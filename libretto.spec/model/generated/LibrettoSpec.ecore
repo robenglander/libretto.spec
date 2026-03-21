@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="librettoSpec" nsURI="http://www.robenglander.com/libretto/spec/LibrettoSpec"
+    nsPrefix="librettoSpec">
+  <eClassifiers xsi:type="ecore:EClass" name="Spec">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="specId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sections" upperBound="-1"
+        eType="#//SpecSection" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SpecSection"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MetadataField">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="specId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="status" eType="#//IdentifierValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="authoredSource" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="compiledAt" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="compilerVersion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modelMetadata" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DependencyRecord">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
+        eType="#//DependencyRecordItem" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DependencyRecordItem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetSpec" eType="#//TargetSpecField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="kind" eType="#//KindField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="notes" eType="#//NotesField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="#//ContextField"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TargetSpecField">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="KindField">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//IdentifierValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReferenceRecord">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
+        eType="#//ReferenceRecordItem" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReferenceRecordItem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="title" eType="#//TitleField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//TypeField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="citation" eType="#//CitationField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="locator" eType="#//LocatorField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="authorityNotes" eType="#//AuthorityNotesField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metadataText" eType="#//MetadataTextField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="#//ContextField"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TitleField">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TypeField">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//IdentifierValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CitationField">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LocatorField">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AuthorityNotesField">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MetadataTextField">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProseRecord"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SectionContextRecord" eSuperTypes="#//ProseRecord">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
+        eType="#//SectionContextRecordItem" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SectionContextRecordItem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="section" eType="#//SectionField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="text" eType="#//TextField"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SubsectionContextRecord" eSuperTypes="#//ProseRecord">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
+        eType="#//SubsectionContextRecordItem" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SubsectionContextRecordItem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="section" eType="#//SectionField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subsection" eType="#//SubsectionField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="text" eType="#//TextField"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OutOfScopeRecord">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
+        eType="#//OutOfScopeRecordItem" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OutOfScopeRecordItem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statement" eType="#//StatementField"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StatementField">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BehaviorRecord">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
+        eType="#//BehaviorRecordItem" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BehaviorRecordItem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//SourceBlock"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actor" eType="#//ActorField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="#//ActionField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="objects" eType="#//ObjectsField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reads" eType="#//ReadsField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="writes" eType="#//WritesField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditions" eType="#//ConditionsField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outcomes" eType="#//OutcomesField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="label" eType="#//LabelField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="references" eType="#//ReferencesField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="notes" eType="#//NotesField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="#//ContextField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dependencies" eType="#//DependenciesField"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActorField">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//IdentifierValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionField">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//IdentifierValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ObjectsField">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//IdentifierList"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReadsField">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//IdentifierList"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WritesField">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//IdentifierList"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConditionsField">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//TextList"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OutcomesField">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//TextList"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LabelField">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReferencesField">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//ReferenceIdList"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DependenciesField">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//IdentifierList"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NotesField">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContextField">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OperationSurfaceRecord">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
+        eType="#//OperationSurfaceRecordItem" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OperationSurfaceRecordItem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operationExpression" eType="#//OperationExpressionField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outcomeClass" eType="#//OutcomeClassField"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OperationExpressionField">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OutcomeClassField">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//OutcomeClassValue"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImplementsSurfaceRecord">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
+        eType="#//ImplementsSurfaceRecordItem" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImplementsSurfaceRecordItem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetSpec" eType="#//ImplementsSurfaceTargetField"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImplementsSurfaceTargetField">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BoundaryRecord">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
+        eType="#//BoundaryRecordItem" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BoundaryRecordItem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specIdField" eType="#//BoundarySpecIdField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operationIdField" eType="#//BoundaryOperationIdField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="profileIdField" eType="#//BoundaryProfileIdField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rawField" eType="#//BoundaryRawField"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BoundarySpecIdField">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BoundaryOperationIdField">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BoundaryProfileIdField">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BoundaryRawField">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AcceptanceTestRecord">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
+        eType="#//AcceptanceTestRecordItem" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AcceptanceTestRecordItem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//SourceBlock"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="validates" eType="#//ValidatesField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="preconditions" eType="#//PreconditionsField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actions" eType="#//ActionsField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assertions" eType="#//AssertionsField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="title" eType="#//TitleField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="references" eType="#//ReferencesField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="notes" eType="#//NotesField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="#//ContextField"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ValidatesField">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//BehaviorIdList"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PreconditionsField">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//TextList"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionsField">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//TextList"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AssertionsField">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//TextList"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImplementationDirectiveRecord">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
+        eType="#//ImplementationDirectiveRecordItem" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImplementationDirectiveRecordItem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//SourceBlock"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="appliesTo" eType="#//AppliesToField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="strength" eType="#//StrengthField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="directive" eType="#//DirectiveField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="category" eType="#//CategoryField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraints" eType="#//ConstraintsField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allowedFlexibility" eType="#//AllowedFlexibilityField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="references" eType="#//ReferencesField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rationale" eType="#//RationaleField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="#//ContextField"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AppliesToField">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//IdentifierList"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StrengthField">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//StrengthValue"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DirectiveField">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CategoryField">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//IdentifierValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConstraintsField">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//TextList"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AllowedFlexibilityField">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//TextList"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RationaleField">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SourceBlock">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
+        eType="#//SourceBlockItem" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SourceBlockItem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="section" eType="#//SectionField"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subsection" eType="#//SubsectionField"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SectionField">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SubsectionField">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextField">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IdentifierList">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="values" upperBound="-1"
+        eType="#//IdentifierValue" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BehaviorIdList">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReferenceIdList">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextList">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IdentifierValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DottedIdentifier" eSuperTypes="#//IdentifierValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="head" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tail" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OutcomeClassValue">
+    <eLiterals name="RETURNS" literal="returns"/>
+    <eLiterals name="REJECTS" value="1" literal="rejects"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="StrengthValue">
+    <eLiterals name="REQUIRED" literal="required"/>
+    <eLiterals name="STRONGLY_PREFERRED" value="1" literal="strongly_preferred"/>
+    <eLiterals name="PREFERRED" value="2" literal="preferred"/>
+    <eLiterals name="ADVISORY" value="3" literal="advisory"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MetadataSection" eSuperTypes="#//SpecSection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
+        eType="#//MetadataField" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DependenciesSection" eSuperTypes="#//SpecSection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="records" upperBound="-1"
+        eType="#//DependencyRecord" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReferencesSection" eSuperTypes="#//SpecSection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="records" upperBound="-1"
+        eType="#//ReferenceRecord" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProseSection" eSuperTypes="#//SpecSection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="records" upperBound="-1"
+        eType="#//ProseRecord" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OutOfScopeSection" eSuperTypes="#//SpecSection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="records" upperBound="-1"
+        eType="#//OutOfScopeRecord" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OperationSurfaceSection" eSuperTypes="#//SpecSection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="records" upperBound="-1"
+        eType="#//OperationSurfaceRecord" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImplementsSurfaceSection" eSuperTypes="#//SpecSection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="records" upperBound="-1"
+        eType="#//ImplementsSurfaceRecord" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BoundaryExportsSection" eSuperTypes="#//SpecSection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="records" upperBound="-1"
+        eType="#//BoundaryRecord" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BoundaryImportsSection" eSuperTypes="#//SpecSection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="records" upperBound="-1"
+        eType="#//BoundaryRecord" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BehaviorsSection" eSuperTypes="#//SpecSection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="records" upperBound="-1"
+        eType="#//BehaviorRecord" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AcceptanceTestsSection" eSuperTypes="#//SpecSection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="records" upperBound="-1"
+        eType="#//AcceptanceTestRecord" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImplementationDirectivesSection" eSuperTypes="#//SpecSection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="records" upperBound="-1"
+        eType="#//ImplementationDirectiveRecord" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

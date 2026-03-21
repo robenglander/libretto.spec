@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: libretto.spec
+Bundle-ManifestVersion: 2
+Bundle-Name: libretto.spec
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: libretto.spec; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.19.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.40.0",
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Export-Package: com.robenglander.libretto.spec,
+ com.robenglander.libretto.spec.librettoSpec,
+ com.robenglander.libretto.spec.librettoSpec.util,
+ com.robenglander.libretto.spec.parser.antlr.internal,
+ com.robenglander.libretto.spec.scoping,
+ com.robenglander.libretto.spec.parser.antlr,
+ com.robenglander.libretto.spec.validation,
+ com.robenglander.libretto.spec.services,
+ com.robenglander.libretto.spec.serializer,
+ com.robenglander.libretto.spec.librettoSpec.impl,
+ com.robenglander.libretto.spec.generator
+Import-Package: org.apache.log4j

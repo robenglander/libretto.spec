@@ -1,0 +1,597 @@
+grammar com.robenglander.libretto.spec.LibrettoSpec with org.eclipse.xtext.common.Terminals
+
+hidden(WS, ML_COMMENT, SL_COMMENT)
+
+generate librettoSpec "http://www.robenglander.com/libretto/spec/LibrettoSpec"
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+/**
+ * Native Libretto (`.libretto`) — aligned with ANTLR {@code LibrettoSpec.g4}
+ * in the {@code libretto} repo ({@code libretto-language/.../LibrettoSpec.g4}).
+ * <p>
+ * Principle: <b>loose syntax, strong validation</b> — many record fields are optional in the grammar
+ * so the parser produces a partial model; {@code LibrettoSpecValidator} enforces required structure
+ * with clear issue codes (mirrored in {@code LibrettoTextValidator}).
+ * <p>
+ * Top-level sections may appear in any order (and may be omitted when optional); at most one block per
+ * section keyword is enforced in validation ({@code DUPLICATE_TOP_LEVEL_SECTION}).
+ * <p>
+ * Within each record and structured block (e.g. {@code behavior}, {@code source}, {@code section_context}),
+ * child fields may appear in any order; the grammar allows unbounded repeats per field kind; at most one
+ * occurrence per field kind is enforced in validation ({@code DUPLICATE_NESTED_FIELD}).
+ */
+
+Spec:
+	'spec' specId=LIBRETTO_ID '{'
+	sections+=SpecSection*
+	'}';
+
+SpecSection:
+	MetadataSection | DependenciesSection | ReferencesSection | ProseSection | OutOfScopeSection
+	| OperationSurfaceSection | ImplementsSurfaceSection | BoundaryExportsSection | BoundaryImportsSection
+	| BehaviorsSection | AcceptanceTestsSection | ImplementationDirectivesSection;
+
+// ----- Top-level sections -----
+
+MetadataSection returns SpecSection:
+	{MetadataSection}
+	'metadata' '{' fields+=MetadataField* '}';
+
+DependenciesSection returns SpecSection:
+	{DependenciesSection}
+	'dependencies' '{' records+=DependencyRecord* '}';
+
+ReferencesSection returns SpecSection:
+	{ReferencesSection}
+	'references' '{' records+=ReferenceRecord* '}';
+
+ProseSection returns SpecSection:
+	{ProseSection}
+	'prose' '{' records+=ProseRecord* '}';
+
+OutOfScopeSection returns SpecSection:
+	{OutOfScopeSection}
+	'out_of_scope' '{' records+=OutOfScopeRecord* '}';
+
+OperationSurfaceSection returns SpecSection:
+	{OperationSurfaceSection}
+	'operation_surface' '{' records+=OperationSurfaceRecord* '}';
+
+ImplementsSurfaceSection returns SpecSection:
+	{ImplementsSurfaceSection}
+	'implements_surface' '{' records+=ImplementsSurfaceRecord* '}';
+
+BoundaryExportsSection returns SpecSection:
+	{BoundaryExportsSection}
+	'boundary_exports' '{' records+=BoundaryRecord* '}';
+
+BoundaryImportsSection returns SpecSection:
+	{BoundaryImportsSection}
+	'boundary_imports' '{' records+=BoundaryRecord* '}';
+
+BehaviorsSection returns SpecSection:
+	{BehaviorsSection}
+	'behaviors' '{' records+=BehaviorRecord* '}';
+
+AcceptanceTestsSection returns SpecSection:
+	{AcceptanceTestsSection}
+	'acceptance_tests' '{' records+=AcceptanceTestRecord* '}';
+
+ImplementationDirectivesSection returns SpecSection:
+	{ImplementationDirectivesSection}
+	'implementation_directives' '{' records+=ImplementationDirectiveRecord* '}';
+
+// ----- Metadata -----
+
+MetadataField:
+	  'spec_id' ':' specId=TextValue
+	| 'title' ':' title=TextValue
+	| 'version' ':' version=TextValue
+	| 'status' ':' status=IdentifierValue
+	| 'authored_source' ':' authoredSource=TextValue
+	| 'compiled_at' ':' compiledAt=TextValue
+	| 'compiler_version' ':' compilerVersion=TextValue
+	| 'model_metadata' ':' modelMetadata=TextValue;
+
+// ----- Dependency records -----
+
+DependencyRecord:
+	'dependency' id=LIBRETTO_ID '{'
+	items+=DependencyRecordItem*
+	'}';
+
+DependencyRecordItem:
+	DependencyTargetSpecItem | DependencyKindItem | DependencyNotesItem | DependencyContextItem;
+
+DependencyTargetSpecItem returns DependencyRecordItem:
+	targetSpec=TargetSpecField;
+
+DependencyKindItem returns DependencyRecordItem:
+	kind=KindField;
+
+DependencyNotesItem returns DependencyRecordItem:
+	notes=NotesField;
+
+DependencyContextItem returns DependencyRecordItem:
+	context=ContextField;
+
+TargetSpecField:
+	'target_spec' ':' value=TextValue;
+
+KindField:
+	'kind' ':' value=IdentifierValue;
+
+// ----- Reference records -----
+
+ReferenceRecord:
+	'reference' id=RefId '{'
+	items+=ReferenceRecordItem*
+	'}';
+
+ReferenceRecordItem:
+	ReferenceTitleItem | ReferenceTypeItem | ReferenceCitationItem | ReferenceLocatorItem
+	| ReferenceAuthorityNotesItem | ReferenceMetadataTextItem | ReferenceContextItem;
+
+ReferenceTitleItem returns ReferenceRecordItem:
+	title=TitleField;
+
+ReferenceTypeItem returns ReferenceRecordItem:
+	type=TypeField;
+
+ReferenceCitationItem returns ReferenceRecordItem:
+	citation=CitationField;
+
+ReferenceLocatorItem returns ReferenceRecordItem:
+	locator=LocatorField;
+
+ReferenceAuthorityNotesItem returns ReferenceRecordItem:
+	authorityNotes=AuthorityNotesField;
+
+ReferenceMetadataTextItem returns ReferenceRecordItem:
+	metadataText=MetadataTextField;
+
+ReferenceContextItem returns ReferenceRecordItem:
+	context=ContextField;
+
+TitleField:
+	'title' ':' value=TextValue;
+
+TypeField:
+	'type' ':' value=IdentifierValue;
+
+CitationField:
+	'citation' ':' value=TextValue;
+
+LocatorField:
+	'locator' ':' value=TextValue;
+
+AuthorityNotesField:
+	'authority_notes' ':' value=TextValue;
+
+MetadataTextField:
+	'metadata' ':' value=TextValue;
+
+// ----- Prose records -----
+
+ProseRecord:
+	SectionContextRecord | SubsectionContextRecord;
+
+SectionContextRecord:
+	'section_context' '{'
+	items+=SectionContextRecordItem*
+	'}';
+
+SectionContextRecordItem:
+	SectionContextSectionItem | SectionContextTextItem;
+
+SectionContextSectionItem returns SectionContextRecordItem:
+	section=SectionField;
+
+SectionContextTextItem returns SectionContextRecordItem:
+	text=TextField;
+
+SubsectionContextRecord:
+	'subsection_context' '{'
+	items+=SubsectionContextRecordItem*
+	'}';
+
+SubsectionContextRecordItem:
+	SubsectionContextSectionItem | SubsectionContextSubsectionItem | SubsectionContextTextItem;
+
+SubsectionContextSectionItem returns SubsectionContextRecordItem:
+	section=SectionField;
+
+SubsectionContextSubsectionItem returns SubsectionContextRecordItem:
+	subsection=SubsectionField;
+
+SubsectionContextTextItem returns SubsectionContextRecordItem:
+	text=TextField;
+
+// ----- Out-of-scope records -----
+
+OutOfScopeRecord:
+	'out_of_scope_item' id=OosId '{'
+	items+=OutOfScopeRecordItem*
+	'}';
+
+OutOfScopeRecordItem:
+	OutOfScopeStatementItem;
+
+OutOfScopeStatementItem returns OutOfScopeRecordItem:
+	statement=StatementField;
+
+StatementField:
+	'statement' ':' value=TextValue;
+
+// ----- Behavior records -----
+
+BehaviorRecord:
+	'behavior' id=BehaviorId '{'
+	items+=BehaviorRecordItem*
+	'}';
+
+BehaviorRecordItem:
+	BehaviorSourceItem | BehaviorActorItem | BehaviorActionItem | BehaviorObjectsItem | BehaviorReadsItem
+	| BehaviorWritesItem | BehaviorConditionsItem | BehaviorOutcomesItem | BehaviorLabelItem | BehaviorReferencesItem
+	| BehaviorNotesItem | BehaviorContextItem | BehaviorDependenciesItem;
+
+BehaviorSourceItem returns BehaviorRecordItem:
+	source=SourceBlock;
+
+BehaviorActorItem returns BehaviorRecordItem:
+	actor=ActorField;
+
+BehaviorActionItem returns BehaviorRecordItem:
+	action=ActionField;
+
+BehaviorObjectsItem returns BehaviorRecordItem:
+	objects=ObjectsField;
+
+BehaviorReadsItem returns BehaviorRecordItem:
+	reads=ReadsField;
+
+BehaviorWritesItem returns BehaviorRecordItem:
+	writes=WritesField;
+
+BehaviorConditionsItem returns BehaviorRecordItem:
+	conditions=ConditionsField;
+
+BehaviorOutcomesItem returns BehaviorRecordItem:
+	outcomes=OutcomesField;
+
+BehaviorLabelItem returns BehaviorRecordItem:
+	label=LabelField;
+
+BehaviorReferencesItem returns BehaviorRecordItem:
+	references=ReferencesField;
+
+BehaviorNotesItem returns BehaviorRecordItem:
+	notes=NotesField;
+
+BehaviorContextItem returns BehaviorRecordItem:
+	context=ContextField;
+
+BehaviorDependenciesItem returns BehaviorRecordItem:
+	dependencies=DependenciesField;
+
+ActorField:
+	'actor' ':' value=IdentifierValue;
+
+ActionField:
+	'action' ':' value=IdentifierValue;
+
+ObjectsField:
+	'objects' ':' value=IdentifierList;
+
+ReadsField:
+	'reads' ':' value=IdentifierList;
+
+WritesField:
+	'writes' ':' value=IdentifierList;
+
+ConditionsField:
+	'conditions' ':' value=TextList;
+
+OutcomesField:
+	'outcomes' ':' value=TextList;
+
+LabelField:
+	'label' ':' value=TextValue;
+
+ReferencesField:
+	'references' ':' value=ReferenceIdList;
+
+DependenciesField:
+	'dependencies' ':' value=IdentifierList;
+
+NotesField:
+	'notes' ':' value=TextValue;
+
+ContextField:
+	'context' ':' value=TextValue;
+
+// ----- Deterministic coherence surface -----
+
+OperationSurfaceRecord:
+	'operation' id=LIBRETTO_ID '{'
+	items+=OperationSurfaceRecordItem*
+	'}';
+
+OperationSurfaceRecordItem:
+	OperationSurfaceExpressionItem | OperationSurfaceOutcomeItem;
+
+OperationSurfaceExpressionItem returns OperationSurfaceRecordItem:
+	operationExpression=OperationExpressionField;
+
+OperationSurfaceOutcomeItem returns OperationSurfaceRecordItem:
+	outcomeClass=OutcomeClassField;
+
+OperationExpressionField:
+	'operation_expression' ':' value=TextValue;
+
+OutcomeClassField:
+	'outcome_class' ':' value=OutcomeClassValue;
+
+ImplementsSurfaceRecord:
+	'implements' items+=ImplementsSurfaceRecordItem*;
+
+ImplementsSurfaceRecordItem:
+	ImplementsSurfaceTargetItem;
+
+ImplementsSurfaceTargetItem returns ImplementsSurfaceRecordItem:
+	targetSpec=ImplementsSurfaceTargetField;
+
+ImplementsSurfaceTargetField:
+	'target_spec' ':' value=TextValue;
+
+BoundaryRecord:
+	'boundary' '{'
+	items+=BoundaryRecordItem*
+	'}';
+
+BoundaryRecordItem:
+	BoundarySpecIdElement | BoundaryOperationIdElement | BoundaryProfileIdElement | BoundaryRawElement;
+
+BoundarySpecIdElement returns BoundaryRecordItem:
+	specIdField=BoundarySpecIdField;
+
+BoundaryOperationIdElement returns BoundaryRecordItem:
+	operationIdField=BoundaryOperationIdField;
+
+BoundaryProfileIdElement returns BoundaryRecordItem:
+	profileIdField=BoundaryProfileIdField;
+
+BoundaryRawElement returns BoundaryRecordItem:
+	rawField=BoundaryRawField;
+
+BoundarySpecIdField:
+	'spec_id' ':' value=TextValue;
+
+BoundaryOperationIdField:
+	'operation_id' ':' value=TextValue;
+
+BoundaryProfileIdField:
+	'profile_id' ':' value=TextValue;
+
+BoundaryRawField:
+	'raw' ':' value=TextValue;
+
+// ----- Acceptance test records -----
+
+AcceptanceTestRecord:
+	'acceptance_test' id=AcceptanceTestId '{'
+	items+=AcceptanceTestRecordItem*
+	'}';
+
+AcceptanceTestRecordItem:
+	AcceptanceTestSourceItem | AcceptanceTestValidatesItem | AcceptanceTestPreconditionsItem | AcceptanceTestActionsItem
+	| AcceptanceTestAssertionsItem | AcceptanceTestTitleItem | AcceptanceTestReferencesItem | AcceptanceTestNotesItem
+	| AcceptanceTestContextItem;
+
+AcceptanceTestSourceItem returns AcceptanceTestRecordItem:
+	source=SourceBlock;
+
+AcceptanceTestValidatesItem returns AcceptanceTestRecordItem:
+	validates=ValidatesField;
+
+AcceptanceTestPreconditionsItem returns AcceptanceTestRecordItem:
+	preconditions=PreconditionsField;
+
+AcceptanceTestActionsItem returns AcceptanceTestRecordItem:
+	actions=ActionsField;
+
+AcceptanceTestAssertionsItem returns AcceptanceTestRecordItem:
+	assertions=AssertionsField;
+
+AcceptanceTestTitleItem returns AcceptanceTestRecordItem:
+	title=TitleField;
+
+AcceptanceTestReferencesItem returns AcceptanceTestRecordItem:
+	references=ReferencesField;
+
+AcceptanceTestNotesItem returns AcceptanceTestRecordItem:
+	notes=NotesField;
+
+AcceptanceTestContextItem returns AcceptanceTestRecordItem:
+	context=ContextField;
+
+ValidatesField:
+	'validates' ':' value=BehaviorIdList;
+
+PreconditionsField:
+	'preconditions' ':' value=TextList;
+
+ActionsField:
+	'actions' ':' value=TextList;
+
+AssertionsField:
+	'assertions' ':' value=TextList;
+
+// ----- Implementation directive records -----
+
+ImplementationDirectiveRecord:
+	'implementation_directive' id=ImplementationDirectiveId '{'
+	items+=ImplementationDirectiveRecordItem*
+	'}';
+
+ImplementationDirectiveRecordItem:
+	ImplementationDirectiveSourceItem | ImplementationDirectiveAppliesToItem | ImplementationDirectiveStrengthItem
+	| ImplementationDirectiveDirectiveItem | ImplementationDirectiveCategoryItem | ImplementationDirectiveConstraintsItem
+	| ImplementationDirectiveAllowedFlexibilityItem | ImplementationDirectiveReferencesItem | ImplementationDirectiveRationaleItem
+	| ImplementationDirectiveContextItem;
+
+ImplementationDirectiveSourceItem returns ImplementationDirectiveRecordItem:
+	source=SourceBlock;
+
+ImplementationDirectiveAppliesToItem returns ImplementationDirectiveRecordItem:
+	appliesTo=AppliesToField;
+
+ImplementationDirectiveStrengthItem returns ImplementationDirectiveRecordItem:
+	strength=StrengthField;
+
+ImplementationDirectiveDirectiveItem returns ImplementationDirectiveRecordItem:
+	directive=DirectiveField;
+
+ImplementationDirectiveCategoryItem returns ImplementationDirectiveRecordItem:
+	category=CategoryField;
+
+ImplementationDirectiveConstraintsItem returns ImplementationDirectiveRecordItem:
+	constraints=ConstraintsField;
+
+ImplementationDirectiveAllowedFlexibilityItem returns ImplementationDirectiveRecordItem:
+	allowedFlexibility=AllowedFlexibilityField;
+
+ImplementationDirectiveReferencesItem returns ImplementationDirectiveRecordItem:
+	references=ReferencesField;
+
+ImplementationDirectiveRationaleItem returns ImplementationDirectiveRecordItem:
+	rationale=RationaleField;
+
+ImplementationDirectiveContextItem returns ImplementationDirectiveRecordItem:
+	context=ContextField;
+
+AppliesToField:
+	'applies_to' ':' value=IdentifierList;
+
+StrengthField:
+	'strength' ':' value=StrengthValue;
+
+DirectiveField:
+	'directive' ':' value=TextValue;
+
+CategoryField:
+	'category' ':' value=IdentifierValue;
+
+ConstraintsField:
+	'constraints' ':' value=TextList;
+
+AllowedFlexibilityField:
+	'allowed_flexibility' ':' value=TextList;
+
+RationaleField:
+	'rationale' ':' value=TextValue;
+
+// ----- Shared structured fields -----
+
+SourceBlock:
+	'source' '{'
+	items+=SourceBlockItem*
+	'}';
+
+SourceBlockItem:
+	SourceBlockSectionItem | SourceBlockSubsectionItem;
+
+SourceBlockSectionItem returns SourceBlockItem:
+	section=SectionField;
+
+SourceBlockSubsectionItem returns SourceBlockItem:
+	subsection=SubsectionField;
+
+SectionField:
+	'section' ':' value=TextValue;
+
+SubsectionField:
+	'subsection' ':' value=TextValue;
+
+TextField:
+	'text' ':' value=TextValue;
+
+// ----- Structured IDs (wrap terminals for parser assignments) -----
+
+BehaviorId:
+	BEHAVIOR_ID;
+
+AcceptanceTestId:
+	ACCEPTANCE_TEST_ID;
+
+ImplementationDirectiveId:
+	IMPLEMENTATION_DIRECTIVE_ID;
+
+RefId:
+	REF_ID;
+
+OosId:
+	OOS_ID;
+
+// ----- Shared value rules -----
+
+IdentifierList:
+	{IdentifierList} 
+	'[' (values+=IdentifierValue (',' values+=IdentifierValue)*)? ']';
+
+BehaviorIdList:
+	{BehaviorIdList} 
+	'[' (values+=BehaviorId (',' values+=BehaviorId)*)? ']';
+
+ReferenceIdList:
+	{ReferenceIdList} 
+	'[' (values+=RefId (',' values+=RefId)*)? ']';
+
+TextList:
+	{TextList} 
+	'[' (values+=TextValue (',' values+=TextValue)*)? ']';
+
+TextValue:
+	STRING | TEXT_BLOCK;
+
+IdentifierValue:
+	LIBRETTO_ID | DottedIdentifier;
+
+DottedIdentifier:
+	head=LIBRETTO_ID ('.' tail+=LIBRETTO_ID)+;
+
+// ----- Enums (literal names avoid Xtext reserved words e.g. "returns") -----
+
+enum OutcomeClassValue:
+	RETURNS='returns' | REJECTS='rejects';
+
+enum StrengthValue:
+	REQUIRED='required'
+	| STRONGLY_PREFERRED='strongly_preferred'
+	| PREFERRED='preferred'
+	| ADVISORY='advisory';
+
+// ----- Terminals (match LibrettoSpec.g4; declare specific tokens before LibrettoID) -----
+
+terminal TEXT_BLOCK:
+	'"""' (!('"') | '"' !('"') | '"' '"' !('"'))* '"""';
+
+terminal BEHAVIOR_ID returns ecore::EString:
+	'B-' ('0'..'9')('0'..'9')('0'..'9');
+
+terminal ACCEPTANCE_TEST_ID returns ecore::EString:
+	'AT-' ('0'..'9')('0'..'9')('0'..'9');
+
+terminal IMPLEMENTATION_DIRECTIVE_ID returns ecore::EString:
+	'ID-' ('0'..'9')('0'..'9')('0'..'9');
+
+terminal REF_ID returns ecore::EString:
+	'REF-' ('0'..'9')('0'..'9')('0'..'9');
+
+terminal OOS_ID returns ecore::EString:
+	'OOS-' ('0'..'9')('0'..'9')('0'..'9');
+
+/** ANTLR IDENTIFIER: [A-Za-z_] [A-Za-z0-9_\\-]* */
+terminal LIBRETTO_ID returns ecore::EString:
+	('a'..'z'|'A'..'Z'|'_')('a'..'z'|'A'..'Z'|'_'|'0'..'9'|'-'|'\\')*;

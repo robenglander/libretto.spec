@@ -1,0 +1,106 @@
+{
+  "name": "libretto-spec-lsp",
+  "displayName": "Libretto Spec (Xtext LSP)",
+  "description": "Language Server for native .libretto (LibrettoSpec / Xtext)",
+  "version": "0.1.0",
+  "publisher": "robenglander",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "workspaceContains:**/*.libretto"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "configurationDefaults": {
+      "files.associations": {
+        "*.libretto": "librettospec"
+      },
+      "[librettospec]": {
+        "editor.semanticHighlighting.enabled": true,
+        "editor.semanticTokenColorCustomizations": {
+          "rules": {
+            "property": "#3fb950"
+          }
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "librettoSpec.repairLanguageMode",
+        "title": "Libretto Spec: Use Libretto Spec language for this file",
+        "enablement": "resourceExtname == '.libretto'"
+      }
+    ],
+    "languages": [
+      {
+        "id": "librettospec",
+        "aliases": [
+          "Libretto Spec",
+          "libretto"
+        ],
+        "extensions": [
+          ".libretto"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "librettospec",
+        "scopeName": "source.libretto",
+        "path": "./syntaxes/libretto.tmLanguage.json"
+      }
+    ],
+    "configuration": {
+      "title": "Libretto Spec LSP",
+      "properties": {
+        "librettoSpec.languageServer.jarPath": {
+          "type": "string",
+          "default": "",
+          "description": "Absolute path to libretto.spec.ide-*-ls.jar (shaded LSP). Use ${workspaceFolder} for the first workspace root. If empty, the extension tries ../libretto.spec.ide/target/*-ls.jar relative to this extension folder."
+        },
+        "librettoSpec.languageServer.javaPath": {
+          "type": "string",
+          "default": "java",
+          "description": "Java executable used to run the LSP jar (must be Java 21+ for this project)."
+        },
+        "librettoSpec.languageServer.jvmArgs": {
+          "type": "array",
+          "default": [],
+          "description": "Extra JVM arguments (e.g. -Xmx512m).",
+          "items": {
+            "type": "string"
+          }
+        },
+        "librettoSpec.languageServer.trace": {
+          "type": "string",
+          "enum": [
+            "off",
+            "messages",
+            "compact",
+            "verbose"
+          ],
+          "default": "off",
+          "description": "LSP message trace in Output → Libretto Spec LSP. Use \"verbose\" to confirm textDocument/publishDiagnostics from the server."
+        },
+        "librettoSpec.languageServer.logDiagnostics": {
+          "type": "boolean",
+          "default": false,
+          "description": "Log each publishDiagnostics batch (URI + count) to the Libretto Spec LSP output channel."
+        },
+        "librettoSpec.autoSetLanguageForDotLibretto": {
+          "type": "boolean",
+          "default": true,
+          "description": "When a .libretto file opens, set language id to librettospec if it was something else (so the LSP attaches). Disable if you intentionally open .libretto as Plain Text or another language."
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "vscode-languageclient": "^9.0.1"
+  }
+}

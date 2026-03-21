@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+	<extension point="org.eclipse.emf.ecore.generated_package">
+		<package
+			uri = "http://www.robenglander.com/libretto/spec/LibrettoSpec"
+			class = "com.robenglander.libretto.spec.librettoSpec.LibrettoSpecPackage"
+			genModel = "model/generated/LibrettoSpec.genmodel" />
+	</extension>
+</plugin>

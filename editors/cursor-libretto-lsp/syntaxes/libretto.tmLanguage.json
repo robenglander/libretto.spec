@@ -1,0 +1,87 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Libretto",
+  "scopeName": "source.libretto",
+  "patterns": [
+    { "include": "#comment" },
+    { "include": "#textBlock" },
+    { "include": "#string" },
+    { "include": "#ids" },
+    { "include": "#keywords" },
+    { "include": "#operationLocalId" },
+    { "include": "#punctuation" },
+    { "include": "#identifier" }
+  ],
+  "repository": {
+    "comment": {
+      "name": "comment.line.double-slash.libretto",
+      "match": "//.*$"
+    },
+    "textBlock": {
+      "name": "string.quoted.triple.libretto",
+      "begin": "\"\"\"",
+      "end": "\"\"\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.libretto",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "string": {
+      "name": "string.quoted.double.libretto",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.libretto",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "ids": {
+      "patterns": [
+        {
+          "name": "entity.name.tag.id.behavior.libretto",
+          "match": "\\bB-[0-9]{3}\\b"
+        },
+        {
+          "name": "entity.name.tag.id.acceptance.libretto",
+          "match": "\\bAT-[0-9]{3}\\b"
+        },
+        {
+          "name": "entity.name.tag.id.directive.libretto",
+          "match": "\\bID-[0-9]{3}\\b"
+        },
+        {
+          "name": "entity.name.tag.id.reference.libretto",
+          "match": "\\bREF-[0-9]{3}\\b"
+        },
+        {
+          "name": "entity.name.tag.id.oos.libretto",
+          "match": "\\bOOS-[0-9]{3}\\b"
+        }
+      ]
+    },
+    "keywords": {
+      "name": "keyword.other.libretto",
+      "match": "\\b(spec|metadata|dependencies|references|prose|out_of_scope|behaviors|acceptance_tests|implementation_directives|operation_surface|implements_surface|boundary_exports|boundary_imports|dependency|reference|section_context|subsection_context|out_of_scope_item|behavior|acceptance_test|implementation_directive|operation|implements|boundary|source|section|subsection|text|statement|spec_id|title|version|status|authored_source|compiled_at|compiler_version|model_metadata|target_spec|kind|type|citation|locator|authority_notes|operation_expression|outcome_class|operation_id|profile_id|raw|actor|action|objects|reads|writes|conditions|outcomes|label|notes|context|validates|preconditions|actions|assertions|applies_to|strength|directive|category|constraints|allowed_flexibility|rationale|required|strongly_preferred|preferred|advisory|returns|rejects)\\b"
+    },
+    "operationLocalId": {
+      "name": "variable.other.operation-id.libretto",
+      "match": "\\bop_[0-9]+\\b"
+    },
+    "punctuation": {
+      "patterns": [
+        {
+          "name": "punctuation.section.braces.libretto",
+          "match": "[{}\\[\\]:,]"
+        }
+      ]
+    },
+    "identifier": {
+      "name": "variable.other.identifier.libretto",
+      "match": "[A-Za-z_][A-Za-z0-9_\\\\-]*"
+    }
+  }
+}
