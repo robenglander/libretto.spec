@@ -39,7 +39,7 @@ public class LibrettoSpecSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * terminal LIBRETTO_ID returns ecore::EString:
-	 * 	('a'..'z'|'A'..'Z'|'_')('a'..'z'|'A'..'Z'|'_'|'0'..'9'|'-'|'\\')*;
+	 * 	('^')?('a'..'z'|'A'..'Z'|'_')('a'..'z'|'A'..'Z'|'_'|'0'..'9'|'-'|'\\')*;
 	 */
 	protected String getLIBRETTO_IDToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)

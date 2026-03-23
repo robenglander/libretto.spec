@@ -188,7 +188,8 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.DependenciesSection");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cDependenciesSectionAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cDependenciesKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cSectionKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cSectionKeywordDependenciesSectionKeywordParserRuleCall_1_0 = (RuleCall)cSectionKeywordAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cRecordsAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cRecordsDependencyRecordParserRuleCall_3_0 = (RuleCall)cRecordsAssignment_3.eContents().get(0);
@@ -196,18 +197,21 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 		
 		//DependenciesSection returns SpecSection:
 		//    {DependenciesSection}
-		//    'dependencies' '{' records+=DependencyRecord* '}';
+		//    sectionKeyword=DependenciesSectionKeyword '{' records+=DependencyRecord* '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{DependenciesSection}
-		//'dependencies' '{' records+=DependencyRecord* '}'
+		//sectionKeyword=DependenciesSectionKeyword '{' records+=DependencyRecord* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{DependenciesSection}
 		public Action getDependenciesSectionAction_0() { return cDependenciesSectionAction_0; }
 		
-		//'dependencies'
-		public Keyword getDependenciesKeyword_1() { return cDependenciesKeyword_1; }
+		//sectionKeyword=DependenciesSectionKeyword
+		public Assignment getSectionKeywordAssignment_1() { return cSectionKeywordAssignment_1; }
+		
+		//DependenciesSectionKeyword
+		public RuleCall getSectionKeywordDependenciesSectionKeywordParserRuleCall_1_0() { return cSectionKeywordDependenciesSectionKeywordParserRuleCall_1_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
@@ -595,30 +599,30 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.MetadataField");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Keyword cSpec_idKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Keyword cTitleKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
 		private final Keyword cColonKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
-		private final Assignment cSpecIdAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
-		private final RuleCall cSpecIdTextValueParserRuleCall_0_2_0 = (RuleCall)cSpecIdAssignment_0_2.eContents().get(0);
+		private final Assignment cTitleAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cTitleTextValueParserRuleCall_0_2_0 = (RuleCall)cTitleAssignment_0_2.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Keyword cTitleKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Keyword cVersionKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Keyword cColonKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
-		private final Assignment cTitleAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cTitleTextValueParserRuleCall_1_2_0 = (RuleCall)cTitleAssignment_1_2.eContents().get(0);
+		private final Assignment cVersionAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cVersionTextValueParserRuleCall_1_2_0 = (RuleCall)cVersionAssignment_1_2.eContents().get(0);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Keyword cVersionKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Keyword cStatusKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Keyword cColonKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
-		private final Assignment cVersionAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
-		private final RuleCall cVersionTextValueParserRuleCall_2_2_0 = (RuleCall)cVersionAssignment_2_2.eContents().get(0);
+		private final Assignment cStatusAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
+		private final RuleCall cStatusMetadataStatusValueEnumRuleCall_2_2_0 = (RuleCall)cStatusAssignment_2_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final Keyword cStatusKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Keyword cModuleKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Keyword cColonKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
-		private final Assignment cStatusAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-		private final RuleCall cStatusIdentifierValueParserRuleCall_3_2_0 = (RuleCall)cStatusAssignment_3_2.eContents().get(0);
+		private final Assignment cModuleNameAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
+		private final RuleCall cModuleNameTextValueParserRuleCall_3_2_0 = (RuleCall)cModuleNameAssignment_3_2.eContents().get(0);
 		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
-		private final Keyword cAuthored_sourceKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cPackageKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Keyword cColonKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Assignment cAuthoredSourceAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final RuleCall cAuthoredSourceTextValueParserRuleCall_4_2_0 = (RuleCall)cAuthoredSourceAssignment_4_2.eContents().get(0);
+		private final Assignment cJavaPackageAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cJavaPackageTextValueParserRuleCall_4_2_0 = (RuleCall)cJavaPackageAssignment_4_2.eContents().get(0);
 		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
 		private final Keyword cCompiled_atKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Keyword cColonKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
@@ -637,100 +641,100 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 		
 		//// ----- Metadata -----
 		//MetadataField:
-		//      'spec_id' ':' specId=TextValue
-		//    | 'title' ':' title=TextValue
+		//      'title' ':' title=TextValue
 		//    | 'version' ':' version=TextValue
-		//    | 'status' ':' status=IdentifierValue
-		//    | 'authored_source' ':' authoredSource=TextValue
+		//    | 'status' ':' status=MetadataStatusValue
+		//    | 'module' ':' moduleName=TextValue
+		//    | 'package' ':' javaPackage=TextValue
 		//    | 'compiled_at' ':' compiledAt=TextValue
 		//    | 'compiler_version' ':' compilerVersion=TextValue
 		//    | 'model_metadata' ':' modelMetadata=TextValue;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//  'spec_id' ':' specId=TextValue
-		//| 'title' ':' title=TextValue
+		//  'title' ':' title=TextValue
 		//| 'version' ':' version=TextValue
-		//| 'status' ':' status=IdentifierValue
-		//| 'authored_source' ':' authoredSource=TextValue
+		//| 'status' ':' status=MetadataStatusValue
+		//| 'module' ':' moduleName=TextValue
+		//| 'package' ':' javaPackage=TextValue
 		//| 'compiled_at' ':' compiledAt=TextValue
 		//| 'compiler_version' ':' compilerVersion=TextValue
 		//| 'model_metadata' ':' modelMetadata=TextValue
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//'spec_id' ':' specId=TextValue
+		//'title' ':' title=TextValue
 		public Group getGroup_0() { return cGroup_0; }
 		
-		//'spec_id'
-		public Keyword getSpec_idKeyword_0_0() { return cSpec_idKeyword_0_0; }
+		//'title'
+		public Keyword getTitleKeyword_0_0() { return cTitleKeyword_0_0; }
 		
 		//':'
 		public Keyword getColonKeyword_0_1() { return cColonKeyword_0_1; }
 		
-		//specId=TextValue
-		public Assignment getSpecIdAssignment_0_2() { return cSpecIdAssignment_0_2; }
+		//title=TextValue
+		public Assignment getTitleAssignment_0_2() { return cTitleAssignment_0_2; }
 		
 		//TextValue
-		public RuleCall getSpecIdTextValueParserRuleCall_0_2_0() { return cSpecIdTextValueParserRuleCall_0_2_0; }
+		public RuleCall getTitleTextValueParserRuleCall_0_2_0() { return cTitleTextValueParserRuleCall_0_2_0; }
 		
-		//'title' ':' title=TextValue
+		//'version' ':' version=TextValue
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//'title'
-		public Keyword getTitleKeyword_1_0() { return cTitleKeyword_1_0; }
+		//'version'
+		public Keyword getVersionKeyword_1_0() { return cVersionKeyword_1_0; }
 		
 		//':'
 		public Keyword getColonKeyword_1_1() { return cColonKeyword_1_1; }
 		
-		//title=TextValue
-		public Assignment getTitleAssignment_1_2() { return cTitleAssignment_1_2; }
+		//version=TextValue
+		public Assignment getVersionAssignment_1_2() { return cVersionAssignment_1_2; }
 		
 		//TextValue
-		public RuleCall getTitleTextValueParserRuleCall_1_2_0() { return cTitleTextValueParserRuleCall_1_2_0; }
+		public RuleCall getVersionTextValueParserRuleCall_1_2_0() { return cVersionTextValueParserRuleCall_1_2_0; }
 		
-		//'version' ':' version=TextValue
+		//'status' ':' status=MetadataStatusValue
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//'version'
-		public Keyword getVersionKeyword_2_0() { return cVersionKeyword_2_0; }
+		//'status'
+		public Keyword getStatusKeyword_2_0() { return cStatusKeyword_2_0; }
 		
 		//':'
 		public Keyword getColonKeyword_2_1() { return cColonKeyword_2_1; }
 		
-		//version=TextValue
-		public Assignment getVersionAssignment_2_2() { return cVersionAssignment_2_2; }
+		//status=MetadataStatusValue
+		public Assignment getStatusAssignment_2_2() { return cStatusAssignment_2_2; }
 		
-		//TextValue
-		public RuleCall getVersionTextValueParserRuleCall_2_2_0() { return cVersionTextValueParserRuleCall_2_2_0; }
+		//MetadataStatusValue
+		public RuleCall getStatusMetadataStatusValueEnumRuleCall_2_2_0() { return cStatusMetadataStatusValueEnumRuleCall_2_2_0; }
 		
-		//'status' ':' status=IdentifierValue
+		//'module' ':' moduleName=TextValue
 		public Group getGroup_3() { return cGroup_3; }
 		
-		//'status'
-		public Keyword getStatusKeyword_3_0() { return cStatusKeyword_3_0; }
+		//'module'
+		public Keyword getModuleKeyword_3_0() { return cModuleKeyword_3_0; }
 		
 		//':'
 		public Keyword getColonKeyword_3_1() { return cColonKeyword_3_1; }
 		
-		//status=IdentifierValue
-		public Assignment getStatusAssignment_3_2() { return cStatusAssignment_3_2; }
+		//moduleName=TextValue
+		public Assignment getModuleNameAssignment_3_2() { return cModuleNameAssignment_3_2; }
 		
-		//IdentifierValue
-		public RuleCall getStatusIdentifierValueParserRuleCall_3_2_0() { return cStatusIdentifierValueParserRuleCall_3_2_0; }
+		//TextValue
+		public RuleCall getModuleNameTextValueParserRuleCall_3_2_0() { return cModuleNameTextValueParserRuleCall_3_2_0; }
 		
-		//'authored_source' ':' authoredSource=TextValue
+		//'package' ':' javaPackage=TextValue
 		public Group getGroup_4() { return cGroup_4; }
 		
-		//'authored_source'
-		public Keyword getAuthored_sourceKeyword_4_0() { return cAuthored_sourceKeyword_4_0; }
+		//'package'
+		public Keyword getPackageKeyword_4_0() { return cPackageKeyword_4_0; }
 		
 		//':'
 		public Keyword getColonKeyword_4_1() { return cColonKeyword_4_1; }
 		
-		//authoredSource=TextValue
-		public Assignment getAuthoredSourceAssignment_4_2() { return cAuthoredSourceAssignment_4_2; }
+		//javaPackage=TextValue
+		public Assignment getJavaPackageAssignment_4_2() { return cJavaPackageAssignment_4_2; }
 		
 		//TextValue
-		public RuleCall getAuthoredSourceTextValueParserRuleCall_4_2_0() { return cAuthoredSourceTextValueParserRuleCall_4_2_0; }
+		public RuleCall getJavaPackageTextValueParserRuleCall_4_2_0() { return cJavaPackageTextValueParserRuleCall_4_2_0; }
 		
 		//'compiled_at' ':' compiledAt=TextValue
 		public Group getGroup_5() { return cGroup_5; }
@@ -777,10 +781,54 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 		//TextValue
 		public RuleCall getModelMetadataTextValueParserRuleCall_7_2_0() { return cModelMetadataTextValueParserRuleCall_7_2_0; }
 	}
+	public class DependenciesSectionKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.DependenciesSectionKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cDependenciesSectionKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cDependenciesKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//// ----- Dependency records -----
+		//DependenciesSectionKeyword:
+		//    {DependenciesSectionKeyword}
+		//    'dependencies';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{DependenciesSectionKeyword}
+		//'dependencies'
+		public Group getGroup() { return cGroup; }
+		
+		//{DependenciesSectionKeyword}
+		public Action getDependenciesSectionKeywordAction_0() { return cDependenciesSectionKeywordAction_0; }
+		
+		//'dependencies'
+		public Keyword getDependenciesKeyword_1() { return cDependenciesKeyword_1; }
+	}
+	public class DependencyKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.DependencyKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cDependencyKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cDependencyKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//DependencyKeyword:
+		//    {DependencyKeyword}
+		//    'dependency';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{DependencyKeyword}
+		//'dependency'
+		public Group getGroup() { return cGroup; }
+		
+		//{DependencyKeyword}
+		public Action getDependencyKeywordAction_0() { return cDependencyKeywordAction_0; }
+		
+		//'dependency'
+		public Keyword getDependencyKeyword_1() { return cDependencyKeyword_1; }
+	}
 	public class DependencyRecordElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.DependencyRecord");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cDependencyKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cKeywordDependencyKeywordParserRuleCall_0_0 = (RuleCall)cKeywordAssignment_0.eContents().get(0);
 		private final Assignment cIdAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cIdLIBRETTO_IDTerminalRuleCall_1_0 = (RuleCall)cIdAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
@@ -788,20 +836,22 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 		private final RuleCall cItemsDependencyRecordItemParserRuleCall_3_0 = (RuleCall)cItemsAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//// ----- Dependency records -----
 		//DependencyRecord:
-		//    'dependency' id=LIBRETTO_ID '{'
+		//    keyword=DependencyKeyword id=LIBRETTO_ID '{'
 		//    items+=DependencyRecordItem*
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'dependency' id=LIBRETTO_ID '{'
+		//keyword=DependencyKeyword id=LIBRETTO_ID '{'
 		//items+=DependencyRecordItem*
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
-		//'dependency'
-		public Keyword getDependencyKeyword_0() { return cDependencyKeyword_0; }
+		//keyword=DependencyKeyword
+		public Assignment getKeywordAssignment_0() { return cKeywordAssignment_0; }
+		
+		//DependencyKeyword
+		public RuleCall getKeywordDependencyKeywordParserRuleCall_0_0() { return cKeywordDependencyKeywordParserRuleCall_0_0; }
 		
 		//id=LIBRETTO_ID
 		public Assignment getIdAssignment_1() { return cIdAssignment_1; }
@@ -825,28 +875,20 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.DependencyRecordItem");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cDependencyTargetSpecItemParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cDependencyKindItemParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cDependencyNotesItemParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cDependencyContextItemParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cDependencyNotesItemParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//DependencyRecordItem:
-		//    DependencyTargetSpecItem | DependencyKindItem | DependencyNotesItem | DependencyContextItem;
+		//    DependencyTargetSpecItem | DependencyNotesItem;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//DependencyTargetSpecItem | DependencyKindItem | DependencyNotesItem | DependencyContextItem
+		//DependencyTargetSpecItem | DependencyNotesItem
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//DependencyTargetSpecItem
 		public RuleCall getDependencyTargetSpecItemParserRuleCall_0() { return cDependencyTargetSpecItemParserRuleCall_0; }
 		
-		//DependencyKindItem
-		public RuleCall getDependencyKindItemParserRuleCall_1() { return cDependencyKindItemParserRuleCall_1; }
-		
 		//DependencyNotesItem
-		public RuleCall getDependencyNotesItemParserRuleCall_2() { return cDependencyNotesItemParserRuleCall_2; }
-		
-		//DependencyContextItem
-		public RuleCall getDependencyContextItemParserRuleCall_3() { return cDependencyContextItemParserRuleCall_3; }
+		public RuleCall getDependencyNotesItemParserRuleCall_1() { return cDependencyNotesItemParserRuleCall_1; }
 	}
 	public class DependencyTargetSpecItemElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.DependencyTargetSpecItem");
@@ -863,21 +905,6 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 		//TargetSpecField
 		public RuleCall getTargetSpecTargetSpecFieldParserRuleCall_0() { return cTargetSpecTargetSpecFieldParserRuleCall_0; }
 	}
-	public class DependencyKindItemElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.DependencyKindItem");
-		private final Assignment cKindAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cKindKindFieldParserRuleCall_0 = (RuleCall)cKindAssignment.eContents().get(0);
-		
-		//DependencyKindItem returns DependencyRecordItem:
-		//    kind=KindField;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//kind=KindField
-		public Assignment getKindAssignment() { return cKindAssignment; }
-		
-		//KindField
-		public RuleCall getKindKindFieldParserRuleCall_0() { return cKindKindFieldParserRuleCall_0; }
-	}
 	public class DependencyNotesItemElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.DependencyNotesItem");
 		private final Assignment cNotesAssignment = (Assignment)rule.eContents().get(1);
@@ -892,21 +919,6 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 		
 		//NotesField
 		public RuleCall getNotesNotesFieldParserRuleCall_0() { return cNotesNotesFieldParserRuleCall_0; }
-	}
-	public class DependencyContextItemElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.DependencyContextItem");
-		private final Assignment cContextAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cContextContextFieldParserRuleCall_0 = (RuleCall)cContextAssignment.eContents().get(0);
-		
-		//DependencyContextItem returns DependencyRecordItem:
-		//    context=ContextField;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//context=ContextField
-		public Assignment getContextAssignment() { return cContextAssignment; }
-		
-		//ContextField
-		public RuleCall getContextContextFieldParserRuleCall_0() { return cContextContextFieldParserRuleCall_0; }
 	}
 	public class TargetSpecFieldElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.TargetSpecField");
@@ -934,33 +946,6 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 		
 		//TextValue
 		public RuleCall getValueTextValueParserRuleCall_2_0() { return cValueTextValueParserRuleCall_2_0; }
-	}
-	public class KindFieldElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.KindField");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cKindKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValueIdentifierValueParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
-		
-		//KindField:
-		//    'kind' ':' value=IdentifierValue;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'kind' ':' value=IdentifierValue
-		public Group getGroup() { return cGroup; }
-		
-		//'kind'
-		public Keyword getKindKeyword_0() { return cKindKeyword_0; }
-		
-		//':'
-		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
-		
-		//value=IdentifierValue
-		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
-		
-		//IdentifierValue
-		public RuleCall getValueIdentifierValueParserRuleCall_2_0() { return cValueIdentifierValueParserRuleCall_2_0; }
 	}
 	public class ReferenceRecordElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.ReferenceRecord");
@@ -3917,21 +3902,46 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 	public class TextValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.TextValue");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cSTRINGTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cTEXT_BLOCKTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Action cTextValueAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Assignment cTextAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cTextSTRINGTerminalRuleCall_0_1_0 = (RuleCall)cTextAssignment_0_1.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Action cTextValueAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Assignment cTextAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cTextTEXT_BLOCKTerminalRuleCall_1_1_0 = (RuleCall)cTextAssignment_1_1.eContents().get(0);
 		
-		//TextValue:
-		//    STRING | TEXT_BLOCK;
+		//// Decoded string body lives on EAttribute `text`; terminals go through value converters (TEXT_BLOCK in LibrettoSpecTerminalConverters).
+		//TextValue returns TextValue:
+		//    {TextValue} text=STRING | {TextValue} text=TEXT_BLOCK;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//STRING | TEXT_BLOCK
+		//{TextValue} text=STRING | {TextValue} text=TEXT_BLOCK
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
+		//{TextValue} text=STRING
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//{TextValue}
+		public Action getTextValueAction_0_0() { return cTextValueAction_0_0; }
+		
+		//text=STRING
+		public Assignment getTextAssignment_0_1() { return cTextAssignment_0_1; }
+		
 		//STRING
-		public RuleCall getSTRINGTerminalRuleCall_0() { return cSTRINGTerminalRuleCall_0; }
+		public RuleCall getTextSTRINGTerminalRuleCall_0_1_0() { return cTextSTRINGTerminalRuleCall_0_1_0; }
+		
+		//{TextValue} text=TEXT_BLOCK
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//{TextValue}
+		public Action getTextValueAction_1_0() { return cTextValueAction_1_0; }
+		
+		//text=TEXT_BLOCK
+		public Assignment getTextAssignment_1_1() { return cTextAssignment_1_1; }
 		
 		//TEXT_BLOCK
-		public RuleCall getTEXT_BLOCKTerminalRuleCall_1() { return cTEXT_BLOCKTerminalRuleCall_1; }
+		public RuleCall getTextTEXT_BLOCKTerminalRuleCall_1_1_0() { return cTextTEXT_BLOCKTerminalRuleCall_1_1_0; }
 	}
 	public class IdentifierValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.IdentifierValue");
@@ -4016,6 +4026,33 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 		//'rejects'
 		public Keyword getREJECTSRejectsKeyword_1_0() { return cREJECTSRejectsKeyword_1_0; }
 	}
+	public class MetadataStatusValueElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.MetadataStatusValue");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cDRAFTEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cDRAFTDraftKeyword_0_0 = (Keyword)cDRAFTEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cPUBLICEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cPUBLICPublicKeyword_1_0 = (Keyword)cPUBLICEnumLiteralDeclaration_1.eContents().get(0);
+		
+		//enum MetadataStatusValue:
+		//    DRAFT='draft' | PUBLIC='public';
+		public EnumRule getRule() { return rule; }
+		
+		//DRAFT='draft' | PUBLIC='public'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//DRAFT='draft'
+		public EnumLiteralDeclaration getDRAFTEnumLiteralDeclaration_0() { return cDRAFTEnumLiteralDeclaration_0; }
+		
+		//'draft'
+		public Keyword getDRAFTDraftKeyword_0_0() { return cDRAFTDraftKeyword_0_0; }
+		
+		//PUBLIC='public'
+		public EnumLiteralDeclaration getPUBLICEnumLiteralDeclaration_1() { return cPUBLICEnumLiteralDeclaration_1; }
+		
+		//'public'
+		public Keyword getPUBLICPublicKeyword_1_0() { return cPUBLICPublicKeyword_1_0; }
+	}
 	public class StrengthValueElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.StrengthValue");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -4081,14 +4118,13 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 	private final AcceptanceTestsSectionElements pAcceptanceTestsSection;
 	private final ImplementationDirectivesSectionElements pImplementationDirectivesSection;
 	private final MetadataFieldElements pMetadataField;
+	private final DependenciesSectionKeywordElements pDependenciesSectionKeyword;
+	private final DependencyKeywordElements pDependencyKeyword;
 	private final DependencyRecordElements pDependencyRecord;
 	private final DependencyRecordItemElements pDependencyRecordItem;
 	private final DependencyTargetSpecItemElements pDependencyTargetSpecItem;
-	private final DependencyKindItemElements pDependencyKindItem;
 	private final DependencyNotesItemElements pDependencyNotesItem;
-	private final DependencyContextItemElements pDependencyContextItem;
 	private final TargetSpecFieldElements pTargetSpecField;
-	private final KindFieldElements pKindField;
 	private final ReferenceRecordElements pReferenceRecord;
 	private final ReferenceRecordItemElements pReferenceRecordItem;
 	private final ReferenceTitleItemElements pReferenceTitleItem;
@@ -4219,6 +4255,7 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 	private final IdentifierValueElements pIdentifierValue;
 	private final DottedIdentifierElements pDottedIdentifier;
 	private final OutcomeClassValueElements eOutcomeClassValue;
+	private final MetadataStatusValueElements eMetadataStatusValue;
 	private final StrengthValueElements eStrengthValue;
 	private final TerminalRule tTEXT_BLOCK;
 	private final TerminalRule tBEHAVIOR_ID;
@@ -4252,14 +4289,13 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 		this.pAcceptanceTestsSection = new AcceptanceTestsSectionElements();
 		this.pImplementationDirectivesSection = new ImplementationDirectivesSectionElements();
 		this.pMetadataField = new MetadataFieldElements();
+		this.pDependenciesSectionKeyword = new DependenciesSectionKeywordElements();
+		this.pDependencyKeyword = new DependencyKeywordElements();
 		this.pDependencyRecord = new DependencyRecordElements();
 		this.pDependencyRecordItem = new DependencyRecordItemElements();
 		this.pDependencyTargetSpecItem = new DependencyTargetSpecItemElements();
-		this.pDependencyKindItem = new DependencyKindItemElements();
 		this.pDependencyNotesItem = new DependencyNotesItemElements();
-		this.pDependencyContextItem = new DependencyContextItemElements();
 		this.pTargetSpecField = new TargetSpecFieldElements();
-		this.pKindField = new KindFieldElements();
 		this.pReferenceRecord = new ReferenceRecordElements();
 		this.pReferenceRecordItem = new ReferenceRecordItemElements();
 		this.pReferenceTitleItem = new ReferenceTitleItemElements();
@@ -4390,6 +4426,7 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 		this.pIdentifierValue = new IdentifierValueElements();
 		this.pDottedIdentifier = new DottedIdentifierElements();
 		this.eOutcomeClassValue = new OutcomeClassValueElements();
+		this.eMetadataStatusValue = new MetadataStatusValueElements();
 		this.eStrengthValue = new StrengthValueElements();
 		this.tTEXT_BLOCK = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.TEXT_BLOCK");
 		this.tBEHAVIOR_ID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.BEHAVIOR_ID");
@@ -4480,7 +4517,7 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 	
 	//DependenciesSection returns SpecSection:
 	//    {DependenciesSection}
-	//    'dependencies' '{' records+=DependencyRecord* '}';
+	//    sectionKeyword=DependenciesSectionKeyword '{' records+=DependencyRecord* '}';
 	public DependenciesSectionElements getDependenciesSectionAccess() {
 		return pDependenciesSection;
 	}
@@ -4601,11 +4638,11 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 	
 	//// ----- Metadata -----
 	//MetadataField:
-	//      'spec_id' ':' specId=TextValue
-	//    | 'title' ':' title=TextValue
+	//      'title' ':' title=TextValue
 	//    | 'version' ':' version=TextValue
-	//    | 'status' ':' status=IdentifierValue
-	//    | 'authored_source' ':' authoredSource=TextValue
+	//    | 'status' ':' status=MetadataStatusValue
+	//    | 'module' ':' moduleName=TextValue
+	//    | 'package' ':' javaPackage=TextValue
 	//    | 'compiled_at' ':' compiledAt=TextValue
 	//    | 'compiler_version' ':' compilerVersion=TextValue
 	//    | 'model_metadata' ':' modelMetadata=TextValue;
@@ -4618,8 +4655,30 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 	}
 	
 	//// ----- Dependency records -----
+	//DependenciesSectionKeyword:
+	//    {DependenciesSectionKeyword}
+	//    'dependencies';
+	public DependenciesSectionKeywordElements getDependenciesSectionKeywordAccess() {
+		return pDependenciesSectionKeyword;
+	}
+	
+	public ParserRule getDependenciesSectionKeywordRule() {
+		return getDependenciesSectionKeywordAccess().getRule();
+	}
+	
+	//DependencyKeyword:
+	//    {DependencyKeyword}
+	//    'dependency';
+	public DependencyKeywordElements getDependencyKeywordAccess() {
+		return pDependencyKeyword;
+	}
+	
+	public ParserRule getDependencyKeywordRule() {
+		return getDependencyKeywordAccess().getRule();
+	}
+	
 	//DependencyRecord:
-	//    'dependency' id=LIBRETTO_ID '{'
+	//    keyword=DependencyKeyword id=LIBRETTO_ID '{'
 	//    items+=DependencyRecordItem*
 	//    '}';
 	public DependencyRecordElements getDependencyRecordAccess() {
@@ -4631,7 +4690,7 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 	}
 	
 	//DependencyRecordItem:
-	//    DependencyTargetSpecItem | DependencyKindItem | DependencyNotesItem | DependencyContextItem;
+	//    DependencyTargetSpecItem | DependencyNotesItem;
 	public DependencyRecordItemElements getDependencyRecordItemAccess() {
 		return pDependencyRecordItem;
 	}
@@ -4650,16 +4709,6 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 		return getDependencyTargetSpecItemAccess().getRule();
 	}
 	
-	//DependencyKindItem returns DependencyRecordItem:
-	//    kind=KindField;
-	public DependencyKindItemElements getDependencyKindItemAccess() {
-		return pDependencyKindItem;
-	}
-	
-	public ParserRule getDependencyKindItemRule() {
-		return getDependencyKindItemAccess().getRule();
-	}
-	
 	//DependencyNotesItem returns DependencyRecordItem:
 	//    notes=NotesField;
 	public DependencyNotesItemElements getDependencyNotesItemAccess() {
@@ -4670,16 +4719,6 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 		return getDependencyNotesItemAccess().getRule();
 	}
 	
-	//DependencyContextItem returns DependencyRecordItem:
-	//    context=ContextField;
-	public DependencyContextItemElements getDependencyContextItemAccess() {
-		return pDependencyContextItem;
-	}
-	
-	public ParserRule getDependencyContextItemRule() {
-		return getDependencyContextItemAccess().getRule();
-	}
-	
 	//TargetSpecField:
 	//    'target_spec' ':' value=TextValue;
 	public TargetSpecFieldElements getTargetSpecFieldAccess() {
@@ -4688,16 +4727,6 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 	
 	public ParserRule getTargetSpecFieldRule() {
 		return getTargetSpecFieldAccess().getRule();
-	}
-	
-	//KindField:
-	//    'kind' ':' value=IdentifierValue;
-	public KindFieldElements getKindFieldAccess() {
-		return pKindField;
-	}
-	
-	public ParserRule getKindFieldRule() {
-		return getKindFieldAccess().getRule();
 	}
 	
 	//// ----- Reference records -----
@@ -6002,8 +6031,9 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 		return getTextListAccess().getRule();
 	}
 	
-	//TextValue:
-	//    STRING | TEXT_BLOCK;
+	//// Decoded string body lives on EAttribute `text`; terminals go through value converters (TEXT_BLOCK in LibrettoSpecTerminalConverters).
+	//TextValue returns TextValue:
+	//    {TextValue} text=STRING | {TextValue} text=TEXT_BLOCK;
 	public TextValueElements getTextValueAccess() {
 		return pTextValue;
 	}
@@ -6043,6 +6073,16 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 		return getOutcomeClassValueAccess().getRule();
 	}
 	
+	//enum MetadataStatusValue:
+	//    DRAFT='draft' | PUBLIC='public';
+	public MetadataStatusValueElements getMetadataStatusValueAccess() {
+		return eMetadataStatusValue;
+	}
+	
+	public EnumRule getMetadataStatusValueRule() {
+		return getMetadataStatusValueAccess().getRule();
+	}
+	
 	//enum StrengthValue:
 	//    REQUIRED='required'
 	//    | STRONGLY_PREFERRED='strongly_preferred'
@@ -6057,7 +6097,7 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 	}
 	
 	//// ----- Terminals (match LibrettoSpec.g4; declare specific tokens before LibrettoID) -----
-	//terminal TEXT_BLOCK:
+	//terminal TEXT_BLOCK returns ecore::EString:
 	//    '"""' (!('"') | '"' !('"') | '"' '"' !('"'))* '"""';
 	public TerminalRule getTEXT_BLOCKRule() {
 		return tTEXT_BLOCK;
@@ -6093,9 +6133,9 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 		return tOOS_ID;
 	}
 	
-	///** ANTLR IDENTIFIER: [A-Za-z_] [A-Za-z0-9_\\-]* */
+	///** ANTLR IDENTIFIER — optional '^' prefix for keyword collision (Xtext Common Terminals ID). */
 	//terminal LIBRETTO_ID returns ecore::EString:
-	//    ('a'..'z'|'A'..'Z'|'_')('a'..'z'|'A'..'Z'|'_'|'0'..'9'|'-'|'\\')*;
+	//    ('^')?('a'..'z'|'A'..'Z'|'_')('a'..'z'|'A'..'Z'|'_'|'0'..'9'|'-'|'\\')*;
 	public TerminalRule getLIBRETTO_IDRule() {
 		return tLIBRETTO_ID;
 	}

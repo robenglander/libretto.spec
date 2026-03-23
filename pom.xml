@@ -25,6 +25,8 @@
 	<modules>
 		<!-- Target definition first so a full `mvn install` publishes it before other Tycho modules (if using artifact resolution). -->
 		<module>libretto.spec.target</module>
+		<!-- Plain Maven jar: portable projection types for libretto-core (no EMF / Xtext on the classpath here). -->
+		<module>libretto.spec.projection</module>
 		<module>libretto.spec</module>
 		<module>libretto.spec.ide</module>
 		<module>libretto.spec.ui</module>

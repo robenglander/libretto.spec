@@ -3,6 +3,7 @@
  */
 package com.robenglander.libretto.spec.librettoSpec.impl;
 
+import com.robenglander.libretto.spec.librettoSpec.DependencyKeyword;
 import com.robenglander.libretto.spec.librettoSpec.DependencyRecord;
 import com.robenglander.libretto.spec.librettoSpec.DependencyRecordItem;
 import com.robenglander.libretto.spec.librettoSpec.LibrettoSpecPackage;
@@ -31,6 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link com.robenglander.libretto.spec.librettoSpec.impl.DependencyRecordImpl#getKeyword <em>Keyword</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoSpec.impl.DependencyRecordImpl#getId <em>Id</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoSpec.impl.DependencyRecordImpl#getItems <em>Items</em>}</li>
  * </ul>
@@ -39,6 +41,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class DependencyRecordImpl extends MinimalEObjectImpl.Container implements DependencyRecord
 {
+  /**
+   * The cached value of the '{@link #getKeyword() <em>Keyword</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getKeyword()
+   * @generated
+   * @ordered
+   */
+  protected DependencyKeyword keyword;
+
   /**
    * The default value of the '{@link #getId() <em>Id</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -96,6 +108,56 @@ public class DependencyRecordImpl extends MinimalEObjectImpl.Container implement
    * @generated
    */
   @Override
+  public DependencyKeyword getKeyword()
+  {
+    return keyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetKeyword(DependencyKeyword newKeyword, NotificationChain msgs)
+  {
+    DependencyKeyword oldKeyword = keyword;
+    keyword = newKeyword;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LibrettoSpecPackage.DEPENDENCY_RECORD__KEYWORD, oldKeyword, newKeyword);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setKeyword(DependencyKeyword newKeyword)
+  {
+    if (newKeyword != keyword)
+    {
+      NotificationChain msgs = null;
+      if (keyword != null)
+        msgs = ((InternalEObject)keyword).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LibrettoSpecPackage.DEPENDENCY_RECORD__KEYWORD, null, msgs);
+      if (newKeyword != null)
+        msgs = ((InternalEObject)newKeyword).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LibrettoSpecPackage.DEPENDENCY_RECORD__KEYWORD, null, msgs);
+      msgs = basicSetKeyword(newKeyword, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoSpecPackage.DEPENDENCY_RECORD__KEYWORD, newKeyword, newKeyword));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getId()
   {
     return id;
@@ -140,6 +202,8 @@ public class DependencyRecordImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case LibrettoSpecPackage.DEPENDENCY_RECORD__KEYWORD:
+        return basicSetKeyword(null, msgs);
       case LibrettoSpecPackage.DEPENDENCY_RECORD__ITEMS:
         return ((InternalEList<?>)getItems()).basicRemove(otherEnd, msgs);
     }
@@ -156,6 +220,8 @@ public class DependencyRecordImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case LibrettoSpecPackage.DEPENDENCY_RECORD__KEYWORD:
+        return getKeyword();
       case LibrettoSpecPackage.DEPENDENCY_RECORD__ID:
         return getId();
       case LibrettoSpecPackage.DEPENDENCY_RECORD__ITEMS:
@@ -175,6 +241,9 @@ public class DependencyRecordImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case LibrettoSpecPackage.DEPENDENCY_RECORD__KEYWORD:
+        setKeyword((DependencyKeyword)newValue);
+        return;
       case LibrettoSpecPackage.DEPENDENCY_RECORD__ID:
         setId((String)newValue);
         return;
@@ -196,6 +265,9 @@ public class DependencyRecordImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case LibrettoSpecPackage.DEPENDENCY_RECORD__KEYWORD:
+        setKeyword((DependencyKeyword)null);
+        return;
       case LibrettoSpecPackage.DEPENDENCY_RECORD__ID:
         setId(ID_EDEFAULT);
         return;
@@ -216,6 +288,8 @@ public class DependencyRecordImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case LibrettoSpecPackage.DEPENDENCY_RECORD__KEYWORD:
+        return keyword != null;
       case LibrettoSpecPackage.DEPENDENCY_RECORD__ID:
         return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
       case LibrettoSpecPackage.DEPENDENCY_RECORD__ITEMS:

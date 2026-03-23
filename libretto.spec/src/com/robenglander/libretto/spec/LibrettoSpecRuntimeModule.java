@@ -3,9 +3,27 @@
  */
 package com.robenglander.libretto.spec;
 
+import com.google.inject.Binder;
+import com.robenglander.libretto.spec.documentation.LibrettoSpecEObjectDocumentationProvider;
+import org.eclipse.xtext.common.services.DefaultTerminalConverters;
+import org.eclipse.xtext.documentation.IEObjectDocumentationProvider;
 
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
 public class LibrettoSpecRuntimeModule extends AbstractLibrettoSpecRuntimeModule {
+
+	@Override
+	public void configure(Binder binder) {
+		super.configure(binder);
+		binder.bind(DefaultTerminalConverters.class).to(LibrettoSpecTerminalConverters.class);
+	}
+
+	/**
+	 * Hovers in Eclipse and LSP ({@code textDocument/hover}) use
+	 * {@link org.eclipse.xtext.documentation.IEObjectDocumentationProvider}.
+	 */
+	public Class<? extends IEObjectDocumentationProvider> bindIEObjectDocumentationProvider() {
+		return LibrettoSpecEObjectDocumentationProvider.class;
+	}
 }

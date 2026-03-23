@@ -6,6 +6,7 @@
     { "include": "#comment" },
     { "include": "#textBlock" },
     { "include": "#string" },
+    { "include": "#caretEscapedIdentifier" },
     { "include": "#ids" },
     { "include": "#keywords" },
     { "include": "#operationLocalId" },
@@ -39,6 +40,10 @@
         }
       ]
     },
+    "caretEscapedIdentifier": {
+      "name": "variable.other.caret-escaped-identifier.libretto",
+      "match": "\\^[A-Za-z_][A-Za-z0-9_\\\\-]*"
+    },
     "ids": {
       "patterns": [
         {
@@ -65,7 +70,7 @@
     },
     "keywords": {
       "name": "keyword.other.libretto",
-      "match": "\\b(spec|metadata|dependencies|references|prose|out_of_scope|behaviors|acceptance_tests|implementation_directives|operation_surface|implements_surface|boundary_exports|boundary_imports|dependency|reference|section_context|subsection_context|out_of_scope_item|behavior|acceptance_test|implementation_directive|operation|implements|boundary|source|section|subsection|text|statement|spec_id|title|version|status|authored_source|compiled_at|compiler_version|model_metadata|target_spec|kind|type|citation|locator|authority_notes|operation_expression|outcome_class|operation_id|profile_id|raw|actor|action|objects|reads|writes|conditions|outcomes|label|notes|context|validates|preconditions|actions|assertions|applies_to|strength|directive|category|constraints|allowed_flexibility|rationale|required|strongly_preferred|preferred|advisory|returns|rejects)\\b"
+      "match": "\\b(spec|metadata|dependencies|references|prose|out_of_scope|behaviors|acceptance_tests|implementation_directives|operation_surface|implements_surface|boundary_exports|boundary_imports|dependency|reference|section_context|subsection_context|out_of_scope_item|behavior|acceptance_test|implementation_directive|operation|implements|boundary|source|section|subsection|text|statement|spec_id|title|version|status|module|package|draft|public|compiled_at|compiler_version|model_metadata|target_spec|type|citation|locator|authority_notes|operation_expression|outcome_class|operation_id|profile_id|raw|actor|action|objects|reads|writes|conditions|outcomes|label|notes|context|validates|preconditions|actions|assertions|applies_to|strength|directive|category|constraints|allowed_flexibility|rationale|required|strongly_preferred|preferred|advisory|returns|rejects)\\b"
     },
     "operationLocalId": {
       "name": "variable.other.operation-id.libretto",

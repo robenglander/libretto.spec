@@ -5,16 +5,21 @@ package com.robenglander.libretto.spec.librettoSpec.impl;
 
 import com.robenglander.libretto.spec.librettoSpec.LibrettoSpecPackage;
 import com.robenglander.libretto.spec.librettoSpec.TextList;
+import com.robenglander.libretto.spec.librettoSpec.TextValue;
 
 import java.util.Collection;
+
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,14 +37,14 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 public class TextListImpl extends MinimalEObjectImpl.Container implements TextList
 {
   /**
-   * The cached value of the '{@link #getValues() <em>Values</em>}' attribute list.
+   * The cached value of the '{@link #getValues() <em>Values</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getValues()
    * @generated
    * @ordered
    */
-  protected EList<String> values;
+  protected EList<TextValue> values;
 
   /**
    * <!-- begin-user-doc -->
@@ -68,13 +73,29 @@ public class TextListImpl extends MinimalEObjectImpl.Container implements TextLi
    * @generated
    */
   @Override
-  public EList<String> getValues()
+  public EList<TextValue> getValues()
   {
     if (values == null)
     {
-      values = new EDataTypeEList<String>(String.class, this, LibrettoSpecPackage.TEXT_LIST__VALUES);
+      values = new EObjectContainmentEList<TextValue>(TextValue.class, this, LibrettoSpecPackage.TEXT_LIST__VALUES);
     }
     return values;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case LibrettoSpecPackage.TEXT_LIST__VALUES:
+        return ((InternalEList<?>)getValues()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -106,7 +127,7 @@ public class TextListImpl extends MinimalEObjectImpl.Container implements TextLi
     {
       case LibrettoSpecPackage.TEXT_LIST__VALUES:
         getValues().clear();
-        getValues().addAll((Collection<? extends String>)newValue);
+        getValues().addAll((Collection<? extends TextValue>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -143,23 +164,6 @@ public class TextListImpl extends MinimalEObjectImpl.Container implements TextLi
         return values != null && !values.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (values: ");
-    result.append(values);
-    result.append(')');
-    return result.toString();
   }
 
 } //TextListImpl

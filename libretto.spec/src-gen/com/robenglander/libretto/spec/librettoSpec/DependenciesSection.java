@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link com.robenglander.libretto.spec.librettoSpec.DependenciesSection#getSectionKeyword <em>Section Keyword</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoSpec.DependenciesSection#getRecords <em>Records</em>}</li>
  * </ul>
  *
@@ -23,6 +24,28 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface DependenciesSection extends SpecSection
 {
+  /**
+   * Returns the value of the '<em><b>Section Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Section Keyword</em>' containment reference.
+   * @see #setSectionKeyword(DependenciesSectionKeyword)
+   * @see com.robenglander.libretto.spec.librettoSpec.LibrettoSpecPackage#getDependenciesSection_SectionKeyword()
+   * @model containment="true"
+   * @generated
+   */
+  DependenciesSectionKeyword getSectionKeyword();
+
+  /**
+   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoSpec.DependenciesSection#getSectionKeyword <em>Section Keyword</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Section Keyword</em>' containment reference.
+   * @see #getSectionKeyword()
+   * @generated
+   */
+  void setSectionKeyword(DependenciesSectionKeyword value);
+
   /**
    * Returns the value of the '<em><b>Records</b></em>' containment reference list.
    * The list contents are of type {@link com.robenglander.libretto.spec.librettoSpec.DependencyRecord}.

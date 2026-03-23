@@ -14,11 +14,11 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getSpecId <em>Spec Id</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getTitle <em>Title</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getVersion <em>Version</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getStatus <em>Status</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getAuthoredSource <em>Authored Source</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getModuleName <em>Module Name</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getJavaPackage <em>Java Package</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getCompiledAt <em>Compiled At</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getCompilerVersion <em>Compiler Version</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getModelMetadata <em>Model Metadata</em>}</li>
@@ -31,179 +31,182 @@ import org.eclipse.emf.ecore.EObject;
 public interface MetadataField extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Spec Id</b></em>' attribute.
+   * Returns the value of the '<em><b>Title</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Spec Id</em>' attribute.
-   * @see #setSpecId(String)
-   * @see com.robenglander.libretto.spec.librettoSpec.LibrettoSpecPackage#getMetadataField_SpecId()
-   * @model
-   * @generated
-   */
-  String getSpecId();
-
-  /**
-   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getSpecId <em>Spec Id</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Spec Id</em>' attribute.
-   * @see #getSpecId()
-   * @generated
-   */
-  void setSpecId(String value);
-
-  /**
-   * Returns the value of the '<em><b>Title</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Title</em>' attribute.
-   * @see #setTitle(String)
+   * @return the value of the '<em>Title</em>' containment reference.
+   * @see #setTitle(TextValue)
    * @see com.robenglander.libretto.spec.librettoSpec.LibrettoSpecPackage#getMetadataField_Title()
-   * @model
-   * @generated
-   */
-  String getTitle();
-
-  /**
-   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getTitle <em>Title</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Title</em>' attribute.
-   * @see #getTitle()
-   * @generated
-   */
-  void setTitle(String value);
-
-  /**
-   * Returns the value of the '<em><b>Version</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Version</em>' attribute.
-   * @see #setVersion(String)
-   * @see com.robenglander.libretto.spec.librettoSpec.LibrettoSpecPackage#getMetadataField_Version()
-   * @model
-   * @generated
-   */
-  String getVersion();
-
-  /**
-   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getVersion <em>Version</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Version</em>' attribute.
-   * @see #getVersion()
-   * @generated
-   */
-  void setVersion(String value);
-
-  /**
-   * Returns the value of the '<em><b>Status</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Status</em>' containment reference.
-   * @see #setStatus(IdentifierValue)
-   * @see com.robenglander.libretto.spec.librettoSpec.LibrettoSpecPackage#getMetadataField_Status()
    * @model containment="true"
    * @generated
    */
-  IdentifierValue getStatus();
+  TextValue getTitle();
 
   /**
-   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getStatus <em>Status</em>}' containment reference.
+   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getTitle <em>Title</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Status</em>' containment reference.
+   * @param value the new value of the '<em>Title</em>' containment reference.
+   * @see #getTitle()
+   * @generated
+   */
+  void setTitle(TextValue value);
+
+  /**
+   * Returns the value of the '<em><b>Version</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Version</em>' containment reference.
+   * @see #setVersion(TextValue)
+   * @see com.robenglander.libretto.spec.librettoSpec.LibrettoSpecPackage#getMetadataField_Version()
+   * @model containment="true"
+   * @generated
+   */
+  TextValue getVersion();
+
+  /**
+   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getVersion <em>Version</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Version</em>' containment reference.
+   * @see #getVersion()
+   * @generated
+   */
+  void setVersion(TextValue value);
+
+  /**
+   * Returns the value of the '<em><b>Status</b></em>' attribute.
+   * The literals are from the enumeration {@link com.robenglander.libretto.spec.librettoSpec.MetadataStatusValue}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Status</em>' attribute.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataStatusValue
+   * @see #setStatus(MetadataStatusValue)
+   * @see com.robenglander.libretto.spec.librettoSpec.LibrettoSpecPackage#getMetadataField_Status()
+   * @model
+   * @generated
+   */
+  MetadataStatusValue getStatus();
+
+  /**
+   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getStatus <em>Status</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Status</em>' attribute.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataStatusValue
    * @see #getStatus()
    * @generated
    */
-  void setStatus(IdentifierValue value);
+  void setStatus(MetadataStatusValue value);
 
   /**
-   * Returns the value of the '<em><b>Authored Source</b></em>' attribute.
+   * Returns the value of the '<em><b>Module Name</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Authored Source</em>' attribute.
-   * @see #setAuthoredSource(String)
-   * @see com.robenglander.libretto.spec.librettoSpec.LibrettoSpecPackage#getMetadataField_AuthoredSource()
-   * @model
+   * @return the value of the '<em>Module Name</em>' containment reference.
+   * @see #setModuleName(TextValue)
+   * @see com.robenglander.libretto.spec.librettoSpec.LibrettoSpecPackage#getMetadataField_ModuleName()
+   * @model containment="true"
    * @generated
    */
-  String getAuthoredSource();
+  TextValue getModuleName();
 
   /**
-   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getAuthoredSource <em>Authored Source</em>}' attribute.
+   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getModuleName <em>Module Name</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Authored Source</em>' attribute.
-   * @see #getAuthoredSource()
+   * @param value the new value of the '<em>Module Name</em>' containment reference.
+   * @see #getModuleName()
    * @generated
    */
-  void setAuthoredSource(String value);
+  void setModuleName(TextValue value);
 
   /**
-   * Returns the value of the '<em><b>Compiled At</b></em>' attribute.
+   * Returns the value of the '<em><b>Java Package</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Compiled At</em>' attribute.
-   * @see #setCompiledAt(String)
+   * @return the value of the '<em>Java Package</em>' containment reference.
+   * @see #setJavaPackage(TextValue)
+   * @see com.robenglander.libretto.spec.librettoSpec.LibrettoSpecPackage#getMetadataField_JavaPackage()
+   * @model containment="true"
+   * @generated
+   */
+  TextValue getJavaPackage();
+
+  /**
+   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getJavaPackage <em>Java Package</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Java Package</em>' containment reference.
+   * @see #getJavaPackage()
+   * @generated
+   */
+  void setJavaPackage(TextValue value);
+
+  /**
+   * Returns the value of the '<em><b>Compiled At</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Compiled At</em>' containment reference.
+   * @see #setCompiledAt(TextValue)
    * @see com.robenglander.libretto.spec.librettoSpec.LibrettoSpecPackage#getMetadataField_CompiledAt()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getCompiledAt();
+  TextValue getCompiledAt();
 
   /**
-   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getCompiledAt <em>Compiled At</em>}' attribute.
+   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getCompiledAt <em>Compiled At</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Compiled At</em>' attribute.
+   * @param value the new value of the '<em>Compiled At</em>' containment reference.
    * @see #getCompiledAt()
    * @generated
    */
-  void setCompiledAt(String value);
+  void setCompiledAt(TextValue value);
 
   /**
-   * Returns the value of the '<em><b>Compiler Version</b></em>' attribute.
+   * Returns the value of the '<em><b>Compiler Version</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Compiler Version</em>' attribute.
-   * @see #setCompilerVersion(String)
+   * @return the value of the '<em>Compiler Version</em>' containment reference.
+   * @see #setCompilerVersion(TextValue)
    * @see com.robenglander.libretto.spec.librettoSpec.LibrettoSpecPackage#getMetadataField_CompilerVersion()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getCompilerVersion();
+  TextValue getCompilerVersion();
 
   /**
-   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getCompilerVersion <em>Compiler Version</em>}' attribute.
+   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getCompilerVersion <em>Compiler Version</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Compiler Version</em>' attribute.
+   * @param value the new value of the '<em>Compiler Version</em>' containment reference.
    * @see #getCompilerVersion()
    * @generated
    */
-  void setCompilerVersion(String value);
+  void setCompilerVersion(TextValue value);
 
   /**
-   * Returns the value of the '<em><b>Model Metadata</b></em>' attribute.
+   * Returns the value of the '<em><b>Model Metadata</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Model Metadata</em>' attribute.
-   * @see #setModelMetadata(String)
+   * @return the value of the '<em>Model Metadata</em>' containment reference.
+   * @see #setModelMetadata(TextValue)
    * @see com.robenglander.libretto.spec.librettoSpec.LibrettoSpecPackage#getMetadataField_ModelMetadata()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getModelMetadata();
+  TextValue getModelMetadata();
 
   /**
-   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getModelMetadata <em>Model Metadata</em>}' attribute.
+   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getModelMetadata <em>Model Metadata</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Model Metadata</em>' attribute.
+   * @param value the new value of the '<em>Model Metadata</em>' containment reference.
    * @see #getModelMetadata()
    * @generated
    */
-  void setModelMetadata(String value);
+  void setModelMetadata(TextValue value);
 
 } // MetadataField

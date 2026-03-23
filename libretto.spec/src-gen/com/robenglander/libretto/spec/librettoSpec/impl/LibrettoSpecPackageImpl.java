@@ -32,6 +32,8 @@ import com.robenglander.libretto.spec.librettoSpec.ConstraintsField;
 import com.robenglander.libretto.spec.librettoSpec.ContextField;
 import com.robenglander.libretto.spec.librettoSpec.DependenciesField;
 import com.robenglander.libretto.spec.librettoSpec.DependenciesSection;
+import com.robenglander.libretto.spec.librettoSpec.DependenciesSectionKeyword;
+import com.robenglander.libretto.spec.librettoSpec.DependencyKeyword;
 import com.robenglander.libretto.spec.librettoSpec.DependencyRecord;
 import com.robenglander.libretto.spec.librettoSpec.DependencyRecordItem;
 import com.robenglander.libretto.spec.librettoSpec.DirectiveField;
@@ -45,13 +47,13 @@ import com.robenglander.libretto.spec.librettoSpec.ImplementsSurfaceRecord;
 import com.robenglander.libretto.spec.librettoSpec.ImplementsSurfaceRecordItem;
 import com.robenglander.libretto.spec.librettoSpec.ImplementsSurfaceSection;
 import com.robenglander.libretto.spec.librettoSpec.ImplementsSurfaceTargetField;
-import com.robenglander.libretto.spec.librettoSpec.KindField;
 import com.robenglander.libretto.spec.librettoSpec.LabelField;
 import com.robenglander.libretto.spec.librettoSpec.LibrettoSpecFactory;
 import com.robenglander.libretto.spec.librettoSpec.LibrettoSpecPackage;
 import com.robenglander.libretto.spec.librettoSpec.LocatorField;
 import com.robenglander.libretto.spec.librettoSpec.MetadataField;
 import com.robenglander.libretto.spec.librettoSpec.MetadataSection;
+import com.robenglander.libretto.spec.librettoSpec.MetadataStatusValue;
 import com.robenglander.libretto.spec.librettoSpec.MetadataTextField;
 import com.robenglander.libretto.spec.librettoSpec.NotesField;
 import com.robenglander.libretto.spec.librettoSpec.ObjectsField;
@@ -91,6 +93,7 @@ import com.robenglander.libretto.spec.librettoSpec.SubsectionField;
 import com.robenglander.libretto.spec.librettoSpec.TargetSpecField;
 import com.robenglander.libretto.spec.librettoSpec.TextField;
 import com.robenglander.libretto.spec.librettoSpec.TextList;
+import com.robenglander.libretto.spec.librettoSpec.TextValue;
 import com.robenglander.libretto.spec.librettoSpec.TitleField;
 import com.robenglander.libretto.spec.librettoSpec.TypeField;
 import com.robenglander.libretto.spec.librettoSpec.ValidatesField;
@@ -138,6 +141,20 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass dependenciesSectionKeywordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass dependencyKeywordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass dependencyRecordEClass = null;
 
   /**
@@ -153,13 +170,6 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   private EClass targetSpecFieldEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass kindFieldEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -635,6 +645,13 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass textValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass identifierValueEClass = null;
 
   /**
@@ -734,6 +751,13 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   private EEnum outcomeClassValueEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum metadataStatusValueEEnum = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -865,9 +889,9 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
-  public EAttribute getMetadataField_SpecId()
+  public EReference getMetadataField_Title()
   {
-    return (EAttribute)metadataFieldEClass.getEStructuralFeatures().get(0);
+    return (EReference)metadataFieldEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -876,9 +900,9 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
-  public EAttribute getMetadataField_Title()
+  public EReference getMetadataField_Version()
   {
-    return (EAttribute)metadataFieldEClass.getEStructuralFeatures().get(1);
+    return (EReference)metadataFieldEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -887,7 +911,7 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
-  public EAttribute getMetadataField_Version()
+  public EAttribute getMetadataField_Status()
   {
     return (EAttribute)metadataFieldEClass.getEStructuralFeatures().get(2);
   }
@@ -898,7 +922,7 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
-  public EReference getMetadataField_Status()
+  public EReference getMetadataField_ModuleName()
   {
     return (EReference)metadataFieldEClass.getEStructuralFeatures().get(3);
   }
@@ -909,9 +933,9 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
-  public EAttribute getMetadataField_AuthoredSource()
+  public EReference getMetadataField_JavaPackage()
   {
-    return (EAttribute)metadataFieldEClass.getEStructuralFeatures().get(4);
+    return (EReference)metadataFieldEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -920,9 +944,9 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
-  public EAttribute getMetadataField_CompiledAt()
+  public EReference getMetadataField_CompiledAt()
   {
-    return (EAttribute)metadataFieldEClass.getEStructuralFeatures().get(5);
+    return (EReference)metadataFieldEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -931,9 +955,9 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
-  public EAttribute getMetadataField_CompilerVersion()
+  public EReference getMetadataField_CompilerVersion()
   {
-    return (EAttribute)metadataFieldEClass.getEStructuralFeatures().get(6);
+    return (EReference)metadataFieldEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -942,9 +966,31 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
-  public EAttribute getMetadataField_ModelMetadata()
+  public EReference getMetadataField_ModelMetadata()
   {
-    return (EAttribute)metadataFieldEClass.getEStructuralFeatures().get(7);
+    return (EReference)metadataFieldEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDependenciesSectionKeyword()
+  {
+    return dependenciesSectionKeywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDependencyKeyword()
+  {
+    return dependencyKeywordEClass;
   }
 
   /**
@@ -964,9 +1010,20 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
+  public EReference getDependencyRecord_Keyword()
+  {
+    return (EReference)dependencyRecordEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EAttribute getDependencyRecord_Id()
   {
-    return (EAttribute)dependencyRecordEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)dependencyRecordEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -977,7 +1034,7 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
   @Override
   public EReference getDependencyRecord_Items()
   {
-    return (EReference)dependencyRecordEClass.getEStructuralFeatures().get(1);
+    return (EReference)dependencyRecordEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1008,31 +1065,9 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
-  public EReference getDependencyRecordItem_Kind()
-  {
-    return (EReference)dependencyRecordItemEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EReference getDependencyRecordItem_Notes()
   {
-    return (EReference)dependencyRecordItemEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getDependencyRecordItem_Context()
-  {
-    return (EReference)dependencyRecordItemEClass.getEStructuralFeatures().get(3);
+    return (EReference)dependencyRecordItemEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1052,31 +1087,9 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
-  public EAttribute getTargetSpecField_Value()
+  public EReference getTargetSpecField_Value()
   {
-    return (EAttribute)targetSpecFieldEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getKindField()
-  {
-    return kindFieldEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getKindField_Value()
-  {
-    return (EReference)kindFieldEClass.getEStructuralFeatures().get(0);
+    return (EReference)targetSpecFieldEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1217,9 +1230,9 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
-  public EAttribute getTitleField_Value()
+  public EReference getTitleField_Value()
   {
-    return (EAttribute)titleFieldEClass.getEStructuralFeatures().get(0);
+    return (EReference)titleFieldEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1261,9 +1274,9 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
-  public EAttribute getCitationField_Value()
+  public EReference getCitationField_Value()
   {
-    return (EAttribute)citationFieldEClass.getEStructuralFeatures().get(0);
+    return (EReference)citationFieldEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1283,9 +1296,9 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
-  public EAttribute getLocatorField_Value()
+  public EReference getLocatorField_Value()
   {
-    return (EAttribute)locatorFieldEClass.getEStructuralFeatures().get(0);
+    return (EReference)locatorFieldEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1305,9 +1318,9 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
-  public EAttribute getAuthorityNotesField_Value()
+  public EReference getAuthorityNotesField_Value()
   {
-    return (EAttribute)authorityNotesFieldEClass.getEStructuralFeatures().get(0);
+    return (EReference)authorityNotesFieldEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1327,9 +1340,9 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
-  public EAttribute getMetadataTextField_Value()
+  public EReference getMetadataTextField_Value()
   {
-    return (EAttribute)metadataTextFieldEClass.getEStructuralFeatures().get(0);
+    return (EReference)metadataTextFieldEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1536,9 +1549,9 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
-  public EAttribute getStatementField_Value()
+  public EReference getStatementField_Value()
   {
-    return (EAttribute)statementFieldEClass.getEStructuralFeatures().get(0);
+    return (EReference)statementFieldEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1899,9 +1912,9 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
-  public EAttribute getLabelField_Value()
+  public EReference getLabelField_Value()
   {
-    return (EAttribute)labelFieldEClass.getEStructuralFeatures().get(0);
+    return (EReference)labelFieldEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1965,9 +1978,9 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
-  public EAttribute getNotesField_Value()
+  public EReference getNotesField_Value()
   {
-    return (EAttribute)notesFieldEClass.getEStructuralFeatures().get(0);
+    return (EReference)notesFieldEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1987,9 +2000,9 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
-  public EAttribute getContextField_Value()
+  public EReference getContextField_Value()
   {
-    return (EAttribute)contextFieldEClass.getEStructuralFeatures().get(0);
+    return (EReference)contextFieldEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2075,9 +2088,9 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
-  public EAttribute getOperationExpressionField_Value()
+  public EReference getOperationExpressionField_Value()
   {
-    return (EAttribute)operationExpressionFieldEClass.getEStructuralFeatures().get(0);
+    return (EReference)operationExpressionFieldEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2163,9 +2176,9 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
-  public EAttribute getImplementsSurfaceTargetField_Value()
+  public EReference getImplementsSurfaceTargetField_Value()
   {
-    return (EAttribute)implementsSurfaceTargetFieldEClass.getEStructuralFeatures().get(0);
+    return (EReference)implementsSurfaceTargetFieldEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2262,9 +2275,9 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
-  public EAttribute getBoundarySpecIdField_Value()
+  public EReference getBoundarySpecIdField_Value()
   {
-    return (EAttribute)boundarySpecIdFieldEClass.getEStructuralFeatures().get(0);
+    return (EReference)boundarySpecIdFieldEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2284,9 +2297,9 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
-  public EAttribute getBoundaryOperationIdField_Value()
+  public EReference getBoundaryOperationIdField_Value()
   {
-    return (EAttribute)boundaryOperationIdFieldEClass.getEStructuralFeatures().get(0);
+    return (EReference)boundaryOperationIdFieldEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2306,9 +2319,9 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
-  public EAttribute getBoundaryProfileIdField_Value()
+  public EReference getBoundaryProfileIdField_Value()
   {
-    return (EAttribute)boundaryProfileIdFieldEClass.getEStructuralFeatures().get(0);
+    return (EReference)boundaryProfileIdFieldEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2328,9 +2341,9 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
-  public EAttribute getBoundaryRawField_Value()
+  public EReference getBoundaryRawField_Value()
   {
-    return (EAttribute)boundaryRawFieldEClass.getEStructuralFeatures().get(0);
+    return (EReference)boundaryRawFieldEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2779,9 +2792,9 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
-  public EAttribute getDirectiveField_Value()
+  public EReference getDirectiveField_Value()
   {
-    return (EAttribute)directiveFieldEClass.getEStructuralFeatures().get(0);
+    return (EReference)directiveFieldEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2867,9 +2880,9 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
-  public EAttribute getRationaleField_Value()
+  public EReference getRationaleField_Value()
   {
-    return (EAttribute)rationaleFieldEClass.getEStructuralFeatures().get(0);
+    return (EReference)rationaleFieldEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2944,9 +2957,9 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
-  public EAttribute getSectionField_Value()
+  public EReference getSectionField_Value()
   {
-    return (EAttribute)sectionFieldEClass.getEStructuralFeatures().get(0);
+    return (EReference)sectionFieldEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2966,9 +2979,9 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
-  public EAttribute getSubsectionField_Value()
+  public EReference getSubsectionField_Value()
   {
-    return (EAttribute)subsectionFieldEClass.getEStructuralFeatures().get(0);
+    return (EReference)subsectionFieldEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2988,9 +3001,9 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
-  public EAttribute getTextField_Value()
+  public EReference getTextField_Value()
   {
-    return (EAttribute)textFieldEClass.getEStructuralFeatures().get(0);
+    return (EReference)textFieldEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3076,9 +3089,31 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
-  public EAttribute getTextList_Values()
+  public EReference getTextList_Values()
   {
-    return (EAttribute)textListEClass.getEStructuralFeatures().get(0);
+    return (EReference)textListEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTextValue()
+  {
+    return textValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTextValue_Text()
+  {
+    return (EAttribute)textValueEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3164,9 +3199,20 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
-  public EReference getDependenciesSection_Records()
+  public EReference getDependenciesSection_SectionKeyword()
   {
     return (EReference)dependenciesSectionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDependenciesSection_Records()
+  {
+    return (EReference)dependenciesSectionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -3406,6 +3452,17 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
+  public EEnum getMetadataStatusValue()
+  {
+    return metadataStatusValueEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EEnum getStrengthValue()
   {
     return strengthValueEEnum;
@@ -3449,30 +3506,30 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
     specSectionEClass = createEClass(SPEC_SECTION);
 
     metadataFieldEClass = createEClass(METADATA_FIELD);
-    createEAttribute(metadataFieldEClass, METADATA_FIELD__SPEC_ID);
-    createEAttribute(metadataFieldEClass, METADATA_FIELD__TITLE);
-    createEAttribute(metadataFieldEClass, METADATA_FIELD__VERSION);
-    createEReference(metadataFieldEClass, METADATA_FIELD__STATUS);
-    createEAttribute(metadataFieldEClass, METADATA_FIELD__AUTHORED_SOURCE);
-    createEAttribute(metadataFieldEClass, METADATA_FIELD__COMPILED_AT);
-    createEAttribute(metadataFieldEClass, METADATA_FIELD__COMPILER_VERSION);
-    createEAttribute(metadataFieldEClass, METADATA_FIELD__MODEL_METADATA);
+    createEReference(metadataFieldEClass, METADATA_FIELD__TITLE);
+    createEReference(metadataFieldEClass, METADATA_FIELD__VERSION);
+    createEAttribute(metadataFieldEClass, METADATA_FIELD__STATUS);
+    createEReference(metadataFieldEClass, METADATA_FIELD__MODULE_NAME);
+    createEReference(metadataFieldEClass, METADATA_FIELD__JAVA_PACKAGE);
+    createEReference(metadataFieldEClass, METADATA_FIELD__COMPILED_AT);
+    createEReference(metadataFieldEClass, METADATA_FIELD__COMPILER_VERSION);
+    createEReference(metadataFieldEClass, METADATA_FIELD__MODEL_METADATA);
+
+    dependenciesSectionKeywordEClass = createEClass(DEPENDENCIES_SECTION_KEYWORD);
+
+    dependencyKeywordEClass = createEClass(DEPENDENCY_KEYWORD);
 
     dependencyRecordEClass = createEClass(DEPENDENCY_RECORD);
+    createEReference(dependencyRecordEClass, DEPENDENCY_RECORD__KEYWORD);
     createEAttribute(dependencyRecordEClass, DEPENDENCY_RECORD__ID);
     createEReference(dependencyRecordEClass, DEPENDENCY_RECORD__ITEMS);
 
     dependencyRecordItemEClass = createEClass(DEPENDENCY_RECORD_ITEM);
     createEReference(dependencyRecordItemEClass, DEPENDENCY_RECORD_ITEM__TARGET_SPEC);
-    createEReference(dependencyRecordItemEClass, DEPENDENCY_RECORD_ITEM__KIND);
     createEReference(dependencyRecordItemEClass, DEPENDENCY_RECORD_ITEM__NOTES);
-    createEReference(dependencyRecordItemEClass, DEPENDENCY_RECORD_ITEM__CONTEXT);
 
     targetSpecFieldEClass = createEClass(TARGET_SPEC_FIELD);
-    createEAttribute(targetSpecFieldEClass, TARGET_SPEC_FIELD__VALUE);
-
-    kindFieldEClass = createEClass(KIND_FIELD);
-    createEReference(kindFieldEClass, KIND_FIELD__VALUE);
+    createEReference(targetSpecFieldEClass, TARGET_SPEC_FIELD__VALUE);
 
     referenceRecordEClass = createEClass(REFERENCE_RECORD);
     createEAttribute(referenceRecordEClass, REFERENCE_RECORD__ID);
@@ -3488,22 +3545,22 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
     createEReference(referenceRecordItemEClass, REFERENCE_RECORD_ITEM__CONTEXT);
 
     titleFieldEClass = createEClass(TITLE_FIELD);
-    createEAttribute(titleFieldEClass, TITLE_FIELD__VALUE);
+    createEReference(titleFieldEClass, TITLE_FIELD__VALUE);
 
     typeFieldEClass = createEClass(TYPE_FIELD);
     createEReference(typeFieldEClass, TYPE_FIELD__VALUE);
 
     citationFieldEClass = createEClass(CITATION_FIELD);
-    createEAttribute(citationFieldEClass, CITATION_FIELD__VALUE);
+    createEReference(citationFieldEClass, CITATION_FIELD__VALUE);
 
     locatorFieldEClass = createEClass(LOCATOR_FIELD);
-    createEAttribute(locatorFieldEClass, LOCATOR_FIELD__VALUE);
+    createEReference(locatorFieldEClass, LOCATOR_FIELD__VALUE);
 
     authorityNotesFieldEClass = createEClass(AUTHORITY_NOTES_FIELD);
-    createEAttribute(authorityNotesFieldEClass, AUTHORITY_NOTES_FIELD__VALUE);
+    createEReference(authorityNotesFieldEClass, AUTHORITY_NOTES_FIELD__VALUE);
 
     metadataTextFieldEClass = createEClass(METADATA_TEXT_FIELD);
-    createEAttribute(metadataTextFieldEClass, METADATA_TEXT_FIELD__VALUE);
+    createEReference(metadataTextFieldEClass, METADATA_TEXT_FIELD__VALUE);
 
     proseRecordEClass = createEClass(PROSE_RECORD);
 
@@ -3530,7 +3587,7 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
     createEReference(outOfScopeRecordItemEClass, OUT_OF_SCOPE_RECORD_ITEM__STATEMENT);
 
     statementFieldEClass = createEClass(STATEMENT_FIELD);
-    createEAttribute(statementFieldEClass, STATEMENT_FIELD__VALUE);
+    createEReference(statementFieldEClass, STATEMENT_FIELD__VALUE);
 
     behaviorRecordEClass = createEClass(BEHAVIOR_RECORD);
     createEAttribute(behaviorRecordEClass, BEHAVIOR_RECORD__ID);
@@ -3573,7 +3630,7 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
     createEReference(outcomesFieldEClass, OUTCOMES_FIELD__VALUE);
 
     labelFieldEClass = createEClass(LABEL_FIELD);
-    createEAttribute(labelFieldEClass, LABEL_FIELD__VALUE);
+    createEReference(labelFieldEClass, LABEL_FIELD__VALUE);
 
     referencesFieldEClass = createEClass(REFERENCES_FIELD);
     createEReference(referencesFieldEClass, REFERENCES_FIELD__VALUE);
@@ -3582,10 +3639,10 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
     createEReference(dependenciesFieldEClass, DEPENDENCIES_FIELD__VALUE);
 
     notesFieldEClass = createEClass(NOTES_FIELD);
-    createEAttribute(notesFieldEClass, NOTES_FIELD__VALUE);
+    createEReference(notesFieldEClass, NOTES_FIELD__VALUE);
 
     contextFieldEClass = createEClass(CONTEXT_FIELD);
-    createEAttribute(contextFieldEClass, CONTEXT_FIELD__VALUE);
+    createEReference(contextFieldEClass, CONTEXT_FIELD__VALUE);
 
     operationSurfaceRecordEClass = createEClass(OPERATION_SURFACE_RECORD);
     createEAttribute(operationSurfaceRecordEClass, OPERATION_SURFACE_RECORD__ID);
@@ -3596,7 +3653,7 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
     createEReference(operationSurfaceRecordItemEClass, OPERATION_SURFACE_RECORD_ITEM__OUTCOME_CLASS);
 
     operationExpressionFieldEClass = createEClass(OPERATION_EXPRESSION_FIELD);
-    createEAttribute(operationExpressionFieldEClass, OPERATION_EXPRESSION_FIELD__VALUE);
+    createEReference(operationExpressionFieldEClass, OPERATION_EXPRESSION_FIELD__VALUE);
 
     outcomeClassFieldEClass = createEClass(OUTCOME_CLASS_FIELD);
     createEAttribute(outcomeClassFieldEClass, OUTCOME_CLASS_FIELD__VALUE);
@@ -3608,7 +3665,7 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
     createEReference(implementsSurfaceRecordItemEClass, IMPLEMENTS_SURFACE_RECORD_ITEM__TARGET_SPEC);
 
     implementsSurfaceTargetFieldEClass = createEClass(IMPLEMENTS_SURFACE_TARGET_FIELD);
-    createEAttribute(implementsSurfaceTargetFieldEClass, IMPLEMENTS_SURFACE_TARGET_FIELD__VALUE);
+    createEReference(implementsSurfaceTargetFieldEClass, IMPLEMENTS_SURFACE_TARGET_FIELD__VALUE);
 
     boundaryRecordEClass = createEClass(BOUNDARY_RECORD);
     createEReference(boundaryRecordEClass, BOUNDARY_RECORD__ITEMS);
@@ -3620,16 +3677,16 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
     createEReference(boundaryRecordItemEClass, BOUNDARY_RECORD_ITEM__RAW_FIELD);
 
     boundarySpecIdFieldEClass = createEClass(BOUNDARY_SPEC_ID_FIELD);
-    createEAttribute(boundarySpecIdFieldEClass, BOUNDARY_SPEC_ID_FIELD__VALUE);
+    createEReference(boundarySpecIdFieldEClass, BOUNDARY_SPEC_ID_FIELD__VALUE);
 
     boundaryOperationIdFieldEClass = createEClass(BOUNDARY_OPERATION_ID_FIELD);
-    createEAttribute(boundaryOperationIdFieldEClass, BOUNDARY_OPERATION_ID_FIELD__VALUE);
+    createEReference(boundaryOperationIdFieldEClass, BOUNDARY_OPERATION_ID_FIELD__VALUE);
 
     boundaryProfileIdFieldEClass = createEClass(BOUNDARY_PROFILE_ID_FIELD);
-    createEAttribute(boundaryProfileIdFieldEClass, BOUNDARY_PROFILE_ID_FIELD__VALUE);
+    createEReference(boundaryProfileIdFieldEClass, BOUNDARY_PROFILE_ID_FIELD__VALUE);
 
     boundaryRawFieldEClass = createEClass(BOUNDARY_RAW_FIELD);
-    createEAttribute(boundaryRawFieldEClass, BOUNDARY_RAW_FIELD__VALUE);
+    createEReference(boundaryRawFieldEClass, BOUNDARY_RAW_FIELD__VALUE);
 
     acceptanceTestRecordEClass = createEClass(ACCEPTANCE_TEST_RECORD);
     createEAttribute(acceptanceTestRecordEClass, ACCEPTANCE_TEST_RECORD__ID);
@@ -3681,7 +3738,7 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
     createEAttribute(strengthFieldEClass, STRENGTH_FIELD__VALUE);
 
     directiveFieldEClass = createEClass(DIRECTIVE_FIELD);
-    createEAttribute(directiveFieldEClass, DIRECTIVE_FIELD__VALUE);
+    createEReference(directiveFieldEClass, DIRECTIVE_FIELD__VALUE);
 
     categoryFieldEClass = createEClass(CATEGORY_FIELD);
     createEReference(categoryFieldEClass, CATEGORY_FIELD__VALUE);
@@ -3693,7 +3750,7 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
     createEReference(allowedFlexibilityFieldEClass, ALLOWED_FLEXIBILITY_FIELD__VALUE);
 
     rationaleFieldEClass = createEClass(RATIONALE_FIELD);
-    createEAttribute(rationaleFieldEClass, RATIONALE_FIELD__VALUE);
+    createEReference(rationaleFieldEClass, RATIONALE_FIELD__VALUE);
 
     sourceBlockEClass = createEClass(SOURCE_BLOCK);
     createEReference(sourceBlockEClass, SOURCE_BLOCK__ITEMS);
@@ -3703,13 +3760,13 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
     createEReference(sourceBlockItemEClass, SOURCE_BLOCK_ITEM__SUBSECTION);
 
     sectionFieldEClass = createEClass(SECTION_FIELD);
-    createEAttribute(sectionFieldEClass, SECTION_FIELD__VALUE);
+    createEReference(sectionFieldEClass, SECTION_FIELD__VALUE);
 
     subsectionFieldEClass = createEClass(SUBSECTION_FIELD);
-    createEAttribute(subsectionFieldEClass, SUBSECTION_FIELD__VALUE);
+    createEReference(subsectionFieldEClass, SUBSECTION_FIELD__VALUE);
 
     textFieldEClass = createEClass(TEXT_FIELD);
-    createEAttribute(textFieldEClass, TEXT_FIELD__VALUE);
+    createEReference(textFieldEClass, TEXT_FIELD__VALUE);
 
     identifierListEClass = createEClass(IDENTIFIER_LIST);
     createEReference(identifierListEClass, IDENTIFIER_LIST__VALUES);
@@ -3721,7 +3778,10 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
     createEAttribute(referenceIdListEClass, REFERENCE_ID_LIST__VALUES);
 
     textListEClass = createEClass(TEXT_LIST);
-    createEAttribute(textListEClass, TEXT_LIST__VALUES);
+    createEReference(textListEClass, TEXT_LIST__VALUES);
+
+    textValueEClass = createEClass(TEXT_VALUE);
+    createEAttribute(textValueEClass, TEXT_VALUE__TEXT);
 
     identifierValueEClass = createEClass(IDENTIFIER_VALUE);
 
@@ -3733,6 +3793,7 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
     createEReference(metadataSectionEClass, METADATA_SECTION__FIELDS);
 
     dependenciesSectionEClass = createEClass(DEPENDENCIES_SECTION);
+    createEReference(dependenciesSectionEClass, DEPENDENCIES_SECTION__SECTION_KEYWORD);
     createEReference(dependenciesSectionEClass, DEPENDENCIES_SECTION__RECORDS);
 
     referencesSectionEClass = createEClass(REFERENCES_SECTION);
@@ -3767,6 +3828,7 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
 
     // Create enums
     outcomeClassValueEEnum = createEEnum(OUTCOME_CLASS_VALUE);
+    metadataStatusValueEEnum = createEEnum(METADATA_STATUS_VALUE);
     strengthValueEEnum = createEEnum(STRENGTH_VALUE);
   }
 
@@ -3823,30 +3885,30 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
     initEClass(specSectionEClass, SpecSection.class, "SpecSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(metadataFieldEClass, MetadataField.class, "MetadataField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getMetadataField_SpecId(), ecorePackage.getEString(), "specId", null, 0, 1, MetadataField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getMetadataField_Title(), ecorePackage.getEString(), "title", null, 0, 1, MetadataField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getMetadataField_Version(), ecorePackage.getEString(), "version", null, 0, 1, MetadataField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getMetadataField_Status(), this.getIdentifierValue(), null, "status", null, 0, 1, MetadataField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getMetadataField_AuthoredSource(), ecorePackage.getEString(), "authoredSource", null, 0, 1, MetadataField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getMetadataField_CompiledAt(), ecorePackage.getEString(), "compiledAt", null, 0, 1, MetadataField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getMetadataField_CompilerVersion(), ecorePackage.getEString(), "compilerVersion", null, 0, 1, MetadataField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getMetadataField_ModelMetadata(), ecorePackage.getEString(), "modelMetadata", null, 0, 1, MetadataField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMetadataField_Title(), this.getTextValue(), null, "title", null, 0, 1, MetadataField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMetadataField_Version(), this.getTextValue(), null, "version", null, 0, 1, MetadataField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMetadataField_Status(), this.getMetadataStatusValue(), "status", null, 0, 1, MetadataField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMetadataField_ModuleName(), this.getTextValue(), null, "moduleName", null, 0, 1, MetadataField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMetadataField_JavaPackage(), this.getTextValue(), null, "javaPackage", null, 0, 1, MetadataField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMetadataField_CompiledAt(), this.getTextValue(), null, "compiledAt", null, 0, 1, MetadataField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMetadataField_CompilerVersion(), this.getTextValue(), null, "compilerVersion", null, 0, 1, MetadataField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMetadataField_ModelMetadata(), this.getTextValue(), null, "modelMetadata", null, 0, 1, MetadataField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(dependenciesSectionKeywordEClass, DependenciesSectionKeyword.class, "DependenciesSectionKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(dependencyKeywordEClass, DependencyKeyword.class, "DependencyKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(dependencyRecordEClass, DependencyRecord.class, "DependencyRecord", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDependencyRecord_Keyword(), this.getDependencyKeyword(), null, "keyword", null, 0, 1, DependencyRecord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDependencyRecord_Id(), ecorePackage.getEString(), "id", null, 0, 1, DependencyRecord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDependencyRecord_Items(), this.getDependencyRecordItem(), null, "items", null, 0, -1, DependencyRecord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(dependencyRecordItemEClass, DependencyRecordItem.class, "DependencyRecordItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDependencyRecordItem_TargetSpec(), this.getTargetSpecField(), null, "targetSpec", null, 0, 1, DependencyRecordItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDependencyRecordItem_Kind(), this.getKindField(), null, "kind", null, 0, 1, DependencyRecordItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDependencyRecordItem_Notes(), this.getNotesField(), null, "notes", null, 0, 1, DependencyRecordItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDependencyRecordItem_Context(), this.getContextField(), null, "context", null, 0, 1, DependencyRecordItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(targetSpecFieldEClass, TargetSpecField.class, "TargetSpecField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTargetSpecField_Value(), ecorePackage.getEString(), "value", null, 0, 1, TargetSpecField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(kindFieldEClass, KindField.class, "KindField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getKindField_Value(), this.getIdentifierValue(), null, "value", null, 0, 1, KindField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTargetSpecField_Value(), this.getTextValue(), null, "value", null, 0, 1, TargetSpecField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(referenceRecordEClass, ReferenceRecord.class, "ReferenceRecord", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getReferenceRecord_Id(), ecorePackage.getEString(), "id", null, 0, 1, ReferenceRecord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3862,22 +3924,22 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
     initEReference(getReferenceRecordItem_Context(), this.getContextField(), null, "context", null, 0, 1, ReferenceRecordItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(titleFieldEClass, TitleField.class, "TitleField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTitleField_Value(), ecorePackage.getEString(), "value", null, 0, 1, TitleField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTitleField_Value(), this.getTextValue(), null, "value", null, 0, 1, TitleField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(typeFieldEClass, TypeField.class, "TypeField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTypeField_Value(), this.getIdentifierValue(), null, "value", null, 0, 1, TypeField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(citationFieldEClass, CitationField.class, "CitationField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getCitationField_Value(), ecorePackage.getEString(), "value", null, 0, 1, CitationField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCitationField_Value(), this.getTextValue(), null, "value", null, 0, 1, CitationField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(locatorFieldEClass, LocatorField.class, "LocatorField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getLocatorField_Value(), ecorePackage.getEString(), "value", null, 0, 1, LocatorField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLocatorField_Value(), this.getTextValue(), null, "value", null, 0, 1, LocatorField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(authorityNotesFieldEClass, AuthorityNotesField.class, "AuthorityNotesField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAuthorityNotesField_Value(), ecorePackage.getEString(), "value", null, 0, 1, AuthorityNotesField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAuthorityNotesField_Value(), this.getTextValue(), null, "value", null, 0, 1, AuthorityNotesField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(metadataTextFieldEClass, MetadataTextField.class, "MetadataTextField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getMetadataTextField_Value(), ecorePackage.getEString(), "value", null, 0, 1, MetadataTextField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMetadataTextField_Value(), this.getTextValue(), null, "value", null, 0, 1, MetadataTextField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(proseRecordEClass, ProseRecord.class, "ProseRecord", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -3904,7 +3966,7 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
     initEReference(getOutOfScopeRecordItem_Statement(), this.getStatementField(), null, "statement", null, 0, 1, OutOfScopeRecordItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(statementFieldEClass, StatementField.class, "StatementField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getStatementField_Value(), ecorePackage.getEString(), "value", null, 0, 1, StatementField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStatementField_Value(), this.getTextValue(), null, "value", null, 0, 1, StatementField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(behaviorRecordEClass, BehaviorRecord.class, "BehaviorRecord", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getBehaviorRecord_Id(), ecorePackage.getEString(), "id", null, 0, 1, BehaviorRecord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3947,7 +4009,7 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
     initEReference(getOutcomesField_Value(), this.getTextList(), null, "value", null, 0, 1, OutcomesField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(labelFieldEClass, LabelField.class, "LabelField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getLabelField_Value(), ecorePackage.getEString(), "value", null, 0, 1, LabelField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLabelField_Value(), this.getTextValue(), null, "value", null, 0, 1, LabelField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(referencesFieldEClass, ReferencesField.class, "ReferencesField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getReferencesField_Value(), this.getReferenceIdList(), null, "value", null, 0, 1, ReferencesField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3956,10 +4018,10 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
     initEReference(getDependenciesField_Value(), this.getIdentifierList(), null, "value", null, 0, 1, DependenciesField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(notesFieldEClass, NotesField.class, "NotesField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getNotesField_Value(), ecorePackage.getEString(), "value", null, 0, 1, NotesField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNotesField_Value(), this.getTextValue(), null, "value", null, 0, 1, NotesField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(contextFieldEClass, ContextField.class, "ContextField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getContextField_Value(), ecorePackage.getEString(), "value", null, 0, 1, ContextField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getContextField_Value(), this.getTextValue(), null, "value", null, 0, 1, ContextField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(operationSurfaceRecordEClass, OperationSurfaceRecord.class, "OperationSurfaceRecord", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getOperationSurfaceRecord_Id(), ecorePackage.getEString(), "id", null, 0, 1, OperationSurfaceRecord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3970,7 +4032,7 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
     initEReference(getOperationSurfaceRecordItem_OutcomeClass(), this.getOutcomeClassField(), null, "outcomeClass", null, 0, 1, OperationSurfaceRecordItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(operationExpressionFieldEClass, OperationExpressionField.class, "OperationExpressionField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getOperationExpressionField_Value(), ecorePackage.getEString(), "value", null, 0, 1, OperationExpressionField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getOperationExpressionField_Value(), this.getTextValue(), null, "value", null, 0, 1, OperationExpressionField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(outcomeClassFieldEClass, OutcomeClassField.class, "OutcomeClassField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getOutcomeClassField_Value(), this.getOutcomeClassValue(), "value", null, 0, 1, OutcomeClassField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3982,7 +4044,7 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
     initEReference(getImplementsSurfaceRecordItem_TargetSpec(), this.getImplementsSurfaceTargetField(), null, "targetSpec", null, 0, 1, ImplementsSurfaceRecordItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(implementsSurfaceTargetFieldEClass, ImplementsSurfaceTargetField.class, "ImplementsSurfaceTargetField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getImplementsSurfaceTargetField_Value(), ecorePackage.getEString(), "value", null, 0, 1, ImplementsSurfaceTargetField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getImplementsSurfaceTargetField_Value(), this.getTextValue(), null, "value", null, 0, 1, ImplementsSurfaceTargetField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(boundaryRecordEClass, BoundaryRecord.class, "BoundaryRecord", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getBoundaryRecord_Items(), this.getBoundaryRecordItem(), null, "items", null, 0, -1, BoundaryRecord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3994,16 +4056,16 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
     initEReference(getBoundaryRecordItem_RawField(), this.getBoundaryRawField(), null, "rawField", null, 0, 1, BoundaryRecordItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(boundarySpecIdFieldEClass, BoundarySpecIdField.class, "BoundarySpecIdField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBoundarySpecIdField_Value(), ecorePackage.getEString(), "value", null, 0, 1, BoundarySpecIdField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBoundarySpecIdField_Value(), this.getTextValue(), null, "value", null, 0, 1, BoundarySpecIdField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(boundaryOperationIdFieldEClass, BoundaryOperationIdField.class, "BoundaryOperationIdField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBoundaryOperationIdField_Value(), ecorePackage.getEString(), "value", null, 0, 1, BoundaryOperationIdField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBoundaryOperationIdField_Value(), this.getTextValue(), null, "value", null, 0, 1, BoundaryOperationIdField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(boundaryProfileIdFieldEClass, BoundaryProfileIdField.class, "BoundaryProfileIdField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBoundaryProfileIdField_Value(), ecorePackage.getEString(), "value", null, 0, 1, BoundaryProfileIdField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBoundaryProfileIdField_Value(), this.getTextValue(), null, "value", null, 0, 1, BoundaryProfileIdField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(boundaryRawFieldEClass, BoundaryRawField.class, "BoundaryRawField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBoundaryRawField_Value(), ecorePackage.getEString(), "value", null, 0, 1, BoundaryRawField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBoundaryRawField_Value(), this.getTextValue(), null, "value", null, 0, 1, BoundaryRawField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(acceptanceTestRecordEClass, AcceptanceTestRecord.class, "AcceptanceTestRecord", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAcceptanceTestRecord_Id(), ecorePackage.getEString(), "id", null, 0, 1, AcceptanceTestRecord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4055,7 +4117,7 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
     initEAttribute(getStrengthField_Value(), this.getStrengthValue(), "value", null, 0, 1, StrengthField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(directiveFieldEClass, DirectiveField.class, "DirectiveField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDirectiveField_Value(), ecorePackage.getEString(), "value", null, 0, 1, DirectiveField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDirectiveField_Value(), this.getTextValue(), null, "value", null, 0, 1, DirectiveField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(categoryFieldEClass, CategoryField.class, "CategoryField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getCategoryField_Value(), this.getIdentifierValue(), null, "value", null, 0, 1, CategoryField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4067,7 +4129,7 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
     initEReference(getAllowedFlexibilityField_Value(), this.getTextList(), null, "value", null, 0, 1, AllowedFlexibilityField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(rationaleFieldEClass, RationaleField.class, "RationaleField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRationaleField_Value(), ecorePackage.getEString(), "value", null, 0, 1, RationaleField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRationaleField_Value(), this.getTextValue(), null, "value", null, 0, 1, RationaleField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(sourceBlockEClass, SourceBlock.class, "SourceBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSourceBlock_Items(), this.getSourceBlockItem(), null, "items", null, 0, -1, SourceBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4077,13 +4139,13 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
     initEReference(getSourceBlockItem_Subsection(), this.getSubsectionField(), null, "subsection", null, 0, 1, SourceBlockItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(sectionFieldEClass, SectionField.class, "SectionField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSectionField_Value(), ecorePackage.getEString(), "value", null, 0, 1, SectionField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSectionField_Value(), this.getTextValue(), null, "value", null, 0, 1, SectionField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(subsectionFieldEClass, SubsectionField.class, "SubsectionField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSubsectionField_Value(), ecorePackage.getEString(), "value", null, 0, 1, SubsectionField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSubsectionField_Value(), this.getTextValue(), null, "value", null, 0, 1, SubsectionField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(textFieldEClass, TextField.class, "TextField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTextField_Value(), ecorePackage.getEString(), "value", null, 0, 1, TextField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTextField_Value(), this.getTextValue(), null, "value", null, 0, 1, TextField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(identifierListEClass, IdentifierList.class, "IdentifierList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getIdentifierList_Values(), this.getIdentifierValue(), null, "values", null, 0, -1, IdentifierList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4095,7 +4157,10 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
     initEAttribute(getReferenceIdList_Values(), ecorePackage.getEString(), "values", null, 0, -1, ReferenceIdList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(textListEClass, TextList.class, "TextList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTextList_Values(), ecorePackage.getEString(), "values", null, 0, -1, TextList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTextList_Values(), this.getTextValue(), null, "values", null, 0, -1, TextList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(textValueEClass, TextValue.class, "TextValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTextValue_Text(), ecorePackage.getEString(), "text", null, 0, 1, TextValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(identifierValueEClass, IdentifierValue.class, "IdentifierValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -4107,6 +4172,7 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
     initEReference(getMetadataSection_Fields(), this.getMetadataField(), null, "fields", null, 0, -1, MetadataSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(dependenciesSectionEClass, DependenciesSection.class, "DependenciesSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDependenciesSection_SectionKeyword(), this.getDependenciesSectionKeyword(), null, "sectionKeyword", null, 0, 1, DependenciesSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDependenciesSection_Records(), this.getDependencyRecord(), null, "records", null, 0, -1, DependenciesSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(referencesSectionEClass, ReferencesSection.class, "ReferencesSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -4143,6 +4209,10 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
     initEEnum(outcomeClassValueEEnum, OutcomeClassValue.class, "OutcomeClassValue");
     addEEnumLiteral(outcomeClassValueEEnum, OutcomeClassValue.RETURNS);
     addEEnumLiteral(outcomeClassValueEEnum, OutcomeClassValue.REJECTS);
+
+    initEEnum(metadataStatusValueEEnum, MetadataStatusValue.class, "MetadataStatusValue");
+    addEEnumLiteral(metadataStatusValueEEnum, MetadataStatusValue.DRAFT);
+    addEEnumLiteral(metadataStatusValueEEnum, MetadataStatusValue.PUBLIC);
 
     initEEnum(strengthValueEEnum, StrengthValue.class, "StrengthValue");
     addEEnumLiteral(strengthValueEEnum, StrengthValue.REQUIRED);

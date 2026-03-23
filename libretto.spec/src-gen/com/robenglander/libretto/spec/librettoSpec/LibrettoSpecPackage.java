@@ -125,52 +125,52 @@ public interface LibrettoSpecPackage extends EPackage
   int METADATA_FIELD = 2;
 
   /**
-   * The feature id for the '<em><b>Spec Id</b></em>' attribute.
+   * The feature id for the '<em><b>Title</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int METADATA_FIELD__SPEC_ID = 0;
+  int METADATA_FIELD__TITLE = 0;
 
   /**
-   * The feature id for the '<em><b>Title</b></em>' attribute.
+   * The feature id for the '<em><b>Version</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int METADATA_FIELD__TITLE = 1;
+  int METADATA_FIELD__VERSION = 1;
 
   /**
-   * The feature id for the '<em><b>Version</b></em>' attribute.
+   * The feature id for the '<em><b>Status</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int METADATA_FIELD__VERSION = 2;
+  int METADATA_FIELD__STATUS = 2;
 
   /**
-   * The feature id for the '<em><b>Status</b></em>' containment reference.
+   * The feature id for the '<em><b>Module Name</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int METADATA_FIELD__STATUS = 3;
+  int METADATA_FIELD__MODULE_NAME = 3;
 
   /**
-   * The feature id for the '<em><b>Authored Source</b></em>' attribute.
+   * The feature id for the '<em><b>Java Package</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int METADATA_FIELD__AUTHORED_SOURCE = 4;
+  int METADATA_FIELD__JAVA_PACKAGE = 4;
 
   /**
-   * The feature id for the '<em><b>Compiled At</b></em>' attribute.
+   * The feature id for the '<em><b>Compiled At</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -179,7 +179,7 @@ public interface LibrettoSpecPackage extends EPackage
   int METADATA_FIELD__COMPILED_AT = 5;
 
   /**
-   * The feature id for the '<em><b>Compiler Version</b></em>' attribute.
+   * The feature id for the '<em><b>Compiler Version</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -188,7 +188,7 @@ public interface LibrettoSpecPackage extends EPackage
   int METADATA_FIELD__COMPILER_VERSION = 6;
 
   /**
-   * The feature id for the '<em><b>Model Metadata</b></em>' attribute.
+   * The feature id for the '<em><b>Model Metadata</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -206,6 +206,44 @@ public interface LibrettoSpecPackage extends EPackage
   int METADATA_FIELD_FEATURE_COUNT = 8;
 
   /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.DependenciesSectionKeywordImpl <em>Dependencies Section Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoSpec.impl.DependenciesSectionKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getDependenciesSectionKeyword()
+   * @generated
+   */
+  int DEPENDENCIES_SECTION_KEYWORD = 3;
+
+  /**
+   * The number of structural features of the '<em>Dependencies Section Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEPENDENCIES_SECTION_KEYWORD_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.DependencyKeywordImpl <em>Dependency Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoSpec.impl.DependencyKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getDependencyKeyword()
+   * @generated
+   */
+  int DEPENDENCY_KEYWORD = 4;
+
+  /**
+   * The number of structural features of the '<em>Dependency Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEPENDENCY_KEYWORD_FEATURE_COUNT = 0;
+
+  /**
    * The meta object id for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.DependencyRecordImpl <em>Dependency Record</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -213,7 +251,16 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getDependencyRecord()
    * @generated
    */
-  int DEPENDENCY_RECORD = 3;
+  int DEPENDENCY_RECORD = 5;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEPENDENCY_RECORD__KEYWORD = 0;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -222,7 +269,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEPENDENCY_RECORD__ID = 0;
+  int DEPENDENCY_RECORD__ID = 1;
 
   /**
    * The feature id for the '<em><b>Items</b></em>' containment reference list.
@@ -231,7 +278,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEPENDENCY_RECORD__ITEMS = 1;
+  int DEPENDENCY_RECORD__ITEMS = 2;
 
   /**
    * The number of structural features of the '<em>Dependency Record</em>' class.
@@ -240,7 +287,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEPENDENCY_RECORD_FEATURE_COUNT = 2;
+  int DEPENDENCY_RECORD_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.DependencyRecordItemImpl <em>Dependency Record Item</em>}' class.
@@ -250,7 +297,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getDependencyRecordItem()
    * @generated
    */
-  int DEPENDENCY_RECORD_ITEM = 4;
+  int DEPENDENCY_RECORD_ITEM = 6;
 
   /**
    * The feature id for the '<em><b>Target Spec</b></em>' containment reference.
@@ -262,31 +309,13 @@ public interface LibrettoSpecPackage extends EPackage
   int DEPENDENCY_RECORD_ITEM__TARGET_SPEC = 0;
 
   /**
-   * The feature id for the '<em><b>Kind</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DEPENDENCY_RECORD_ITEM__KIND = 1;
-
-  /**
    * The feature id for the '<em><b>Notes</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DEPENDENCY_RECORD_ITEM__NOTES = 2;
-
-  /**
-   * The feature id for the '<em><b>Context</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DEPENDENCY_RECORD_ITEM__CONTEXT = 3;
+  int DEPENDENCY_RECORD_ITEM__NOTES = 1;
 
   /**
    * The number of structural features of the '<em>Dependency Record Item</em>' class.
@@ -295,7 +324,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEPENDENCY_RECORD_ITEM_FEATURE_COUNT = 4;
+  int DEPENDENCY_RECORD_ITEM_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.TargetSpecFieldImpl <em>Target Spec Field</em>}' class.
@@ -305,10 +334,10 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getTargetSpecField()
    * @generated
    */
-  int TARGET_SPEC_FIELD = 5;
+  int TARGET_SPEC_FIELD = 7;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -326,34 +355,6 @@ public interface LibrettoSpecPackage extends EPackage
   int TARGET_SPEC_FIELD_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.KindFieldImpl <em>Kind Field</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.robenglander.libretto.spec.librettoSpec.impl.KindFieldImpl
-   * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getKindField()
-   * @generated
-   */
-  int KIND_FIELD = 6;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int KIND_FIELD__VALUE = 0;
-
-  /**
-   * The number of structural features of the '<em>Kind Field</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int KIND_FIELD_FEATURE_COUNT = 1;
-
-  /**
    * The meta object id for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.ReferenceRecordImpl <em>Reference Record</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -361,7 +362,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getReferenceRecord()
    * @generated
    */
-  int REFERENCE_RECORD = 7;
+  int REFERENCE_RECORD = 8;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -398,7 +399,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getReferenceRecordItem()
    * @generated
    */
-  int REFERENCE_RECORD_ITEM = 8;
+  int REFERENCE_RECORD_ITEM = 9;
 
   /**
    * The feature id for the '<em><b>Title</b></em>' containment reference.
@@ -480,10 +481,10 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getTitleField()
    * @generated
    */
-  int TITLE_FIELD = 9;
+  int TITLE_FIELD = 10;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -508,7 +509,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getTypeField()
    * @generated
    */
-  int TYPE_FIELD = 10;
+  int TYPE_FIELD = 11;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -536,10 +537,10 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getCitationField()
    * @generated
    */
-  int CITATION_FIELD = 11;
+  int CITATION_FIELD = 12;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -564,10 +565,10 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getLocatorField()
    * @generated
    */
-  int LOCATOR_FIELD = 12;
+  int LOCATOR_FIELD = 13;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -592,10 +593,10 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getAuthorityNotesField()
    * @generated
    */
-  int AUTHORITY_NOTES_FIELD = 13;
+  int AUTHORITY_NOTES_FIELD = 14;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -620,10 +621,10 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getMetadataTextField()
    * @generated
    */
-  int METADATA_TEXT_FIELD = 14;
+  int METADATA_TEXT_FIELD = 15;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -648,7 +649,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getProseRecord()
    * @generated
    */
-  int PROSE_RECORD = 15;
+  int PROSE_RECORD = 16;
 
   /**
    * The number of structural features of the '<em>Prose Record</em>' class.
@@ -667,7 +668,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getSectionContextRecord()
    * @generated
    */
-  int SECTION_CONTEXT_RECORD = 16;
+  int SECTION_CONTEXT_RECORD = 17;
 
   /**
    * The feature id for the '<em><b>Items</b></em>' containment reference list.
@@ -695,7 +696,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getSectionContextRecordItem()
    * @generated
    */
-  int SECTION_CONTEXT_RECORD_ITEM = 17;
+  int SECTION_CONTEXT_RECORD_ITEM = 18;
 
   /**
    * The feature id for the '<em><b>Section</b></em>' containment reference.
@@ -732,7 +733,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getSubsectionContextRecord()
    * @generated
    */
-  int SUBSECTION_CONTEXT_RECORD = 18;
+  int SUBSECTION_CONTEXT_RECORD = 19;
 
   /**
    * The feature id for the '<em><b>Items</b></em>' containment reference list.
@@ -760,7 +761,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getSubsectionContextRecordItem()
    * @generated
    */
-  int SUBSECTION_CONTEXT_RECORD_ITEM = 19;
+  int SUBSECTION_CONTEXT_RECORD_ITEM = 20;
 
   /**
    * The feature id for the '<em><b>Section</b></em>' containment reference.
@@ -806,7 +807,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getOutOfScopeRecord()
    * @generated
    */
-  int OUT_OF_SCOPE_RECORD = 20;
+  int OUT_OF_SCOPE_RECORD = 21;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -843,7 +844,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getOutOfScopeRecordItem()
    * @generated
    */
-  int OUT_OF_SCOPE_RECORD_ITEM = 21;
+  int OUT_OF_SCOPE_RECORD_ITEM = 22;
 
   /**
    * The feature id for the '<em><b>Statement</b></em>' containment reference.
@@ -871,10 +872,10 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getStatementField()
    * @generated
    */
-  int STATEMENT_FIELD = 22;
+  int STATEMENT_FIELD = 23;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -899,7 +900,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getBehaviorRecord()
    * @generated
    */
-  int BEHAVIOR_RECORD = 23;
+  int BEHAVIOR_RECORD = 24;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -936,7 +937,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getBehaviorRecordItem()
    * @generated
    */
-  int BEHAVIOR_RECORD_ITEM = 24;
+  int BEHAVIOR_RECORD_ITEM = 25;
 
   /**
    * The feature id for the '<em><b>Source</b></em>' containment reference.
@@ -1072,7 +1073,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getActorField()
    * @generated
    */
-  int ACTOR_FIELD = 25;
+  int ACTOR_FIELD = 26;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -1100,7 +1101,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getActionField()
    * @generated
    */
-  int ACTION_FIELD = 26;
+  int ACTION_FIELD = 27;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -1128,7 +1129,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getObjectsField()
    * @generated
    */
-  int OBJECTS_FIELD = 27;
+  int OBJECTS_FIELD = 28;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -1156,7 +1157,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getReadsField()
    * @generated
    */
-  int READS_FIELD = 28;
+  int READS_FIELD = 29;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -1184,7 +1185,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getWritesField()
    * @generated
    */
-  int WRITES_FIELD = 29;
+  int WRITES_FIELD = 30;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -1212,7 +1213,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getConditionsField()
    * @generated
    */
-  int CONDITIONS_FIELD = 30;
+  int CONDITIONS_FIELD = 31;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -1240,7 +1241,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getOutcomesField()
    * @generated
    */
-  int OUTCOMES_FIELD = 31;
+  int OUTCOMES_FIELD = 32;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -1268,10 +1269,10 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getLabelField()
    * @generated
    */
-  int LABEL_FIELD = 32;
+  int LABEL_FIELD = 33;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1296,7 +1297,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getReferencesField()
    * @generated
    */
-  int REFERENCES_FIELD = 33;
+  int REFERENCES_FIELD = 34;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -1324,7 +1325,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getDependenciesField()
    * @generated
    */
-  int DEPENDENCIES_FIELD = 34;
+  int DEPENDENCIES_FIELD = 35;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -1352,10 +1353,10 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getNotesField()
    * @generated
    */
-  int NOTES_FIELD = 35;
+  int NOTES_FIELD = 36;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1380,10 +1381,10 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getContextField()
    * @generated
    */
-  int CONTEXT_FIELD = 36;
+  int CONTEXT_FIELD = 37;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1408,7 +1409,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getOperationSurfaceRecord()
    * @generated
    */
-  int OPERATION_SURFACE_RECORD = 37;
+  int OPERATION_SURFACE_RECORD = 38;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1445,7 +1446,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getOperationSurfaceRecordItem()
    * @generated
    */
-  int OPERATION_SURFACE_RECORD_ITEM = 38;
+  int OPERATION_SURFACE_RECORD_ITEM = 39;
 
   /**
    * The feature id for the '<em><b>Operation Expression</b></em>' containment reference.
@@ -1482,10 +1483,10 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getOperationExpressionField()
    * @generated
    */
-  int OPERATION_EXPRESSION_FIELD = 39;
+  int OPERATION_EXPRESSION_FIELD = 40;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1510,7 +1511,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getOutcomeClassField()
    * @generated
    */
-  int OUTCOME_CLASS_FIELD = 40;
+  int OUTCOME_CLASS_FIELD = 41;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1538,7 +1539,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getImplementsSurfaceRecord()
    * @generated
    */
-  int IMPLEMENTS_SURFACE_RECORD = 41;
+  int IMPLEMENTS_SURFACE_RECORD = 42;
 
   /**
    * The feature id for the '<em><b>Items</b></em>' containment reference list.
@@ -1566,7 +1567,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getImplementsSurfaceRecordItem()
    * @generated
    */
-  int IMPLEMENTS_SURFACE_RECORD_ITEM = 42;
+  int IMPLEMENTS_SURFACE_RECORD_ITEM = 43;
 
   /**
    * The feature id for the '<em><b>Target Spec</b></em>' containment reference.
@@ -1594,10 +1595,10 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getImplementsSurfaceTargetField()
    * @generated
    */
-  int IMPLEMENTS_SURFACE_TARGET_FIELD = 43;
+  int IMPLEMENTS_SURFACE_TARGET_FIELD = 44;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1622,7 +1623,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getBoundaryRecord()
    * @generated
    */
-  int BOUNDARY_RECORD = 44;
+  int BOUNDARY_RECORD = 45;
 
   /**
    * The feature id for the '<em><b>Items</b></em>' containment reference list.
@@ -1650,7 +1651,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getBoundaryRecordItem()
    * @generated
    */
-  int BOUNDARY_RECORD_ITEM = 45;
+  int BOUNDARY_RECORD_ITEM = 46;
 
   /**
    * The feature id for the '<em><b>Spec Id Field</b></em>' containment reference.
@@ -1705,10 +1706,10 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getBoundarySpecIdField()
    * @generated
    */
-  int BOUNDARY_SPEC_ID_FIELD = 46;
+  int BOUNDARY_SPEC_ID_FIELD = 47;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1733,10 +1734,10 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getBoundaryOperationIdField()
    * @generated
    */
-  int BOUNDARY_OPERATION_ID_FIELD = 47;
+  int BOUNDARY_OPERATION_ID_FIELD = 48;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1761,10 +1762,10 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getBoundaryProfileIdField()
    * @generated
    */
-  int BOUNDARY_PROFILE_ID_FIELD = 48;
+  int BOUNDARY_PROFILE_ID_FIELD = 49;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1789,10 +1790,10 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getBoundaryRawField()
    * @generated
    */
-  int BOUNDARY_RAW_FIELD = 49;
+  int BOUNDARY_RAW_FIELD = 50;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1817,7 +1818,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getAcceptanceTestRecord()
    * @generated
    */
-  int ACCEPTANCE_TEST_RECORD = 50;
+  int ACCEPTANCE_TEST_RECORD = 51;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1854,7 +1855,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getAcceptanceTestRecordItem()
    * @generated
    */
-  int ACCEPTANCE_TEST_RECORD_ITEM = 51;
+  int ACCEPTANCE_TEST_RECORD_ITEM = 52;
 
   /**
    * The feature id for the '<em><b>Source</b></em>' containment reference.
@@ -1954,7 +1955,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getValidatesField()
    * @generated
    */
-  int VALIDATES_FIELD = 52;
+  int VALIDATES_FIELD = 53;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -1982,7 +1983,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getPreconditionsField()
    * @generated
    */
-  int PRECONDITIONS_FIELD = 53;
+  int PRECONDITIONS_FIELD = 54;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -2010,7 +2011,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getActionsField()
    * @generated
    */
-  int ACTIONS_FIELD = 54;
+  int ACTIONS_FIELD = 55;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -2038,7 +2039,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getAssertionsField()
    * @generated
    */
-  int ASSERTIONS_FIELD = 55;
+  int ASSERTIONS_FIELD = 56;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -2066,7 +2067,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getImplementationDirectiveRecord()
    * @generated
    */
-  int IMPLEMENTATION_DIRECTIVE_RECORD = 56;
+  int IMPLEMENTATION_DIRECTIVE_RECORD = 57;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -2103,7 +2104,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getImplementationDirectiveRecordItem()
    * @generated
    */
-  int IMPLEMENTATION_DIRECTIVE_RECORD_ITEM = 57;
+  int IMPLEMENTATION_DIRECTIVE_RECORD_ITEM = 58;
 
   /**
    * The feature id for the '<em><b>Source</b></em>' containment reference.
@@ -2212,7 +2213,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getAppliesToField()
    * @generated
    */
-  int APPLIES_TO_FIELD = 58;
+  int APPLIES_TO_FIELD = 59;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -2240,7 +2241,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getStrengthField()
    * @generated
    */
-  int STRENGTH_FIELD = 59;
+  int STRENGTH_FIELD = 60;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2268,10 +2269,10 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getDirectiveField()
    * @generated
    */
-  int DIRECTIVE_FIELD = 60;
+  int DIRECTIVE_FIELD = 61;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2296,7 +2297,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getCategoryField()
    * @generated
    */
-  int CATEGORY_FIELD = 61;
+  int CATEGORY_FIELD = 62;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -2324,7 +2325,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getConstraintsField()
    * @generated
    */
-  int CONSTRAINTS_FIELD = 62;
+  int CONSTRAINTS_FIELD = 63;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -2352,7 +2353,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getAllowedFlexibilityField()
    * @generated
    */
-  int ALLOWED_FLEXIBILITY_FIELD = 63;
+  int ALLOWED_FLEXIBILITY_FIELD = 64;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -2380,10 +2381,10 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getRationaleField()
    * @generated
    */
-  int RATIONALE_FIELD = 64;
+  int RATIONALE_FIELD = 65;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2408,7 +2409,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getSourceBlock()
    * @generated
    */
-  int SOURCE_BLOCK = 65;
+  int SOURCE_BLOCK = 66;
 
   /**
    * The feature id for the '<em><b>Items</b></em>' containment reference list.
@@ -2436,7 +2437,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getSourceBlockItem()
    * @generated
    */
-  int SOURCE_BLOCK_ITEM = 66;
+  int SOURCE_BLOCK_ITEM = 67;
 
   /**
    * The feature id for the '<em><b>Section</b></em>' containment reference.
@@ -2473,10 +2474,10 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getSectionField()
    * @generated
    */
-  int SECTION_FIELD = 67;
+  int SECTION_FIELD = 68;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2501,10 +2502,10 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getSubsectionField()
    * @generated
    */
-  int SUBSECTION_FIELD = 68;
+  int SUBSECTION_FIELD = 69;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2529,10 +2530,10 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getTextField()
    * @generated
    */
-  int TEXT_FIELD = 69;
+  int TEXT_FIELD = 70;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2557,7 +2558,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getIdentifierList()
    * @generated
    */
-  int IDENTIFIER_LIST = 70;
+  int IDENTIFIER_LIST = 71;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' containment reference list.
@@ -2585,7 +2586,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getBehaviorIdList()
    * @generated
    */
-  int BEHAVIOR_ID_LIST = 71;
+  int BEHAVIOR_ID_LIST = 72;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' attribute list.
@@ -2613,7 +2614,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getReferenceIdList()
    * @generated
    */
-  int REFERENCE_ID_LIST = 72;
+  int REFERENCE_ID_LIST = 73;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' attribute list.
@@ -2641,10 +2642,10 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getTextList()
    * @generated
    */
-  int TEXT_LIST = 73;
+  int TEXT_LIST = 74;
 
   /**
-   * The feature id for the '<em><b>Values</b></em>' attribute list.
+   * The feature id for the '<em><b>Values</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2662,6 +2663,34 @@ public interface LibrettoSpecPackage extends EPackage
   int TEXT_LIST_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.TextValueImpl <em>Text Value</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoSpec.impl.TextValueImpl
+   * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getTextValue()
+   * @generated
+   */
+  int TEXT_VALUE = 75;
+
+  /**
+   * The feature id for the '<em><b>Text</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXT_VALUE__TEXT = 0;
+
+  /**
+   * The number of structural features of the '<em>Text Value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXT_VALUE_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.IdentifierValueImpl <em>Identifier Value</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2669,7 +2698,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getIdentifierValue()
    * @generated
    */
-  int IDENTIFIER_VALUE = 74;
+  int IDENTIFIER_VALUE = 76;
 
   /**
    * The number of structural features of the '<em>Identifier Value</em>' class.
@@ -2688,7 +2717,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getDottedIdentifier()
    * @generated
    */
-  int DOTTED_IDENTIFIER = 75;
+  int DOTTED_IDENTIFIER = 77;
 
   /**
    * The feature id for the '<em><b>Head</b></em>' attribute.
@@ -2725,7 +2754,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getMetadataSection()
    * @generated
    */
-  int METADATA_SECTION = 76;
+  int METADATA_SECTION = 78;
 
   /**
    * The feature id for the '<em><b>Fields</b></em>' containment reference list.
@@ -2753,7 +2782,16 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getDependenciesSection()
    * @generated
    */
-  int DEPENDENCIES_SECTION = 77;
+  int DEPENDENCIES_SECTION = 79;
+
+  /**
+   * The feature id for the '<em><b>Section Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEPENDENCIES_SECTION__SECTION_KEYWORD = SPEC_SECTION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Records</b></em>' containment reference list.
@@ -2762,7 +2800,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEPENDENCIES_SECTION__RECORDS = SPEC_SECTION_FEATURE_COUNT + 0;
+  int DEPENDENCIES_SECTION__RECORDS = SPEC_SECTION_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Dependencies Section</em>' class.
@@ -2771,7 +2809,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEPENDENCIES_SECTION_FEATURE_COUNT = SPEC_SECTION_FEATURE_COUNT + 1;
+  int DEPENDENCIES_SECTION_FEATURE_COUNT = SPEC_SECTION_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.ReferencesSectionImpl <em>References Section</em>}' class.
@@ -2781,7 +2819,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getReferencesSection()
    * @generated
    */
-  int REFERENCES_SECTION = 78;
+  int REFERENCES_SECTION = 80;
 
   /**
    * The feature id for the '<em><b>Records</b></em>' containment reference list.
@@ -2809,7 +2847,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getProseSection()
    * @generated
    */
-  int PROSE_SECTION = 79;
+  int PROSE_SECTION = 81;
 
   /**
    * The feature id for the '<em><b>Records</b></em>' containment reference list.
@@ -2837,7 +2875,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getOutOfScopeSection()
    * @generated
    */
-  int OUT_OF_SCOPE_SECTION = 80;
+  int OUT_OF_SCOPE_SECTION = 82;
 
   /**
    * The feature id for the '<em><b>Records</b></em>' containment reference list.
@@ -2865,7 +2903,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getOperationSurfaceSection()
    * @generated
    */
-  int OPERATION_SURFACE_SECTION = 81;
+  int OPERATION_SURFACE_SECTION = 83;
 
   /**
    * The feature id for the '<em><b>Records</b></em>' containment reference list.
@@ -2893,7 +2931,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getImplementsSurfaceSection()
    * @generated
    */
-  int IMPLEMENTS_SURFACE_SECTION = 82;
+  int IMPLEMENTS_SURFACE_SECTION = 84;
 
   /**
    * The feature id for the '<em><b>Records</b></em>' containment reference list.
@@ -2921,7 +2959,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getBoundaryExportsSection()
    * @generated
    */
-  int BOUNDARY_EXPORTS_SECTION = 83;
+  int BOUNDARY_EXPORTS_SECTION = 85;
 
   /**
    * The feature id for the '<em><b>Records</b></em>' containment reference list.
@@ -2949,7 +2987,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getBoundaryImportsSection()
    * @generated
    */
-  int BOUNDARY_IMPORTS_SECTION = 84;
+  int BOUNDARY_IMPORTS_SECTION = 86;
 
   /**
    * The feature id for the '<em><b>Records</b></em>' containment reference list.
@@ -2977,7 +3015,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getBehaviorsSection()
    * @generated
    */
-  int BEHAVIORS_SECTION = 85;
+  int BEHAVIORS_SECTION = 87;
 
   /**
    * The feature id for the '<em><b>Records</b></em>' containment reference list.
@@ -3005,7 +3043,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getAcceptanceTestsSection()
    * @generated
    */
-  int ACCEPTANCE_TESTS_SECTION = 86;
+  int ACCEPTANCE_TESTS_SECTION = 88;
 
   /**
    * The feature id for the '<em><b>Records</b></em>' containment reference list.
@@ -3033,7 +3071,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getImplementationDirectivesSection()
    * @generated
    */
-  int IMPLEMENTATION_DIRECTIVES_SECTION = 87;
+  int IMPLEMENTATION_DIRECTIVES_SECTION = 89;
 
   /**
    * The feature id for the '<em><b>Records</b></em>' containment reference list.
@@ -3061,7 +3099,17 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getOutcomeClassValue()
    * @generated
    */
-  int OUTCOME_CLASS_VALUE = 88;
+  int OUTCOME_CLASS_VALUE = 90;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoSpec.MetadataStatusValue <em>Metadata Status Value</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataStatusValue
+   * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getMetadataStatusValue()
+   * @generated
+   */
+  int METADATA_STATUS_VALUE = 91;
 
   /**
    * The meta object id for the '{@link com.robenglander.libretto.spec.librettoSpec.StrengthValue <em>Strength Value</em>}' enum.
@@ -3071,7 +3119,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getStrengthValue()
    * @generated
    */
-  int STRENGTH_VALUE = 89;
+  int STRENGTH_VALUE = 92;
 
 
   /**
@@ -3127,92 +3175,112 @@ public interface LibrettoSpecPackage extends EPackage
   EClass getMetadataField();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getSpecId <em>Spec Id</em>}'.
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getTitle <em>Title</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Spec Id</em>'.
-   * @see com.robenglander.libretto.spec.librettoSpec.MetadataField#getSpecId()
-   * @see #getMetadataField()
-   * @generated
-   */
-  EAttribute getMetadataField_SpecId();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getTitle <em>Title</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Title</em>'.
+   * @return the meta object for the containment reference '<em>Title</em>'.
    * @see com.robenglander.libretto.spec.librettoSpec.MetadataField#getTitle()
    * @see #getMetadataField()
    * @generated
    */
-  EAttribute getMetadataField_Title();
+  EReference getMetadataField_Title();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getVersion <em>Version</em>}'.
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getVersion <em>Version</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Version</em>'.
+   * @return the meta object for the containment reference '<em>Version</em>'.
    * @see com.robenglander.libretto.spec.librettoSpec.MetadataField#getVersion()
    * @see #getMetadataField()
    * @generated
    */
-  EAttribute getMetadataField_Version();
+  EReference getMetadataField_Version();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getStatus <em>Status</em>}'.
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getStatus <em>Status</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Status</em>'.
+   * @return the meta object for the attribute '<em>Status</em>'.
    * @see com.robenglander.libretto.spec.librettoSpec.MetadataField#getStatus()
    * @see #getMetadataField()
    * @generated
    */
-  EReference getMetadataField_Status();
+  EAttribute getMetadataField_Status();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getAuthoredSource <em>Authored Source</em>}'.
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getModuleName <em>Module Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Authored Source</em>'.
-   * @see com.robenglander.libretto.spec.librettoSpec.MetadataField#getAuthoredSource()
+   * @return the meta object for the containment reference '<em>Module Name</em>'.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataField#getModuleName()
    * @see #getMetadataField()
    * @generated
    */
-  EAttribute getMetadataField_AuthoredSource();
+  EReference getMetadataField_ModuleName();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getCompiledAt <em>Compiled At</em>}'.
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getJavaPackage <em>Java Package</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Compiled At</em>'.
+   * @return the meta object for the containment reference '<em>Java Package</em>'.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataField#getJavaPackage()
+   * @see #getMetadataField()
+   * @generated
+   */
+  EReference getMetadataField_JavaPackage();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getCompiledAt <em>Compiled At</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Compiled At</em>'.
    * @see com.robenglander.libretto.spec.librettoSpec.MetadataField#getCompiledAt()
    * @see #getMetadataField()
    * @generated
    */
-  EAttribute getMetadataField_CompiledAt();
+  EReference getMetadataField_CompiledAt();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getCompilerVersion <em>Compiler Version</em>}'.
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getCompilerVersion <em>Compiler Version</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Compiler Version</em>'.
+   * @return the meta object for the containment reference '<em>Compiler Version</em>'.
    * @see com.robenglander.libretto.spec.librettoSpec.MetadataField#getCompilerVersion()
    * @see #getMetadataField()
    * @generated
    */
-  EAttribute getMetadataField_CompilerVersion();
+  EReference getMetadataField_CompilerVersion();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getModelMetadata <em>Model Metadata</em>}'.
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getModelMetadata <em>Model Metadata</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Model Metadata</em>'.
+   * @return the meta object for the containment reference '<em>Model Metadata</em>'.
    * @see com.robenglander.libretto.spec.librettoSpec.MetadataField#getModelMetadata()
    * @see #getMetadataField()
    * @generated
    */
-  EAttribute getMetadataField_ModelMetadata();
+  EReference getMetadataField_ModelMetadata();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.DependenciesSectionKeyword <em>Dependencies Section Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Dependencies Section Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoSpec.DependenciesSectionKeyword
+   * @generated
+   */
+  EClass getDependenciesSectionKeyword();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.DependencyKeyword <em>Dependency Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Dependency Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoSpec.DependencyKeyword
+   * @generated
+   */
+  EClass getDependencyKeyword();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.DependencyRecord <em>Dependency Record</em>}'.
@@ -3223,6 +3291,17 @@ public interface LibrettoSpecPackage extends EPackage
    * @generated
    */
   EClass getDependencyRecord();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.DependencyRecord#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoSpec.DependencyRecord#getKeyword()
+   * @see #getDependencyRecord()
+   * @generated
+   */
+  EReference getDependencyRecord_Keyword();
 
   /**
    * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoSpec.DependencyRecord#getId <em>Id</em>}'.
@@ -3268,17 +3347,6 @@ public interface LibrettoSpecPackage extends EPackage
   EReference getDependencyRecordItem_TargetSpec();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.DependencyRecordItem#getKind <em>Kind</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Kind</em>'.
-   * @see com.robenglander.libretto.spec.librettoSpec.DependencyRecordItem#getKind()
-   * @see #getDependencyRecordItem()
-   * @generated
-   */
-  EReference getDependencyRecordItem_Kind();
-
-  /**
    * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.DependencyRecordItem#getNotes <em>Notes</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3288,17 +3356,6 @@ public interface LibrettoSpecPackage extends EPackage
    * @generated
    */
   EReference getDependencyRecordItem_Notes();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.DependencyRecordItem#getContext <em>Context</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Context</em>'.
-   * @see com.robenglander.libretto.spec.librettoSpec.DependencyRecordItem#getContext()
-   * @see #getDependencyRecordItem()
-   * @generated
-   */
-  EReference getDependencyRecordItem_Context();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.TargetSpecField <em>Target Spec Field</em>}'.
@@ -3311,36 +3368,15 @@ public interface LibrettoSpecPackage extends EPackage
   EClass getTargetSpecField();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoSpec.TargetSpecField#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.TargetSpecField#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
+   * @return the meta object for the containment reference '<em>Value</em>'.
    * @see com.robenglander.libretto.spec.librettoSpec.TargetSpecField#getValue()
    * @see #getTargetSpecField()
    * @generated
    */
-  EAttribute getTargetSpecField_Value();
-
-  /**
-   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.KindField <em>Kind Field</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Kind Field</em>'.
-   * @see com.robenglander.libretto.spec.librettoSpec.KindField
-   * @generated
-   */
-  EClass getKindField();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.KindField#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Value</em>'.
-   * @see com.robenglander.libretto.spec.librettoSpec.KindField#getValue()
-   * @see #getKindField()
-   * @generated
-   */
-  EReference getKindField_Value();
+  EReference getTargetSpecField_Value();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.ReferenceRecord <em>Reference Record</em>}'.
@@ -3472,15 +3508,15 @@ public interface LibrettoSpecPackage extends EPackage
   EClass getTitleField();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoSpec.TitleField#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.TitleField#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
+   * @return the meta object for the containment reference '<em>Value</em>'.
    * @see com.robenglander.libretto.spec.librettoSpec.TitleField#getValue()
    * @see #getTitleField()
    * @generated
    */
-  EAttribute getTitleField_Value();
+  EReference getTitleField_Value();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.TypeField <em>Type Field</em>}'.
@@ -3514,15 +3550,15 @@ public interface LibrettoSpecPackage extends EPackage
   EClass getCitationField();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoSpec.CitationField#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.CitationField#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
+   * @return the meta object for the containment reference '<em>Value</em>'.
    * @see com.robenglander.libretto.spec.librettoSpec.CitationField#getValue()
    * @see #getCitationField()
    * @generated
    */
-  EAttribute getCitationField_Value();
+  EReference getCitationField_Value();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.LocatorField <em>Locator Field</em>}'.
@@ -3535,15 +3571,15 @@ public interface LibrettoSpecPackage extends EPackage
   EClass getLocatorField();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoSpec.LocatorField#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.LocatorField#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
+   * @return the meta object for the containment reference '<em>Value</em>'.
    * @see com.robenglander.libretto.spec.librettoSpec.LocatorField#getValue()
    * @see #getLocatorField()
    * @generated
    */
-  EAttribute getLocatorField_Value();
+  EReference getLocatorField_Value();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.AuthorityNotesField <em>Authority Notes Field</em>}'.
@@ -3556,15 +3592,15 @@ public interface LibrettoSpecPackage extends EPackage
   EClass getAuthorityNotesField();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoSpec.AuthorityNotesField#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.AuthorityNotesField#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
+   * @return the meta object for the containment reference '<em>Value</em>'.
    * @see com.robenglander.libretto.spec.librettoSpec.AuthorityNotesField#getValue()
    * @see #getAuthorityNotesField()
    * @generated
    */
-  EAttribute getAuthorityNotesField_Value();
+  EReference getAuthorityNotesField_Value();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.MetadataTextField <em>Metadata Text Field</em>}'.
@@ -3577,15 +3613,15 @@ public interface LibrettoSpecPackage extends EPackage
   EClass getMetadataTextField();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoSpec.MetadataTextField#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.MetadataTextField#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
+   * @return the meta object for the containment reference '<em>Value</em>'.
    * @see com.robenglander.libretto.spec.librettoSpec.MetadataTextField#getValue()
    * @see #getMetadataTextField()
    * @generated
    */
-  EAttribute getMetadataTextField_Value();
+  EReference getMetadataTextField_Value();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.ProseRecord <em>Prose Record</em>}'.
@@ -3778,15 +3814,15 @@ public interface LibrettoSpecPackage extends EPackage
   EClass getStatementField();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoSpec.StatementField#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.StatementField#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
+   * @return the meta object for the containment reference '<em>Value</em>'.
    * @see com.robenglander.libretto.spec.librettoSpec.StatementField#getValue()
    * @see #getStatementField()
    * @generated
    */
-  EAttribute getStatementField_Value();
+  EReference getStatementField_Value();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.BehaviorRecord <em>Behavior Record</em>}'.
@@ -4131,15 +4167,15 @@ public interface LibrettoSpecPackage extends EPackage
   EClass getLabelField();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoSpec.LabelField#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.LabelField#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
+   * @return the meta object for the containment reference '<em>Value</em>'.
    * @see com.robenglander.libretto.spec.librettoSpec.LabelField#getValue()
    * @see #getLabelField()
    * @generated
    */
-  EAttribute getLabelField_Value();
+  EReference getLabelField_Value();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.ReferencesField <em>References Field</em>}'.
@@ -4194,15 +4230,15 @@ public interface LibrettoSpecPackage extends EPackage
   EClass getNotesField();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoSpec.NotesField#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.NotesField#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
+   * @return the meta object for the containment reference '<em>Value</em>'.
    * @see com.robenglander.libretto.spec.librettoSpec.NotesField#getValue()
    * @see #getNotesField()
    * @generated
    */
-  EAttribute getNotesField_Value();
+  EReference getNotesField_Value();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.ContextField <em>Context Field</em>}'.
@@ -4215,15 +4251,15 @@ public interface LibrettoSpecPackage extends EPackage
   EClass getContextField();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoSpec.ContextField#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.ContextField#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
+   * @return the meta object for the containment reference '<em>Value</em>'.
    * @see com.robenglander.libretto.spec.librettoSpec.ContextField#getValue()
    * @see #getContextField()
    * @generated
    */
-  EAttribute getContextField_Value();
+  EReference getContextField_Value();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.OperationSurfaceRecord <em>Operation Surface Record</em>}'.
@@ -4300,15 +4336,15 @@ public interface LibrettoSpecPackage extends EPackage
   EClass getOperationExpressionField();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoSpec.OperationExpressionField#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.OperationExpressionField#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
+   * @return the meta object for the containment reference '<em>Value</em>'.
    * @see com.robenglander.libretto.spec.librettoSpec.OperationExpressionField#getValue()
    * @see #getOperationExpressionField()
    * @generated
    */
-  EAttribute getOperationExpressionField_Value();
+  EReference getOperationExpressionField_Value();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.OutcomeClassField <em>Outcome Class Field</em>}'.
@@ -4384,15 +4420,15 @@ public interface LibrettoSpecPackage extends EPackage
   EClass getImplementsSurfaceTargetField();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoSpec.ImplementsSurfaceTargetField#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.ImplementsSurfaceTargetField#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
+   * @return the meta object for the containment reference '<em>Value</em>'.
    * @see com.robenglander.libretto.spec.librettoSpec.ImplementsSurfaceTargetField#getValue()
    * @see #getImplementsSurfaceTargetField()
    * @generated
    */
-  EAttribute getImplementsSurfaceTargetField_Value();
+  EReference getImplementsSurfaceTargetField_Value();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.BoundaryRecord <em>Boundary Record</em>}'.
@@ -4480,15 +4516,15 @@ public interface LibrettoSpecPackage extends EPackage
   EClass getBoundarySpecIdField();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoSpec.BoundarySpecIdField#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.BoundarySpecIdField#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
+   * @return the meta object for the containment reference '<em>Value</em>'.
    * @see com.robenglander.libretto.spec.librettoSpec.BoundarySpecIdField#getValue()
    * @see #getBoundarySpecIdField()
    * @generated
    */
-  EAttribute getBoundarySpecIdField_Value();
+  EReference getBoundarySpecIdField_Value();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.BoundaryOperationIdField <em>Boundary Operation Id Field</em>}'.
@@ -4501,15 +4537,15 @@ public interface LibrettoSpecPackage extends EPackage
   EClass getBoundaryOperationIdField();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoSpec.BoundaryOperationIdField#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.BoundaryOperationIdField#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
+   * @return the meta object for the containment reference '<em>Value</em>'.
    * @see com.robenglander.libretto.spec.librettoSpec.BoundaryOperationIdField#getValue()
    * @see #getBoundaryOperationIdField()
    * @generated
    */
-  EAttribute getBoundaryOperationIdField_Value();
+  EReference getBoundaryOperationIdField_Value();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.BoundaryProfileIdField <em>Boundary Profile Id Field</em>}'.
@@ -4522,15 +4558,15 @@ public interface LibrettoSpecPackage extends EPackage
   EClass getBoundaryProfileIdField();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoSpec.BoundaryProfileIdField#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.BoundaryProfileIdField#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
+   * @return the meta object for the containment reference '<em>Value</em>'.
    * @see com.robenglander.libretto.spec.librettoSpec.BoundaryProfileIdField#getValue()
    * @see #getBoundaryProfileIdField()
    * @generated
    */
-  EAttribute getBoundaryProfileIdField_Value();
+  EReference getBoundaryProfileIdField_Value();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.BoundaryRawField <em>Boundary Raw Field</em>}'.
@@ -4543,15 +4579,15 @@ public interface LibrettoSpecPackage extends EPackage
   EClass getBoundaryRawField();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoSpec.BoundaryRawField#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.BoundaryRawField#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
+   * @return the meta object for the containment reference '<em>Value</em>'.
    * @see com.robenglander.libretto.spec.librettoSpec.BoundaryRawField#getValue()
    * @see #getBoundaryRawField()
    * @generated
    */
-  EAttribute getBoundaryRawField_Value();
+  EReference getBoundaryRawField_Value();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.AcceptanceTestRecord <em>Acceptance Test Record</em>}'.
@@ -4983,15 +5019,15 @@ public interface LibrettoSpecPackage extends EPackage
   EClass getDirectiveField();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoSpec.DirectiveField#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.DirectiveField#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
+   * @return the meta object for the containment reference '<em>Value</em>'.
    * @see com.robenglander.libretto.spec.librettoSpec.DirectiveField#getValue()
    * @see #getDirectiveField()
    * @generated
    */
-  EAttribute getDirectiveField_Value();
+  EReference getDirectiveField_Value();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.CategoryField <em>Category Field</em>}'.
@@ -5067,15 +5103,15 @@ public interface LibrettoSpecPackage extends EPackage
   EClass getRationaleField();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoSpec.RationaleField#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.RationaleField#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
+   * @return the meta object for the containment reference '<em>Value</em>'.
    * @see com.robenglander.libretto.spec.librettoSpec.RationaleField#getValue()
    * @see #getRationaleField()
    * @generated
    */
-  EAttribute getRationaleField_Value();
+  EReference getRationaleField_Value();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.SourceBlock <em>Source Block</em>}'.
@@ -5141,15 +5177,15 @@ public interface LibrettoSpecPackage extends EPackage
   EClass getSectionField();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoSpec.SectionField#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.SectionField#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
+   * @return the meta object for the containment reference '<em>Value</em>'.
    * @see com.robenglander.libretto.spec.librettoSpec.SectionField#getValue()
    * @see #getSectionField()
    * @generated
    */
-  EAttribute getSectionField_Value();
+  EReference getSectionField_Value();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.SubsectionField <em>Subsection Field</em>}'.
@@ -5162,15 +5198,15 @@ public interface LibrettoSpecPackage extends EPackage
   EClass getSubsectionField();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoSpec.SubsectionField#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.SubsectionField#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
+   * @return the meta object for the containment reference '<em>Value</em>'.
    * @see com.robenglander.libretto.spec.librettoSpec.SubsectionField#getValue()
    * @see #getSubsectionField()
    * @generated
    */
-  EAttribute getSubsectionField_Value();
+  EReference getSubsectionField_Value();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.TextField <em>Text Field</em>}'.
@@ -5183,15 +5219,15 @@ public interface LibrettoSpecPackage extends EPackage
   EClass getTextField();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoSpec.TextField#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.TextField#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
+   * @return the meta object for the containment reference '<em>Value</em>'.
    * @see com.robenglander.libretto.spec.librettoSpec.TextField#getValue()
    * @see #getTextField()
    * @generated
    */
-  EAttribute getTextField_Value();
+  EReference getTextField_Value();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.IdentifierList <em>Identifier List</em>}'.
@@ -5267,15 +5303,36 @@ public interface LibrettoSpecPackage extends EPackage
   EClass getTextList();
 
   /**
-   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoSpec.TextList#getValues <em>Values</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoSpec.TextList#getValues <em>Values</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Values</em>'.
+   * @return the meta object for the containment reference list '<em>Values</em>'.
    * @see com.robenglander.libretto.spec.librettoSpec.TextList#getValues()
    * @see #getTextList()
    * @generated
    */
-  EAttribute getTextList_Values();
+  EReference getTextList_Values();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.TextValue <em>Text Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Text Value</em>'.
+   * @see com.robenglander.libretto.spec.librettoSpec.TextValue
+   * @generated
+   */
+  EClass getTextValue();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoSpec.TextValue#getText <em>Text</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Text</em>'.
+   * @see com.robenglander.libretto.spec.librettoSpec.TextValue#getText()
+   * @see #getTextValue()
+   * @generated
+   */
+  EAttribute getTextValue_Text();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.IdentifierValue <em>Identifier Value</em>}'.
@@ -5349,6 +5406,17 @@ public interface LibrettoSpecPackage extends EPackage
    * @generated
    */
   EClass getDependenciesSection();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.DependenciesSection#getSectionKeyword <em>Section Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Section Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoSpec.DependenciesSection#getSectionKeyword()
+   * @see #getDependenciesSection()
+   * @generated
+   */
+  EReference getDependenciesSection_SectionKeyword();
 
   /**
    * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoSpec.DependenciesSection#getRecords <em>Records</em>}'.
@@ -5582,6 +5650,16 @@ public interface LibrettoSpecPackage extends EPackage
   EEnum getOutcomeClassValue();
 
   /**
+   * Returns the meta object for enum '{@link com.robenglander.libretto.spec.librettoSpec.MetadataStatusValue <em>Metadata Status Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Metadata Status Value</em>'.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataStatusValue
+   * @generated
+   */
+  EEnum getMetadataStatusValue();
+
+  /**
    * Returns the meta object for enum '{@link com.robenglander.libretto.spec.librettoSpec.StrengthValue <em>Strength Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5661,68 +5739,88 @@ public interface LibrettoSpecPackage extends EPackage
     EClass METADATA_FIELD = eINSTANCE.getMetadataField();
 
     /**
-     * The meta object literal for the '<em><b>Spec Id</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Title</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute METADATA_FIELD__SPEC_ID = eINSTANCE.getMetadataField_SpecId();
+    EReference METADATA_FIELD__TITLE = eINSTANCE.getMetadataField_Title();
 
     /**
-     * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Version</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute METADATA_FIELD__TITLE = eINSTANCE.getMetadataField_Title();
+    EReference METADATA_FIELD__VERSION = eINSTANCE.getMetadataField_Version();
 
     /**
-     * The meta object literal for the '<em><b>Version</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Status</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute METADATA_FIELD__VERSION = eINSTANCE.getMetadataField_Version();
+    EAttribute METADATA_FIELD__STATUS = eINSTANCE.getMetadataField_Status();
 
     /**
-     * The meta object literal for the '<em><b>Status</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Module Name</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference METADATA_FIELD__STATUS = eINSTANCE.getMetadataField_Status();
+    EReference METADATA_FIELD__MODULE_NAME = eINSTANCE.getMetadataField_ModuleName();
 
     /**
-     * The meta object literal for the '<em><b>Authored Source</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Java Package</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute METADATA_FIELD__AUTHORED_SOURCE = eINSTANCE.getMetadataField_AuthoredSource();
+    EReference METADATA_FIELD__JAVA_PACKAGE = eINSTANCE.getMetadataField_JavaPackage();
 
     /**
-     * The meta object literal for the '<em><b>Compiled At</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Compiled At</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute METADATA_FIELD__COMPILED_AT = eINSTANCE.getMetadataField_CompiledAt();
+    EReference METADATA_FIELD__COMPILED_AT = eINSTANCE.getMetadataField_CompiledAt();
 
     /**
-     * The meta object literal for the '<em><b>Compiler Version</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Compiler Version</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute METADATA_FIELD__COMPILER_VERSION = eINSTANCE.getMetadataField_CompilerVersion();
+    EReference METADATA_FIELD__COMPILER_VERSION = eINSTANCE.getMetadataField_CompilerVersion();
 
     /**
-     * The meta object literal for the '<em><b>Model Metadata</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Model Metadata</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute METADATA_FIELD__MODEL_METADATA = eINSTANCE.getMetadataField_ModelMetadata();
+    EReference METADATA_FIELD__MODEL_METADATA = eINSTANCE.getMetadataField_ModelMetadata();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.DependenciesSectionKeywordImpl <em>Dependencies Section Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoSpec.impl.DependenciesSectionKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getDependenciesSectionKeyword()
+     * @generated
+     */
+    EClass DEPENDENCIES_SECTION_KEYWORD = eINSTANCE.getDependenciesSectionKeyword();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.DependencyKeywordImpl <em>Dependency Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoSpec.impl.DependencyKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getDependencyKeyword()
+     * @generated
+     */
+    EClass DEPENDENCY_KEYWORD = eINSTANCE.getDependencyKeyword();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.DependencyRecordImpl <em>Dependency Record</em>}' class.
@@ -5733,6 +5831,14 @@ public interface LibrettoSpecPackage extends EPackage
      * @generated
      */
     EClass DEPENDENCY_RECORD = eINSTANCE.getDependencyRecord();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DEPENDENCY_RECORD__KEYWORD = eINSTANCE.getDependencyRecord_Keyword();
 
     /**
      * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
@@ -5769,28 +5875,12 @@ public interface LibrettoSpecPackage extends EPackage
     EReference DEPENDENCY_RECORD_ITEM__TARGET_SPEC = eINSTANCE.getDependencyRecordItem_TargetSpec();
 
     /**
-     * The meta object literal for the '<em><b>Kind</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference DEPENDENCY_RECORD_ITEM__KIND = eINSTANCE.getDependencyRecordItem_Kind();
-
-    /**
      * The meta object literal for the '<em><b>Notes</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference DEPENDENCY_RECORD_ITEM__NOTES = eINSTANCE.getDependencyRecordItem_Notes();
-
-    /**
-     * The meta object literal for the '<em><b>Context</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference DEPENDENCY_RECORD_ITEM__CONTEXT = eINSTANCE.getDependencyRecordItem_Context();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.TargetSpecFieldImpl <em>Target Spec Field</em>}' class.
@@ -5803,30 +5893,12 @@ public interface LibrettoSpecPackage extends EPackage
     EClass TARGET_SPEC_FIELD = eINSTANCE.getTargetSpecField();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TARGET_SPEC_FIELD__VALUE = eINSTANCE.getTargetSpecField_Value();
-
-    /**
-     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.KindFieldImpl <em>Kind Field</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.robenglander.libretto.spec.librettoSpec.impl.KindFieldImpl
-     * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getKindField()
-     * @generated
-     */
-    EClass KIND_FIELD = eINSTANCE.getKindField();
-
-    /**
      * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference KIND_FIELD__VALUE = eINSTANCE.getKindField_Value();
+    EReference TARGET_SPEC_FIELD__VALUE = eINSTANCE.getTargetSpecField_Value();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.ReferenceRecordImpl <em>Reference Record</em>}' class.
@@ -5931,12 +6003,12 @@ public interface LibrettoSpecPackage extends EPackage
     EClass TITLE_FIELD = eINSTANCE.getTitleField();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TITLE_FIELD__VALUE = eINSTANCE.getTitleField_Value();
+    EReference TITLE_FIELD__VALUE = eINSTANCE.getTitleField_Value();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.TypeFieldImpl <em>Type Field</em>}' class.
@@ -5967,12 +6039,12 @@ public interface LibrettoSpecPackage extends EPackage
     EClass CITATION_FIELD = eINSTANCE.getCitationField();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CITATION_FIELD__VALUE = eINSTANCE.getCitationField_Value();
+    EReference CITATION_FIELD__VALUE = eINSTANCE.getCitationField_Value();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.LocatorFieldImpl <em>Locator Field</em>}' class.
@@ -5985,12 +6057,12 @@ public interface LibrettoSpecPackage extends EPackage
     EClass LOCATOR_FIELD = eINSTANCE.getLocatorField();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute LOCATOR_FIELD__VALUE = eINSTANCE.getLocatorField_Value();
+    EReference LOCATOR_FIELD__VALUE = eINSTANCE.getLocatorField_Value();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.AuthorityNotesFieldImpl <em>Authority Notes Field</em>}' class.
@@ -6003,12 +6075,12 @@ public interface LibrettoSpecPackage extends EPackage
     EClass AUTHORITY_NOTES_FIELD = eINSTANCE.getAuthorityNotesField();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute AUTHORITY_NOTES_FIELD__VALUE = eINSTANCE.getAuthorityNotesField_Value();
+    EReference AUTHORITY_NOTES_FIELD__VALUE = eINSTANCE.getAuthorityNotesField_Value();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.MetadataTextFieldImpl <em>Metadata Text Field</em>}' class.
@@ -6021,12 +6093,12 @@ public interface LibrettoSpecPackage extends EPackage
     EClass METADATA_TEXT_FIELD = eINSTANCE.getMetadataTextField();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute METADATA_TEXT_FIELD__VALUE = eINSTANCE.getMetadataTextField_Value();
+    EReference METADATA_TEXT_FIELD__VALUE = eINSTANCE.getMetadataTextField_Value();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.ProseRecordImpl <em>Prose Record</em>}' class.
@@ -6189,12 +6261,12 @@ public interface LibrettoSpecPackage extends EPackage
     EClass STATEMENT_FIELD = eINSTANCE.getStatementField();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute STATEMENT_FIELD__VALUE = eINSTANCE.getStatementField_Value();
+    EReference STATEMENT_FIELD__VALUE = eINSTANCE.getStatementField_Value();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.BehaviorRecordImpl <em>Behavior Record</em>}' class.
@@ -6473,12 +6545,12 @@ public interface LibrettoSpecPackage extends EPackage
     EClass LABEL_FIELD = eINSTANCE.getLabelField();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute LABEL_FIELD__VALUE = eINSTANCE.getLabelField_Value();
+    EReference LABEL_FIELD__VALUE = eINSTANCE.getLabelField_Value();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.ReferencesFieldImpl <em>References Field</em>}' class.
@@ -6527,12 +6599,12 @@ public interface LibrettoSpecPackage extends EPackage
     EClass NOTES_FIELD = eINSTANCE.getNotesField();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute NOTES_FIELD__VALUE = eINSTANCE.getNotesField_Value();
+    EReference NOTES_FIELD__VALUE = eINSTANCE.getNotesField_Value();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.ContextFieldImpl <em>Context Field</em>}' class.
@@ -6545,12 +6617,12 @@ public interface LibrettoSpecPackage extends EPackage
     EClass CONTEXT_FIELD = eINSTANCE.getContextField();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CONTEXT_FIELD__VALUE = eINSTANCE.getContextField_Value();
+    EReference CONTEXT_FIELD__VALUE = eINSTANCE.getContextField_Value();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.OperationSurfaceRecordImpl <em>Operation Surface Record</em>}' class.
@@ -6615,12 +6687,12 @@ public interface LibrettoSpecPackage extends EPackage
     EClass OPERATION_EXPRESSION_FIELD = eINSTANCE.getOperationExpressionField();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute OPERATION_EXPRESSION_FIELD__VALUE = eINSTANCE.getOperationExpressionField_Value();
+    EReference OPERATION_EXPRESSION_FIELD__VALUE = eINSTANCE.getOperationExpressionField_Value();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.OutcomeClassFieldImpl <em>Outcome Class Field</em>}' class.
@@ -6687,12 +6759,12 @@ public interface LibrettoSpecPackage extends EPackage
     EClass IMPLEMENTS_SURFACE_TARGET_FIELD = eINSTANCE.getImplementsSurfaceTargetField();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute IMPLEMENTS_SURFACE_TARGET_FIELD__VALUE = eINSTANCE.getImplementsSurfaceTargetField_Value();
+    EReference IMPLEMENTS_SURFACE_TARGET_FIELD__VALUE = eINSTANCE.getImplementsSurfaceTargetField_Value();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.BoundaryRecordImpl <em>Boundary Record</em>}' class.
@@ -6765,12 +6837,12 @@ public interface LibrettoSpecPackage extends EPackage
     EClass BOUNDARY_SPEC_ID_FIELD = eINSTANCE.getBoundarySpecIdField();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute BOUNDARY_SPEC_ID_FIELD__VALUE = eINSTANCE.getBoundarySpecIdField_Value();
+    EReference BOUNDARY_SPEC_ID_FIELD__VALUE = eINSTANCE.getBoundarySpecIdField_Value();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.BoundaryOperationIdFieldImpl <em>Boundary Operation Id Field</em>}' class.
@@ -6783,12 +6855,12 @@ public interface LibrettoSpecPackage extends EPackage
     EClass BOUNDARY_OPERATION_ID_FIELD = eINSTANCE.getBoundaryOperationIdField();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute BOUNDARY_OPERATION_ID_FIELD__VALUE = eINSTANCE.getBoundaryOperationIdField_Value();
+    EReference BOUNDARY_OPERATION_ID_FIELD__VALUE = eINSTANCE.getBoundaryOperationIdField_Value();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.BoundaryProfileIdFieldImpl <em>Boundary Profile Id Field</em>}' class.
@@ -6801,12 +6873,12 @@ public interface LibrettoSpecPackage extends EPackage
     EClass BOUNDARY_PROFILE_ID_FIELD = eINSTANCE.getBoundaryProfileIdField();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute BOUNDARY_PROFILE_ID_FIELD__VALUE = eINSTANCE.getBoundaryProfileIdField_Value();
+    EReference BOUNDARY_PROFILE_ID_FIELD__VALUE = eINSTANCE.getBoundaryProfileIdField_Value();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.BoundaryRawFieldImpl <em>Boundary Raw Field</em>}' class.
@@ -6819,12 +6891,12 @@ public interface LibrettoSpecPackage extends EPackage
     EClass BOUNDARY_RAW_FIELD = eINSTANCE.getBoundaryRawField();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute BOUNDARY_RAW_FIELD__VALUE = eINSTANCE.getBoundaryRawField_Value();
+    EReference BOUNDARY_RAW_FIELD__VALUE = eINSTANCE.getBoundaryRawField_Value();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.AcceptanceTestRecordImpl <em>Acceptance Test Record</em>}' class.
@@ -7169,12 +7241,12 @@ public interface LibrettoSpecPackage extends EPackage
     EClass DIRECTIVE_FIELD = eINSTANCE.getDirectiveField();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DIRECTIVE_FIELD__VALUE = eINSTANCE.getDirectiveField_Value();
+    EReference DIRECTIVE_FIELD__VALUE = eINSTANCE.getDirectiveField_Value();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.CategoryFieldImpl <em>Category Field</em>}' class.
@@ -7241,12 +7313,12 @@ public interface LibrettoSpecPackage extends EPackage
     EClass RATIONALE_FIELD = eINSTANCE.getRationaleField();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute RATIONALE_FIELD__VALUE = eINSTANCE.getRationaleField_Value();
+    EReference RATIONALE_FIELD__VALUE = eINSTANCE.getRationaleField_Value();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.SourceBlockImpl <em>Source Block</em>}' class.
@@ -7303,12 +7375,12 @@ public interface LibrettoSpecPackage extends EPackage
     EClass SECTION_FIELD = eINSTANCE.getSectionField();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SECTION_FIELD__VALUE = eINSTANCE.getSectionField_Value();
+    EReference SECTION_FIELD__VALUE = eINSTANCE.getSectionField_Value();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.SubsectionFieldImpl <em>Subsection Field</em>}' class.
@@ -7321,12 +7393,12 @@ public interface LibrettoSpecPackage extends EPackage
     EClass SUBSECTION_FIELD = eINSTANCE.getSubsectionField();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SUBSECTION_FIELD__VALUE = eINSTANCE.getSubsectionField_Value();
+    EReference SUBSECTION_FIELD__VALUE = eINSTANCE.getSubsectionField_Value();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.TextFieldImpl <em>Text Field</em>}' class.
@@ -7339,12 +7411,12 @@ public interface LibrettoSpecPackage extends EPackage
     EClass TEXT_FIELD = eINSTANCE.getTextField();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TEXT_FIELD__VALUE = eINSTANCE.getTextField_Value();
+    EReference TEXT_FIELD__VALUE = eINSTANCE.getTextField_Value();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.IdentifierListImpl <em>Identifier List</em>}' class.
@@ -7411,12 +7483,30 @@ public interface LibrettoSpecPackage extends EPackage
     EClass TEXT_LIST = eINSTANCE.getTextList();
 
     /**
-     * The meta object literal for the '<em><b>Values</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Values</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TEXT_LIST__VALUES = eINSTANCE.getTextList_Values();
+    EReference TEXT_LIST__VALUES = eINSTANCE.getTextList_Values();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.TextValueImpl <em>Text Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoSpec.impl.TextValueImpl
+     * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getTextValue()
+     * @generated
+     */
+    EClass TEXT_VALUE = eINSTANCE.getTextValue();
+
+    /**
+     * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TEXT_VALUE__TEXT = eINSTANCE.getTextValue_Text();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.IdentifierValueImpl <em>Identifier Value</em>}' class.
@@ -7481,6 +7571,14 @@ public interface LibrettoSpecPackage extends EPackage
      * @generated
      */
     EClass DEPENDENCIES_SECTION = eINSTANCE.getDependenciesSection();
+
+    /**
+     * The meta object literal for the '<em><b>Section Keyword</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DEPENDENCIES_SECTION__SECTION_KEYWORD = eINSTANCE.getDependenciesSection_SectionKeyword();
 
     /**
      * The meta object literal for the '<em><b>Records</b></em>' containment reference list feature.
@@ -7679,6 +7777,16 @@ public interface LibrettoSpecPackage extends EPackage
      * @generated
      */
     EEnum OUTCOME_CLASS_VALUE = eINSTANCE.getOutcomeClassValue();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.MetadataStatusValue <em>Metadata Status Value</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoSpec.MetadataStatusValue
+     * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getMetadataStatusValue()
+     * @generated
+     */
+    EEnum METADATA_STATUS_VALUE = eINSTANCE.getMetadataStatusValue();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.StrengthValue <em>Strength Value</em>}' enum.

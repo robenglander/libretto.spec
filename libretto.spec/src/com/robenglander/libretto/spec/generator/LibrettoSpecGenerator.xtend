@@ -3,23 +3,34 @@
  */
 package com.robenglander.libretto.spec.generator
 
+import com.robenglander.libretto.spec.librettoSpec.Spec
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 
 /**
- * Generates code from your model files on save.
- * 
+ * Generates the authored Markdown projection alongside each {@code .libretto} file on save
+ * (same shape as {@code LibrettoMarkdownProjection} / {@code AuthoredMarkdownEmitter} in libretto-core).
+ *
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 class LibrettoSpecGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(Greeting)
-//				.map[name]
-//				.join(', '))
+		val spec = resource.allContents.filter(typeof(Spec)).head
+		if (spec === null) {
+			return
+		}
+		val uri = resource.URI
+		if (uri === null) {
+			return
+		}
+		val seg = uri.lastSegment
+		if (seg === null || !seg.endsWith('.libretto')) {
+			return
+		}
+		val base = seg.substring(0, seg.length - '.libretto'.length)
+		fsa.generateFile(base + '.md', LibrettoSpecMarkdownEmitter.emit(spec))
 	}
 }

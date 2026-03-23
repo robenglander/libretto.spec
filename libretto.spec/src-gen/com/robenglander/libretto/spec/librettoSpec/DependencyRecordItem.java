@@ -15,9 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link com.robenglander.libretto.spec.librettoSpec.DependencyRecordItem#getTargetSpec <em>Target Spec</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoSpec.DependencyRecordItem#getKind <em>Kind</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoSpec.DependencyRecordItem#getNotes <em>Notes</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoSpec.DependencyRecordItem#getContext <em>Context</em>}</li>
  * </ul>
  *
  * @see com.robenglander.libretto.spec.librettoSpec.LibrettoSpecPackage#getDependencyRecordItem()
@@ -49,28 +47,6 @@ public interface DependencyRecordItem extends EObject
   void setTargetSpec(TargetSpecField value);
 
   /**
-   * Returns the value of the '<em><b>Kind</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Kind</em>' containment reference.
-   * @see #setKind(KindField)
-   * @see com.robenglander.libretto.spec.librettoSpec.LibrettoSpecPackage#getDependencyRecordItem_Kind()
-   * @model containment="true"
-   * @generated
-   */
-  KindField getKind();
-
-  /**
-   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoSpec.DependencyRecordItem#getKind <em>Kind</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Kind</em>' containment reference.
-   * @see #getKind()
-   * @generated
-   */
-  void setKind(KindField value);
-
-  /**
    * Returns the value of the '<em><b>Notes</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -91,27 +67,5 @@ public interface DependencyRecordItem extends EObject
    * @generated
    */
   void setNotes(NotesField value);
-
-  /**
-   * Returns the value of the '<em><b>Context</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Context</em>' containment reference.
-   * @see #setContext(ContextField)
-   * @see com.robenglander.libretto.spec.librettoSpec.LibrettoSpecPackage#getDependencyRecordItem_Context()
-   * @model containment="true"
-   * @generated
-   */
-  ContextField getContext();
-
-  /**
-   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoSpec.DependencyRecordItem#getContext <em>Context</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Context</em>' containment reference.
-   * @see #getContext()
-   * @generated
-   */
-  void setContext(ContextField value);
 
 } // DependencyRecordItem

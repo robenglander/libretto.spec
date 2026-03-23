@@ -3,13 +3,18 @@
  */
 package com.robenglander.libretto.spec.generator;
 
+import com.google.common.collect.Iterators;
+import com.robenglander.libretto.spec.librettoSpec.Spec;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 
 /**
- * Generates code from your model files on save.
+ * Generates the authored Markdown projection alongside each {@code .libretto} file on save
+ * (same shape as {@code LibrettoMarkdownProjection} / {@code AuthoredMarkdownEmitter} in libretto-core).
  * 
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
@@ -17,5 +22,22 @@ import org.eclipse.xtext.generator.IGeneratorContext;
 public class LibrettoSpecGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    final Spec spec = IteratorExtensions.<Spec>head(Iterators.<Spec>filter(resource.getAllContents(), Spec.class));
+    if ((spec == null)) {
+      return;
+    }
+    final URI uri = resource.getURI();
+    if ((uri == null)) {
+      return;
+    }
+    final String seg = uri.lastSegment();
+    if (((seg == null) || (!seg.endsWith(".libretto")))) {
+      return;
+    }
+    int _length = seg.length();
+    int _length_1 = ".libretto".length();
+    int _minus = (_length - _length_1);
+    final String base = seg.substring(0, _minus);
+    fsa.generateFile((base + ".md"), LibrettoSpecMarkdownEmitter.emit(spec));
   }
 }

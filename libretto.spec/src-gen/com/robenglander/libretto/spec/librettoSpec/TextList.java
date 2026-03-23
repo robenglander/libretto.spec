@@ -26,15 +26,15 @@ import org.eclipse.emf.ecore.EObject;
 public interface TextList extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Values</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Values</b></em>' containment reference list.
+   * The list contents are of type {@link com.robenglander.libretto.spec.librettoSpec.TextValue}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Values</em>' attribute list.
+   * @return the value of the '<em>Values</em>' containment reference list.
    * @see com.robenglander.libretto.spec.librettoSpec.LibrettoSpecPackage#getTextList_Values()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getValues();
+  EList<TextValue> getValues();
 
 } // TextList

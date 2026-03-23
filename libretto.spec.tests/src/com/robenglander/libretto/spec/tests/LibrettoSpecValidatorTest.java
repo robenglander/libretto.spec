@@ -30,9 +30,10 @@ class LibrettoSpecValidatorTest {
 		Spec spec = parseHelper.parse("""
 				spec DupBehaviors {
 				  metadata {
-				    spec_id: "DupBehaviors"
 				    title: "t"
 				    status: draft
+				    module: "m"
+				    package: "com.example"
 				  }
 				  dependencies { }
 				  references { }
@@ -80,9 +81,10 @@ class LibrettoSpecValidatorTest {
 		Spec spec = parseHelper.parse("""
 				spec NoSource {
 				  metadata {
-				    spec_id: "NoSource"
 				    title: "t"
 				    status: draft
+				    module: "m"
+				    package: "com.example"
 				  }
 				  dependencies { }
 				  references { }
@@ -112,13 +114,14 @@ class LibrettoSpecValidatorTest {
 	}
 
 	@Test
-	void missingDependencyKindIsErrorOnDependencyRecord() throws Exception {
+	void dependencyWithTargetSpecOnlyIsValid() throws Exception {
 		Spec spec = parseHelper.parse("""
-				spec DepKind {
+				spec DepMinimal {
 				  metadata {
-				    spec_id: "DepKind"
 				    title: "t"
 				    status: draft
+				    module: "m"
+				    package: "com.example"
 				  }
 				  dependencies {
 				    dependency d1 {
@@ -137,7 +140,58 @@ class LibrettoSpecValidatorTest {
 				  implementation_directives { }
 				}
 				""");
-		validationTestHelper.assertError(spec, LibrettoSpecPackage.Literals.DEPENDENCY_RECORD,
-				LibrettoSpecValidator.MISSING_DEPENDENCY_KIND);
+		validationTestHelper.assertNoIssues(spec);
+	}
+
+	@Test
+	void statusAfterTitleIsNotReportedAsDuplicate() throws Exception {
+		Spec spec = parseHelper.parse("""
+				spec StatusOrder {
+				  metadata {
+				    title: "t"
+				    status: public
+				    module: "m"
+				    package: "com.example"
+				  }
+				  dependencies { }
+				  references { }
+				  prose { }
+				  out_of_scope { }
+				  operation_surface { }
+				  implements_surface { }
+				  boundary_exports { }
+				  boundary_imports { }
+				  behaviors { }
+				  acceptance_tests { }
+				  implementation_directives { }
+				}
+				""");
+		validationTestHelper.assertNoIssues(spec);
+	}
+
+	@Test
+	void missingStatusLineIsError() throws Exception {
+		Spec spec = parseHelper.parse("""
+				spec NoStatus {
+				  metadata {
+				    title: "t"
+				    module: "m"
+				    package: "com.example"
+				  }
+				  dependencies { }
+				  references { }
+				  prose { }
+				  out_of_scope { }
+				  operation_surface { }
+				  implements_surface { }
+				  boundary_exports { }
+				  boundary_imports { }
+				  behaviors { }
+				  acceptance_tests { }
+				  implementation_directives { }
+				}
+				""");
+		validationTestHelper.assertError(spec, LibrettoSpecPackage.Literals.METADATA_SECTION,
+				LibrettoSpecValidator.MISSING_METADATA_STATUS);
 	}
 }

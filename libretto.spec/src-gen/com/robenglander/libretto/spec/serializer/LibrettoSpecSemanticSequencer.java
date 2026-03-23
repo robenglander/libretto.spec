@@ -33,6 +33,8 @@ import com.robenglander.libretto.spec.librettoSpec.ConstraintsField;
 import com.robenglander.libretto.spec.librettoSpec.ContextField;
 import com.robenglander.libretto.spec.librettoSpec.DependenciesField;
 import com.robenglander.libretto.spec.librettoSpec.DependenciesSection;
+import com.robenglander.libretto.spec.librettoSpec.DependenciesSectionKeyword;
+import com.robenglander.libretto.spec.librettoSpec.DependencyKeyword;
 import com.robenglander.libretto.spec.librettoSpec.DependencyRecord;
 import com.robenglander.libretto.spec.librettoSpec.DependencyRecordItem;
 import com.robenglander.libretto.spec.librettoSpec.DirectiveField;
@@ -45,7 +47,6 @@ import com.robenglander.libretto.spec.librettoSpec.ImplementsSurfaceRecord;
 import com.robenglander.libretto.spec.librettoSpec.ImplementsSurfaceRecordItem;
 import com.robenglander.libretto.spec.librettoSpec.ImplementsSurfaceSection;
 import com.robenglander.libretto.spec.librettoSpec.ImplementsSurfaceTargetField;
-import com.robenglander.libretto.spec.librettoSpec.KindField;
 import com.robenglander.libretto.spec.librettoSpec.LabelField;
 import com.robenglander.libretto.spec.librettoSpec.LibrettoSpecPackage;
 import com.robenglander.libretto.spec.librettoSpec.LocatorField;
@@ -86,6 +87,7 @@ import com.robenglander.libretto.spec.librettoSpec.SubsectionField;
 import com.robenglander.libretto.spec.librettoSpec.TargetSpecField;
 import com.robenglander.libretto.spec.librettoSpec.TextField;
 import com.robenglander.libretto.spec.librettoSpec.TextList;
+import com.robenglander.libretto.spec.librettoSpec.TextValue;
 import com.robenglander.libretto.spec.librettoSpec.TitleField;
 import com.robenglander.libretto.spec.librettoSpec.TypeField;
 import com.robenglander.libretto.spec.librettoSpec.ValidatesField;
@@ -316,24 +318,22 @@ public class LibrettoSpecSemanticSequencer extends AbstractDelegatingSemanticSeq
 			case LibrettoSpecPackage.DEPENDENCIES_SECTION:
 				sequence_DependenciesSection(context, (DependenciesSection) semanticObject); 
 				return; 
+			case LibrettoSpecPackage.DEPENDENCIES_SECTION_KEYWORD:
+				sequence_DependenciesSectionKeyword(context, (DependenciesSectionKeyword) semanticObject); 
+				return; 
+			case LibrettoSpecPackage.DEPENDENCY_KEYWORD:
+				sequence_DependencyKeyword(context, (DependencyKeyword) semanticObject); 
+				return; 
 			case LibrettoSpecPackage.DEPENDENCY_RECORD:
 				sequence_DependencyRecord(context, (DependencyRecord) semanticObject); 
 				return; 
 			case LibrettoSpecPackage.DEPENDENCY_RECORD_ITEM:
-				if (rule == grammarAccess.getDependencyRecordItemRule()) {
-					sequence_DependencyContextItem_DependencyKindItem_DependencyNotesItem_DependencyTargetSpecItem(context, (DependencyRecordItem) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getDependencyContextItemRule()) {
-					sequence_DependencyContextItem(context, (DependencyRecordItem) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getDependencyKindItemRule()) {
-					sequence_DependencyKindItem(context, (DependencyRecordItem) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getDependencyNotesItemRule()) {
+				if (rule == grammarAccess.getDependencyNotesItemRule()) {
 					sequence_DependencyNotesItem(context, (DependencyRecordItem) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getDependencyRecordItemRule()) {
+					sequence_DependencyNotesItem_DependencyTargetSpecItem(context, (DependencyRecordItem) semanticObject); 
 					return; 
 				}
 				else if (rule == grammarAccess.getDependencyTargetSpecItemRule()) {
@@ -413,9 +413,6 @@ public class LibrettoSpecSemanticSequencer extends AbstractDelegatingSemanticSeq
 				return; 
 			case LibrettoSpecPackage.IMPLEMENTS_SURFACE_TARGET_FIELD:
 				sequence_ImplementsSurfaceTargetField(context, (ImplementsSurfaceTargetField) semanticObject); 
-				return; 
-			case LibrettoSpecPackage.KIND_FIELD:
-				sequence_KindField(context, (KindField) semanticObject); 
 				return; 
 			case LibrettoSpecPackage.LABEL_FIELD:
 				sequence_LabelField(context, (LabelField) semanticObject); 
@@ -612,6 +609,9 @@ public class LibrettoSpecSemanticSequencer extends AbstractDelegatingSemanticSeq
 				return; 
 			case LibrettoSpecPackage.TEXT_LIST:
 				sequence_TextList(context, (TextList) semanticObject); 
+				return; 
+			case LibrettoSpecPackage.TEXT_VALUE:
+				sequence_TextValue(context, (TextValue) semanticObject); 
 				return; 
 			case LibrettoSpecPackage.TITLE_FIELD:
 				sequence_TitleField(context, (TitleField) semanticObject); 
@@ -1675,11 +1675,25 @@ public class LibrettoSpecSemanticSequencer extends AbstractDelegatingSemanticSeq
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     DependenciesSectionKeyword returns DependenciesSectionKeyword
+	 *
+	 * Constraint:
+	 *     {DependenciesSectionKeyword}
+	 * </pre>
+	 */
+	protected void sequence_DependenciesSectionKeyword(ISerializationContext context, DependenciesSectionKeyword semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     SpecSection returns DependenciesSection
 	 *     DependenciesSection returns DependenciesSection
 	 *
 	 * Constraint:
-	 *     records+=DependencyRecord*
+	 *     (sectionKeyword=DependenciesSectionKeyword records+=DependencyRecord*)
 	 * </pre>
 	 */
 	protected void sequence_DependenciesSection(ISerializationContext context, DependenciesSection semanticObject) {
@@ -1690,54 +1704,14 @@ public class LibrettoSpecSemanticSequencer extends AbstractDelegatingSemanticSeq
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     DependencyRecordItem returns DependencyRecordItem
+	 *     DependencyKeyword returns DependencyKeyword
 	 *
 	 * Constraint:
-	 *     (targetSpec=TargetSpecField | kind=KindField | notes=NotesField | context=ContextField)
+	 *     {DependencyKeyword}
 	 * </pre>
 	 */
-	protected void sequence_DependencyContextItem_DependencyKindItem_DependencyNotesItem_DependencyTargetSpecItem(ISerializationContext context, DependencyRecordItem semanticObject) {
+	protected void sequence_DependencyKeyword(ISerializationContext context, DependencyKeyword semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     DependencyContextItem returns DependencyRecordItem
-	 *
-	 * Constraint:
-	 *     context=ContextField
-	 * </pre>
-	 */
-	protected void sequence_DependencyContextItem(ISerializationContext context, DependencyRecordItem semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LibrettoSpecPackage.Literals.DEPENDENCY_RECORD_ITEM__CONTEXT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoSpecPackage.Literals.DEPENDENCY_RECORD_ITEM__CONTEXT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getDependencyContextItemAccess().getContextContextFieldParserRuleCall_0(), semanticObject.getContext());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     DependencyKindItem returns DependencyRecordItem
-	 *
-	 * Constraint:
-	 *     kind=KindField
-	 * </pre>
-	 */
-	protected void sequence_DependencyKindItem(ISerializationContext context, DependencyRecordItem semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LibrettoSpecPackage.Literals.DEPENDENCY_RECORD_ITEM__KIND) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoSpecPackage.Literals.DEPENDENCY_RECORD_ITEM__KIND));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getDependencyKindItemAccess().getKindKindFieldParserRuleCall_0(), semanticObject.getKind());
-		feeder.finish();
 	}
 	
 	
@@ -1764,10 +1738,24 @@ public class LibrettoSpecSemanticSequencer extends AbstractDelegatingSemanticSeq
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     DependencyRecordItem returns DependencyRecordItem
+	 *
+	 * Constraint:
+	 *     (targetSpec=TargetSpecField | notes=NotesField)
+	 * </pre>
+	 */
+	protected void sequence_DependencyNotesItem_DependencyTargetSpecItem(ISerializationContext context, DependencyRecordItem semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     DependencyRecord returns DependencyRecord
 	 *
 	 * Constraint:
-	 *     (id=LIBRETTO_ID items+=DependencyRecordItem*)
+	 *     (keyword=DependencyKeyword id=LIBRETTO_ID items+=DependencyRecordItem*)
 	 * </pre>
 	 */
 	protected void sequence_DependencyRecord(ISerializationContext context, DependencyRecord semanticObject) {
@@ -2171,26 +2159,6 @@ public class LibrettoSpecSemanticSequencer extends AbstractDelegatingSemanticSeq
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     KindField returns KindField
-	 *
-	 * Constraint:
-	 *     value=IdentifierValue
-	 * </pre>
-	 */
-	protected void sequence_KindField(ISerializationContext context, KindField semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LibrettoSpecPackage.Literals.KIND_FIELD__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoSpecPackage.Literals.KIND_FIELD__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getKindFieldAccess().getValueIdentifierValueParserRuleCall_2_0(), semanticObject.getValue());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
 	 *     LabelField returns LabelField
 	 *
 	 * Constraint:
@@ -2235,11 +2203,11 @@ public class LibrettoSpecSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *
 	 * Constraint:
 	 *     (
-	 *         specId=TextValue | 
 	 *         title=TextValue | 
 	 *         version=TextValue | 
-	 *         status=IdentifierValue | 
-	 *         authoredSource=TextValue | 
+	 *         status=MetadataStatusValue | 
+	 *         moduleName=TextValue | 
+	 *         javaPackage=TextValue | 
 	 *         compiledAt=TextValue | 
 	 *         compilerVersion=TextValue | 
 	 *         modelMetadata=TextValue
@@ -3189,6 +3157,20 @@ public class LibrettoSpecSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 * </pre>
 	 */
 	protected void sequence_TextList(ISerializationContext context, TextList semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     TextValue returns TextValue
+	 *
+	 * Constraint:
+	 *     (text=STRING | text=TEXT_BLOCK)
+	 * </pre>
+	 */
+	protected void sequence_TextValue(ISerializationContext context, TextValue semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

@@ -40,7 +40,7 @@ MetadataSection returns SpecSection:
 
 DependenciesSection returns SpecSection:
 	{DependenciesSection}
-	'dependencies' '{' records+=DependencyRecord* '}';
+	sectionKeyword=DependenciesSectionKeyword '{' records+=DependencyRecord* '}';
 
 ReferencesSection returns SpecSection:
 	{ReferencesSection}
@@ -85,42 +85,41 @@ ImplementationDirectivesSection returns SpecSection:
 // ----- Metadata -----
 
 MetadataField:
-	  'spec_id' ':' specId=TextValue
-	| 'title' ':' title=TextValue
+	  'title' ':' title=TextValue
 	| 'version' ':' version=TextValue
-	| 'status' ':' status=IdentifierValue
-	| 'authored_source' ':' authoredSource=TextValue
+	| 'status' ':' status=MetadataStatusValue
+	| 'module' ':' moduleName=TextValue
+	| 'package' ':' javaPackage=TextValue
 	| 'compiled_at' ':' compiledAt=TextValue
 	| 'compiler_version' ':' compilerVersion=TextValue
 	| 'model_metadata' ':' modelMetadata=TextValue;
 
 // ----- Dependency records -----
 
+DependenciesSectionKeyword:
+	{DependenciesSectionKeyword}
+	'dependencies';
+
+DependencyKeyword:
+	{DependencyKeyword}
+	'dependency';
+
 DependencyRecord:
-	'dependency' id=LIBRETTO_ID '{'
+	keyword=DependencyKeyword id=LIBRETTO_ID '{'
 	items+=DependencyRecordItem*
 	'}';
 
 DependencyRecordItem:
-	DependencyTargetSpecItem | DependencyKindItem | DependencyNotesItem | DependencyContextItem;
+	DependencyTargetSpecItem | DependencyNotesItem;
 
 DependencyTargetSpecItem returns DependencyRecordItem:
 	targetSpec=TargetSpecField;
 
-DependencyKindItem returns DependencyRecordItem:
-	kind=KindField;
-
 DependencyNotesItem returns DependencyRecordItem:
 	notes=NotesField;
 
-DependencyContextItem returns DependencyRecordItem:
-	context=ContextField;
-
 TargetSpecField:
 	'target_spec' ':' value=TextValue;
-
-KindField:
-	'kind' ':' value=IdentifierValue;
 
 // ----- Reference records -----
 
@@ -552,8 +551,9 @@ TextList:
 	{TextList} 
 	'[' (values+=TextValue (',' values+=TextValue)*)? ']';
 
-TextValue:
-	STRING | TEXT_BLOCK;
+// Decoded string body lives on EAttribute `text`; terminals go through value converters (TEXT_BLOCK in LibrettoSpecTerminalConverters).
+TextValue returns TextValue:
+	{TextValue} text=STRING | {TextValue} text=TEXT_BLOCK;
 
 IdentifierValue:
 	LIBRETTO_ID | DottedIdentifier;
@@ -566,6 +566,9 @@ DottedIdentifier:
 enum OutcomeClassValue:
 	RETURNS='returns' | REJECTS='rejects';
 
+enum MetadataStatusValue:
+	DRAFT='draft' | PUBLIC='public';
+
 enum StrengthValue:
 	REQUIRED='required'
 	| STRONGLY_PREFERRED='strongly_preferred'
@@ -574,7 +577,7 @@ enum StrengthValue:
 
 // ----- Terminals (match LibrettoSpec.g4; declare specific tokens before LibrettoID) -----
 
-terminal TEXT_BLOCK:
+terminal TEXT_BLOCK returns ecore::EString:
 	'"""' (!('"') | '"' !('"') | '"' '"' !('"'))* '"""';
 
 terminal BEHAVIOR_ID returns ecore::EString:
@@ -592,6 +595,6 @@ terminal REF_ID returns ecore::EString:
 terminal OOS_ID returns ecore::EString:
 	'OOS-' ('0'..'9')('0'..'9')('0'..'9');
 
-/** ANTLR IDENTIFIER: [A-Za-z_] [A-Za-z0-9_\\-]* */
+/** ANTLR IDENTIFIER — optional '^' prefix for keyword collision (Xtext Common Terminals ID). */
 terminal LIBRETTO_ID returns ecore::EString:
-	('a'..'z'|'A'..'Z'|'_')('a'..'z'|'A'..'Z'|'_'|'0'..'9'|'-'|'\\')*;
+	('^')?('a'..'z'|'A'..'Z'|'_')('a'..'z'|'A'..'Z'|'_'|'0'..'9'|'-'|'\\')*;

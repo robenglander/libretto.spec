@@ -68,6 +68,9 @@ public class LibrettoSpecSemanticHighlightingCalculator extends DefaultSemanticH
 		if (object.eClass() == PKG.getTextList() && object.eIsSet(PKG.getTextList_Values())) {
 			highlightAllNodesForFeature(acceptor, object, PKG.getTextList_Values(), SemanticTokenTypes.String);
 		}
+		if (object.eClass() == PKG.getTextValue() && object.eIsSet(PKG.getTextValue_Text())) {
+			highlightAllNodesForFeature(acceptor, object, PKG.getTextValue_Text(), SemanticTokenTypes.String);
+		}
 		return false;
 	}
 

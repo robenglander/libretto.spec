@@ -1,5 +1,9 @@
 # Libretto Spec (Xtext)
 
+## Language guide
+
+Authoring reference for `.libretto` syntax (sections, records, ids, lists): **[docs/LIBRETTO-SPEC-LANGUAGE-GUIDE.md](docs/LIBRETTO-SPEC-LANGUAGE-GUIDE.md)**.
+
 ## Build (Tycho)
 
 Always run Maven from **this directory** (`libretto.spec.parent`), not from a submodule path alone.

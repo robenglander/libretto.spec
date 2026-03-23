@@ -335,10 +335,25 @@ ruleDependenciesSection returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='dependencies'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getDependenciesSectionAccess().getDependenciesKeyword_1());
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getDependenciesSectionAccess().getSectionKeywordDependenciesSectionKeywordParserRuleCall_1_0());
+				}
+				lv_sectionKeyword_1_0=ruleDependenciesSectionKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getDependenciesSectionRule());
+					}
+					set(
+						$current,
+						"sectionKeyword",
+						lv_sectionKeyword_1_0,
+						"com.robenglander.libretto.spec.LibrettoSpec.DependenciesSectionKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 		otherlv_2='{'
 		{
 			newLeafNode(otherlv_2, grammarAccess.getDependenciesSectionAccess().getLeftCurlyBracketKeyword_2());
@@ -956,9 +971,9 @@ ruleMetadataField returns [EObject current=null]
 }:
 	(
 		(
-			otherlv_0='spec_id'
+			otherlv_0='title'
 			{
-				newLeafNode(otherlv_0, grammarAccess.getMetadataFieldAccess().getSpec_idKeyword_0_0());
+				newLeafNode(otherlv_0, grammarAccess.getMetadataFieldAccess().getTitleKeyword_0_0());
 			}
 			otherlv_1=':'
 			{
@@ -967,17 +982,17 @@ ruleMetadataField returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMetadataFieldAccess().getSpecIdTextValueParserRuleCall_0_2_0());
+						newCompositeNode(grammarAccess.getMetadataFieldAccess().getTitleTextValueParserRuleCall_0_2_0());
 					}
-					lv_specId_2_0=ruleTextValue
+					lv_title_2_0=ruleTextValue
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMetadataFieldRule());
 						}
 						set(
 							$current,
-							"specId",
-							lv_specId_2_0,
+							"title",
+							lv_title_2_0,
 							"com.robenglander.libretto.spec.LibrettoSpec.TextValue");
 						afterParserOrEnumRuleCall();
 					}
@@ -986,9 +1001,9 @@ ruleMetadataField returns [EObject current=null]
 		)
 		    |
 		(
-			otherlv_3='title'
+			otherlv_3='version'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getMetadataFieldAccess().getTitleKeyword_1_0());
+				newLeafNode(otherlv_3, grammarAccess.getMetadataFieldAccess().getVersionKeyword_1_0());
 			}
 			otherlv_4=':'
 			{
@@ -997,17 +1012,17 @@ ruleMetadataField returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMetadataFieldAccess().getTitleTextValueParserRuleCall_1_2_0());
+						newCompositeNode(grammarAccess.getMetadataFieldAccess().getVersionTextValueParserRuleCall_1_2_0());
 					}
-					lv_title_5_0=ruleTextValue
+					lv_version_5_0=ruleTextValue
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMetadataFieldRule());
 						}
 						set(
 							$current,
-							"title",
-							lv_title_5_0,
+							"version",
+							lv_version_5_0,
 							"com.robenglander.libretto.spec.LibrettoSpec.TextValue");
 						afterParserOrEnumRuleCall();
 					}
@@ -1016,9 +1031,9 @@ ruleMetadataField returns [EObject current=null]
 		)
 		    |
 		(
-			otherlv_6='version'
+			otherlv_6='status'
 			{
-				newLeafNode(otherlv_6, grammarAccess.getMetadataFieldAccess().getVersionKeyword_2_0());
+				newLeafNode(otherlv_6, grammarAccess.getMetadataFieldAccess().getStatusKeyword_2_0());
 			}
 			otherlv_7=':'
 			{
@@ -1027,18 +1042,18 @@ ruleMetadataField returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMetadataFieldAccess().getVersionTextValueParserRuleCall_2_2_0());
+						newCompositeNode(grammarAccess.getMetadataFieldAccess().getStatusMetadataStatusValueEnumRuleCall_2_2_0());
 					}
-					lv_version_8_0=ruleTextValue
+					lv_status_8_0=ruleMetadataStatusValue
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMetadataFieldRule());
 						}
 						set(
 							$current,
-							"version",
-							lv_version_8_0,
-							"com.robenglander.libretto.spec.LibrettoSpec.TextValue");
+							"status",
+							lv_status_8_0,
+							"com.robenglander.libretto.spec.LibrettoSpec.MetadataStatusValue");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -1046,9 +1061,9 @@ ruleMetadataField returns [EObject current=null]
 		)
 		    |
 		(
-			otherlv_9='status'
+			otherlv_9='module'
 			{
-				newLeafNode(otherlv_9, grammarAccess.getMetadataFieldAccess().getStatusKeyword_3_0());
+				newLeafNode(otherlv_9, grammarAccess.getMetadataFieldAccess().getModuleKeyword_3_0());
 			}
 			otherlv_10=':'
 			{
@@ -1057,18 +1072,18 @@ ruleMetadataField returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMetadataFieldAccess().getStatusIdentifierValueParserRuleCall_3_2_0());
+						newCompositeNode(grammarAccess.getMetadataFieldAccess().getModuleNameTextValueParserRuleCall_3_2_0());
 					}
-					lv_status_11_0=ruleIdentifierValue
+					lv_moduleName_11_0=ruleTextValue
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMetadataFieldRule());
 						}
 						set(
 							$current,
-							"status",
-							lv_status_11_0,
-							"com.robenglander.libretto.spec.LibrettoSpec.IdentifierValue");
+							"moduleName",
+							lv_moduleName_11_0,
+							"com.robenglander.libretto.spec.LibrettoSpec.TextValue");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -1076,9 +1091,9 @@ ruleMetadataField returns [EObject current=null]
 		)
 		    |
 		(
-			otherlv_12='authored_source'
+			otherlv_12='package'
 			{
-				newLeafNode(otherlv_12, grammarAccess.getMetadataFieldAccess().getAuthored_sourceKeyword_4_0());
+				newLeafNode(otherlv_12, grammarAccess.getMetadataFieldAccess().getPackageKeyword_4_0());
 			}
 			otherlv_13=':'
 			{
@@ -1087,17 +1102,17 @@ ruleMetadataField returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMetadataFieldAccess().getAuthoredSourceTextValueParserRuleCall_4_2_0());
+						newCompositeNode(grammarAccess.getMetadataFieldAccess().getJavaPackageTextValueParserRuleCall_4_2_0());
 					}
-					lv_authoredSource_14_0=ruleTextValue
+					lv_javaPackage_14_0=ruleTextValue
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMetadataFieldRule());
 						}
 						set(
 							$current,
-							"authoredSource",
-							lv_authoredSource_14_0,
+							"javaPackage",
+							lv_javaPackage_14_0,
 							"com.robenglander.libretto.spec.LibrettoSpec.TextValue");
 						afterParserOrEnumRuleCall();
 					}
@@ -1197,6 +1212,66 @@ ruleMetadataField returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleDependenciesSectionKeyword
+entryRuleDependenciesSectionKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getDependenciesSectionKeywordRule()); }
+	iv_ruleDependenciesSectionKeyword=ruleDependenciesSectionKeyword
+	{ $current=$iv_ruleDependenciesSectionKeyword.current; }
+	EOF;
+
+// Rule DependenciesSectionKeyword
+ruleDependenciesSectionKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getDependenciesSectionKeywordAccess().getDependenciesSectionKeywordAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='dependencies'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getDependenciesSectionKeywordAccess().getDependenciesKeyword_1());
+		}
+	)
+;
+
+// Entry rule entryRuleDependencyKeyword
+entryRuleDependencyKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getDependencyKeywordRule()); }
+	iv_ruleDependencyKeyword=ruleDependencyKeyword
+	{ $current=$iv_ruleDependencyKeyword.current; }
+	EOF;
+
+// Rule DependencyKeyword
+ruleDependencyKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getDependencyKeywordAccess().getDependencyKeywordAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='dependency'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getDependencyKeywordAccess().getDependencyKeyword_1());
+		}
+	)
+;
+
 // Entry rule entryRuleDependencyRecord
 entryRuleDependencyRecord returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getDependencyRecordRule()); }
@@ -1213,10 +1288,25 @@ ruleDependencyRecord returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='dependency'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getDependencyRecordAccess().getDependencyKeyword_0());
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getDependencyRecordAccess().getKeywordDependencyKeywordParserRuleCall_0_0());
+				}
+				lv_keyword_0_0=ruleDependencyKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getDependencyRecordRule());
+					}
+					set(
+						$current,
+						"keyword",
+						lv_keyword_0_0,
+						"com.robenglander.libretto.spec.LibrettoSpec.DependencyKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 		(
 			(
 				lv_id_1_0=RULE_LIBRETTO_ID
@@ -1291,29 +1381,11 @@ ruleDependencyRecordItem returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getDependencyRecordItemAccess().getDependencyKindItemParserRuleCall_1());
+			newCompositeNode(grammarAccess.getDependencyRecordItemAccess().getDependencyNotesItemParserRuleCall_1());
 		}
-		this_DependencyKindItem_1=ruleDependencyKindItem
+		this_DependencyNotesItem_1=ruleDependencyNotesItem
 		{
-			$current = $this_DependencyKindItem_1.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getDependencyRecordItemAccess().getDependencyNotesItemParserRuleCall_2());
-		}
-		this_DependencyNotesItem_2=ruleDependencyNotesItem
-		{
-			$current = $this_DependencyNotesItem_2.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getDependencyRecordItemAccess().getDependencyContextItemParserRuleCall_3());
-		}
-		this_DependencyContextItem_3=ruleDependencyContextItem
-		{
-			$current = $this_DependencyContextItem_3.current;
+			$current = $this_DependencyNotesItem_1.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -1355,42 +1427,6 @@ ruleDependencyTargetSpecItem returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleDependencyKindItem
-entryRuleDependencyKindItem returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getDependencyKindItemRule()); }
-	iv_ruleDependencyKindItem=ruleDependencyKindItem
-	{ $current=$iv_ruleDependencyKindItem.current; }
-	EOF;
-
-// Rule DependencyKindItem
-ruleDependencyKindItem returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			{
-				newCompositeNode(grammarAccess.getDependencyKindItemAccess().getKindKindFieldParserRuleCall_0());
-			}
-			lv_kind_0_0=ruleKindField
-			{
-				if ($current==null) {
-					$current = createModelElementForParent(grammarAccess.getDependencyKindItemRule());
-				}
-				set(
-					$current,
-					"kind",
-					lv_kind_0_0,
-					"com.robenglander.libretto.spec.LibrettoSpec.KindField");
-				afterParserOrEnumRuleCall();
-			}
-		)
-	)
-;
-
 // Entry rule entryRuleDependencyNotesItem
 entryRuleDependencyNotesItem returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getDependencyNotesItemRule()); }
@@ -1421,42 +1457,6 @@ ruleDependencyNotesItem returns [EObject current=null]
 					"notes",
 					lv_notes_0_0,
 					"com.robenglander.libretto.spec.LibrettoSpec.NotesField");
-				afterParserOrEnumRuleCall();
-			}
-		)
-	)
-;
-
-// Entry rule entryRuleDependencyContextItem
-entryRuleDependencyContextItem returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getDependencyContextItemRule()); }
-	iv_ruleDependencyContextItem=ruleDependencyContextItem
-	{ $current=$iv_ruleDependencyContextItem.current; }
-	EOF;
-
-// Rule DependencyContextItem
-ruleDependencyContextItem returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			{
-				newCompositeNode(grammarAccess.getDependencyContextItemAccess().getContextContextFieldParserRuleCall_0());
-			}
-			lv_context_0_0=ruleContextField
-			{
-				if ($current==null) {
-					$current = createModelElementForParent(grammarAccess.getDependencyContextItemRule());
-				}
-				set(
-					$current,
-					"context",
-					lv_context_0_0,
-					"com.robenglander.libretto.spec.LibrettoSpec.ContextField");
 				afterParserOrEnumRuleCall();
 			}
 		)
@@ -1502,52 +1502,6 @@ ruleTargetSpecField returns [EObject current=null]
 						"value",
 						lv_value_2_0,
 						"com.robenglander.libretto.spec.LibrettoSpec.TextValue");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-	)
-;
-
-// Entry rule entryRuleKindField
-entryRuleKindField returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getKindFieldRule()); }
-	iv_ruleKindField=ruleKindField
-	{ $current=$iv_ruleKindField.current; }
-	EOF;
-
-// Rule KindField
-ruleKindField returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='kind'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getKindFieldAccess().getKindKeyword_0());
-		}
-		otherlv_1=':'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getKindFieldAccess().getColonKeyword_1());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getKindFieldAccess().getValueIdentifierValueParserRuleCall_2_0());
-				}
-				lv_value_2_0=ruleIdentifierValue
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getKindFieldRule());
-					}
-					set(
-						$current,
-						"value",
-						lv_value_2_0,
-						"com.robenglander.libretto.spec.LibrettoSpec.IdentifierValue");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -7151,14 +7105,14 @@ ruleTextList returns [EObject current=null]
 ;
 
 // Entry rule entryRuleTextValue
-entryRuleTextValue returns [String current=null]:
+entryRuleTextValue returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getTextValueRule()); }
 	iv_ruleTextValue=ruleTextValue
-	{ $current=$iv_ruleTextValue.current.getText(); }
+	{ $current=$iv_ruleTextValue.current; }
 	EOF;
 
 // Rule TextValue
-ruleTextValue returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+ruleTextValue returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -7166,21 +7120,61 @@ ruleTextValue returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken
 	leaveRule();
 }:
 	(
-		this_STRING_0=RULE_STRING
-		{
-			$current.merge(this_STRING_0);
-		}
-		{
-			newLeafNode(this_STRING_0, grammarAccess.getTextValueAccess().getSTRINGTerminalRuleCall_0());
-		}
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getTextValueAccess().getTextValueAction_0_0(),
+						$current);
+				}
+			)
+			(
+				(
+					lv_text_1_0=RULE_STRING
+					{
+						newLeafNode(lv_text_1_0, grammarAccess.getTextValueAccess().getTextSTRINGTerminalRuleCall_0_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getTextValueRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"text",
+							lv_text_1_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+				)
+			)
+		)
 		    |
-		this_TEXT_BLOCK_1=RULE_TEXT_BLOCK
-		{
-			$current.merge(this_TEXT_BLOCK_1);
-		}
-		{
-			newLeafNode(this_TEXT_BLOCK_1, grammarAccess.getTextValueAccess().getTEXT_BLOCKTerminalRuleCall_1());
-		}
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getTextValueAccess().getTextValueAction_1_0(),
+						$current);
+				}
+			)
+			(
+				(
+					lv_text_3_0=RULE_TEXT_BLOCK
+					{
+						newLeafNode(lv_text_3_0, grammarAccess.getTextValueAccess().getTextTEXT_BLOCKTerminalRuleCall_1_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getTextValueRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"text",
+							lv_text_3_0,
+							"com.robenglander.libretto.spec.LibrettoSpec.TEXT_BLOCK");
+					}
+				)
+			)
+		)
 	)
 ;
 
@@ -7304,6 +7298,33 @@ ruleOutcomeClassValue returns [Enumerator current=null]
 	)
 ;
 
+// Rule MetadataStatusValue
+ruleMetadataStatusValue returns [Enumerator current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			enumLiteral_0='draft'
+			{
+				$current = grammarAccess.getMetadataStatusValueAccess().getDRAFTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getMetadataStatusValueAccess().getDRAFTEnumLiteralDeclaration_0());
+			}
+		)
+		    |
+		(
+			enumLiteral_1='public'
+			{
+				$current = grammarAccess.getMetadataStatusValueAccess().getPUBLICEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getMetadataStatusValueAccess().getPUBLICEnumLiteralDeclaration_1());
+			}
+		)
+	)
+;
+
 // Rule StrengthValue
 ruleStrengthValue returns [Enumerator current=null]
 @init {
@@ -7359,7 +7380,7 @@ RULE_REF_ID : 'REF-' '0'..'9' '0'..'9' '0'..'9';
 
 RULE_OOS_ID : 'OOS-' '0'..'9' '0'..'9' '0'..'9';
 
-RULE_LIBRETTO_ID : ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9'|'-'|'\\')*;
+RULE_LIBRETTO_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9'|'-'|'\\')*;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

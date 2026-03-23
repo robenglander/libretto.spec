@@ -91,6 +91,16 @@ public class LibrettoSpecAdapterFactory extends AdapterFactoryImpl
         return createMetadataFieldAdapter();
       }
       @Override
+      public Adapter caseDependenciesSectionKeyword(DependenciesSectionKeyword object)
+      {
+        return createDependenciesSectionKeywordAdapter();
+      }
+      @Override
+      public Adapter caseDependencyKeyword(DependencyKeyword object)
+      {
+        return createDependencyKeywordAdapter();
+      }
+      @Override
       public Adapter caseDependencyRecord(DependencyRecord object)
       {
         return createDependencyRecordAdapter();
@@ -104,11 +114,6 @@ public class LibrettoSpecAdapterFactory extends AdapterFactoryImpl
       public Adapter caseTargetSpecField(TargetSpecField object)
       {
         return createTargetSpecFieldAdapter();
-      }
-      @Override
-      public Adapter caseKindField(KindField object)
-      {
-        return createKindFieldAdapter();
       }
       @Override
       public Adapter caseReferenceRecord(ReferenceRecord object)
@@ -446,6 +451,11 @@ public class LibrettoSpecAdapterFactory extends AdapterFactoryImpl
         return createTextListAdapter();
       }
       @Override
+      public Adapter caseTextValue(TextValue object)
+      {
+        return createTextValueAdapter();
+      }
+      @Override
       public Adapter caseIdentifierValue(IdentifierValue object)
       {
         return createIdentifierValueAdapter();
@@ -583,6 +593,36 @@ public class LibrettoSpecAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoSpec.DependenciesSectionKeyword <em>Dependencies Section Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoSpec.DependenciesSectionKeyword
+   * @generated
+   */
+  public Adapter createDependenciesSectionKeywordAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoSpec.DependencyKeyword <em>Dependency Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoSpec.DependencyKeyword
+   * @generated
+   */
+  public Adapter createDependencyKeywordAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoSpec.DependencyRecord <em>Dependency Record</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -623,21 +663,6 @@ public class LibrettoSpecAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTargetSpecFieldAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoSpec.KindField <em>Kind Field</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.robenglander.libretto.spec.librettoSpec.KindField
-   * @generated
-   */
-  public Adapter createKindFieldAdapter()
   {
     return null;
   }
@@ -1643,6 +1668,21 @@ public class LibrettoSpecAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTextListAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoSpec.TextValue <em>Text Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoSpec.TextValue
+   * @generated
+   */
+  public Adapter createTextValueAdapter()
   {
     return null;
   }

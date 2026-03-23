@@ -10,6 +10,10 @@
       <genEnumLiterals ecoreEnumLiteral="LibrettoSpec.ecore#//OutcomeClassValue/RETURNS"/>
       <genEnumLiterals ecoreEnumLiteral="LibrettoSpec.ecore#//OutcomeClassValue/REJECTS"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="LibrettoSpec.ecore#//MetadataStatusValue">
+      <genEnumLiterals ecoreEnumLiteral="LibrettoSpec.ecore#//MetadataStatusValue/DRAFT"/>
+      <genEnumLiterals ecoreEnumLiteral="LibrettoSpec.ecore#//MetadataStatusValue/PUBLIC"/>
+    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="LibrettoSpec.ecore#//StrengthValue">
       <genEnumLiterals ecoreEnumLiteral="LibrettoSpec.ecore#//StrengthValue/REQUIRED"/>
       <genEnumLiterals ecoreEnumLiteral="LibrettoSpec.ecore#//StrengthValue/STRONGLY_PREFERRED"/>
@@ -22,30 +26,28 @@
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//SpecSection"/>
     <genClasses ecoreClass="LibrettoSpec.ecore#//MetadataField">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//MetadataField/specId"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//MetadataField/title"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//MetadataField/version"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//MetadataField/status"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//MetadataField/authoredSource"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//MetadataField/compiledAt"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//MetadataField/compilerVersion"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//MetadataField/modelMetadata"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//MetadataField/title"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//MetadataField/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//MetadataField/status"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//MetadataField/moduleName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//MetadataField/javaPackage"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//MetadataField/compiledAt"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//MetadataField/compilerVersion"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//MetadataField/modelMetadata"/>
     </genClasses>
+    <genClasses ecoreClass="LibrettoSpec.ecore#//DependenciesSectionKeyword"/>
+    <genClasses ecoreClass="LibrettoSpec.ecore#//DependencyKeyword"/>
     <genClasses ecoreClass="LibrettoSpec.ecore#//DependencyRecord">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//DependencyRecord/keyword"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//DependencyRecord/id"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//DependencyRecord/items"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//DependencyRecordItem">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//DependencyRecordItem/targetSpec"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//DependencyRecordItem/kind"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//DependencyRecordItem/notes"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//DependencyRecordItem/context"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//TargetSpecField">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//TargetSpecField/value"/>
-    </genClasses>
-    <genClasses ecoreClass="LibrettoSpec.ecore#//KindField">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//KindField/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//TargetSpecField/value"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//ReferenceRecord">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//ReferenceRecord/id"/>
@@ -61,22 +63,22 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//ReferenceRecordItem/context"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//TitleField">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//TitleField/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//TitleField/value"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//TypeField">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//TypeField/value"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//CitationField">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//CitationField/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//CitationField/value"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//LocatorField">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//LocatorField/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//LocatorField/value"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//AuthorityNotesField">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//AuthorityNotesField/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//AuthorityNotesField/value"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//MetadataTextField">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//MetadataTextField/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//MetadataTextField/value"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//ProseRecord"/>
     <genClasses ecoreClass="LibrettoSpec.ecore#//SectionContextRecord">
@@ -102,7 +104,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//OutOfScopeRecordItem/statement"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//StatementField">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//StatementField/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//StatementField/value"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//BehaviorRecord">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//BehaviorRecord/id"/>
@@ -145,7 +147,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//OutcomesField/value"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//LabelField">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//LabelField/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//LabelField/value"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//ReferencesField">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//ReferencesField/value"/>
@@ -154,10 +156,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//DependenciesField/value"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//NotesField">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//NotesField/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//NotesField/value"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//ContextField">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//ContextField/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//ContextField/value"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//OperationSurfaceRecord">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//OperationSurfaceRecord/id"/>
@@ -168,7 +170,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//OperationSurfaceRecordItem/outcomeClass"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//OperationExpressionField">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//OperationExpressionField/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//OperationExpressionField/value"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//OutcomeClassField">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//OutcomeClassField/value"/>
@@ -180,7 +182,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//ImplementsSurfaceRecordItem/targetSpec"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//ImplementsSurfaceTargetField">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//ImplementsSurfaceTargetField/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//ImplementsSurfaceTargetField/value"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//BoundaryRecord">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//BoundaryRecord/items"/>
@@ -192,16 +194,16 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//BoundaryRecordItem/rawField"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//BoundarySpecIdField">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//BoundarySpecIdField/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//BoundarySpecIdField/value"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//BoundaryOperationIdField">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//BoundaryOperationIdField/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//BoundaryOperationIdField/value"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//BoundaryProfileIdField">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//BoundaryProfileIdField/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//BoundaryProfileIdField/value"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//BoundaryRawField">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//BoundaryRawField/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//BoundaryRawField/value"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//AcceptanceTestRecord">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//AcceptanceTestRecord/id"/>
@@ -253,7 +255,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//StrengthField/value"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//DirectiveField">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//DirectiveField/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//DirectiveField/value"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//CategoryField">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//CategoryField/value"/>
@@ -265,7 +267,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//AllowedFlexibilityField/value"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//RationaleField">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//RationaleField/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//RationaleField/value"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//SourceBlock">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//SourceBlock/items"/>
@@ -275,13 +277,13 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//SourceBlockItem/subsection"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//SectionField">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//SectionField/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//SectionField/value"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//SubsectionField">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//SubsectionField/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//SubsectionField/value"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//TextField">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//TextField/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//TextField/value"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//IdentifierList">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//IdentifierList/values"/>
@@ -293,7 +295,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//ReferenceIdList/values"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//TextList">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//TextList/values"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//TextList/values"/>
+    </genClasses>
+    <genClasses ecoreClass="LibrettoSpec.ecore#//TextValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//TextValue/text"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//IdentifierValue"/>
     <genClasses ecoreClass="LibrettoSpec.ecore#//DottedIdentifier">
@@ -304,6 +309,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//MetadataSection/fields"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//DependenciesSection">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//DependenciesSection/sectionKeyword"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//DependenciesSection/records"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//ReferencesSection">

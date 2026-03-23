@@ -69,10 +69,11 @@ public class LibrettoSpecFactoryImpl extends EFactoryImpl implements LibrettoSpe
       case LibrettoSpecPackage.SPEC: return createSpec();
       case LibrettoSpecPackage.SPEC_SECTION: return createSpecSection();
       case LibrettoSpecPackage.METADATA_FIELD: return createMetadataField();
+      case LibrettoSpecPackage.DEPENDENCIES_SECTION_KEYWORD: return createDependenciesSectionKeyword();
+      case LibrettoSpecPackage.DEPENDENCY_KEYWORD: return createDependencyKeyword();
       case LibrettoSpecPackage.DEPENDENCY_RECORD: return createDependencyRecord();
       case LibrettoSpecPackage.DEPENDENCY_RECORD_ITEM: return createDependencyRecordItem();
       case LibrettoSpecPackage.TARGET_SPEC_FIELD: return createTargetSpecField();
-      case LibrettoSpecPackage.KIND_FIELD: return createKindField();
       case LibrettoSpecPackage.REFERENCE_RECORD: return createReferenceRecord();
       case LibrettoSpecPackage.REFERENCE_RECORD_ITEM: return createReferenceRecordItem();
       case LibrettoSpecPackage.TITLE_FIELD: return createTitleField();
@@ -140,6 +141,7 @@ public class LibrettoSpecFactoryImpl extends EFactoryImpl implements LibrettoSpe
       case LibrettoSpecPackage.BEHAVIOR_ID_LIST: return createBehaviorIdList();
       case LibrettoSpecPackage.REFERENCE_ID_LIST: return createReferenceIdList();
       case LibrettoSpecPackage.TEXT_LIST: return createTextList();
+      case LibrettoSpecPackage.TEXT_VALUE: return createTextValue();
       case LibrettoSpecPackage.IDENTIFIER_VALUE: return createIdentifierValue();
       case LibrettoSpecPackage.DOTTED_IDENTIFIER: return createDottedIdentifier();
       case LibrettoSpecPackage.METADATA_SECTION: return createMetadataSection();
@@ -171,6 +173,8 @@ public class LibrettoSpecFactoryImpl extends EFactoryImpl implements LibrettoSpe
     {
       case LibrettoSpecPackage.OUTCOME_CLASS_VALUE:
         return createOutcomeClassValueFromString(eDataType, initialValue);
+      case LibrettoSpecPackage.METADATA_STATUS_VALUE:
+        return createMetadataStatusValueFromString(eDataType, initialValue);
       case LibrettoSpecPackage.STRENGTH_VALUE:
         return createStrengthValueFromString(eDataType, initialValue);
       default:
@@ -190,6 +194,8 @@ public class LibrettoSpecFactoryImpl extends EFactoryImpl implements LibrettoSpe
     {
       case LibrettoSpecPackage.OUTCOME_CLASS_VALUE:
         return convertOutcomeClassValueToString(eDataType, instanceValue);
+      case LibrettoSpecPackage.METADATA_STATUS_VALUE:
+        return convertMetadataStatusValueToString(eDataType, instanceValue);
       case LibrettoSpecPackage.STRENGTH_VALUE:
         return convertStrengthValueToString(eDataType, instanceValue);
       default:
@@ -239,6 +245,30 @@ public class LibrettoSpecFactoryImpl extends EFactoryImpl implements LibrettoSpe
    * @generated
    */
   @Override
+  public DependenciesSectionKeyword createDependenciesSectionKeyword()
+  {
+    DependenciesSectionKeywordImpl dependenciesSectionKeyword = new DependenciesSectionKeywordImpl();
+    return dependenciesSectionKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DependencyKeyword createDependencyKeyword()
+  {
+    DependencyKeywordImpl dependencyKeyword = new DependencyKeywordImpl();
+    return dependencyKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public DependencyRecord createDependencyRecord()
   {
     DependencyRecordImpl dependencyRecord = new DependencyRecordImpl();
@@ -267,18 +297,6 @@ public class LibrettoSpecFactoryImpl extends EFactoryImpl implements LibrettoSpe
   {
     TargetSpecFieldImpl targetSpecField = new TargetSpecFieldImpl();
     return targetSpecField;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public KindField createKindField()
-  {
-    KindFieldImpl kindField = new KindFieldImpl();
-    return kindField;
   }
 
   /**
@@ -1091,6 +1109,18 @@ public class LibrettoSpecFactoryImpl extends EFactoryImpl implements LibrettoSpe
    * @generated
    */
   @Override
+  public TextValue createTextValue()
+  {
+    TextValueImpl textValue = new TextValueImpl();
+    return textValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public IdentifierValue createIdentifierValue()
   {
     IdentifierValueImpl identifierValue = new IdentifierValueImpl();
@@ -1271,6 +1301,28 @@ public class LibrettoSpecFactoryImpl extends EFactoryImpl implements LibrettoSpe
    * @generated
    */
   public String convertOutcomeClassValueToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MetadataStatusValue createMetadataStatusValueFromString(EDataType eDataType, String initialValue)
+  {
+    MetadataStatusValue result = MetadataStatusValue.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertMetadataStatusValueToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

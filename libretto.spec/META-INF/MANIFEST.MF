@@ -6,6 +6,7 @@ Bundle-Vendor: My Company
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: libretto.spec; singleton:=true
 Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .,lib/libretto.spec.projection.jar
 Require-Bundle: org.eclipse.xtext,
  org.eclipse.xtext.xbase,
  org.eclipse.equinox.common;bundle-version="3.19.0",
@@ -24,5 +25,7 @@ Export-Package: com.robenglander.libretto.spec,
  com.robenglander.libretto.spec.services,
  com.robenglander.libretto.spec.serializer,
  com.robenglander.libretto.spec.librettoSpec.impl,
- com.robenglander.libretto.spec.generator
+ com.robenglander.libretto.spec.generator,
+ com.robenglander.libretto.spec.projection,
+ com.robenglander.libretto.spec.projection.mapper
 Import-Package: org.apache.log4j

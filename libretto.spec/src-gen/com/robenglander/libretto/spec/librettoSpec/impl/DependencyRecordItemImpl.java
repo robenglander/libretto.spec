@@ -3,9 +3,7 @@
  */
 package com.robenglander.libretto.spec.librettoSpec.impl;
 
-import com.robenglander.libretto.spec.librettoSpec.ContextField;
 import com.robenglander.libretto.spec.librettoSpec.DependencyRecordItem;
-import com.robenglander.libretto.spec.librettoSpec.KindField;
 import com.robenglander.libretto.spec.librettoSpec.LibrettoSpecPackage;
 import com.robenglander.libretto.spec.librettoSpec.NotesField;
 import com.robenglander.libretto.spec.librettoSpec.TargetSpecField;
@@ -28,9 +26,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link com.robenglander.libretto.spec.librettoSpec.impl.DependencyRecordItemImpl#getTargetSpec <em>Target Spec</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoSpec.impl.DependencyRecordItemImpl#getKind <em>Kind</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoSpec.impl.DependencyRecordItemImpl#getNotes <em>Notes</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoSpec.impl.DependencyRecordItemImpl#getContext <em>Context</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,16 +44,6 @@ public class DependencyRecordItemImpl extends MinimalEObjectImpl.Container imple
   protected TargetSpecField targetSpec;
 
   /**
-   * The cached value of the '{@link #getKind() <em>Kind</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getKind()
-   * @generated
-   * @ordered
-   */
-  protected KindField kind;
-
-  /**
    * The cached value of the '{@link #getNotes() <em>Notes</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -66,16 +52,6 @@ public class DependencyRecordItemImpl extends MinimalEObjectImpl.Container imple
    * @ordered
    */
   protected NotesField notes;
-
-  /**
-   * The cached value of the '{@link #getContext() <em>Context</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getContext()
-   * @generated
-   * @ordered
-   */
-  protected ContextField context;
 
   /**
    * <!-- begin-user-doc -->
@@ -154,56 +130,6 @@ public class DependencyRecordItemImpl extends MinimalEObjectImpl.Container imple
    * @generated
    */
   @Override
-  public KindField getKind()
-  {
-    return kind;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetKind(KindField newKind, NotificationChain msgs)
-  {
-    KindField oldKind = kind;
-    kind = newKind;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LibrettoSpecPackage.DEPENDENCY_RECORD_ITEM__KIND, oldKind, newKind);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setKind(KindField newKind)
-  {
-    if (newKind != kind)
-    {
-      NotificationChain msgs = null;
-      if (kind != null)
-        msgs = ((InternalEObject)kind).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LibrettoSpecPackage.DEPENDENCY_RECORD_ITEM__KIND, null, msgs);
-      if (newKind != null)
-        msgs = ((InternalEObject)newKind).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LibrettoSpecPackage.DEPENDENCY_RECORD_ITEM__KIND, null, msgs);
-      msgs = basicSetKind(newKind, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoSpecPackage.DEPENDENCY_RECORD_ITEM__KIND, newKind, newKind));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public NotesField getNotes()
   {
     return notes;
@@ -254,68 +180,14 @@ public class DependencyRecordItemImpl extends MinimalEObjectImpl.Container imple
    * @generated
    */
   @Override
-  public ContextField getContext()
-  {
-    return context;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetContext(ContextField newContext, NotificationChain msgs)
-  {
-    ContextField oldContext = context;
-    context = newContext;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LibrettoSpecPackage.DEPENDENCY_RECORD_ITEM__CONTEXT, oldContext, newContext);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setContext(ContextField newContext)
-  {
-    if (newContext != context)
-    {
-      NotificationChain msgs = null;
-      if (context != null)
-        msgs = ((InternalEObject)context).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LibrettoSpecPackage.DEPENDENCY_RECORD_ITEM__CONTEXT, null, msgs);
-      if (newContext != null)
-        msgs = ((InternalEObject)newContext).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LibrettoSpecPackage.DEPENDENCY_RECORD_ITEM__CONTEXT, null, msgs);
-      msgs = basicSetContext(newContext, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoSpecPackage.DEPENDENCY_RECORD_ITEM__CONTEXT, newContext, newContext));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
       case LibrettoSpecPackage.DEPENDENCY_RECORD_ITEM__TARGET_SPEC:
         return basicSetTargetSpec(null, msgs);
-      case LibrettoSpecPackage.DEPENDENCY_RECORD_ITEM__KIND:
-        return basicSetKind(null, msgs);
       case LibrettoSpecPackage.DEPENDENCY_RECORD_ITEM__NOTES:
         return basicSetNotes(null, msgs);
-      case LibrettoSpecPackage.DEPENDENCY_RECORD_ITEM__CONTEXT:
-        return basicSetContext(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -332,12 +204,8 @@ public class DependencyRecordItemImpl extends MinimalEObjectImpl.Container imple
     {
       case LibrettoSpecPackage.DEPENDENCY_RECORD_ITEM__TARGET_SPEC:
         return getTargetSpec();
-      case LibrettoSpecPackage.DEPENDENCY_RECORD_ITEM__KIND:
-        return getKind();
       case LibrettoSpecPackage.DEPENDENCY_RECORD_ITEM__NOTES:
         return getNotes();
-      case LibrettoSpecPackage.DEPENDENCY_RECORD_ITEM__CONTEXT:
-        return getContext();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -355,14 +223,8 @@ public class DependencyRecordItemImpl extends MinimalEObjectImpl.Container imple
       case LibrettoSpecPackage.DEPENDENCY_RECORD_ITEM__TARGET_SPEC:
         setTargetSpec((TargetSpecField)newValue);
         return;
-      case LibrettoSpecPackage.DEPENDENCY_RECORD_ITEM__KIND:
-        setKind((KindField)newValue);
-        return;
       case LibrettoSpecPackage.DEPENDENCY_RECORD_ITEM__NOTES:
         setNotes((NotesField)newValue);
-        return;
-      case LibrettoSpecPackage.DEPENDENCY_RECORD_ITEM__CONTEXT:
-        setContext((ContextField)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -381,14 +243,8 @@ public class DependencyRecordItemImpl extends MinimalEObjectImpl.Container imple
       case LibrettoSpecPackage.DEPENDENCY_RECORD_ITEM__TARGET_SPEC:
         setTargetSpec((TargetSpecField)null);
         return;
-      case LibrettoSpecPackage.DEPENDENCY_RECORD_ITEM__KIND:
-        setKind((KindField)null);
-        return;
       case LibrettoSpecPackage.DEPENDENCY_RECORD_ITEM__NOTES:
         setNotes((NotesField)null);
-        return;
-      case LibrettoSpecPackage.DEPENDENCY_RECORD_ITEM__CONTEXT:
-        setContext((ContextField)null);
         return;
     }
     super.eUnset(featureID);
@@ -406,12 +262,8 @@ public class DependencyRecordItemImpl extends MinimalEObjectImpl.Container imple
     {
       case LibrettoSpecPackage.DEPENDENCY_RECORD_ITEM__TARGET_SPEC:
         return targetSpec != null;
-      case LibrettoSpecPackage.DEPENDENCY_RECORD_ITEM__KIND:
-        return kind != null;
       case LibrettoSpecPackage.DEPENDENCY_RECORD_ITEM__NOTES:
         return notes != null;
-      case LibrettoSpecPackage.DEPENDENCY_RECORD_ITEM__CONTEXT:
-        return context != null;
     }
     return super.eIsSet(featureID);
   }

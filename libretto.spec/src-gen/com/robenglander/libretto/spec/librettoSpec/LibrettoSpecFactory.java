@@ -51,6 +51,24 @@ public interface LibrettoSpecFactory extends EFactory
   MetadataField createMetadataField();
 
   /**
+   * Returns a new object of class '<em>Dependencies Section Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Dependencies Section Keyword</em>'.
+   * @generated
+   */
+  DependenciesSectionKeyword createDependenciesSectionKeyword();
+
+  /**
+   * Returns a new object of class '<em>Dependency Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Dependency Keyword</em>'.
+   * @generated
+   */
+  DependencyKeyword createDependencyKeyword();
+
+  /**
    * Returns a new object of class '<em>Dependency Record</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -76,15 +94,6 @@ public interface LibrettoSpecFactory extends EFactory
    * @generated
    */
   TargetSpecField createTargetSpecField();
-
-  /**
-   * Returns a new object of class '<em>Kind Field</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Kind Field</em>'.
-   * @generated
-   */
-  KindField createKindField();
 
   /**
    * Returns a new object of class '<em>Reference Record</em>'.
@@ -688,6 +697,15 @@ public interface LibrettoSpecFactory extends EFactory
    * @generated
    */
   TextList createTextList();
+
+  /**
+   * Returns a new object of class '<em>Text Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Text Value</em>'.
+   * @generated
+   */
+  TextValue createTextValue();
 
   /**
    * Returns a new object of class '<em>Identifier Value</em>'.

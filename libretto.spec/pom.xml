@@ -9,8 +9,40 @@
 	<artifactId>libretto.spec</artifactId>
 	<packaging>eclipse-plugin</packaging>
 
+	<dependencies>
+		<dependency>
+			<groupId>libretto.spec</groupId>
+			<artifactId>libretto.spec.projection</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-libretto-spec-projection</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>copy</goal>
+						</goals>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>libretto.spec</groupId>
+									<artifactId>libretto.spec.projection</artifactId>
+									<version>${project.version}</version>
+									<outputDirectory>${project.basedir}/lib</outputDirectory>
+									<destFileName>libretto.spec.projection.jar</destFileName>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
@@ -86,6 +118,12 @@
 						</fileset>
 						<fileset>
 							<directory>${basedir}/model/generated/</directory>
+						</fileset>
+						<fileset>
+							<directory>${basedir}/lib</directory>
+							<includes>
+								<include>*.jar</include>
+							</includes>
 						</fileset>
 					</filesets>
 				</configuration>

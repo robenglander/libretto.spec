@@ -23,9 +23,10 @@ class LibrettoSpecParsingTest {
 		val result = parseHelper.parse('''
 			spec Test-Minimal {
 			  metadata {
-			    spec_id: "Test-Minimal"
 			    title: "Test"
 			    status: draft
+			    module: "test"
+			    package: "com.example.test"
 			  }
 			  dependencies { }
 			  references { }
@@ -51,9 +52,10 @@ class LibrettoSpecParsingTest {
 			spec Test-Reorder {
 			  behaviors { }
 			  metadata {
-			    spec_id: "Test-Reorder"
 			    title: "Test"
 			    status: draft
+			    module: "test"
+			    package: "com.example.test"
 			  }
 			  implementation_directives { }
 			  boundary_imports { }

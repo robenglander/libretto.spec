@@ -4,17 +4,21 @@
 package com.robenglander.libretto.spec.librettoSpec.impl;
 
 import com.robenglander.libretto.spec.librettoSpec.DependenciesSection;
+import com.robenglander.libretto.spec.librettoSpec.DependenciesSectionKeyword;
 import com.robenglander.libretto.spec.librettoSpec.DependencyRecord;
 import com.robenglander.libretto.spec.librettoSpec.LibrettoSpecPackage;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -27,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link com.robenglander.libretto.spec.librettoSpec.impl.DependenciesSectionImpl#getSectionKeyword <em>Section Keyword</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoSpec.impl.DependenciesSectionImpl#getRecords <em>Records</em>}</li>
  * </ul>
  *
@@ -34,6 +39,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class DependenciesSectionImpl extends SpecSectionImpl implements DependenciesSection
 {
+  /**
+   * The cached value of the '{@link #getSectionKeyword() <em>Section Keyword</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSectionKeyword()
+   * @generated
+   * @ordered
+   */
+  protected DependenciesSectionKeyword sectionKeyword;
+
   /**
    * The cached value of the '{@link #getRecords() <em>Records</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -71,6 +86,56 @@ public class DependenciesSectionImpl extends SpecSectionImpl implements Dependen
    * @generated
    */
   @Override
+  public DependenciesSectionKeyword getSectionKeyword()
+  {
+    return sectionKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetSectionKeyword(DependenciesSectionKeyword newSectionKeyword, NotificationChain msgs)
+  {
+    DependenciesSectionKeyword oldSectionKeyword = sectionKeyword;
+    sectionKeyword = newSectionKeyword;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LibrettoSpecPackage.DEPENDENCIES_SECTION__SECTION_KEYWORD, oldSectionKeyword, newSectionKeyword);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setSectionKeyword(DependenciesSectionKeyword newSectionKeyword)
+  {
+    if (newSectionKeyword != sectionKeyword)
+    {
+      NotificationChain msgs = null;
+      if (sectionKeyword != null)
+        msgs = ((InternalEObject)sectionKeyword).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LibrettoSpecPackage.DEPENDENCIES_SECTION__SECTION_KEYWORD, null, msgs);
+      if (newSectionKeyword != null)
+        msgs = ((InternalEObject)newSectionKeyword).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LibrettoSpecPackage.DEPENDENCIES_SECTION__SECTION_KEYWORD, null, msgs);
+      msgs = basicSetSectionKeyword(newSectionKeyword, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoSpecPackage.DEPENDENCIES_SECTION__SECTION_KEYWORD, newSectionKeyword, newSectionKeyword));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<DependencyRecord> getRecords()
   {
     if (records == null)
@@ -90,6 +155,8 @@ public class DependenciesSectionImpl extends SpecSectionImpl implements Dependen
   {
     switch (featureID)
     {
+      case LibrettoSpecPackage.DEPENDENCIES_SECTION__SECTION_KEYWORD:
+        return basicSetSectionKeyword(null, msgs);
       case LibrettoSpecPackage.DEPENDENCIES_SECTION__RECORDS:
         return ((InternalEList<?>)getRecords()).basicRemove(otherEnd, msgs);
     }
@@ -106,6 +173,8 @@ public class DependenciesSectionImpl extends SpecSectionImpl implements Dependen
   {
     switch (featureID)
     {
+      case LibrettoSpecPackage.DEPENDENCIES_SECTION__SECTION_KEYWORD:
+        return getSectionKeyword();
       case LibrettoSpecPackage.DEPENDENCIES_SECTION__RECORDS:
         return getRecords();
     }
@@ -123,6 +192,9 @@ public class DependenciesSectionImpl extends SpecSectionImpl implements Dependen
   {
     switch (featureID)
     {
+      case LibrettoSpecPackage.DEPENDENCIES_SECTION__SECTION_KEYWORD:
+        setSectionKeyword((DependenciesSectionKeyword)newValue);
+        return;
       case LibrettoSpecPackage.DEPENDENCIES_SECTION__RECORDS:
         getRecords().clear();
         getRecords().addAll((Collection<? extends DependencyRecord>)newValue);
@@ -141,6 +213,9 @@ public class DependenciesSectionImpl extends SpecSectionImpl implements Dependen
   {
     switch (featureID)
     {
+      case LibrettoSpecPackage.DEPENDENCIES_SECTION__SECTION_KEYWORD:
+        setSectionKeyword((DependenciesSectionKeyword)null);
+        return;
       case LibrettoSpecPackage.DEPENDENCIES_SECTION__RECORDS:
         getRecords().clear();
         return;
@@ -158,6 +233,8 @@ public class DependenciesSectionImpl extends SpecSectionImpl implements Dependen
   {
     switch (featureID)
     {
+      case LibrettoSpecPackage.DEPENDENCIES_SECTION__SECTION_KEYWORD:
+        return sectionKeyword != null;
       case LibrettoSpecPackage.DEPENDENCIES_SECTION__RECORDS:
         return records != null && !records.isEmpty();
     }

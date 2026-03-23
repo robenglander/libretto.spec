@@ -3,9 +3,10 @@
  */
 package com.robenglander.libretto.spec.librettoSpec.impl;
 
-import com.robenglander.libretto.spec.librettoSpec.IdentifierValue;
 import com.robenglander.libretto.spec.librettoSpec.LibrettoSpecPackage;
 import com.robenglander.libretto.spec.librettoSpec.MetadataField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataStatusValue;
+import com.robenglander.libretto.spec.librettoSpec.TextValue;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -24,11 +25,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.robenglander.libretto.spec.librettoSpec.impl.MetadataFieldImpl#getSpecId <em>Spec Id</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoSpec.impl.MetadataFieldImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoSpec.impl.MetadataFieldImpl#getVersion <em>Version</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoSpec.impl.MetadataFieldImpl#getStatus <em>Status</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoSpec.impl.MetadataFieldImpl#getAuthoredSource <em>Authored Source</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoSpec.impl.MetadataFieldImpl#getModuleName <em>Module Name</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoSpec.impl.MetadataFieldImpl#getJavaPackage <em>Java Package</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoSpec.impl.MetadataFieldImpl#getCompiledAt <em>Compiled At</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoSpec.impl.MetadataFieldImpl#getCompilerVersion <em>Compiler Version</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoSpec.impl.MetadataFieldImpl#getModelMetadata <em>Model Metadata</em>}</li>
@@ -39,154 +40,94 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class MetadataFieldImpl extends MinimalEObjectImpl.Container implements MetadataField
 {
   /**
-   * The default value of the '{@link #getSpecId() <em>Spec Id</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSpecId()
-   * @generated
-   * @ordered
-   */
-  protected static final String SPEC_ID_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getSpecId() <em>Spec Id</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSpecId()
-   * @generated
-   * @ordered
-   */
-  protected String specId = SPEC_ID_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
+   * The cached value of the '{@link #getTitle() <em>Title</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getTitle()
    * @generated
    * @ordered
    */
-  protected static final String TITLE_EDEFAULT = null;
+  protected TextValue title;
 
   /**
-   * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTitle()
-   * @generated
-   * @ordered
-   */
-  protected String title = TITLE_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getVersion() <em>Version</em>}' attribute.
+   * The cached value of the '{@link #getVersion() <em>Version</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getVersion()
    * @generated
    * @ordered
    */
-  protected static final String VERSION_EDEFAULT = null;
+  protected TextValue version;
 
   /**
-   * The cached value of the '{@link #getVersion() <em>Version</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getVersion()
-   * @generated
-   * @ordered
-   */
-  protected String version = VERSION_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getStatus() <em>Status</em>}' containment reference.
+   * The default value of the '{@link #getStatus() <em>Status</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getStatus()
    * @generated
    * @ordered
    */
-  protected IdentifierValue status;
+  protected static final MetadataStatusValue STATUS_EDEFAULT = MetadataStatusValue.DRAFT;
 
   /**
-   * The default value of the '{@link #getAuthoredSource() <em>Authored Source</em>}' attribute.
+   * The cached value of the '{@link #getStatus() <em>Status</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAuthoredSource()
+   * @see #getStatus()
    * @generated
    * @ordered
    */
-  protected static final String AUTHORED_SOURCE_EDEFAULT = null;
+  protected MetadataStatusValue status = STATUS_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getAuthoredSource() <em>Authored Source</em>}' attribute.
+   * The cached value of the '{@link #getModuleName() <em>Module Name</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAuthoredSource()
+   * @see #getModuleName()
    * @generated
    * @ordered
    */
-  protected String authoredSource = AUTHORED_SOURCE_EDEFAULT;
+  protected TextValue moduleName;
 
   /**
-   * The default value of the '{@link #getCompiledAt() <em>Compiled At</em>}' attribute.
+   * The cached value of the '{@link #getJavaPackage() <em>Java Package</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getJavaPackage()
+   * @generated
+   * @ordered
+   */
+  protected TextValue javaPackage;
+
+  /**
+   * The cached value of the '{@link #getCompiledAt() <em>Compiled At</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getCompiledAt()
    * @generated
    * @ordered
    */
-  protected static final String COMPILED_AT_EDEFAULT = null;
+  protected TextValue compiledAt;
 
   /**
-   * The cached value of the '{@link #getCompiledAt() <em>Compiled At</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCompiledAt()
-   * @generated
-   * @ordered
-   */
-  protected String compiledAt = COMPILED_AT_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getCompilerVersion() <em>Compiler Version</em>}' attribute.
+   * The cached value of the '{@link #getCompilerVersion() <em>Compiler Version</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getCompilerVersion()
    * @generated
    * @ordered
    */
-  protected static final String COMPILER_VERSION_EDEFAULT = null;
+  protected TextValue compilerVersion;
 
   /**
-   * The cached value of the '{@link #getCompilerVersion() <em>Compiler Version</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCompilerVersion()
-   * @generated
-   * @ordered
-   */
-  protected String compilerVersion = COMPILER_VERSION_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getModelMetadata() <em>Model Metadata</em>}' attribute.
+   * The cached value of the '{@link #getModelMetadata() <em>Model Metadata</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getModelMetadata()
    * @generated
    * @ordered
    */
-  protected static final String MODEL_METADATA_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getModelMetadata() <em>Model Metadata</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getModelMetadata()
-   * @generated
-   * @ordered
-   */
-  protected String modelMetadata = MODEL_METADATA_EDEFAULT;
+  protected TextValue modelMetadata;
 
   /**
    * <!-- begin-user-doc -->
@@ -215,32 +156,7 @@ public class MetadataFieldImpl extends MinimalEObjectImpl.Container implements M
    * @generated
    */
   @Override
-  public String getSpecId()
-  {
-    return specId;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setSpecId(String newSpecId)
-  {
-    String oldSpecId = specId;
-    specId = newSpecId;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoSpecPackage.METADATA_FIELD__SPEC_ID, oldSpecId, specId));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getTitle()
+  public TextValue getTitle()
   {
     return title;
   }
@@ -250,63 +166,13 @@ public class MetadataFieldImpl extends MinimalEObjectImpl.Container implements M
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setTitle(String newTitle)
+  public NotificationChain basicSetTitle(TextValue newTitle, NotificationChain msgs)
   {
-    String oldTitle = title;
+    TextValue oldTitle = title;
     title = newTitle;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoSpecPackage.METADATA_FIELD__TITLE, oldTitle, title));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getVersion()
-  {
-    return version;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setVersion(String newVersion)
-  {
-    String oldVersion = version;
-    version = newVersion;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoSpecPackage.METADATA_FIELD__VERSION, oldVersion, version));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public IdentifierValue getStatus()
-  {
-    return status;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetStatus(IdentifierValue newStatus, NotificationChain msgs)
-  {
-    IdentifierValue oldStatus = status;
-    status = newStatus;
-    if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LibrettoSpecPackage.METADATA_FIELD__STATUS, oldStatus, newStatus);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LibrettoSpecPackage.METADATA_FIELD__TITLE, oldTitle, newTitle);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -318,20 +184,20 @@ public class MetadataFieldImpl extends MinimalEObjectImpl.Container implements M
    * @generated
    */
   @Override
-  public void setStatus(IdentifierValue newStatus)
+  public void setTitle(TextValue newTitle)
   {
-    if (newStatus != status)
+    if (newTitle != title)
     {
       NotificationChain msgs = null;
-      if (status != null)
-        msgs = ((InternalEObject)status).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LibrettoSpecPackage.METADATA_FIELD__STATUS, null, msgs);
-      if (newStatus != null)
-        msgs = ((InternalEObject)newStatus).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LibrettoSpecPackage.METADATA_FIELD__STATUS, null, msgs);
-      msgs = basicSetStatus(newStatus, msgs);
+      if (title != null)
+        msgs = ((InternalEObject)title).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LibrettoSpecPackage.METADATA_FIELD__TITLE, null, msgs);
+      if (newTitle != null)
+        msgs = ((InternalEObject)newTitle).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LibrettoSpecPackage.METADATA_FIELD__TITLE, null, msgs);
+      msgs = basicSetTitle(newTitle, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoSpecPackage.METADATA_FIELD__STATUS, newStatus, newStatus));
+      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoSpecPackage.METADATA_FIELD__TITLE, newTitle, newTitle));
   }
 
   /**
@@ -340,9 +206,9 @@ public class MetadataFieldImpl extends MinimalEObjectImpl.Container implements M
    * @generated
    */
   @Override
-  public String getAuthoredSource()
+  public TextValue getVersion()
   {
-    return authoredSource;
+    return version;
   }
 
   /**
@@ -350,13 +216,16 @@ public class MetadataFieldImpl extends MinimalEObjectImpl.Container implements M
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setAuthoredSource(String newAuthoredSource)
+  public NotificationChain basicSetVersion(TextValue newVersion, NotificationChain msgs)
   {
-    String oldAuthoredSource = authoredSource;
-    authoredSource = newAuthoredSource;
+    TextValue oldVersion = version;
+    version = newVersion;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoSpecPackage.METADATA_FIELD__AUTHORED_SOURCE, oldAuthoredSource, authoredSource));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LibrettoSpecPackage.METADATA_FIELD__VERSION, oldVersion, newVersion);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -365,7 +234,154 @@ public class MetadataFieldImpl extends MinimalEObjectImpl.Container implements M
    * @generated
    */
   @Override
-  public String getCompiledAt()
+  public void setVersion(TextValue newVersion)
+  {
+    if (newVersion != version)
+    {
+      NotificationChain msgs = null;
+      if (version != null)
+        msgs = ((InternalEObject)version).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LibrettoSpecPackage.METADATA_FIELD__VERSION, null, msgs);
+      if (newVersion != null)
+        msgs = ((InternalEObject)newVersion).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LibrettoSpecPackage.METADATA_FIELD__VERSION, null, msgs);
+      msgs = basicSetVersion(newVersion, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoSpecPackage.METADATA_FIELD__VERSION, newVersion, newVersion));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public MetadataStatusValue getStatus()
+  {
+    return status;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setStatus(MetadataStatusValue newStatus)
+  {
+    MetadataStatusValue oldStatus = status;
+    status = newStatus == null ? STATUS_EDEFAULT : newStatus;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoSpecPackage.METADATA_FIELD__STATUS, oldStatus, status));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TextValue getModuleName()
+  {
+    return moduleName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetModuleName(TextValue newModuleName, NotificationChain msgs)
+  {
+    TextValue oldModuleName = moduleName;
+    moduleName = newModuleName;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LibrettoSpecPackage.METADATA_FIELD__MODULE_NAME, oldModuleName, newModuleName);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setModuleName(TextValue newModuleName)
+  {
+    if (newModuleName != moduleName)
+    {
+      NotificationChain msgs = null;
+      if (moduleName != null)
+        msgs = ((InternalEObject)moduleName).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LibrettoSpecPackage.METADATA_FIELD__MODULE_NAME, null, msgs);
+      if (newModuleName != null)
+        msgs = ((InternalEObject)newModuleName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LibrettoSpecPackage.METADATA_FIELD__MODULE_NAME, null, msgs);
+      msgs = basicSetModuleName(newModuleName, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoSpecPackage.METADATA_FIELD__MODULE_NAME, newModuleName, newModuleName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TextValue getJavaPackage()
+  {
+    return javaPackage;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetJavaPackage(TextValue newJavaPackage, NotificationChain msgs)
+  {
+    TextValue oldJavaPackage = javaPackage;
+    javaPackage = newJavaPackage;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LibrettoSpecPackage.METADATA_FIELD__JAVA_PACKAGE, oldJavaPackage, newJavaPackage);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setJavaPackage(TextValue newJavaPackage)
+  {
+    if (newJavaPackage != javaPackage)
+    {
+      NotificationChain msgs = null;
+      if (javaPackage != null)
+        msgs = ((InternalEObject)javaPackage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LibrettoSpecPackage.METADATA_FIELD__JAVA_PACKAGE, null, msgs);
+      if (newJavaPackage != null)
+        msgs = ((InternalEObject)newJavaPackage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LibrettoSpecPackage.METADATA_FIELD__JAVA_PACKAGE, null, msgs);
+      msgs = basicSetJavaPackage(newJavaPackage, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoSpecPackage.METADATA_FIELD__JAVA_PACKAGE, newJavaPackage, newJavaPackage));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TextValue getCompiledAt()
   {
     return compiledAt;
   }
@@ -375,13 +391,16 @@ public class MetadataFieldImpl extends MinimalEObjectImpl.Container implements M
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setCompiledAt(String newCompiledAt)
+  public NotificationChain basicSetCompiledAt(TextValue newCompiledAt, NotificationChain msgs)
   {
-    String oldCompiledAt = compiledAt;
+    TextValue oldCompiledAt = compiledAt;
     compiledAt = newCompiledAt;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoSpecPackage.METADATA_FIELD__COMPILED_AT, oldCompiledAt, compiledAt));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LibrettoSpecPackage.METADATA_FIELD__COMPILED_AT, oldCompiledAt, newCompiledAt);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -390,7 +409,29 @@ public class MetadataFieldImpl extends MinimalEObjectImpl.Container implements M
    * @generated
    */
   @Override
-  public String getCompilerVersion()
+  public void setCompiledAt(TextValue newCompiledAt)
+  {
+    if (newCompiledAt != compiledAt)
+    {
+      NotificationChain msgs = null;
+      if (compiledAt != null)
+        msgs = ((InternalEObject)compiledAt).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LibrettoSpecPackage.METADATA_FIELD__COMPILED_AT, null, msgs);
+      if (newCompiledAt != null)
+        msgs = ((InternalEObject)newCompiledAt).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LibrettoSpecPackage.METADATA_FIELD__COMPILED_AT, null, msgs);
+      msgs = basicSetCompiledAt(newCompiledAt, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoSpecPackage.METADATA_FIELD__COMPILED_AT, newCompiledAt, newCompiledAt));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TextValue getCompilerVersion()
   {
     return compilerVersion;
   }
@@ -400,13 +441,16 @@ public class MetadataFieldImpl extends MinimalEObjectImpl.Container implements M
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setCompilerVersion(String newCompilerVersion)
+  public NotificationChain basicSetCompilerVersion(TextValue newCompilerVersion, NotificationChain msgs)
   {
-    String oldCompilerVersion = compilerVersion;
+    TextValue oldCompilerVersion = compilerVersion;
     compilerVersion = newCompilerVersion;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoSpecPackage.METADATA_FIELD__COMPILER_VERSION, oldCompilerVersion, compilerVersion));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LibrettoSpecPackage.METADATA_FIELD__COMPILER_VERSION, oldCompilerVersion, newCompilerVersion);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -415,7 +459,29 @@ public class MetadataFieldImpl extends MinimalEObjectImpl.Container implements M
    * @generated
    */
   @Override
-  public String getModelMetadata()
+  public void setCompilerVersion(TextValue newCompilerVersion)
+  {
+    if (newCompilerVersion != compilerVersion)
+    {
+      NotificationChain msgs = null;
+      if (compilerVersion != null)
+        msgs = ((InternalEObject)compilerVersion).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LibrettoSpecPackage.METADATA_FIELD__COMPILER_VERSION, null, msgs);
+      if (newCompilerVersion != null)
+        msgs = ((InternalEObject)newCompilerVersion).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LibrettoSpecPackage.METADATA_FIELD__COMPILER_VERSION, null, msgs);
+      msgs = basicSetCompilerVersion(newCompilerVersion, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoSpecPackage.METADATA_FIELD__COMPILER_VERSION, newCompilerVersion, newCompilerVersion));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TextValue getModelMetadata()
   {
     return modelMetadata;
   }
@@ -425,13 +491,38 @@ public class MetadataFieldImpl extends MinimalEObjectImpl.Container implements M
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setModelMetadata(String newModelMetadata)
+  public NotificationChain basicSetModelMetadata(TextValue newModelMetadata, NotificationChain msgs)
   {
-    String oldModelMetadata = modelMetadata;
+    TextValue oldModelMetadata = modelMetadata;
     modelMetadata = newModelMetadata;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoSpecPackage.METADATA_FIELD__MODEL_METADATA, oldModelMetadata, modelMetadata));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LibrettoSpecPackage.METADATA_FIELD__MODEL_METADATA, oldModelMetadata, newModelMetadata);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setModelMetadata(TextValue newModelMetadata)
+  {
+    if (newModelMetadata != modelMetadata)
+    {
+      NotificationChain msgs = null;
+      if (modelMetadata != null)
+        msgs = ((InternalEObject)modelMetadata).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LibrettoSpecPackage.METADATA_FIELD__MODEL_METADATA, null, msgs);
+      if (newModelMetadata != null)
+        msgs = ((InternalEObject)newModelMetadata).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LibrettoSpecPackage.METADATA_FIELD__MODEL_METADATA, null, msgs);
+      msgs = basicSetModelMetadata(newModelMetadata, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoSpecPackage.METADATA_FIELD__MODEL_METADATA, newModelMetadata, newModelMetadata));
   }
 
   /**
@@ -444,8 +535,20 @@ public class MetadataFieldImpl extends MinimalEObjectImpl.Container implements M
   {
     switch (featureID)
     {
-      case LibrettoSpecPackage.METADATA_FIELD__STATUS:
-        return basicSetStatus(null, msgs);
+      case LibrettoSpecPackage.METADATA_FIELD__TITLE:
+        return basicSetTitle(null, msgs);
+      case LibrettoSpecPackage.METADATA_FIELD__VERSION:
+        return basicSetVersion(null, msgs);
+      case LibrettoSpecPackage.METADATA_FIELD__MODULE_NAME:
+        return basicSetModuleName(null, msgs);
+      case LibrettoSpecPackage.METADATA_FIELD__JAVA_PACKAGE:
+        return basicSetJavaPackage(null, msgs);
+      case LibrettoSpecPackage.METADATA_FIELD__COMPILED_AT:
+        return basicSetCompiledAt(null, msgs);
+      case LibrettoSpecPackage.METADATA_FIELD__COMPILER_VERSION:
+        return basicSetCompilerVersion(null, msgs);
+      case LibrettoSpecPackage.METADATA_FIELD__MODEL_METADATA:
+        return basicSetModelMetadata(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -460,16 +563,16 @@ public class MetadataFieldImpl extends MinimalEObjectImpl.Container implements M
   {
     switch (featureID)
     {
-      case LibrettoSpecPackage.METADATA_FIELD__SPEC_ID:
-        return getSpecId();
       case LibrettoSpecPackage.METADATA_FIELD__TITLE:
         return getTitle();
       case LibrettoSpecPackage.METADATA_FIELD__VERSION:
         return getVersion();
       case LibrettoSpecPackage.METADATA_FIELD__STATUS:
         return getStatus();
-      case LibrettoSpecPackage.METADATA_FIELD__AUTHORED_SOURCE:
-        return getAuthoredSource();
+      case LibrettoSpecPackage.METADATA_FIELD__MODULE_NAME:
+        return getModuleName();
+      case LibrettoSpecPackage.METADATA_FIELD__JAVA_PACKAGE:
+        return getJavaPackage();
       case LibrettoSpecPackage.METADATA_FIELD__COMPILED_AT:
         return getCompiledAt();
       case LibrettoSpecPackage.METADATA_FIELD__COMPILER_VERSION:
@@ -490,29 +593,29 @@ public class MetadataFieldImpl extends MinimalEObjectImpl.Container implements M
   {
     switch (featureID)
     {
-      case LibrettoSpecPackage.METADATA_FIELD__SPEC_ID:
-        setSpecId((String)newValue);
-        return;
       case LibrettoSpecPackage.METADATA_FIELD__TITLE:
-        setTitle((String)newValue);
+        setTitle((TextValue)newValue);
         return;
       case LibrettoSpecPackage.METADATA_FIELD__VERSION:
-        setVersion((String)newValue);
+        setVersion((TextValue)newValue);
         return;
       case LibrettoSpecPackage.METADATA_FIELD__STATUS:
-        setStatus((IdentifierValue)newValue);
+        setStatus((MetadataStatusValue)newValue);
         return;
-      case LibrettoSpecPackage.METADATA_FIELD__AUTHORED_SOURCE:
-        setAuthoredSource((String)newValue);
+      case LibrettoSpecPackage.METADATA_FIELD__MODULE_NAME:
+        setModuleName((TextValue)newValue);
+        return;
+      case LibrettoSpecPackage.METADATA_FIELD__JAVA_PACKAGE:
+        setJavaPackage((TextValue)newValue);
         return;
       case LibrettoSpecPackage.METADATA_FIELD__COMPILED_AT:
-        setCompiledAt((String)newValue);
+        setCompiledAt((TextValue)newValue);
         return;
       case LibrettoSpecPackage.METADATA_FIELD__COMPILER_VERSION:
-        setCompilerVersion((String)newValue);
+        setCompilerVersion((TextValue)newValue);
         return;
       case LibrettoSpecPackage.METADATA_FIELD__MODEL_METADATA:
-        setModelMetadata((String)newValue);
+        setModelMetadata((TextValue)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -528,29 +631,29 @@ public class MetadataFieldImpl extends MinimalEObjectImpl.Container implements M
   {
     switch (featureID)
     {
-      case LibrettoSpecPackage.METADATA_FIELD__SPEC_ID:
-        setSpecId(SPEC_ID_EDEFAULT);
-        return;
       case LibrettoSpecPackage.METADATA_FIELD__TITLE:
-        setTitle(TITLE_EDEFAULT);
+        setTitle((TextValue)null);
         return;
       case LibrettoSpecPackage.METADATA_FIELD__VERSION:
-        setVersion(VERSION_EDEFAULT);
+        setVersion((TextValue)null);
         return;
       case LibrettoSpecPackage.METADATA_FIELD__STATUS:
-        setStatus((IdentifierValue)null);
+        setStatus(STATUS_EDEFAULT);
         return;
-      case LibrettoSpecPackage.METADATA_FIELD__AUTHORED_SOURCE:
-        setAuthoredSource(AUTHORED_SOURCE_EDEFAULT);
+      case LibrettoSpecPackage.METADATA_FIELD__MODULE_NAME:
+        setModuleName((TextValue)null);
+        return;
+      case LibrettoSpecPackage.METADATA_FIELD__JAVA_PACKAGE:
+        setJavaPackage((TextValue)null);
         return;
       case LibrettoSpecPackage.METADATA_FIELD__COMPILED_AT:
-        setCompiledAt(COMPILED_AT_EDEFAULT);
+        setCompiledAt((TextValue)null);
         return;
       case LibrettoSpecPackage.METADATA_FIELD__COMPILER_VERSION:
-        setCompilerVersion(COMPILER_VERSION_EDEFAULT);
+        setCompilerVersion((TextValue)null);
         return;
       case LibrettoSpecPackage.METADATA_FIELD__MODEL_METADATA:
-        setModelMetadata(MODEL_METADATA_EDEFAULT);
+        setModelMetadata((TextValue)null);
         return;
     }
     super.eUnset(featureID);
@@ -566,22 +669,22 @@ public class MetadataFieldImpl extends MinimalEObjectImpl.Container implements M
   {
     switch (featureID)
     {
-      case LibrettoSpecPackage.METADATA_FIELD__SPEC_ID:
-        return SPEC_ID_EDEFAULT == null ? specId != null : !SPEC_ID_EDEFAULT.equals(specId);
       case LibrettoSpecPackage.METADATA_FIELD__TITLE:
-        return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
+        return title != null;
       case LibrettoSpecPackage.METADATA_FIELD__VERSION:
-        return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
+        return version != null;
       case LibrettoSpecPackage.METADATA_FIELD__STATUS:
-        return status != null;
-      case LibrettoSpecPackage.METADATA_FIELD__AUTHORED_SOURCE:
-        return AUTHORED_SOURCE_EDEFAULT == null ? authoredSource != null : !AUTHORED_SOURCE_EDEFAULT.equals(authoredSource);
+        return status != STATUS_EDEFAULT;
+      case LibrettoSpecPackage.METADATA_FIELD__MODULE_NAME:
+        return moduleName != null;
+      case LibrettoSpecPackage.METADATA_FIELD__JAVA_PACKAGE:
+        return javaPackage != null;
       case LibrettoSpecPackage.METADATA_FIELD__COMPILED_AT:
-        return COMPILED_AT_EDEFAULT == null ? compiledAt != null : !COMPILED_AT_EDEFAULT.equals(compiledAt);
+        return compiledAt != null;
       case LibrettoSpecPackage.METADATA_FIELD__COMPILER_VERSION:
-        return COMPILER_VERSION_EDEFAULT == null ? compilerVersion != null : !COMPILER_VERSION_EDEFAULT.equals(compilerVersion);
+        return compilerVersion != null;
       case LibrettoSpecPackage.METADATA_FIELD__MODEL_METADATA:
-        return MODEL_METADATA_EDEFAULT == null ? modelMetadata != null : !MODEL_METADATA_EDEFAULT.equals(modelMetadata);
+        return modelMetadata != null;
     }
     return super.eIsSet(featureID);
   }
@@ -597,20 +700,8 @@ public class MetadataFieldImpl extends MinimalEObjectImpl.Container implements M
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (specId: ");
-    result.append(specId);
-    result.append(", title: ");
-    result.append(title);
-    result.append(", version: ");
-    result.append(version);
-    result.append(", authoredSource: ");
-    result.append(authoredSource);
-    result.append(", compiledAt: ");
-    result.append(compiledAt);
-    result.append(", compilerVersion: ");
-    result.append(compilerVersion);
-    result.append(", modelMetadata: ");
-    result.append(modelMetadata);
+    result.append(" (status: ");
+    result.append(status);
     result.append(')');
     return result.toString();
   }

@@ -27,7 +27,6 @@ import com.robenglander.libretto.spec.librettoSpec.ImplementsSurfaceRecordItem;
 import com.robenglander.libretto.spec.librettoSpec.ImplementsSurfaceTargetField;
 import com.robenglander.libretto.spec.librettoSpec.ImplementationDirectiveRecord;
 import com.robenglander.libretto.spec.librettoSpec.ImplementationDirectiveRecordItem;
-import com.robenglander.libretto.spec.librettoSpec.KindField;
 import com.robenglander.libretto.spec.librettoSpec.ObjectsField;
 import com.robenglander.libretto.spec.librettoSpec.OperationExpressionField;
 import com.robenglander.libretto.spec.librettoSpec.OperationSurfaceRecord;
@@ -98,10 +97,6 @@ public final class UnorderedRecordAccess {
 
 	public static TargetSpecField dependencyTargetSpec(DependencyRecord dep) {
 		return firstItemField(dep.getItems(), DependencyRecordItem::getTargetSpec);
-	}
-
-	public static KindField dependencyKind(DependencyRecord dep) {
-		return firstItemField(dep.getItems(), DependencyRecordItem::getKind);
 	}
 
 	public static TitleField referenceTitle(ReferenceRecord ref) {

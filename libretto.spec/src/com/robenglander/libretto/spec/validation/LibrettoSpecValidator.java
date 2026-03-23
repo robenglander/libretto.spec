@@ -20,6 +20,7 @@ import com.robenglander.libretto.spec.librettoSpec.ImplementationDirectiveRecord
 import com.robenglander.libretto.spec.librettoSpec.ImplementationDirectivesSection;
 import com.robenglander.libretto.spec.librettoSpec.MetadataField;
 import com.robenglander.libretto.spec.librettoSpec.MetadataSection;
+import com.robenglander.libretto.spec.librettoSpec.MetadataStatusValue;
 import com.robenglander.libretto.spec.librettoSpec.OperationSurfaceRecord;
 import com.robenglander.libretto.spec.librettoSpec.OperationSurfaceSection;
 import com.robenglander.libretto.spec.librettoSpec.OutcomeClassValue;
@@ -32,6 +33,7 @@ import com.robenglander.libretto.spec.librettoSpec.SectionContextRecord;
 import com.robenglander.libretto.spec.librettoSpec.SourceBlock;
 import com.robenglander.libretto.spec.librettoSpec.Spec;
 import com.robenglander.libretto.spec.librettoSpec.SpecSection;
+import com.robenglander.libretto.spec.librettoSpec.TextValue;
 import com.robenglander.libretto.spec.librettoSpec.SubsectionContextRecord;
 import com.robenglander.libretto.spec.librettoSpec.BehaviorRecordItem;
 import com.robenglander.libretto.spec.librettoSpec.BoundaryRecordItem;
@@ -46,6 +48,7 @@ import com.robenglander.libretto.spec.librettoSpec.AcceptanceTestRecordItem;
 import com.robenglander.libretto.spec.librettoSpec.ImplementationDirectiveRecordItem;
 import com.robenglander.libretto.spec.librettoSpec.SourceBlockItem;
 import com.robenglander.libretto.spec.librettoSpec.LibrettoSpecPackage.Literals;
+import com.robenglander.libretto.spec.model.LibrettoSpecTextValues;
 import com.robenglander.libretto.spec.model.SpecSections;
 import com.robenglander.libretto.spec.model.UnorderedRecordAccess;
 import java.util.HashMap;
@@ -55,6 +58,7 @@ import java.util.Map;
 import java.util.List;
 import java.util.Set;
 import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.eclipse.emf.ecore.EObject;
@@ -90,7 +94,11 @@ public class LibrettoSpecValidator extends AbstractLibrettoSpecValidator {
 	public static final String BOUNDARY_IMPORT_MISSING_OPERATION_ID = "BOUNDARY_IMPORT_MISSING_OPERATION_ID";
 	public static final String BOUNDARY_IMPORT_UNKNOWN_OPERATION_ID = "BOUNDARY_IMPORT_UNKNOWN_OPERATION_ID";
 	public static final String BOUNDARY_IMPORT_DUPLICATE_TARGET = "BOUNDARY_IMPORT_DUPLICATE_TARGET";
-	public static final String METADATA_SPEC_ID_MISMATCH = "METADATA_SPEC_ID_MISMATCH";
+	public static final String MISSING_METADATA_SECTION = "MISSING_METADATA_SECTION";
+	public static final String MISSING_METADATA_STATUS = "MISSING_METADATA_STATUS";
+	public static final String MISSING_METADATA_MODULE = "MISSING_METADATA_MODULE";
+	public static final String MISSING_METADATA_PACKAGE = "MISSING_METADATA_PACKAGE";
+	public static final String DUPLICATE_METADATA_FIELD = "DUPLICATE_METADATA_FIELD";
 	public static final String MISSING_BEHAVIOR_SOURCE = "MISSING_BEHAVIOR_SOURCE";
 	public static final String MISSING_BEHAVIOR_ACTOR = "MISSING_BEHAVIOR_ACTOR";
 	public static final String MISSING_BEHAVIOR_ACTION = "MISSING_BEHAVIOR_ACTION";
@@ -100,7 +108,6 @@ public class LibrettoSpecValidator extends AbstractLibrettoSpecValidator {
 	public static final String MISSING_BEHAVIOR_CONDITIONS = "MISSING_BEHAVIOR_CONDITIONS";
 	public static final String MISSING_BEHAVIOR_OUTCOMES = "MISSING_BEHAVIOR_OUTCOMES";
 	public static final String MISSING_DEPENDENCY_TARGET_SPEC = "MISSING_DEPENDENCY_TARGET_SPEC";
-	public static final String MISSING_DEPENDENCY_KIND = "MISSING_DEPENDENCY_KIND";
 	public static final String MISSING_REFERENCE_TITLE = "MISSING_REFERENCE_TITLE";
 	public static final String MISSING_REFERENCE_TYPE = "MISSING_REFERENCE_TYPE";
 	public static final String MISSING_REFERENCE_CITATION = "MISSING_REFERENCE_CITATION";
@@ -258,19 +265,95 @@ public class LibrettoSpecValidator extends AbstractLibrettoSpecValidator {
 	}
 
 	@Check
-	public void checkMetadataSpecIdMatchesRoot(Spec spec) {
-		for (MetadataSection metaSec : SpecSections.metadataSections(spec)) {
-			for (MetadataField field : metaSec.getFields()) {
-				if (field.getSpecId() != null) {
-					String meta = unquote(field.getSpecId());
-					String root = spec.getSpecId() != null ? spec.getSpecId().trim() : "";
-					if (!meta.equals(root)) {
-						errorAnchored(field, "spec_id", "metadata spec_id does not match root spec id.",
-								METADATA_SPEC_ID_MISMATCH, Literals.METADATA_FIELD__SPEC_ID);
-					}
-					break;
-				}
+	public void checkSpecHasMetadataSection(Spec spec) {
+		if (SpecSections.metadataSections(spec).isEmpty()) {
+			errorAnchored(spec, "spec", "Spec is missing required metadata section.", MISSING_METADATA_SECTION,
+					Literals.SPEC__SECTIONS);
+		}
+	}
+
+	@Check
+	public void checkMetadataSectionRequiredAndUnique(MetadataSection metaSec) {
+		checkAtMostOneMetadataSlot(metaSec, f -> f.getTitle() != null, "title", Literals.METADATA_FIELD__TITLE);
+		checkAtMostOneMetadataSlot(metaSec, f -> f.getVersion() != null, "version", Literals.METADATA_FIELD__VERSION);
+		checkAtMostOneMetadataSlot(metaSec, LibrettoSpecValidator::metadataFieldDeclaresStatus, "status",
+				Literals.METADATA_FIELD__STATUS);
+		checkAtMostOneMetadataSlot(metaSec, f -> f.getModuleName() != null, "module", Literals.METADATA_FIELD__MODULE_NAME);
+		checkAtMostOneMetadataSlot(metaSec, f -> f.getJavaPackage() != null, "package",
+				Literals.METADATA_FIELD__JAVA_PACKAGE);
+		checkAtMostOneMetadataSlot(metaSec, f -> f.getCompiledAt() != null, "compiled_at",
+				Literals.METADATA_FIELD__COMPILED_AT);
+		checkAtMostOneMetadataSlot(metaSec, f -> f.getCompilerVersion() != null, "compiler_version",
+				Literals.METADATA_FIELD__COMPILER_VERSION);
+		checkAtMostOneMetadataSlot(metaSec, f -> f.getModelMetadata() != null, "model_metadata",
+				Literals.METADATA_FIELD__MODEL_METADATA);
+
+		boolean hasStatus = false;
+		boolean hasModule = false;
+		boolean hasPackage = false;
+		for (MetadataField f : metaSec.getFields()) {
+			if (metadataFieldDeclaresStatus(f)) {
+				hasStatus = true;
 			}
+			if (f.getModuleName() != null && !LibrettoSpecTextValues.text(f.getModuleName()).isBlank()) {
+				hasModule = true;
+			}
+			if (f.getJavaPackage() != null && !LibrettoSpecTextValues.text(f.getJavaPackage()).isBlank()) {
+				hasPackage = true;
+			}
+		}
+		String mk = ValidationKeywordAnchor.topLevelSectionKeyword(metaSec);
+		if (!hasStatus) {
+			errorAnchored(metaSec, mk, "metadata is missing required status field (draft or public).",
+					MISSING_METADATA_STATUS, Literals.METADATA_SECTION__FIELDS);
+		}
+		if (!hasModule) {
+			errorAnchored(metaSec, mk, "metadata is missing required module field.", MISSING_METADATA_MODULE,
+					Literals.METADATA_SECTION__FIELDS);
+		}
+		if (!hasPackage) {
+			errorAnchored(metaSec, mk, "metadata is missing required package field.", MISSING_METADATA_PACKAGE,
+					Literals.METADATA_SECTION__FIELDS);
+		}
+	}
+
+	/**
+	 * True for a {@code metadata} line that declares {@code status: ...}. Every {@link MetadataField}
+	 * has {@link MetadataField#getStatus()} defaulting to {@link MetadataStatusValue#DRAFT} in EMF, so
+	 * {@code getStatus() != null} is not a reliable signal.
+	 */
+	private static boolean metadataFieldDeclaresStatus(MetadataField f) {
+		if (f.eIsSet(Literals.METADATA_FIELD__STATUS)) {
+			return true;
+		}
+		// Explicit "status: draft" equals the feature default; eIsSet(STATUS) stays false.
+		if (metadataFieldDeclaresAnyNonStatusSlot(f)) {
+			return false;
+		}
+		return f.getStatus() == MetadataStatusValue.DRAFT;
+	}
+
+	private static boolean metadataFieldDeclaresAnyNonStatusSlot(MetadataField f) {
+		return f.eIsSet(Literals.METADATA_FIELD__TITLE) || f.eIsSet(Literals.METADATA_FIELD__VERSION)
+				|| f.eIsSet(Literals.METADATA_FIELD__MODULE_NAME) || f.eIsSet(Literals.METADATA_FIELD__JAVA_PACKAGE)
+				|| f.eIsSet(Literals.METADATA_FIELD__COMPILED_AT)
+				|| f.eIsSet(Literals.METADATA_FIELD__COMPILER_VERSION)
+				|| f.eIsSet(Literals.METADATA_FIELD__MODEL_METADATA);
+	}
+
+	private void checkAtMostOneMetadataSlot(MetadataSection metaSec, Predicate<MetadataField> present, String keyword,
+			EStructuralFeature fieldFallback) {
+		boolean seen = false;
+		for (MetadataField f : metaSec.getFields()) {
+			if (!present.test(f)) {
+				continue;
+			}
+			if (seen) {
+				errorAnchored(f, keyword, "Duplicate " + keyword + " field in metadata.", DUPLICATE_METADATA_FIELD,
+						fieldFallback);
+				return;
+			}
+			seen = true;
 		}
 	}
 
@@ -325,13 +408,9 @@ public class LibrettoSpecValidator extends AbstractLibrettoSpecValidator {
 	@Check
 	public void checkDependencyRecordRequiredFields(DependencyRecord dep) {
 		checkAtMostOneNestedSlots(dep.getItems(),
-				new NestedSlot<>(DependencyRecordItem::getTargetSpec, Literals.DEPENDENCY_RECORD_ITEM__TARGET_SPEC, "target_spec"),
-				new NestedSlot<>(DependencyRecordItem::getKind, Literals.DEPENDENCY_RECORD_ITEM__KIND, "kind"));
+				new NestedSlot<>(DependencyRecordItem::getTargetSpec, Literals.DEPENDENCY_RECORD_ITEM__TARGET_SPEC, "target_spec"));
 		if (UnorderedRecordAccess.dependencyTargetSpec(dep) == null) {
 			errorOnRecordConstruct(dep, "Dependency is missing required target_spec field.", MISSING_DEPENDENCY_TARGET_SPEC);
-		}
-		if (UnorderedRecordAccess.dependencyKind(dep) == null) {
-			errorOnRecordConstruct(dep, "Dependency is missing required kind field.", MISSING_DEPENDENCY_KIND);
 		}
 	}
 
@@ -538,7 +617,7 @@ public class LibrettoSpecValidator extends AbstractLibrettoSpecValidator {
 		for (DependencyRecord dep : SpecSections.dependencyRecords(spec)) {
 			var ts = UnorderedRecordAccess.dependencyTargetSpec(dep);
 			if (ts != null && ts.getValue() != null) {
-				dependencyTargets.add(unquote(ts.getValue()));
+				dependencyTargets.add(LibrettoSpecTextValues.text(ts.getValue()));
 			}
 		}
 
@@ -556,7 +635,7 @@ public class LibrettoSpecValidator extends AbstractLibrettoSpecValidator {
 			if (opExpr == null || opOutcome == null) {
 				continue;
 			}
-			String operationExpression = unquote(opExpr.getValue());
+			String operationExpression = LibrettoSpecTextValues.text(opExpr.getValue());
 			OutcomeClassValue outcomeEnum = opOutcome.getValue();
 			String outcomeClass = outcomeEnum != null ? outcomeEnum.getLiteral() : "";
 			operationExpressions.add(operationExpression);
@@ -575,11 +654,11 @@ public class LibrettoSpecValidator extends AbstractLibrettoSpecValidator {
 			if (condField == null || condField.getValue() == null) {
 				continue;
 			}
-			for (String condition : condField.getValue().getValues()) {
+			for (TextValue condition : condField.getValue().getValues()) {
 				if (condition == null) {
 					continue;
 				}
-				String c = unquote(condition);
+				String c = LibrettoSpecTextValues.text(condition);
 				Matcher m = OPERATION_CONDITION_PATTERN.matcher(c);
 				if (m.find()) {
 					String operationExpression = m.group(1).trim();
@@ -683,7 +762,7 @@ public class LibrettoSpecValidator extends AbstractLibrettoSpecValidator {
 			if (tgt == null || tgt.getValue() == null) {
 				continue;
 			}
-			String target = unquote(tgt.getValue());
+			String target = LibrettoSpecTextValues.text(tgt.getValue());
 			if (!implementsTargets.add(target)) {
 				errorOnRecordConstruct(impl, "Duplicate implements_surface target in Libretto: " + target,
 						DUPLICATE_IMPLEMENTS_TARGET);
@@ -754,8 +833,10 @@ public class LibrettoSpecValidator extends AbstractLibrettoSpecValidator {
 					new NestedSlot<>(BoundaryRecordItem::getRawField, Literals.BOUNDARY_RECORD_ITEM__RAW_FIELD, "raw"));
 			var specIdF = UnorderedRecordAccess.boundarySpecId(record);
 			var opIdF = UnorderedRecordAccess.boundaryOperationId(record);
-			String specId = specIdF != null && specIdF.getValue() != null ? unquote(specIdF.getValue()) : "";
-			String operationId = opIdF != null && opIdF.getValue() != null ? unquote(opIdF.getValue()) : "";
+			String specId = specIdF != null && specIdF.getValue() != null
+					? LibrettoSpecTextValues.text(specIdF.getValue()) : "";
+			String operationId = opIdF != null && opIdF.getValue() != null
+					? LibrettoSpecTextValues.text(opIdF.getValue()) : "";
 
 			if (specId.isBlank()) {
 				errorOnRecordConstruct(record, "Boundary record is missing spec_id.", codePrefix + "_MISSING_SPEC_ID");
@@ -791,27 +872,26 @@ public class LibrettoSpecValidator extends AbstractLibrettoSpecValidator {
 			return null;
 		}
 		if (v instanceof DottedIdentifier dotted) {
-			StringBuilder sb = new StringBuilder(dotted.getHead());
+			StringBuilder sb = new StringBuilder(stripLeadingCaret(dotted.getHead()));
 			for (String t : dotted.getTail()) {
-				sb.append('.').append(t);
+				sb.append('.').append(stripLeadingCaret(t));
 			}
 			return sb.toString();
 		}
 		var node = NodeModelUtils.getNode(v);
-		return node != null ? node.getText().trim() : "";
+		String raw = node != null ? node.getText().trim() : "";
+		return stripLeadingCaret(raw);
 	}
 
-	private static String unquote(String value) {
-		if (value == null) {
+	/** Xtext-style '^' escape on identifiers (see org.eclipse.xtext.common.Terminals ID). */
+	private static String stripLeadingCaret(String segment) {
+		if (segment == null || segment.isEmpty()) {
 			return "";
 		}
-		String trimmed = value.trim();
-		if (trimmed.startsWith("\"\"\"") && trimmed.endsWith("\"\"\"") && trimmed.length() >= 6) {
-			return trimmed.substring(3, trimmed.length() - 3);
+		if (segment.startsWith("^") && segment.length() > 1) {
+			return segment.substring(1);
 		}
-		if (trimmed.startsWith("\"") && trimmed.endsWith("\"") && trimmed.length() >= 2) {
-			return trimmed.substring(1, trimmed.length() - 1).replace("\\\"", "\"").replace("\\\\", "\\");
-		}
-		return trimmed;
+		return segment;
 	}
+
 }

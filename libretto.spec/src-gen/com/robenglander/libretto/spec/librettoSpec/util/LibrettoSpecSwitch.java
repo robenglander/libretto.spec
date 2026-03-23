@@ -94,6 +94,20 @@ public class LibrettoSpecSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LibrettoSpecPackage.DEPENDENCIES_SECTION_KEYWORD:
+      {
+        DependenciesSectionKeyword dependenciesSectionKeyword = (DependenciesSectionKeyword)theEObject;
+        T result = caseDependenciesSectionKeyword(dependenciesSectionKeyword);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoSpecPackage.DEPENDENCY_KEYWORD:
+      {
+        DependencyKeyword dependencyKeyword = (DependencyKeyword)theEObject;
+        T result = caseDependencyKeyword(dependencyKeyword);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case LibrettoSpecPackage.DEPENDENCY_RECORD:
       {
         DependencyRecord dependencyRecord = (DependencyRecord)theEObject;
@@ -112,13 +126,6 @@ public class LibrettoSpecSwitch<T> extends Switch<T>
       {
         TargetSpecField targetSpecField = (TargetSpecField)theEObject;
         T result = caseTargetSpecField(targetSpecField);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LibrettoSpecPackage.KIND_FIELD:
-      {
-        KindField kindField = (KindField)theEObject;
-        T result = caseKindField(kindField);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -593,6 +600,13 @@ public class LibrettoSpecSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LibrettoSpecPackage.TEXT_VALUE:
+      {
+        TextValue textValue = (TextValue)theEObject;
+        T result = caseTextValue(textValue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case LibrettoSpecPackage.IDENTIFIER_VALUE:
       {
         IdentifierValue identifierValue = (IdentifierValue)theEObject;
@@ -757,6 +771,38 @@ public class LibrettoSpecSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Dependencies Section Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Dependencies Section Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDependenciesSectionKeyword(DependenciesSectionKeyword object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Dependency Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Dependency Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDependencyKeyword(DependencyKeyword object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Dependency Record</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -800,22 +846,6 @@ public class LibrettoSpecSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseTargetSpecField(TargetSpecField object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Kind Field</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Kind Field</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseKindField(KindField object)
   {
     return null;
   }
@@ -1888,6 +1918,22 @@ public class LibrettoSpecSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseTextList(TextList object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Text Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Text Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTextValue(TextValue object)
   {
     return null;
   }

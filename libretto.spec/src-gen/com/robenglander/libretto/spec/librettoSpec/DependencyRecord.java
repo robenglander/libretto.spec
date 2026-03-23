@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link com.robenglander.libretto.spec.librettoSpec.DependencyRecord#getKeyword <em>Keyword</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoSpec.DependencyRecord#getId <em>Id</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoSpec.DependencyRecord#getItems <em>Items</em>}</li>
  * </ul>
@@ -26,6 +27,28 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface DependencyRecord extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Keyword</em>' containment reference.
+   * @see #setKeyword(DependencyKeyword)
+   * @see com.robenglander.libretto.spec.librettoSpec.LibrettoSpecPackage#getDependencyRecord_Keyword()
+   * @model containment="true"
+   * @generated
+   */
+  DependencyKeyword getKeyword();
+
+  /**
+   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoSpec.DependencyRecord#getKeyword <em>Keyword</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Keyword</em>' containment reference.
+   * @see #getKeyword()
+   * @generated
+   */
+  void setKeyword(DependencyKeyword value);
+
   /**
    * Returns the value of the '<em><b>Id</b></em>' attribute.
    * <!-- begin-user-doc -->
