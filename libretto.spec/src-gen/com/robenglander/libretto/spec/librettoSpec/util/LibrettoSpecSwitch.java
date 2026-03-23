@@ -718,6 +718,78 @@ public class LibrettoSpecSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LibrettoSpecPackage.METADATA_TITLE_FIELD:
+      {
+        MetadataTitleField metadataTitleField = (MetadataTitleField)theEObject;
+        T result = caseMetadataTitleField(metadataTitleField);
+        if (result == null) result = caseMetadataField(metadataTitleField);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoSpecPackage.METADATA_VERSION_FIELD:
+      {
+        MetadataVersionField metadataVersionField = (MetadataVersionField)theEObject;
+        T result = caseMetadataVersionField(metadataVersionField);
+        if (result == null) result = caseMetadataField(metadataVersionField);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoSpecPackage.METADATA_STATUS_FIELD:
+      {
+        MetadataStatusField metadataStatusField = (MetadataStatusField)theEObject;
+        T result = caseMetadataStatusField(metadataStatusField);
+        if (result == null) result = caseMetadataField(metadataStatusField);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoSpecPackage.METADATA_MODULE_FIELD:
+      {
+        MetadataModuleField metadataModuleField = (MetadataModuleField)theEObject;
+        T result = caseMetadataModuleField(metadataModuleField);
+        if (result == null) result = caseMetadataField(metadataModuleField);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoSpecPackage.METADATA_JAVA_PACKAGE_FIELD:
+      {
+        MetadataJavaPackageField metadataJavaPackageField = (MetadataJavaPackageField)theEObject;
+        T result = caseMetadataJavaPackageField(metadataJavaPackageField);
+        if (result == null) result = caseMetadataField(metadataJavaPackageField);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoSpecPackage.METADATA_COMPILED_AT_FIELD:
+      {
+        MetadataCompiledAtField metadataCompiledAtField = (MetadataCompiledAtField)theEObject;
+        T result = caseMetadataCompiledAtField(metadataCompiledAtField);
+        if (result == null) result = caseMetadataField(metadataCompiledAtField);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoSpecPackage.METADATA_COMPILER_VERSION_FIELD:
+      {
+        MetadataCompilerVersionField metadataCompilerVersionField = (MetadataCompilerVersionField)theEObject;
+        T result = caseMetadataCompilerVersionField(metadataCompilerVersionField);
+        if (result == null) result = caseMetadataField(metadataCompilerVersionField);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoSpecPackage.METADATA_MODEL_METADATA_FIELD:
+      {
+        MetadataModelMetadataField metadataModelMetadataField = (MetadataModelMetadataField)theEObject;
+        T result = caseMetadataModelMetadataField(metadataModelMetadataField);
+        if (result == null) result = caseMetadataField(metadataModelMetadataField);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoSpecPackage.SIMPLE_IDENTIFIER:
+      {
+        SimpleIdentifier simpleIdentifier = (SimpleIdentifier)theEObject;
+        T result = caseSimpleIdentifier(simpleIdentifier);
+        if (result == null) result = caseIdentifierValue(simpleIdentifier);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -2158,6 +2230,150 @@ public class LibrettoSpecSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseImplementationDirectivesSection(ImplementationDirectivesSection object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Metadata Title Field</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Metadata Title Field</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMetadataTitleField(MetadataTitleField object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Metadata Version Field</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Metadata Version Field</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMetadataVersionField(MetadataVersionField object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Metadata Status Field</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Metadata Status Field</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMetadataStatusField(MetadataStatusField object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Metadata Module Field</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Metadata Module Field</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMetadataModuleField(MetadataModuleField object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Metadata Java Package Field</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Metadata Java Package Field</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMetadataJavaPackageField(MetadataJavaPackageField object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Metadata Compiled At Field</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Metadata Compiled At Field</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMetadataCompiledAtField(MetadataCompiledAtField object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Metadata Compiler Version Field</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Metadata Compiler Version Field</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMetadataCompilerVersionField(MetadataCompilerVersionField object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Metadata Model Metadata Field</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Metadata Model Metadata Field</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMetadataModelMetadataField(MetadataModelMetadataField object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Simple Identifier</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Simple Identifier</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSimpleIdentifier(SimpleIdentifier object)
   {
     return null;
   }

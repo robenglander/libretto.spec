@@ -834,6 +834,87 @@ public interface LibrettoSpecFactory extends EFactory
   ImplementationDirectivesSection createImplementationDirectivesSection();
 
   /**
+   * Returns a new object of class '<em>Metadata Title Field</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Metadata Title Field</em>'.
+   * @generated
+   */
+  MetadataTitleField createMetadataTitleField();
+
+  /**
+   * Returns a new object of class '<em>Metadata Version Field</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Metadata Version Field</em>'.
+   * @generated
+   */
+  MetadataVersionField createMetadataVersionField();
+
+  /**
+   * Returns a new object of class '<em>Metadata Status Field</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Metadata Status Field</em>'.
+   * @generated
+   */
+  MetadataStatusField createMetadataStatusField();
+
+  /**
+   * Returns a new object of class '<em>Metadata Module Field</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Metadata Module Field</em>'.
+   * @generated
+   */
+  MetadataModuleField createMetadataModuleField();
+
+  /**
+   * Returns a new object of class '<em>Metadata Java Package Field</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Metadata Java Package Field</em>'.
+   * @generated
+   */
+  MetadataJavaPackageField createMetadataJavaPackageField();
+
+  /**
+   * Returns a new object of class '<em>Metadata Compiled At Field</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Metadata Compiled At Field</em>'.
+   * @generated
+   */
+  MetadataCompiledAtField createMetadataCompiledAtField();
+
+  /**
+   * Returns a new object of class '<em>Metadata Compiler Version Field</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Metadata Compiler Version Field</em>'.
+   * @generated
+   */
+  MetadataCompilerVersionField createMetadataCompilerVersionField();
+
+  /**
+   * Returns a new object of class '<em>Metadata Model Metadata Field</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Metadata Model Metadata Field</em>'.
+   * @generated
+   */
+  MetadataModelMetadataField createMetadataModelMetadataField();
+
+  /**
+   * Returns a new object of class '<em>Simple Identifier</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Simple Identifier</em>'.
+   * @generated
+   */
+  SimpleIdentifier createSimpleIdentifier();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

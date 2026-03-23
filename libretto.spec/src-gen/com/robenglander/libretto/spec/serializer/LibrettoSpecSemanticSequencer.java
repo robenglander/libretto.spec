@@ -50,9 +50,16 @@ import com.robenglander.libretto.spec.librettoSpec.ImplementsSurfaceTargetField;
 import com.robenglander.libretto.spec.librettoSpec.LabelField;
 import com.robenglander.libretto.spec.librettoSpec.LibrettoSpecPackage;
 import com.robenglander.libretto.spec.librettoSpec.LocatorField;
-import com.robenglander.libretto.spec.librettoSpec.MetadataField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataCompiledAtField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataCompilerVersionField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataJavaPackageField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataModelMetadataField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataModuleField;
 import com.robenglander.libretto.spec.librettoSpec.MetadataSection;
+import com.robenglander.libretto.spec.librettoSpec.MetadataStatusField;
 import com.robenglander.libretto.spec.librettoSpec.MetadataTextField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataTitleField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataVersionField;
 import com.robenglander.libretto.spec.librettoSpec.NotesField;
 import com.robenglander.libretto.spec.librettoSpec.ObjectsField;
 import com.robenglander.libretto.spec.librettoSpec.OperationExpressionField;
@@ -76,6 +83,7 @@ import com.robenglander.libretto.spec.librettoSpec.ReferencesSection;
 import com.robenglander.libretto.spec.librettoSpec.SectionContextRecord;
 import com.robenglander.libretto.spec.librettoSpec.SectionContextRecordItem;
 import com.robenglander.libretto.spec.librettoSpec.SectionField;
+import com.robenglander.libretto.spec.librettoSpec.SimpleIdentifier;
 import com.robenglander.libretto.spec.librettoSpec.SourceBlock;
 import com.robenglander.libretto.spec.librettoSpec.SourceBlockItem;
 import com.robenglander.libretto.spec.librettoSpec.Spec;
@@ -420,14 +428,35 @@ public class LibrettoSpecSemanticSequencer extends AbstractDelegatingSemanticSeq
 			case LibrettoSpecPackage.LOCATOR_FIELD:
 				sequence_LocatorField(context, (LocatorField) semanticObject); 
 				return; 
-			case LibrettoSpecPackage.METADATA_FIELD:
-				sequence_MetadataField(context, (MetadataField) semanticObject); 
+			case LibrettoSpecPackage.METADATA_COMPILED_AT_FIELD:
+				sequence_MetadataCompiledAtField(context, (MetadataCompiledAtField) semanticObject); 
+				return; 
+			case LibrettoSpecPackage.METADATA_COMPILER_VERSION_FIELD:
+				sequence_MetadataCompilerVersionField(context, (MetadataCompilerVersionField) semanticObject); 
+				return; 
+			case LibrettoSpecPackage.METADATA_JAVA_PACKAGE_FIELD:
+				sequence_MetadataJavaPackageField(context, (MetadataJavaPackageField) semanticObject); 
+				return; 
+			case LibrettoSpecPackage.METADATA_MODEL_METADATA_FIELD:
+				sequence_MetadataModelMetadataField(context, (MetadataModelMetadataField) semanticObject); 
+				return; 
+			case LibrettoSpecPackage.METADATA_MODULE_FIELD:
+				sequence_MetadataModuleField(context, (MetadataModuleField) semanticObject); 
 				return; 
 			case LibrettoSpecPackage.METADATA_SECTION:
 				sequence_MetadataSection(context, (MetadataSection) semanticObject); 
 				return; 
+			case LibrettoSpecPackage.METADATA_STATUS_FIELD:
+				sequence_MetadataStatusField(context, (MetadataStatusField) semanticObject); 
+				return; 
 			case LibrettoSpecPackage.METADATA_TEXT_FIELD:
 				sequence_MetadataTextField(context, (MetadataTextField) semanticObject); 
+				return; 
+			case LibrettoSpecPackage.METADATA_TITLE_FIELD:
+				sequence_MetadataTitleField(context, (MetadataTitleField) semanticObject); 
+				return; 
+			case LibrettoSpecPackage.METADATA_VERSION_FIELD:
+				sequence_MetadataVersionField(context, (MetadataVersionField) semanticObject); 
 				return; 
 			case LibrettoSpecPackage.NOTES_FIELD:
 				sequence_NotesField(context, (NotesField) semanticObject); 
@@ -550,6 +579,9 @@ public class LibrettoSpecSemanticSequencer extends AbstractDelegatingSemanticSeq
 				else break;
 			case LibrettoSpecPackage.SECTION_FIELD:
 				sequence_SectionField(context, (SectionField) semanticObject); 
+				return; 
+			case LibrettoSpecPackage.SIMPLE_IDENTIFIER:
+				sequence_SimpleIdentifier(context, (SimpleIdentifier) semanticObject); 
 				return; 
 			case LibrettoSpecPackage.SOURCE_BLOCK:
 				sequence_SourceBlock(context, (SourceBlock) semanticObject); 
@@ -2199,23 +2231,105 @@ public class LibrettoSpecSemanticSequencer extends AbstractDelegatingSemanticSeq
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     MetadataField returns MetadataField
+	 *     MetadataField returns MetadataCompiledAtField
+	 *     MetadataCompiledAtField returns MetadataCompiledAtField
 	 *
 	 * Constraint:
-	 *     (
-	 *         title=TextValue | 
-	 *         version=TextValue | 
-	 *         status=MetadataStatusValue | 
-	 *         moduleName=TextValue | 
-	 *         javaPackage=TextValue | 
-	 *         compiledAt=TextValue | 
-	 *         compilerVersion=TextValue | 
-	 *         modelMetadata=TextValue
-	 *     )
+	 *     compiledAt=TextValue
 	 * </pre>
 	 */
-	protected void sequence_MetadataField(ISerializationContext context, MetadataField semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_MetadataCompiledAtField(ISerializationContext context, MetadataCompiledAtField semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoSpecPackage.Literals.METADATA_COMPILED_AT_FIELD__COMPILED_AT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoSpecPackage.Literals.METADATA_COMPILED_AT_FIELD__COMPILED_AT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMetadataCompiledAtFieldAccess().getCompiledAtTextValueParserRuleCall_3_0(), semanticObject.getCompiledAt());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     MetadataField returns MetadataCompilerVersionField
+	 *     MetadataCompilerVersionField returns MetadataCompilerVersionField
+	 *
+	 * Constraint:
+	 *     compilerVersion=TextValue
+	 * </pre>
+	 */
+	protected void sequence_MetadataCompilerVersionField(ISerializationContext context, MetadataCompilerVersionField semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoSpecPackage.Literals.METADATA_COMPILER_VERSION_FIELD__COMPILER_VERSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoSpecPackage.Literals.METADATA_COMPILER_VERSION_FIELD__COMPILER_VERSION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMetadataCompilerVersionFieldAccess().getCompilerVersionTextValueParserRuleCall_3_0(), semanticObject.getCompilerVersion());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     MetadataField returns MetadataJavaPackageField
+	 *     MetadataJavaPackageField returns MetadataJavaPackageField
+	 *
+	 * Constraint:
+	 *     javaPackage=TextValue
+	 * </pre>
+	 */
+	protected void sequence_MetadataJavaPackageField(ISerializationContext context, MetadataJavaPackageField semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoSpecPackage.Literals.METADATA_JAVA_PACKAGE_FIELD__JAVA_PACKAGE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoSpecPackage.Literals.METADATA_JAVA_PACKAGE_FIELD__JAVA_PACKAGE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMetadataJavaPackageFieldAccess().getJavaPackageTextValueParserRuleCall_3_0(), semanticObject.getJavaPackage());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     MetadataField returns MetadataModelMetadataField
+	 *     MetadataModelMetadataField returns MetadataModelMetadataField
+	 *
+	 * Constraint:
+	 *     modelMetadata=TextValue
+	 * </pre>
+	 */
+	protected void sequence_MetadataModelMetadataField(ISerializationContext context, MetadataModelMetadataField semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoSpecPackage.Literals.METADATA_MODEL_METADATA_FIELD__MODEL_METADATA) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoSpecPackage.Literals.METADATA_MODEL_METADATA_FIELD__MODEL_METADATA));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMetadataModelMetadataFieldAccess().getModelMetadataTextValueParserRuleCall_3_0(), semanticObject.getModelMetadata());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     MetadataField returns MetadataModuleField
+	 *     MetadataModuleField returns MetadataModuleField
+	 *
+	 * Constraint:
+	 *     moduleName=TextValue
+	 * </pre>
+	 */
+	protected void sequence_MetadataModuleField(ISerializationContext context, MetadataModuleField semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoSpecPackage.Literals.METADATA_MODULE_FIELD__MODULE_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoSpecPackage.Literals.METADATA_MODULE_FIELD__MODULE_NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMetadataModuleFieldAccess().getModuleNameTextValueParserRuleCall_3_0(), semanticObject.getModuleName());
+		feeder.finish();
 	}
 	
 	
@@ -2237,6 +2351,27 @@ public class LibrettoSpecSemanticSequencer extends AbstractDelegatingSemanticSeq
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     MetadataField returns MetadataStatusField
+	 *     MetadataStatusField returns MetadataStatusField
+	 *
+	 * Constraint:
+	 *     status=MetadataStatusValue
+	 * </pre>
+	 */
+	protected void sequence_MetadataStatusField(ISerializationContext context, MetadataStatusField semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoSpecPackage.Literals.METADATA_STATUS_FIELD__STATUS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoSpecPackage.Literals.METADATA_STATUS_FIELD__STATUS));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMetadataStatusFieldAccess().getStatusMetadataStatusValueEnumRuleCall_3_0(), semanticObject.getStatus());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     MetadataTextField returns MetadataTextField
 	 *
 	 * Constraint:
@@ -2250,6 +2385,48 @@ public class LibrettoSpecSemanticSequencer extends AbstractDelegatingSemanticSeq
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getMetadataTextFieldAccess().getValueTextValueParserRuleCall_2_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     MetadataField returns MetadataTitleField
+	 *     MetadataTitleField returns MetadataTitleField
+	 *
+	 * Constraint:
+	 *     title=TextValue
+	 * </pre>
+	 */
+	protected void sequence_MetadataTitleField(ISerializationContext context, MetadataTitleField semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoSpecPackage.Literals.METADATA_TITLE_FIELD__TITLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoSpecPackage.Literals.METADATA_TITLE_FIELD__TITLE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMetadataTitleFieldAccess().getTitleTextValueParserRuleCall_3_0(), semanticObject.getTitle());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     MetadataField returns MetadataVersionField
+	 *     MetadataVersionField returns MetadataVersionField
+	 *
+	 * Constraint:
+	 *     version=TextValue
+	 * </pre>
+	 */
+	protected void sequence_MetadataVersionField(ISerializationContext context, MetadataVersionField semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoSpecPackage.Literals.METADATA_VERSION_FIELD__VERSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoSpecPackage.Literals.METADATA_VERSION_FIELD__VERSION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMetadataVersionFieldAccess().getVersionTextValueParserRuleCall_3_0(), semanticObject.getVersion());
 		feeder.finish();
 	}
 	
@@ -2872,6 +3049,27 @@ public class LibrettoSpecSemanticSequencer extends AbstractDelegatingSemanticSeq
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getSectionFieldAccess().getValueTextValueParserRuleCall_2_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     IdentifierValue returns SimpleIdentifier
+	 *     SimpleIdentifier returns SimpleIdentifier
+	 *
+	 * Constraint:
+	 *     id=LIBRETTO_ID
+	 * </pre>
+	 */
+	protected void sequence_SimpleIdentifier(ISerializationContext context, SimpleIdentifier semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoSpecPackage.Literals.SIMPLE_IDENTIFIER__ID) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoSpecPackage.Literals.SIMPLE_IDENTIFIER__ID));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSimpleIdentifierAccess().getIdLIBRETTO_IDTerminalRuleCall_1_0(), semanticObject.getId());
 		feeder.finish();
 	}
 	

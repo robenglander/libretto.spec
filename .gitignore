@@ -1,6 +1,9 @@
 target/
 bin/
 .DS_Store
+**/.classpath
+**/.project
+**/.settings/
 *.class
 .flattened-pom.xml
 .tycho-consumer-pom.xml

@@ -526,6 +526,51 @@ public class LibrettoSpecAdapterFactory extends AdapterFactoryImpl
         return createImplementationDirectivesSectionAdapter();
       }
       @Override
+      public Adapter caseMetadataTitleField(MetadataTitleField object)
+      {
+        return createMetadataTitleFieldAdapter();
+      }
+      @Override
+      public Adapter caseMetadataVersionField(MetadataVersionField object)
+      {
+        return createMetadataVersionFieldAdapter();
+      }
+      @Override
+      public Adapter caseMetadataStatusField(MetadataStatusField object)
+      {
+        return createMetadataStatusFieldAdapter();
+      }
+      @Override
+      public Adapter caseMetadataModuleField(MetadataModuleField object)
+      {
+        return createMetadataModuleFieldAdapter();
+      }
+      @Override
+      public Adapter caseMetadataJavaPackageField(MetadataJavaPackageField object)
+      {
+        return createMetadataJavaPackageFieldAdapter();
+      }
+      @Override
+      public Adapter caseMetadataCompiledAtField(MetadataCompiledAtField object)
+      {
+        return createMetadataCompiledAtFieldAdapter();
+      }
+      @Override
+      public Adapter caseMetadataCompilerVersionField(MetadataCompilerVersionField object)
+      {
+        return createMetadataCompilerVersionFieldAdapter();
+      }
+      @Override
+      public Adapter caseMetadataModelMetadataField(MetadataModelMetadataField object)
+      {
+        return createMetadataModelMetadataFieldAdapter();
+      }
+      @Override
+      public Adapter caseSimpleIdentifier(SimpleIdentifier object)
+      {
+        return createSimpleIdentifierAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -1893,6 +1938,141 @@ public class LibrettoSpecAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createImplementationDirectivesSectionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoSpec.MetadataTitleField <em>Metadata Title Field</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataTitleField
+   * @generated
+   */
+  public Adapter createMetadataTitleFieldAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoSpec.MetadataVersionField <em>Metadata Version Field</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataVersionField
+   * @generated
+   */
+  public Adapter createMetadataVersionFieldAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoSpec.MetadataStatusField <em>Metadata Status Field</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataStatusField
+   * @generated
+   */
+  public Adapter createMetadataStatusFieldAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoSpec.MetadataModuleField <em>Metadata Module Field</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataModuleField
+   * @generated
+   */
+  public Adapter createMetadataModuleFieldAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoSpec.MetadataJavaPackageField <em>Metadata Java Package Field</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataJavaPackageField
+   * @generated
+   */
+  public Adapter createMetadataJavaPackageFieldAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoSpec.MetadataCompiledAtField <em>Metadata Compiled At Field</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataCompiledAtField
+   * @generated
+   */
+  public Adapter createMetadataCompiledAtFieldAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoSpec.MetadataCompilerVersionField <em>Metadata Compiler Version Field</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataCompilerVersionField
+   * @generated
+   */
+  public Adapter createMetadataCompilerVersionFieldAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoSpec.MetadataModelMetadataField <em>Metadata Model Metadata Field</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataModelMetadataField
+   * @generated
+   */
+  public Adapter createMetadataModelMetadataFieldAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoSpec.SimpleIdentifier <em>Simple Identifier</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoSpec.SimpleIdentifier
+   * @generated
+   */
+  public Adapter createSimpleIdentifierAdapter()
   {
     return null;
   }

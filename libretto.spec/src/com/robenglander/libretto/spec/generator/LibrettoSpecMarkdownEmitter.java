@@ -17,7 +17,10 @@ import com.robenglander.libretto.spec.librettoSpec.IdentifierValue;
 import com.robenglander.libretto.spec.librettoSpec.ImplementsSurfaceRecord;
 import com.robenglander.libretto.spec.librettoSpec.ImplementsSurfaceSection;
 import com.robenglander.libretto.spec.librettoSpec.MetadataField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataJavaPackageField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataModuleField;
 import com.robenglander.libretto.spec.librettoSpec.MetadataSection;
+import com.robenglander.libretto.spec.librettoSpec.MetadataStatusField;
 import com.robenglander.libretto.spec.librettoSpec.MetadataStatusValue;
 import com.robenglander.libretto.spec.librettoSpec.OperationSurfaceRecord;
 import com.robenglander.libretto.spec.librettoSpec.OperationSurfaceRecordItem;
@@ -153,17 +156,21 @@ public final class LibrettoSpecMarkdownEmitter {
 
     private static void ingestMetadataHeader(MetadataSection ms, Map<String, String> header) {
         for (MetadataField f : ms.getFields()) {
-            String mod = textAttr(f.getModuleName());
-            if (!mod.isBlank()) {
-                header.put("module", mod);
-            }
-            String pkg = textAttr(f.getJavaPackage());
-            if (!pkg.isBlank()) {
-                header.put("package", pkg);
-            }
-            if (f.getStatus() != null) {
-                MetadataStatusValue st = f.getStatus();
-                header.put("visibility", st.getLiteral());
+            if (f instanceof MetadataModuleField mf) {
+                String mod = textAttr(mf.getModuleName());
+                if (!mod.isBlank()) {
+                    header.put("module", mod);
+                }
+            } else if (f instanceof MetadataJavaPackageField jf) {
+                String pkg = textAttr(jf.getJavaPackage());
+                if (!pkg.isBlank()) {
+                    header.put("package", pkg);
+                }
+            } else if (f instanceof MetadataStatusField sf) {
+                MetadataStatusValue st = sf.getStatus();
+                if (st != null) {
+                    header.put("visibility", st.getLiteral());
+                }
             }
         }
     }

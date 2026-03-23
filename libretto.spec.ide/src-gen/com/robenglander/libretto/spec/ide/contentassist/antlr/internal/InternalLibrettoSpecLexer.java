@@ -1887,12 +1887,12 @@ public class InternalLibrettoSpecLexer extends Lexer {
         try {
             int _type = RULE_TEXT_BLOCK;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLibrettoSpec.g:15195:17: ( '\"\"\"' (~ ( '\"' ) | '\"' ~ ( '\"' ) | '\"' '\"' ~ ( '\"' ) )* '\"\"\"' )
-            // InternalLibrettoSpec.g:15195:19: '\"\"\"' (~ ( '\"' ) | '\"' ~ ( '\"' ) | '\"' '\"' ~ ( '\"' ) )* '\"\"\"'
+            // InternalLibrettoSpec.g:15705:17: ( '\"\"\"' (~ ( '\"' ) | '\"' ~ ( '\"' ) | '\"' '\"' ~ ( '\"' ) )* '\"\"\"' )
+            // InternalLibrettoSpec.g:15705:19: '\"\"\"' (~ ( '\"' ) | '\"' ~ ( '\"' ) | '\"' '\"' ~ ( '\"' ) )* '\"\"\"'
             {
             match("\"\"\""); 
 
-            // InternalLibrettoSpec.g:15195:25: (~ ( '\"' ) | '\"' ~ ( '\"' ) | '\"' '\"' ~ ( '\"' ) )*
+            // InternalLibrettoSpec.g:15705:25: (~ ( '\"' ) | '\"' ~ ( '\"' ) | '\"' '\"' ~ ( '\"' ) )*
             loop1:
             do {
                 int alt1=4;
@@ -1923,7 +1923,7 @@ public class InternalLibrettoSpecLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // InternalLibrettoSpec.g:15195:26: ~ ( '\"' )
+            	    // InternalLibrettoSpec.g:15705:26: ~ ( '\"' )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1938,7 +1938,7 @@ public class InternalLibrettoSpecLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-            	    // InternalLibrettoSpec.g:15195:33: '\"' ~ ( '\"' )
+            	    // InternalLibrettoSpec.g:15705:33: '\"' ~ ( '\"' )
             	    {
             	    match('\"'); 
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='\uFFFF') ) {
@@ -1954,7 +1954,7 @@ public class InternalLibrettoSpecLexer extends Lexer {
             	    }
             	    break;
             	case 3 :
-            	    // InternalLibrettoSpec.g:15195:44: '\"' '\"' ~ ( '\"' )
+            	    // InternalLibrettoSpec.g:15705:44: '\"' '\"' ~ ( '\"' )
             	    {
             	    match('\"'); 
             	    match('\"'); 
@@ -1994,8 +1994,8 @@ public class InternalLibrettoSpecLexer extends Lexer {
         try {
             int _type = RULE_BEHAVIOR_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLibrettoSpec.g:15197:18: ( 'B-' '0' .. '9' '0' .. '9' '0' .. '9' )
-            // InternalLibrettoSpec.g:15197:20: 'B-' '0' .. '9' '0' .. '9' '0' .. '9'
+            // InternalLibrettoSpec.g:15707:18: ( 'B-' '0' .. '9' '0' .. '9' '0' .. '9' )
+            // InternalLibrettoSpec.g:15707:20: 'B-' '0' .. '9' '0' .. '9' '0' .. '9'
             {
             match("B-"); 
 
@@ -2018,8 +2018,8 @@ public class InternalLibrettoSpecLexer extends Lexer {
         try {
             int _type = RULE_ACCEPTANCE_TEST_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLibrettoSpec.g:15199:25: ( 'AT-' '0' .. '9' '0' .. '9' '0' .. '9' )
-            // InternalLibrettoSpec.g:15199:27: 'AT-' '0' .. '9' '0' .. '9' '0' .. '9'
+            // InternalLibrettoSpec.g:15709:25: ( 'AT-' '0' .. '9' '0' .. '9' '0' .. '9' )
+            // InternalLibrettoSpec.g:15709:27: 'AT-' '0' .. '9' '0' .. '9' '0' .. '9'
             {
             match("AT-"); 
 
@@ -2042,8 +2042,8 @@ public class InternalLibrettoSpecLexer extends Lexer {
         try {
             int _type = RULE_IMPLEMENTATION_DIRECTIVE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLibrettoSpec.g:15201:34: ( 'ID-' '0' .. '9' '0' .. '9' '0' .. '9' )
-            // InternalLibrettoSpec.g:15201:36: 'ID-' '0' .. '9' '0' .. '9' '0' .. '9'
+            // InternalLibrettoSpec.g:15711:34: ( 'ID-' '0' .. '9' '0' .. '9' '0' .. '9' )
+            // InternalLibrettoSpec.g:15711:36: 'ID-' '0' .. '9' '0' .. '9' '0' .. '9'
             {
             match("ID-"); 
 
@@ -2066,8 +2066,8 @@ public class InternalLibrettoSpecLexer extends Lexer {
         try {
             int _type = RULE_REF_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLibrettoSpec.g:15203:13: ( 'REF-' '0' .. '9' '0' .. '9' '0' .. '9' )
-            // InternalLibrettoSpec.g:15203:15: 'REF-' '0' .. '9' '0' .. '9' '0' .. '9'
+            // InternalLibrettoSpec.g:15713:13: ( 'REF-' '0' .. '9' '0' .. '9' '0' .. '9' )
+            // InternalLibrettoSpec.g:15713:15: 'REF-' '0' .. '9' '0' .. '9' '0' .. '9'
             {
             match("REF-"); 
 
@@ -2090,8 +2090,8 @@ public class InternalLibrettoSpecLexer extends Lexer {
         try {
             int _type = RULE_OOS_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLibrettoSpec.g:15205:13: ( 'OOS-' '0' .. '9' '0' .. '9' '0' .. '9' )
-            // InternalLibrettoSpec.g:15205:15: 'OOS-' '0' .. '9' '0' .. '9' '0' .. '9'
+            // InternalLibrettoSpec.g:15715:13: ( 'OOS-' '0' .. '9' '0' .. '9' '0' .. '9' )
+            // InternalLibrettoSpec.g:15715:15: 'OOS-' '0' .. '9' '0' .. '9' '0' .. '9'
             {
             match("OOS-"); 
 
@@ -2114,10 +2114,10 @@ public class InternalLibrettoSpecLexer extends Lexer {
         try {
             int _type = RULE_LIBRETTO_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLibrettoSpec.g:15207:18: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '-' | '\\\\' )* )
-            // InternalLibrettoSpec.g:15207:20: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '-' | '\\\\' )*
+            // InternalLibrettoSpec.g:15717:18: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '-' | '\\\\' )* )
+            // InternalLibrettoSpec.g:15717:20: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '-' | '\\\\' )*
             {
-            // InternalLibrettoSpec.g:15207:20: ( '^' )?
+            // InternalLibrettoSpec.g:15717:20: ( '^' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -2126,7 +2126,7 @@ public class InternalLibrettoSpecLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // InternalLibrettoSpec.g:15207:20: '^'
+                    // InternalLibrettoSpec.g:15717:20: '^'
                     {
                     match('^'); 
 
@@ -2144,7 +2144,7 @@ public class InternalLibrettoSpecLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalLibrettoSpec.g:15207:49: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '-' | '\\\\' )*
+            // InternalLibrettoSpec.g:15717:49: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '-' | '\\\\' )*
             loop3:
             do {
                 int alt3=2;
@@ -2193,10 +2193,10 @@ public class InternalLibrettoSpecLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLibrettoSpec.g:15209:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalLibrettoSpec.g:15209:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalLibrettoSpec.g:15719:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalLibrettoSpec.g:15719:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalLibrettoSpec.g:15209:11: ( '^' )?
+            // InternalLibrettoSpec.g:15719:11: ( '^' )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -2205,7 +2205,7 @@ public class InternalLibrettoSpecLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // InternalLibrettoSpec.g:15209:11: '^'
+                    // InternalLibrettoSpec.g:15719:11: '^'
                     {
                     match('^'); 
 
@@ -2223,7 +2223,7 @@ public class InternalLibrettoSpecLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalLibrettoSpec.g:15209:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalLibrettoSpec.g:15719:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop5:
             do {
                 int alt5=2;
@@ -2272,10 +2272,10 @@ public class InternalLibrettoSpecLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLibrettoSpec.g:15211:10: ( ( '0' .. '9' )+ )
-            // InternalLibrettoSpec.g:15211:12: ( '0' .. '9' )+
+            // InternalLibrettoSpec.g:15721:10: ( ( '0' .. '9' )+ )
+            // InternalLibrettoSpec.g:15721:12: ( '0' .. '9' )+
             {
-            // InternalLibrettoSpec.g:15211:12: ( '0' .. '9' )+
+            // InternalLibrettoSpec.g:15721:12: ( '0' .. '9' )+
             int cnt6=0;
             loop6:
             do {
@@ -2289,7 +2289,7 @@ public class InternalLibrettoSpecLexer extends Lexer {
 
                 switch (alt6) {
             	case 1 :
-            	    // InternalLibrettoSpec.g:15211:13: '0' .. '9'
+            	    // InternalLibrettoSpec.g:15721:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -2321,10 +2321,10 @@ public class InternalLibrettoSpecLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLibrettoSpec.g:15213:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalLibrettoSpec.g:15213:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalLibrettoSpec.g:15723:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalLibrettoSpec.g:15723:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalLibrettoSpec.g:15213:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalLibrettoSpec.g:15723:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -2342,10 +2342,10 @@ public class InternalLibrettoSpecLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // InternalLibrettoSpec.g:15213:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalLibrettoSpec.g:15723:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalLibrettoSpec.g:15213:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalLibrettoSpec.g:15723:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop7:
                     do {
                         int alt7=3;
@@ -2361,7 +2361,7 @@ public class InternalLibrettoSpecLexer extends Lexer {
 
                         switch (alt7) {
                     	case 1 :
-                    	    // InternalLibrettoSpec.g:15213:21: '\\\\' .
+                    	    // InternalLibrettoSpec.g:15723:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2369,7 +2369,7 @@ public class InternalLibrettoSpecLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalLibrettoSpec.g:15213:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalLibrettoSpec.g:15723:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2394,10 +2394,10 @@ public class InternalLibrettoSpecLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoSpec.g:15213:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalLibrettoSpec.g:15723:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalLibrettoSpec.g:15213:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalLibrettoSpec.g:15723:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop8:
                     do {
                         int alt8=3;
@@ -2413,7 +2413,7 @@ public class InternalLibrettoSpecLexer extends Lexer {
 
                         switch (alt8) {
                     	case 1 :
-                    	    // InternalLibrettoSpec.g:15213:54: '\\\\' .
+                    	    // InternalLibrettoSpec.g:15723:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2421,7 +2421,7 @@ public class InternalLibrettoSpecLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalLibrettoSpec.g:15213:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalLibrettoSpec.g:15723:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2464,12 +2464,12 @@ public class InternalLibrettoSpecLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLibrettoSpec.g:15215:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalLibrettoSpec.g:15215:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalLibrettoSpec.g:15725:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalLibrettoSpec.g:15725:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalLibrettoSpec.g:15215:24: ( options {greedy=false; } : . )*
+            // InternalLibrettoSpec.g:15725:24: ( options {greedy=false; } : . )*
             loop10:
             do {
                 int alt10=2;
@@ -2494,7 +2494,7 @@ public class InternalLibrettoSpecLexer extends Lexer {
 
                 switch (alt10) {
             	case 1 :
-            	    // InternalLibrettoSpec.g:15215:52: .
+            	    // InternalLibrettoSpec.g:15725:52: .
             	    {
             	    matchAny(); 
 
@@ -2524,12 +2524,12 @@ public class InternalLibrettoSpecLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLibrettoSpec.g:15217:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalLibrettoSpec.g:15217:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalLibrettoSpec.g:15727:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalLibrettoSpec.g:15727:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalLibrettoSpec.g:15217:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalLibrettoSpec.g:15727:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop11:
             do {
                 int alt11=2;
@@ -2542,7 +2542,7 @@ public class InternalLibrettoSpecLexer extends Lexer {
 
                 switch (alt11) {
             	case 1 :
-            	    // InternalLibrettoSpec.g:15217:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalLibrettoSpec.g:15727:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2562,7 +2562,7 @@ public class InternalLibrettoSpecLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalLibrettoSpec.g:15217:40: ( ( '\\r' )? '\\n' )?
+            // InternalLibrettoSpec.g:15727:40: ( ( '\\r' )? '\\n' )?
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -2571,9 +2571,9 @@ public class InternalLibrettoSpecLexer extends Lexer {
             }
             switch (alt13) {
                 case 1 :
-                    // InternalLibrettoSpec.g:15217:41: ( '\\r' )? '\\n'
+                    // InternalLibrettoSpec.g:15727:41: ( '\\r' )? '\\n'
                     {
-                    // InternalLibrettoSpec.g:15217:41: ( '\\r' )?
+                    // InternalLibrettoSpec.g:15727:41: ( '\\r' )?
                     int alt12=2;
                     int LA12_0 = input.LA(1);
 
@@ -2582,7 +2582,7 @@ public class InternalLibrettoSpecLexer extends Lexer {
                     }
                     switch (alt12) {
                         case 1 :
-                            // InternalLibrettoSpec.g:15217:41: '\\r'
+                            // InternalLibrettoSpec.g:15727:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2614,10 +2614,10 @@ public class InternalLibrettoSpecLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLibrettoSpec.g:15219:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalLibrettoSpec.g:15219:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalLibrettoSpec.g:15729:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalLibrettoSpec.g:15729:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalLibrettoSpec.g:15219:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalLibrettoSpec.g:15729:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt14=0;
             loop14:
             do {
@@ -2671,8 +2671,8 @@ public class InternalLibrettoSpecLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLibrettoSpec.g:15221:16: ( . )
-            // InternalLibrettoSpec.g:15221:18: .
+            // InternalLibrettoSpec.g:15731:16: ( . )
+            // InternalLibrettoSpec.g:15731:18: .
             {
             matchAny(); 
 

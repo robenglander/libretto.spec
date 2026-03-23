@@ -5,6 +5,7 @@ import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 
 import com.robenglander.libretto.spec.librettoSpec.IdentifierValue;
+import com.robenglander.libretto.spec.librettoSpec.SimpleIdentifier;
 
 /**
  * Text from parse nodes (identifiers have no EAttributes).
@@ -15,6 +16,10 @@ final class ProjectionNodeText {
 	}
 
 	static String identifierText(EObject iv) {
+		if (iv instanceof SimpleIdentifier si) {
+			String id = si.getId();
+			return id == null ? "" : stripCaretKeywordEscapes(id);
+		}
 		if (!(iv instanceof IdentifierValue)) {
 			return "";
 		}

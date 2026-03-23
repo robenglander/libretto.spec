@@ -1,6 +1,8 @@
 /**
- * Portable projection of native {@code .libretto} documents: immutable Java types mirroring
- * {@code LibrettoSpec.xtext}, without EMF or Xtext on the classpath.
+ * Portable projection of native {@code .libretto} specs: immutable Java types mirroring
+ * {@code LibrettoSpec.xtext}, without EMF or Xtext on the classpath. Root type is
+ * {@link com.robenglander.libretto.spec.projection.LibrettoSpecDomainModelProjection} wrapping
+ * {@link com.robenglander.libretto.spec.projection.LibrettoSpecDomainModel}.
  * <p>
  * <b>Populate</b> from EMF in {@code libretto.spec} (mapper). <b>Consume</b> from {@code libretto-core}
  * for coherence and structural checks.

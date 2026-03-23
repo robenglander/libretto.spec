@@ -25,7 +25,13 @@
 				<executions>
 					<execution>
 						<id>copy-libretto-spec-projection</id>
-						<phase>generate-resources</phase>
+						<!--
+						  Same phase as MWE2 below, but this execution runs first (POM order).
+						  Must run before generate-sources MWE: XtextGenerator registers lib/libretto.spec.projection.jar.
+						  libretto.spec.projection attaches a supplemental JAR (classifier reactor) at compile (see that module)
+						  so reactor "compile -am" works without replacing the main package JAR.
+						-->
+						<phase>generate-sources</phase>
 						<goals>
 							<goal>copy</goal>
 						</goals>
@@ -35,6 +41,8 @@
 									<groupId>libretto.spec</groupId>
 									<artifactId>libretto.spec.projection</artifactId>
 									<version>${project.version}</version>
+									<classifier>reactor</classifier>
+									<type>jar</type>
 									<outputDirectory>${project.basedir}/lib</outputDirectory>
 									<destFileName>libretto.spec.projection.jar</destFileName>
 								</artifactItem>

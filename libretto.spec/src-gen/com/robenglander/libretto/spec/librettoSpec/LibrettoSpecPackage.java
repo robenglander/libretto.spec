@@ -125,85 +125,13 @@ public interface LibrettoSpecPackage extends EPackage
   int METADATA_FIELD = 2;
 
   /**
-   * The feature id for the '<em><b>Title</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int METADATA_FIELD__TITLE = 0;
-
-  /**
-   * The feature id for the '<em><b>Version</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int METADATA_FIELD__VERSION = 1;
-
-  /**
-   * The feature id for the '<em><b>Status</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int METADATA_FIELD__STATUS = 2;
-
-  /**
-   * The feature id for the '<em><b>Module Name</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int METADATA_FIELD__MODULE_NAME = 3;
-
-  /**
-   * The feature id for the '<em><b>Java Package</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int METADATA_FIELD__JAVA_PACKAGE = 4;
-
-  /**
-   * The feature id for the '<em><b>Compiled At</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int METADATA_FIELD__COMPILED_AT = 5;
-
-  /**
-   * The feature id for the '<em><b>Compiler Version</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int METADATA_FIELD__COMPILER_VERSION = 6;
-
-  /**
-   * The feature id for the '<em><b>Model Metadata</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int METADATA_FIELD__MODEL_METADATA = 7;
-
-  /**
    * The number of structural features of the '<em>Metadata Field</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int METADATA_FIELD_FEATURE_COUNT = 8;
+  int METADATA_FIELD_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.DependenciesSectionKeywordImpl <em>Dependencies Section Keyword</em>}' class.
@@ -3092,6 +3020,258 @@ public interface LibrettoSpecPackage extends EPackage
   int IMPLEMENTATION_DIRECTIVES_SECTION_FEATURE_COUNT = SPEC_SECTION_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.MetadataTitleFieldImpl <em>Metadata Title Field</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoSpec.impl.MetadataTitleFieldImpl
+   * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getMetadataTitleField()
+   * @generated
+   */
+  int METADATA_TITLE_FIELD = 90;
+
+  /**
+   * The feature id for the '<em><b>Title</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METADATA_TITLE_FIELD__TITLE = METADATA_FIELD_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Metadata Title Field</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METADATA_TITLE_FIELD_FEATURE_COUNT = METADATA_FIELD_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.MetadataVersionFieldImpl <em>Metadata Version Field</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoSpec.impl.MetadataVersionFieldImpl
+   * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getMetadataVersionField()
+   * @generated
+   */
+  int METADATA_VERSION_FIELD = 91;
+
+  /**
+   * The feature id for the '<em><b>Version</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METADATA_VERSION_FIELD__VERSION = METADATA_FIELD_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Metadata Version Field</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METADATA_VERSION_FIELD_FEATURE_COUNT = METADATA_FIELD_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.MetadataStatusFieldImpl <em>Metadata Status Field</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoSpec.impl.MetadataStatusFieldImpl
+   * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getMetadataStatusField()
+   * @generated
+   */
+  int METADATA_STATUS_FIELD = 92;
+
+  /**
+   * The feature id for the '<em><b>Status</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METADATA_STATUS_FIELD__STATUS = METADATA_FIELD_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Metadata Status Field</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METADATA_STATUS_FIELD_FEATURE_COUNT = METADATA_FIELD_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.MetadataModuleFieldImpl <em>Metadata Module Field</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoSpec.impl.MetadataModuleFieldImpl
+   * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getMetadataModuleField()
+   * @generated
+   */
+  int METADATA_MODULE_FIELD = 93;
+
+  /**
+   * The feature id for the '<em><b>Module Name</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METADATA_MODULE_FIELD__MODULE_NAME = METADATA_FIELD_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Metadata Module Field</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METADATA_MODULE_FIELD_FEATURE_COUNT = METADATA_FIELD_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.MetadataJavaPackageFieldImpl <em>Metadata Java Package Field</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoSpec.impl.MetadataJavaPackageFieldImpl
+   * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getMetadataJavaPackageField()
+   * @generated
+   */
+  int METADATA_JAVA_PACKAGE_FIELD = 94;
+
+  /**
+   * The feature id for the '<em><b>Java Package</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METADATA_JAVA_PACKAGE_FIELD__JAVA_PACKAGE = METADATA_FIELD_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Metadata Java Package Field</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METADATA_JAVA_PACKAGE_FIELD_FEATURE_COUNT = METADATA_FIELD_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.MetadataCompiledAtFieldImpl <em>Metadata Compiled At Field</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoSpec.impl.MetadataCompiledAtFieldImpl
+   * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getMetadataCompiledAtField()
+   * @generated
+   */
+  int METADATA_COMPILED_AT_FIELD = 95;
+
+  /**
+   * The feature id for the '<em><b>Compiled At</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METADATA_COMPILED_AT_FIELD__COMPILED_AT = METADATA_FIELD_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Metadata Compiled At Field</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METADATA_COMPILED_AT_FIELD_FEATURE_COUNT = METADATA_FIELD_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.MetadataCompilerVersionFieldImpl <em>Metadata Compiler Version Field</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoSpec.impl.MetadataCompilerVersionFieldImpl
+   * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getMetadataCompilerVersionField()
+   * @generated
+   */
+  int METADATA_COMPILER_VERSION_FIELD = 96;
+
+  /**
+   * The feature id for the '<em><b>Compiler Version</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METADATA_COMPILER_VERSION_FIELD__COMPILER_VERSION = METADATA_FIELD_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Metadata Compiler Version Field</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METADATA_COMPILER_VERSION_FIELD_FEATURE_COUNT = METADATA_FIELD_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.MetadataModelMetadataFieldImpl <em>Metadata Model Metadata Field</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoSpec.impl.MetadataModelMetadataFieldImpl
+   * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getMetadataModelMetadataField()
+   * @generated
+   */
+  int METADATA_MODEL_METADATA_FIELD = 97;
+
+  /**
+   * The feature id for the '<em><b>Model Metadata</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METADATA_MODEL_METADATA_FIELD__MODEL_METADATA = METADATA_FIELD_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Metadata Model Metadata Field</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METADATA_MODEL_METADATA_FIELD_FEATURE_COUNT = METADATA_FIELD_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.SimpleIdentifierImpl <em>Simple Identifier</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoSpec.impl.SimpleIdentifierImpl
+   * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getSimpleIdentifier()
+   * @generated
+   */
+  int SIMPLE_IDENTIFIER = 98;
+
+  /**
+   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_IDENTIFIER__ID = IDENTIFIER_VALUE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Simple Identifier</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_IDENTIFIER_FEATURE_COUNT = IDENTIFIER_VALUE_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link com.robenglander.libretto.spec.librettoSpec.OutcomeClassValue <em>Outcome Class Value</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3099,7 +3279,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getOutcomeClassValue()
    * @generated
    */
-  int OUTCOME_CLASS_VALUE = 90;
+  int OUTCOME_CLASS_VALUE = 99;
 
   /**
    * The meta object id for the '{@link com.robenglander.libretto.spec.librettoSpec.MetadataStatusValue <em>Metadata Status Value</em>}' enum.
@@ -3109,7 +3289,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getMetadataStatusValue()
    * @generated
    */
-  int METADATA_STATUS_VALUE = 91;
+  int METADATA_STATUS_VALUE = 100;
 
   /**
    * The meta object id for the '{@link com.robenglander.libretto.spec.librettoSpec.StrengthValue <em>Strength Value</em>}' enum.
@@ -3119,7 +3299,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getStrengthValue()
    * @generated
    */
-  int STRENGTH_VALUE = 92;
+  int STRENGTH_VALUE = 101;
 
 
   /**
@@ -3173,94 +3353,6 @@ public interface LibrettoSpecPackage extends EPackage
    * @generated
    */
   EClass getMetadataField();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getTitle <em>Title</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Title</em>'.
-   * @see com.robenglander.libretto.spec.librettoSpec.MetadataField#getTitle()
-   * @see #getMetadataField()
-   * @generated
-   */
-  EReference getMetadataField_Title();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getVersion <em>Version</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Version</em>'.
-   * @see com.robenglander.libretto.spec.librettoSpec.MetadataField#getVersion()
-   * @see #getMetadataField()
-   * @generated
-   */
-  EReference getMetadataField_Version();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getStatus <em>Status</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Status</em>'.
-   * @see com.robenglander.libretto.spec.librettoSpec.MetadataField#getStatus()
-   * @see #getMetadataField()
-   * @generated
-   */
-  EAttribute getMetadataField_Status();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getModuleName <em>Module Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Module Name</em>'.
-   * @see com.robenglander.libretto.spec.librettoSpec.MetadataField#getModuleName()
-   * @see #getMetadataField()
-   * @generated
-   */
-  EReference getMetadataField_ModuleName();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getJavaPackage <em>Java Package</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Java Package</em>'.
-   * @see com.robenglander.libretto.spec.librettoSpec.MetadataField#getJavaPackage()
-   * @see #getMetadataField()
-   * @generated
-   */
-  EReference getMetadataField_JavaPackage();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getCompiledAt <em>Compiled At</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Compiled At</em>'.
-   * @see com.robenglander.libretto.spec.librettoSpec.MetadataField#getCompiledAt()
-   * @see #getMetadataField()
-   * @generated
-   */
-  EReference getMetadataField_CompiledAt();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getCompilerVersion <em>Compiler Version</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Compiler Version</em>'.
-   * @see com.robenglander.libretto.spec.librettoSpec.MetadataField#getCompilerVersion()
-   * @see #getMetadataField()
-   * @generated
-   */
-  EReference getMetadataField_CompilerVersion();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.MetadataField#getModelMetadata <em>Model Metadata</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Model Metadata</em>'.
-   * @see com.robenglander.libretto.spec.librettoSpec.MetadataField#getModelMetadata()
-   * @see #getMetadataField()
-   * @generated
-   */
-  EReference getMetadataField_ModelMetadata();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.DependenciesSectionKeyword <em>Dependencies Section Keyword</em>}'.
@@ -5640,6 +5732,195 @@ public interface LibrettoSpecPackage extends EPackage
   EReference getImplementationDirectivesSection_Records();
 
   /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.MetadataTitleField <em>Metadata Title Field</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Metadata Title Field</em>'.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataTitleField
+   * @generated
+   */
+  EClass getMetadataTitleField();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.MetadataTitleField#getTitle <em>Title</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Title</em>'.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataTitleField#getTitle()
+   * @see #getMetadataTitleField()
+   * @generated
+   */
+  EReference getMetadataTitleField_Title();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.MetadataVersionField <em>Metadata Version Field</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Metadata Version Field</em>'.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataVersionField
+   * @generated
+   */
+  EClass getMetadataVersionField();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.MetadataVersionField#getVersion <em>Version</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Version</em>'.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataVersionField#getVersion()
+   * @see #getMetadataVersionField()
+   * @generated
+   */
+  EReference getMetadataVersionField_Version();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.MetadataStatusField <em>Metadata Status Field</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Metadata Status Field</em>'.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataStatusField
+   * @generated
+   */
+  EClass getMetadataStatusField();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoSpec.MetadataStatusField#getStatus <em>Status</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Status</em>'.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataStatusField#getStatus()
+   * @see #getMetadataStatusField()
+   * @generated
+   */
+  EAttribute getMetadataStatusField_Status();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.MetadataModuleField <em>Metadata Module Field</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Metadata Module Field</em>'.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataModuleField
+   * @generated
+   */
+  EClass getMetadataModuleField();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.MetadataModuleField#getModuleName <em>Module Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Module Name</em>'.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataModuleField#getModuleName()
+   * @see #getMetadataModuleField()
+   * @generated
+   */
+  EReference getMetadataModuleField_ModuleName();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.MetadataJavaPackageField <em>Metadata Java Package Field</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Metadata Java Package Field</em>'.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataJavaPackageField
+   * @generated
+   */
+  EClass getMetadataJavaPackageField();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.MetadataJavaPackageField#getJavaPackage <em>Java Package</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Java Package</em>'.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataJavaPackageField#getJavaPackage()
+   * @see #getMetadataJavaPackageField()
+   * @generated
+   */
+  EReference getMetadataJavaPackageField_JavaPackage();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.MetadataCompiledAtField <em>Metadata Compiled At Field</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Metadata Compiled At Field</em>'.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataCompiledAtField
+   * @generated
+   */
+  EClass getMetadataCompiledAtField();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.MetadataCompiledAtField#getCompiledAt <em>Compiled At</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Compiled At</em>'.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataCompiledAtField#getCompiledAt()
+   * @see #getMetadataCompiledAtField()
+   * @generated
+   */
+  EReference getMetadataCompiledAtField_CompiledAt();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.MetadataCompilerVersionField <em>Metadata Compiler Version Field</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Metadata Compiler Version Field</em>'.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataCompilerVersionField
+   * @generated
+   */
+  EClass getMetadataCompilerVersionField();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.MetadataCompilerVersionField#getCompilerVersion <em>Compiler Version</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Compiler Version</em>'.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataCompilerVersionField#getCompilerVersion()
+   * @see #getMetadataCompilerVersionField()
+   * @generated
+   */
+  EReference getMetadataCompilerVersionField_CompilerVersion();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.MetadataModelMetadataField <em>Metadata Model Metadata Field</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Metadata Model Metadata Field</em>'.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataModelMetadataField
+   * @generated
+   */
+  EClass getMetadataModelMetadataField();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.MetadataModelMetadataField#getModelMetadata <em>Model Metadata</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Model Metadata</em>'.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataModelMetadataField#getModelMetadata()
+   * @see #getMetadataModelMetadataField()
+   * @generated
+   */
+  EReference getMetadataModelMetadataField_ModelMetadata();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.SimpleIdentifier <em>Simple Identifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Simple Identifier</em>'.
+   * @see com.robenglander.libretto.spec.librettoSpec.SimpleIdentifier
+   * @generated
+   */
+  EClass getSimpleIdentifier();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoSpec.SimpleIdentifier#getId <em>Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Id</em>'.
+   * @see com.robenglander.libretto.spec.librettoSpec.SimpleIdentifier#getId()
+   * @see #getSimpleIdentifier()
+   * @generated
+   */
+  EAttribute getSimpleIdentifier_Id();
+
+  /**
    * Returns the meta object for enum '{@link com.robenglander.libretto.spec.librettoSpec.OutcomeClassValue <em>Outcome Class Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5737,70 +6018,6 @@ public interface LibrettoSpecPackage extends EPackage
      * @generated
      */
     EClass METADATA_FIELD = eINSTANCE.getMetadataField();
-
-    /**
-     * The meta object literal for the '<em><b>Title</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference METADATA_FIELD__TITLE = eINSTANCE.getMetadataField_Title();
-
-    /**
-     * The meta object literal for the '<em><b>Version</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference METADATA_FIELD__VERSION = eINSTANCE.getMetadataField_Version();
-
-    /**
-     * The meta object literal for the '<em><b>Status</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute METADATA_FIELD__STATUS = eINSTANCE.getMetadataField_Status();
-
-    /**
-     * The meta object literal for the '<em><b>Module Name</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference METADATA_FIELD__MODULE_NAME = eINSTANCE.getMetadataField_ModuleName();
-
-    /**
-     * The meta object literal for the '<em><b>Java Package</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference METADATA_FIELD__JAVA_PACKAGE = eINSTANCE.getMetadataField_JavaPackage();
-
-    /**
-     * The meta object literal for the '<em><b>Compiled At</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference METADATA_FIELD__COMPILED_AT = eINSTANCE.getMetadataField_CompiledAt();
-
-    /**
-     * The meta object literal for the '<em><b>Compiler Version</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference METADATA_FIELD__COMPILER_VERSION = eINSTANCE.getMetadataField_CompilerVersion();
-
-    /**
-     * The meta object literal for the '<em><b>Model Metadata</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference METADATA_FIELD__MODEL_METADATA = eINSTANCE.getMetadataField_ModelMetadata();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.DependenciesSectionKeywordImpl <em>Dependencies Section Keyword</em>}' class.
@@ -7767,6 +7984,168 @@ public interface LibrettoSpecPackage extends EPackage
      * @generated
      */
     EReference IMPLEMENTATION_DIRECTIVES_SECTION__RECORDS = eINSTANCE.getImplementationDirectivesSection_Records();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.MetadataTitleFieldImpl <em>Metadata Title Field</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoSpec.impl.MetadataTitleFieldImpl
+     * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getMetadataTitleField()
+     * @generated
+     */
+    EClass METADATA_TITLE_FIELD = eINSTANCE.getMetadataTitleField();
+
+    /**
+     * The meta object literal for the '<em><b>Title</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference METADATA_TITLE_FIELD__TITLE = eINSTANCE.getMetadataTitleField_Title();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.MetadataVersionFieldImpl <em>Metadata Version Field</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoSpec.impl.MetadataVersionFieldImpl
+     * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getMetadataVersionField()
+     * @generated
+     */
+    EClass METADATA_VERSION_FIELD = eINSTANCE.getMetadataVersionField();
+
+    /**
+     * The meta object literal for the '<em><b>Version</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference METADATA_VERSION_FIELD__VERSION = eINSTANCE.getMetadataVersionField_Version();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.MetadataStatusFieldImpl <em>Metadata Status Field</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoSpec.impl.MetadataStatusFieldImpl
+     * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getMetadataStatusField()
+     * @generated
+     */
+    EClass METADATA_STATUS_FIELD = eINSTANCE.getMetadataStatusField();
+
+    /**
+     * The meta object literal for the '<em><b>Status</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute METADATA_STATUS_FIELD__STATUS = eINSTANCE.getMetadataStatusField_Status();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.MetadataModuleFieldImpl <em>Metadata Module Field</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoSpec.impl.MetadataModuleFieldImpl
+     * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getMetadataModuleField()
+     * @generated
+     */
+    EClass METADATA_MODULE_FIELD = eINSTANCE.getMetadataModuleField();
+
+    /**
+     * The meta object literal for the '<em><b>Module Name</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference METADATA_MODULE_FIELD__MODULE_NAME = eINSTANCE.getMetadataModuleField_ModuleName();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.MetadataJavaPackageFieldImpl <em>Metadata Java Package Field</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoSpec.impl.MetadataJavaPackageFieldImpl
+     * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getMetadataJavaPackageField()
+     * @generated
+     */
+    EClass METADATA_JAVA_PACKAGE_FIELD = eINSTANCE.getMetadataJavaPackageField();
+
+    /**
+     * The meta object literal for the '<em><b>Java Package</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference METADATA_JAVA_PACKAGE_FIELD__JAVA_PACKAGE = eINSTANCE.getMetadataJavaPackageField_JavaPackage();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.MetadataCompiledAtFieldImpl <em>Metadata Compiled At Field</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoSpec.impl.MetadataCompiledAtFieldImpl
+     * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getMetadataCompiledAtField()
+     * @generated
+     */
+    EClass METADATA_COMPILED_AT_FIELD = eINSTANCE.getMetadataCompiledAtField();
+
+    /**
+     * The meta object literal for the '<em><b>Compiled At</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference METADATA_COMPILED_AT_FIELD__COMPILED_AT = eINSTANCE.getMetadataCompiledAtField_CompiledAt();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.MetadataCompilerVersionFieldImpl <em>Metadata Compiler Version Field</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoSpec.impl.MetadataCompilerVersionFieldImpl
+     * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getMetadataCompilerVersionField()
+     * @generated
+     */
+    EClass METADATA_COMPILER_VERSION_FIELD = eINSTANCE.getMetadataCompilerVersionField();
+
+    /**
+     * The meta object literal for the '<em><b>Compiler Version</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference METADATA_COMPILER_VERSION_FIELD__COMPILER_VERSION = eINSTANCE.getMetadataCompilerVersionField_CompilerVersion();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.MetadataModelMetadataFieldImpl <em>Metadata Model Metadata Field</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoSpec.impl.MetadataModelMetadataFieldImpl
+     * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getMetadataModelMetadataField()
+     * @generated
+     */
+    EClass METADATA_MODEL_METADATA_FIELD = eINSTANCE.getMetadataModelMetadataField();
+
+    /**
+     * The meta object literal for the '<em><b>Model Metadata</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference METADATA_MODEL_METADATA_FIELD__MODEL_METADATA = eINSTANCE.getMetadataModelMetadataField_ModelMetadata();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.SimpleIdentifierImpl <em>Simple Identifier</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoSpec.impl.SimpleIdentifierImpl
+     * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getSimpleIdentifier()
+     * @generated
+     */
+    EClass SIMPLE_IDENTIFIER = eINSTANCE.getSimpleIdentifier();
+
+    /**
+     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SIMPLE_IDENTIFIER__ID = eINSTANCE.getSimpleIdentifier_Id();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.OutcomeClassValue <em>Outcome Class Value</em>}' enum.

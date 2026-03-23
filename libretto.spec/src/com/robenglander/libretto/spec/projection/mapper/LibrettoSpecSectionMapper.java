@@ -23,8 +23,16 @@ import com.robenglander.libretto.spec.librettoSpec.ImplementationDirectivesSecti
 import com.robenglander.libretto.spec.librettoSpec.ImplementsSurfaceRecord;
 import com.robenglander.libretto.spec.librettoSpec.ImplementsSurfaceRecordItem;
 import com.robenglander.libretto.spec.librettoSpec.ImplementsSurfaceSection;
+import com.robenglander.libretto.spec.librettoSpec.MetadataCompiledAtField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataCompilerVersionField;
 import com.robenglander.libretto.spec.librettoSpec.MetadataField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataJavaPackageField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataModelMetadataField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataModuleField;
 import com.robenglander.libretto.spec.librettoSpec.MetadataSection;
+import com.robenglander.libretto.spec.librettoSpec.MetadataStatusField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataTitleField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataVersionField;
 import com.robenglander.libretto.spec.librettoSpec.MetadataStatusValue;
 import com.robenglander.libretto.spec.librettoSpec.OperationSurfaceRecord;
 import com.robenglander.libretto.spec.librettoSpec.OperationSurfaceRecordItem;
@@ -143,31 +151,21 @@ final class LibrettoSpecSectionMapper {
 	}
 
 	private static ProjectedMetadataField mapMetadataField(MetadataField f) {
-		if (f.getTitle() != null) {
-			return new ProjectedMetadataField.Title(ProjectionValues.text(f.getTitle()));
-		}
-		if (f.getVersion() != null) {
-			return new ProjectedMetadataField.Version(ProjectionValues.text(f.getVersion()));
-		}
-		if (f.getStatus() != null) {
-			return new ProjectedMetadataField.Status(mapMetaStatus(f.getStatus()));
-		}
-		if (f.getModuleName() != null) {
-			return new ProjectedMetadataField.ModuleName(ProjectionValues.text(f.getModuleName()));
-		}
-		if (f.getJavaPackage() != null) {
-			return new ProjectedMetadataField.JavaPackage(ProjectionValues.text(f.getJavaPackage()));
-		}
-		if (f.getCompiledAt() != null) {
-			return new ProjectedMetadataField.CompiledAt(ProjectionValues.text(f.getCompiledAt()));
-		}
-		if (f.getCompilerVersion() != null) {
-			return new ProjectedMetadataField.CompilerVersion(ProjectionValues.text(f.getCompilerVersion()));
-		}
-		if (f.getModelMetadata() != null) {
-			return new ProjectedMetadataField.ModelMetadata(ProjectionValues.text(f.getModelMetadata()));
-		}
-		return null;
+		return switch (f) {
+			case MetadataTitleField tf -> new ProjectedMetadataField.Title(ProjectionValues.text(tf.getTitle()));
+			case MetadataVersionField vf -> new ProjectedMetadataField.Version(ProjectionValues.text(vf.getVersion()));
+			case MetadataModuleField mf -> new ProjectedMetadataField.ModuleName(ProjectionValues.text(mf.getModuleName()));
+			case MetadataJavaPackageField jf ->
+				new ProjectedMetadataField.JavaPackage(ProjectionValues.text(jf.getJavaPackage()));
+			case MetadataCompiledAtField caf ->
+				new ProjectedMetadataField.CompiledAt(ProjectionValues.text(caf.getCompiledAt()));
+			case MetadataCompilerVersionField cvf ->
+				new ProjectedMetadataField.CompilerVersion(ProjectionValues.text(cvf.getCompilerVersion()));
+			case MetadataModelMetadataField mmf ->
+				new ProjectedMetadataField.ModelMetadata(ProjectionValues.text(mmf.getModelMetadata()));
+			case MetadataStatusField sf -> new ProjectedMetadataField.Status(mapMetaStatus(sf.getStatus()));
+			default -> null;
+		};
 	}
 
 	private static MetadataPublicationStatus mapMetaStatus(MetadataStatusValue v) {

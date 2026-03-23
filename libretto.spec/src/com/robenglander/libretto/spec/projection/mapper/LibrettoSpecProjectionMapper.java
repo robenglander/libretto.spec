@@ -7,20 +7,21 @@ import org.eclipse.emf.ecore.EObject;
 
 import com.robenglander.libretto.spec.librettoSpec.Spec;
 import com.robenglander.libretto.spec.librettoSpec.SpecSection;
-import com.robenglander.libretto.spec.projection.LibrettoSpecDocumentProjection;
+import com.robenglander.libretto.spec.projection.LibrettoSpecDomainModel;
+import com.robenglander.libretto.spec.projection.LibrettoSpecDomainModelProjection;
 import com.robenglander.libretto.spec.projection.ProjectedSpecSection;
 
 /**
- * EMF {@link Spec} → portable {@link LibrettoSpecDocumentProjection}.
+ * EMF {@link Spec} → portable {@link LibrettoSpecDomainModelProjection}.
  */
 public final class LibrettoSpecProjectionMapper {
 
 	private LibrettoSpecProjectionMapper() {
 	}
 
-	public static LibrettoSpecDocumentProjection project(Spec spec) {
+	public static LibrettoSpecDomainModelProjection project(Spec spec) {
 		if (spec == null) {
-			return new LibrettoSpecDocumentProjection("", List.of());
+			return new LibrettoSpecDomainModelProjection(new LibrettoSpecDomainModel("", List.of()));
 		}
 		String specId = spec.getSpecId() == null ? "" : spec.getSpecId().trim();
 		List<ProjectedSpecSection> sections = new ArrayList<>();
@@ -30,7 +31,7 @@ public final class LibrettoSpecProjectionMapper {
 				sections.add(p);
 			}
 		}
-		return new LibrettoSpecDocumentProjection(specId, sections);
+		return new LibrettoSpecDomainModelProjection(new LibrettoSpecDomainModel(specId, sections));
 	}
 
 	/** Raw node text for {@link com.robenglander.libretto.spec.librettoSpec.IdentifierValue} (caret escapes normalized). */

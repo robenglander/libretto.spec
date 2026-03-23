@@ -156,6 +156,15 @@ public class LibrettoSpecFactoryImpl extends EFactoryImpl implements LibrettoSpe
       case LibrettoSpecPackage.BEHAVIORS_SECTION: return createBehaviorsSection();
       case LibrettoSpecPackage.ACCEPTANCE_TESTS_SECTION: return createAcceptanceTestsSection();
       case LibrettoSpecPackage.IMPLEMENTATION_DIRECTIVES_SECTION: return createImplementationDirectivesSection();
+      case LibrettoSpecPackage.METADATA_TITLE_FIELD: return createMetadataTitleField();
+      case LibrettoSpecPackage.METADATA_VERSION_FIELD: return createMetadataVersionField();
+      case LibrettoSpecPackage.METADATA_STATUS_FIELD: return createMetadataStatusField();
+      case LibrettoSpecPackage.METADATA_MODULE_FIELD: return createMetadataModuleField();
+      case LibrettoSpecPackage.METADATA_JAVA_PACKAGE_FIELD: return createMetadataJavaPackageField();
+      case LibrettoSpecPackage.METADATA_COMPILED_AT_FIELD: return createMetadataCompiledAtField();
+      case LibrettoSpecPackage.METADATA_COMPILER_VERSION_FIELD: return createMetadataCompilerVersionField();
+      case LibrettoSpecPackage.METADATA_MODEL_METADATA_FIELD: return createMetadataModelMetadataField();
+      case LibrettoSpecPackage.SIMPLE_IDENTIFIER: return createSimpleIdentifier();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -1281,6 +1290,114 @@ public class LibrettoSpecFactoryImpl extends EFactoryImpl implements LibrettoSpe
   {
     ImplementationDirectivesSectionImpl implementationDirectivesSection = new ImplementationDirectivesSectionImpl();
     return implementationDirectivesSection;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public MetadataTitleField createMetadataTitleField()
+  {
+    MetadataTitleFieldImpl metadataTitleField = new MetadataTitleFieldImpl();
+    return metadataTitleField;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public MetadataVersionField createMetadataVersionField()
+  {
+    MetadataVersionFieldImpl metadataVersionField = new MetadataVersionFieldImpl();
+    return metadataVersionField;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public MetadataStatusField createMetadataStatusField()
+  {
+    MetadataStatusFieldImpl metadataStatusField = new MetadataStatusFieldImpl();
+    return metadataStatusField;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public MetadataModuleField createMetadataModuleField()
+  {
+    MetadataModuleFieldImpl metadataModuleField = new MetadataModuleFieldImpl();
+    return metadataModuleField;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public MetadataJavaPackageField createMetadataJavaPackageField()
+  {
+    MetadataJavaPackageFieldImpl metadataJavaPackageField = new MetadataJavaPackageFieldImpl();
+    return metadataJavaPackageField;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public MetadataCompiledAtField createMetadataCompiledAtField()
+  {
+    MetadataCompiledAtFieldImpl metadataCompiledAtField = new MetadataCompiledAtFieldImpl();
+    return metadataCompiledAtField;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public MetadataCompilerVersionField createMetadataCompilerVersionField()
+  {
+    MetadataCompilerVersionFieldImpl metadataCompilerVersionField = new MetadataCompilerVersionFieldImpl();
+    return metadataCompilerVersionField;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public MetadataModelMetadataField createMetadataModelMetadataField()
+  {
+    MetadataModelMetadataFieldImpl metadataModelMetadataField = new MetadataModelMetadataFieldImpl();
+    return metadataModelMetadataField;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SimpleIdentifier createSimpleIdentifier()
+  {
+    SimpleIdentifierImpl simpleIdentifier = new SimpleIdentifierImpl();
+    return simpleIdentifier;
   }
 
   /**

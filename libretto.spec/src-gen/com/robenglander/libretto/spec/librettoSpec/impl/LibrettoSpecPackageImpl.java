@@ -51,10 +51,18 @@ import com.robenglander.libretto.spec.librettoSpec.LabelField;
 import com.robenglander.libretto.spec.librettoSpec.LibrettoSpecFactory;
 import com.robenglander.libretto.spec.librettoSpec.LibrettoSpecPackage;
 import com.robenglander.libretto.spec.librettoSpec.LocatorField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataCompiledAtField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataCompilerVersionField;
 import com.robenglander.libretto.spec.librettoSpec.MetadataField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataJavaPackageField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataModelMetadataField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataModuleField;
 import com.robenglander.libretto.spec.librettoSpec.MetadataSection;
+import com.robenglander.libretto.spec.librettoSpec.MetadataStatusField;
 import com.robenglander.libretto.spec.librettoSpec.MetadataStatusValue;
 import com.robenglander.libretto.spec.librettoSpec.MetadataTextField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataTitleField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataVersionField;
 import com.robenglander.libretto.spec.librettoSpec.NotesField;
 import com.robenglander.libretto.spec.librettoSpec.ObjectsField;
 import com.robenglander.libretto.spec.librettoSpec.OperationExpressionField;
@@ -80,6 +88,7 @@ import com.robenglander.libretto.spec.librettoSpec.ReferencesSection;
 import com.robenglander.libretto.spec.librettoSpec.SectionContextRecord;
 import com.robenglander.libretto.spec.librettoSpec.SectionContextRecordItem;
 import com.robenglander.libretto.spec.librettoSpec.SectionField;
+import com.robenglander.libretto.spec.librettoSpec.SimpleIdentifier;
 import com.robenglander.libretto.spec.librettoSpec.SourceBlock;
 import com.robenglander.libretto.spec.librettoSpec.SourceBlockItem;
 import com.robenglander.libretto.spec.librettoSpec.Spec;
@@ -750,6 +759,69 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass metadataTitleFieldEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass metadataVersionFieldEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass metadataStatusFieldEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass metadataModuleFieldEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass metadataJavaPackageFieldEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass metadataCompiledAtFieldEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass metadataCompilerVersionFieldEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass metadataModelMetadataFieldEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass simpleIdentifierEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EEnum outcomeClassValueEEnum = null;
 
   /**
@@ -881,94 +953,6 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
   public EClass getMetadataField()
   {
     return metadataFieldEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getMetadataField_Title()
-  {
-    return (EReference)metadataFieldEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getMetadataField_Version()
-  {
-    return (EReference)metadataFieldEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getMetadataField_Status()
-  {
-    return (EAttribute)metadataFieldEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getMetadataField_ModuleName()
-  {
-    return (EReference)metadataFieldEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getMetadataField_JavaPackage()
-  {
-    return (EReference)metadataFieldEClass.getEStructuralFeatures().get(4);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getMetadataField_CompiledAt()
-  {
-    return (EReference)metadataFieldEClass.getEStructuralFeatures().get(5);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getMetadataField_CompilerVersion()
-  {
-    return (EReference)metadataFieldEClass.getEStructuralFeatures().get(6);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getMetadataField_ModelMetadata()
-  {
-    return (EReference)metadataFieldEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -3441,6 +3425,204 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
+  public EClass getMetadataTitleField()
+  {
+    return metadataTitleFieldEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getMetadataTitleField_Title()
+  {
+    return (EReference)metadataTitleFieldEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMetadataVersionField()
+  {
+    return metadataVersionFieldEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getMetadataVersionField_Version()
+  {
+    return (EReference)metadataVersionFieldEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMetadataStatusField()
+  {
+    return metadataStatusFieldEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getMetadataStatusField_Status()
+  {
+    return (EAttribute)metadataStatusFieldEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMetadataModuleField()
+  {
+    return metadataModuleFieldEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getMetadataModuleField_ModuleName()
+  {
+    return (EReference)metadataModuleFieldEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMetadataJavaPackageField()
+  {
+    return metadataJavaPackageFieldEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getMetadataJavaPackageField_JavaPackage()
+  {
+    return (EReference)metadataJavaPackageFieldEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMetadataCompiledAtField()
+  {
+    return metadataCompiledAtFieldEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getMetadataCompiledAtField_CompiledAt()
+  {
+    return (EReference)metadataCompiledAtFieldEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMetadataCompilerVersionField()
+  {
+    return metadataCompilerVersionFieldEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getMetadataCompilerVersionField_CompilerVersion()
+  {
+    return (EReference)metadataCompilerVersionFieldEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMetadataModelMetadataField()
+  {
+    return metadataModelMetadataFieldEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getMetadataModelMetadataField_ModelMetadata()
+  {
+    return (EReference)metadataModelMetadataFieldEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSimpleIdentifier()
+  {
+    return simpleIdentifierEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSimpleIdentifier_Id()
+  {
+    return (EAttribute)simpleIdentifierEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EEnum getOutcomeClassValue()
   {
     return outcomeClassValueEEnum;
@@ -3506,14 +3688,6 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
     specSectionEClass = createEClass(SPEC_SECTION);
 
     metadataFieldEClass = createEClass(METADATA_FIELD);
-    createEReference(metadataFieldEClass, METADATA_FIELD__TITLE);
-    createEReference(metadataFieldEClass, METADATA_FIELD__VERSION);
-    createEAttribute(metadataFieldEClass, METADATA_FIELD__STATUS);
-    createEReference(metadataFieldEClass, METADATA_FIELD__MODULE_NAME);
-    createEReference(metadataFieldEClass, METADATA_FIELD__JAVA_PACKAGE);
-    createEReference(metadataFieldEClass, METADATA_FIELD__COMPILED_AT);
-    createEReference(metadataFieldEClass, METADATA_FIELD__COMPILER_VERSION);
-    createEReference(metadataFieldEClass, METADATA_FIELD__MODEL_METADATA);
 
     dependenciesSectionKeywordEClass = createEClass(DEPENDENCIES_SECTION_KEYWORD);
 
@@ -3826,6 +4000,33 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
     implementationDirectivesSectionEClass = createEClass(IMPLEMENTATION_DIRECTIVES_SECTION);
     createEReference(implementationDirectivesSectionEClass, IMPLEMENTATION_DIRECTIVES_SECTION__RECORDS);
 
+    metadataTitleFieldEClass = createEClass(METADATA_TITLE_FIELD);
+    createEReference(metadataTitleFieldEClass, METADATA_TITLE_FIELD__TITLE);
+
+    metadataVersionFieldEClass = createEClass(METADATA_VERSION_FIELD);
+    createEReference(metadataVersionFieldEClass, METADATA_VERSION_FIELD__VERSION);
+
+    metadataStatusFieldEClass = createEClass(METADATA_STATUS_FIELD);
+    createEAttribute(metadataStatusFieldEClass, METADATA_STATUS_FIELD__STATUS);
+
+    metadataModuleFieldEClass = createEClass(METADATA_MODULE_FIELD);
+    createEReference(metadataModuleFieldEClass, METADATA_MODULE_FIELD__MODULE_NAME);
+
+    metadataJavaPackageFieldEClass = createEClass(METADATA_JAVA_PACKAGE_FIELD);
+    createEReference(metadataJavaPackageFieldEClass, METADATA_JAVA_PACKAGE_FIELD__JAVA_PACKAGE);
+
+    metadataCompiledAtFieldEClass = createEClass(METADATA_COMPILED_AT_FIELD);
+    createEReference(metadataCompiledAtFieldEClass, METADATA_COMPILED_AT_FIELD__COMPILED_AT);
+
+    metadataCompilerVersionFieldEClass = createEClass(METADATA_COMPILER_VERSION_FIELD);
+    createEReference(metadataCompilerVersionFieldEClass, METADATA_COMPILER_VERSION_FIELD__COMPILER_VERSION);
+
+    metadataModelMetadataFieldEClass = createEClass(METADATA_MODEL_METADATA_FIELD);
+    createEReference(metadataModelMetadataFieldEClass, METADATA_MODEL_METADATA_FIELD__MODEL_METADATA);
+
+    simpleIdentifierEClass = createEClass(SIMPLE_IDENTIFIER);
+    createEAttribute(simpleIdentifierEClass, SIMPLE_IDENTIFIER__ID);
+
     // Create enums
     outcomeClassValueEEnum = createEEnum(OUTCOME_CLASS_VALUE);
     metadataStatusValueEEnum = createEEnum(METADATA_STATUS_VALUE);
@@ -3876,6 +4077,15 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
     behaviorsSectionEClass.getESuperTypes().add(this.getSpecSection());
     acceptanceTestsSectionEClass.getESuperTypes().add(this.getSpecSection());
     implementationDirectivesSectionEClass.getESuperTypes().add(this.getSpecSection());
+    metadataTitleFieldEClass.getESuperTypes().add(this.getMetadataField());
+    metadataVersionFieldEClass.getESuperTypes().add(this.getMetadataField());
+    metadataStatusFieldEClass.getESuperTypes().add(this.getMetadataField());
+    metadataModuleFieldEClass.getESuperTypes().add(this.getMetadataField());
+    metadataJavaPackageFieldEClass.getESuperTypes().add(this.getMetadataField());
+    metadataCompiledAtFieldEClass.getESuperTypes().add(this.getMetadataField());
+    metadataCompilerVersionFieldEClass.getESuperTypes().add(this.getMetadataField());
+    metadataModelMetadataFieldEClass.getESuperTypes().add(this.getMetadataField());
+    simpleIdentifierEClass.getESuperTypes().add(this.getIdentifierValue());
 
     // Initialize classes and features; add operations and parameters
     initEClass(specEClass, Spec.class, "Spec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -3885,14 +4095,6 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
     initEClass(specSectionEClass, SpecSection.class, "SpecSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(metadataFieldEClass, MetadataField.class, "MetadataField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getMetadataField_Title(), this.getTextValue(), null, "title", null, 0, 1, MetadataField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getMetadataField_Version(), this.getTextValue(), null, "version", null, 0, 1, MetadataField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getMetadataField_Status(), this.getMetadataStatusValue(), "status", null, 0, 1, MetadataField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getMetadataField_ModuleName(), this.getTextValue(), null, "moduleName", null, 0, 1, MetadataField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getMetadataField_JavaPackage(), this.getTextValue(), null, "javaPackage", null, 0, 1, MetadataField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getMetadataField_CompiledAt(), this.getTextValue(), null, "compiledAt", null, 0, 1, MetadataField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getMetadataField_CompilerVersion(), this.getTextValue(), null, "compilerVersion", null, 0, 1, MetadataField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getMetadataField_ModelMetadata(), this.getTextValue(), null, "modelMetadata", null, 0, 1, MetadataField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(dependenciesSectionKeywordEClass, DependenciesSectionKeyword.class, "DependenciesSectionKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -4204,6 +4406,33 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
 
     initEClass(implementationDirectivesSectionEClass, ImplementationDirectivesSection.class, "ImplementationDirectivesSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getImplementationDirectivesSection_Records(), this.getImplementationDirectiveRecord(), null, "records", null, 0, -1, ImplementationDirectivesSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(metadataTitleFieldEClass, MetadataTitleField.class, "MetadataTitleField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMetadataTitleField_Title(), this.getTextValue(), null, "title", null, 0, 1, MetadataTitleField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(metadataVersionFieldEClass, MetadataVersionField.class, "MetadataVersionField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMetadataVersionField_Version(), this.getTextValue(), null, "version", null, 0, 1, MetadataVersionField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(metadataStatusFieldEClass, MetadataStatusField.class, "MetadataStatusField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMetadataStatusField_Status(), this.getMetadataStatusValue(), "status", null, 0, 1, MetadataStatusField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(metadataModuleFieldEClass, MetadataModuleField.class, "MetadataModuleField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMetadataModuleField_ModuleName(), this.getTextValue(), null, "moduleName", null, 0, 1, MetadataModuleField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(metadataJavaPackageFieldEClass, MetadataJavaPackageField.class, "MetadataJavaPackageField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMetadataJavaPackageField_JavaPackage(), this.getTextValue(), null, "javaPackage", null, 0, 1, MetadataJavaPackageField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(metadataCompiledAtFieldEClass, MetadataCompiledAtField.class, "MetadataCompiledAtField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMetadataCompiledAtField_CompiledAt(), this.getTextValue(), null, "compiledAt", null, 0, 1, MetadataCompiledAtField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(metadataCompilerVersionFieldEClass, MetadataCompilerVersionField.class, "MetadataCompilerVersionField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMetadataCompilerVersionField_CompilerVersion(), this.getTextValue(), null, "compilerVersion", null, 0, 1, MetadataCompilerVersionField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(metadataModelMetadataFieldEClass, MetadataModelMetadataField.class, "MetadataModelMetadataField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMetadataModelMetadataField_ModelMetadata(), this.getTextValue(), null, "modelMetadata", null, 0, 1, MetadataModelMetadataField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(simpleIdentifierEClass, SimpleIdentifier.class, "SimpleIdentifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSimpleIdentifier_Id(), ecorePackage.getEString(), "id", null, 0, 1, SimpleIdentifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
     initEEnum(outcomeClassValueEEnum, OutcomeClassValue.class, "OutcomeClassValue");

@@ -25,16 +25,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//Spec/sections"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//SpecSection"/>
-    <genClasses ecoreClass="LibrettoSpec.ecore#//MetadataField">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//MetadataField/title"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//MetadataField/version"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//MetadataField/status"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//MetadataField/moduleName"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//MetadataField/javaPackage"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//MetadataField/compiledAt"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//MetadataField/compilerVersion"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//MetadataField/modelMetadata"/>
-    </genClasses>
+    <genClasses ecoreClass="LibrettoSpec.ecore#//MetadataField"/>
     <genClasses ecoreClass="LibrettoSpec.ecore#//DependenciesSectionKeyword"/>
     <genClasses ecoreClass="LibrettoSpec.ecore#//DependencyKeyword"/>
     <genClasses ecoreClass="LibrettoSpec.ecore#//DependencyRecord">
@@ -341,6 +332,33 @@
     </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//ImplementationDirectivesSection">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//ImplementationDirectivesSection/records"/>
+    </genClasses>
+    <genClasses ecoreClass="LibrettoSpec.ecore#//MetadataTitleField">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//MetadataTitleField/title"/>
+    </genClasses>
+    <genClasses ecoreClass="LibrettoSpec.ecore#//MetadataVersionField">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//MetadataVersionField/version"/>
+    </genClasses>
+    <genClasses ecoreClass="LibrettoSpec.ecore#//MetadataStatusField">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//MetadataStatusField/status"/>
+    </genClasses>
+    <genClasses ecoreClass="LibrettoSpec.ecore#//MetadataModuleField">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//MetadataModuleField/moduleName"/>
+    </genClasses>
+    <genClasses ecoreClass="LibrettoSpec.ecore#//MetadataJavaPackageField">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//MetadataJavaPackageField/javaPackage"/>
+    </genClasses>
+    <genClasses ecoreClass="LibrettoSpec.ecore#//MetadataCompiledAtField">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//MetadataCompiledAtField/compiledAt"/>
+    </genClasses>
+    <genClasses ecoreClass="LibrettoSpec.ecore#//MetadataCompilerVersionField">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//MetadataCompilerVersionField/compilerVersion"/>
+    </genClasses>
+    <genClasses ecoreClass="LibrettoSpec.ecore#//MetadataModelMetadataField">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//MetadataModelMetadataField/modelMetadata"/>
+    </genClasses>
+    <genClasses ecoreClass="LibrettoSpec.ecore#//SimpleIdentifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//SimpleIdentifier/id"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

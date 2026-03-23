@@ -18,9 +18,16 @@ import com.robenglander.libretto.spec.librettoSpec.ImplementsSurfaceRecord;
 import com.robenglander.libretto.spec.librettoSpec.ImplementsSurfaceSection;
 import com.robenglander.libretto.spec.librettoSpec.ImplementationDirectiveRecord;
 import com.robenglander.libretto.spec.librettoSpec.ImplementationDirectivesSection;
+import com.robenglander.libretto.spec.librettoSpec.MetadataCompiledAtField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataCompilerVersionField;
 import com.robenglander.libretto.spec.librettoSpec.MetadataField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataJavaPackageField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataModelMetadataField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataModuleField;
 import com.robenglander.libretto.spec.librettoSpec.MetadataSection;
-import com.robenglander.libretto.spec.librettoSpec.MetadataStatusValue;
+import com.robenglander.libretto.spec.librettoSpec.MetadataStatusField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataTitleField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataVersionField;
 import com.robenglander.libretto.spec.librettoSpec.OperationSurfaceRecord;
 import com.robenglander.libretto.spec.librettoSpec.OperationSurfaceSection;
 import com.robenglander.libretto.spec.librettoSpec.OutcomeClassValue;
@@ -30,6 +37,7 @@ import com.robenglander.libretto.spec.librettoSpec.ProseSection;
 import com.robenglander.libretto.spec.librettoSpec.ReferenceRecord;
 import com.robenglander.libretto.spec.librettoSpec.ReferencesSection;
 import com.robenglander.libretto.spec.librettoSpec.SectionContextRecord;
+import com.robenglander.libretto.spec.librettoSpec.SimpleIdentifier;
 import com.robenglander.libretto.spec.librettoSpec.SourceBlock;
 import com.robenglander.libretto.spec.librettoSpec.Spec;
 import com.robenglander.libretto.spec.librettoSpec.SpecSection;
@@ -274,31 +282,36 @@ public class LibrettoSpecValidator extends AbstractLibrettoSpecValidator {
 
 	@Check
 	public void checkMetadataSectionRequiredAndUnique(MetadataSection metaSec) {
-		checkAtMostOneMetadataSlot(metaSec, f -> f.getTitle() != null, "title", Literals.METADATA_FIELD__TITLE);
-		checkAtMostOneMetadataSlot(metaSec, f -> f.getVersion() != null, "version", Literals.METADATA_FIELD__VERSION);
-		checkAtMostOneMetadataSlot(metaSec, LibrettoSpecValidator::metadataFieldDeclaresStatus, "status",
-				Literals.METADATA_FIELD__STATUS);
-		checkAtMostOneMetadataSlot(metaSec, f -> f.getModuleName() != null, "module", Literals.METADATA_FIELD__MODULE_NAME);
-		checkAtMostOneMetadataSlot(metaSec, f -> f.getJavaPackage() != null, "package",
-				Literals.METADATA_FIELD__JAVA_PACKAGE);
-		checkAtMostOneMetadataSlot(metaSec, f -> f.getCompiledAt() != null, "compiled_at",
-				Literals.METADATA_FIELD__COMPILED_AT);
-		checkAtMostOneMetadataSlot(metaSec, f -> f.getCompilerVersion() != null, "compiler_version",
-				Literals.METADATA_FIELD__COMPILER_VERSION);
-		checkAtMostOneMetadataSlot(metaSec, f -> f.getModelMetadata() != null, "model_metadata",
-				Literals.METADATA_FIELD__MODEL_METADATA);
+		checkAtMostOneMetadataSlot(metaSec, f -> f instanceof MetadataTitleField, "title",
+				Literals.METADATA_TITLE_FIELD__TITLE);
+		checkAtMostOneMetadataSlot(metaSec, f -> f instanceof MetadataVersionField, "version",
+				Literals.METADATA_VERSION_FIELD__VERSION);
+		checkAtMostOneMetadataSlot(metaSec, f -> f instanceof MetadataStatusField, "status",
+				Literals.METADATA_STATUS_FIELD__STATUS);
+		checkAtMostOneMetadataSlot(metaSec, f -> f instanceof MetadataModuleField, "module",
+				Literals.METADATA_MODULE_FIELD__MODULE_NAME);
+		checkAtMostOneMetadataSlot(metaSec, f -> f instanceof MetadataJavaPackageField, "package",
+				Literals.METADATA_JAVA_PACKAGE_FIELD__JAVA_PACKAGE);
+		checkAtMostOneMetadataSlot(metaSec, f -> f instanceof MetadataCompiledAtField, "compiled_at",
+				Literals.METADATA_COMPILED_AT_FIELD__COMPILED_AT);
+		checkAtMostOneMetadataSlot(metaSec, f -> f instanceof MetadataCompilerVersionField, "compiler_version",
+				Literals.METADATA_COMPILER_VERSION_FIELD__COMPILER_VERSION);
+		checkAtMostOneMetadataSlot(metaSec, f -> f instanceof MetadataModelMetadataField, "model_metadata",
+				Literals.METADATA_MODEL_METADATA_FIELD__MODEL_METADATA);
 
 		boolean hasStatus = false;
 		boolean hasModule = false;
 		boolean hasPackage = false;
 		for (MetadataField f : metaSec.getFields()) {
-			if (metadataFieldDeclaresStatus(f)) {
+			if (f instanceof MetadataStatusField) {
 				hasStatus = true;
 			}
-			if (f.getModuleName() != null && !LibrettoSpecTextValues.text(f.getModuleName()).isBlank()) {
+			if (f instanceof MetadataModuleField mf && mf.getModuleName() != null
+					&& !LibrettoSpecTextValues.text(mf.getModuleName()).isBlank()) {
 				hasModule = true;
 			}
-			if (f.getJavaPackage() != null && !LibrettoSpecTextValues.text(f.getJavaPackage()).isBlank()) {
+			if (f instanceof MetadataJavaPackageField jf && jf.getJavaPackage() != null
+					&& !LibrettoSpecTextValues.text(jf.getJavaPackage()).isBlank()) {
 				hasPackage = true;
 			}
 		}
@@ -315,30 +328,6 @@ public class LibrettoSpecValidator extends AbstractLibrettoSpecValidator {
 			errorAnchored(metaSec, mk, "metadata is missing required package field.", MISSING_METADATA_PACKAGE,
 					Literals.METADATA_SECTION__FIELDS);
 		}
-	}
-
-	/**
-	 * True for a {@code metadata} line that declares {@code status: ...}. Every {@link MetadataField}
-	 * has {@link MetadataField#getStatus()} defaulting to {@link MetadataStatusValue#DRAFT} in EMF, so
-	 * {@code getStatus() != null} is not a reliable signal.
-	 */
-	private static boolean metadataFieldDeclaresStatus(MetadataField f) {
-		if (f.eIsSet(Literals.METADATA_FIELD__STATUS)) {
-			return true;
-		}
-		// Explicit "status: draft" equals the feature default; eIsSet(STATUS) stays false.
-		if (metadataFieldDeclaresAnyNonStatusSlot(f)) {
-			return false;
-		}
-		return f.getStatus() == MetadataStatusValue.DRAFT;
-	}
-
-	private static boolean metadataFieldDeclaresAnyNonStatusSlot(MetadataField f) {
-		return f.eIsSet(Literals.METADATA_FIELD__TITLE) || f.eIsSet(Literals.METADATA_FIELD__VERSION)
-				|| f.eIsSet(Literals.METADATA_FIELD__MODULE_NAME) || f.eIsSet(Literals.METADATA_FIELD__JAVA_PACKAGE)
-				|| f.eIsSet(Literals.METADATA_FIELD__COMPILED_AT)
-				|| f.eIsSet(Literals.METADATA_FIELD__COMPILER_VERSION)
-				|| f.eIsSet(Literals.METADATA_FIELD__MODEL_METADATA);
 	}
 
 	private void checkAtMostOneMetadataSlot(MetadataSection metaSec, Predicate<MetadataField> present, String keyword,
@@ -870,6 +859,9 @@ public class LibrettoSpecValidator extends AbstractLibrettoSpecValidator {
 	private static String identifierText(IdentifierValue v) {
 		if (v == null) {
 			return null;
+		}
+		if (v instanceof SimpleIdentifier si) {
+			return stripLeadingCaret(si.getId());
 		}
 		if (v instanceof DottedIdentifier dotted) {
 			StringBuilder sb = new StringBuilder(stripLeadingCaret(dotted.getHead()));

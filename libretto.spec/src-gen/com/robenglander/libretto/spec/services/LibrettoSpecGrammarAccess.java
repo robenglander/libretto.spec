@@ -37,8 +37,8 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		///**
-		// * Native Libretto (`.libretto`) — aligned with ANTLR {@code LibrettoSpec.g4}
-		// * in the {@code libretto} repo ({@code libretto-language/.../LibrettoSpec.g4}).
+		// * Native Libretto (`.libretto`) — <b>canonical grammar</b> (Xtext). A legacy ANTLR {@code LibrettoSpec.g4}
+		// * may still exist under {@code libretto-language} for older tooling but is not authoritative.
 		// * <p>
 		// * Principle: <b>loose syntax, strong validation</b> — many record fields are optional in the grammar
 		// * so the parser produces a partial model; {@code LibrettoSpecValidator} enforces required structure
@@ -598,188 +598,309 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 	public class MetadataFieldElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.MetadataField");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Keyword cTitleKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final Keyword cColonKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
-		private final Assignment cTitleAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
-		private final RuleCall cTitleTextValueParserRuleCall_0_2_0 = (RuleCall)cTitleAssignment_0_2.eContents().get(0);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Keyword cVersionKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Keyword cColonKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
-		private final Assignment cVersionAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cVersionTextValueParserRuleCall_1_2_0 = (RuleCall)cVersionAssignment_1_2.eContents().get(0);
-		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Keyword cStatusKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Keyword cColonKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
-		private final Assignment cStatusAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
-		private final RuleCall cStatusMetadataStatusValueEnumRuleCall_2_2_0 = (RuleCall)cStatusAssignment_2_2.eContents().get(0);
-		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final Keyword cModuleKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Keyword cColonKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
-		private final Assignment cModuleNameAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-		private final RuleCall cModuleNameTextValueParserRuleCall_3_2_0 = (RuleCall)cModuleNameAssignment_3_2.eContents().get(0);
-		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
-		private final Keyword cPackageKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Keyword cColonKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Assignment cJavaPackageAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final RuleCall cJavaPackageTextValueParserRuleCall_4_2_0 = (RuleCall)cJavaPackageAssignment_4_2.eContents().get(0);
-		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
-		private final Keyword cCompiled_atKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Keyword cColonKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Assignment cCompiledAtAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final RuleCall cCompiledAtTextValueParserRuleCall_5_2_0 = (RuleCall)cCompiledAtAssignment_5_2.eContents().get(0);
-		private final Group cGroup_6 = (Group)cAlternatives.eContents().get(6);
-		private final Keyword cCompiler_versionKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Keyword cColonKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
-		private final Assignment cCompilerVersionAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
-		private final RuleCall cCompilerVersionTextValueParserRuleCall_6_2_0 = (RuleCall)cCompilerVersionAssignment_6_2.eContents().get(0);
-		private final Group cGroup_7 = (Group)cAlternatives.eContents().get(7);
-		private final Keyword cModel_metadataKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Keyword cColonKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
-		private final Assignment cModelMetadataAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
-		private final RuleCall cModelMetadataTextValueParserRuleCall_7_2_0 = (RuleCall)cModelMetadataAssignment_7_2.eContents().get(0);
+		private final RuleCall cMetadataTitleFieldParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cMetadataVersionFieldParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cMetadataStatusFieldParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cMetadataModuleFieldParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cMetadataJavaPackageFieldParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cMetadataCompiledAtFieldParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cMetadataCompilerVersionFieldParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cMetadataModelMetadataFieldParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
 		
 		//// ----- Metadata -----
+		//// One subtype per line so the AST is never ambiguous (no shared MetadataField with default enum status).
 		//MetadataField:
-		//      'title' ':' title=TextValue
-		//    | 'version' ':' version=TextValue
-		//    | 'status' ':' status=MetadataStatusValue
-		//    | 'module' ':' moduleName=TextValue
-		//    | 'package' ':' javaPackage=TextValue
-		//    | 'compiled_at' ':' compiledAt=TextValue
-		//    | 'compiler_version' ':' compilerVersion=TextValue
-		//    | 'model_metadata' ':' modelMetadata=TextValue;
+		//    MetadataTitleField
+		//    | MetadataVersionField
+		//    | MetadataStatusField
+		//    | MetadataModuleField
+		//    | MetadataJavaPackageField
+		//    | MetadataCompiledAtField
+		//    | MetadataCompilerVersionField
+		//    | MetadataModelMetadataField;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//  'title' ':' title=TextValue
-		//| 'version' ':' version=TextValue
-		//| 'status' ':' status=MetadataStatusValue
-		//| 'module' ':' moduleName=TextValue
-		//| 'package' ':' javaPackage=TextValue
-		//| 'compiled_at' ':' compiledAt=TextValue
-		//| 'compiler_version' ':' compilerVersion=TextValue
-		//| 'model_metadata' ':' modelMetadata=TextValue
+		//MetadataTitleField
+		//| MetadataVersionField
+		//| MetadataStatusField
+		//| MetadataModuleField
+		//| MetadataJavaPackageField
+		//| MetadataCompiledAtField
+		//| MetadataCompilerVersionField
+		//| MetadataModelMetadataField
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//'title' ':' title=TextValue
-		public Group getGroup_0() { return cGroup_0; }
+		//MetadataTitleField
+		public RuleCall getMetadataTitleFieldParserRuleCall_0() { return cMetadataTitleFieldParserRuleCall_0; }
+		
+		//MetadataVersionField
+		public RuleCall getMetadataVersionFieldParserRuleCall_1() { return cMetadataVersionFieldParserRuleCall_1; }
+		
+		//MetadataStatusField
+		public RuleCall getMetadataStatusFieldParserRuleCall_2() { return cMetadataStatusFieldParserRuleCall_2; }
+		
+		//MetadataModuleField
+		public RuleCall getMetadataModuleFieldParserRuleCall_3() { return cMetadataModuleFieldParserRuleCall_3; }
+		
+		//MetadataJavaPackageField
+		public RuleCall getMetadataJavaPackageFieldParserRuleCall_4() { return cMetadataJavaPackageFieldParserRuleCall_4; }
+		
+		//MetadataCompiledAtField
+		public RuleCall getMetadataCompiledAtFieldParserRuleCall_5() { return cMetadataCompiledAtFieldParserRuleCall_5; }
+		
+		//MetadataCompilerVersionField
+		public RuleCall getMetadataCompilerVersionFieldParserRuleCall_6() { return cMetadataCompilerVersionFieldParserRuleCall_6; }
+		
+		//MetadataModelMetadataField
+		public RuleCall getMetadataModelMetadataFieldParserRuleCall_7() { return cMetadataModelMetadataFieldParserRuleCall_7; }
+	}
+	public class MetadataTitleFieldElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.MetadataTitleField");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMetadataTitleFieldAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cTitleKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cTitleAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cTitleTextValueParserRuleCall_3_0 = (RuleCall)cTitleAssignment_3.eContents().get(0);
+		
+		//MetadataTitleField returns MetadataField:
+		//    {MetadataTitleField} 'title' ':' title=TextValue;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{MetadataTitleField} 'title' ':' title=TextValue
+		public Group getGroup() { return cGroup; }
+		
+		//{MetadataTitleField}
+		public Action getMetadataTitleFieldAction_0() { return cMetadataTitleFieldAction_0; }
 		
 		//'title'
-		public Keyword getTitleKeyword_0_0() { return cTitleKeyword_0_0; }
+		public Keyword getTitleKeyword_1() { return cTitleKeyword_1; }
 		
 		//':'
-		public Keyword getColonKeyword_0_1() { return cColonKeyword_0_1; }
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 		
 		//title=TextValue
-		public Assignment getTitleAssignment_0_2() { return cTitleAssignment_0_2; }
+		public Assignment getTitleAssignment_3() { return cTitleAssignment_3; }
 		
 		//TextValue
-		public RuleCall getTitleTextValueParserRuleCall_0_2_0() { return cTitleTextValueParserRuleCall_0_2_0; }
+		public RuleCall getTitleTextValueParserRuleCall_3_0() { return cTitleTextValueParserRuleCall_3_0; }
+	}
+	public class MetadataVersionFieldElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.MetadataVersionField");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMetadataVersionFieldAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cVersionKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cVersionAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cVersionTextValueParserRuleCall_3_0 = (RuleCall)cVersionAssignment_3.eContents().get(0);
 		
-		//'version' ':' version=TextValue
-		public Group getGroup_1() { return cGroup_1; }
+		//MetadataVersionField returns MetadataField:
+		//    {MetadataVersionField} 'version' ':' version=TextValue;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{MetadataVersionField} 'version' ':' version=TextValue
+		public Group getGroup() { return cGroup; }
+		
+		//{MetadataVersionField}
+		public Action getMetadataVersionFieldAction_0() { return cMetadataVersionFieldAction_0; }
 		
 		//'version'
-		public Keyword getVersionKeyword_1_0() { return cVersionKeyword_1_0; }
+		public Keyword getVersionKeyword_1() { return cVersionKeyword_1; }
 		
 		//':'
-		public Keyword getColonKeyword_1_1() { return cColonKeyword_1_1; }
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 		
 		//version=TextValue
-		public Assignment getVersionAssignment_1_2() { return cVersionAssignment_1_2; }
+		public Assignment getVersionAssignment_3() { return cVersionAssignment_3; }
 		
 		//TextValue
-		public RuleCall getVersionTextValueParserRuleCall_1_2_0() { return cVersionTextValueParserRuleCall_1_2_0; }
+		public RuleCall getVersionTextValueParserRuleCall_3_0() { return cVersionTextValueParserRuleCall_3_0; }
+	}
+	public class MetadataStatusFieldElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.MetadataStatusField");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMetadataStatusFieldAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cStatusKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cStatusAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cStatusMetadataStatusValueEnumRuleCall_3_0 = (RuleCall)cStatusAssignment_3.eContents().get(0);
 		
-		//'status' ':' status=MetadataStatusValue
-		public Group getGroup_2() { return cGroup_2; }
+		//MetadataStatusField returns MetadataField:
+		//    {MetadataStatusField} 'status' ':' status=MetadataStatusValue;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{MetadataStatusField} 'status' ':' status=MetadataStatusValue
+		public Group getGroup() { return cGroup; }
+		
+		//{MetadataStatusField}
+		public Action getMetadataStatusFieldAction_0() { return cMetadataStatusFieldAction_0; }
 		
 		//'status'
-		public Keyword getStatusKeyword_2_0() { return cStatusKeyword_2_0; }
+		public Keyword getStatusKeyword_1() { return cStatusKeyword_1; }
 		
 		//':'
-		public Keyword getColonKeyword_2_1() { return cColonKeyword_2_1; }
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 		
 		//status=MetadataStatusValue
-		public Assignment getStatusAssignment_2_2() { return cStatusAssignment_2_2; }
+		public Assignment getStatusAssignment_3() { return cStatusAssignment_3; }
 		
 		//MetadataStatusValue
-		public RuleCall getStatusMetadataStatusValueEnumRuleCall_2_2_0() { return cStatusMetadataStatusValueEnumRuleCall_2_2_0; }
+		public RuleCall getStatusMetadataStatusValueEnumRuleCall_3_0() { return cStatusMetadataStatusValueEnumRuleCall_3_0; }
+	}
+	public class MetadataModuleFieldElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.MetadataModuleField");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMetadataModuleFieldAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cModuleKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cModuleNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cModuleNameTextValueParserRuleCall_3_0 = (RuleCall)cModuleNameAssignment_3.eContents().get(0);
 		
-		//'module' ':' moduleName=TextValue
-		public Group getGroup_3() { return cGroup_3; }
+		//MetadataModuleField returns MetadataField:
+		//    {MetadataModuleField} 'module' ':' moduleName=TextValue;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{MetadataModuleField} 'module' ':' moduleName=TextValue
+		public Group getGroup() { return cGroup; }
+		
+		//{MetadataModuleField}
+		public Action getMetadataModuleFieldAction_0() { return cMetadataModuleFieldAction_0; }
 		
 		//'module'
-		public Keyword getModuleKeyword_3_0() { return cModuleKeyword_3_0; }
+		public Keyword getModuleKeyword_1() { return cModuleKeyword_1; }
 		
 		//':'
-		public Keyword getColonKeyword_3_1() { return cColonKeyword_3_1; }
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 		
 		//moduleName=TextValue
-		public Assignment getModuleNameAssignment_3_2() { return cModuleNameAssignment_3_2; }
+		public Assignment getModuleNameAssignment_3() { return cModuleNameAssignment_3; }
 		
 		//TextValue
-		public RuleCall getModuleNameTextValueParserRuleCall_3_2_0() { return cModuleNameTextValueParserRuleCall_3_2_0; }
+		public RuleCall getModuleNameTextValueParserRuleCall_3_0() { return cModuleNameTextValueParserRuleCall_3_0; }
+	}
+	public class MetadataJavaPackageFieldElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.MetadataJavaPackageField");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMetadataJavaPackageFieldAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cPackageKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cJavaPackageAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cJavaPackageTextValueParserRuleCall_3_0 = (RuleCall)cJavaPackageAssignment_3.eContents().get(0);
 		
-		//'package' ':' javaPackage=TextValue
-		public Group getGroup_4() { return cGroup_4; }
+		//MetadataJavaPackageField returns MetadataField:
+		//    {MetadataJavaPackageField} 'package' ':' javaPackage=TextValue;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{MetadataJavaPackageField} 'package' ':' javaPackage=TextValue
+		public Group getGroup() { return cGroup; }
+		
+		//{MetadataJavaPackageField}
+		public Action getMetadataJavaPackageFieldAction_0() { return cMetadataJavaPackageFieldAction_0; }
 		
 		//'package'
-		public Keyword getPackageKeyword_4_0() { return cPackageKeyword_4_0; }
+		public Keyword getPackageKeyword_1() { return cPackageKeyword_1; }
 		
 		//':'
-		public Keyword getColonKeyword_4_1() { return cColonKeyword_4_1; }
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 		
 		//javaPackage=TextValue
-		public Assignment getJavaPackageAssignment_4_2() { return cJavaPackageAssignment_4_2; }
+		public Assignment getJavaPackageAssignment_3() { return cJavaPackageAssignment_3; }
 		
 		//TextValue
-		public RuleCall getJavaPackageTextValueParserRuleCall_4_2_0() { return cJavaPackageTextValueParserRuleCall_4_2_0; }
+		public RuleCall getJavaPackageTextValueParserRuleCall_3_0() { return cJavaPackageTextValueParserRuleCall_3_0; }
+	}
+	public class MetadataCompiledAtFieldElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.MetadataCompiledAtField");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMetadataCompiledAtFieldAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cCompiled_atKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cCompiledAtAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cCompiledAtTextValueParserRuleCall_3_0 = (RuleCall)cCompiledAtAssignment_3.eContents().get(0);
 		
-		//'compiled_at' ':' compiledAt=TextValue
-		public Group getGroup_5() { return cGroup_5; }
+		//MetadataCompiledAtField returns MetadataField:
+		//    {MetadataCompiledAtField} 'compiled_at' ':' compiledAt=TextValue;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{MetadataCompiledAtField} 'compiled_at' ':' compiledAt=TextValue
+		public Group getGroup() { return cGroup; }
+		
+		//{MetadataCompiledAtField}
+		public Action getMetadataCompiledAtFieldAction_0() { return cMetadataCompiledAtFieldAction_0; }
 		
 		//'compiled_at'
-		public Keyword getCompiled_atKeyword_5_0() { return cCompiled_atKeyword_5_0; }
+		public Keyword getCompiled_atKeyword_1() { return cCompiled_atKeyword_1; }
 		
 		//':'
-		public Keyword getColonKeyword_5_1() { return cColonKeyword_5_1; }
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 		
 		//compiledAt=TextValue
-		public Assignment getCompiledAtAssignment_5_2() { return cCompiledAtAssignment_5_2; }
+		public Assignment getCompiledAtAssignment_3() { return cCompiledAtAssignment_3; }
 		
 		//TextValue
-		public RuleCall getCompiledAtTextValueParserRuleCall_5_2_0() { return cCompiledAtTextValueParserRuleCall_5_2_0; }
+		public RuleCall getCompiledAtTextValueParserRuleCall_3_0() { return cCompiledAtTextValueParserRuleCall_3_0; }
+	}
+	public class MetadataCompilerVersionFieldElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.MetadataCompilerVersionField");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMetadataCompilerVersionFieldAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cCompiler_versionKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cCompilerVersionAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cCompilerVersionTextValueParserRuleCall_3_0 = (RuleCall)cCompilerVersionAssignment_3.eContents().get(0);
 		
-		//'compiler_version' ':' compilerVersion=TextValue
-		public Group getGroup_6() { return cGroup_6; }
+		//MetadataCompilerVersionField returns MetadataField:
+		//    {MetadataCompilerVersionField} 'compiler_version' ':' compilerVersion=TextValue;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{MetadataCompilerVersionField} 'compiler_version' ':' compilerVersion=TextValue
+		public Group getGroup() { return cGroup; }
+		
+		//{MetadataCompilerVersionField}
+		public Action getMetadataCompilerVersionFieldAction_0() { return cMetadataCompilerVersionFieldAction_0; }
 		
 		//'compiler_version'
-		public Keyword getCompiler_versionKeyword_6_0() { return cCompiler_versionKeyword_6_0; }
+		public Keyword getCompiler_versionKeyword_1() { return cCompiler_versionKeyword_1; }
 		
 		//':'
-		public Keyword getColonKeyword_6_1() { return cColonKeyword_6_1; }
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 		
 		//compilerVersion=TextValue
-		public Assignment getCompilerVersionAssignment_6_2() { return cCompilerVersionAssignment_6_2; }
+		public Assignment getCompilerVersionAssignment_3() { return cCompilerVersionAssignment_3; }
 		
 		//TextValue
-		public RuleCall getCompilerVersionTextValueParserRuleCall_6_2_0() { return cCompilerVersionTextValueParserRuleCall_6_2_0; }
+		public RuleCall getCompilerVersionTextValueParserRuleCall_3_0() { return cCompilerVersionTextValueParserRuleCall_3_0; }
+	}
+	public class MetadataModelMetadataFieldElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.MetadataModelMetadataField");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMetadataModelMetadataFieldAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cModel_metadataKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cModelMetadataAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cModelMetadataTextValueParserRuleCall_3_0 = (RuleCall)cModelMetadataAssignment_3.eContents().get(0);
 		
-		//'model_metadata' ':' modelMetadata=TextValue
-		public Group getGroup_7() { return cGroup_7; }
+		//MetadataModelMetadataField returns MetadataField:
+		//    {MetadataModelMetadataField} 'model_metadata' ':' modelMetadata=TextValue;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{MetadataModelMetadataField} 'model_metadata' ':' modelMetadata=TextValue
+		public Group getGroup() { return cGroup; }
+		
+		//{MetadataModelMetadataField}
+		public Action getMetadataModelMetadataFieldAction_0() { return cMetadataModelMetadataFieldAction_0; }
 		
 		//'model_metadata'
-		public Keyword getModel_metadataKeyword_7_0() { return cModel_metadataKeyword_7_0; }
+		public Keyword getModel_metadataKeyword_1() { return cModel_metadataKeyword_1; }
 		
 		//':'
-		public Keyword getColonKeyword_7_1() { return cColonKeyword_7_1; }
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 		
 		//modelMetadata=TextValue
-		public Assignment getModelMetadataAssignment_7_2() { return cModelMetadataAssignment_7_2; }
+		public Assignment getModelMetadataAssignment_3() { return cModelMetadataAssignment_3; }
 		
 		//TextValue
-		public RuleCall getModelMetadataTextValueParserRuleCall_7_2_0() { return cModelMetadataTextValueParserRuleCall_7_2_0; }
+		public RuleCall getModelMetadataTextValueParserRuleCall_3_0() { return cModelMetadataTextValueParserRuleCall_3_0; }
 	}
 	public class DependenciesSectionKeywordElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.DependenciesSectionKeyword");
@@ -3946,21 +4067,46 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 	public class IdentifierValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.IdentifierValue");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cLIBRETTO_IDTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cSimpleIdentifierParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cDottedIdentifierParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
+		//// Simple id must be a subtype with an assignment; bare `LIBRETTO_ID` here yields no EObject for `value`
+		//// (ActorField/ActionField get null IdentifierValue → projection drops actor/action).
 		//IdentifierValue:
-		//    LIBRETTO_ID | DottedIdentifier;
+		//    SimpleIdentifier | DottedIdentifier;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//LIBRETTO_ID | DottedIdentifier
+		//SimpleIdentifier | DottedIdentifier
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//LIBRETTO_ID
-		public RuleCall getLIBRETTO_IDTerminalRuleCall_0() { return cLIBRETTO_IDTerminalRuleCall_0; }
+		//SimpleIdentifier
+		public RuleCall getSimpleIdentifierParserRuleCall_0() { return cSimpleIdentifierParserRuleCall_0; }
 		
 		//DottedIdentifier
 		public RuleCall getDottedIdentifierParserRuleCall_1() { return cDottedIdentifierParserRuleCall_1; }
+	}
+	public class SimpleIdentifierElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.SimpleIdentifier");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cSimpleIdentifierAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cIdAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cIdLIBRETTO_IDTerminalRuleCall_1_0 = (RuleCall)cIdAssignment_1.eContents().get(0);
+		
+		//SimpleIdentifier returns IdentifierValue:
+		//    {SimpleIdentifier} id=LIBRETTO_ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{SimpleIdentifier} id=LIBRETTO_ID
+		public Group getGroup() { return cGroup; }
+		
+		//{SimpleIdentifier}
+		public Action getSimpleIdentifierAction_0() { return cSimpleIdentifierAction_0; }
+		
+		//id=LIBRETTO_ID
+		public Assignment getIdAssignment_1() { return cIdAssignment_1; }
+		
+		//LIBRETTO_ID
+		public RuleCall getIdLIBRETTO_IDTerminalRuleCall_1_0() { return cIdLIBRETTO_IDTerminalRuleCall_1_0; }
 	}
 	public class DottedIdentifierElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.DottedIdentifier");
@@ -4118,6 +4264,14 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 	private final AcceptanceTestsSectionElements pAcceptanceTestsSection;
 	private final ImplementationDirectivesSectionElements pImplementationDirectivesSection;
 	private final MetadataFieldElements pMetadataField;
+	private final MetadataTitleFieldElements pMetadataTitleField;
+	private final MetadataVersionFieldElements pMetadataVersionField;
+	private final MetadataStatusFieldElements pMetadataStatusField;
+	private final MetadataModuleFieldElements pMetadataModuleField;
+	private final MetadataJavaPackageFieldElements pMetadataJavaPackageField;
+	private final MetadataCompiledAtFieldElements pMetadataCompiledAtField;
+	private final MetadataCompilerVersionFieldElements pMetadataCompilerVersionField;
+	private final MetadataModelMetadataFieldElements pMetadataModelMetadataField;
 	private final DependenciesSectionKeywordElements pDependenciesSectionKeyword;
 	private final DependencyKeywordElements pDependencyKeyword;
 	private final DependencyRecordElements pDependencyRecord;
@@ -4253,6 +4407,7 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 	private final TextListElements pTextList;
 	private final TextValueElements pTextValue;
 	private final IdentifierValueElements pIdentifierValue;
+	private final SimpleIdentifierElements pSimpleIdentifier;
 	private final DottedIdentifierElements pDottedIdentifier;
 	private final OutcomeClassValueElements eOutcomeClassValue;
 	private final MetadataStatusValueElements eMetadataStatusValue;
@@ -4289,6 +4444,14 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 		this.pAcceptanceTestsSection = new AcceptanceTestsSectionElements();
 		this.pImplementationDirectivesSection = new ImplementationDirectivesSectionElements();
 		this.pMetadataField = new MetadataFieldElements();
+		this.pMetadataTitleField = new MetadataTitleFieldElements();
+		this.pMetadataVersionField = new MetadataVersionFieldElements();
+		this.pMetadataStatusField = new MetadataStatusFieldElements();
+		this.pMetadataModuleField = new MetadataModuleFieldElements();
+		this.pMetadataJavaPackageField = new MetadataJavaPackageFieldElements();
+		this.pMetadataCompiledAtField = new MetadataCompiledAtFieldElements();
+		this.pMetadataCompilerVersionField = new MetadataCompilerVersionFieldElements();
+		this.pMetadataModelMetadataField = new MetadataModelMetadataFieldElements();
 		this.pDependenciesSectionKeyword = new DependenciesSectionKeywordElements();
 		this.pDependencyKeyword = new DependencyKeywordElements();
 		this.pDependencyRecord = new DependencyRecordElements();
@@ -4424,6 +4587,7 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 		this.pTextList = new TextListElements();
 		this.pTextValue = new TextValueElements();
 		this.pIdentifierValue = new IdentifierValueElements();
+		this.pSimpleIdentifier = new SimpleIdentifierElements();
 		this.pDottedIdentifier = new DottedIdentifierElements();
 		this.eOutcomeClassValue = new OutcomeClassValueElements();
 		this.eMetadataStatusValue = new MetadataStatusValueElements();
@@ -4465,8 +4629,8 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 
 	
 	///**
-	// * Native Libretto (`.libretto`) — aligned with ANTLR {@code LibrettoSpec.g4}
-	// * in the {@code libretto} repo ({@code libretto-language/.../LibrettoSpec.g4}).
+	// * Native Libretto (`.libretto`) — <b>canonical grammar</b> (Xtext). A legacy ANTLR {@code LibrettoSpec.g4}
+	// * may still exist under {@code libretto-language} for older tooling but is not authoritative.
 	// * <p>
 	// * Principle: <b>loose syntax, strong validation</b> — many record fields are optional in the grammar
 	// * so the parser produces a partial model; {@code LibrettoSpecValidator} enforces required structure
@@ -4637,21 +4801,102 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 	}
 	
 	//// ----- Metadata -----
+	//// One subtype per line so the AST is never ambiguous (no shared MetadataField with default enum status).
 	//MetadataField:
-	//      'title' ':' title=TextValue
-	//    | 'version' ':' version=TextValue
-	//    | 'status' ':' status=MetadataStatusValue
-	//    | 'module' ':' moduleName=TextValue
-	//    | 'package' ':' javaPackage=TextValue
-	//    | 'compiled_at' ':' compiledAt=TextValue
-	//    | 'compiler_version' ':' compilerVersion=TextValue
-	//    | 'model_metadata' ':' modelMetadata=TextValue;
+	//    MetadataTitleField
+	//    | MetadataVersionField
+	//    | MetadataStatusField
+	//    | MetadataModuleField
+	//    | MetadataJavaPackageField
+	//    | MetadataCompiledAtField
+	//    | MetadataCompilerVersionField
+	//    | MetadataModelMetadataField;
 	public MetadataFieldElements getMetadataFieldAccess() {
 		return pMetadataField;
 	}
 	
 	public ParserRule getMetadataFieldRule() {
 		return getMetadataFieldAccess().getRule();
+	}
+	
+	//MetadataTitleField returns MetadataField:
+	//    {MetadataTitleField} 'title' ':' title=TextValue;
+	public MetadataTitleFieldElements getMetadataTitleFieldAccess() {
+		return pMetadataTitleField;
+	}
+	
+	public ParserRule getMetadataTitleFieldRule() {
+		return getMetadataTitleFieldAccess().getRule();
+	}
+	
+	//MetadataVersionField returns MetadataField:
+	//    {MetadataVersionField} 'version' ':' version=TextValue;
+	public MetadataVersionFieldElements getMetadataVersionFieldAccess() {
+		return pMetadataVersionField;
+	}
+	
+	public ParserRule getMetadataVersionFieldRule() {
+		return getMetadataVersionFieldAccess().getRule();
+	}
+	
+	//MetadataStatusField returns MetadataField:
+	//    {MetadataStatusField} 'status' ':' status=MetadataStatusValue;
+	public MetadataStatusFieldElements getMetadataStatusFieldAccess() {
+		return pMetadataStatusField;
+	}
+	
+	public ParserRule getMetadataStatusFieldRule() {
+		return getMetadataStatusFieldAccess().getRule();
+	}
+	
+	//MetadataModuleField returns MetadataField:
+	//    {MetadataModuleField} 'module' ':' moduleName=TextValue;
+	public MetadataModuleFieldElements getMetadataModuleFieldAccess() {
+		return pMetadataModuleField;
+	}
+	
+	public ParserRule getMetadataModuleFieldRule() {
+		return getMetadataModuleFieldAccess().getRule();
+	}
+	
+	//MetadataJavaPackageField returns MetadataField:
+	//    {MetadataJavaPackageField} 'package' ':' javaPackage=TextValue;
+	public MetadataJavaPackageFieldElements getMetadataJavaPackageFieldAccess() {
+		return pMetadataJavaPackageField;
+	}
+	
+	public ParserRule getMetadataJavaPackageFieldRule() {
+		return getMetadataJavaPackageFieldAccess().getRule();
+	}
+	
+	//MetadataCompiledAtField returns MetadataField:
+	//    {MetadataCompiledAtField} 'compiled_at' ':' compiledAt=TextValue;
+	public MetadataCompiledAtFieldElements getMetadataCompiledAtFieldAccess() {
+		return pMetadataCompiledAtField;
+	}
+	
+	public ParserRule getMetadataCompiledAtFieldRule() {
+		return getMetadataCompiledAtFieldAccess().getRule();
+	}
+	
+	//MetadataCompilerVersionField returns MetadataField:
+	//    {MetadataCompilerVersionField} 'compiler_version' ':' compilerVersion=TextValue;
+	public MetadataCompilerVersionFieldElements getMetadataCompilerVersionFieldAccess() {
+		return pMetadataCompilerVersionField;
+	}
+	
+	public ParserRule getMetadataCompilerVersionFieldRule() {
+		return getMetadataCompilerVersionFieldAccess().getRule();
+	}
+	
+	//MetadataModelMetadataField returns MetadataField:
+	//    {MetadataModelMetadataField} 'model_metadata' ':' modelMetadata=TextValue;
+	public MetadataModelMetadataFieldElements getMetadataModelMetadataFieldAccess() {
+		return pMetadataModelMetadataField;
+	}
+	
+	public ParserRule getMetadataModelMetadataFieldRule() {
+		return getMetadataModelMetadataFieldAccess().getRule();
 	}
 	
 	//// ----- Dependency records -----
@@ -6042,14 +6287,26 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 		return getTextValueAccess().getRule();
 	}
 	
+	//// Simple id must be a subtype with an assignment; bare `LIBRETTO_ID` here yields no EObject for `value`
+	//// (ActorField/ActionField get null IdentifierValue → projection drops actor/action).
 	//IdentifierValue:
-	//    LIBRETTO_ID | DottedIdentifier;
+	//    SimpleIdentifier | DottedIdentifier;
 	public IdentifierValueElements getIdentifierValueAccess() {
 		return pIdentifierValue;
 	}
 	
 	public ParserRule getIdentifierValueRule() {
 		return getIdentifierValueAccess().getRule();
+	}
+	
+	//SimpleIdentifier returns IdentifierValue:
+	//    {SimpleIdentifier} id=LIBRETTO_ID;
+	public SimpleIdentifierElements getSimpleIdentifierAccess() {
+		return pSimpleIdentifier;
+	}
+	
+	public ParserRule getSimpleIdentifierRule() {
+		return getSimpleIdentifierAccess().getRule();
 	}
 	
 	//DottedIdentifier:

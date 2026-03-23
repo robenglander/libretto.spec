@@ -8,23 +8,7 @@
         eType="#//SpecSection" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SpecSection"/>
-  <eClassifiers xsi:type="ecore:EClass" name="MetadataField">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="title" eType="#//TextValue"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="version" eType="#//TextValue"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="#//MetadataStatusValue"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="moduleName" eType="#//TextValue"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="javaPackage" eType="#//TextValue"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="compiledAt" eType="#//TextValue"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="compilerVersion" eType="#//TextValue"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="modelMetadata" eType="#//TextValue"
-        containment="true"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MetadataField"/>
   <eClassifiers xsi:type="ecore:EClass" name="DependenciesSectionKeyword"/>
   <eClassifiers xsi:type="ecore:EClass" name="DependencyKeyword"/>
   <eClassifiers xsi:type="ecore:EClass" name="DependencyRecord">
@@ -471,5 +455,39 @@
   <eClassifiers xsi:type="ecore:EClass" name="ImplementationDirectivesSection" eSuperTypes="#//SpecSection">
     <eStructuralFeatures xsi:type="ecore:EReference" name="records" upperBound="-1"
         eType="#//ImplementationDirectiveRecord" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MetadataTitleField" eSuperTypes="#//MetadataField">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="title" eType="#//TextValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MetadataVersionField" eSuperTypes="#//MetadataField">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="version" eType="#//TextValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MetadataStatusField" eSuperTypes="#//MetadataField">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="#//MetadataStatusValue"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MetadataModuleField" eSuperTypes="#//MetadataField">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="moduleName" eType="#//TextValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MetadataJavaPackageField" eSuperTypes="#//MetadataField">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="javaPackage" eType="#//TextValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MetadataCompiledAtField" eSuperTypes="#//MetadataField">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compiledAt" eType="#//TextValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MetadataCompilerVersionField" eSuperTypes="#//MetadataField">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compilerVersion" eType="#//TextValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MetadataModelMetadataField" eSuperTypes="#//MetadataField">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modelMetadata" eType="#//TextValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleIdentifier" eSuperTypes="#//IdentifierValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

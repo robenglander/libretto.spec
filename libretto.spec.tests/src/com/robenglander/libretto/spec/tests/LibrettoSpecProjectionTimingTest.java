@@ -11,7 +11,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 
 import com.google.inject.Inject;
 import com.robenglander.libretto.spec.librettoSpec.Spec;
-import com.robenglander.libretto.spec.projection.LibrettoSpecDocumentProjection;
+import com.robenglander.libretto.spec.projection.LibrettoSpecDomainModelProjection;
 import com.robenglander.libretto.spec.projection.mapper.LibrettoSpecProjectionMapper;
 
 /**
@@ -38,7 +38,7 @@ class LibrettoSpecProjectionTimingTest {
 		int iterations = 500;
 		long t0 = System.nanoTime();
 		for (int i = 0; i < iterations; i++) {
-			LibrettoSpecDocumentProjection p = LibrettoSpecProjectionMapper.project(spec);
+			LibrettoSpecDomainModelProjection p = LibrettoSpecProjectionMapper.project(spec);
 			assertNotNull(p);
 		}
 		long elapsedNs = System.nanoTime() - t0;

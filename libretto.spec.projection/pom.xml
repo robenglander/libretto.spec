@@ -25,6 +25,28 @@
 					<release>21</release>
 				</configuration>
 			</plugin>
+			<!--
+			  Produce the JAR at compile so sibling libretto.spec can copy it in generate-sources
+			  when building with "mvn compile -pl libretto.spec -am" (reactor does not run package on this module otherwise).
+			-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.4.2</version>
+				<executions>
+					<execution>
+						<id>compile-jar-for-downstream-mwe</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+						<configuration>
+							<!-- Supplemental artifact: default-jar at package must keep the main classifier -->
+							<classifier>reactor</classifier>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 </project>

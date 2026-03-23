@@ -32,20 +32,9 @@ public class LibrettoSpecSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (ruleCall.getRule() == grammarAccess.getLIBRETTO_IDRule())
-			return getLIBRETTO_IDToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
-	/**
-	 * terminal LIBRETTO_ID returns ecore::EString:
-	 * 	('^')?('a'..'z'|'A'..'Z'|'_')('a'..'z'|'A'..'Z'|'_'|'0'..'9'|'-'|'\\')*;
-	 */
-	protected String getLIBRETTO_IDToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "";
-	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {

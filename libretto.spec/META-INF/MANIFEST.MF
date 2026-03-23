@@ -16,6 +16,7 @@ Require-Bundle: org.eclipse.xtext,
  org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
 Bundle-RequiredExecutionEnvironment: JavaSE-21
 Export-Package: com.robenglander.libretto.spec,
+ com.robenglander.libretto.spec.headless,
  com.robenglander.libretto.spec.librettoSpec,
  com.robenglander.libretto.spec.librettoSpec.util,
  com.robenglander.libretto.spec.parser.antlr.internal,

@@ -7,8 +7,8 @@ generate librettoSpec "http://www.robenglander.com/libretto/spec/LibrettoSpec"
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 /**
- * Native Libretto (`.libretto`) — aligned with ANTLR {@code LibrettoSpec.g4}
- * in the {@code libretto} repo ({@code libretto-language/.../LibrettoSpec.g4}).
+ * Native Libretto (`.libretto`) — <b>canonical grammar</b> (Xtext). A legacy ANTLR {@code LibrettoSpec.g4}
+ * may still exist under {@code libretto-language} for older tooling but is not authoritative.
  * <p>
  * Principle: <b>loose syntax, strong validation</b> — many record fields are optional in the grammar
  * so the parser produces a partial model; {@code LibrettoSpecValidator} enforces required structure
@@ -83,16 +83,41 @@ ImplementationDirectivesSection returns SpecSection:
 	'implementation_directives' '{' records+=ImplementationDirectiveRecord* '}';
 
 // ----- Metadata -----
+// One subtype per line so the AST is never ambiguous (no shared MetadataField with default enum status).
 
 MetadataField:
-	  'title' ':' title=TextValue
-	| 'version' ':' version=TextValue
-	| 'status' ':' status=MetadataStatusValue
-	| 'module' ':' moduleName=TextValue
-	| 'package' ':' javaPackage=TextValue
-	| 'compiled_at' ':' compiledAt=TextValue
-	| 'compiler_version' ':' compilerVersion=TextValue
-	| 'model_metadata' ':' modelMetadata=TextValue;
+	MetadataTitleField
+	| MetadataVersionField
+	| MetadataStatusField
+	| MetadataModuleField
+	| MetadataJavaPackageField
+	| MetadataCompiledAtField
+	| MetadataCompilerVersionField
+	| MetadataModelMetadataField;
+
+MetadataTitleField returns MetadataField:
+	{MetadataTitleField} 'title' ':' title=TextValue;
+
+MetadataVersionField returns MetadataField:
+	{MetadataVersionField} 'version' ':' version=TextValue;
+
+MetadataStatusField returns MetadataField:
+	{MetadataStatusField} 'status' ':' status=MetadataStatusValue;
+
+MetadataModuleField returns MetadataField:
+	{MetadataModuleField} 'module' ':' moduleName=TextValue;
+
+MetadataJavaPackageField returns MetadataField:
+	{MetadataJavaPackageField} 'package' ':' javaPackage=TextValue;
+
+MetadataCompiledAtField returns MetadataField:
+	{MetadataCompiledAtField} 'compiled_at' ':' compiledAt=TextValue;
+
+MetadataCompilerVersionField returns MetadataField:
+	{MetadataCompilerVersionField} 'compiler_version' ':' compilerVersion=TextValue;
+
+MetadataModelMetadataField returns MetadataField:
+	{MetadataModelMetadataField} 'model_metadata' ':' modelMetadata=TextValue;
 
 // ----- Dependency records -----
 
@@ -555,8 +580,13 @@ TextList:
 TextValue returns TextValue:
 	{TextValue} text=STRING | {TextValue} text=TEXT_BLOCK;
 
+// Simple id must be a subtype with an assignment; bare `LIBRETTO_ID` here yields no EObject for `value`
+// (ActorField/ActionField get null IdentifierValue → projection drops actor/action).
 IdentifierValue:
-	LIBRETTO_ID | DottedIdentifier;
+	SimpleIdentifier | DottedIdentifier;
+
+SimpleIdentifier returns IdentifierValue:
+	{SimpleIdentifier} id=LIBRETTO_ID;
 
 DottedIdentifier:
 	head=LIBRETTO_ID ('.' tail+=LIBRETTO_ID)+;

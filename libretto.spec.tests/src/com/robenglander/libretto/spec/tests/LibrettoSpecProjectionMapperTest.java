@@ -12,7 +12,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 
 import com.google.inject.Inject;
 import com.robenglander.libretto.spec.librettoSpec.Spec;
-import com.robenglander.libretto.spec.projection.LibrettoSpecDocumentProjection;
+import com.robenglander.libretto.spec.projection.LibrettoSpecDomainModelProjection;
 import com.robenglander.libretto.spec.projection.ProjectedMetadataField;
 import com.robenglander.libretto.spec.projection.ProjectedMetadataSection;
 import com.robenglander.libretto.spec.projection.mapper.LibrettoSpecProjectionMapper;
@@ -48,7 +48,7 @@ class LibrettoSpecProjectionMapperTest {
 				}
 				""");
 		assertNotNull(spec);
-		LibrettoSpecDocumentProjection p = LibrettoSpecProjectionMapper.project(spec);
+		LibrettoSpecDomainModelProjection p = LibrettoSpecProjectionMapper.project(spec);
 		assertNotNull(p);
 		assertEquals("Test-Projection", p.specId());
 		assertInstanceOf(ProjectedMetadataSection.class, p.sections().get(0));
