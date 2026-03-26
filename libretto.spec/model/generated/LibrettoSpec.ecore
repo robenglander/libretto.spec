@@ -487,6 +487,15 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="modelMetadata" eType="#//TextValue"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MetadataProjectProfileVersionField"
+      eSuperTypes="#//MetadataField">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="projectProfileVersion"
+        eType="#//TextValue" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MetadataProjectProfileIdField" eSuperTypes="#//MetadataField">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="projectProfileId" eType="#//TextValue"
+        containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SimpleIdentifier" eSuperTypes="#//IdentifierValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

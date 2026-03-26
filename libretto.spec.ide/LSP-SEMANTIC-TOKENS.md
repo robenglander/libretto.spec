@@ -13,7 +13,9 @@ This project binds **`LibrettoSpecSemanticHighlightingCalculator`** in `Libretto
 | `ReferenceIdList.values` | `variable`   |
 | `TextList.values`     | `string`         |
 
-The Cursor/VS Code extension sets **`property`** to green (`#3fb950`) for `[librettospec]` only so field names stand out while section keywords stay on the TextMate grammar colors.
+The **Libretto Spec** Cursor/VS Code extension (`editors/cursor-libretto-lsp`) sets **`property`** to green (`#3fb950`) for `[librettospec]` so field names stand out while section keywords stay on the TextMate grammar colors.
+
+**Libretto Project Profile** (`.lpp`) uses `LibrettoProjectProfileSemanticHighlightingCalculator` (bound in `LibrettoProjectProfileIdeModule`) and a separate editor extension: `editors/cursor-libretto-profile-lsp` (`librettoProfile.*` settings, `[librettoprofile]` semantic token rules).
 
 **No MWE2 fragment is required** — highlighting is plain Java in `src/`, shipped inside the shaded `*-ls.jar`.
 

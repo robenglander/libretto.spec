@@ -164,6 +164,8 @@ public class LibrettoSpecFactoryImpl extends EFactoryImpl implements LibrettoSpe
       case LibrettoSpecPackage.METADATA_COMPILED_AT_FIELD: return createMetadataCompiledAtField();
       case LibrettoSpecPackage.METADATA_COMPILER_VERSION_FIELD: return createMetadataCompilerVersionField();
       case LibrettoSpecPackage.METADATA_MODEL_METADATA_FIELD: return createMetadataModelMetadataField();
+      case LibrettoSpecPackage.METADATA_PROJECT_PROFILE_VERSION_FIELD: return createMetadataProjectProfileVersionField();
+      case LibrettoSpecPackage.METADATA_PROJECT_PROFILE_ID_FIELD: return createMetadataProjectProfileIdField();
       case LibrettoSpecPackage.SIMPLE_IDENTIFIER: return createSimpleIdentifier();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -1386,6 +1388,30 @@ public class LibrettoSpecFactoryImpl extends EFactoryImpl implements LibrettoSpe
   {
     MetadataModelMetadataFieldImpl metadataModelMetadataField = new MetadataModelMetadataFieldImpl();
     return metadataModelMetadataField;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public MetadataProjectProfileVersionField createMetadataProjectProfileVersionField()
+  {
+    MetadataProjectProfileVersionFieldImpl metadataProjectProfileVersionField = new MetadataProjectProfileVersionFieldImpl();
+    return metadataProjectProfileVersionField;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public MetadataProjectProfileIdField createMetadataProjectProfileIdField()
+  {
+    MetadataProjectProfileIdFieldImpl metadataProjectProfileIdField = new MetadataProjectProfileIdFieldImpl();
+    return metadataProjectProfileIdField;
   }
 
   /**

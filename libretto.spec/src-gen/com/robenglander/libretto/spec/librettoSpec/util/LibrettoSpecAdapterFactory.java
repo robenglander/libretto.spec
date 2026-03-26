@@ -566,6 +566,16 @@ public class LibrettoSpecAdapterFactory extends AdapterFactoryImpl
         return createMetadataModelMetadataFieldAdapter();
       }
       @Override
+      public Adapter caseMetadataProjectProfileVersionField(MetadataProjectProfileVersionField object)
+      {
+        return createMetadataProjectProfileVersionFieldAdapter();
+      }
+      @Override
+      public Adapter caseMetadataProjectProfileIdField(MetadataProjectProfileIdField object)
+      {
+        return createMetadataProjectProfileIdFieldAdapter();
+      }
+      @Override
       public Adapter caseSimpleIdentifier(SimpleIdentifier object)
       {
         return createSimpleIdentifierAdapter();
@@ -2058,6 +2068,36 @@ public class LibrettoSpecAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createMetadataModelMetadataFieldAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoSpec.MetadataProjectProfileVersionField <em>Metadata Project Profile Version Field</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataProjectProfileVersionField
+   * @generated
+   */
+  public Adapter createMetadataProjectProfileVersionFieldAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoSpec.MetadataProjectProfileIdField <em>Metadata Project Profile Id Field</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataProjectProfileIdField
+   * @generated
+   */
+  public Adapter createMetadataProjectProfileIdFieldAdapter()
   {
     return null;
   }

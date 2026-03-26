@@ -19,6 +19,8 @@ import com.robenglander.libretto.spec.librettoSpec.ImplementsSurfaceSection;
 import com.robenglander.libretto.spec.librettoSpec.MetadataField;
 import com.robenglander.libretto.spec.librettoSpec.MetadataJavaPackageField;
 import com.robenglander.libretto.spec.librettoSpec.MetadataModuleField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataProjectProfileIdField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataProjectProfileVersionField;
 import com.robenglander.libretto.spec.librettoSpec.MetadataSection;
 import com.robenglander.libretto.spec.librettoSpec.MetadataStatusField;
 import com.robenglander.libretto.spec.librettoSpec.MetadataStatusValue;
@@ -170,6 +172,16 @@ public final class LibrettoSpecMarkdownEmitter {
                 MetadataStatusValue st = sf.getStatus();
                 if (st != null) {
                     header.put("visibility", st.getLiteral());
+                }
+            } else if (f instanceof MetadataProjectProfileVersionField ppv) {
+                String v = textAttr(ppv.getProjectProfileVersion());
+                if (!v.isBlank()) {
+                    header.put("project_profile_version", v);
+                }
+            } else if (f instanceof MetadataProjectProfileIdField ppi) {
+                String id = textAttr(ppi.getProjectProfileId());
+                if (!id.isBlank()) {
+                    header.put("project_profile_id", id);
                 }
             }
         }

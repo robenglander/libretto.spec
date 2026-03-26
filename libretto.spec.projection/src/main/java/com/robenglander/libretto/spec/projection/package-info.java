@@ -1,11 +1,18 @@
 /**
- * Portable projection of native {@code .libretto} specs: immutable Java types mirroring
- * {@code LibrettoSpec.xtext}, without EMF or Xtext on the classpath. Root type is
- * {@link com.robenglander.libretto.spec.projection.LibrettoSpecDomainModelProjection} wrapping
- * {@link com.robenglander.libretto.spec.projection.LibrettoSpecDomainModel}.
+ * Portable projection of Libretto languages: immutable Java types without EMF or Xtext on the classpath.
  * <p>
- * <b>Populate</b> from EMF in {@code libretto.spec} (mapper). <b>Consume</b> from {@code libretto-core}
- * for coherence and structural checks.
+ * <b>Libretto spec ({@code .libretto}):</b> root
+ * {@link com.robenglander.libretto.spec.projection.LibrettoSpecDomainModelProjection} /
+ * {@link com.robenglander.libretto.spec.projection.LibrettoSpecDomainModel}.
+ * </p>
+ * <p>
+ * <b>Project profile ({@code .lpp}):</b> root
+ * {@link com.robenglander.libretto.spec.projection.LibrettoProjectProfileDomainModelProjection} /
+ * {@link com.robenglander.libretto.spec.projection.LibrettoProjectProfileDomainModel}.
+ * </p>
+ * <p>
+ * <b>Populate</b> from EMF in {@code libretto.spec} (mappers). <b>Consume</b> from {@code libretto-core}
+ * for validation, surface generation, and tooling.
  * </p>
  * <p>
  * Decoded text-value bodies (grammar {@code TextValue}) are plain {@link String}s

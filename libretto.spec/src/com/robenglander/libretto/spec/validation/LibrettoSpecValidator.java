@@ -24,6 +24,8 @@ import com.robenglander.libretto.spec.librettoSpec.MetadataField;
 import com.robenglander.libretto.spec.librettoSpec.MetadataJavaPackageField;
 import com.robenglander.libretto.spec.librettoSpec.MetadataModelMetadataField;
 import com.robenglander.libretto.spec.librettoSpec.MetadataModuleField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataProjectProfileIdField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataProjectProfileVersionField;
 import com.robenglander.libretto.spec.librettoSpec.MetadataSection;
 import com.robenglander.libretto.spec.librettoSpec.MetadataStatusField;
 import com.robenglander.libretto.spec.librettoSpec.MetadataTitleField;
@@ -298,6 +300,11 @@ public class LibrettoSpecValidator extends AbstractLibrettoSpecValidator {
 				Literals.METADATA_COMPILER_VERSION_FIELD__COMPILER_VERSION);
 		checkAtMostOneMetadataSlot(metaSec, f -> f instanceof MetadataModelMetadataField, "model_metadata",
 				Literals.METADATA_MODEL_METADATA_FIELD__MODEL_METADATA);
+		checkAtMostOneMetadataSlot(metaSec, f -> f instanceof MetadataProjectProfileVersionField,
+				"project_profile_version",
+				Literals.METADATA_PROJECT_PROFILE_VERSION_FIELD__PROJECT_PROFILE_VERSION);
+		checkAtMostOneMetadataSlot(metaSec, f -> f instanceof MetadataProjectProfileIdField, "project_profile_id",
+				Literals.METADATA_PROJECT_PROFILE_ID_FIELD__PROJECT_PROFILE_ID);
 
 		boolean hasStatus = false;
 		boolean hasModule = false;

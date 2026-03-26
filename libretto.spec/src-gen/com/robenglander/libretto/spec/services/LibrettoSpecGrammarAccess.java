@@ -606,6 +606,8 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 		private final RuleCall cMetadataCompiledAtFieldParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
 		private final RuleCall cMetadataCompilerVersionFieldParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		private final RuleCall cMetadataModelMetadataFieldParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
+		private final RuleCall cMetadataProjectProfileVersionFieldParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
+		private final RuleCall cMetadataProjectProfileIdFieldParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
 		
 		//// ----- Metadata -----
 		//// One subtype per line so the AST is never ambiguous (no shared MetadataField with default enum status).
@@ -617,7 +619,9 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 		//    | MetadataJavaPackageField
 		//    | MetadataCompiledAtField
 		//    | MetadataCompilerVersionField
-		//    | MetadataModelMetadataField;
+		//    | MetadataModelMetadataField
+		//    | MetadataProjectProfileVersionField
+		//    | MetadataProjectProfileIdField;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//MetadataTitleField
@@ -628,6 +632,8 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 		//| MetadataCompiledAtField
 		//| MetadataCompilerVersionField
 		//| MetadataModelMetadataField
+		//| MetadataProjectProfileVersionField
+		//| MetadataProjectProfileIdField
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//MetadataTitleField
@@ -653,6 +659,12 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 		
 		//MetadataModelMetadataField
 		public RuleCall getMetadataModelMetadataFieldParserRuleCall_7() { return cMetadataModelMetadataFieldParserRuleCall_7; }
+		
+		//MetadataProjectProfileVersionField
+		public RuleCall getMetadataProjectProfileVersionFieldParserRuleCall_8() { return cMetadataProjectProfileVersionFieldParserRuleCall_8; }
+		
+		//MetadataProjectProfileIdField
+		public RuleCall getMetadataProjectProfileIdFieldParserRuleCall_9() { return cMetadataProjectProfileIdFieldParserRuleCall_9; }
 	}
 	public class MetadataTitleFieldElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.MetadataTitleField");
@@ -901,6 +913,68 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 		
 		//TextValue
 		public RuleCall getModelMetadataTextValueParserRuleCall_3_0() { return cModelMetadataTextValueParserRuleCall_3_0; }
+	}
+	public class MetadataProjectProfileVersionFieldElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.MetadataProjectProfileVersionField");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMetadataProjectProfileVersionFieldAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cProject_profile_versionKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cProjectProfileVersionAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cProjectProfileVersionTextValueParserRuleCall_3_0 = (RuleCall)cProjectProfileVersionAssignment_3.eContents().get(0);
+		
+		//MetadataProjectProfileVersionField returns MetadataField:
+		//    {MetadataProjectProfileVersionField} 'project_profile_version' ':' projectProfileVersion=TextValue;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{MetadataProjectProfileVersionField} 'project_profile_version' ':' projectProfileVersion=TextValue
+		public Group getGroup() { return cGroup; }
+		
+		//{MetadataProjectProfileVersionField}
+		public Action getMetadataProjectProfileVersionFieldAction_0() { return cMetadataProjectProfileVersionFieldAction_0; }
+		
+		//'project_profile_version'
+		public Keyword getProject_profile_versionKeyword_1() { return cProject_profile_versionKeyword_1; }
+		
+		//':'
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+		
+		//projectProfileVersion=TextValue
+		public Assignment getProjectProfileVersionAssignment_3() { return cProjectProfileVersionAssignment_3; }
+		
+		//TextValue
+		public RuleCall getProjectProfileVersionTextValueParserRuleCall_3_0() { return cProjectProfileVersionTextValueParserRuleCall_3_0; }
+	}
+	public class MetadataProjectProfileIdFieldElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.MetadataProjectProfileIdField");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMetadataProjectProfileIdFieldAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cProject_profile_idKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cProjectProfileIdAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cProjectProfileIdTextValueParserRuleCall_3_0 = (RuleCall)cProjectProfileIdAssignment_3.eContents().get(0);
+		
+		//MetadataProjectProfileIdField returns MetadataField:
+		//    {MetadataProjectProfileIdField} 'project_profile_id' ':' projectProfileId=TextValue;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{MetadataProjectProfileIdField} 'project_profile_id' ':' projectProfileId=TextValue
+		public Group getGroup() { return cGroup; }
+		
+		//{MetadataProjectProfileIdField}
+		public Action getMetadataProjectProfileIdFieldAction_0() { return cMetadataProjectProfileIdFieldAction_0; }
+		
+		//'project_profile_id'
+		public Keyword getProject_profile_idKeyword_1() { return cProject_profile_idKeyword_1; }
+		
+		//':'
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+		
+		//projectProfileId=TextValue
+		public Assignment getProjectProfileIdAssignment_3() { return cProjectProfileIdAssignment_3; }
+		
+		//TextValue
+		public RuleCall getProjectProfileIdTextValueParserRuleCall_3_0() { return cProjectProfileIdTextValueParserRuleCall_3_0; }
 	}
 	public class DependenciesSectionKeywordElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoSpec.DependenciesSectionKeyword");
@@ -4272,6 +4346,8 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 	private final MetadataCompiledAtFieldElements pMetadataCompiledAtField;
 	private final MetadataCompilerVersionFieldElements pMetadataCompilerVersionField;
 	private final MetadataModelMetadataFieldElements pMetadataModelMetadataField;
+	private final MetadataProjectProfileVersionFieldElements pMetadataProjectProfileVersionField;
+	private final MetadataProjectProfileIdFieldElements pMetadataProjectProfileIdField;
 	private final DependenciesSectionKeywordElements pDependenciesSectionKeyword;
 	private final DependencyKeywordElements pDependencyKeyword;
 	private final DependencyRecordElements pDependencyRecord;
@@ -4452,6 +4528,8 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 		this.pMetadataCompiledAtField = new MetadataCompiledAtFieldElements();
 		this.pMetadataCompilerVersionField = new MetadataCompilerVersionFieldElements();
 		this.pMetadataModelMetadataField = new MetadataModelMetadataFieldElements();
+		this.pMetadataProjectProfileVersionField = new MetadataProjectProfileVersionFieldElements();
+		this.pMetadataProjectProfileIdField = new MetadataProjectProfileIdFieldElements();
 		this.pDependenciesSectionKeyword = new DependenciesSectionKeywordElements();
 		this.pDependencyKeyword = new DependencyKeywordElements();
 		this.pDependencyRecord = new DependencyRecordElements();
@@ -4810,7 +4888,9 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 	//    | MetadataJavaPackageField
 	//    | MetadataCompiledAtField
 	//    | MetadataCompilerVersionField
-	//    | MetadataModelMetadataField;
+	//    | MetadataModelMetadataField
+	//    | MetadataProjectProfileVersionField
+	//    | MetadataProjectProfileIdField;
 	public MetadataFieldElements getMetadataFieldAccess() {
 		return pMetadataField;
 	}
@@ -4897,6 +4977,26 @@ public class LibrettoSpecGrammarAccess extends AbstractElementFinder.AbstractGra
 	
 	public ParserRule getMetadataModelMetadataFieldRule() {
 		return getMetadataModelMetadataFieldAccess().getRule();
+	}
+	
+	//MetadataProjectProfileVersionField returns MetadataField:
+	//    {MetadataProjectProfileVersionField} 'project_profile_version' ':' projectProfileVersion=TextValue;
+	public MetadataProjectProfileVersionFieldElements getMetadataProjectProfileVersionFieldAccess() {
+		return pMetadataProjectProfileVersionField;
+	}
+	
+	public ParserRule getMetadataProjectProfileVersionFieldRule() {
+		return getMetadataProjectProfileVersionFieldAccess().getRule();
+	}
+	
+	//MetadataProjectProfileIdField returns MetadataField:
+	//    {MetadataProjectProfileIdField} 'project_profile_id' ':' projectProfileId=TextValue;
+	public MetadataProjectProfileIdFieldElements getMetadataProjectProfileIdFieldAccess() {
+		return pMetadataProjectProfileIdField;
+	}
+	
+	public ParserRule getMetadataProjectProfileIdFieldRule() {
+		return getMetadataProjectProfileIdFieldAccess().getRule();
 	}
 	
 	//// ----- Dependency records -----

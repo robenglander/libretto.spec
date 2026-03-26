@@ -2,6 +2,8 @@
 
 Connects **Cursor** (or VS Code) to the Xtext **shaded language server** (`*-ls.jar`) from `libretto.spec.ide`, and bundles the same **TextMate grammar** as `libretto/editors/vscode` under language id **`librettospec`** (so validation and syntax coloring use one language id).
 
+**Project profile (`.lpp`)** is a separate extension: [`../cursor-libretto-profile-lsp`](../cursor-libretto-profile-lsp) (`librettoProfile.*` settings, same jar). Install both if you work with specs and profiles.
+
 If you also use the standalone **Libretto** highlighting extension, **disable it** — it used to register **`libretto`**, which prevented the LSP (which expects **`librettospec`**) from attaching. That standalone package is now aligned to `librettospec` too, but two extensions registering the same grammar is redundant.
 
 ### Syntax coloring: where it comes from

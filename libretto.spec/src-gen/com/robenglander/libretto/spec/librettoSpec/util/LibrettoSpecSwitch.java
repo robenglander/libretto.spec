@@ -782,6 +782,22 @@ public class LibrettoSpecSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LibrettoSpecPackage.METADATA_PROJECT_PROFILE_VERSION_FIELD:
+      {
+        MetadataProjectProfileVersionField metadataProjectProfileVersionField = (MetadataProjectProfileVersionField)theEObject;
+        T result = caseMetadataProjectProfileVersionField(metadataProjectProfileVersionField);
+        if (result == null) result = caseMetadataField(metadataProjectProfileVersionField);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoSpecPackage.METADATA_PROJECT_PROFILE_ID_FIELD:
+      {
+        MetadataProjectProfileIdField metadataProjectProfileIdField = (MetadataProjectProfileIdField)theEObject;
+        T result = caseMetadataProjectProfileIdField(metadataProjectProfileIdField);
+        if (result == null) result = caseMetadataField(metadataProjectProfileIdField);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case LibrettoSpecPackage.SIMPLE_IDENTIFIER:
       {
         SimpleIdentifier simpleIdentifier = (SimpleIdentifier)theEObject;
@@ -2358,6 +2374,38 @@ public class LibrettoSpecSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseMetadataModelMetadataField(MetadataModelMetadataField object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Metadata Project Profile Version Field</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Metadata Project Profile Version Field</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMetadataProjectProfileVersionField(MetadataProjectProfileVersionField object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Metadata Project Profile Id Field</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Metadata Project Profile Id Field</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMetadataProjectProfileIdField(MetadataProjectProfileIdField object)
   {
     return null;
   }

@@ -357,6 +357,12 @@
     <genClasses ecoreClass="LibrettoSpec.ecore#//MetadataModelMetadataField">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//MetadataModelMetadataField/modelMetadata"/>
     </genClasses>
+    <genClasses ecoreClass="LibrettoSpec.ecore#//MetadataProjectProfileVersionField">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//MetadataProjectProfileVersionField/projectProfileVersion"/>
+    </genClasses>
+    <genClasses ecoreClass="LibrettoSpec.ecore#//MetadataProjectProfileIdField">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoSpec.ecore#//MetadataProjectProfileIdField/projectProfileId"/>
+    </genClasses>
     <genClasses ecoreClass="LibrettoSpec.ecore#//SimpleIdentifier">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoSpec.ecore#//SimpleIdentifier/id"/>
     </genClasses>

@@ -1041,6 +1041,24 @@ ruleMetadataField returns [EObject current=null]
 			$current = $this_MetadataModelMetadataField_7.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getMetadataFieldAccess().getMetadataProjectProfileVersionFieldParserRuleCall_8());
+		}
+		this_MetadataProjectProfileVersionField_8=ruleMetadataProjectProfileVersionField
+		{
+			$current = $this_MetadataProjectProfileVersionField_8.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getMetadataFieldAccess().getMetadataProjectProfileIdFieldParserRuleCall_9());
+		}
+		this_MetadataProjectProfileIdField_9=ruleMetadataProjectProfileIdField
+		{
+			$current = $this_MetadataProjectProfileIdField_9.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -1460,6 +1478,112 @@ ruleMetadataModelMetadataField returns [EObject current=null]
 						$current,
 						"modelMetadata",
 						lv_modelMetadata_3_0,
+						"com.robenglander.libretto.spec.LibrettoSpec.TextValue");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleMetadataProjectProfileVersionField
+entryRuleMetadataProjectProfileVersionField returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getMetadataProjectProfileVersionFieldRule()); }
+	iv_ruleMetadataProjectProfileVersionField=ruleMetadataProjectProfileVersionField
+	{ $current=$iv_ruleMetadataProjectProfileVersionField.current; }
+	EOF;
+
+// Rule MetadataProjectProfileVersionField
+ruleMetadataProjectProfileVersionField returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getMetadataProjectProfileVersionFieldAccess().getMetadataProjectProfileVersionFieldAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='project_profile_version'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getMetadataProjectProfileVersionFieldAccess().getProject_profile_versionKeyword_1());
+		}
+		otherlv_2=':'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getMetadataProjectProfileVersionFieldAccess().getColonKeyword_2());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getMetadataProjectProfileVersionFieldAccess().getProjectProfileVersionTextValueParserRuleCall_3_0());
+				}
+				lv_projectProfileVersion_3_0=ruleTextValue
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getMetadataProjectProfileVersionFieldRule());
+					}
+					set(
+						$current,
+						"projectProfileVersion",
+						lv_projectProfileVersion_3_0,
+						"com.robenglander.libretto.spec.LibrettoSpec.TextValue");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleMetadataProjectProfileIdField
+entryRuleMetadataProjectProfileIdField returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getMetadataProjectProfileIdFieldRule()); }
+	iv_ruleMetadataProjectProfileIdField=ruleMetadataProjectProfileIdField
+	{ $current=$iv_ruleMetadataProjectProfileIdField.current; }
+	EOF;
+
+// Rule MetadataProjectProfileIdField
+ruleMetadataProjectProfileIdField returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getMetadataProjectProfileIdFieldAccess().getMetadataProjectProfileIdFieldAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='project_profile_id'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getMetadataProjectProfileIdFieldAccess().getProject_profile_idKeyword_1());
+		}
+		otherlv_2=':'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getMetadataProjectProfileIdFieldAccess().getColonKeyword_2());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getMetadataProjectProfileIdFieldAccess().getProjectProfileIdTextValueParserRuleCall_3_0());
+				}
+				lv_projectProfileId_3_0=ruleTextValue
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getMetadataProjectProfileIdFieldRule());
+					}
+					set(
+						$current,
+						"projectProfileId",
+						lv_projectProfileId_3_0,
 						"com.robenglander.libretto.spec.LibrettoSpec.TextValue");
 					afterParserOrEnumRuleCall();
 				}

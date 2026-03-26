@@ -5,7 +5,9 @@ package libretto.spec.ui.internal;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
+import com.robenglander.libretto.spec.LibrettoProjectProfileRuntimeModule;
 import com.robenglander.libretto.spec.LibrettoSpecRuntimeModule;
+import com.robenglander.libretto.spec.ui.LibrettoProjectProfileUiModule;
 import com.robenglander.libretto.spec.ui.LibrettoSpecUiModule;
 import java.util.Collections;
 import java.util.HashMap;
@@ -24,6 +26,7 @@ public class SpecActivator extends AbstractUIPlugin {
 
 	public static final String PLUGIN_ID = "libretto.spec.ui";
 	public static final String COM_ROBENGLANDER_LIBRETTO_SPEC_LIBRETTOSPEC = "com.robenglander.libretto.spec.LibrettoSpec";
+	public static final String COM_ROBENGLANDER_LIBRETTO_SPEC_LIBRETTOPROJECTPROFILE = "com.robenglander.libretto.spec.LibrettoProjectProfile";
 	
 	private static final Logger logger = Logger.getLogger(SpecActivator.class);
 	
@@ -76,12 +79,18 @@ public class SpecActivator extends AbstractUIPlugin {
 		if (COM_ROBENGLANDER_LIBRETTO_SPEC_LIBRETTOSPEC.equals(grammar)) {
 			return new LibrettoSpecRuntimeModule();
 		}
+		if (COM_ROBENGLANDER_LIBRETTO_SPEC_LIBRETTOPROJECTPROFILE.equals(grammar)) {
+			return new LibrettoProjectProfileRuntimeModule();
+		}
 		throw new IllegalArgumentException(grammar);
 	}
 	
 	protected com.google.inject.Module getUiModule(String grammar) {
 		if (COM_ROBENGLANDER_LIBRETTO_SPEC_LIBRETTOSPEC.equals(grammar)) {
 			return new LibrettoSpecUiModule(this);
+		}
+		if (COM_ROBENGLANDER_LIBRETTO_SPEC_LIBRETTOPROJECTPROFILE.equals(grammar)) {
+			return new LibrettoProjectProfileUiModule(this);
 		}
 		throw new IllegalArgumentException(grammar);
 	}

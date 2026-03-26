@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_LIBRETTO_ID", "RULE_BEHAVIOR_ID", "RULE_ACCEPTANCE_TEST_ID", "RULE_IMPLEMENTATION_DIRECTIVE_ID", "RULE_REF_ID", "RULE_OOS_ID", "RULE_STRING", "RULE_TEXT_BLOCK", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'spec'", "'{'", "'}'", "'metadata'", "'references'", "'prose'", "'out_of_scope'", "'operation_surface'", "'implements_surface'", "'boundary_exports'", "'boundary_imports'", "'behaviors'", "'acceptance_tests'", "'implementation_directives'", "'title'", "':'", "'version'", "'status'", "'module'", "'package'", "'compiled_at'", "'compiler_version'", "'model_metadata'", "'dependencies'", "'dependency'", "'target_spec'", "'reference'", "'type'", "'citation'", "'locator'", "'authority_notes'", "'section_context'", "'subsection_context'", "'out_of_scope_item'", "'statement'", "'behavior'", "'actor'", "'action'", "'objects'", "'reads'", "'writes'", "'conditions'", "'outcomes'", "'label'", "'notes'", "'context'", "'operation'", "'operation_expression'", "'outcome_class'", "'implements'", "'boundary'", "'spec_id'", "'operation_id'", "'profile_id'", "'raw'", "'acceptance_test'", "'validates'", "'preconditions'", "'actions'", "'assertions'", "'implementation_directive'", "'applies_to'", "'strength'", "'directive'", "'category'", "'constraints'", "'allowed_flexibility'", "'rationale'", "'source'", "'section'", "'subsection'", "'text'", "'['", "','", "']'", "'.'", "'returns'", "'rejects'", "'draft'", "'public'", "'required'", "'strongly_preferred'", "'preferred'", "'advisory'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_LIBRETTO_ID", "RULE_BEHAVIOR_ID", "RULE_ACCEPTANCE_TEST_ID", "RULE_IMPLEMENTATION_DIRECTIVE_ID", "RULE_REF_ID", "RULE_OOS_ID", "RULE_STRING", "RULE_TEXT_BLOCK", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'spec'", "'{'", "'}'", "'metadata'", "'references'", "'prose'", "'out_of_scope'", "'operation_surface'", "'implements_surface'", "'boundary_exports'", "'boundary_imports'", "'behaviors'", "'acceptance_tests'", "'implementation_directives'", "'title'", "':'", "'version'", "'status'", "'module'", "'package'", "'compiled_at'", "'compiler_version'", "'model_metadata'", "'project_profile_version'", "'project_profile_id'", "'dependencies'", "'dependency'", "'target_spec'", "'reference'", "'type'", "'citation'", "'locator'", "'authority_notes'", "'section_context'", "'subsection_context'", "'out_of_scope_item'", "'statement'", "'behavior'", "'actor'", "'action'", "'objects'", "'reads'", "'writes'", "'conditions'", "'outcomes'", "'label'", "'notes'", "'context'", "'operation'", "'operation_expression'", "'outcome_class'", "'implements'", "'boundary'", "'spec_id'", "'operation_id'", "'profile_id'", "'raw'", "'acceptance_test'", "'validates'", "'preconditions'", "'actions'", "'assertions'", "'implementation_directive'", "'applies_to'", "'strength'", "'directive'", "'category'", "'constraints'", "'allowed_flexibility'", "'rationale'", "'source'", "'section'", "'subsection'", "'text'", "'['", "','", "']'", "'.'", "'returns'", "'rejects'", "'draft'", "'public'", "'required'", "'strongly_preferred'", "'preferred'", "'advisory'"
     };
     public static final int T__50=50;
     public static final int RULE_TEXT_BLOCK=11;
@@ -76,6 +76,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
     public static final int T__100=100;
     public static final int T__92=92;
     public static final int T__93=93;
+    public static final int T__102=102;
     public static final int T__94=94;
     public static final int T__101=101;
     public static final int T__90=90;
@@ -121,6 +122,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
     public static final int RULE_REF_ID=8;
     public static final int T__84=84;
     public static final int T__85=85;
+    public static final int T__103=103;
     public static final int T__86=86;
     public static final int T__87=87;
 
@@ -261,7 +263,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( ((LA1_0>=21 && LA1_0<=31)||LA1_0==41) ) {
+                if ( ((LA1_0>=21 && LA1_0<=31)||LA1_0==43) ) {
                     alt1=1;
                 }
 
@@ -411,7 +413,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                 alt2=1;
                 }
                 break;
-            case 41:
+            case 43:
                 {
                 alt2=2;
                 }
@@ -794,7 +796,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                 int alt3=2;
                 int LA3_0 = input.LA(1);
 
-                if ( (LA3_0==32||(LA3_0>=34 && LA3_0<=40)) ) {
+                if ( (LA3_0==32||(LA3_0>=34 && LA3_0<=42)) ) {
                     alt3=1;
                 }
 
@@ -973,7 +975,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                 int alt4=2;
                 int LA4_0 = input.LA(1);
 
-                if ( (LA4_0==42) ) {
+                if ( (LA4_0==44) ) {
                     alt4=1;
                 }
 
@@ -1124,7 +1126,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                 int alt5=2;
                 int LA5_0 = input.LA(1);
 
-                if ( (LA5_0==44) ) {
+                if ( (LA5_0==46) ) {
                     alt5=1;
                 }
 
@@ -1275,7 +1277,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                 int alt6=2;
                 int LA6_0 = input.LA(1);
 
-                if ( ((LA6_0>=49 && LA6_0<=50)) ) {
+                if ( ((LA6_0>=51 && LA6_0<=52)) ) {
                     alt6=1;
                 }
 
@@ -1426,7 +1428,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                 int alt7=2;
                 int LA7_0 = input.LA(1);
 
-                if ( (LA7_0==51) ) {
+                if ( (LA7_0==53) ) {
                     alt7=1;
                 }
 
@@ -1577,7 +1579,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                 int alt8=2;
                 int LA8_0 = input.LA(1);
 
-                if ( (LA8_0==64) ) {
+                if ( (LA8_0==66) ) {
                     alt8=1;
                 }
 
@@ -1728,7 +1730,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                 int alt9=2;
                 int LA9_0 = input.LA(1);
 
-                if ( (LA9_0==67) ) {
+                if ( (LA9_0==69) ) {
                     alt9=1;
                 }
 
@@ -1879,7 +1881,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                 int alt10=2;
                 int LA10_0 = input.LA(1);
 
-                if ( (LA10_0==68) ) {
+                if ( (LA10_0==70) ) {
                     alt10=1;
                 }
 
@@ -2030,7 +2032,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                 int alt11=2;
                 int LA11_0 = input.LA(1);
 
-                if ( (LA11_0==68) ) {
+                if ( (LA11_0==70) ) {
                     alt11=1;
                 }
 
@@ -2181,7 +2183,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                 int alt12=2;
                 int LA12_0 = input.LA(1);
 
-                if ( (LA12_0==53) ) {
+                if ( (LA12_0==55) ) {
                     alt12=1;
                 }
 
@@ -2332,7 +2334,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                 int alt13=2;
                 int LA13_0 = input.LA(1);
 
-                if ( (LA13_0==73) ) {
+                if ( (LA13_0==75) ) {
                     alt13=1;
                 }
 
@@ -2483,7 +2485,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                 int alt14=2;
                 int LA14_0 = input.LA(1);
 
-                if ( (LA14_0==78) ) {
+                if ( (LA14_0==80) ) {
                     alt14=1;
                 }
 
@@ -2589,7 +2591,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMetadataField"
-    // InternalLibrettoSpec.g:965:1: ruleMetadataField returns [EObject current=null] : (this_MetadataTitleField_0= ruleMetadataTitleField | this_MetadataVersionField_1= ruleMetadataVersionField | this_MetadataStatusField_2= ruleMetadataStatusField | this_MetadataModuleField_3= ruleMetadataModuleField | this_MetadataJavaPackageField_4= ruleMetadataJavaPackageField | this_MetadataCompiledAtField_5= ruleMetadataCompiledAtField | this_MetadataCompilerVersionField_6= ruleMetadataCompilerVersionField | this_MetadataModelMetadataField_7= ruleMetadataModelMetadataField ) ;
+    // InternalLibrettoSpec.g:965:1: ruleMetadataField returns [EObject current=null] : (this_MetadataTitleField_0= ruleMetadataTitleField | this_MetadataVersionField_1= ruleMetadataVersionField | this_MetadataStatusField_2= ruleMetadataStatusField | this_MetadataModuleField_3= ruleMetadataModuleField | this_MetadataJavaPackageField_4= ruleMetadataJavaPackageField | this_MetadataCompiledAtField_5= ruleMetadataCompiledAtField | this_MetadataCompilerVersionField_6= ruleMetadataCompilerVersionField | this_MetadataModelMetadataField_7= ruleMetadataModelMetadataField | this_MetadataProjectProfileVersionField_8= ruleMetadataProjectProfileVersionField | this_MetadataProjectProfileIdField_9= ruleMetadataProjectProfileIdField ) ;
     public final EObject ruleMetadataField() throws RecognitionException {
         EObject current = null;
 
@@ -2609,16 +2611,20 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
         EObject this_MetadataModelMetadataField_7 = null;
 
+        EObject this_MetadataProjectProfileVersionField_8 = null;
+
+        EObject this_MetadataProjectProfileIdField_9 = null;
+
 
 
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:971:2: ( (this_MetadataTitleField_0= ruleMetadataTitleField | this_MetadataVersionField_1= ruleMetadataVersionField | this_MetadataStatusField_2= ruleMetadataStatusField | this_MetadataModuleField_3= ruleMetadataModuleField | this_MetadataJavaPackageField_4= ruleMetadataJavaPackageField | this_MetadataCompiledAtField_5= ruleMetadataCompiledAtField | this_MetadataCompilerVersionField_6= ruleMetadataCompilerVersionField | this_MetadataModelMetadataField_7= ruleMetadataModelMetadataField ) )
-            // InternalLibrettoSpec.g:972:2: (this_MetadataTitleField_0= ruleMetadataTitleField | this_MetadataVersionField_1= ruleMetadataVersionField | this_MetadataStatusField_2= ruleMetadataStatusField | this_MetadataModuleField_3= ruleMetadataModuleField | this_MetadataJavaPackageField_4= ruleMetadataJavaPackageField | this_MetadataCompiledAtField_5= ruleMetadataCompiledAtField | this_MetadataCompilerVersionField_6= ruleMetadataCompilerVersionField | this_MetadataModelMetadataField_7= ruleMetadataModelMetadataField )
+            // InternalLibrettoSpec.g:971:2: ( (this_MetadataTitleField_0= ruleMetadataTitleField | this_MetadataVersionField_1= ruleMetadataVersionField | this_MetadataStatusField_2= ruleMetadataStatusField | this_MetadataModuleField_3= ruleMetadataModuleField | this_MetadataJavaPackageField_4= ruleMetadataJavaPackageField | this_MetadataCompiledAtField_5= ruleMetadataCompiledAtField | this_MetadataCompilerVersionField_6= ruleMetadataCompilerVersionField | this_MetadataModelMetadataField_7= ruleMetadataModelMetadataField | this_MetadataProjectProfileVersionField_8= ruleMetadataProjectProfileVersionField | this_MetadataProjectProfileIdField_9= ruleMetadataProjectProfileIdField ) )
+            // InternalLibrettoSpec.g:972:2: (this_MetadataTitleField_0= ruleMetadataTitleField | this_MetadataVersionField_1= ruleMetadataVersionField | this_MetadataStatusField_2= ruleMetadataStatusField | this_MetadataModuleField_3= ruleMetadataModuleField | this_MetadataJavaPackageField_4= ruleMetadataJavaPackageField | this_MetadataCompiledAtField_5= ruleMetadataCompiledAtField | this_MetadataCompilerVersionField_6= ruleMetadataCompilerVersionField | this_MetadataModelMetadataField_7= ruleMetadataModelMetadataField | this_MetadataProjectProfileVersionField_8= ruleMetadataProjectProfileVersionField | this_MetadataProjectProfileIdField_9= ruleMetadataProjectProfileIdField )
             {
-            // InternalLibrettoSpec.g:972:2: (this_MetadataTitleField_0= ruleMetadataTitleField | this_MetadataVersionField_1= ruleMetadataVersionField | this_MetadataStatusField_2= ruleMetadataStatusField | this_MetadataModuleField_3= ruleMetadataModuleField | this_MetadataJavaPackageField_4= ruleMetadataJavaPackageField | this_MetadataCompiledAtField_5= ruleMetadataCompiledAtField | this_MetadataCompilerVersionField_6= ruleMetadataCompilerVersionField | this_MetadataModelMetadataField_7= ruleMetadataModelMetadataField )
-            int alt15=8;
+            // InternalLibrettoSpec.g:972:2: (this_MetadataTitleField_0= ruleMetadataTitleField | this_MetadataVersionField_1= ruleMetadataVersionField | this_MetadataStatusField_2= ruleMetadataStatusField | this_MetadataModuleField_3= ruleMetadataModuleField | this_MetadataJavaPackageField_4= ruleMetadataJavaPackageField | this_MetadataCompiledAtField_5= ruleMetadataCompiledAtField | this_MetadataCompilerVersionField_6= ruleMetadataCompilerVersionField | this_MetadataModelMetadataField_7= ruleMetadataModelMetadataField | this_MetadataProjectProfileVersionField_8= ruleMetadataProjectProfileVersionField | this_MetadataProjectProfileIdField_9= ruleMetadataProjectProfileIdField )
+            int alt15=10;
             switch ( input.LA(1) ) {
             case 32:
                 {
@@ -2658,6 +2664,16 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
             case 40:
                 {
                 alt15=8;
+                }
+                break;
+            case 41:
+                {
+                alt15=9;
+                }
+                break;
+            case 42:
+                {
+                alt15=10;
                 }
                 break;
             default:
@@ -2812,6 +2828,42 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
+                case 9 :
+                    // InternalLibrettoSpec.g:1045:3: this_MetadataProjectProfileVersionField_8= ruleMetadataProjectProfileVersionField
+                    {
+
+                    			newCompositeNode(grammarAccess.getMetadataFieldAccess().getMetadataProjectProfileVersionFieldParserRuleCall_8());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_MetadataProjectProfileVersionField_8=ruleMetadataProjectProfileVersionField();
+
+                    state._fsp--;
+
+
+                    			current = this_MetadataProjectProfileVersionField_8;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 10 :
+                    // InternalLibrettoSpec.g:1054:3: this_MetadataProjectProfileIdField_9= ruleMetadataProjectProfileIdField
+                    {
+
+                    			newCompositeNode(grammarAccess.getMetadataFieldAccess().getMetadataProjectProfileIdFieldParserRuleCall_9());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_MetadataProjectProfileIdField_9=ruleMetadataProjectProfileIdField();
+
+                    state._fsp--;
+
+
+                    			current = this_MetadataProjectProfileIdField_9;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
 
             }
 
@@ -2835,7 +2887,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMetadataTitleField"
-    // InternalLibrettoSpec.g:1048:1: entryRuleMetadataTitleField returns [EObject current=null] : iv_ruleMetadataTitleField= ruleMetadataTitleField EOF ;
+    // InternalLibrettoSpec.g:1066:1: entryRuleMetadataTitleField returns [EObject current=null] : iv_ruleMetadataTitleField= ruleMetadataTitleField EOF ;
     public final EObject entryRuleMetadataTitleField() throws RecognitionException {
         EObject current = null;
 
@@ -2843,8 +2895,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:1048:59: (iv_ruleMetadataTitleField= ruleMetadataTitleField EOF )
-            // InternalLibrettoSpec.g:1049:2: iv_ruleMetadataTitleField= ruleMetadataTitleField EOF
+            // InternalLibrettoSpec.g:1066:59: (iv_ruleMetadataTitleField= ruleMetadataTitleField EOF )
+            // InternalLibrettoSpec.g:1067:2: iv_ruleMetadataTitleField= ruleMetadataTitleField EOF
             {
              newCompositeNode(grammarAccess.getMetadataTitleFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -2871,7 +2923,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMetadataTitleField"
-    // InternalLibrettoSpec.g:1055:1: ruleMetadataTitleField returns [EObject current=null] : ( () otherlv_1= 'title' otherlv_2= ':' ( (lv_title_3_0= ruleTextValue ) ) ) ;
+    // InternalLibrettoSpec.g:1073:1: ruleMetadataTitleField returns [EObject current=null] : ( () otherlv_1= 'title' otherlv_2= ':' ( (lv_title_3_0= ruleTextValue ) ) ) ;
     public final EObject ruleMetadataTitleField() throws RecognitionException {
         EObject current = null;
 
@@ -2884,14 +2936,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:1061:2: ( ( () otherlv_1= 'title' otherlv_2= ':' ( (lv_title_3_0= ruleTextValue ) ) ) )
-            // InternalLibrettoSpec.g:1062:2: ( () otherlv_1= 'title' otherlv_2= ':' ( (lv_title_3_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:1079:2: ( ( () otherlv_1= 'title' otherlv_2= ':' ( (lv_title_3_0= ruleTextValue ) ) ) )
+            // InternalLibrettoSpec.g:1080:2: ( () otherlv_1= 'title' otherlv_2= ':' ( (lv_title_3_0= ruleTextValue ) ) )
             {
-            // InternalLibrettoSpec.g:1062:2: ( () otherlv_1= 'title' otherlv_2= ':' ( (lv_title_3_0= ruleTextValue ) ) )
-            // InternalLibrettoSpec.g:1063:3: () otherlv_1= 'title' otherlv_2= ':' ( (lv_title_3_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:1080:2: ( () otherlv_1= 'title' otherlv_2= ':' ( (lv_title_3_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:1081:3: () otherlv_1= 'title' otherlv_2= ':' ( (lv_title_3_0= ruleTextValue ) )
             {
-            // InternalLibrettoSpec.g:1063:3: ()
-            // InternalLibrettoSpec.g:1064:4: 
+            // InternalLibrettoSpec.g:1081:3: ()
+            // InternalLibrettoSpec.g:1082:4: 
             {
 
             				current = forceCreateModelElement(
@@ -2909,11 +2961,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getMetadataTitleFieldAccess().getColonKeyword_2());
             		
-            // InternalLibrettoSpec.g:1078:3: ( (lv_title_3_0= ruleTextValue ) )
-            // InternalLibrettoSpec.g:1079:4: (lv_title_3_0= ruleTextValue )
+            // InternalLibrettoSpec.g:1096:3: ( (lv_title_3_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:1097:4: (lv_title_3_0= ruleTextValue )
             {
-            // InternalLibrettoSpec.g:1079:4: (lv_title_3_0= ruleTextValue )
-            // InternalLibrettoSpec.g:1080:5: lv_title_3_0= ruleTextValue
+            // InternalLibrettoSpec.g:1097:4: (lv_title_3_0= ruleTextValue )
+            // InternalLibrettoSpec.g:1098:5: lv_title_3_0= ruleTextValue
             {
 
             					newCompositeNode(grammarAccess.getMetadataTitleFieldAccess().getTitleTextValueParserRuleCall_3_0());
@@ -2963,7 +3015,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMetadataVersionField"
-    // InternalLibrettoSpec.g:1101:1: entryRuleMetadataVersionField returns [EObject current=null] : iv_ruleMetadataVersionField= ruleMetadataVersionField EOF ;
+    // InternalLibrettoSpec.g:1119:1: entryRuleMetadataVersionField returns [EObject current=null] : iv_ruleMetadataVersionField= ruleMetadataVersionField EOF ;
     public final EObject entryRuleMetadataVersionField() throws RecognitionException {
         EObject current = null;
 
@@ -2971,8 +3023,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:1101:61: (iv_ruleMetadataVersionField= ruleMetadataVersionField EOF )
-            // InternalLibrettoSpec.g:1102:2: iv_ruleMetadataVersionField= ruleMetadataVersionField EOF
+            // InternalLibrettoSpec.g:1119:61: (iv_ruleMetadataVersionField= ruleMetadataVersionField EOF )
+            // InternalLibrettoSpec.g:1120:2: iv_ruleMetadataVersionField= ruleMetadataVersionField EOF
             {
              newCompositeNode(grammarAccess.getMetadataVersionFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -2999,7 +3051,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMetadataVersionField"
-    // InternalLibrettoSpec.g:1108:1: ruleMetadataVersionField returns [EObject current=null] : ( () otherlv_1= 'version' otherlv_2= ':' ( (lv_version_3_0= ruleTextValue ) ) ) ;
+    // InternalLibrettoSpec.g:1126:1: ruleMetadataVersionField returns [EObject current=null] : ( () otherlv_1= 'version' otherlv_2= ':' ( (lv_version_3_0= ruleTextValue ) ) ) ;
     public final EObject ruleMetadataVersionField() throws RecognitionException {
         EObject current = null;
 
@@ -3012,14 +3064,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:1114:2: ( ( () otherlv_1= 'version' otherlv_2= ':' ( (lv_version_3_0= ruleTextValue ) ) ) )
-            // InternalLibrettoSpec.g:1115:2: ( () otherlv_1= 'version' otherlv_2= ':' ( (lv_version_3_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:1132:2: ( ( () otherlv_1= 'version' otherlv_2= ':' ( (lv_version_3_0= ruleTextValue ) ) ) )
+            // InternalLibrettoSpec.g:1133:2: ( () otherlv_1= 'version' otherlv_2= ':' ( (lv_version_3_0= ruleTextValue ) ) )
             {
-            // InternalLibrettoSpec.g:1115:2: ( () otherlv_1= 'version' otherlv_2= ':' ( (lv_version_3_0= ruleTextValue ) ) )
-            // InternalLibrettoSpec.g:1116:3: () otherlv_1= 'version' otherlv_2= ':' ( (lv_version_3_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:1133:2: ( () otherlv_1= 'version' otherlv_2= ':' ( (lv_version_3_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:1134:3: () otherlv_1= 'version' otherlv_2= ':' ( (lv_version_3_0= ruleTextValue ) )
             {
-            // InternalLibrettoSpec.g:1116:3: ()
-            // InternalLibrettoSpec.g:1117:4: 
+            // InternalLibrettoSpec.g:1134:3: ()
+            // InternalLibrettoSpec.g:1135:4: 
             {
 
             				current = forceCreateModelElement(
@@ -3037,11 +3089,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getMetadataVersionFieldAccess().getColonKeyword_2());
             		
-            // InternalLibrettoSpec.g:1131:3: ( (lv_version_3_0= ruleTextValue ) )
-            // InternalLibrettoSpec.g:1132:4: (lv_version_3_0= ruleTextValue )
+            // InternalLibrettoSpec.g:1149:3: ( (lv_version_3_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:1150:4: (lv_version_3_0= ruleTextValue )
             {
-            // InternalLibrettoSpec.g:1132:4: (lv_version_3_0= ruleTextValue )
-            // InternalLibrettoSpec.g:1133:5: lv_version_3_0= ruleTextValue
+            // InternalLibrettoSpec.g:1150:4: (lv_version_3_0= ruleTextValue )
+            // InternalLibrettoSpec.g:1151:5: lv_version_3_0= ruleTextValue
             {
 
             					newCompositeNode(grammarAccess.getMetadataVersionFieldAccess().getVersionTextValueParserRuleCall_3_0());
@@ -3091,7 +3143,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMetadataStatusField"
-    // InternalLibrettoSpec.g:1154:1: entryRuleMetadataStatusField returns [EObject current=null] : iv_ruleMetadataStatusField= ruleMetadataStatusField EOF ;
+    // InternalLibrettoSpec.g:1172:1: entryRuleMetadataStatusField returns [EObject current=null] : iv_ruleMetadataStatusField= ruleMetadataStatusField EOF ;
     public final EObject entryRuleMetadataStatusField() throws RecognitionException {
         EObject current = null;
 
@@ -3099,8 +3151,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:1154:60: (iv_ruleMetadataStatusField= ruleMetadataStatusField EOF )
-            // InternalLibrettoSpec.g:1155:2: iv_ruleMetadataStatusField= ruleMetadataStatusField EOF
+            // InternalLibrettoSpec.g:1172:60: (iv_ruleMetadataStatusField= ruleMetadataStatusField EOF )
+            // InternalLibrettoSpec.g:1173:2: iv_ruleMetadataStatusField= ruleMetadataStatusField EOF
             {
              newCompositeNode(grammarAccess.getMetadataStatusFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -3127,7 +3179,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMetadataStatusField"
-    // InternalLibrettoSpec.g:1161:1: ruleMetadataStatusField returns [EObject current=null] : ( () otherlv_1= 'status' otherlv_2= ':' ( (lv_status_3_0= ruleMetadataStatusValue ) ) ) ;
+    // InternalLibrettoSpec.g:1179:1: ruleMetadataStatusField returns [EObject current=null] : ( () otherlv_1= 'status' otherlv_2= ':' ( (lv_status_3_0= ruleMetadataStatusValue ) ) ) ;
     public final EObject ruleMetadataStatusField() throws RecognitionException {
         EObject current = null;
 
@@ -3140,14 +3192,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:1167:2: ( ( () otherlv_1= 'status' otherlv_2= ':' ( (lv_status_3_0= ruleMetadataStatusValue ) ) ) )
-            // InternalLibrettoSpec.g:1168:2: ( () otherlv_1= 'status' otherlv_2= ':' ( (lv_status_3_0= ruleMetadataStatusValue ) ) )
+            // InternalLibrettoSpec.g:1185:2: ( ( () otherlv_1= 'status' otherlv_2= ':' ( (lv_status_3_0= ruleMetadataStatusValue ) ) ) )
+            // InternalLibrettoSpec.g:1186:2: ( () otherlv_1= 'status' otherlv_2= ':' ( (lv_status_3_0= ruleMetadataStatusValue ) ) )
             {
-            // InternalLibrettoSpec.g:1168:2: ( () otherlv_1= 'status' otherlv_2= ':' ( (lv_status_3_0= ruleMetadataStatusValue ) ) )
-            // InternalLibrettoSpec.g:1169:3: () otherlv_1= 'status' otherlv_2= ':' ( (lv_status_3_0= ruleMetadataStatusValue ) )
+            // InternalLibrettoSpec.g:1186:2: ( () otherlv_1= 'status' otherlv_2= ':' ( (lv_status_3_0= ruleMetadataStatusValue ) ) )
+            // InternalLibrettoSpec.g:1187:3: () otherlv_1= 'status' otherlv_2= ':' ( (lv_status_3_0= ruleMetadataStatusValue ) )
             {
-            // InternalLibrettoSpec.g:1169:3: ()
-            // InternalLibrettoSpec.g:1170:4: 
+            // InternalLibrettoSpec.g:1187:3: ()
+            // InternalLibrettoSpec.g:1188:4: 
             {
 
             				current = forceCreateModelElement(
@@ -3165,11 +3217,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getMetadataStatusFieldAccess().getColonKeyword_2());
             		
-            // InternalLibrettoSpec.g:1184:3: ( (lv_status_3_0= ruleMetadataStatusValue ) )
-            // InternalLibrettoSpec.g:1185:4: (lv_status_3_0= ruleMetadataStatusValue )
+            // InternalLibrettoSpec.g:1202:3: ( (lv_status_3_0= ruleMetadataStatusValue ) )
+            // InternalLibrettoSpec.g:1203:4: (lv_status_3_0= ruleMetadataStatusValue )
             {
-            // InternalLibrettoSpec.g:1185:4: (lv_status_3_0= ruleMetadataStatusValue )
-            // InternalLibrettoSpec.g:1186:5: lv_status_3_0= ruleMetadataStatusValue
+            // InternalLibrettoSpec.g:1203:4: (lv_status_3_0= ruleMetadataStatusValue )
+            // InternalLibrettoSpec.g:1204:5: lv_status_3_0= ruleMetadataStatusValue
             {
 
             					newCompositeNode(grammarAccess.getMetadataStatusFieldAccess().getStatusMetadataStatusValueEnumRuleCall_3_0());
@@ -3219,7 +3271,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMetadataModuleField"
-    // InternalLibrettoSpec.g:1207:1: entryRuleMetadataModuleField returns [EObject current=null] : iv_ruleMetadataModuleField= ruleMetadataModuleField EOF ;
+    // InternalLibrettoSpec.g:1225:1: entryRuleMetadataModuleField returns [EObject current=null] : iv_ruleMetadataModuleField= ruleMetadataModuleField EOF ;
     public final EObject entryRuleMetadataModuleField() throws RecognitionException {
         EObject current = null;
 
@@ -3227,8 +3279,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:1207:60: (iv_ruleMetadataModuleField= ruleMetadataModuleField EOF )
-            // InternalLibrettoSpec.g:1208:2: iv_ruleMetadataModuleField= ruleMetadataModuleField EOF
+            // InternalLibrettoSpec.g:1225:60: (iv_ruleMetadataModuleField= ruleMetadataModuleField EOF )
+            // InternalLibrettoSpec.g:1226:2: iv_ruleMetadataModuleField= ruleMetadataModuleField EOF
             {
              newCompositeNode(grammarAccess.getMetadataModuleFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -3255,7 +3307,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMetadataModuleField"
-    // InternalLibrettoSpec.g:1214:1: ruleMetadataModuleField returns [EObject current=null] : ( () otherlv_1= 'module' otherlv_2= ':' ( (lv_moduleName_3_0= ruleTextValue ) ) ) ;
+    // InternalLibrettoSpec.g:1232:1: ruleMetadataModuleField returns [EObject current=null] : ( () otherlv_1= 'module' otherlv_2= ':' ( (lv_moduleName_3_0= ruleTextValue ) ) ) ;
     public final EObject ruleMetadataModuleField() throws RecognitionException {
         EObject current = null;
 
@@ -3268,14 +3320,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:1220:2: ( ( () otherlv_1= 'module' otherlv_2= ':' ( (lv_moduleName_3_0= ruleTextValue ) ) ) )
-            // InternalLibrettoSpec.g:1221:2: ( () otherlv_1= 'module' otherlv_2= ':' ( (lv_moduleName_3_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:1238:2: ( ( () otherlv_1= 'module' otherlv_2= ':' ( (lv_moduleName_3_0= ruleTextValue ) ) ) )
+            // InternalLibrettoSpec.g:1239:2: ( () otherlv_1= 'module' otherlv_2= ':' ( (lv_moduleName_3_0= ruleTextValue ) ) )
             {
-            // InternalLibrettoSpec.g:1221:2: ( () otherlv_1= 'module' otherlv_2= ':' ( (lv_moduleName_3_0= ruleTextValue ) ) )
-            // InternalLibrettoSpec.g:1222:3: () otherlv_1= 'module' otherlv_2= ':' ( (lv_moduleName_3_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:1239:2: ( () otherlv_1= 'module' otherlv_2= ':' ( (lv_moduleName_3_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:1240:3: () otherlv_1= 'module' otherlv_2= ':' ( (lv_moduleName_3_0= ruleTextValue ) )
             {
-            // InternalLibrettoSpec.g:1222:3: ()
-            // InternalLibrettoSpec.g:1223:4: 
+            // InternalLibrettoSpec.g:1240:3: ()
+            // InternalLibrettoSpec.g:1241:4: 
             {
 
             				current = forceCreateModelElement(
@@ -3293,11 +3345,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getMetadataModuleFieldAccess().getColonKeyword_2());
             		
-            // InternalLibrettoSpec.g:1237:3: ( (lv_moduleName_3_0= ruleTextValue ) )
-            // InternalLibrettoSpec.g:1238:4: (lv_moduleName_3_0= ruleTextValue )
+            // InternalLibrettoSpec.g:1255:3: ( (lv_moduleName_3_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:1256:4: (lv_moduleName_3_0= ruleTextValue )
             {
-            // InternalLibrettoSpec.g:1238:4: (lv_moduleName_3_0= ruleTextValue )
-            // InternalLibrettoSpec.g:1239:5: lv_moduleName_3_0= ruleTextValue
+            // InternalLibrettoSpec.g:1256:4: (lv_moduleName_3_0= ruleTextValue )
+            // InternalLibrettoSpec.g:1257:5: lv_moduleName_3_0= ruleTextValue
             {
 
             					newCompositeNode(grammarAccess.getMetadataModuleFieldAccess().getModuleNameTextValueParserRuleCall_3_0());
@@ -3347,7 +3399,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMetadataJavaPackageField"
-    // InternalLibrettoSpec.g:1260:1: entryRuleMetadataJavaPackageField returns [EObject current=null] : iv_ruleMetadataJavaPackageField= ruleMetadataJavaPackageField EOF ;
+    // InternalLibrettoSpec.g:1278:1: entryRuleMetadataJavaPackageField returns [EObject current=null] : iv_ruleMetadataJavaPackageField= ruleMetadataJavaPackageField EOF ;
     public final EObject entryRuleMetadataJavaPackageField() throws RecognitionException {
         EObject current = null;
 
@@ -3355,8 +3407,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:1260:65: (iv_ruleMetadataJavaPackageField= ruleMetadataJavaPackageField EOF )
-            // InternalLibrettoSpec.g:1261:2: iv_ruleMetadataJavaPackageField= ruleMetadataJavaPackageField EOF
+            // InternalLibrettoSpec.g:1278:65: (iv_ruleMetadataJavaPackageField= ruleMetadataJavaPackageField EOF )
+            // InternalLibrettoSpec.g:1279:2: iv_ruleMetadataJavaPackageField= ruleMetadataJavaPackageField EOF
             {
              newCompositeNode(grammarAccess.getMetadataJavaPackageFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -3383,7 +3435,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMetadataJavaPackageField"
-    // InternalLibrettoSpec.g:1267:1: ruleMetadataJavaPackageField returns [EObject current=null] : ( () otherlv_1= 'package' otherlv_2= ':' ( (lv_javaPackage_3_0= ruleTextValue ) ) ) ;
+    // InternalLibrettoSpec.g:1285:1: ruleMetadataJavaPackageField returns [EObject current=null] : ( () otherlv_1= 'package' otherlv_2= ':' ( (lv_javaPackage_3_0= ruleTextValue ) ) ) ;
     public final EObject ruleMetadataJavaPackageField() throws RecognitionException {
         EObject current = null;
 
@@ -3396,14 +3448,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:1273:2: ( ( () otherlv_1= 'package' otherlv_2= ':' ( (lv_javaPackage_3_0= ruleTextValue ) ) ) )
-            // InternalLibrettoSpec.g:1274:2: ( () otherlv_1= 'package' otherlv_2= ':' ( (lv_javaPackage_3_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:1291:2: ( ( () otherlv_1= 'package' otherlv_2= ':' ( (lv_javaPackage_3_0= ruleTextValue ) ) ) )
+            // InternalLibrettoSpec.g:1292:2: ( () otherlv_1= 'package' otherlv_2= ':' ( (lv_javaPackage_3_0= ruleTextValue ) ) )
             {
-            // InternalLibrettoSpec.g:1274:2: ( () otherlv_1= 'package' otherlv_2= ':' ( (lv_javaPackage_3_0= ruleTextValue ) ) )
-            // InternalLibrettoSpec.g:1275:3: () otherlv_1= 'package' otherlv_2= ':' ( (lv_javaPackage_3_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:1292:2: ( () otherlv_1= 'package' otherlv_2= ':' ( (lv_javaPackage_3_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:1293:3: () otherlv_1= 'package' otherlv_2= ':' ( (lv_javaPackage_3_0= ruleTextValue ) )
             {
-            // InternalLibrettoSpec.g:1275:3: ()
-            // InternalLibrettoSpec.g:1276:4: 
+            // InternalLibrettoSpec.g:1293:3: ()
+            // InternalLibrettoSpec.g:1294:4: 
             {
 
             				current = forceCreateModelElement(
@@ -3421,11 +3473,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getMetadataJavaPackageFieldAccess().getColonKeyword_2());
             		
-            // InternalLibrettoSpec.g:1290:3: ( (lv_javaPackage_3_0= ruleTextValue ) )
-            // InternalLibrettoSpec.g:1291:4: (lv_javaPackage_3_0= ruleTextValue )
+            // InternalLibrettoSpec.g:1308:3: ( (lv_javaPackage_3_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:1309:4: (lv_javaPackage_3_0= ruleTextValue )
             {
-            // InternalLibrettoSpec.g:1291:4: (lv_javaPackage_3_0= ruleTextValue )
-            // InternalLibrettoSpec.g:1292:5: lv_javaPackage_3_0= ruleTextValue
+            // InternalLibrettoSpec.g:1309:4: (lv_javaPackage_3_0= ruleTextValue )
+            // InternalLibrettoSpec.g:1310:5: lv_javaPackage_3_0= ruleTextValue
             {
 
             					newCompositeNode(grammarAccess.getMetadataJavaPackageFieldAccess().getJavaPackageTextValueParserRuleCall_3_0());
@@ -3475,7 +3527,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMetadataCompiledAtField"
-    // InternalLibrettoSpec.g:1313:1: entryRuleMetadataCompiledAtField returns [EObject current=null] : iv_ruleMetadataCompiledAtField= ruleMetadataCompiledAtField EOF ;
+    // InternalLibrettoSpec.g:1331:1: entryRuleMetadataCompiledAtField returns [EObject current=null] : iv_ruleMetadataCompiledAtField= ruleMetadataCompiledAtField EOF ;
     public final EObject entryRuleMetadataCompiledAtField() throws RecognitionException {
         EObject current = null;
 
@@ -3483,8 +3535,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:1313:64: (iv_ruleMetadataCompiledAtField= ruleMetadataCompiledAtField EOF )
-            // InternalLibrettoSpec.g:1314:2: iv_ruleMetadataCompiledAtField= ruleMetadataCompiledAtField EOF
+            // InternalLibrettoSpec.g:1331:64: (iv_ruleMetadataCompiledAtField= ruleMetadataCompiledAtField EOF )
+            // InternalLibrettoSpec.g:1332:2: iv_ruleMetadataCompiledAtField= ruleMetadataCompiledAtField EOF
             {
              newCompositeNode(grammarAccess.getMetadataCompiledAtFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -3511,7 +3563,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMetadataCompiledAtField"
-    // InternalLibrettoSpec.g:1320:1: ruleMetadataCompiledAtField returns [EObject current=null] : ( () otherlv_1= 'compiled_at' otherlv_2= ':' ( (lv_compiledAt_3_0= ruleTextValue ) ) ) ;
+    // InternalLibrettoSpec.g:1338:1: ruleMetadataCompiledAtField returns [EObject current=null] : ( () otherlv_1= 'compiled_at' otherlv_2= ':' ( (lv_compiledAt_3_0= ruleTextValue ) ) ) ;
     public final EObject ruleMetadataCompiledAtField() throws RecognitionException {
         EObject current = null;
 
@@ -3524,14 +3576,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:1326:2: ( ( () otherlv_1= 'compiled_at' otherlv_2= ':' ( (lv_compiledAt_3_0= ruleTextValue ) ) ) )
-            // InternalLibrettoSpec.g:1327:2: ( () otherlv_1= 'compiled_at' otherlv_2= ':' ( (lv_compiledAt_3_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:1344:2: ( ( () otherlv_1= 'compiled_at' otherlv_2= ':' ( (lv_compiledAt_3_0= ruleTextValue ) ) ) )
+            // InternalLibrettoSpec.g:1345:2: ( () otherlv_1= 'compiled_at' otherlv_2= ':' ( (lv_compiledAt_3_0= ruleTextValue ) ) )
             {
-            // InternalLibrettoSpec.g:1327:2: ( () otherlv_1= 'compiled_at' otherlv_2= ':' ( (lv_compiledAt_3_0= ruleTextValue ) ) )
-            // InternalLibrettoSpec.g:1328:3: () otherlv_1= 'compiled_at' otherlv_2= ':' ( (lv_compiledAt_3_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:1345:2: ( () otherlv_1= 'compiled_at' otherlv_2= ':' ( (lv_compiledAt_3_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:1346:3: () otherlv_1= 'compiled_at' otherlv_2= ':' ( (lv_compiledAt_3_0= ruleTextValue ) )
             {
-            // InternalLibrettoSpec.g:1328:3: ()
-            // InternalLibrettoSpec.g:1329:4: 
+            // InternalLibrettoSpec.g:1346:3: ()
+            // InternalLibrettoSpec.g:1347:4: 
             {
 
             				current = forceCreateModelElement(
@@ -3549,11 +3601,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getMetadataCompiledAtFieldAccess().getColonKeyword_2());
             		
-            // InternalLibrettoSpec.g:1343:3: ( (lv_compiledAt_3_0= ruleTextValue ) )
-            // InternalLibrettoSpec.g:1344:4: (lv_compiledAt_3_0= ruleTextValue )
+            // InternalLibrettoSpec.g:1361:3: ( (lv_compiledAt_3_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:1362:4: (lv_compiledAt_3_0= ruleTextValue )
             {
-            // InternalLibrettoSpec.g:1344:4: (lv_compiledAt_3_0= ruleTextValue )
-            // InternalLibrettoSpec.g:1345:5: lv_compiledAt_3_0= ruleTextValue
+            // InternalLibrettoSpec.g:1362:4: (lv_compiledAt_3_0= ruleTextValue )
+            // InternalLibrettoSpec.g:1363:5: lv_compiledAt_3_0= ruleTextValue
             {
 
             					newCompositeNode(grammarAccess.getMetadataCompiledAtFieldAccess().getCompiledAtTextValueParserRuleCall_3_0());
@@ -3603,7 +3655,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMetadataCompilerVersionField"
-    // InternalLibrettoSpec.g:1366:1: entryRuleMetadataCompilerVersionField returns [EObject current=null] : iv_ruleMetadataCompilerVersionField= ruleMetadataCompilerVersionField EOF ;
+    // InternalLibrettoSpec.g:1384:1: entryRuleMetadataCompilerVersionField returns [EObject current=null] : iv_ruleMetadataCompilerVersionField= ruleMetadataCompilerVersionField EOF ;
     public final EObject entryRuleMetadataCompilerVersionField() throws RecognitionException {
         EObject current = null;
 
@@ -3611,8 +3663,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:1366:69: (iv_ruleMetadataCompilerVersionField= ruleMetadataCompilerVersionField EOF )
-            // InternalLibrettoSpec.g:1367:2: iv_ruleMetadataCompilerVersionField= ruleMetadataCompilerVersionField EOF
+            // InternalLibrettoSpec.g:1384:69: (iv_ruleMetadataCompilerVersionField= ruleMetadataCompilerVersionField EOF )
+            // InternalLibrettoSpec.g:1385:2: iv_ruleMetadataCompilerVersionField= ruleMetadataCompilerVersionField EOF
             {
              newCompositeNode(grammarAccess.getMetadataCompilerVersionFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -3639,7 +3691,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMetadataCompilerVersionField"
-    // InternalLibrettoSpec.g:1373:1: ruleMetadataCompilerVersionField returns [EObject current=null] : ( () otherlv_1= 'compiler_version' otherlv_2= ':' ( (lv_compilerVersion_3_0= ruleTextValue ) ) ) ;
+    // InternalLibrettoSpec.g:1391:1: ruleMetadataCompilerVersionField returns [EObject current=null] : ( () otherlv_1= 'compiler_version' otherlv_2= ':' ( (lv_compilerVersion_3_0= ruleTextValue ) ) ) ;
     public final EObject ruleMetadataCompilerVersionField() throws RecognitionException {
         EObject current = null;
 
@@ -3652,14 +3704,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:1379:2: ( ( () otherlv_1= 'compiler_version' otherlv_2= ':' ( (lv_compilerVersion_3_0= ruleTextValue ) ) ) )
-            // InternalLibrettoSpec.g:1380:2: ( () otherlv_1= 'compiler_version' otherlv_2= ':' ( (lv_compilerVersion_3_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:1397:2: ( ( () otherlv_1= 'compiler_version' otherlv_2= ':' ( (lv_compilerVersion_3_0= ruleTextValue ) ) ) )
+            // InternalLibrettoSpec.g:1398:2: ( () otherlv_1= 'compiler_version' otherlv_2= ':' ( (lv_compilerVersion_3_0= ruleTextValue ) ) )
             {
-            // InternalLibrettoSpec.g:1380:2: ( () otherlv_1= 'compiler_version' otherlv_2= ':' ( (lv_compilerVersion_3_0= ruleTextValue ) ) )
-            // InternalLibrettoSpec.g:1381:3: () otherlv_1= 'compiler_version' otherlv_2= ':' ( (lv_compilerVersion_3_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:1398:2: ( () otherlv_1= 'compiler_version' otherlv_2= ':' ( (lv_compilerVersion_3_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:1399:3: () otherlv_1= 'compiler_version' otherlv_2= ':' ( (lv_compilerVersion_3_0= ruleTextValue ) )
             {
-            // InternalLibrettoSpec.g:1381:3: ()
-            // InternalLibrettoSpec.g:1382:4: 
+            // InternalLibrettoSpec.g:1399:3: ()
+            // InternalLibrettoSpec.g:1400:4: 
             {
 
             				current = forceCreateModelElement(
@@ -3677,11 +3729,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getMetadataCompilerVersionFieldAccess().getColonKeyword_2());
             		
-            // InternalLibrettoSpec.g:1396:3: ( (lv_compilerVersion_3_0= ruleTextValue ) )
-            // InternalLibrettoSpec.g:1397:4: (lv_compilerVersion_3_0= ruleTextValue )
+            // InternalLibrettoSpec.g:1414:3: ( (lv_compilerVersion_3_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:1415:4: (lv_compilerVersion_3_0= ruleTextValue )
             {
-            // InternalLibrettoSpec.g:1397:4: (lv_compilerVersion_3_0= ruleTextValue )
-            // InternalLibrettoSpec.g:1398:5: lv_compilerVersion_3_0= ruleTextValue
+            // InternalLibrettoSpec.g:1415:4: (lv_compilerVersion_3_0= ruleTextValue )
+            // InternalLibrettoSpec.g:1416:5: lv_compilerVersion_3_0= ruleTextValue
             {
 
             					newCompositeNode(grammarAccess.getMetadataCompilerVersionFieldAccess().getCompilerVersionTextValueParserRuleCall_3_0());
@@ -3731,7 +3783,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMetadataModelMetadataField"
-    // InternalLibrettoSpec.g:1419:1: entryRuleMetadataModelMetadataField returns [EObject current=null] : iv_ruleMetadataModelMetadataField= ruleMetadataModelMetadataField EOF ;
+    // InternalLibrettoSpec.g:1437:1: entryRuleMetadataModelMetadataField returns [EObject current=null] : iv_ruleMetadataModelMetadataField= ruleMetadataModelMetadataField EOF ;
     public final EObject entryRuleMetadataModelMetadataField() throws RecognitionException {
         EObject current = null;
 
@@ -3739,8 +3791,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:1419:67: (iv_ruleMetadataModelMetadataField= ruleMetadataModelMetadataField EOF )
-            // InternalLibrettoSpec.g:1420:2: iv_ruleMetadataModelMetadataField= ruleMetadataModelMetadataField EOF
+            // InternalLibrettoSpec.g:1437:67: (iv_ruleMetadataModelMetadataField= ruleMetadataModelMetadataField EOF )
+            // InternalLibrettoSpec.g:1438:2: iv_ruleMetadataModelMetadataField= ruleMetadataModelMetadataField EOF
             {
              newCompositeNode(grammarAccess.getMetadataModelMetadataFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -3767,7 +3819,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMetadataModelMetadataField"
-    // InternalLibrettoSpec.g:1426:1: ruleMetadataModelMetadataField returns [EObject current=null] : ( () otherlv_1= 'model_metadata' otherlv_2= ':' ( (lv_modelMetadata_3_0= ruleTextValue ) ) ) ;
+    // InternalLibrettoSpec.g:1444:1: ruleMetadataModelMetadataField returns [EObject current=null] : ( () otherlv_1= 'model_metadata' otherlv_2= ':' ( (lv_modelMetadata_3_0= ruleTextValue ) ) ) ;
     public final EObject ruleMetadataModelMetadataField() throws RecognitionException {
         EObject current = null;
 
@@ -3780,14 +3832,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:1432:2: ( ( () otherlv_1= 'model_metadata' otherlv_2= ':' ( (lv_modelMetadata_3_0= ruleTextValue ) ) ) )
-            // InternalLibrettoSpec.g:1433:2: ( () otherlv_1= 'model_metadata' otherlv_2= ':' ( (lv_modelMetadata_3_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:1450:2: ( ( () otherlv_1= 'model_metadata' otherlv_2= ':' ( (lv_modelMetadata_3_0= ruleTextValue ) ) ) )
+            // InternalLibrettoSpec.g:1451:2: ( () otherlv_1= 'model_metadata' otherlv_2= ':' ( (lv_modelMetadata_3_0= ruleTextValue ) ) )
             {
-            // InternalLibrettoSpec.g:1433:2: ( () otherlv_1= 'model_metadata' otherlv_2= ':' ( (lv_modelMetadata_3_0= ruleTextValue ) ) )
-            // InternalLibrettoSpec.g:1434:3: () otherlv_1= 'model_metadata' otherlv_2= ':' ( (lv_modelMetadata_3_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:1451:2: ( () otherlv_1= 'model_metadata' otherlv_2= ':' ( (lv_modelMetadata_3_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:1452:3: () otherlv_1= 'model_metadata' otherlv_2= ':' ( (lv_modelMetadata_3_0= ruleTextValue ) )
             {
-            // InternalLibrettoSpec.g:1434:3: ()
-            // InternalLibrettoSpec.g:1435:4: 
+            // InternalLibrettoSpec.g:1452:3: ()
+            // InternalLibrettoSpec.g:1453:4: 
             {
 
             				current = forceCreateModelElement(
@@ -3805,11 +3857,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getMetadataModelMetadataFieldAccess().getColonKeyword_2());
             		
-            // InternalLibrettoSpec.g:1449:3: ( (lv_modelMetadata_3_0= ruleTextValue ) )
-            // InternalLibrettoSpec.g:1450:4: (lv_modelMetadata_3_0= ruleTextValue )
+            // InternalLibrettoSpec.g:1467:3: ( (lv_modelMetadata_3_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:1468:4: (lv_modelMetadata_3_0= ruleTextValue )
             {
-            // InternalLibrettoSpec.g:1450:4: (lv_modelMetadata_3_0= ruleTextValue )
-            // InternalLibrettoSpec.g:1451:5: lv_modelMetadata_3_0= ruleTextValue
+            // InternalLibrettoSpec.g:1468:4: (lv_modelMetadata_3_0= ruleTextValue )
+            // InternalLibrettoSpec.g:1469:5: lv_modelMetadata_3_0= ruleTextValue
             {
 
             					newCompositeNode(grammarAccess.getMetadataModelMetadataFieldAccess().getModelMetadataTextValueParserRuleCall_3_0());
@@ -3858,8 +3910,264 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleMetadataModelMetadataField"
 
 
+    // $ANTLR start "entryRuleMetadataProjectProfileVersionField"
+    // InternalLibrettoSpec.g:1490:1: entryRuleMetadataProjectProfileVersionField returns [EObject current=null] : iv_ruleMetadataProjectProfileVersionField= ruleMetadataProjectProfileVersionField EOF ;
+    public final EObject entryRuleMetadataProjectProfileVersionField() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMetadataProjectProfileVersionField = null;
+
+
+        try {
+            // InternalLibrettoSpec.g:1490:75: (iv_ruleMetadataProjectProfileVersionField= ruleMetadataProjectProfileVersionField EOF )
+            // InternalLibrettoSpec.g:1491:2: iv_ruleMetadataProjectProfileVersionField= ruleMetadataProjectProfileVersionField EOF
+            {
+             newCompositeNode(grammarAccess.getMetadataProjectProfileVersionFieldRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMetadataProjectProfileVersionField=ruleMetadataProjectProfileVersionField();
+
+            state._fsp--;
+
+             current =iv_ruleMetadataProjectProfileVersionField; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMetadataProjectProfileVersionField"
+
+
+    // $ANTLR start "ruleMetadataProjectProfileVersionField"
+    // InternalLibrettoSpec.g:1497:1: ruleMetadataProjectProfileVersionField returns [EObject current=null] : ( () otherlv_1= 'project_profile_version' otherlv_2= ':' ( (lv_projectProfileVersion_3_0= ruleTextValue ) ) ) ;
+    public final EObject ruleMetadataProjectProfileVersionField() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        EObject lv_projectProfileVersion_3_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalLibrettoSpec.g:1503:2: ( ( () otherlv_1= 'project_profile_version' otherlv_2= ':' ( (lv_projectProfileVersion_3_0= ruleTextValue ) ) ) )
+            // InternalLibrettoSpec.g:1504:2: ( () otherlv_1= 'project_profile_version' otherlv_2= ':' ( (lv_projectProfileVersion_3_0= ruleTextValue ) ) )
+            {
+            // InternalLibrettoSpec.g:1504:2: ( () otherlv_1= 'project_profile_version' otherlv_2= ':' ( (lv_projectProfileVersion_3_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:1505:3: () otherlv_1= 'project_profile_version' otherlv_2= ':' ( (lv_projectProfileVersion_3_0= ruleTextValue ) )
+            {
+            // InternalLibrettoSpec.g:1505:3: ()
+            // InternalLibrettoSpec.g:1506:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getMetadataProjectProfileVersionFieldAccess().getMetadataProjectProfileVersionFieldAction_0(),
+            					current);
+            			
+
+            }
+
+            otherlv_1=(Token)match(input,41,FOLLOW_17); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getMetadataProjectProfileVersionFieldAccess().getProject_profile_versionKeyword_1());
+            		
+            otherlv_2=(Token)match(input,33,FOLLOW_18); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getMetadataProjectProfileVersionFieldAccess().getColonKeyword_2());
+            		
+            // InternalLibrettoSpec.g:1520:3: ( (lv_projectProfileVersion_3_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:1521:4: (lv_projectProfileVersion_3_0= ruleTextValue )
+            {
+            // InternalLibrettoSpec.g:1521:4: (lv_projectProfileVersion_3_0= ruleTextValue )
+            // InternalLibrettoSpec.g:1522:5: lv_projectProfileVersion_3_0= ruleTextValue
+            {
+
+            					newCompositeNode(grammarAccess.getMetadataProjectProfileVersionFieldAccess().getProjectProfileVersionTextValueParserRuleCall_3_0());
+            				
+            pushFollow(FOLLOW_2);
+            lv_projectProfileVersion_3_0=ruleTextValue();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getMetadataProjectProfileVersionFieldRule());
+            					}
+            					set(
+            						current,
+            						"projectProfileVersion",
+            						lv_projectProfileVersion_3_0,
+            						"com.robenglander.libretto.spec.LibrettoSpec.TextValue");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMetadataProjectProfileVersionField"
+
+
+    // $ANTLR start "entryRuleMetadataProjectProfileIdField"
+    // InternalLibrettoSpec.g:1543:1: entryRuleMetadataProjectProfileIdField returns [EObject current=null] : iv_ruleMetadataProjectProfileIdField= ruleMetadataProjectProfileIdField EOF ;
+    public final EObject entryRuleMetadataProjectProfileIdField() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMetadataProjectProfileIdField = null;
+
+
+        try {
+            // InternalLibrettoSpec.g:1543:70: (iv_ruleMetadataProjectProfileIdField= ruleMetadataProjectProfileIdField EOF )
+            // InternalLibrettoSpec.g:1544:2: iv_ruleMetadataProjectProfileIdField= ruleMetadataProjectProfileIdField EOF
+            {
+             newCompositeNode(grammarAccess.getMetadataProjectProfileIdFieldRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMetadataProjectProfileIdField=ruleMetadataProjectProfileIdField();
+
+            state._fsp--;
+
+             current =iv_ruleMetadataProjectProfileIdField; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMetadataProjectProfileIdField"
+
+
+    // $ANTLR start "ruleMetadataProjectProfileIdField"
+    // InternalLibrettoSpec.g:1550:1: ruleMetadataProjectProfileIdField returns [EObject current=null] : ( () otherlv_1= 'project_profile_id' otherlv_2= ':' ( (lv_projectProfileId_3_0= ruleTextValue ) ) ) ;
+    public final EObject ruleMetadataProjectProfileIdField() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        EObject lv_projectProfileId_3_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalLibrettoSpec.g:1556:2: ( ( () otherlv_1= 'project_profile_id' otherlv_2= ':' ( (lv_projectProfileId_3_0= ruleTextValue ) ) ) )
+            // InternalLibrettoSpec.g:1557:2: ( () otherlv_1= 'project_profile_id' otherlv_2= ':' ( (lv_projectProfileId_3_0= ruleTextValue ) ) )
+            {
+            // InternalLibrettoSpec.g:1557:2: ( () otherlv_1= 'project_profile_id' otherlv_2= ':' ( (lv_projectProfileId_3_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:1558:3: () otherlv_1= 'project_profile_id' otherlv_2= ':' ( (lv_projectProfileId_3_0= ruleTextValue ) )
+            {
+            // InternalLibrettoSpec.g:1558:3: ()
+            // InternalLibrettoSpec.g:1559:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getMetadataProjectProfileIdFieldAccess().getMetadataProjectProfileIdFieldAction_0(),
+            					current);
+            			
+
+            }
+
+            otherlv_1=(Token)match(input,42,FOLLOW_17); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getMetadataProjectProfileIdFieldAccess().getProject_profile_idKeyword_1());
+            		
+            otherlv_2=(Token)match(input,33,FOLLOW_18); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getMetadataProjectProfileIdFieldAccess().getColonKeyword_2());
+            		
+            // InternalLibrettoSpec.g:1573:3: ( (lv_projectProfileId_3_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:1574:4: (lv_projectProfileId_3_0= ruleTextValue )
+            {
+            // InternalLibrettoSpec.g:1574:4: (lv_projectProfileId_3_0= ruleTextValue )
+            // InternalLibrettoSpec.g:1575:5: lv_projectProfileId_3_0= ruleTextValue
+            {
+
+            					newCompositeNode(grammarAccess.getMetadataProjectProfileIdFieldAccess().getProjectProfileIdTextValueParserRuleCall_3_0());
+            				
+            pushFollow(FOLLOW_2);
+            lv_projectProfileId_3_0=ruleTextValue();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getMetadataProjectProfileIdFieldRule());
+            					}
+            					set(
+            						current,
+            						"projectProfileId",
+            						lv_projectProfileId_3_0,
+            						"com.robenglander.libretto.spec.LibrettoSpec.TextValue");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMetadataProjectProfileIdField"
+
+
     // $ANTLR start "entryRuleDependenciesSectionKeyword"
-    // InternalLibrettoSpec.g:1472:1: entryRuleDependenciesSectionKeyword returns [EObject current=null] : iv_ruleDependenciesSectionKeyword= ruleDependenciesSectionKeyword EOF ;
+    // InternalLibrettoSpec.g:1596:1: entryRuleDependenciesSectionKeyword returns [EObject current=null] : iv_ruleDependenciesSectionKeyword= ruleDependenciesSectionKeyword EOF ;
     public final EObject entryRuleDependenciesSectionKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -3867,8 +4175,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:1472:67: (iv_ruleDependenciesSectionKeyword= ruleDependenciesSectionKeyword EOF )
-            // InternalLibrettoSpec.g:1473:2: iv_ruleDependenciesSectionKeyword= ruleDependenciesSectionKeyword EOF
+            // InternalLibrettoSpec.g:1596:67: (iv_ruleDependenciesSectionKeyword= ruleDependenciesSectionKeyword EOF )
+            // InternalLibrettoSpec.g:1597:2: iv_ruleDependenciesSectionKeyword= ruleDependenciesSectionKeyword EOF
             {
              newCompositeNode(grammarAccess.getDependenciesSectionKeywordRule()); 
             pushFollow(FOLLOW_1);
@@ -3895,7 +4203,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDependenciesSectionKeyword"
-    // InternalLibrettoSpec.g:1479:1: ruleDependenciesSectionKeyword returns [EObject current=null] : ( () otherlv_1= 'dependencies' ) ;
+    // InternalLibrettoSpec.g:1603:1: ruleDependenciesSectionKeyword returns [EObject current=null] : ( () otherlv_1= 'dependencies' ) ;
     public final EObject ruleDependenciesSectionKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -3905,14 +4213,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:1485:2: ( ( () otherlv_1= 'dependencies' ) )
-            // InternalLibrettoSpec.g:1486:2: ( () otherlv_1= 'dependencies' )
+            // InternalLibrettoSpec.g:1609:2: ( ( () otherlv_1= 'dependencies' ) )
+            // InternalLibrettoSpec.g:1610:2: ( () otherlv_1= 'dependencies' )
             {
-            // InternalLibrettoSpec.g:1486:2: ( () otherlv_1= 'dependencies' )
-            // InternalLibrettoSpec.g:1487:3: () otherlv_1= 'dependencies'
+            // InternalLibrettoSpec.g:1610:2: ( () otherlv_1= 'dependencies' )
+            // InternalLibrettoSpec.g:1611:3: () otherlv_1= 'dependencies'
             {
-            // InternalLibrettoSpec.g:1487:3: ()
-            // InternalLibrettoSpec.g:1488:4: 
+            // InternalLibrettoSpec.g:1611:3: ()
+            // InternalLibrettoSpec.g:1612:4: 
             {
 
             				current = forceCreateModelElement(
@@ -3922,7 +4230,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,41,FOLLOW_2); 
+            otherlv_1=(Token)match(input,43,FOLLOW_2); 
 
             			newLeafNode(otherlv_1, grammarAccess.getDependenciesSectionKeywordAccess().getDependenciesKeyword_1());
             		
@@ -3949,7 +4257,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDependencyKeyword"
-    // InternalLibrettoSpec.g:1502:1: entryRuleDependencyKeyword returns [EObject current=null] : iv_ruleDependencyKeyword= ruleDependencyKeyword EOF ;
+    // InternalLibrettoSpec.g:1626:1: entryRuleDependencyKeyword returns [EObject current=null] : iv_ruleDependencyKeyword= ruleDependencyKeyword EOF ;
     public final EObject entryRuleDependencyKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -3957,8 +4265,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:1502:58: (iv_ruleDependencyKeyword= ruleDependencyKeyword EOF )
-            // InternalLibrettoSpec.g:1503:2: iv_ruleDependencyKeyword= ruleDependencyKeyword EOF
+            // InternalLibrettoSpec.g:1626:58: (iv_ruleDependencyKeyword= ruleDependencyKeyword EOF )
+            // InternalLibrettoSpec.g:1627:2: iv_ruleDependencyKeyword= ruleDependencyKeyword EOF
             {
              newCompositeNode(grammarAccess.getDependencyKeywordRule()); 
             pushFollow(FOLLOW_1);
@@ -3985,7 +4293,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDependencyKeyword"
-    // InternalLibrettoSpec.g:1509:1: ruleDependencyKeyword returns [EObject current=null] : ( () otherlv_1= 'dependency' ) ;
+    // InternalLibrettoSpec.g:1633:1: ruleDependencyKeyword returns [EObject current=null] : ( () otherlv_1= 'dependency' ) ;
     public final EObject ruleDependencyKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -3995,14 +4303,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:1515:2: ( ( () otherlv_1= 'dependency' ) )
-            // InternalLibrettoSpec.g:1516:2: ( () otherlv_1= 'dependency' )
+            // InternalLibrettoSpec.g:1639:2: ( ( () otherlv_1= 'dependency' ) )
+            // InternalLibrettoSpec.g:1640:2: ( () otherlv_1= 'dependency' )
             {
-            // InternalLibrettoSpec.g:1516:2: ( () otherlv_1= 'dependency' )
-            // InternalLibrettoSpec.g:1517:3: () otherlv_1= 'dependency'
+            // InternalLibrettoSpec.g:1640:2: ( () otherlv_1= 'dependency' )
+            // InternalLibrettoSpec.g:1641:3: () otherlv_1= 'dependency'
             {
-            // InternalLibrettoSpec.g:1517:3: ()
-            // InternalLibrettoSpec.g:1518:4: 
+            // InternalLibrettoSpec.g:1641:3: ()
+            // InternalLibrettoSpec.g:1642:4: 
             {
 
             				current = forceCreateModelElement(
@@ -4012,7 +4320,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,42,FOLLOW_2); 
+            otherlv_1=(Token)match(input,44,FOLLOW_2); 
 
             			newLeafNode(otherlv_1, grammarAccess.getDependencyKeywordAccess().getDependencyKeyword_1());
             		
@@ -4039,7 +4347,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDependencyRecord"
-    // InternalLibrettoSpec.g:1532:1: entryRuleDependencyRecord returns [EObject current=null] : iv_ruleDependencyRecord= ruleDependencyRecord EOF ;
+    // InternalLibrettoSpec.g:1656:1: entryRuleDependencyRecord returns [EObject current=null] : iv_ruleDependencyRecord= ruleDependencyRecord EOF ;
     public final EObject entryRuleDependencyRecord() throws RecognitionException {
         EObject current = null;
 
@@ -4047,8 +4355,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:1532:57: (iv_ruleDependencyRecord= ruleDependencyRecord EOF )
-            // InternalLibrettoSpec.g:1533:2: iv_ruleDependencyRecord= ruleDependencyRecord EOF
+            // InternalLibrettoSpec.g:1656:57: (iv_ruleDependencyRecord= ruleDependencyRecord EOF )
+            // InternalLibrettoSpec.g:1657:2: iv_ruleDependencyRecord= ruleDependencyRecord EOF
             {
              newCompositeNode(grammarAccess.getDependencyRecordRule()); 
             pushFollow(FOLLOW_1);
@@ -4075,7 +4383,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDependencyRecord"
-    // InternalLibrettoSpec.g:1539:1: ruleDependencyRecord returns [EObject current=null] : ( ( (lv_keyword_0_0= ruleDependencyKeyword ) ) ( (lv_id_1_0= RULE_LIBRETTO_ID ) ) otherlv_2= '{' ( (lv_items_3_0= ruleDependencyRecordItem ) )* otherlv_4= '}' ) ;
+    // InternalLibrettoSpec.g:1663:1: ruleDependencyRecord returns [EObject current=null] : ( ( (lv_keyword_0_0= ruleDependencyKeyword ) ) ( (lv_id_1_0= RULE_LIBRETTO_ID ) ) otherlv_2= '{' ( (lv_items_3_0= ruleDependencyRecordItem ) )* otherlv_4= '}' ) ;
     public final EObject ruleDependencyRecord() throws RecognitionException {
         EObject current = null;
 
@@ -4091,17 +4399,17 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:1545:2: ( ( ( (lv_keyword_0_0= ruleDependencyKeyword ) ) ( (lv_id_1_0= RULE_LIBRETTO_ID ) ) otherlv_2= '{' ( (lv_items_3_0= ruleDependencyRecordItem ) )* otherlv_4= '}' ) )
-            // InternalLibrettoSpec.g:1546:2: ( ( (lv_keyword_0_0= ruleDependencyKeyword ) ) ( (lv_id_1_0= RULE_LIBRETTO_ID ) ) otherlv_2= '{' ( (lv_items_3_0= ruleDependencyRecordItem ) )* otherlv_4= '}' )
+            // InternalLibrettoSpec.g:1669:2: ( ( ( (lv_keyword_0_0= ruleDependencyKeyword ) ) ( (lv_id_1_0= RULE_LIBRETTO_ID ) ) otherlv_2= '{' ( (lv_items_3_0= ruleDependencyRecordItem ) )* otherlv_4= '}' ) )
+            // InternalLibrettoSpec.g:1670:2: ( ( (lv_keyword_0_0= ruleDependencyKeyword ) ) ( (lv_id_1_0= RULE_LIBRETTO_ID ) ) otherlv_2= '{' ( (lv_items_3_0= ruleDependencyRecordItem ) )* otherlv_4= '}' )
             {
-            // InternalLibrettoSpec.g:1546:2: ( ( (lv_keyword_0_0= ruleDependencyKeyword ) ) ( (lv_id_1_0= RULE_LIBRETTO_ID ) ) otherlv_2= '{' ( (lv_items_3_0= ruleDependencyRecordItem ) )* otherlv_4= '}' )
-            // InternalLibrettoSpec.g:1547:3: ( (lv_keyword_0_0= ruleDependencyKeyword ) ) ( (lv_id_1_0= RULE_LIBRETTO_ID ) ) otherlv_2= '{' ( (lv_items_3_0= ruleDependencyRecordItem ) )* otherlv_4= '}'
+            // InternalLibrettoSpec.g:1670:2: ( ( (lv_keyword_0_0= ruleDependencyKeyword ) ) ( (lv_id_1_0= RULE_LIBRETTO_ID ) ) otherlv_2= '{' ( (lv_items_3_0= ruleDependencyRecordItem ) )* otherlv_4= '}' )
+            // InternalLibrettoSpec.g:1671:3: ( (lv_keyword_0_0= ruleDependencyKeyword ) ) ( (lv_id_1_0= RULE_LIBRETTO_ID ) ) otherlv_2= '{' ( (lv_items_3_0= ruleDependencyRecordItem ) )* otherlv_4= '}'
             {
-            // InternalLibrettoSpec.g:1547:3: ( (lv_keyword_0_0= ruleDependencyKeyword ) )
-            // InternalLibrettoSpec.g:1548:4: (lv_keyword_0_0= ruleDependencyKeyword )
+            // InternalLibrettoSpec.g:1671:3: ( (lv_keyword_0_0= ruleDependencyKeyword ) )
+            // InternalLibrettoSpec.g:1672:4: (lv_keyword_0_0= ruleDependencyKeyword )
             {
-            // InternalLibrettoSpec.g:1548:4: (lv_keyword_0_0= ruleDependencyKeyword )
-            // InternalLibrettoSpec.g:1549:5: lv_keyword_0_0= ruleDependencyKeyword
+            // InternalLibrettoSpec.g:1672:4: (lv_keyword_0_0= ruleDependencyKeyword )
+            // InternalLibrettoSpec.g:1673:5: lv_keyword_0_0= ruleDependencyKeyword
             {
 
             					newCompositeNode(grammarAccess.getDependencyRecordAccess().getKeywordDependencyKeywordParserRuleCall_0_0());
@@ -4128,11 +4436,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalLibrettoSpec.g:1566:3: ( (lv_id_1_0= RULE_LIBRETTO_ID ) )
-            // InternalLibrettoSpec.g:1567:4: (lv_id_1_0= RULE_LIBRETTO_ID )
+            // InternalLibrettoSpec.g:1690:3: ( (lv_id_1_0= RULE_LIBRETTO_ID ) )
+            // InternalLibrettoSpec.g:1691:4: (lv_id_1_0= RULE_LIBRETTO_ID )
             {
-            // InternalLibrettoSpec.g:1567:4: (lv_id_1_0= RULE_LIBRETTO_ID )
-            // InternalLibrettoSpec.g:1568:5: lv_id_1_0= RULE_LIBRETTO_ID
+            // InternalLibrettoSpec.g:1691:4: (lv_id_1_0= RULE_LIBRETTO_ID )
+            // InternalLibrettoSpec.g:1692:5: lv_id_1_0= RULE_LIBRETTO_ID
             {
             lv_id_1_0=(Token)match(input,RULE_LIBRETTO_ID,FOLLOW_4); 
 
@@ -4158,23 +4466,23 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getDependencyRecordAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalLibrettoSpec.g:1588:3: ( (lv_items_3_0= ruleDependencyRecordItem ) )*
+            // InternalLibrettoSpec.g:1712:3: ( (lv_items_3_0= ruleDependencyRecordItem ) )*
             loop16:
             do {
                 int alt16=2;
                 int LA16_0 = input.LA(1);
 
-                if ( (LA16_0==43||LA16_0==62) ) {
+                if ( (LA16_0==45||LA16_0==64) ) {
                     alt16=1;
                 }
 
 
                 switch (alt16) {
             	case 1 :
-            	    // InternalLibrettoSpec.g:1589:4: (lv_items_3_0= ruleDependencyRecordItem )
+            	    // InternalLibrettoSpec.g:1713:4: (lv_items_3_0= ruleDependencyRecordItem )
             	    {
-            	    // InternalLibrettoSpec.g:1589:4: (lv_items_3_0= ruleDependencyRecordItem )
-            	    // InternalLibrettoSpec.g:1590:5: lv_items_3_0= ruleDependencyRecordItem
+            	    // InternalLibrettoSpec.g:1713:4: (lv_items_3_0= ruleDependencyRecordItem )
+            	    // InternalLibrettoSpec.g:1714:5: lv_items_3_0= ruleDependencyRecordItem
             	    {
 
             	    					newCompositeNode(grammarAccess.getDependencyRecordAccess().getItemsDependencyRecordItemParserRuleCall_3_0());
@@ -4234,7 +4542,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDependencyRecordItem"
-    // InternalLibrettoSpec.g:1615:1: entryRuleDependencyRecordItem returns [EObject current=null] : iv_ruleDependencyRecordItem= ruleDependencyRecordItem EOF ;
+    // InternalLibrettoSpec.g:1739:1: entryRuleDependencyRecordItem returns [EObject current=null] : iv_ruleDependencyRecordItem= ruleDependencyRecordItem EOF ;
     public final EObject entryRuleDependencyRecordItem() throws RecognitionException {
         EObject current = null;
 
@@ -4242,8 +4550,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:1615:61: (iv_ruleDependencyRecordItem= ruleDependencyRecordItem EOF )
-            // InternalLibrettoSpec.g:1616:2: iv_ruleDependencyRecordItem= ruleDependencyRecordItem EOF
+            // InternalLibrettoSpec.g:1739:61: (iv_ruleDependencyRecordItem= ruleDependencyRecordItem EOF )
+            // InternalLibrettoSpec.g:1740:2: iv_ruleDependencyRecordItem= ruleDependencyRecordItem EOF
             {
              newCompositeNode(grammarAccess.getDependencyRecordItemRule()); 
             pushFollow(FOLLOW_1);
@@ -4270,7 +4578,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDependencyRecordItem"
-    // InternalLibrettoSpec.g:1622:1: ruleDependencyRecordItem returns [EObject current=null] : (this_DependencyTargetSpecItem_0= ruleDependencyTargetSpecItem | this_DependencyNotesItem_1= ruleDependencyNotesItem ) ;
+    // InternalLibrettoSpec.g:1746:1: ruleDependencyRecordItem returns [EObject current=null] : (this_DependencyTargetSpecItem_0= ruleDependencyTargetSpecItem | this_DependencyNotesItem_1= ruleDependencyNotesItem ) ;
     public final EObject ruleDependencyRecordItem() throws RecognitionException {
         EObject current = null;
 
@@ -4283,17 +4591,17 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:1628:2: ( (this_DependencyTargetSpecItem_0= ruleDependencyTargetSpecItem | this_DependencyNotesItem_1= ruleDependencyNotesItem ) )
-            // InternalLibrettoSpec.g:1629:2: (this_DependencyTargetSpecItem_0= ruleDependencyTargetSpecItem | this_DependencyNotesItem_1= ruleDependencyNotesItem )
+            // InternalLibrettoSpec.g:1752:2: ( (this_DependencyTargetSpecItem_0= ruleDependencyTargetSpecItem | this_DependencyNotesItem_1= ruleDependencyNotesItem ) )
+            // InternalLibrettoSpec.g:1753:2: (this_DependencyTargetSpecItem_0= ruleDependencyTargetSpecItem | this_DependencyNotesItem_1= ruleDependencyNotesItem )
             {
-            // InternalLibrettoSpec.g:1629:2: (this_DependencyTargetSpecItem_0= ruleDependencyTargetSpecItem | this_DependencyNotesItem_1= ruleDependencyNotesItem )
+            // InternalLibrettoSpec.g:1753:2: (this_DependencyTargetSpecItem_0= ruleDependencyTargetSpecItem | this_DependencyNotesItem_1= ruleDependencyNotesItem )
             int alt17=2;
             int LA17_0 = input.LA(1);
 
-            if ( (LA17_0==43) ) {
+            if ( (LA17_0==45) ) {
                 alt17=1;
             }
-            else if ( (LA17_0==62) ) {
+            else if ( (LA17_0==64) ) {
                 alt17=2;
             }
             else {
@@ -4304,7 +4612,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
             }
             switch (alt17) {
                 case 1 :
-                    // InternalLibrettoSpec.g:1630:3: this_DependencyTargetSpecItem_0= ruleDependencyTargetSpecItem
+                    // InternalLibrettoSpec.g:1754:3: this_DependencyTargetSpecItem_0= ruleDependencyTargetSpecItem
                     {
 
                     			newCompositeNode(grammarAccess.getDependencyRecordItemAccess().getDependencyTargetSpecItemParserRuleCall_0());
@@ -4322,7 +4630,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoSpec.g:1639:3: this_DependencyNotesItem_1= ruleDependencyNotesItem
+                    // InternalLibrettoSpec.g:1763:3: this_DependencyNotesItem_1= ruleDependencyNotesItem
                     {
 
                     			newCompositeNode(grammarAccess.getDependencyRecordItemAccess().getDependencyNotesItemParserRuleCall_1());
@@ -4362,7 +4670,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDependencyTargetSpecItem"
-    // InternalLibrettoSpec.g:1651:1: entryRuleDependencyTargetSpecItem returns [EObject current=null] : iv_ruleDependencyTargetSpecItem= ruleDependencyTargetSpecItem EOF ;
+    // InternalLibrettoSpec.g:1775:1: entryRuleDependencyTargetSpecItem returns [EObject current=null] : iv_ruleDependencyTargetSpecItem= ruleDependencyTargetSpecItem EOF ;
     public final EObject entryRuleDependencyTargetSpecItem() throws RecognitionException {
         EObject current = null;
 
@@ -4370,8 +4678,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:1651:65: (iv_ruleDependencyTargetSpecItem= ruleDependencyTargetSpecItem EOF )
-            // InternalLibrettoSpec.g:1652:2: iv_ruleDependencyTargetSpecItem= ruleDependencyTargetSpecItem EOF
+            // InternalLibrettoSpec.g:1775:65: (iv_ruleDependencyTargetSpecItem= ruleDependencyTargetSpecItem EOF )
+            // InternalLibrettoSpec.g:1776:2: iv_ruleDependencyTargetSpecItem= ruleDependencyTargetSpecItem EOF
             {
              newCompositeNode(grammarAccess.getDependencyTargetSpecItemRule()); 
             pushFollow(FOLLOW_1);
@@ -4398,7 +4706,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDependencyTargetSpecItem"
-    // InternalLibrettoSpec.g:1658:1: ruleDependencyTargetSpecItem returns [EObject current=null] : ( (lv_targetSpec_0_0= ruleTargetSpecField ) ) ;
+    // InternalLibrettoSpec.g:1782:1: ruleDependencyTargetSpecItem returns [EObject current=null] : ( (lv_targetSpec_0_0= ruleTargetSpecField ) ) ;
     public final EObject ruleDependencyTargetSpecItem() throws RecognitionException {
         EObject current = null;
 
@@ -4409,14 +4717,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:1664:2: ( ( (lv_targetSpec_0_0= ruleTargetSpecField ) ) )
-            // InternalLibrettoSpec.g:1665:2: ( (lv_targetSpec_0_0= ruleTargetSpecField ) )
+            // InternalLibrettoSpec.g:1788:2: ( ( (lv_targetSpec_0_0= ruleTargetSpecField ) ) )
+            // InternalLibrettoSpec.g:1789:2: ( (lv_targetSpec_0_0= ruleTargetSpecField ) )
             {
-            // InternalLibrettoSpec.g:1665:2: ( (lv_targetSpec_0_0= ruleTargetSpecField ) )
-            // InternalLibrettoSpec.g:1666:3: (lv_targetSpec_0_0= ruleTargetSpecField )
+            // InternalLibrettoSpec.g:1789:2: ( (lv_targetSpec_0_0= ruleTargetSpecField ) )
+            // InternalLibrettoSpec.g:1790:3: (lv_targetSpec_0_0= ruleTargetSpecField )
             {
-            // InternalLibrettoSpec.g:1666:3: (lv_targetSpec_0_0= ruleTargetSpecField )
-            // InternalLibrettoSpec.g:1667:4: lv_targetSpec_0_0= ruleTargetSpecField
+            // InternalLibrettoSpec.g:1790:3: (lv_targetSpec_0_0= ruleTargetSpecField )
+            // InternalLibrettoSpec.g:1791:4: lv_targetSpec_0_0= ruleTargetSpecField
             {
 
             				newCompositeNode(grammarAccess.getDependencyTargetSpecItemAccess().getTargetSpecTargetSpecFieldParserRuleCall_0());
@@ -4463,7 +4771,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDependencyNotesItem"
-    // InternalLibrettoSpec.g:1687:1: entryRuleDependencyNotesItem returns [EObject current=null] : iv_ruleDependencyNotesItem= ruleDependencyNotesItem EOF ;
+    // InternalLibrettoSpec.g:1811:1: entryRuleDependencyNotesItem returns [EObject current=null] : iv_ruleDependencyNotesItem= ruleDependencyNotesItem EOF ;
     public final EObject entryRuleDependencyNotesItem() throws RecognitionException {
         EObject current = null;
 
@@ -4471,8 +4779,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:1687:60: (iv_ruleDependencyNotesItem= ruleDependencyNotesItem EOF )
-            // InternalLibrettoSpec.g:1688:2: iv_ruleDependencyNotesItem= ruleDependencyNotesItem EOF
+            // InternalLibrettoSpec.g:1811:60: (iv_ruleDependencyNotesItem= ruleDependencyNotesItem EOF )
+            // InternalLibrettoSpec.g:1812:2: iv_ruleDependencyNotesItem= ruleDependencyNotesItem EOF
             {
              newCompositeNode(grammarAccess.getDependencyNotesItemRule()); 
             pushFollow(FOLLOW_1);
@@ -4499,7 +4807,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDependencyNotesItem"
-    // InternalLibrettoSpec.g:1694:1: ruleDependencyNotesItem returns [EObject current=null] : ( (lv_notes_0_0= ruleNotesField ) ) ;
+    // InternalLibrettoSpec.g:1818:1: ruleDependencyNotesItem returns [EObject current=null] : ( (lv_notes_0_0= ruleNotesField ) ) ;
     public final EObject ruleDependencyNotesItem() throws RecognitionException {
         EObject current = null;
 
@@ -4510,14 +4818,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:1700:2: ( ( (lv_notes_0_0= ruleNotesField ) ) )
-            // InternalLibrettoSpec.g:1701:2: ( (lv_notes_0_0= ruleNotesField ) )
+            // InternalLibrettoSpec.g:1824:2: ( ( (lv_notes_0_0= ruleNotesField ) ) )
+            // InternalLibrettoSpec.g:1825:2: ( (lv_notes_0_0= ruleNotesField ) )
             {
-            // InternalLibrettoSpec.g:1701:2: ( (lv_notes_0_0= ruleNotesField ) )
-            // InternalLibrettoSpec.g:1702:3: (lv_notes_0_0= ruleNotesField )
+            // InternalLibrettoSpec.g:1825:2: ( (lv_notes_0_0= ruleNotesField ) )
+            // InternalLibrettoSpec.g:1826:3: (lv_notes_0_0= ruleNotesField )
             {
-            // InternalLibrettoSpec.g:1702:3: (lv_notes_0_0= ruleNotesField )
-            // InternalLibrettoSpec.g:1703:4: lv_notes_0_0= ruleNotesField
+            // InternalLibrettoSpec.g:1826:3: (lv_notes_0_0= ruleNotesField )
+            // InternalLibrettoSpec.g:1827:4: lv_notes_0_0= ruleNotesField
             {
 
             				newCompositeNode(grammarAccess.getDependencyNotesItemAccess().getNotesNotesFieldParserRuleCall_0());
@@ -4564,7 +4872,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTargetSpecField"
-    // InternalLibrettoSpec.g:1723:1: entryRuleTargetSpecField returns [EObject current=null] : iv_ruleTargetSpecField= ruleTargetSpecField EOF ;
+    // InternalLibrettoSpec.g:1847:1: entryRuleTargetSpecField returns [EObject current=null] : iv_ruleTargetSpecField= ruleTargetSpecField EOF ;
     public final EObject entryRuleTargetSpecField() throws RecognitionException {
         EObject current = null;
 
@@ -4572,8 +4880,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:1723:56: (iv_ruleTargetSpecField= ruleTargetSpecField EOF )
-            // InternalLibrettoSpec.g:1724:2: iv_ruleTargetSpecField= ruleTargetSpecField EOF
+            // InternalLibrettoSpec.g:1847:56: (iv_ruleTargetSpecField= ruleTargetSpecField EOF )
+            // InternalLibrettoSpec.g:1848:2: iv_ruleTargetSpecField= ruleTargetSpecField EOF
             {
              newCompositeNode(grammarAccess.getTargetSpecFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -4600,7 +4908,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTargetSpecField"
-    // InternalLibrettoSpec.g:1730:1: ruleTargetSpecField returns [EObject current=null] : (otherlv_0= 'target_spec' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
+    // InternalLibrettoSpec.g:1854:1: ruleTargetSpecField returns [EObject current=null] : (otherlv_0= 'target_spec' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
     public final EObject ruleTargetSpecField() throws RecognitionException {
         EObject current = null;
 
@@ -4613,13 +4921,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:1736:2: ( (otherlv_0= 'target_spec' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
-            // InternalLibrettoSpec.g:1737:2: (otherlv_0= 'target_spec' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:1860:2: ( (otherlv_0= 'target_spec' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
+            // InternalLibrettoSpec.g:1861:2: (otherlv_0= 'target_spec' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
             {
-            // InternalLibrettoSpec.g:1737:2: (otherlv_0= 'target_spec' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
-            // InternalLibrettoSpec.g:1738:3: otherlv_0= 'target_spec' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:1861:2: (otherlv_0= 'target_spec' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:1862:3: otherlv_0= 'target_spec' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
             {
-            otherlv_0=(Token)match(input,43,FOLLOW_17); 
+            otherlv_0=(Token)match(input,45,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getTargetSpecFieldAccess().getTarget_specKeyword_0());
             		
@@ -4627,11 +4935,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getTargetSpecFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:1746:3: ( (lv_value_2_0= ruleTextValue ) )
-            // InternalLibrettoSpec.g:1747:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:1870:3: ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:1871:4: (lv_value_2_0= ruleTextValue )
             {
-            // InternalLibrettoSpec.g:1747:4: (lv_value_2_0= ruleTextValue )
-            // InternalLibrettoSpec.g:1748:5: lv_value_2_0= ruleTextValue
+            // InternalLibrettoSpec.g:1871:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:1872:5: lv_value_2_0= ruleTextValue
             {
 
             					newCompositeNode(grammarAccess.getTargetSpecFieldAccess().getValueTextValueParserRuleCall_2_0());
@@ -4681,7 +4989,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleReferenceRecord"
-    // InternalLibrettoSpec.g:1769:1: entryRuleReferenceRecord returns [EObject current=null] : iv_ruleReferenceRecord= ruleReferenceRecord EOF ;
+    // InternalLibrettoSpec.g:1893:1: entryRuleReferenceRecord returns [EObject current=null] : iv_ruleReferenceRecord= ruleReferenceRecord EOF ;
     public final EObject entryRuleReferenceRecord() throws RecognitionException {
         EObject current = null;
 
@@ -4689,8 +4997,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:1769:56: (iv_ruleReferenceRecord= ruleReferenceRecord EOF )
-            // InternalLibrettoSpec.g:1770:2: iv_ruleReferenceRecord= ruleReferenceRecord EOF
+            // InternalLibrettoSpec.g:1893:56: (iv_ruleReferenceRecord= ruleReferenceRecord EOF )
+            // InternalLibrettoSpec.g:1894:2: iv_ruleReferenceRecord= ruleReferenceRecord EOF
             {
              newCompositeNode(grammarAccess.getReferenceRecordRule()); 
             pushFollow(FOLLOW_1);
@@ -4717,7 +5025,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleReferenceRecord"
-    // InternalLibrettoSpec.g:1776:1: ruleReferenceRecord returns [EObject current=null] : (otherlv_0= 'reference' ( (lv_id_1_0= ruleRefId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleReferenceRecordItem ) )* otherlv_4= '}' ) ;
+    // InternalLibrettoSpec.g:1900:1: ruleReferenceRecord returns [EObject current=null] : (otherlv_0= 'reference' ( (lv_id_1_0= ruleRefId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleReferenceRecordItem ) )* otherlv_4= '}' ) ;
     public final EObject ruleReferenceRecord() throws RecognitionException {
         EObject current = null;
 
@@ -4733,21 +5041,21 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:1782:2: ( (otherlv_0= 'reference' ( (lv_id_1_0= ruleRefId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleReferenceRecordItem ) )* otherlv_4= '}' ) )
-            // InternalLibrettoSpec.g:1783:2: (otherlv_0= 'reference' ( (lv_id_1_0= ruleRefId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleReferenceRecordItem ) )* otherlv_4= '}' )
+            // InternalLibrettoSpec.g:1906:2: ( (otherlv_0= 'reference' ( (lv_id_1_0= ruleRefId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleReferenceRecordItem ) )* otherlv_4= '}' ) )
+            // InternalLibrettoSpec.g:1907:2: (otherlv_0= 'reference' ( (lv_id_1_0= ruleRefId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleReferenceRecordItem ) )* otherlv_4= '}' )
             {
-            // InternalLibrettoSpec.g:1783:2: (otherlv_0= 'reference' ( (lv_id_1_0= ruleRefId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleReferenceRecordItem ) )* otherlv_4= '}' )
-            // InternalLibrettoSpec.g:1784:3: otherlv_0= 'reference' ( (lv_id_1_0= ruleRefId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleReferenceRecordItem ) )* otherlv_4= '}'
+            // InternalLibrettoSpec.g:1907:2: (otherlv_0= 'reference' ( (lv_id_1_0= ruleRefId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleReferenceRecordItem ) )* otherlv_4= '}' )
+            // InternalLibrettoSpec.g:1908:3: otherlv_0= 'reference' ( (lv_id_1_0= ruleRefId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleReferenceRecordItem ) )* otherlv_4= '}'
             {
-            otherlv_0=(Token)match(input,44,FOLLOW_21); 
+            otherlv_0=(Token)match(input,46,FOLLOW_21); 
 
             			newLeafNode(otherlv_0, grammarAccess.getReferenceRecordAccess().getReferenceKeyword_0());
             		
-            // InternalLibrettoSpec.g:1788:3: ( (lv_id_1_0= ruleRefId ) )
-            // InternalLibrettoSpec.g:1789:4: (lv_id_1_0= ruleRefId )
+            // InternalLibrettoSpec.g:1912:3: ( (lv_id_1_0= ruleRefId ) )
+            // InternalLibrettoSpec.g:1913:4: (lv_id_1_0= ruleRefId )
             {
-            // InternalLibrettoSpec.g:1789:4: (lv_id_1_0= ruleRefId )
-            // InternalLibrettoSpec.g:1790:5: lv_id_1_0= ruleRefId
+            // InternalLibrettoSpec.g:1913:4: (lv_id_1_0= ruleRefId )
+            // InternalLibrettoSpec.g:1914:5: lv_id_1_0= ruleRefId
             {
 
             					newCompositeNode(grammarAccess.getReferenceRecordAccess().getIdRefIdParserRuleCall_1_0());
@@ -4778,23 +5086,23 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getReferenceRecordAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalLibrettoSpec.g:1811:3: ( (lv_items_3_0= ruleReferenceRecordItem ) )*
+            // InternalLibrettoSpec.g:1935:3: ( (lv_items_3_0= ruleReferenceRecordItem ) )*
             loop18:
             do {
                 int alt18=2;
                 int LA18_0 = input.LA(1);
 
-                if ( (LA18_0==21||LA18_0==32||(LA18_0>=45 && LA18_0<=48)||LA18_0==63) ) {
+                if ( (LA18_0==21||LA18_0==32||(LA18_0>=47 && LA18_0<=50)||LA18_0==65) ) {
                     alt18=1;
                 }
 
 
                 switch (alt18) {
             	case 1 :
-            	    // InternalLibrettoSpec.g:1812:4: (lv_items_3_0= ruleReferenceRecordItem )
+            	    // InternalLibrettoSpec.g:1936:4: (lv_items_3_0= ruleReferenceRecordItem )
             	    {
-            	    // InternalLibrettoSpec.g:1812:4: (lv_items_3_0= ruleReferenceRecordItem )
-            	    // InternalLibrettoSpec.g:1813:5: lv_items_3_0= ruleReferenceRecordItem
+            	    // InternalLibrettoSpec.g:1936:4: (lv_items_3_0= ruleReferenceRecordItem )
+            	    // InternalLibrettoSpec.g:1937:5: lv_items_3_0= ruleReferenceRecordItem
             	    {
 
             	    					newCompositeNode(grammarAccess.getReferenceRecordAccess().getItemsReferenceRecordItemParserRuleCall_3_0());
@@ -4854,7 +5162,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleReferenceRecordItem"
-    // InternalLibrettoSpec.g:1838:1: entryRuleReferenceRecordItem returns [EObject current=null] : iv_ruleReferenceRecordItem= ruleReferenceRecordItem EOF ;
+    // InternalLibrettoSpec.g:1962:1: entryRuleReferenceRecordItem returns [EObject current=null] : iv_ruleReferenceRecordItem= ruleReferenceRecordItem EOF ;
     public final EObject entryRuleReferenceRecordItem() throws RecognitionException {
         EObject current = null;
 
@@ -4862,8 +5170,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:1838:60: (iv_ruleReferenceRecordItem= ruleReferenceRecordItem EOF )
-            // InternalLibrettoSpec.g:1839:2: iv_ruleReferenceRecordItem= ruleReferenceRecordItem EOF
+            // InternalLibrettoSpec.g:1962:60: (iv_ruleReferenceRecordItem= ruleReferenceRecordItem EOF )
+            // InternalLibrettoSpec.g:1963:2: iv_ruleReferenceRecordItem= ruleReferenceRecordItem EOF
             {
              newCompositeNode(grammarAccess.getReferenceRecordItemRule()); 
             pushFollow(FOLLOW_1);
@@ -4890,7 +5198,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleReferenceRecordItem"
-    // InternalLibrettoSpec.g:1845:1: ruleReferenceRecordItem returns [EObject current=null] : (this_ReferenceTitleItem_0= ruleReferenceTitleItem | this_ReferenceTypeItem_1= ruleReferenceTypeItem | this_ReferenceCitationItem_2= ruleReferenceCitationItem | this_ReferenceLocatorItem_3= ruleReferenceLocatorItem | this_ReferenceAuthorityNotesItem_4= ruleReferenceAuthorityNotesItem | this_ReferenceMetadataTextItem_5= ruleReferenceMetadataTextItem | this_ReferenceContextItem_6= ruleReferenceContextItem ) ;
+    // InternalLibrettoSpec.g:1969:1: ruleReferenceRecordItem returns [EObject current=null] : (this_ReferenceTitleItem_0= ruleReferenceTitleItem | this_ReferenceTypeItem_1= ruleReferenceTypeItem | this_ReferenceCitationItem_2= ruleReferenceCitationItem | this_ReferenceLocatorItem_3= ruleReferenceLocatorItem | this_ReferenceAuthorityNotesItem_4= ruleReferenceAuthorityNotesItem | this_ReferenceMetadataTextItem_5= ruleReferenceMetadataTextItem | this_ReferenceContextItem_6= ruleReferenceContextItem ) ;
     public final EObject ruleReferenceRecordItem() throws RecognitionException {
         EObject current = null;
 
@@ -4913,10 +5221,10 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:1851:2: ( (this_ReferenceTitleItem_0= ruleReferenceTitleItem | this_ReferenceTypeItem_1= ruleReferenceTypeItem | this_ReferenceCitationItem_2= ruleReferenceCitationItem | this_ReferenceLocatorItem_3= ruleReferenceLocatorItem | this_ReferenceAuthorityNotesItem_4= ruleReferenceAuthorityNotesItem | this_ReferenceMetadataTextItem_5= ruleReferenceMetadataTextItem | this_ReferenceContextItem_6= ruleReferenceContextItem ) )
-            // InternalLibrettoSpec.g:1852:2: (this_ReferenceTitleItem_0= ruleReferenceTitleItem | this_ReferenceTypeItem_1= ruleReferenceTypeItem | this_ReferenceCitationItem_2= ruleReferenceCitationItem | this_ReferenceLocatorItem_3= ruleReferenceLocatorItem | this_ReferenceAuthorityNotesItem_4= ruleReferenceAuthorityNotesItem | this_ReferenceMetadataTextItem_5= ruleReferenceMetadataTextItem | this_ReferenceContextItem_6= ruleReferenceContextItem )
+            // InternalLibrettoSpec.g:1975:2: ( (this_ReferenceTitleItem_0= ruleReferenceTitleItem | this_ReferenceTypeItem_1= ruleReferenceTypeItem | this_ReferenceCitationItem_2= ruleReferenceCitationItem | this_ReferenceLocatorItem_3= ruleReferenceLocatorItem | this_ReferenceAuthorityNotesItem_4= ruleReferenceAuthorityNotesItem | this_ReferenceMetadataTextItem_5= ruleReferenceMetadataTextItem | this_ReferenceContextItem_6= ruleReferenceContextItem ) )
+            // InternalLibrettoSpec.g:1976:2: (this_ReferenceTitleItem_0= ruleReferenceTitleItem | this_ReferenceTypeItem_1= ruleReferenceTypeItem | this_ReferenceCitationItem_2= ruleReferenceCitationItem | this_ReferenceLocatorItem_3= ruleReferenceLocatorItem | this_ReferenceAuthorityNotesItem_4= ruleReferenceAuthorityNotesItem | this_ReferenceMetadataTextItem_5= ruleReferenceMetadataTextItem | this_ReferenceContextItem_6= ruleReferenceContextItem )
             {
-            // InternalLibrettoSpec.g:1852:2: (this_ReferenceTitleItem_0= ruleReferenceTitleItem | this_ReferenceTypeItem_1= ruleReferenceTypeItem | this_ReferenceCitationItem_2= ruleReferenceCitationItem | this_ReferenceLocatorItem_3= ruleReferenceLocatorItem | this_ReferenceAuthorityNotesItem_4= ruleReferenceAuthorityNotesItem | this_ReferenceMetadataTextItem_5= ruleReferenceMetadataTextItem | this_ReferenceContextItem_6= ruleReferenceContextItem )
+            // InternalLibrettoSpec.g:1976:2: (this_ReferenceTitleItem_0= ruleReferenceTitleItem | this_ReferenceTypeItem_1= ruleReferenceTypeItem | this_ReferenceCitationItem_2= ruleReferenceCitationItem | this_ReferenceLocatorItem_3= ruleReferenceLocatorItem | this_ReferenceAuthorityNotesItem_4= ruleReferenceAuthorityNotesItem | this_ReferenceMetadataTextItem_5= ruleReferenceMetadataTextItem | this_ReferenceContextItem_6= ruleReferenceContextItem )
             int alt19=7;
             switch ( input.LA(1) ) {
             case 32:
@@ -4924,22 +5232,22 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                 alt19=1;
                 }
                 break;
-            case 45:
+            case 47:
                 {
                 alt19=2;
                 }
                 break;
-            case 46:
+            case 48:
                 {
                 alt19=3;
                 }
                 break;
-            case 47:
+            case 49:
                 {
                 alt19=4;
                 }
                 break;
-            case 48:
+            case 50:
                 {
                 alt19=5;
                 }
@@ -4949,7 +5257,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                 alt19=6;
                 }
                 break;
-            case 63:
+            case 65:
                 {
                 alt19=7;
                 }
@@ -4963,7 +5271,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             switch (alt19) {
                 case 1 :
-                    // InternalLibrettoSpec.g:1853:3: this_ReferenceTitleItem_0= ruleReferenceTitleItem
+                    // InternalLibrettoSpec.g:1977:3: this_ReferenceTitleItem_0= ruleReferenceTitleItem
                     {
 
                     			newCompositeNode(grammarAccess.getReferenceRecordItemAccess().getReferenceTitleItemParserRuleCall_0());
@@ -4981,7 +5289,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoSpec.g:1862:3: this_ReferenceTypeItem_1= ruleReferenceTypeItem
+                    // InternalLibrettoSpec.g:1986:3: this_ReferenceTypeItem_1= ruleReferenceTypeItem
                     {
 
                     			newCompositeNode(grammarAccess.getReferenceRecordItemAccess().getReferenceTypeItemParserRuleCall_1());
@@ -4999,7 +5307,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalLibrettoSpec.g:1871:3: this_ReferenceCitationItem_2= ruleReferenceCitationItem
+                    // InternalLibrettoSpec.g:1995:3: this_ReferenceCitationItem_2= ruleReferenceCitationItem
                     {
 
                     			newCompositeNode(grammarAccess.getReferenceRecordItemAccess().getReferenceCitationItemParserRuleCall_2());
@@ -5017,7 +5325,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalLibrettoSpec.g:1880:3: this_ReferenceLocatorItem_3= ruleReferenceLocatorItem
+                    // InternalLibrettoSpec.g:2004:3: this_ReferenceLocatorItem_3= ruleReferenceLocatorItem
                     {
 
                     			newCompositeNode(grammarAccess.getReferenceRecordItemAccess().getReferenceLocatorItemParserRuleCall_3());
@@ -5035,7 +5343,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalLibrettoSpec.g:1889:3: this_ReferenceAuthorityNotesItem_4= ruleReferenceAuthorityNotesItem
+                    // InternalLibrettoSpec.g:2013:3: this_ReferenceAuthorityNotesItem_4= ruleReferenceAuthorityNotesItem
                     {
 
                     			newCompositeNode(grammarAccess.getReferenceRecordItemAccess().getReferenceAuthorityNotesItemParserRuleCall_4());
@@ -5053,7 +5361,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalLibrettoSpec.g:1898:3: this_ReferenceMetadataTextItem_5= ruleReferenceMetadataTextItem
+                    // InternalLibrettoSpec.g:2022:3: this_ReferenceMetadataTextItem_5= ruleReferenceMetadataTextItem
                     {
 
                     			newCompositeNode(grammarAccess.getReferenceRecordItemAccess().getReferenceMetadataTextItemParserRuleCall_5());
@@ -5071,7 +5379,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalLibrettoSpec.g:1907:3: this_ReferenceContextItem_6= ruleReferenceContextItem
+                    // InternalLibrettoSpec.g:2031:3: this_ReferenceContextItem_6= ruleReferenceContextItem
                     {
 
                     			newCompositeNode(grammarAccess.getReferenceRecordItemAccess().getReferenceContextItemParserRuleCall_6());
@@ -5111,7 +5419,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleReferenceTitleItem"
-    // InternalLibrettoSpec.g:1919:1: entryRuleReferenceTitleItem returns [EObject current=null] : iv_ruleReferenceTitleItem= ruleReferenceTitleItem EOF ;
+    // InternalLibrettoSpec.g:2043:1: entryRuleReferenceTitleItem returns [EObject current=null] : iv_ruleReferenceTitleItem= ruleReferenceTitleItem EOF ;
     public final EObject entryRuleReferenceTitleItem() throws RecognitionException {
         EObject current = null;
 
@@ -5119,8 +5427,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:1919:59: (iv_ruleReferenceTitleItem= ruleReferenceTitleItem EOF )
-            // InternalLibrettoSpec.g:1920:2: iv_ruleReferenceTitleItem= ruleReferenceTitleItem EOF
+            // InternalLibrettoSpec.g:2043:59: (iv_ruleReferenceTitleItem= ruleReferenceTitleItem EOF )
+            // InternalLibrettoSpec.g:2044:2: iv_ruleReferenceTitleItem= ruleReferenceTitleItem EOF
             {
              newCompositeNode(grammarAccess.getReferenceTitleItemRule()); 
             pushFollow(FOLLOW_1);
@@ -5147,7 +5455,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleReferenceTitleItem"
-    // InternalLibrettoSpec.g:1926:1: ruleReferenceTitleItem returns [EObject current=null] : ( (lv_title_0_0= ruleTitleField ) ) ;
+    // InternalLibrettoSpec.g:2050:1: ruleReferenceTitleItem returns [EObject current=null] : ( (lv_title_0_0= ruleTitleField ) ) ;
     public final EObject ruleReferenceTitleItem() throws RecognitionException {
         EObject current = null;
 
@@ -5158,14 +5466,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:1932:2: ( ( (lv_title_0_0= ruleTitleField ) ) )
-            // InternalLibrettoSpec.g:1933:2: ( (lv_title_0_0= ruleTitleField ) )
+            // InternalLibrettoSpec.g:2056:2: ( ( (lv_title_0_0= ruleTitleField ) ) )
+            // InternalLibrettoSpec.g:2057:2: ( (lv_title_0_0= ruleTitleField ) )
             {
-            // InternalLibrettoSpec.g:1933:2: ( (lv_title_0_0= ruleTitleField ) )
-            // InternalLibrettoSpec.g:1934:3: (lv_title_0_0= ruleTitleField )
+            // InternalLibrettoSpec.g:2057:2: ( (lv_title_0_0= ruleTitleField ) )
+            // InternalLibrettoSpec.g:2058:3: (lv_title_0_0= ruleTitleField )
             {
-            // InternalLibrettoSpec.g:1934:3: (lv_title_0_0= ruleTitleField )
-            // InternalLibrettoSpec.g:1935:4: lv_title_0_0= ruleTitleField
+            // InternalLibrettoSpec.g:2058:3: (lv_title_0_0= ruleTitleField )
+            // InternalLibrettoSpec.g:2059:4: lv_title_0_0= ruleTitleField
             {
 
             				newCompositeNode(grammarAccess.getReferenceTitleItemAccess().getTitleTitleFieldParserRuleCall_0());
@@ -5212,7 +5520,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleReferenceTypeItem"
-    // InternalLibrettoSpec.g:1955:1: entryRuleReferenceTypeItem returns [EObject current=null] : iv_ruleReferenceTypeItem= ruleReferenceTypeItem EOF ;
+    // InternalLibrettoSpec.g:2079:1: entryRuleReferenceTypeItem returns [EObject current=null] : iv_ruleReferenceTypeItem= ruleReferenceTypeItem EOF ;
     public final EObject entryRuleReferenceTypeItem() throws RecognitionException {
         EObject current = null;
 
@@ -5220,8 +5528,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:1955:58: (iv_ruleReferenceTypeItem= ruleReferenceTypeItem EOF )
-            // InternalLibrettoSpec.g:1956:2: iv_ruleReferenceTypeItem= ruleReferenceTypeItem EOF
+            // InternalLibrettoSpec.g:2079:58: (iv_ruleReferenceTypeItem= ruleReferenceTypeItem EOF )
+            // InternalLibrettoSpec.g:2080:2: iv_ruleReferenceTypeItem= ruleReferenceTypeItem EOF
             {
              newCompositeNode(grammarAccess.getReferenceTypeItemRule()); 
             pushFollow(FOLLOW_1);
@@ -5248,7 +5556,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleReferenceTypeItem"
-    // InternalLibrettoSpec.g:1962:1: ruleReferenceTypeItem returns [EObject current=null] : ( (lv_type_0_0= ruleTypeField ) ) ;
+    // InternalLibrettoSpec.g:2086:1: ruleReferenceTypeItem returns [EObject current=null] : ( (lv_type_0_0= ruleTypeField ) ) ;
     public final EObject ruleReferenceTypeItem() throws RecognitionException {
         EObject current = null;
 
@@ -5259,14 +5567,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:1968:2: ( ( (lv_type_0_0= ruleTypeField ) ) )
-            // InternalLibrettoSpec.g:1969:2: ( (lv_type_0_0= ruleTypeField ) )
+            // InternalLibrettoSpec.g:2092:2: ( ( (lv_type_0_0= ruleTypeField ) ) )
+            // InternalLibrettoSpec.g:2093:2: ( (lv_type_0_0= ruleTypeField ) )
             {
-            // InternalLibrettoSpec.g:1969:2: ( (lv_type_0_0= ruleTypeField ) )
-            // InternalLibrettoSpec.g:1970:3: (lv_type_0_0= ruleTypeField )
+            // InternalLibrettoSpec.g:2093:2: ( (lv_type_0_0= ruleTypeField ) )
+            // InternalLibrettoSpec.g:2094:3: (lv_type_0_0= ruleTypeField )
             {
-            // InternalLibrettoSpec.g:1970:3: (lv_type_0_0= ruleTypeField )
-            // InternalLibrettoSpec.g:1971:4: lv_type_0_0= ruleTypeField
+            // InternalLibrettoSpec.g:2094:3: (lv_type_0_0= ruleTypeField )
+            // InternalLibrettoSpec.g:2095:4: lv_type_0_0= ruleTypeField
             {
 
             				newCompositeNode(grammarAccess.getReferenceTypeItemAccess().getTypeTypeFieldParserRuleCall_0());
@@ -5313,7 +5621,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleReferenceCitationItem"
-    // InternalLibrettoSpec.g:1991:1: entryRuleReferenceCitationItem returns [EObject current=null] : iv_ruleReferenceCitationItem= ruleReferenceCitationItem EOF ;
+    // InternalLibrettoSpec.g:2115:1: entryRuleReferenceCitationItem returns [EObject current=null] : iv_ruleReferenceCitationItem= ruleReferenceCitationItem EOF ;
     public final EObject entryRuleReferenceCitationItem() throws RecognitionException {
         EObject current = null;
 
@@ -5321,8 +5629,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:1991:62: (iv_ruleReferenceCitationItem= ruleReferenceCitationItem EOF )
-            // InternalLibrettoSpec.g:1992:2: iv_ruleReferenceCitationItem= ruleReferenceCitationItem EOF
+            // InternalLibrettoSpec.g:2115:62: (iv_ruleReferenceCitationItem= ruleReferenceCitationItem EOF )
+            // InternalLibrettoSpec.g:2116:2: iv_ruleReferenceCitationItem= ruleReferenceCitationItem EOF
             {
              newCompositeNode(grammarAccess.getReferenceCitationItemRule()); 
             pushFollow(FOLLOW_1);
@@ -5349,7 +5657,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleReferenceCitationItem"
-    // InternalLibrettoSpec.g:1998:1: ruleReferenceCitationItem returns [EObject current=null] : ( (lv_citation_0_0= ruleCitationField ) ) ;
+    // InternalLibrettoSpec.g:2122:1: ruleReferenceCitationItem returns [EObject current=null] : ( (lv_citation_0_0= ruleCitationField ) ) ;
     public final EObject ruleReferenceCitationItem() throws RecognitionException {
         EObject current = null;
 
@@ -5360,14 +5668,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:2004:2: ( ( (lv_citation_0_0= ruleCitationField ) ) )
-            // InternalLibrettoSpec.g:2005:2: ( (lv_citation_0_0= ruleCitationField ) )
+            // InternalLibrettoSpec.g:2128:2: ( ( (lv_citation_0_0= ruleCitationField ) ) )
+            // InternalLibrettoSpec.g:2129:2: ( (lv_citation_0_0= ruleCitationField ) )
             {
-            // InternalLibrettoSpec.g:2005:2: ( (lv_citation_0_0= ruleCitationField ) )
-            // InternalLibrettoSpec.g:2006:3: (lv_citation_0_0= ruleCitationField )
+            // InternalLibrettoSpec.g:2129:2: ( (lv_citation_0_0= ruleCitationField ) )
+            // InternalLibrettoSpec.g:2130:3: (lv_citation_0_0= ruleCitationField )
             {
-            // InternalLibrettoSpec.g:2006:3: (lv_citation_0_0= ruleCitationField )
-            // InternalLibrettoSpec.g:2007:4: lv_citation_0_0= ruleCitationField
+            // InternalLibrettoSpec.g:2130:3: (lv_citation_0_0= ruleCitationField )
+            // InternalLibrettoSpec.g:2131:4: lv_citation_0_0= ruleCitationField
             {
 
             				newCompositeNode(grammarAccess.getReferenceCitationItemAccess().getCitationCitationFieldParserRuleCall_0());
@@ -5414,7 +5722,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleReferenceLocatorItem"
-    // InternalLibrettoSpec.g:2027:1: entryRuleReferenceLocatorItem returns [EObject current=null] : iv_ruleReferenceLocatorItem= ruleReferenceLocatorItem EOF ;
+    // InternalLibrettoSpec.g:2151:1: entryRuleReferenceLocatorItem returns [EObject current=null] : iv_ruleReferenceLocatorItem= ruleReferenceLocatorItem EOF ;
     public final EObject entryRuleReferenceLocatorItem() throws RecognitionException {
         EObject current = null;
 
@@ -5422,8 +5730,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:2027:61: (iv_ruleReferenceLocatorItem= ruleReferenceLocatorItem EOF )
-            // InternalLibrettoSpec.g:2028:2: iv_ruleReferenceLocatorItem= ruleReferenceLocatorItem EOF
+            // InternalLibrettoSpec.g:2151:61: (iv_ruleReferenceLocatorItem= ruleReferenceLocatorItem EOF )
+            // InternalLibrettoSpec.g:2152:2: iv_ruleReferenceLocatorItem= ruleReferenceLocatorItem EOF
             {
              newCompositeNode(grammarAccess.getReferenceLocatorItemRule()); 
             pushFollow(FOLLOW_1);
@@ -5450,7 +5758,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleReferenceLocatorItem"
-    // InternalLibrettoSpec.g:2034:1: ruleReferenceLocatorItem returns [EObject current=null] : ( (lv_locator_0_0= ruleLocatorField ) ) ;
+    // InternalLibrettoSpec.g:2158:1: ruleReferenceLocatorItem returns [EObject current=null] : ( (lv_locator_0_0= ruleLocatorField ) ) ;
     public final EObject ruleReferenceLocatorItem() throws RecognitionException {
         EObject current = null;
 
@@ -5461,14 +5769,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:2040:2: ( ( (lv_locator_0_0= ruleLocatorField ) ) )
-            // InternalLibrettoSpec.g:2041:2: ( (lv_locator_0_0= ruleLocatorField ) )
+            // InternalLibrettoSpec.g:2164:2: ( ( (lv_locator_0_0= ruleLocatorField ) ) )
+            // InternalLibrettoSpec.g:2165:2: ( (lv_locator_0_0= ruleLocatorField ) )
             {
-            // InternalLibrettoSpec.g:2041:2: ( (lv_locator_0_0= ruleLocatorField ) )
-            // InternalLibrettoSpec.g:2042:3: (lv_locator_0_0= ruleLocatorField )
+            // InternalLibrettoSpec.g:2165:2: ( (lv_locator_0_0= ruleLocatorField ) )
+            // InternalLibrettoSpec.g:2166:3: (lv_locator_0_0= ruleLocatorField )
             {
-            // InternalLibrettoSpec.g:2042:3: (lv_locator_0_0= ruleLocatorField )
-            // InternalLibrettoSpec.g:2043:4: lv_locator_0_0= ruleLocatorField
+            // InternalLibrettoSpec.g:2166:3: (lv_locator_0_0= ruleLocatorField )
+            // InternalLibrettoSpec.g:2167:4: lv_locator_0_0= ruleLocatorField
             {
 
             				newCompositeNode(grammarAccess.getReferenceLocatorItemAccess().getLocatorLocatorFieldParserRuleCall_0());
@@ -5515,7 +5823,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleReferenceAuthorityNotesItem"
-    // InternalLibrettoSpec.g:2063:1: entryRuleReferenceAuthorityNotesItem returns [EObject current=null] : iv_ruleReferenceAuthorityNotesItem= ruleReferenceAuthorityNotesItem EOF ;
+    // InternalLibrettoSpec.g:2187:1: entryRuleReferenceAuthorityNotesItem returns [EObject current=null] : iv_ruleReferenceAuthorityNotesItem= ruleReferenceAuthorityNotesItem EOF ;
     public final EObject entryRuleReferenceAuthorityNotesItem() throws RecognitionException {
         EObject current = null;
 
@@ -5523,8 +5831,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:2063:68: (iv_ruleReferenceAuthorityNotesItem= ruleReferenceAuthorityNotesItem EOF )
-            // InternalLibrettoSpec.g:2064:2: iv_ruleReferenceAuthorityNotesItem= ruleReferenceAuthorityNotesItem EOF
+            // InternalLibrettoSpec.g:2187:68: (iv_ruleReferenceAuthorityNotesItem= ruleReferenceAuthorityNotesItem EOF )
+            // InternalLibrettoSpec.g:2188:2: iv_ruleReferenceAuthorityNotesItem= ruleReferenceAuthorityNotesItem EOF
             {
              newCompositeNode(grammarAccess.getReferenceAuthorityNotesItemRule()); 
             pushFollow(FOLLOW_1);
@@ -5551,7 +5859,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleReferenceAuthorityNotesItem"
-    // InternalLibrettoSpec.g:2070:1: ruleReferenceAuthorityNotesItem returns [EObject current=null] : ( (lv_authorityNotes_0_0= ruleAuthorityNotesField ) ) ;
+    // InternalLibrettoSpec.g:2194:1: ruleReferenceAuthorityNotesItem returns [EObject current=null] : ( (lv_authorityNotes_0_0= ruleAuthorityNotesField ) ) ;
     public final EObject ruleReferenceAuthorityNotesItem() throws RecognitionException {
         EObject current = null;
 
@@ -5562,14 +5870,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:2076:2: ( ( (lv_authorityNotes_0_0= ruleAuthorityNotesField ) ) )
-            // InternalLibrettoSpec.g:2077:2: ( (lv_authorityNotes_0_0= ruleAuthorityNotesField ) )
+            // InternalLibrettoSpec.g:2200:2: ( ( (lv_authorityNotes_0_0= ruleAuthorityNotesField ) ) )
+            // InternalLibrettoSpec.g:2201:2: ( (lv_authorityNotes_0_0= ruleAuthorityNotesField ) )
             {
-            // InternalLibrettoSpec.g:2077:2: ( (lv_authorityNotes_0_0= ruleAuthorityNotesField ) )
-            // InternalLibrettoSpec.g:2078:3: (lv_authorityNotes_0_0= ruleAuthorityNotesField )
+            // InternalLibrettoSpec.g:2201:2: ( (lv_authorityNotes_0_0= ruleAuthorityNotesField ) )
+            // InternalLibrettoSpec.g:2202:3: (lv_authorityNotes_0_0= ruleAuthorityNotesField )
             {
-            // InternalLibrettoSpec.g:2078:3: (lv_authorityNotes_0_0= ruleAuthorityNotesField )
-            // InternalLibrettoSpec.g:2079:4: lv_authorityNotes_0_0= ruleAuthorityNotesField
+            // InternalLibrettoSpec.g:2202:3: (lv_authorityNotes_0_0= ruleAuthorityNotesField )
+            // InternalLibrettoSpec.g:2203:4: lv_authorityNotes_0_0= ruleAuthorityNotesField
             {
 
             				newCompositeNode(grammarAccess.getReferenceAuthorityNotesItemAccess().getAuthorityNotesAuthorityNotesFieldParserRuleCall_0());
@@ -5616,7 +5924,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleReferenceMetadataTextItem"
-    // InternalLibrettoSpec.g:2099:1: entryRuleReferenceMetadataTextItem returns [EObject current=null] : iv_ruleReferenceMetadataTextItem= ruleReferenceMetadataTextItem EOF ;
+    // InternalLibrettoSpec.g:2223:1: entryRuleReferenceMetadataTextItem returns [EObject current=null] : iv_ruleReferenceMetadataTextItem= ruleReferenceMetadataTextItem EOF ;
     public final EObject entryRuleReferenceMetadataTextItem() throws RecognitionException {
         EObject current = null;
 
@@ -5624,8 +5932,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:2099:66: (iv_ruleReferenceMetadataTextItem= ruleReferenceMetadataTextItem EOF )
-            // InternalLibrettoSpec.g:2100:2: iv_ruleReferenceMetadataTextItem= ruleReferenceMetadataTextItem EOF
+            // InternalLibrettoSpec.g:2223:66: (iv_ruleReferenceMetadataTextItem= ruleReferenceMetadataTextItem EOF )
+            // InternalLibrettoSpec.g:2224:2: iv_ruleReferenceMetadataTextItem= ruleReferenceMetadataTextItem EOF
             {
              newCompositeNode(grammarAccess.getReferenceMetadataTextItemRule()); 
             pushFollow(FOLLOW_1);
@@ -5652,7 +5960,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleReferenceMetadataTextItem"
-    // InternalLibrettoSpec.g:2106:1: ruleReferenceMetadataTextItem returns [EObject current=null] : ( (lv_metadataText_0_0= ruleMetadataTextField ) ) ;
+    // InternalLibrettoSpec.g:2230:1: ruleReferenceMetadataTextItem returns [EObject current=null] : ( (lv_metadataText_0_0= ruleMetadataTextField ) ) ;
     public final EObject ruleReferenceMetadataTextItem() throws RecognitionException {
         EObject current = null;
 
@@ -5663,14 +5971,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:2112:2: ( ( (lv_metadataText_0_0= ruleMetadataTextField ) ) )
-            // InternalLibrettoSpec.g:2113:2: ( (lv_metadataText_0_0= ruleMetadataTextField ) )
+            // InternalLibrettoSpec.g:2236:2: ( ( (lv_metadataText_0_0= ruleMetadataTextField ) ) )
+            // InternalLibrettoSpec.g:2237:2: ( (lv_metadataText_0_0= ruleMetadataTextField ) )
             {
-            // InternalLibrettoSpec.g:2113:2: ( (lv_metadataText_0_0= ruleMetadataTextField ) )
-            // InternalLibrettoSpec.g:2114:3: (lv_metadataText_0_0= ruleMetadataTextField )
+            // InternalLibrettoSpec.g:2237:2: ( (lv_metadataText_0_0= ruleMetadataTextField ) )
+            // InternalLibrettoSpec.g:2238:3: (lv_metadataText_0_0= ruleMetadataTextField )
             {
-            // InternalLibrettoSpec.g:2114:3: (lv_metadataText_0_0= ruleMetadataTextField )
-            // InternalLibrettoSpec.g:2115:4: lv_metadataText_0_0= ruleMetadataTextField
+            // InternalLibrettoSpec.g:2238:3: (lv_metadataText_0_0= ruleMetadataTextField )
+            // InternalLibrettoSpec.g:2239:4: lv_metadataText_0_0= ruleMetadataTextField
             {
 
             				newCompositeNode(grammarAccess.getReferenceMetadataTextItemAccess().getMetadataTextMetadataTextFieldParserRuleCall_0());
@@ -5717,7 +6025,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleReferenceContextItem"
-    // InternalLibrettoSpec.g:2135:1: entryRuleReferenceContextItem returns [EObject current=null] : iv_ruleReferenceContextItem= ruleReferenceContextItem EOF ;
+    // InternalLibrettoSpec.g:2259:1: entryRuleReferenceContextItem returns [EObject current=null] : iv_ruleReferenceContextItem= ruleReferenceContextItem EOF ;
     public final EObject entryRuleReferenceContextItem() throws RecognitionException {
         EObject current = null;
 
@@ -5725,8 +6033,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:2135:61: (iv_ruleReferenceContextItem= ruleReferenceContextItem EOF )
-            // InternalLibrettoSpec.g:2136:2: iv_ruleReferenceContextItem= ruleReferenceContextItem EOF
+            // InternalLibrettoSpec.g:2259:61: (iv_ruleReferenceContextItem= ruleReferenceContextItem EOF )
+            // InternalLibrettoSpec.g:2260:2: iv_ruleReferenceContextItem= ruleReferenceContextItem EOF
             {
              newCompositeNode(grammarAccess.getReferenceContextItemRule()); 
             pushFollow(FOLLOW_1);
@@ -5753,7 +6061,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleReferenceContextItem"
-    // InternalLibrettoSpec.g:2142:1: ruleReferenceContextItem returns [EObject current=null] : ( (lv_context_0_0= ruleContextField ) ) ;
+    // InternalLibrettoSpec.g:2266:1: ruleReferenceContextItem returns [EObject current=null] : ( (lv_context_0_0= ruleContextField ) ) ;
     public final EObject ruleReferenceContextItem() throws RecognitionException {
         EObject current = null;
 
@@ -5764,14 +6072,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:2148:2: ( ( (lv_context_0_0= ruleContextField ) ) )
-            // InternalLibrettoSpec.g:2149:2: ( (lv_context_0_0= ruleContextField ) )
+            // InternalLibrettoSpec.g:2272:2: ( ( (lv_context_0_0= ruleContextField ) ) )
+            // InternalLibrettoSpec.g:2273:2: ( (lv_context_0_0= ruleContextField ) )
             {
-            // InternalLibrettoSpec.g:2149:2: ( (lv_context_0_0= ruleContextField ) )
-            // InternalLibrettoSpec.g:2150:3: (lv_context_0_0= ruleContextField )
+            // InternalLibrettoSpec.g:2273:2: ( (lv_context_0_0= ruleContextField ) )
+            // InternalLibrettoSpec.g:2274:3: (lv_context_0_0= ruleContextField )
             {
-            // InternalLibrettoSpec.g:2150:3: (lv_context_0_0= ruleContextField )
-            // InternalLibrettoSpec.g:2151:4: lv_context_0_0= ruleContextField
+            // InternalLibrettoSpec.g:2274:3: (lv_context_0_0= ruleContextField )
+            // InternalLibrettoSpec.g:2275:4: lv_context_0_0= ruleContextField
             {
 
             				newCompositeNode(grammarAccess.getReferenceContextItemAccess().getContextContextFieldParserRuleCall_0());
@@ -5818,7 +6126,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTitleField"
-    // InternalLibrettoSpec.g:2171:1: entryRuleTitleField returns [EObject current=null] : iv_ruleTitleField= ruleTitleField EOF ;
+    // InternalLibrettoSpec.g:2295:1: entryRuleTitleField returns [EObject current=null] : iv_ruleTitleField= ruleTitleField EOF ;
     public final EObject entryRuleTitleField() throws RecognitionException {
         EObject current = null;
 
@@ -5826,8 +6134,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:2171:51: (iv_ruleTitleField= ruleTitleField EOF )
-            // InternalLibrettoSpec.g:2172:2: iv_ruleTitleField= ruleTitleField EOF
+            // InternalLibrettoSpec.g:2295:51: (iv_ruleTitleField= ruleTitleField EOF )
+            // InternalLibrettoSpec.g:2296:2: iv_ruleTitleField= ruleTitleField EOF
             {
              newCompositeNode(grammarAccess.getTitleFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -5854,7 +6162,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTitleField"
-    // InternalLibrettoSpec.g:2178:1: ruleTitleField returns [EObject current=null] : (otherlv_0= 'title' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
+    // InternalLibrettoSpec.g:2302:1: ruleTitleField returns [EObject current=null] : (otherlv_0= 'title' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
     public final EObject ruleTitleField() throws RecognitionException {
         EObject current = null;
 
@@ -5867,11 +6175,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:2184:2: ( (otherlv_0= 'title' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
-            // InternalLibrettoSpec.g:2185:2: (otherlv_0= 'title' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:2308:2: ( (otherlv_0= 'title' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
+            // InternalLibrettoSpec.g:2309:2: (otherlv_0= 'title' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
             {
-            // InternalLibrettoSpec.g:2185:2: (otherlv_0= 'title' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
-            // InternalLibrettoSpec.g:2186:3: otherlv_0= 'title' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:2309:2: (otherlv_0= 'title' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:2310:3: otherlv_0= 'title' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
             {
             otherlv_0=(Token)match(input,32,FOLLOW_17); 
 
@@ -5881,11 +6189,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getTitleFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:2194:3: ( (lv_value_2_0= ruleTextValue ) )
-            // InternalLibrettoSpec.g:2195:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:2318:3: ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:2319:4: (lv_value_2_0= ruleTextValue )
             {
-            // InternalLibrettoSpec.g:2195:4: (lv_value_2_0= ruleTextValue )
-            // InternalLibrettoSpec.g:2196:5: lv_value_2_0= ruleTextValue
+            // InternalLibrettoSpec.g:2319:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:2320:5: lv_value_2_0= ruleTextValue
             {
 
             					newCompositeNode(grammarAccess.getTitleFieldAccess().getValueTextValueParserRuleCall_2_0());
@@ -5935,7 +6243,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTypeField"
-    // InternalLibrettoSpec.g:2217:1: entryRuleTypeField returns [EObject current=null] : iv_ruleTypeField= ruleTypeField EOF ;
+    // InternalLibrettoSpec.g:2341:1: entryRuleTypeField returns [EObject current=null] : iv_ruleTypeField= ruleTypeField EOF ;
     public final EObject entryRuleTypeField() throws RecognitionException {
         EObject current = null;
 
@@ -5943,8 +6251,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:2217:50: (iv_ruleTypeField= ruleTypeField EOF )
-            // InternalLibrettoSpec.g:2218:2: iv_ruleTypeField= ruleTypeField EOF
+            // InternalLibrettoSpec.g:2341:50: (iv_ruleTypeField= ruleTypeField EOF )
+            // InternalLibrettoSpec.g:2342:2: iv_ruleTypeField= ruleTypeField EOF
             {
              newCompositeNode(grammarAccess.getTypeFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -5971,7 +6279,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTypeField"
-    // InternalLibrettoSpec.g:2224:1: ruleTypeField returns [EObject current=null] : (otherlv_0= 'type' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) ) ) ;
+    // InternalLibrettoSpec.g:2348:1: ruleTypeField returns [EObject current=null] : (otherlv_0= 'type' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) ) ) ;
     public final EObject ruleTypeField() throws RecognitionException {
         EObject current = null;
 
@@ -5984,13 +6292,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:2230:2: ( (otherlv_0= 'type' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) ) ) )
-            // InternalLibrettoSpec.g:2231:2: (otherlv_0= 'type' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) ) )
+            // InternalLibrettoSpec.g:2354:2: ( (otherlv_0= 'type' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) ) ) )
+            // InternalLibrettoSpec.g:2355:2: (otherlv_0= 'type' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) ) )
             {
-            // InternalLibrettoSpec.g:2231:2: (otherlv_0= 'type' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) ) )
-            // InternalLibrettoSpec.g:2232:3: otherlv_0= 'type' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) )
+            // InternalLibrettoSpec.g:2355:2: (otherlv_0= 'type' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) ) )
+            // InternalLibrettoSpec.g:2356:3: otherlv_0= 'type' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) )
             {
-            otherlv_0=(Token)match(input,45,FOLLOW_17); 
+            otherlv_0=(Token)match(input,47,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getTypeFieldAccess().getTypeKeyword_0());
             		
@@ -5998,11 +6306,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getTypeFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:2240:3: ( (lv_value_2_0= ruleIdentifierValue ) )
-            // InternalLibrettoSpec.g:2241:4: (lv_value_2_0= ruleIdentifierValue )
+            // InternalLibrettoSpec.g:2364:3: ( (lv_value_2_0= ruleIdentifierValue ) )
+            // InternalLibrettoSpec.g:2365:4: (lv_value_2_0= ruleIdentifierValue )
             {
-            // InternalLibrettoSpec.g:2241:4: (lv_value_2_0= ruleIdentifierValue )
-            // InternalLibrettoSpec.g:2242:5: lv_value_2_0= ruleIdentifierValue
+            // InternalLibrettoSpec.g:2365:4: (lv_value_2_0= ruleIdentifierValue )
+            // InternalLibrettoSpec.g:2366:5: lv_value_2_0= ruleIdentifierValue
             {
 
             					newCompositeNode(grammarAccess.getTypeFieldAccess().getValueIdentifierValueParserRuleCall_2_0());
@@ -6052,7 +6360,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCitationField"
-    // InternalLibrettoSpec.g:2263:1: entryRuleCitationField returns [EObject current=null] : iv_ruleCitationField= ruleCitationField EOF ;
+    // InternalLibrettoSpec.g:2387:1: entryRuleCitationField returns [EObject current=null] : iv_ruleCitationField= ruleCitationField EOF ;
     public final EObject entryRuleCitationField() throws RecognitionException {
         EObject current = null;
 
@@ -6060,8 +6368,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:2263:54: (iv_ruleCitationField= ruleCitationField EOF )
-            // InternalLibrettoSpec.g:2264:2: iv_ruleCitationField= ruleCitationField EOF
+            // InternalLibrettoSpec.g:2387:54: (iv_ruleCitationField= ruleCitationField EOF )
+            // InternalLibrettoSpec.g:2388:2: iv_ruleCitationField= ruleCitationField EOF
             {
              newCompositeNode(grammarAccess.getCitationFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -6088,7 +6396,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCitationField"
-    // InternalLibrettoSpec.g:2270:1: ruleCitationField returns [EObject current=null] : (otherlv_0= 'citation' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
+    // InternalLibrettoSpec.g:2394:1: ruleCitationField returns [EObject current=null] : (otherlv_0= 'citation' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
     public final EObject ruleCitationField() throws RecognitionException {
         EObject current = null;
 
@@ -6101,13 +6409,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:2276:2: ( (otherlv_0= 'citation' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
-            // InternalLibrettoSpec.g:2277:2: (otherlv_0= 'citation' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:2400:2: ( (otherlv_0= 'citation' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
+            // InternalLibrettoSpec.g:2401:2: (otherlv_0= 'citation' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
             {
-            // InternalLibrettoSpec.g:2277:2: (otherlv_0= 'citation' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
-            // InternalLibrettoSpec.g:2278:3: otherlv_0= 'citation' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:2401:2: (otherlv_0= 'citation' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:2402:3: otherlv_0= 'citation' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
             {
-            otherlv_0=(Token)match(input,46,FOLLOW_17); 
+            otherlv_0=(Token)match(input,48,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getCitationFieldAccess().getCitationKeyword_0());
             		
@@ -6115,11 +6423,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getCitationFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:2286:3: ( (lv_value_2_0= ruleTextValue ) )
-            // InternalLibrettoSpec.g:2287:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:2410:3: ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:2411:4: (lv_value_2_0= ruleTextValue )
             {
-            // InternalLibrettoSpec.g:2287:4: (lv_value_2_0= ruleTextValue )
-            // InternalLibrettoSpec.g:2288:5: lv_value_2_0= ruleTextValue
+            // InternalLibrettoSpec.g:2411:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:2412:5: lv_value_2_0= ruleTextValue
             {
 
             					newCompositeNode(grammarAccess.getCitationFieldAccess().getValueTextValueParserRuleCall_2_0());
@@ -6169,7 +6477,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLocatorField"
-    // InternalLibrettoSpec.g:2309:1: entryRuleLocatorField returns [EObject current=null] : iv_ruleLocatorField= ruleLocatorField EOF ;
+    // InternalLibrettoSpec.g:2433:1: entryRuleLocatorField returns [EObject current=null] : iv_ruleLocatorField= ruleLocatorField EOF ;
     public final EObject entryRuleLocatorField() throws RecognitionException {
         EObject current = null;
 
@@ -6177,8 +6485,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:2309:53: (iv_ruleLocatorField= ruleLocatorField EOF )
-            // InternalLibrettoSpec.g:2310:2: iv_ruleLocatorField= ruleLocatorField EOF
+            // InternalLibrettoSpec.g:2433:53: (iv_ruleLocatorField= ruleLocatorField EOF )
+            // InternalLibrettoSpec.g:2434:2: iv_ruleLocatorField= ruleLocatorField EOF
             {
              newCompositeNode(grammarAccess.getLocatorFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -6205,7 +6513,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLocatorField"
-    // InternalLibrettoSpec.g:2316:1: ruleLocatorField returns [EObject current=null] : (otherlv_0= 'locator' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
+    // InternalLibrettoSpec.g:2440:1: ruleLocatorField returns [EObject current=null] : (otherlv_0= 'locator' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
     public final EObject ruleLocatorField() throws RecognitionException {
         EObject current = null;
 
@@ -6218,13 +6526,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:2322:2: ( (otherlv_0= 'locator' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
-            // InternalLibrettoSpec.g:2323:2: (otherlv_0= 'locator' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:2446:2: ( (otherlv_0= 'locator' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
+            // InternalLibrettoSpec.g:2447:2: (otherlv_0= 'locator' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
             {
-            // InternalLibrettoSpec.g:2323:2: (otherlv_0= 'locator' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
-            // InternalLibrettoSpec.g:2324:3: otherlv_0= 'locator' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:2447:2: (otherlv_0= 'locator' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:2448:3: otherlv_0= 'locator' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
             {
-            otherlv_0=(Token)match(input,47,FOLLOW_17); 
+            otherlv_0=(Token)match(input,49,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getLocatorFieldAccess().getLocatorKeyword_0());
             		
@@ -6232,11 +6540,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getLocatorFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:2332:3: ( (lv_value_2_0= ruleTextValue ) )
-            // InternalLibrettoSpec.g:2333:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:2456:3: ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:2457:4: (lv_value_2_0= ruleTextValue )
             {
-            // InternalLibrettoSpec.g:2333:4: (lv_value_2_0= ruleTextValue )
-            // InternalLibrettoSpec.g:2334:5: lv_value_2_0= ruleTextValue
+            // InternalLibrettoSpec.g:2457:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:2458:5: lv_value_2_0= ruleTextValue
             {
 
             					newCompositeNode(grammarAccess.getLocatorFieldAccess().getValueTextValueParserRuleCall_2_0());
@@ -6286,7 +6594,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAuthorityNotesField"
-    // InternalLibrettoSpec.g:2355:1: entryRuleAuthorityNotesField returns [EObject current=null] : iv_ruleAuthorityNotesField= ruleAuthorityNotesField EOF ;
+    // InternalLibrettoSpec.g:2479:1: entryRuleAuthorityNotesField returns [EObject current=null] : iv_ruleAuthorityNotesField= ruleAuthorityNotesField EOF ;
     public final EObject entryRuleAuthorityNotesField() throws RecognitionException {
         EObject current = null;
 
@@ -6294,8 +6602,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:2355:60: (iv_ruleAuthorityNotesField= ruleAuthorityNotesField EOF )
-            // InternalLibrettoSpec.g:2356:2: iv_ruleAuthorityNotesField= ruleAuthorityNotesField EOF
+            // InternalLibrettoSpec.g:2479:60: (iv_ruleAuthorityNotesField= ruleAuthorityNotesField EOF )
+            // InternalLibrettoSpec.g:2480:2: iv_ruleAuthorityNotesField= ruleAuthorityNotesField EOF
             {
              newCompositeNode(grammarAccess.getAuthorityNotesFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -6322,7 +6630,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAuthorityNotesField"
-    // InternalLibrettoSpec.g:2362:1: ruleAuthorityNotesField returns [EObject current=null] : (otherlv_0= 'authority_notes' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
+    // InternalLibrettoSpec.g:2486:1: ruleAuthorityNotesField returns [EObject current=null] : (otherlv_0= 'authority_notes' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
     public final EObject ruleAuthorityNotesField() throws RecognitionException {
         EObject current = null;
 
@@ -6335,13 +6643,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:2368:2: ( (otherlv_0= 'authority_notes' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
-            // InternalLibrettoSpec.g:2369:2: (otherlv_0= 'authority_notes' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:2492:2: ( (otherlv_0= 'authority_notes' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
+            // InternalLibrettoSpec.g:2493:2: (otherlv_0= 'authority_notes' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
             {
-            // InternalLibrettoSpec.g:2369:2: (otherlv_0= 'authority_notes' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
-            // InternalLibrettoSpec.g:2370:3: otherlv_0= 'authority_notes' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:2493:2: (otherlv_0= 'authority_notes' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:2494:3: otherlv_0= 'authority_notes' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
             {
-            otherlv_0=(Token)match(input,48,FOLLOW_17); 
+            otherlv_0=(Token)match(input,50,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getAuthorityNotesFieldAccess().getAuthority_notesKeyword_0());
             		
@@ -6349,11 +6657,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getAuthorityNotesFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:2378:3: ( (lv_value_2_0= ruleTextValue ) )
-            // InternalLibrettoSpec.g:2379:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:2502:3: ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:2503:4: (lv_value_2_0= ruleTextValue )
             {
-            // InternalLibrettoSpec.g:2379:4: (lv_value_2_0= ruleTextValue )
-            // InternalLibrettoSpec.g:2380:5: lv_value_2_0= ruleTextValue
+            // InternalLibrettoSpec.g:2503:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:2504:5: lv_value_2_0= ruleTextValue
             {
 
             					newCompositeNode(grammarAccess.getAuthorityNotesFieldAccess().getValueTextValueParserRuleCall_2_0());
@@ -6403,7 +6711,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMetadataTextField"
-    // InternalLibrettoSpec.g:2401:1: entryRuleMetadataTextField returns [EObject current=null] : iv_ruleMetadataTextField= ruleMetadataTextField EOF ;
+    // InternalLibrettoSpec.g:2525:1: entryRuleMetadataTextField returns [EObject current=null] : iv_ruleMetadataTextField= ruleMetadataTextField EOF ;
     public final EObject entryRuleMetadataTextField() throws RecognitionException {
         EObject current = null;
 
@@ -6411,8 +6719,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:2401:58: (iv_ruleMetadataTextField= ruleMetadataTextField EOF )
-            // InternalLibrettoSpec.g:2402:2: iv_ruleMetadataTextField= ruleMetadataTextField EOF
+            // InternalLibrettoSpec.g:2525:58: (iv_ruleMetadataTextField= ruleMetadataTextField EOF )
+            // InternalLibrettoSpec.g:2526:2: iv_ruleMetadataTextField= ruleMetadataTextField EOF
             {
              newCompositeNode(grammarAccess.getMetadataTextFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -6439,7 +6747,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMetadataTextField"
-    // InternalLibrettoSpec.g:2408:1: ruleMetadataTextField returns [EObject current=null] : (otherlv_0= 'metadata' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
+    // InternalLibrettoSpec.g:2532:1: ruleMetadataTextField returns [EObject current=null] : (otherlv_0= 'metadata' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
     public final EObject ruleMetadataTextField() throws RecognitionException {
         EObject current = null;
 
@@ -6452,11 +6760,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:2414:2: ( (otherlv_0= 'metadata' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
-            // InternalLibrettoSpec.g:2415:2: (otherlv_0= 'metadata' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:2538:2: ( (otherlv_0= 'metadata' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
+            // InternalLibrettoSpec.g:2539:2: (otherlv_0= 'metadata' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
             {
-            // InternalLibrettoSpec.g:2415:2: (otherlv_0= 'metadata' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
-            // InternalLibrettoSpec.g:2416:3: otherlv_0= 'metadata' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:2539:2: (otherlv_0= 'metadata' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:2540:3: otherlv_0= 'metadata' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
             {
             otherlv_0=(Token)match(input,21,FOLLOW_17); 
 
@@ -6466,11 +6774,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getMetadataTextFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:2424:3: ( (lv_value_2_0= ruleTextValue ) )
-            // InternalLibrettoSpec.g:2425:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:2548:3: ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:2549:4: (lv_value_2_0= ruleTextValue )
             {
-            // InternalLibrettoSpec.g:2425:4: (lv_value_2_0= ruleTextValue )
-            // InternalLibrettoSpec.g:2426:5: lv_value_2_0= ruleTextValue
+            // InternalLibrettoSpec.g:2549:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:2550:5: lv_value_2_0= ruleTextValue
             {
 
             					newCompositeNode(grammarAccess.getMetadataTextFieldAccess().getValueTextValueParserRuleCall_2_0());
@@ -6520,7 +6828,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleProseRecord"
-    // InternalLibrettoSpec.g:2447:1: entryRuleProseRecord returns [EObject current=null] : iv_ruleProseRecord= ruleProseRecord EOF ;
+    // InternalLibrettoSpec.g:2571:1: entryRuleProseRecord returns [EObject current=null] : iv_ruleProseRecord= ruleProseRecord EOF ;
     public final EObject entryRuleProseRecord() throws RecognitionException {
         EObject current = null;
 
@@ -6528,8 +6836,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:2447:52: (iv_ruleProseRecord= ruleProseRecord EOF )
-            // InternalLibrettoSpec.g:2448:2: iv_ruleProseRecord= ruleProseRecord EOF
+            // InternalLibrettoSpec.g:2571:52: (iv_ruleProseRecord= ruleProseRecord EOF )
+            // InternalLibrettoSpec.g:2572:2: iv_ruleProseRecord= ruleProseRecord EOF
             {
              newCompositeNode(grammarAccess.getProseRecordRule()); 
             pushFollow(FOLLOW_1);
@@ -6556,7 +6864,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProseRecord"
-    // InternalLibrettoSpec.g:2454:1: ruleProseRecord returns [EObject current=null] : (this_SectionContextRecord_0= ruleSectionContextRecord | this_SubsectionContextRecord_1= ruleSubsectionContextRecord ) ;
+    // InternalLibrettoSpec.g:2578:1: ruleProseRecord returns [EObject current=null] : (this_SectionContextRecord_0= ruleSectionContextRecord | this_SubsectionContextRecord_1= ruleSubsectionContextRecord ) ;
     public final EObject ruleProseRecord() throws RecognitionException {
         EObject current = null;
 
@@ -6569,17 +6877,17 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:2460:2: ( (this_SectionContextRecord_0= ruleSectionContextRecord | this_SubsectionContextRecord_1= ruleSubsectionContextRecord ) )
-            // InternalLibrettoSpec.g:2461:2: (this_SectionContextRecord_0= ruleSectionContextRecord | this_SubsectionContextRecord_1= ruleSubsectionContextRecord )
+            // InternalLibrettoSpec.g:2584:2: ( (this_SectionContextRecord_0= ruleSectionContextRecord | this_SubsectionContextRecord_1= ruleSubsectionContextRecord ) )
+            // InternalLibrettoSpec.g:2585:2: (this_SectionContextRecord_0= ruleSectionContextRecord | this_SubsectionContextRecord_1= ruleSubsectionContextRecord )
             {
-            // InternalLibrettoSpec.g:2461:2: (this_SectionContextRecord_0= ruleSectionContextRecord | this_SubsectionContextRecord_1= ruleSubsectionContextRecord )
+            // InternalLibrettoSpec.g:2585:2: (this_SectionContextRecord_0= ruleSectionContextRecord | this_SubsectionContextRecord_1= ruleSubsectionContextRecord )
             int alt20=2;
             int LA20_0 = input.LA(1);
 
-            if ( (LA20_0==49) ) {
+            if ( (LA20_0==51) ) {
                 alt20=1;
             }
-            else if ( (LA20_0==50) ) {
+            else if ( (LA20_0==52) ) {
                 alt20=2;
             }
             else {
@@ -6590,7 +6898,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
             }
             switch (alt20) {
                 case 1 :
-                    // InternalLibrettoSpec.g:2462:3: this_SectionContextRecord_0= ruleSectionContextRecord
+                    // InternalLibrettoSpec.g:2586:3: this_SectionContextRecord_0= ruleSectionContextRecord
                     {
 
                     			newCompositeNode(grammarAccess.getProseRecordAccess().getSectionContextRecordParserRuleCall_0());
@@ -6608,7 +6916,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoSpec.g:2471:3: this_SubsectionContextRecord_1= ruleSubsectionContextRecord
+                    // InternalLibrettoSpec.g:2595:3: this_SubsectionContextRecord_1= ruleSubsectionContextRecord
                     {
 
                     			newCompositeNode(grammarAccess.getProseRecordAccess().getSubsectionContextRecordParserRuleCall_1());
@@ -6648,7 +6956,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSectionContextRecord"
-    // InternalLibrettoSpec.g:2483:1: entryRuleSectionContextRecord returns [EObject current=null] : iv_ruleSectionContextRecord= ruleSectionContextRecord EOF ;
+    // InternalLibrettoSpec.g:2607:1: entryRuleSectionContextRecord returns [EObject current=null] : iv_ruleSectionContextRecord= ruleSectionContextRecord EOF ;
     public final EObject entryRuleSectionContextRecord() throws RecognitionException {
         EObject current = null;
 
@@ -6656,8 +6964,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:2483:61: (iv_ruleSectionContextRecord= ruleSectionContextRecord EOF )
-            // InternalLibrettoSpec.g:2484:2: iv_ruleSectionContextRecord= ruleSectionContextRecord EOF
+            // InternalLibrettoSpec.g:2607:61: (iv_ruleSectionContextRecord= ruleSectionContextRecord EOF )
+            // InternalLibrettoSpec.g:2608:2: iv_ruleSectionContextRecord= ruleSectionContextRecord EOF
             {
              newCompositeNode(grammarAccess.getSectionContextRecordRule()); 
             pushFollow(FOLLOW_1);
@@ -6684,7 +6992,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSectionContextRecord"
-    // InternalLibrettoSpec.g:2490:1: ruleSectionContextRecord returns [EObject current=null] : (otherlv_0= 'section_context' otherlv_1= '{' ( (lv_items_2_0= ruleSectionContextRecordItem ) )* otherlv_3= '}' ) ;
+    // InternalLibrettoSpec.g:2614:1: ruleSectionContextRecord returns [EObject current=null] : (otherlv_0= 'section_context' otherlv_1= '{' ( (lv_items_2_0= ruleSectionContextRecordItem ) )* otherlv_3= '}' ) ;
     public final EObject ruleSectionContextRecord() throws RecognitionException {
         EObject current = null;
 
@@ -6698,13 +7006,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:2496:2: ( (otherlv_0= 'section_context' otherlv_1= '{' ( (lv_items_2_0= ruleSectionContextRecordItem ) )* otherlv_3= '}' ) )
-            // InternalLibrettoSpec.g:2497:2: (otherlv_0= 'section_context' otherlv_1= '{' ( (lv_items_2_0= ruleSectionContextRecordItem ) )* otherlv_3= '}' )
+            // InternalLibrettoSpec.g:2620:2: ( (otherlv_0= 'section_context' otherlv_1= '{' ( (lv_items_2_0= ruleSectionContextRecordItem ) )* otherlv_3= '}' ) )
+            // InternalLibrettoSpec.g:2621:2: (otherlv_0= 'section_context' otherlv_1= '{' ( (lv_items_2_0= ruleSectionContextRecordItem ) )* otherlv_3= '}' )
             {
-            // InternalLibrettoSpec.g:2497:2: (otherlv_0= 'section_context' otherlv_1= '{' ( (lv_items_2_0= ruleSectionContextRecordItem ) )* otherlv_3= '}' )
-            // InternalLibrettoSpec.g:2498:3: otherlv_0= 'section_context' otherlv_1= '{' ( (lv_items_2_0= ruleSectionContextRecordItem ) )* otherlv_3= '}'
+            // InternalLibrettoSpec.g:2621:2: (otherlv_0= 'section_context' otherlv_1= '{' ( (lv_items_2_0= ruleSectionContextRecordItem ) )* otherlv_3= '}' )
+            // InternalLibrettoSpec.g:2622:3: otherlv_0= 'section_context' otherlv_1= '{' ( (lv_items_2_0= ruleSectionContextRecordItem ) )* otherlv_3= '}'
             {
-            otherlv_0=(Token)match(input,49,FOLLOW_4); 
+            otherlv_0=(Token)match(input,51,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSectionContextRecordAccess().getSection_contextKeyword_0());
             		
@@ -6712,23 +7020,23 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getSectionContextRecordAccess().getLeftCurlyBracketKeyword_1());
             		
-            // InternalLibrettoSpec.g:2506:3: ( (lv_items_2_0= ruleSectionContextRecordItem ) )*
+            // InternalLibrettoSpec.g:2630:3: ( (lv_items_2_0= ruleSectionContextRecordItem ) )*
             loop21:
             do {
                 int alt21=2;
                 int LA21_0 = input.LA(1);
 
-                if ( (LA21_0==87||LA21_0==89) ) {
+                if ( (LA21_0==89||LA21_0==91) ) {
                     alt21=1;
                 }
 
 
                 switch (alt21) {
             	case 1 :
-            	    // InternalLibrettoSpec.g:2507:4: (lv_items_2_0= ruleSectionContextRecordItem )
+            	    // InternalLibrettoSpec.g:2631:4: (lv_items_2_0= ruleSectionContextRecordItem )
             	    {
-            	    // InternalLibrettoSpec.g:2507:4: (lv_items_2_0= ruleSectionContextRecordItem )
-            	    // InternalLibrettoSpec.g:2508:5: lv_items_2_0= ruleSectionContextRecordItem
+            	    // InternalLibrettoSpec.g:2631:4: (lv_items_2_0= ruleSectionContextRecordItem )
+            	    // InternalLibrettoSpec.g:2632:5: lv_items_2_0= ruleSectionContextRecordItem
             	    {
 
             	    					newCompositeNode(grammarAccess.getSectionContextRecordAccess().getItemsSectionContextRecordItemParserRuleCall_2_0());
@@ -6788,7 +7096,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSectionContextRecordItem"
-    // InternalLibrettoSpec.g:2533:1: entryRuleSectionContextRecordItem returns [EObject current=null] : iv_ruleSectionContextRecordItem= ruleSectionContextRecordItem EOF ;
+    // InternalLibrettoSpec.g:2657:1: entryRuleSectionContextRecordItem returns [EObject current=null] : iv_ruleSectionContextRecordItem= ruleSectionContextRecordItem EOF ;
     public final EObject entryRuleSectionContextRecordItem() throws RecognitionException {
         EObject current = null;
 
@@ -6796,8 +7104,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:2533:65: (iv_ruleSectionContextRecordItem= ruleSectionContextRecordItem EOF )
-            // InternalLibrettoSpec.g:2534:2: iv_ruleSectionContextRecordItem= ruleSectionContextRecordItem EOF
+            // InternalLibrettoSpec.g:2657:65: (iv_ruleSectionContextRecordItem= ruleSectionContextRecordItem EOF )
+            // InternalLibrettoSpec.g:2658:2: iv_ruleSectionContextRecordItem= ruleSectionContextRecordItem EOF
             {
              newCompositeNode(grammarAccess.getSectionContextRecordItemRule()); 
             pushFollow(FOLLOW_1);
@@ -6824,7 +7132,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSectionContextRecordItem"
-    // InternalLibrettoSpec.g:2540:1: ruleSectionContextRecordItem returns [EObject current=null] : (this_SectionContextSectionItem_0= ruleSectionContextSectionItem | this_SectionContextTextItem_1= ruleSectionContextTextItem ) ;
+    // InternalLibrettoSpec.g:2664:1: ruleSectionContextRecordItem returns [EObject current=null] : (this_SectionContextSectionItem_0= ruleSectionContextSectionItem | this_SectionContextTextItem_1= ruleSectionContextTextItem ) ;
     public final EObject ruleSectionContextRecordItem() throws RecognitionException {
         EObject current = null;
 
@@ -6837,17 +7145,17 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:2546:2: ( (this_SectionContextSectionItem_0= ruleSectionContextSectionItem | this_SectionContextTextItem_1= ruleSectionContextTextItem ) )
-            // InternalLibrettoSpec.g:2547:2: (this_SectionContextSectionItem_0= ruleSectionContextSectionItem | this_SectionContextTextItem_1= ruleSectionContextTextItem )
+            // InternalLibrettoSpec.g:2670:2: ( (this_SectionContextSectionItem_0= ruleSectionContextSectionItem | this_SectionContextTextItem_1= ruleSectionContextTextItem ) )
+            // InternalLibrettoSpec.g:2671:2: (this_SectionContextSectionItem_0= ruleSectionContextSectionItem | this_SectionContextTextItem_1= ruleSectionContextTextItem )
             {
-            // InternalLibrettoSpec.g:2547:2: (this_SectionContextSectionItem_0= ruleSectionContextSectionItem | this_SectionContextTextItem_1= ruleSectionContextTextItem )
+            // InternalLibrettoSpec.g:2671:2: (this_SectionContextSectionItem_0= ruleSectionContextSectionItem | this_SectionContextTextItem_1= ruleSectionContextTextItem )
             int alt22=2;
             int LA22_0 = input.LA(1);
 
-            if ( (LA22_0==87) ) {
+            if ( (LA22_0==89) ) {
                 alt22=1;
             }
-            else if ( (LA22_0==89) ) {
+            else if ( (LA22_0==91) ) {
                 alt22=2;
             }
             else {
@@ -6858,7 +7166,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
             }
             switch (alt22) {
                 case 1 :
-                    // InternalLibrettoSpec.g:2548:3: this_SectionContextSectionItem_0= ruleSectionContextSectionItem
+                    // InternalLibrettoSpec.g:2672:3: this_SectionContextSectionItem_0= ruleSectionContextSectionItem
                     {
 
                     			newCompositeNode(grammarAccess.getSectionContextRecordItemAccess().getSectionContextSectionItemParserRuleCall_0());
@@ -6876,7 +7184,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoSpec.g:2557:3: this_SectionContextTextItem_1= ruleSectionContextTextItem
+                    // InternalLibrettoSpec.g:2681:3: this_SectionContextTextItem_1= ruleSectionContextTextItem
                     {
 
                     			newCompositeNode(grammarAccess.getSectionContextRecordItemAccess().getSectionContextTextItemParserRuleCall_1());
@@ -6916,7 +7224,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSectionContextSectionItem"
-    // InternalLibrettoSpec.g:2569:1: entryRuleSectionContextSectionItem returns [EObject current=null] : iv_ruleSectionContextSectionItem= ruleSectionContextSectionItem EOF ;
+    // InternalLibrettoSpec.g:2693:1: entryRuleSectionContextSectionItem returns [EObject current=null] : iv_ruleSectionContextSectionItem= ruleSectionContextSectionItem EOF ;
     public final EObject entryRuleSectionContextSectionItem() throws RecognitionException {
         EObject current = null;
 
@@ -6924,8 +7232,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:2569:66: (iv_ruleSectionContextSectionItem= ruleSectionContextSectionItem EOF )
-            // InternalLibrettoSpec.g:2570:2: iv_ruleSectionContextSectionItem= ruleSectionContextSectionItem EOF
+            // InternalLibrettoSpec.g:2693:66: (iv_ruleSectionContextSectionItem= ruleSectionContextSectionItem EOF )
+            // InternalLibrettoSpec.g:2694:2: iv_ruleSectionContextSectionItem= ruleSectionContextSectionItem EOF
             {
              newCompositeNode(grammarAccess.getSectionContextSectionItemRule()); 
             pushFollow(FOLLOW_1);
@@ -6952,7 +7260,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSectionContextSectionItem"
-    // InternalLibrettoSpec.g:2576:1: ruleSectionContextSectionItem returns [EObject current=null] : ( (lv_section_0_0= ruleSectionField ) ) ;
+    // InternalLibrettoSpec.g:2700:1: ruleSectionContextSectionItem returns [EObject current=null] : ( (lv_section_0_0= ruleSectionField ) ) ;
     public final EObject ruleSectionContextSectionItem() throws RecognitionException {
         EObject current = null;
 
@@ -6963,14 +7271,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:2582:2: ( ( (lv_section_0_0= ruleSectionField ) ) )
-            // InternalLibrettoSpec.g:2583:2: ( (lv_section_0_0= ruleSectionField ) )
+            // InternalLibrettoSpec.g:2706:2: ( ( (lv_section_0_0= ruleSectionField ) ) )
+            // InternalLibrettoSpec.g:2707:2: ( (lv_section_0_0= ruleSectionField ) )
             {
-            // InternalLibrettoSpec.g:2583:2: ( (lv_section_0_0= ruleSectionField ) )
-            // InternalLibrettoSpec.g:2584:3: (lv_section_0_0= ruleSectionField )
+            // InternalLibrettoSpec.g:2707:2: ( (lv_section_0_0= ruleSectionField ) )
+            // InternalLibrettoSpec.g:2708:3: (lv_section_0_0= ruleSectionField )
             {
-            // InternalLibrettoSpec.g:2584:3: (lv_section_0_0= ruleSectionField )
-            // InternalLibrettoSpec.g:2585:4: lv_section_0_0= ruleSectionField
+            // InternalLibrettoSpec.g:2708:3: (lv_section_0_0= ruleSectionField )
+            // InternalLibrettoSpec.g:2709:4: lv_section_0_0= ruleSectionField
             {
 
             				newCompositeNode(grammarAccess.getSectionContextSectionItemAccess().getSectionSectionFieldParserRuleCall_0());
@@ -7017,7 +7325,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSectionContextTextItem"
-    // InternalLibrettoSpec.g:2605:1: entryRuleSectionContextTextItem returns [EObject current=null] : iv_ruleSectionContextTextItem= ruleSectionContextTextItem EOF ;
+    // InternalLibrettoSpec.g:2729:1: entryRuleSectionContextTextItem returns [EObject current=null] : iv_ruleSectionContextTextItem= ruleSectionContextTextItem EOF ;
     public final EObject entryRuleSectionContextTextItem() throws RecognitionException {
         EObject current = null;
 
@@ -7025,8 +7333,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:2605:63: (iv_ruleSectionContextTextItem= ruleSectionContextTextItem EOF )
-            // InternalLibrettoSpec.g:2606:2: iv_ruleSectionContextTextItem= ruleSectionContextTextItem EOF
+            // InternalLibrettoSpec.g:2729:63: (iv_ruleSectionContextTextItem= ruleSectionContextTextItem EOF )
+            // InternalLibrettoSpec.g:2730:2: iv_ruleSectionContextTextItem= ruleSectionContextTextItem EOF
             {
              newCompositeNode(grammarAccess.getSectionContextTextItemRule()); 
             pushFollow(FOLLOW_1);
@@ -7053,7 +7361,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSectionContextTextItem"
-    // InternalLibrettoSpec.g:2612:1: ruleSectionContextTextItem returns [EObject current=null] : ( (lv_text_0_0= ruleTextField ) ) ;
+    // InternalLibrettoSpec.g:2736:1: ruleSectionContextTextItem returns [EObject current=null] : ( (lv_text_0_0= ruleTextField ) ) ;
     public final EObject ruleSectionContextTextItem() throws RecognitionException {
         EObject current = null;
 
@@ -7064,14 +7372,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:2618:2: ( ( (lv_text_0_0= ruleTextField ) ) )
-            // InternalLibrettoSpec.g:2619:2: ( (lv_text_0_0= ruleTextField ) )
+            // InternalLibrettoSpec.g:2742:2: ( ( (lv_text_0_0= ruleTextField ) ) )
+            // InternalLibrettoSpec.g:2743:2: ( (lv_text_0_0= ruleTextField ) )
             {
-            // InternalLibrettoSpec.g:2619:2: ( (lv_text_0_0= ruleTextField ) )
-            // InternalLibrettoSpec.g:2620:3: (lv_text_0_0= ruleTextField )
+            // InternalLibrettoSpec.g:2743:2: ( (lv_text_0_0= ruleTextField ) )
+            // InternalLibrettoSpec.g:2744:3: (lv_text_0_0= ruleTextField )
             {
-            // InternalLibrettoSpec.g:2620:3: (lv_text_0_0= ruleTextField )
-            // InternalLibrettoSpec.g:2621:4: lv_text_0_0= ruleTextField
+            // InternalLibrettoSpec.g:2744:3: (lv_text_0_0= ruleTextField )
+            // InternalLibrettoSpec.g:2745:4: lv_text_0_0= ruleTextField
             {
 
             				newCompositeNode(grammarAccess.getSectionContextTextItemAccess().getTextTextFieldParserRuleCall_0());
@@ -7118,7 +7426,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSubsectionContextRecord"
-    // InternalLibrettoSpec.g:2641:1: entryRuleSubsectionContextRecord returns [EObject current=null] : iv_ruleSubsectionContextRecord= ruleSubsectionContextRecord EOF ;
+    // InternalLibrettoSpec.g:2765:1: entryRuleSubsectionContextRecord returns [EObject current=null] : iv_ruleSubsectionContextRecord= ruleSubsectionContextRecord EOF ;
     public final EObject entryRuleSubsectionContextRecord() throws RecognitionException {
         EObject current = null;
 
@@ -7126,8 +7434,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:2641:64: (iv_ruleSubsectionContextRecord= ruleSubsectionContextRecord EOF )
-            // InternalLibrettoSpec.g:2642:2: iv_ruleSubsectionContextRecord= ruleSubsectionContextRecord EOF
+            // InternalLibrettoSpec.g:2765:64: (iv_ruleSubsectionContextRecord= ruleSubsectionContextRecord EOF )
+            // InternalLibrettoSpec.g:2766:2: iv_ruleSubsectionContextRecord= ruleSubsectionContextRecord EOF
             {
              newCompositeNode(grammarAccess.getSubsectionContextRecordRule()); 
             pushFollow(FOLLOW_1);
@@ -7154,7 +7462,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSubsectionContextRecord"
-    // InternalLibrettoSpec.g:2648:1: ruleSubsectionContextRecord returns [EObject current=null] : (otherlv_0= 'subsection_context' otherlv_1= '{' ( (lv_items_2_0= ruleSubsectionContextRecordItem ) )* otherlv_3= '}' ) ;
+    // InternalLibrettoSpec.g:2772:1: ruleSubsectionContextRecord returns [EObject current=null] : (otherlv_0= 'subsection_context' otherlv_1= '{' ( (lv_items_2_0= ruleSubsectionContextRecordItem ) )* otherlv_3= '}' ) ;
     public final EObject ruleSubsectionContextRecord() throws RecognitionException {
         EObject current = null;
 
@@ -7168,13 +7476,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:2654:2: ( (otherlv_0= 'subsection_context' otherlv_1= '{' ( (lv_items_2_0= ruleSubsectionContextRecordItem ) )* otherlv_3= '}' ) )
-            // InternalLibrettoSpec.g:2655:2: (otherlv_0= 'subsection_context' otherlv_1= '{' ( (lv_items_2_0= ruleSubsectionContextRecordItem ) )* otherlv_3= '}' )
+            // InternalLibrettoSpec.g:2778:2: ( (otherlv_0= 'subsection_context' otherlv_1= '{' ( (lv_items_2_0= ruleSubsectionContextRecordItem ) )* otherlv_3= '}' ) )
+            // InternalLibrettoSpec.g:2779:2: (otherlv_0= 'subsection_context' otherlv_1= '{' ( (lv_items_2_0= ruleSubsectionContextRecordItem ) )* otherlv_3= '}' )
             {
-            // InternalLibrettoSpec.g:2655:2: (otherlv_0= 'subsection_context' otherlv_1= '{' ( (lv_items_2_0= ruleSubsectionContextRecordItem ) )* otherlv_3= '}' )
-            // InternalLibrettoSpec.g:2656:3: otherlv_0= 'subsection_context' otherlv_1= '{' ( (lv_items_2_0= ruleSubsectionContextRecordItem ) )* otherlv_3= '}'
+            // InternalLibrettoSpec.g:2779:2: (otherlv_0= 'subsection_context' otherlv_1= '{' ( (lv_items_2_0= ruleSubsectionContextRecordItem ) )* otherlv_3= '}' )
+            // InternalLibrettoSpec.g:2780:3: otherlv_0= 'subsection_context' otherlv_1= '{' ( (lv_items_2_0= ruleSubsectionContextRecordItem ) )* otherlv_3= '}'
             {
-            otherlv_0=(Token)match(input,50,FOLLOW_4); 
+            otherlv_0=(Token)match(input,52,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSubsectionContextRecordAccess().getSubsection_contextKeyword_0());
             		
@@ -7182,23 +7490,23 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getSubsectionContextRecordAccess().getLeftCurlyBracketKeyword_1());
             		
-            // InternalLibrettoSpec.g:2664:3: ( (lv_items_2_0= ruleSubsectionContextRecordItem ) )*
+            // InternalLibrettoSpec.g:2788:3: ( (lv_items_2_0= ruleSubsectionContextRecordItem ) )*
             loop23:
             do {
                 int alt23=2;
                 int LA23_0 = input.LA(1);
 
-                if ( ((LA23_0>=87 && LA23_0<=89)) ) {
+                if ( ((LA23_0>=89 && LA23_0<=91)) ) {
                     alt23=1;
                 }
 
 
                 switch (alt23) {
             	case 1 :
-            	    // InternalLibrettoSpec.g:2665:4: (lv_items_2_0= ruleSubsectionContextRecordItem )
+            	    // InternalLibrettoSpec.g:2789:4: (lv_items_2_0= ruleSubsectionContextRecordItem )
             	    {
-            	    // InternalLibrettoSpec.g:2665:4: (lv_items_2_0= ruleSubsectionContextRecordItem )
-            	    // InternalLibrettoSpec.g:2666:5: lv_items_2_0= ruleSubsectionContextRecordItem
+            	    // InternalLibrettoSpec.g:2789:4: (lv_items_2_0= ruleSubsectionContextRecordItem )
+            	    // InternalLibrettoSpec.g:2790:5: lv_items_2_0= ruleSubsectionContextRecordItem
             	    {
 
             	    					newCompositeNode(grammarAccess.getSubsectionContextRecordAccess().getItemsSubsectionContextRecordItemParserRuleCall_2_0());
@@ -7258,7 +7566,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSubsectionContextRecordItem"
-    // InternalLibrettoSpec.g:2691:1: entryRuleSubsectionContextRecordItem returns [EObject current=null] : iv_ruleSubsectionContextRecordItem= ruleSubsectionContextRecordItem EOF ;
+    // InternalLibrettoSpec.g:2815:1: entryRuleSubsectionContextRecordItem returns [EObject current=null] : iv_ruleSubsectionContextRecordItem= ruleSubsectionContextRecordItem EOF ;
     public final EObject entryRuleSubsectionContextRecordItem() throws RecognitionException {
         EObject current = null;
 
@@ -7266,8 +7574,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:2691:68: (iv_ruleSubsectionContextRecordItem= ruleSubsectionContextRecordItem EOF )
-            // InternalLibrettoSpec.g:2692:2: iv_ruleSubsectionContextRecordItem= ruleSubsectionContextRecordItem EOF
+            // InternalLibrettoSpec.g:2815:68: (iv_ruleSubsectionContextRecordItem= ruleSubsectionContextRecordItem EOF )
+            // InternalLibrettoSpec.g:2816:2: iv_ruleSubsectionContextRecordItem= ruleSubsectionContextRecordItem EOF
             {
              newCompositeNode(grammarAccess.getSubsectionContextRecordItemRule()); 
             pushFollow(FOLLOW_1);
@@ -7294,7 +7602,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSubsectionContextRecordItem"
-    // InternalLibrettoSpec.g:2698:1: ruleSubsectionContextRecordItem returns [EObject current=null] : (this_SubsectionContextSectionItem_0= ruleSubsectionContextSectionItem | this_SubsectionContextSubsectionItem_1= ruleSubsectionContextSubsectionItem | this_SubsectionContextTextItem_2= ruleSubsectionContextTextItem ) ;
+    // InternalLibrettoSpec.g:2822:1: ruleSubsectionContextRecordItem returns [EObject current=null] : (this_SubsectionContextSectionItem_0= ruleSubsectionContextSectionItem | this_SubsectionContextSubsectionItem_1= ruleSubsectionContextSubsectionItem | this_SubsectionContextTextItem_2= ruleSubsectionContextTextItem ) ;
     public final EObject ruleSubsectionContextRecordItem() throws RecognitionException {
         EObject current = null;
 
@@ -7309,23 +7617,23 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:2704:2: ( (this_SubsectionContextSectionItem_0= ruleSubsectionContextSectionItem | this_SubsectionContextSubsectionItem_1= ruleSubsectionContextSubsectionItem | this_SubsectionContextTextItem_2= ruleSubsectionContextTextItem ) )
-            // InternalLibrettoSpec.g:2705:2: (this_SubsectionContextSectionItem_0= ruleSubsectionContextSectionItem | this_SubsectionContextSubsectionItem_1= ruleSubsectionContextSubsectionItem | this_SubsectionContextTextItem_2= ruleSubsectionContextTextItem )
+            // InternalLibrettoSpec.g:2828:2: ( (this_SubsectionContextSectionItem_0= ruleSubsectionContextSectionItem | this_SubsectionContextSubsectionItem_1= ruleSubsectionContextSubsectionItem | this_SubsectionContextTextItem_2= ruleSubsectionContextTextItem ) )
+            // InternalLibrettoSpec.g:2829:2: (this_SubsectionContextSectionItem_0= ruleSubsectionContextSectionItem | this_SubsectionContextSubsectionItem_1= ruleSubsectionContextSubsectionItem | this_SubsectionContextTextItem_2= ruleSubsectionContextTextItem )
             {
-            // InternalLibrettoSpec.g:2705:2: (this_SubsectionContextSectionItem_0= ruleSubsectionContextSectionItem | this_SubsectionContextSubsectionItem_1= ruleSubsectionContextSubsectionItem | this_SubsectionContextTextItem_2= ruleSubsectionContextTextItem )
+            // InternalLibrettoSpec.g:2829:2: (this_SubsectionContextSectionItem_0= ruleSubsectionContextSectionItem | this_SubsectionContextSubsectionItem_1= ruleSubsectionContextSubsectionItem | this_SubsectionContextTextItem_2= ruleSubsectionContextTextItem )
             int alt24=3;
             switch ( input.LA(1) ) {
-            case 87:
+            case 89:
                 {
                 alt24=1;
                 }
                 break;
-            case 88:
+            case 90:
                 {
                 alt24=2;
                 }
                 break;
-            case 89:
+            case 91:
                 {
                 alt24=3;
                 }
@@ -7339,7 +7647,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             switch (alt24) {
                 case 1 :
-                    // InternalLibrettoSpec.g:2706:3: this_SubsectionContextSectionItem_0= ruleSubsectionContextSectionItem
+                    // InternalLibrettoSpec.g:2830:3: this_SubsectionContextSectionItem_0= ruleSubsectionContextSectionItem
                     {
 
                     			newCompositeNode(grammarAccess.getSubsectionContextRecordItemAccess().getSubsectionContextSectionItemParserRuleCall_0());
@@ -7357,7 +7665,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoSpec.g:2715:3: this_SubsectionContextSubsectionItem_1= ruleSubsectionContextSubsectionItem
+                    // InternalLibrettoSpec.g:2839:3: this_SubsectionContextSubsectionItem_1= ruleSubsectionContextSubsectionItem
                     {
 
                     			newCompositeNode(grammarAccess.getSubsectionContextRecordItemAccess().getSubsectionContextSubsectionItemParserRuleCall_1());
@@ -7375,7 +7683,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalLibrettoSpec.g:2724:3: this_SubsectionContextTextItem_2= ruleSubsectionContextTextItem
+                    // InternalLibrettoSpec.g:2848:3: this_SubsectionContextTextItem_2= ruleSubsectionContextTextItem
                     {
 
                     			newCompositeNode(grammarAccess.getSubsectionContextRecordItemAccess().getSubsectionContextTextItemParserRuleCall_2());
@@ -7415,7 +7723,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSubsectionContextSectionItem"
-    // InternalLibrettoSpec.g:2736:1: entryRuleSubsectionContextSectionItem returns [EObject current=null] : iv_ruleSubsectionContextSectionItem= ruleSubsectionContextSectionItem EOF ;
+    // InternalLibrettoSpec.g:2860:1: entryRuleSubsectionContextSectionItem returns [EObject current=null] : iv_ruleSubsectionContextSectionItem= ruleSubsectionContextSectionItem EOF ;
     public final EObject entryRuleSubsectionContextSectionItem() throws RecognitionException {
         EObject current = null;
 
@@ -7423,8 +7731,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:2736:69: (iv_ruleSubsectionContextSectionItem= ruleSubsectionContextSectionItem EOF )
-            // InternalLibrettoSpec.g:2737:2: iv_ruleSubsectionContextSectionItem= ruleSubsectionContextSectionItem EOF
+            // InternalLibrettoSpec.g:2860:69: (iv_ruleSubsectionContextSectionItem= ruleSubsectionContextSectionItem EOF )
+            // InternalLibrettoSpec.g:2861:2: iv_ruleSubsectionContextSectionItem= ruleSubsectionContextSectionItem EOF
             {
              newCompositeNode(grammarAccess.getSubsectionContextSectionItemRule()); 
             pushFollow(FOLLOW_1);
@@ -7451,7 +7759,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSubsectionContextSectionItem"
-    // InternalLibrettoSpec.g:2743:1: ruleSubsectionContextSectionItem returns [EObject current=null] : ( (lv_section_0_0= ruleSectionField ) ) ;
+    // InternalLibrettoSpec.g:2867:1: ruleSubsectionContextSectionItem returns [EObject current=null] : ( (lv_section_0_0= ruleSectionField ) ) ;
     public final EObject ruleSubsectionContextSectionItem() throws RecognitionException {
         EObject current = null;
 
@@ -7462,14 +7770,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:2749:2: ( ( (lv_section_0_0= ruleSectionField ) ) )
-            // InternalLibrettoSpec.g:2750:2: ( (lv_section_0_0= ruleSectionField ) )
+            // InternalLibrettoSpec.g:2873:2: ( ( (lv_section_0_0= ruleSectionField ) ) )
+            // InternalLibrettoSpec.g:2874:2: ( (lv_section_0_0= ruleSectionField ) )
             {
-            // InternalLibrettoSpec.g:2750:2: ( (lv_section_0_0= ruleSectionField ) )
-            // InternalLibrettoSpec.g:2751:3: (lv_section_0_0= ruleSectionField )
+            // InternalLibrettoSpec.g:2874:2: ( (lv_section_0_0= ruleSectionField ) )
+            // InternalLibrettoSpec.g:2875:3: (lv_section_0_0= ruleSectionField )
             {
-            // InternalLibrettoSpec.g:2751:3: (lv_section_0_0= ruleSectionField )
-            // InternalLibrettoSpec.g:2752:4: lv_section_0_0= ruleSectionField
+            // InternalLibrettoSpec.g:2875:3: (lv_section_0_0= ruleSectionField )
+            // InternalLibrettoSpec.g:2876:4: lv_section_0_0= ruleSectionField
             {
 
             				newCompositeNode(grammarAccess.getSubsectionContextSectionItemAccess().getSectionSectionFieldParserRuleCall_0());
@@ -7516,7 +7824,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSubsectionContextSubsectionItem"
-    // InternalLibrettoSpec.g:2772:1: entryRuleSubsectionContextSubsectionItem returns [EObject current=null] : iv_ruleSubsectionContextSubsectionItem= ruleSubsectionContextSubsectionItem EOF ;
+    // InternalLibrettoSpec.g:2896:1: entryRuleSubsectionContextSubsectionItem returns [EObject current=null] : iv_ruleSubsectionContextSubsectionItem= ruleSubsectionContextSubsectionItem EOF ;
     public final EObject entryRuleSubsectionContextSubsectionItem() throws RecognitionException {
         EObject current = null;
 
@@ -7524,8 +7832,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:2772:72: (iv_ruleSubsectionContextSubsectionItem= ruleSubsectionContextSubsectionItem EOF )
-            // InternalLibrettoSpec.g:2773:2: iv_ruleSubsectionContextSubsectionItem= ruleSubsectionContextSubsectionItem EOF
+            // InternalLibrettoSpec.g:2896:72: (iv_ruleSubsectionContextSubsectionItem= ruleSubsectionContextSubsectionItem EOF )
+            // InternalLibrettoSpec.g:2897:2: iv_ruleSubsectionContextSubsectionItem= ruleSubsectionContextSubsectionItem EOF
             {
              newCompositeNode(grammarAccess.getSubsectionContextSubsectionItemRule()); 
             pushFollow(FOLLOW_1);
@@ -7552,7 +7860,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSubsectionContextSubsectionItem"
-    // InternalLibrettoSpec.g:2779:1: ruleSubsectionContextSubsectionItem returns [EObject current=null] : ( (lv_subsection_0_0= ruleSubsectionField ) ) ;
+    // InternalLibrettoSpec.g:2903:1: ruleSubsectionContextSubsectionItem returns [EObject current=null] : ( (lv_subsection_0_0= ruleSubsectionField ) ) ;
     public final EObject ruleSubsectionContextSubsectionItem() throws RecognitionException {
         EObject current = null;
 
@@ -7563,14 +7871,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:2785:2: ( ( (lv_subsection_0_0= ruleSubsectionField ) ) )
-            // InternalLibrettoSpec.g:2786:2: ( (lv_subsection_0_0= ruleSubsectionField ) )
+            // InternalLibrettoSpec.g:2909:2: ( ( (lv_subsection_0_0= ruleSubsectionField ) ) )
+            // InternalLibrettoSpec.g:2910:2: ( (lv_subsection_0_0= ruleSubsectionField ) )
             {
-            // InternalLibrettoSpec.g:2786:2: ( (lv_subsection_0_0= ruleSubsectionField ) )
-            // InternalLibrettoSpec.g:2787:3: (lv_subsection_0_0= ruleSubsectionField )
+            // InternalLibrettoSpec.g:2910:2: ( (lv_subsection_0_0= ruleSubsectionField ) )
+            // InternalLibrettoSpec.g:2911:3: (lv_subsection_0_0= ruleSubsectionField )
             {
-            // InternalLibrettoSpec.g:2787:3: (lv_subsection_0_0= ruleSubsectionField )
-            // InternalLibrettoSpec.g:2788:4: lv_subsection_0_0= ruleSubsectionField
+            // InternalLibrettoSpec.g:2911:3: (lv_subsection_0_0= ruleSubsectionField )
+            // InternalLibrettoSpec.g:2912:4: lv_subsection_0_0= ruleSubsectionField
             {
 
             				newCompositeNode(grammarAccess.getSubsectionContextSubsectionItemAccess().getSubsectionSubsectionFieldParserRuleCall_0());
@@ -7617,7 +7925,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSubsectionContextTextItem"
-    // InternalLibrettoSpec.g:2808:1: entryRuleSubsectionContextTextItem returns [EObject current=null] : iv_ruleSubsectionContextTextItem= ruleSubsectionContextTextItem EOF ;
+    // InternalLibrettoSpec.g:2932:1: entryRuleSubsectionContextTextItem returns [EObject current=null] : iv_ruleSubsectionContextTextItem= ruleSubsectionContextTextItem EOF ;
     public final EObject entryRuleSubsectionContextTextItem() throws RecognitionException {
         EObject current = null;
 
@@ -7625,8 +7933,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:2808:66: (iv_ruleSubsectionContextTextItem= ruleSubsectionContextTextItem EOF )
-            // InternalLibrettoSpec.g:2809:2: iv_ruleSubsectionContextTextItem= ruleSubsectionContextTextItem EOF
+            // InternalLibrettoSpec.g:2932:66: (iv_ruleSubsectionContextTextItem= ruleSubsectionContextTextItem EOF )
+            // InternalLibrettoSpec.g:2933:2: iv_ruleSubsectionContextTextItem= ruleSubsectionContextTextItem EOF
             {
              newCompositeNode(grammarAccess.getSubsectionContextTextItemRule()); 
             pushFollow(FOLLOW_1);
@@ -7653,7 +7961,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSubsectionContextTextItem"
-    // InternalLibrettoSpec.g:2815:1: ruleSubsectionContextTextItem returns [EObject current=null] : ( (lv_text_0_0= ruleTextField ) ) ;
+    // InternalLibrettoSpec.g:2939:1: ruleSubsectionContextTextItem returns [EObject current=null] : ( (lv_text_0_0= ruleTextField ) ) ;
     public final EObject ruleSubsectionContextTextItem() throws RecognitionException {
         EObject current = null;
 
@@ -7664,14 +7972,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:2821:2: ( ( (lv_text_0_0= ruleTextField ) ) )
-            // InternalLibrettoSpec.g:2822:2: ( (lv_text_0_0= ruleTextField ) )
+            // InternalLibrettoSpec.g:2945:2: ( ( (lv_text_0_0= ruleTextField ) ) )
+            // InternalLibrettoSpec.g:2946:2: ( (lv_text_0_0= ruleTextField ) )
             {
-            // InternalLibrettoSpec.g:2822:2: ( (lv_text_0_0= ruleTextField ) )
-            // InternalLibrettoSpec.g:2823:3: (lv_text_0_0= ruleTextField )
+            // InternalLibrettoSpec.g:2946:2: ( (lv_text_0_0= ruleTextField ) )
+            // InternalLibrettoSpec.g:2947:3: (lv_text_0_0= ruleTextField )
             {
-            // InternalLibrettoSpec.g:2823:3: (lv_text_0_0= ruleTextField )
-            // InternalLibrettoSpec.g:2824:4: lv_text_0_0= ruleTextField
+            // InternalLibrettoSpec.g:2947:3: (lv_text_0_0= ruleTextField )
+            // InternalLibrettoSpec.g:2948:4: lv_text_0_0= ruleTextField
             {
 
             				newCompositeNode(grammarAccess.getSubsectionContextTextItemAccess().getTextTextFieldParserRuleCall_0());
@@ -7718,7 +8026,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOutOfScopeRecord"
-    // InternalLibrettoSpec.g:2844:1: entryRuleOutOfScopeRecord returns [EObject current=null] : iv_ruleOutOfScopeRecord= ruleOutOfScopeRecord EOF ;
+    // InternalLibrettoSpec.g:2968:1: entryRuleOutOfScopeRecord returns [EObject current=null] : iv_ruleOutOfScopeRecord= ruleOutOfScopeRecord EOF ;
     public final EObject entryRuleOutOfScopeRecord() throws RecognitionException {
         EObject current = null;
 
@@ -7726,8 +8034,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:2844:57: (iv_ruleOutOfScopeRecord= ruleOutOfScopeRecord EOF )
-            // InternalLibrettoSpec.g:2845:2: iv_ruleOutOfScopeRecord= ruleOutOfScopeRecord EOF
+            // InternalLibrettoSpec.g:2968:57: (iv_ruleOutOfScopeRecord= ruleOutOfScopeRecord EOF )
+            // InternalLibrettoSpec.g:2969:2: iv_ruleOutOfScopeRecord= ruleOutOfScopeRecord EOF
             {
              newCompositeNode(grammarAccess.getOutOfScopeRecordRule()); 
             pushFollow(FOLLOW_1);
@@ -7754,7 +8062,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOutOfScopeRecord"
-    // InternalLibrettoSpec.g:2851:1: ruleOutOfScopeRecord returns [EObject current=null] : (otherlv_0= 'out_of_scope_item' ( (lv_id_1_0= ruleOosId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleOutOfScopeRecordItem ) )* otherlv_4= '}' ) ;
+    // InternalLibrettoSpec.g:2975:1: ruleOutOfScopeRecord returns [EObject current=null] : (otherlv_0= 'out_of_scope_item' ( (lv_id_1_0= ruleOosId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleOutOfScopeRecordItem ) )* otherlv_4= '}' ) ;
     public final EObject ruleOutOfScopeRecord() throws RecognitionException {
         EObject current = null;
 
@@ -7770,21 +8078,21 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:2857:2: ( (otherlv_0= 'out_of_scope_item' ( (lv_id_1_0= ruleOosId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleOutOfScopeRecordItem ) )* otherlv_4= '}' ) )
-            // InternalLibrettoSpec.g:2858:2: (otherlv_0= 'out_of_scope_item' ( (lv_id_1_0= ruleOosId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleOutOfScopeRecordItem ) )* otherlv_4= '}' )
+            // InternalLibrettoSpec.g:2981:2: ( (otherlv_0= 'out_of_scope_item' ( (lv_id_1_0= ruleOosId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleOutOfScopeRecordItem ) )* otherlv_4= '}' ) )
+            // InternalLibrettoSpec.g:2982:2: (otherlv_0= 'out_of_scope_item' ( (lv_id_1_0= ruleOosId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleOutOfScopeRecordItem ) )* otherlv_4= '}' )
             {
-            // InternalLibrettoSpec.g:2858:2: (otherlv_0= 'out_of_scope_item' ( (lv_id_1_0= ruleOosId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleOutOfScopeRecordItem ) )* otherlv_4= '}' )
-            // InternalLibrettoSpec.g:2859:3: otherlv_0= 'out_of_scope_item' ( (lv_id_1_0= ruleOosId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleOutOfScopeRecordItem ) )* otherlv_4= '}'
+            // InternalLibrettoSpec.g:2982:2: (otherlv_0= 'out_of_scope_item' ( (lv_id_1_0= ruleOosId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleOutOfScopeRecordItem ) )* otherlv_4= '}' )
+            // InternalLibrettoSpec.g:2983:3: otherlv_0= 'out_of_scope_item' ( (lv_id_1_0= ruleOosId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleOutOfScopeRecordItem ) )* otherlv_4= '}'
             {
-            otherlv_0=(Token)match(input,51,FOLLOW_25); 
+            otherlv_0=(Token)match(input,53,FOLLOW_25); 
 
             			newLeafNode(otherlv_0, grammarAccess.getOutOfScopeRecordAccess().getOut_of_scope_itemKeyword_0());
             		
-            // InternalLibrettoSpec.g:2863:3: ( (lv_id_1_0= ruleOosId ) )
-            // InternalLibrettoSpec.g:2864:4: (lv_id_1_0= ruleOosId )
+            // InternalLibrettoSpec.g:2987:3: ( (lv_id_1_0= ruleOosId ) )
+            // InternalLibrettoSpec.g:2988:4: (lv_id_1_0= ruleOosId )
             {
-            // InternalLibrettoSpec.g:2864:4: (lv_id_1_0= ruleOosId )
-            // InternalLibrettoSpec.g:2865:5: lv_id_1_0= ruleOosId
+            // InternalLibrettoSpec.g:2988:4: (lv_id_1_0= ruleOosId )
+            // InternalLibrettoSpec.g:2989:5: lv_id_1_0= ruleOosId
             {
 
             					newCompositeNode(grammarAccess.getOutOfScopeRecordAccess().getIdOosIdParserRuleCall_1_0());
@@ -7815,23 +8123,23 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getOutOfScopeRecordAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalLibrettoSpec.g:2886:3: ( (lv_items_3_0= ruleOutOfScopeRecordItem ) )*
+            // InternalLibrettoSpec.g:3010:3: ( (lv_items_3_0= ruleOutOfScopeRecordItem ) )*
             loop25:
             do {
                 int alt25=2;
                 int LA25_0 = input.LA(1);
 
-                if ( (LA25_0==52) ) {
+                if ( (LA25_0==54) ) {
                     alt25=1;
                 }
 
 
                 switch (alt25) {
             	case 1 :
-            	    // InternalLibrettoSpec.g:2887:4: (lv_items_3_0= ruleOutOfScopeRecordItem )
+            	    // InternalLibrettoSpec.g:3011:4: (lv_items_3_0= ruleOutOfScopeRecordItem )
             	    {
-            	    // InternalLibrettoSpec.g:2887:4: (lv_items_3_0= ruleOutOfScopeRecordItem )
-            	    // InternalLibrettoSpec.g:2888:5: lv_items_3_0= ruleOutOfScopeRecordItem
+            	    // InternalLibrettoSpec.g:3011:4: (lv_items_3_0= ruleOutOfScopeRecordItem )
+            	    // InternalLibrettoSpec.g:3012:5: lv_items_3_0= ruleOutOfScopeRecordItem
             	    {
 
             	    					newCompositeNode(grammarAccess.getOutOfScopeRecordAccess().getItemsOutOfScopeRecordItemParserRuleCall_3_0());
@@ -7891,7 +8199,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOutOfScopeRecordItem"
-    // InternalLibrettoSpec.g:2913:1: entryRuleOutOfScopeRecordItem returns [EObject current=null] : iv_ruleOutOfScopeRecordItem= ruleOutOfScopeRecordItem EOF ;
+    // InternalLibrettoSpec.g:3037:1: entryRuleOutOfScopeRecordItem returns [EObject current=null] : iv_ruleOutOfScopeRecordItem= ruleOutOfScopeRecordItem EOF ;
     public final EObject entryRuleOutOfScopeRecordItem() throws RecognitionException {
         EObject current = null;
 
@@ -7899,8 +8207,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:2913:61: (iv_ruleOutOfScopeRecordItem= ruleOutOfScopeRecordItem EOF )
-            // InternalLibrettoSpec.g:2914:2: iv_ruleOutOfScopeRecordItem= ruleOutOfScopeRecordItem EOF
+            // InternalLibrettoSpec.g:3037:61: (iv_ruleOutOfScopeRecordItem= ruleOutOfScopeRecordItem EOF )
+            // InternalLibrettoSpec.g:3038:2: iv_ruleOutOfScopeRecordItem= ruleOutOfScopeRecordItem EOF
             {
              newCompositeNode(grammarAccess.getOutOfScopeRecordItemRule()); 
             pushFollow(FOLLOW_1);
@@ -7927,7 +8235,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOutOfScopeRecordItem"
-    // InternalLibrettoSpec.g:2920:1: ruleOutOfScopeRecordItem returns [EObject current=null] : this_OutOfScopeStatementItem_0= ruleOutOfScopeStatementItem ;
+    // InternalLibrettoSpec.g:3044:1: ruleOutOfScopeRecordItem returns [EObject current=null] : this_OutOfScopeStatementItem_0= ruleOutOfScopeStatementItem ;
     public final EObject ruleOutOfScopeRecordItem() throws RecognitionException {
         EObject current = null;
 
@@ -7938,8 +8246,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:2926:2: (this_OutOfScopeStatementItem_0= ruleOutOfScopeStatementItem )
-            // InternalLibrettoSpec.g:2927:2: this_OutOfScopeStatementItem_0= ruleOutOfScopeStatementItem
+            // InternalLibrettoSpec.g:3050:2: (this_OutOfScopeStatementItem_0= ruleOutOfScopeStatementItem )
+            // InternalLibrettoSpec.g:3051:2: this_OutOfScopeStatementItem_0= ruleOutOfScopeStatementItem
             {
 
             		newCompositeNode(grammarAccess.getOutOfScopeRecordItemAccess().getOutOfScopeStatementItemParserRuleCall());
@@ -7973,7 +8281,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOutOfScopeStatementItem"
-    // InternalLibrettoSpec.g:2938:1: entryRuleOutOfScopeStatementItem returns [EObject current=null] : iv_ruleOutOfScopeStatementItem= ruleOutOfScopeStatementItem EOF ;
+    // InternalLibrettoSpec.g:3062:1: entryRuleOutOfScopeStatementItem returns [EObject current=null] : iv_ruleOutOfScopeStatementItem= ruleOutOfScopeStatementItem EOF ;
     public final EObject entryRuleOutOfScopeStatementItem() throws RecognitionException {
         EObject current = null;
 
@@ -7981,8 +8289,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:2938:64: (iv_ruleOutOfScopeStatementItem= ruleOutOfScopeStatementItem EOF )
-            // InternalLibrettoSpec.g:2939:2: iv_ruleOutOfScopeStatementItem= ruleOutOfScopeStatementItem EOF
+            // InternalLibrettoSpec.g:3062:64: (iv_ruleOutOfScopeStatementItem= ruleOutOfScopeStatementItem EOF )
+            // InternalLibrettoSpec.g:3063:2: iv_ruleOutOfScopeStatementItem= ruleOutOfScopeStatementItem EOF
             {
              newCompositeNode(grammarAccess.getOutOfScopeStatementItemRule()); 
             pushFollow(FOLLOW_1);
@@ -8009,7 +8317,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOutOfScopeStatementItem"
-    // InternalLibrettoSpec.g:2945:1: ruleOutOfScopeStatementItem returns [EObject current=null] : ( (lv_statement_0_0= ruleStatementField ) ) ;
+    // InternalLibrettoSpec.g:3069:1: ruleOutOfScopeStatementItem returns [EObject current=null] : ( (lv_statement_0_0= ruleStatementField ) ) ;
     public final EObject ruleOutOfScopeStatementItem() throws RecognitionException {
         EObject current = null;
 
@@ -8020,14 +8328,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:2951:2: ( ( (lv_statement_0_0= ruleStatementField ) ) )
-            // InternalLibrettoSpec.g:2952:2: ( (lv_statement_0_0= ruleStatementField ) )
+            // InternalLibrettoSpec.g:3075:2: ( ( (lv_statement_0_0= ruleStatementField ) ) )
+            // InternalLibrettoSpec.g:3076:2: ( (lv_statement_0_0= ruleStatementField ) )
             {
-            // InternalLibrettoSpec.g:2952:2: ( (lv_statement_0_0= ruleStatementField ) )
-            // InternalLibrettoSpec.g:2953:3: (lv_statement_0_0= ruleStatementField )
+            // InternalLibrettoSpec.g:3076:2: ( (lv_statement_0_0= ruleStatementField ) )
+            // InternalLibrettoSpec.g:3077:3: (lv_statement_0_0= ruleStatementField )
             {
-            // InternalLibrettoSpec.g:2953:3: (lv_statement_0_0= ruleStatementField )
-            // InternalLibrettoSpec.g:2954:4: lv_statement_0_0= ruleStatementField
+            // InternalLibrettoSpec.g:3077:3: (lv_statement_0_0= ruleStatementField )
+            // InternalLibrettoSpec.g:3078:4: lv_statement_0_0= ruleStatementField
             {
 
             				newCompositeNode(grammarAccess.getOutOfScopeStatementItemAccess().getStatementStatementFieldParserRuleCall_0());
@@ -8074,7 +8382,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStatementField"
-    // InternalLibrettoSpec.g:2974:1: entryRuleStatementField returns [EObject current=null] : iv_ruleStatementField= ruleStatementField EOF ;
+    // InternalLibrettoSpec.g:3098:1: entryRuleStatementField returns [EObject current=null] : iv_ruleStatementField= ruleStatementField EOF ;
     public final EObject entryRuleStatementField() throws RecognitionException {
         EObject current = null;
 
@@ -8082,8 +8390,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:2974:55: (iv_ruleStatementField= ruleStatementField EOF )
-            // InternalLibrettoSpec.g:2975:2: iv_ruleStatementField= ruleStatementField EOF
+            // InternalLibrettoSpec.g:3098:55: (iv_ruleStatementField= ruleStatementField EOF )
+            // InternalLibrettoSpec.g:3099:2: iv_ruleStatementField= ruleStatementField EOF
             {
              newCompositeNode(grammarAccess.getStatementFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -8110,7 +8418,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStatementField"
-    // InternalLibrettoSpec.g:2981:1: ruleStatementField returns [EObject current=null] : (otherlv_0= 'statement' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
+    // InternalLibrettoSpec.g:3105:1: ruleStatementField returns [EObject current=null] : (otherlv_0= 'statement' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
     public final EObject ruleStatementField() throws RecognitionException {
         EObject current = null;
 
@@ -8123,13 +8431,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:2987:2: ( (otherlv_0= 'statement' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
-            // InternalLibrettoSpec.g:2988:2: (otherlv_0= 'statement' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:3111:2: ( (otherlv_0= 'statement' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
+            // InternalLibrettoSpec.g:3112:2: (otherlv_0= 'statement' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
             {
-            // InternalLibrettoSpec.g:2988:2: (otherlv_0= 'statement' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
-            // InternalLibrettoSpec.g:2989:3: otherlv_0= 'statement' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:3112:2: (otherlv_0= 'statement' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:3113:3: otherlv_0= 'statement' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
             {
-            otherlv_0=(Token)match(input,52,FOLLOW_17); 
+            otherlv_0=(Token)match(input,54,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getStatementFieldAccess().getStatementKeyword_0());
             		
@@ -8137,11 +8445,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getStatementFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:2997:3: ( (lv_value_2_0= ruleTextValue ) )
-            // InternalLibrettoSpec.g:2998:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:3121:3: ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:3122:4: (lv_value_2_0= ruleTextValue )
             {
-            // InternalLibrettoSpec.g:2998:4: (lv_value_2_0= ruleTextValue )
-            // InternalLibrettoSpec.g:2999:5: lv_value_2_0= ruleTextValue
+            // InternalLibrettoSpec.g:3122:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:3123:5: lv_value_2_0= ruleTextValue
             {
 
             					newCompositeNode(grammarAccess.getStatementFieldAccess().getValueTextValueParserRuleCall_2_0());
@@ -8191,7 +8499,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBehaviorRecord"
-    // InternalLibrettoSpec.g:3020:1: entryRuleBehaviorRecord returns [EObject current=null] : iv_ruleBehaviorRecord= ruleBehaviorRecord EOF ;
+    // InternalLibrettoSpec.g:3144:1: entryRuleBehaviorRecord returns [EObject current=null] : iv_ruleBehaviorRecord= ruleBehaviorRecord EOF ;
     public final EObject entryRuleBehaviorRecord() throws RecognitionException {
         EObject current = null;
 
@@ -8199,8 +8507,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:3020:55: (iv_ruleBehaviorRecord= ruleBehaviorRecord EOF )
-            // InternalLibrettoSpec.g:3021:2: iv_ruleBehaviorRecord= ruleBehaviorRecord EOF
+            // InternalLibrettoSpec.g:3144:55: (iv_ruleBehaviorRecord= ruleBehaviorRecord EOF )
+            // InternalLibrettoSpec.g:3145:2: iv_ruleBehaviorRecord= ruleBehaviorRecord EOF
             {
              newCompositeNode(grammarAccess.getBehaviorRecordRule()); 
             pushFollow(FOLLOW_1);
@@ -8227,7 +8535,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBehaviorRecord"
-    // InternalLibrettoSpec.g:3027:1: ruleBehaviorRecord returns [EObject current=null] : (otherlv_0= 'behavior' ( (lv_id_1_0= ruleBehaviorId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleBehaviorRecordItem ) )* otherlv_4= '}' ) ;
+    // InternalLibrettoSpec.g:3151:1: ruleBehaviorRecord returns [EObject current=null] : (otherlv_0= 'behavior' ( (lv_id_1_0= ruleBehaviorId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleBehaviorRecordItem ) )* otherlv_4= '}' ) ;
     public final EObject ruleBehaviorRecord() throws RecognitionException {
         EObject current = null;
 
@@ -8243,21 +8551,21 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:3033:2: ( (otherlv_0= 'behavior' ( (lv_id_1_0= ruleBehaviorId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleBehaviorRecordItem ) )* otherlv_4= '}' ) )
-            // InternalLibrettoSpec.g:3034:2: (otherlv_0= 'behavior' ( (lv_id_1_0= ruleBehaviorId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleBehaviorRecordItem ) )* otherlv_4= '}' )
+            // InternalLibrettoSpec.g:3157:2: ( (otherlv_0= 'behavior' ( (lv_id_1_0= ruleBehaviorId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleBehaviorRecordItem ) )* otherlv_4= '}' ) )
+            // InternalLibrettoSpec.g:3158:2: (otherlv_0= 'behavior' ( (lv_id_1_0= ruleBehaviorId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleBehaviorRecordItem ) )* otherlv_4= '}' )
             {
-            // InternalLibrettoSpec.g:3034:2: (otherlv_0= 'behavior' ( (lv_id_1_0= ruleBehaviorId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleBehaviorRecordItem ) )* otherlv_4= '}' )
-            // InternalLibrettoSpec.g:3035:3: otherlv_0= 'behavior' ( (lv_id_1_0= ruleBehaviorId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleBehaviorRecordItem ) )* otherlv_4= '}'
+            // InternalLibrettoSpec.g:3158:2: (otherlv_0= 'behavior' ( (lv_id_1_0= ruleBehaviorId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleBehaviorRecordItem ) )* otherlv_4= '}' )
+            // InternalLibrettoSpec.g:3159:3: otherlv_0= 'behavior' ( (lv_id_1_0= ruleBehaviorId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleBehaviorRecordItem ) )* otherlv_4= '}'
             {
-            otherlv_0=(Token)match(input,53,FOLLOW_27); 
+            otherlv_0=(Token)match(input,55,FOLLOW_27); 
 
             			newLeafNode(otherlv_0, grammarAccess.getBehaviorRecordAccess().getBehaviorKeyword_0());
             		
-            // InternalLibrettoSpec.g:3039:3: ( (lv_id_1_0= ruleBehaviorId ) )
-            // InternalLibrettoSpec.g:3040:4: (lv_id_1_0= ruleBehaviorId )
+            // InternalLibrettoSpec.g:3163:3: ( (lv_id_1_0= ruleBehaviorId ) )
+            // InternalLibrettoSpec.g:3164:4: (lv_id_1_0= ruleBehaviorId )
             {
-            // InternalLibrettoSpec.g:3040:4: (lv_id_1_0= ruleBehaviorId )
-            // InternalLibrettoSpec.g:3041:5: lv_id_1_0= ruleBehaviorId
+            // InternalLibrettoSpec.g:3164:4: (lv_id_1_0= ruleBehaviorId )
+            // InternalLibrettoSpec.g:3165:5: lv_id_1_0= ruleBehaviorId
             {
 
             					newCompositeNode(grammarAccess.getBehaviorRecordAccess().getIdBehaviorIdParserRuleCall_1_0());
@@ -8288,23 +8596,23 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getBehaviorRecordAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalLibrettoSpec.g:3062:3: ( (lv_items_3_0= ruleBehaviorRecordItem ) )*
+            // InternalLibrettoSpec.g:3186:3: ( (lv_items_3_0= ruleBehaviorRecordItem ) )*
             loop26:
             do {
                 int alt26=2;
                 int LA26_0 = input.LA(1);
 
-                if ( (LA26_0==22||LA26_0==41||(LA26_0>=54 && LA26_0<=63)||LA26_0==86) ) {
+                if ( (LA26_0==22||LA26_0==43||(LA26_0>=56 && LA26_0<=65)||LA26_0==88) ) {
                     alt26=1;
                 }
 
 
                 switch (alt26) {
             	case 1 :
-            	    // InternalLibrettoSpec.g:3063:4: (lv_items_3_0= ruleBehaviorRecordItem )
+            	    // InternalLibrettoSpec.g:3187:4: (lv_items_3_0= ruleBehaviorRecordItem )
             	    {
-            	    // InternalLibrettoSpec.g:3063:4: (lv_items_3_0= ruleBehaviorRecordItem )
-            	    // InternalLibrettoSpec.g:3064:5: lv_items_3_0= ruleBehaviorRecordItem
+            	    // InternalLibrettoSpec.g:3187:4: (lv_items_3_0= ruleBehaviorRecordItem )
+            	    // InternalLibrettoSpec.g:3188:5: lv_items_3_0= ruleBehaviorRecordItem
             	    {
 
             	    					newCompositeNode(grammarAccess.getBehaviorRecordAccess().getItemsBehaviorRecordItemParserRuleCall_3_0());
@@ -8364,7 +8672,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBehaviorRecordItem"
-    // InternalLibrettoSpec.g:3089:1: entryRuleBehaviorRecordItem returns [EObject current=null] : iv_ruleBehaviorRecordItem= ruleBehaviorRecordItem EOF ;
+    // InternalLibrettoSpec.g:3213:1: entryRuleBehaviorRecordItem returns [EObject current=null] : iv_ruleBehaviorRecordItem= ruleBehaviorRecordItem EOF ;
     public final EObject entryRuleBehaviorRecordItem() throws RecognitionException {
         EObject current = null;
 
@@ -8372,8 +8680,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:3089:59: (iv_ruleBehaviorRecordItem= ruleBehaviorRecordItem EOF )
-            // InternalLibrettoSpec.g:3090:2: iv_ruleBehaviorRecordItem= ruleBehaviorRecordItem EOF
+            // InternalLibrettoSpec.g:3213:59: (iv_ruleBehaviorRecordItem= ruleBehaviorRecordItem EOF )
+            // InternalLibrettoSpec.g:3214:2: iv_ruleBehaviorRecordItem= ruleBehaviorRecordItem EOF
             {
              newCompositeNode(grammarAccess.getBehaviorRecordItemRule()); 
             pushFollow(FOLLOW_1);
@@ -8400,7 +8708,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBehaviorRecordItem"
-    // InternalLibrettoSpec.g:3096:1: ruleBehaviorRecordItem returns [EObject current=null] : (this_BehaviorSourceItem_0= ruleBehaviorSourceItem | this_BehaviorActorItem_1= ruleBehaviorActorItem | this_BehaviorActionItem_2= ruleBehaviorActionItem | this_BehaviorObjectsItem_3= ruleBehaviorObjectsItem | this_BehaviorReadsItem_4= ruleBehaviorReadsItem | this_BehaviorWritesItem_5= ruleBehaviorWritesItem | this_BehaviorConditionsItem_6= ruleBehaviorConditionsItem | this_BehaviorOutcomesItem_7= ruleBehaviorOutcomesItem | this_BehaviorLabelItem_8= ruleBehaviorLabelItem | this_BehaviorReferencesItem_9= ruleBehaviorReferencesItem | this_BehaviorNotesItem_10= ruleBehaviorNotesItem | this_BehaviorContextItem_11= ruleBehaviorContextItem | this_BehaviorDependenciesItem_12= ruleBehaviorDependenciesItem ) ;
+    // InternalLibrettoSpec.g:3220:1: ruleBehaviorRecordItem returns [EObject current=null] : (this_BehaviorSourceItem_0= ruleBehaviorSourceItem | this_BehaviorActorItem_1= ruleBehaviorActorItem | this_BehaviorActionItem_2= ruleBehaviorActionItem | this_BehaviorObjectsItem_3= ruleBehaviorObjectsItem | this_BehaviorReadsItem_4= ruleBehaviorReadsItem | this_BehaviorWritesItem_5= ruleBehaviorWritesItem | this_BehaviorConditionsItem_6= ruleBehaviorConditionsItem | this_BehaviorOutcomesItem_7= ruleBehaviorOutcomesItem | this_BehaviorLabelItem_8= ruleBehaviorLabelItem | this_BehaviorReferencesItem_9= ruleBehaviorReferencesItem | this_BehaviorNotesItem_10= ruleBehaviorNotesItem | this_BehaviorContextItem_11= ruleBehaviorContextItem | this_BehaviorDependenciesItem_12= ruleBehaviorDependenciesItem ) ;
     public final EObject ruleBehaviorRecordItem() throws RecognitionException {
         EObject current = null;
 
@@ -8435,53 +8743,53 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:3102:2: ( (this_BehaviorSourceItem_0= ruleBehaviorSourceItem | this_BehaviorActorItem_1= ruleBehaviorActorItem | this_BehaviorActionItem_2= ruleBehaviorActionItem | this_BehaviorObjectsItem_3= ruleBehaviorObjectsItem | this_BehaviorReadsItem_4= ruleBehaviorReadsItem | this_BehaviorWritesItem_5= ruleBehaviorWritesItem | this_BehaviorConditionsItem_6= ruleBehaviorConditionsItem | this_BehaviorOutcomesItem_7= ruleBehaviorOutcomesItem | this_BehaviorLabelItem_8= ruleBehaviorLabelItem | this_BehaviorReferencesItem_9= ruleBehaviorReferencesItem | this_BehaviorNotesItem_10= ruleBehaviorNotesItem | this_BehaviorContextItem_11= ruleBehaviorContextItem | this_BehaviorDependenciesItem_12= ruleBehaviorDependenciesItem ) )
-            // InternalLibrettoSpec.g:3103:2: (this_BehaviorSourceItem_0= ruleBehaviorSourceItem | this_BehaviorActorItem_1= ruleBehaviorActorItem | this_BehaviorActionItem_2= ruleBehaviorActionItem | this_BehaviorObjectsItem_3= ruleBehaviorObjectsItem | this_BehaviorReadsItem_4= ruleBehaviorReadsItem | this_BehaviorWritesItem_5= ruleBehaviorWritesItem | this_BehaviorConditionsItem_6= ruleBehaviorConditionsItem | this_BehaviorOutcomesItem_7= ruleBehaviorOutcomesItem | this_BehaviorLabelItem_8= ruleBehaviorLabelItem | this_BehaviorReferencesItem_9= ruleBehaviorReferencesItem | this_BehaviorNotesItem_10= ruleBehaviorNotesItem | this_BehaviorContextItem_11= ruleBehaviorContextItem | this_BehaviorDependenciesItem_12= ruleBehaviorDependenciesItem )
+            // InternalLibrettoSpec.g:3226:2: ( (this_BehaviorSourceItem_0= ruleBehaviorSourceItem | this_BehaviorActorItem_1= ruleBehaviorActorItem | this_BehaviorActionItem_2= ruleBehaviorActionItem | this_BehaviorObjectsItem_3= ruleBehaviorObjectsItem | this_BehaviorReadsItem_4= ruleBehaviorReadsItem | this_BehaviorWritesItem_5= ruleBehaviorWritesItem | this_BehaviorConditionsItem_6= ruleBehaviorConditionsItem | this_BehaviorOutcomesItem_7= ruleBehaviorOutcomesItem | this_BehaviorLabelItem_8= ruleBehaviorLabelItem | this_BehaviorReferencesItem_9= ruleBehaviorReferencesItem | this_BehaviorNotesItem_10= ruleBehaviorNotesItem | this_BehaviorContextItem_11= ruleBehaviorContextItem | this_BehaviorDependenciesItem_12= ruleBehaviorDependenciesItem ) )
+            // InternalLibrettoSpec.g:3227:2: (this_BehaviorSourceItem_0= ruleBehaviorSourceItem | this_BehaviorActorItem_1= ruleBehaviorActorItem | this_BehaviorActionItem_2= ruleBehaviorActionItem | this_BehaviorObjectsItem_3= ruleBehaviorObjectsItem | this_BehaviorReadsItem_4= ruleBehaviorReadsItem | this_BehaviorWritesItem_5= ruleBehaviorWritesItem | this_BehaviorConditionsItem_6= ruleBehaviorConditionsItem | this_BehaviorOutcomesItem_7= ruleBehaviorOutcomesItem | this_BehaviorLabelItem_8= ruleBehaviorLabelItem | this_BehaviorReferencesItem_9= ruleBehaviorReferencesItem | this_BehaviorNotesItem_10= ruleBehaviorNotesItem | this_BehaviorContextItem_11= ruleBehaviorContextItem | this_BehaviorDependenciesItem_12= ruleBehaviorDependenciesItem )
             {
-            // InternalLibrettoSpec.g:3103:2: (this_BehaviorSourceItem_0= ruleBehaviorSourceItem | this_BehaviorActorItem_1= ruleBehaviorActorItem | this_BehaviorActionItem_2= ruleBehaviorActionItem | this_BehaviorObjectsItem_3= ruleBehaviorObjectsItem | this_BehaviorReadsItem_4= ruleBehaviorReadsItem | this_BehaviorWritesItem_5= ruleBehaviorWritesItem | this_BehaviorConditionsItem_6= ruleBehaviorConditionsItem | this_BehaviorOutcomesItem_7= ruleBehaviorOutcomesItem | this_BehaviorLabelItem_8= ruleBehaviorLabelItem | this_BehaviorReferencesItem_9= ruleBehaviorReferencesItem | this_BehaviorNotesItem_10= ruleBehaviorNotesItem | this_BehaviorContextItem_11= ruleBehaviorContextItem | this_BehaviorDependenciesItem_12= ruleBehaviorDependenciesItem )
+            // InternalLibrettoSpec.g:3227:2: (this_BehaviorSourceItem_0= ruleBehaviorSourceItem | this_BehaviorActorItem_1= ruleBehaviorActorItem | this_BehaviorActionItem_2= ruleBehaviorActionItem | this_BehaviorObjectsItem_3= ruleBehaviorObjectsItem | this_BehaviorReadsItem_4= ruleBehaviorReadsItem | this_BehaviorWritesItem_5= ruleBehaviorWritesItem | this_BehaviorConditionsItem_6= ruleBehaviorConditionsItem | this_BehaviorOutcomesItem_7= ruleBehaviorOutcomesItem | this_BehaviorLabelItem_8= ruleBehaviorLabelItem | this_BehaviorReferencesItem_9= ruleBehaviorReferencesItem | this_BehaviorNotesItem_10= ruleBehaviorNotesItem | this_BehaviorContextItem_11= ruleBehaviorContextItem | this_BehaviorDependenciesItem_12= ruleBehaviorDependenciesItem )
             int alt27=13;
             switch ( input.LA(1) ) {
-            case 86:
+            case 88:
                 {
                 alt27=1;
                 }
                 break;
-            case 54:
+            case 56:
                 {
                 alt27=2;
                 }
                 break;
-            case 55:
+            case 57:
                 {
                 alt27=3;
                 }
                 break;
-            case 56:
+            case 58:
                 {
                 alt27=4;
                 }
                 break;
-            case 57:
+            case 59:
                 {
                 alt27=5;
                 }
                 break;
-            case 58:
+            case 60:
                 {
                 alt27=6;
                 }
                 break;
-            case 59:
+            case 61:
                 {
                 alt27=7;
                 }
                 break;
-            case 60:
+            case 62:
                 {
                 alt27=8;
                 }
                 break;
-            case 61:
+            case 63:
                 {
                 alt27=9;
                 }
@@ -8491,17 +8799,17 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                 alt27=10;
                 }
                 break;
-            case 62:
+            case 64:
                 {
                 alt27=11;
                 }
                 break;
-            case 63:
+            case 65:
                 {
                 alt27=12;
                 }
                 break;
-            case 41:
+            case 43:
                 {
                 alt27=13;
                 }
@@ -8515,7 +8823,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             switch (alt27) {
                 case 1 :
-                    // InternalLibrettoSpec.g:3104:3: this_BehaviorSourceItem_0= ruleBehaviorSourceItem
+                    // InternalLibrettoSpec.g:3228:3: this_BehaviorSourceItem_0= ruleBehaviorSourceItem
                     {
 
                     			newCompositeNode(grammarAccess.getBehaviorRecordItemAccess().getBehaviorSourceItemParserRuleCall_0());
@@ -8533,7 +8841,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoSpec.g:3113:3: this_BehaviorActorItem_1= ruleBehaviorActorItem
+                    // InternalLibrettoSpec.g:3237:3: this_BehaviorActorItem_1= ruleBehaviorActorItem
                     {
 
                     			newCompositeNode(grammarAccess.getBehaviorRecordItemAccess().getBehaviorActorItemParserRuleCall_1());
@@ -8551,7 +8859,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalLibrettoSpec.g:3122:3: this_BehaviorActionItem_2= ruleBehaviorActionItem
+                    // InternalLibrettoSpec.g:3246:3: this_BehaviorActionItem_2= ruleBehaviorActionItem
                     {
 
                     			newCompositeNode(grammarAccess.getBehaviorRecordItemAccess().getBehaviorActionItemParserRuleCall_2());
@@ -8569,7 +8877,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalLibrettoSpec.g:3131:3: this_BehaviorObjectsItem_3= ruleBehaviorObjectsItem
+                    // InternalLibrettoSpec.g:3255:3: this_BehaviorObjectsItem_3= ruleBehaviorObjectsItem
                     {
 
                     			newCompositeNode(grammarAccess.getBehaviorRecordItemAccess().getBehaviorObjectsItemParserRuleCall_3());
@@ -8587,7 +8895,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalLibrettoSpec.g:3140:3: this_BehaviorReadsItem_4= ruleBehaviorReadsItem
+                    // InternalLibrettoSpec.g:3264:3: this_BehaviorReadsItem_4= ruleBehaviorReadsItem
                     {
 
                     			newCompositeNode(grammarAccess.getBehaviorRecordItemAccess().getBehaviorReadsItemParserRuleCall_4());
@@ -8605,7 +8913,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalLibrettoSpec.g:3149:3: this_BehaviorWritesItem_5= ruleBehaviorWritesItem
+                    // InternalLibrettoSpec.g:3273:3: this_BehaviorWritesItem_5= ruleBehaviorWritesItem
                     {
 
                     			newCompositeNode(grammarAccess.getBehaviorRecordItemAccess().getBehaviorWritesItemParserRuleCall_5());
@@ -8623,7 +8931,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalLibrettoSpec.g:3158:3: this_BehaviorConditionsItem_6= ruleBehaviorConditionsItem
+                    // InternalLibrettoSpec.g:3282:3: this_BehaviorConditionsItem_6= ruleBehaviorConditionsItem
                     {
 
                     			newCompositeNode(grammarAccess.getBehaviorRecordItemAccess().getBehaviorConditionsItemParserRuleCall_6());
@@ -8641,7 +8949,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalLibrettoSpec.g:3167:3: this_BehaviorOutcomesItem_7= ruleBehaviorOutcomesItem
+                    // InternalLibrettoSpec.g:3291:3: this_BehaviorOutcomesItem_7= ruleBehaviorOutcomesItem
                     {
 
                     			newCompositeNode(grammarAccess.getBehaviorRecordItemAccess().getBehaviorOutcomesItemParserRuleCall_7());
@@ -8659,7 +8967,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // InternalLibrettoSpec.g:3176:3: this_BehaviorLabelItem_8= ruleBehaviorLabelItem
+                    // InternalLibrettoSpec.g:3300:3: this_BehaviorLabelItem_8= ruleBehaviorLabelItem
                     {
 
                     			newCompositeNode(grammarAccess.getBehaviorRecordItemAccess().getBehaviorLabelItemParserRuleCall_8());
@@ -8677,7 +8985,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // InternalLibrettoSpec.g:3185:3: this_BehaviorReferencesItem_9= ruleBehaviorReferencesItem
+                    // InternalLibrettoSpec.g:3309:3: this_BehaviorReferencesItem_9= ruleBehaviorReferencesItem
                     {
 
                     			newCompositeNode(grammarAccess.getBehaviorRecordItemAccess().getBehaviorReferencesItemParserRuleCall_9());
@@ -8695,7 +9003,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // InternalLibrettoSpec.g:3194:3: this_BehaviorNotesItem_10= ruleBehaviorNotesItem
+                    // InternalLibrettoSpec.g:3318:3: this_BehaviorNotesItem_10= ruleBehaviorNotesItem
                     {
 
                     			newCompositeNode(grammarAccess.getBehaviorRecordItemAccess().getBehaviorNotesItemParserRuleCall_10());
@@ -8713,7 +9021,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // InternalLibrettoSpec.g:3203:3: this_BehaviorContextItem_11= ruleBehaviorContextItem
+                    // InternalLibrettoSpec.g:3327:3: this_BehaviorContextItem_11= ruleBehaviorContextItem
                     {
 
                     			newCompositeNode(grammarAccess.getBehaviorRecordItemAccess().getBehaviorContextItemParserRuleCall_11());
@@ -8731,7 +9039,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 13 :
-                    // InternalLibrettoSpec.g:3212:3: this_BehaviorDependenciesItem_12= ruleBehaviorDependenciesItem
+                    // InternalLibrettoSpec.g:3336:3: this_BehaviorDependenciesItem_12= ruleBehaviorDependenciesItem
                     {
 
                     			newCompositeNode(grammarAccess.getBehaviorRecordItemAccess().getBehaviorDependenciesItemParserRuleCall_12());
@@ -8771,7 +9079,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBehaviorSourceItem"
-    // InternalLibrettoSpec.g:3224:1: entryRuleBehaviorSourceItem returns [EObject current=null] : iv_ruleBehaviorSourceItem= ruleBehaviorSourceItem EOF ;
+    // InternalLibrettoSpec.g:3348:1: entryRuleBehaviorSourceItem returns [EObject current=null] : iv_ruleBehaviorSourceItem= ruleBehaviorSourceItem EOF ;
     public final EObject entryRuleBehaviorSourceItem() throws RecognitionException {
         EObject current = null;
 
@@ -8779,8 +9087,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:3224:59: (iv_ruleBehaviorSourceItem= ruleBehaviorSourceItem EOF )
-            // InternalLibrettoSpec.g:3225:2: iv_ruleBehaviorSourceItem= ruleBehaviorSourceItem EOF
+            // InternalLibrettoSpec.g:3348:59: (iv_ruleBehaviorSourceItem= ruleBehaviorSourceItem EOF )
+            // InternalLibrettoSpec.g:3349:2: iv_ruleBehaviorSourceItem= ruleBehaviorSourceItem EOF
             {
              newCompositeNode(grammarAccess.getBehaviorSourceItemRule()); 
             pushFollow(FOLLOW_1);
@@ -8807,7 +9115,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBehaviorSourceItem"
-    // InternalLibrettoSpec.g:3231:1: ruleBehaviorSourceItem returns [EObject current=null] : ( (lv_source_0_0= ruleSourceBlock ) ) ;
+    // InternalLibrettoSpec.g:3355:1: ruleBehaviorSourceItem returns [EObject current=null] : ( (lv_source_0_0= ruleSourceBlock ) ) ;
     public final EObject ruleBehaviorSourceItem() throws RecognitionException {
         EObject current = null;
 
@@ -8818,14 +9126,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:3237:2: ( ( (lv_source_0_0= ruleSourceBlock ) ) )
-            // InternalLibrettoSpec.g:3238:2: ( (lv_source_0_0= ruleSourceBlock ) )
+            // InternalLibrettoSpec.g:3361:2: ( ( (lv_source_0_0= ruleSourceBlock ) ) )
+            // InternalLibrettoSpec.g:3362:2: ( (lv_source_0_0= ruleSourceBlock ) )
             {
-            // InternalLibrettoSpec.g:3238:2: ( (lv_source_0_0= ruleSourceBlock ) )
-            // InternalLibrettoSpec.g:3239:3: (lv_source_0_0= ruleSourceBlock )
+            // InternalLibrettoSpec.g:3362:2: ( (lv_source_0_0= ruleSourceBlock ) )
+            // InternalLibrettoSpec.g:3363:3: (lv_source_0_0= ruleSourceBlock )
             {
-            // InternalLibrettoSpec.g:3239:3: (lv_source_0_0= ruleSourceBlock )
-            // InternalLibrettoSpec.g:3240:4: lv_source_0_0= ruleSourceBlock
+            // InternalLibrettoSpec.g:3363:3: (lv_source_0_0= ruleSourceBlock )
+            // InternalLibrettoSpec.g:3364:4: lv_source_0_0= ruleSourceBlock
             {
 
             				newCompositeNode(grammarAccess.getBehaviorSourceItemAccess().getSourceSourceBlockParserRuleCall_0());
@@ -8872,7 +9180,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBehaviorActorItem"
-    // InternalLibrettoSpec.g:3260:1: entryRuleBehaviorActorItem returns [EObject current=null] : iv_ruleBehaviorActorItem= ruleBehaviorActorItem EOF ;
+    // InternalLibrettoSpec.g:3384:1: entryRuleBehaviorActorItem returns [EObject current=null] : iv_ruleBehaviorActorItem= ruleBehaviorActorItem EOF ;
     public final EObject entryRuleBehaviorActorItem() throws RecognitionException {
         EObject current = null;
 
@@ -8880,8 +9188,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:3260:58: (iv_ruleBehaviorActorItem= ruleBehaviorActorItem EOF )
-            // InternalLibrettoSpec.g:3261:2: iv_ruleBehaviorActorItem= ruleBehaviorActorItem EOF
+            // InternalLibrettoSpec.g:3384:58: (iv_ruleBehaviorActorItem= ruleBehaviorActorItem EOF )
+            // InternalLibrettoSpec.g:3385:2: iv_ruleBehaviorActorItem= ruleBehaviorActorItem EOF
             {
              newCompositeNode(grammarAccess.getBehaviorActorItemRule()); 
             pushFollow(FOLLOW_1);
@@ -8908,7 +9216,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBehaviorActorItem"
-    // InternalLibrettoSpec.g:3267:1: ruleBehaviorActorItem returns [EObject current=null] : ( (lv_actor_0_0= ruleActorField ) ) ;
+    // InternalLibrettoSpec.g:3391:1: ruleBehaviorActorItem returns [EObject current=null] : ( (lv_actor_0_0= ruleActorField ) ) ;
     public final EObject ruleBehaviorActorItem() throws RecognitionException {
         EObject current = null;
 
@@ -8919,14 +9227,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:3273:2: ( ( (lv_actor_0_0= ruleActorField ) ) )
-            // InternalLibrettoSpec.g:3274:2: ( (lv_actor_0_0= ruleActorField ) )
+            // InternalLibrettoSpec.g:3397:2: ( ( (lv_actor_0_0= ruleActorField ) ) )
+            // InternalLibrettoSpec.g:3398:2: ( (lv_actor_0_0= ruleActorField ) )
             {
-            // InternalLibrettoSpec.g:3274:2: ( (lv_actor_0_0= ruleActorField ) )
-            // InternalLibrettoSpec.g:3275:3: (lv_actor_0_0= ruleActorField )
+            // InternalLibrettoSpec.g:3398:2: ( (lv_actor_0_0= ruleActorField ) )
+            // InternalLibrettoSpec.g:3399:3: (lv_actor_0_0= ruleActorField )
             {
-            // InternalLibrettoSpec.g:3275:3: (lv_actor_0_0= ruleActorField )
-            // InternalLibrettoSpec.g:3276:4: lv_actor_0_0= ruleActorField
+            // InternalLibrettoSpec.g:3399:3: (lv_actor_0_0= ruleActorField )
+            // InternalLibrettoSpec.g:3400:4: lv_actor_0_0= ruleActorField
             {
 
             				newCompositeNode(grammarAccess.getBehaviorActorItemAccess().getActorActorFieldParserRuleCall_0());
@@ -8973,7 +9281,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBehaviorActionItem"
-    // InternalLibrettoSpec.g:3296:1: entryRuleBehaviorActionItem returns [EObject current=null] : iv_ruleBehaviorActionItem= ruleBehaviorActionItem EOF ;
+    // InternalLibrettoSpec.g:3420:1: entryRuleBehaviorActionItem returns [EObject current=null] : iv_ruleBehaviorActionItem= ruleBehaviorActionItem EOF ;
     public final EObject entryRuleBehaviorActionItem() throws RecognitionException {
         EObject current = null;
 
@@ -8981,8 +9289,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:3296:59: (iv_ruleBehaviorActionItem= ruleBehaviorActionItem EOF )
-            // InternalLibrettoSpec.g:3297:2: iv_ruleBehaviorActionItem= ruleBehaviorActionItem EOF
+            // InternalLibrettoSpec.g:3420:59: (iv_ruleBehaviorActionItem= ruleBehaviorActionItem EOF )
+            // InternalLibrettoSpec.g:3421:2: iv_ruleBehaviorActionItem= ruleBehaviorActionItem EOF
             {
              newCompositeNode(grammarAccess.getBehaviorActionItemRule()); 
             pushFollow(FOLLOW_1);
@@ -9009,7 +9317,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBehaviorActionItem"
-    // InternalLibrettoSpec.g:3303:1: ruleBehaviorActionItem returns [EObject current=null] : ( (lv_action_0_0= ruleActionField ) ) ;
+    // InternalLibrettoSpec.g:3427:1: ruleBehaviorActionItem returns [EObject current=null] : ( (lv_action_0_0= ruleActionField ) ) ;
     public final EObject ruleBehaviorActionItem() throws RecognitionException {
         EObject current = null;
 
@@ -9020,14 +9328,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:3309:2: ( ( (lv_action_0_0= ruleActionField ) ) )
-            // InternalLibrettoSpec.g:3310:2: ( (lv_action_0_0= ruleActionField ) )
+            // InternalLibrettoSpec.g:3433:2: ( ( (lv_action_0_0= ruleActionField ) ) )
+            // InternalLibrettoSpec.g:3434:2: ( (lv_action_0_0= ruleActionField ) )
             {
-            // InternalLibrettoSpec.g:3310:2: ( (lv_action_0_0= ruleActionField ) )
-            // InternalLibrettoSpec.g:3311:3: (lv_action_0_0= ruleActionField )
+            // InternalLibrettoSpec.g:3434:2: ( (lv_action_0_0= ruleActionField ) )
+            // InternalLibrettoSpec.g:3435:3: (lv_action_0_0= ruleActionField )
             {
-            // InternalLibrettoSpec.g:3311:3: (lv_action_0_0= ruleActionField )
-            // InternalLibrettoSpec.g:3312:4: lv_action_0_0= ruleActionField
+            // InternalLibrettoSpec.g:3435:3: (lv_action_0_0= ruleActionField )
+            // InternalLibrettoSpec.g:3436:4: lv_action_0_0= ruleActionField
             {
 
             				newCompositeNode(grammarAccess.getBehaviorActionItemAccess().getActionActionFieldParserRuleCall_0());
@@ -9074,7 +9382,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBehaviorObjectsItem"
-    // InternalLibrettoSpec.g:3332:1: entryRuleBehaviorObjectsItem returns [EObject current=null] : iv_ruleBehaviorObjectsItem= ruleBehaviorObjectsItem EOF ;
+    // InternalLibrettoSpec.g:3456:1: entryRuleBehaviorObjectsItem returns [EObject current=null] : iv_ruleBehaviorObjectsItem= ruleBehaviorObjectsItem EOF ;
     public final EObject entryRuleBehaviorObjectsItem() throws RecognitionException {
         EObject current = null;
 
@@ -9082,8 +9390,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:3332:60: (iv_ruleBehaviorObjectsItem= ruleBehaviorObjectsItem EOF )
-            // InternalLibrettoSpec.g:3333:2: iv_ruleBehaviorObjectsItem= ruleBehaviorObjectsItem EOF
+            // InternalLibrettoSpec.g:3456:60: (iv_ruleBehaviorObjectsItem= ruleBehaviorObjectsItem EOF )
+            // InternalLibrettoSpec.g:3457:2: iv_ruleBehaviorObjectsItem= ruleBehaviorObjectsItem EOF
             {
              newCompositeNode(grammarAccess.getBehaviorObjectsItemRule()); 
             pushFollow(FOLLOW_1);
@@ -9110,7 +9418,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBehaviorObjectsItem"
-    // InternalLibrettoSpec.g:3339:1: ruleBehaviorObjectsItem returns [EObject current=null] : ( (lv_objects_0_0= ruleObjectsField ) ) ;
+    // InternalLibrettoSpec.g:3463:1: ruleBehaviorObjectsItem returns [EObject current=null] : ( (lv_objects_0_0= ruleObjectsField ) ) ;
     public final EObject ruleBehaviorObjectsItem() throws RecognitionException {
         EObject current = null;
 
@@ -9121,14 +9429,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:3345:2: ( ( (lv_objects_0_0= ruleObjectsField ) ) )
-            // InternalLibrettoSpec.g:3346:2: ( (lv_objects_0_0= ruleObjectsField ) )
+            // InternalLibrettoSpec.g:3469:2: ( ( (lv_objects_0_0= ruleObjectsField ) ) )
+            // InternalLibrettoSpec.g:3470:2: ( (lv_objects_0_0= ruleObjectsField ) )
             {
-            // InternalLibrettoSpec.g:3346:2: ( (lv_objects_0_0= ruleObjectsField ) )
-            // InternalLibrettoSpec.g:3347:3: (lv_objects_0_0= ruleObjectsField )
+            // InternalLibrettoSpec.g:3470:2: ( (lv_objects_0_0= ruleObjectsField ) )
+            // InternalLibrettoSpec.g:3471:3: (lv_objects_0_0= ruleObjectsField )
             {
-            // InternalLibrettoSpec.g:3347:3: (lv_objects_0_0= ruleObjectsField )
-            // InternalLibrettoSpec.g:3348:4: lv_objects_0_0= ruleObjectsField
+            // InternalLibrettoSpec.g:3471:3: (lv_objects_0_0= ruleObjectsField )
+            // InternalLibrettoSpec.g:3472:4: lv_objects_0_0= ruleObjectsField
             {
 
             				newCompositeNode(grammarAccess.getBehaviorObjectsItemAccess().getObjectsObjectsFieldParserRuleCall_0());
@@ -9175,7 +9483,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBehaviorReadsItem"
-    // InternalLibrettoSpec.g:3368:1: entryRuleBehaviorReadsItem returns [EObject current=null] : iv_ruleBehaviorReadsItem= ruleBehaviorReadsItem EOF ;
+    // InternalLibrettoSpec.g:3492:1: entryRuleBehaviorReadsItem returns [EObject current=null] : iv_ruleBehaviorReadsItem= ruleBehaviorReadsItem EOF ;
     public final EObject entryRuleBehaviorReadsItem() throws RecognitionException {
         EObject current = null;
 
@@ -9183,8 +9491,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:3368:58: (iv_ruleBehaviorReadsItem= ruleBehaviorReadsItem EOF )
-            // InternalLibrettoSpec.g:3369:2: iv_ruleBehaviorReadsItem= ruleBehaviorReadsItem EOF
+            // InternalLibrettoSpec.g:3492:58: (iv_ruleBehaviorReadsItem= ruleBehaviorReadsItem EOF )
+            // InternalLibrettoSpec.g:3493:2: iv_ruleBehaviorReadsItem= ruleBehaviorReadsItem EOF
             {
              newCompositeNode(grammarAccess.getBehaviorReadsItemRule()); 
             pushFollow(FOLLOW_1);
@@ -9211,7 +9519,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBehaviorReadsItem"
-    // InternalLibrettoSpec.g:3375:1: ruleBehaviorReadsItem returns [EObject current=null] : ( (lv_reads_0_0= ruleReadsField ) ) ;
+    // InternalLibrettoSpec.g:3499:1: ruleBehaviorReadsItem returns [EObject current=null] : ( (lv_reads_0_0= ruleReadsField ) ) ;
     public final EObject ruleBehaviorReadsItem() throws RecognitionException {
         EObject current = null;
 
@@ -9222,14 +9530,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:3381:2: ( ( (lv_reads_0_0= ruleReadsField ) ) )
-            // InternalLibrettoSpec.g:3382:2: ( (lv_reads_0_0= ruleReadsField ) )
+            // InternalLibrettoSpec.g:3505:2: ( ( (lv_reads_0_0= ruleReadsField ) ) )
+            // InternalLibrettoSpec.g:3506:2: ( (lv_reads_0_0= ruleReadsField ) )
             {
-            // InternalLibrettoSpec.g:3382:2: ( (lv_reads_0_0= ruleReadsField ) )
-            // InternalLibrettoSpec.g:3383:3: (lv_reads_0_0= ruleReadsField )
+            // InternalLibrettoSpec.g:3506:2: ( (lv_reads_0_0= ruleReadsField ) )
+            // InternalLibrettoSpec.g:3507:3: (lv_reads_0_0= ruleReadsField )
             {
-            // InternalLibrettoSpec.g:3383:3: (lv_reads_0_0= ruleReadsField )
-            // InternalLibrettoSpec.g:3384:4: lv_reads_0_0= ruleReadsField
+            // InternalLibrettoSpec.g:3507:3: (lv_reads_0_0= ruleReadsField )
+            // InternalLibrettoSpec.g:3508:4: lv_reads_0_0= ruleReadsField
             {
 
             				newCompositeNode(grammarAccess.getBehaviorReadsItemAccess().getReadsReadsFieldParserRuleCall_0());
@@ -9276,7 +9584,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBehaviorWritesItem"
-    // InternalLibrettoSpec.g:3404:1: entryRuleBehaviorWritesItem returns [EObject current=null] : iv_ruleBehaviorWritesItem= ruleBehaviorWritesItem EOF ;
+    // InternalLibrettoSpec.g:3528:1: entryRuleBehaviorWritesItem returns [EObject current=null] : iv_ruleBehaviorWritesItem= ruleBehaviorWritesItem EOF ;
     public final EObject entryRuleBehaviorWritesItem() throws RecognitionException {
         EObject current = null;
 
@@ -9284,8 +9592,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:3404:59: (iv_ruleBehaviorWritesItem= ruleBehaviorWritesItem EOF )
-            // InternalLibrettoSpec.g:3405:2: iv_ruleBehaviorWritesItem= ruleBehaviorWritesItem EOF
+            // InternalLibrettoSpec.g:3528:59: (iv_ruleBehaviorWritesItem= ruleBehaviorWritesItem EOF )
+            // InternalLibrettoSpec.g:3529:2: iv_ruleBehaviorWritesItem= ruleBehaviorWritesItem EOF
             {
              newCompositeNode(grammarAccess.getBehaviorWritesItemRule()); 
             pushFollow(FOLLOW_1);
@@ -9312,7 +9620,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBehaviorWritesItem"
-    // InternalLibrettoSpec.g:3411:1: ruleBehaviorWritesItem returns [EObject current=null] : ( (lv_writes_0_0= ruleWritesField ) ) ;
+    // InternalLibrettoSpec.g:3535:1: ruleBehaviorWritesItem returns [EObject current=null] : ( (lv_writes_0_0= ruleWritesField ) ) ;
     public final EObject ruleBehaviorWritesItem() throws RecognitionException {
         EObject current = null;
 
@@ -9323,14 +9631,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:3417:2: ( ( (lv_writes_0_0= ruleWritesField ) ) )
-            // InternalLibrettoSpec.g:3418:2: ( (lv_writes_0_0= ruleWritesField ) )
+            // InternalLibrettoSpec.g:3541:2: ( ( (lv_writes_0_0= ruleWritesField ) ) )
+            // InternalLibrettoSpec.g:3542:2: ( (lv_writes_0_0= ruleWritesField ) )
             {
-            // InternalLibrettoSpec.g:3418:2: ( (lv_writes_0_0= ruleWritesField ) )
-            // InternalLibrettoSpec.g:3419:3: (lv_writes_0_0= ruleWritesField )
+            // InternalLibrettoSpec.g:3542:2: ( (lv_writes_0_0= ruleWritesField ) )
+            // InternalLibrettoSpec.g:3543:3: (lv_writes_0_0= ruleWritesField )
             {
-            // InternalLibrettoSpec.g:3419:3: (lv_writes_0_0= ruleWritesField )
-            // InternalLibrettoSpec.g:3420:4: lv_writes_0_0= ruleWritesField
+            // InternalLibrettoSpec.g:3543:3: (lv_writes_0_0= ruleWritesField )
+            // InternalLibrettoSpec.g:3544:4: lv_writes_0_0= ruleWritesField
             {
 
             				newCompositeNode(grammarAccess.getBehaviorWritesItemAccess().getWritesWritesFieldParserRuleCall_0());
@@ -9377,7 +9685,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBehaviorConditionsItem"
-    // InternalLibrettoSpec.g:3440:1: entryRuleBehaviorConditionsItem returns [EObject current=null] : iv_ruleBehaviorConditionsItem= ruleBehaviorConditionsItem EOF ;
+    // InternalLibrettoSpec.g:3564:1: entryRuleBehaviorConditionsItem returns [EObject current=null] : iv_ruleBehaviorConditionsItem= ruleBehaviorConditionsItem EOF ;
     public final EObject entryRuleBehaviorConditionsItem() throws RecognitionException {
         EObject current = null;
 
@@ -9385,8 +9693,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:3440:63: (iv_ruleBehaviorConditionsItem= ruleBehaviorConditionsItem EOF )
-            // InternalLibrettoSpec.g:3441:2: iv_ruleBehaviorConditionsItem= ruleBehaviorConditionsItem EOF
+            // InternalLibrettoSpec.g:3564:63: (iv_ruleBehaviorConditionsItem= ruleBehaviorConditionsItem EOF )
+            // InternalLibrettoSpec.g:3565:2: iv_ruleBehaviorConditionsItem= ruleBehaviorConditionsItem EOF
             {
              newCompositeNode(grammarAccess.getBehaviorConditionsItemRule()); 
             pushFollow(FOLLOW_1);
@@ -9413,7 +9721,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBehaviorConditionsItem"
-    // InternalLibrettoSpec.g:3447:1: ruleBehaviorConditionsItem returns [EObject current=null] : ( (lv_conditions_0_0= ruleConditionsField ) ) ;
+    // InternalLibrettoSpec.g:3571:1: ruleBehaviorConditionsItem returns [EObject current=null] : ( (lv_conditions_0_0= ruleConditionsField ) ) ;
     public final EObject ruleBehaviorConditionsItem() throws RecognitionException {
         EObject current = null;
 
@@ -9424,14 +9732,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:3453:2: ( ( (lv_conditions_0_0= ruleConditionsField ) ) )
-            // InternalLibrettoSpec.g:3454:2: ( (lv_conditions_0_0= ruleConditionsField ) )
+            // InternalLibrettoSpec.g:3577:2: ( ( (lv_conditions_0_0= ruleConditionsField ) ) )
+            // InternalLibrettoSpec.g:3578:2: ( (lv_conditions_0_0= ruleConditionsField ) )
             {
-            // InternalLibrettoSpec.g:3454:2: ( (lv_conditions_0_0= ruleConditionsField ) )
-            // InternalLibrettoSpec.g:3455:3: (lv_conditions_0_0= ruleConditionsField )
+            // InternalLibrettoSpec.g:3578:2: ( (lv_conditions_0_0= ruleConditionsField ) )
+            // InternalLibrettoSpec.g:3579:3: (lv_conditions_0_0= ruleConditionsField )
             {
-            // InternalLibrettoSpec.g:3455:3: (lv_conditions_0_0= ruleConditionsField )
-            // InternalLibrettoSpec.g:3456:4: lv_conditions_0_0= ruleConditionsField
+            // InternalLibrettoSpec.g:3579:3: (lv_conditions_0_0= ruleConditionsField )
+            // InternalLibrettoSpec.g:3580:4: lv_conditions_0_0= ruleConditionsField
             {
 
             				newCompositeNode(grammarAccess.getBehaviorConditionsItemAccess().getConditionsConditionsFieldParserRuleCall_0());
@@ -9478,7 +9786,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBehaviorOutcomesItem"
-    // InternalLibrettoSpec.g:3476:1: entryRuleBehaviorOutcomesItem returns [EObject current=null] : iv_ruleBehaviorOutcomesItem= ruleBehaviorOutcomesItem EOF ;
+    // InternalLibrettoSpec.g:3600:1: entryRuleBehaviorOutcomesItem returns [EObject current=null] : iv_ruleBehaviorOutcomesItem= ruleBehaviorOutcomesItem EOF ;
     public final EObject entryRuleBehaviorOutcomesItem() throws RecognitionException {
         EObject current = null;
 
@@ -9486,8 +9794,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:3476:61: (iv_ruleBehaviorOutcomesItem= ruleBehaviorOutcomesItem EOF )
-            // InternalLibrettoSpec.g:3477:2: iv_ruleBehaviorOutcomesItem= ruleBehaviorOutcomesItem EOF
+            // InternalLibrettoSpec.g:3600:61: (iv_ruleBehaviorOutcomesItem= ruleBehaviorOutcomesItem EOF )
+            // InternalLibrettoSpec.g:3601:2: iv_ruleBehaviorOutcomesItem= ruleBehaviorOutcomesItem EOF
             {
              newCompositeNode(grammarAccess.getBehaviorOutcomesItemRule()); 
             pushFollow(FOLLOW_1);
@@ -9514,7 +9822,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBehaviorOutcomesItem"
-    // InternalLibrettoSpec.g:3483:1: ruleBehaviorOutcomesItem returns [EObject current=null] : ( (lv_outcomes_0_0= ruleOutcomesField ) ) ;
+    // InternalLibrettoSpec.g:3607:1: ruleBehaviorOutcomesItem returns [EObject current=null] : ( (lv_outcomes_0_0= ruleOutcomesField ) ) ;
     public final EObject ruleBehaviorOutcomesItem() throws RecognitionException {
         EObject current = null;
 
@@ -9525,14 +9833,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:3489:2: ( ( (lv_outcomes_0_0= ruleOutcomesField ) ) )
-            // InternalLibrettoSpec.g:3490:2: ( (lv_outcomes_0_0= ruleOutcomesField ) )
+            // InternalLibrettoSpec.g:3613:2: ( ( (lv_outcomes_0_0= ruleOutcomesField ) ) )
+            // InternalLibrettoSpec.g:3614:2: ( (lv_outcomes_0_0= ruleOutcomesField ) )
             {
-            // InternalLibrettoSpec.g:3490:2: ( (lv_outcomes_0_0= ruleOutcomesField ) )
-            // InternalLibrettoSpec.g:3491:3: (lv_outcomes_0_0= ruleOutcomesField )
+            // InternalLibrettoSpec.g:3614:2: ( (lv_outcomes_0_0= ruleOutcomesField ) )
+            // InternalLibrettoSpec.g:3615:3: (lv_outcomes_0_0= ruleOutcomesField )
             {
-            // InternalLibrettoSpec.g:3491:3: (lv_outcomes_0_0= ruleOutcomesField )
-            // InternalLibrettoSpec.g:3492:4: lv_outcomes_0_0= ruleOutcomesField
+            // InternalLibrettoSpec.g:3615:3: (lv_outcomes_0_0= ruleOutcomesField )
+            // InternalLibrettoSpec.g:3616:4: lv_outcomes_0_0= ruleOutcomesField
             {
 
             				newCompositeNode(grammarAccess.getBehaviorOutcomesItemAccess().getOutcomesOutcomesFieldParserRuleCall_0());
@@ -9579,7 +9887,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBehaviorLabelItem"
-    // InternalLibrettoSpec.g:3512:1: entryRuleBehaviorLabelItem returns [EObject current=null] : iv_ruleBehaviorLabelItem= ruleBehaviorLabelItem EOF ;
+    // InternalLibrettoSpec.g:3636:1: entryRuleBehaviorLabelItem returns [EObject current=null] : iv_ruleBehaviorLabelItem= ruleBehaviorLabelItem EOF ;
     public final EObject entryRuleBehaviorLabelItem() throws RecognitionException {
         EObject current = null;
 
@@ -9587,8 +9895,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:3512:58: (iv_ruleBehaviorLabelItem= ruleBehaviorLabelItem EOF )
-            // InternalLibrettoSpec.g:3513:2: iv_ruleBehaviorLabelItem= ruleBehaviorLabelItem EOF
+            // InternalLibrettoSpec.g:3636:58: (iv_ruleBehaviorLabelItem= ruleBehaviorLabelItem EOF )
+            // InternalLibrettoSpec.g:3637:2: iv_ruleBehaviorLabelItem= ruleBehaviorLabelItem EOF
             {
              newCompositeNode(grammarAccess.getBehaviorLabelItemRule()); 
             pushFollow(FOLLOW_1);
@@ -9615,7 +9923,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBehaviorLabelItem"
-    // InternalLibrettoSpec.g:3519:1: ruleBehaviorLabelItem returns [EObject current=null] : ( (lv_label_0_0= ruleLabelField ) ) ;
+    // InternalLibrettoSpec.g:3643:1: ruleBehaviorLabelItem returns [EObject current=null] : ( (lv_label_0_0= ruleLabelField ) ) ;
     public final EObject ruleBehaviorLabelItem() throws RecognitionException {
         EObject current = null;
 
@@ -9626,14 +9934,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:3525:2: ( ( (lv_label_0_0= ruleLabelField ) ) )
-            // InternalLibrettoSpec.g:3526:2: ( (lv_label_0_0= ruleLabelField ) )
+            // InternalLibrettoSpec.g:3649:2: ( ( (lv_label_0_0= ruleLabelField ) ) )
+            // InternalLibrettoSpec.g:3650:2: ( (lv_label_0_0= ruleLabelField ) )
             {
-            // InternalLibrettoSpec.g:3526:2: ( (lv_label_0_0= ruleLabelField ) )
-            // InternalLibrettoSpec.g:3527:3: (lv_label_0_0= ruleLabelField )
+            // InternalLibrettoSpec.g:3650:2: ( (lv_label_0_0= ruleLabelField ) )
+            // InternalLibrettoSpec.g:3651:3: (lv_label_0_0= ruleLabelField )
             {
-            // InternalLibrettoSpec.g:3527:3: (lv_label_0_0= ruleLabelField )
-            // InternalLibrettoSpec.g:3528:4: lv_label_0_0= ruleLabelField
+            // InternalLibrettoSpec.g:3651:3: (lv_label_0_0= ruleLabelField )
+            // InternalLibrettoSpec.g:3652:4: lv_label_0_0= ruleLabelField
             {
 
             				newCompositeNode(grammarAccess.getBehaviorLabelItemAccess().getLabelLabelFieldParserRuleCall_0());
@@ -9680,7 +9988,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBehaviorReferencesItem"
-    // InternalLibrettoSpec.g:3548:1: entryRuleBehaviorReferencesItem returns [EObject current=null] : iv_ruleBehaviorReferencesItem= ruleBehaviorReferencesItem EOF ;
+    // InternalLibrettoSpec.g:3672:1: entryRuleBehaviorReferencesItem returns [EObject current=null] : iv_ruleBehaviorReferencesItem= ruleBehaviorReferencesItem EOF ;
     public final EObject entryRuleBehaviorReferencesItem() throws RecognitionException {
         EObject current = null;
 
@@ -9688,8 +9996,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:3548:63: (iv_ruleBehaviorReferencesItem= ruleBehaviorReferencesItem EOF )
-            // InternalLibrettoSpec.g:3549:2: iv_ruleBehaviorReferencesItem= ruleBehaviorReferencesItem EOF
+            // InternalLibrettoSpec.g:3672:63: (iv_ruleBehaviorReferencesItem= ruleBehaviorReferencesItem EOF )
+            // InternalLibrettoSpec.g:3673:2: iv_ruleBehaviorReferencesItem= ruleBehaviorReferencesItem EOF
             {
              newCompositeNode(grammarAccess.getBehaviorReferencesItemRule()); 
             pushFollow(FOLLOW_1);
@@ -9716,7 +10024,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBehaviorReferencesItem"
-    // InternalLibrettoSpec.g:3555:1: ruleBehaviorReferencesItem returns [EObject current=null] : ( (lv_references_0_0= ruleReferencesField ) ) ;
+    // InternalLibrettoSpec.g:3679:1: ruleBehaviorReferencesItem returns [EObject current=null] : ( (lv_references_0_0= ruleReferencesField ) ) ;
     public final EObject ruleBehaviorReferencesItem() throws RecognitionException {
         EObject current = null;
 
@@ -9727,14 +10035,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:3561:2: ( ( (lv_references_0_0= ruleReferencesField ) ) )
-            // InternalLibrettoSpec.g:3562:2: ( (lv_references_0_0= ruleReferencesField ) )
+            // InternalLibrettoSpec.g:3685:2: ( ( (lv_references_0_0= ruleReferencesField ) ) )
+            // InternalLibrettoSpec.g:3686:2: ( (lv_references_0_0= ruleReferencesField ) )
             {
-            // InternalLibrettoSpec.g:3562:2: ( (lv_references_0_0= ruleReferencesField ) )
-            // InternalLibrettoSpec.g:3563:3: (lv_references_0_0= ruleReferencesField )
+            // InternalLibrettoSpec.g:3686:2: ( (lv_references_0_0= ruleReferencesField ) )
+            // InternalLibrettoSpec.g:3687:3: (lv_references_0_0= ruleReferencesField )
             {
-            // InternalLibrettoSpec.g:3563:3: (lv_references_0_0= ruleReferencesField )
-            // InternalLibrettoSpec.g:3564:4: lv_references_0_0= ruleReferencesField
+            // InternalLibrettoSpec.g:3687:3: (lv_references_0_0= ruleReferencesField )
+            // InternalLibrettoSpec.g:3688:4: lv_references_0_0= ruleReferencesField
             {
 
             				newCompositeNode(grammarAccess.getBehaviorReferencesItemAccess().getReferencesReferencesFieldParserRuleCall_0());
@@ -9781,7 +10089,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBehaviorNotesItem"
-    // InternalLibrettoSpec.g:3584:1: entryRuleBehaviorNotesItem returns [EObject current=null] : iv_ruleBehaviorNotesItem= ruleBehaviorNotesItem EOF ;
+    // InternalLibrettoSpec.g:3708:1: entryRuleBehaviorNotesItem returns [EObject current=null] : iv_ruleBehaviorNotesItem= ruleBehaviorNotesItem EOF ;
     public final EObject entryRuleBehaviorNotesItem() throws RecognitionException {
         EObject current = null;
 
@@ -9789,8 +10097,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:3584:58: (iv_ruleBehaviorNotesItem= ruleBehaviorNotesItem EOF )
-            // InternalLibrettoSpec.g:3585:2: iv_ruleBehaviorNotesItem= ruleBehaviorNotesItem EOF
+            // InternalLibrettoSpec.g:3708:58: (iv_ruleBehaviorNotesItem= ruleBehaviorNotesItem EOF )
+            // InternalLibrettoSpec.g:3709:2: iv_ruleBehaviorNotesItem= ruleBehaviorNotesItem EOF
             {
              newCompositeNode(grammarAccess.getBehaviorNotesItemRule()); 
             pushFollow(FOLLOW_1);
@@ -9817,7 +10125,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBehaviorNotesItem"
-    // InternalLibrettoSpec.g:3591:1: ruleBehaviorNotesItem returns [EObject current=null] : ( (lv_notes_0_0= ruleNotesField ) ) ;
+    // InternalLibrettoSpec.g:3715:1: ruleBehaviorNotesItem returns [EObject current=null] : ( (lv_notes_0_0= ruleNotesField ) ) ;
     public final EObject ruleBehaviorNotesItem() throws RecognitionException {
         EObject current = null;
 
@@ -9828,14 +10136,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:3597:2: ( ( (lv_notes_0_0= ruleNotesField ) ) )
-            // InternalLibrettoSpec.g:3598:2: ( (lv_notes_0_0= ruleNotesField ) )
+            // InternalLibrettoSpec.g:3721:2: ( ( (lv_notes_0_0= ruleNotesField ) ) )
+            // InternalLibrettoSpec.g:3722:2: ( (lv_notes_0_0= ruleNotesField ) )
             {
-            // InternalLibrettoSpec.g:3598:2: ( (lv_notes_0_0= ruleNotesField ) )
-            // InternalLibrettoSpec.g:3599:3: (lv_notes_0_0= ruleNotesField )
+            // InternalLibrettoSpec.g:3722:2: ( (lv_notes_0_0= ruleNotesField ) )
+            // InternalLibrettoSpec.g:3723:3: (lv_notes_0_0= ruleNotesField )
             {
-            // InternalLibrettoSpec.g:3599:3: (lv_notes_0_0= ruleNotesField )
-            // InternalLibrettoSpec.g:3600:4: lv_notes_0_0= ruleNotesField
+            // InternalLibrettoSpec.g:3723:3: (lv_notes_0_0= ruleNotesField )
+            // InternalLibrettoSpec.g:3724:4: lv_notes_0_0= ruleNotesField
             {
 
             				newCompositeNode(grammarAccess.getBehaviorNotesItemAccess().getNotesNotesFieldParserRuleCall_0());
@@ -9882,7 +10190,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBehaviorContextItem"
-    // InternalLibrettoSpec.g:3620:1: entryRuleBehaviorContextItem returns [EObject current=null] : iv_ruleBehaviorContextItem= ruleBehaviorContextItem EOF ;
+    // InternalLibrettoSpec.g:3744:1: entryRuleBehaviorContextItem returns [EObject current=null] : iv_ruleBehaviorContextItem= ruleBehaviorContextItem EOF ;
     public final EObject entryRuleBehaviorContextItem() throws RecognitionException {
         EObject current = null;
 
@@ -9890,8 +10198,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:3620:60: (iv_ruleBehaviorContextItem= ruleBehaviorContextItem EOF )
-            // InternalLibrettoSpec.g:3621:2: iv_ruleBehaviorContextItem= ruleBehaviorContextItem EOF
+            // InternalLibrettoSpec.g:3744:60: (iv_ruleBehaviorContextItem= ruleBehaviorContextItem EOF )
+            // InternalLibrettoSpec.g:3745:2: iv_ruleBehaviorContextItem= ruleBehaviorContextItem EOF
             {
              newCompositeNode(grammarAccess.getBehaviorContextItemRule()); 
             pushFollow(FOLLOW_1);
@@ -9918,7 +10226,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBehaviorContextItem"
-    // InternalLibrettoSpec.g:3627:1: ruleBehaviorContextItem returns [EObject current=null] : ( (lv_context_0_0= ruleContextField ) ) ;
+    // InternalLibrettoSpec.g:3751:1: ruleBehaviorContextItem returns [EObject current=null] : ( (lv_context_0_0= ruleContextField ) ) ;
     public final EObject ruleBehaviorContextItem() throws RecognitionException {
         EObject current = null;
 
@@ -9929,14 +10237,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:3633:2: ( ( (lv_context_0_0= ruleContextField ) ) )
-            // InternalLibrettoSpec.g:3634:2: ( (lv_context_0_0= ruleContextField ) )
+            // InternalLibrettoSpec.g:3757:2: ( ( (lv_context_0_0= ruleContextField ) ) )
+            // InternalLibrettoSpec.g:3758:2: ( (lv_context_0_0= ruleContextField ) )
             {
-            // InternalLibrettoSpec.g:3634:2: ( (lv_context_0_0= ruleContextField ) )
-            // InternalLibrettoSpec.g:3635:3: (lv_context_0_0= ruleContextField )
+            // InternalLibrettoSpec.g:3758:2: ( (lv_context_0_0= ruleContextField ) )
+            // InternalLibrettoSpec.g:3759:3: (lv_context_0_0= ruleContextField )
             {
-            // InternalLibrettoSpec.g:3635:3: (lv_context_0_0= ruleContextField )
-            // InternalLibrettoSpec.g:3636:4: lv_context_0_0= ruleContextField
+            // InternalLibrettoSpec.g:3759:3: (lv_context_0_0= ruleContextField )
+            // InternalLibrettoSpec.g:3760:4: lv_context_0_0= ruleContextField
             {
 
             				newCompositeNode(grammarAccess.getBehaviorContextItemAccess().getContextContextFieldParserRuleCall_0());
@@ -9983,7 +10291,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBehaviorDependenciesItem"
-    // InternalLibrettoSpec.g:3656:1: entryRuleBehaviorDependenciesItem returns [EObject current=null] : iv_ruleBehaviorDependenciesItem= ruleBehaviorDependenciesItem EOF ;
+    // InternalLibrettoSpec.g:3780:1: entryRuleBehaviorDependenciesItem returns [EObject current=null] : iv_ruleBehaviorDependenciesItem= ruleBehaviorDependenciesItem EOF ;
     public final EObject entryRuleBehaviorDependenciesItem() throws RecognitionException {
         EObject current = null;
 
@@ -9991,8 +10299,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:3656:65: (iv_ruleBehaviorDependenciesItem= ruleBehaviorDependenciesItem EOF )
-            // InternalLibrettoSpec.g:3657:2: iv_ruleBehaviorDependenciesItem= ruleBehaviorDependenciesItem EOF
+            // InternalLibrettoSpec.g:3780:65: (iv_ruleBehaviorDependenciesItem= ruleBehaviorDependenciesItem EOF )
+            // InternalLibrettoSpec.g:3781:2: iv_ruleBehaviorDependenciesItem= ruleBehaviorDependenciesItem EOF
             {
              newCompositeNode(grammarAccess.getBehaviorDependenciesItemRule()); 
             pushFollow(FOLLOW_1);
@@ -10019,7 +10327,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBehaviorDependenciesItem"
-    // InternalLibrettoSpec.g:3663:1: ruleBehaviorDependenciesItem returns [EObject current=null] : ( (lv_dependencies_0_0= ruleDependenciesField ) ) ;
+    // InternalLibrettoSpec.g:3787:1: ruleBehaviorDependenciesItem returns [EObject current=null] : ( (lv_dependencies_0_0= ruleDependenciesField ) ) ;
     public final EObject ruleBehaviorDependenciesItem() throws RecognitionException {
         EObject current = null;
 
@@ -10030,14 +10338,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:3669:2: ( ( (lv_dependencies_0_0= ruleDependenciesField ) ) )
-            // InternalLibrettoSpec.g:3670:2: ( (lv_dependencies_0_0= ruleDependenciesField ) )
+            // InternalLibrettoSpec.g:3793:2: ( ( (lv_dependencies_0_0= ruleDependenciesField ) ) )
+            // InternalLibrettoSpec.g:3794:2: ( (lv_dependencies_0_0= ruleDependenciesField ) )
             {
-            // InternalLibrettoSpec.g:3670:2: ( (lv_dependencies_0_0= ruleDependenciesField ) )
-            // InternalLibrettoSpec.g:3671:3: (lv_dependencies_0_0= ruleDependenciesField )
+            // InternalLibrettoSpec.g:3794:2: ( (lv_dependencies_0_0= ruleDependenciesField ) )
+            // InternalLibrettoSpec.g:3795:3: (lv_dependencies_0_0= ruleDependenciesField )
             {
-            // InternalLibrettoSpec.g:3671:3: (lv_dependencies_0_0= ruleDependenciesField )
-            // InternalLibrettoSpec.g:3672:4: lv_dependencies_0_0= ruleDependenciesField
+            // InternalLibrettoSpec.g:3795:3: (lv_dependencies_0_0= ruleDependenciesField )
+            // InternalLibrettoSpec.g:3796:4: lv_dependencies_0_0= ruleDependenciesField
             {
 
             				newCompositeNode(grammarAccess.getBehaviorDependenciesItemAccess().getDependenciesDependenciesFieldParserRuleCall_0());
@@ -10084,7 +10392,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleActorField"
-    // InternalLibrettoSpec.g:3692:1: entryRuleActorField returns [EObject current=null] : iv_ruleActorField= ruleActorField EOF ;
+    // InternalLibrettoSpec.g:3816:1: entryRuleActorField returns [EObject current=null] : iv_ruleActorField= ruleActorField EOF ;
     public final EObject entryRuleActorField() throws RecognitionException {
         EObject current = null;
 
@@ -10092,8 +10400,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:3692:51: (iv_ruleActorField= ruleActorField EOF )
-            // InternalLibrettoSpec.g:3693:2: iv_ruleActorField= ruleActorField EOF
+            // InternalLibrettoSpec.g:3816:51: (iv_ruleActorField= ruleActorField EOF )
+            // InternalLibrettoSpec.g:3817:2: iv_ruleActorField= ruleActorField EOF
             {
              newCompositeNode(grammarAccess.getActorFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -10120,7 +10428,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleActorField"
-    // InternalLibrettoSpec.g:3699:1: ruleActorField returns [EObject current=null] : (otherlv_0= 'actor' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) ) ) ;
+    // InternalLibrettoSpec.g:3823:1: ruleActorField returns [EObject current=null] : (otherlv_0= 'actor' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) ) ) ;
     public final EObject ruleActorField() throws RecognitionException {
         EObject current = null;
 
@@ -10133,13 +10441,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:3705:2: ( (otherlv_0= 'actor' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) ) ) )
-            // InternalLibrettoSpec.g:3706:2: (otherlv_0= 'actor' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) ) )
+            // InternalLibrettoSpec.g:3829:2: ( (otherlv_0= 'actor' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) ) ) )
+            // InternalLibrettoSpec.g:3830:2: (otherlv_0= 'actor' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) ) )
             {
-            // InternalLibrettoSpec.g:3706:2: (otherlv_0= 'actor' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) ) )
-            // InternalLibrettoSpec.g:3707:3: otherlv_0= 'actor' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) )
+            // InternalLibrettoSpec.g:3830:2: (otherlv_0= 'actor' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) ) )
+            // InternalLibrettoSpec.g:3831:3: otherlv_0= 'actor' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) )
             {
-            otherlv_0=(Token)match(input,54,FOLLOW_17); 
+            otherlv_0=(Token)match(input,56,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getActorFieldAccess().getActorKeyword_0());
             		
@@ -10147,11 +10455,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getActorFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:3715:3: ( (lv_value_2_0= ruleIdentifierValue ) )
-            // InternalLibrettoSpec.g:3716:4: (lv_value_2_0= ruleIdentifierValue )
+            // InternalLibrettoSpec.g:3839:3: ( (lv_value_2_0= ruleIdentifierValue ) )
+            // InternalLibrettoSpec.g:3840:4: (lv_value_2_0= ruleIdentifierValue )
             {
-            // InternalLibrettoSpec.g:3716:4: (lv_value_2_0= ruleIdentifierValue )
-            // InternalLibrettoSpec.g:3717:5: lv_value_2_0= ruleIdentifierValue
+            // InternalLibrettoSpec.g:3840:4: (lv_value_2_0= ruleIdentifierValue )
+            // InternalLibrettoSpec.g:3841:5: lv_value_2_0= ruleIdentifierValue
             {
 
             					newCompositeNode(grammarAccess.getActorFieldAccess().getValueIdentifierValueParserRuleCall_2_0());
@@ -10201,7 +10509,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleActionField"
-    // InternalLibrettoSpec.g:3738:1: entryRuleActionField returns [EObject current=null] : iv_ruleActionField= ruleActionField EOF ;
+    // InternalLibrettoSpec.g:3862:1: entryRuleActionField returns [EObject current=null] : iv_ruleActionField= ruleActionField EOF ;
     public final EObject entryRuleActionField() throws RecognitionException {
         EObject current = null;
 
@@ -10209,8 +10517,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:3738:52: (iv_ruleActionField= ruleActionField EOF )
-            // InternalLibrettoSpec.g:3739:2: iv_ruleActionField= ruleActionField EOF
+            // InternalLibrettoSpec.g:3862:52: (iv_ruleActionField= ruleActionField EOF )
+            // InternalLibrettoSpec.g:3863:2: iv_ruleActionField= ruleActionField EOF
             {
              newCompositeNode(grammarAccess.getActionFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -10237,7 +10545,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleActionField"
-    // InternalLibrettoSpec.g:3745:1: ruleActionField returns [EObject current=null] : (otherlv_0= 'action' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) ) ) ;
+    // InternalLibrettoSpec.g:3869:1: ruleActionField returns [EObject current=null] : (otherlv_0= 'action' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) ) ) ;
     public final EObject ruleActionField() throws RecognitionException {
         EObject current = null;
 
@@ -10250,13 +10558,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:3751:2: ( (otherlv_0= 'action' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) ) ) )
-            // InternalLibrettoSpec.g:3752:2: (otherlv_0= 'action' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) ) )
+            // InternalLibrettoSpec.g:3875:2: ( (otherlv_0= 'action' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) ) ) )
+            // InternalLibrettoSpec.g:3876:2: (otherlv_0= 'action' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) ) )
             {
-            // InternalLibrettoSpec.g:3752:2: (otherlv_0= 'action' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) ) )
-            // InternalLibrettoSpec.g:3753:3: otherlv_0= 'action' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) )
+            // InternalLibrettoSpec.g:3876:2: (otherlv_0= 'action' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) ) )
+            // InternalLibrettoSpec.g:3877:3: otherlv_0= 'action' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) )
             {
-            otherlv_0=(Token)match(input,55,FOLLOW_17); 
+            otherlv_0=(Token)match(input,57,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getActionFieldAccess().getActionKeyword_0());
             		
@@ -10264,11 +10572,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getActionFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:3761:3: ( (lv_value_2_0= ruleIdentifierValue ) )
-            // InternalLibrettoSpec.g:3762:4: (lv_value_2_0= ruleIdentifierValue )
+            // InternalLibrettoSpec.g:3885:3: ( (lv_value_2_0= ruleIdentifierValue ) )
+            // InternalLibrettoSpec.g:3886:4: (lv_value_2_0= ruleIdentifierValue )
             {
-            // InternalLibrettoSpec.g:3762:4: (lv_value_2_0= ruleIdentifierValue )
-            // InternalLibrettoSpec.g:3763:5: lv_value_2_0= ruleIdentifierValue
+            // InternalLibrettoSpec.g:3886:4: (lv_value_2_0= ruleIdentifierValue )
+            // InternalLibrettoSpec.g:3887:5: lv_value_2_0= ruleIdentifierValue
             {
 
             					newCompositeNode(grammarAccess.getActionFieldAccess().getValueIdentifierValueParserRuleCall_2_0());
@@ -10318,7 +10626,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleObjectsField"
-    // InternalLibrettoSpec.g:3784:1: entryRuleObjectsField returns [EObject current=null] : iv_ruleObjectsField= ruleObjectsField EOF ;
+    // InternalLibrettoSpec.g:3908:1: entryRuleObjectsField returns [EObject current=null] : iv_ruleObjectsField= ruleObjectsField EOF ;
     public final EObject entryRuleObjectsField() throws RecognitionException {
         EObject current = null;
 
@@ -10326,8 +10634,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:3784:53: (iv_ruleObjectsField= ruleObjectsField EOF )
-            // InternalLibrettoSpec.g:3785:2: iv_ruleObjectsField= ruleObjectsField EOF
+            // InternalLibrettoSpec.g:3908:53: (iv_ruleObjectsField= ruleObjectsField EOF )
+            // InternalLibrettoSpec.g:3909:2: iv_ruleObjectsField= ruleObjectsField EOF
             {
              newCompositeNode(grammarAccess.getObjectsFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -10354,7 +10662,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleObjectsField"
-    // InternalLibrettoSpec.g:3791:1: ruleObjectsField returns [EObject current=null] : (otherlv_0= 'objects' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) ) ;
+    // InternalLibrettoSpec.g:3915:1: ruleObjectsField returns [EObject current=null] : (otherlv_0= 'objects' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) ) ;
     public final EObject ruleObjectsField() throws RecognitionException {
         EObject current = null;
 
@@ -10367,13 +10675,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:3797:2: ( (otherlv_0= 'objects' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) ) )
-            // InternalLibrettoSpec.g:3798:2: (otherlv_0= 'objects' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) )
+            // InternalLibrettoSpec.g:3921:2: ( (otherlv_0= 'objects' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) ) )
+            // InternalLibrettoSpec.g:3922:2: (otherlv_0= 'objects' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) )
             {
-            // InternalLibrettoSpec.g:3798:2: (otherlv_0= 'objects' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) )
-            // InternalLibrettoSpec.g:3799:3: otherlv_0= 'objects' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) )
+            // InternalLibrettoSpec.g:3922:2: (otherlv_0= 'objects' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) )
+            // InternalLibrettoSpec.g:3923:3: otherlv_0= 'objects' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) )
             {
-            otherlv_0=(Token)match(input,56,FOLLOW_17); 
+            otherlv_0=(Token)match(input,58,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getObjectsFieldAccess().getObjectsKeyword_0());
             		
@@ -10381,11 +10689,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getObjectsFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:3807:3: ( (lv_value_2_0= ruleIdentifierList ) )
-            // InternalLibrettoSpec.g:3808:4: (lv_value_2_0= ruleIdentifierList )
+            // InternalLibrettoSpec.g:3931:3: ( (lv_value_2_0= ruleIdentifierList ) )
+            // InternalLibrettoSpec.g:3932:4: (lv_value_2_0= ruleIdentifierList )
             {
-            // InternalLibrettoSpec.g:3808:4: (lv_value_2_0= ruleIdentifierList )
-            // InternalLibrettoSpec.g:3809:5: lv_value_2_0= ruleIdentifierList
+            // InternalLibrettoSpec.g:3932:4: (lv_value_2_0= ruleIdentifierList )
+            // InternalLibrettoSpec.g:3933:5: lv_value_2_0= ruleIdentifierList
             {
 
             					newCompositeNode(grammarAccess.getObjectsFieldAccess().getValueIdentifierListParserRuleCall_2_0());
@@ -10435,7 +10743,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleReadsField"
-    // InternalLibrettoSpec.g:3830:1: entryRuleReadsField returns [EObject current=null] : iv_ruleReadsField= ruleReadsField EOF ;
+    // InternalLibrettoSpec.g:3954:1: entryRuleReadsField returns [EObject current=null] : iv_ruleReadsField= ruleReadsField EOF ;
     public final EObject entryRuleReadsField() throws RecognitionException {
         EObject current = null;
 
@@ -10443,8 +10751,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:3830:51: (iv_ruleReadsField= ruleReadsField EOF )
-            // InternalLibrettoSpec.g:3831:2: iv_ruleReadsField= ruleReadsField EOF
+            // InternalLibrettoSpec.g:3954:51: (iv_ruleReadsField= ruleReadsField EOF )
+            // InternalLibrettoSpec.g:3955:2: iv_ruleReadsField= ruleReadsField EOF
             {
              newCompositeNode(grammarAccess.getReadsFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -10471,7 +10779,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleReadsField"
-    // InternalLibrettoSpec.g:3837:1: ruleReadsField returns [EObject current=null] : (otherlv_0= 'reads' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) ) ;
+    // InternalLibrettoSpec.g:3961:1: ruleReadsField returns [EObject current=null] : (otherlv_0= 'reads' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) ) ;
     public final EObject ruleReadsField() throws RecognitionException {
         EObject current = null;
 
@@ -10484,13 +10792,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:3843:2: ( (otherlv_0= 'reads' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) ) )
-            // InternalLibrettoSpec.g:3844:2: (otherlv_0= 'reads' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) )
+            // InternalLibrettoSpec.g:3967:2: ( (otherlv_0= 'reads' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) ) )
+            // InternalLibrettoSpec.g:3968:2: (otherlv_0= 'reads' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) )
             {
-            // InternalLibrettoSpec.g:3844:2: (otherlv_0= 'reads' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) )
-            // InternalLibrettoSpec.g:3845:3: otherlv_0= 'reads' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) )
+            // InternalLibrettoSpec.g:3968:2: (otherlv_0= 'reads' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) )
+            // InternalLibrettoSpec.g:3969:3: otherlv_0= 'reads' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) )
             {
-            otherlv_0=(Token)match(input,57,FOLLOW_17); 
+            otherlv_0=(Token)match(input,59,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getReadsFieldAccess().getReadsKeyword_0());
             		
@@ -10498,11 +10806,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getReadsFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:3853:3: ( (lv_value_2_0= ruleIdentifierList ) )
-            // InternalLibrettoSpec.g:3854:4: (lv_value_2_0= ruleIdentifierList )
+            // InternalLibrettoSpec.g:3977:3: ( (lv_value_2_0= ruleIdentifierList ) )
+            // InternalLibrettoSpec.g:3978:4: (lv_value_2_0= ruleIdentifierList )
             {
-            // InternalLibrettoSpec.g:3854:4: (lv_value_2_0= ruleIdentifierList )
-            // InternalLibrettoSpec.g:3855:5: lv_value_2_0= ruleIdentifierList
+            // InternalLibrettoSpec.g:3978:4: (lv_value_2_0= ruleIdentifierList )
+            // InternalLibrettoSpec.g:3979:5: lv_value_2_0= ruleIdentifierList
             {
 
             					newCompositeNode(grammarAccess.getReadsFieldAccess().getValueIdentifierListParserRuleCall_2_0());
@@ -10552,7 +10860,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleWritesField"
-    // InternalLibrettoSpec.g:3876:1: entryRuleWritesField returns [EObject current=null] : iv_ruleWritesField= ruleWritesField EOF ;
+    // InternalLibrettoSpec.g:4000:1: entryRuleWritesField returns [EObject current=null] : iv_ruleWritesField= ruleWritesField EOF ;
     public final EObject entryRuleWritesField() throws RecognitionException {
         EObject current = null;
 
@@ -10560,8 +10868,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:3876:52: (iv_ruleWritesField= ruleWritesField EOF )
-            // InternalLibrettoSpec.g:3877:2: iv_ruleWritesField= ruleWritesField EOF
+            // InternalLibrettoSpec.g:4000:52: (iv_ruleWritesField= ruleWritesField EOF )
+            // InternalLibrettoSpec.g:4001:2: iv_ruleWritesField= ruleWritesField EOF
             {
              newCompositeNode(grammarAccess.getWritesFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -10588,7 +10896,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleWritesField"
-    // InternalLibrettoSpec.g:3883:1: ruleWritesField returns [EObject current=null] : (otherlv_0= 'writes' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) ) ;
+    // InternalLibrettoSpec.g:4007:1: ruleWritesField returns [EObject current=null] : (otherlv_0= 'writes' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) ) ;
     public final EObject ruleWritesField() throws RecognitionException {
         EObject current = null;
 
@@ -10601,13 +10909,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:3889:2: ( (otherlv_0= 'writes' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) ) )
-            // InternalLibrettoSpec.g:3890:2: (otherlv_0= 'writes' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) )
+            // InternalLibrettoSpec.g:4013:2: ( (otherlv_0= 'writes' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) ) )
+            // InternalLibrettoSpec.g:4014:2: (otherlv_0= 'writes' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) )
             {
-            // InternalLibrettoSpec.g:3890:2: (otherlv_0= 'writes' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) )
-            // InternalLibrettoSpec.g:3891:3: otherlv_0= 'writes' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) )
+            // InternalLibrettoSpec.g:4014:2: (otherlv_0= 'writes' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) )
+            // InternalLibrettoSpec.g:4015:3: otherlv_0= 'writes' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) )
             {
-            otherlv_0=(Token)match(input,58,FOLLOW_17); 
+            otherlv_0=(Token)match(input,60,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getWritesFieldAccess().getWritesKeyword_0());
             		
@@ -10615,11 +10923,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getWritesFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:3899:3: ( (lv_value_2_0= ruleIdentifierList ) )
-            // InternalLibrettoSpec.g:3900:4: (lv_value_2_0= ruleIdentifierList )
+            // InternalLibrettoSpec.g:4023:3: ( (lv_value_2_0= ruleIdentifierList ) )
+            // InternalLibrettoSpec.g:4024:4: (lv_value_2_0= ruleIdentifierList )
             {
-            // InternalLibrettoSpec.g:3900:4: (lv_value_2_0= ruleIdentifierList )
-            // InternalLibrettoSpec.g:3901:5: lv_value_2_0= ruleIdentifierList
+            // InternalLibrettoSpec.g:4024:4: (lv_value_2_0= ruleIdentifierList )
+            // InternalLibrettoSpec.g:4025:5: lv_value_2_0= ruleIdentifierList
             {
 
             					newCompositeNode(grammarAccess.getWritesFieldAccess().getValueIdentifierListParserRuleCall_2_0());
@@ -10669,7 +10977,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConditionsField"
-    // InternalLibrettoSpec.g:3922:1: entryRuleConditionsField returns [EObject current=null] : iv_ruleConditionsField= ruleConditionsField EOF ;
+    // InternalLibrettoSpec.g:4046:1: entryRuleConditionsField returns [EObject current=null] : iv_ruleConditionsField= ruleConditionsField EOF ;
     public final EObject entryRuleConditionsField() throws RecognitionException {
         EObject current = null;
 
@@ -10677,8 +10985,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:3922:56: (iv_ruleConditionsField= ruleConditionsField EOF )
-            // InternalLibrettoSpec.g:3923:2: iv_ruleConditionsField= ruleConditionsField EOF
+            // InternalLibrettoSpec.g:4046:56: (iv_ruleConditionsField= ruleConditionsField EOF )
+            // InternalLibrettoSpec.g:4047:2: iv_ruleConditionsField= ruleConditionsField EOF
             {
              newCompositeNode(grammarAccess.getConditionsFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -10705,7 +11013,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConditionsField"
-    // InternalLibrettoSpec.g:3929:1: ruleConditionsField returns [EObject current=null] : (otherlv_0= 'conditions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) ) ;
+    // InternalLibrettoSpec.g:4053:1: ruleConditionsField returns [EObject current=null] : (otherlv_0= 'conditions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) ) ;
     public final EObject ruleConditionsField() throws RecognitionException {
         EObject current = null;
 
@@ -10718,13 +11026,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:3935:2: ( (otherlv_0= 'conditions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) ) )
-            // InternalLibrettoSpec.g:3936:2: (otherlv_0= 'conditions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) )
+            // InternalLibrettoSpec.g:4059:2: ( (otherlv_0= 'conditions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) ) )
+            // InternalLibrettoSpec.g:4060:2: (otherlv_0= 'conditions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) )
             {
-            // InternalLibrettoSpec.g:3936:2: (otherlv_0= 'conditions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) )
-            // InternalLibrettoSpec.g:3937:3: otherlv_0= 'conditions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) )
+            // InternalLibrettoSpec.g:4060:2: (otherlv_0= 'conditions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) )
+            // InternalLibrettoSpec.g:4061:3: otherlv_0= 'conditions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) )
             {
-            otherlv_0=(Token)match(input,59,FOLLOW_17); 
+            otherlv_0=(Token)match(input,61,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getConditionsFieldAccess().getConditionsKeyword_0());
             		
@@ -10732,11 +11040,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getConditionsFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:3945:3: ( (lv_value_2_0= ruleTextList ) )
-            // InternalLibrettoSpec.g:3946:4: (lv_value_2_0= ruleTextList )
+            // InternalLibrettoSpec.g:4069:3: ( (lv_value_2_0= ruleTextList ) )
+            // InternalLibrettoSpec.g:4070:4: (lv_value_2_0= ruleTextList )
             {
-            // InternalLibrettoSpec.g:3946:4: (lv_value_2_0= ruleTextList )
-            // InternalLibrettoSpec.g:3947:5: lv_value_2_0= ruleTextList
+            // InternalLibrettoSpec.g:4070:4: (lv_value_2_0= ruleTextList )
+            // InternalLibrettoSpec.g:4071:5: lv_value_2_0= ruleTextList
             {
 
             					newCompositeNode(grammarAccess.getConditionsFieldAccess().getValueTextListParserRuleCall_2_0());
@@ -10786,7 +11094,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOutcomesField"
-    // InternalLibrettoSpec.g:3968:1: entryRuleOutcomesField returns [EObject current=null] : iv_ruleOutcomesField= ruleOutcomesField EOF ;
+    // InternalLibrettoSpec.g:4092:1: entryRuleOutcomesField returns [EObject current=null] : iv_ruleOutcomesField= ruleOutcomesField EOF ;
     public final EObject entryRuleOutcomesField() throws RecognitionException {
         EObject current = null;
 
@@ -10794,8 +11102,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:3968:54: (iv_ruleOutcomesField= ruleOutcomesField EOF )
-            // InternalLibrettoSpec.g:3969:2: iv_ruleOutcomesField= ruleOutcomesField EOF
+            // InternalLibrettoSpec.g:4092:54: (iv_ruleOutcomesField= ruleOutcomesField EOF )
+            // InternalLibrettoSpec.g:4093:2: iv_ruleOutcomesField= ruleOutcomesField EOF
             {
              newCompositeNode(grammarAccess.getOutcomesFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -10822,7 +11130,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOutcomesField"
-    // InternalLibrettoSpec.g:3975:1: ruleOutcomesField returns [EObject current=null] : (otherlv_0= 'outcomes' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) ) ;
+    // InternalLibrettoSpec.g:4099:1: ruleOutcomesField returns [EObject current=null] : (otherlv_0= 'outcomes' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) ) ;
     public final EObject ruleOutcomesField() throws RecognitionException {
         EObject current = null;
 
@@ -10835,13 +11143,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:3981:2: ( (otherlv_0= 'outcomes' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) ) )
-            // InternalLibrettoSpec.g:3982:2: (otherlv_0= 'outcomes' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) )
+            // InternalLibrettoSpec.g:4105:2: ( (otherlv_0= 'outcomes' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) ) )
+            // InternalLibrettoSpec.g:4106:2: (otherlv_0= 'outcomes' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) )
             {
-            // InternalLibrettoSpec.g:3982:2: (otherlv_0= 'outcomes' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) )
-            // InternalLibrettoSpec.g:3983:3: otherlv_0= 'outcomes' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) )
+            // InternalLibrettoSpec.g:4106:2: (otherlv_0= 'outcomes' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) )
+            // InternalLibrettoSpec.g:4107:3: otherlv_0= 'outcomes' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) )
             {
-            otherlv_0=(Token)match(input,60,FOLLOW_17); 
+            otherlv_0=(Token)match(input,62,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getOutcomesFieldAccess().getOutcomesKeyword_0());
             		
@@ -10849,11 +11157,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getOutcomesFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:3991:3: ( (lv_value_2_0= ruleTextList ) )
-            // InternalLibrettoSpec.g:3992:4: (lv_value_2_0= ruleTextList )
+            // InternalLibrettoSpec.g:4115:3: ( (lv_value_2_0= ruleTextList ) )
+            // InternalLibrettoSpec.g:4116:4: (lv_value_2_0= ruleTextList )
             {
-            // InternalLibrettoSpec.g:3992:4: (lv_value_2_0= ruleTextList )
-            // InternalLibrettoSpec.g:3993:5: lv_value_2_0= ruleTextList
+            // InternalLibrettoSpec.g:4116:4: (lv_value_2_0= ruleTextList )
+            // InternalLibrettoSpec.g:4117:5: lv_value_2_0= ruleTextList
             {
 
             					newCompositeNode(grammarAccess.getOutcomesFieldAccess().getValueTextListParserRuleCall_2_0());
@@ -10903,7 +11211,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLabelField"
-    // InternalLibrettoSpec.g:4014:1: entryRuleLabelField returns [EObject current=null] : iv_ruleLabelField= ruleLabelField EOF ;
+    // InternalLibrettoSpec.g:4138:1: entryRuleLabelField returns [EObject current=null] : iv_ruleLabelField= ruleLabelField EOF ;
     public final EObject entryRuleLabelField() throws RecognitionException {
         EObject current = null;
 
@@ -10911,8 +11219,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:4014:51: (iv_ruleLabelField= ruleLabelField EOF )
-            // InternalLibrettoSpec.g:4015:2: iv_ruleLabelField= ruleLabelField EOF
+            // InternalLibrettoSpec.g:4138:51: (iv_ruleLabelField= ruleLabelField EOF )
+            // InternalLibrettoSpec.g:4139:2: iv_ruleLabelField= ruleLabelField EOF
             {
              newCompositeNode(grammarAccess.getLabelFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -10939,7 +11247,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLabelField"
-    // InternalLibrettoSpec.g:4021:1: ruleLabelField returns [EObject current=null] : (otherlv_0= 'label' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
+    // InternalLibrettoSpec.g:4145:1: ruleLabelField returns [EObject current=null] : (otherlv_0= 'label' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
     public final EObject ruleLabelField() throws RecognitionException {
         EObject current = null;
 
@@ -10952,13 +11260,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:4027:2: ( (otherlv_0= 'label' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
-            // InternalLibrettoSpec.g:4028:2: (otherlv_0= 'label' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:4151:2: ( (otherlv_0= 'label' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
+            // InternalLibrettoSpec.g:4152:2: (otherlv_0= 'label' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
             {
-            // InternalLibrettoSpec.g:4028:2: (otherlv_0= 'label' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
-            // InternalLibrettoSpec.g:4029:3: otherlv_0= 'label' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:4152:2: (otherlv_0= 'label' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:4153:3: otherlv_0= 'label' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
             {
-            otherlv_0=(Token)match(input,61,FOLLOW_17); 
+            otherlv_0=(Token)match(input,63,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getLabelFieldAccess().getLabelKeyword_0());
             		
@@ -10966,11 +11274,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getLabelFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:4037:3: ( (lv_value_2_0= ruleTextValue ) )
-            // InternalLibrettoSpec.g:4038:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:4161:3: ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:4162:4: (lv_value_2_0= ruleTextValue )
             {
-            // InternalLibrettoSpec.g:4038:4: (lv_value_2_0= ruleTextValue )
-            // InternalLibrettoSpec.g:4039:5: lv_value_2_0= ruleTextValue
+            // InternalLibrettoSpec.g:4162:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:4163:5: lv_value_2_0= ruleTextValue
             {
 
             					newCompositeNode(grammarAccess.getLabelFieldAccess().getValueTextValueParserRuleCall_2_0());
@@ -11020,7 +11328,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleReferencesField"
-    // InternalLibrettoSpec.g:4060:1: entryRuleReferencesField returns [EObject current=null] : iv_ruleReferencesField= ruleReferencesField EOF ;
+    // InternalLibrettoSpec.g:4184:1: entryRuleReferencesField returns [EObject current=null] : iv_ruleReferencesField= ruleReferencesField EOF ;
     public final EObject entryRuleReferencesField() throws RecognitionException {
         EObject current = null;
 
@@ -11028,8 +11336,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:4060:56: (iv_ruleReferencesField= ruleReferencesField EOF )
-            // InternalLibrettoSpec.g:4061:2: iv_ruleReferencesField= ruleReferencesField EOF
+            // InternalLibrettoSpec.g:4184:56: (iv_ruleReferencesField= ruleReferencesField EOF )
+            // InternalLibrettoSpec.g:4185:2: iv_ruleReferencesField= ruleReferencesField EOF
             {
              newCompositeNode(grammarAccess.getReferencesFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -11056,7 +11364,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleReferencesField"
-    // InternalLibrettoSpec.g:4067:1: ruleReferencesField returns [EObject current=null] : (otherlv_0= 'references' otherlv_1= ':' ( (lv_value_2_0= ruleReferenceIdList ) ) ) ;
+    // InternalLibrettoSpec.g:4191:1: ruleReferencesField returns [EObject current=null] : (otherlv_0= 'references' otherlv_1= ':' ( (lv_value_2_0= ruleReferenceIdList ) ) ) ;
     public final EObject ruleReferencesField() throws RecognitionException {
         EObject current = null;
 
@@ -11069,11 +11377,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:4073:2: ( (otherlv_0= 'references' otherlv_1= ':' ( (lv_value_2_0= ruleReferenceIdList ) ) ) )
-            // InternalLibrettoSpec.g:4074:2: (otherlv_0= 'references' otherlv_1= ':' ( (lv_value_2_0= ruleReferenceIdList ) ) )
+            // InternalLibrettoSpec.g:4197:2: ( (otherlv_0= 'references' otherlv_1= ':' ( (lv_value_2_0= ruleReferenceIdList ) ) ) )
+            // InternalLibrettoSpec.g:4198:2: (otherlv_0= 'references' otherlv_1= ':' ( (lv_value_2_0= ruleReferenceIdList ) ) )
             {
-            // InternalLibrettoSpec.g:4074:2: (otherlv_0= 'references' otherlv_1= ':' ( (lv_value_2_0= ruleReferenceIdList ) ) )
-            // InternalLibrettoSpec.g:4075:3: otherlv_0= 'references' otherlv_1= ':' ( (lv_value_2_0= ruleReferenceIdList ) )
+            // InternalLibrettoSpec.g:4198:2: (otherlv_0= 'references' otherlv_1= ':' ( (lv_value_2_0= ruleReferenceIdList ) ) )
+            // InternalLibrettoSpec.g:4199:3: otherlv_0= 'references' otherlv_1= ':' ( (lv_value_2_0= ruleReferenceIdList ) )
             {
             otherlv_0=(Token)match(input,22,FOLLOW_17); 
 
@@ -11083,11 +11391,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getReferencesFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:4083:3: ( (lv_value_2_0= ruleReferenceIdList ) )
-            // InternalLibrettoSpec.g:4084:4: (lv_value_2_0= ruleReferenceIdList )
+            // InternalLibrettoSpec.g:4207:3: ( (lv_value_2_0= ruleReferenceIdList ) )
+            // InternalLibrettoSpec.g:4208:4: (lv_value_2_0= ruleReferenceIdList )
             {
-            // InternalLibrettoSpec.g:4084:4: (lv_value_2_0= ruleReferenceIdList )
-            // InternalLibrettoSpec.g:4085:5: lv_value_2_0= ruleReferenceIdList
+            // InternalLibrettoSpec.g:4208:4: (lv_value_2_0= ruleReferenceIdList )
+            // InternalLibrettoSpec.g:4209:5: lv_value_2_0= ruleReferenceIdList
             {
 
             					newCompositeNode(grammarAccess.getReferencesFieldAccess().getValueReferenceIdListParserRuleCall_2_0());
@@ -11137,7 +11445,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDependenciesField"
-    // InternalLibrettoSpec.g:4106:1: entryRuleDependenciesField returns [EObject current=null] : iv_ruleDependenciesField= ruleDependenciesField EOF ;
+    // InternalLibrettoSpec.g:4230:1: entryRuleDependenciesField returns [EObject current=null] : iv_ruleDependenciesField= ruleDependenciesField EOF ;
     public final EObject entryRuleDependenciesField() throws RecognitionException {
         EObject current = null;
 
@@ -11145,8 +11453,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:4106:58: (iv_ruleDependenciesField= ruleDependenciesField EOF )
-            // InternalLibrettoSpec.g:4107:2: iv_ruleDependenciesField= ruleDependenciesField EOF
+            // InternalLibrettoSpec.g:4230:58: (iv_ruleDependenciesField= ruleDependenciesField EOF )
+            // InternalLibrettoSpec.g:4231:2: iv_ruleDependenciesField= ruleDependenciesField EOF
             {
              newCompositeNode(grammarAccess.getDependenciesFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -11173,7 +11481,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDependenciesField"
-    // InternalLibrettoSpec.g:4113:1: ruleDependenciesField returns [EObject current=null] : (otherlv_0= 'dependencies' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) ) ;
+    // InternalLibrettoSpec.g:4237:1: ruleDependenciesField returns [EObject current=null] : (otherlv_0= 'dependencies' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) ) ;
     public final EObject ruleDependenciesField() throws RecognitionException {
         EObject current = null;
 
@@ -11186,13 +11494,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:4119:2: ( (otherlv_0= 'dependencies' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) ) )
-            // InternalLibrettoSpec.g:4120:2: (otherlv_0= 'dependencies' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) )
+            // InternalLibrettoSpec.g:4243:2: ( (otherlv_0= 'dependencies' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) ) )
+            // InternalLibrettoSpec.g:4244:2: (otherlv_0= 'dependencies' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) )
             {
-            // InternalLibrettoSpec.g:4120:2: (otherlv_0= 'dependencies' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) )
-            // InternalLibrettoSpec.g:4121:3: otherlv_0= 'dependencies' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) )
+            // InternalLibrettoSpec.g:4244:2: (otherlv_0= 'dependencies' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) )
+            // InternalLibrettoSpec.g:4245:3: otherlv_0= 'dependencies' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) )
             {
-            otherlv_0=(Token)match(input,41,FOLLOW_17); 
+            otherlv_0=(Token)match(input,43,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getDependenciesFieldAccess().getDependenciesKeyword_0());
             		
@@ -11200,11 +11508,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getDependenciesFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:4129:3: ( (lv_value_2_0= ruleIdentifierList ) )
-            // InternalLibrettoSpec.g:4130:4: (lv_value_2_0= ruleIdentifierList )
+            // InternalLibrettoSpec.g:4253:3: ( (lv_value_2_0= ruleIdentifierList ) )
+            // InternalLibrettoSpec.g:4254:4: (lv_value_2_0= ruleIdentifierList )
             {
-            // InternalLibrettoSpec.g:4130:4: (lv_value_2_0= ruleIdentifierList )
-            // InternalLibrettoSpec.g:4131:5: lv_value_2_0= ruleIdentifierList
+            // InternalLibrettoSpec.g:4254:4: (lv_value_2_0= ruleIdentifierList )
+            // InternalLibrettoSpec.g:4255:5: lv_value_2_0= ruleIdentifierList
             {
 
             					newCompositeNode(grammarAccess.getDependenciesFieldAccess().getValueIdentifierListParserRuleCall_2_0());
@@ -11254,7 +11562,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNotesField"
-    // InternalLibrettoSpec.g:4152:1: entryRuleNotesField returns [EObject current=null] : iv_ruleNotesField= ruleNotesField EOF ;
+    // InternalLibrettoSpec.g:4276:1: entryRuleNotesField returns [EObject current=null] : iv_ruleNotesField= ruleNotesField EOF ;
     public final EObject entryRuleNotesField() throws RecognitionException {
         EObject current = null;
 
@@ -11262,8 +11570,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:4152:51: (iv_ruleNotesField= ruleNotesField EOF )
-            // InternalLibrettoSpec.g:4153:2: iv_ruleNotesField= ruleNotesField EOF
+            // InternalLibrettoSpec.g:4276:51: (iv_ruleNotesField= ruleNotesField EOF )
+            // InternalLibrettoSpec.g:4277:2: iv_ruleNotesField= ruleNotesField EOF
             {
              newCompositeNode(grammarAccess.getNotesFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -11290,7 +11598,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNotesField"
-    // InternalLibrettoSpec.g:4159:1: ruleNotesField returns [EObject current=null] : (otherlv_0= 'notes' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
+    // InternalLibrettoSpec.g:4283:1: ruleNotesField returns [EObject current=null] : (otherlv_0= 'notes' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
     public final EObject ruleNotesField() throws RecognitionException {
         EObject current = null;
 
@@ -11303,13 +11611,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:4165:2: ( (otherlv_0= 'notes' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
-            // InternalLibrettoSpec.g:4166:2: (otherlv_0= 'notes' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:4289:2: ( (otherlv_0= 'notes' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
+            // InternalLibrettoSpec.g:4290:2: (otherlv_0= 'notes' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
             {
-            // InternalLibrettoSpec.g:4166:2: (otherlv_0= 'notes' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
-            // InternalLibrettoSpec.g:4167:3: otherlv_0= 'notes' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:4290:2: (otherlv_0= 'notes' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:4291:3: otherlv_0= 'notes' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
             {
-            otherlv_0=(Token)match(input,62,FOLLOW_17); 
+            otherlv_0=(Token)match(input,64,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getNotesFieldAccess().getNotesKeyword_0());
             		
@@ -11317,11 +11625,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getNotesFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:4175:3: ( (lv_value_2_0= ruleTextValue ) )
-            // InternalLibrettoSpec.g:4176:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:4299:3: ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:4300:4: (lv_value_2_0= ruleTextValue )
             {
-            // InternalLibrettoSpec.g:4176:4: (lv_value_2_0= ruleTextValue )
-            // InternalLibrettoSpec.g:4177:5: lv_value_2_0= ruleTextValue
+            // InternalLibrettoSpec.g:4300:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:4301:5: lv_value_2_0= ruleTextValue
             {
 
             					newCompositeNode(grammarAccess.getNotesFieldAccess().getValueTextValueParserRuleCall_2_0());
@@ -11371,7 +11679,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleContextField"
-    // InternalLibrettoSpec.g:4198:1: entryRuleContextField returns [EObject current=null] : iv_ruleContextField= ruleContextField EOF ;
+    // InternalLibrettoSpec.g:4322:1: entryRuleContextField returns [EObject current=null] : iv_ruleContextField= ruleContextField EOF ;
     public final EObject entryRuleContextField() throws RecognitionException {
         EObject current = null;
 
@@ -11379,8 +11687,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:4198:53: (iv_ruleContextField= ruleContextField EOF )
-            // InternalLibrettoSpec.g:4199:2: iv_ruleContextField= ruleContextField EOF
+            // InternalLibrettoSpec.g:4322:53: (iv_ruleContextField= ruleContextField EOF )
+            // InternalLibrettoSpec.g:4323:2: iv_ruleContextField= ruleContextField EOF
             {
              newCompositeNode(grammarAccess.getContextFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -11407,7 +11715,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleContextField"
-    // InternalLibrettoSpec.g:4205:1: ruleContextField returns [EObject current=null] : (otherlv_0= 'context' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
+    // InternalLibrettoSpec.g:4329:1: ruleContextField returns [EObject current=null] : (otherlv_0= 'context' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
     public final EObject ruleContextField() throws RecognitionException {
         EObject current = null;
 
@@ -11420,13 +11728,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:4211:2: ( (otherlv_0= 'context' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
-            // InternalLibrettoSpec.g:4212:2: (otherlv_0= 'context' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:4335:2: ( (otherlv_0= 'context' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
+            // InternalLibrettoSpec.g:4336:2: (otherlv_0= 'context' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
             {
-            // InternalLibrettoSpec.g:4212:2: (otherlv_0= 'context' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
-            // InternalLibrettoSpec.g:4213:3: otherlv_0= 'context' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:4336:2: (otherlv_0= 'context' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:4337:3: otherlv_0= 'context' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
             {
-            otherlv_0=(Token)match(input,63,FOLLOW_17); 
+            otherlv_0=(Token)match(input,65,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getContextFieldAccess().getContextKeyword_0());
             		
@@ -11434,11 +11742,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getContextFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:4221:3: ( (lv_value_2_0= ruleTextValue ) )
-            // InternalLibrettoSpec.g:4222:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:4345:3: ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:4346:4: (lv_value_2_0= ruleTextValue )
             {
-            // InternalLibrettoSpec.g:4222:4: (lv_value_2_0= ruleTextValue )
-            // InternalLibrettoSpec.g:4223:5: lv_value_2_0= ruleTextValue
+            // InternalLibrettoSpec.g:4346:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:4347:5: lv_value_2_0= ruleTextValue
             {
 
             					newCompositeNode(grammarAccess.getContextFieldAccess().getValueTextValueParserRuleCall_2_0());
@@ -11488,7 +11796,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOperationSurfaceRecord"
-    // InternalLibrettoSpec.g:4244:1: entryRuleOperationSurfaceRecord returns [EObject current=null] : iv_ruleOperationSurfaceRecord= ruleOperationSurfaceRecord EOF ;
+    // InternalLibrettoSpec.g:4368:1: entryRuleOperationSurfaceRecord returns [EObject current=null] : iv_ruleOperationSurfaceRecord= ruleOperationSurfaceRecord EOF ;
     public final EObject entryRuleOperationSurfaceRecord() throws RecognitionException {
         EObject current = null;
 
@@ -11496,8 +11804,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:4244:63: (iv_ruleOperationSurfaceRecord= ruleOperationSurfaceRecord EOF )
-            // InternalLibrettoSpec.g:4245:2: iv_ruleOperationSurfaceRecord= ruleOperationSurfaceRecord EOF
+            // InternalLibrettoSpec.g:4368:63: (iv_ruleOperationSurfaceRecord= ruleOperationSurfaceRecord EOF )
+            // InternalLibrettoSpec.g:4369:2: iv_ruleOperationSurfaceRecord= ruleOperationSurfaceRecord EOF
             {
              newCompositeNode(grammarAccess.getOperationSurfaceRecordRule()); 
             pushFollow(FOLLOW_1);
@@ -11524,7 +11832,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOperationSurfaceRecord"
-    // InternalLibrettoSpec.g:4251:1: ruleOperationSurfaceRecord returns [EObject current=null] : (otherlv_0= 'operation' ( (lv_id_1_0= RULE_LIBRETTO_ID ) ) otherlv_2= '{' ( (lv_items_3_0= ruleOperationSurfaceRecordItem ) )* otherlv_4= '}' ) ;
+    // InternalLibrettoSpec.g:4375:1: ruleOperationSurfaceRecord returns [EObject current=null] : (otherlv_0= 'operation' ( (lv_id_1_0= RULE_LIBRETTO_ID ) ) otherlv_2= '{' ( (lv_items_3_0= ruleOperationSurfaceRecordItem ) )* otherlv_4= '}' ) ;
     public final EObject ruleOperationSurfaceRecord() throws RecognitionException {
         EObject current = null;
 
@@ -11539,21 +11847,21 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:4257:2: ( (otherlv_0= 'operation' ( (lv_id_1_0= RULE_LIBRETTO_ID ) ) otherlv_2= '{' ( (lv_items_3_0= ruleOperationSurfaceRecordItem ) )* otherlv_4= '}' ) )
-            // InternalLibrettoSpec.g:4258:2: (otherlv_0= 'operation' ( (lv_id_1_0= RULE_LIBRETTO_ID ) ) otherlv_2= '{' ( (lv_items_3_0= ruleOperationSurfaceRecordItem ) )* otherlv_4= '}' )
+            // InternalLibrettoSpec.g:4381:2: ( (otherlv_0= 'operation' ( (lv_id_1_0= RULE_LIBRETTO_ID ) ) otherlv_2= '{' ( (lv_items_3_0= ruleOperationSurfaceRecordItem ) )* otherlv_4= '}' ) )
+            // InternalLibrettoSpec.g:4382:2: (otherlv_0= 'operation' ( (lv_id_1_0= RULE_LIBRETTO_ID ) ) otherlv_2= '{' ( (lv_items_3_0= ruleOperationSurfaceRecordItem ) )* otherlv_4= '}' )
             {
-            // InternalLibrettoSpec.g:4258:2: (otherlv_0= 'operation' ( (lv_id_1_0= RULE_LIBRETTO_ID ) ) otherlv_2= '{' ( (lv_items_3_0= ruleOperationSurfaceRecordItem ) )* otherlv_4= '}' )
-            // InternalLibrettoSpec.g:4259:3: otherlv_0= 'operation' ( (lv_id_1_0= RULE_LIBRETTO_ID ) ) otherlv_2= '{' ( (lv_items_3_0= ruleOperationSurfaceRecordItem ) )* otherlv_4= '}'
+            // InternalLibrettoSpec.g:4382:2: (otherlv_0= 'operation' ( (lv_id_1_0= RULE_LIBRETTO_ID ) ) otherlv_2= '{' ( (lv_items_3_0= ruleOperationSurfaceRecordItem ) )* otherlv_4= '}' )
+            // InternalLibrettoSpec.g:4383:3: otherlv_0= 'operation' ( (lv_id_1_0= RULE_LIBRETTO_ID ) ) otherlv_2= '{' ( (lv_items_3_0= ruleOperationSurfaceRecordItem ) )* otherlv_4= '}'
             {
-            otherlv_0=(Token)match(input,64,FOLLOW_3); 
+            otherlv_0=(Token)match(input,66,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getOperationSurfaceRecordAccess().getOperationKeyword_0());
             		
-            // InternalLibrettoSpec.g:4263:3: ( (lv_id_1_0= RULE_LIBRETTO_ID ) )
-            // InternalLibrettoSpec.g:4264:4: (lv_id_1_0= RULE_LIBRETTO_ID )
+            // InternalLibrettoSpec.g:4387:3: ( (lv_id_1_0= RULE_LIBRETTO_ID ) )
+            // InternalLibrettoSpec.g:4388:4: (lv_id_1_0= RULE_LIBRETTO_ID )
             {
-            // InternalLibrettoSpec.g:4264:4: (lv_id_1_0= RULE_LIBRETTO_ID )
-            // InternalLibrettoSpec.g:4265:5: lv_id_1_0= RULE_LIBRETTO_ID
+            // InternalLibrettoSpec.g:4388:4: (lv_id_1_0= RULE_LIBRETTO_ID )
+            // InternalLibrettoSpec.g:4389:5: lv_id_1_0= RULE_LIBRETTO_ID
             {
             lv_id_1_0=(Token)match(input,RULE_LIBRETTO_ID,FOLLOW_4); 
 
@@ -11579,23 +11887,23 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getOperationSurfaceRecordAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalLibrettoSpec.g:4285:3: ( (lv_items_3_0= ruleOperationSurfaceRecordItem ) )*
+            // InternalLibrettoSpec.g:4409:3: ( (lv_items_3_0= ruleOperationSurfaceRecordItem ) )*
             loop28:
             do {
                 int alt28=2;
                 int LA28_0 = input.LA(1);
 
-                if ( ((LA28_0>=65 && LA28_0<=66)) ) {
+                if ( ((LA28_0>=67 && LA28_0<=68)) ) {
                     alt28=1;
                 }
 
 
                 switch (alt28) {
             	case 1 :
-            	    // InternalLibrettoSpec.g:4286:4: (lv_items_3_0= ruleOperationSurfaceRecordItem )
+            	    // InternalLibrettoSpec.g:4410:4: (lv_items_3_0= ruleOperationSurfaceRecordItem )
             	    {
-            	    // InternalLibrettoSpec.g:4286:4: (lv_items_3_0= ruleOperationSurfaceRecordItem )
-            	    // InternalLibrettoSpec.g:4287:5: lv_items_3_0= ruleOperationSurfaceRecordItem
+            	    // InternalLibrettoSpec.g:4410:4: (lv_items_3_0= ruleOperationSurfaceRecordItem )
+            	    // InternalLibrettoSpec.g:4411:5: lv_items_3_0= ruleOperationSurfaceRecordItem
             	    {
 
             	    					newCompositeNode(grammarAccess.getOperationSurfaceRecordAccess().getItemsOperationSurfaceRecordItemParserRuleCall_3_0());
@@ -11655,7 +11963,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOperationSurfaceRecordItem"
-    // InternalLibrettoSpec.g:4312:1: entryRuleOperationSurfaceRecordItem returns [EObject current=null] : iv_ruleOperationSurfaceRecordItem= ruleOperationSurfaceRecordItem EOF ;
+    // InternalLibrettoSpec.g:4436:1: entryRuleOperationSurfaceRecordItem returns [EObject current=null] : iv_ruleOperationSurfaceRecordItem= ruleOperationSurfaceRecordItem EOF ;
     public final EObject entryRuleOperationSurfaceRecordItem() throws RecognitionException {
         EObject current = null;
 
@@ -11663,8 +11971,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:4312:67: (iv_ruleOperationSurfaceRecordItem= ruleOperationSurfaceRecordItem EOF )
-            // InternalLibrettoSpec.g:4313:2: iv_ruleOperationSurfaceRecordItem= ruleOperationSurfaceRecordItem EOF
+            // InternalLibrettoSpec.g:4436:67: (iv_ruleOperationSurfaceRecordItem= ruleOperationSurfaceRecordItem EOF )
+            // InternalLibrettoSpec.g:4437:2: iv_ruleOperationSurfaceRecordItem= ruleOperationSurfaceRecordItem EOF
             {
              newCompositeNode(grammarAccess.getOperationSurfaceRecordItemRule()); 
             pushFollow(FOLLOW_1);
@@ -11691,7 +11999,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOperationSurfaceRecordItem"
-    // InternalLibrettoSpec.g:4319:1: ruleOperationSurfaceRecordItem returns [EObject current=null] : (this_OperationSurfaceExpressionItem_0= ruleOperationSurfaceExpressionItem | this_OperationSurfaceOutcomeItem_1= ruleOperationSurfaceOutcomeItem ) ;
+    // InternalLibrettoSpec.g:4443:1: ruleOperationSurfaceRecordItem returns [EObject current=null] : (this_OperationSurfaceExpressionItem_0= ruleOperationSurfaceExpressionItem | this_OperationSurfaceOutcomeItem_1= ruleOperationSurfaceOutcomeItem ) ;
     public final EObject ruleOperationSurfaceRecordItem() throws RecognitionException {
         EObject current = null;
 
@@ -11704,17 +12012,17 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:4325:2: ( (this_OperationSurfaceExpressionItem_0= ruleOperationSurfaceExpressionItem | this_OperationSurfaceOutcomeItem_1= ruleOperationSurfaceOutcomeItem ) )
-            // InternalLibrettoSpec.g:4326:2: (this_OperationSurfaceExpressionItem_0= ruleOperationSurfaceExpressionItem | this_OperationSurfaceOutcomeItem_1= ruleOperationSurfaceOutcomeItem )
+            // InternalLibrettoSpec.g:4449:2: ( (this_OperationSurfaceExpressionItem_0= ruleOperationSurfaceExpressionItem | this_OperationSurfaceOutcomeItem_1= ruleOperationSurfaceOutcomeItem ) )
+            // InternalLibrettoSpec.g:4450:2: (this_OperationSurfaceExpressionItem_0= ruleOperationSurfaceExpressionItem | this_OperationSurfaceOutcomeItem_1= ruleOperationSurfaceOutcomeItem )
             {
-            // InternalLibrettoSpec.g:4326:2: (this_OperationSurfaceExpressionItem_0= ruleOperationSurfaceExpressionItem | this_OperationSurfaceOutcomeItem_1= ruleOperationSurfaceOutcomeItem )
+            // InternalLibrettoSpec.g:4450:2: (this_OperationSurfaceExpressionItem_0= ruleOperationSurfaceExpressionItem | this_OperationSurfaceOutcomeItem_1= ruleOperationSurfaceOutcomeItem )
             int alt29=2;
             int LA29_0 = input.LA(1);
 
-            if ( (LA29_0==65) ) {
+            if ( (LA29_0==67) ) {
                 alt29=1;
             }
-            else if ( (LA29_0==66) ) {
+            else if ( (LA29_0==68) ) {
                 alt29=2;
             }
             else {
@@ -11725,7 +12033,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
             }
             switch (alt29) {
                 case 1 :
-                    // InternalLibrettoSpec.g:4327:3: this_OperationSurfaceExpressionItem_0= ruleOperationSurfaceExpressionItem
+                    // InternalLibrettoSpec.g:4451:3: this_OperationSurfaceExpressionItem_0= ruleOperationSurfaceExpressionItem
                     {
 
                     			newCompositeNode(grammarAccess.getOperationSurfaceRecordItemAccess().getOperationSurfaceExpressionItemParserRuleCall_0());
@@ -11743,7 +12051,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoSpec.g:4336:3: this_OperationSurfaceOutcomeItem_1= ruleOperationSurfaceOutcomeItem
+                    // InternalLibrettoSpec.g:4460:3: this_OperationSurfaceOutcomeItem_1= ruleOperationSurfaceOutcomeItem
                     {
 
                     			newCompositeNode(grammarAccess.getOperationSurfaceRecordItemAccess().getOperationSurfaceOutcomeItemParserRuleCall_1());
@@ -11783,7 +12091,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOperationSurfaceExpressionItem"
-    // InternalLibrettoSpec.g:4348:1: entryRuleOperationSurfaceExpressionItem returns [EObject current=null] : iv_ruleOperationSurfaceExpressionItem= ruleOperationSurfaceExpressionItem EOF ;
+    // InternalLibrettoSpec.g:4472:1: entryRuleOperationSurfaceExpressionItem returns [EObject current=null] : iv_ruleOperationSurfaceExpressionItem= ruleOperationSurfaceExpressionItem EOF ;
     public final EObject entryRuleOperationSurfaceExpressionItem() throws RecognitionException {
         EObject current = null;
 
@@ -11791,8 +12099,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:4348:71: (iv_ruleOperationSurfaceExpressionItem= ruleOperationSurfaceExpressionItem EOF )
-            // InternalLibrettoSpec.g:4349:2: iv_ruleOperationSurfaceExpressionItem= ruleOperationSurfaceExpressionItem EOF
+            // InternalLibrettoSpec.g:4472:71: (iv_ruleOperationSurfaceExpressionItem= ruleOperationSurfaceExpressionItem EOF )
+            // InternalLibrettoSpec.g:4473:2: iv_ruleOperationSurfaceExpressionItem= ruleOperationSurfaceExpressionItem EOF
             {
              newCompositeNode(grammarAccess.getOperationSurfaceExpressionItemRule()); 
             pushFollow(FOLLOW_1);
@@ -11819,7 +12127,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOperationSurfaceExpressionItem"
-    // InternalLibrettoSpec.g:4355:1: ruleOperationSurfaceExpressionItem returns [EObject current=null] : ( (lv_operationExpression_0_0= ruleOperationExpressionField ) ) ;
+    // InternalLibrettoSpec.g:4479:1: ruleOperationSurfaceExpressionItem returns [EObject current=null] : ( (lv_operationExpression_0_0= ruleOperationExpressionField ) ) ;
     public final EObject ruleOperationSurfaceExpressionItem() throws RecognitionException {
         EObject current = null;
 
@@ -11830,14 +12138,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:4361:2: ( ( (lv_operationExpression_0_0= ruleOperationExpressionField ) ) )
-            // InternalLibrettoSpec.g:4362:2: ( (lv_operationExpression_0_0= ruleOperationExpressionField ) )
+            // InternalLibrettoSpec.g:4485:2: ( ( (lv_operationExpression_0_0= ruleOperationExpressionField ) ) )
+            // InternalLibrettoSpec.g:4486:2: ( (lv_operationExpression_0_0= ruleOperationExpressionField ) )
             {
-            // InternalLibrettoSpec.g:4362:2: ( (lv_operationExpression_0_0= ruleOperationExpressionField ) )
-            // InternalLibrettoSpec.g:4363:3: (lv_operationExpression_0_0= ruleOperationExpressionField )
+            // InternalLibrettoSpec.g:4486:2: ( (lv_operationExpression_0_0= ruleOperationExpressionField ) )
+            // InternalLibrettoSpec.g:4487:3: (lv_operationExpression_0_0= ruleOperationExpressionField )
             {
-            // InternalLibrettoSpec.g:4363:3: (lv_operationExpression_0_0= ruleOperationExpressionField )
-            // InternalLibrettoSpec.g:4364:4: lv_operationExpression_0_0= ruleOperationExpressionField
+            // InternalLibrettoSpec.g:4487:3: (lv_operationExpression_0_0= ruleOperationExpressionField )
+            // InternalLibrettoSpec.g:4488:4: lv_operationExpression_0_0= ruleOperationExpressionField
             {
 
             				newCompositeNode(grammarAccess.getOperationSurfaceExpressionItemAccess().getOperationExpressionOperationExpressionFieldParserRuleCall_0());
@@ -11884,7 +12192,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOperationSurfaceOutcomeItem"
-    // InternalLibrettoSpec.g:4384:1: entryRuleOperationSurfaceOutcomeItem returns [EObject current=null] : iv_ruleOperationSurfaceOutcomeItem= ruleOperationSurfaceOutcomeItem EOF ;
+    // InternalLibrettoSpec.g:4508:1: entryRuleOperationSurfaceOutcomeItem returns [EObject current=null] : iv_ruleOperationSurfaceOutcomeItem= ruleOperationSurfaceOutcomeItem EOF ;
     public final EObject entryRuleOperationSurfaceOutcomeItem() throws RecognitionException {
         EObject current = null;
 
@@ -11892,8 +12200,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:4384:68: (iv_ruleOperationSurfaceOutcomeItem= ruleOperationSurfaceOutcomeItem EOF )
-            // InternalLibrettoSpec.g:4385:2: iv_ruleOperationSurfaceOutcomeItem= ruleOperationSurfaceOutcomeItem EOF
+            // InternalLibrettoSpec.g:4508:68: (iv_ruleOperationSurfaceOutcomeItem= ruleOperationSurfaceOutcomeItem EOF )
+            // InternalLibrettoSpec.g:4509:2: iv_ruleOperationSurfaceOutcomeItem= ruleOperationSurfaceOutcomeItem EOF
             {
              newCompositeNode(grammarAccess.getOperationSurfaceOutcomeItemRule()); 
             pushFollow(FOLLOW_1);
@@ -11920,7 +12228,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOperationSurfaceOutcomeItem"
-    // InternalLibrettoSpec.g:4391:1: ruleOperationSurfaceOutcomeItem returns [EObject current=null] : ( (lv_outcomeClass_0_0= ruleOutcomeClassField ) ) ;
+    // InternalLibrettoSpec.g:4515:1: ruleOperationSurfaceOutcomeItem returns [EObject current=null] : ( (lv_outcomeClass_0_0= ruleOutcomeClassField ) ) ;
     public final EObject ruleOperationSurfaceOutcomeItem() throws RecognitionException {
         EObject current = null;
 
@@ -11931,14 +12239,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:4397:2: ( ( (lv_outcomeClass_0_0= ruleOutcomeClassField ) ) )
-            // InternalLibrettoSpec.g:4398:2: ( (lv_outcomeClass_0_0= ruleOutcomeClassField ) )
+            // InternalLibrettoSpec.g:4521:2: ( ( (lv_outcomeClass_0_0= ruleOutcomeClassField ) ) )
+            // InternalLibrettoSpec.g:4522:2: ( (lv_outcomeClass_0_0= ruleOutcomeClassField ) )
             {
-            // InternalLibrettoSpec.g:4398:2: ( (lv_outcomeClass_0_0= ruleOutcomeClassField ) )
-            // InternalLibrettoSpec.g:4399:3: (lv_outcomeClass_0_0= ruleOutcomeClassField )
+            // InternalLibrettoSpec.g:4522:2: ( (lv_outcomeClass_0_0= ruleOutcomeClassField ) )
+            // InternalLibrettoSpec.g:4523:3: (lv_outcomeClass_0_0= ruleOutcomeClassField )
             {
-            // InternalLibrettoSpec.g:4399:3: (lv_outcomeClass_0_0= ruleOutcomeClassField )
-            // InternalLibrettoSpec.g:4400:4: lv_outcomeClass_0_0= ruleOutcomeClassField
+            // InternalLibrettoSpec.g:4523:3: (lv_outcomeClass_0_0= ruleOutcomeClassField )
+            // InternalLibrettoSpec.g:4524:4: lv_outcomeClass_0_0= ruleOutcomeClassField
             {
 
             				newCompositeNode(grammarAccess.getOperationSurfaceOutcomeItemAccess().getOutcomeClassOutcomeClassFieldParserRuleCall_0());
@@ -11985,7 +12293,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOperationExpressionField"
-    // InternalLibrettoSpec.g:4420:1: entryRuleOperationExpressionField returns [EObject current=null] : iv_ruleOperationExpressionField= ruleOperationExpressionField EOF ;
+    // InternalLibrettoSpec.g:4544:1: entryRuleOperationExpressionField returns [EObject current=null] : iv_ruleOperationExpressionField= ruleOperationExpressionField EOF ;
     public final EObject entryRuleOperationExpressionField() throws RecognitionException {
         EObject current = null;
 
@@ -11993,8 +12301,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:4420:65: (iv_ruleOperationExpressionField= ruleOperationExpressionField EOF )
-            // InternalLibrettoSpec.g:4421:2: iv_ruleOperationExpressionField= ruleOperationExpressionField EOF
+            // InternalLibrettoSpec.g:4544:65: (iv_ruleOperationExpressionField= ruleOperationExpressionField EOF )
+            // InternalLibrettoSpec.g:4545:2: iv_ruleOperationExpressionField= ruleOperationExpressionField EOF
             {
              newCompositeNode(grammarAccess.getOperationExpressionFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -12021,7 +12329,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOperationExpressionField"
-    // InternalLibrettoSpec.g:4427:1: ruleOperationExpressionField returns [EObject current=null] : (otherlv_0= 'operation_expression' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
+    // InternalLibrettoSpec.g:4551:1: ruleOperationExpressionField returns [EObject current=null] : (otherlv_0= 'operation_expression' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
     public final EObject ruleOperationExpressionField() throws RecognitionException {
         EObject current = null;
 
@@ -12034,13 +12342,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:4433:2: ( (otherlv_0= 'operation_expression' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
-            // InternalLibrettoSpec.g:4434:2: (otherlv_0= 'operation_expression' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:4557:2: ( (otherlv_0= 'operation_expression' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
+            // InternalLibrettoSpec.g:4558:2: (otherlv_0= 'operation_expression' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
             {
-            // InternalLibrettoSpec.g:4434:2: (otherlv_0= 'operation_expression' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
-            // InternalLibrettoSpec.g:4435:3: otherlv_0= 'operation_expression' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:4558:2: (otherlv_0= 'operation_expression' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:4559:3: otherlv_0= 'operation_expression' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
             {
-            otherlv_0=(Token)match(input,65,FOLLOW_17); 
+            otherlv_0=(Token)match(input,67,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getOperationExpressionFieldAccess().getOperation_expressionKeyword_0());
             		
@@ -12048,11 +12356,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getOperationExpressionFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:4443:3: ( (lv_value_2_0= ruleTextValue ) )
-            // InternalLibrettoSpec.g:4444:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:4567:3: ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:4568:4: (lv_value_2_0= ruleTextValue )
             {
-            // InternalLibrettoSpec.g:4444:4: (lv_value_2_0= ruleTextValue )
-            // InternalLibrettoSpec.g:4445:5: lv_value_2_0= ruleTextValue
+            // InternalLibrettoSpec.g:4568:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:4569:5: lv_value_2_0= ruleTextValue
             {
 
             					newCompositeNode(grammarAccess.getOperationExpressionFieldAccess().getValueTextValueParserRuleCall_2_0());
@@ -12102,7 +12410,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOutcomeClassField"
-    // InternalLibrettoSpec.g:4466:1: entryRuleOutcomeClassField returns [EObject current=null] : iv_ruleOutcomeClassField= ruleOutcomeClassField EOF ;
+    // InternalLibrettoSpec.g:4590:1: entryRuleOutcomeClassField returns [EObject current=null] : iv_ruleOutcomeClassField= ruleOutcomeClassField EOF ;
     public final EObject entryRuleOutcomeClassField() throws RecognitionException {
         EObject current = null;
 
@@ -12110,8 +12418,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:4466:58: (iv_ruleOutcomeClassField= ruleOutcomeClassField EOF )
-            // InternalLibrettoSpec.g:4467:2: iv_ruleOutcomeClassField= ruleOutcomeClassField EOF
+            // InternalLibrettoSpec.g:4590:58: (iv_ruleOutcomeClassField= ruleOutcomeClassField EOF )
+            // InternalLibrettoSpec.g:4591:2: iv_ruleOutcomeClassField= ruleOutcomeClassField EOF
             {
              newCompositeNode(grammarAccess.getOutcomeClassFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -12138,7 +12446,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOutcomeClassField"
-    // InternalLibrettoSpec.g:4473:1: ruleOutcomeClassField returns [EObject current=null] : (otherlv_0= 'outcome_class' otherlv_1= ':' ( (lv_value_2_0= ruleOutcomeClassValue ) ) ) ;
+    // InternalLibrettoSpec.g:4597:1: ruleOutcomeClassField returns [EObject current=null] : (otherlv_0= 'outcome_class' otherlv_1= ':' ( (lv_value_2_0= ruleOutcomeClassValue ) ) ) ;
     public final EObject ruleOutcomeClassField() throws RecognitionException {
         EObject current = null;
 
@@ -12151,13 +12459,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:4479:2: ( (otherlv_0= 'outcome_class' otherlv_1= ':' ( (lv_value_2_0= ruleOutcomeClassValue ) ) ) )
-            // InternalLibrettoSpec.g:4480:2: (otherlv_0= 'outcome_class' otherlv_1= ':' ( (lv_value_2_0= ruleOutcomeClassValue ) ) )
+            // InternalLibrettoSpec.g:4603:2: ( (otherlv_0= 'outcome_class' otherlv_1= ':' ( (lv_value_2_0= ruleOutcomeClassValue ) ) ) )
+            // InternalLibrettoSpec.g:4604:2: (otherlv_0= 'outcome_class' otherlv_1= ':' ( (lv_value_2_0= ruleOutcomeClassValue ) ) )
             {
-            // InternalLibrettoSpec.g:4480:2: (otherlv_0= 'outcome_class' otherlv_1= ':' ( (lv_value_2_0= ruleOutcomeClassValue ) ) )
-            // InternalLibrettoSpec.g:4481:3: otherlv_0= 'outcome_class' otherlv_1= ':' ( (lv_value_2_0= ruleOutcomeClassValue ) )
+            // InternalLibrettoSpec.g:4604:2: (otherlv_0= 'outcome_class' otherlv_1= ':' ( (lv_value_2_0= ruleOutcomeClassValue ) ) )
+            // InternalLibrettoSpec.g:4605:3: otherlv_0= 'outcome_class' otherlv_1= ':' ( (lv_value_2_0= ruleOutcomeClassValue ) )
             {
-            otherlv_0=(Token)match(input,66,FOLLOW_17); 
+            otherlv_0=(Token)match(input,68,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getOutcomeClassFieldAccess().getOutcome_classKeyword_0());
             		
@@ -12165,11 +12473,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getOutcomeClassFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:4489:3: ( (lv_value_2_0= ruleOutcomeClassValue ) )
-            // InternalLibrettoSpec.g:4490:4: (lv_value_2_0= ruleOutcomeClassValue )
+            // InternalLibrettoSpec.g:4613:3: ( (lv_value_2_0= ruleOutcomeClassValue ) )
+            // InternalLibrettoSpec.g:4614:4: (lv_value_2_0= ruleOutcomeClassValue )
             {
-            // InternalLibrettoSpec.g:4490:4: (lv_value_2_0= ruleOutcomeClassValue )
-            // InternalLibrettoSpec.g:4491:5: lv_value_2_0= ruleOutcomeClassValue
+            // InternalLibrettoSpec.g:4614:4: (lv_value_2_0= ruleOutcomeClassValue )
+            // InternalLibrettoSpec.g:4615:5: lv_value_2_0= ruleOutcomeClassValue
             {
 
             					newCompositeNode(grammarAccess.getOutcomeClassFieldAccess().getValueOutcomeClassValueEnumRuleCall_2_0());
@@ -12219,7 +12527,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleImplementsSurfaceRecord"
-    // InternalLibrettoSpec.g:4512:1: entryRuleImplementsSurfaceRecord returns [EObject current=null] : iv_ruleImplementsSurfaceRecord= ruleImplementsSurfaceRecord EOF ;
+    // InternalLibrettoSpec.g:4636:1: entryRuleImplementsSurfaceRecord returns [EObject current=null] : iv_ruleImplementsSurfaceRecord= ruleImplementsSurfaceRecord EOF ;
     public final EObject entryRuleImplementsSurfaceRecord() throws RecognitionException {
         EObject current = null;
 
@@ -12227,8 +12535,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:4512:64: (iv_ruleImplementsSurfaceRecord= ruleImplementsSurfaceRecord EOF )
-            // InternalLibrettoSpec.g:4513:2: iv_ruleImplementsSurfaceRecord= ruleImplementsSurfaceRecord EOF
+            // InternalLibrettoSpec.g:4636:64: (iv_ruleImplementsSurfaceRecord= ruleImplementsSurfaceRecord EOF )
+            // InternalLibrettoSpec.g:4637:2: iv_ruleImplementsSurfaceRecord= ruleImplementsSurfaceRecord EOF
             {
              newCompositeNode(grammarAccess.getImplementsSurfaceRecordRule()); 
             pushFollow(FOLLOW_1);
@@ -12255,7 +12563,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleImplementsSurfaceRecord"
-    // InternalLibrettoSpec.g:4519:1: ruleImplementsSurfaceRecord returns [EObject current=null] : (otherlv_0= 'implements' ( (lv_items_1_0= ruleImplementsSurfaceRecordItem ) )* ) ;
+    // InternalLibrettoSpec.g:4643:1: ruleImplementsSurfaceRecord returns [EObject current=null] : (otherlv_0= 'implements' ( (lv_items_1_0= ruleImplementsSurfaceRecordItem ) )* ) ;
     public final EObject ruleImplementsSurfaceRecord() throws RecognitionException {
         EObject current = null;
 
@@ -12267,33 +12575,33 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:4525:2: ( (otherlv_0= 'implements' ( (lv_items_1_0= ruleImplementsSurfaceRecordItem ) )* ) )
-            // InternalLibrettoSpec.g:4526:2: (otherlv_0= 'implements' ( (lv_items_1_0= ruleImplementsSurfaceRecordItem ) )* )
+            // InternalLibrettoSpec.g:4649:2: ( (otherlv_0= 'implements' ( (lv_items_1_0= ruleImplementsSurfaceRecordItem ) )* ) )
+            // InternalLibrettoSpec.g:4650:2: (otherlv_0= 'implements' ( (lv_items_1_0= ruleImplementsSurfaceRecordItem ) )* )
             {
-            // InternalLibrettoSpec.g:4526:2: (otherlv_0= 'implements' ( (lv_items_1_0= ruleImplementsSurfaceRecordItem ) )* )
-            // InternalLibrettoSpec.g:4527:3: otherlv_0= 'implements' ( (lv_items_1_0= ruleImplementsSurfaceRecordItem ) )*
+            // InternalLibrettoSpec.g:4650:2: (otherlv_0= 'implements' ( (lv_items_1_0= ruleImplementsSurfaceRecordItem ) )* )
+            // InternalLibrettoSpec.g:4651:3: otherlv_0= 'implements' ( (lv_items_1_0= ruleImplementsSurfaceRecordItem ) )*
             {
-            otherlv_0=(Token)match(input,67,FOLLOW_32); 
+            otherlv_0=(Token)match(input,69,FOLLOW_32); 
 
             			newLeafNode(otherlv_0, grammarAccess.getImplementsSurfaceRecordAccess().getImplementsKeyword_0());
             		
-            // InternalLibrettoSpec.g:4531:3: ( (lv_items_1_0= ruleImplementsSurfaceRecordItem ) )*
+            // InternalLibrettoSpec.g:4655:3: ( (lv_items_1_0= ruleImplementsSurfaceRecordItem ) )*
             loop30:
             do {
                 int alt30=2;
                 int LA30_0 = input.LA(1);
 
-                if ( (LA30_0==43) ) {
+                if ( (LA30_0==45) ) {
                     alt30=1;
                 }
 
 
                 switch (alt30) {
             	case 1 :
-            	    // InternalLibrettoSpec.g:4532:4: (lv_items_1_0= ruleImplementsSurfaceRecordItem )
+            	    // InternalLibrettoSpec.g:4656:4: (lv_items_1_0= ruleImplementsSurfaceRecordItem )
             	    {
-            	    // InternalLibrettoSpec.g:4532:4: (lv_items_1_0= ruleImplementsSurfaceRecordItem )
-            	    // InternalLibrettoSpec.g:4533:5: lv_items_1_0= ruleImplementsSurfaceRecordItem
+            	    // InternalLibrettoSpec.g:4656:4: (lv_items_1_0= ruleImplementsSurfaceRecordItem )
+            	    // InternalLibrettoSpec.g:4657:5: lv_items_1_0= ruleImplementsSurfaceRecordItem
             	    {
 
             	    					newCompositeNode(grammarAccess.getImplementsSurfaceRecordAccess().getItemsImplementsSurfaceRecordItemParserRuleCall_1_0());
@@ -12349,7 +12657,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleImplementsSurfaceRecordItem"
-    // InternalLibrettoSpec.g:4554:1: entryRuleImplementsSurfaceRecordItem returns [EObject current=null] : iv_ruleImplementsSurfaceRecordItem= ruleImplementsSurfaceRecordItem EOF ;
+    // InternalLibrettoSpec.g:4678:1: entryRuleImplementsSurfaceRecordItem returns [EObject current=null] : iv_ruleImplementsSurfaceRecordItem= ruleImplementsSurfaceRecordItem EOF ;
     public final EObject entryRuleImplementsSurfaceRecordItem() throws RecognitionException {
         EObject current = null;
 
@@ -12357,8 +12665,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:4554:68: (iv_ruleImplementsSurfaceRecordItem= ruleImplementsSurfaceRecordItem EOF )
-            // InternalLibrettoSpec.g:4555:2: iv_ruleImplementsSurfaceRecordItem= ruleImplementsSurfaceRecordItem EOF
+            // InternalLibrettoSpec.g:4678:68: (iv_ruleImplementsSurfaceRecordItem= ruleImplementsSurfaceRecordItem EOF )
+            // InternalLibrettoSpec.g:4679:2: iv_ruleImplementsSurfaceRecordItem= ruleImplementsSurfaceRecordItem EOF
             {
              newCompositeNode(grammarAccess.getImplementsSurfaceRecordItemRule()); 
             pushFollow(FOLLOW_1);
@@ -12385,7 +12693,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleImplementsSurfaceRecordItem"
-    // InternalLibrettoSpec.g:4561:1: ruleImplementsSurfaceRecordItem returns [EObject current=null] : this_ImplementsSurfaceTargetItem_0= ruleImplementsSurfaceTargetItem ;
+    // InternalLibrettoSpec.g:4685:1: ruleImplementsSurfaceRecordItem returns [EObject current=null] : this_ImplementsSurfaceTargetItem_0= ruleImplementsSurfaceTargetItem ;
     public final EObject ruleImplementsSurfaceRecordItem() throws RecognitionException {
         EObject current = null;
 
@@ -12396,8 +12704,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:4567:2: (this_ImplementsSurfaceTargetItem_0= ruleImplementsSurfaceTargetItem )
-            // InternalLibrettoSpec.g:4568:2: this_ImplementsSurfaceTargetItem_0= ruleImplementsSurfaceTargetItem
+            // InternalLibrettoSpec.g:4691:2: (this_ImplementsSurfaceTargetItem_0= ruleImplementsSurfaceTargetItem )
+            // InternalLibrettoSpec.g:4692:2: this_ImplementsSurfaceTargetItem_0= ruleImplementsSurfaceTargetItem
             {
 
             		newCompositeNode(grammarAccess.getImplementsSurfaceRecordItemAccess().getImplementsSurfaceTargetItemParserRuleCall());
@@ -12431,7 +12739,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleImplementsSurfaceTargetItem"
-    // InternalLibrettoSpec.g:4579:1: entryRuleImplementsSurfaceTargetItem returns [EObject current=null] : iv_ruleImplementsSurfaceTargetItem= ruleImplementsSurfaceTargetItem EOF ;
+    // InternalLibrettoSpec.g:4703:1: entryRuleImplementsSurfaceTargetItem returns [EObject current=null] : iv_ruleImplementsSurfaceTargetItem= ruleImplementsSurfaceTargetItem EOF ;
     public final EObject entryRuleImplementsSurfaceTargetItem() throws RecognitionException {
         EObject current = null;
 
@@ -12439,8 +12747,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:4579:68: (iv_ruleImplementsSurfaceTargetItem= ruleImplementsSurfaceTargetItem EOF )
-            // InternalLibrettoSpec.g:4580:2: iv_ruleImplementsSurfaceTargetItem= ruleImplementsSurfaceTargetItem EOF
+            // InternalLibrettoSpec.g:4703:68: (iv_ruleImplementsSurfaceTargetItem= ruleImplementsSurfaceTargetItem EOF )
+            // InternalLibrettoSpec.g:4704:2: iv_ruleImplementsSurfaceTargetItem= ruleImplementsSurfaceTargetItem EOF
             {
              newCompositeNode(grammarAccess.getImplementsSurfaceTargetItemRule()); 
             pushFollow(FOLLOW_1);
@@ -12467,7 +12775,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleImplementsSurfaceTargetItem"
-    // InternalLibrettoSpec.g:4586:1: ruleImplementsSurfaceTargetItem returns [EObject current=null] : ( (lv_targetSpec_0_0= ruleImplementsSurfaceTargetField ) ) ;
+    // InternalLibrettoSpec.g:4710:1: ruleImplementsSurfaceTargetItem returns [EObject current=null] : ( (lv_targetSpec_0_0= ruleImplementsSurfaceTargetField ) ) ;
     public final EObject ruleImplementsSurfaceTargetItem() throws RecognitionException {
         EObject current = null;
 
@@ -12478,14 +12786,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:4592:2: ( ( (lv_targetSpec_0_0= ruleImplementsSurfaceTargetField ) ) )
-            // InternalLibrettoSpec.g:4593:2: ( (lv_targetSpec_0_0= ruleImplementsSurfaceTargetField ) )
+            // InternalLibrettoSpec.g:4716:2: ( ( (lv_targetSpec_0_0= ruleImplementsSurfaceTargetField ) ) )
+            // InternalLibrettoSpec.g:4717:2: ( (lv_targetSpec_0_0= ruleImplementsSurfaceTargetField ) )
             {
-            // InternalLibrettoSpec.g:4593:2: ( (lv_targetSpec_0_0= ruleImplementsSurfaceTargetField ) )
-            // InternalLibrettoSpec.g:4594:3: (lv_targetSpec_0_0= ruleImplementsSurfaceTargetField )
+            // InternalLibrettoSpec.g:4717:2: ( (lv_targetSpec_0_0= ruleImplementsSurfaceTargetField ) )
+            // InternalLibrettoSpec.g:4718:3: (lv_targetSpec_0_0= ruleImplementsSurfaceTargetField )
             {
-            // InternalLibrettoSpec.g:4594:3: (lv_targetSpec_0_0= ruleImplementsSurfaceTargetField )
-            // InternalLibrettoSpec.g:4595:4: lv_targetSpec_0_0= ruleImplementsSurfaceTargetField
+            // InternalLibrettoSpec.g:4718:3: (lv_targetSpec_0_0= ruleImplementsSurfaceTargetField )
+            // InternalLibrettoSpec.g:4719:4: lv_targetSpec_0_0= ruleImplementsSurfaceTargetField
             {
 
             				newCompositeNode(grammarAccess.getImplementsSurfaceTargetItemAccess().getTargetSpecImplementsSurfaceTargetFieldParserRuleCall_0());
@@ -12532,7 +12840,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleImplementsSurfaceTargetField"
-    // InternalLibrettoSpec.g:4615:1: entryRuleImplementsSurfaceTargetField returns [EObject current=null] : iv_ruleImplementsSurfaceTargetField= ruleImplementsSurfaceTargetField EOF ;
+    // InternalLibrettoSpec.g:4739:1: entryRuleImplementsSurfaceTargetField returns [EObject current=null] : iv_ruleImplementsSurfaceTargetField= ruleImplementsSurfaceTargetField EOF ;
     public final EObject entryRuleImplementsSurfaceTargetField() throws RecognitionException {
         EObject current = null;
 
@@ -12540,8 +12848,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:4615:69: (iv_ruleImplementsSurfaceTargetField= ruleImplementsSurfaceTargetField EOF )
-            // InternalLibrettoSpec.g:4616:2: iv_ruleImplementsSurfaceTargetField= ruleImplementsSurfaceTargetField EOF
+            // InternalLibrettoSpec.g:4739:69: (iv_ruleImplementsSurfaceTargetField= ruleImplementsSurfaceTargetField EOF )
+            // InternalLibrettoSpec.g:4740:2: iv_ruleImplementsSurfaceTargetField= ruleImplementsSurfaceTargetField EOF
             {
              newCompositeNode(grammarAccess.getImplementsSurfaceTargetFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -12568,7 +12876,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleImplementsSurfaceTargetField"
-    // InternalLibrettoSpec.g:4622:1: ruleImplementsSurfaceTargetField returns [EObject current=null] : (otherlv_0= 'target_spec' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
+    // InternalLibrettoSpec.g:4746:1: ruleImplementsSurfaceTargetField returns [EObject current=null] : (otherlv_0= 'target_spec' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
     public final EObject ruleImplementsSurfaceTargetField() throws RecognitionException {
         EObject current = null;
 
@@ -12581,13 +12889,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:4628:2: ( (otherlv_0= 'target_spec' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
-            // InternalLibrettoSpec.g:4629:2: (otherlv_0= 'target_spec' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:4752:2: ( (otherlv_0= 'target_spec' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
+            // InternalLibrettoSpec.g:4753:2: (otherlv_0= 'target_spec' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
             {
-            // InternalLibrettoSpec.g:4629:2: (otherlv_0= 'target_spec' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
-            // InternalLibrettoSpec.g:4630:3: otherlv_0= 'target_spec' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:4753:2: (otherlv_0= 'target_spec' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:4754:3: otherlv_0= 'target_spec' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
             {
-            otherlv_0=(Token)match(input,43,FOLLOW_17); 
+            otherlv_0=(Token)match(input,45,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getImplementsSurfaceTargetFieldAccess().getTarget_specKeyword_0());
             		
@@ -12595,11 +12903,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getImplementsSurfaceTargetFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:4638:3: ( (lv_value_2_0= ruleTextValue ) )
-            // InternalLibrettoSpec.g:4639:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:4762:3: ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:4763:4: (lv_value_2_0= ruleTextValue )
             {
-            // InternalLibrettoSpec.g:4639:4: (lv_value_2_0= ruleTextValue )
-            // InternalLibrettoSpec.g:4640:5: lv_value_2_0= ruleTextValue
+            // InternalLibrettoSpec.g:4763:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:4764:5: lv_value_2_0= ruleTextValue
             {
 
             					newCompositeNode(grammarAccess.getImplementsSurfaceTargetFieldAccess().getValueTextValueParserRuleCall_2_0());
@@ -12649,7 +12957,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBoundaryRecord"
-    // InternalLibrettoSpec.g:4661:1: entryRuleBoundaryRecord returns [EObject current=null] : iv_ruleBoundaryRecord= ruleBoundaryRecord EOF ;
+    // InternalLibrettoSpec.g:4785:1: entryRuleBoundaryRecord returns [EObject current=null] : iv_ruleBoundaryRecord= ruleBoundaryRecord EOF ;
     public final EObject entryRuleBoundaryRecord() throws RecognitionException {
         EObject current = null;
 
@@ -12657,8 +12965,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:4661:55: (iv_ruleBoundaryRecord= ruleBoundaryRecord EOF )
-            // InternalLibrettoSpec.g:4662:2: iv_ruleBoundaryRecord= ruleBoundaryRecord EOF
+            // InternalLibrettoSpec.g:4785:55: (iv_ruleBoundaryRecord= ruleBoundaryRecord EOF )
+            // InternalLibrettoSpec.g:4786:2: iv_ruleBoundaryRecord= ruleBoundaryRecord EOF
             {
              newCompositeNode(grammarAccess.getBoundaryRecordRule()); 
             pushFollow(FOLLOW_1);
@@ -12685,7 +12993,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBoundaryRecord"
-    // InternalLibrettoSpec.g:4668:1: ruleBoundaryRecord returns [EObject current=null] : (otherlv_0= 'boundary' otherlv_1= '{' ( (lv_items_2_0= ruleBoundaryRecordItem ) )* otherlv_3= '}' ) ;
+    // InternalLibrettoSpec.g:4792:1: ruleBoundaryRecord returns [EObject current=null] : (otherlv_0= 'boundary' otherlv_1= '{' ( (lv_items_2_0= ruleBoundaryRecordItem ) )* otherlv_3= '}' ) ;
     public final EObject ruleBoundaryRecord() throws RecognitionException {
         EObject current = null;
 
@@ -12699,13 +13007,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:4674:2: ( (otherlv_0= 'boundary' otherlv_1= '{' ( (lv_items_2_0= ruleBoundaryRecordItem ) )* otherlv_3= '}' ) )
-            // InternalLibrettoSpec.g:4675:2: (otherlv_0= 'boundary' otherlv_1= '{' ( (lv_items_2_0= ruleBoundaryRecordItem ) )* otherlv_3= '}' )
+            // InternalLibrettoSpec.g:4798:2: ( (otherlv_0= 'boundary' otherlv_1= '{' ( (lv_items_2_0= ruleBoundaryRecordItem ) )* otherlv_3= '}' ) )
+            // InternalLibrettoSpec.g:4799:2: (otherlv_0= 'boundary' otherlv_1= '{' ( (lv_items_2_0= ruleBoundaryRecordItem ) )* otherlv_3= '}' )
             {
-            // InternalLibrettoSpec.g:4675:2: (otherlv_0= 'boundary' otherlv_1= '{' ( (lv_items_2_0= ruleBoundaryRecordItem ) )* otherlv_3= '}' )
-            // InternalLibrettoSpec.g:4676:3: otherlv_0= 'boundary' otherlv_1= '{' ( (lv_items_2_0= ruleBoundaryRecordItem ) )* otherlv_3= '}'
+            // InternalLibrettoSpec.g:4799:2: (otherlv_0= 'boundary' otherlv_1= '{' ( (lv_items_2_0= ruleBoundaryRecordItem ) )* otherlv_3= '}' )
+            // InternalLibrettoSpec.g:4800:3: otherlv_0= 'boundary' otherlv_1= '{' ( (lv_items_2_0= ruleBoundaryRecordItem ) )* otherlv_3= '}'
             {
-            otherlv_0=(Token)match(input,68,FOLLOW_4); 
+            otherlv_0=(Token)match(input,70,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getBoundaryRecordAccess().getBoundaryKeyword_0());
             		
@@ -12713,23 +13021,23 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getBoundaryRecordAccess().getLeftCurlyBracketKeyword_1());
             		
-            // InternalLibrettoSpec.g:4684:3: ( (lv_items_2_0= ruleBoundaryRecordItem ) )*
+            // InternalLibrettoSpec.g:4808:3: ( (lv_items_2_0= ruleBoundaryRecordItem ) )*
             loop31:
             do {
                 int alt31=2;
                 int LA31_0 = input.LA(1);
 
-                if ( ((LA31_0>=69 && LA31_0<=72)) ) {
+                if ( ((LA31_0>=71 && LA31_0<=74)) ) {
                     alt31=1;
                 }
 
 
                 switch (alt31) {
             	case 1 :
-            	    // InternalLibrettoSpec.g:4685:4: (lv_items_2_0= ruleBoundaryRecordItem )
+            	    // InternalLibrettoSpec.g:4809:4: (lv_items_2_0= ruleBoundaryRecordItem )
             	    {
-            	    // InternalLibrettoSpec.g:4685:4: (lv_items_2_0= ruleBoundaryRecordItem )
-            	    // InternalLibrettoSpec.g:4686:5: lv_items_2_0= ruleBoundaryRecordItem
+            	    // InternalLibrettoSpec.g:4809:4: (lv_items_2_0= ruleBoundaryRecordItem )
+            	    // InternalLibrettoSpec.g:4810:5: lv_items_2_0= ruleBoundaryRecordItem
             	    {
 
             	    					newCompositeNode(grammarAccess.getBoundaryRecordAccess().getItemsBoundaryRecordItemParserRuleCall_2_0());
@@ -12789,7 +13097,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBoundaryRecordItem"
-    // InternalLibrettoSpec.g:4711:1: entryRuleBoundaryRecordItem returns [EObject current=null] : iv_ruleBoundaryRecordItem= ruleBoundaryRecordItem EOF ;
+    // InternalLibrettoSpec.g:4835:1: entryRuleBoundaryRecordItem returns [EObject current=null] : iv_ruleBoundaryRecordItem= ruleBoundaryRecordItem EOF ;
     public final EObject entryRuleBoundaryRecordItem() throws RecognitionException {
         EObject current = null;
 
@@ -12797,8 +13105,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:4711:59: (iv_ruleBoundaryRecordItem= ruleBoundaryRecordItem EOF )
-            // InternalLibrettoSpec.g:4712:2: iv_ruleBoundaryRecordItem= ruleBoundaryRecordItem EOF
+            // InternalLibrettoSpec.g:4835:59: (iv_ruleBoundaryRecordItem= ruleBoundaryRecordItem EOF )
+            // InternalLibrettoSpec.g:4836:2: iv_ruleBoundaryRecordItem= ruleBoundaryRecordItem EOF
             {
              newCompositeNode(grammarAccess.getBoundaryRecordItemRule()); 
             pushFollow(FOLLOW_1);
@@ -12825,7 +13133,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBoundaryRecordItem"
-    // InternalLibrettoSpec.g:4718:1: ruleBoundaryRecordItem returns [EObject current=null] : (this_BoundarySpecIdElement_0= ruleBoundarySpecIdElement | this_BoundaryOperationIdElement_1= ruleBoundaryOperationIdElement | this_BoundaryProfileIdElement_2= ruleBoundaryProfileIdElement | this_BoundaryRawElement_3= ruleBoundaryRawElement ) ;
+    // InternalLibrettoSpec.g:4842:1: ruleBoundaryRecordItem returns [EObject current=null] : (this_BoundarySpecIdElement_0= ruleBoundarySpecIdElement | this_BoundaryOperationIdElement_1= ruleBoundaryOperationIdElement | this_BoundaryProfileIdElement_2= ruleBoundaryProfileIdElement | this_BoundaryRawElement_3= ruleBoundaryRawElement ) ;
     public final EObject ruleBoundaryRecordItem() throws RecognitionException {
         EObject current = null;
 
@@ -12842,28 +13150,28 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:4724:2: ( (this_BoundarySpecIdElement_0= ruleBoundarySpecIdElement | this_BoundaryOperationIdElement_1= ruleBoundaryOperationIdElement | this_BoundaryProfileIdElement_2= ruleBoundaryProfileIdElement | this_BoundaryRawElement_3= ruleBoundaryRawElement ) )
-            // InternalLibrettoSpec.g:4725:2: (this_BoundarySpecIdElement_0= ruleBoundarySpecIdElement | this_BoundaryOperationIdElement_1= ruleBoundaryOperationIdElement | this_BoundaryProfileIdElement_2= ruleBoundaryProfileIdElement | this_BoundaryRawElement_3= ruleBoundaryRawElement )
+            // InternalLibrettoSpec.g:4848:2: ( (this_BoundarySpecIdElement_0= ruleBoundarySpecIdElement | this_BoundaryOperationIdElement_1= ruleBoundaryOperationIdElement | this_BoundaryProfileIdElement_2= ruleBoundaryProfileIdElement | this_BoundaryRawElement_3= ruleBoundaryRawElement ) )
+            // InternalLibrettoSpec.g:4849:2: (this_BoundarySpecIdElement_0= ruleBoundarySpecIdElement | this_BoundaryOperationIdElement_1= ruleBoundaryOperationIdElement | this_BoundaryProfileIdElement_2= ruleBoundaryProfileIdElement | this_BoundaryRawElement_3= ruleBoundaryRawElement )
             {
-            // InternalLibrettoSpec.g:4725:2: (this_BoundarySpecIdElement_0= ruleBoundarySpecIdElement | this_BoundaryOperationIdElement_1= ruleBoundaryOperationIdElement | this_BoundaryProfileIdElement_2= ruleBoundaryProfileIdElement | this_BoundaryRawElement_3= ruleBoundaryRawElement )
+            // InternalLibrettoSpec.g:4849:2: (this_BoundarySpecIdElement_0= ruleBoundarySpecIdElement | this_BoundaryOperationIdElement_1= ruleBoundaryOperationIdElement | this_BoundaryProfileIdElement_2= ruleBoundaryProfileIdElement | this_BoundaryRawElement_3= ruleBoundaryRawElement )
             int alt32=4;
             switch ( input.LA(1) ) {
-            case 69:
+            case 71:
                 {
                 alt32=1;
                 }
                 break;
-            case 70:
+            case 72:
                 {
                 alt32=2;
                 }
                 break;
-            case 71:
+            case 73:
                 {
                 alt32=3;
                 }
                 break;
-            case 72:
+            case 74:
                 {
                 alt32=4;
                 }
@@ -12877,7 +13185,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             switch (alt32) {
                 case 1 :
-                    // InternalLibrettoSpec.g:4726:3: this_BoundarySpecIdElement_0= ruleBoundarySpecIdElement
+                    // InternalLibrettoSpec.g:4850:3: this_BoundarySpecIdElement_0= ruleBoundarySpecIdElement
                     {
 
                     			newCompositeNode(grammarAccess.getBoundaryRecordItemAccess().getBoundarySpecIdElementParserRuleCall_0());
@@ -12895,7 +13203,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoSpec.g:4735:3: this_BoundaryOperationIdElement_1= ruleBoundaryOperationIdElement
+                    // InternalLibrettoSpec.g:4859:3: this_BoundaryOperationIdElement_1= ruleBoundaryOperationIdElement
                     {
 
                     			newCompositeNode(grammarAccess.getBoundaryRecordItemAccess().getBoundaryOperationIdElementParserRuleCall_1());
@@ -12913,7 +13221,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalLibrettoSpec.g:4744:3: this_BoundaryProfileIdElement_2= ruleBoundaryProfileIdElement
+                    // InternalLibrettoSpec.g:4868:3: this_BoundaryProfileIdElement_2= ruleBoundaryProfileIdElement
                     {
 
                     			newCompositeNode(grammarAccess.getBoundaryRecordItemAccess().getBoundaryProfileIdElementParserRuleCall_2());
@@ -12931,7 +13239,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalLibrettoSpec.g:4753:3: this_BoundaryRawElement_3= ruleBoundaryRawElement
+                    // InternalLibrettoSpec.g:4877:3: this_BoundaryRawElement_3= ruleBoundaryRawElement
                     {
 
                     			newCompositeNode(grammarAccess.getBoundaryRecordItemAccess().getBoundaryRawElementParserRuleCall_3());
@@ -12971,7 +13279,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBoundarySpecIdElement"
-    // InternalLibrettoSpec.g:4765:1: entryRuleBoundarySpecIdElement returns [EObject current=null] : iv_ruleBoundarySpecIdElement= ruleBoundarySpecIdElement EOF ;
+    // InternalLibrettoSpec.g:4889:1: entryRuleBoundarySpecIdElement returns [EObject current=null] : iv_ruleBoundarySpecIdElement= ruleBoundarySpecIdElement EOF ;
     public final EObject entryRuleBoundarySpecIdElement() throws RecognitionException {
         EObject current = null;
 
@@ -12979,8 +13287,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:4765:62: (iv_ruleBoundarySpecIdElement= ruleBoundarySpecIdElement EOF )
-            // InternalLibrettoSpec.g:4766:2: iv_ruleBoundarySpecIdElement= ruleBoundarySpecIdElement EOF
+            // InternalLibrettoSpec.g:4889:62: (iv_ruleBoundarySpecIdElement= ruleBoundarySpecIdElement EOF )
+            // InternalLibrettoSpec.g:4890:2: iv_ruleBoundarySpecIdElement= ruleBoundarySpecIdElement EOF
             {
              newCompositeNode(grammarAccess.getBoundarySpecIdElementRule()); 
             pushFollow(FOLLOW_1);
@@ -13007,7 +13315,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBoundarySpecIdElement"
-    // InternalLibrettoSpec.g:4772:1: ruleBoundarySpecIdElement returns [EObject current=null] : ( (lv_specIdField_0_0= ruleBoundarySpecIdField ) ) ;
+    // InternalLibrettoSpec.g:4896:1: ruleBoundarySpecIdElement returns [EObject current=null] : ( (lv_specIdField_0_0= ruleBoundarySpecIdField ) ) ;
     public final EObject ruleBoundarySpecIdElement() throws RecognitionException {
         EObject current = null;
 
@@ -13018,14 +13326,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:4778:2: ( ( (lv_specIdField_0_0= ruleBoundarySpecIdField ) ) )
-            // InternalLibrettoSpec.g:4779:2: ( (lv_specIdField_0_0= ruleBoundarySpecIdField ) )
+            // InternalLibrettoSpec.g:4902:2: ( ( (lv_specIdField_0_0= ruleBoundarySpecIdField ) ) )
+            // InternalLibrettoSpec.g:4903:2: ( (lv_specIdField_0_0= ruleBoundarySpecIdField ) )
             {
-            // InternalLibrettoSpec.g:4779:2: ( (lv_specIdField_0_0= ruleBoundarySpecIdField ) )
-            // InternalLibrettoSpec.g:4780:3: (lv_specIdField_0_0= ruleBoundarySpecIdField )
+            // InternalLibrettoSpec.g:4903:2: ( (lv_specIdField_0_0= ruleBoundarySpecIdField ) )
+            // InternalLibrettoSpec.g:4904:3: (lv_specIdField_0_0= ruleBoundarySpecIdField )
             {
-            // InternalLibrettoSpec.g:4780:3: (lv_specIdField_0_0= ruleBoundarySpecIdField )
-            // InternalLibrettoSpec.g:4781:4: lv_specIdField_0_0= ruleBoundarySpecIdField
+            // InternalLibrettoSpec.g:4904:3: (lv_specIdField_0_0= ruleBoundarySpecIdField )
+            // InternalLibrettoSpec.g:4905:4: lv_specIdField_0_0= ruleBoundarySpecIdField
             {
 
             				newCompositeNode(grammarAccess.getBoundarySpecIdElementAccess().getSpecIdFieldBoundarySpecIdFieldParserRuleCall_0());
@@ -13072,7 +13380,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBoundaryOperationIdElement"
-    // InternalLibrettoSpec.g:4801:1: entryRuleBoundaryOperationIdElement returns [EObject current=null] : iv_ruleBoundaryOperationIdElement= ruleBoundaryOperationIdElement EOF ;
+    // InternalLibrettoSpec.g:4925:1: entryRuleBoundaryOperationIdElement returns [EObject current=null] : iv_ruleBoundaryOperationIdElement= ruleBoundaryOperationIdElement EOF ;
     public final EObject entryRuleBoundaryOperationIdElement() throws RecognitionException {
         EObject current = null;
 
@@ -13080,8 +13388,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:4801:67: (iv_ruleBoundaryOperationIdElement= ruleBoundaryOperationIdElement EOF )
-            // InternalLibrettoSpec.g:4802:2: iv_ruleBoundaryOperationIdElement= ruleBoundaryOperationIdElement EOF
+            // InternalLibrettoSpec.g:4925:67: (iv_ruleBoundaryOperationIdElement= ruleBoundaryOperationIdElement EOF )
+            // InternalLibrettoSpec.g:4926:2: iv_ruleBoundaryOperationIdElement= ruleBoundaryOperationIdElement EOF
             {
              newCompositeNode(grammarAccess.getBoundaryOperationIdElementRule()); 
             pushFollow(FOLLOW_1);
@@ -13108,7 +13416,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBoundaryOperationIdElement"
-    // InternalLibrettoSpec.g:4808:1: ruleBoundaryOperationIdElement returns [EObject current=null] : ( (lv_operationIdField_0_0= ruleBoundaryOperationIdField ) ) ;
+    // InternalLibrettoSpec.g:4932:1: ruleBoundaryOperationIdElement returns [EObject current=null] : ( (lv_operationIdField_0_0= ruleBoundaryOperationIdField ) ) ;
     public final EObject ruleBoundaryOperationIdElement() throws RecognitionException {
         EObject current = null;
 
@@ -13119,14 +13427,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:4814:2: ( ( (lv_operationIdField_0_0= ruleBoundaryOperationIdField ) ) )
-            // InternalLibrettoSpec.g:4815:2: ( (lv_operationIdField_0_0= ruleBoundaryOperationIdField ) )
+            // InternalLibrettoSpec.g:4938:2: ( ( (lv_operationIdField_0_0= ruleBoundaryOperationIdField ) ) )
+            // InternalLibrettoSpec.g:4939:2: ( (lv_operationIdField_0_0= ruleBoundaryOperationIdField ) )
             {
-            // InternalLibrettoSpec.g:4815:2: ( (lv_operationIdField_0_0= ruleBoundaryOperationIdField ) )
-            // InternalLibrettoSpec.g:4816:3: (lv_operationIdField_0_0= ruleBoundaryOperationIdField )
+            // InternalLibrettoSpec.g:4939:2: ( (lv_operationIdField_0_0= ruleBoundaryOperationIdField ) )
+            // InternalLibrettoSpec.g:4940:3: (lv_operationIdField_0_0= ruleBoundaryOperationIdField )
             {
-            // InternalLibrettoSpec.g:4816:3: (lv_operationIdField_0_0= ruleBoundaryOperationIdField )
-            // InternalLibrettoSpec.g:4817:4: lv_operationIdField_0_0= ruleBoundaryOperationIdField
+            // InternalLibrettoSpec.g:4940:3: (lv_operationIdField_0_0= ruleBoundaryOperationIdField )
+            // InternalLibrettoSpec.g:4941:4: lv_operationIdField_0_0= ruleBoundaryOperationIdField
             {
 
             				newCompositeNode(grammarAccess.getBoundaryOperationIdElementAccess().getOperationIdFieldBoundaryOperationIdFieldParserRuleCall_0());
@@ -13173,7 +13481,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBoundaryProfileIdElement"
-    // InternalLibrettoSpec.g:4837:1: entryRuleBoundaryProfileIdElement returns [EObject current=null] : iv_ruleBoundaryProfileIdElement= ruleBoundaryProfileIdElement EOF ;
+    // InternalLibrettoSpec.g:4961:1: entryRuleBoundaryProfileIdElement returns [EObject current=null] : iv_ruleBoundaryProfileIdElement= ruleBoundaryProfileIdElement EOF ;
     public final EObject entryRuleBoundaryProfileIdElement() throws RecognitionException {
         EObject current = null;
 
@@ -13181,8 +13489,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:4837:65: (iv_ruleBoundaryProfileIdElement= ruleBoundaryProfileIdElement EOF )
-            // InternalLibrettoSpec.g:4838:2: iv_ruleBoundaryProfileIdElement= ruleBoundaryProfileIdElement EOF
+            // InternalLibrettoSpec.g:4961:65: (iv_ruleBoundaryProfileIdElement= ruleBoundaryProfileIdElement EOF )
+            // InternalLibrettoSpec.g:4962:2: iv_ruleBoundaryProfileIdElement= ruleBoundaryProfileIdElement EOF
             {
              newCompositeNode(grammarAccess.getBoundaryProfileIdElementRule()); 
             pushFollow(FOLLOW_1);
@@ -13209,7 +13517,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBoundaryProfileIdElement"
-    // InternalLibrettoSpec.g:4844:1: ruleBoundaryProfileIdElement returns [EObject current=null] : ( (lv_profileIdField_0_0= ruleBoundaryProfileIdField ) ) ;
+    // InternalLibrettoSpec.g:4968:1: ruleBoundaryProfileIdElement returns [EObject current=null] : ( (lv_profileIdField_0_0= ruleBoundaryProfileIdField ) ) ;
     public final EObject ruleBoundaryProfileIdElement() throws RecognitionException {
         EObject current = null;
 
@@ -13220,14 +13528,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:4850:2: ( ( (lv_profileIdField_0_0= ruleBoundaryProfileIdField ) ) )
-            // InternalLibrettoSpec.g:4851:2: ( (lv_profileIdField_0_0= ruleBoundaryProfileIdField ) )
+            // InternalLibrettoSpec.g:4974:2: ( ( (lv_profileIdField_0_0= ruleBoundaryProfileIdField ) ) )
+            // InternalLibrettoSpec.g:4975:2: ( (lv_profileIdField_0_0= ruleBoundaryProfileIdField ) )
             {
-            // InternalLibrettoSpec.g:4851:2: ( (lv_profileIdField_0_0= ruleBoundaryProfileIdField ) )
-            // InternalLibrettoSpec.g:4852:3: (lv_profileIdField_0_0= ruleBoundaryProfileIdField )
+            // InternalLibrettoSpec.g:4975:2: ( (lv_profileIdField_0_0= ruleBoundaryProfileIdField ) )
+            // InternalLibrettoSpec.g:4976:3: (lv_profileIdField_0_0= ruleBoundaryProfileIdField )
             {
-            // InternalLibrettoSpec.g:4852:3: (lv_profileIdField_0_0= ruleBoundaryProfileIdField )
-            // InternalLibrettoSpec.g:4853:4: lv_profileIdField_0_0= ruleBoundaryProfileIdField
+            // InternalLibrettoSpec.g:4976:3: (lv_profileIdField_0_0= ruleBoundaryProfileIdField )
+            // InternalLibrettoSpec.g:4977:4: lv_profileIdField_0_0= ruleBoundaryProfileIdField
             {
 
             				newCompositeNode(grammarAccess.getBoundaryProfileIdElementAccess().getProfileIdFieldBoundaryProfileIdFieldParserRuleCall_0());
@@ -13274,7 +13582,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBoundaryRawElement"
-    // InternalLibrettoSpec.g:4873:1: entryRuleBoundaryRawElement returns [EObject current=null] : iv_ruleBoundaryRawElement= ruleBoundaryRawElement EOF ;
+    // InternalLibrettoSpec.g:4997:1: entryRuleBoundaryRawElement returns [EObject current=null] : iv_ruleBoundaryRawElement= ruleBoundaryRawElement EOF ;
     public final EObject entryRuleBoundaryRawElement() throws RecognitionException {
         EObject current = null;
 
@@ -13282,8 +13590,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:4873:59: (iv_ruleBoundaryRawElement= ruleBoundaryRawElement EOF )
-            // InternalLibrettoSpec.g:4874:2: iv_ruleBoundaryRawElement= ruleBoundaryRawElement EOF
+            // InternalLibrettoSpec.g:4997:59: (iv_ruleBoundaryRawElement= ruleBoundaryRawElement EOF )
+            // InternalLibrettoSpec.g:4998:2: iv_ruleBoundaryRawElement= ruleBoundaryRawElement EOF
             {
              newCompositeNode(grammarAccess.getBoundaryRawElementRule()); 
             pushFollow(FOLLOW_1);
@@ -13310,7 +13618,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBoundaryRawElement"
-    // InternalLibrettoSpec.g:4880:1: ruleBoundaryRawElement returns [EObject current=null] : ( (lv_rawField_0_0= ruleBoundaryRawField ) ) ;
+    // InternalLibrettoSpec.g:5004:1: ruleBoundaryRawElement returns [EObject current=null] : ( (lv_rawField_0_0= ruleBoundaryRawField ) ) ;
     public final EObject ruleBoundaryRawElement() throws RecognitionException {
         EObject current = null;
 
@@ -13321,14 +13629,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:4886:2: ( ( (lv_rawField_0_0= ruleBoundaryRawField ) ) )
-            // InternalLibrettoSpec.g:4887:2: ( (lv_rawField_0_0= ruleBoundaryRawField ) )
+            // InternalLibrettoSpec.g:5010:2: ( ( (lv_rawField_0_0= ruleBoundaryRawField ) ) )
+            // InternalLibrettoSpec.g:5011:2: ( (lv_rawField_0_0= ruleBoundaryRawField ) )
             {
-            // InternalLibrettoSpec.g:4887:2: ( (lv_rawField_0_0= ruleBoundaryRawField ) )
-            // InternalLibrettoSpec.g:4888:3: (lv_rawField_0_0= ruleBoundaryRawField )
+            // InternalLibrettoSpec.g:5011:2: ( (lv_rawField_0_0= ruleBoundaryRawField ) )
+            // InternalLibrettoSpec.g:5012:3: (lv_rawField_0_0= ruleBoundaryRawField )
             {
-            // InternalLibrettoSpec.g:4888:3: (lv_rawField_0_0= ruleBoundaryRawField )
-            // InternalLibrettoSpec.g:4889:4: lv_rawField_0_0= ruleBoundaryRawField
+            // InternalLibrettoSpec.g:5012:3: (lv_rawField_0_0= ruleBoundaryRawField )
+            // InternalLibrettoSpec.g:5013:4: lv_rawField_0_0= ruleBoundaryRawField
             {
 
             				newCompositeNode(grammarAccess.getBoundaryRawElementAccess().getRawFieldBoundaryRawFieldParserRuleCall_0());
@@ -13375,7 +13683,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBoundarySpecIdField"
-    // InternalLibrettoSpec.g:4909:1: entryRuleBoundarySpecIdField returns [EObject current=null] : iv_ruleBoundarySpecIdField= ruleBoundarySpecIdField EOF ;
+    // InternalLibrettoSpec.g:5033:1: entryRuleBoundarySpecIdField returns [EObject current=null] : iv_ruleBoundarySpecIdField= ruleBoundarySpecIdField EOF ;
     public final EObject entryRuleBoundarySpecIdField() throws RecognitionException {
         EObject current = null;
 
@@ -13383,8 +13691,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:4909:60: (iv_ruleBoundarySpecIdField= ruleBoundarySpecIdField EOF )
-            // InternalLibrettoSpec.g:4910:2: iv_ruleBoundarySpecIdField= ruleBoundarySpecIdField EOF
+            // InternalLibrettoSpec.g:5033:60: (iv_ruleBoundarySpecIdField= ruleBoundarySpecIdField EOF )
+            // InternalLibrettoSpec.g:5034:2: iv_ruleBoundarySpecIdField= ruleBoundarySpecIdField EOF
             {
              newCompositeNode(grammarAccess.getBoundarySpecIdFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -13411,7 +13719,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBoundarySpecIdField"
-    // InternalLibrettoSpec.g:4916:1: ruleBoundarySpecIdField returns [EObject current=null] : (otherlv_0= 'spec_id' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
+    // InternalLibrettoSpec.g:5040:1: ruleBoundarySpecIdField returns [EObject current=null] : (otherlv_0= 'spec_id' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
     public final EObject ruleBoundarySpecIdField() throws RecognitionException {
         EObject current = null;
 
@@ -13424,13 +13732,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:4922:2: ( (otherlv_0= 'spec_id' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
-            // InternalLibrettoSpec.g:4923:2: (otherlv_0= 'spec_id' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:5046:2: ( (otherlv_0= 'spec_id' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
+            // InternalLibrettoSpec.g:5047:2: (otherlv_0= 'spec_id' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
             {
-            // InternalLibrettoSpec.g:4923:2: (otherlv_0= 'spec_id' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
-            // InternalLibrettoSpec.g:4924:3: otherlv_0= 'spec_id' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:5047:2: (otherlv_0= 'spec_id' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:5048:3: otherlv_0= 'spec_id' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
             {
-            otherlv_0=(Token)match(input,69,FOLLOW_17); 
+            otherlv_0=(Token)match(input,71,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getBoundarySpecIdFieldAccess().getSpec_idKeyword_0());
             		
@@ -13438,11 +13746,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getBoundarySpecIdFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:4932:3: ( (lv_value_2_0= ruleTextValue ) )
-            // InternalLibrettoSpec.g:4933:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:5056:3: ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:5057:4: (lv_value_2_0= ruleTextValue )
             {
-            // InternalLibrettoSpec.g:4933:4: (lv_value_2_0= ruleTextValue )
-            // InternalLibrettoSpec.g:4934:5: lv_value_2_0= ruleTextValue
+            // InternalLibrettoSpec.g:5057:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:5058:5: lv_value_2_0= ruleTextValue
             {
 
             					newCompositeNode(grammarAccess.getBoundarySpecIdFieldAccess().getValueTextValueParserRuleCall_2_0());
@@ -13492,7 +13800,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBoundaryOperationIdField"
-    // InternalLibrettoSpec.g:4955:1: entryRuleBoundaryOperationIdField returns [EObject current=null] : iv_ruleBoundaryOperationIdField= ruleBoundaryOperationIdField EOF ;
+    // InternalLibrettoSpec.g:5079:1: entryRuleBoundaryOperationIdField returns [EObject current=null] : iv_ruleBoundaryOperationIdField= ruleBoundaryOperationIdField EOF ;
     public final EObject entryRuleBoundaryOperationIdField() throws RecognitionException {
         EObject current = null;
 
@@ -13500,8 +13808,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:4955:65: (iv_ruleBoundaryOperationIdField= ruleBoundaryOperationIdField EOF )
-            // InternalLibrettoSpec.g:4956:2: iv_ruleBoundaryOperationIdField= ruleBoundaryOperationIdField EOF
+            // InternalLibrettoSpec.g:5079:65: (iv_ruleBoundaryOperationIdField= ruleBoundaryOperationIdField EOF )
+            // InternalLibrettoSpec.g:5080:2: iv_ruleBoundaryOperationIdField= ruleBoundaryOperationIdField EOF
             {
              newCompositeNode(grammarAccess.getBoundaryOperationIdFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -13528,7 +13836,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBoundaryOperationIdField"
-    // InternalLibrettoSpec.g:4962:1: ruleBoundaryOperationIdField returns [EObject current=null] : (otherlv_0= 'operation_id' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
+    // InternalLibrettoSpec.g:5086:1: ruleBoundaryOperationIdField returns [EObject current=null] : (otherlv_0= 'operation_id' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
     public final EObject ruleBoundaryOperationIdField() throws RecognitionException {
         EObject current = null;
 
@@ -13541,13 +13849,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:4968:2: ( (otherlv_0= 'operation_id' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
-            // InternalLibrettoSpec.g:4969:2: (otherlv_0= 'operation_id' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:5092:2: ( (otherlv_0= 'operation_id' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
+            // InternalLibrettoSpec.g:5093:2: (otherlv_0= 'operation_id' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
             {
-            // InternalLibrettoSpec.g:4969:2: (otherlv_0= 'operation_id' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
-            // InternalLibrettoSpec.g:4970:3: otherlv_0= 'operation_id' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:5093:2: (otherlv_0= 'operation_id' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:5094:3: otherlv_0= 'operation_id' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
             {
-            otherlv_0=(Token)match(input,70,FOLLOW_17); 
+            otherlv_0=(Token)match(input,72,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getBoundaryOperationIdFieldAccess().getOperation_idKeyword_0());
             		
@@ -13555,11 +13863,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getBoundaryOperationIdFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:4978:3: ( (lv_value_2_0= ruleTextValue ) )
-            // InternalLibrettoSpec.g:4979:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:5102:3: ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:5103:4: (lv_value_2_0= ruleTextValue )
             {
-            // InternalLibrettoSpec.g:4979:4: (lv_value_2_0= ruleTextValue )
-            // InternalLibrettoSpec.g:4980:5: lv_value_2_0= ruleTextValue
+            // InternalLibrettoSpec.g:5103:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:5104:5: lv_value_2_0= ruleTextValue
             {
 
             					newCompositeNode(grammarAccess.getBoundaryOperationIdFieldAccess().getValueTextValueParserRuleCall_2_0());
@@ -13609,7 +13917,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBoundaryProfileIdField"
-    // InternalLibrettoSpec.g:5001:1: entryRuleBoundaryProfileIdField returns [EObject current=null] : iv_ruleBoundaryProfileIdField= ruleBoundaryProfileIdField EOF ;
+    // InternalLibrettoSpec.g:5125:1: entryRuleBoundaryProfileIdField returns [EObject current=null] : iv_ruleBoundaryProfileIdField= ruleBoundaryProfileIdField EOF ;
     public final EObject entryRuleBoundaryProfileIdField() throws RecognitionException {
         EObject current = null;
 
@@ -13617,8 +13925,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:5001:63: (iv_ruleBoundaryProfileIdField= ruleBoundaryProfileIdField EOF )
-            // InternalLibrettoSpec.g:5002:2: iv_ruleBoundaryProfileIdField= ruleBoundaryProfileIdField EOF
+            // InternalLibrettoSpec.g:5125:63: (iv_ruleBoundaryProfileIdField= ruleBoundaryProfileIdField EOF )
+            // InternalLibrettoSpec.g:5126:2: iv_ruleBoundaryProfileIdField= ruleBoundaryProfileIdField EOF
             {
              newCompositeNode(grammarAccess.getBoundaryProfileIdFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -13645,7 +13953,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBoundaryProfileIdField"
-    // InternalLibrettoSpec.g:5008:1: ruleBoundaryProfileIdField returns [EObject current=null] : (otherlv_0= 'profile_id' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
+    // InternalLibrettoSpec.g:5132:1: ruleBoundaryProfileIdField returns [EObject current=null] : (otherlv_0= 'profile_id' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
     public final EObject ruleBoundaryProfileIdField() throws RecognitionException {
         EObject current = null;
 
@@ -13658,13 +13966,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:5014:2: ( (otherlv_0= 'profile_id' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
-            // InternalLibrettoSpec.g:5015:2: (otherlv_0= 'profile_id' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:5138:2: ( (otherlv_0= 'profile_id' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
+            // InternalLibrettoSpec.g:5139:2: (otherlv_0= 'profile_id' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
             {
-            // InternalLibrettoSpec.g:5015:2: (otherlv_0= 'profile_id' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
-            // InternalLibrettoSpec.g:5016:3: otherlv_0= 'profile_id' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:5139:2: (otherlv_0= 'profile_id' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:5140:3: otherlv_0= 'profile_id' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
             {
-            otherlv_0=(Token)match(input,71,FOLLOW_17); 
+            otherlv_0=(Token)match(input,73,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getBoundaryProfileIdFieldAccess().getProfile_idKeyword_0());
             		
@@ -13672,11 +13980,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getBoundaryProfileIdFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:5024:3: ( (lv_value_2_0= ruleTextValue ) )
-            // InternalLibrettoSpec.g:5025:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:5148:3: ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:5149:4: (lv_value_2_0= ruleTextValue )
             {
-            // InternalLibrettoSpec.g:5025:4: (lv_value_2_0= ruleTextValue )
-            // InternalLibrettoSpec.g:5026:5: lv_value_2_0= ruleTextValue
+            // InternalLibrettoSpec.g:5149:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:5150:5: lv_value_2_0= ruleTextValue
             {
 
             					newCompositeNode(grammarAccess.getBoundaryProfileIdFieldAccess().getValueTextValueParserRuleCall_2_0());
@@ -13726,7 +14034,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBoundaryRawField"
-    // InternalLibrettoSpec.g:5047:1: entryRuleBoundaryRawField returns [EObject current=null] : iv_ruleBoundaryRawField= ruleBoundaryRawField EOF ;
+    // InternalLibrettoSpec.g:5171:1: entryRuleBoundaryRawField returns [EObject current=null] : iv_ruleBoundaryRawField= ruleBoundaryRawField EOF ;
     public final EObject entryRuleBoundaryRawField() throws RecognitionException {
         EObject current = null;
 
@@ -13734,8 +14042,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:5047:57: (iv_ruleBoundaryRawField= ruleBoundaryRawField EOF )
-            // InternalLibrettoSpec.g:5048:2: iv_ruleBoundaryRawField= ruleBoundaryRawField EOF
+            // InternalLibrettoSpec.g:5171:57: (iv_ruleBoundaryRawField= ruleBoundaryRawField EOF )
+            // InternalLibrettoSpec.g:5172:2: iv_ruleBoundaryRawField= ruleBoundaryRawField EOF
             {
              newCompositeNode(grammarAccess.getBoundaryRawFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -13762,7 +14070,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBoundaryRawField"
-    // InternalLibrettoSpec.g:5054:1: ruleBoundaryRawField returns [EObject current=null] : (otherlv_0= 'raw' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
+    // InternalLibrettoSpec.g:5178:1: ruleBoundaryRawField returns [EObject current=null] : (otherlv_0= 'raw' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
     public final EObject ruleBoundaryRawField() throws RecognitionException {
         EObject current = null;
 
@@ -13775,13 +14083,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:5060:2: ( (otherlv_0= 'raw' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
-            // InternalLibrettoSpec.g:5061:2: (otherlv_0= 'raw' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:5184:2: ( (otherlv_0= 'raw' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
+            // InternalLibrettoSpec.g:5185:2: (otherlv_0= 'raw' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
             {
-            // InternalLibrettoSpec.g:5061:2: (otherlv_0= 'raw' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
-            // InternalLibrettoSpec.g:5062:3: otherlv_0= 'raw' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:5185:2: (otherlv_0= 'raw' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:5186:3: otherlv_0= 'raw' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
             {
-            otherlv_0=(Token)match(input,72,FOLLOW_17); 
+            otherlv_0=(Token)match(input,74,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getBoundaryRawFieldAccess().getRawKeyword_0());
             		
@@ -13789,11 +14097,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getBoundaryRawFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:5070:3: ( (lv_value_2_0= ruleTextValue ) )
-            // InternalLibrettoSpec.g:5071:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:5194:3: ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:5195:4: (lv_value_2_0= ruleTextValue )
             {
-            // InternalLibrettoSpec.g:5071:4: (lv_value_2_0= ruleTextValue )
-            // InternalLibrettoSpec.g:5072:5: lv_value_2_0= ruleTextValue
+            // InternalLibrettoSpec.g:5195:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:5196:5: lv_value_2_0= ruleTextValue
             {
 
             					newCompositeNode(grammarAccess.getBoundaryRawFieldAccess().getValueTextValueParserRuleCall_2_0());
@@ -13843,7 +14151,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAcceptanceTestRecord"
-    // InternalLibrettoSpec.g:5093:1: entryRuleAcceptanceTestRecord returns [EObject current=null] : iv_ruleAcceptanceTestRecord= ruleAcceptanceTestRecord EOF ;
+    // InternalLibrettoSpec.g:5217:1: entryRuleAcceptanceTestRecord returns [EObject current=null] : iv_ruleAcceptanceTestRecord= ruleAcceptanceTestRecord EOF ;
     public final EObject entryRuleAcceptanceTestRecord() throws RecognitionException {
         EObject current = null;
 
@@ -13851,8 +14159,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:5093:61: (iv_ruleAcceptanceTestRecord= ruleAcceptanceTestRecord EOF )
-            // InternalLibrettoSpec.g:5094:2: iv_ruleAcceptanceTestRecord= ruleAcceptanceTestRecord EOF
+            // InternalLibrettoSpec.g:5217:61: (iv_ruleAcceptanceTestRecord= ruleAcceptanceTestRecord EOF )
+            // InternalLibrettoSpec.g:5218:2: iv_ruleAcceptanceTestRecord= ruleAcceptanceTestRecord EOF
             {
              newCompositeNode(grammarAccess.getAcceptanceTestRecordRule()); 
             pushFollow(FOLLOW_1);
@@ -13879,7 +14187,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAcceptanceTestRecord"
-    // InternalLibrettoSpec.g:5100:1: ruleAcceptanceTestRecord returns [EObject current=null] : (otherlv_0= 'acceptance_test' ( (lv_id_1_0= ruleAcceptanceTestId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleAcceptanceTestRecordItem ) )* otherlv_4= '}' ) ;
+    // InternalLibrettoSpec.g:5224:1: ruleAcceptanceTestRecord returns [EObject current=null] : (otherlv_0= 'acceptance_test' ( (lv_id_1_0= ruleAcceptanceTestId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleAcceptanceTestRecordItem ) )* otherlv_4= '}' ) ;
     public final EObject ruleAcceptanceTestRecord() throws RecognitionException {
         EObject current = null;
 
@@ -13895,21 +14203,21 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:5106:2: ( (otherlv_0= 'acceptance_test' ( (lv_id_1_0= ruleAcceptanceTestId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleAcceptanceTestRecordItem ) )* otherlv_4= '}' ) )
-            // InternalLibrettoSpec.g:5107:2: (otherlv_0= 'acceptance_test' ( (lv_id_1_0= ruleAcceptanceTestId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleAcceptanceTestRecordItem ) )* otherlv_4= '}' )
+            // InternalLibrettoSpec.g:5230:2: ( (otherlv_0= 'acceptance_test' ( (lv_id_1_0= ruleAcceptanceTestId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleAcceptanceTestRecordItem ) )* otherlv_4= '}' ) )
+            // InternalLibrettoSpec.g:5231:2: (otherlv_0= 'acceptance_test' ( (lv_id_1_0= ruleAcceptanceTestId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleAcceptanceTestRecordItem ) )* otherlv_4= '}' )
             {
-            // InternalLibrettoSpec.g:5107:2: (otherlv_0= 'acceptance_test' ( (lv_id_1_0= ruleAcceptanceTestId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleAcceptanceTestRecordItem ) )* otherlv_4= '}' )
-            // InternalLibrettoSpec.g:5108:3: otherlv_0= 'acceptance_test' ( (lv_id_1_0= ruleAcceptanceTestId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleAcceptanceTestRecordItem ) )* otherlv_4= '}'
+            // InternalLibrettoSpec.g:5231:2: (otherlv_0= 'acceptance_test' ( (lv_id_1_0= ruleAcceptanceTestId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleAcceptanceTestRecordItem ) )* otherlv_4= '}' )
+            // InternalLibrettoSpec.g:5232:3: otherlv_0= 'acceptance_test' ( (lv_id_1_0= ruleAcceptanceTestId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleAcceptanceTestRecordItem ) )* otherlv_4= '}'
             {
-            otherlv_0=(Token)match(input,73,FOLLOW_34); 
+            otherlv_0=(Token)match(input,75,FOLLOW_34); 
 
             			newLeafNode(otherlv_0, grammarAccess.getAcceptanceTestRecordAccess().getAcceptance_testKeyword_0());
             		
-            // InternalLibrettoSpec.g:5112:3: ( (lv_id_1_0= ruleAcceptanceTestId ) )
-            // InternalLibrettoSpec.g:5113:4: (lv_id_1_0= ruleAcceptanceTestId )
+            // InternalLibrettoSpec.g:5236:3: ( (lv_id_1_0= ruleAcceptanceTestId ) )
+            // InternalLibrettoSpec.g:5237:4: (lv_id_1_0= ruleAcceptanceTestId )
             {
-            // InternalLibrettoSpec.g:5113:4: (lv_id_1_0= ruleAcceptanceTestId )
-            // InternalLibrettoSpec.g:5114:5: lv_id_1_0= ruleAcceptanceTestId
+            // InternalLibrettoSpec.g:5237:4: (lv_id_1_0= ruleAcceptanceTestId )
+            // InternalLibrettoSpec.g:5238:5: lv_id_1_0= ruleAcceptanceTestId
             {
 
             					newCompositeNode(grammarAccess.getAcceptanceTestRecordAccess().getIdAcceptanceTestIdParserRuleCall_1_0());
@@ -13940,23 +14248,23 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getAcceptanceTestRecordAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalLibrettoSpec.g:5135:3: ( (lv_items_3_0= ruleAcceptanceTestRecordItem ) )*
+            // InternalLibrettoSpec.g:5259:3: ( (lv_items_3_0= ruleAcceptanceTestRecordItem ) )*
             loop33:
             do {
                 int alt33=2;
                 int LA33_0 = input.LA(1);
 
-                if ( (LA33_0==22||LA33_0==32||(LA33_0>=62 && LA33_0<=63)||(LA33_0>=74 && LA33_0<=77)||LA33_0==86) ) {
+                if ( (LA33_0==22||LA33_0==32||(LA33_0>=64 && LA33_0<=65)||(LA33_0>=76 && LA33_0<=79)||LA33_0==88) ) {
                     alt33=1;
                 }
 
 
                 switch (alt33) {
             	case 1 :
-            	    // InternalLibrettoSpec.g:5136:4: (lv_items_3_0= ruleAcceptanceTestRecordItem )
+            	    // InternalLibrettoSpec.g:5260:4: (lv_items_3_0= ruleAcceptanceTestRecordItem )
             	    {
-            	    // InternalLibrettoSpec.g:5136:4: (lv_items_3_0= ruleAcceptanceTestRecordItem )
-            	    // InternalLibrettoSpec.g:5137:5: lv_items_3_0= ruleAcceptanceTestRecordItem
+            	    // InternalLibrettoSpec.g:5260:4: (lv_items_3_0= ruleAcceptanceTestRecordItem )
+            	    // InternalLibrettoSpec.g:5261:5: lv_items_3_0= ruleAcceptanceTestRecordItem
             	    {
 
             	    					newCompositeNode(grammarAccess.getAcceptanceTestRecordAccess().getItemsAcceptanceTestRecordItemParserRuleCall_3_0());
@@ -14016,7 +14324,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAcceptanceTestRecordItem"
-    // InternalLibrettoSpec.g:5162:1: entryRuleAcceptanceTestRecordItem returns [EObject current=null] : iv_ruleAcceptanceTestRecordItem= ruleAcceptanceTestRecordItem EOF ;
+    // InternalLibrettoSpec.g:5286:1: entryRuleAcceptanceTestRecordItem returns [EObject current=null] : iv_ruleAcceptanceTestRecordItem= ruleAcceptanceTestRecordItem EOF ;
     public final EObject entryRuleAcceptanceTestRecordItem() throws RecognitionException {
         EObject current = null;
 
@@ -14024,8 +14332,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:5162:65: (iv_ruleAcceptanceTestRecordItem= ruleAcceptanceTestRecordItem EOF )
-            // InternalLibrettoSpec.g:5163:2: iv_ruleAcceptanceTestRecordItem= ruleAcceptanceTestRecordItem EOF
+            // InternalLibrettoSpec.g:5286:65: (iv_ruleAcceptanceTestRecordItem= ruleAcceptanceTestRecordItem EOF )
+            // InternalLibrettoSpec.g:5287:2: iv_ruleAcceptanceTestRecordItem= ruleAcceptanceTestRecordItem EOF
             {
              newCompositeNode(grammarAccess.getAcceptanceTestRecordItemRule()); 
             pushFollow(FOLLOW_1);
@@ -14052,7 +14360,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAcceptanceTestRecordItem"
-    // InternalLibrettoSpec.g:5169:1: ruleAcceptanceTestRecordItem returns [EObject current=null] : (this_AcceptanceTestSourceItem_0= ruleAcceptanceTestSourceItem | this_AcceptanceTestValidatesItem_1= ruleAcceptanceTestValidatesItem | this_AcceptanceTestPreconditionsItem_2= ruleAcceptanceTestPreconditionsItem | this_AcceptanceTestActionsItem_3= ruleAcceptanceTestActionsItem | this_AcceptanceTestAssertionsItem_4= ruleAcceptanceTestAssertionsItem | this_AcceptanceTestTitleItem_5= ruleAcceptanceTestTitleItem | this_AcceptanceTestReferencesItem_6= ruleAcceptanceTestReferencesItem | this_AcceptanceTestNotesItem_7= ruleAcceptanceTestNotesItem | this_AcceptanceTestContextItem_8= ruleAcceptanceTestContextItem ) ;
+    // InternalLibrettoSpec.g:5293:1: ruleAcceptanceTestRecordItem returns [EObject current=null] : (this_AcceptanceTestSourceItem_0= ruleAcceptanceTestSourceItem | this_AcceptanceTestValidatesItem_1= ruleAcceptanceTestValidatesItem | this_AcceptanceTestPreconditionsItem_2= ruleAcceptanceTestPreconditionsItem | this_AcceptanceTestActionsItem_3= ruleAcceptanceTestActionsItem | this_AcceptanceTestAssertionsItem_4= ruleAcceptanceTestAssertionsItem | this_AcceptanceTestTitleItem_5= ruleAcceptanceTestTitleItem | this_AcceptanceTestReferencesItem_6= ruleAcceptanceTestReferencesItem | this_AcceptanceTestNotesItem_7= ruleAcceptanceTestNotesItem | this_AcceptanceTestContextItem_8= ruleAcceptanceTestContextItem ) ;
     public final EObject ruleAcceptanceTestRecordItem() throws RecognitionException {
         EObject current = null;
 
@@ -14079,33 +14387,33 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:5175:2: ( (this_AcceptanceTestSourceItem_0= ruleAcceptanceTestSourceItem | this_AcceptanceTestValidatesItem_1= ruleAcceptanceTestValidatesItem | this_AcceptanceTestPreconditionsItem_2= ruleAcceptanceTestPreconditionsItem | this_AcceptanceTestActionsItem_3= ruleAcceptanceTestActionsItem | this_AcceptanceTestAssertionsItem_4= ruleAcceptanceTestAssertionsItem | this_AcceptanceTestTitleItem_5= ruleAcceptanceTestTitleItem | this_AcceptanceTestReferencesItem_6= ruleAcceptanceTestReferencesItem | this_AcceptanceTestNotesItem_7= ruleAcceptanceTestNotesItem | this_AcceptanceTestContextItem_8= ruleAcceptanceTestContextItem ) )
-            // InternalLibrettoSpec.g:5176:2: (this_AcceptanceTestSourceItem_0= ruleAcceptanceTestSourceItem | this_AcceptanceTestValidatesItem_1= ruleAcceptanceTestValidatesItem | this_AcceptanceTestPreconditionsItem_2= ruleAcceptanceTestPreconditionsItem | this_AcceptanceTestActionsItem_3= ruleAcceptanceTestActionsItem | this_AcceptanceTestAssertionsItem_4= ruleAcceptanceTestAssertionsItem | this_AcceptanceTestTitleItem_5= ruleAcceptanceTestTitleItem | this_AcceptanceTestReferencesItem_6= ruleAcceptanceTestReferencesItem | this_AcceptanceTestNotesItem_7= ruleAcceptanceTestNotesItem | this_AcceptanceTestContextItem_8= ruleAcceptanceTestContextItem )
+            // InternalLibrettoSpec.g:5299:2: ( (this_AcceptanceTestSourceItem_0= ruleAcceptanceTestSourceItem | this_AcceptanceTestValidatesItem_1= ruleAcceptanceTestValidatesItem | this_AcceptanceTestPreconditionsItem_2= ruleAcceptanceTestPreconditionsItem | this_AcceptanceTestActionsItem_3= ruleAcceptanceTestActionsItem | this_AcceptanceTestAssertionsItem_4= ruleAcceptanceTestAssertionsItem | this_AcceptanceTestTitleItem_5= ruleAcceptanceTestTitleItem | this_AcceptanceTestReferencesItem_6= ruleAcceptanceTestReferencesItem | this_AcceptanceTestNotesItem_7= ruleAcceptanceTestNotesItem | this_AcceptanceTestContextItem_8= ruleAcceptanceTestContextItem ) )
+            // InternalLibrettoSpec.g:5300:2: (this_AcceptanceTestSourceItem_0= ruleAcceptanceTestSourceItem | this_AcceptanceTestValidatesItem_1= ruleAcceptanceTestValidatesItem | this_AcceptanceTestPreconditionsItem_2= ruleAcceptanceTestPreconditionsItem | this_AcceptanceTestActionsItem_3= ruleAcceptanceTestActionsItem | this_AcceptanceTestAssertionsItem_4= ruleAcceptanceTestAssertionsItem | this_AcceptanceTestTitleItem_5= ruleAcceptanceTestTitleItem | this_AcceptanceTestReferencesItem_6= ruleAcceptanceTestReferencesItem | this_AcceptanceTestNotesItem_7= ruleAcceptanceTestNotesItem | this_AcceptanceTestContextItem_8= ruleAcceptanceTestContextItem )
             {
-            // InternalLibrettoSpec.g:5176:2: (this_AcceptanceTestSourceItem_0= ruleAcceptanceTestSourceItem | this_AcceptanceTestValidatesItem_1= ruleAcceptanceTestValidatesItem | this_AcceptanceTestPreconditionsItem_2= ruleAcceptanceTestPreconditionsItem | this_AcceptanceTestActionsItem_3= ruleAcceptanceTestActionsItem | this_AcceptanceTestAssertionsItem_4= ruleAcceptanceTestAssertionsItem | this_AcceptanceTestTitleItem_5= ruleAcceptanceTestTitleItem | this_AcceptanceTestReferencesItem_6= ruleAcceptanceTestReferencesItem | this_AcceptanceTestNotesItem_7= ruleAcceptanceTestNotesItem | this_AcceptanceTestContextItem_8= ruleAcceptanceTestContextItem )
+            // InternalLibrettoSpec.g:5300:2: (this_AcceptanceTestSourceItem_0= ruleAcceptanceTestSourceItem | this_AcceptanceTestValidatesItem_1= ruleAcceptanceTestValidatesItem | this_AcceptanceTestPreconditionsItem_2= ruleAcceptanceTestPreconditionsItem | this_AcceptanceTestActionsItem_3= ruleAcceptanceTestActionsItem | this_AcceptanceTestAssertionsItem_4= ruleAcceptanceTestAssertionsItem | this_AcceptanceTestTitleItem_5= ruleAcceptanceTestTitleItem | this_AcceptanceTestReferencesItem_6= ruleAcceptanceTestReferencesItem | this_AcceptanceTestNotesItem_7= ruleAcceptanceTestNotesItem | this_AcceptanceTestContextItem_8= ruleAcceptanceTestContextItem )
             int alt34=9;
             switch ( input.LA(1) ) {
-            case 86:
+            case 88:
                 {
                 alt34=1;
                 }
                 break;
-            case 74:
+            case 76:
                 {
                 alt34=2;
                 }
                 break;
-            case 75:
+            case 77:
                 {
                 alt34=3;
                 }
                 break;
-            case 76:
+            case 78:
                 {
                 alt34=4;
                 }
                 break;
-            case 77:
+            case 79:
                 {
                 alt34=5;
                 }
@@ -14120,12 +14428,12 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                 alt34=7;
                 }
                 break;
-            case 62:
+            case 64:
                 {
                 alt34=8;
                 }
                 break;
-            case 63:
+            case 65:
                 {
                 alt34=9;
                 }
@@ -14139,7 +14447,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             switch (alt34) {
                 case 1 :
-                    // InternalLibrettoSpec.g:5177:3: this_AcceptanceTestSourceItem_0= ruleAcceptanceTestSourceItem
+                    // InternalLibrettoSpec.g:5301:3: this_AcceptanceTestSourceItem_0= ruleAcceptanceTestSourceItem
                     {
 
                     			newCompositeNode(grammarAccess.getAcceptanceTestRecordItemAccess().getAcceptanceTestSourceItemParserRuleCall_0());
@@ -14157,7 +14465,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoSpec.g:5186:3: this_AcceptanceTestValidatesItem_1= ruleAcceptanceTestValidatesItem
+                    // InternalLibrettoSpec.g:5310:3: this_AcceptanceTestValidatesItem_1= ruleAcceptanceTestValidatesItem
                     {
 
                     			newCompositeNode(grammarAccess.getAcceptanceTestRecordItemAccess().getAcceptanceTestValidatesItemParserRuleCall_1());
@@ -14175,7 +14483,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalLibrettoSpec.g:5195:3: this_AcceptanceTestPreconditionsItem_2= ruleAcceptanceTestPreconditionsItem
+                    // InternalLibrettoSpec.g:5319:3: this_AcceptanceTestPreconditionsItem_2= ruleAcceptanceTestPreconditionsItem
                     {
 
                     			newCompositeNode(grammarAccess.getAcceptanceTestRecordItemAccess().getAcceptanceTestPreconditionsItemParserRuleCall_2());
@@ -14193,7 +14501,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalLibrettoSpec.g:5204:3: this_AcceptanceTestActionsItem_3= ruleAcceptanceTestActionsItem
+                    // InternalLibrettoSpec.g:5328:3: this_AcceptanceTestActionsItem_3= ruleAcceptanceTestActionsItem
                     {
 
                     			newCompositeNode(grammarAccess.getAcceptanceTestRecordItemAccess().getAcceptanceTestActionsItemParserRuleCall_3());
@@ -14211,7 +14519,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalLibrettoSpec.g:5213:3: this_AcceptanceTestAssertionsItem_4= ruleAcceptanceTestAssertionsItem
+                    // InternalLibrettoSpec.g:5337:3: this_AcceptanceTestAssertionsItem_4= ruleAcceptanceTestAssertionsItem
                     {
 
                     			newCompositeNode(grammarAccess.getAcceptanceTestRecordItemAccess().getAcceptanceTestAssertionsItemParserRuleCall_4());
@@ -14229,7 +14537,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalLibrettoSpec.g:5222:3: this_AcceptanceTestTitleItem_5= ruleAcceptanceTestTitleItem
+                    // InternalLibrettoSpec.g:5346:3: this_AcceptanceTestTitleItem_5= ruleAcceptanceTestTitleItem
                     {
 
                     			newCompositeNode(grammarAccess.getAcceptanceTestRecordItemAccess().getAcceptanceTestTitleItemParserRuleCall_5());
@@ -14247,7 +14555,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalLibrettoSpec.g:5231:3: this_AcceptanceTestReferencesItem_6= ruleAcceptanceTestReferencesItem
+                    // InternalLibrettoSpec.g:5355:3: this_AcceptanceTestReferencesItem_6= ruleAcceptanceTestReferencesItem
                     {
 
                     			newCompositeNode(grammarAccess.getAcceptanceTestRecordItemAccess().getAcceptanceTestReferencesItemParserRuleCall_6());
@@ -14265,7 +14573,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalLibrettoSpec.g:5240:3: this_AcceptanceTestNotesItem_7= ruleAcceptanceTestNotesItem
+                    // InternalLibrettoSpec.g:5364:3: this_AcceptanceTestNotesItem_7= ruleAcceptanceTestNotesItem
                     {
 
                     			newCompositeNode(grammarAccess.getAcceptanceTestRecordItemAccess().getAcceptanceTestNotesItemParserRuleCall_7());
@@ -14283,7 +14591,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // InternalLibrettoSpec.g:5249:3: this_AcceptanceTestContextItem_8= ruleAcceptanceTestContextItem
+                    // InternalLibrettoSpec.g:5373:3: this_AcceptanceTestContextItem_8= ruleAcceptanceTestContextItem
                     {
 
                     			newCompositeNode(grammarAccess.getAcceptanceTestRecordItemAccess().getAcceptanceTestContextItemParserRuleCall_8());
@@ -14323,7 +14631,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAcceptanceTestSourceItem"
-    // InternalLibrettoSpec.g:5261:1: entryRuleAcceptanceTestSourceItem returns [EObject current=null] : iv_ruleAcceptanceTestSourceItem= ruleAcceptanceTestSourceItem EOF ;
+    // InternalLibrettoSpec.g:5385:1: entryRuleAcceptanceTestSourceItem returns [EObject current=null] : iv_ruleAcceptanceTestSourceItem= ruleAcceptanceTestSourceItem EOF ;
     public final EObject entryRuleAcceptanceTestSourceItem() throws RecognitionException {
         EObject current = null;
 
@@ -14331,8 +14639,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:5261:65: (iv_ruleAcceptanceTestSourceItem= ruleAcceptanceTestSourceItem EOF )
-            // InternalLibrettoSpec.g:5262:2: iv_ruleAcceptanceTestSourceItem= ruleAcceptanceTestSourceItem EOF
+            // InternalLibrettoSpec.g:5385:65: (iv_ruleAcceptanceTestSourceItem= ruleAcceptanceTestSourceItem EOF )
+            // InternalLibrettoSpec.g:5386:2: iv_ruleAcceptanceTestSourceItem= ruleAcceptanceTestSourceItem EOF
             {
              newCompositeNode(grammarAccess.getAcceptanceTestSourceItemRule()); 
             pushFollow(FOLLOW_1);
@@ -14359,7 +14667,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAcceptanceTestSourceItem"
-    // InternalLibrettoSpec.g:5268:1: ruleAcceptanceTestSourceItem returns [EObject current=null] : ( (lv_source_0_0= ruleSourceBlock ) ) ;
+    // InternalLibrettoSpec.g:5392:1: ruleAcceptanceTestSourceItem returns [EObject current=null] : ( (lv_source_0_0= ruleSourceBlock ) ) ;
     public final EObject ruleAcceptanceTestSourceItem() throws RecognitionException {
         EObject current = null;
 
@@ -14370,14 +14678,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:5274:2: ( ( (lv_source_0_0= ruleSourceBlock ) ) )
-            // InternalLibrettoSpec.g:5275:2: ( (lv_source_0_0= ruleSourceBlock ) )
+            // InternalLibrettoSpec.g:5398:2: ( ( (lv_source_0_0= ruleSourceBlock ) ) )
+            // InternalLibrettoSpec.g:5399:2: ( (lv_source_0_0= ruleSourceBlock ) )
             {
-            // InternalLibrettoSpec.g:5275:2: ( (lv_source_0_0= ruleSourceBlock ) )
-            // InternalLibrettoSpec.g:5276:3: (lv_source_0_0= ruleSourceBlock )
+            // InternalLibrettoSpec.g:5399:2: ( (lv_source_0_0= ruleSourceBlock ) )
+            // InternalLibrettoSpec.g:5400:3: (lv_source_0_0= ruleSourceBlock )
             {
-            // InternalLibrettoSpec.g:5276:3: (lv_source_0_0= ruleSourceBlock )
-            // InternalLibrettoSpec.g:5277:4: lv_source_0_0= ruleSourceBlock
+            // InternalLibrettoSpec.g:5400:3: (lv_source_0_0= ruleSourceBlock )
+            // InternalLibrettoSpec.g:5401:4: lv_source_0_0= ruleSourceBlock
             {
 
             				newCompositeNode(grammarAccess.getAcceptanceTestSourceItemAccess().getSourceSourceBlockParserRuleCall_0());
@@ -14424,7 +14732,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAcceptanceTestValidatesItem"
-    // InternalLibrettoSpec.g:5297:1: entryRuleAcceptanceTestValidatesItem returns [EObject current=null] : iv_ruleAcceptanceTestValidatesItem= ruleAcceptanceTestValidatesItem EOF ;
+    // InternalLibrettoSpec.g:5421:1: entryRuleAcceptanceTestValidatesItem returns [EObject current=null] : iv_ruleAcceptanceTestValidatesItem= ruleAcceptanceTestValidatesItem EOF ;
     public final EObject entryRuleAcceptanceTestValidatesItem() throws RecognitionException {
         EObject current = null;
 
@@ -14432,8 +14740,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:5297:68: (iv_ruleAcceptanceTestValidatesItem= ruleAcceptanceTestValidatesItem EOF )
-            // InternalLibrettoSpec.g:5298:2: iv_ruleAcceptanceTestValidatesItem= ruleAcceptanceTestValidatesItem EOF
+            // InternalLibrettoSpec.g:5421:68: (iv_ruleAcceptanceTestValidatesItem= ruleAcceptanceTestValidatesItem EOF )
+            // InternalLibrettoSpec.g:5422:2: iv_ruleAcceptanceTestValidatesItem= ruleAcceptanceTestValidatesItem EOF
             {
              newCompositeNode(grammarAccess.getAcceptanceTestValidatesItemRule()); 
             pushFollow(FOLLOW_1);
@@ -14460,7 +14768,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAcceptanceTestValidatesItem"
-    // InternalLibrettoSpec.g:5304:1: ruleAcceptanceTestValidatesItem returns [EObject current=null] : ( (lv_validates_0_0= ruleValidatesField ) ) ;
+    // InternalLibrettoSpec.g:5428:1: ruleAcceptanceTestValidatesItem returns [EObject current=null] : ( (lv_validates_0_0= ruleValidatesField ) ) ;
     public final EObject ruleAcceptanceTestValidatesItem() throws RecognitionException {
         EObject current = null;
 
@@ -14471,14 +14779,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:5310:2: ( ( (lv_validates_0_0= ruleValidatesField ) ) )
-            // InternalLibrettoSpec.g:5311:2: ( (lv_validates_0_0= ruleValidatesField ) )
+            // InternalLibrettoSpec.g:5434:2: ( ( (lv_validates_0_0= ruleValidatesField ) ) )
+            // InternalLibrettoSpec.g:5435:2: ( (lv_validates_0_0= ruleValidatesField ) )
             {
-            // InternalLibrettoSpec.g:5311:2: ( (lv_validates_0_0= ruleValidatesField ) )
-            // InternalLibrettoSpec.g:5312:3: (lv_validates_0_0= ruleValidatesField )
+            // InternalLibrettoSpec.g:5435:2: ( (lv_validates_0_0= ruleValidatesField ) )
+            // InternalLibrettoSpec.g:5436:3: (lv_validates_0_0= ruleValidatesField )
             {
-            // InternalLibrettoSpec.g:5312:3: (lv_validates_0_0= ruleValidatesField )
-            // InternalLibrettoSpec.g:5313:4: lv_validates_0_0= ruleValidatesField
+            // InternalLibrettoSpec.g:5436:3: (lv_validates_0_0= ruleValidatesField )
+            // InternalLibrettoSpec.g:5437:4: lv_validates_0_0= ruleValidatesField
             {
 
             				newCompositeNode(grammarAccess.getAcceptanceTestValidatesItemAccess().getValidatesValidatesFieldParserRuleCall_0());
@@ -14525,7 +14833,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAcceptanceTestPreconditionsItem"
-    // InternalLibrettoSpec.g:5333:1: entryRuleAcceptanceTestPreconditionsItem returns [EObject current=null] : iv_ruleAcceptanceTestPreconditionsItem= ruleAcceptanceTestPreconditionsItem EOF ;
+    // InternalLibrettoSpec.g:5457:1: entryRuleAcceptanceTestPreconditionsItem returns [EObject current=null] : iv_ruleAcceptanceTestPreconditionsItem= ruleAcceptanceTestPreconditionsItem EOF ;
     public final EObject entryRuleAcceptanceTestPreconditionsItem() throws RecognitionException {
         EObject current = null;
 
@@ -14533,8 +14841,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:5333:72: (iv_ruleAcceptanceTestPreconditionsItem= ruleAcceptanceTestPreconditionsItem EOF )
-            // InternalLibrettoSpec.g:5334:2: iv_ruleAcceptanceTestPreconditionsItem= ruleAcceptanceTestPreconditionsItem EOF
+            // InternalLibrettoSpec.g:5457:72: (iv_ruleAcceptanceTestPreconditionsItem= ruleAcceptanceTestPreconditionsItem EOF )
+            // InternalLibrettoSpec.g:5458:2: iv_ruleAcceptanceTestPreconditionsItem= ruleAcceptanceTestPreconditionsItem EOF
             {
              newCompositeNode(grammarAccess.getAcceptanceTestPreconditionsItemRule()); 
             pushFollow(FOLLOW_1);
@@ -14561,7 +14869,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAcceptanceTestPreconditionsItem"
-    // InternalLibrettoSpec.g:5340:1: ruleAcceptanceTestPreconditionsItem returns [EObject current=null] : ( (lv_preconditions_0_0= rulePreconditionsField ) ) ;
+    // InternalLibrettoSpec.g:5464:1: ruleAcceptanceTestPreconditionsItem returns [EObject current=null] : ( (lv_preconditions_0_0= rulePreconditionsField ) ) ;
     public final EObject ruleAcceptanceTestPreconditionsItem() throws RecognitionException {
         EObject current = null;
 
@@ -14572,14 +14880,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:5346:2: ( ( (lv_preconditions_0_0= rulePreconditionsField ) ) )
-            // InternalLibrettoSpec.g:5347:2: ( (lv_preconditions_0_0= rulePreconditionsField ) )
+            // InternalLibrettoSpec.g:5470:2: ( ( (lv_preconditions_0_0= rulePreconditionsField ) ) )
+            // InternalLibrettoSpec.g:5471:2: ( (lv_preconditions_0_0= rulePreconditionsField ) )
             {
-            // InternalLibrettoSpec.g:5347:2: ( (lv_preconditions_0_0= rulePreconditionsField ) )
-            // InternalLibrettoSpec.g:5348:3: (lv_preconditions_0_0= rulePreconditionsField )
+            // InternalLibrettoSpec.g:5471:2: ( (lv_preconditions_0_0= rulePreconditionsField ) )
+            // InternalLibrettoSpec.g:5472:3: (lv_preconditions_0_0= rulePreconditionsField )
             {
-            // InternalLibrettoSpec.g:5348:3: (lv_preconditions_0_0= rulePreconditionsField )
-            // InternalLibrettoSpec.g:5349:4: lv_preconditions_0_0= rulePreconditionsField
+            // InternalLibrettoSpec.g:5472:3: (lv_preconditions_0_0= rulePreconditionsField )
+            // InternalLibrettoSpec.g:5473:4: lv_preconditions_0_0= rulePreconditionsField
             {
 
             				newCompositeNode(grammarAccess.getAcceptanceTestPreconditionsItemAccess().getPreconditionsPreconditionsFieldParserRuleCall_0());
@@ -14626,7 +14934,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAcceptanceTestActionsItem"
-    // InternalLibrettoSpec.g:5369:1: entryRuleAcceptanceTestActionsItem returns [EObject current=null] : iv_ruleAcceptanceTestActionsItem= ruleAcceptanceTestActionsItem EOF ;
+    // InternalLibrettoSpec.g:5493:1: entryRuleAcceptanceTestActionsItem returns [EObject current=null] : iv_ruleAcceptanceTestActionsItem= ruleAcceptanceTestActionsItem EOF ;
     public final EObject entryRuleAcceptanceTestActionsItem() throws RecognitionException {
         EObject current = null;
 
@@ -14634,8 +14942,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:5369:66: (iv_ruleAcceptanceTestActionsItem= ruleAcceptanceTestActionsItem EOF )
-            // InternalLibrettoSpec.g:5370:2: iv_ruleAcceptanceTestActionsItem= ruleAcceptanceTestActionsItem EOF
+            // InternalLibrettoSpec.g:5493:66: (iv_ruleAcceptanceTestActionsItem= ruleAcceptanceTestActionsItem EOF )
+            // InternalLibrettoSpec.g:5494:2: iv_ruleAcceptanceTestActionsItem= ruleAcceptanceTestActionsItem EOF
             {
              newCompositeNode(grammarAccess.getAcceptanceTestActionsItemRule()); 
             pushFollow(FOLLOW_1);
@@ -14662,7 +14970,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAcceptanceTestActionsItem"
-    // InternalLibrettoSpec.g:5376:1: ruleAcceptanceTestActionsItem returns [EObject current=null] : ( (lv_actions_0_0= ruleActionsField ) ) ;
+    // InternalLibrettoSpec.g:5500:1: ruleAcceptanceTestActionsItem returns [EObject current=null] : ( (lv_actions_0_0= ruleActionsField ) ) ;
     public final EObject ruleAcceptanceTestActionsItem() throws RecognitionException {
         EObject current = null;
 
@@ -14673,14 +14981,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:5382:2: ( ( (lv_actions_0_0= ruleActionsField ) ) )
-            // InternalLibrettoSpec.g:5383:2: ( (lv_actions_0_0= ruleActionsField ) )
+            // InternalLibrettoSpec.g:5506:2: ( ( (lv_actions_0_0= ruleActionsField ) ) )
+            // InternalLibrettoSpec.g:5507:2: ( (lv_actions_0_0= ruleActionsField ) )
             {
-            // InternalLibrettoSpec.g:5383:2: ( (lv_actions_0_0= ruleActionsField ) )
-            // InternalLibrettoSpec.g:5384:3: (lv_actions_0_0= ruleActionsField )
+            // InternalLibrettoSpec.g:5507:2: ( (lv_actions_0_0= ruleActionsField ) )
+            // InternalLibrettoSpec.g:5508:3: (lv_actions_0_0= ruleActionsField )
             {
-            // InternalLibrettoSpec.g:5384:3: (lv_actions_0_0= ruleActionsField )
-            // InternalLibrettoSpec.g:5385:4: lv_actions_0_0= ruleActionsField
+            // InternalLibrettoSpec.g:5508:3: (lv_actions_0_0= ruleActionsField )
+            // InternalLibrettoSpec.g:5509:4: lv_actions_0_0= ruleActionsField
             {
 
             				newCompositeNode(grammarAccess.getAcceptanceTestActionsItemAccess().getActionsActionsFieldParserRuleCall_0());
@@ -14727,7 +15035,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAcceptanceTestAssertionsItem"
-    // InternalLibrettoSpec.g:5405:1: entryRuleAcceptanceTestAssertionsItem returns [EObject current=null] : iv_ruleAcceptanceTestAssertionsItem= ruleAcceptanceTestAssertionsItem EOF ;
+    // InternalLibrettoSpec.g:5529:1: entryRuleAcceptanceTestAssertionsItem returns [EObject current=null] : iv_ruleAcceptanceTestAssertionsItem= ruleAcceptanceTestAssertionsItem EOF ;
     public final EObject entryRuleAcceptanceTestAssertionsItem() throws RecognitionException {
         EObject current = null;
 
@@ -14735,8 +15043,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:5405:69: (iv_ruleAcceptanceTestAssertionsItem= ruleAcceptanceTestAssertionsItem EOF )
-            // InternalLibrettoSpec.g:5406:2: iv_ruleAcceptanceTestAssertionsItem= ruleAcceptanceTestAssertionsItem EOF
+            // InternalLibrettoSpec.g:5529:69: (iv_ruleAcceptanceTestAssertionsItem= ruleAcceptanceTestAssertionsItem EOF )
+            // InternalLibrettoSpec.g:5530:2: iv_ruleAcceptanceTestAssertionsItem= ruleAcceptanceTestAssertionsItem EOF
             {
              newCompositeNode(grammarAccess.getAcceptanceTestAssertionsItemRule()); 
             pushFollow(FOLLOW_1);
@@ -14763,7 +15071,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAcceptanceTestAssertionsItem"
-    // InternalLibrettoSpec.g:5412:1: ruleAcceptanceTestAssertionsItem returns [EObject current=null] : ( (lv_assertions_0_0= ruleAssertionsField ) ) ;
+    // InternalLibrettoSpec.g:5536:1: ruleAcceptanceTestAssertionsItem returns [EObject current=null] : ( (lv_assertions_0_0= ruleAssertionsField ) ) ;
     public final EObject ruleAcceptanceTestAssertionsItem() throws RecognitionException {
         EObject current = null;
 
@@ -14774,14 +15082,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:5418:2: ( ( (lv_assertions_0_0= ruleAssertionsField ) ) )
-            // InternalLibrettoSpec.g:5419:2: ( (lv_assertions_0_0= ruleAssertionsField ) )
+            // InternalLibrettoSpec.g:5542:2: ( ( (lv_assertions_0_0= ruleAssertionsField ) ) )
+            // InternalLibrettoSpec.g:5543:2: ( (lv_assertions_0_0= ruleAssertionsField ) )
             {
-            // InternalLibrettoSpec.g:5419:2: ( (lv_assertions_0_0= ruleAssertionsField ) )
-            // InternalLibrettoSpec.g:5420:3: (lv_assertions_0_0= ruleAssertionsField )
+            // InternalLibrettoSpec.g:5543:2: ( (lv_assertions_0_0= ruleAssertionsField ) )
+            // InternalLibrettoSpec.g:5544:3: (lv_assertions_0_0= ruleAssertionsField )
             {
-            // InternalLibrettoSpec.g:5420:3: (lv_assertions_0_0= ruleAssertionsField )
-            // InternalLibrettoSpec.g:5421:4: lv_assertions_0_0= ruleAssertionsField
+            // InternalLibrettoSpec.g:5544:3: (lv_assertions_0_0= ruleAssertionsField )
+            // InternalLibrettoSpec.g:5545:4: lv_assertions_0_0= ruleAssertionsField
             {
 
             				newCompositeNode(grammarAccess.getAcceptanceTestAssertionsItemAccess().getAssertionsAssertionsFieldParserRuleCall_0());
@@ -14828,7 +15136,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAcceptanceTestTitleItem"
-    // InternalLibrettoSpec.g:5441:1: entryRuleAcceptanceTestTitleItem returns [EObject current=null] : iv_ruleAcceptanceTestTitleItem= ruleAcceptanceTestTitleItem EOF ;
+    // InternalLibrettoSpec.g:5565:1: entryRuleAcceptanceTestTitleItem returns [EObject current=null] : iv_ruleAcceptanceTestTitleItem= ruleAcceptanceTestTitleItem EOF ;
     public final EObject entryRuleAcceptanceTestTitleItem() throws RecognitionException {
         EObject current = null;
 
@@ -14836,8 +15144,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:5441:64: (iv_ruleAcceptanceTestTitleItem= ruleAcceptanceTestTitleItem EOF )
-            // InternalLibrettoSpec.g:5442:2: iv_ruleAcceptanceTestTitleItem= ruleAcceptanceTestTitleItem EOF
+            // InternalLibrettoSpec.g:5565:64: (iv_ruleAcceptanceTestTitleItem= ruleAcceptanceTestTitleItem EOF )
+            // InternalLibrettoSpec.g:5566:2: iv_ruleAcceptanceTestTitleItem= ruleAcceptanceTestTitleItem EOF
             {
              newCompositeNode(grammarAccess.getAcceptanceTestTitleItemRule()); 
             pushFollow(FOLLOW_1);
@@ -14864,7 +15172,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAcceptanceTestTitleItem"
-    // InternalLibrettoSpec.g:5448:1: ruleAcceptanceTestTitleItem returns [EObject current=null] : ( (lv_title_0_0= ruleTitleField ) ) ;
+    // InternalLibrettoSpec.g:5572:1: ruleAcceptanceTestTitleItem returns [EObject current=null] : ( (lv_title_0_0= ruleTitleField ) ) ;
     public final EObject ruleAcceptanceTestTitleItem() throws RecognitionException {
         EObject current = null;
 
@@ -14875,14 +15183,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:5454:2: ( ( (lv_title_0_0= ruleTitleField ) ) )
-            // InternalLibrettoSpec.g:5455:2: ( (lv_title_0_0= ruleTitleField ) )
+            // InternalLibrettoSpec.g:5578:2: ( ( (lv_title_0_0= ruleTitleField ) ) )
+            // InternalLibrettoSpec.g:5579:2: ( (lv_title_0_0= ruleTitleField ) )
             {
-            // InternalLibrettoSpec.g:5455:2: ( (lv_title_0_0= ruleTitleField ) )
-            // InternalLibrettoSpec.g:5456:3: (lv_title_0_0= ruleTitleField )
+            // InternalLibrettoSpec.g:5579:2: ( (lv_title_0_0= ruleTitleField ) )
+            // InternalLibrettoSpec.g:5580:3: (lv_title_0_0= ruleTitleField )
             {
-            // InternalLibrettoSpec.g:5456:3: (lv_title_0_0= ruleTitleField )
-            // InternalLibrettoSpec.g:5457:4: lv_title_0_0= ruleTitleField
+            // InternalLibrettoSpec.g:5580:3: (lv_title_0_0= ruleTitleField )
+            // InternalLibrettoSpec.g:5581:4: lv_title_0_0= ruleTitleField
             {
 
             				newCompositeNode(grammarAccess.getAcceptanceTestTitleItemAccess().getTitleTitleFieldParserRuleCall_0());
@@ -14929,7 +15237,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAcceptanceTestReferencesItem"
-    // InternalLibrettoSpec.g:5477:1: entryRuleAcceptanceTestReferencesItem returns [EObject current=null] : iv_ruleAcceptanceTestReferencesItem= ruleAcceptanceTestReferencesItem EOF ;
+    // InternalLibrettoSpec.g:5601:1: entryRuleAcceptanceTestReferencesItem returns [EObject current=null] : iv_ruleAcceptanceTestReferencesItem= ruleAcceptanceTestReferencesItem EOF ;
     public final EObject entryRuleAcceptanceTestReferencesItem() throws RecognitionException {
         EObject current = null;
 
@@ -14937,8 +15245,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:5477:69: (iv_ruleAcceptanceTestReferencesItem= ruleAcceptanceTestReferencesItem EOF )
-            // InternalLibrettoSpec.g:5478:2: iv_ruleAcceptanceTestReferencesItem= ruleAcceptanceTestReferencesItem EOF
+            // InternalLibrettoSpec.g:5601:69: (iv_ruleAcceptanceTestReferencesItem= ruleAcceptanceTestReferencesItem EOF )
+            // InternalLibrettoSpec.g:5602:2: iv_ruleAcceptanceTestReferencesItem= ruleAcceptanceTestReferencesItem EOF
             {
              newCompositeNode(grammarAccess.getAcceptanceTestReferencesItemRule()); 
             pushFollow(FOLLOW_1);
@@ -14965,7 +15273,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAcceptanceTestReferencesItem"
-    // InternalLibrettoSpec.g:5484:1: ruleAcceptanceTestReferencesItem returns [EObject current=null] : ( (lv_references_0_0= ruleReferencesField ) ) ;
+    // InternalLibrettoSpec.g:5608:1: ruleAcceptanceTestReferencesItem returns [EObject current=null] : ( (lv_references_0_0= ruleReferencesField ) ) ;
     public final EObject ruleAcceptanceTestReferencesItem() throws RecognitionException {
         EObject current = null;
 
@@ -14976,14 +15284,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:5490:2: ( ( (lv_references_0_0= ruleReferencesField ) ) )
-            // InternalLibrettoSpec.g:5491:2: ( (lv_references_0_0= ruleReferencesField ) )
+            // InternalLibrettoSpec.g:5614:2: ( ( (lv_references_0_0= ruleReferencesField ) ) )
+            // InternalLibrettoSpec.g:5615:2: ( (lv_references_0_0= ruleReferencesField ) )
             {
-            // InternalLibrettoSpec.g:5491:2: ( (lv_references_0_0= ruleReferencesField ) )
-            // InternalLibrettoSpec.g:5492:3: (lv_references_0_0= ruleReferencesField )
+            // InternalLibrettoSpec.g:5615:2: ( (lv_references_0_0= ruleReferencesField ) )
+            // InternalLibrettoSpec.g:5616:3: (lv_references_0_0= ruleReferencesField )
             {
-            // InternalLibrettoSpec.g:5492:3: (lv_references_0_0= ruleReferencesField )
-            // InternalLibrettoSpec.g:5493:4: lv_references_0_0= ruleReferencesField
+            // InternalLibrettoSpec.g:5616:3: (lv_references_0_0= ruleReferencesField )
+            // InternalLibrettoSpec.g:5617:4: lv_references_0_0= ruleReferencesField
             {
 
             				newCompositeNode(grammarAccess.getAcceptanceTestReferencesItemAccess().getReferencesReferencesFieldParserRuleCall_0());
@@ -15030,7 +15338,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAcceptanceTestNotesItem"
-    // InternalLibrettoSpec.g:5513:1: entryRuleAcceptanceTestNotesItem returns [EObject current=null] : iv_ruleAcceptanceTestNotesItem= ruleAcceptanceTestNotesItem EOF ;
+    // InternalLibrettoSpec.g:5637:1: entryRuleAcceptanceTestNotesItem returns [EObject current=null] : iv_ruleAcceptanceTestNotesItem= ruleAcceptanceTestNotesItem EOF ;
     public final EObject entryRuleAcceptanceTestNotesItem() throws RecognitionException {
         EObject current = null;
 
@@ -15038,8 +15346,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:5513:64: (iv_ruleAcceptanceTestNotesItem= ruleAcceptanceTestNotesItem EOF )
-            // InternalLibrettoSpec.g:5514:2: iv_ruleAcceptanceTestNotesItem= ruleAcceptanceTestNotesItem EOF
+            // InternalLibrettoSpec.g:5637:64: (iv_ruleAcceptanceTestNotesItem= ruleAcceptanceTestNotesItem EOF )
+            // InternalLibrettoSpec.g:5638:2: iv_ruleAcceptanceTestNotesItem= ruleAcceptanceTestNotesItem EOF
             {
              newCompositeNode(grammarAccess.getAcceptanceTestNotesItemRule()); 
             pushFollow(FOLLOW_1);
@@ -15066,7 +15374,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAcceptanceTestNotesItem"
-    // InternalLibrettoSpec.g:5520:1: ruleAcceptanceTestNotesItem returns [EObject current=null] : ( (lv_notes_0_0= ruleNotesField ) ) ;
+    // InternalLibrettoSpec.g:5644:1: ruleAcceptanceTestNotesItem returns [EObject current=null] : ( (lv_notes_0_0= ruleNotesField ) ) ;
     public final EObject ruleAcceptanceTestNotesItem() throws RecognitionException {
         EObject current = null;
 
@@ -15077,14 +15385,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:5526:2: ( ( (lv_notes_0_0= ruleNotesField ) ) )
-            // InternalLibrettoSpec.g:5527:2: ( (lv_notes_0_0= ruleNotesField ) )
+            // InternalLibrettoSpec.g:5650:2: ( ( (lv_notes_0_0= ruleNotesField ) ) )
+            // InternalLibrettoSpec.g:5651:2: ( (lv_notes_0_0= ruleNotesField ) )
             {
-            // InternalLibrettoSpec.g:5527:2: ( (lv_notes_0_0= ruleNotesField ) )
-            // InternalLibrettoSpec.g:5528:3: (lv_notes_0_0= ruleNotesField )
+            // InternalLibrettoSpec.g:5651:2: ( (lv_notes_0_0= ruleNotesField ) )
+            // InternalLibrettoSpec.g:5652:3: (lv_notes_0_0= ruleNotesField )
             {
-            // InternalLibrettoSpec.g:5528:3: (lv_notes_0_0= ruleNotesField )
-            // InternalLibrettoSpec.g:5529:4: lv_notes_0_0= ruleNotesField
+            // InternalLibrettoSpec.g:5652:3: (lv_notes_0_0= ruleNotesField )
+            // InternalLibrettoSpec.g:5653:4: lv_notes_0_0= ruleNotesField
             {
 
             				newCompositeNode(grammarAccess.getAcceptanceTestNotesItemAccess().getNotesNotesFieldParserRuleCall_0());
@@ -15131,7 +15439,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAcceptanceTestContextItem"
-    // InternalLibrettoSpec.g:5549:1: entryRuleAcceptanceTestContextItem returns [EObject current=null] : iv_ruleAcceptanceTestContextItem= ruleAcceptanceTestContextItem EOF ;
+    // InternalLibrettoSpec.g:5673:1: entryRuleAcceptanceTestContextItem returns [EObject current=null] : iv_ruleAcceptanceTestContextItem= ruleAcceptanceTestContextItem EOF ;
     public final EObject entryRuleAcceptanceTestContextItem() throws RecognitionException {
         EObject current = null;
 
@@ -15139,8 +15447,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:5549:66: (iv_ruleAcceptanceTestContextItem= ruleAcceptanceTestContextItem EOF )
-            // InternalLibrettoSpec.g:5550:2: iv_ruleAcceptanceTestContextItem= ruleAcceptanceTestContextItem EOF
+            // InternalLibrettoSpec.g:5673:66: (iv_ruleAcceptanceTestContextItem= ruleAcceptanceTestContextItem EOF )
+            // InternalLibrettoSpec.g:5674:2: iv_ruleAcceptanceTestContextItem= ruleAcceptanceTestContextItem EOF
             {
              newCompositeNode(grammarAccess.getAcceptanceTestContextItemRule()); 
             pushFollow(FOLLOW_1);
@@ -15167,7 +15475,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAcceptanceTestContextItem"
-    // InternalLibrettoSpec.g:5556:1: ruleAcceptanceTestContextItem returns [EObject current=null] : ( (lv_context_0_0= ruleContextField ) ) ;
+    // InternalLibrettoSpec.g:5680:1: ruleAcceptanceTestContextItem returns [EObject current=null] : ( (lv_context_0_0= ruleContextField ) ) ;
     public final EObject ruleAcceptanceTestContextItem() throws RecognitionException {
         EObject current = null;
 
@@ -15178,14 +15486,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:5562:2: ( ( (lv_context_0_0= ruleContextField ) ) )
-            // InternalLibrettoSpec.g:5563:2: ( (lv_context_0_0= ruleContextField ) )
+            // InternalLibrettoSpec.g:5686:2: ( ( (lv_context_0_0= ruleContextField ) ) )
+            // InternalLibrettoSpec.g:5687:2: ( (lv_context_0_0= ruleContextField ) )
             {
-            // InternalLibrettoSpec.g:5563:2: ( (lv_context_0_0= ruleContextField ) )
-            // InternalLibrettoSpec.g:5564:3: (lv_context_0_0= ruleContextField )
+            // InternalLibrettoSpec.g:5687:2: ( (lv_context_0_0= ruleContextField ) )
+            // InternalLibrettoSpec.g:5688:3: (lv_context_0_0= ruleContextField )
             {
-            // InternalLibrettoSpec.g:5564:3: (lv_context_0_0= ruleContextField )
-            // InternalLibrettoSpec.g:5565:4: lv_context_0_0= ruleContextField
+            // InternalLibrettoSpec.g:5688:3: (lv_context_0_0= ruleContextField )
+            // InternalLibrettoSpec.g:5689:4: lv_context_0_0= ruleContextField
             {
 
             				newCompositeNode(grammarAccess.getAcceptanceTestContextItemAccess().getContextContextFieldParserRuleCall_0());
@@ -15232,7 +15540,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleValidatesField"
-    // InternalLibrettoSpec.g:5585:1: entryRuleValidatesField returns [EObject current=null] : iv_ruleValidatesField= ruleValidatesField EOF ;
+    // InternalLibrettoSpec.g:5709:1: entryRuleValidatesField returns [EObject current=null] : iv_ruleValidatesField= ruleValidatesField EOF ;
     public final EObject entryRuleValidatesField() throws RecognitionException {
         EObject current = null;
 
@@ -15240,8 +15548,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:5585:55: (iv_ruleValidatesField= ruleValidatesField EOF )
-            // InternalLibrettoSpec.g:5586:2: iv_ruleValidatesField= ruleValidatesField EOF
+            // InternalLibrettoSpec.g:5709:55: (iv_ruleValidatesField= ruleValidatesField EOF )
+            // InternalLibrettoSpec.g:5710:2: iv_ruleValidatesField= ruleValidatesField EOF
             {
              newCompositeNode(grammarAccess.getValidatesFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -15268,7 +15576,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleValidatesField"
-    // InternalLibrettoSpec.g:5592:1: ruleValidatesField returns [EObject current=null] : (otherlv_0= 'validates' otherlv_1= ':' ( (lv_value_2_0= ruleBehaviorIdList ) ) ) ;
+    // InternalLibrettoSpec.g:5716:1: ruleValidatesField returns [EObject current=null] : (otherlv_0= 'validates' otherlv_1= ':' ( (lv_value_2_0= ruleBehaviorIdList ) ) ) ;
     public final EObject ruleValidatesField() throws RecognitionException {
         EObject current = null;
 
@@ -15281,13 +15589,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:5598:2: ( (otherlv_0= 'validates' otherlv_1= ':' ( (lv_value_2_0= ruleBehaviorIdList ) ) ) )
-            // InternalLibrettoSpec.g:5599:2: (otherlv_0= 'validates' otherlv_1= ':' ( (lv_value_2_0= ruleBehaviorIdList ) ) )
+            // InternalLibrettoSpec.g:5722:2: ( (otherlv_0= 'validates' otherlv_1= ':' ( (lv_value_2_0= ruleBehaviorIdList ) ) ) )
+            // InternalLibrettoSpec.g:5723:2: (otherlv_0= 'validates' otherlv_1= ':' ( (lv_value_2_0= ruleBehaviorIdList ) ) )
             {
-            // InternalLibrettoSpec.g:5599:2: (otherlv_0= 'validates' otherlv_1= ':' ( (lv_value_2_0= ruleBehaviorIdList ) ) )
-            // InternalLibrettoSpec.g:5600:3: otherlv_0= 'validates' otherlv_1= ':' ( (lv_value_2_0= ruleBehaviorIdList ) )
+            // InternalLibrettoSpec.g:5723:2: (otherlv_0= 'validates' otherlv_1= ':' ( (lv_value_2_0= ruleBehaviorIdList ) ) )
+            // InternalLibrettoSpec.g:5724:3: otherlv_0= 'validates' otherlv_1= ':' ( (lv_value_2_0= ruleBehaviorIdList ) )
             {
-            otherlv_0=(Token)match(input,74,FOLLOW_17); 
+            otherlv_0=(Token)match(input,76,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getValidatesFieldAccess().getValidatesKeyword_0());
             		
@@ -15295,11 +15603,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getValidatesFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:5608:3: ( (lv_value_2_0= ruleBehaviorIdList ) )
-            // InternalLibrettoSpec.g:5609:4: (lv_value_2_0= ruleBehaviorIdList )
+            // InternalLibrettoSpec.g:5732:3: ( (lv_value_2_0= ruleBehaviorIdList ) )
+            // InternalLibrettoSpec.g:5733:4: (lv_value_2_0= ruleBehaviorIdList )
             {
-            // InternalLibrettoSpec.g:5609:4: (lv_value_2_0= ruleBehaviorIdList )
-            // InternalLibrettoSpec.g:5610:5: lv_value_2_0= ruleBehaviorIdList
+            // InternalLibrettoSpec.g:5733:4: (lv_value_2_0= ruleBehaviorIdList )
+            // InternalLibrettoSpec.g:5734:5: lv_value_2_0= ruleBehaviorIdList
             {
 
             					newCompositeNode(grammarAccess.getValidatesFieldAccess().getValueBehaviorIdListParserRuleCall_2_0());
@@ -15349,7 +15657,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePreconditionsField"
-    // InternalLibrettoSpec.g:5631:1: entryRulePreconditionsField returns [EObject current=null] : iv_rulePreconditionsField= rulePreconditionsField EOF ;
+    // InternalLibrettoSpec.g:5755:1: entryRulePreconditionsField returns [EObject current=null] : iv_rulePreconditionsField= rulePreconditionsField EOF ;
     public final EObject entryRulePreconditionsField() throws RecognitionException {
         EObject current = null;
 
@@ -15357,8 +15665,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:5631:59: (iv_rulePreconditionsField= rulePreconditionsField EOF )
-            // InternalLibrettoSpec.g:5632:2: iv_rulePreconditionsField= rulePreconditionsField EOF
+            // InternalLibrettoSpec.g:5755:59: (iv_rulePreconditionsField= rulePreconditionsField EOF )
+            // InternalLibrettoSpec.g:5756:2: iv_rulePreconditionsField= rulePreconditionsField EOF
             {
              newCompositeNode(grammarAccess.getPreconditionsFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -15385,7 +15693,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePreconditionsField"
-    // InternalLibrettoSpec.g:5638:1: rulePreconditionsField returns [EObject current=null] : (otherlv_0= 'preconditions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) ) ;
+    // InternalLibrettoSpec.g:5762:1: rulePreconditionsField returns [EObject current=null] : (otherlv_0= 'preconditions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) ) ;
     public final EObject rulePreconditionsField() throws RecognitionException {
         EObject current = null;
 
@@ -15398,13 +15706,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:5644:2: ( (otherlv_0= 'preconditions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) ) )
-            // InternalLibrettoSpec.g:5645:2: (otherlv_0= 'preconditions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) )
+            // InternalLibrettoSpec.g:5768:2: ( (otherlv_0= 'preconditions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) ) )
+            // InternalLibrettoSpec.g:5769:2: (otherlv_0= 'preconditions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) )
             {
-            // InternalLibrettoSpec.g:5645:2: (otherlv_0= 'preconditions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) )
-            // InternalLibrettoSpec.g:5646:3: otherlv_0= 'preconditions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) )
+            // InternalLibrettoSpec.g:5769:2: (otherlv_0= 'preconditions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) )
+            // InternalLibrettoSpec.g:5770:3: otherlv_0= 'preconditions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) )
             {
-            otherlv_0=(Token)match(input,75,FOLLOW_17); 
+            otherlv_0=(Token)match(input,77,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getPreconditionsFieldAccess().getPreconditionsKeyword_0());
             		
@@ -15412,11 +15720,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getPreconditionsFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:5654:3: ( (lv_value_2_0= ruleTextList ) )
-            // InternalLibrettoSpec.g:5655:4: (lv_value_2_0= ruleTextList )
+            // InternalLibrettoSpec.g:5778:3: ( (lv_value_2_0= ruleTextList ) )
+            // InternalLibrettoSpec.g:5779:4: (lv_value_2_0= ruleTextList )
             {
-            // InternalLibrettoSpec.g:5655:4: (lv_value_2_0= ruleTextList )
-            // InternalLibrettoSpec.g:5656:5: lv_value_2_0= ruleTextList
+            // InternalLibrettoSpec.g:5779:4: (lv_value_2_0= ruleTextList )
+            // InternalLibrettoSpec.g:5780:5: lv_value_2_0= ruleTextList
             {
 
             					newCompositeNode(grammarAccess.getPreconditionsFieldAccess().getValueTextListParserRuleCall_2_0());
@@ -15466,7 +15774,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleActionsField"
-    // InternalLibrettoSpec.g:5677:1: entryRuleActionsField returns [EObject current=null] : iv_ruleActionsField= ruleActionsField EOF ;
+    // InternalLibrettoSpec.g:5801:1: entryRuleActionsField returns [EObject current=null] : iv_ruleActionsField= ruleActionsField EOF ;
     public final EObject entryRuleActionsField() throws RecognitionException {
         EObject current = null;
 
@@ -15474,8 +15782,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:5677:53: (iv_ruleActionsField= ruleActionsField EOF )
-            // InternalLibrettoSpec.g:5678:2: iv_ruleActionsField= ruleActionsField EOF
+            // InternalLibrettoSpec.g:5801:53: (iv_ruleActionsField= ruleActionsField EOF )
+            // InternalLibrettoSpec.g:5802:2: iv_ruleActionsField= ruleActionsField EOF
             {
              newCompositeNode(grammarAccess.getActionsFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -15502,7 +15810,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleActionsField"
-    // InternalLibrettoSpec.g:5684:1: ruleActionsField returns [EObject current=null] : (otherlv_0= 'actions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) ) ;
+    // InternalLibrettoSpec.g:5808:1: ruleActionsField returns [EObject current=null] : (otherlv_0= 'actions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) ) ;
     public final EObject ruleActionsField() throws RecognitionException {
         EObject current = null;
 
@@ -15515,13 +15823,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:5690:2: ( (otherlv_0= 'actions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) ) )
-            // InternalLibrettoSpec.g:5691:2: (otherlv_0= 'actions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) )
+            // InternalLibrettoSpec.g:5814:2: ( (otherlv_0= 'actions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) ) )
+            // InternalLibrettoSpec.g:5815:2: (otherlv_0= 'actions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) )
             {
-            // InternalLibrettoSpec.g:5691:2: (otherlv_0= 'actions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) )
-            // InternalLibrettoSpec.g:5692:3: otherlv_0= 'actions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) )
+            // InternalLibrettoSpec.g:5815:2: (otherlv_0= 'actions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) )
+            // InternalLibrettoSpec.g:5816:3: otherlv_0= 'actions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) )
             {
-            otherlv_0=(Token)match(input,76,FOLLOW_17); 
+            otherlv_0=(Token)match(input,78,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getActionsFieldAccess().getActionsKeyword_0());
             		
@@ -15529,11 +15837,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getActionsFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:5700:3: ( (lv_value_2_0= ruleTextList ) )
-            // InternalLibrettoSpec.g:5701:4: (lv_value_2_0= ruleTextList )
+            // InternalLibrettoSpec.g:5824:3: ( (lv_value_2_0= ruleTextList ) )
+            // InternalLibrettoSpec.g:5825:4: (lv_value_2_0= ruleTextList )
             {
-            // InternalLibrettoSpec.g:5701:4: (lv_value_2_0= ruleTextList )
-            // InternalLibrettoSpec.g:5702:5: lv_value_2_0= ruleTextList
+            // InternalLibrettoSpec.g:5825:4: (lv_value_2_0= ruleTextList )
+            // InternalLibrettoSpec.g:5826:5: lv_value_2_0= ruleTextList
             {
 
             					newCompositeNode(grammarAccess.getActionsFieldAccess().getValueTextListParserRuleCall_2_0());
@@ -15583,7 +15891,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAssertionsField"
-    // InternalLibrettoSpec.g:5723:1: entryRuleAssertionsField returns [EObject current=null] : iv_ruleAssertionsField= ruleAssertionsField EOF ;
+    // InternalLibrettoSpec.g:5847:1: entryRuleAssertionsField returns [EObject current=null] : iv_ruleAssertionsField= ruleAssertionsField EOF ;
     public final EObject entryRuleAssertionsField() throws RecognitionException {
         EObject current = null;
 
@@ -15591,8 +15899,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:5723:56: (iv_ruleAssertionsField= ruleAssertionsField EOF )
-            // InternalLibrettoSpec.g:5724:2: iv_ruleAssertionsField= ruleAssertionsField EOF
+            // InternalLibrettoSpec.g:5847:56: (iv_ruleAssertionsField= ruleAssertionsField EOF )
+            // InternalLibrettoSpec.g:5848:2: iv_ruleAssertionsField= ruleAssertionsField EOF
             {
              newCompositeNode(grammarAccess.getAssertionsFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -15619,7 +15927,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAssertionsField"
-    // InternalLibrettoSpec.g:5730:1: ruleAssertionsField returns [EObject current=null] : (otherlv_0= 'assertions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) ) ;
+    // InternalLibrettoSpec.g:5854:1: ruleAssertionsField returns [EObject current=null] : (otherlv_0= 'assertions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) ) ;
     public final EObject ruleAssertionsField() throws RecognitionException {
         EObject current = null;
 
@@ -15632,13 +15940,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:5736:2: ( (otherlv_0= 'assertions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) ) )
-            // InternalLibrettoSpec.g:5737:2: (otherlv_0= 'assertions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) )
+            // InternalLibrettoSpec.g:5860:2: ( (otherlv_0= 'assertions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) ) )
+            // InternalLibrettoSpec.g:5861:2: (otherlv_0= 'assertions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) )
             {
-            // InternalLibrettoSpec.g:5737:2: (otherlv_0= 'assertions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) )
-            // InternalLibrettoSpec.g:5738:3: otherlv_0= 'assertions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) )
+            // InternalLibrettoSpec.g:5861:2: (otherlv_0= 'assertions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) )
+            // InternalLibrettoSpec.g:5862:3: otherlv_0= 'assertions' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) )
             {
-            otherlv_0=(Token)match(input,77,FOLLOW_17); 
+            otherlv_0=(Token)match(input,79,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getAssertionsFieldAccess().getAssertionsKeyword_0());
             		
@@ -15646,11 +15954,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getAssertionsFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:5746:3: ( (lv_value_2_0= ruleTextList ) )
-            // InternalLibrettoSpec.g:5747:4: (lv_value_2_0= ruleTextList )
+            // InternalLibrettoSpec.g:5870:3: ( (lv_value_2_0= ruleTextList ) )
+            // InternalLibrettoSpec.g:5871:4: (lv_value_2_0= ruleTextList )
             {
-            // InternalLibrettoSpec.g:5747:4: (lv_value_2_0= ruleTextList )
-            // InternalLibrettoSpec.g:5748:5: lv_value_2_0= ruleTextList
+            // InternalLibrettoSpec.g:5871:4: (lv_value_2_0= ruleTextList )
+            // InternalLibrettoSpec.g:5872:5: lv_value_2_0= ruleTextList
             {
 
             					newCompositeNode(grammarAccess.getAssertionsFieldAccess().getValueTextListParserRuleCall_2_0());
@@ -15700,7 +16008,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleImplementationDirectiveRecord"
-    // InternalLibrettoSpec.g:5769:1: entryRuleImplementationDirectiveRecord returns [EObject current=null] : iv_ruleImplementationDirectiveRecord= ruleImplementationDirectiveRecord EOF ;
+    // InternalLibrettoSpec.g:5893:1: entryRuleImplementationDirectiveRecord returns [EObject current=null] : iv_ruleImplementationDirectiveRecord= ruleImplementationDirectiveRecord EOF ;
     public final EObject entryRuleImplementationDirectiveRecord() throws RecognitionException {
         EObject current = null;
 
@@ -15708,8 +16016,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:5769:70: (iv_ruleImplementationDirectiveRecord= ruleImplementationDirectiveRecord EOF )
-            // InternalLibrettoSpec.g:5770:2: iv_ruleImplementationDirectiveRecord= ruleImplementationDirectiveRecord EOF
+            // InternalLibrettoSpec.g:5893:70: (iv_ruleImplementationDirectiveRecord= ruleImplementationDirectiveRecord EOF )
+            // InternalLibrettoSpec.g:5894:2: iv_ruleImplementationDirectiveRecord= ruleImplementationDirectiveRecord EOF
             {
              newCompositeNode(grammarAccess.getImplementationDirectiveRecordRule()); 
             pushFollow(FOLLOW_1);
@@ -15736,7 +16044,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleImplementationDirectiveRecord"
-    // InternalLibrettoSpec.g:5776:1: ruleImplementationDirectiveRecord returns [EObject current=null] : (otherlv_0= 'implementation_directive' ( (lv_id_1_0= ruleImplementationDirectiveId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleImplementationDirectiveRecordItem ) )* otherlv_4= '}' ) ;
+    // InternalLibrettoSpec.g:5900:1: ruleImplementationDirectiveRecord returns [EObject current=null] : (otherlv_0= 'implementation_directive' ( (lv_id_1_0= ruleImplementationDirectiveId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleImplementationDirectiveRecordItem ) )* otherlv_4= '}' ) ;
     public final EObject ruleImplementationDirectiveRecord() throws RecognitionException {
         EObject current = null;
 
@@ -15752,21 +16060,21 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:5782:2: ( (otherlv_0= 'implementation_directive' ( (lv_id_1_0= ruleImplementationDirectiveId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleImplementationDirectiveRecordItem ) )* otherlv_4= '}' ) )
-            // InternalLibrettoSpec.g:5783:2: (otherlv_0= 'implementation_directive' ( (lv_id_1_0= ruleImplementationDirectiveId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleImplementationDirectiveRecordItem ) )* otherlv_4= '}' )
+            // InternalLibrettoSpec.g:5906:2: ( (otherlv_0= 'implementation_directive' ( (lv_id_1_0= ruleImplementationDirectiveId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleImplementationDirectiveRecordItem ) )* otherlv_4= '}' ) )
+            // InternalLibrettoSpec.g:5907:2: (otherlv_0= 'implementation_directive' ( (lv_id_1_0= ruleImplementationDirectiveId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleImplementationDirectiveRecordItem ) )* otherlv_4= '}' )
             {
-            // InternalLibrettoSpec.g:5783:2: (otherlv_0= 'implementation_directive' ( (lv_id_1_0= ruleImplementationDirectiveId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleImplementationDirectiveRecordItem ) )* otherlv_4= '}' )
-            // InternalLibrettoSpec.g:5784:3: otherlv_0= 'implementation_directive' ( (lv_id_1_0= ruleImplementationDirectiveId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleImplementationDirectiveRecordItem ) )* otherlv_4= '}'
+            // InternalLibrettoSpec.g:5907:2: (otherlv_0= 'implementation_directive' ( (lv_id_1_0= ruleImplementationDirectiveId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleImplementationDirectiveRecordItem ) )* otherlv_4= '}' )
+            // InternalLibrettoSpec.g:5908:3: otherlv_0= 'implementation_directive' ( (lv_id_1_0= ruleImplementationDirectiveId ) ) otherlv_2= '{' ( (lv_items_3_0= ruleImplementationDirectiveRecordItem ) )* otherlv_4= '}'
             {
-            otherlv_0=(Token)match(input,78,FOLLOW_36); 
+            otherlv_0=(Token)match(input,80,FOLLOW_36); 
 
             			newLeafNode(otherlv_0, grammarAccess.getImplementationDirectiveRecordAccess().getImplementation_directiveKeyword_0());
             		
-            // InternalLibrettoSpec.g:5788:3: ( (lv_id_1_0= ruleImplementationDirectiveId ) )
-            // InternalLibrettoSpec.g:5789:4: (lv_id_1_0= ruleImplementationDirectiveId )
+            // InternalLibrettoSpec.g:5912:3: ( (lv_id_1_0= ruleImplementationDirectiveId ) )
+            // InternalLibrettoSpec.g:5913:4: (lv_id_1_0= ruleImplementationDirectiveId )
             {
-            // InternalLibrettoSpec.g:5789:4: (lv_id_1_0= ruleImplementationDirectiveId )
-            // InternalLibrettoSpec.g:5790:5: lv_id_1_0= ruleImplementationDirectiveId
+            // InternalLibrettoSpec.g:5913:4: (lv_id_1_0= ruleImplementationDirectiveId )
+            // InternalLibrettoSpec.g:5914:5: lv_id_1_0= ruleImplementationDirectiveId
             {
 
             					newCompositeNode(grammarAccess.getImplementationDirectiveRecordAccess().getIdImplementationDirectiveIdParserRuleCall_1_0());
@@ -15797,23 +16105,23 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getImplementationDirectiveRecordAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalLibrettoSpec.g:5811:3: ( (lv_items_3_0= ruleImplementationDirectiveRecordItem ) )*
+            // InternalLibrettoSpec.g:5935:3: ( (lv_items_3_0= ruleImplementationDirectiveRecordItem ) )*
             loop35:
             do {
                 int alt35=2;
                 int LA35_0 = input.LA(1);
 
-                if ( (LA35_0==22||LA35_0==63||(LA35_0>=79 && LA35_0<=86)) ) {
+                if ( (LA35_0==22||LA35_0==65||(LA35_0>=81 && LA35_0<=88)) ) {
                     alt35=1;
                 }
 
 
                 switch (alt35) {
             	case 1 :
-            	    // InternalLibrettoSpec.g:5812:4: (lv_items_3_0= ruleImplementationDirectiveRecordItem )
+            	    // InternalLibrettoSpec.g:5936:4: (lv_items_3_0= ruleImplementationDirectiveRecordItem )
             	    {
-            	    // InternalLibrettoSpec.g:5812:4: (lv_items_3_0= ruleImplementationDirectiveRecordItem )
-            	    // InternalLibrettoSpec.g:5813:5: lv_items_3_0= ruleImplementationDirectiveRecordItem
+            	    // InternalLibrettoSpec.g:5936:4: (lv_items_3_0= ruleImplementationDirectiveRecordItem )
+            	    // InternalLibrettoSpec.g:5937:5: lv_items_3_0= ruleImplementationDirectiveRecordItem
             	    {
 
             	    					newCompositeNode(grammarAccess.getImplementationDirectiveRecordAccess().getItemsImplementationDirectiveRecordItemParserRuleCall_3_0());
@@ -15873,7 +16181,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleImplementationDirectiveRecordItem"
-    // InternalLibrettoSpec.g:5838:1: entryRuleImplementationDirectiveRecordItem returns [EObject current=null] : iv_ruleImplementationDirectiveRecordItem= ruleImplementationDirectiveRecordItem EOF ;
+    // InternalLibrettoSpec.g:5962:1: entryRuleImplementationDirectiveRecordItem returns [EObject current=null] : iv_ruleImplementationDirectiveRecordItem= ruleImplementationDirectiveRecordItem EOF ;
     public final EObject entryRuleImplementationDirectiveRecordItem() throws RecognitionException {
         EObject current = null;
 
@@ -15881,8 +16189,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:5838:74: (iv_ruleImplementationDirectiveRecordItem= ruleImplementationDirectiveRecordItem EOF )
-            // InternalLibrettoSpec.g:5839:2: iv_ruleImplementationDirectiveRecordItem= ruleImplementationDirectiveRecordItem EOF
+            // InternalLibrettoSpec.g:5962:74: (iv_ruleImplementationDirectiveRecordItem= ruleImplementationDirectiveRecordItem EOF )
+            // InternalLibrettoSpec.g:5963:2: iv_ruleImplementationDirectiveRecordItem= ruleImplementationDirectiveRecordItem EOF
             {
              newCompositeNode(grammarAccess.getImplementationDirectiveRecordItemRule()); 
             pushFollow(FOLLOW_1);
@@ -15909,7 +16217,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleImplementationDirectiveRecordItem"
-    // InternalLibrettoSpec.g:5845:1: ruleImplementationDirectiveRecordItem returns [EObject current=null] : (this_ImplementationDirectiveSourceItem_0= ruleImplementationDirectiveSourceItem | this_ImplementationDirectiveAppliesToItem_1= ruleImplementationDirectiveAppliesToItem | this_ImplementationDirectiveStrengthItem_2= ruleImplementationDirectiveStrengthItem | this_ImplementationDirectiveDirectiveItem_3= ruleImplementationDirectiveDirectiveItem | this_ImplementationDirectiveCategoryItem_4= ruleImplementationDirectiveCategoryItem | this_ImplementationDirectiveConstraintsItem_5= ruleImplementationDirectiveConstraintsItem | this_ImplementationDirectiveAllowedFlexibilityItem_6= ruleImplementationDirectiveAllowedFlexibilityItem | this_ImplementationDirectiveReferencesItem_7= ruleImplementationDirectiveReferencesItem | this_ImplementationDirectiveRationaleItem_8= ruleImplementationDirectiveRationaleItem | this_ImplementationDirectiveContextItem_9= ruleImplementationDirectiveContextItem ) ;
+    // InternalLibrettoSpec.g:5969:1: ruleImplementationDirectiveRecordItem returns [EObject current=null] : (this_ImplementationDirectiveSourceItem_0= ruleImplementationDirectiveSourceItem | this_ImplementationDirectiveAppliesToItem_1= ruleImplementationDirectiveAppliesToItem | this_ImplementationDirectiveStrengthItem_2= ruleImplementationDirectiveStrengthItem | this_ImplementationDirectiveDirectiveItem_3= ruleImplementationDirectiveDirectiveItem | this_ImplementationDirectiveCategoryItem_4= ruleImplementationDirectiveCategoryItem | this_ImplementationDirectiveConstraintsItem_5= ruleImplementationDirectiveConstraintsItem | this_ImplementationDirectiveAllowedFlexibilityItem_6= ruleImplementationDirectiveAllowedFlexibilityItem | this_ImplementationDirectiveReferencesItem_7= ruleImplementationDirectiveReferencesItem | this_ImplementationDirectiveRationaleItem_8= ruleImplementationDirectiveRationaleItem | this_ImplementationDirectiveContextItem_9= ruleImplementationDirectiveContextItem ) ;
     public final EObject ruleImplementationDirectiveRecordItem() throws RecognitionException {
         EObject current = null;
 
@@ -15938,43 +16246,43 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:5851:2: ( (this_ImplementationDirectiveSourceItem_0= ruleImplementationDirectiveSourceItem | this_ImplementationDirectiveAppliesToItem_1= ruleImplementationDirectiveAppliesToItem | this_ImplementationDirectiveStrengthItem_2= ruleImplementationDirectiveStrengthItem | this_ImplementationDirectiveDirectiveItem_3= ruleImplementationDirectiveDirectiveItem | this_ImplementationDirectiveCategoryItem_4= ruleImplementationDirectiveCategoryItem | this_ImplementationDirectiveConstraintsItem_5= ruleImplementationDirectiveConstraintsItem | this_ImplementationDirectiveAllowedFlexibilityItem_6= ruleImplementationDirectiveAllowedFlexibilityItem | this_ImplementationDirectiveReferencesItem_7= ruleImplementationDirectiveReferencesItem | this_ImplementationDirectiveRationaleItem_8= ruleImplementationDirectiveRationaleItem | this_ImplementationDirectiveContextItem_9= ruleImplementationDirectiveContextItem ) )
-            // InternalLibrettoSpec.g:5852:2: (this_ImplementationDirectiveSourceItem_0= ruleImplementationDirectiveSourceItem | this_ImplementationDirectiveAppliesToItem_1= ruleImplementationDirectiveAppliesToItem | this_ImplementationDirectiveStrengthItem_2= ruleImplementationDirectiveStrengthItem | this_ImplementationDirectiveDirectiveItem_3= ruleImplementationDirectiveDirectiveItem | this_ImplementationDirectiveCategoryItem_4= ruleImplementationDirectiveCategoryItem | this_ImplementationDirectiveConstraintsItem_5= ruleImplementationDirectiveConstraintsItem | this_ImplementationDirectiveAllowedFlexibilityItem_6= ruleImplementationDirectiveAllowedFlexibilityItem | this_ImplementationDirectiveReferencesItem_7= ruleImplementationDirectiveReferencesItem | this_ImplementationDirectiveRationaleItem_8= ruleImplementationDirectiveRationaleItem | this_ImplementationDirectiveContextItem_9= ruleImplementationDirectiveContextItem )
+            // InternalLibrettoSpec.g:5975:2: ( (this_ImplementationDirectiveSourceItem_0= ruleImplementationDirectiveSourceItem | this_ImplementationDirectiveAppliesToItem_1= ruleImplementationDirectiveAppliesToItem | this_ImplementationDirectiveStrengthItem_2= ruleImplementationDirectiveStrengthItem | this_ImplementationDirectiveDirectiveItem_3= ruleImplementationDirectiveDirectiveItem | this_ImplementationDirectiveCategoryItem_4= ruleImplementationDirectiveCategoryItem | this_ImplementationDirectiveConstraintsItem_5= ruleImplementationDirectiveConstraintsItem | this_ImplementationDirectiveAllowedFlexibilityItem_6= ruleImplementationDirectiveAllowedFlexibilityItem | this_ImplementationDirectiveReferencesItem_7= ruleImplementationDirectiveReferencesItem | this_ImplementationDirectiveRationaleItem_8= ruleImplementationDirectiveRationaleItem | this_ImplementationDirectiveContextItem_9= ruleImplementationDirectiveContextItem ) )
+            // InternalLibrettoSpec.g:5976:2: (this_ImplementationDirectiveSourceItem_0= ruleImplementationDirectiveSourceItem | this_ImplementationDirectiveAppliesToItem_1= ruleImplementationDirectiveAppliesToItem | this_ImplementationDirectiveStrengthItem_2= ruleImplementationDirectiveStrengthItem | this_ImplementationDirectiveDirectiveItem_3= ruleImplementationDirectiveDirectiveItem | this_ImplementationDirectiveCategoryItem_4= ruleImplementationDirectiveCategoryItem | this_ImplementationDirectiveConstraintsItem_5= ruleImplementationDirectiveConstraintsItem | this_ImplementationDirectiveAllowedFlexibilityItem_6= ruleImplementationDirectiveAllowedFlexibilityItem | this_ImplementationDirectiveReferencesItem_7= ruleImplementationDirectiveReferencesItem | this_ImplementationDirectiveRationaleItem_8= ruleImplementationDirectiveRationaleItem | this_ImplementationDirectiveContextItem_9= ruleImplementationDirectiveContextItem )
             {
-            // InternalLibrettoSpec.g:5852:2: (this_ImplementationDirectiveSourceItem_0= ruleImplementationDirectiveSourceItem | this_ImplementationDirectiveAppliesToItem_1= ruleImplementationDirectiveAppliesToItem | this_ImplementationDirectiveStrengthItem_2= ruleImplementationDirectiveStrengthItem | this_ImplementationDirectiveDirectiveItem_3= ruleImplementationDirectiveDirectiveItem | this_ImplementationDirectiveCategoryItem_4= ruleImplementationDirectiveCategoryItem | this_ImplementationDirectiveConstraintsItem_5= ruleImplementationDirectiveConstraintsItem | this_ImplementationDirectiveAllowedFlexibilityItem_6= ruleImplementationDirectiveAllowedFlexibilityItem | this_ImplementationDirectiveReferencesItem_7= ruleImplementationDirectiveReferencesItem | this_ImplementationDirectiveRationaleItem_8= ruleImplementationDirectiveRationaleItem | this_ImplementationDirectiveContextItem_9= ruleImplementationDirectiveContextItem )
+            // InternalLibrettoSpec.g:5976:2: (this_ImplementationDirectiveSourceItem_0= ruleImplementationDirectiveSourceItem | this_ImplementationDirectiveAppliesToItem_1= ruleImplementationDirectiveAppliesToItem | this_ImplementationDirectiveStrengthItem_2= ruleImplementationDirectiveStrengthItem | this_ImplementationDirectiveDirectiveItem_3= ruleImplementationDirectiveDirectiveItem | this_ImplementationDirectiveCategoryItem_4= ruleImplementationDirectiveCategoryItem | this_ImplementationDirectiveConstraintsItem_5= ruleImplementationDirectiveConstraintsItem | this_ImplementationDirectiveAllowedFlexibilityItem_6= ruleImplementationDirectiveAllowedFlexibilityItem | this_ImplementationDirectiveReferencesItem_7= ruleImplementationDirectiveReferencesItem | this_ImplementationDirectiveRationaleItem_8= ruleImplementationDirectiveRationaleItem | this_ImplementationDirectiveContextItem_9= ruleImplementationDirectiveContextItem )
             int alt36=10;
             switch ( input.LA(1) ) {
-            case 86:
+            case 88:
                 {
                 alt36=1;
                 }
                 break;
-            case 79:
+            case 81:
                 {
                 alt36=2;
                 }
                 break;
-            case 80:
+            case 82:
                 {
                 alt36=3;
                 }
                 break;
-            case 81:
+            case 83:
                 {
                 alt36=4;
                 }
                 break;
-            case 82:
+            case 84:
                 {
                 alt36=5;
                 }
                 break;
-            case 83:
+            case 85:
                 {
                 alt36=6;
                 }
                 break;
-            case 84:
+            case 86:
                 {
                 alt36=7;
                 }
@@ -15984,12 +16292,12 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                 alt36=8;
                 }
                 break;
-            case 85:
+            case 87:
                 {
                 alt36=9;
                 }
                 break;
-            case 63:
+            case 65:
                 {
                 alt36=10;
                 }
@@ -16003,7 +16311,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             switch (alt36) {
                 case 1 :
-                    // InternalLibrettoSpec.g:5853:3: this_ImplementationDirectiveSourceItem_0= ruleImplementationDirectiveSourceItem
+                    // InternalLibrettoSpec.g:5977:3: this_ImplementationDirectiveSourceItem_0= ruleImplementationDirectiveSourceItem
                     {
 
                     			newCompositeNode(grammarAccess.getImplementationDirectiveRecordItemAccess().getImplementationDirectiveSourceItemParserRuleCall_0());
@@ -16021,7 +16329,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoSpec.g:5862:3: this_ImplementationDirectiveAppliesToItem_1= ruleImplementationDirectiveAppliesToItem
+                    // InternalLibrettoSpec.g:5986:3: this_ImplementationDirectiveAppliesToItem_1= ruleImplementationDirectiveAppliesToItem
                     {
 
                     			newCompositeNode(grammarAccess.getImplementationDirectiveRecordItemAccess().getImplementationDirectiveAppliesToItemParserRuleCall_1());
@@ -16039,7 +16347,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalLibrettoSpec.g:5871:3: this_ImplementationDirectiveStrengthItem_2= ruleImplementationDirectiveStrengthItem
+                    // InternalLibrettoSpec.g:5995:3: this_ImplementationDirectiveStrengthItem_2= ruleImplementationDirectiveStrengthItem
                     {
 
                     			newCompositeNode(grammarAccess.getImplementationDirectiveRecordItemAccess().getImplementationDirectiveStrengthItemParserRuleCall_2());
@@ -16057,7 +16365,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalLibrettoSpec.g:5880:3: this_ImplementationDirectiveDirectiveItem_3= ruleImplementationDirectiveDirectiveItem
+                    // InternalLibrettoSpec.g:6004:3: this_ImplementationDirectiveDirectiveItem_3= ruleImplementationDirectiveDirectiveItem
                     {
 
                     			newCompositeNode(grammarAccess.getImplementationDirectiveRecordItemAccess().getImplementationDirectiveDirectiveItemParserRuleCall_3());
@@ -16075,7 +16383,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalLibrettoSpec.g:5889:3: this_ImplementationDirectiveCategoryItem_4= ruleImplementationDirectiveCategoryItem
+                    // InternalLibrettoSpec.g:6013:3: this_ImplementationDirectiveCategoryItem_4= ruleImplementationDirectiveCategoryItem
                     {
 
                     			newCompositeNode(grammarAccess.getImplementationDirectiveRecordItemAccess().getImplementationDirectiveCategoryItemParserRuleCall_4());
@@ -16093,7 +16401,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalLibrettoSpec.g:5898:3: this_ImplementationDirectiveConstraintsItem_5= ruleImplementationDirectiveConstraintsItem
+                    // InternalLibrettoSpec.g:6022:3: this_ImplementationDirectiveConstraintsItem_5= ruleImplementationDirectiveConstraintsItem
                     {
 
                     			newCompositeNode(grammarAccess.getImplementationDirectiveRecordItemAccess().getImplementationDirectiveConstraintsItemParserRuleCall_5());
@@ -16111,7 +16419,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalLibrettoSpec.g:5907:3: this_ImplementationDirectiveAllowedFlexibilityItem_6= ruleImplementationDirectiveAllowedFlexibilityItem
+                    // InternalLibrettoSpec.g:6031:3: this_ImplementationDirectiveAllowedFlexibilityItem_6= ruleImplementationDirectiveAllowedFlexibilityItem
                     {
 
                     			newCompositeNode(grammarAccess.getImplementationDirectiveRecordItemAccess().getImplementationDirectiveAllowedFlexibilityItemParserRuleCall_6());
@@ -16129,7 +16437,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalLibrettoSpec.g:5916:3: this_ImplementationDirectiveReferencesItem_7= ruleImplementationDirectiveReferencesItem
+                    // InternalLibrettoSpec.g:6040:3: this_ImplementationDirectiveReferencesItem_7= ruleImplementationDirectiveReferencesItem
                     {
 
                     			newCompositeNode(grammarAccess.getImplementationDirectiveRecordItemAccess().getImplementationDirectiveReferencesItemParserRuleCall_7());
@@ -16147,7 +16455,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // InternalLibrettoSpec.g:5925:3: this_ImplementationDirectiveRationaleItem_8= ruleImplementationDirectiveRationaleItem
+                    // InternalLibrettoSpec.g:6049:3: this_ImplementationDirectiveRationaleItem_8= ruleImplementationDirectiveRationaleItem
                     {
 
                     			newCompositeNode(grammarAccess.getImplementationDirectiveRecordItemAccess().getImplementationDirectiveRationaleItemParserRuleCall_8());
@@ -16165,7 +16473,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // InternalLibrettoSpec.g:5934:3: this_ImplementationDirectiveContextItem_9= ruleImplementationDirectiveContextItem
+                    // InternalLibrettoSpec.g:6058:3: this_ImplementationDirectiveContextItem_9= ruleImplementationDirectiveContextItem
                     {
 
                     			newCompositeNode(grammarAccess.getImplementationDirectiveRecordItemAccess().getImplementationDirectiveContextItemParserRuleCall_9());
@@ -16205,7 +16513,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleImplementationDirectiveSourceItem"
-    // InternalLibrettoSpec.g:5946:1: entryRuleImplementationDirectiveSourceItem returns [EObject current=null] : iv_ruleImplementationDirectiveSourceItem= ruleImplementationDirectiveSourceItem EOF ;
+    // InternalLibrettoSpec.g:6070:1: entryRuleImplementationDirectiveSourceItem returns [EObject current=null] : iv_ruleImplementationDirectiveSourceItem= ruleImplementationDirectiveSourceItem EOF ;
     public final EObject entryRuleImplementationDirectiveSourceItem() throws RecognitionException {
         EObject current = null;
 
@@ -16213,8 +16521,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:5946:74: (iv_ruleImplementationDirectiveSourceItem= ruleImplementationDirectiveSourceItem EOF )
-            // InternalLibrettoSpec.g:5947:2: iv_ruleImplementationDirectiveSourceItem= ruleImplementationDirectiveSourceItem EOF
+            // InternalLibrettoSpec.g:6070:74: (iv_ruleImplementationDirectiveSourceItem= ruleImplementationDirectiveSourceItem EOF )
+            // InternalLibrettoSpec.g:6071:2: iv_ruleImplementationDirectiveSourceItem= ruleImplementationDirectiveSourceItem EOF
             {
              newCompositeNode(grammarAccess.getImplementationDirectiveSourceItemRule()); 
             pushFollow(FOLLOW_1);
@@ -16241,7 +16549,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleImplementationDirectiveSourceItem"
-    // InternalLibrettoSpec.g:5953:1: ruleImplementationDirectiveSourceItem returns [EObject current=null] : ( (lv_source_0_0= ruleSourceBlock ) ) ;
+    // InternalLibrettoSpec.g:6077:1: ruleImplementationDirectiveSourceItem returns [EObject current=null] : ( (lv_source_0_0= ruleSourceBlock ) ) ;
     public final EObject ruleImplementationDirectiveSourceItem() throws RecognitionException {
         EObject current = null;
 
@@ -16252,14 +16560,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:5959:2: ( ( (lv_source_0_0= ruleSourceBlock ) ) )
-            // InternalLibrettoSpec.g:5960:2: ( (lv_source_0_0= ruleSourceBlock ) )
+            // InternalLibrettoSpec.g:6083:2: ( ( (lv_source_0_0= ruleSourceBlock ) ) )
+            // InternalLibrettoSpec.g:6084:2: ( (lv_source_0_0= ruleSourceBlock ) )
             {
-            // InternalLibrettoSpec.g:5960:2: ( (lv_source_0_0= ruleSourceBlock ) )
-            // InternalLibrettoSpec.g:5961:3: (lv_source_0_0= ruleSourceBlock )
+            // InternalLibrettoSpec.g:6084:2: ( (lv_source_0_0= ruleSourceBlock ) )
+            // InternalLibrettoSpec.g:6085:3: (lv_source_0_0= ruleSourceBlock )
             {
-            // InternalLibrettoSpec.g:5961:3: (lv_source_0_0= ruleSourceBlock )
-            // InternalLibrettoSpec.g:5962:4: lv_source_0_0= ruleSourceBlock
+            // InternalLibrettoSpec.g:6085:3: (lv_source_0_0= ruleSourceBlock )
+            // InternalLibrettoSpec.g:6086:4: lv_source_0_0= ruleSourceBlock
             {
 
             				newCompositeNode(grammarAccess.getImplementationDirectiveSourceItemAccess().getSourceSourceBlockParserRuleCall_0());
@@ -16306,7 +16614,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleImplementationDirectiveAppliesToItem"
-    // InternalLibrettoSpec.g:5982:1: entryRuleImplementationDirectiveAppliesToItem returns [EObject current=null] : iv_ruleImplementationDirectiveAppliesToItem= ruleImplementationDirectiveAppliesToItem EOF ;
+    // InternalLibrettoSpec.g:6106:1: entryRuleImplementationDirectiveAppliesToItem returns [EObject current=null] : iv_ruleImplementationDirectiveAppliesToItem= ruleImplementationDirectiveAppliesToItem EOF ;
     public final EObject entryRuleImplementationDirectiveAppliesToItem() throws RecognitionException {
         EObject current = null;
 
@@ -16314,8 +16622,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:5982:77: (iv_ruleImplementationDirectiveAppliesToItem= ruleImplementationDirectiveAppliesToItem EOF )
-            // InternalLibrettoSpec.g:5983:2: iv_ruleImplementationDirectiveAppliesToItem= ruleImplementationDirectiveAppliesToItem EOF
+            // InternalLibrettoSpec.g:6106:77: (iv_ruleImplementationDirectiveAppliesToItem= ruleImplementationDirectiveAppliesToItem EOF )
+            // InternalLibrettoSpec.g:6107:2: iv_ruleImplementationDirectiveAppliesToItem= ruleImplementationDirectiveAppliesToItem EOF
             {
              newCompositeNode(grammarAccess.getImplementationDirectiveAppliesToItemRule()); 
             pushFollow(FOLLOW_1);
@@ -16342,7 +16650,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleImplementationDirectiveAppliesToItem"
-    // InternalLibrettoSpec.g:5989:1: ruleImplementationDirectiveAppliesToItem returns [EObject current=null] : ( (lv_appliesTo_0_0= ruleAppliesToField ) ) ;
+    // InternalLibrettoSpec.g:6113:1: ruleImplementationDirectiveAppliesToItem returns [EObject current=null] : ( (lv_appliesTo_0_0= ruleAppliesToField ) ) ;
     public final EObject ruleImplementationDirectiveAppliesToItem() throws RecognitionException {
         EObject current = null;
 
@@ -16353,14 +16661,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:5995:2: ( ( (lv_appliesTo_0_0= ruleAppliesToField ) ) )
-            // InternalLibrettoSpec.g:5996:2: ( (lv_appliesTo_0_0= ruleAppliesToField ) )
+            // InternalLibrettoSpec.g:6119:2: ( ( (lv_appliesTo_0_0= ruleAppliesToField ) ) )
+            // InternalLibrettoSpec.g:6120:2: ( (lv_appliesTo_0_0= ruleAppliesToField ) )
             {
-            // InternalLibrettoSpec.g:5996:2: ( (lv_appliesTo_0_0= ruleAppliesToField ) )
-            // InternalLibrettoSpec.g:5997:3: (lv_appliesTo_0_0= ruleAppliesToField )
+            // InternalLibrettoSpec.g:6120:2: ( (lv_appliesTo_0_0= ruleAppliesToField ) )
+            // InternalLibrettoSpec.g:6121:3: (lv_appliesTo_0_0= ruleAppliesToField )
             {
-            // InternalLibrettoSpec.g:5997:3: (lv_appliesTo_0_0= ruleAppliesToField )
-            // InternalLibrettoSpec.g:5998:4: lv_appliesTo_0_0= ruleAppliesToField
+            // InternalLibrettoSpec.g:6121:3: (lv_appliesTo_0_0= ruleAppliesToField )
+            // InternalLibrettoSpec.g:6122:4: lv_appliesTo_0_0= ruleAppliesToField
             {
 
             				newCompositeNode(grammarAccess.getImplementationDirectiveAppliesToItemAccess().getAppliesToAppliesToFieldParserRuleCall_0());
@@ -16407,7 +16715,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleImplementationDirectiveStrengthItem"
-    // InternalLibrettoSpec.g:6018:1: entryRuleImplementationDirectiveStrengthItem returns [EObject current=null] : iv_ruleImplementationDirectiveStrengthItem= ruleImplementationDirectiveStrengthItem EOF ;
+    // InternalLibrettoSpec.g:6142:1: entryRuleImplementationDirectiveStrengthItem returns [EObject current=null] : iv_ruleImplementationDirectiveStrengthItem= ruleImplementationDirectiveStrengthItem EOF ;
     public final EObject entryRuleImplementationDirectiveStrengthItem() throws RecognitionException {
         EObject current = null;
 
@@ -16415,8 +16723,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:6018:76: (iv_ruleImplementationDirectiveStrengthItem= ruleImplementationDirectiveStrengthItem EOF )
-            // InternalLibrettoSpec.g:6019:2: iv_ruleImplementationDirectiveStrengthItem= ruleImplementationDirectiveStrengthItem EOF
+            // InternalLibrettoSpec.g:6142:76: (iv_ruleImplementationDirectiveStrengthItem= ruleImplementationDirectiveStrengthItem EOF )
+            // InternalLibrettoSpec.g:6143:2: iv_ruleImplementationDirectiveStrengthItem= ruleImplementationDirectiveStrengthItem EOF
             {
              newCompositeNode(grammarAccess.getImplementationDirectiveStrengthItemRule()); 
             pushFollow(FOLLOW_1);
@@ -16443,7 +16751,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleImplementationDirectiveStrengthItem"
-    // InternalLibrettoSpec.g:6025:1: ruleImplementationDirectiveStrengthItem returns [EObject current=null] : ( (lv_strength_0_0= ruleStrengthField ) ) ;
+    // InternalLibrettoSpec.g:6149:1: ruleImplementationDirectiveStrengthItem returns [EObject current=null] : ( (lv_strength_0_0= ruleStrengthField ) ) ;
     public final EObject ruleImplementationDirectiveStrengthItem() throws RecognitionException {
         EObject current = null;
 
@@ -16454,14 +16762,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:6031:2: ( ( (lv_strength_0_0= ruleStrengthField ) ) )
-            // InternalLibrettoSpec.g:6032:2: ( (lv_strength_0_0= ruleStrengthField ) )
+            // InternalLibrettoSpec.g:6155:2: ( ( (lv_strength_0_0= ruleStrengthField ) ) )
+            // InternalLibrettoSpec.g:6156:2: ( (lv_strength_0_0= ruleStrengthField ) )
             {
-            // InternalLibrettoSpec.g:6032:2: ( (lv_strength_0_0= ruleStrengthField ) )
-            // InternalLibrettoSpec.g:6033:3: (lv_strength_0_0= ruleStrengthField )
+            // InternalLibrettoSpec.g:6156:2: ( (lv_strength_0_0= ruleStrengthField ) )
+            // InternalLibrettoSpec.g:6157:3: (lv_strength_0_0= ruleStrengthField )
             {
-            // InternalLibrettoSpec.g:6033:3: (lv_strength_0_0= ruleStrengthField )
-            // InternalLibrettoSpec.g:6034:4: lv_strength_0_0= ruleStrengthField
+            // InternalLibrettoSpec.g:6157:3: (lv_strength_0_0= ruleStrengthField )
+            // InternalLibrettoSpec.g:6158:4: lv_strength_0_0= ruleStrengthField
             {
 
             				newCompositeNode(grammarAccess.getImplementationDirectiveStrengthItemAccess().getStrengthStrengthFieldParserRuleCall_0());
@@ -16508,7 +16816,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleImplementationDirectiveDirectiveItem"
-    // InternalLibrettoSpec.g:6054:1: entryRuleImplementationDirectiveDirectiveItem returns [EObject current=null] : iv_ruleImplementationDirectiveDirectiveItem= ruleImplementationDirectiveDirectiveItem EOF ;
+    // InternalLibrettoSpec.g:6178:1: entryRuleImplementationDirectiveDirectiveItem returns [EObject current=null] : iv_ruleImplementationDirectiveDirectiveItem= ruleImplementationDirectiveDirectiveItem EOF ;
     public final EObject entryRuleImplementationDirectiveDirectiveItem() throws RecognitionException {
         EObject current = null;
 
@@ -16516,8 +16824,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:6054:77: (iv_ruleImplementationDirectiveDirectiveItem= ruleImplementationDirectiveDirectiveItem EOF )
-            // InternalLibrettoSpec.g:6055:2: iv_ruleImplementationDirectiveDirectiveItem= ruleImplementationDirectiveDirectiveItem EOF
+            // InternalLibrettoSpec.g:6178:77: (iv_ruleImplementationDirectiveDirectiveItem= ruleImplementationDirectiveDirectiveItem EOF )
+            // InternalLibrettoSpec.g:6179:2: iv_ruleImplementationDirectiveDirectiveItem= ruleImplementationDirectiveDirectiveItem EOF
             {
              newCompositeNode(grammarAccess.getImplementationDirectiveDirectiveItemRule()); 
             pushFollow(FOLLOW_1);
@@ -16544,7 +16852,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleImplementationDirectiveDirectiveItem"
-    // InternalLibrettoSpec.g:6061:1: ruleImplementationDirectiveDirectiveItem returns [EObject current=null] : ( (lv_directive_0_0= ruleDirectiveField ) ) ;
+    // InternalLibrettoSpec.g:6185:1: ruleImplementationDirectiveDirectiveItem returns [EObject current=null] : ( (lv_directive_0_0= ruleDirectiveField ) ) ;
     public final EObject ruleImplementationDirectiveDirectiveItem() throws RecognitionException {
         EObject current = null;
 
@@ -16555,14 +16863,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:6067:2: ( ( (lv_directive_0_0= ruleDirectiveField ) ) )
-            // InternalLibrettoSpec.g:6068:2: ( (lv_directive_0_0= ruleDirectiveField ) )
+            // InternalLibrettoSpec.g:6191:2: ( ( (lv_directive_0_0= ruleDirectiveField ) ) )
+            // InternalLibrettoSpec.g:6192:2: ( (lv_directive_0_0= ruleDirectiveField ) )
             {
-            // InternalLibrettoSpec.g:6068:2: ( (lv_directive_0_0= ruleDirectiveField ) )
-            // InternalLibrettoSpec.g:6069:3: (lv_directive_0_0= ruleDirectiveField )
+            // InternalLibrettoSpec.g:6192:2: ( (lv_directive_0_0= ruleDirectiveField ) )
+            // InternalLibrettoSpec.g:6193:3: (lv_directive_0_0= ruleDirectiveField )
             {
-            // InternalLibrettoSpec.g:6069:3: (lv_directive_0_0= ruleDirectiveField )
-            // InternalLibrettoSpec.g:6070:4: lv_directive_0_0= ruleDirectiveField
+            // InternalLibrettoSpec.g:6193:3: (lv_directive_0_0= ruleDirectiveField )
+            // InternalLibrettoSpec.g:6194:4: lv_directive_0_0= ruleDirectiveField
             {
 
             				newCompositeNode(grammarAccess.getImplementationDirectiveDirectiveItemAccess().getDirectiveDirectiveFieldParserRuleCall_0());
@@ -16609,7 +16917,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleImplementationDirectiveCategoryItem"
-    // InternalLibrettoSpec.g:6090:1: entryRuleImplementationDirectiveCategoryItem returns [EObject current=null] : iv_ruleImplementationDirectiveCategoryItem= ruleImplementationDirectiveCategoryItem EOF ;
+    // InternalLibrettoSpec.g:6214:1: entryRuleImplementationDirectiveCategoryItem returns [EObject current=null] : iv_ruleImplementationDirectiveCategoryItem= ruleImplementationDirectiveCategoryItem EOF ;
     public final EObject entryRuleImplementationDirectiveCategoryItem() throws RecognitionException {
         EObject current = null;
 
@@ -16617,8 +16925,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:6090:76: (iv_ruleImplementationDirectiveCategoryItem= ruleImplementationDirectiveCategoryItem EOF )
-            // InternalLibrettoSpec.g:6091:2: iv_ruleImplementationDirectiveCategoryItem= ruleImplementationDirectiveCategoryItem EOF
+            // InternalLibrettoSpec.g:6214:76: (iv_ruleImplementationDirectiveCategoryItem= ruleImplementationDirectiveCategoryItem EOF )
+            // InternalLibrettoSpec.g:6215:2: iv_ruleImplementationDirectiveCategoryItem= ruleImplementationDirectiveCategoryItem EOF
             {
              newCompositeNode(grammarAccess.getImplementationDirectiveCategoryItemRule()); 
             pushFollow(FOLLOW_1);
@@ -16645,7 +16953,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleImplementationDirectiveCategoryItem"
-    // InternalLibrettoSpec.g:6097:1: ruleImplementationDirectiveCategoryItem returns [EObject current=null] : ( (lv_category_0_0= ruleCategoryField ) ) ;
+    // InternalLibrettoSpec.g:6221:1: ruleImplementationDirectiveCategoryItem returns [EObject current=null] : ( (lv_category_0_0= ruleCategoryField ) ) ;
     public final EObject ruleImplementationDirectiveCategoryItem() throws RecognitionException {
         EObject current = null;
 
@@ -16656,14 +16964,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:6103:2: ( ( (lv_category_0_0= ruleCategoryField ) ) )
-            // InternalLibrettoSpec.g:6104:2: ( (lv_category_0_0= ruleCategoryField ) )
+            // InternalLibrettoSpec.g:6227:2: ( ( (lv_category_0_0= ruleCategoryField ) ) )
+            // InternalLibrettoSpec.g:6228:2: ( (lv_category_0_0= ruleCategoryField ) )
             {
-            // InternalLibrettoSpec.g:6104:2: ( (lv_category_0_0= ruleCategoryField ) )
-            // InternalLibrettoSpec.g:6105:3: (lv_category_0_0= ruleCategoryField )
+            // InternalLibrettoSpec.g:6228:2: ( (lv_category_0_0= ruleCategoryField ) )
+            // InternalLibrettoSpec.g:6229:3: (lv_category_0_0= ruleCategoryField )
             {
-            // InternalLibrettoSpec.g:6105:3: (lv_category_0_0= ruleCategoryField )
-            // InternalLibrettoSpec.g:6106:4: lv_category_0_0= ruleCategoryField
+            // InternalLibrettoSpec.g:6229:3: (lv_category_0_0= ruleCategoryField )
+            // InternalLibrettoSpec.g:6230:4: lv_category_0_0= ruleCategoryField
             {
 
             				newCompositeNode(grammarAccess.getImplementationDirectiveCategoryItemAccess().getCategoryCategoryFieldParserRuleCall_0());
@@ -16710,7 +17018,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleImplementationDirectiveConstraintsItem"
-    // InternalLibrettoSpec.g:6126:1: entryRuleImplementationDirectiveConstraintsItem returns [EObject current=null] : iv_ruleImplementationDirectiveConstraintsItem= ruleImplementationDirectiveConstraintsItem EOF ;
+    // InternalLibrettoSpec.g:6250:1: entryRuleImplementationDirectiveConstraintsItem returns [EObject current=null] : iv_ruleImplementationDirectiveConstraintsItem= ruleImplementationDirectiveConstraintsItem EOF ;
     public final EObject entryRuleImplementationDirectiveConstraintsItem() throws RecognitionException {
         EObject current = null;
 
@@ -16718,8 +17026,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:6126:79: (iv_ruleImplementationDirectiveConstraintsItem= ruleImplementationDirectiveConstraintsItem EOF )
-            // InternalLibrettoSpec.g:6127:2: iv_ruleImplementationDirectiveConstraintsItem= ruleImplementationDirectiveConstraintsItem EOF
+            // InternalLibrettoSpec.g:6250:79: (iv_ruleImplementationDirectiveConstraintsItem= ruleImplementationDirectiveConstraintsItem EOF )
+            // InternalLibrettoSpec.g:6251:2: iv_ruleImplementationDirectiveConstraintsItem= ruleImplementationDirectiveConstraintsItem EOF
             {
              newCompositeNode(grammarAccess.getImplementationDirectiveConstraintsItemRule()); 
             pushFollow(FOLLOW_1);
@@ -16746,7 +17054,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleImplementationDirectiveConstraintsItem"
-    // InternalLibrettoSpec.g:6133:1: ruleImplementationDirectiveConstraintsItem returns [EObject current=null] : ( (lv_constraints_0_0= ruleConstraintsField ) ) ;
+    // InternalLibrettoSpec.g:6257:1: ruleImplementationDirectiveConstraintsItem returns [EObject current=null] : ( (lv_constraints_0_0= ruleConstraintsField ) ) ;
     public final EObject ruleImplementationDirectiveConstraintsItem() throws RecognitionException {
         EObject current = null;
 
@@ -16757,14 +17065,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:6139:2: ( ( (lv_constraints_0_0= ruleConstraintsField ) ) )
-            // InternalLibrettoSpec.g:6140:2: ( (lv_constraints_0_0= ruleConstraintsField ) )
+            // InternalLibrettoSpec.g:6263:2: ( ( (lv_constraints_0_0= ruleConstraintsField ) ) )
+            // InternalLibrettoSpec.g:6264:2: ( (lv_constraints_0_0= ruleConstraintsField ) )
             {
-            // InternalLibrettoSpec.g:6140:2: ( (lv_constraints_0_0= ruleConstraintsField ) )
-            // InternalLibrettoSpec.g:6141:3: (lv_constraints_0_0= ruleConstraintsField )
+            // InternalLibrettoSpec.g:6264:2: ( (lv_constraints_0_0= ruleConstraintsField ) )
+            // InternalLibrettoSpec.g:6265:3: (lv_constraints_0_0= ruleConstraintsField )
             {
-            // InternalLibrettoSpec.g:6141:3: (lv_constraints_0_0= ruleConstraintsField )
-            // InternalLibrettoSpec.g:6142:4: lv_constraints_0_0= ruleConstraintsField
+            // InternalLibrettoSpec.g:6265:3: (lv_constraints_0_0= ruleConstraintsField )
+            // InternalLibrettoSpec.g:6266:4: lv_constraints_0_0= ruleConstraintsField
             {
 
             				newCompositeNode(grammarAccess.getImplementationDirectiveConstraintsItemAccess().getConstraintsConstraintsFieldParserRuleCall_0());
@@ -16811,7 +17119,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleImplementationDirectiveAllowedFlexibilityItem"
-    // InternalLibrettoSpec.g:6162:1: entryRuleImplementationDirectiveAllowedFlexibilityItem returns [EObject current=null] : iv_ruleImplementationDirectiveAllowedFlexibilityItem= ruleImplementationDirectiveAllowedFlexibilityItem EOF ;
+    // InternalLibrettoSpec.g:6286:1: entryRuleImplementationDirectiveAllowedFlexibilityItem returns [EObject current=null] : iv_ruleImplementationDirectiveAllowedFlexibilityItem= ruleImplementationDirectiveAllowedFlexibilityItem EOF ;
     public final EObject entryRuleImplementationDirectiveAllowedFlexibilityItem() throws RecognitionException {
         EObject current = null;
 
@@ -16819,8 +17127,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:6162:86: (iv_ruleImplementationDirectiveAllowedFlexibilityItem= ruleImplementationDirectiveAllowedFlexibilityItem EOF )
-            // InternalLibrettoSpec.g:6163:2: iv_ruleImplementationDirectiveAllowedFlexibilityItem= ruleImplementationDirectiveAllowedFlexibilityItem EOF
+            // InternalLibrettoSpec.g:6286:86: (iv_ruleImplementationDirectiveAllowedFlexibilityItem= ruleImplementationDirectiveAllowedFlexibilityItem EOF )
+            // InternalLibrettoSpec.g:6287:2: iv_ruleImplementationDirectiveAllowedFlexibilityItem= ruleImplementationDirectiveAllowedFlexibilityItem EOF
             {
              newCompositeNode(grammarAccess.getImplementationDirectiveAllowedFlexibilityItemRule()); 
             pushFollow(FOLLOW_1);
@@ -16847,7 +17155,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleImplementationDirectiveAllowedFlexibilityItem"
-    // InternalLibrettoSpec.g:6169:1: ruleImplementationDirectiveAllowedFlexibilityItem returns [EObject current=null] : ( (lv_allowedFlexibility_0_0= ruleAllowedFlexibilityField ) ) ;
+    // InternalLibrettoSpec.g:6293:1: ruleImplementationDirectiveAllowedFlexibilityItem returns [EObject current=null] : ( (lv_allowedFlexibility_0_0= ruleAllowedFlexibilityField ) ) ;
     public final EObject ruleImplementationDirectiveAllowedFlexibilityItem() throws RecognitionException {
         EObject current = null;
 
@@ -16858,14 +17166,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:6175:2: ( ( (lv_allowedFlexibility_0_0= ruleAllowedFlexibilityField ) ) )
-            // InternalLibrettoSpec.g:6176:2: ( (lv_allowedFlexibility_0_0= ruleAllowedFlexibilityField ) )
+            // InternalLibrettoSpec.g:6299:2: ( ( (lv_allowedFlexibility_0_0= ruleAllowedFlexibilityField ) ) )
+            // InternalLibrettoSpec.g:6300:2: ( (lv_allowedFlexibility_0_0= ruleAllowedFlexibilityField ) )
             {
-            // InternalLibrettoSpec.g:6176:2: ( (lv_allowedFlexibility_0_0= ruleAllowedFlexibilityField ) )
-            // InternalLibrettoSpec.g:6177:3: (lv_allowedFlexibility_0_0= ruleAllowedFlexibilityField )
+            // InternalLibrettoSpec.g:6300:2: ( (lv_allowedFlexibility_0_0= ruleAllowedFlexibilityField ) )
+            // InternalLibrettoSpec.g:6301:3: (lv_allowedFlexibility_0_0= ruleAllowedFlexibilityField )
             {
-            // InternalLibrettoSpec.g:6177:3: (lv_allowedFlexibility_0_0= ruleAllowedFlexibilityField )
-            // InternalLibrettoSpec.g:6178:4: lv_allowedFlexibility_0_0= ruleAllowedFlexibilityField
+            // InternalLibrettoSpec.g:6301:3: (lv_allowedFlexibility_0_0= ruleAllowedFlexibilityField )
+            // InternalLibrettoSpec.g:6302:4: lv_allowedFlexibility_0_0= ruleAllowedFlexibilityField
             {
 
             				newCompositeNode(grammarAccess.getImplementationDirectiveAllowedFlexibilityItemAccess().getAllowedFlexibilityAllowedFlexibilityFieldParserRuleCall_0());
@@ -16912,7 +17220,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleImplementationDirectiveReferencesItem"
-    // InternalLibrettoSpec.g:6198:1: entryRuleImplementationDirectiveReferencesItem returns [EObject current=null] : iv_ruleImplementationDirectiveReferencesItem= ruleImplementationDirectiveReferencesItem EOF ;
+    // InternalLibrettoSpec.g:6322:1: entryRuleImplementationDirectiveReferencesItem returns [EObject current=null] : iv_ruleImplementationDirectiveReferencesItem= ruleImplementationDirectiveReferencesItem EOF ;
     public final EObject entryRuleImplementationDirectiveReferencesItem() throws RecognitionException {
         EObject current = null;
 
@@ -16920,8 +17228,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:6198:78: (iv_ruleImplementationDirectiveReferencesItem= ruleImplementationDirectiveReferencesItem EOF )
-            // InternalLibrettoSpec.g:6199:2: iv_ruleImplementationDirectiveReferencesItem= ruleImplementationDirectiveReferencesItem EOF
+            // InternalLibrettoSpec.g:6322:78: (iv_ruleImplementationDirectiveReferencesItem= ruleImplementationDirectiveReferencesItem EOF )
+            // InternalLibrettoSpec.g:6323:2: iv_ruleImplementationDirectiveReferencesItem= ruleImplementationDirectiveReferencesItem EOF
             {
              newCompositeNode(grammarAccess.getImplementationDirectiveReferencesItemRule()); 
             pushFollow(FOLLOW_1);
@@ -16948,7 +17256,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleImplementationDirectiveReferencesItem"
-    // InternalLibrettoSpec.g:6205:1: ruleImplementationDirectiveReferencesItem returns [EObject current=null] : ( (lv_references_0_0= ruleReferencesField ) ) ;
+    // InternalLibrettoSpec.g:6329:1: ruleImplementationDirectiveReferencesItem returns [EObject current=null] : ( (lv_references_0_0= ruleReferencesField ) ) ;
     public final EObject ruleImplementationDirectiveReferencesItem() throws RecognitionException {
         EObject current = null;
 
@@ -16959,14 +17267,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:6211:2: ( ( (lv_references_0_0= ruleReferencesField ) ) )
-            // InternalLibrettoSpec.g:6212:2: ( (lv_references_0_0= ruleReferencesField ) )
+            // InternalLibrettoSpec.g:6335:2: ( ( (lv_references_0_0= ruleReferencesField ) ) )
+            // InternalLibrettoSpec.g:6336:2: ( (lv_references_0_0= ruleReferencesField ) )
             {
-            // InternalLibrettoSpec.g:6212:2: ( (lv_references_0_0= ruleReferencesField ) )
-            // InternalLibrettoSpec.g:6213:3: (lv_references_0_0= ruleReferencesField )
+            // InternalLibrettoSpec.g:6336:2: ( (lv_references_0_0= ruleReferencesField ) )
+            // InternalLibrettoSpec.g:6337:3: (lv_references_0_0= ruleReferencesField )
             {
-            // InternalLibrettoSpec.g:6213:3: (lv_references_0_0= ruleReferencesField )
-            // InternalLibrettoSpec.g:6214:4: lv_references_0_0= ruleReferencesField
+            // InternalLibrettoSpec.g:6337:3: (lv_references_0_0= ruleReferencesField )
+            // InternalLibrettoSpec.g:6338:4: lv_references_0_0= ruleReferencesField
             {
 
             				newCompositeNode(grammarAccess.getImplementationDirectiveReferencesItemAccess().getReferencesReferencesFieldParserRuleCall_0());
@@ -17013,7 +17321,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleImplementationDirectiveRationaleItem"
-    // InternalLibrettoSpec.g:6234:1: entryRuleImplementationDirectiveRationaleItem returns [EObject current=null] : iv_ruleImplementationDirectiveRationaleItem= ruleImplementationDirectiveRationaleItem EOF ;
+    // InternalLibrettoSpec.g:6358:1: entryRuleImplementationDirectiveRationaleItem returns [EObject current=null] : iv_ruleImplementationDirectiveRationaleItem= ruleImplementationDirectiveRationaleItem EOF ;
     public final EObject entryRuleImplementationDirectiveRationaleItem() throws RecognitionException {
         EObject current = null;
 
@@ -17021,8 +17329,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:6234:77: (iv_ruleImplementationDirectiveRationaleItem= ruleImplementationDirectiveRationaleItem EOF )
-            // InternalLibrettoSpec.g:6235:2: iv_ruleImplementationDirectiveRationaleItem= ruleImplementationDirectiveRationaleItem EOF
+            // InternalLibrettoSpec.g:6358:77: (iv_ruleImplementationDirectiveRationaleItem= ruleImplementationDirectiveRationaleItem EOF )
+            // InternalLibrettoSpec.g:6359:2: iv_ruleImplementationDirectiveRationaleItem= ruleImplementationDirectiveRationaleItem EOF
             {
              newCompositeNode(grammarAccess.getImplementationDirectiveRationaleItemRule()); 
             pushFollow(FOLLOW_1);
@@ -17049,7 +17357,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleImplementationDirectiveRationaleItem"
-    // InternalLibrettoSpec.g:6241:1: ruleImplementationDirectiveRationaleItem returns [EObject current=null] : ( (lv_rationale_0_0= ruleRationaleField ) ) ;
+    // InternalLibrettoSpec.g:6365:1: ruleImplementationDirectiveRationaleItem returns [EObject current=null] : ( (lv_rationale_0_0= ruleRationaleField ) ) ;
     public final EObject ruleImplementationDirectiveRationaleItem() throws RecognitionException {
         EObject current = null;
 
@@ -17060,14 +17368,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:6247:2: ( ( (lv_rationale_0_0= ruleRationaleField ) ) )
-            // InternalLibrettoSpec.g:6248:2: ( (lv_rationale_0_0= ruleRationaleField ) )
+            // InternalLibrettoSpec.g:6371:2: ( ( (lv_rationale_0_0= ruleRationaleField ) ) )
+            // InternalLibrettoSpec.g:6372:2: ( (lv_rationale_0_0= ruleRationaleField ) )
             {
-            // InternalLibrettoSpec.g:6248:2: ( (lv_rationale_0_0= ruleRationaleField ) )
-            // InternalLibrettoSpec.g:6249:3: (lv_rationale_0_0= ruleRationaleField )
+            // InternalLibrettoSpec.g:6372:2: ( (lv_rationale_0_0= ruleRationaleField ) )
+            // InternalLibrettoSpec.g:6373:3: (lv_rationale_0_0= ruleRationaleField )
             {
-            // InternalLibrettoSpec.g:6249:3: (lv_rationale_0_0= ruleRationaleField )
-            // InternalLibrettoSpec.g:6250:4: lv_rationale_0_0= ruleRationaleField
+            // InternalLibrettoSpec.g:6373:3: (lv_rationale_0_0= ruleRationaleField )
+            // InternalLibrettoSpec.g:6374:4: lv_rationale_0_0= ruleRationaleField
             {
 
             				newCompositeNode(grammarAccess.getImplementationDirectiveRationaleItemAccess().getRationaleRationaleFieldParserRuleCall_0());
@@ -17114,7 +17422,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleImplementationDirectiveContextItem"
-    // InternalLibrettoSpec.g:6270:1: entryRuleImplementationDirectiveContextItem returns [EObject current=null] : iv_ruleImplementationDirectiveContextItem= ruleImplementationDirectiveContextItem EOF ;
+    // InternalLibrettoSpec.g:6394:1: entryRuleImplementationDirectiveContextItem returns [EObject current=null] : iv_ruleImplementationDirectiveContextItem= ruleImplementationDirectiveContextItem EOF ;
     public final EObject entryRuleImplementationDirectiveContextItem() throws RecognitionException {
         EObject current = null;
 
@@ -17122,8 +17430,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:6270:75: (iv_ruleImplementationDirectiveContextItem= ruleImplementationDirectiveContextItem EOF )
-            // InternalLibrettoSpec.g:6271:2: iv_ruleImplementationDirectiveContextItem= ruleImplementationDirectiveContextItem EOF
+            // InternalLibrettoSpec.g:6394:75: (iv_ruleImplementationDirectiveContextItem= ruleImplementationDirectiveContextItem EOF )
+            // InternalLibrettoSpec.g:6395:2: iv_ruleImplementationDirectiveContextItem= ruleImplementationDirectiveContextItem EOF
             {
              newCompositeNode(grammarAccess.getImplementationDirectiveContextItemRule()); 
             pushFollow(FOLLOW_1);
@@ -17150,7 +17458,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleImplementationDirectiveContextItem"
-    // InternalLibrettoSpec.g:6277:1: ruleImplementationDirectiveContextItem returns [EObject current=null] : ( (lv_context_0_0= ruleContextField ) ) ;
+    // InternalLibrettoSpec.g:6401:1: ruleImplementationDirectiveContextItem returns [EObject current=null] : ( (lv_context_0_0= ruleContextField ) ) ;
     public final EObject ruleImplementationDirectiveContextItem() throws RecognitionException {
         EObject current = null;
 
@@ -17161,14 +17469,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:6283:2: ( ( (lv_context_0_0= ruleContextField ) ) )
-            // InternalLibrettoSpec.g:6284:2: ( (lv_context_0_0= ruleContextField ) )
+            // InternalLibrettoSpec.g:6407:2: ( ( (lv_context_0_0= ruleContextField ) ) )
+            // InternalLibrettoSpec.g:6408:2: ( (lv_context_0_0= ruleContextField ) )
             {
-            // InternalLibrettoSpec.g:6284:2: ( (lv_context_0_0= ruleContextField ) )
-            // InternalLibrettoSpec.g:6285:3: (lv_context_0_0= ruleContextField )
+            // InternalLibrettoSpec.g:6408:2: ( (lv_context_0_0= ruleContextField ) )
+            // InternalLibrettoSpec.g:6409:3: (lv_context_0_0= ruleContextField )
             {
-            // InternalLibrettoSpec.g:6285:3: (lv_context_0_0= ruleContextField )
-            // InternalLibrettoSpec.g:6286:4: lv_context_0_0= ruleContextField
+            // InternalLibrettoSpec.g:6409:3: (lv_context_0_0= ruleContextField )
+            // InternalLibrettoSpec.g:6410:4: lv_context_0_0= ruleContextField
             {
 
             				newCompositeNode(grammarAccess.getImplementationDirectiveContextItemAccess().getContextContextFieldParserRuleCall_0());
@@ -17215,7 +17523,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAppliesToField"
-    // InternalLibrettoSpec.g:6306:1: entryRuleAppliesToField returns [EObject current=null] : iv_ruleAppliesToField= ruleAppliesToField EOF ;
+    // InternalLibrettoSpec.g:6430:1: entryRuleAppliesToField returns [EObject current=null] : iv_ruleAppliesToField= ruleAppliesToField EOF ;
     public final EObject entryRuleAppliesToField() throws RecognitionException {
         EObject current = null;
 
@@ -17223,8 +17531,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:6306:55: (iv_ruleAppliesToField= ruleAppliesToField EOF )
-            // InternalLibrettoSpec.g:6307:2: iv_ruleAppliesToField= ruleAppliesToField EOF
+            // InternalLibrettoSpec.g:6430:55: (iv_ruleAppliesToField= ruleAppliesToField EOF )
+            // InternalLibrettoSpec.g:6431:2: iv_ruleAppliesToField= ruleAppliesToField EOF
             {
              newCompositeNode(grammarAccess.getAppliesToFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -17251,7 +17559,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAppliesToField"
-    // InternalLibrettoSpec.g:6313:1: ruleAppliesToField returns [EObject current=null] : (otherlv_0= 'applies_to' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) ) ;
+    // InternalLibrettoSpec.g:6437:1: ruleAppliesToField returns [EObject current=null] : (otherlv_0= 'applies_to' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) ) ;
     public final EObject ruleAppliesToField() throws RecognitionException {
         EObject current = null;
 
@@ -17264,13 +17572,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:6319:2: ( (otherlv_0= 'applies_to' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) ) )
-            // InternalLibrettoSpec.g:6320:2: (otherlv_0= 'applies_to' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) )
+            // InternalLibrettoSpec.g:6443:2: ( (otherlv_0= 'applies_to' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) ) )
+            // InternalLibrettoSpec.g:6444:2: (otherlv_0= 'applies_to' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) )
             {
-            // InternalLibrettoSpec.g:6320:2: (otherlv_0= 'applies_to' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) )
-            // InternalLibrettoSpec.g:6321:3: otherlv_0= 'applies_to' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) )
+            // InternalLibrettoSpec.g:6444:2: (otherlv_0= 'applies_to' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) ) )
+            // InternalLibrettoSpec.g:6445:3: otherlv_0= 'applies_to' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierList ) )
             {
-            otherlv_0=(Token)match(input,79,FOLLOW_17); 
+            otherlv_0=(Token)match(input,81,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getAppliesToFieldAccess().getApplies_toKeyword_0());
             		
@@ -17278,11 +17586,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getAppliesToFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:6329:3: ( (lv_value_2_0= ruleIdentifierList ) )
-            // InternalLibrettoSpec.g:6330:4: (lv_value_2_0= ruleIdentifierList )
+            // InternalLibrettoSpec.g:6453:3: ( (lv_value_2_0= ruleIdentifierList ) )
+            // InternalLibrettoSpec.g:6454:4: (lv_value_2_0= ruleIdentifierList )
             {
-            // InternalLibrettoSpec.g:6330:4: (lv_value_2_0= ruleIdentifierList )
-            // InternalLibrettoSpec.g:6331:5: lv_value_2_0= ruleIdentifierList
+            // InternalLibrettoSpec.g:6454:4: (lv_value_2_0= ruleIdentifierList )
+            // InternalLibrettoSpec.g:6455:5: lv_value_2_0= ruleIdentifierList
             {
 
             					newCompositeNode(grammarAccess.getAppliesToFieldAccess().getValueIdentifierListParserRuleCall_2_0());
@@ -17332,7 +17640,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStrengthField"
-    // InternalLibrettoSpec.g:6352:1: entryRuleStrengthField returns [EObject current=null] : iv_ruleStrengthField= ruleStrengthField EOF ;
+    // InternalLibrettoSpec.g:6476:1: entryRuleStrengthField returns [EObject current=null] : iv_ruleStrengthField= ruleStrengthField EOF ;
     public final EObject entryRuleStrengthField() throws RecognitionException {
         EObject current = null;
 
@@ -17340,8 +17648,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:6352:54: (iv_ruleStrengthField= ruleStrengthField EOF )
-            // InternalLibrettoSpec.g:6353:2: iv_ruleStrengthField= ruleStrengthField EOF
+            // InternalLibrettoSpec.g:6476:54: (iv_ruleStrengthField= ruleStrengthField EOF )
+            // InternalLibrettoSpec.g:6477:2: iv_ruleStrengthField= ruleStrengthField EOF
             {
              newCompositeNode(grammarAccess.getStrengthFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -17368,7 +17676,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStrengthField"
-    // InternalLibrettoSpec.g:6359:1: ruleStrengthField returns [EObject current=null] : (otherlv_0= 'strength' otherlv_1= ':' ( (lv_value_2_0= ruleStrengthValue ) ) ) ;
+    // InternalLibrettoSpec.g:6483:1: ruleStrengthField returns [EObject current=null] : (otherlv_0= 'strength' otherlv_1= ':' ( (lv_value_2_0= ruleStrengthValue ) ) ) ;
     public final EObject ruleStrengthField() throws RecognitionException {
         EObject current = null;
 
@@ -17381,13 +17689,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:6365:2: ( (otherlv_0= 'strength' otherlv_1= ':' ( (lv_value_2_0= ruleStrengthValue ) ) ) )
-            // InternalLibrettoSpec.g:6366:2: (otherlv_0= 'strength' otherlv_1= ':' ( (lv_value_2_0= ruleStrengthValue ) ) )
+            // InternalLibrettoSpec.g:6489:2: ( (otherlv_0= 'strength' otherlv_1= ':' ( (lv_value_2_0= ruleStrengthValue ) ) ) )
+            // InternalLibrettoSpec.g:6490:2: (otherlv_0= 'strength' otherlv_1= ':' ( (lv_value_2_0= ruleStrengthValue ) ) )
             {
-            // InternalLibrettoSpec.g:6366:2: (otherlv_0= 'strength' otherlv_1= ':' ( (lv_value_2_0= ruleStrengthValue ) ) )
-            // InternalLibrettoSpec.g:6367:3: otherlv_0= 'strength' otherlv_1= ':' ( (lv_value_2_0= ruleStrengthValue ) )
+            // InternalLibrettoSpec.g:6490:2: (otherlv_0= 'strength' otherlv_1= ':' ( (lv_value_2_0= ruleStrengthValue ) ) )
+            // InternalLibrettoSpec.g:6491:3: otherlv_0= 'strength' otherlv_1= ':' ( (lv_value_2_0= ruleStrengthValue ) )
             {
-            otherlv_0=(Token)match(input,80,FOLLOW_17); 
+            otherlv_0=(Token)match(input,82,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getStrengthFieldAccess().getStrengthKeyword_0());
             		
@@ -17395,11 +17703,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getStrengthFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:6375:3: ( (lv_value_2_0= ruleStrengthValue ) )
-            // InternalLibrettoSpec.g:6376:4: (lv_value_2_0= ruleStrengthValue )
+            // InternalLibrettoSpec.g:6499:3: ( (lv_value_2_0= ruleStrengthValue ) )
+            // InternalLibrettoSpec.g:6500:4: (lv_value_2_0= ruleStrengthValue )
             {
-            // InternalLibrettoSpec.g:6376:4: (lv_value_2_0= ruleStrengthValue )
-            // InternalLibrettoSpec.g:6377:5: lv_value_2_0= ruleStrengthValue
+            // InternalLibrettoSpec.g:6500:4: (lv_value_2_0= ruleStrengthValue )
+            // InternalLibrettoSpec.g:6501:5: lv_value_2_0= ruleStrengthValue
             {
 
             					newCompositeNode(grammarAccess.getStrengthFieldAccess().getValueStrengthValueEnumRuleCall_2_0());
@@ -17449,7 +17757,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDirectiveField"
-    // InternalLibrettoSpec.g:6398:1: entryRuleDirectiveField returns [EObject current=null] : iv_ruleDirectiveField= ruleDirectiveField EOF ;
+    // InternalLibrettoSpec.g:6522:1: entryRuleDirectiveField returns [EObject current=null] : iv_ruleDirectiveField= ruleDirectiveField EOF ;
     public final EObject entryRuleDirectiveField() throws RecognitionException {
         EObject current = null;
 
@@ -17457,8 +17765,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:6398:55: (iv_ruleDirectiveField= ruleDirectiveField EOF )
-            // InternalLibrettoSpec.g:6399:2: iv_ruleDirectiveField= ruleDirectiveField EOF
+            // InternalLibrettoSpec.g:6522:55: (iv_ruleDirectiveField= ruleDirectiveField EOF )
+            // InternalLibrettoSpec.g:6523:2: iv_ruleDirectiveField= ruleDirectiveField EOF
             {
              newCompositeNode(grammarAccess.getDirectiveFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -17485,7 +17793,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDirectiveField"
-    // InternalLibrettoSpec.g:6405:1: ruleDirectiveField returns [EObject current=null] : (otherlv_0= 'directive' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
+    // InternalLibrettoSpec.g:6529:1: ruleDirectiveField returns [EObject current=null] : (otherlv_0= 'directive' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
     public final EObject ruleDirectiveField() throws RecognitionException {
         EObject current = null;
 
@@ -17498,13 +17806,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:6411:2: ( (otherlv_0= 'directive' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
-            // InternalLibrettoSpec.g:6412:2: (otherlv_0= 'directive' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:6535:2: ( (otherlv_0= 'directive' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
+            // InternalLibrettoSpec.g:6536:2: (otherlv_0= 'directive' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
             {
-            // InternalLibrettoSpec.g:6412:2: (otherlv_0= 'directive' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
-            // InternalLibrettoSpec.g:6413:3: otherlv_0= 'directive' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:6536:2: (otherlv_0= 'directive' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:6537:3: otherlv_0= 'directive' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
             {
-            otherlv_0=(Token)match(input,81,FOLLOW_17); 
+            otherlv_0=(Token)match(input,83,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getDirectiveFieldAccess().getDirectiveKeyword_0());
             		
@@ -17512,11 +17820,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getDirectiveFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:6421:3: ( (lv_value_2_0= ruleTextValue ) )
-            // InternalLibrettoSpec.g:6422:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:6545:3: ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:6546:4: (lv_value_2_0= ruleTextValue )
             {
-            // InternalLibrettoSpec.g:6422:4: (lv_value_2_0= ruleTextValue )
-            // InternalLibrettoSpec.g:6423:5: lv_value_2_0= ruleTextValue
+            // InternalLibrettoSpec.g:6546:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:6547:5: lv_value_2_0= ruleTextValue
             {
 
             					newCompositeNode(grammarAccess.getDirectiveFieldAccess().getValueTextValueParserRuleCall_2_0());
@@ -17566,7 +17874,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCategoryField"
-    // InternalLibrettoSpec.g:6444:1: entryRuleCategoryField returns [EObject current=null] : iv_ruleCategoryField= ruleCategoryField EOF ;
+    // InternalLibrettoSpec.g:6568:1: entryRuleCategoryField returns [EObject current=null] : iv_ruleCategoryField= ruleCategoryField EOF ;
     public final EObject entryRuleCategoryField() throws RecognitionException {
         EObject current = null;
 
@@ -17574,8 +17882,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:6444:54: (iv_ruleCategoryField= ruleCategoryField EOF )
-            // InternalLibrettoSpec.g:6445:2: iv_ruleCategoryField= ruleCategoryField EOF
+            // InternalLibrettoSpec.g:6568:54: (iv_ruleCategoryField= ruleCategoryField EOF )
+            // InternalLibrettoSpec.g:6569:2: iv_ruleCategoryField= ruleCategoryField EOF
             {
              newCompositeNode(grammarAccess.getCategoryFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -17602,7 +17910,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCategoryField"
-    // InternalLibrettoSpec.g:6451:1: ruleCategoryField returns [EObject current=null] : (otherlv_0= 'category' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) ) ) ;
+    // InternalLibrettoSpec.g:6575:1: ruleCategoryField returns [EObject current=null] : (otherlv_0= 'category' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) ) ) ;
     public final EObject ruleCategoryField() throws RecognitionException {
         EObject current = null;
 
@@ -17615,13 +17923,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:6457:2: ( (otherlv_0= 'category' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) ) ) )
-            // InternalLibrettoSpec.g:6458:2: (otherlv_0= 'category' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) ) )
+            // InternalLibrettoSpec.g:6581:2: ( (otherlv_0= 'category' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) ) ) )
+            // InternalLibrettoSpec.g:6582:2: (otherlv_0= 'category' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) ) )
             {
-            // InternalLibrettoSpec.g:6458:2: (otherlv_0= 'category' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) ) )
-            // InternalLibrettoSpec.g:6459:3: otherlv_0= 'category' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) )
+            // InternalLibrettoSpec.g:6582:2: (otherlv_0= 'category' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) ) )
+            // InternalLibrettoSpec.g:6583:3: otherlv_0= 'category' otherlv_1= ':' ( (lv_value_2_0= ruleIdentifierValue ) )
             {
-            otherlv_0=(Token)match(input,82,FOLLOW_17); 
+            otherlv_0=(Token)match(input,84,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getCategoryFieldAccess().getCategoryKeyword_0());
             		
@@ -17629,11 +17937,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getCategoryFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:6467:3: ( (lv_value_2_0= ruleIdentifierValue ) )
-            // InternalLibrettoSpec.g:6468:4: (lv_value_2_0= ruleIdentifierValue )
+            // InternalLibrettoSpec.g:6591:3: ( (lv_value_2_0= ruleIdentifierValue ) )
+            // InternalLibrettoSpec.g:6592:4: (lv_value_2_0= ruleIdentifierValue )
             {
-            // InternalLibrettoSpec.g:6468:4: (lv_value_2_0= ruleIdentifierValue )
-            // InternalLibrettoSpec.g:6469:5: lv_value_2_0= ruleIdentifierValue
+            // InternalLibrettoSpec.g:6592:4: (lv_value_2_0= ruleIdentifierValue )
+            // InternalLibrettoSpec.g:6593:5: lv_value_2_0= ruleIdentifierValue
             {
 
             					newCompositeNode(grammarAccess.getCategoryFieldAccess().getValueIdentifierValueParserRuleCall_2_0());
@@ -17683,7 +17991,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConstraintsField"
-    // InternalLibrettoSpec.g:6490:1: entryRuleConstraintsField returns [EObject current=null] : iv_ruleConstraintsField= ruleConstraintsField EOF ;
+    // InternalLibrettoSpec.g:6614:1: entryRuleConstraintsField returns [EObject current=null] : iv_ruleConstraintsField= ruleConstraintsField EOF ;
     public final EObject entryRuleConstraintsField() throws RecognitionException {
         EObject current = null;
 
@@ -17691,8 +17999,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:6490:57: (iv_ruleConstraintsField= ruleConstraintsField EOF )
-            // InternalLibrettoSpec.g:6491:2: iv_ruleConstraintsField= ruleConstraintsField EOF
+            // InternalLibrettoSpec.g:6614:57: (iv_ruleConstraintsField= ruleConstraintsField EOF )
+            // InternalLibrettoSpec.g:6615:2: iv_ruleConstraintsField= ruleConstraintsField EOF
             {
              newCompositeNode(grammarAccess.getConstraintsFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -17719,7 +18027,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConstraintsField"
-    // InternalLibrettoSpec.g:6497:1: ruleConstraintsField returns [EObject current=null] : (otherlv_0= 'constraints' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) ) ;
+    // InternalLibrettoSpec.g:6621:1: ruleConstraintsField returns [EObject current=null] : (otherlv_0= 'constraints' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) ) ;
     public final EObject ruleConstraintsField() throws RecognitionException {
         EObject current = null;
 
@@ -17732,13 +18040,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:6503:2: ( (otherlv_0= 'constraints' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) ) )
-            // InternalLibrettoSpec.g:6504:2: (otherlv_0= 'constraints' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) )
+            // InternalLibrettoSpec.g:6627:2: ( (otherlv_0= 'constraints' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) ) )
+            // InternalLibrettoSpec.g:6628:2: (otherlv_0= 'constraints' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) )
             {
-            // InternalLibrettoSpec.g:6504:2: (otherlv_0= 'constraints' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) )
-            // InternalLibrettoSpec.g:6505:3: otherlv_0= 'constraints' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) )
+            // InternalLibrettoSpec.g:6628:2: (otherlv_0= 'constraints' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) )
+            // InternalLibrettoSpec.g:6629:3: otherlv_0= 'constraints' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) )
             {
-            otherlv_0=(Token)match(input,83,FOLLOW_17); 
+            otherlv_0=(Token)match(input,85,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getConstraintsFieldAccess().getConstraintsKeyword_0());
             		
@@ -17746,11 +18054,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getConstraintsFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:6513:3: ( (lv_value_2_0= ruleTextList ) )
-            // InternalLibrettoSpec.g:6514:4: (lv_value_2_0= ruleTextList )
+            // InternalLibrettoSpec.g:6637:3: ( (lv_value_2_0= ruleTextList ) )
+            // InternalLibrettoSpec.g:6638:4: (lv_value_2_0= ruleTextList )
             {
-            // InternalLibrettoSpec.g:6514:4: (lv_value_2_0= ruleTextList )
-            // InternalLibrettoSpec.g:6515:5: lv_value_2_0= ruleTextList
+            // InternalLibrettoSpec.g:6638:4: (lv_value_2_0= ruleTextList )
+            // InternalLibrettoSpec.g:6639:5: lv_value_2_0= ruleTextList
             {
 
             					newCompositeNode(grammarAccess.getConstraintsFieldAccess().getValueTextListParserRuleCall_2_0());
@@ -17800,7 +18108,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAllowedFlexibilityField"
-    // InternalLibrettoSpec.g:6536:1: entryRuleAllowedFlexibilityField returns [EObject current=null] : iv_ruleAllowedFlexibilityField= ruleAllowedFlexibilityField EOF ;
+    // InternalLibrettoSpec.g:6660:1: entryRuleAllowedFlexibilityField returns [EObject current=null] : iv_ruleAllowedFlexibilityField= ruleAllowedFlexibilityField EOF ;
     public final EObject entryRuleAllowedFlexibilityField() throws RecognitionException {
         EObject current = null;
 
@@ -17808,8 +18116,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:6536:64: (iv_ruleAllowedFlexibilityField= ruleAllowedFlexibilityField EOF )
-            // InternalLibrettoSpec.g:6537:2: iv_ruleAllowedFlexibilityField= ruleAllowedFlexibilityField EOF
+            // InternalLibrettoSpec.g:6660:64: (iv_ruleAllowedFlexibilityField= ruleAllowedFlexibilityField EOF )
+            // InternalLibrettoSpec.g:6661:2: iv_ruleAllowedFlexibilityField= ruleAllowedFlexibilityField EOF
             {
              newCompositeNode(grammarAccess.getAllowedFlexibilityFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -17836,7 +18144,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAllowedFlexibilityField"
-    // InternalLibrettoSpec.g:6543:1: ruleAllowedFlexibilityField returns [EObject current=null] : (otherlv_0= 'allowed_flexibility' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) ) ;
+    // InternalLibrettoSpec.g:6667:1: ruleAllowedFlexibilityField returns [EObject current=null] : (otherlv_0= 'allowed_flexibility' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) ) ;
     public final EObject ruleAllowedFlexibilityField() throws RecognitionException {
         EObject current = null;
 
@@ -17849,13 +18157,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:6549:2: ( (otherlv_0= 'allowed_flexibility' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) ) )
-            // InternalLibrettoSpec.g:6550:2: (otherlv_0= 'allowed_flexibility' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) )
+            // InternalLibrettoSpec.g:6673:2: ( (otherlv_0= 'allowed_flexibility' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) ) )
+            // InternalLibrettoSpec.g:6674:2: (otherlv_0= 'allowed_flexibility' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) )
             {
-            // InternalLibrettoSpec.g:6550:2: (otherlv_0= 'allowed_flexibility' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) )
-            // InternalLibrettoSpec.g:6551:3: otherlv_0= 'allowed_flexibility' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) )
+            // InternalLibrettoSpec.g:6674:2: (otherlv_0= 'allowed_flexibility' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) ) )
+            // InternalLibrettoSpec.g:6675:3: otherlv_0= 'allowed_flexibility' otherlv_1= ':' ( (lv_value_2_0= ruleTextList ) )
             {
-            otherlv_0=(Token)match(input,84,FOLLOW_17); 
+            otherlv_0=(Token)match(input,86,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getAllowedFlexibilityFieldAccess().getAllowed_flexibilityKeyword_0());
             		
@@ -17863,11 +18171,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getAllowedFlexibilityFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:6559:3: ( (lv_value_2_0= ruleTextList ) )
-            // InternalLibrettoSpec.g:6560:4: (lv_value_2_0= ruleTextList )
+            // InternalLibrettoSpec.g:6683:3: ( (lv_value_2_0= ruleTextList ) )
+            // InternalLibrettoSpec.g:6684:4: (lv_value_2_0= ruleTextList )
             {
-            // InternalLibrettoSpec.g:6560:4: (lv_value_2_0= ruleTextList )
-            // InternalLibrettoSpec.g:6561:5: lv_value_2_0= ruleTextList
+            // InternalLibrettoSpec.g:6684:4: (lv_value_2_0= ruleTextList )
+            // InternalLibrettoSpec.g:6685:5: lv_value_2_0= ruleTextList
             {
 
             					newCompositeNode(grammarAccess.getAllowedFlexibilityFieldAccess().getValueTextListParserRuleCall_2_0());
@@ -17917,7 +18225,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRationaleField"
-    // InternalLibrettoSpec.g:6582:1: entryRuleRationaleField returns [EObject current=null] : iv_ruleRationaleField= ruleRationaleField EOF ;
+    // InternalLibrettoSpec.g:6706:1: entryRuleRationaleField returns [EObject current=null] : iv_ruleRationaleField= ruleRationaleField EOF ;
     public final EObject entryRuleRationaleField() throws RecognitionException {
         EObject current = null;
 
@@ -17925,8 +18233,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:6582:55: (iv_ruleRationaleField= ruleRationaleField EOF )
-            // InternalLibrettoSpec.g:6583:2: iv_ruleRationaleField= ruleRationaleField EOF
+            // InternalLibrettoSpec.g:6706:55: (iv_ruleRationaleField= ruleRationaleField EOF )
+            // InternalLibrettoSpec.g:6707:2: iv_ruleRationaleField= ruleRationaleField EOF
             {
              newCompositeNode(grammarAccess.getRationaleFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -17953,7 +18261,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRationaleField"
-    // InternalLibrettoSpec.g:6589:1: ruleRationaleField returns [EObject current=null] : (otherlv_0= 'rationale' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
+    // InternalLibrettoSpec.g:6713:1: ruleRationaleField returns [EObject current=null] : (otherlv_0= 'rationale' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
     public final EObject ruleRationaleField() throws RecognitionException {
         EObject current = null;
 
@@ -17966,13 +18274,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:6595:2: ( (otherlv_0= 'rationale' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
-            // InternalLibrettoSpec.g:6596:2: (otherlv_0= 'rationale' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:6719:2: ( (otherlv_0= 'rationale' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
+            // InternalLibrettoSpec.g:6720:2: (otherlv_0= 'rationale' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
             {
-            // InternalLibrettoSpec.g:6596:2: (otherlv_0= 'rationale' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
-            // InternalLibrettoSpec.g:6597:3: otherlv_0= 'rationale' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:6720:2: (otherlv_0= 'rationale' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:6721:3: otherlv_0= 'rationale' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
             {
-            otherlv_0=(Token)match(input,85,FOLLOW_17); 
+            otherlv_0=(Token)match(input,87,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getRationaleFieldAccess().getRationaleKeyword_0());
             		
@@ -17980,11 +18288,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getRationaleFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:6605:3: ( (lv_value_2_0= ruleTextValue ) )
-            // InternalLibrettoSpec.g:6606:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:6729:3: ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:6730:4: (lv_value_2_0= ruleTextValue )
             {
-            // InternalLibrettoSpec.g:6606:4: (lv_value_2_0= ruleTextValue )
-            // InternalLibrettoSpec.g:6607:5: lv_value_2_0= ruleTextValue
+            // InternalLibrettoSpec.g:6730:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:6731:5: lv_value_2_0= ruleTextValue
             {
 
             					newCompositeNode(grammarAccess.getRationaleFieldAccess().getValueTextValueParserRuleCall_2_0());
@@ -18034,7 +18342,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSourceBlock"
-    // InternalLibrettoSpec.g:6628:1: entryRuleSourceBlock returns [EObject current=null] : iv_ruleSourceBlock= ruleSourceBlock EOF ;
+    // InternalLibrettoSpec.g:6752:1: entryRuleSourceBlock returns [EObject current=null] : iv_ruleSourceBlock= ruleSourceBlock EOF ;
     public final EObject entryRuleSourceBlock() throws RecognitionException {
         EObject current = null;
 
@@ -18042,8 +18350,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:6628:52: (iv_ruleSourceBlock= ruleSourceBlock EOF )
-            // InternalLibrettoSpec.g:6629:2: iv_ruleSourceBlock= ruleSourceBlock EOF
+            // InternalLibrettoSpec.g:6752:52: (iv_ruleSourceBlock= ruleSourceBlock EOF )
+            // InternalLibrettoSpec.g:6753:2: iv_ruleSourceBlock= ruleSourceBlock EOF
             {
              newCompositeNode(grammarAccess.getSourceBlockRule()); 
             pushFollow(FOLLOW_1);
@@ -18070,7 +18378,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSourceBlock"
-    // InternalLibrettoSpec.g:6635:1: ruleSourceBlock returns [EObject current=null] : (otherlv_0= 'source' otherlv_1= '{' ( (lv_items_2_0= ruleSourceBlockItem ) )* otherlv_3= '}' ) ;
+    // InternalLibrettoSpec.g:6759:1: ruleSourceBlock returns [EObject current=null] : (otherlv_0= 'source' otherlv_1= '{' ( (lv_items_2_0= ruleSourceBlockItem ) )* otherlv_3= '}' ) ;
     public final EObject ruleSourceBlock() throws RecognitionException {
         EObject current = null;
 
@@ -18084,13 +18392,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:6641:2: ( (otherlv_0= 'source' otherlv_1= '{' ( (lv_items_2_0= ruleSourceBlockItem ) )* otherlv_3= '}' ) )
-            // InternalLibrettoSpec.g:6642:2: (otherlv_0= 'source' otherlv_1= '{' ( (lv_items_2_0= ruleSourceBlockItem ) )* otherlv_3= '}' )
+            // InternalLibrettoSpec.g:6765:2: ( (otherlv_0= 'source' otherlv_1= '{' ( (lv_items_2_0= ruleSourceBlockItem ) )* otherlv_3= '}' ) )
+            // InternalLibrettoSpec.g:6766:2: (otherlv_0= 'source' otherlv_1= '{' ( (lv_items_2_0= ruleSourceBlockItem ) )* otherlv_3= '}' )
             {
-            // InternalLibrettoSpec.g:6642:2: (otherlv_0= 'source' otherlv_1= '{' ( (lv_items_2_0= ruleSourceBlockItem ) )* otherlv_3= '}' )
-            // InternalLibrettoSpec.g:6643:3: otherlv_0= 'source' otherlv_1= '{' ( (lv_items_2_0= ruleSourceBlockItem ) )* otherlv_3= '}'
+            // InternalLibrettoSpec.g:6766:2: (otherlv_0= 'source' otherlv_1= '{' ( (lv_items_2_0= ruleSourceBlockItem ) )* otherlv_3= '}' )
+            // InternalLibrettoSpec.g:6767:3: otherlv_0= 'source' otherlv_1= '{' ( (lv_items_2_0= ruleSourceBlockItem ) )* otherlv_3= '}'
             {
-            otherlv_0=(Token)match(input,86,FOLLOW_4); 
+            otherlv_0=(Token)match(input,88,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSourceBlockAccess().getSourceKeyword_0());
             		
@@ -18098,23 +18406,23 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getSourceBlockAccess().getLeftCurlyBracketKeyword_1());
             		
-            // InternalLibrettoSpec.g:6651:3: ( (lv_items_2_0= ruleSourceBlockItem ) )*
+            // InternalLibrettoSpec.g:6775:3: ( (lv_items_2_0= ruleSourceBlockItem ) )*
             loop37:
             do {
                 int alt37=2;
                 int LA37_0 = input.LA(1);
 
-                if ( ((LA37_0>=87 && LA37_0<=88)) ) {
+                if ( ((LA37_0>=89 && LA37_0<=90)) ) {
                     alt37=1;
                 }
 
 
                 switch (alt37) {
             	case 1 :
-            	    // InternalLibrettoSpec.g:6652:4: (lv_items_2_0= ruleSourceBlockItem )
+            	    // InternalLibrettoSpec.g:6776:4: (lv_items_2_0= ruleSourceBlockItem )
             	    {
-            	    // InternalLibrettoSpec.g:6652:4: (lv_items_2_0= ruleSourceBlockItem )
-            	    // InternalLibrettoSpec.g:6653:5: lv_items_2_0= ruleSourceBlockItem
+            	    // InternalLibrettoSpec.g:6776:4: (lv_items_2_0= ruleSourceBlockItem )
+            	    // InternalLibrettoSpec.g:6777:5: lv_items_2_0= ruleSourceBlockItem
             	    {
 
             	    					newCompositeNode(grammarAccess.getSourceBlockAccess().getItemsSourceBlockItemParserRuleCall_2_0());
@@ -18174,7 +18482,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSourceBlockItem"
-    // InternalLibrettoSpec.g:6678:1: entryRuleSourceBlockItem returns [EObject current=null] : iv_ruleSourceBlockItem= ruleSourceBlockItem EOF ;
+    // InternalLibrettoSpec.g:6802:1: entryRuleSourceBlockItem returns [EObject current=null] : iv_ruleSourceBlockItem= ruleSourceBlockItem EOF ;
     public final EObject entryRuleSourceBlockItem() throws RecognitionException {
         EObject current = null;
 
@@ -18182,8 +18490,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:6678:56: (iv_ruleSourceBlockItem= ruleSourceBlockItem EOF )
-            // InternalLibrettoSpec.g:6679:2: iv_ruleSourceBlockItem= ruleSourceBlockItem EOF
+            // InternalLibrettoSpec.g:6802:56: (iv_ruleSourceBlockItem= ruleSourceBlockItem EOF )
+            // InternalLibrettoSpec.g:6803:2: iv_ruleSourceBlockItem= ruleSourceBlockItem EOF
             {
              newCompositeNode(grammarAccess.getSourceBlockItemRule()); 
             pushFollow(FOLLOW_1);
@@ -18210,7 +18518,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSourceBlockItem"
-    // InternalLibrettoSpec.g:6685:1: ruleSourceBlockItem returns [EObject current=null] : (this_SourceBlockSectionItem_0= ruleSourceBlockSectionItem | this_SourceBlockSubsectionItem_1= ruleSourceBlockSubsectionItem ) ;
+    // InternalLibrettoSpec.g:6809:1: ruleSourceBlockItem returns [EObject current=null] : (this_SourceBlockSectionItem_0= ruleSourceBlockSectionItem | this_SourceBlockSubsectionItem_1= ruleSourceBlockSubsectionItem ) ;
     public final EObject ruleSourceBlockItem() throws RecognitionException {
         EObject current = null;
 
@@ -18223,17 +18531,17 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:6691:2: ( (this_SourceBlockSectionItem_0= ruleSourceBlockSectionItem | this_SourceBlockSubsectionItem_1= ruleSourceBlockSubsectionItem ) )
-            // InternalLibrettoSpec.g:6692:2: (this_SourceBlockSectionItem_0= ruleSourceBlockSectionItem | this_SourceBlockSubsectionItem_1= ruleSourceBlockSubsectionItem )
+            // InternalLibrettoSpec.g:6815:2: ( (this_SourceBlockSectionItem_0= ruleSourceBlockSectionItem | this_SourceBlockSubsectionItem_1= ruleSourceBlockSubsectionItem ) )
+            // InternalLibrettoSpec.g:6816:2: (this_SourceBlockSectionItem_0= ruleSourceBlockSectionItem | this_SourceBlockSubsectionItem_1= ruleSourceBlockSubsectionItem )
             {
-            // InternalLibrettoSpec.g:6692:2: (this_SourceBlockSectionItem_0= ruleSourceBlockSectionItem | this_SourceBlockSubsectionItem_1= ruleSourceBlockSubsectionItem )
+            // InternalLibrettoSpec.g:6816:2: (this_SourceBlockSectionItem_0= ruleSourceBlockSectionItem | this_SourceBlockSubsectionItem_1= ruleSourceBlockSubsectionItem )
             int alt38=2;
             int LA38_0 = input.LA(1);
 
-            if ( (LA38_0==87) ) {
+            if ( (LA38_0==89) ) {
                 alt38=1;
             }
-            else if ( (LA38_0==88) ) {
+            else if ( (LA38_0==90) ) {
                 alt38=2;
             }
             else {
@@ -18244,7 +18552,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
             }
             switch (alt38) {
                 case 1 :
-                    // InternalLibrettoSpec.g:6693:3: this_SourceBlockSectionItem_0= ruleSourceBlockSectionItem
+                    // InternalLibrettoSpec.g:6817:3: this_SourceBlockSectionItem_0= ruleSourceBlockSectionItem
                     {
 
                     			newCompositeNode(grammarAccess.getSourceBlockItemAccess().getSourceBlockSectionItemParserRuleCall_0());
@@ -18262,7 +18570,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoSpec.g:6702:3: this_SourceBlockSubsectionItem_1= ruleSourceBlockSubsectionItem
+                    // InternalLibrettoSpec.g:6826:3: this_SourceBlockSubsectionItem_1= ruleSourceBlockSubsectionItem
                     {
 
                     			newCompositeNode(grammarAccess.getSourceBlockItemAccess().getSourceBlockSubsectionItemParserRuleCall_1());
@@ -18302,7 +18610,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSourceBlockSectionItem"
-    // InternalLibrettoSpec.g:6714:1: entryRuleSourceBlockSectionItem returns [EObject current=null] : iv_ruleSourceBlockSectionItem= ruleSourceBlockSectionItem EOF ;
+    // InternalLibrettoSpec.g:6838:1: entryRuleSourceBlockSectionItem returns [EObject current=null] : iv_ruleSourceBlockSectionItem= ruleSourceBlockSectionItem EOF ;
     public final EObject entryRuleSourceBlockSectionItem() throws RecognitionException {
         EObject current = null;
 
@@ -18310,8 +18618,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:6714:63: (iv_ruleSourceBlockSectionItem= ruleSourceBlockSectionItem EOF )
-            // InternalLibrettoSpec.g:6715:2: iv_ruleSourceBlockSectionItem= ruleSourceBlockSectionItem EOF
+            // InternalLibrettoSpec.g:6838:63: (iv_ruleSourceBlockSectionItem= ruleSourceBlockSectionItem EOF )
+            // InternalLibrettoSpec.g:6839:2: iv_ruleSourceBlockSectionItem= ruleSourceBlockSectionItem EOF
             {
              newCompositeNode(grammarAccess.getSourceBlockSectionItemRule()); 
             pushFollow(FOLLOW_1);
@@ -18338,7 +18646,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSourceBlockSectionItem"
-    // InternalLibrettoSpec.g:6721:1: ruleSourceBlockSectionItem returns [EObject current=null] : ( (lv_section_0_0= ruleSectionField ) ) ;
+    // InternalLibrettoSpec.g:6845:1: ruleSourceBlockSectionItem returns [EObject current=null] : ( (lv_section_0_0= ruleSectionField ) ) ;
     public final EObject ruleSourceBlockSectionItem() throws RecognitionException {
         EObject current = null;
 
@@ -18349,14 +18657,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:6727:2: ( ( (lv_section_0_0= ruleSectionField ) ) )
-            // InternalLibrettoSpec.g:6728:2: ( (lv_section_0_0= ruleSectionField ) )
+            // InternalLibrettoSpec.g:6851:2: ( ( (lv_section_0_0= ruleSectionField ) ) )
+            // InternalLibrettoSpec.g:6852:2: ( (lv_section_0_0= ruleSectionField ) )
             {
-            // InternalLibrettoSpec.g:6728:2: ( (lv_section_0_0= ruleSectionField ) )
-            // InternalLibrettoSpec.g:6729:3: (lv_section_0_0= ruleSectionField )
+            // InternalLibrettoSpec.g:6852:2: ( (lv_section_0_0= ruleSectionField ) )
+            // InternalLibrettoSpec.g:6853:3: (lv_section_0_0= ruleSectionField )
             {
-            // InternalLibrettoSpec.g:6729:3: (lv_section_0_0= ruleSectionField )
-            // InternalLibrettoSpec.g:6730:4: lv_section_0_0= ruleSectionField
+            // InternalLibrettoSpec.g:6853:3: (lv_section_0_0= ruleSectionField )
+            // InternalLibrettoSpec.g:6854:4: lv_section_0_0= ruleSectionField
             {
 
             				newCompositeNode(grammarAccess.getSourceBlockSectionItemAccess().getSectionSectionFieldParserRuleCall_0());
@@ -18403,7 +18711,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSourceBlockSubsectionItem"
-    // InternalLibrettoSpec.g:6750:1: entryRuleSourceBlockSubsectionItem returns [EObject current=null] : iv_ruleSourceBlockSubsectionItem= ruleSourceBlockSubsectionItem EOF ;
+    // InternalLibrettoSpec.g:6874:1: entryRuleSourceBlockSubsectionItem returns [EObject current=null] : iv_ruleSourceBlockSubsectionItem= ruleSourceBlockSubsectionItem EOF ;
     public final EObject entryRuleSourceBlockSubsectionItem() throws RecognitionException {
         EObject current = null;
 
@@ -18411,8 +18719,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:6750:66: (iv_ruleSourceBlockSubsectionItem= ruleSourceBlockSubsectionItem EOF )
-            // InternalLibrettoSpec.g:6751:2: iv_ruleSourceBlockSubsectionItem= ruleSourceBlockSubsectionItem EOF
+            // InternalLibrettoSpec.g:6874:66: (iv_ruleSourceBlockSubsectionItem= ruleSourceBlockSubsectionItem EOF )
+            // InternalLibrettoSpec.g:6875:2: iv_ruleSourceBlockSubsectionItem= ruleSourceBlockSubsectionItem EOF
             {
              newCompositeNode(grammarAccess.getSourceBlockSubsectionItemRule()); 
             pushFollow(FOLLOW_1);
@@ -18439,7 +18747,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSourceBlockSubsectionItem"
-    // InternalLibrettoSpec.g:6757:1: ruleSourceBlockSubsectionItem returns [EObject current=null] : ( (lv_subsection_0_0= ruleSubsectionField ) ) ;
+    // InternalLibrettoSpec.g:6881:1: ruleSourceBlockSubsectionItem returns [EObject current=null] : ( (lv_subsection_0_0= ruleSubsectionField ) ) ;
     public final EObject ruleSourceBlockSubsectionItem() throws RecognitionException {
         EObject current = null;
 
@@ -18450,14 +18758,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:6763:2: ( ( (lv_subsection_0_0= ruleSubsectionField ) ) )
-            // InternalLibrettoSpec.g:6764:2: ( (lv_subsection_0_0= ruleSubsectionField ) )
+            // InternalLibrettoSpec.g:6887:2: ( ( (lv_subsection_0_0= ruleSubsectionField ) ) )
+            // InternalLibrettoSpec.g:6888:2: ( (lv_subsection_0_0= ruleSubsectionField ) )
             {
-            // InternalLibrettoSpec.g:6764:2: ( (lv_subsection_0_0= ruleSubsectionField ) )
-            // InternalLibrettoSpec.g:6765:3: (lv_subsection_0_0= ruleSubsectionField )
+            // InternalLibrettoSpec.g:6888:2: ( (lv_subsection_0_0= ruleSubsectionField ) )
+            // InternalLibrettoSpec.g:6889:3: (lv_subsection_0_0= ruleSubsectionField )
             {
-            // InternalLibrettoSpec.g:6765:3: (lv_subsection_0_0= ruleSubsectionField )
-            // InternalLibrettoSpec.g:6766:4: lv_subsection_0_0= ruleSubsectionField
+            // InternalLibrettoSpec.g:6889:3: (lv_subsection_0_0= ruleSubsectionField )
+            // InternalLibrettoSpec.g:6890:4: lv_subsection_0_0= ruleSubsectionField
             {
 
             				newCompositeNode(grammarAccess.getSourceBlockSubsectionItemAccess().getSubsectionSubsectionFieldParserRuleCall_0());
@@ -18504,7 +18812,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSectionField"
-    // InternalLibrettoSpec.g:6786:1: entryRuleSectionField returns [EObject current=null] : iv_ruleSectionField= ruleSectionField EOF ;
+    // InternalLibrettoSpec.g:6910:1: entryRuleSectionField returns [EObject current=null] : iv_ruleSectionField= ruleSectionField EOF ;
     public final EObject entryRuleSectionField() throws RecognitionException {
         EObject current = null;
 
@@ -18512,8 +18820,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:6786:53: (iv_ruleSectionField= ruleSectionField EOF )
-            // InternalLibrettoSpec.g:6787:2: iv_ruleSectionField= ruleSectionField EOF
+            // InternalLibrettoSpec.g:6910:53: (iv_ruleSectionField= ruleSectionField EOF )
+            // InternalLibrettoSpec.g:6911:2: iv_ruleSectionField= ruleSectionField EOF
             {
              newCompositeNode(grammarAccess.getSectionFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -18540,7 +18848,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSectionField"
-    // InternalLibrettoSpec.g:6793:1: ruleSectionField returns [EObject current=null] : (otherlv_0= 'section' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
+    // InternalLibrettoSpec.g:6917:1: ruleSectionField returns [EObject current=null] : (otherlv_0= 'section' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
     public final EObject ruleSectionField() throws RecognitionException {
         EObject current = null;
 
@@ -18553,13 +18861,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:6799:2: ( (otherlv_0= 'section' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
-            // InternalLibrettoSpec.g:6800:2: (otherlv_0= 'section' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:6923:2: ( (otherlv_0= 'section' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
+            // InternalLibrettoSpec.g:6924:2: (otherlv_0= 'section' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
             {
-            // InternalLibrettoSpec.g:6800:2: (otherlv_0= 'section' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
-            // InternalLibrettoSpec.g:6801:3: otherlv_0= 'section' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:6924:2: (otherlv_0= 'section' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:6925:3: otherlv_0= 'section' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
             {
-            otherlv_0=(Token)match(input,87,FOLLOW_17); 
+            otherlv_0=(Token)match(input,89,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSectionFieldAccess().getSectionKeyword_0());
             		
@@ -18567,11 +18875,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getSectionFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:6809:3: ( (lv_value_2_0= ruleTextValue ) )
-            // InternalLibrettoSpec.g:6810:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:6933:3: ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:6934:4: (lv_value_2_0= ruleTextValue )
             {
-            // InternalLibrettoSpec.g:6810:4: (lv_value_2_0= ruleTextValue )
-            // InternalLibrettoSpec.g:6811:5: lv_value_2_0= ruleTextValue
+            // InternalLibrettoSpec.g:6934:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:6935:5: lv_value_2_0= ruleTextValue
             {
 
             					newCompositeNode(grammarAccess.getSectionFieldAccess().getValueTextValueParserRuleCall_2_0());
@@ -18621,7 +18929,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSubsectionField"
-    // InternalLibrettoSpec.g:6832:1: entryRuleSubsectionField returns [EObject current=null] : iv_ruleSubsectionField= ruleSubsectionField EOF ;
+    // InternalLibrettoSpec.g:6956:1: entryRuleSubsectionField returns [EObject current=null] : iv_ruleSubsectionField= ruleSubsectionField EOF ;
     public final EObject entryRuleSubsectionField() throws RecognitionException {
         EObject current = null;
 
@@ -18629,8 +18937,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:6832:56: (iv_ruleSubsectionField= ruleSubsectionField EOF )
-            // InternalLibrettoSpec.g:6833:2: iv_ruleSubsectionField= ruleSubsectionField EOF
+            // InternalLibrettoSpec.g:6956:56: (iv_ruleSubsectionField= ruleSubsectionField EOF )
+            // InternalLibrettoSpec.g:6957:2: iv_ruleSubsectionField= ruleSubsectionField EOF
             {
              newCompositeNode(grammarAccess.getSubsectionFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -18657,7 +18965,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSubsectionField"
-    // InternalLibrettoSpec.g:6839:1: ruleSubsectionField returns [EObject current=null] : (otherlv_0= 'subsection' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
+    // InternalLibrettoSpec.g:6963:1: ruleSubsectionField returns [EObject current=null] : (otherlv_0= 'subsection' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
     public final EObject ruleSubsectionField() throws RecognitionException {
         EObject current = null;
 
@@ -18670,13 +18978,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:6845:2: ( (otherlv_0= 'subsection' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
-            // InternalLibrettoSpec.g:6846:2: (otherlv_0= 'subsection' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:6969:2: ( (otherlv_0= 'subsection' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
+            // InternalLibrettoSpec.g:6970:2: (otherlv_0= 'subsection' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
             {
-            // InternalLibrettoSpec.g:6846:2: (otherlv_0= 'subsection' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
-            // InternalLibrettoSpec.g:6847:3: otherlv_0= 'subsection' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:6970:2: (otherlv_0= 'subsection' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:6971:3: otherlv_0= 'subsection' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
             {
-            otherlv_0=(Token)match(input,88,FOLLOW_17); 
+            otherlv_0=(Token)match(input,90,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSubsectionFieldAccess().getSubsectionKeyword_0());
             		
@@ -18684,11 +18992,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getSubsectionFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:6855:3: ( (lv_value_2_0= ruleTextValue ) )
-            // InternalLibrettoSpec.g:6856:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:6979:3: ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:6980:4: (lv_value_2_0= ruleTextValue )
             {
-            // InternalLibrettoSpec.g:6856:4: (lv_value_2_0= ruleTextValue )
-            // InternalLibrettoSpec.g:6857:5: lv_value_2_0= ruleTextValue
+            // InternalLibrettoSpec.g:6980:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:6981:5: lv_value_2_0= ruleTextValue
             {
 
             					newCompositeNode(grammarAccess.getSubsectionFieldAccess().getValueTextValueParserRuleCall_2_0());
@@ -18738,7 +19046,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTextField"
-    // InternalLibrettoSpec.g:6878:1: entryRuleTextField returns [EObject current=null] : iv_ruleTextField= ruleTextField EOF ;
+    // InternalLibrettoSpec.g:7002:1: entryRuleTextField returns [EObject current=null] : iv_ruleTextField= ruleTextField EOF ;
     public final EObject entryRuleTextField() throws RecognitionException {
         EObject current = null;
 
@@ -18746,8 +19054,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:6878:50: (iv_ruleTextField= ruleTextField EOF )
-            // InternalLibrettoSpec.g:6879:2: iv_ruleTextField= ruleTextField EOF
+            // InternalLibrettoSpec.g:7002:50: (iv_ruleTextField= ruleTextField EOF )
+            // InternalLibrettoSpec.g:7003:2: iv_ruleTextField= ruleTextField EOF
             {
              newCompositeNode(grammarAccess.getTextFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -18774,7 +19082,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTextField"
-    // InternalLibrettoSpec.g:6885:1: ruleTextField returns [EObject current=null] : (otherlv_0= 'text' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
+    // InternalLibrettoSpec.g:7009:1: ruleTextField returns [EObject current=null] : (otherlv_0= 'text' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) ;
     public final EObject ruleTextField() throws RecognitionException {
         EObject current = null;
 
@@ -18787,13 +19095,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:6891:2: ( (otherlv_0= 'text' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
-            // InternalLibrettoSpec.g:6892:2: (otherlv_0= 'text' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:7015:2: ( (otherlv_0= 'text' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) ) )
+            // InternalLibrettoSpec.g:7016:2: (otherlv_0= 'text' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
             {
-            // InternalLibrettoSpec.g:6892:2: (otherlv_0= 'text' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
-            // InternalLibrettoSpec.g:6893:3: otherlv_0= 'text' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:7016:2: (otherlv_0= 'text' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) ) )
+            // InternalLibrettoSpec.g:7017:3: otherlv_0= 'text' otherlv_1= ':' ( (lv_value_2_0= ruleTextValue ) )
             {
-            otherlv_0=(Token)match(input,89,FOLLOW_17); 
+            otherlv_0=(Token)match(input,91,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getTextFieldAccess().getTextKeyword_0());
             		
@@ -18801,11 +19109,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getTextFieldAccess().getColonKeyword_1());
             		
-            // InternalLibrettoSpec.g:6901:3: ( (lv_value_2_0= ruleTextValue ) )
-            // InternalLibrettoSpec.g:6902:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:7025:3: ( (lv_value_2_0= ruleTextValue ) )
+            // InternalLibrettoSpec.g:7026:4: (lv_value_2_0= ruleTextValue )
             {
-            // InternalLibrettoSpec.g:6902:4: (lv_value_2_0= ruleTextValue )
-            // InternalLibrettoSpec.g:6903:5: lv_value_2_0= ruleTextValue
+            // InternalLibrettoSpec.g:7026:4: (lv_value_2_0= ruleTextValue )
+            // InternalLibrettoSpec.g:7027:5: lv_value_2_0= ruleTextValue
             {
 
             					newCompositeNode(grammarAccess.getTextFieldAccess().getValueTextValueParserRuleCall_2_0());
@@ -18855,7 +19163,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBehaviorId"
-    // InternalLibrettoSpec.g:6924:1: entryRuleBehaviorId returns [String current=null] : iv_ruleBehaviorId= ruleBehaviorId EOF ;
+    // InternalLibrettoSpec.g:7048:1: entryRuleBehaviorId returns [String current=null] : iv_ruleBehaviorId= ruleBehaviorId EOF ;
     public final String entryRuleBehaviorId() throws RecognitionException {
         String current = null;
 
@@ -18863,8 +19171,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:6924:50: (iv_ruleBehaviorId= ruleBehaviorId EOF )
-            // InternalLibrettoSpec.g:6925:2: iv_ruleBehaviorId= ruleBehaviorId EOF
+            // InternalLibrettoSpec.g:7048:50: (iv_ruleBehaviorId= ruleBehaviorId EOF )
+            // InternalLibrettoSpec.g:7049:2: iv_ruleBehaviorId= ruleBehaviorId EOF
             {
              newCompositeNode(grammarAccess.getBehaviorIdRule()); 
             pushFollow(FOLLOW_1);
@@ -18891,7 +19199,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBehaviorId"
-    // InternalLibrettoSpec.g:6931:1: ruleBehaviorId returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_BEHAVIOR_ID_0= RULE_BEHAVIOR_ID ;
+    // InternalLibrettoSpec.g:7055:1: ruleBehaviorId returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_BEHAVIOR_ID_0= RULE_BEHAVIOR_ID ;
     public final AntlrDatatypeRuleToken ruleBehaviorId() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -18901,8 +19209,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:6937:2: (this_BEHAVIOR_ID_0= RULE_BEHAVIOR_ID )
-            // InternalLibrettoSpec.g:6938:2: this_BEHAVIOR_ID_0= RULE_BEHAVIOR_ID
+            // InternalLibrettoSpec.g:7061:2: (this_BEHAVIOR_ID_0= RULE_BEHAVIOR_ID )
+            // InternalLibrettoSpec.g:7062:2: this_BEHAVIOR_ID_0= RULE_BEHAVIOR_ID
             {
             this_BEHAVIOR_ID_0=(Token)match(input,RULE_BEHAVIOR_ID,FOLLOW_2); 
 
@@ -18931,7 +19239,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAcceptanceTestId"
-    // InternalLibrettoSpec.g:6948:1: entryRuleAcceptanceTestId returns [String current=null] : iv_ruleAcceptanceTestId= ruleAcceptanceTestId EOF ;
+    // InternalLibrettoSpec.g:7072:1: entryRuleAcceptanceTestId returns [String current=null] : iv_ruleAcceptanceTestId= ruleAcceptanceTestId EOF ;
     public final String entryRuleAcceptanceTestId() throws RecognitionException {
         String current = null;
 
@@ -18939,8 +19247,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:6948:56: (iv_ruleAcceptanceTestId= ruleAcceptanceTestId EOF )
-            // InternalLibrettoSpec.g:6949:2: iv_ruleAcceptanceTestId= ruleAcceptanceTestId EOF
+            // InternalLibrettoSpec.g:7072:56: (iv_ruleAcceptanceTestId= ruleAcceptanceTestId EOF )
+            // InternalLibrettoSpec.g:7073:2: iv_ruleAcceptanceTestId= ruleAcceptanceTestId EOF
             {
              newCompositeNode(grammarAccess.getAcceptanceTestIdRule()); 
             pushFollow(FOLLOW_1);
@@ -18967,7 +19275,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAcceptanceTestId"
-    // InternalLibrettoSpec.g:6955:1: ruleAcceptanceTestId returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_ACCEPTANCE_TEST_ID_0= RULE_ACCEPTANCE_TEST_ID ;
+    // InternalLibrettoSpec.g:7079:1: ruleAcceptanceTestId returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_ACCEPTANCE_TEST_ID_0= RULE_ACCEPTANCE_TEST_ID ;
     public final AntlrDatatypeRuleToken ruleAcceptanceTestId() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -18977,8 +19285,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:6961:2: (this_ACCEPTANCE_TEST_ID_0= RULE_ACCEPTANCE_TEST_ID )
-            // InternalLibrettoSpec.g:6962:2: this_ACCEPTANCE_TEST_ID_0= RULE_ACCEPTANCE_TEST_ID
+            // InternalLibrettoSpec.g:7085:2: (this_ACCEPTANCE_TEST_ID_0= RULE_ACCEPTANCE_TEST_ID )
+            // InternalLibrettoSpec.g:7086:2: this_ACCEPTANCE_TEST_ID_0= RULE_ACCEPTANCE_TEST_ID
             {
             this_ACCEPTANCE_TEST_ID_0=(Token)match(input,RULE_ACCEPTANCE_TEST_ID,FOLLOW_2); 
 
@@ -19007,7 +19315,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleImplementationDirectiveId"
-    // InternalLibrettoSpec.g:6972:1: entryRuleImplementationDirectiveId returns [String current=null] : iv_ruleImplementationDirectiveId= ruleImplementationDirectiveId EOF ;
+    // InternalLibrettoSpec.g:7096:1: entryRuleImplementationDirectiveId returns [String current=null] : iv_ruleImplementationDirectiveId= ruleImplementationDirectiveId EOF ;
     public final String entryRuleImplementationDirectiveId() throws RecognitionException {
         String current = null;
 
@@ -19015,8 +19323,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:6972:65: (iv_ruleImplementationDirectiveId= ruleImplementationDirectiveId EOF )
-            // InternalLibrettoSpec.g:6973:2: iv_ruleImplementationDirectiveId= ruleImplementationDirectiveId EOF
+            // InternalLibrettoSpec.g:7096:65: (iv_ruleImplementationDirectiveId= ruleImplementationDirectiveId EOF )
+            // InternalLibrettoSpec.g:7097:2: iv_ruleImplementationDirectiveId= ruleImplementationDirectiveId EOF
             {
              newCompositeNode(grammarAccess.getImplementationDirectiveIdRule()); 
             pushFollow(FOLLOW_1);
@@ -19043,7 +19351,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleImplementationDirectiveId"
-    // InternalLibrettoSpec.g:6979:1: ruleImplementationDirectiveId returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_IMPLEMENTATION_DIRECTIVE_ID_0= RULE_IMPLEMENTATION_DIRECTIVE_ID ;
+    // InternalLibrettoSpec.g:7103:1: ruleImplementationDirectiveId returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_IMPLEMENTATION_DIRECTIVE_ID_0= RULE_IMPLEMENTATION_DIRECTIVE_ID ;
     public final AntlrDatatypeRuleToken ruleImplementationDirectiveId() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -19053,8 +19361,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:6985:2: (this_IMPLEMENTATION_DIRECTIVE_ID_0= RULE_IMPLEMENTATION_DIRECTIVE_ID )
-            // InternalLibrettoSpec.g:6986:2: this_IMPLEMENTATION_DIRECTIVE_ID_0= RULE_IMPLEMENTATION_DIRECTIVE_ID
+            // InternalLibrettoSpec.g:7109:2: (this_IMPLEMENTATION_DIRECTIVE_ID_0= RULE_IMPLEMENTATION_DIRECTIVE_ID )
+            // InternalLibrettoSpec.g:7110:2: this_IMPLEMENTATION_DIRECTIVE_ID_0= RULE_IMPLEMENTATION_DIRECTIVE_ID
             {
             this_IMPLEMENTATION_DIRECTIVE_ID_0=(Token)match(input,RULE_IMPLEMENTATION_DIRECTIVE_ID,FOLLOW_2); 
 
@@ -19083,7 +19391,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRefId"
-    // InternalLibrettoSpec.g:6996:1: entryRuleRefId returns [String current=null] : iv_ruleRefId= ruleRefId EOF ;
+    // InternalLibrettoSpec.g:7120:1: entryRuleRefId returns [String current=null] : iv_ruleRefId= ruleRefId EOF ;
     public final String entryRuleRefId() throws RecognitionException {
         String current = null;
 
@@ -19091,8 +19399,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:6996:45: (iv_ruleRefId= ruleRefId EOF )
-            // InternalLibrettoSpec.g:6997:2: iv_ruleRefId= ruleRefId EOF
+            // InternalLibrettoSpec.g:7120:45: (iv_ruleRefId= ruleRefId EOF )
+            // InternalLibrettoSpec.g:7121:2: iv_ruleRefId= ruleRefId EOF
             {
              newCompositeNode(grammarAccess.getRefIdRule()); 
             pushFollow(FOLLOW_1);
@@ -19119,7 +19427,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRefId"
-    // InternalLibrettoSpec.g:7003:1: ruleRefId returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_REF_ID_0= RULE_REF_ID ;
+    // InternalLibrettoSpec.g:7127:1: ruleRefId returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_REF_ID_0= RULE_REF_ID ;
     public final AntlrDatatypeRuleToken ruleRefId() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -19129,8 +19437,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:7009:2: (this_REF_ID_0= RULE_REF_ID )
-            // InternalLibrettoSpec.g:7010:2: this_REF_ID_0= RULE_REF_ID
+            // InternalLibrettoSpec.g:7133:2: (this_REF_ID_0= RULE_REF_ID )
+            // InternalLibrettoSpec.g:7134:2: this_REF_ID_0= RULE_REF_ID
             {
             this_REF_ID_0=(Token)match(input,RULE_REF_ID,FOLLOW_2); 
 
@@ -19159,7 +19467,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOosId"
-    // InternalLibrettoSpec.g:7020:1: entryRuleOosId returns [String current=null] : iv_ruleOosId= ruleOosId EOF ;
+    // InternalLibrettoSpec.g:7144:1: entryRuleOosId returns [String current=null] : iv_ruleOosId= ruleOosId EOF ;
     public final String entryRuleOosId() throws RecognitionException {
         String current = null;
 
@@ -19167,8 +19475,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:7020:45: (iv_ruleOosId= ruleOosId EOF )
-            // InternalLibrettoSpec.g:7021:2: iv_ruleOosId= ruleOosId EOF
+            // InternalLibrettoSpec.g:7144:45: (iv_ruleOosId= ruleOosId EOF )
+            // InternalLibrettoSpec.g:7145:2: iv_ruleOosId= ruleOosId EOF
             {
              newCompositeNode(grammarAccess.getOosIdRule()); 
             pushFollow(FOLLOW_1);
@@ -19195,7 +19503,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOosId"
-    // InternalLibrettoSpec.g:7027:1: ruleOosId returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_OOS_ID_0= RULE_OOS_ID ;
+    // InternalLibrettoSpec.g:7151:1: ruleOosId returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_OOS_ID_0= RULE_OOS_ID ;
     public final AntlrDatatypeRuleToken ruleOosId() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -19205,8 +19513,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:7033:2: (this_OOS_ID_0= RULE_OOS_ID )
-            // InternalLibrettoSpec.g:7034:2: this_OOS_ID_0= RULE_OOS_ID
+            // InternalLibrettoSpec.g:7157:2: (this_OOS_ID_0= RULE_OOS_ID )
+            // InternalLibrettoSpec.g:7158:2: this_OOS_ID_0= RULE_OOS_ID
             {
             this_OOS_ID_0=(Token)match(input,RULE_OOS_ID,FOLLOW_2); 
 
@@ -19235,7 +19543,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIdentifierList"
-    // InternalLibrettoSpec.g:7044:1: entryRuleIdentifierList returns [EObject current=null] : iv_ruleIdentifierList= ruleIdentifierList EOF ;
+    // InternalLibrettoSpec.g:7168:1: entryRuleIdentifierList returns [EObject current=null] : iv_ruleIdentifierList= ruleIdentifierList EOF ;
     public final EObject entryRuleIdentifierList() throws RecognitionException {
         EObject current = null;
 
@@ -19243,8 +19551,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:7044:55: (iv_ruleIdentifierList= ruleIdentifierList EOF )
-            // InternalLibrettoSpec.g:7045:2: iv_ruleIdentifierList= ruleIdentifierList EOF
+            // InternalLibrettoSpec.g:7168:55: (iv_ruleIdentifierList= ruleIdentifierList EOF )
+            // InternalLibrettoSpec.g:7169:2: iv_ruleIdentifierList= ruleIdentifierList EOF
             {
              newCompositeNode(grammarAccess.getIdentifierListRule()); 
             pushFollow(FOLLOW_1);
@@ -19271,7 +19579,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIdentifierList"
-    // InternalLibrettoSpec.g:7051:1: ruleIdentifierList returns [EObject current=null] : ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleIdentifierValue ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleIdentifierValue ) ) )* )? otherlv_5= ']' ) ;
+    // InternalLibrettoSpec.g:7175:1: ruleIdentifierList returns [EObject current=null] : ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleIdentifierValue ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleIdentifierValue ) ) )* )? otherlv_5= ']' ) ;
     public final EObject ruleIdentifierList() throws RecognitionException {
         EObject current = null;
 
@@ -19287,14 +19595,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:7057:2: ( ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleIdentifierValue ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleIdentifierValue ) ) )* )? otherlv_5= ']' ) )
-            // InternalLibrettoSpec.g:7058:2: ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleIdentifierValue ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleIdentifierValue ) ) )* )? otherlv_5= ']' )
+            // InternalLibrettoSpec.g:7181:2: ( ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleIdentifierValue ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleIdentifierValue ) ) )* )? otherlv_5= ']' ) )
+            // InternalLibrettoSpec.g:7182:2: ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleIdentifierValue ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleIdentifierValue ) ) )* )? otherlv_5= ']' )
             {
-            // InternalLibrettoSpec.g:7058:2: ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleIdentifierValue ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleIdentifierValue ) ) )* )? otherlv_5= ']' )
-            // InternalLibrettoSpec.g:7059:3: () otherlv_1= '[' ( ( (lv_values_2_0= ruleIdentifierValue ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleIdentifierValue ) ) )* )? otherlv_5= ']'
+            // InternalLibrettoSpec.g:7182:2: ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleIdentifierValue ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleIdentifierValue ) ) )* )? otherlv_5= ']' )
+            // InternalLibrettoSpec.g:7183:3: () otherlv_1= '[' ( ( (lv_values_2_0= ruleIdentifierValue ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleIdentifierValue ) ) )* )? otherlv_5= ']'
             {
-            // InternalLibrettoSpec.g:7059:3: ()
-            // InternalLibrettoSpec.g:7060:4: 
+            // InternalLibrettoSpec.g:7183:3: ()
+            // InternalLibrettoSpec.g:7184:4: 
             {
 
             				current = forceCreateModelElement(
@@ -19304,11 +19612,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,90,FOLLOW_40); 
+            otherlv_1=(Token)match(input,92,FOLLOW_40); 
 
             			newLeafNode(otherlv_1, grammarAccess.getIdentifierListAccess().getLeftSquareBracketKeyword_1());
             		
-            // InternalLibrettoSpec.g:7070:3: ( ( (lv_values_2_0= ruleIdentifierValue ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleIdentifierValue ) ) )* )?
+            // InternalLibrettoSpec.g:7194:3: ( ( (lv_values_2_0= ruleIdentifierValue ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleIdentifierValue ) ) )* )?
             int alt40=2;
             int LA40_0 = input.LA(1);
 
@@ -19317,13 +19625,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
             }
             switch (alt40) {
                 case 1 :
-                    // InternalLibrettoSpec.g:7071:4: ( (lv_values_2_0= ruleIdentifierValue ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleIdentifierValue ) ) )*
+                    // InternalLibrettoSpec.g:7195:4: ( (lv_values_2_0= ruleIdentifierValue ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleIdentifierValue ) ) )*
                     {
-                    // InternalLibrettoSpec.g:7071:4: ( (lv_values_2_0= ruleIdentifierValue ) )
-                    // InternalLibrettoSpec.g:7072:5: (lv_values_2_0= ruleIdentifierValue )
+                    // InternalLibrettoSpec.g:7195:4: ( (lv_values_2_0= ruleIdentifierValue ) )
+                    // InternalLibrettoSpec.g:7196:5: (lv_values_2_0= ruleIdentifierValue )
                     {
-                    // InternalLibrettoSpec.g:7072:5: (lv_values_2_0= ruleIdentifierValue )
-                    // InternalLibrettoSpec.g:7073:6: lv_values_2_0= ruleIdentifierValue
+                    // InternalLibrettoSpec.g:7196:5: (lv_values_2_0= ruleIdentifierValue )
+                    // InternalLibrettoSpec.g:7197:6: lv_values_2_0= ruleIdentifierValue
                     {
 
                     						newCompositeNode(grammarAccess.getIdentifierListAccess().getValuesIdentifierValueParserRuleCall_2_0_0());
@@ -19350,30 +19658,30 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalLibrettoSpec.g:7090:4: (otherlv_3= ',' ( (lv_values_4_0= ruleIdentifierValue ) ) )*
+                    // InternalLibrettoSpec.g:7214:4: (otherlv_3= ',' ( (lv_values_4_0= ruleIdentifierValue ) ) )*
                     loop39:
                     do {
                         int alt39=2;
                         int LA39_0 = input.LA(1);
 
-                        if ( (LA39_0==91) ) {
+                        if ( (LA39_0==93) ) {
                             alt39=1;
                         }
 
 
                         switch (alt39) {
                     	case 1 :
-                    	    // InternalLibrettoSpec.g:7091:5: otherlv_3= ',' ( (lv_values_4_0= ruleIdentifierValue ) )
+                    	    // InternalLibrettoSpec.g:7215:5: otherlv_3= ',' ( (lv_values_4_0= ruleIdentifierValue ) )
                     	    {
-                    	    otherlv_3=(Token)match(input,91,FOLLOW_3); 
+                    	    otherlv_3=(Token)match(input,93,FOLLOW_3); 
 
                     	    					newLeafNode(otherlv_3, grammarAccess.getIdentifierListAccess().getCommaKeyword_2_1_0());
                     	    				
-                    	    // InternalLibrettoSpec.g:7095:5: ( (lv_values_4_0= ruleIdentifierValue ) )
-                    	    // InternalLibrettoSpec.g:7096:6: (lv_values_4_0= ruleIdentifierValue )
+                    	    // InternalLibrettoSpec.g:7219:5: ( (lv_values_4_0= ruleIdentifierValue ) )
+                    	    // InternalLibrettoSpec.g:7220:6: (lv_values_4_0= ruleIdentifierValue )
                     	    {
-                    	    // InternalLibrettoSpec.g:7096:6: (lv_values_4_0= ruleIdentifierValue )
-                    	    // InternalLibrettoSpec.g:7097:7: lv_values_4_0= ruleIdentifierValue
+                    	    // InternalLibrettoSpec.g:7220:6: (lv_values_4_0= ruleIdentifierValue )
+                    	    // InternalLibrettoSpec.g:7221:7: lv_values_4_0= ruleIdentifierValue
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getIdentifierListAccess().getValuesIdentifierValueParserRuleCall_2_1_1_0());
@@ -19415,7 +19723,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,92,FOLLOW_2); 
+            otherlv_5=(Token)match(input,94,FOLLOW_2); 
 
             			newLeafNode(otherlv_5, grammarAccess.getIdentifierListAccess().getRightSquareBracketKeyword_3());
             		
@@ -19442,7 +19750,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBehaviorIdList"
-    // InternalLibrettoSpec.g:7124:1: entryRuleBehaviorIdList returns [EObject current=null] : iv_ruleBehaviorIdList= ruleBehaviorIdList EOF ;
+    // InternalLibrettoSpec.g:7248:1: entryRuleBehaviorIdList returns [EObject current=null] : iv_ruleBehaviorIdList= ruleBehaviorIdList EOF ;
     public final EObject entryRuleBehaviorIdList() throws RecognitionException {
         EObject current = null;
 
@@ -19450,8 +19758,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:7124:55: (iv_ruleBehaviorIdList= ruleBehaviorIdList EOF )
-            // InternalLibrettoSpec.g:7125:2: iv_ruleBehaviorIdList= ruleBehaviorIdList EOF
+            // InternalLibrettoSpec.g:7248:55: (iv_ruleBehaviorIdList= ruleBehaviorIdList EOF )
+            // InternalLibrettoSpec.g:7249:2: iv_ruleBehaviorIdList= ruleBehaviorIdList EOF
             {
              newCompositeNode(grammarAccess.getBehaviorIdListRule()); 
             pushFollow(FOLLOW_1);
@@ -19478,7 +19786,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBehaviorIdList"
-    // InternalLibrettoSpec.g:7131:1: ruleBehaviorIdList returns [EObject current=null] : ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleBehaviorId ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleBehaviorId ) ) )* )? otherlv_5= ']' ) ;
+    // InternalLibrettoSpec.g:7255:1: ruleBehaviorIdList returns [EObject current=null] : ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleBehaviorId ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleBehaviorId ) ) )* )? otherlv_5= ']' ) ;
     public final EObject ruleBehaviorIdList() throws RecognitionException {
         EObject current = null;
 
@@ -19494,14 +19802,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:7137:2: ( ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleBehaviorId ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleBehaviorId ) ) )* )? otherlv_5= ']' ) )
-            // InternalLibrettoSpec.g:7138:2: ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleBehaviorId ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleBehaviorId ) ) )* )? otherlv_5= ']' )
+            // InternalLibrettoSpec.g:7261:2: ( ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleBehaviorId ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleBehaviorId ) ) )* )? otherlv_5= ']' ) )
+            // InternalLibrettoSpec.g:7262:2: ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleBehaviorId ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleBehaviorId ) ) )* )? otherlv_5= ']' )
             {
-            // InternalLibrettoSpec.g:7138:2: ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleBehaviorId ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleBehaviorId ) ) )* )? otherlv_5= ']' )
-            // InternalLibrettoSpec.g:7139:3: () otherlv_1= '[' ( ( (lv_values_2_0= ruleBehaviorId ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleBehaviorId ) ) )* )? otherlv_5= ']'
+            // InternalLibrettoSpec.g:7262:2: ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleBehaviorId ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleBehaviorId ) ) )* )? otherlv_5= ']' )
+            // InternalLibrettoSpec.g:7263:3: () otherlv_1= '[' ( ( (lv_values_2_0= ruleBehaviorId ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleBehaviorId ) ) )* )? otherlv_5= ']'
             {
-            // InternalLibrettoSpec.g:7139:3: ()
-            // InternalLibrettoSpec.g:7140:4: 
+            // InternalLibrettoSpec.g:7263:3: ()
+            // InternalLibrettoSpec.g:7264:4: 
             {
 
             				current = forceCreateModelElement(
@@ -19511,11 +19819,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,90,FOLLOW_42); 
+            otherlv_1=(Token)match(input,92,FOLLOW_42); 
 
             			newLeafNode(otherlv_1, grammarAccess.getBehaviorIdListAccess().getLeftSquareBracketKeyword_1());
             		
-            // InternalLibrettoSpec.g:7150:3: ( ( (lv_values_2_0= ruleBehaviorId ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleBehaviorId ) ) )* )?
+            // InternalLibrettoSpec.g:7274:3: ( ( (lv_values_2_0= ruleBehaviorId ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleBehaviorId ) ) )* )?
             int alt42=2;
             int LA42_0 = input.LA(1);
 
@@ -19524,13 +19832,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
             }
             switch (alt42) {
                 case 1 :
-                    // InternalLibrettoSpec.g:7151:4: ( (lv_values_2_0= ruleBehaviorId ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleBehaviorId ) ) )*
+                    // InternalLibrettoSpec.g:7275:4: ( (lv_values_2_0= ruleBehaviorId ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleBehaviorId ) ) )*
                     {
-                    // InternalLibrettoSpec.g:7151:4: ( (lv_values_2_0= ruleBehaviorId ) )
-                    // InternalLibrettoSpec.g:7152:5: (lv_values_2_0= ruleBehaviorId )
+                    // InternalLibrettoSpec.g:7275:4: ( (lv_values_2_0= ruleBehaviorId ) )
+                    // InternalLibrettoSpec.g:7276:5: (lv_values_2_0= ruleBehaviorId )
                     {
-                    // InternalLibrettoSpec.g:7152:5: (lv_values_2_0= ruleBehaviorId )
-                    // InternalLibrettoSpec.g:7153:6: lv_values_2_0= ruleBehaviorId
+                    // InternalLibrettoSpec.g:7276:5: (lv_values_2_0= ruleBehaviorId )
+                    // InternalLibrettoSpec.g:7277:6: lv_values_2_0= ruleBehaviorId
                     {
 
                     						newCompositeNode(grammarAccess.getBehaviorIdListAccess().getValuesBehaviorIdParserRuleCall_2_0_0());
@@ -19557,30 +19865,30 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalLibrettoSpec.g:7170:4: (otherlv_3= ',' ( (lv_values_4_0= ruleBehaviorId ) ) )*
+                    // InternalLibrettoSpec.g:7294:4: (otherlv_3= ',' ( (lv_values_4_0= ruleBehaviorId ) ) )*
                     loop41:
                     do {
                         int alt41=2;
                         int LA41_0 = input.LA(1);
 
-                        if ( (LA41_0==91) ) {
+                        if ( (LA41_0==93) ) {
                             alt41=1;
                         }
 
 
                         switch (alt41) {
                     	case 1 :
-                    	    // InternalLibrettoSpec.g:7171:5: otherlv_3= ',' ( (lv_values_4_0= ruleBehaviorId ) )
+                    	    // InternalLibrettoSpec.g:7295:5: otherlv_3= ',' ( (lv_values_4_0= ruleBehaviorId ) )
                     	    {
-                    	    otherlv_3=(Token)match(input,91,FOLLOW_27); 
+                    	    otherlv_3=(Token)match(input,93,FOLLOW_27); 
 
                     	    					newLeafNode(otherlv_3, grammarAccess.getBehaviorIdListAccess().getCommaKeyword_2_1_0());
                     	    				
-                    	    // InternalLibrettoSpec.g:7175:5: ( (lv_values_4_0= ruleBehaviorId ) )
-                    	    // InternalLibrettoSpec.g:7176:6: (lv_values_4_0= ruleBehaviorId )
+                    	    // InternalLibrettoSpec.g:7299:5: ( (lv_values_4_0= ruleBehaviorId ) )
+                    	    // InternalLibrettoSpec.g:7300:6: (lv_values_4_0= ruleBehaviorId )
                     	    {
-                    	    // InternalLibrettoSpec.g:7176:6: (lv_values_4_0= ruleBehaviorId )
-                    	    // InternalLibrettoSpec.g:7177:7: lv_values_4_0= ruleBehaviorId
+                    	    // InternalLibrettoSpec.g:7300:6: (lv_values_4_0= ruleBehaviorId )
+                    	    // InternalLibrettoSpec.g:7301:7: lv_values_4_0= ruleBehaviorId
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getBehaviorIdListAccess().getValuesBehaviorIdParserRuleCall_2_1_1_0());
@@ -19622,7 +19930,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,92,FOLLOW_2); 
+            otherlv_5=(Token)match(input,94,FOLLOW_2); 
 
             			newLeafNode(otherlv_5, grammarAccess.getBehaviorIdListAccess().getRightSquareBracketKeyword_3());
             		
@@ -19649,7 +19957,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleReferenceIdList"
-    // InternalLibrettoSpec.g:7204:1: entryRuleReferenceIdList returns [EObject current=null] : iv_ruleReferenceIdList= ruleReferenceIdList EOF ;
+    // InternalLibrettoSpec.g:7328:1: entryRuleReferenceIdList returns [EObject current=null] : iv_ruleReferenceIdList= ruleReferenceIdList EOF ;
     public final EObject entryRuleReferenceIdList() throws RecognitionException {
         EObject current = null;
 
@@ -19657,8 +19965,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:7204:56: (iv_ruleReferenceIdList= ruleReferenceIdList EOF )
-            // InternalLibrettoSpec.g:7205:2: iv_ruleReferenceIdList= ruleReferenceIdList EOF
+            // InternalLibrettoSpec.g:7328:56: (iv_ruleReferenceIdList= ruleReferenceIdList EOF )
+            // InternalLibrettoSpec.g:7329:2: iv_ruleReferenceIdList= ruleReferenceIdList EOF
             {
              newCompositeNode(grammarAccess.getReferenceIdListRule()); 
             pushFollow(FOLLOW_1);
@@ -19685,7 +19993,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleReferenceIdList"
-    // InternalLibrettoSpec.g:7211:1: ruleReferenceIdList returns [EObject current=null] : ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleRefId ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleRefId ) ) )* )? otherlv_5= ']' ) ;
+    // InternalLibrettoSpec.g:7335:1: ruleReferenceIdList returns [EObject current=null] : ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleRefId ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleRefId ) ) )* )? otherlv_5= ']' ) ;
     public final EObject ruleReferenceIdList() throws RecognitionException {
         EObject current = null;
 
@@ -19701,14 +20009,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:7217:2: ( ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleRefId ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleRefId ) ) )* )? otherlv_5= ']' ) )
-            // InternalLibrettoSpec.g:7218:2: ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleRefId ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleRefId ) ) )* )? otherlv_5= ']' )
+            // InternalLibrettoSpec.g:7341:2: ( ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleRefId ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleRefId ) ) )* )? otherlv_5= ']' ) )
+            // InternalLibrettoSpec.g:7342:2: ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleRefId ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleRefId ) ) )* )? otherlv_5= ']' )
             {
-            // InternalLibrettoSpec.g:7218:2: ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleRefId ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleRefId ) ) )* )? otherlv_5= ']' )
-            // InternalLibrettoSpec.g:7219:3: () otherlv_1= '[' ( ( (lv_values_2_0= ruleRefId ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleRefId ) ) )* )? otherlv_5= ']'
+            // InternalLibrettoSpec.g:7342:2: ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleRefId ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleRefId ) ) )* )? otherlv_5= ']' )
+            // InternalLibrettoSpec.g:7343:3: () otherlv_1= '[' ( ( (lv_values_2_0= ruleRefId ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleRefId ) ) )* )? otherlv_5= ']'
             {
-            // InternalLibrettoSpec.g:7219:3: ()
-            // InternalLibrettoSpec.g:7220:4: 
+            // InternalLibrettoSpec.g:7343:3: ()
+            // InternalLibrettoSpec.g:7344:4: 
             {
 
             				current = forceCreateModelElement(
@@ -19718,11 +20026,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,90,FOLLOW_43); 
+            otherlv_1=(Token)match(input,92,FOLLOW_43); 
 
             			newLeafNode(otherlv_1, grammarAccess.getReferenceIdListAccess().getLeftSquareBracketKeyword_1());
             		
-            // InternalLibrettoSpec.g:7230:3: ( ( (lv_values_2_0= ruleRefId ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleRefId ) ) )* )?
+            // InternalLibrettoSpec.g:7354:3: ( ( (lv_values_2_0= ruleRefId ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleRefId ) ) )* )?
             int alt44=2;
             int LA44_0 = input.LA(1);
 
@@ -19731,13 +20039,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
             }
             switch (alt44) {
                 case 1 :
-                    // InternalLibrettoSpec.g:7231:4: ( (lv_values_2_0= ruleRefId ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleRefId ) ) )*
+                    // InternalLibrettoSpec.g:7355:4: ( (lv_values_2_0= ruleRefId ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleRefId ) ) )*
                     {
-                    // InternalLibrettoSpec.g:7231:4: ( (lv_values_2_0= ruleRefId ) )
-                    // InternalLibrettoSpec.g:7232:5: (lv_values_2_0= ruleRefId )
+                    // InternalLibrettoSpec.g:7355:4: ( (lv_values_2_0= ruleRefId ) )
+                    // InternalLibrettoSpec.g:7356:5: (lv_values_2_0= ruleRefId )
                     {
-                    // InternalLibrettoSpec.g:7232:5: (lv_values_2_0= ruleRefId )
-                    // InternalLibrettoSpec.g:7233:6: lv_values_2_0= ruleRefId
+                    // InternalLibrettoSpec.g:7356:5: (lv_values_2_0= ruleRefId )
+                    // InternalLibrettoSpec.g:7357:6: lv_values_2_0= ruleRefId
                     {
 
                     						newCompositeNode(grammarAccess.getReferenceIdListAccess().getValuesRefIdParserRuleCall_2_0_0());
@@ -19764,30 +20072,30 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalLibrettoSpec.g:7250:4: (otherlv_3= ',' ( (lv_values_4_0= ruleRefId ) ) )*
+                    // InternalLibrettoSpec.g:7374:4: (otherlv_3= ',' ( (lv_values_4_0= ruleRefId ) ) )*
                     loop43:
                     do {
                         int alt43=2;
                         int LA43_0 = input.LA(1);
 
-                        if ( (LA43_0==91) ) {
+                        if ( (LA43_0==93) ) {
                             alt43=1;
                         }
 
 
                         switch (alt43) {
                     	case 1 :
-                    	    // InternalLibrettoSpec.g:7251:5: otherlv_3= ',' ( (lv_values_4_0= ruleRefId ) )
+                    	    // InternalLibrettoSpec.g:7375:5: otherlv_3= ',' ( (lv_values_4_0= ruleRefId ) )
                     	    {
-                    	    otherlv_3=(Token)match(input,91,FOLLOW_21); 
+                    	    otherlv_3=(Token)match(input,93,FOLLOW_21); 
 
                     	    					newLeafNode(otherlv_3, grammarAccess.getReferenceIdListAccess().getCommaKeyword_2_1_0());
                     	    				
-                    	    // InternalLibrettoSpec.g:7255:5: ( (lv_values_4_0= ruleRefId ) )
-                    	    // InternalLibrettoSpec.g:7256:6: (lv_values_4_0= ruleRefId )
+                    	    // InternalLibrettoSpec.g:7379:5: ( (lv_values_4_0= ruleRefId ) )
+                    	    // InternalLibrettoSpec.g:7380:6: (lv_values_4_0= ruleRefId )
                     	    {
-                    	    // InternalLibrettoSpec.g:7256:6: (lv_values_4_0= ruleRefId )
-                    	    // InternalLibrettoSpec.g:7257:7: lv_values_4_0= ruleRefId
+                    	    // InternalLibrettoSpec.g:7380:6: (lv_values_4_0= ruleRefId )
+                    	    // InternalLibrettoSpec.g:7381:7: lv_values_4_0= ruleRefId
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getReferenceIdListAccess().getValuesRefIdParserRuleCall_2_1_1_0());
@@ -19829,7 +20137,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,92,FOLLOW_2); 
+            otherlv_5=(Token)match(input,94,FOLLOW_2); 
 
             			newLeafNode(otherlv_5, grammarAccess.getReferenceIdListAccess().getRightSquareBracketKeyword_3());
             		
@@ -19856,7 +20164,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTextList"
-    // InternalLibrettoSpec.g:7284:1: entryRuleTextList returns [EObject current=null] : iv_ruleTextList= ruleTextList EOF ;
+    // InternalLibrettoSpec.g:7408:1: entryRuleTextList returns [EObject current=null] : iv_ruleTextList= ruleTextList EOF ;
     public final EObject entryRuleTextList() throws RecognitionException {
         EObject current = null;
 
@@ -19864,8 +20172,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:7284:49: (iv_ruleTextList= ruleTextList EOF )
-            // InternalLibrettoSpec.g:7285:2: iv_ruleTextList= ruleTextList EOF
+            // InternalLibrettoSpec.g:7408:49: (iv_ruleTextList= ruleTextList EOF )
+            // InternalLibrettoSpec.g:7409:2: iv_ruleTextList= ruleTextList EOF
             {
              newCompositeNode(grammarAccess.getTextListRule()); 
             pushFollow(FOLLOW_1);
@@ -19892,7 +20200,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTextList"
-    // InternalLibrettoSpec.g:7291:1: ruleTextList returns [EObject current=null] : ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleTextValue ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleTextValue ) ) )* )? otherlv_5= ']' ) ;
+    // InternalLibrettoSpec.g:7415:1: ruleTextList returns [EObject current=null] : ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleTextValue ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleTextValue ) ) )* )? otherlv_5= ']' ) ;
     public final EObject ruleTextList() throws RecognitionException {
         EObject current = null;
 
@@ -19908,14 +20216,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:7297:2: ( ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleTextValue ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleTextValue ) ) )* )? otherlv_5= ']' ) )
-            // InternalLibrettoSpec.g:7298:2: ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleTextValue ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleTextValue ) ) )* )? otherlv_5= ']' )
+            // InternalLibrettoSpec.g:7421:2: ( ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleTextValue ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleTextValue ) ) )* )? otherlv_5= ']' ) )
+            // InternalLibrettoSpec.g:7422:2: ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleTextValue ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleTextValue ) ) )* )? otherlv_5= ']' )
             {
-            // InternalLibrettoSpec.g:7298:2: ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleTextValue ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleTextValue ) ) )* )? otherlv_5= ']' )
-            // InternalLibrettoSpec.g:7299:3: () otherlv_1= '[' ( ( (lv_values_2_0= ruleTextValue ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleTextValue ) ) )* )? otherlv_5= ']'
+            // InternalLibrettoSpec.g:7422:2: ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleTextValue ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleTextValue ) ) )* )? otherlv_5= ']' )
+            // InternalLibrettoSpec.g:7423:3: () otherlv_1= '[' ( ( (lv_values_2_0= ruleTextValue ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleTextValue ) ) )* )? otherlv_5= ']'
             {
-            // InternalLibrettoSpec.g:7299:3: ()
-            // InternalLibrettoSpec.g:7300:4: 
+            // InternalLibrettoSpec.g:7423:3: ()
+            // InternalLibrettoSpec.g:7424:4: 
             {
 
             				current = forceCreateModelElement(
@@ -19925,11 +20233,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,90,FOLLOW_44); 
+            otherlv_1=(Token)match(input,92,FOLLOW_44); 
 
             			newLeafNode(otherlv_1, grammarAccess.getTextListAccess().getLeftSquareBracketKeyword_1());
             		
-            // InternalLibrettoSpec.g:7310:3: ( ( (lv_values_2_0= ruleTextValue ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleTextValue ) ) )* )?
+            // InternalLibrettoSpec.g:7434:3: ( ( (lv_values_2_0= ruleTextValue ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleTextValue ) ) )* )?
             int alt46=2;
             int LA46_0 = input.LA(1);
 
@@ -19938,13 +20246,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
             }
             switch (alt46) {
                 case 1 :
-                    // InternalLibrettoSpec.g:7311:4: ( (lv_values_2_0= ruleTextValue ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleTextValue ) ) )*
+                    // InternalLibrettoSpec.g:7435:4: ( (lv_values_2_0= ruleTextValue ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleTextValue ) ) )*
                     {
-                    // InternalLibrettoSpec.g:7311:4: ( (lv_values_2_0= ruleTextValue ) )
-                    // InternalLibrettoSpec.g:7312:5: (lv_values_2_0= ruleTextValue )
+                    // InternalLibrettoSpec.g:7435:4: ( (lv_values_2_0= ruleTextValue ) )
+                    // InternalLibrettoSpec.g:7436:5: (lv_values_2_0= ruleTextValue )
                     {
-                    // InternalLibrettoSpec.g:7312:5: (lv_values_2_0= ruleTextValue )
-                    // InternalLibrettoSpec.g:7313:6: lv_values_2_0= ruleTextValue
+                    // InternalLibrettoSpec.g:7436:5: (lv_values_2_0= ruleTextValue )
+                    // InternalLibrettoSpec.g:7437:6: lv_values_2_0= ruleTextValue
                     {
 
                     						newCompositeNode(grammarAccess.getTextListAccess().getValuesTextValueParserRuleCall_2_0_0());
@@ -19971,30 +20279,30 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalLibrettoSpec.g:7330:4: (otherlv_3= ',' ( (lv_values_4_0= ruleTextValue ) ) )*
+                    // InternalLibrettoSpec.g:7454:4: (otherlv_3= ',' ( (lv_values_4_0= ruleTextValue ) ) )*
                     loop45:
                     do {
                         int alt45=2;
                         int LA45_0 = input.LA(1);
 
-                        if ( (LA45_0==91) ) {
+                        if ( (LA45_0==93) ) {
                             alt45=1;
                         }
 
 
                         switch (alt45) {
                     	case 1 :
-                    	    // InternalLibrettoSpec.g:7331:5: otherlv_3= ',' ( (lv_values_4_0= ruleTextValue ) )
+                    	    // InternalLibrettoSpec.g:7455:5: otherlv_3= ',' ( (lv_values_4_0= ruleTextValue ) )
                     	    {
-                    	    otherlv_3=(Token)match(input,91,FOLLOW_18); 
+                    	    otherlv_3=(Token)match(input,93,FOLLOW_18); 
 
                     	    					newLeafNode(otherlv_3, grammarAccess.getTextListAccess().getCommaKeyword_2_1_0());
                     	    				
-                    	    // InternalLibrettoSpec.g:7335:5: ( (lv_values_4_0= ruleTextValue ) )
-                    	    // InternalLibrettoSpec.g:7336:6: (lv_values_4_0= ruleTextValue )
+                    	    // InternalLibrettoSpec.g:7459:5: ( (lv_values_4_0= ruleTextValue ) )
+                    	    // InternalLibrettoSpec.g:7460:6: (lv_values_4_0= ruleTextValue )
                     	    {
-                    	    // InternalLibrettoSpec.g:7336:6: (lv_values_4_0= ruleTextValue )
-                    	    // InternalLibrettoSpec.g:7337:7: lv_values_4_0= ruleTextValue
+                    	    // InternalLibrettoSpec.g:7460:6: (lv_values_4_0= ruleTextValue )
+                    	    // InternalLibrettoSpec.g:7461:7: lv_values_4_0= ruleTextValue
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getTextListAccess().getValuesTextValueParserRuleCall_2_1_1_0());
@@ -20036,7 +20344,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,92,FOLLOW_2); 
+            otherlv_5=(Token)match(input,94,FOLLOW_2); 
 
             			newLeafNode(otherlv_5, grammarAccess.getTextListAccess().getRightSquareBracketKeyword_3());
             		
@@ -20063,7 +20371,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTextValue"
-    // InternalLibrettoSpec.g:7364:1: entryRuleTextValue returns [EObject current=null] : iv_ruleTextValue= ruleTextValue EOF ;
+    // InternalLibrettoSpec.g:7488:1: entryRuleTextValue returns [EObject current=null] : iv_ruleTextValue= ruleTextValue EOF ;
     public final EObject entryRuleTextValue() throws RecognitionException {
         EObject current = null;
 
@@ -20071,8 +20379,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:7364:50: (iv_ruleTextValue= ruleTextValue EOF )
-            // InternalLibrettoSpec.g:7365:2: iv_ruleTextValue= ruleTextValue EOF
+            // InternalLibrettoSpec.g:7488:50: (iv_ruleTextValue= ruleTextValue EOF )
+            // InternalLibrettoSpec.g:7489:2: iv_ruleTextValue= ruleTextValue EOF
             {
              newCompositeNode(grammarAccess.getTextValueRule()); 
             pushFollow(FOLLOW_1);
@@ -20099,7 +20407,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTextValue"
-    // InternalLibrettoSpec.g:7371:1: ruleTextValue returns [EObject current=null] : ( ( () ( (lv_text_1_0= RULE_STRING ) ) ) | ( () ( (lv_text_3_0= RULE_TEXT_BLOCK ) ) ) ) ;
+    // InternalLibrettoSpec.g:7495:1: ruleTextValue returns [EObject current=null] : ( ( () ( (lv_text_1_0= RULE_STRING ) ) ) | ( () ( (lv_text_3_0= RULE_TEXT_BLOCK ) ) ) ) ;
     public final EObject ruleTextValue() throws RecognitionException {
         EObject current = null;
 
@@ -20110,10 +20418,10 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:7377:2: ( ( ( () ( (lv_text_1_0= RULE_STRING ) ) ) | ( () ( (lv_text_3_0= RULE_TEXT_BLOCK ) ) ) ) )
-            // InternalLibrettoSpec.g:7378:2: ( ( () ( (lv_text_1_0= RULE_STRING ) ) ) | ( () ( (lv_text_3_0= RULE_TEXT_BLOCK ) ) ) )
+            // InternalLibrettoSpec.g:7501:2: ( ( ( () ( (lv_text_1_0= RULE_STRING ) ) ) | ( () ( (lv_text_3_0= RULE_TEXT_BLOCK ) ) ) ) )
+            // InternalLibrettoSpec.g:7502:2: ( ( () ( (lv_text_1_0= RULE_STRING ) ) ) | ( () ( (lv_text_3_0= RULE_TEXT_BLOCK ) ) ) )
             {
-            // InternalLibrettoSpec.g:7378:2: ( ( () ( (lv_text_1_0= RULE_STRING ) ) ) | ( () ( (lv_text_3_0= RULE_TEXT_BLOCK ) ) ) )
+            // InternalLibrettoSpec.g:7502:2: ( ( () ( (lv_text_1_0= RULE_STRING ) ) ) | ( () ( (lv_text_3_0= RULE_TEXT_BLOCK ) ) ) )
             int alt47=2;
             int LA47_0 = input.LA(1);
 
@@ -20131,13 +20439,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
             }
             switch (alt47) {
                 case 1 :
-                    // InternalLibrettoSpec.g:7379:3: ( () ( (lv_text_1_0= RULE_STRING ) ) )
+                    // InternalLibrettoSpec.g:7503:3: ( () ( (lv_text_1_0= RULE_STRING ) ) )
                     {
-                    // InternalLibrettoSpec.g:7379:3: ( () ( (lv_text_1_0= RULE_STRING ) ) )
-                    // InternalLibrettoSpec.g:7380:4: () ( (lv_text_1_0= RULE_STRING ) )
+                    // InternalLibrettoSpec.g:7503:3: ( () ( (lv_text_1_0= RULE_STRING ) ) )
+                    // InternalLibrettoSpec.g:7504:4: () ( (lv_text_1_0= RULE_STRING ) )
                     {
-                    // InternalLibrettoSpec.g:7380:4: ()
-                    // InternalLibrettoSpec.g:7381:5: 
+                    // InternalLibrettoSpec.g:7504:4: ()
+                    // InternalLibrettoSpec.g:7505:5: 
                     {
 
                     					current = forceCreateModelElement(
@@ -20147,11 +20455,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalLibrettoSpec.g:7387:4: ( (lv_text_1_0= RULE_STRING ) )
-                    // InternalLibrettoSpec.g:7388:5: (lv_text_1_0= RULE_STRING )
+                    // InternalLibrettoSpec.g:7511:4: ( (lv_text_1_0= RULE_STRING ) )
+                    // InternalLibrettoSpec.g:7512:5: (lv_text_1_0= RULE_STRING )
                     {
-                    // InternalLibrettoSpec.g:7388:5: (lv_text_1_0= RULE_STRING )
-                    // InternalLibrettoSpec.g:7389:6: lv_text_1_0= RULE_STRING
+                    // InternalLibrettoSpec.g:7512:5: (lv_text_1_0= RULE_STRING )
+                    // InternalLibrettoSpec.g:7513:6: lv_text_1_0= RULE_STRING
                     {
                     lv_text_1_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -20180,13 +20488,13 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoSpec.g:7407:3: ( () ( (lv_text_3_0= RULE_TEXT_BLOCK ) ) )
+                    // InternalLibrettoSpec.g:7531:3: ( () ( (lv_text_3_0= RULE_TEXT_BLOCK ) ) )
                     {
-                    // InternalLibrettoSpec.g:7407:3: ( () ( (lv_text_3_0= RULE_TEXT_BLOCK ) ) )
-                    // InternalLibrettoSpec.g:7408:4: () ( (lv_text_3_0= RULE_TEXT_BLOCK ) )
+                    // InternalLibrettoSpec.g:7531:3: ( () ( (lv_text_3_0= RULE_TEXT_BLOCK ) ) )
+                    // InternalLibrettoSpec.g:7532:4: () ( (lv_text_3_0= RULE_TEXT_BLOCK ) )
                     {
-                    // InternalLibrettoSpec.g:7408:4: ()
-                    // InternalLibrettoSpec.g:7409:5: 
+                    // InternalLibrettoSpec.g:7532:4: ()
+                    // InternalLibrettoSpec.g:7533:5: 
                     {
 
                     					current = forceCreateModelElement(
@@ -20196,11 +20504,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalLibrettoSpec.g:7415:4: ( (lv_text_3_0= RULE_TEXT_BLOCK ) )
-                    // InternalLibrettoSpec.g:7416:5: (lv_text_3_0= RULE_TEXT_BLOCK )
+                    // InternalLibrettoSpec.g:7539:4: ( (lv_text_3_0= RULE_TEXT_BLOCK ) )
+                    // InternalLibrettoSpec.g:7540:5: (lv_text_3_0= RULE_TEXT_BLOCK )
                     {
-                    // InternalLibrettoSpec.g:7416:5: (lv_text_3_0= RULE_TEXT_BLOCK )
-                    // InternalLibrettoSpec.g:7417:6: lv_text_3_0= RULE_TEXT_BLOCK
+                    // InternalLibrettoSpec.g:7540:5: (lv_text_3_0= RULE_TEXT_BLOCK )
+                    // InternalLibrettoSpec.g:7541:6: lv_text_3_0= RULE_TEXT_BLOCK
                     {
                     lv_text_3_0=(Token)match(input,RULE_TEXT_BLOCK,FOLLOW_2); 
 
@@ -20251,7 +20559,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIdentifierValue"
-    // InternalLibrettoSpec.g:7438:1: entryRuleIdentifierValue returns [EObject current=null] : iv_ruleIdentifierValue= ruleIdentifierValue EOF ;
+    // InternalLibrettoSpec.g:7562:1: entryRuleIdentifierValue returns [EObject current=null] : iv_ruleIdentifierValue= ruleIdentifierValue EOF ;
     public final EObject entryRuleIdentifierValue() throws RecognitionException {
         EObject current = null;
 
@@ -20259,8 +20567,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:7438:56: (iv_ruleIdentifierValue= ruleIdentifierValue EOF )
-            // InternalLibrettoSpec.g:7439:2: iv_ruleIdentifierValue= ruleIdentifierValue EOF
+            // InternalLibrettoSpec.g:7562:56: (iv_ruleIdentifierValue= ruleIdentifierValue EOF )
+            // InternalLibrettoSpec.g:7563:2: iv_ruleIdentifierValue= ruleIdentifierValue EOF
             {
              newCompositeNode(grammarAccess.getIdentifierValueRule()); 
             pushFollow(FOLLOW_1);
@@ -20287,7 +20595,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIdentifierValue"
-    // InternalLibrettoSpec.g:7445:1: ruleIdentifierValue returns [EObject current=null] : (this_SimpleIdentifier_0= ruleSimpleIdentifier | this_DottedIdentifier_1= ruleDottedIdentifier ) ;
+    // InternalLibrettoSpec.g:7569:1: ruleIdentifierValue returns [EObject current=null] : (this_SimpleIdentifier_0= ruleSimpleIdentifier | this_DottedIdentifier_1= ruleDottedIdentifier ) ;
     public final EObject ruleIdentifierValue() throws RecognitionException {
         EObject current = null;
 
@@ -20300,21 +20608,21 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:7451:2: ( (this_SimpleIdentifier_0= ruleSimpleIdentifier | this_DottedIdentifier_1= ruleDottedIdentifier ) )
-            // InternalLibrettoSpec.g:7452:2: (this_SimpleIdentifier_0= ruleSimpleIdentifier | this_DottedIdentifier_1= ruleDottedIdentifier )
+            // InternalLibrettoSpec.g:7575:2: ( (this_SimpleIdentifier_0= ruleSimpleIdentifier | this_DottedIdentifier_1= ruleDottedIdentifier ) )
+            // InternalLibrettoSpec.g:7576:2: (this_SimpleIdentifier_0= ruleSimpleIdentifier | this_DottedIdentifier_1= ruleDottedIdentifier )
             {
-            // InternalLibrettoSpec.g:7452:2: (this_SimpleIdentifier_0= ruleSimpleIdentifier | this_DottedIdentifier_1= ruleDottedIdentifier )
+            // InternalLibrettoSpec.g:7576:2: (this_SimpleIdentifier_0= ruleSimpleIdentifier | this_DottedIdentifier_1= ruleDottedIdentifier )
             int alt48=2;
             int LA48_0 = input.LA(1);
 
             if ( (LA48_0==RULE_LIBRETTO_ID) ) {
                 int LA48_1 = input.LA(2);
 
-                if ( (LA48_1==93) ) {
-                    alt48=2;
-                }
-                else if ( (LA48_1==EOF||(LA48_1>=20 && LA48_1<=22)||LA48_1==32||LA48_1==41||(LA48_1>=45 && LA48_1<=48)||(LA48_1>=54 && LA48_1<=63)||(LA48_1>=79 && LA48_1<=86)||(LA48_1>=91 && LA48_1<=92)) ) {
+                if ( (LA48_1==EOF||(LA48_1>=20 && LA48_1<=22)||LA48_1==32||LA48_1==43||(LA48_1>=47 && LA48_1<=50)||(LA48_1>=56 && LA48_1<=65)||(LA48_1>=81 && LA48_1<=88)||(LA48_1>=93 && LA48_1<=94)) ) {
                     alt48=1;
+                }
+                else if ( (LA48_1==95) ) {
+                    alt48=2;
                 }
                 else {
                     NoViableAltException nvae =
@@ -20331,7 +20639,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
             }
             switch (alt48) {
                 case 1 :
-                    // InternalLibrettoSpec.g:7453:3: this_SimpleIdentifier_0= ruleSimpleIdentifier
+                    // InternalLibrettoSpec.g:7577:3: this_SimpleIdentifier_0= ruleSimpleIdentifier
                     {
 
                     			newCompositeNode(grammarAccess.getIdentifierValueAccess().getSimpleIdentifierParserRuleCall_0());
@@ -20349,7 +20657,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoSpec.g:7462:3: this_DottedIdentifier_1= ruleDottedIdentifier
+                    // InternalLibrettoSpec.g:7586:3: this_DottedIdentifier_1= ruleDottedIdentifier
                     {
 
                     			newCompositeNode(grammarAccess.getIdentifierValueAccess().getDottedIdentifierParserRuleCall_1());
@@ -20389,7 +20697,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSimpleIdentifier"
-    // InternalLibrettoSpec.g:7474:1: entryRuleSimpleIdentifier returns [EObject current=null] : iv_ruleSimpleIdentifier= ruleSimpleIdentifier EOF ;
+    // InternalLibrettoSpec.g:7598:1: entryRuleSimpleIdentifier returns [EObject current=null] : iv_ruleSimpleIdentifier= ruleSimpleIdentifier EOF ;
     public final EObject entryRuleSimpleIdentifier() throws RecognitionException {
         EObject current = null;
 
@@ -20397,8 +20705,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:7474:57: (iv_ruleSimpleIdentifier= ruleSimpleIdentifier EOF )
-            // InternalLibrettoSpec.g:7475:2: iv_ruleSimpleIdentifier= ruleSimpleIdentifier EOF
+            // InternalLibrettoSpec.g:7598:57: (iv_ruleSimpleIdentifier= ruleSimpleIdentifier EOF )
+            // InternalLibrettoSpec.g:7599:2: iv_ruleSimpleIdentifier= ruleSimpleIdentifier EOF
             {
              newCompositeNode(grammarAccess.getSimpleIdentifierRule()); 
             pushFollow(FOLLOW_1);
@@ -20425,7 +20733,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSimpleIdentifier"
-    // InternalLibrettoSpec.g:7481:1: ruleSimpleIdentifier returns [EObject current=null] : ( () ( (lv_id_1_0= RULE_LIBRETTO_ID ) ) ) ;
+    // InternalLibrettoSpec.g:7605:1: ruleSimpleIdentifier returns [EObject current=null] : ( () ( (lv_id_1_0= RULE_LIBRETTO_ID ) ) ) ;
     public final EObject ruleSimpleIdentifier() throws RecognitionException {
         EObject current = null;
 
@@ -20435,14 +20743,14 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:7487:2: ( ( () ( (lv_id_1_0= RULE_LIBRETTO_ID ) ) ) )
-            // InternalLibrettoSpec.g:7488:2: ( () ( (lv_id_1_0= RULE_LIBRETTO_ID ) ) )
+            // InternalLibrettoSpec.g:7611:2: ( ( () ( (lv_id_1_0= RULE_LIBRETTO_ID ) ) ) )
+            // InternalLibrettoSpec.g:7612:2: ( () ( (lv_id_1_0= RULE_LIBRETTO_ID ) ) )
             {
-            // InternalLibrettoSpec.g:7488:2: ( () ( (lv_id_1_0= RULE_LIBRETTO_ID ) ) )
-            // InternalLibrettoSpec.g:7489:3: () ( (lv_id_1_0= RULE_LIBRETTO_ID ) )
+            // InternalLibrettoSpec.g:7612:2: ( () ( (lv_id_1_0= RULE_LIBRETTO_ID ) ) )
+            // InternalLibrettoSpec.g:7613:3: () ( (lv_id_1_0= RULE_LIBRETTO_ID ) )
             {
-            // InternalLibrettoSpec.g:7489:3: ()
-            // InternalLibrettoSpec.g:7490:4: 
+            // InternalLibrettoSpec.g:7613:3: ()
+            // InternalLibrettoSpec.g:7614:4: 
             {
 
             				current = forceCreateModelElement(
@@ -20452,11 +20760,11 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalLibrettoSpec.g:7496:3: ( (lv_id_1_0= RULE_LIBRETTO_ID ) )
-            // InternalLibrettoSpec.g:7497:4: (lv_id_1_0= RULE_LIBRETTO_ID )
+            // InternalLibrettoSpec.g:7620:3: ( (lv_id_1_0= RULE_LIBRETTO_ID ) )
+            // InternalLibrettoSpec.g:7621:4: (lv_id_1_0= RULE_LIBRETTO_ID )
             {
-            // InternalLibrettoSpec.g:7497:4: (lv_id_1_0= RULE_LIBRETTO_ID )
-            // InternalLibrettoSpec.g:7498:5: lv_id_1_0= RULE_LIBRETTO_ID
+            // InternalLibrettoSpec.g:7621:4: (lv_id_1_0= RULE_LIBRETTO_ID )
+            // InternalLibrettoSpec.g:7622:5: lv_id_1_0= RULE_LIBRETTO_ID
             {
             lv_id_1_0=(Token)match(input,RULE_LIBRETTO_ID,FOLLOW_2); 
 
@@ -20501,7 +20809,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDottedIdentifier"
-    // InternalLibrettoSpec.g:7518:1: entryRuleDottedIdentifier returns [EObject current=null] : iv_ruleDottedIdentifier= ruleDottedIdentifier EOF ;
+    // InternalLibrettoSpec.g:7642:1: entryRuleDottedIdentifier returns [EObject current=null] : iv_ruleDottedIdentifier= ruleDottedIdentifier EOF ;
     public final EObject entryRuleDottedIdentifier() throws RecognitionException {
         EObject current = null;
 
@@ -20509,8 +20817,8 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLibrettoSpec.g:7518:57: (iv_ruleDottedIdentifier= ruleDottedIdentifier EOF )
-            // InternalLibrettoSpec.g:7519:2: iv_ruleDottedIdentifier= ruleDottedIdentifier EOF
+            // InternalLibrettoSpec.g:7642:57: (iv_ruleDottedIdentifier= ruleDottedIdentifier EOF )
+            // InternalLibrettoSpec.g:7643:2: iv_ruleDottedIdentifier= ruleDottedIdentifier EOF
             {
              newCompositeNode(grammarAccess.getDottedIdentifierRule()); 
             pushFollow(FOLLOW_1);
@@ -20537,7 +20845,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDottedIdentifier"
-    // InternalLibrettoSpec.g:7525:1: ruleDottedIdentifier returns [EObject current=null] : ( ( (lv_head_0_0= RULE_LIBRETTO_ID ) ) (otherlv_1= '.' ( (lv_tail_2_0= RULE_LIBRETTO_ID ) ) )+ ) ;
+    // InternalLibrettoSpec.g:7649:1: ruleDottedIdentifier returns [EObject current=null] : ( ( (lv_head_0_0= RULE_LIBRETTO_ID ) ) (otherlv_1= '.' ( (lv_tail_2_0= RULE_LIBRETTO_ID ) ) )+ ) ;
     public final EObject ruleDottedIdentifier() throws RecognitionException {
         EObject current = null;
 
@@ -20549,17 +20857,17 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:7531:2: ( ( ( (lv_head_0_0= RULE_LIBRETTO_ID ) ) (otherlv_1= '.' ( (lv_tail_2_0= RULE_LIBRETTO_ID ) ) )+ ) )
-            // InternalLibrettoSpec.g:7532:2: ( ( (lv_head_0_0= RULE_LIBRETTO_ID ) ) (otherlv_1= '.' ( (lv_tail_2_0= RULE_LIBRETTO_ID ) ) )+ )
+            // InternalLibrettoSpec.g:7655:2: ( ( ( (lv_head_0_0= RULE_LIBRETTO_ID ) ) (otherlv_1= '.' ( (lv_tail_2_0= RULE_LIBRETTO_ID ) ) )+ ) )
+            // InternalLibrettoSpec.g:7656:2: ( ( (lv_head_0_0= RULE_LIBRETTO_ID ) ) (otherlv_1= '.' ( (lv_tail_2_0= RULE_LIBRETTO_ID ) ) )+ )
             {
-            // InternalLibrettoSpec.g:7532:2: ( ( (lv_head_0_0= RULE_LIBRETTO_ID ) ) (otherlv_1= '.' ( (lv_tail_2_0= RULE_LIBRETTO_ID ) ) )+ )
-            // InternalLibrettoSpec.g:7533:3: ( (lv_head_0_0= RULE_LIBRETTO_ID ) ) (otherlv_1= '.' ( (lv_tail_2_0= RULE_LIBRETTO_ID ) ) )+
+            // InternalLibrettoSpec.g:7656:2: ( ( (lv_head_0_0= RULE_LIBRETTO_ID ) ) (otherlv_1= '.' ( (lv_tail_2_0= RULE_LIBRETTO_ID ) ) )+ )
+            // InternalLibrettoSpec.g:7657:3: ( (lv_head_0_0= RULE_LIBRETTO_ID ) ) (otherlv_1= '.' ( (lv_tail_2_0= RULE_LIBRETTO_ID ) ) )+
             {
-            // InternalLibrettoSpec.g:7533:3: ( (lv_head_0_0= RULE_LIBRETTO_ID ) )
-            // InternalLibrettoSpec.g:7534:4: (lv_head_0_0= RULE_LIBRETTO_ID )
+            // InternalLibrettoSpec.g:7657:3: ( (lv_head_0_0= RULE_LIBRETTO_ID ) )
+            // InternalLibrettoSpec.g:7658:4: (lv_head_0_0= RULE_LIBRETTO_ID )
             {
-            // InternalLibrettoSpec.g:7534:4: (lv_head_0_0= RULE_LIBRETTO_ID )
-            // InternalLibrettoSpec.g:7535:5: lv_head_0_0= RULE_LIBRETTO_ID
+            // InternalLibrettoSpec.g:7658:4: (lv_head_0_0= RULE_LIBRETTO_ID )
+            // InternalLibrettoSpec.g:7659:5: lv_head_0_0= RULE_LIBRETTO_ID
             {
             lv_head_0_0=(Token)match(input,RULE_LIBRETTO_ID,FOLLOW_45); 
 
@@ -20581,31 +20889,31 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalLibrettoSpec.g:7551:3: (otherlv_1= '.' ( (lv_tail_2_0= RULE_LIBRETTO_ID ) ) )+
+            // InternalLibrettoSpec.g:7675:3: (otherlv_1= '.' ( (lv_tail_2_0= RULE_LIBRETTO_ID ) ) )+
             int cnt49=0;
             loop49:
             do {
                 int alt49=2;
                 int LA49_0 = input.LA(1);
 
-                if ( (LA49_0==93) ) {
+                if ( (LA49_0==95) ) {
                     alt49=1;
                 }
 
 
                 switch (alt49) {
             	case 1 :
-            	    // InternalLibrettoSpec.g:7552:4: otherlv_1= '.' ( (lv_tail_2_0= RULE_LIBRETTO_ID ) )
+            	    // InternalLibrettoSpec.g:7676:4: otherlv_1= '.' ( (lv_tail_2_0= RULE_LIBRETTO_ID ) )
             	    {
-            	    otherlv_1=(Token)match(input,93,FOLLOW_3); 
+            	    otherlv_1=(Token)match(input,95,FOLLOW_3); 
 
             	    				newLeafNode(otherlv_1, grammarAccess.getDottedIdentifierAccess().getFullStopKeyword_1_0());
             	    			
-            	    // InternalLibrettoSpec.g:7556:4: ( (lv_tail_2_0= RULE_LIBRETTO_ID ) )
-            	    // InternalLibrettoSpec.g:7557:5: (lv_tail_2_0= RULE_LIBRETTO_ID )
+            	    // InternalLibrettoSpec.g:7680:4: ( (lv_tail_2_0= RULE_LIBRETTO_ID ) )
+            	    // InternalLibrettoSpec.g:7681:5: (lv_tail_2_0= RULE_LIBRETTO_ID )
             	    {
-            	    // InternalLibrettoSpec.g:7557:5: (lv_tail_2_0= RULE_LIBRETTO_ID )
-            	    // InternalLibrettoSpec.g:7558:6: lv_tail_2_0= RULE_LIBRETTO_ID
+            	    // InternalLibrettoSpec.g:7681:5: (lv_tail_2_0= RULE_LIBRETTO_ID )
+            	    // InternalLibrettoSpec.g:7682:6: lv_tail_2_0= RULE_LIBRETTO_ID
             	    {
             	    lv_tail_2_0=(Token)match(input,RULE_LIBRETTO_ID,FOLLOW_46); 
 
@@ -20663,7 +20971,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOutcomeClassValue"
-    // InternalLibrettoSpec.g:7579:1: ruleOutcomeClassValue returns [Enumerator current=null] : ( (enumLiteral_0= 'returns' ) | (enumLiteral_1= 'rejects' ) ) ;
+    // InternalLibrettoSpec.g:7703:1: ruleOutcomeClassValue returns [Enumerator current=null] : ( (enumLiteral_0= 'returns' ) | (enumLiteral_1= 'rejects' ) ) ;
     public final Enumerator ruleOutcomeClassValue() throws RecognitionException {
         Enumerator current = null;
 
@@ -20674,17 +20982,17 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:7585:2: ( ( (enumLiteral_0= 'returns' ) | (enumLiteral_1= 'rejects' ) ) )
-            // InternalLibrettoSpec.g:7586:2: ( (enumLiteral_0= 'returns' ) | (enumLiteral_1= 'rejects' ) )
+            // InternalLibrettoSpec.g:7709:2: ( ( (enumLiteral_0= 'returns' ) | (enumLiteral_1= 'rejects' ) ) )
+            // InternalLibrettoSpec.g:7710:2: ( (enumLiteral_0= 'returns' ) | (enumLiteral_1= 'rejects' ) )
             {
-            // InternalLibrettoSpec.g:7586:2: ( (enumLiteral_0= 'returns' ) | (enumLiteral_1= 'rejects' ) )
+            // InternalLibrettoSpec.g:7710:2: ( (enumLiteral_0= 'returns' ) | (enumLiteral_1= 'rejects' ) )
             int alt50=2;
             int LA50_0 = input.LA(1);
 
-            if ( (LA50_0==94) ) {
+            if ( (LA50_0==96) ) {
                 alt50=1;
             }
-            else if ( (LA50_0==95) ) {
+            else if ( (LA50_0==97) ) {
                 alt50=2;
             }
             else {
@@ -20695,12 +21003,12 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
             }
             switch (alt50) {
                 case 1 :
-                    // InternalLibrettoSpec.g:7587:3: (enumLiteral_0= 'returns' )
+                    // InternalLibrettoSpec.g:7711:3: (enumLiteral_0= 'returns' )
                     {
-                    // InternalLibrettoSpec.g:7587:3: (enumLiteral_0= 'returns' )
-                    // InternalLibrettoSpec.g:7588:4: enumLiteral_0= 'returns'
+                    // InternalLibrettoSpec.g:7711:3: (enumLiteral_0= 'returns' )
+                    // InternalLibrettoSpec.g:7712:4: enumLiteral_0= 'returns'
                     {
-                    enumLiteral_0=(Token)match(input,94,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,96,FOLLOW_2); 
 
                     				current = grammarAccess.getOutcomeClassValueAccess().getRETURNSEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getOutcomeClassValueAccess().getRETURNSEnumLiteralDeclaration_0());
@@ -20712,12 +21020,12 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoSpec.g:7595:3: (enumLiteral_1= 'rejects' )
+                    // InternalLibrettoSpec.g:7719:3: (enumLiteral_1= 'rejects' )
                     {
-                    // InternalLibrettoSpec.g:7595:3: (enumLiteral_1= 'rejects' )
-                    // InternalLibrettoSpec.g:7596:4: enumLiteral_1= 'rejects'
+                    // InternalLibrettoSpec.g:7719:3: (enumLiteral_1= 'rejects' )
+                    // InternalLibrettoSpec.g:7720:4: enumLiteral_1= 'rejects'
                     {
-                    enumLiteral_1=(Token)match(input,95,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,97,FOLLOW_2); 
 
                     				current = grammarAccess.getOutcomeClassValueAccess().getREJECTSEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getOutcomeClassValueAccess().getREJECTSEnumLiteralDeclaration_1());
@@ -20751,7 +21059,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMetadataStatusValue"
-    // InternalLibrettoSpec.g:7606:1: ruleMetadataStatusValue returns [Enumerator current=null] : ( (enumLiteral_0= 'draft' ) | (enumLiteral_1= 'public' ) ) ;
+    // InternalLibrettoSpec.g:7730:1: ruleMetadataStatusValue returns [Enumerator current=null] : ( (enumLiteral_0= 'draft' ) | (enumLiteral_1= 'public' ) ) ;
     public final Enumerator ruleMetadataStatusValue() throws RecognitionException {
         Enumerator current = null;
 
@@ -20762,17 +21070,17 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:7612:2: ( ( (enumLiteral_0= 'draft' ) | (enumLiteral_1= 'public' ) ) )
-            // InternalLibrettoSpec.g:7613:2: ( (enumLiteral_0= 'draft' ) | (enumLiteral_1= 'public' ) )
+            // InternalLibrettoSpec.g:7736:2: ( ( (enumLiteral_0= 'draft' ) | (enumLiteral_1= 'public' ) ) )
+            // InternalLibrettoSpec.g:7737:2: ( (enumLiteral_0= 'draft' ) | (enumLiteral_1= 'public' ) )
             {
-            // InternalLibrettoSpec.g:7613:2: ( (enumLiteral_0= 'draft' ) | (enumLiteral_1= 'public' ) )
+            // InternalLibrettoSpec.g:7737:2: ( (enumLiteral_0= 'draft' ) | (enumLiteral_1= 'public' ) )
             int alt51=2;
             int LA51_0 = input.LA(1);
 
-            if ( (LA51_0==96) ) {
+            if ( (LA51_0==98) ) {
                 alt51=1;
             }
-            else if ( (LA51_0==97) ) {
+            else if ( (LA51_0==99) ) {
                 alt51=2;
             }
             else {
@@ -20783,12 +21091,12 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
             }
             switch (alt51) {
                 case 1 :
-                    // InternalLibrettoSpec.g:7614:3: (enumLiteral_0= 'draft' )
+                    // InternalLibrettoSpec.g:7738:3: (enumLiteral_0= 'draft' )
                     {
-                    // InternalLibrettoSpec.g:7614:3: (enumLiteral_0= 'draft' )
-                    // InternalLibrettoSpec.g:7615:4: enumLiteral_0= 'draft'
+                    // InternalLibrettoSpec.g:7738:3: (enumLiteral_0= 'draft' )
+                    // InternalLibrettoSpec.g:7739:4: enumLiteral_0= 'draft'
                     {
-                    enumLiteral_0=(Token)match(input,96,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,98,FOLLOW_2); 
 
                     				current = grammarAccess.getMetadataStatusValueAccess().getDRAFTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getMetadataStatusValueAccess().getDRAFTEnumLiteralDeclaration_0());
@@ -20800,12 +21108,12 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoSpec.g:7622:3: (enumLiteral_1= 'public' )
+                    // InternalLibrettoSpec.g:7746:3: (enumLiteral_1= 'public' )
                     {
-                    // InternalLibrettoSpec.g:7622:3: (enumLiteral_1= 'public' )
-                    // InternalLibrettoSpec.g:7623:4: enumLiteral_1= 'public'
+                    // InternalLibrettoSpec.g:7746:3: (enumLiteral_1= 'public' )
+                    // InternalLibrettoSpec.g:7747:4: enumLiteral_1= 'public'
                     {
-                    enumLiteral_1=(Token)match(input,97,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,99,FOLLOW_2); 
 
                     				current = grammarAccess.getMetadataStatusValueAccess().getPUBLICEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getMetadataStatusValueAccess().getPUBLICEnumLiteralDeclaration_1());
@@ -20839,7 +21147,7 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStrengthValue"
-    // InternalLibrettoSpec.g:7633:1: ruleStrengthValue returns [Enumerator current=null] : ( (enumLiteral_0= 'required' ) | (enumLiteral_1= 'strongly_preferred' ) | (enumLiteral_2= 'preferred' ) | (enumLiteral_3= 'advisory' ) ) ;
+    // InternalLibrettoSpec.g:7757:1: ruleStrengthValue returns [Enumerator current=null] : ( (enumLiteral_0= 'required' ) | (enumLiteral_1= 'strongly_preferred' ) | (enumLiteral_2= 'preferred' ) | (enumLiteral_3= 'advisory' ) ) ;
     public final Enumerator ruleStrengthValue() throws RecognitionException {
         Enumerator current = null;
 
@@ -20852,28 +21160,28 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLibrettoSpec.g:7639:2: ( ( (enumLiteral_0= 'required' ) | (enumLiteral_1= 'strongly_preferred' ) | (enumLiteral_2= 'preferred' ) | (enumLiteral_3= 'advisory' ) ) )
-            // InternalLibrettoSpec.g:7640:2: ( (enumLiteral_0= 'required' ) | (enumLiteral_1= 'strongly_preferred' ) | (enumLiteral_2= 'preferred' ) | (enumLiteral_3= 'advisory' ) )
+            // InternalLibrettoSpec.g:7763:2: ( ( (enumLiteral_0= 'required' ) | (enumLiteral_1= 'strongly_preferred' ) | (enumLiteral_2= 'preferred' ) | (enumLiteral_3= 'advisory' ) ) )
+            // InternalLibrettoSpec.g:7764:2: ( (enumLiteral_0= 'required' ) | (enumLiteral_1= 'strongly_preferred' ) | (enumLiteral_2= 'preferred' ) | (enumLiteral_3= 'advisory' ) )
             {
-            // InternalLibrettoSpec.g:7640:2: ( (enumLiteral_0= 'required' ) | (enumLiteral_1= 'strongly_preferred' ) | (enumLiteral_2= 'preferred' ) | (enumLiteral_3= 'advisory' ) )
+            // InternalLibrettoSpec.g:7764:2: ( (enumLiteral_0= 'required' ) | (enumLiteral_1= 'strongly_preferred' ) | (enumLiteral_2= 'preferred' ) | (enumLiteral_3= 'advisory' ) )
             int alt52=4;
             switch ( input.LA(1) ) {
-            case 98:
+            case 100:
                 {
                 alt52=1;
                 }
                 break;
-            case 99:
+            case 101:
                 {
                 alt52=2;
                 }
                 break;
-            case 100:
+            case 102:
                 {
                 alt52=3;
                 }
                 break;
-            case 101:
+            case 103:
                 {
                 alt52=4;
                 }
@@ -20887,12 +21195,12 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
 
             switch (alt52) {
                 case 1 :
-                    // InternalLibrettoSpec.g:7641:3: (enumLiteral_0= 'required' )
+                    // InternalLibrettoSpec.g:7765:3: (enumLiteral_0= 'required' )
                     {
-                    // InternalLibrettoSpec.g:7641:3: (enumLiteral_0= 'required' )
-                    // InternalLibrettoSpec.g:7642:4: enumLiteral_0= 'required'
+                    // InternalLibrettoSpec.g:7765:3: (enumLiteral_0= 'required' )
+                    // InternalLibrettoSpec.g:7766:4: enumLiteral_0= 'required'
                     {
-                    enumLiteral_0=(Token)match(input,98,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,100,FOLLOW_2); 
 
                     				current = grammarAccess.getStrengthValueAccess().getREQUIREDEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getStrengthValueAccess().getREQUIREDEnumLiteralDeclaration_0());
@@ -20904,12 +21212,12 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoSpec.g:7649:3: (enumLiteral_1= 'strongly_preferred' )
+                    // InternalLibrettoSpec.g:7773:3: (enumLiteral_1= 'strongly_preferred' )
                     {
-                    // InternalLibrettoSpec.g:7649:3: (enumLiteral_1= 'strongly_preferred' )
-                    // InternalLibrettoSpec.g:7650:4: enumLiteral_1= 'strongly_preferred'
+                    // InternalLibrettoSpec.g:7773:3: (enumLiteral_1= 'strongly_preferred' )
+                    // InternalLibrettoSpec.g:7774:4: enumLiteral_1= 'strongly_preferred'
                     {
-                    enumLiteral_1=(Token)match(input,99,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,101,FOLLOW_2); 
 
                     				current = grammarAccess.getStrengthValueAccess().getSTRONGLY_PREFERREDEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getStrengthValueAccess().getSTRONGLY_PREFERREDEnumLiteralDeclaration_1());
@@ -20921,12 +21229,12 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalLibrettoSpec.g:7657:3: (enumLiteral_2= 'preferred' )
+                    // InternalLibrettoSpec.g:7781:3: (enumLiteral_2= 'preferred' )
                     {
-                    // InternalLibrettoSpec.g:7657:3: (enumLiteral_2= 'preferred' )
-                    // InternalLibrettoSpec.g:7658:4: enumLiteral_2= 'preferred'
+                    // InternalLibrettoSpec.g:7781:3: (enumLiteral_2= 'preferred' )
+                    // InternalLibrettoSpec.g:7782:4: enumLiteral_2= 'preferred'
                     {
-                    enumLiteral_2=(Token)match(input,100,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,102,FOLLOW_2); 
 
                     				current = grammarAccess.getStrengthValueAccess().getPREFERREDEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getStrengthValueAccess().getPREFERREDEnumLiteralDeclaration_2());
@@ -20938,12 +21246,12 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalLibrettoSpec.g:7665:3: (enumLiteral_3= 'advisory' )
+                    // InternalLibrettoSpec.g:7789:3: (enumLiteral_3= 'advisory' )
                     {
-                    // InternalLibrettoSpec.g:7665:3: (enumLiteral_3= 'advisory' )
-                    // InternalLibrettoSpec.g:7666:4: enumLiteral_3= 'advisory'
+                    // InternalLibrettoSpec.g:7789:3: (enumLiteral_3= 'advisory' )
+                    // InternalLibrettoSpec.g:7790:4: enumLiteral_3= 'advisory'
                     {
-                    enumLiteral_3=(Token)match(input,101,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,103,FOLLOW_2); 
 
                     				current = grammarAccess.getStrengthValueAccess().getADVISORYEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getStrengthValueAccess().getADVISORYEnumLiteralDeclaration_3());
@@ -20984,47 +21292,47 @@ public class InternalLibrettoSpecParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x00000200FFF00000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x000001FD00100000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000040000100000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000100000100000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0006000000100000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0008000000100000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000100000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000100000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000100000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0020000000100000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000100000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000100000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x00000800FFF00000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x000007FD00100000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000100000100000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000400000100000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0018000000100000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0020000000100000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000100000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000100000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000100000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0080000000100000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000100000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000100000L,0x0000000000010000L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000200000000L});
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000000C00L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000000L,0x0000000300000000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x4000080000100000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000000L,0x0000000C00000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000200000100000L,0x0000000000000001L});
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x8001E00100300000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000100000L,0x0000000002800000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000100000L,0x0000000003800000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0007800100300000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000100000L,0x000000000A000000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000100000L,0x000000000E000000L});
     public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0010000000100000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0040000000100000L});
     public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0xFFC1EA0100700000L,0x0000000000400000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000000100000L,0x0000000000000006L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000000000000L,0x00000000C0000000L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000080000000002L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000000100000L,0x00000000000001E0L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0xFF07A80100700000L,0x0000000001000003L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000000000000L,0x0000000010000000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000000100000L,0x0000000000000018L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000000000000L,0x0000000300000000L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000200000000002L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000000100000L,0x0000000000000780L});
     public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0xC001E80100700000L,0x0000000000403C00L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0007A00100700000L,0x000000000100F003L});
     public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x8001E00100700000L,0x00000000007F8000L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000000000000L,0x0000003C00000000L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000000100000L,0x0000000001800000L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000000000000010L,0x0000000010000000L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000000000000000L,0x0000000018000000L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000000000000020L,0x0000000010000000L});
-    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000000000000100L,0x0000000010000000L});
-    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000000000000C00L,0x0000000010000000L});
-    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000000000000002L,0x0000000020000000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0007800100700000L,0x0000000001FE0002L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000000000000L,0x000000F000000000L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000000100000L,0x0000000006000000L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000000000000010L,0x0000000040000000L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000000000000000L,0x0000000060000000L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000000000000020L,0x0000000040000000L});
+    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000000000000100L,0x0000000040000000L});
+    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000000000000C00L,0x0000000040000000L});
+    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000000000000000L,0x0000000080000000L});
+    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000000000000002L,0x0000000080000000L});
 
 }

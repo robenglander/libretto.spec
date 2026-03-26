@@ -906,6 +906,24 @@ public interface LibrettoSpecFactory extends EFactory
   MetadataModelMetadataField createMetadataModelMetadataField();
 
   /**
+   * Returns a new object of class '<em>Metadata Project Profile Version Field</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Metadata Project Profile Version Field</em>'.
+   * @generated
+   */
+  MetadataProjectProfileVersionField createMetadataProjectProfileVersionField();
+
+  /**
+   * Returns a new object of class '<em>Metadata Project Profile Id Field</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Metadata Project Profile Id Field</em>'.
+   * @generated
+   */
+  MetadataProjectProfileIdField createMetadataProjectProfileIdField();
+
+  /**
    * Returns a new object of class '<em>Simple Identifier</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

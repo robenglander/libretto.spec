@@ -53,5 +53,22 @@ Workflow {
 				junitVersion = "5"
 			}
 		}
+		language = StandardLanguage {
+			name = "com.robenglander.libretto.spec.LibrettoProjectProfile"
+			fileExtensions = "lpp"
+
+			serializer = {
+				generateStub = false
+			}
+			validator = {
+				generateDeprecationValidation = true
+			}
+			generator = {
+				generateXtendStub = false
+			}
+			junitSupport = {
+				junitVersion = "5"
+			}
+		}
 	}
 }

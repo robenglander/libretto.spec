@@ -29,6 +29,8 @@ import com.robenglander.libretto.spec.librettoSpec.MetadataField;
 import com.robenglander.libretto.spec.librettoSpec.MetadataJavaPackageField;
 import com.robenglander.libretto.spec.librettoSpec.MetadataModelMetadataField;
 import com.robenglander.libretto.spec.librettoSpec.MetadataModuleField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataProjectProfileIdField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataProjectProfileVersionField;
 import com.robenglander.libretto.spec.librettoSpec.MetadataSection;
 import com.robenglander.libretto.spec.librettoSpec.MetadataStatusField;
 import com.robenglander.libretto.spec.librettoSpec.MetadataTitleField;
@@ -164,6 +166,10 @@ final class LibrettoSpecSectionMapper {
 			case MetadataModelMetadataField mmf ->
 				new ProjectedMetadataField.ModelMetadata(ProjectionValues.text(mmf.getModelMetadata()));
 			case MetadataStatusField sf -> new ProjectedMetadataField.Status(mapMetaStatus(sf.getStatus()));
+			case MetadataProjectProfileVersionField ppv ->
+				new ProjectedMetadataField.ProjectProfileVersion(ProjectionValues.text(ppv.getProjectProfileVersion()));
+			case MetadataProjectProfileIdField ppi ->
+				new ProjectedMetadataField.ProjectProfileId(ProjectionValues.text(ppi.getProjectProfileId()));
 			default -> null;
 		};
 	}

@@ -70,6 +70,8 @@ public class LibrettoSpecParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getMetadataCompiledAtFieldAccess().getGroup(), "rule__MetadataCompiledAtField__Group__0");
 			builder.put(grammarAccess.getMetadataCompilerVersionFieldAccess().getGroup(), "rule__MetadataCompilerVersionField__Group__0");
 			builder.put(grammarAccess.getMetadataModelMetadataFieldAccess().getGroup(), "rule__MetadataModelMetadataField__Group__0");
+			builder.put(grammarAccess.getMetadataProjectProfileVersionFieldAccess().getGroup(), "rule__MetadataProjectProfileVersionField__Group__0");
+			builder.put(grammarAccess.getMetadataProjectProfileIdFieldAccess().getGroup(), "rule__MetadataProjectProfileIdField__Group__0");
 			builder.put(grammarAccess.getDependenciesSectionKeywordAccess().getGroup(), "rule__DependenciesSectionKeyword__Group__0");
 			builder.put(grammarAccess.getDependencyKeywordAccess().getGroup(), "rule__DependencyKeyword__Group__0");
 			builder.put(grammarAccess.getDependencyRecordAccess().getGroup(), "rule__DependencyRecord__Group__0");
@@ -165,6 +167,8 @@ public class LibrettoSpecParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getMetadataCompiledAtFieldAccess().getCompiledAtAssignment_3(), "rule__MetadataCompiledAtField__CompiledAtAssignment_3");
 			builder.put(grammarAccess.getMetadataCompilerVersionFieldAccess().getCompilerVersionAssignment_3(), "rule__MetadataCompilerVersionField__CompilerVersionAssignment_3");
 			builder.put(grammarAccess.getMetadataModelMetadataFieldAccess().getModelMetadataAssignment_3(), "rule__MetadataModelMetadataField__ModelMetadataAssignment_3");
+			builder.put(grammarAccess.getMetadataProjectProfileVersionFieldAccess().getProjectProfileVersionAssignment_3(), "rule__MetadataProjectProfileVersionField__ProjectProfileVersionAssignment_3");
+			builder.put(grammarAccess.getMetadataProjectProfileIdFieldAccess().getProjectProfileIdAssignment_3(), "rule__MetadataProjectProfileIdField__ProjectProfileIdAssignment_3");
 			builder.put(grammarAccess.getDependencyRecordAccess().getKeywordAssignment_0(), "rule__DependencyRecord__KeywordAssignment_0");
 			builder.put(grammarAccess.getDependencyRecordAccess().getIdAssignment_1(), "rule__DependencyRecord__IdAssignment_1");
 			builder.put(grammarAccess.getDependencyRecordAccess().getItemsAssignment_3(), "rule__DependencyRecord__ItemsAssignment_3");

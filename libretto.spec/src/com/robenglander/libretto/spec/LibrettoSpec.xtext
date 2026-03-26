@@ -93,7 +93,9 @@ MetadataField:
 	| MetadataJavaPackageField
 	| MetadataCompiledAtField
 	| MetadataCompilerVersionField
-	| MetadataModelMetadataField;
+	| MetadataModelMetadataField
+	| MetadataProjectProfileVersionField
+	| MetadataProjectProfileIdField;
 
 MetadataTitleField returns MetadataField:
 	{MetadataTitleField} 'title' ':' title=TextValue;
@@ -118,6 +120,12 @@ MetadataCompilerVersionField returns MetadataField:
 
 MetadataModelMetadataField returns MetadataField:
 	{MetadataModelMetadataField} 'model_metadata' ':' modelMetadata=TextValue;
+
+MetadataProjectProfileVersionField returns MetadataField:
+	{MetadataProjectProfileVersionField} 'project_profile_version' ':' projectProfileVersion=TextValue;
+
+MetadataProjectProfileIdField returns MetadataField:
+	{MetadataProjectProfileIdField} 'project_profile_id' ':' projectProfileId=TextValue;
 
 // ----- Dependency records -----
 

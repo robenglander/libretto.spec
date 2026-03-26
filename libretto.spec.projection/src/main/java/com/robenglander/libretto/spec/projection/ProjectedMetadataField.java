@@ -11,7 +11,9 @@ public sealed interface ProjectedMetadataField permits
 		ProjectedMetadataField.JavaPackage,
 		ProjectedMetadataField.CompiledAt,
 		ProjectedMetadataField.CompilerVersion,
-		ProjectedMetadataField.ModelMetadata {
+		ProjectedMetadataField.ModelMetadata,
+		ProjectedMetadataField.ProjectProfileVersion,
+		ProjectedMetadataField.ProjectProfileId {
 
 	record Title(String title) implements ProjectedMetadataField {
 		public Title {
@@ -60,6 +62,23 @@ public sealed interface ProjectedMetadataField permits
 	record ModelMetadata(String modelMetadata) implements ProjectedMetadataField {
 		public ModelMetadata {
 			modelMetadata = modelMetadata == null ? "" : modelMetadata;
+		}
+	}
+
+	/**
+	 * Declared {@code project_profile_version} — must match the loaded {@code .lpp} root version when tooling
+	 * passes {@code --project-profile}.
+	 */
+	record ProjectProfileVersion(String version) implements ProjectedMetadataField {
+		public ProjectProfileVersion {
+			version = version == null ? "" : version.trim();
+		}
+	}
+
+	/** Optional {@code project_profile_id}; if either side sets an id, both must match. */
+	record ProjectProfileId(String id) implements ProjectedMetadataField {
+		public ProjectProfileId {
+			id = id == null ? "" : id.trim();
 		}
 	}
 }

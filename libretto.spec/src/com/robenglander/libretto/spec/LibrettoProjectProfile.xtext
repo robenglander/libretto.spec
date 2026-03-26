@@ -1,0 +1,83 @@
+grammar com.robenglander.libretto.spec.LibrettoProjectProfile with org.eclipse.xtext.common.Terminals
+
+hidden(WS, ML_COMMENT, SL_COMMENT)
+
+generate librettoProjectProfile "http://www.robenglander.com/libretto/spec/LibrettoProjectProfile"
+
+/**
+ * Libretto <b>project profile</b> — declarative tooling configuration (not the `.libretto` spec language).
+ * <p>
+ * File extension: {@code .lpp}. Binds at build/CLI time. Spec metadata {@code project_profile_id} should match
+ * this file's profile name when using {@code --project-profile} (see surface generator).
+ * See {@code docs/DESIGN-SurfaceProfileConfigXtext.md} in the Libretto repository.
+ * <p>
+ * Principle: <b>config, not a programming language</b> — fixed statement forms, explicit names and types,
+ * optional scoped blocks; no patterns, conditionals, or executable logic in the grammar.
+ */
+
+ProjectProfile:
+	'profile' profileName=STRING '{'
+		project=ProjectBlock?
+		surface=SurfaceBlock?
+	'}';
+
+ProjectBlock:
+	'project' '{'
+		('rootDir' rootDir=STRING ';')?
+		modules=ModulesBlock?
+	'}';
+
+ModulesBlock:
+	'modules' '{'
+		modules+=ProjectModule*
+	'}';
+
+ProjectModule:
+	'module' name=STRING '{'
+		'dir' dir=STRING ';'
+		('specsDir' specsDir=STRING ';')?
+		('testsDir' testsDir=STRING ';')?
+		('mainJavaDir' mainJavaDir=STRING ';')?
+		('basePackage' basePackage=STRING ';')?
+	'}';
+
+SurfaceBlock:
+	'surface' '{'
+		elements+=SurfaceElement*
+	'}';
+
+SurfaceElement:
+	ScopedSurface | SurfaceRule;
+
+ScopedSurface:
+	'for' ('module' moduleId=STRING | 'spec' specId=STRING) '{' rules+=SurfaceRule* '}';
+
+SurfaceRule:
+	ReturnTypeRule | ParamTypeRule | RecordSelfReturnRule | MethodOverrideRule;
+
+ReturnTypeRule:
+	'returnType' 'method' name=ID 'as' javaType=JavaType ';';
+
+ParamTypeRule:
+	'paramType' 'name' paramName=ID 'as' javaType=JavaType ';';
+
+RecordSelfReturnRule:
+	'recordSelfReturn' methods+=ID (',' methods+=ID)* ';';
+
+MethodOverrideRule:
+	'methodOverride' signature=OperationSignature 'returns' javaType=JavaType ';';
+
+JavaType:
+	PrimitiveType | QualifiedName;
+
+QualifiedName:
+	segments+=ID ('.' segments+=ID)*;
+
+PrimitiveType:
+	kind=('boolean' | 'int' | 'long' | 'double' | 'float' | 'short' | 'byte' | 'char' | 'void');
+
+OperationSignature:
+	name=ID '(' (params+=TypedParam (',' params+=TypedParam)*)? ')';
+
+TypedParam:
+	type=JavaType paramName=ID;

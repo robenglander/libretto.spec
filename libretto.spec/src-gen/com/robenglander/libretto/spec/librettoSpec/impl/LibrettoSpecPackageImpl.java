@@ -57,6 +57,8 @@ import com.robenglander.libretto.spec.librettoSpec.MetadataField;
 import com.robenglander.libretto.spec.librettoSpec.MetadataJavaPackageField;
 import com.robenglander.libretto.spec.librettoSpec.MetadataModelMetadataField;
 import com.robenglander.libretto.spec.librettoSpec.MetadataModuleField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataProjectProfileIdField;
+import com.robenglander.libretto.spec.librettoSpec.MetadataProjectProfileVersionField;
 import com.robenglander.libretto.spec.librettoSpec.MetadataSection;
 import com.robenglander.libretto.spec.librettoSpec.MetadataStatusField;
 import com.robenglander.libretto.spec.librettoSpec.MetadataStatusValue;
@@ -809,6 +811,20 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   private EClass metadataModelMetadataFieldEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass metadataProjectProfileVersionFieldEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass metadataProjectProfileIdFieldEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -3601,6 +3617,50 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
    * @generated
    */
   @Override
+  public EClass getMetadataProjectProfileVersionField()
+  {
+    return metadataProjectProfileVersionFieldEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getMetadataProjectProfileVersionField_ProjectProfileVersion()
+  {
+    return (EReference)metadataProjectProfileVersionFieldEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMetadataProjectProfileIdField()
+  {
+    return metadataProjectProfileIdFieldEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getMetadataProjectProfileIdField_ProjectProfileId()
+  {
+    return (EReference)metadataProjectProfileIdFieldEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getSimpleIdentifier()
   {
     return simpleIdentifierEClass;
@@ -4024,6 +4084,12 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
     metadataModelMetadataFieldEClass = createEClass(METADATA_MODEL_METADATA_FIELD);
     createEReference(metadataModelMetadataFieldEClass, METADATA_MODEL_METADATA_FIELD__MODEL_METADATA);
 
+    metadataProjectProfileVersionFieldEClass = createEClass(METADATA_PROJECT_PROFILE_VERSION_FIELD);
+    createEReference(metadataProjectProfileVersionFieldEClass, METADATA_PROJECT_PROFILE_VERSION_FIELD__PROJECT_PROFILE_VERSION);
+
+    metadataProjectProfileIdFieldEClass = createEClass(METADATA_PROJECT_PROFILE_ID_FIELD);
+    createEReference(metadataProjectProfileIdFieldEClass, METADATA_PROJECT_PROFILE_ID_FIELD__PROJECT_PROFILE_ID);
+
     simpleIdentifierEClass = createEClass(SIMPLE_IDENTIFIER);
     createEAttribute(simpleIdentifierEClass, SIMPLE_IDENTIFIER__ID);
 
@@ -4085,6 +4151,8 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
     metadataCompiledAtFieldEClass.getESuperTypes().add(this.getMetadataField());
     metadataCompilerVersionFieldEClass.getESuperTypes().add(this.getMetadataField());
     metadataModelMetadataFieldEClass.getESuperTypes().add(this.getMetadataField());
+    metadataProjectProfileVersionFieldEClass.getESuperTypes().add(this.getMetadataField());
+    metadataProjectProfileIdFieldEClass.getESuperTypes().add(this.getMetadataField());
     simpleIdentifierEClass.getESuperTypes().add(this.getIdentifierValue());
 
     // Initialize classes and features; add operations and parameters
@@ -4430,6 +4498,12 @@ public class LibrettoSpecPackageImpl extends EPackageImpl implements LibrettoSpe
 
     initEClass(metadataModelMetadataFieldEClass, MetadataModelMetadataField.class, "MetadataModelMetadataField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getMetadataModelMetadataField_ModelMetadata(), this.getTextValue(), null, "modelMetadata", null, 0, 1, MetadataModelMetadataField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(metadataProjectProfileVersionFieldEClass, MetadataProjectProfileVersionField.class, "MetadataProjectProfileVersionField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMetadataProjectProfileVersionField_ProjectProfileVersion(), this.getTextValue(), null, "projectProfileVersion", null, 0, 1, MetadataProjectProfileVersionField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(metadataProjectProfileIdFieldEClass, MetadataProjectProfileIdField.class, "MetadataProjectProfileIdField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMetadataProjectProfileIdField_ProjectProfileId(), this.getTextValue(), null, "projectProfileId", null, 0, 1, MetadataProjectProfileIdField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(simpleIdentifierEClass, SimpleIdentifier.class, "SimpleIdentifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSimpleIdentifier_Id(), ecorePackage.getEString(), "id", null, 0, 1, SimpleIdentifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -3244,6 +3244,62 @@ public interface LibrettoSpecPackage extends EPackage
   int METADATA_MODEL_METADATA_FIELD_FEATURE_COUNT = METADATA_FIELD_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.MetadataProjectProfileVersionFieldImpl <em>Metadata Project Profile Version Field</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoSpec.impl.MetadataProjectProfileVersionFieldImpl
+   * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getMetadataProjectProfileVersionField()
+   * @generated
+   */
+  int METADATA_PROJECT_PROFILE_VERSION_FIELD = 98;
+
+  /**
+   * The feature id for the '<em><b>Project Profile Version</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METADATA_PROJECT_PROFILE_VERSION_FIELD__PROJECT_PROFILE_VERSION = METADATA_FIELD_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Metadata Project Profile Version Field</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METADATA_PROJECT_PROFILE_VERSION_FIELD_FEATURE_COUNT = METADATA_FIELD_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.MetadataProjectProfileIdFieldImpl <em>Metadata Project Profile Id Field</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoSpec.impl.MetadataProjectProfileIdFieldImpl
+   * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getMetadataProjectProfileIdField()
+   * @generated
+   */
+  int METADATA_PROJECT_PROFILE_ID_FIELD = 99;
+
+  /**
+   * The feature id for the '<em><b>Project Profile Id</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METADATA_PROJECT_PROFILE_ID_FIELD__PROJECT_PROFILE_ID = METADATA_FIELD_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Metadata Project Profile Id Field</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METADATA_PROJECT_PROFILE_ID_FIELD_FEATURE_COUNT = METADATA_FIELD_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.SimpleIdentifierImpl <em>Simple Identifier</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3251,7 +3307,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getSimpleIdentifier()
    * @generated
    */
-  int SIMPLE_IDENTIFIER = 98;
+  int SIMPLE_IDENTIFIER = 100;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -3279,7 +3335,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getOutcomeClassValue()
    * @generated
    */
-  int OUTCOME_CLASS_VALUE = 99;
+  int OUTCOME_CLASS_VALUE = 101;
 
   /**
    * The meta object id for the '{@link com.robenglander.libretto.spec.librettoSpec.MetadataStatusValue <em>Metadata Status Value</em>}' enum.
@@ -3289,7 +3345,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getMetadataStatusValue()
    * @generated
    */
-  int METADATA_STATUS_VALUE = 100;
+  int METADATA_STATUS_VALUE = 102;
 
   /**
    * The meta object id for the '{@link com.robenglander.libretto.spec.librettoSpec.StrengthValue <em>Strength Value</em>}' enum.
@@ -3299,7 +3355,7 @@ public interface LibrettoSpecPackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getStrengthValue()
    * @generated
    */
-  int STRENGTH_VALUE = 101;
+  int STRENGTH_VALUE = 103;
 
 
   /**
@@ -5900,6 +5956,48 @@ public interface LibrettoSpecPackage extends EPackage
   EReference getMetadataModelMetadataField_ModelMetadata();
 
   /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.MetadataProjectProfileVersionField <em>Metadata Project Profile Version Field</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Metadata Project Profile Version Field</em>'.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataProjectProfileVersionField
+   * @generated
+   */
+  EClass getMetadataProjectProfileVersionField();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.MetadataProjectProfileVersionField#getProjectProfileVersion <em>Project Profile Version</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Project Profile Version</em>'.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataProjectProfileVersionField#getProjectProfileVersion()
+   * @see #getMetadataProjectProfileVersionField()
+   * @generated
+   */
+  EReference getMetadataProjectProfileVersionField_ProjectProfileVersion();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.MetadataProjectProfileIdField <em>Metadata Project Profile Id Field</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Metadata Project Profile Id Field</em>'.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataProjectProfileIdField
+   * @generated
+   */
+  EClass getMetadataProjectProfileIdField();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoSpec.MetadataProjectProfileIdField#getProjectProfileId <em>Project Profile Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Project Profile Id</em>'.
+   * @see com.robenglander.libretto.spec.librettoSpec.MetadataProjectProfileIdField#getProjectProfileId()
+   * @see #getMetadataProjectProfileIdField()
+   * @generated
+   */
+  EReference getMetadataProjectProfileIdField_ProjectProfileId();
+
+  /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoSpec.SimpleIdentifier <em>Simple Identifier</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -8128,6 +8226,42 @@ public interface LibrettoSpecPackage extends EPackage
      * @generated
      */
     EReference METADATA_MODEL_METADATA_FIELD__MODEL_METADATA = eINSTANCE.getMetadataModelMetadataField_ModelMetadata();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.MetadataProjectProfileVersionFieldImpl <em>Metadata Project Profile Version Field</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoSpec.impl.MetadataProjectProfileVersionFieldImpl
+     * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getMetadataProjectProfileVersionField()
+     * @generated
+     */
+    EClass METADATA_PROJECT_PROFILE_VERSION_FIELD = eINSTANCE.getMetadataProjectProfileVersionField();
+
+    /**
+     * The meta object literal for the '<em><b>Project Profile Version</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference METADATA_PROJECT_PROFILE_VERSION_FIELD__PROJECT_PROFILE_VERSION = eINSTANCE.getMetadataProjectProfileVersionField_ProjectProfileVersion();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.MetadataProjectProfileIdFieldImpl <em>Metadata Project Profile Id Field</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoSpec.impl.MetadataProjectProfileIdFieldImpl
+     * @see com.robenglander.libretto.spec.librettoSpec.impl.LibrettoSpecPackageImpl#getMetadataProjectProfileIdField()
+     * @generated
+     */
+    EClass METADATA_PROJECT_PROFILE_ID_FIELD = eINSTANCE.getMetadataProjectProfileIdField();
+
+    /**
+     * The meta object literal for the '<em><b>Project Profile Id</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference METADATA_PROJECT_PROFILE_ID_FIELD__PROJECT_PROFILE_ID = eINSTANCE.getMetadataProjectProfileIdField_ProjectProfileId();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoSpec.impl.SimpleIdentifierImpl <em>Simple Identifier</em>}' class.

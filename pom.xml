@@ -31,9 +31,11 @@
 		<module>libretto.spec.ide</module>
 		<module>libretto.spec.ui</module>
 		<module>libretto.spec.feature</module>
+		<module>libretto.profile.feature</module>
 		<module>libretto.spec.tests</module>
 		<module>libretto.spec.ui.tests</module>
 		<module>libretto.spec.repository</module>
+		<module>libretto.profile.repository</module>
 	</modules>
 	<dependencyManagement>
 		<dependencies>

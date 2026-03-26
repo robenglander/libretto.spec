@@ -4,6 +4,9 @@
 package com.robenglander.libretto.spec.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfiguration;
+
+import com.robenglander.libretto.spec.ui.syntaxcoloring.LibrettoSpecHighlightingConfiguration;
 
 /**
  * Use this class to register components to be used within the Eclipse IDE.
@@ -12,5 +15,9 @@ public class LibrettoSpecUiModule extends AbstractLibrettoSpecUiModule {
 
 	public LibrettoSpecUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
+	}
+
+	public Class<? extends IHighlightingConfiguration> bindIHighlightingConfiguration() {
+		return LibrettoSpecHighlightingConfiguration.class;
 	}
 }

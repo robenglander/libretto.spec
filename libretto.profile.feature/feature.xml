@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="libretto.profile.feature"
+      label="Libretto Project Profile Language"
+      version="1.0.0.qualifier"
+      provider-name="Rob Englander">
+
+   <description>
+      Xtext-based editor and language support for native .lpp (LibrettoProjectProfile).
+   </description>
+
+   <copyright>
+      See project LICENSE.
+   </copyright>
+
+   <license url="https://www.eclipse.org/legal/epl-2.0/">
+      Eclipse Public License 2.0
+   </license>
+
+   <plugin
+         id="libretto.spec"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="libretto.spec.ide"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="libretto.spec.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

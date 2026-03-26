@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="librettoProjectProfile" nsURI="http://www.robenglander.com/libretto/spec/LibrettoProjectProfile"
+    nsPrefix="librettoProjectProfile">
+  <eClassifiers xsi:type="ecore:EClass" name="ProjectProfile">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="profileName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="project" eType="#//ProjectBlock"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="surface" eType="#//SurfaceBlock"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProjectBlock">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rootDir" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modules" eType="#//ModulesBlock"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModulesBlock">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modules" upperBound="-1"
+        eType="#//ProjectModule" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProjectModule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dir" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="specsDir" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="testsDir" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mainJavaDir" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="basePackage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SurfaceBlock">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//SurfaceElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SurfaceElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ScopedSurface" eSuperTypes="#//SurfaceElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="moduleId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="specId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rules" upperBound="-1"
+        eType="#//SurfaceRule" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SurfaceRule" eSuperTypes="#//SurfaceElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ReturnTypeRule" eSuperTypes="#//SurfaceRule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="javaType" eType="#//JavaType"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParamTypeRule" eSuperTypes="#//SurfaceRule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="paramName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="javaType" eType="#//JavaType"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RecordSelfReturnRule" eSuperTypes="#//SurfaceRule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="methods" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MethodOverrideRule" eSuperTypes="#//SurfaceRule">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="signature" eType="#//OperationSignature"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="javaType" eType="#//JavaType"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="JavaType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="QualifiedName" eSuperTypes="#//JavaType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="segments" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveType" eSuperTypes="#//JavaType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OperationSignature">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1"
+        eType="#//TypedParam" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TypedParam">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//JavaType"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="paramName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

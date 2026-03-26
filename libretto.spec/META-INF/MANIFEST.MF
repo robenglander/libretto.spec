@@ -28,5 +28,8 @@ Export-Package: com.robenglander.libretto.spec,
  com.robenglander.libretto.spec.librettoSpec.impl,
  com.robenglander.libretto.spec.generator,
  com.robenglander.libretto.spec.projection,
- com.robenglander.libretto.spec.projection.mapper
+ com.robenglander.libretto.spec.projection.mapper,
+ com.robenglander.libretto.spec.librettoProjectProfile.util,
+ com.robenglander.libretto.spec.librettoProjectProfile,
+ com.robenglander.libretto.spec.librettoProjectProfile.impl
 Import-Package: org.apache.log4j

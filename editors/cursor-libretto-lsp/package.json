@@ -1,7 +1,7 @@
 {
   "name": "libretto-spec-lsp",
   "displayName": "Libretto Spec (Xtext LSP)",
-  "description": "Language Server for native .libretto (LibrettoSpec / Xtext)",
+  "description": "Language Server for .libretto (LibrettoSpec / Xtext)",
   "version": "0.1.0",
   "publisher": "robenglander",
   "engines": {

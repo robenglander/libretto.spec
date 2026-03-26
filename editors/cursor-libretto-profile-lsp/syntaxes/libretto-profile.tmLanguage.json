@@ -1,0 +1,54 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Libretto Project Profile",
+  "scopeName": "source.libretto-profile",
+  "patterns": [
+    { "include": "#comment" },
+    { "include": "#string" },
+    { "include": "#primitives" },
+    { "include": "#keywords" },
+    { "include": "#punctuation" },
+    { "include": "#identifier" }
+  ],
+  "repository": {
+    "comment": {
+      "name": "comment.line.double-slash.libretto-profile",
+      "match": "//.*$"
+    },
+    "string": {
+      "name": "string.quoted.double.libretto-profile",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.libretto-profile",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "primitives": {
+      "name": "storage.type.primitive.libretto-profile",
+      "match": "\\b(boolean|int|long|double|float|short|byte|char|void)\\b"
+    },
+    "keywords": {
+      "name": "keyword.control.libretto-profile",
+      "match": "\\b(librettoProjectProfile|surface|for|module|spec|returnType|method|as|paramType|name|recordSelfReturn|methodOverride|returns)\\b"
+    },
+    "punctuation": {
+      "patterns": [
+        {
+          "name": "punctuation.separator.libretto-profile",
+          "match": "[;,.]"
+        },
+        {
+          "name": "punctuation.bracket.libretto-profile",
+          "match": "[(){}\\[\\]]"
+        }
+      ]
+    },
+    "identifier": {
+      "name": "variable.other.libretto-profile",
+      "match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b"
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "name": "libretto-profile-lsp",
+  "displayName": "Libretto Project Profile (Xtext LSP)",
+  "description": "Language Server for .lpp — Libretto project profile (Xtext)",
+  "version": "0.1.0",
+  "publisher": "robenglander",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "workspaceContains:**/*.lpp"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "configurationDefaults": {
+      "files.associations": {
+        "*.lpp": "librettoprofile"
+      },
+      "[librettoprofile]": {
+        "editor.semanticHighlighting.enabled": true,
+        "editor.semanticTokenColorCustomizations": {
+          "rules": {
+            "namespace": "#f0883e",
+            "type": "#d2a8ff",
+            "parameter": "#ffa657",
+            "string": "#79c0ff",
+            "enumMember": "#ff7b72",
+            "function": "#a371f7"
+          }
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "librettoProfile.repairLanguageMode",
+        "title": "Libretto Project Profile: Use profile language for this file",
+        "enablement": "resourceExtname == '.lpp'"
+      }
+    ],
+    "languages": [
+      {
+        "id": "librettoprofile",
+        "aliases": [
+          "Libretto Project Profile",
+          "libretto profile"
+        ],
+        "extensions": [
+          ".lpp"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "librettoprofile",
+        "scopeName": "source.libretto-profile",
+        "path": "./syntaxes/libretto-profile.tmLanguage.json"
+      }
+    ],
+    "configuration": {
+      "title": "Libretto Project Profile LSP",
+      "properties": {
+        "librettoProfile.languageServer.jarPath": {
+          "type": "string",
+          "default": "",
+          "description": "Absolute path to libretto.spec.ide-*-ls.jar (same shaded LSP as Libretto Spec). Use ${workspaceFolder}. If empty, tries ../../libretto.spec.ide/target/*-ls.jar relative to this extension folder."
+        },
+        "librettoProfile.languageServer.javaPath": {
+          "type": "string",
+          "default": "java",
+          "description": "Java executable (Java 21+)."
+        },
+        "librettoProfile.languageServer.jvmArgs": {
+          "type": "array",
+          "default": [],
+          "description": "Extra JVM arguments (e.g. -Xmx512m).",
+          "items": {
+            "type": "string"
+          }
+        },
+        "librettoProfile.languageServer.trace": {
+          "type": "string",
+          "enum": [
+            "off",
+            "messages",
+            "compact",
+            "verbose"
+          ],
+          "default": "off",
+          "description": "LSP trace in Output → Libretto Project Profile LSP."
+        },
+        "librettoProfile.languageServer.logDiagnostics": {
+          "type": "boolean",
+          "default": false,
+          "description": "Log publishDiagnostics batches to the output channel."
+        },
+        "librettoProfile.autoSetLanguageForDotLpp": {
+          "type": "boolean",
+          "default": true,
+          "description": "When a .lpp file opens, set language id to librettoprofile so the LSP attaches."
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "vscode-languageclient": "^9.0.1"
+  }
+}
