@@ -144,6 +144,9 @@ public class LibrettoSpecValidator extends AbstractLibrettoSpecValidator {
 	public static final String DUPLICATE_NESTED_FIELD = "DUPLICATE_NESTED_FIELD";
 
 	private static final Pattern OPERATION_CONDITION_PATTERN = Pattern.compile("operation\\s*=\\s*(.+)$");
+	/** Matches {@code java.kind = interface} in implementation_directive constraints (surface-only / no acceptance tests). */
+	private static final Pattern JAVA_KIND_INTERFACE_CONSTRAINT_PATTERN =
+			Pattern.compile("(?i)java\\.kind\\s*=\\s*interface\\b");
 
 	private static final class NestedSlot<I> {
 		private final Function<I, ?> getter;
@@ -700,22 +703,24 @@ public class LibrettoSpecValidator extends AbstractLibrettoSpecValidator {
 				atValidatedBehaviorIds.addAll(v.getValue().getValues());
 			}
 
-			for (String operationExpression : operationExpressions) {
-				boolean covered = false;
-				for (String behaviorId : atValidatedBehaviorIds) {
-					if (behaviorId == null) {
-						continue;
+			if (!specDeclaresJavaKindInterface(spec)) {
+				for (String operationExpression : operationExpressions) {
+					boolean covered = false;
+					for (String behaviorId : atValidatedBehaviorIds) {
+						if (behaviorId == null) {
+							continue;
+						}
+						Set<String> ops = behaviorOperationsByBehaviorId.get(behaviorId);
+						if (ops != null && ops.contains(operationExpression)) {
+							covered = true;
+							break;
+						}
 					}
-					Set<String> ops = behaviorOperationsByBehaviorId.get(behaviorId);
-					if (ops != null && ops.contains(operationExpression)) {
-						covered = true;
-						break;
+					if (!covered) {
+						warningAnchored(spec, "spec",
+								"operation_surface expression is not covered by any acceptance test validates linkage.",
+								OPERATION_SURFACE_NOT_COVERED_BY_ACCEPTANCE_TEST, Literals.SPEC__SECTIONS);
 					}
-				}
-				if (!covered) {
-					warningAnchored(spec, "spec",
-							"operation_surface expression is not covered by any acceptance test validates linkage.",
-							OPERATION_SURFACE_NOT_COVERED_BY_ACCEPTANCE_TEST, Literals.SPEC__SECTIONS);
 				}
 			}
 
@@ -850,6 +855,37 @@ public class LibrettoSpecValidator extends AbstractLibrettoSpecValidator {
 						codePrefix + "_DUPLICATE_TARGET");
 			}
 		}
+	}
+
+	/**
+	 * When {@code java.kind = interface} is set, the spec describes a behavioral contract surface only;
+	 * acceptance-test coverage linkage is not required.
+	 */
+	private static boolean specDeclaresJavaKindInterface(Spec spec) {
+		for (ImplementationDirectiveRecord idr : SpecSections.implementationDirectiveRecords(spec)) {
+			if (idr.getItems() == null) {
+				continue;
+			}
+			for (ImplementationDirectiveRecordItem item : idr.getItems()) {
+				if (item == null) {
+					continue;
+				}
+				var constraintsField = item.getConstraints();
+				if (constraintsField == null || constraintsField.getValue() == null) {
+					continue;
+				}
+				for (TextValue tv : constraintsField.getValue().getValues()) {
+					if (tv == null) {
+						continue;
+					}
+					String c = LibrettoSpecTextValues.text(tv);
+					if (c != null && JAVA_KIND_INTERFACE_CONSTRAINT_PATTERN.matcher(c.trim()).find()) {
+						return true;
+					}
+				}
+			}
+		}
+		return false;
 	}
 
 	private static String inferOutcomeClass(String actionValue) {
