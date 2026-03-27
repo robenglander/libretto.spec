@@ -6,12 +6,18 @@ package com.robenglander.libretto.spec.librettoProjectProfile.impl;
 import com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage;
 import com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,10 +28,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.NamedLlmProviderImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.NamedLlmProviderImpl#getKind <em>Kind</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.NamedLlmProviderImpl#getLocalModelPath <em>Local Model Path</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.NamedLlmProviderImpl#getModel <em>Model</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.NamedLlmProviderImpl#getEndpoint <em>Endpoint</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.NamedLlmProviderImpl#getKinds <em>Kinds</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.NamedLlmProviderImpl#getLocalModelPaths <em>Local Model Paths</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.NamedLlmProviderImpl#getModels <em>Models</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.NamedLlmProviderImpl#getEndpoints <em>Endpoints</em>}</li>
  * </ul>
  *
  * @generated
@@ -53,84 +59,44 @@ public class NamedLlmProviderImpl extends MinimalEObjectImpl.Container implement
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
+   * The cached value of the '{@link #getKinds() <em>Kinds</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getKind()
+   * @see #getKinds()
    * @generated
    * @ordered
    */
-  protected static final String KIND_EDEFAULT = null;
+  protected EList<String> kinds;
 
   /**
-   * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
+   * The cached value of the '{@link #getLocalModelPaths() <em>Local Model Paths</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getKind()
+   * @see #getLocalModelPaths()
    * @generated
    * @ordered
    */
-  protected String kind = KIND_EDEFAULT;
+  protected EList<String> localModelPaths;
 
   /**
-   * The default value of the '{@link #getLocalModelPath() <em>Local Model Path</em>}' attribute.
+   * The cached value of the '{@link #getModels() <em>Models</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLocalModelPath()
+   * @see #getModels()
    * @generated
    * @ordered
    */
-  protected static final String LOCAL_MODEL_PATH_EDEFAULT = null;
+  protected EList<String> models;
 
   /**
-   * The cached value of the '{@link #getLocalModelPath() <em>Local Model Path</em>}' attribute.
+   * The cached value of the '{@link #getEndpoints() <em>Endpoints</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLocalModelPath()
+   * @see #getEndpoints()
    * @generated
    * @ordered
    */
-  protected String localModelPath = LOCAL_MODEL_PATH_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getModel() <em>Model</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getModel()
-   * @generated
-   * @ordered
-   */
-  protected static final String MODEL_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getModel() <em>Model</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getModel()
-   * @generated
-   * @ordered
-   */
-  protected String model = MODEL_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getEndpoint() <em>Endpoint</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEndpoint()
-   * @generated
-   * @ordered
-   */
-  protected static final String ENDPOINT_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getEndpoint() <em>Endpoint</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEndpoint()
-   * @generated
-   * @ordered
-   */
-  protected String endpoint = ENDPOINT_EDEFAULT;
+  protected EList<String> endpoints;
 
   /**
    * <!-- begin-user-doc -->
@@ -184,9 +150,13 @@ public class NamedLlmProviderImpl extends MinimalEObjectImpl.Container implement
    * @generated
    */
   @Override
-  public String getKind()
+  public EList<String> getKinds()
   {
-    return kind;
+    if (kinds == null)
+    {
+      kinds = new EDataTypeEList<String>(String.class, this, LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__KINDS);
+    }
+    return kinds;
   }
 
   /**
@@ -195,12 +165,13 @@ public class NamedLlmProviderImpl extends MinimalEObjectImpl.Container implement
    * @generated
    */
   @Override
-  public void setKind(String newKind)
+  public EList<String> getLocalModelPaths()
   {
-    String oldKind = kind;
-    kind = newKind;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__KIND, oldKind, kind));
+    if (localModelPaths == null)
+    {
+      localModelPaths = new EDataTypeEList<String>(String.class, this, LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__LOCAL_MODEL_PATHS);
+    }
+    return localModelPaths;
   }
 
   /**
@@ -209,9 +180,13 @@ public class NamedLlmProviderImpl extends MinimalEObjectImpl.Container implement
    * @generated
    */
   @Override
-  public String getLocalModelPath()
+  public EList<String> getModels()
   {
-    return localModelPath;
+    if (models == null)
+    {
+      models = new EDataTypeEList<String>(String.class, this, LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__MODELS);
+    }
+    return models;
   }
 
   /**
@@ -220,62 +195,13 @@ public class NamedLlmProviderImpl extends MinimalEObjectImpl.Container implement
    * @generated
    */
   @Override
-  public void setLocalModelPath(String newLocalModelPath)
+  public EList<String> getEndpoints()
   {
-    String oldLocalModelPath = localModelPath;
-    localModelPath = newLocalModelPath;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__LOCAL_MODEL_PATH, oldLocalModelPath, localModelPath));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getModel()
-  {
-    return model;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setModel(String newModel)
-  {
-    String oldModel = model;
-    model = newModel;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__MODEL, oldModel, model));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getEndpoint()
-  {
-    return endpoint;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setEndpoint(String newEndpoint)
-  {
-    String oldEndpoint = endpoint;
-    endpoint = newEndpoint;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__ENDPOINT, oldEndpoint, endpoint));
+    if (endpoints == null)
+    {
+      endpoints = new EDataTypeEList<String>(String.class, this, LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__ENDPOINTS);
+    }
+    return endpoints;
   }
 
   /**
@@ -290,14 +216,14 @@ public class NamedLlmProviderImpl extends MinimalEObjectImpl.Container implement
     {
       case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__NAME:
         return getName();
-      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__KIND:
-        return getKind();
-      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__LOCAL_MODEL_PATH:
-        return getLocalModelPath();
-      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__MODEL:
-        return getModel();
-      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__ENDPOINT:
-        return getEndpoint();
+      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__KINDS:
+        return getKinds();
+      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__LOCAL_MODEL_PATHS:
+        return getLocalModelPaths();
+      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__MODELS:
+        return getModels();
+      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__ENDPOINTS:
+        return getEndpoints();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -307,6 +233,7 @@ public class NamedLlmProviderImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -315,17 +242,21 @@ public class NamedLlmProviderImpl extends MinimalEObjectImpl.Container implement
       case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__NAME:
         setName((String)newValue);
         return;
-      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__KIND:
-        setKind((String)newValue);
+      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__KINDS:
+        getKinds().clear();
+        getKinds().addAll((Collection<? extends String>)newValue);
         return;
-      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__LOCAL_MODEL_PATH:
-        setLocalModelPath((String)newValue);
+      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__LOCAL_MODEL_PATHS:
+        getLocalModelPaths().clear();
+        getLocalModelPaths().addAll((Collection<? extends String>)newValue);
         return;
-      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__MODEL:
-        setModel((String)newValue);
+      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__MODELS:
+        getModels().clear();
+        getModels().addAll((Collection<? extends String>)newValue);
         return;
-      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__ENDPOINT:
-        setEndpoint((String)newValue);
+      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__ENDPOINTS:
+        getEndpoints().clear();
+        getEndpoints().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -344,17 +275,17 @@ public class NamedLlmProviderImpl extends MinimalEObjectImpl.Container implement
       case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__KIND:
-        setKind(KIND_EDEFAULT);
+      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__KINDS:
+        getKinds().clear();
         return;
-      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__LOCAL_MODEL_PATH:
-        setLocalModelPath(LOCAL_MODEL_PATH_EDEFAULT);
+      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__LOCAL_MODEL_PATHS:
+        getLocalModelPaths().clear();
         return;
-      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__MODEL:
-        setModel(MODEL_EDEFAULT);
+      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__MODELS:
+        getModels().clear();
         return;
-      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__ENDPOINT:
-        setEndpoint(ENDPOINT_EDEFAULT);
+      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__ENDPOINTS:
+        getEndpoints().clear();
         return;
     }
     super.eUnset(featureID);
@@ -372,14 +303,14 @@ public class NamedLlmProviderImpl extends MinimalEObjectImpl.Container implement
     {
       case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__KIND:
-        return KIND_EDEFAULT == null ? kind != null : !KIND_EDEFAULT.equals(kind);
-      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__LOCAL_MODEL_PATH:
-        return LOCAL_MODEL_PATH_EDEFAULT == null ? localModelPath != null : !LOCAL_MODEL_PATH_EDEFAULT.equals(localModelPath);
-      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__MODEL:
-        return MODEL_EDEFAULT == null ? model != null : !MODEL_EDEFAULT.equals(model);
-      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__ENDPOINT:
-        return ENDPOINT_EDEFAULT == null ? endpoint != null : !ENDPOINT_EDEFAULT.equals(endpoint);
+      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__KINDS:
+        return kinds != null && !kinds.isEmpty();
+      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__LOCAL_MODEL_PATHS:
+        return localModelPaths != null && !localModelPaths.isEmpty();
+      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__MODELS:
+        return models != null && !models.isEmpty();
+      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER__ENDPOINTS:
+        return endpoints != null && !endpoints.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -397,14 +328,14 @@ public class NamedLlmProviderImpl extends MinimalEObjectImpl.Container implement
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", kind: ");
-    result.append(kind);
-    result.append(", localModelPath: ");
-    result.append(localModelPath);
-    result.append(", model: ");
-    result.append(model);
-    result.append(", endpoint: ");
-    result.append(endpoint);
+    result.append(", kinds: ");
+    result.append(kinds);
+    result.append(", localModelPaths: ");
+    result.append(localModelPaths);
+    result.append(", models: ");
+    result.append(models);
+    result.append(", endpoints: ");
+    result.append(endpoints);
     result.append(')');
     return result.toString();
   }

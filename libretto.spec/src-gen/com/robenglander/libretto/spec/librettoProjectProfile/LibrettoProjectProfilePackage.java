@@ -68,25 +68,25 @@ public interface LibrettoProjectProfilePackage extends EPackage
   int PROJECT_PROFILE = 0;
 
   /**
-   * The feature id for the '<em><b>Profile Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROJECT_PROFILE__PROFILE_NAME = 0;
+  int PROJECT_PROFILE__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Project</b></em>' containment reference.
+   * The feature id for the '<em><b>Projects</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROJECT_PROFILE__PROJECT = 1;
+  int PROJECT_PROFILE__PROJECTS = 1;
 
   /**
-   * The feature id for the '<em><b>Llm Providers</b></em>' containment reference.
+   * The feature id for the '<em><b>Llm Providers</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -95,13 +95,13 @@ public interface LibrettoProjectProfilePackage extends EPackage
   int PROJECT_PROFILE__LLM_PROVIDERS = 2;
 
   /**
-   * The feature id for the '<em><b>Surface</b></em>' containment reference.
+   * The feature id for the '<em><b>Surfaces</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROJECT_PROFILE__SURFACE = 3;
+  int PROJECT_PROFILE__SURFACES = 3;
 
   /**
    * The number of structural features of the '<em>Project Profile</em>' class.
@@ -123,7 +123,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
   int PROJECT_BLOCK = 1;
 
   /**
-   * The feature id for the '<em><b>Root Dir</b></em>' attribute.
+   * The feature id for the '<em><b>Root Dir</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -132,7 +132,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
   int PROJECT_BLOCK__ROOT_DIR = 0;
 
   /**
-   * The feature id for the '<em><b>Modules</b></em>' containment reference.
+   * The feature id for the '<em><b>Modules</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -141,13 +141,13 @@ public interface LibrettoProjectProfilePackage extends EPackage
   int PROJECT_BLOCK__MODULES = 1;
 
   /**
-   * The feature id for the '<em><b>Test Gen</b></em>' containment reference.
+   * The feature id for the '<em><b>Gens</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROJECT_BLOCK__TEST_GEN = 2;
+  int PROJECT_BLOCK__GENS = 2;
 
   /**
    * The number of structural features of the '<em>Project Block</em>' class.
@@ -206,49 +206,49 @@ public interface LibrettoProjectProfilePackage extends EPackage
   int PROJECT_MODULE__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Dir</b></em>' attribute.
+   * The feature id for the '<em><b>Dirs</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROJECT_MODULE__DIR = 1;
+  int PROJECT_MODULE__DIRS = 1;
 
   /**
-   * The feature id for the '<em><b>Specs Dir</b></em>' attribute.
+   * The feature id for the '<em><b>Spec Dirs</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROJECT_MODULE__SPECS_DIR = 2;
+  int PROJECT_MODULE__SPEC_DIRS = 2;
 
   /**
-   * The feature id for the '<em><b>Tests Dir</b></em>' attribute.
+   * The feature id for the '<em><b>Test Dirs</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROJECT_MODULE__TESTS_DIR = 3;
+  int PROJECT_MODULE__TEST_DIRS = 3;
 
   /**
-   * The feature id for the '<em><b>Main Java Dir</b></em>' attribute.
+   * The feature id for the '<em><b>Main Dirs</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROJECT_MODULE__MAIN_JAVA_DIR = 4;
+  int PROJECT_MODULE__MAIN_DIRS = 4;
 
   /**
-   * The feature id for the '<em><b>Base Package</b></em>' attribute.
+   * The feature id for the '<em><b>Base Packages</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROJECT_MODULE__BASE_PACKAGE = 5;
+  int PROJECT_MODULE__BASE_PACKAGES = 5;
 
   /**
    * The number of structural features of the '<em>Project Module</em>' class.
@@ -260,260 +260,87 @@ public interface LibrettoProjectProfilePackage extends EPackage
   int PROJECT_MODULE_FEATURE_COUNT = 6;
 
   /**
-   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenBlockImpl <em>Test Gen Block</em>}' class.
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenBlockImpl <em>Gen Block</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenBlockImpl
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getTestGenBlock()
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.GenBlockImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getGenBlock()
    * @generated
    */
-  int TEST_GEN_BLOCK = 4;
+  int GEN_BLOCK = 4;
 
   /**
-   * The feature id for the '<em><b>Initial Instruction</b></em>' attribute.
+   * The feature id for the '<em><b>Initial Instructions</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEST_GEN_BLOCK__INITIAL_INSTRUCTION = 0;
+  int GEN_BLOCK__INITIAL_INSTRUCTIONS = 0;
 
   /**
-   * The feature id for the '<em><b>Forbidden Patterns</b></em>' attribute list.
+   * The feature id for the '<em><b>Max Retries</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEST_GEN_BLOCK__FORBIDDEN_PATTERNS = 1;
+  int GEN_BLOCK__MAX_RETRIES = 1;
 
   /**
-   * The feature id for the '<em><b>Max Retries</b></em>' attribute.
+   * The feature id for the '<em><b>Parse Checks</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEST_GEN_BLOCK__MAX_RETRIES = 2;
+  int GEN_BLOCK__PARSE_CHECKS = 2;
 
   /**
-   * The feature id for the '<em><b>Parse Check</b></em>' attribute.
+   * The feature id for the '<em><b>Default Corrections</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEST_GEN_BLOCK__PARSE_CHECK = 3;
+  int GEN_BLOCK__DEFAULT_CORRECTIONS = 3;
 
   /**
-   * The feature id for the '<em><b>Remediations</b></em>' containment reference.
+   * The feature id for the '<em><b>Remediations</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEST_GEN_BLOCK__REMEDIATIONS = 4;
+  int GEN_BLOCK__REMEDIATIONS = 4;
 
   /**
-   * The feature id for the '<em><b>Legacy Remediation Rules</b></em>' containment reference.
+   * The feature id for the '<em><b>Model Usages</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEST_GEN_BLOCK__LEGACY_REMEDIATION_RULES = 5;
+  int GEN_BLOCK__MODEL_USAGES = 5;
 
   /**
-   * The feature id for the '<em><b>Usage</b></em>' containment reference.
+   * The number of structural features of the '<em>Gen Block</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEST_GEN_BLOCK__USAGE = 6;
+  int GEN_BLOCK_FEATURE_COUNT = 6;
 
   /**
-   * The feature id for the '<em><b>Module Policies</b></em>' containment reference list.
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenRemediationRulesImpl <em>Gen Remediation Rules</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEST_GEN_BLOCK__MODULE_POLICIES = 7;
-
-  /**
-   * The number of structural features of the '<em>Test Gen Block</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEST_GEN_BLOCK_FEATURE_COUNT = 8;
-
-  /**
-   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenModulePolicyImpl <em>Test Gen Module Policy</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenModulePolicyImpl
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getTestGenModulePolicy()
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.GenRemediationRulesImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getGenRemediationRules()
    * @generated
    */
-  int TEST_GEN_MODULE_POLICY = 5;
-
-  /**
-   * The feature id for the '<em><b>Module Id</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEST_GEN_MODULE_POLICY__MODULE_ID = 0;
-
-  /**
-   * The feature id for the '<em><b>Initial Instruction</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEST_GEN_MODULE_POLICY__INITIAL_INSTRUCTION = 1;
-
-  /**
-   * The feature id for the '<em><b>Forbidden Patterns</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEST_GEN_MODULE_POLICY__FORBIDDEN_PATTERNS = 2;
-
-  /**
-   * The feature id for the '<em><b>Max Retries</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEST_GEN_MODULE_POLICY__MAX_RETRIES = 3;
-
-  /**
-   * The feature id for the '<em><b>Parse Check</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEST_GEN_MODULE_POLICY__PARSE_CHECK = 4;
-
-  /**
-   * The feature id for the '<em><b>Remediations</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEST_GEN_MODULE_POLICY__REMEDIATIONS = 5;
-
-  /**
-   * The feature id for the '<em><b>Legacy Remediation Rules</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEST_GEN_MODULE_POLICY__LEGACY_REMEDIATION_RULES = 6;
-
-  /**
-   * The feature id for the '<em><b>Usage</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEST_GEN_MODULE_POLICY__USAGE = 7;
-
-  /**
-   * The number of structural features of the '<em>Test Gen Module Policy</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEST_GEN_MODULE_POLICY_FEATURE_COUNT = 8;
-
-  /**
-   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenRemediationsBlockImpl <em>Test Gen Remediations Block</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenRemediationsBlockImpl
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getTestGenRemediationsBlock()
-   * @generated
-   */
-  int TEST_GEN_REMEDIATIONS_BLOCK = 6;
-
-  /**
-   * The feature id for the '<em><b>Max Retries</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEST_GEN_REMEDIATIONS_BLOCK__MAX_RETRIES = 0;
-
-  /**
-   * The feature id for the '<em><b>Parse Check</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEST_GEN_REMEDIATIONS_BLOCK__PARSE_CHECK = 1;
-
-  /**
-   * The feature id for the '<em><b>Default Correction</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEST_GEN_REMEDIATIONS_BLOCK__DEFAULT_CORRECTION = 2;
-
-  /**
-   * The feature id for the '<em><b>Forbidden Patterns</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEST_GEN_REMEDIATIONS_BLOCK__FORBIDDEN_PATTERNS = 3;
-
-  /**
-   * The feature id for the '<em><b>Rules Container</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEST_GEN_REMEDIATIONS_BLOCK__RULES_CONTAINER = 4;
-
-  /**
-   * The number of structural features of the '<em>Test Gen Remediations Block</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEST_GEN_REMEDIATIONS_BLOCK_FEATURE_COUNT = 5;
-
-  /**
-   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenRemediationRulesContainerImpl <em>Test Gen Remediation Rules Container</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenRemediationRulesContainerImpl
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getTestGenRemediationRulesContainer()
-   * @generated
-   */
-  int TEST_GEN_REMEDIATION_RULES_CONTAINER = 7;
+  int GEN_REMEDIATION_RULES = 5;
 
   /**
    * The feature id for the '<em><b>Pattern Rules</b></em>' containment reference list.
@@ -522,173 +349,108 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int TEST_GEN_REMEDIATION_RULES_CONTAINER__PATTERN_RULES = 0;
+  int GEN_REMEDIATION_RULES__PATTERN_RULES = 0;
 
   /**
-   * The feature id for the '<em><b>Default Remediation</b></em>' containment reference.
+   * The feature id for the '<em><b>Default Remediations</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEST_GEN_REMEDIATION_RULES_CONTAINER__DEFAULT_REMEDIATION = 1;
+  int GEN_REMEDIATION_RULES__DEFAULT_REMEDIATIONS = 1;
 
   /**
-   * The number of structural features of the '<em>Test Gen Remediation Rules Container</em>' class.
+   * The number of structural features of the '<em>Gen Remediation Rules</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEST_GEN_REMEDIATION_RULES_CONTAINER_FEATURE_COUNT = 2;
+  int GEN_REMEDIATION_RULES_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenPatternRemediationRuleImpl <em>Test Gen Pattern Remediation Rule</em>}' class.
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenPatternRemediationRuleImpl <em>Gen Pattern Remediation Rule</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenPatternRemediationRuleImpl
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getTestGenPatternRemediationRule()
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.GenPatternRemediationRuleImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getGenPatternRemediationRule()
    * @generated
    */
-  int TEST_GEN_PATTERN_REMEDIATION_RULE = 8;
+  int GEN_PATTERN_REMEDIATION_RULE = 6;
 
   /**
-   * The feature id for the '<em><b>Pattern</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEST_GEN_PATTERN_REMEDIATION_RULE__PATTERN = 0;
-
-  /**
-   * The feature id for the '<em><b>Code</b></em>' attribute.
+   * The feature id for the '<em><b>Patterns</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEST_GEN_PATTERN_REMEDIATION_RULE__CODE = 1;
+  int GEN_PATTERN_REMEDIATION_RULE__PATTERNS = 0;
 
   /**
-   * The feature id for the '<em><b>Correction</b></em>' attribute.
+   * The feature id for the '<em><b>Codes</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEST_GEN_PATTERN_REMEDIATION_RULE__CORRECTION = 2;
+  int GEN_PATTERN_REMEDIATION_RULE__CODES = 1;
 
   /**
-   * The number of structural features of the '<em>Test Gen Pattern Remediation Rule</em>' class.
+   * The feature id for the '<em><b>Corrections</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEST_GEN_PATTERN_REMEDIATION_RULE_FEATURE_COUNT = 3;
+  int GEN_PATTERN_REMEDIATION_RULE__CORRECTIONS = 2;
 
   /**
-   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenDefaultRemediationRuleImpl <em>Test Gen Default Remediation Rule</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenDefaultRemediationRuleImpl
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getTestGenDefaultRemediationRule()
-   * @generated
-   */
-  int TEST_GEN_DEFAULT_REMEDIATION_RULE = 9;
-
-  /**
-   * The feature id for the '<em><b>Code</b></em>' attribute.
+   * The number of structural features of the '<em>Gen Pattern Remediation Rule</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEST_GEN_DEFAULT_REMEDIATION_RULE__CODE = 0;
+  int GEN_PATTERN_REMEDIATION_RULE_FEATURE_COUNT = 3;
 
   /**
-   * The feature id for the '<em><b>Correction</b></em>' attribute.
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenDefaultRemediationRuleImpl <em>Gen Default Remediation Rule</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.GenDefaultRemediationRuleImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getGenDefaultRemediationRule()
+   * @generated
+   */
+  int GEN_DEFAULT_REMEDIATION_RULE = 7;
+
+  /**
+   * The feature id for the '<em><b>Codes</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEST_GEN_DEFAULT_REMEDIATION_RULE__CORRECTION = 1;
+  int GEN_DEFAULT_REMEDIATION_RULE__CODES = 0;
 
   /**
-   * The number of structural features of the '<em>Test Gen Default Remediation Rule</em>' class.
+   * The feature id for the '<em><b>Correction</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEST_GEN_DEFAULT_REMEDIATION_RULE_FEATURE_COUNT = 2;
+  int GEN_DEFAULT_REMEDIATION_RULE__CORRECTION = 1;
 
   /**
-   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenLegacyRemediationRulesBlockImpl <em>Test Gen Legacy Remediation Rules Block</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenLegacyRemediationRulesBlockImpl
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getTestGenLegacyRemediationRulesBlock()
-   * @generated
-   */
-  int TEST_GEN_LEGACY_REMEDIATION_RULES_BLOCK = 10;
-
-  /**
-   * The feature id for the '<em><b>Rules</b></em>' containment reference list.
+   * The number of structural features of the '<em>Gen Default Remediation Rule</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEST_GEN_LEGACY_REMEDIATION_RULES_BLOCK__RULES = 0;
-
-  /**
-   * The number of structural features of the '<em>Test Gen Legacy Remediation Rules Block</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEST_GEN_LEGACY_REMEDIATION_RULES_BLOCK_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenLegacyRemediationRuleImpl <em>Test Gen Legacy Remediation Rule</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenLegacyRemediationRuleImpl
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getTestGenLegacyRemediationRule()
-   * @generated
-   */
-  int TEST_GEN_LEGACY_REMEDIATION_RULE = 11;
-
-  /**
-   * The feature id for the '<em><b>Key</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEST_GEN_LEGACY_REMEDIATION_RULE__KEY = 0;
-
-  /**
-   * The feature id for the '<em><b>Instruction</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEST_GEN_LEGACY_REMEDIATION_RULE__INSTRUCTION = 1;
-
-  /**
-   * The number of structural features of the '<em>Test Gen Legacy Remediation Rule</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEST_GEN_LEGACY_REMEDIATION_RULE_FEATURE_COUNT = 2;
+  int GEN_DEFAULT_REMEDIATION_RULE_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.LlmProvidersBlockImpl <em>Llm Providers Block</em>}' class.
@@ -698,7 +460,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getLlmProvidersBlock()
    * @generated
    */
-  int LLM_PROVIDERS_BLOCK = 12;
+  int LLM_PROVIDERS_BLOCK = 8;
 
   /**
    * The feature id for the '<em><b>Providers</b></em>' containment reference list.
@@ -726,7 +488,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getNamedLlmProvider()
    * @generated
    */
-  int NAMED_LLM_PROVIDER = 13;
+  int NAMED_LLM_PROVIDER = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -738,40 +500,40 @@ public interface LibrettoProjectProfilePackage extends EPackage
   int NAMED_LLM_PROVIDER__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Kind</b></em>' attribute.
+   * The feature id for the '<em><b>Kinds</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NAMED_LLM_PROVIDER__KIND = 1;
+  int NAMED_LLM_PROVIDER__KINDS = 1;
 
   /**
-   * The feature id for the '<em><b>Local Model Path</b></em>' attribute.
+   * The feature id for the '<em><b>Local Model Paths</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NAMED_LLM_PROVIDER__LOCAL_MODEL_PATH = 2;
+  int NAMED_LLM_PROVIDER__LOCAL_MODEL_PATHS = 2;
 
   /**
-   * The feature id for the '<em><b>Model</b></em>' attribute.
+   * The feature id for the '<em><b>Models</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NAMED_LLM_PROVIDER__MODEL = 3;
+  int NAMED_LLM_PROVIDER__MODELS = 3;
 
   /**
-   * The feature id for the '<em><b>Endpoint</b></em>' attribute.
+   * The feature id for the '<em><b>Endpoints</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NAMED_LLM_PROVIDER__ENDPOINT = 4;
+  int NAMED_LLM_PROVIDER__ENDPOINTS = 4;
 
   /**
    * The number of structural features of the '<em>Named Llm Provider</em>' class.
@@ -783,96 +545,87 @@ public interface LibrettoProjectProfilePackage extends EPackage
   int NAMED_LLM_PROVIDER_FEATURE_COUNT = 5;
 
   /**
-   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenUsageBlockImpl <em>Test Gen Usage Block</em>}' class.
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenUsageBlockImpl <em>Gen Usage Block</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenUsageBlockImpl
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getTestGenUsageBlock()
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.GenUsageBlockImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getGenUsageBlock()
    * @generated
    */
-  int TEST_GEN_USAGE_BLOCK = 14;
+  int GEN_USAGE_BLOCK = 10;
 
   /**
-   * The feature id for the '<em><b>Primary Provider</b></em>' attribute.
+   * The feature id for the '<em><b>Primary Providers</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEST_GEN_USAGE_BLOCK__PRIMARY_PROVIDER = 0;
+  int GEN_USAGE_BLOCK__PRIMARY_PROVIDERS = 0;
 
   /**
-   * The feature id for the '<em><b>Secondary Provider</b></em>' attribute.
+   * The feature id for the '<em><b>Secondary Providers</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEST_GEN_USAGE_BLOCK__SECONDARY_PROVIDER = 1;
+  int GEN_USAGE_BLOCK__SECONDARY_PROVIDERS = 1;
 
   /**
-   * The feature id for the '<em><b>Escalation</b></em>' containment reference.
+   * The feature id for the '<em><b>Escalations</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEST_GEN_USAGE_BLOCK__ESCALATION = 2;
+  int GEN_USAGE_BLOCK__ESCALATIONS = 2;
 
   /**
-   * The number of structural features of the '<em>Test Gen Usage Block</em>' class.
+   * The number of structural features of the '<em>Gen Usage Block</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEST_GEN_USAGE_BLOCK_FEATURE_COUNT = 3;
+  int GEN_USAGE_BLOCK_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenEscalationBlockImpl <em>Test Gen Escalation Block</em>}' class.
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenEscalationBlockImpl <em>Gen Escalation Block</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenEscalationBlockImpl
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getTestGenEscalationBlock()
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.GenEscalationBlockImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getGenEscalationBlock()
    * @generated
    */
-  int TEST_GEN_ESCALATION_BLOCK = 15;
+  int GEN_ESCALATION_BLOCK = 11;
 
   /**
-   * The feature id for the '<em><b>Enabled</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEST_GEN_ESCALATION_BLOCK__ENABLED = 0;
-
-  /**
-   * The feature id for the '<em><b>Escalate At Retry</b></em>' attribute.
+   * The feature id for the '<em><b>Enableds</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEST_GEN_ESCALATION_BLOCK__ESCALATE_AT_RETRY = 1;
+  int GEN_ESCALATION_BLOCK__ENABLEDS = 0;
 
   /**
-   * The feature id for the '<em><b>Target</b></em>' attribute.
+   * The feature id for the '<em><b>Escalate At Retries</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEST_GEN_ESCALATION_BLOCK__TARGET = 2;
+  int GEN_ESCALATION_BLOCK__ESCALATE_AT_RETRIES = 1;
 
   /**
-   * The number of structural features of the '<em>Test Gen Escalation Block</em>' class.
+   * The number of structural features of the '<em>Gen Escalation Block</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEST_GEN_ESCALATION_BLOCK_FEATURE_COUNT = 3;
+  int GEN_ESCALATION_BLOCK_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.SurfaceBlockImpl <em>Surface Block</em>}' class.
@@ -882,7 +635,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getSurfaceBlock()
    * @generated
    */
-  int SURFACE_BLOCK = 16;
+  int SURFACE_BLOCK = 12;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -910,7 +663,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getSurfaceElement()
    * @generated
    */
-  int SURFACE_ELEMENT = 17;
+  int SURFACE_ELEMENT = 13;
 
   /**
    * The number of structural features of the '<em>Surface Element</em>' class.
@@ -929,7 +682,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getScopedSurface()
    * @generated
    */
-  int SCOPED_SURFACE = 18;
+  int SCOPED_SURFACE = 14;
 
   /**
    * The feature id for the '<em><b>Module Id</b></em>' attribute.
@@ -975,7 +728,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getSurfaceRule()
    * @generated
    */
-  int SURFACE_RULE = 19;
+  int SURFACE_RULE = 15;
 
   /**
    * The number of structural features of the '<em>Surface Rule</em>' class.
@@ -994,7 +747,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getReturnTypeRule()
    * @generated
    */
-  int RETURN_TYPE_RULE = 20;
+  int RETURN_TYPE_RULE = 16;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1031,7 +784,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getParamTypeRule()
    * @generated
    */
-  int PARAM_TYPE_RULE = 21;
+  int PARAM_TYPE_RULE = 17;
 
   /**
    * The feature id for the '<em><b>Param Name</b></em>' attribute.
@@ -1068,7 +821,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getRecordSelfReturnRule()
    * @generated
    */
-  int RECORD_SELF_RETURN_RULE = 22;
+  int RECORD_SELF_RETURN_RULE = 18;
 
   /**
    * The feature id for the '<em><b>Methods</b></em>' attribute list.
@@ -1096,7 +849,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getMethodOverrideRule()
    * @generated
    */
-  int METHOD_OVERRIDE_RULE = 23;
+  int METHOD_OVERRIDE_RULE = 19;
 
   /**
    * The feature id for the '<em><b>Signature</b></em>' containment reference.
@@ -1133,7 +886,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getJavaType()
    * @generated
    */
-  int JAVA_TYPE = 24;
+  int JAVA_TYPE = 20;
 
   /**
    * The number of structural features of the '<em>Java Type</em>' class.
@@ -1152,7 +905,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getQualifiedName()
    * @generated
    */
-  int QUALIFIED_NAME = 25;
+  int QUALIFIED_NAME = 21;
 
   /**
    * The feature id for the '<em><b>Segments</b></em>' attribute list.
@@ -1180,7 +933,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getPrimitiveType()
    * @generated
    */
-  int PRIMITIVE_TYPE = 26;
+  int PRIMITIVE_TYPE = 22;
 
   /**
    * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -1208,7 +961,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getOperationSignature()
    * @generated
    */
-  int OPERATION_SIGNATURE = 27;
+  int OPERATION_SIGNATURE = 23;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1245,7 +998,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getTypedParam()
    * @generated
    */
-  int TYPED_PARAM = 28;
+  int TYPED_PARAM = 24;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -1286,32 +1039,32 @@ public interface LibrettoProjectProfilePackage extends EPackage
   EClass getProjectProfile();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getProfileName <em>Profile Name</em>}'.
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Profile Name</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getProfileName()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getName()
    * @see #getProjectProfile()
    * @generated
    */
-  EAttribute getProjectProfile_ProfileName();
+  EAttribute getProjectProfile_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getProject <em>Project</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getProjects <em>Projects</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Project</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getProject()
+   * @return the meta object for the containment reference list '<em>Projects</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getProjects()
    * @see #getProjectProfile()
    * @generated
    */
-  EReference getProjectProfile_Project();
+  EReference getProjectProfile_Projects();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getLlmProviders <em>Llm Providers</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getLlmProviders <em>Llm Providers</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Llm Providers</em>'.
+   * @return the meta object for the containment reference list '<em>Llm Providers</em>'.
    * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getLlmProviders()
    * @see #getProjectProfile()
    * @generated
@@ -1319,15 +1072,15 @@ public interface LibrettoProjectProfilePackage extends EPackage
   EReference getProjectProfile_LlmProviders();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getSurface <em>Surface</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getSurfaces <em>Surfaces</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Surface</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getSurface()
+   * @return the meta object for the containment reference list '<em>Surfaces</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getSurfaces()
    * @see #getProjectProfile()
    * @generated
    */
-  EReference getProjectProfile_Surface();
+  EReference getProjectProfile_Surfaces();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock <em>Project Block</em>}'.
@@ -1340,10 +1093,10 @@ public interface LibrettoProjectProfilePackage extends EPackage
   EClass getProjectBlock();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock#getRootDir <em>Root Dir</em>}'.
+   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock#getRootDir <em>Root Dir</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Root Dir</em>'.
+   * @return the meta object for the attribute list '<em>Root Dir</em>'.
    * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock#getRootDir()
    * @see #getProjectBlock()
    * @generated
@@ -1351,10 +1104,10 @@ public interface LibrettoProjectProfilePackage extends EPackage
   EAttribute getProjectBlock_RootDir();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock#getModules <em>Modules</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock#getModules <em>Modules</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Modules</em>'.
+   * @return the meta object for the containment reference list '<em>Modules</em>'.
    * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock#getModules()
    * @see #getProjectBlock()
    * @generated
@@ -1362,15 +1115,15 @@ public interface LibrettoProjectProfilePackage extends EPackage
   EReference getProjectBlock_Modules();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock#getTestGen <em>Test Gen</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock#getGens <em>Gens</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Test Gen</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock#getTestGen()
+   * @return the meta object for the containment reference list '<em>Gens</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock#getGens()
    * @see #getProjectBlock()
    * @generated
    */
-  EReference getProjectBlock_TestGen();
+  EReference getProjectBlock_Gens();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.ModulesBlock <em>Modules Block</em>}'.
@@ -1415,480 +1168,242 @@ public interface LibrettoProjectProfilePackage extends EPackage
   EAttribute getProjectModule_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getDir <em>Dir</em>}'.
+   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getDirs <em>Dirs</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Dir</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getDir()
+   * @return the meta object for the attribute list '<em>Dirs</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getDirs()
    * @see #getProjectModule()
    * @generated
    */
-  EAttribute getProjectModule_Dir();
+  EAttribute getProjectModule_Dirs();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getSpecsDir <em>Specs Dir</em>}'.
+   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getSpecDirs <em>Spec Dirs</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Specs Dir</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getSpecsDir()
+   * @return the meta object for the attribute list '<em>Spec Dirs</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getSpecDirs()
    * @see #getProjectModule()
    * @generated
    */
-  EAttribute getProjectModule_SpecsDir();
+  EAttribute getProjectModule_SpecDirs();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getTestsDir <em>Tests Dir</em>}'.
+   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getTestDirs <em>Test Dirs</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Tests Dir</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getTestsDir()
+   * @return the meta object for the attribute list '<em>Test Dirs</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getTestDirs()
    * @see #getProjectModule()
    * @generated
    */
-  EAttribute getProjectModule_TestsDir();
+  EAttribute getProjectModule_TestDirs();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getMainJavaDir <em>Main Java Dir</em>}'.
+   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getMainDirs <em>Main Dirs</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Main Java Dir</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getMainJavaDir()
+   * @return the meta object for the attribute list '<em>Main Dirs</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getMainDirs()
    * @see #getProjectModule()
    * @generated
    */
-  EAttribute getProjectModule_MainJavaDir();
+  EAttribute getProjectModule_MainDirs();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getBasePackage <em>Base Package</em>}'.
+   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getBasePackages <em>Base Packages</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Base Package</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getBasePackage()
+   * @return the meta object for the attribute list '<em>Base Packages</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getBasePackages()
    * @see #getProjectModule()
    * @generated
    */
-  EAttribute getProjectModule_BasePackage();
+  EAttribute getProjectModule_BasePackages();
 
   /**
-   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenBlock <em>Test Gen Block</em>}'.
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenBlock <em>Gen Block</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Test Gen Block</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenBlock
+   * @return the meta object for class '<em>Gen Block</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenBlock
    * @generated
    */
-  EClass getTestGenBlock();
+  EClass getGenBlock();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenBlock#getInitialInstruction <em>Initial Instruction</em>}'.
+   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getInitialInstructions <em>Initial Instructions</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Initial Instruction</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenBlock#getInitialInstruction()
-   * @see #getTestGenBlock()
+   * @return the meta object for the attribute list '<em>Initial Instructions</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getInitialInstructions()
+   * @see #getGenBlock()
    * @generated
    */
-  EAttribute getTestGenBlock_InitialInstruction();
+  EAttribute getGenBlock_InitialInstructions();
 
   /**
-   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenBlock#getForbiddenPatterns <em>Forbidden Patterns</em>}'.
+   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getMaxRetries <em>Max Retries</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Forbidden Patterns</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenBlock#getForbiddenPatterns()
-   * @see #getTestGenBlock()
+   * @return the meta object for the attribute list '<em>Max Retries</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getMaxRetries()
+   * @see #getGenBlock()
    * @generated
    */
-  EAttribute getTestGenBlock_ForbiddenPatterns();
+  EAttribute getGenBlock_MaxRetries();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenBlock#getMaxRetries <em>Max Retries</em>}'.
+   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getParseChecks <em>Parse Checks</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Max Retries</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenBlock#getMaxRetries()
-   * @see #getTestGenBlock()
+   * @return the meta object for the attribute list '<em>Parse Checks</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getParseChecks()
+   * @see #getGenBlock()
    * @generated
    */
-  EAttribute getTestGenBlock_MaxRetries();
+  EAttribute getGenBlock_ParseChecks();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenBlock#getParseCheck <em>Parse Check</em>}'.
+   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getDefaultCorrections <em>Default Corrections</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Parse Check</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenBlock#getParseCheck()
-   * @see #getTestGenBlock()
+   * @return the meta object for the attribute list '<em>Default Corrections</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getDefaultCorrections()
+   * @see #getGenBlock()
    * @generated
    */
-  EAttribute getTestGenBlock_ParseCheck();
+  EAttribute getGenBlock_DefaultCorrections();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenBlock#getRemediations <em>Remediations</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getRemediations <em>Remediations</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Remediations</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenBlock#getRemediations()
-   * @see #getTestGenBlock()
+   * @return the meta object for the containment reference list '<em>Remediations</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getRemediations()
+   * @see #getGenBlock()
    * @generated
    */
-  EReference getTestGenBlock_Remediations();
+  EReference getGenBlock_Remediations();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenBlock#getLegacyRemediationRules <em>Legacy Remediation Rules</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getModelUsages <em>Model Usages</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Legacy Remediation Rules</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenBlock#getLegacyRemediationRules()
-   * @see #getTestGenBlock()
+   * @return the meta object for the containment reference list '<em>Model Usages</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getModelUsages()
+   * @see #getGenBlock()
    * @generated
    */
-  EReference getTestGenBlock_LegacyRemediationRules();
+  EReference getGenBlock_ModelUsages();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenBlock#getUsage <em>Usage</em>}'.
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenRemediationRules <em>Gen Remediation Rules</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Usage</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenBlock#getUsage()
-   * @see #getTestGenBlock()
+   * @return the meta object for class '<em>Gen Remediation Rules</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenRemediationRules
    * @generated
    */
-  EReference getTestGenBlock_Usage();
+  EClass getGenRemediationRules();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenBlock#getModulePolicies <em>Module Policies</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Module Policies</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenBlock#getModulePolicies()
-   * @see #getTestGenBlock()
-   * @generated
-   */
-  EReference getTestGenBlock_ModulePolicies();
-
-  /**
-   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenModulePolicy <em>Test Gen Module Policy</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Test Gen Module Policy</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenModulePolicy
-   * @generated
-   */
-  EClass getTestGenModulePolicy();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenModulePolicy#getModuleId <em>Module Id</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Module Id</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenModulePolicy#getModuleId()
-   * @see #getTestGenModulePolicy()
-   * @generated
-   */
-  EAttribute getTestGenModulePolicy_ModuleId();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenModulePolicy#getInitialInstruction <em>Initial Instruction</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Initial Instruction</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenModulePolicy#getInitialInstruction()
-   * @see #getTestGenModulePolicy()
-   * @generated
-   */
-  EAttribute getTestGenModulePolicy_InitialInstruction();
-
-  /**
-   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenModulePolicy#getForbiddenPatterns <em>Forbidden Patterns</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Forbidden Patterns</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenModulePolicy#getForbiddenPatterns()
-   * @see #getTestGenModulePolicy()
-   * @generated
-   */
-  EAttribute getTestGenModulePolicy_ForbiddenPatterns();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenModulePolicy#getMaxRetries <em>Max Retries</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Max Retries</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenModulePolicy#getMaxRetries()
-   * @see #getTestGenModulePolicy()
-   * @generated
-   */
-  EAttribute getTestGenModulePolicy_MaxRetries();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenModulePolicy#getParseCheck <em>Parse Check</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Parse Check</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenModulePolicy#getParseCheck()
-   * @see #getTestGenModulePolicy()
-   * @generated
-   */
-  EAttribute getTestGenModulePolicy_ParseCheck();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenModulePolicy#getRemediations <em>Remediations</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Remediations</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenModulePolicy#getRemediations()
-   * @see #getTestGenModulePolicy()
-   * @generated
-   */
-  EReference getTestGenModulePolicy_Remediations();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenModulePolicy#getLegacyRemediationRules <em>Legacy Remediation Rules</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Legacy Remediation Rules</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenModulePolicy#getLegacyRemediationRules()
-   * @see #getTestGenModulePolicy()
-   * @generated
-   */
-  EReference getTestGenModulePolicy_LegacyRemediationRules();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenModulePolicy#getUsage <em>Usage</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Usage</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenModulePolicy#getUsage()
-   * @see #getTestGenModulePolicy()
-   * @generated
-   */
-  EReference getTestGenModulePolicy_Usage();
-
-  /**
-   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenRemediationsBlock <em>Test Gen Remediations Block</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Test Gen Remediations Block</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenRemediationsBlock
-   * @generated
-   */
-  EClass getTestGenRemediationsBlock();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenRemediationsBlock#getMaxRetries <em>Max Retries</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Max Retries</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenRemediationsBlock#getMaxRetries()
-   * @see #getTestGenRemediationsBlock()
-   * @generated
-   */
-  EAttribute getTestGenRemediationsBlock_MaxRetries();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenRemediationsBlock#getParseCheck <em>Parse Check</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Parse Check</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenRemediationsBlock#getParseCheck()
-   * @see #getTestGenRemediationsBlock()
-   * @generated
-   */
-  EAttribute getTestGenRemediationsBlock_ParseCheck();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenRemediationsBlock#getDefaultCorrection <em>Default Correction</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Default Correction</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenRemediationsBlock#getDefaultCorrection()
-   * @see #getTestGenRemediationsBlock()
-   * @generated
-   */
-  EAttribute getTestGenRemediationsBlock_DefaultCorrection();
-
-  /**
-   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenRemediationsBlock#getForbiddenPatterns <em>Forbidden Patterns</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Forbidden Patterns</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenRemediationsBlock#getForbiddenPatterns()
-   * @see #getTestGenRemediationsBlock()
-   * @generated
-   */
-  EAttribute getTestGenRemediationsBlock_ForbiddenPatterns();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenRemediationsBlock#getRulesContainer <em>Rules Container</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Rules Container</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenRemediationsBlock#getRulesContainer()
-   * @see #getTestGenRemediationsBlock()
-   * @generated
-   */
-  EReference getTestGenRemediationsBlock_RulesContainer();
-
-  /**
-   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenRemediationRulesContainer <em>Test Gen Remediation Rules Container</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Test Gen Remediation Rules Container</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenRemediationRulesContainer
-   * @generated
-   */
-  EClass getTestGenRemediationRulesContainer();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenRemediationRulesContainer#getPatternRules <em>Pattern Rules</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenRemediationRules#getPatternRules <em>Pattern Rules</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Pattern Rules</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenRemediationRulesContainer#getPatternRules()
-   * @see #getTestGenRemediationRulesContainer()
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenRemediationRules#getPatternRules()
+   * @see #getGenRemediationRules()
    * @generated
    */
-  EReference getTestGenRemediationRulesContainer_PatternRules();
+  EReference getGenRemediationRules_PatternRules();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenRemediationRulesContainer#getDefaultRemediation <em>Default Remediation</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenRemediationRules#getDefaultRemediations <em>Default Remediations</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Default Remediation</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenRemediationRulesContainer#getDefaultRemediation()
-   * @see #getTestGenRemediationRulesContainer()
+   * @return the meta object for the containment reference list '<em>Default Remediations</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenRemediationRules#getDefaultRemediations()
+   * @see #getGenRemediationRules()
    * @generated
    */
-  EReference getTestGenRemediationRulesContainer_DefaultRemediation();
+  EReference getGenRemediationRules_DefaultRemediations();
 
   /**
-   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenPatternRemediationRule <em>Test Gen Pattern Remediation Rule</em>}'.
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenPatternRemediationRule <em>Gen Pattern Remediation Rule</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Test Gen Pattern Remediation Rule</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenPatternRemediationRule
+   * @return the meta object for class '<em>Gen Pattern Remediation Rule</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenPatternRemediationRule
    * @generated
    */
-  EClass getTestGenPatternRemediationRule();
+  EClass getGenPatternRemediationRule();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenPatternRemediationRule#getPattern <em>Pattern</em>}'.
+   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenPatternRemediationRule#getPatterns <em>Patterns</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Pattern</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenPatternRemediationRule#getPattern()
-   * @see #getTestGenPatternRemediationRule()
+   * @return the meta object for the attribute list '<em>Patterns</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenPatternRemediationRule#getPatterns()
+   * @see #getGenPatternRemediationRule()
    * @generated
    */
-  EAttribute getTestGenPatternRemediationRule_Pattern();
+  EAttribute getGenPatternRemediationRule_Patterns();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenPatternRemediationRule#getCode <em>Code</em>}'.
+   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenPatternRemediationRule#getCodes <em>Codes</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Code</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenPatternRemediationRule#getCode()
-   * @see #getTestGenPatternRemediationRule()
+   * @return the meta object for the attribute list '<em>Codes</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenPatternRemediationRule#getCodes()
+   * @see #getGenPatternRemediationRule()
    * @generated
    */
-  EAttribute getTestGenPatternRemediationRule_Code();
+  EAttribute getGenPatternRemediationRule_Codes();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenPatternRemediationRule#getCorrection <em>Correction</em>}'.
+   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenPatternRemediationRule#getCorrections <em>Corrections</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Correction</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenPatternRemediationRule#getCorrection()
-   * @see #getTestGenPatternRemediationRule()
+   * @return the meta object for the attribute list '<em>Corrections</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenPatternRemediationRule#getCorrections()
+   * @see #getGenPatternRemediationRule()
    * @generated
    */
-  EAttribute getTestGenPatternRemediationRule_Correction();
+  EAttribute getGenPatternRemediationRule_Corrections();
 
   /**
-   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenDefaultRemediationRule <em>Test Gen Default Remediation Rule</em>}'.
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenDefaultRemediationRule <em>Gen Default Remediation Rule</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Test Gen Default Remediation Rule</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenDefaultRemediationRule
+   * @return the meta object for class '<em>Gen Default Remediation Rule</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenDefaultRemediationRule
    * @generated
    */
-  EClass getTestGenDefaultRemediationRule();
+  EClass getGenDefaultRemediationRule();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenDefaultRemediationRule#getCode <em>Code</em>}'.
+   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenDefaultRemediationRule#getCodes <em>Codes</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Code</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenDefaultRemediationRule#getCode()
-   * @see #getTestGenDefaultRemediationRule()
+   * @return the meta object for the attribute list '<em>Codes</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenDefaultRemediationRule#getCodes()
+   * @see #getGenDefaultRemediationRule()
    * @generated
    */
-  EAttribute getTestGenDefaultRemediationRule_Code();
+  EAttribute getGenDefaultRemediationRule_Codes();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenDefaultRemediationRule#getCorrection <em>Correction</em>}'.
+   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenDefaultRemediationRule#getCorrection <em>Correction</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Correction</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenDefaultRemediationRule#getCorrection()
-   * @see #getTestGenDefaultRemediationRule()
+   * @return the meta object for the attribute list '<em>Correction</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenDefaultRemediationRule#getCorrection()
+   * @see #getGenDefaultRemediationRule()
    * @generated
    */
-  EAttribute getTestGenDefaultRemediationRule_Correction();
-
-  /**
-   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenLegacyRemediationRulesBlock <em>Test Gen Legacy Remediation Rules Block</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Test Gen Legacy Remediation Rules Block</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenLegacyRemediationRulesBlock
-   * @generated
-   */
-  EClass getTestGenLegacyRemediationRulesBlock();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenLegacyRemediationRulesBlock#getRules <em>Rules</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Rules</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenLegacyRemediationRulesBlock#getRules()
-   * @see #getTestGenLegacyRemediationRulesBlock()
-   * @generated
-   */
-  EReference getTestGenLegacyRemediationRulesBlock_Rules();
-
-  /**
-   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenLegacyRemediationRule <em>Test Gen Legacy Remediation Rule</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Test Gen Legacy Remediation Rule</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenLegacyRemediationRule
-   * @generated
-   */
-  EClass getTestGenLegacyRemediationRule();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenLegacyRemediationRule#getKey <em>Key</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Key</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenLegacyRemediationRule#getKey()
-   * @see #getTestGenLegacyRemediationRule()
-   * @generated
-   */
-  EAttribute getTestGenLegacyRemediationRule_Key();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenLegacyRemediationRule#getInstruction <em>Instruction</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Instruction</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenLegacyRemediationRule#getInstruction()
-   * @see #getTestGenLegacyRemediationRule()
-   * @generated
-   */
-  EAttribute getTestGenLegacyRemediationRule_Instruction();
+  EAttribute getGenDefaultRemediationRule_Correction();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.LlmProvidersBlock <em>Llm Providers Block</em>}'.
@@ -1933,134 +1448,123 @@ public interface LibrettoProjectProfilePackage extends EPackage
   EAttribute getNamedLlmProvider_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getKind <em>Kind</em>}'.
+   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getKinds <em>Kinds</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Kind</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getKind()
+   * @return the meta object for the attribute list '<em>Kinds</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getKinds()
    * @see #getNamedLlmProvider()
    * @generated
    */
-  EAttribute getNamedLlmProvider_Kind();
+  EAttribute getNamedLlmProvider_Kinds();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getLocalModelPath <em>Local Model Path</em>}'.
+   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getLocalModelPaths <em>Local Model Paths</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Local Model Path</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getLocalModelPath()
+   * @return the meta object for the attribute list '<em>Local Model Paths</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getLocalModelPaths()
    * @see #getNamedLlmProvider()
    * @generated
    */
-  EAttribute getNamedLlmProvider_LocalModelPath();
+  EAttribute getNamedLlmProvider_LocalModelPaths();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getModel <em>Model</em>}'.
+   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getModels <em>Models</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Model</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getModel()
+   * @return the meta object for the attribute list '<em>Models</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getModels()
    * @see #getNamedLlmProvider()
    * @generated
    */
-  EAttribute getNamedLlmProvider_Model();
+  EAttribute getNamedLlmProvider_Models();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getEndpoint <em>Endpoint</em>}'.
+   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getEndpoints <em>Endpoints</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Endpoint</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getEndpoint()
+   * @return the meta object for the attribute list '<em>Endpoints</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getEndpoints()
    * @see #getNamedLlmProvider()
    * @generated
    */
-  EAttribute getNamedLlmProvider_Endpoint();
+  EAttribute getNamedLlmProvider_Endpoints();
 
   /**
-   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenUsageBlock <em>Test Gen Usage Block</em>}'.
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock <em>Gen Usage Block</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Test Gen Usage Block</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenUsageBlock
+   * @return the meta object for class '<em>Gen Usage Block</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock
    * @generated
    */
-  EClass getTestGenUsageBlock();
+  EClass getGenUsageBlock();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenUsageBlock#getPrimaryProvider <em>Primary Provider</em>}'.
+   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getPrimaryProviders <em>Primary Providers</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Primary Provider</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenUsageBlock#getPrimaryProvider()
-   * @see #getTestGenUsageBlock()
+   * @return the meta object for the attribute list '<em>Primary Providers</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getPrimaryProviders()
+   * @see #getGenUsageBlock()
    * @generated
    */
-  EAttribute getTestGenUsageBlock_PrimaryProvider();
+  EAttribute getGenUsageBlock_PrimaryProviders();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenUsageBlock#getSecondaryProvider <em>Secondary Provider</em>}'.
+   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getSecondaryProviders <em>Secondary Providers</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Secondary Provider</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenUsageBlock#getSecondaryProvider()
-   * @see #getTestGenUsageBlock()
+   * @return the meta object for the attribute list '<em>Secondary Providers</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getSecondaryProviders()
+   * @see #getGenUsageBlock()
    * @generated
    */
-  EAttribute getTestGenUsageBlock_SecondaryProvider();
+  EAttribute getGenUsageBlock_SecondaryProviders();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenUsageBlock#getEscalation <em>Escalation</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getEscalations <em>Escalations</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Escalation</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenUsageBlock#getEscalation()
-   * @see #getTestGenUsageBlock()
+   * @return the meta object for the containment reference list '<em>Escalations</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getEscalations()
+   * @see #getGenUsageBlock()
    * @generated
    */
-  EReference getTestGenUsageBlock_Escalation();
+  EReference getGenUsageBlock_Escalations();
 
   /**
-   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenEscalationBlock <em>Test Gen Escalation Block</em>}'.
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock <em>Gen Escalation Block</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Test Gen Escalation Block</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenEscalationBlock
+   * @return the meta object for class '<em>Gen Escalation Block</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock
    * @generated
    */
-  EClass getTestGenEscalationBlock();
+  EClass getGenEscalationBlock();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenEscalationBlock#getEnabled <em>Enabled</em>}'.
+   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock#getEnableds <em>Enableds</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Enabled</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenEscalationBlock#getEnabled()
-   * @see #getTestGenEscalationBlock()
+   * @return the meta object for the attribute list '<em>Enableds</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock#getEnableds()
+   * @see #getGenEscalationBlock()
    * @generated
    */
-  EAttribute getTestGenEscalationBlock_Enabled();
+  EAttribute getGenEscalationBlock_Enableds();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenEscalationBlock#getEscalateAtRetry <em>Escalate At Retry</em>}'.
+   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock#getEscalateAtRetries <em>Escalate At Retries</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Escalate At Retry</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenEscalationBlock#getEscalateAtRetry()
-   * @see #getTestGenEscalationBlock()
+   * @return the meta object for the attribute list '<em>Escalate At Retries</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock#getEscalateAtRetries()
+   * @see #getGenEscalationBlock()
    * @generated
    */
-  EAttribute getTestGenEscalationBlock_EscalateAtRetry();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenEscalationBlock#getTarget <em>Target</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Target</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenEscalationBlock#getTarget()
-   * @see #getTestGenEscalationBlock()
-   * @generated
-   */
-  EAttribute getTestGenEscalationBlock_Target();
+  EAttribute getGenEscalationBlock_EscalateAtRetries();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.SurfaceBlock <em>Surface Block</em>}'.
@@ -2413,23 +1917,23 @@ public interface LibrettoProjectProfilePackage extends EPackage
     EClass PROJECT_PROFILE = eINSTANCE.getProjectProfile();
 
     /**
-     * The meta object literal for the '<em><b>Profile Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PROJECT_PROFILE__PROFILE_NAME = eINSTANCE.getProjectProfile_ProfileName();
+    EAttribute PROJECT_PROFILE__NAME = eINSTANCE.getProjectProfile_Name();
 
     /**
-     * The meta object literal for the '<em><b>Project</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Projects</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PROJECT_PROFILE__PROJECT = eINSTANCE.getProjectProfile_Project();
+    EReference PROJECT_PROFILE__PROJECTS = eINSTANCE.getProjectProfile_Projects();
 
     /**
-     * The meta object literal for the '<em><b>Llm Providers</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Llm Providers</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -2437,12 +1941,12 @@ public interface LibrettoProjectProfilePackage extends EPackage
     EReference PROJECT_PROFILE__LLM_PROVIDERS = eINSTANCE.getProjectProfile_LlmProviders();
 
     /**
-     * The meta object literal for the '<em><b>Surface</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Surfaces</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PROJECT_PROFILE__SURFACE = eINSTANCE.getProjectProfile_Surface();
+    EReference PROJECT_PROFILE__SURFACES = eINSTANCE.getProjectProfile_Surfaces();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectBlockImpl <em>Project Block</em>}' class.
@@ -2455,7 +1959,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
     EClass PROJECT_BLOCK = eINSTANCE.getProjectBlock();
 
     /**
-     * The meta object literal for the '<em><b>Root Dir</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Root Dir</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -2463,7 +1967,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
     EAttribute PROJECT_BLOCK__ROOT_DIR = eINSTANCE.getProjectBlock_RootDir();
 
     /**
-     * The meta object literal for the '<em><b>Modules</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Modules</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -2471,12 +1975,12 @@ public interface LibrettoProjectProfilePackage extends EPackage
     EReference PROJECT_BLOCK__MODULES = eINSTANCE.getProjectBlock_Modules();
 
     /**
-     * The meta object literal for the '<em><b>Test Gen</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Gens</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PROJECT_BLOCK__TEST_GEN = eINSTANCE.getProjectBlock_TestGen();
+    EReference PROJECT_BLOCK__GENS = eINSTANCE.getProjectBlock_Gens();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ModulesBlockImpl <em>Modules Block</em>}' class.
@@ -2515,252 +2019,112 @@ public interface LibrettoProjectProfilePackage extends EPackage
     EAttribute PROJECT_MODULE__NAME = eINSTANCE.getProjectModule_Name();
 
     /**
-     * The meta object literal for the '<em><b>Dir</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Dirs</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PROJECT_MODULE__DIR = eINSTANCE.getProjectModule_Dir();
+    EAttribute PROJECT_MODULE__DIRS = eINSTANCE.getProjectModule_Dirs();
 
     /**
-     * The meta object literal for the '<em><b>Specs Dir</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Spec Dirs</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PROJECT_MODULE__SPECS_DIR = eINSTANCE.getProjectModule_SpecsDir();
+    EAttribute PROJECT_MODULE__SPEC_DIRS = eINSTANCE.getProjectModule_SpecDirs();
 
     /**
-     * The meta object literal for the '<em><b>Tests Dir</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Test Dirs</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PROJECT_MODULE__TESTS_DIR = eINSTANCE.getProjectModule_TestsDir();
+    EAttribute PROJECT_MODULE__TEST_DIRS = eINSTANCE.getProjectModule_TestDirs();
 
     /**
-     * The meta object literal for the '<em><b>Main Java Dir</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Main Dirs</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PROJECT_MODULE__MAIN_JAVA_DIR = eINSTANCE.getProjectModule_MainJavaDir();
+    EAttribute PROJECT_MODULE__MAIN_DIRS = eINSTANCE.getProjectModule_MainDirs();
 
     /**
-     * The meta object literal for the '<em><b>Base Package</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Base Packages</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PROJECT_MODULE__BASE_PACKAGE = eINSTANCE.getProjectModule_BasePackage();
+    EAttribute PROJECT_MODULE__BASE_PACKAGES = eINSTANCE.getProjectModule_BasePackages();
 
     /**
-     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenBlockImpl <em>Test Gen Block</em>}' class.
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenBlockImpl <em>Gen Block</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenBlockImpl
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getTestGenBlock()
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.GenBlockImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getGenBlock()
      * @generated
      */
-    EClass TEST_GEN_BLOCK = eINSTANCE.getTestGenBlock();
+    EClass GEN_BLOCK = eINSTANCE.getGenBlock();
 
     /**
-     * The meta object literal for the '<em><b>Initial Instruction</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Initial Instructions</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TEST_GEN_BLOCK__INITIAL_INSTRUCTION = eINSTANCE.getTestGenBlock_InitialInstruction();
+    EAttribute GEN_BLOCK__INITIAL_INSTRUCTIONS = eINSTANCE.getGenBlock_InitialInstructions();
 
     /**
-     * The meta object literal for the '<em><b>Forbidden Patterns</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Max Retries</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TEST_GEN_BLOCK__FORBIDDEN_PATTERNS = eINSTANCE.getTestGenBlock_ForbiddenPatterns();
+    EAttribute GEN_BLOCK__MAX_RETRIES = eINSTANCE.getGenBlock_MaxRetries();
 
     /**
-     * The meta object literal for the '<em><b>Max Retries</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Parse Checks</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TEST_GEN_BLOCK__MAX_RETRIES = eINSTANCE.getTestGenBlock_MaxRetries();
+    EAttribute GEN_BLOCK__PARSE_CHECKS = eINSTANCE.getGenBlock_ParseChecks();
 
     /**
-     * The meta object literal for the '<em><b>Parse Check</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Default Corrections</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TEST_GEN_BLOCK__PARSE_CHECK = eINSTANCE.getTestGenBlock_ParseCheck();
+    EAttribute GEN_BLOCK__DEFAULT_CORRECTIONS = eINSTANCE.getGenBlock_DefaultCorrections();
 
     /**
-     * The meta object literal for the '<em><b>Remediations</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Remediations</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TEST_GEN_BLOCK__REMEDIATIONS = eINSTANCE.getTestGenBlock_Remediations();
+    EReference GEN_BLOCK__REMEDIATIONS = eINSTANCE.getGenBlock_Remediations();
 
     /**
-     * The meta object literal for the '<em><b>Legacy Remediation Rules</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Model Usages</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TEST_GEN_BLOCK__LEGACY_REMEDIATION_RULES = eINSTANCE.getTestGenBlock_LegacyRemediationRules();
+    EReference GEN_BLOCK__MODEL_USAGES = eINSTANCE.getGenBlock_ModelUsages();
 
     /**
-     * The meta object literal for the '<em><b>Usage</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenRemediationRulesImpl <em>Gen Remediation Rules</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.GenRemediationRulesImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getGenRemediationRules()
      * @generated
      */
-    EReference TEST_GEN_BLOCK__USAGE = eINSTANCE.getTestGenBlock_Usage();
-
-    /**
-     * The meta object literal for the '<em><b>Module Policies</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TEST_GEN_BLOCK__MODULE_POLICIES = eINSTANCE.getTestGenBlock_ModulePolicies();
-
-    /**
-     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenModulePolicyImpl <em>Test Gen Module Policy</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenModulePolicyImpl
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getTestGenModulePolicy()
-     * @generated
-     */
-    EClass TEST_GEN_MODULE_POLICY = eINSTANCE.getTestGenModulePolicy();
-
-    /**
-     * The meta object literal for the '<em><b>Module Id</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TEST_GEN_MODULE_POLICY__MODULE_ID = eINSTANCE.getTestGenModulePolicy_ModuleId();
-
-    /**
-     * The meta object literal for the '<em><b>Initial Instruction</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TEST_GEN_MODULE_POLICY__INITIAL_INSTRUCTION = eINSTANCE.getTestGenModulePolicy_InitialInstruction();
-
-    /**
-     * The meta object literal for the '<em><b>Forbidden Patterns</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TEST_GEN_MODULE_POLICY__FORBIDDEN_PATTERNS = eINSTANCE.getTestGenModulePolicy_ForbiddenPatterns();
-
-    /**
-     * The meta object literal for the '<em><b>Max Retries</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TEST_GEN_MODULE_POLICY__MAX_RETRIES = eINSTANCE.getTestGenModulePolicy_MaxRetries();
-
-    /**
-     * The meta object literal for the '<em><b>Parse Check</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TEST_GEN_MODULE_POLICY__PARSE_CHECK = eINSTANCE.getTestGenModulePolicy_ParseCheck();
-
-    /**
-     * The meta object literal for the '<em><b>Remediations</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TEST_GEN_MODULE_POLICY__REMEDIATIONS = eINSTANCE.getTestGenModulePolicy_Remediations();
-
-    /**
-     * The meta object literal for the '<em><b>Legacy Remediation Rules</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TEST_GEN_MODULE_POLICY__LEGACY_REMEDIATION_RULES = eINSTANCE.getTestGenModulePolicy_LegacyRemediationRules();
-
-    /**
-     * The meta object literal for the '<em><b>Usage</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TEST_GEN_MODULE_POLICY__USAGE = eINSTANCE.getTestGenModulePolicy_Usage();
-
-    /**
-     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenRemediationsBlockImpl <em>Test Gen Remediations Block</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenRemediationsBlockImpl
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getTestGenRemediationsBlock()
-     * @generated
-     */
-    EClass TEST_GEN_REMEDIATIONS_BLOCK = eINSTANCE.getTestGenRemediationsBlock();
-
-    /**
-     * The meta object literal for the '<em><b>Max Retries</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TEST_GEN_REMEDIATIONS_BLOCK__MAX_RETRIES = eINSTANCE.getTestGenRemediationsBlock_MaxRetries();
-
-    /**
-     * The meta object literal for the '<em><b>Parse Check</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TEST_GEN_REMEDIATIONS_BLOCK__PARSE_CHECK = eINSTANCE.getTestGenRemediationsBlock_ParseCheck();
-
-    /**
-     * The meta object literal for the '<em><b>Default Correction</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TEST_GEN_REMEDIATIONS_BLOCK__DEFAULT_CORRECTION = eINSTANCE.getTestGenRemediationsBlock_DefaultCorrection();
-
-    /**
-     * The meta object literal for the '<em><b>Forbidden Patterns</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TEST_GEN_REMEDIATIONS_BLOCK__FORBIDDEN_PATTERNS = eINSTANCE.getTestGenRemediationsBlock_ForbiddenPatterns();
-
-    /**
-     * The meta object literal for the '<em><b>Rules Container</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TEST_GEN_REMEDIATIONS_BLOCK__RULES_CONTAINER = eINSTANCE.getTestGenRemediationsBlock_RulesContainer();
-
-    /**
-     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenRemediationRulesContainerImpl <em>Test Gen Remediation Rules Container</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenRemediationRulesContainerImpl
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getTestGenRemediationRulesContainer()
-     * @generated
-     */
-    EClass TEST_GEN_REMEDIATION_RULES_CONTAINER = eINSTANCE.getTestGenRemediationRulesContainer();
+    EClass GEN_REMEDIATION_RULES = eINSTANCE.getGenRemediationRules();
 
     /**
      * The meta object literal for the '<em><b>Pattern Rules</b></em>' containment reference list feature.
@@ -2768,119 +2132,75 @@ public interface LibrettoProjectProfilePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TEST_GEN_REMEDIATION_RULES_CONTAINER__PATTERN_RULES = eINSTANCE.getTestGenRemediationRulesContainer_PatternRules();
+    EReference GEN_REMEDIATION_RULES__PATTERN_RULES = eINSTANCE.getGenRemediationRules_PatternRules();
 
     /**
-     * The meta object literal for the '<em><b>Default Remediation</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Default Remediations</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TEST_GEN_REMEDIATION_RULES_CONTAINER__DEFAULT_REMEDIATION = eINSTANCE.getTestGenRemediationRulesContainer_DefaultRemediation();
+    EReference GEN_REMEDIATION_RULES__DEFAULT_REMEDIATIONS = eINSTANCE.getGenRemediationRules_DefaultRemediations();
 
     /**
-     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenPatternRemediationRuleImpl <em>Test Gen Pattern Remediation Rule</em>}' class.
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenPatternRemediationRuleImpl <em>Gen Pattern Remediation Rule</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenPatternRemediationRuleImpl
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getTestGenPatternRemediationRule()
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.GenPatternRemediationRuleImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getGenPatternRemediationRule()
      * @generated
      */
-    EClass TEST_GEN_PATTERN_REMEDIATION_RULE = eINSTANCE.getTestGenPatternRemediationRule();
+    EClass GEN_PATTERN_REMEDIATION_RULE = eINSTANCE.getGenPatternRemediationRule();
 
     /**
-     * The meta object literal for the '<em><b>Pattern</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TEST_GEN_PATTERN_REMEDIATION_RULE__PATTERN = eINSTANCE.getTestGenPatternRemediationRule_Pattern();
-
-    /**
-     * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Patterns</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TEST_GEN_PATTERN_REMEDIATION_RULE__CODE = eINSTANCE.getTestGenPatternRemediationRule_Code();
+    EAttribute GEN_PATTERN_REMEDIATION_RULE__PATTERNS = eINSTANCE.getGenPatternRemediationRule_Patterns();
 
     /**
-     * The meta object literal for the '<em><b>Correction</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Codes</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TEST_GEN_PATTERN_REMEDIATION_RULE__CORRECTION = eINSTANCE.getTestGenPatternRemediationRule_Correction();
+    EAttribute GEN_PATTERN_REMEDIATION_RULE__CODES = eINSTANCE.getGenPatternRemediationRule_Codes();
 
     /**
-     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenDefaultRemediationRuleImpl <em>Test Gen Default Remediation Rule</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenDefaultRemediationRuleImpl
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getTestGenDefaultRemediationRule()
-     * @generated
-     */
-    EClass TEST_GEN_DEFAULT_REMEDIATION_RULE = eINSTANCE.getTestGenDefaultRemediationRule();
-
-    /**
-     * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Corrections</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TEST_GEN_DEFAULT_REMEDIATION_RULE__CODE = eINSTANCE.getTestGenDefaultRemediationRule_Code();
+    EAttribute GEN_PATTERN_REMEDIATION_RULE__CORRECTIONS = eINSTANCE.getGenPatternRemediationRule_Corrections();
 
     /**
-     * The meta object literal for the '<em><b>Correction</b></em>' attribute feature.
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenDefaultRemediationRuleImpl <em>Gen Default Remediation Rule</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.GenDefaultRemediationRuleImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getGenDefaultRemediationRule()
+     * @generated
+     */
+    EClass GEN_DEFAULT_REMEDIATION_RULE = eINSTANCE.getGenDefaultRemediationRule();
+
+    /**
+     * The meta object literal for the '<em><b>Codes</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TEST_GEN_DEFAULT_REMEDIATION_RULE__CORRECTION = eINSTANCE.getTestGenDefaultRemediationRule_Correction();
+    EAttribute GEN_DEFAULT_REMEDIATION_RULE__CODES = eINSTANCE.getGenDefaultRemediationRule_Codes();
 
     /**
-     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenLegacyRemediationRulesBlockImpl <em>Test Gen Legacy Remediation Rules Block</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenLegacyRemediationRulesBlockImpl
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getTestGenLegacyRemediationRulesBlock()
-     * @generated
-     */
-    EClass TEST_GEN_LEGACY_REMEDIATION_RULES_BLOCK = eINSTANCE.getTestGenLegacyRemediationRulesBlock();
-
-    /**
-     * The meta object literal for the '<em><b>Rules</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Correction</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TEST_GEN_LEGACY_REMEDIATION_RULES_BLOCK__RULES = eINSTANCE.getTestGenLegacyRemediationRulesBlock_Rules();
-
-    /**
-     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenLegacyRemediationRuleImpl <em>Test Gen Legacy Remediation Rule</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenLegacyRemediationRuleImpl
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getTestGenLegacyRemediationRule()
-     * @generated
-     */
-    EClass TEST_GEN_LEGACY_REMEDIATION_RULE = eINSTANCE.getTestGenLegacyRemediationRule();
-
-    /**
-     * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TEST_GEN_LEGACY_REMEDIATION_RULE__KEY = eINSTANCE.getTestGenLegacyRemediationRule_Key();
-
-    /**
-     * The meta object literal for the '<em><b>Instruction</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TEST_GEN_LEGACY_REMEDIATION_RULE__INSTRUCTION = eINSTANCE.getTestGenLegacyRemediationRule_Instruction();
+    EAttribute GEN_DEFAULT_REMEDIATION_RULE__CORRECTION = eINSTANCE.getGenDefaultRemediationRule_Correction();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.LlmProvidersBlockImpl <em>Llm Providers Block</em>}' class.
@@ -2919,104 +2239,96 @@ public interface LibrettoProjectProfilePackage extends EPackage
     EAttribute NAMED_LLM_PROVIDER__NAME = eINSTANCE.getNamedLlmProvider_Name();
 
     /**
-     * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Kinds</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute NAMED_LLM_PROVIDER__KIND = eINSTANCE.getNamedLlmProvider_Kind();
+    EAttribute NAMED_LLM_PROVIDER__KINDS = eINSTANCE.getNamedLlmProvider_Kinds();
 
     /**
-     * The meta object literal for the '<em><b>Local Model Path</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Local Model Paths</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute NAMED_LLM_PROVIDER__LOCAL_MODEL_PATH = eINSTANCE.getNamedLlmProvider_LocalModelPath();
+    EAttribute NAMED_LLM_PROVIDER__LOCAL_MODEL_PATHS = eINSTANCE.getNamedLlmProvider_LocalModelPaths();
 
     /**
-     * The meta object literal for the '<em><b>Model</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Models</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute NAMED_LLM_PROVIDER__MODEL = eINSTANCE.getNamedLlmProvider_Model();
+    EAttribute NAMED_LLM_PROVIDER__MODELS = eINSTANCE.getNamedLlmProvider_Models();
 
     /**
-     * The meta object literal for the '<em><b>Endpoint</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Endpoints</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute NAMED_LLM_PROVIDER__ENDPOINT = eINSTANCE.getNamedLlmProvider_Endpoint();
+    EAttribute NAMED_LLM_PROVIDER__ENDPOINTS = eINSTANCE.getNamedLlmProvider_Endpoints();
 
     /**
-     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenUsageBlockImpl <em>Test Gen Usage Block</em>}' class.
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenUsageBlockImpl <em>Gen Usage Block</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenUsageBlockImpl
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getTestGenUsageBlock()
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.GenUsageBlockImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getGenUsageBlock()
      * @generated
      */
-    EClass TEST_GEN_USAGE_BLOCK = eINSTANCE.getTestGenUsageBlock();
+    EClass GEN_USAGE_BLOCK = eINSTANCE.getGenUsageBlock();
 
     /**
-     * The meta object literal for the '<em><b>Primary Provider</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Primary Providers</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TEST_GEN_USAGE_BLOCK__PRIMARY_PROVIDER = eINSTANCE.getTestGenUsageBlock_PrimaryProvider();
+    EAttribute GEN_USAGE_BLOCK__PRIMARY_PROVIDERS = eINSTANCE.getGenUsageBlock_PrimaryProviders();
 
     /**
-     * The meta object literal for the '<em><b>Secondary Provider</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Secondary Providers</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TEST_GEN_USAGE_BLOCK__SECONDARY_PROVIDER = eINSTANCE.getTestGenUsageBlock_SecondaryProvider();
+    EAttribute GEN_USAGE_BLOCK__SECONDARY_PROVIDERS = eINSTANCE.getGenUsageBlock_SecondaryProviders();
 
     /**
-     * The meta object literal for the '<em><b>Escalation</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Escalations</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TEST_GEN_USAGE_BLOCK__ESCALATION = eINSTANCE.getTestGenUsageBlock_Escalation();
+    EReference GEN_USAGE_BLOCK__ESCALATIONS = eINSTANCE.getGenUsageBlock_Escalations();
 
     /**
-     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenEscalationBlockImpl <em>Test Gen Escalation Block</em>}' class.
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenEscalationBlockImpl <em>Gen Escalation Block</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.TestGenEscalationBlockImpl
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getTestGenEscalationBlock()
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.GenEscalationBlockImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getGenEscalationBlock()
      * @generated
      */
-    EClass TEST_GEN_ESCALATION_BLOCK = eINSTANCE.getTestGenEscalationBlock();
+    EClass GEN_ESCALATION_BLOCK = eINSTANCE.getGenEscalationBlock();
 
     /**
-     * The meta object literal for the '<em><b>Enabled</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Enableds</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TEST_GEN_ESCALATION_BLOCK__ENABLED = eINSTANCE.getTestGenEscalationBlock_Enabled();
+    EAttribute GEN_ESCALATION_BLOCK__ENABLEDS = eINSTANCE.getGenEscalationBlock_Enableds();
 
     /**
-     * The meta object literal for the '<em><b>Escalate At Retry</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Escalate At Retries</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TEST_GEN_ESCALATION_BLOCK__ESCALATE_AT_RETRY = eINSTANCE.getTestGenEscalationBlock_EscalateAtRetry();
-
-    /**
-     * The meta object literal for the '<em><b>Target</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TEST_GEN_ESCALATION_BLOCK__TARGET = eINSTANCE.getTestGenEscalationBlock_Target();
+    EAttribute GEN_ESCALATION_BLOCK__ESCALATE_AT_RETRIES = eINSTANCE.getGenEscalationBlock_EscalateAtRetries();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.SurfaceBlockImpl <em>Surface Block</em>}' class.

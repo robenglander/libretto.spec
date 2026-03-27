@@ -6,12 +6,18 @@ package com.robenglander.libretto.spec.librettoProjectProfile.impl;
 import com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage;
 import com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,11 +28,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectModuleImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectModuleImpl#getDir <em>Dir</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectModuleImpl#getSpecsDir <em>Specs Dir</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectModuleImpl#getTestsDir <em>Tests Dir</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectModuleImpl#getMainJavaDir <em>Main Java Dir</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectModuleImpl#getBasePackage <em>Base Package</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectModuleImpl#getDirs <em>Dirs</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectModuleImpl#getSpecDirs <em>Spec Dirs</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectModuleImpl#getTestDirs <em>Test Dirs</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectModuleImpl#getMainDirs <em>Main Dirs</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectModuleImpl#getBasePackages <em>Base Packages</em>}</li>
  * </ul>
  *
  * @generated
@@ -54,104 +60,54 @@ public class ProjectModuleImpl extends MinimalEObjectImpl.Container implements P
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getDir() <em>Dir</em>}' attribute.
+   * The cached value of the '{@link #getDirs() <em>Dirs</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDir()
+   * @see #getDirs()
    * @generated
    * @ordered
    */
-  protected static final String DIR_EDEFAULT = null;
+  protected EList<String> dirs;
 
   /**
-   * The cached value of the '{@link #getDir() <em>Dir</em>}' attribute.
+   * The cached value of the '{@link #getSpecDirs() <em>Spec Dirs</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDir()
+   * @see #getSpecDirs()
    * @generated
    * @ordered
    */
-  protected String dir = DIR_EDEFAULT;
+  protected EList<String> specDirs;
 
   /**
-   * The default value of the '{@link #getSpecsDir() <em>Specs Dir</em>}' attribute.
+   * The cached value of the '{@link #getTestDirs() <em>Test Dirs</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSpecsDir()
+   * @see #getTestDirs()
    * @generated
    * @ordered
    */
-  protected static final String SPECS_DIR_EDEFAULT = null;
+  protected EList<String> testDirs;
 
   /**
-   * The cached value of the '{@link #getSpecsDir() <em>Specs Dir</em>}' attribute.
+   * The cached value of the '{@link #getMainDirs() <em>Main Dirs</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSpecsDir()
+   * @see #getMainDirs()
    * @generated
    * @ordered
    */
-  protected String specsDir = SPECS_DIR_EDEFAULT;
+  protected EList<String> mainDirs;
 
   /**
-   * The default value of the '{@link #getTestsDir() <em>Tests Dir</em>}' attribute.
+   * The cached value of the '{@link #getBasePackages() <em>Base Packages</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTestsDir()
+   * @see #getBasePackages()
    * @generated
    * @ordered
    */
-  protected static final String TESTS_DIR_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getTestsDir() <em>Tests Dir</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTestsDir()
-   * @generated
-   * @ordered
-   */
-  protected String testsDir = TESTS_DIR_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getMainJavaDir() <em>Main Java Dir</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMainJavaDir()
-   * @generated
-   * @ordered
-   */
-  protected static final String MAIN_JAVA_DIR_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getMainJavaDir() <em>Main Java Dir</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMainJavaDir()
-   * @generated
-   * @ordered
-   */
-  protected String mainJavaDir = MAIN_JAVA_DIR_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getBasePackage() <em>Base Package</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getBasePackage()
-   * @generated
-   * @ordered
-   */
-  protected static final String BASE_PACKAGE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getBasePackage() <em>Base Package</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getBasePackage()
-   * @generated
-   * @ordered
-   */
-  protected String basePackage = BASE_PACKAGE_EDEFAULT;
+  protected EList<String> basePackages;
 
   /**
    * <!-- begin-user-doc -->
@@ -205,9 +161,13 @@ public class ProjectModuleImpl extends MinimalEObjectImpl.Container implements P
    * @generated
    */
   @Override
-  public String getDir()
+  public EList<String> getDirs()
   {
-    return dir;
+    if (dirs == null)
+    {
+      dirs = new EDataTypeEList<String>(String.class, this, LibrettoProjectProfilePackage.PROJECT_MODULE__DIRS);
+    }
+    return dirs;
   }
 
   /**
@@ -216,12 +176,13 @@ public class ProjectModuleImpl extends MinimalEObjectImpl.Container implements P
    * @generated
    */
   @Override
-  public void setDir(String newDir)
+  public EList<String> getSpecDirs()
   {
-    String oldDir = dir;
-    dir = newDir;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoProjectProfilePackage.PROJECT_MODULE__DIR, oldDir, dir));
+    if (specDirs == null)
+    {
+      specDirs = new EDataTypeEList<String>(String.class, this, LibrettoProjectProfilePackage.PROJECT_MODULE__SPEC_DIRS);
+    }
+    return specDirs;
   }
 
   /**
@@ -230,9 +191,13 @@ public class ProjectModuleImpl extends MinimalEObjectImpl.Container implements P
    * @generated
    */
   @Override
-  public String getSpecsDir()
+  public EList<String> getTestDirs()
   {
-    return specsDir;
+    if (testDirs == null)
+    {
+      testDirs = new EDataTypeEList<String>(String.class, this, LibrettoProjectProfilePackage.PROJECT_MODULE__TEST_DIRS);
+    }
+    return testDirs;
   }
 
   /**
@@ -241,12 +206,13 @@ public class ProjectModuleImpl extends MinimalEObjectImpl.Container implements P
    * @generated
    */
   @Override
-  public void setSpecsDir(String newSpecsDir)
+  public EList<String> getMainDirs()
   {
-    String oldSpecsDir = specsDir;
-    specsDir = newSpecsDir;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoProjectProfilePackage.PROJECT_MODULE__SPECS_DIR, oldSpecsDir, specsDir));
+    if (mainDirs == null)
+    {
+      mainDirs = new EDataTypeEList<String>(String.class, this, LibrettoProjectProfilePackage.PROJECT_MODULE__MAIN_DIRS);
+    }
+    return mainDirs;
   }
 
   /**
@@ -255,73 +221,13 @@ public class ProjectModuleImpl extends MinimalEObjectImpl.Container implements P
    * @generated
    */
   @Override
-  public String getTestsDir()
+  public EList<String> getBasePackages()
   {
-    return testsDir;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setTestsDir(String newTestsDir)
-  {
-    String oldTestsDir = testsDir;
-    testsDir = newTestsDir;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoProjectProfilePackage.PROJECT_MODULE__TESTS_DIR, oldTestsDir, testsDir));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getMainJavaDir()
-  {
-    return mainJavaDir;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setMainJavaDir(String newMainJavaDir)
-  {
-    String oldMainJavaDir = mainJavaDir;
-    mainJavaDir = newMainJavaDir;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoProjectProfilePackage.PROJECT_MODULE__MAIN_JAVA_DIR, oldMainJavaDir, mainJavaDir));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getBasePackage()
-  {
-    return basePackage;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setBasePackage(String newBasePackage)
-  {
-    String oldBasePackage = basePackage;
-    basePackage = newBasePackage;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoProjectProfilePackage.PROJECT_MODULE__BASE_PACKAGE, oldBasePackage, basePackage));
+    if (basePackages == null)
+    {
+      basePackages = new EDataTypeEList<String>(String.class, this, LibrettoProjectProfilePackage.PROJECT_MODULE__BASE_PACKAGES);
+    }
+    return basePackages;
   }
 
   /**
@@ -336,16 +242,16 @@ public class ProjectModuleImpl extends MinimalEObjectImpl.Container implements P
     {
       case LibrettoProjectProfilePackage.PROJECT_MODULE__NAME:
         return getName();
-      case LibrettoProjectProfilePackage.PROJECT_MODULE__DIR:
-        return getDir();
-      case LibrettoProjectProfilePackage.PROJECT_MODULE__SPECS_DIR:
-        return getSpecsDir();
-      case LibrettoProjectProfilePackage.PROJECT_MODULE__TESTS_DIR:
-        return getTestsDir();
-      case LibrettoProjectProfilePackage.PROJECT_MODULE__MAIN_JAVA_DIR:
-        return getMainJavaDir();
-      case LibrettoProjectProfilePackage.PROJECT_MODULE__BASE_PACKAGE:
-        return getBasePackage();
+      case LibrettoProjectProfilePackage.PROJECT_MODULE__DIRS:
+        return getDirs();
+      case LibrettoProjectProfilePackage.PROJECT_MODULE__SPEC_DIRS:
+        return getSpecDirs();
+      case LibrettoProjectProfilePackage.PROJECT_MODULE__TEST_DIRS:
+        return getTestDirs();
+      case LibrettoProjectProfilePackage.PROJECT_MODULE__MAIN_DIRS:
+        return getMainDirs();
+      case LibrettoProjectProfilePackage.PROJECT_MODULE__BASE_PACKAGES:
+        return getBasePackages();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -355,6 +261,7 @@ public class ProjectModuleImpl extends MinimalEObjectImpl.Container implements P
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -363,20 +270,25 @@ public class ProjectModuleImpl extends MinimalEObjectImpl.Container implements P
       case LibrettoProjectProfilePackage.PROJECT_MODULE__NAME:
         setName((String)newValue);
         return;
-      case LibrettoProjectProfilePackage.PROJECT_MODULE__DIR:
-        setDir((String)newValue);
+      case LibrettoProjectProfilePackage.PROJECT_MODULE__DIRS:
+        getDirs().clear();
+        getDirs().addAll((Collection<? extends String>)newValue);
         return;
-      case LibrettoProjectProfilePackage.PROJECT_MODULE__SPECS_DIR:
-        setSpecsDir((String)newValue);
+      case LibrettoProjectProfilePackage.PROJECT_MODULE__SPEC_DIRS:
+        getSpecDirs().clear();
+        getSpecDirs().addAll((Collection<? extends String>)newValue);
         return;
-      case LibrettoProjectProfilePackage.PROJECT_MODULE__TESTS_DIR:
-        setTestsDir((String)newValue);
+      case LibrettoProjectProfilePackage.PROJECT_MODULE__TEST_DIRS:
+        getTestDirs().clear();
+        getTestDirs().addAll((Collection<? extends String>)newValue);
         return;
-      case LibrettoProjectProfilePackage.PROJECT_MODULE__MAIN_JAVA_DIR:
-        setMainJavaDir((String)newValue);
+      case LibrettoProjectProfilePackage.PROJECT_MODULE__MAIN_DIRS:
+        getMainDirs().clear();
+        getMainDirs().addAll((Collection<? extends String>)newValue);
         return;
-      case LibrettoProjectProfilePackage.PROJECT_MODULE__BASE_PACKAGE:
-        setBasePackage((String)newValue);
+      case LibrettoProjectProfilePackage.PROJECT_MODULE__BASE_PACKAGES:
+        getBasePackages().clear();
+        getBasePackages().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -395,20 +307,20 @@ public class ProjectModuleImpl extends MinimalEObjectImpl.Container implements P
       case LibrettoProjectProfilePackage.PROJECT_MODULE__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case LibrettoProjectProfilePackage.PROJECT_MODULE__DIR:
-        setDir(DIR_EDEFAULT);
+      case LibrettoProjectProfilePackage.PROJECT_MODULE__DIRS:
+        getDirs().clear();
         return;
-      case LibrettoProjectProfilePackage.PROJECT_MODULE__SPECS_DIR:
-        setSpecsDir(SPECS_DIR_EDEFAULT);
+      case LibrettoProjectProfilePackage.PROJECT_MODULE__SPEC_DIRS:
+        getSpecDirs().clear();
         return;
-      case LibrettoProjectProfilePackage.PROJECT_MODULE__TESTS_DIR:
-        setTestsDir(TESTS_DIR_EDEFAULT);
+      case LibrettoProjectProfilePackage.PROJECT_MODULE__TEST_DIRS:
+        getTestDirs().clear();
         return;
-      case LibrettoProjectProfilePackage.PROJECT_MODULE__MAIN_JAVA_DIR:
-        setMainJavaDir(MAIN_JAVA_DIR_EDEFAULT);
+      case LibrettoProjectProfilePackage.PROJECT_MODULE__MAIN_DIRS:
+        getMainDirs().clear();
         return;
-      case LibrettoProjectProfilePackage.PROJECT_MODULE__BASE_PACKAGE:
-        setBasePackage(BASE_PACKAGE_EDEFAULT);
+      case LibrettoProjectProfilePackage.PROJECT_MODULE__BASE_PACKAGES:
+        getBasePackages().clear();
         return;
     }
     super.eUnset(featureID);
@@ -426,16 +338,16 @@ public class ProjectModuleImpl extends MinimalEObjectImpl.Container implements P
     {
       case LibrettoProjectProfilePackage.PROJECT_MODULE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case LibrettoProjectProfilePackage.PROJECT_MODULE__DIR:
-        return DIR_EDEFAULT == null ? dir != null : !DIR_EDEFAULT.equals(dir);
-      case LibrettoProjectProfilePackage.PROJECT_MODULE__SPECS_DIR:
-        return SPECS_DIR_EDEFAULT == null ? specsDir != null : !SPECS_DIR_EDEFAULT.equals(specsDir);
-      case LibrettoProjectProfilePackage.PROJECT_MODULE__TESTS_DIR:
-        return TESTS_DIR_EDEFAULT == null ? testsDir != null : !TESTS_DIR_EDEFAULT.equals(testsDir);
-      case LibrettoProjectProfilePackage.PROJECT_MODULE__MAIN_JAVA_DIR:
-        return MAIN_JAVA_DIR_EDEFAULT == null ? mainJavaDir != null : !MAIN_JAVA_DIR_EDEFAULT.equals(mainJavaDir);
-      case LibrettoProjectProfilePackage.PROJECT_MODULE__BASE_PACKAGE:
-        return BASE_PACKAGE_EDEFAULT == null ? basePackage != null : !BASE_PACKAGE_EDEFAULT.equals(basePackage);
+      case LibrettoProjectProfilePackage.PROJECT_MODULE__DIRS:
+        return dirs != null && !dirs.isEmpty();
+      case LibrettoProjectProfilePackage.PROJECT_MODULE__SPEC_DIRS:
+        return specDirs != null && !specDirs.isEmpty();
+      case LibrettoProjectProfilePackage.PROJECT_MODULE__TEST_DIRS:
+        return testDirs != null && !testDirs.isEmpty();
+      case LibrettoProjectProfilePackage.PROJECT_MODULE__MAIN_DIRS:
+        return mainDirs != null && !mainDirs.isEmpty();
+      case LibrettoProjectProfilePackage.PROJECT_MODULE__BASE_PACKAGES:
+        return basePackages != null && !basePackages.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -453,16 +365,16 @@ public class ProjectModuleImpl extends MinimalEObjectImpl.Container implements P
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", dir: ");
-    result.append(dir);
-    result.append(", specsDir: ");
-    result.append(specsDir);
-    result.append(", testsDir: ");
-    result.append(testsDir);
-    result.append(", mainJavaDir: ");
-    result.append(mainJavaDir);
-    result.append(", basePackage: ");
-    result.append(basePackage);
+    result.append(", dirs: ");
+    result.append(dirs);
+    result.append(", specDirs: ");
+    result.append(specDirs);
+    result.append(", testDirs: ");
+    result.append(testDirs);
+    result.append(", mainDirs: ");
+    result.append(mainDirs);
+    result.append(", basePackages: ");
+    result.append(basePackages);
     result.append(')');
     return result.toString();
   }

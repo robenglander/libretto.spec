@@ -16,120 +16,142 @@ generate librettoProjectProfile "http://www.robenglander.com/libretto/spec/Libre
  */
 
 ProjectProfile:
-	'profile' profileName=STRING '{'
-		project=ProjectBlock?
-		llmProviders=LlmProvidersBlock?
-		surface=SurfaceBlock?
+	{ProjectProfile}
+	'profile' name=ValidID '{'
+		(
+		projects+=ProjectBlock
+		|
+		llmProviders+=LlmProvidersBlock
+		|
+		surfaces+=SurfaceBlock
+		)*
 	'}';
 
 ProjectBlock:
+	{ProjectBlock} 
 	'project' '{'
-		('rootDir' rootDir=STRING (';')?)?
-		modules=ModulesBlock?
-		testGen=TestGenBlock?
+		(
+			('rootDir' rootDir+=STRING)
+			|
+			(modules+=ModulesBlock)
+			|
+			(gens+=GenBlock)
+		)*
 	'}';
 
 ModulesBlock:
+	{ModulesBlock} 
 	'modules' '{'
 		modules+=ProjectModule*
 	'}';
 
 ProjectModule:
-	'module' name=STRING '{'
-		'dir' dir=STRING (';')?
-		('specsDir' specsDir=STRING (';')?)?
-		('testsDir' testsDir=STRING (';')?)?
-		('mainJavaDir' mainJavaDir=STRING (';')?)?
-		('basePackage' basePackage=STRING (';')?)?
+	'module' name=ValidID '{'
+		(
+			('dir' dirs+=STRING)
+			|
+			('specDir' specDirs+=STRING)
+			|
+			('testDir' testDirs+=STRING)
+			|
+			('mainDir' mainDirs+=STRING)
+			|
+			('basePackage' basePackages+=STRING)
+		)*
 	'}';
 
-TestGenBlock:
-	'testgen' '{'
-		('initialInstruction' initialInstruction=STRING (';')?)?
-		('forbiddenPatterns' '[' forbiddenPatterns+=STRING (',' forbiddenPatterns+=STRING)* ']' (';')?)?
-		('maxRetries' maxRetries=INT (';')?)?
-		('parseCheck' parseCheck=('true' | 'false') (';')?)?
-		remediations=TestGenRemediationsBlock?
-		legacyRemediationRules=TestGenLegacyRemediationRulesBlock?
-		usage=TestGenUsageBlock?
-		modulePolicies+=TestGenModulePolicy*
+GenBlock:
+	{GenBlock} 
+	'gen' '{'
+		(
+			('initialInstruction' initialInstructions+=STRING)
+			|
+			('maxRetries' maxRetries+=INT)
+			|
+			('parseCheck' parseChecks+=('true' | 'false'))
+			|
+			('defaultCorrection' defaultCorrections+=STRING)
+			|
+			(remediations+=GenRemediationRules)
+			|
+			(modelUsages+=GenUsageBlock)
+		)*
 	'}';
 
-TestGenModulePolicy:
-	'forModule' moduleId=STRING '{'
-		('initialInstruction' initialInstruction=STRING (';')?)?
-		('forbiddenPatterns' '[' forbiddenPatterns+=STRING (',' forbiddenPatterns+=STRING)* ']' (';')?)?
-		('maxRetries' maxRetries=INT (';')?)?
-		('parseCheck' parseCheck=('true' | 'false') (';')?)?
-		remediations=TestGenRemediationsBlock?
-		legacyRemediationRules=TestGenLegacyRemediationRulesBlock?
-		usage=TestGenUsageBlock?
-	'}';
-
-TestGenRemediationsBlock:
-	'remediations' '{'
-		('maxRetries' maxRetries=INT (';')?)?
-		('parseCheck' parseCheck=('true' | 'false') (';')?)?
-		('defaultCorrection' defaultCorrection=STRING (';')?)?
-		('forbiddenPatterns' '[' forbiddenPatterns+=STRING (',' forbiddenPatterns+=STRING)* ']' (';')?)?
-		rulesContainer=TestGenRemediationRulesContainer?
-	'}';
-
-TestGenRemediationRulesContainer:
+GenRemediationRules:
+	{GenRemediationRules} 
 	'rules' '{'
-		patternRules+=TestGenPatternRemediationRule*
-		defaultRemediation=TestGenDefaultRemediationRule?
+		(
+			(patternRules+=GenPatternRemediationRule)
+			(defaultRemediations+=GenDefaultRemediationRule)
+		)*
 	'}';
 
-TestGenPatternRemediationRule:
+GenPatternRemediationRule:
+	{GenPatternRemediationRule} 
 	'rule' '{'
-		'pattern' pattern=STRING (';')?
-		'code' code=STRING (';')?
-		'correction' correction=STRING (';')?
+		(
+			('pattern' patterns+=STRING)
+			|
+			('code' codes+=STRING)
+			|
+			('correction' corrections+=STRING)
+		)*
 	'}';
 
-TestGenDefaultRemediationRule:
+GenDefaultRemediationRule:
+	{GenDefaultRemediationRule} 
 	'default' '{'
-		'code' code=STRING (';')?
-		'correction' correction=STRING (';')?
+		(
+			('code' codes+=STRING)
+			|
+			('correction' correction+=STRING)
+		)*
 	'}';
-
-TestGenLegacyRemediationRulesBlock:
-	'remediationRules' '{'
-		rules+=TestGenLegacyRemediationRule*
-	'}';
-
-TestGenLegacyRemediationRule:
-	'rule' key=STRING 'instruction' instruction=STRING (';')?;
 
 LlmProvidersBlock:
+	{LlmProvidersBlock} 
 	'llmProviders' '{'
 		providers+=NamedLlmProvider*
 	'}';
 
 NamedLlmProvider:
-	'provider' name=STRING '{'
-		'kind' kind=('local' | 'openai' | 'ollama') (';')?
-		('localModelPath' localModelPath=STRING (';')?)?
-		('model' model=STRING (';')?)?
-		('endpoint' endpoint=STRING (';')?)?
+	'provider' name=ValidID '{'
+		(
+			('kind' kinds+=('local' | 'openai' | 'ollama'))
+			|
+			('localModelPath' localModelPaths+=STRING)
+			|
+			('model' models+=STRING)
+			|
+			('endpoint' endpoints+=STRING)
+		)*
 	'}';
 
-TestGenUsageBlock:
-	'usage' '{'
-		('primary' primaryProvider=STRING (';')?)?
-		('secondary' secondaryProvider=STRING (';')?)?
-		escalation=TestGenEscalationBlock?
+GenUsageBlock:
+	{GenUsageBlock} 
+	'modelUsage' '{'
+		(
+			('primary' primaryProviders+=STRING)
+			|
+			('secondary' secondaryProviders+=STRING)
+			|
+			(escalations+=GenEscalationBlock)
+		)*
 	'}';
 
-TestGenEscalationBlock:
+GenEscalationBlock:
+	{GenEscalationBlock} 
 	'escalation' '{'
-		('enabled' enabled=('true' | 'false') (';')?)?
-		('escalateAtRetry' escalateAtRetry=INT (';')?)?
-		('target' target='secondary' (';')?)?
+		(
+			('enabled' enableds+=('true' | 'false'))
+			|
+			('escalateAtRetries' escalateAtRetries+=INT)
+		)*
 	'}';
 
 SurfaceBlock:
+	{SurfaceBlock} 
 	'surface' '{'
 		elements+=SurfaceElement*
 	'}';
@@ -169,3 +191,8 @@ OperationSignature:
 
 TypedParam:
 	type=JavaType paramName=ID;
+	
+ValidID:
+	ID ( ('.' | '-' | '_') ID)*;
+
+

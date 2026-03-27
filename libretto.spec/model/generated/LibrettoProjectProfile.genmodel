@@ -7,93 +7,66 @@
   <genPackages prefix="LibrettoProjectProfile" basePackage="com.robenglander.libretto.spec"
       disposableProviderFactory="true" fileExtensions="lpp" ecorePackage="LibrettoProjectProfile.ecore#/">
     <genClasses ecoreClass="LibrettoProjectProfile.ecore#//ProjectProfile">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//ProjectProfile/profileName"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//ProjectProfile/project"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//ProjectProfile/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//ProjectProfile/projects"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//ProjectProfile/llmProviders"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//ProjectProfile/surface"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//ProjectProfile/surfaces"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoProjectProfile.ecore#//ProjectBlock">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//ProjectBlock/rootDir"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//ProjectBlock/modules"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//ProjectBlock/testGen"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//ProjectBlock/gens"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoProjectProfile.ecore#//ModulesBlock">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//ModulesBlock/modules"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoProjectProfile.ecore#//ProjectModule">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//ProjectModule/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//ProjectModule/dir"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//ProjectModule/specsDir"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//ProjectModule/testsDir"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//ProjectModule/mainJavaDir"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//ProjectModule/basePackage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//ProjectModule/dirs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//ProjectModule/specDirs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//ProjectModule/testDirs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//ProjectModule/mainDirs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//ProjectModule/basePackages"/>
     </genClasses>
-    <genClasses ecoreClass="LibrettoProjectProfile.ecore#//TestGenBlock">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//TestGenBlock/initialInstruction"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//TestGenBlock/forbiddenPatterns"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//TestGenBlock/maxRetries"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//TestGenBlock/parseCheck"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//TestGenBlock/remediations"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//TestGenBlock/legacyRemediationRules"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//TestGenBlock/usage"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//TestGenBlock/modulePolicies"/>
+    <genClasses ecoreClass="LibrettoProjectProfile.ecore#//GenBlock">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//GenBlock/initialInstructions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//GenBlock/maxRetries"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//GenBlock/parseChecks"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//GenBlock/defaultCorrections"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//GenBlock/remediations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//GenBlock/modelUsages"/>
     </genClasses>
-    <genClasses ecoreClass="LibrettoProjectProfile.ecore#//TestGenModulePolicy">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//TestGenModulePolicy/moduleId"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//TestGenModulePolicy/initialInstruction"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//TestGenModulePolicy/forbiddenPatterns"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//TestGenModulePolicy/maxRetries"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//TestGenModulePolicy/parseCheck"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//TestGenModulePolicy/remediations"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//TestGenModulePolicy/legacyRemediationRules"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//TestGenModulePolicy/usage"/>
+    <genClasses ecoreClass="LibrettoProjectProfile.ecore#//GenRemediationRules">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//GenRemediationRules/patternRules"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//GenRemediationRules/defaultRemediations"/>
     </genClasses>
-    <genClasses ecoreClass="LibrettoProjectProfile.ecore#//TestGenRemediationsBlock">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//TestGenRemediationsBlock/maxRetries"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//TestGenRemediationsBlock/parseCheck"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//TestGenRemediationsBlock/defaultCorrection"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//TestGenRemediationsBlock/forbiddenPatterns"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//TestGenRemediationsBlock/rulesContainer"/>
+    <genClasses ecoreClass="LibrettoProjectProfile.ecore#//GenPatternRemediationRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//GenPatternRemediationRule/patterns"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//GenPatternRemediationRule/codes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//GenPatternRemediationRule/corrections"/>
     </genClasses>
-    <genClasses ecoreClass="LibrettoProjectProfile.ecore#//TestGenRemediationRulesContainer">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//TestGenRemediationRulesContainer/patternRules"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//TestGenRemediationRulesContainer/defaultRemediation"/>
-    </genClasses>
-    <genClasses ecoreClass="LibrettoProjectProfile.ecore#//TestGenPatternRemediationRule">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//TestGenPatternRemediationRule/pattern"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//TestGenPatternRemediationRule/code"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//TestGenPatternRemediationRule/correction"/>
-    </genClasses>
-    <genClasses ecoreClass="LibrettoProjectProfile.ecore#//TestGenDefaultRemediationRule">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//TestGenDefaultRemediationRule/code"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//TestGenDefaultRemediationRule/correction"/>
-    </genClasses>
-    <genClasses ecoreClass="LibrettoProjectProfile.ecore#//TestGenLegacyRemediationRulesBlock">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//TestGenLegacyRemediationRulesBlock/rules"/>
-    </genClasses>
-    <genClasses ecoreClass="LibrettoProjectProfile.ecore#//TestGenLegacyRemediationRule">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//TestGenLegacyRemediationRule/key"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//TestGenLegacyRemediationRule/instruction"/>
+    <genClasses ecoreClass="LibrettoProjectProfile.ecore#//GenDefaultRemediationRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//GenDefaultRemediationRule/codes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//GenDefaultRemediationRule/correction"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoProjectProfile.ecore#//LlmProvidersBlock">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//LlmProvidersBlock/providers"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoProjectProfile.ecore#//NamedLlmProvider">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//NamedLlmProvider/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//NamedLlmProvider/kind"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//NamedLlmProvider/localModelPath"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//NamedLlmProvider/model"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//NamedLlmProvider/endpoint"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//NamedLlmProvider/kinds"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//NamedLlmProvider/localModelPaths"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//NamedLlmProvider/models"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//NamedLlmProvider/endpoints"/>
     </genClasses>
-    <genClasses ecoreClass="LibrettoProjectProfile.ecore#//TestGenUsageBlock">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//TestGenUsageBlock/primaryProvider"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//TestGenUsageBlock/secondaryProvider"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//TestGenUsageBlock/escalation"/>
+    <genClasses ecoreClass="LibrettoProjectProfile.ecore#//GenUsageBlock">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//GenUsageBlock/primaryProviders"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//GenUsageBlock/secondaryProviders"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//GenUsageBlock/escalations"/>
     </genClasses>
-    <genClasses ecoreClass="LibrettoProjectProfile.ecore#//TestGenEscalationBlock">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//TestGenEscalationBlock/enabled"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//TestGenEscalationBlock/escalateAtRetry"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//TestGenEscalationBlock/target"/>
+    <genClasses ecoreClass="LibrettoProjectProfile.ecore#//GenEscalationBlock">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//GenEscalationBlock/enableds"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//GenEscalationBlock/escalateAtRetries"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoProjectProfile.ecore#//SurfaceBlock">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//SurfaceBlock/elements"/>

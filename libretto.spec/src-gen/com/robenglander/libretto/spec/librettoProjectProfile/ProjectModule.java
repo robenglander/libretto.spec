@@ -3,6 +3,8 @@
  */
 package com.robenglander.libretto.spec.librettoProjectProfile;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,11 +17,11 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getName <em>Name</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getDir <em>Dir</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getSpecsDir <em>Specs Dir</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getTestsDir <em>Tests Dir</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getMainJavaDir <em>Main Java Dir</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getBasePackage <em>Base Package</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getDirs <em>Dirs</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getSpecDirs <em>Spec Dirs</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getTestDirs <em>Test Dirs</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getMainDirs <em>Main Dirs</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getBasePackages <em>Base Packages</em>}</li>
  * </ul>
  *
  * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectModule()
@@ -51,113 +53,63 @@ public interface ProjectModule extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Dir</b></em>' attribute.
+   * Returns the value of the '<em><b>Dirs</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Dir</em>' attribute.
-   * @see #setDir(String)
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectModule_Dir()
-   * @model
+   * @return the value of the '<em>Dirs</em>' attribute list.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectModule_Dirs()
+   * @model unique="false"
    * @generated
    */
-  String getDir();
+  EList<String> getDirs();
 
   /**
-   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getDir <em>Dir</em>}' attribute.
+   * Returns the value of the '<em><b>Spec Dirs</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Dir</em>' attribute.
-   * @see #getDir()
+   * @return the value of the '<em>Spec Dirs</em>' attribute list.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectModule_SpecDirs()
+   * @model unique="false"
    * @generated
    */
-  void setDir(String value);
+  EList<String> getSpecDirs();
 
   /**
-   * Returns the value of the '<em><b>Specs Dir</b></em>' attribute.
+   * Returns the value of the '<em><b>Test Dirs</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Specs Dir</em>' attribute.
-   * @see #setSpecsDir(String)
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectModule_SpecsDir()
-   * @model
+   * @return the value of the '<em>Test Dirs</em>' attribute list.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectModule_TestDirs()
+   * @model unique="false"
    * @generated
    */
-  String getSpecsDir();
+  EList<String> getTestDirs();
 
   /**
-   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getSpecsDir <em>Specs Dir</em>}' attribute.
+   * Returns the value of the '<em><b>Main Dirs</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Specs Dir</em>' attribute.
-   * @see #getSpecsDir()
+   * @return the value of the '<em>Main Dirs</em>' attribute list.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectModule_MainDirs()
+   * @model unique="false"
    * @generated
    */
-  void setSpecsDir(String value);
+  EList<String> getMainDirs();
 
   /**
-   * Returns the value of the '<em><b>Tests Dir</b></em>' attribute.
+   * Returns the value of the '<em><b>Base Packages</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Tests Dir</em>' attribute.
-   * @see #setTestsDir(String)
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectModule_TestsDir()
-   * @model
+   * @return the value of the '<em>Base Packages</em>' attribute list.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectModule_BasePackages()
+   * @model unique="false"
    * @generated
    */
-  String getTestsDir();
-
-  /**
-   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getTestsDir <em>Tests Dir</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Tests Dir</em>' attribute.
-   * @see #getTestsDir()
-   * @generated
-   */
-  void setTestsDir(String value);
-
-  /**
-   * Returns the value of the '<em><b>Main Java Dir</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Main Java Dir</em>' attribute.
-   * @see #setMainJavaDir(String)
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectModule_MainJavaDir()
-   * @model
-   * @generated
-   */
-  String getMainJavaDir();
-
-  /**
-   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getMainJavaDir <em>Main Java Dir</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Main Java Dir</em>' attribute.
-   * @see #getMainJavaDir()
-   * @generated
-   */
-  void setMainJavaDir(String value);
-
-  /**
-   * Returns the value of the '<em><b>Base Package</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Base Package</em>' attribute.
-   * @see #setBasePackage(String)
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectModule_BasePackage()
-   * @model
-   * @generated
-   */
-  String getBasePackage();
-
-  /**
-   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getBasePackage <em>Base Package</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Base Package</em>' attribute.
-   * @see #getBasePackage()
-   * @generated
-   */
-  void setBasePackage(String value);
+  EList<String> getBasePackages();
 
 } // ProjectModule

@@ -3,6 +3,8 @@
  */
 package com.robenglander.libretto.spec.librettoProjectProfile;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,10 +16,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getProfileName <em>Profile Name</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getProject <em>Project</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getName <em>Name</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getProjects <em>Projects</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getLlmProviders <em>Llm Providers</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getSurface <em>Surface</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getSurfaces <em>Surfaces</em>}</li>
  * </ul>
  *
  * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectProfile()
@@ -27,91 +29,61 @@ import org.eclipse.emf.ecore.EObject;
 public interface ProjectProfile extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Profile Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Profile Name</em>' attribute.
-   * @see #setProfileName(String)
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectProfile_ProfileName()
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectProfile_Name()
    * @model
    * @generated
    */
-  String getProfileName();
+  String getName();
 
   /**
-   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getProfileName <em>Profile Name</em>}' attribute.
+   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Profile Name</em>' attribute.
-   * @see #getProfileName()
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  void setProfileName(String value);
+  void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Project</b></em>' containment reference.
+   * Returns the value of the '<em><b>Projects</b></em>' containment reference list.
+   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Project</em>' containment reference.
-   * @see #setProject(ProjectBlock)
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectProfile_Project()
+   * @return the value of the '<em>Projects</em>' containment reference list.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectProfile_Projects()
    * @model containment="true"
    * @generated
    */
-  ProjectBlock getProject();
+  EList<ProjectBlock> getProjects();
 
   /**
-   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getProject <em>Project</em>}' containment reference.
+   * Returns the value of the '<em><b>Llm Providers</b></em>' containment reference list.
+   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.LlmProvidersBlock}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Project</em>' containment reference.
-   * @see #getProject()
-   * @generated
-   */
-  void setProject(ProjectBlock value);
-
-  /**
-   * Returns the value of the '<em><b>Llm Providers</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Llm Providers</em>' containment reference.
-   * @see #setLlmProviders(LlmProvidersBlock)
+   * @return the value of the '<em>Llm Providers</em>' containment reference list.
    * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectProfile_LlmProviders()
    * @model containment="true"
    * @generated
    */
-  LlmProvidersBlock getLlmProviders();
+  EList<LlmProvidersBlock> getLlmProviders();
 
   /**
-   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getLlmProviders <em>Llm Providers</em>}' containment reference.
+   * Returns the value of the '<em><b>Surfaces</b></em>' containment reference list.
+   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.SurfaceBlock}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Llm Providers</em>' containment reference.
-   * @see #getLlmProviders()
-   * @generated
-   */
-  void setLlmProviders(LlmProvidersBlock value);
-
-  /**
-   * Returns the value of the '<em><b>Surface</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Surface</em>' containment reference.
-   * @see #setSurface(SurfaceBlock)
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectProfile_Surface()
+   * @return the value of the '<em>Surfaces</em>' containment reference list.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectProfile_Surfaces()
    * @model containment="true"
    * @generated
    */
-  SurfaceBlock getSurface();
-
-  /**
-   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getSurface <em>Surface</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Surface</em>' containment reference.
-   * @see #getSurface()
-   * @generated
-   */
-  void setSurface(SurfaceBlock value);
+  EList<SurfaceBlock> getSurfaces();
 
 } // ProjectProfile

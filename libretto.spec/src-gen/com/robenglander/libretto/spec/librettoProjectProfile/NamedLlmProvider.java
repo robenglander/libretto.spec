@@ -3,6 +3,8 @@
  */
 package com.robenglander.libretto.spec.librettoProjectProfile;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,10 +17,10 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getName <em>Name</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getKind <em>Kind</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getLocalModelPath <em>Local Model Path</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getModel <em>Model</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getEndpoint <em>Endpoint</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getKinds <em>Kinds</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getLocalModelPaths <em>Local Model Paths</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getModels <em>Models</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getEndpoints <em>Endpoints</em>}</li>
  * </ul>
  *
  * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getNamedLlmProvider()
@@ -50,91 +52,51 @@ public interface NamedLlmProvider extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Kind</b></em>' attribute.
+   * Returns the value of the '<em><b>Kinds</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Kind</em>' attribute.
-   * @see #setKind(String)
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getNamedLlmProvider_Kind()
-   * @model
+   * @return the value of the '<em>Kinds</em>' attribute list.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getNamedLlmProvider_Kinds()
+   * @model unique="false"
    * @generated
    */
-  String getKind();
+  EList<String> getKinds();
 
   /**
-   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getKind <em>Kind</em>}' attribute.
+   * Returns the value of the '<em><b>Local Model Paths</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Kind</em>' attribute.
-   * @see #getKind()
+   * @return the value of the '<em>Local Model Paths</em>' attribute list.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getNamedLlmProvider_LocalModelPaths()
+   * @model unique="false"
    * @generated
    */
-  void setKind(String value);
+  EList<String> getLocalModelPaths();
 
   /**
-   * Returns the value of the '<em><b>Local Model Path</b></em>' attribute.
+   * Returns the value of the '<em><b>Models</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Local Model Path</em>' attribute.
-   * @see #setLocalModelPath(String)
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getNamedLlmProvider_LocalModelPath()
-   * @model
+   * @return the value of the '<em>Models</em>' attribute list.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getNamedLlmProvider_Models()
+   * @model unique="false"
    * @generated
    */
-  String getLocalModelPath();
+  EList<String> getModels();
 
   /**
-   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getLocalModelPath <em>Local Model Path</em>}' attribute.
+   * Returns the value of the '<em><b>Endpoints</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Local Model Path</em>' attribute.
-   * @see #getLocalModelPath()
+   * @return the value of the '<em>Endpoints</em>' attribute list.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getNamedLlmProvider_Endpoints()
+   * @model unique="false"
    * @generated
    */
-  void setLocalModelPath(String value);
-
-  /**
-   * Returns the value of the '<em><b>Model</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Model</em>' attribute.
-   * @see #setModel(String)
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getNamedLlmProvider_Model()
-   * @model
-   * @generated
-   */
-  String getModel();
-
-  /**
-   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getModel <em>Model</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Model</em>' attribute.
-   * @see #getModel()
-   * @generated
-   */
-  void setModel(String value);
-
-  /**
-   * Returns the value of the '<em><b>Endpoint</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Endpoint</em>' attribute.
-   * @see #setEndpoint(String)
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getNamedLlmProvider_Endpoint()
-   * @model
-   * @generated
-   */
-  String getEndpoint();
-
-  /**
-   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getEndpoint <em>Endpoint</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Endpoint</em>' attribute.
-   * @see #getEndpoint()
-   * @generated
-   */
-  void setEndpoint(String value);
+  EList<String> getEndpoints();
 
 } // NamedLlmProvider

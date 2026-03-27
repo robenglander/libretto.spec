@@ -4,6 +4,12 @@
 package com.robenglander.libretto.spec.serializer;
 
 import com.google.inject.Inject;
+import com.robenglander.libretto.spec.librettoProjectProfile.GenBlock;
+import com.robenglander.libretto.spec.librettoProjectProfile.GenDefaultRemediationRule;
+import com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock;
+import com.robenglander.libretto.spec.librettoProjectProfile.GenPatternRemediationRule;
+import com.robenglander.libretto.spec.librettoProjectProfile.GenRemediationRules;
+import com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock;
 import com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage;
 import com.robenglander.libretto.spec.librettoProjectProfile.LlmProvidersBlock;
 import com.robenglander.libretto.spec.librettoProjectProfile.MethodOverrideRule;
@@ -20,16 +26,6 @@ import com.robenglander.libretto.spec.librettoProjectProfile.RecordSelfReturnRul
 import com.robenglander.libretto.spec.librettoProjectProfile.ReturnTypeRule;
 import com.robenglander.libretto.spec.librettoProjectProfile.ScopedSurface;
 import com.robenglander.libretto.spec.librettoProjectProfile.SurfaceBlock;
-import com.robenglander.libretto.spec.librettoProjectProfile.TestGenBlock;
-import com.robenglander.libretto.spec.librettoProjectProfile.TestGenDefaultRemediationRule;
-import com.robenglander.libretto.spec.librettoProjectProfile.TestGenEscalationBlock;
-import com.robenglander.libretto.spec.librettoProjectProfile.TestGenLegacyRemediationRule;
-import com.robenglander.libretto.spec.librettoProjectProfile.TestGenLegacyRemediationRulesBlock;
-import com.robenglander.libretto.spec.librettoProjectProfile.TestGenModulePolicy;
-import com.robenglander.libretto.spec.librettoProjectProfile.TestGenPatternRemediationRule;
-import com.robenglander.libretto.spec.librettoProjectProfile.TestGenRemediationRulesContainer;
-import com.robenglander.libretto.spec.librettoProjectProfile.TestGenRemediationsBlock;
-import com.robenglander.libretto.spec.librettoProjectProfile.TestGenUsageBlock;
 import com.robenglander.libretto.spec.librettoProjectProfile.TypedParam;
 import com.robenglander.libretto.spec.services.LibrettoProjectProfileGrammarAccess;
 import java.util.Set;
@@ -57,6 +53,24 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == LibrettoProjectProfilePackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case LibrettoProjectProfilePackage.GEN_BLOCK:
+				sequence_GenBlock(context, (GenBlock) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.GEN_DEFAULT_REMEDIATION_RULE:
+				sequence_GenDefaultRemediationRule(context, (GenDefaultRemediationRule) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK:
+				sequence_GenEscalationBlock(context, (GenEscalationBlock) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.GEN_PATTERN_REMEDIATION_RULE:
+				sequence_GenPatternRemediationRule(context, (GenPatternRemediationRule) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.GEN_REMEDIATION_RULES:
+				sequence_GenRemediationRules(context, (GenRemediationRules) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK:
+				sequence_GenUsageBlock(context, (GenUsageBlock) semanticObject); 
+				return; 
 			case LibrettoProjectProfilePackage.LLM_PROVIDERS_BLOCK:
 				sequence_LlmProvidersBlock(context, (LlmProvidersBlock) semanticObject); 
 				return; 
@@ -102,36 +116,6 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 			case LibrettoProjectProfilePackage.SURFACE_BLOCK:
 				sequence_SurfaceBlock(context, (SurfaceBlock) semanticObject); 
 				return; 
-			case LibrettoProjectProfilePackage.TEST_GEN_BLOCK:
-				sequence_TestGenBlock(context, (TestGenBlock) semanticObject); 
-				return; 
-			case LibrettoProjectProfilePackage.TEST_GEN_DEFAULT_REMEDIATION_RULE:
-				sequence_TestGenDefaultRemediationRule(context, (TestGenDefaultRemediationRule) semanticObject); 
-				return; 
-			case LibrettoProjectProfilePackage.TEST_GEN_ESCALATION_BLOCK:
-				sequence_TestGenEscalationBlock(context, (TestGenEscalationBlock) semanticObject); 
-				return; 
-			case LibrettoProjectProfilePackage.TEST_GEN_LEGACY_REMEDIATION_RULE:
-				sequence_TestGenLegacyRemediationRule(context, (TestGenLegacyRemediationRule) semanticObject); 
-				return; 
-			case LibrettoProjectProfilePackage.TEST_GEN_LEGACY_REMEDIATION_RULES_BLOCK:
-				sequence_TestGenLegacyRemediationRulesBlock(context, (TestGenLegacyRemediationRulesBlock) semanticObject); 
-				return; 
-			case LibrettoProjectProfilePackage.TEST_GEN_MODULE_POLICY:
-				sequence_TestGenModulePolicy(context, (TestGenModulePolicy) semanticObject); 
-				return; 
-			case LibrettoProjectProfilePackage.TEST_GEN_PATTERN_REMEDIATION_RULE:
-				sequence_TestGenPatternRemediationRule(context, (TestGenPatternRemediationRule) semanticObject); 
-				return; 
-			case LibrettoProjectProfilePackage.TEST_GEN_REMEDIATION_RULES_CONTAINER:
-				sequence_TestGenRemediationRulesContainer(context, (TestGenRemediationRulesContainer) semanticObject); 
-				return; 
-			case LibrettoProjectProfilePackage.TEST_GEN_REMEDIATIONS_BLOCK:
-				sequence_TestGenRemediationsBlock(context, (TestGenRemediationsBlock) semanticObject); 
-				return; 
-			case LibrettoProjectProfilePackage.TEST_GEN_USAGE_BLOCK:
-				sequence_TestGenUsageBlock(context, (TestGenUsageBlock) semanticObject); 
-				return; 
 			case LibrettoProjectProfilePackage.TYPED_PARAM:
 				sequence_TypedParam(context, (TypedParam) semanticObject); 
 				return; 
@@ -143,10 +127,102 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     GenBlock returns GenBlock
+	 *
+	 * Constraint:
+	 *     (
+	 *         initialInstructions+=STRING | 
+	 *         maxRetries+=INT | 
+	 *         parseChecks+='true' | 
+	 *         parseChecks+='false' | 
+	 *         defaultCorrections+=STRING | 
+	 *         remediations+=GenRemediationRules | 
+	 *         modelUsages+=GenUsageBlock
+	 *     )*
+	 * </pre>
+	 */
+	protected void sequence_GenBlock(ISerializationContext context, GenBlock semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GenDefaultRemediationRule returns GenDefaultRemediationRule
+	 *
+	 * Constraint:
+	 *     (codes+=STRING | correction+=STRING)*
+	 * </pre>
+	 */
+	protected void sequence_GenDefaultRemediationRule(ISerializationContext context, GenDefaultRemediationRule semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GenEscalationBlock returns GenEscalationBlock
+	 *
+	 * Constraint:
+	 *     (enableds+='true' | enableds+='false' | escalateAtRetries+=INT)*
+	 * </pre>
+	 */
+	protected void sequence_GenEscalationBlock(ISerializationContext context, GenEscalationBlock semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GenPatternRemediationRule returns GenPatternRemediationRule
+	 *
+	 * Constraint:
+	 *     (patterns+=STRING | codes+=STRING | corrections+=STRING)*
+	 * </pre>
+	 */
+	protected void sequence_GenPatternRemediationRule(ISerializationContext context, GenPatternRemediationRule semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GenRemediationRules returns GenRemediationRules
+	 *
+	 * Constraint:
+	 *     (patternRules+=GenPatternRemediationRule defaultRemediations+=GenDefaultRemediationRule)*
+	 * </pre>
+	 */
+	protected void sequence_GenRemediationRules(ISerializationContext context, GenRemediationRules semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GenUsageBlock returns GenUsageBlock
+	 *
+	 * Constraint:
+	 *     (primaryProviders+=STRING | secondaryProviders+=STRING | escalations+=GenEscalationBlock)*
+	 * </pre>
+	 */
+	protected void sequence_GenUsageBlock(ISerializationContext context, GenUsageBlock semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     LlmProvidersBlock returns LlmProvidersBlock
 	 *
 	 * Constraint:
-	 *     providers+=NamedLlmProvider+
+	 *     providers+=NamedLlmProvider*
 	 * </pre>
 	 */
 	protected void sequence_LlmProvidersBlock(ISerializationContext context, LlmProvidersBlock semanticObject) {
@@ -185,7 +261,7 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 	 *     ModulesBlock returns ModulesBlock
 	 *
 	 * Constraint:
-	 *     modules+=ProjectModule+
+	 *     modules+=ProjectModule*
 	 * </pre>
 	 */
 	protected void sequence_ModulesBlock(ISerializationContext context, ModulesBlock semanticObject) {
@@ -199,7 +275,17 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 	 *     NamedLlmProvider returns NamedLlmProvider
 	 *
 	 * Constraint:
-	 *     (name=STRING (kind='local' | kind='openai' | kind='ollama') localModelPath=STRING? model=STRING? endpoint=STRING?)
+	 *     (
+	 *         name=ValidID 
+	 *         (
+	 *             kinds+='local' | 
+	 *             kinds+='openai' | 
+	 *             kinds+='ollama' | 
+	 *             localModelPaths+=STRING | 
+	 *             models+=STRING | 
+	 *             endpoints+=STRING
+	 *         )*
+	 *     )
 	 * </pre>
 	 */
 	protected void sequence_NamedLlmProvider(ISerializationContext context, NamedLlmProvider semanticObject) {
@@ -277,7 +363,7 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 	 *     ProjectBlock returns ProjectBlock
 	 *
 	 * Constraint:
-	 *     ((rootDir=STRING? modules=ModulesBlock testGen=TestGenBlock) | (rootDir=STRING? testGen=TestGenBlock) | testGen=TestGenBlock)?
+	 *     (rootDir+=STRING | modules+=ModulesBlock | gens+=GenBlock)*
 	 * </pre>
 	 */
 	protected void sequence_ProjectBlock(ISerializationContext context, ProjectBlock semanticObject) {
@@ -291,14 +377,7 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 	 *     ProjectModule returns ProjectModule
 	 *
 	 * Constraint:
-	 *     (
-	 *         name=STRING 
-	 *         dir=STRING 
-	 *         specsDir=STRING? 
-	 *         testsDir=STRING? 
-	 *         mainJavaDir=STRING? 
-	 *         basePackage=STRING?
-	 *     )
+	 *     (name=ValidID (dirs+=STRING | specDirs+=STRING | testDirs+=STRING | mainDirs+=STRING | basePackages+=STRING)*)
 	 * </pre>
 	 */
 	protected void sequence_ProjectModule(ISerializationContext context, ProjectModule semanticObject) {
@@ -312,7 +391,7 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 	 *     ProjectProfile returns ProjectProfile
 	 *
 	 * Constraint:
-	 *     (profileName=STRING project=ProjectBlock? llmProviders=LlmProvidersBlock? surface=SurfaceBlock?)
+	 *     (name=ValidID (projects+=ProjectBlock | llmProviders+=LlmProvidersBlock | surfaces+=SurfaceBlock)*)
 	 * </pre>
 	 */
 	protected void sequence_ProjectProfile(ISerializationContext context, ProjectProfile semanticObject) {
@@ -397,288 +476,10 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 	 *     SurfaceBlock returns SurfaceBlock
 	 *
 	 * Constraint:
-	 *     elements+=SurfaceElement+
+	 *     elements+=SurfaceElement*
 	 * </pre>
 	 */
 	protected void sequence_SurfaceBlock(ISerializationContext context, SurfaceBlock semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     TestGenBlock returns TestGenBlock
-	 *
-	 * Constraint:
-	 *     (
-	 *         (
-	 *             (initialInstruction=STRING | (initialInstruction=STRING forbiddenPatterns+=STRING forbiddenPatterns+=STRING*))? 
-	 *             maxRetries=INT? 
-	 *             (parseCheck='true' | parseCheck='false') 
-	 *             (
-	 *                 (
-	 *                     remediations=TestGenRemediationsBlock 
-	 *                     ((legacyRemediationRules=TestGenLegacyRemediationRulesBlock modulePolicies+=TestGenModulePolicy+) | modulePolicies+=TestGenModulePolicy+)
-	 *                 ) | 
-	 *                 (
-	 *                     (
-	 *                         (remediations=TestGenRemediationsBlock legacyRemediationRules=TestGenLegacyRemediationRulesBlock) | 
-	 *                         legacyRemediationRules=TestGenLegacyRemediationRulesBlock
-	 *                     )? 
-	 *                     usage=TestGenUsageBlock 
-	 *                     modulePolicies+=TestGenModulePolicy+
-	 *                 ) | 
-	 *                 (legacyRemediationRules=TestGenLegacyRemediationRulesBlock modulePolicies+=TestGenModulePolicy+) | 
-	 *                 modulePolicies+=TestGenModulePolicy+
-	 *             )
-	 *         ) | 
-	 *         (
-	 *             (
-	 *                 (initialInstruction=STRING maxRetries=INT? remediations=TestGenRemediationsBlock) | 
-	 *                 (initialInstruction=STRING forbiddenPatterns+=STRING forbiddenPatterns+=STRING* maxRetries=INT? remediations=TestGenRemediationsBlock)
-	 *             ) 
-	 *             ((legacyRemediationRules=TestGenLegacyRemediationRulesBlock modulePolicies+=TestGenModulePolicy+) | modulePolicies+=TestGenModulePolicy+)
-	 *         ) | 
-	 *         (
-	 *             initialInstruction=STRING 
-	 *             ((legacyRemediationRules=TestGenLegacyRemediationRulesBlock modulePolicies+=TestGenModulePolicy+) | modulePolicies+=TestGenModulePolicy+)
-	 *         ) | 
-	 *         (
-	 *             (
-	 *                 (initialInstruction=STRING maxRetries=INT? legacyRemediationRules=TestGenLegacyRemediationRulesBlock) | 
-	 *                 (initialInstruction=STRING legacyRemediationRules=TestGenLegacyRemediationRulesBlock) | 
-	 *                 legacyRemediationRules=TestGenLegacyRemediationRulesBlock
-	 *             ) 
-	 *             usage=TestGenUsageBlock 
-	 *             modulePolicies+=TestGenModulePolicy+
-	 *         ) | 
-	 *         (
-	 *             initialInstruction=STRING 
-	 *             maxRetries=INT? 
-	 *             remediations=TestGenRemediationsBlock 
-	 *             legacyRemediationRules=TestGenLegacyRemediationRulesBlock 
-	 *             usage=TestGenUsageBlock 
-	 *             modulePolicies+=TestGenModulePolicy+
-	 *         ) | 
-	 *         (
-	 *             initialInstruction=STRING 
-	 *             forbiddenPatterns+=STRING 
-	 *             forbiddenPatterns+=STRING* 
-	 *             (
-	 *                 (
-	 *                     (
-	 *                         (maxRetries=INT? legacyRemediationRules=TestGenLegacyRemediationRulesBlock) | 
-	 *                         (maxRetries=INT? remediations=TestGenRemediationsBlock legacyRemediationRules=TestGenLegacyRemediationRulesBlock) | 
-	 *                         legacyRemediationRules=TestGenLegacyRemediationRulesBlock
-	 *                     ) 
-	 *                     usage=TestGenUsageBlock 
-	 *                     modulePolicies+=TestGenModulePolicy+
-	 *                 ) | 
-	 *                 (legacyRemediationRules=TestGenLegacyRemediationRulesBlock modulePolicies+=TestGenModulePolicy+) | 
-	 *                 modulePolicies+=TestGenModulePolicy+
-	 *             )
-	 *         ) | 
-	 *         (
-	 *             (initialInstruction=STRING | (initialInstruction=STRING forbiddenPatterns+=STRING forbiddenPatterns+=STRING*)) 
-	 *             maxRetries=INT? 
-	 *             ((legacyRemediationRules=TestGenLegacyRemediationRulesBlock modulePolicies+=TestGenModulePolicy+) | modulePolicies+=TestGenModulePolicy+)
-	 *         ) | 
-	 *         (legacyRemediationRules=TestGenLegacyRemediationRulesBlock modulePolicies+=TestGenModulePolicy+) | 
-	 *         modulePolicies+=TestGenModulePolicy+
-	 *     )?
-	 * </pre>
-	 */
-	protected void sequence_TestGenBlock(ISerializationContext context, TestGenBlock semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     TestGenDefaultRemediationRule returns TestGenDefaultRemediationRule
-	 *
-	 * Constraint:
-	 *     (code=STRING correction=STRING)
-	 * </pre>
-	 */
-	protected void sequence_TestGenDefaultRemediationRule(ISerializationContext context, TestGenDefaultRemediationRule semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.TEST_GEN_DEFAULT_REMEDIATION_RULE__CODE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.TEST_GEN_DEFAULT_REMEDIATION_RULE__CODE));
-			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.TEST_GEN_DEFAULT_REMEDIATION_RULE__CORRECTION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.TEST_GEN_DEFAULT_REMEDIATION_RULE__CORRECTION));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTestGenDefaultRemediationRuleAccess().getCodeSTRINGTerminalRuleCall_3_0(), semanticObject.getCode());
-		feeder.accept(grammarAccess.getTestGenDefaultRemediationRuleAccess().getCorrectionSTRINGTerminalRuleCall_6_0(), semanticObject.getCorrection());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     TestGenEscalationBlock returns TestGenEscalationBlock
-	 *
-	 * Constraint:
-	 *     (
-	 *         ((enabled='true' | enabled='false') ((escalateAtRetry=INT target='secondary') | target='secondary')) | 
-	 *         (escalateAtRetry=INT target='secondary') | 
-	 *         target='secondary'
-	 *     )?
-	 * </pre>
-	 */
-	protected void sequence_TestGenEscalationBlock(ISerializationContext context, TestGenEscalationBlock semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     TestGenLegacyRemediationRule returns TestGenLegacyRemediationRule
-	 *
-	 * Constraint:
-	 *     (key=STRING instruction=STRING)
-	 * </pre>
-	 */
-	protected void sequence_TestGenLegacyRemediationRule(ISerializationContext context, TestGenLegacyRemediationRule semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.TEST_GEN_LEGACY_REMEDIATION_RULE__KEY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.TEST_GEN_LEGACY_REMEDIATION_RULE__KEY));
-			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.TEST_GEN_LEGACY_REMEDIATION_RULE__INSTRUCTION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.TEST_GEN_LEGACY_REMEDIATION_RULE__INSTRUCTION));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTestGenLegacyRemediationRuleAccess().getKeySTRINGTerminalRuleCall_1_0(), semanticObject.getKey());
-		feeder.accept(grammarAccess.getTestGenLegacyRemediationRuleAccess().getInstructionSTRINGTerminalRuleCall_3_0(), semanticObject.getInstruction());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     TestGenLegacyRemediationRulesBlock returns TestGenLegacyRemediationRulesBlock
-	 *
-	 * Constraint:
-	 *     rules+=TestGenLegacyRemediationRule+
-	 * </pre>
-	 */
-	protected void sequence_TestGenLegacyRemediationRulesBlock(ISerializationContext context, TestGenLegacyRemediationRulesBlock semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     TestGenModulePolicy returns TestGenModulePolicy
-	 *
-	 * Constraint:
-	 *     (
-	 *         moduleId=STRING 
-	 *         initialInstruction=STRING? 
-	 *         (forbiddenPatterns+=STRING forbiddenPatterns+=STRING*)? 
-	 *         maxRetries=INT? 
-	 *         (parseCheck='true' | parseCheck='false')? 
-	 *         remediations=TestGenRemediationsBlock? 
-	 *         legacyRemediationRules=TestGenLegacyRemediationRulesBlock? 
-	 *         usage=TestGenUsageBlock?
-	 *     )
-	 * </pre>
-	 */
-	protected void sequence_TestGenModulePolicy(ISerializationContext context, TestGenModulePolicy semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     TestGenPatternRemediationRule returns TestGenPatternRemediationRule
-	 *
-	 * Constraint:
-	 *     (pattern=STRING code=STRING correction=STRING)
-	 * </pre>
-	 */
-	protected void sequence_TestGenPatternRemediationRule(ISerializationContext context, TestGenPatternRemediationRule semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.TEST_GEN_PATTERN_REMEDIATION_RULE__PATTERN) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.TEST_GEN_PATTERN_REMEDIATION_RULE__PATTERN));
-			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.TEST_GEN_PATTERN_REMEDIATION_RULE__CODE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.TEST_GEN_PATTERN_REMEDIATION_RULE__CODE));
-			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.TEST_GEN_PATTERN_REMEDIATION_RULE__CORRECTION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.TEST_GEN_PATTERN_REMEDIATION_RULE__CORRECTION));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTestGenPatternRemediationRuleAccess().getPatternSTRINGTerminalRuleCall_3_0(), semanticObject.getPattern());
-		feeder.accept(grammarAccess.getTestGenPatternRemediationRuleAccess().getCodeSTRINGTerminalRuleCall_6_0(), semanticObject.getCode());
-		feeder.accept(grammarAccess.getTestGenPatternRemediationRuleAccess().getCorrectionSTRINGTerminalRuleCall_9_0(), semanticObject.getCorrection());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     TestGenRemediationRulesContainer returns TestGenRemediationRulesContainer
-	 *
-	 * Constraint:
-	 *     (
-	 *         (patternRules+=TestGenPatternRemediationRule+ defaultRemediation=TestGenDefaultRemediationRule) | 
-	 *         defaultRemediation=TestGenDefaultRemediationRule
-	 *     )?
-	 * </pre>
-	 */
-	protected void sequence_TestGenRemediationRulesContainer(ISerializationContext context, TestGenRemediationRulesContainer semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     TestGenRemediationsBlock returns TestGenRemediationsBlock
-	 *
-	 * Constraint:
-	 *     (
-	 *         (
-	 *             (
-	 *                 (maxRetries=INT? (parseCheck='true' | parseCheck='false') defaultCorrection=STRING) | 
-	 *                 (maxRetries=INT? defaultCorrection=STRING) | 
-	 *                 defaultCorrection=STRING
-	 *             )? 
-	 *             (
-	 *                 (forbiddenPatterns+=STRING forbiddenPatterns+=STRING* rulesContainer=TestGenRemediationRulesContainer) | 
-	 *                 rulesContainer=TestGenRemediationRulesContainer
-	 *             )
-	 *         ) | 
-	 *         (forbiddenPatterns+=STRING forbiddenPatterns+=STRING* rulesContainer=TestGenRemediationRulesContainer) | 
-	 *         rulesContainer=TestGenRemediationRulesContainer
-	 *     )?
-	 * </pre>
-	 */
-	protected void sequence_TestGenRemediationsBlock(ISerializationContext context, TestGenRemediationsBlock semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     TestGenUsageBlock returns TestGenUsageBlock
-	 *
-	 * Constraint:
-	 *     (
-	 *         (((primaryProvider=STRING secondaryProvider=STRING) | secondaryProvider=STRING)? escalation=TestGenEscalationBlock) | 
-	 *         escalation=TestGenEscalationBlock
-	 *     )?
-	 * </pre>
-	 */
-	protected void sequence_TestGenUsageBlock(ISerializationContext context, TestGenUsageBlock semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

@@ -3,6 +3,8 @@
  */
 package com.robenglander.libretto.spec.librettoProjectProfile;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock#getRootDir <em>Root Dir</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock#getModules <em>Modules</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock#getTestGen <em>Test Gen</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock#getGens <em>Gens</em>}</li>
  * </ul>
  *
  * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectBlock()
@@ -26,69 +28,39 @@ import org.eclipse.emf.ecore.EObject;
 public interface ProjectBlock extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Root Dir</b></em>' attribute.
+   * Returns the value of the '<em><b>Root Dir</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Root Dir</em>' attribute.
-   * @see #setRootDir(String)
+   * @return the value of the '<em>Root Dir</em>' attribute list.
    * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectBlock_RootDir()
-   * @model
+   * @model unique="false"
    * @generated
    */
-  String getRootDir();
+  EList<String> getRootDir();
 
   /**
-   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock#getRootDir <em>Root Dir</em>}' attribute.
+   * Returns the value of the '<em><b>Modules</b></em>' containment reference list.
+   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.ModulesBlock}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Root Dir</em>' attribute.
-   * @see #getRootDir()
-   * @generated
-   */
-  void setRootDir(String value);
-
-  /**
-   * Returns the value of the '<em><b>Modules</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Modules</em>' containment reference.
-   * @see #setModules(ModulesBlock)
+   * @return the value of the '<em>Modules</em>' containment reference list.
    * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectBlock_Modules()
    * @model containment="true"
    * @generated
    */
-  ModulesBlock getModules();
+  EList<ModulesBlock> getModules();
 
   /**
-   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock#getModules <em>Modules</em>}' containment reference.
+   * Returns the value of the '<em><b>Gens</b></em>' containment reference list.
+   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.GenBlock}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Modules</em>' containment reference.
-   * @see #getModules()
-   * @generated
-   */
-  void setModules(ModulesBlock value);
-
-  /**
-   * Returns the value of the '<em><b>Test Gen</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Test Gen</em>' containment reference.
-   * @see #setTestGen(TestGenBlock)
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectBlock_TestGen()
+   * @return the value of the '<em>Gens</em>' containment reference list.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectBlock_Gens()
    * @model containment="true"
    * @generated
    */
-  TestGenBlock getTestGen();
-
-  /**
-   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock#getTestGen <em>Test Gen</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Test Gen</em>' containment reference.
-   * @see #getTestGen()
-   * @generated
-   */
-  void setTestGen(TestGenBlock value);
+  EList<GenBlock> getGens();
 
 } // ProjectBlock

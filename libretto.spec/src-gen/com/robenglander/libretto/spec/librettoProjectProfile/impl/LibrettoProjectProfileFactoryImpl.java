@@ -69,18 +69,14 @@ public class LibrettoProjectProfileFactoryImpl extends EFactoryImpl implements L
       case LibrettoProjectProfilePackage.PROJECT_BLOCK: return createProjectBlock();
       case LibrettoProjectProfilePackage.MODULES_BLOCK: return createModulesBlock();
       case LibrettoProjectProfilePackage.PROJECT_MODULE: return createProjectModule();
-      case LibrettoProjectProfilePackage.TEST_GEN_BLOCK: return createTestGenBlock();
-      case LibrettoProjectProfilePackage.TEST_GEN_MODULE_POLICY: return createTestGenModulePolicy();
-      case LibrettoProjectProfilePackage.TEST_GEN_REMEDIATIONS_BLOCK: return createTestGenRemediationsBlock();
-      case LibrettoProjectProfilePackage.TEST_GEN_REMEDIATION_RULES_CONTAINER: return createTestGenRemediationRulesContainer();
-      case LibrettoProjectProfilePackage.TEST_GEN_PATTERN_REMEDIATION_RULE: return createTestGenPatternRemediationRule();
-      case LibrettoProjectProfilePackage.TEST_GEN_DEFAULT_REMEDIATION_RULE: return createTestGenDefaultRemediationRule();
-      case LibrettoProjectProfilePackage.TEST_GEN_LEGACY_REMEDIATION_RULES_BLOCK: return createTestGenLegacyRemediationRulesBlock();
-      case LibrettoProjectProfilePackage.TEST_GEN_LEGACY_REMEDIATION_RULE: return createTestGenLegacyRemediationRule();
+      case LibrettoProjectProfilePackage.GEN_BLOCK: return createGenBlock();
+      case LibrettoProjectProfilePackage.GEN_REMEDIATION_RULES: return createGenRemediationRules();
+      case LibrettoProjectProfilePackage.GEN_PATTERN_REMEDIATION_RULE: return createGenPatternRemediationRule();
+      case LibrettoProjectProfilePackage.GEN_DEFAULT_REMEDIATION_RULE: return createGenDefaultRemediationRule();
       case LibrettoProjectProfilePackage.LLM_PROVIDERS_BLOCK: return createLlmProvidersBlock();
       case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER: return createNamedLlmProvider();
-      case LibrettoProjectProfilePackage.TEST_GEN_USAGE_BLOCK: return createTestGenUsageBlock();
-      case LibrettoProjectProfilePackage.TEST_GEN_ESCALATION_BLOCK: return createTestGenEscalationBlock();
+      case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK: return createGenUsageBlock();
+      case LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK: return createGenEscalationBlock();
       case LibrettoProjectProfilePackage.SURFACE_BLOCK: return createSurfaceBlock();
       case LibrettoProjectProfilePackage.SURFACE_ELEMENT: return createSurfaceElement();
       case LibrettoProjectProfilePackage.SCOPED_SURFACE: return createScopedSurface();
@@ -153,10 +149,10 @@ public class LibrettoProjectProfileFactoryImpl extends EFactoryImpl implements L
    * @generated
    */
   @Override
-  public TestGenBlock createTestGenBlock()
+  public GenBlock createGenBlock()
   {
-    TestGenBlockImpl testGenBlock = new TestGenBlockImpl();
-    return testGenBlock;
+    GenBlockImpl genBlock = new GenBlockImpl();
+    return genBlock;
   }
 
   /**
@@ -165,10 +161,10 @@ public class LibrettoProjectProfileFactoryImpl extends EFactoryImpl implements L
    * @generated
    */
   @Override
-  public TestGenModulePolicy createTestGenModulePolicy()
+  public GenRemediationRules createGenRemediationRules()
   {
-    TestGenModulePolicyImpl testGenModulePolicy = new TestGenModulePolicyImpl();
-    return testGenModulePolicy;
+    GenRemediationRulesImpl genRemediationRules = new GenRemediationRulesImpl();
+    return genRemediationRules;
   }
 
   /**
@@ -177,10 +173,10 @@ public class LibrettoProjectProfileFactoryImpl extends EFactoryImpl implements L
    * @generated
    */
   @Override
-  public TestGenRemediationsBlock createTestGenRemediationsBlock()
+  public GenPatternRemediationRule createGenPatternRemediationRule()
   {
-    TestGenRemediationsBlockImpl testGenRemediationsBlock = new TestGenRemediationsBlockImpl();
-    return testGenRemediationsBlock;
+    GenPatternRemediationRuleImpl genPatternRemediationRule = new GenPatternRemediationRuleImpl();
+    return genPatternRemediationRule;
   }
 
   /**
@@ -189,58 +185,10 @@ public class LibrettoProjectProfileFactoryImpl extends EFactoryImpl implements L
    * @generated
    */
   @Override
-  public TestGenRemediationRulesContainer createTestGenRemediationRulesContainer()
+  public GenDefaultRemediationRule createGenDefaultRemediationRule()
   {
-    TestGenRemediationRulesContainerImpl testGenRemediationRulesContainer = new TestGenRemediationRulesContainerImpl();
-    return testGenRemediationRulesContainer;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public TestGenPatternRemediationRule createTestGenPatternRemediationRule()
-  {
-    TestGenPatternRemediationRuleImpl testGenPatternRemediationRule = new TestGenPatternRemediationRuleImpl();
-    return testGenPatternRemediationRule;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public TestGenDefaultRemediationRule createTestGenDefaultRemediationRule()
-  {
-    TestGenDefaultRemediationRuleImpl testGenDefaultRemediationRule = new TestGenDefaultRemediationRuleImpl();
-    return testGenDefaultRemediationRule;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public TestGenLegacyRemediationRulesBlock createTestGenLegacyRemediationRulesBlock()
-  {
-    TestGenLegacyRemediationRulesBlockImpl testGenLegacyRemediationRulesBlock = new TestGenLegacyRemediationRulesBlockImpl();
-    return testGenLegacyRemediationRulesBlock;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public TestGenLegacyRemediationRule createTestGenLegacyRemediationRule()
-  {
-    TestGenLegacyRemediationRuleImpl testGenLegacyRemediationRule = new TestGenLegacyRemediationRuleImpl();
-    return testGenLegacyRemediationRule;
+    GenDefaultRemediationRuleImpl genDefaultRemediationRule = new GenDefaultRemediationRuleImpl();
+    return genDefaultRemediationRule;
   }
 
   /**
@@ -273,10 +221,10 @@ public class LibrettoProjectProfileFactoryImpl extends EFactoryImpl implements L
    * @generated
    */
   @Override
-  public TestGenUsageBlock createTestGenUsageBlock()
+  public GenUsageBlock createGenUsageBlock()
   {
-    TestGenUsageBlockImpl testGenUsageBlock = new TestGenUsageBlockImpl();
-    return testGenUsageBlock;
+    GenUsageBlockImpl genUsageBlock = new GenUsageBlockImpl();
+    return genUsageBlock;
   }
 
   /**
@@ -285,10 +233,10 @@ public class LibrettoProjectProfileFactoryImpl extends EFactoryImpl implements L
    * @generated
    */
   @Override
-  public TestGenEscalationBlock createTestGenEscalationBlock()
+  public GenEscalationBlock createGenEscalationBlock()
   {
-    TestGenEscalationBlockImpl testGenEscalationBlock = new TestGenEscalationBlockImpl();
-    return testGenEscalationBlock;
+    GenEscalationBlockImpl genEscalationBlock = new GenEscalationBlockImpl();
+    return genEscalationBlock;
   }
 
   /**
