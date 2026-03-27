@@ -96,6 +96,66 @@ public class LibrettoProjectProfileAdapterFactory extends AdapterFactoryImpl
         return createProjectModuleAdapter();
       }
       @Override
+      public Adapter caseTestGenBlock(TestGenBlock object)
+      {
+        return createTestGenBlockAdapter();
+      }
+      @Override
+      public Adapter caseTestGenModulePolicy(TestGenModulePolicy object)
+      {
+        return createTestGenModulePolicyAdapter();
+      }
+      @Override
+      public Adapter caseTestGenRemediationsBlock(TestGenRemediationsBlock object)
+      {
+        return createTestGenRemediationsBlockAdapter();
+      }
+      @Override
+      public Adapter caseTestGenRemediationRulesContainer(TestGenRemediationRulesContainer object)
+      {
+        return createTestGenRemediationRulesContainerAdapter();
+      }
+      @Override
+      public Adapter caseTestGenPatternRemediationRule(TestGenPatternRemediationRule object)
+      {
+        return createTestGenPatternRemediationRuleAdapter();
+      }
+      @Override
+      public Adapter caseTestGenDefaultRemediationRule(TestGenDefaultRemediationRule object)
+      {
+        return createTestGenDefaultRemediationRuleAdapter();
+      }
+      @Override
+      public Adapter caseTestGenLegacyRemediationRulesBlock(TestGenLegacyRemediationRulesBlock object)
+      {
+        return createTestGenLegacyRemediationRulesBlockAdapter();
+      }
+      @Override
+      public Adapter caseTestGenLegacyRemediationRule(TestGenLegacyRemediationRule object)
+      {
+        return createTestGenLegacyRemediationRuleAdapter();
+      }
+      @Override
+      public Adapter caseLlmProvidersBlock(LlmProvidersBlock object)
+      {
+        return createLlmProvidersBlockAdapter();
+      }
+      @Override
+      public Adapter caseNamedLlmProvider(NamedLlmProvider object)
+      {
+        return createNamedLlmProviderAdapter();
+      }
+      @Override
+      public Adapter caseTestGenUsageBlock(TestGenUsageBlock object)
+      {
+        return createTestGenUsageBlockAdapter();
+      }
+      @Override
+      public Adapter caseTestGenEscalationBlock(TestGenEscalationBlock object)
+      {
+        return createTestGenEscalationBlockAdapter();
+      }
+      @Override
       public Adapter caseSurfaceBlock(SurfaceBlock object)
       {
         return createSurfaceBlockAdapter();
@@ -238,6 +298,186 @@ public class LibrettoProjectProfileAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createProjectModuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenBlock <em>Test Gen Block</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenBlock
+   * @generated
+   */
+  public Adapter createTestGenBlockAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenModulePolicy <em>Test Gen Module Policy</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenModulePolicy
+   * @generated
+   */
+  public Adapter createTestGenModulePolicyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenRemediationsBlock <em>Test Gen Remediations Block</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenRemediationsBlock
+   * @generated
+   */
+  public Adapter createTestGenRemediationsBlockAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenRemediationRulesContainer <em>Test Gen Remediation Rules Container</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenRemediationRulesContainer
+   * @generated
+   */
+  public Adapter createTestGenRemediationRulesContainerAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenPatternRemediationRule <em>Test Gen Pattern Remediation Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenPatternRemediationRule
+   * @generated
+   */
+  public Adapter createTestGenPatternRemediationRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenDefaultRemediationRule <em>Test Gen Default Remediation Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenDefaultRemediationRule
+   * @generated
+   */
+  public Adapter createTestGenDefaultRemediationRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenLegacyRemediationRulesBlock <em>Test Gen Legacy Remediation Rules Block</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenLegacyRemediationRulesBlock
+   * @generated
+   */
+  public Adapter createTestGenLegacyRemediationRulesBlockAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenLegacyRemediationRule <em>Test Gen Legacy Remediation Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenLegacyRemediationRule
+   * @generated
+   */
+  public Adapter createTestGenLegacyRemediationRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.LlmProvidersBlock <em>Llm Providers Block</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LlmProvidersBlock
+   * @generated
+   */
+  public Adapter createLlmProvidersBlockAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider <em>Named Llm Provider</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider
+   * @generated
+   */
+  public Adapter createNamedLlmProviderAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenUsageBlock <em>Test Gen Usage Block</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenUsageBlock
+   * @generated
+   */
+  public Adapter createTestGenUsageBlockAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestGenEscalationBlock <em>Test Gen Escalation Block</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestGenEscalationBlock
+   * @generated
+   */
+  public Adapter createTestGenEscalationBlockAdapter()
   {
     return null;
   }

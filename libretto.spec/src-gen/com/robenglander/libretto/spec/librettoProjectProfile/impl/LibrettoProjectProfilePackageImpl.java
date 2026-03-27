@@ -6,8 +6,10 @@ package com.robenglander.libretto.spec.librettoProjectProfile.impl;
 import com.robenglander.libretto.spec.librettoProjectProfile.JavaType;
 import com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfileFactory;
 import com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage;
+import com.robenglander.libretto.spec.librettoProjectProfile.LlmProvidersBlock;
 import com.robenglander.libretto.spec.librettoProjectProfile.MethodOverrideRule;
 import com.robenglander.libretto.spec.librettoProjectProfile.ModulesBlock;
+import com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider;
 import com.robenglander.libretto.spec.librettoProjectProfile.OperationSignature;
 import com.robenglander.libretto.spec.librettoProjectProfile.ParamTypeRule;
 import com.robenglander.libretto.spec.librettoProjectProfile.PrimitiveType;
@@ -21,6 +23,16 @@ import com.robenglander.libretto.spec.librettoProjectProfile.ScopedSurface;
 import com.robenglander.libretto.spec.librettoProjectProfile.SurfaceBlock;
 import com.robenglander.libretto.spec.librettoProjectProfile.SurfaceElement;
 import com.robenglander.libretto.spec.librettoProjectProfile.SurfaceRule;
+import com.robenglander.libretto.spec.librettoProjectProfile.TestGenBlock;
+import com.robenglander.libretto.spec.librettoProjectProfile.TestGenDefaultRemediationRule;
+import com.robenglander.libretto.spec.librettoProjectProfile.TestGenEscalationBlock;
+import com.robenglander.libretto.spec.librettoProjectProfile.TestGenLegacyRemediationRule;
+import com.robenglander.libretto.spec.librettoProjectProfile.TestGenLegacyRemediationRulesBlock;
+import com.robenglander.libretto.spec.librettoProjectProfile.TestGenModulePolicy;
+import com.robenglander.libretto.spec.librettoProjectProfile.TestGenPatternRemediationRule;
+import com.robenglander.libretto.spec.librettoProjectProfile.TestGenRemediationRulesContainer;
+import com.robenglander.libretto.spec.librettoProjectProfile.TestGenRemediationsBlock;
+import com.robenglander.libretto.spec.librettoProjectProfile.TestGenUsageBlock;
 import com.robenglander.libretto.spec.librettoProjectProfile.TypedParam;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -65,6 +77,90 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   private EClass projectModuleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass testGenBlockEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass testGenModulePolicyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass testGenRemediationsBlockEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass testGenRemediationRulesContainerEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass testGenPatternRemediationRuleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass testGenDefaultRemediationRuleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass testGenLegacyRemediationRulesBlockEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass testGenLegacyRemediationRuleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass llmProvidersBlockEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass namedLlmProviderEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass testGenUsageBlockEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass testGenEscalationBlockEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -258,9 +354,20 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EReference getProjectProfile_Surface()
+  public EReference getProjectProfile_LlmProviders()
   {
     return (EReference)projectProfileEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getProjectProfile_Surface()
+  {
+    return (EReference)projectProfileEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -294,6 +401,17 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
   public EReference getProjectBlock_Modules()
   {
     return (EReference)projectBlockEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getProjectBlock_TestGen()
+  {
+    return (EReference)projectBlockEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -393,6 +511,611 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
   public EAttribute getProjectModule_BasePackage()
   {
     return (EAttribute)projectModuleEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTestGenBlock()
+  {
+    return testGenBlockEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTestGenBlock_InitialInstruction()
+  {
+    return (EAttribute)testGenBlockEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTestGenBlock_ForbiddenPatterns()
+  {
+    return (EAttribute)testGenBlockEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTestGenBlock_MaxRetries()
+  {
+    return (EAttribute)testGenBlockEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTestGenBlock_ParseCheck()
+  {
+    return (EAttribute)testGenBlockEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTestGenBlock_Remediations()
+  {
+    return (EReference)testGenBlockEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTestGenBlock_LegacyRemediationRules()
+  {
+    return (EReference)testGenBlockEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTestGenBlock_Usage()
+  {
+    return (EReference)testGenBlockEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTestGenBlock_ModulePolicies()
+  {
+    return (EReference)testGenBlockEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTestGenModulePolicy()
+  {
+    return testGenModulePolicyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTestGenModulePolicy_ModuleId()
+  {
+    return (EAttribute)testGenModulePolicyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTestGenModulePolicy_InitialInstruction()
+  {
+    return (EAttribute)testGenModulePolicyEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTestGenModulePolicy_ForbiddenPatterns()
+  {
+    return (EAttribute)testGenModulePolicyEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTestGenModulePolicy_MaxRetries()
+  {
+    return (EAttribute)testGenModulePolicyEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTestGenModulePolicy_ParseCheck()
+  {
+    return (EAttribute)testGenModulePolicyEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTestGenModulePolicy_Remediations()
+  {
+    return (EReference)testGenModulePolicyEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTestGenModulePolicy_LegacyRemediationRules()
+  {
+    return (EReference)testGenModulePolicyEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTestGenModulePolicy_Usage()
+  {
+    return (EReference)testGenModulePolicyEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTestGenRemediationsBlock()
+  {
+    return testGenRemediationsBlockEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTestGenRemediationsBlock_MaxRetries()
+  {
+    return (EAttribute)testGenRemediationsBlockEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTestGenRemediationsBlock_ParseCheck()
+  {
+    return (EAttribute)testGenRemediationsBlockEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTestGenRemediationsBlock_DefaultCorrection()
+  {
+    return (EAttribute)testGenRemediationsBlockEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTestGenRemediationsBlock_ForbiddenPatterns()
+  {
+    return (EAttribute)testGenRemediationsBlockEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTestGenRemediationsBlock_RulesContainer()
+  {
+    return (EReference)testGenRemediationsBlockEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTestGenRemediationRulesContainer()
+  {
+    return testGenRemediationRulesContainerEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTestGenRemediationRulesContainer_PatternRules()
+  {
+    return (EReference)testGenRemediationRulesContainerEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTestGenRemediationRulesContainer_DefaultRemediation()
+  {
+    return (EReference)testGenRemediationRulesContainerEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTestGenPatternRemediationRule()
+  {
+    return testGenPatternRemediationRuleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTestGenPatternRemediationRule_Pattern()
+  {
+    return (EAttribute)testGenPatternRemediationRuleEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTestGenPatternRemediationRule_Code()
+  {
+    return (EAttribute)testGenPatternRemediationRuleEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTestGenPatternRemediationRule_Correction()
+  {
+    return (EAttribute)testGenPatternRemediationRuleEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTestGenDefaultRemediationRule()
+  {
+    return testGenDefaultRemediationRuleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTestGenDefaultRemediationRule_Code()
+  {
+    return (EAttribute)testGenDefaultRemediationRuleEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTestGenDefaultRemediationRule_Correction()
+  {
+    return (EAttribute)testGenDefaultRemediationRuleEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTestGenLegacyRemediationRulesBlock()
+  {
+    return testGenLegacyRemediationRulesBlockEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTestGenLegacyRemediationRulesBlock_Rules()
+  {
+    return (EReference)testGenLegacyRemediationRulesBlockEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTestGenLegacyRemediationRule()
+  {
+    return testGenLegacyRemediationRuleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTestGenLegacyRemediationRule_Key()
+  {
+    return (EAttribute)testGenLegacyRemediationRuleEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTestGenLegacyRemediationRule_Instruction()
+  {
+    return (EAttribute)testGenLegacyRemediationRuleEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getLlmProvidersBlock()
+  {
+    return llmProvidersBlockEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getLlmProvidersBlock_Providers()
+  {
+    return (EReference)llmProvidersBlockEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getNamedLlmProvider()
+  {
+    return namedLlmProviderEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getNamedLlmProvider_Name()
+  {
+    return (EAttribute)namedLlmProviderEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getNamedLlmProvider_Kind()
+  {
+    return (EAttribute)namedLlmProviderEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getNamedLlmProvider_LocalModelPath()
+  {
+    return (EAttribute)namedLlmProviderEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getNamedLlmProvider_Model()
+  {
+    return (EAttribute)namedLlmProviderEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getNamedLlmProvider_Endpoint()
+  {
+    return (EAttribute)namedLlmProviderEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTestGenUsageBlock()
+  {
+    return testGenUsageBlockEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTestGenUsageBlock_PrimaryProvider()
+  {
+    return (EAttribute)testGenUsageBlockEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTestGenUsageBlock_SecondaryProvider()
+  {
+    return (EAttribute)testGenUsageBlockEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTestGenUsageBlock_Escalation()
+  {
+    return (EReference)testGenUsageBlockEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTestGenEscalationBlock()
+  {
+    return testGenEscalationBlockEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTestGenEscalationBlock_Enabled()
+  {
+    return (EAttribute)testGenEscalationBlockEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTestGenEscalationBlock_EscalateAtRetry()
+  {
+    return (EAttribute)testGenEscalationBlockEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTestGenEscalationBlock_Target()
+  {
+    return (EAttribute)testGenEscalationBlockEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -759,11 +1482,13 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
     projectProfileEClass = createEClass(PROJECT_PROFILE);
     createEAttribute(projectProfileEClass, PROJECT_PROFILE__PROFILE_NAME);
     createEReference(projectProfileEClass, PROJECT_PROFILE__PROJECT);
+    createEReference(projectProfileEClass, PROJECT_PROFILE__LLM_PROVIDERS);
     createEReference(projectProfileEClass, PROJECT_PROFILE__SURFACE);
 
     projectBlockEClass = createEClass(PROJECT_BLOCK);
     createEAttribute(projectBlockEClass, PROJECT_BLOCK__ROOT_DIR);
     createEReference(projectBlockEClass, PROJECT_BLOCK__MODULES);
+    createEReference(projectBlockEClass, PROJECT_BLOCK__TEST_GEN);
 
     modulesBlockEClass = createEClass(MODULES_BLOCK);
     createEReference(modulesBlockEClass, MODULES_BLOCK__MODULES);
@@ -775,6 +1500,73 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
     createEAttribute(projectModuleEClass, PROJECT_MODULE__TESTS_DIR);
     createEAttribute(projectModuleEClass, PROJECT_MODULE__MAIN_JAVA_DIR);
     createEAttribute(projectModuleEClass, PROJECT_MODULE__BASE_PACKAGE);
+
+    testGenBlockEClass = createEClass(TEST_GEN_BLOCK);
+    createEAttribute(testGenBlockEClass, TEST_GEN_BLOCK__INITIAL_INSTRUCTION);
+    createEAttribute(testGenBlockEClass, TEST_GEN_BLOCK__FORBIDDEN_PATTERNS);
+    createEAttribute(testGenBlockEClass, TEST_GEN_BLOCK__MAX_RETRIES);
+    createEAttribute(testGenBlockEClass, TEST_GEN_BLOCK__PARSE_CHECK);
+    createEReference(testGenBlockEClass, TEST_GEN_BLOCK__REMEDIATIONS);
+    createEReference(testGenBlockEClass, TEST_GEN_BLOCK__LEGACY_REMEDIATION_RULES);
+    createEReference(testGenBlockEClass, TEST_GEN_BLOCK__USAGE);
+    createEReference(testGenBlockEClass, TEST_GEN_BLOCK__MODULE_POLICIES);
+
+    testGenModulePolicyEClass = createEClass(TEST_GEN_MODULE_POLICY);
+    createEAttribute(testGenModulePolicyEClass, TEST_GEN_MODULE_POLICY__MODULE_ID);
+    createEAttribute(testGenModulePolicyEClass, TEST_GEN_MODULE_POLICY__INITIAL_INSTRUCTION);
+    createEAttribute(testGenModulePolicyEClass, TEST_GEN_MODULE_POLICY__FORBIDDEN_PATTERNS);
+    createEAttribute(testGenModulePolicyEClass, TEST_GEN_MODULE_POLICY__MAX_RETRIES);
+    createEAttribute(testGenModulePolicyEClass, TEST_GEN_MODULE_POLICY__PARSE_CHECK);
+    createEReference(testGenModulePolicyEClass, TEST_GEN_MODULE_POLICY__REMEDIATIONS);
+    createEReference(testGenModulePolicyEClass, TEST_GEN_MODULE_POLICY__LEGACY_REMEDIATION_RULES);
+    createEReference(testGenModulePolicyEClass, TEST_GEN_MODULE_POLICY__USAGE);
+
+    testGenRemediationsBlockEClass = createEClass(TEST_GEN_REMEDIATIONS_BLOCK);
+    createEAttribute(testGenRemediationsBlockEClass, TEST_GEN_REMEDIATIONS_BLOCK__MAX_RETRIES);
+    createEAttribute(testGenRemediationsBlockEClass, TEST_GEN_REMEDIATIONS_BLOCK__PARSE_CHECK);
+    createEAttribute(testGenRemediationsBlockEClass, TEST_GEN_REMEDIATIONS_BLOCK__DEFAULT_CORRECTION);
+    createEAttribute(testGenRemediationsBlockEClass, TEST_GEN_REMEDIATIONS_BLOCK__FORBIDDEN_PATTERNS);
+    createEReference(testGenRemediationsBlockEClass, TEST_GEN_REMEDIATIONS_BLOCK__RULES_CONTAINER);
+
+    testGenRemediationRulesContainerEClass = createEClass(TEST_GEN_REMEDIATION_RULES_CONTAINER);
+    createEReference(testGenRemediationRulesContainerEClass, TEST_GEN_REMEDIATION_RULES_CONTAINER__PATTERN_RULES);
+    createEReference(testGenRemediationRulesContainerEClass, TEST_GEN_REMEDIATION_RULES_CONTAINER__DEFAULT_REMEDIATION);
+
+    testGenPatternRemediationRuleEClass = createEClass(TEST_GEN_PATTERN_REMEDIATION_RULE);
+    createEAttribute(testGenPatternRemediationRuleEClass, TEST_GEN_PATTERN_REMEDIATION_RULE__PATTERN);
+    createEAttribute(testGenPatternRemediationRuleEClass, TEST_GEN_PATTERN_REMEDIATION_RULE__CODE);
+    createEAttribute(testGenPatternRemediationRuleEClass, TEST_GEN_PATTERN_REMEDIATION_RULE__CORRECTION);
+
+    testGenDefaultRemediationRuleEClass = createEClass(TEST_GEN_DEFAULT_REMEDIATION_RULE);
+    createEAttribute(testGenDefaultRemediationRuleEClass, TEST_GEN_DEFAULT_REMEDIATION_RULE__CODE);
+    createEAttribute(testGenDefaultRemediationRuleEClass, TEST_GEN_DEFAULT_REMEDIATION_RULE__CORRECTION);
+
+    testGenLegacyRemediationRulesBlockEClass = createEClass(TEST_GEN_LEGACY_REMEDIATION_RULES_BLOCK);
+    createEReference(testGenLegacyRemediationRulesBlockEClass, TEST_GEN_LEGACY_REMEDIATION_RULES_BLOCK__RULES);
+
+    testGenLegacyRemediationRuleEClass = createEClass(TEST_GEN_LEGACY_REMEDIATION_RULE);
+    createEAttribute(testGenLegacyRemediationRuleEClass, TEST_GEN_LEGACY_REMEDIATION_RULE__KEY);
+    createEAttribute(testGenLegacyRemediationRuleEClass, TEST_GEN_LEGACY_REMEDIATION_RULE__INSTRUCTION);
+
+    llmProvidersBlockEClass = createEClass(LLM_PROVIDERS_BLOCK);
+    createEReference(llmProvidersBlockEClass, LLM_PROVIDERS_BLOCK__PROVIDERS);
+
+    namedLlmProviderEClass = createEClass(NAMED_LLM_PROVIDER);
+    createEAttribute(namedLlmProviderEClass, NAMED_LLM_PROVIDER__NAME);
+    createEAttribute(namedLlmProviderEClass, NAMED_LLM_PROVIDER__KIND);
+    createEAttribute(namedLlmProviderEClass, NAMED_LLM_PROVIDER__LOCAL_MODEL_PATH);
+    createEAttribute(namedLlmProviderEClass, NAMED_LLM_PROVIDER__MODEL);
+    createEAttribute(namedLlmProviderEClass, NAMED_LLM_PROVIDER__ENDPOINT);
+
+    testGenUsageBlockEClass = createEClass(TEST_GEN_USAGE_BLOCK);
+    createEAttribute(testGenUsageBlockEClass, TEST_GEN_USAGE_BLOCK__PRIMARY_PROVIDER);
+    createEAttribute(testGenUsageBlockEClass, TEST_GEN_USAGE_BLOCK__SECONDARY_PROVIDER);
+    createEReference(testGenUsageBlockEClass, TEST_GEN_USAGE_BLOCK__ESCALATION);
+
+    testGenEscalationBlockEClass = createEClass(TEST_GEN_ESCALATION_BLOCK);
+    createEAttribute(testGenEscalationBlockEClass, TEST_GEN_ESCALATION_BLOCK__ENABLED);
+    createEAttribute(testGenEscalationBlockEClass, TEST_GEN_ESCALATION_BLOCK__ESCALATE_AT_RETRY);
+    createEAttribute(testGenEscalationBlockEClass, TEST_GEN_ESCALATION_BLOCK__TARGET);
 
     surfaceBlockEClass = createEClass(SURFACE_BLOCK);
     createEReference(surfaceBlockEClass, SURFACE_BLOCK__ELEMENTS);
@@ -862,11 +1654,13 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
     initEClass(projectProfileEClass, ProjectProfile.class, "ProjectProfile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getProjectProfile_ProfileName(), ecorePackage.getEString(), "profileName", null, 0, 1, ProjectProfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProjectProfile_Project(), this.getProjectBlock(), null, "project", null, 0, 1, ProjectProfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProjectProfile_LlmProviders(), this.getLlmProvidersBlock(), null, "llmProviders", null, 0, 1, ProjectProfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProjectProfile_Surface(), this.getSurfaceBlock(), null, "surface", null, 0, 1, ProjectProfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(projectBlockEClass, ProjectBlock.class, "ProjectBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getProjectBlock_RootDir(), ecorePackage.getEString(), "rootDir", null, 0, 1, ProjectBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProjectBlock_Modules(), this.getModulesBlock(), null, "modules", null, 0, 1, ProjectBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProjectBlock_TestGen(), this.getTestGenBlock(), null, "testGen", null, 0, 1, ProjectBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(modulesBlockEClass, ModulesBlock.class, "ModulesBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getModulesBlock_Modules(), this.getProjectModule(), null, "modules", null, 0, -1, ModulesBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -878,6 +1672,73 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
     initEAttribute(getProjectModule_TestsDir(), ecorePackage.getEString(), "testsDir", null, 0, 1, ProjectModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getProjectModule_MainJavaDir(), ecorePackage.getEString(), "mainJavaDir", null, 0, 1, ProjectModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getProjectModule_BasePackage(), ecorePackage.getEString(), "basePackage", null, 0, 1, ProjectModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(testGenBlockEClass, TestGenBlock.class, "TestGenBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTestGenBlock_InitialInstruction(), ecorePackage.getEString(), "initialInstruction", null, 0, 1, TestGenBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTestGenBlock_ForbiddenPatterns(), ecorePackage.getEString(), "forbiddenPatterns", null, 0, -1, TestGenBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTestGenBlock_MaxRetries(), ecorePackage.getEInt(), "maxRetries", null, 0, 1, TestGenBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTestGenBlock_ParseCheck(), ecorePackage.getEString(), "parseCheck", null, 0, 1, TestGenBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTestGenBlock_Remediations(), this.getTestGenRemediationsBlock(), null, "remediations", null, 0, 1, TestGenBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTestGenBlock_LegacyRemediationRules(), this.getTestGenLegacyRemediationRulesBlock(), null, "legacyRemediationRules", null, 0, 1, TestGenBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTestGenBlock_Usage(), this.getTestGenUsageBlock(), null, "usage", null, 0, 1, TestGenBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTestGenBlock_ModulePolicies(), this.getTestGenModulePolicy(), null, "modulePolicies", null, 0, -1, TestGenBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(testGenModulePolicyEClass, TestGenModulePolicy.class, "TestGenModulePolicy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTestGenModulePolicy_ModuleId(), ecorePackage.getEString(), "moduleId", null, 0, 1, TestGenModulePolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTestGenModulePolicy_InitialInstruction(), ecorePackage.getEString(), "initialInstruction", null, 0, 1, TestGenModulePolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTestGenModulePolicy_ForbiddenPatterns(), ecorePackage.getEString(), "forbiddenPatterns", null, 0, -1, TestGenModulePolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTestGenModulePolicy_MaxRetries(), ecorePackage.getEInt(), "maxRetries", null, 0, 1, TestGenModulePolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTestGenModulePolicy_ParseCheck(), ecorePackage.getEString(), "parseCheck", null, 0, 1, TestGenModulePolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTestGenModulePolicy_Remediations(), this.getTestGenRemediationsBlock(), null, "remediations", null, 0, 1, TestGenModulePolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTestGenModulePolicy_LegacyRemediationRules(), this.getTestGenLegacyRemediationRulesBlock(), null, "legacyRemediationRules", null, 0, 1, TestGenModulePolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTestGenModulePolicy_Usage(), this.getTestGenUsageBlock(), null, "usage", null, 0, 1, TestGenModulePolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(testGenRemediationsBlockEClass, TestGenRemediationsBlock.class, "TestGenRemediationsBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTestGenRemediationsBlock_MaxRetries(), ecorePackage.getEInt(), "maxRetries", null, 0, 1, TestGenRemediationsBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTestGenRemediationsBlock_ParseCheck(), ecorePackage.getEString(), "parseCheck", null, 0, 1, TestGenRemediationsBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTestGenRemediationsBlock_DefaultCorrection(), ecorePackage.getEString(), "defaultCorrection", null, 0, 1, TestGenRemediationsBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTestGenRemediationsBlock_ForbiddenPatterns(), ecorePackage.getEString(), "forbiddenPatterns", null, 0, -1, TestGenRemediationsBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTestGenRemediationsBlock_RulesContainer(), this.getTestGenRemediationRulesContainer(), null, "rulesContainer", null, 0, 1, TestGenRemediationsBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(testGenRemediationRulesContainerEClass, TestGenRemediationRulesContainer.class, "TestGenRemediationRulesContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTestGenRemediationRulesContainer_PatternRules(), this.getTestGenPatternRemediationRule(), null, "patternRules", null, 0, -1, TestGenRemediationRulesContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTestGenRemediationRulesContainer_DefaultRemediation(), this.getTestGenDefaultRemediationRule(), null, "defaultRemediation", null, 0, 1, TestGenRemediationRulesContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(testGenPatternRemediationRuleEClass, TestGenPatternRemediationRule.class, "TestGenPatternRemediationRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTestGenPatternRemediationRule_Pattern(), ecorePackage.getEString(), "pattern", null, 0, 1, TestGenPatternRemediationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTestGenPatternRemediationRule_Code(), ecorePackage.getEString(), "code", null, 0, 1, TestGenPatternRemediationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTestGenPatternRemediationRule_Correction(), ecorePackage.getEString(), "correction", null, 0, 1, TestGenPatternRemediationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(testGenDefaultRemediationRuleEClass, TestGenDefaultRemediationRule.class, "TestGenDefaultRemediationRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTestGenDefaultRemediationRule_Code(), ecorePackage.getEString(), "code", null, 0, 1, TestGenDefaultRemediationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTestGenDefaultRemediationRule_Correction(), ecorePackage.getEString(), "correction", null, 0, 1, TestGenDefaultRemediationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(testGenLegacyRemediationRulesBlockEClass, TestGenLegacyRemediationRulesBlock.class, "TestGenLegacyRemediationRulesBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTestGenLegacyRemediationRulesBlock_Rules(), this.getTestGenLegacyRemediationRule(), null, "rules", null, 0, -1, TestGenLegacyRemediationRulesBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(testGenLegacyRemediationRuleEClass, TestGenLegacyRemediationRule.class, "TestGenLegacyRemediationRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTestGenLegacyRemediationRule_Key(), ecorePackage.getEString(), "key", null, 0, 1, TestGenLegacyRemediationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTestGenLegacyRemediationRule_Instruction(), ecorePackage.getEString(), "instruction", null, 0, 1, TestGenLegacyRemediationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(llmProvidersBlockEClass, LlmProvidersBlock.class, "LlmProvidersBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getLlmProvidersBlock_Providers(), this.getNamedLlmProvider(), null, "providers", null, 0, -1, LlmProvidersBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(namedLlmProviderEClass, NamedLlmProvider.class, "NamedLlmProvider", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getNamedLlmProvider_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedLlmProvider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getNamedLlmProvider_Kind(), ecorePackage.getEString(), "kind", null, 0, 1, NamedLlmProvider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getNamedLlmProvider_LocalModelPath(), ecorePackage.getEString(), "localModelPath", null, 0, 1, NamedLlmProvider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getNamedLlmProvider_Model(), ecorePackage.getEString(), "model", null, 0, 1, NamedLlmProvider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getNamedLlmProvider_Endpoint(), ecorePackage.getEString(), "endpoint", null, 0, 1, NamedLlmProvider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(testGenUsageBlockEClass, TestGenUsageBlock.class, "TestGenUsageBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTestGenUsageBlock_PrimaryProvider(), ecorePackage.getEString(), "primaryProvider", null, 0, 1, TestGenUsageBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTestGenUsageBlock_SecondaryProvider(), ecorePackage.getEString(), "secondaryProvider", null, 0, 1, TestGenUsageBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTestGenUsageBlock_Escalation(), this.getTestGenEscalationBlock(), null, "escalation", null, 0, 1, TestGenUsageBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(testGenEscalationBlockEClass, TestGenEscalationBlock.class, "TestGenEscalationBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTestGenEscalationBlock_Enabled(), ecorePackage.getEString(), "enabled", null, 0, 1, TestGenEscalationBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTestGenEscalationBlock_EscalateAtRetry(), ecorePackage.getEInt(), "escalateAtRetry", null, 0, 1, TestGenEscalationBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTestGenEscalationBlock_Target(), ecorePackage.getEString(), "target", null, 0, 1, TestGenEscalationBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(surfaceBlockEClass, SurfaceBlock.class, "SurfaceBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSurfaceBlock_Elements(), this.getSurfaceElement(), null, "elements", null, 0, -1, SurfaceBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

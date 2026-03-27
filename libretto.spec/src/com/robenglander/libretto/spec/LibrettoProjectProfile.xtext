@@ -18,13 +18,15 @@ generate librettoProjectProfile "http://www.robenglander.com/libretto/spec/Libre
 ProjectProfile:
 	'profile' profileName=STRING '{'
 		project=ProjectBlock?
+		llmProviders=LlmProvidersBlock?
 		surface=SurfaceBlock?
 	'}';
 
 ProjectBlock:
 	'project' '{'
-		('rootDir' rootDir=STRING ';')?
+		('rootDir' rootDir=STRING (';')?)?
 		modules=ModulesBlock?
+		testGen=TestGenBlock?
 	'}';
 
 ModulesBlock:
@@ -34,11 +36,97 @@ ModulesBlock:
 
 ProjectModule:
 	'module' name=STRING '{'
-		'dir' dir=STRING ';'
-		('specsDir' specsDir=STRING ';')?
-		('testsDir' testsDir=STRING ';')?
-		('mainJavaDir' mainJavaDir=STRING ';')?
-		('basePackage' basePackage=STRING ';')?
+		'dir' dir=STRING (';')?
+		('specsDir' specsDir=STRING (';')?)?
+		('testsDir' testsDir=STRING (';')?)?
+		('mainJavaDir' mainJavaDir=STRING (';')?)?
+		('basePackage' basePackage=STRING (';')?)?
+	'}';
+
+TestGenBlock:
+	'testgen' '{'
+		('initialInstruction' initialInstruction=STRING (';')?)?
+		('forbiddenPatterns' '[' forbiddenPatterns+=STRING (',' forbiddenPatterns+=STRING)* ']' (';')?)?
+		('maxRetries' maxRetries=INT (';')?)?
+		('parseCheck' parseCheck=('true' | 'false') (';')?)?
+		remediations=TestGenRemediationsBlock?
+		legacyRemediationRules=TestGenLegacyRemediationRulesBlock?
+		usage=TestGenUsageBlock?
+		modulePolicies+=TestGenModulePolicy*
+	'}';
+
+TestGenModulePolicy:
+	'forModule' moduleId=STRING '{'
+		('initialInstruction' initialInstruction=STRING (';')?)?
+		('forbiddenPatterns' '[' forbiddenPatterns+=STRING (',' forbiddenPatterns+=STRING)* ']' (';')?)?
+		('maxRetries' maxRetries=INT (';')?)?
+		('parseCheck' parseCheck=('true' | 'false') (';')?)?
+		remediations=TestGenRemediationsBlock?
+		legacyRemediationRules=TestGenLegacyRemediationRulesBlock?
+		usage=TestGenUsageBlock?
+	'}';
+
+TestGenRemediationsBlock:
+	'remediations' '{'
+		('maxRetries' maxRetries=INT (';')?)?
+		('parseCheck' parseCheck=('true' | 'false') (';')?)?
+		('defaultCorrection' defaultCorrection=STRING (';')?)?
+		('forbiddenPatterns' '[' forbiddenPatterns+=STRING (',' forbiddenPatterns+=STRING)* ']' (';')?)?
+		rulesContainer=TestGenRemediationRulesContainer?
+	'}';
+
+TestGenRemediationRulesContainer:
+	'rules' '{'
+		patternRules+=TestGenPatternRemediationRule*
+		defaultRemediation=TestGenDefaultRemediationRule?
+	'}';
+
+TestGenPatternRemediationRule:
+	'rule' '{'
+		'pattern' pattern=STRING (';')?
+		'code' code=STRING (';')?
+		'correction' correction=STRING (';')?
+	'}';
+
+TestGenDefaultRemediationRule:
+	'default' '{'
+		'code' code=STRING (';')?
+		'correction' correction=STRING (';')?
+	'}';
+
+TestGenLegacyRemediationRulesBlock:
+	'remediationRules' '{'
+		rules+=TestGenLegacyRemediationRule*
+	'}';
+
+TestGenLegacyRemediationRule:
+	'rule' key=STRING 'instruction' instruction=STRING (';')?;
+
+LlmProvidersBlock:
+	'llmProviders' '{'
+		providers+=NamedLlmProvider*
+	'}';
+
+NamedLlmProvider:
+	'provider' name=STRING '{'
+		'kind' kind=('local' | 'openai' | 'ollama') (';')?
+		('localModelPath' localModelPath=STRING (';')?)?
+		('model' model=STRING (';')?)?
+		('endpoint' endpoint=STRING (';')?)?
+	'}';
+
+TestGenUsageBlock:
+	'usage' '{'
+		('primary' primaryProvider=STRING (';')?)?
+		('secondary' secondaryProvider=STRING (';')?)?
+		escalation=TestGenEscalationBlock?
+	'}';
+
+TestGenEscalationBlock:
+	'escalation' '{'
+		('enabled' enabled=('true' | 'false') (';')?)?
+		('escalateAtRetry' escalateAtRetry=INT (';')?)?
+		('target' target='secondary' (';')?)?
 	'}';
 
 SurfaceBlock:
@@ -56,16 +144,16 @@ SurfaceRule:
 	ReturnTypeRule | ParamTypeRule | RecordSelfReturnRule | MethodOverrideRule;
 
 ReturnTypeRule:
-	'returnType' 'method' name=ID 'as' javaType=JavaType ';';
+	'returnType' 'method' name=ID 'as' javaType=JavaType (';')?;
 
 ParamTypeRule:
-	'paramType' 'name' paramName=ID 'as' javaType=JavaType ';';
+	'paramType' 'name' paramName=ID 'as' javaType=JavaType (';')?;
 
 RecordSelfReturnRule:
-	'recordSelfReturn' methods+=ID (',' methods+=ID)* ';';
+	'recordSelfReturn' methods+=ID (',' methods+=ID)* (';')?;
 
 MethodOverrideRule:
-	'methodOverride' signature=OperationSignature 'returns' javaType=JavaType ';';
+	'methodOverride' signature=OperationSignature 'returns' javaType=JavaType (';')?;
 
 JavaType:
 	PrimitiveType | QualifiedName;

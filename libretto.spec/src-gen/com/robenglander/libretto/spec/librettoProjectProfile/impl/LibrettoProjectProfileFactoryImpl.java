@@ -69,6 +69,18 @@ public class LibrettoProjectProfileFactoryImpl extends EFactoryImpl implements L
       case LibrettoProjectProfilePackage.PROJECT_BLOCK: return createProjectBlock();
       case LibrettoProjectProfilePackage.MODULES_BLOCK: return createModulesBlock();
       case LibrettoProjectProfilePackage.PROJECT_MODULE: return createProjectModule();
+      case LibrettoProjectProfilePackage.TEST_GEN_BLOCK: return createTestGenBlock();
+      case LibrettoProjectProfilePackage.TEST_GEN_MODULE_POLICY: return createTestGenModulePolicy();
+      case LibrettoProjectProfilePackage.TEST_GEN_REMEDIATIONS_BLOCK: return createTestGenRemediationsBlock();
+      case LibrettoProjectProfilePackage.TEST_GEN_REMEDIATION_RULES_CONTAINER: return createTestGenRemediationRulesContainer();
+      case LibrettoProjectProfilePackage.TEST_GEN_PATTERN_REMEDIATION_RULE: return createTestGenPatternRemediationRule();
+      case LibrettoProjectProfilePackage.TEST_GEN_DEFAULT_REMEDIATION_RULE: return createTestGenDefaultRemediationRule();
+      case LibrettoProjectProfilePackage.TEST_GEN_LEGACY_REMEDIATION_RULES_BLOCK: return createTestGenLegacyRemediationRulesBlock();
+      case LibrettoProjectProfilePackage.TEST_GEN_LEGACY_REMEDIATION_RULE: return createTestGenLegacyRemediationRule();
+      case LibrettoProjectProfilePackage.LLM_PROVIDERS_BLOCK: return createLlmProvidersBlock();
+      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER: return createNamedLlmProvider();
+      case LibrettoProjectProfilePackage.TEST_GEN_USAGE_BLOCK: return createTestGenUsageBlock();
+      case LibrettoProjectProfilePackage.TEST_GEN_ESCALATION_BLOCK: return createTestGenEscalationBlock();
       case LibrettoProjectProfilePackage.SURFACE_BLOCK: return createSurfaceBlock();
       case LibrettoProjectProfilePackage.SURFACE_ELEMENT: return createSurfaceElement();
       case LibrettoProjectProfilePackage.SCOPED_SURFACE: return createScopedSurface();
@@ -133,6 +145,150 @@ public class LibrettoProjectProfileFactoryImpl extends EFactoryImpl implements L
   {
     ProjectModuleImpl projectModule = new ProjectModuleImpl();
     return projectModule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TestGenBlock createTestGenBlock()
+  {
+    TestGenBlockImpl testGenBlock = new TestGenBlockImpl();
+    return testGenBlock;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TestGenModulePolicy createTestGenModulePolicy()
+  {
+    TestGenModulePolicyImpl testGenModulePolicy = new TestGenModulePolicyImpl();
+    return testGenModulePolicy;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TestGenRemediationsBlock createTestGenRemediationsBlock()
+  {
+    TestGenRemediationsBlockImpl testGenRemediationsBlock = new TestGenRemediationsBlockImpl();
+    return testGenRemediationsBlock;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TestGenRemediationRulesContainer createTestGenRemediationRulesContainer()
+  {
+    TestGenRemediationRulesContainerImpl testGenRemediationRulesContainer = new TestGenRemediationRulesContainerImpl();
+    return testGenRemediationRulesContainer;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TestGenPatternRemediationRule createTestGenPatternRemediationRule()
+  {
+    TestGenPatternRemediationRuleImpl testGenPatternRemediationRule = new TestGenPatternRemediationRuleImpl();
+    return testGenPatternRemediationRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TestGenDefaultRemediationRule createTestGenDefaultRemediationRule()
+  {
+    TestGenDefaultRemediationRuleImpl testGenDefaultRemediationRule = new TestGenDefaultRemediationRuleImpl();
+    return testGenDefaultRemediationRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TestGenLegacyRemediationRulesBlock createTestGenLegacyRemediationRulesBlock()
+  {
+    TestGenLegacyRemediationRulesBlockImpl testGenLegacyRemediationRulesBlock = new TestGenLegacyRemediationRulesBlockImpl();
+    return testGenLegacyRemediationRulesBlock;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TestGenLegacyRemediationRule createTestGenLegacyRemediationRule()
+  {
+    TestGenLegacyRemediationRuleImpl testGenLegacyRemediationRule = new TestGenLegacyRemediationRuleImpl();
+    return testGenLegacyRemediationRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public LlmProvidersBlock createLlmProvidersBlock()
+  {
+    LlmProvidersBlockImpl llmProvidersBlock = new LlmProvidersBlockImpl();
+    return llmProvidersBlock;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NamedLlmProvider createNamedLlmProvider()
+  {
+    NamedLlmProviderImpl namedLlmProvider = new NamedLlmProviderImpl();
+    return namedLlmProvider;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TestGenUsageBlock createTestGenUsageBlock()
+  {
+    TestGenUsageBlockImpl testGenUsageBlock = new TestGenUsageBlockImpl();
+    return testGenUsageBlock;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TestGenEscalationBlock createTestGenEscalationBlock()
+  {
+    TestGenEscalationBlockImpl testGenEscalationBlock = new TestGenEscalationBlockImpl();
+    return testGenEscalationBlock;
   }
 
   /**

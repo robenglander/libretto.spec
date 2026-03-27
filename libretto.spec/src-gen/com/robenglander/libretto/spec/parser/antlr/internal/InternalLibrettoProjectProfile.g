@@ -124,9 +124,28 @@ ruleProjectProfile returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getProjectProfileAccess().getSurfaceSurfaceBlockParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getProjectProfileAccess().getLlmProvidersLlmProvidersBlockParserRuleCall_4_0());
 				}
-				lv_surface_4_0=ruleSurfaceBlock
+				lv_llmProviders_4_0=ruleLlmProvidersBlock
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getProjectProfileRule());
+					}
+					set(
+						$current,
+						"llmProviders",
+						lv_llmProviders_4_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.LlmProvidersBlock");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getProjectProfileAccess().getSurfaceSurfaceBlockParserRuleCall_5_0());
+				}
+				lv_surface_5_0=ruleSurfaceBlock
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getProjectProfileRule());
@@ -134,15 +153,15 @@ ruleProjectProfile returns [EObject current=null]
 					set(
 						$current,
 						"surface",
-						lv_surface_4_0,
+						lv_surface_5_0,
 						"com.robenglander.libretto.spec.LibrettoProjectProfile.SurfaceBlock");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)?
-		otherlv_5='}'
+		otherlv_6='}'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getProjectProfileAccess().getRightCurlyBracketKeyword_5());
+			newLeafNode(otherlv_6, grammarAccess.getProjectProfileAccess().getRightCurlyBracketKeyword_6());
 		}
 	)
 ;
@@ -194,10 +213,12 @@ ruleProjectBlock returns [EObject current=null]
 					}
 				)
 			)
-			otherlv_4=';'
-			{
-				newLeafNode(otherlv_4, grammarAccess.getProjectBlockAccess().getSemicolonKeyword_2_2());
-			}
+			(
+				otherlv_4=';'
+				{
+					newLeafNode(otherlv_4, grammarAccess.getProjectBlockAccess().getSemicolonKeyword_2_2());
+				}
+			)?
 		)?
 		(
 			(
@@ -218,9 +239,28 @@ ruleProjectBlock returns [EObject current=null]
 				}
 			)
 		)?
-		otherlv_6='}'
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getProjectBlockAccess().getTestGenTestGenBlockParserRuleCall_4_0());
+				}
+				lv_testGen_6_0=ruleTestGenBlock
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getProjectBlockRule());
+					}
+					set(
+						$current,
+						"testGen",
+						lv_testGen_6_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.TestGenBlock");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+		otherlv_7='}'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getProjectBlockAccess().getRightCurlyBracketKeyword_4());
+			newLeafNode(otherlv_7, grammarAccess.getProjectBlockAccess().getRightCurlyBracketKeyword_5());
 		}
 	)
 ;
@@ -339,10 +379,12 @@ ruleProjectModule returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_5=';'
-		{
-			newLeafNode(otherlv_5, grammarAccess.getProjectModuleAccess().getSemicolonKeyword_5());
-		}
+		(
+			otherlv_5=';'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getProjectModuleAccess().getSemicolonKeyword_5());
+			}
+		)?
 		(
 			otherlv_6='specsDir'
 			{
@@ -366,10 +408,12 @@ ruleProjectModule returns [EObject current=null]
 					}
 				)
 			)
-			otherlv_8=';'
-			{
-				newLeafNode(otherlv_8, grammarAccess.getProjectModuleAccess().getSemicolonKeyword_6_2());
-			}
+			(
+				otherlv_8=';'
+				{
+					newLeafNode(otherlv_8, grammarAccess.getProjectModuleAccess().getSemicolonKeyword_6_2());
+				}
+			)?
 		)?
 		(
 			otherlv_9='testsDir'
@@ -394,10 +438,12 @@ ruleProjectModule returns [EObject current=null]
 					}
 				)
 			)
-			otherlv_11=';'
-			{
-				newLeafNode(otherlv_11, grammarAccess.getProjectModuleAccess().getSemicolonKeyword_7_2());
-			}
+			(
+				otherlv_11=';'
+				{
+					newLeafNode(otherlv_11, grammarAccess.getProjectModuleAccess().getSemicolonKeyword_7_2());
+				}
+			)?
 		)?
 		(
 			otherlv_12='mainJavaDir'
@@ -422,10 +468,12 @@ ruleProjectModule returns [EObject current=null]
 					}
 				)
 			)
-			otherlv_14=';'
-			{
-				newLeafNode(otherlv_14, grammarAccess.getProjectModuleAccess().getSemicolonKeyword_8_2());
-			}
+			(
+				otherlv_14=';'
+				{
+					newLeafNode(otherlv_14, grammarAccess.getProjectModuleAccess().getSemicolonKeyword_8_2());
+				}
+			)?
 		)?
 		(
 			otherlv_15='basePackage'
@@ -450,14 +498,1625 @@ ruleProjectModule returns [EObject current=null]
 					}
 				)
 			)
-			otherlv_17=';'
-			{
-				newLeafNode(otherlv_17, grammarAccess.getProjectModuleAccess().getSemicolonKeyword_9_2());
-			}
+			(
+				otherlv_17=';'
+				{
+					newLeafNode(otherlv_17, grammarAccess.getProjectModuleAccess().getSemicolonKeyword_9_2());
+				}
+			)?
 		)?
 		otherlv_18='}'
 		{
 			newLeafNode(otherlv_18, grammarAccess.getProjectModuleAccess().getRightCurlyBracketKeyword_10());
+		}
+	)
+;
+
+// Entry rule entryRuleTestGenBlock
+entryRuleTestGenBlock returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTestGenBlockRule()); }
+	iv_ruleTestGenBlock=ruleTestGenBlock
+	{ $current=$iv_ruleTestGenBlock.current; }
+	EOF;
+
+// Rule TestGenBlock
+ruleTestGenBlock returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='testgen'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getTestGenBlockAccess().getTestgenKeyword_0());
+		}
+		otherlv_1='{'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getTestGenBlockAccess().getLeftCurlyBracketKeyword_1());
+		}
+		(
+			otherlv_2='initialInstruction'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getTestGenBlockAccess().getInitialInstructionKeyword_2_0());
+			}
+			(
+				(
+					lv_initialInstruction_3_0=RULE_STRING
+					{
+						newLeafNode(lv_initialInstruction_3_0, grammarAccess.getTestGenBlockAccess().getInitialInstructionSTRINGTerminalRuleCall_2_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getTestGenBlockRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"initialInstruction",
+							lv_initialInstruction_3_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+				)
+			)
+			(
+				otherlv_4=';'
+				{
+					newLeafNode(otherlv_4, grammarAccess.getTestGenBlockAccess().getSemicolonKeyword_2_2());
+				}
+			)?
+		)?
+		(
+			otherlv_5='forbiddenPatterns'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getTestGenBlockAccess().getForbiddenPatternsKeyword_3_0());
+			}
+			otherlv_6='['
+			{
+				newLeafNode(otherlv_6, grammarAccess.getTestGenBlockAccess().getLeftSquareBracketKeyword_3_1());
+			}
+			(
+				(
+					lv_forbiddenPatterns_7_0=RULE_STRING
+					{
+						newLeafNode(lv_forbiddenPatterns_7_0, grammarAccess.getTestGenBlockAccess().getForbiddenPatternsSTRINGTerminalRuleCall_3_2_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getTestGenBlockRule());
+						}
+						addWithLastConsumed(
+							$current,
+							"forbiddenPatterns",
+							lv_forbiddenPatterns_7_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+				)
+			)
+			(
+				otherlv_8=','
+				{
+					newLeafNode(otherlv_8, grammarAccess.getTestGenBlockAccess().getCommaKeyword_3_3_0());
+				}
+				(
+					(
+						lv_forbiddenPatterns_9_0=RULE_STRING
+						{
+							newLeafNode(lv_forbiddenPatterns_9_0, grammarAccess.getTestGenBlockAccess().getForbiddenPatternsSTRINGTerminalRuleCall_3_3_1_0());
+						}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getTestGenBlockRule());
+							}
+							addWithLastConsumed(
+								$current,
+								"forbiddenPatterns",
+								lv_forbiddenPatterns_9_0,
+								"org.eclipse.xtext.common.Terminals.STRING");
+						}
+					)
+				)
+			)*
+			otherlv_10=']'
+			{
+				newLeafNode(otherlv_10, grammarAccess.getTestGenBlockAccess().getRightSquareBracketKeyword_3_4());
+			}
+			(
+				otherlv_11=';'
+				{
+					newLeafNode(otherlv_11, grammarAccess.getTestGenBlockAccess().getSemicolonKeyword_3_5());
+				}
+			)?
+		)?
+		(
+			otherlv_12='maxRetries'
+			{
+				newLeafNode(otherlv_12, grammarAccess.getTestGenBlockAccess().getMaxRetriesKeyword_4_0());
+			}
+			(
+				(
+					lv_maxRetries_13_0=RULE_INT
+					{
+						newLeafNode(lv_maxRetries_13_0, grammarAccess.getTestGenBlockAccess().getMaxRetriesINTTerminalRuleCall_4_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getTestGenBlockRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"maxRetries",
+							lv_maxRetries_13_0,
+							"org.eclipse.xtext.common.Terminals.INT");
+					}
+				)
+			)
+			(
+				otherlv_14=';'
+				{
+					newLeafNode(otherlv_14, grammarAccess.getTestGenBlockAccess().getSemicolonKeyword_4_2());
+				}
+			)?
+		)?
+		(
+			otherlv_15='parseCheck'
+			{
+				newLeafNode(otherlv_15, grammarAccess.getTestGenBlockAccess().getParseCheckKeyword_5_0());
+			}
+			(
+				(
+					(
+						lv_parseCheck_16_1='true'
+						{
+							newLeafNode(lv_parseCheck_16_1, grammarAccess.getTestGenBlockAccess().getParseCheckTrueKeyword_5_1_0_0());
+						}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getTestGenBlockRule());
+							}
+							setWithLastConsumed($current, "parseCheck", lv_parseCheck_16_1, null);
+						}
+						    |
+						lv_parseCheck_16_2='false'
+						{
+							newLeafNode(lv_parseCheck_16_2, grammarAccess.getTestGenBlockAccess().getParseCheckFalseKeyword_5_1_0_1());
+						}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getTestGenBlockRule());
+							}
+							setWithLastConsumed($current, "parseCheck", lv_parseCheck_16_2, null);
+						}
+					)
+				)
+			)
+			(
+				otherlv_17=';'
+				{
+					newLeafNode(otherlv_17, grammarAccess.getTestGenBlockAccess().getSemicolonKeyword_5_2());
+				}
+			)?
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getTestGenBlockAccess().getRemediationsTestGenRemediationsBlockParserRuleCall_6_0());
+				}
+				lv_remediations_18_0=ruleTestGenRemediationsBlock
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getTestGenBlockRule());
+					}
+					set(
+						$current,
+						"remediations",
+						lv_remediations_18_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.TestGenRemediationsBlock");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getTestGenBlockAccess().getLegacyRemediationRulesTestGenLegacyRemediationRulesBlockParserRuleCall_7_0());
+				}
+				lv_legacyRemediationRules_19_0=ruleTestGenLegacyRemediationRulesBlock
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getTestGenBlockRule());
+					}
+					set(
+						$current,
+						"legacyRemediationRules",
+						lv_legacyRemediationRules_19_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.TestGenLegacyRemediationRulesBlock");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getTestGenBlockAccess().getUsageTestGenUsageBlockParserRuleCall_8_0());
+				}
+				lv_usage_20_0=ruleTestGenUsageBlock
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getTestGenBlockRule());
+					}
+					set(
+						$current,
+						"usage",
+						lv_usage_20_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.TestGenUsageBlock");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getTestGenBlockAccess().getModulePoliciesTestGenModulePolicyParserRuleCall_9_0());
+				}
+				lv_modulePolicies_21_0=ruleTestGenModulePolicy
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getTestGenBlockRule());
+					}
+					add(
+						$current,
+						"modulePolicies",
+						lv_modulePolicies_21_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.TestGenModulePolicy");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_22='}'
+		{
+			newLeafNode(otherlv_22, grammarAccess.getTestGenBlockAccess().getRightCurlyBracketKeyword_10());
+		}
+	)
+;
+
+// Entry rule entryRuleTestGenModulePolicy
+entryRuleTestGenModulePolicy returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTestGenModulePolicyRule()); }
+	iv_ruleTestGenModulePolicy=ruleTestGenModulePolicy
+	{ $current=$iv_ruleTestGenModulePolicy.current; }
+	EOF;
+
+// Rule TestGenModulePolicy
+ruleTestGenModulePolicy returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='forModule'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getTestGenModulePolicyAccess().getForModuleKeyword_0());
+		}
+		(
+			(
+				lv_moduleId_1_0=RULE_STRING
+				{
+					newLeafNode(lv_moduleId_1_0, grammarAccess.getTestGenModulePolicyAccess().getModuleIdSTRINGTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTestGenModulePolicyRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"moduleId",
+						lv_moduleId_1_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getTestGenModulePolicyAccess().getLeftCurlyBracketKeyword_2());
+		}
+		(
+			otherlv_3='initialInstruction'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getTestGenModulePolicyAccess().getInitialInstructionKeyword_3_0());
+			}
+			(
+				(
+					lv_initialInstruction_4_0=RULE_STRING
+					{
+						newLeafNode(lv_initialInstruction_4_0, grammarAccess.getTestGenModulePolicyAccess().getInitialInstructionSTRINGTerminalRuleCall_3_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getTestGenModulePolicyRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"initialInstruction",
+							lv_initialInstruction_4_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+				)
+			)
+			(
+				otherlv_5=';'
+				{
+					newLeafNode(otherlv_5, grammarAccess.getTestGenModulePolicyAccess().getSemicolonKeyword_3_2());
+				}
+			)?
+		)?
+		(
+			otherlv_6='forbiddenPatterns'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getTestGenModulePolicyAccess().getForbiddenPatternsKeyword_4_0());
+			}
+			otherlv_7='['
+			{
+				newLeafNode(otherlv_7, grammarAccess.getTestGenModulePolicyAccess().getLeftSquareBracketKeyword_4_1());
+			}
+			(
+				(
+					lv_forbiddenPatterns_8_0=RULE_STRING
+					{
+						newLeafNode(lv_forbiddenPatterns_8_0, grammarAccess.getTestGenModulePolicyAccess().getForbiddenPatternsSTRINGTerminalRuleCall_4_2_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getTestGenModulePolicyRule());
+						}
+						addWithLastConsumed(
+							$current,
+							"forbiddenPatterns",
+							lv_forbiddenPatterns_8_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+				)
+			)
+			(
+				otherlv_9=','
+				{
+					newLeafNode(otherlv_9, grammarAccess.getTestGenModulePolicyAccess().getCommaKeyword_4_3_0());
+				}
+				(
+					(
+						lv_forbiddenPatterns_10_0=RULE_STRING
+						{
+							newLeafNode(lv_forbiddenPatterns_10_0, grammarAccess.getTestGenModulePolicyAccess().getForbiddenPatternsSTRINGTerminalRuleCall_4_3_1_0());
+						}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getTestGenModulePolicyRule());
+							}
+							addWithLastConsumed(
+								$current,
+								"forbiddenPatterns",
+								lv_forbiddenPatterns_10_0,
+								"org.eclipse.xtext.common.Terminals.STRING");
+						}
+					)
+				)
+			)*
+			otherlv_11=']'
+			{
+				newLeafNode(otherlv_11, grammarAccess.getTestGenModulePolicyAccess().getRightSquareBracketKeyword_4_4());
+			}
+			(
+				otherlv_12=';'
+				{
+					newLeafNode(otherlv_12, grammarAccess.getTestGenModulePolicyAccess().getSemicolonKeyword_4_5());
+				}
+			)?
+		)?
+		(
+			otherlv_13='maxRetries'
+			{
+				newLeafNode(otherlv_13, grammarAccess.getTestGenModulePolicyAccess().getMaxRetriesKeyword_5_0());
+			}
+			(
+				(
+					lv_maxRetries_14_0=RULE_INT
+					{
+						newLeafNode(lv_maxRetries_14_0, grammarAccess.getTestGenModulePolicyAccess().getMaxRetriesINTTerminalRuleCall_5_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getTestGenModulePolicyRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"maxRetries",
+							lv_maxRetries_14_0,
+							"org.eclipse.xtext.common.Terminals.INT");
+					}
+				)
+			)
+			(
+				otherlv_15=';'
+				{
+					newLeafNode(otherlv_15, grammarAccess.getTestGenModulePolicyAccess().getSemicolonKeyword_5_2());
+				}
+			)?
+		)?
+		(
+			otherlv_16='parseCheck'
+			{
+				newLeafNode(otherlv_16, grammarAccess.getTestGenModulePolicyAccess().getParseCheckKeyword_6_0());
+			}
+			(
+				(
+					(
+						lv_parseCheck_17_1='true'
+						{
+							newLeafNode(lv_parseCheck_17_1, grammarAccess.getTestGenModulePolicyAccess().getParseCheckTrueKeyword_6_1_0_0());
+						}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getTestGenModulePolicyRule());
+							}
+							setWithLastConsumed($current, "parseCheck", lv_parseCheck_17_1, null);
+						}
+						    |
+						lv_parseCheck_17_2='false'
+						{
+							newLeafNode(lv_parseCheck_17_2, grammarAccess.getTestGenModulePolicyAccess().getParseCheckFalseKeyword_6_1_0_1());
+						}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getTestGenModulePolicyRule());
+							}
+							setWithLastConsumed($current, "parseCheck", lv_parseCheck_17_2, null);
+						}
+					)
+				)
+			)
+			(
+				otherlv_18=';'
+				{
+					newLeafNode(otherlv_18, grammarAccess.getTestGenModulePolicyAccess().getSemicolonKeyword_6_2());
+				}
+			)?
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getTestGenModulePolicyAccess().getRemediationsTestGenRemediationsBlockParserRuleCall_7_0());
+				}
+				lv_remediations_19_0=ruleTestGenRemediationsBlock
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getTestGenModulePolicyRule());
+					}
+					set(
+						$current,
+						"remediations",
+						lv_remediations_19_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.TestGenRemediationsBlock");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getTestGenModulePolicyAccess().getLegacyRemediationRulesTestGenLegacyRemediationRulesBlockParserRuleCall_8_0());
+				}
+				lv_legacyRemediationRules_20_0=ruleTestGenLegacyRemediationRulesBlock
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getTestGenModulePolicyRule());
+					}
+					set(
+						$current,
+						"legacyRemediationRules",
+						lv_legacyRemediationRules_20_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.TestGenLegacyRemediationRulesBlock");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getTestGenModulePolicyAccess().getUsageTestGenUsageBlockParserRuleCall_9_0());
+				}
+				lv_usage_21_0=ruleTestGenUsageBlock
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getTestGenModulePolicyRule());
+					}
+					set(
+						$current,
+						"usage",
+						lv_usage_21_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.TestGenUsageBlock");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+		otherlv_22='}'
+		{
+			newLeafNode(otherlv_22, grammarAccess.getTestGenModulePolicyAccess().getRightCurlyBracketKeyword_10());
+		}
+	)
+;
+
+// Entry rule entryRuleTestGenRemediationsBlock
+entryRuleTestGenRemediationsBlock returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTestGenRemediationsBlockRule()); }
+	iv_ruleTestGenRemediationsBlock=ruleTestGenRemediationsBlock
+	{ $current=$iv_ruleTestGenRemediationsBlock.current; }
+	EOF;
+
+// Rule TestGenRemediationsBlock
+ruleTestGenRemediationsBlock returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='remediations'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getTestGenRemediationsBlockAccess().getRemediationsKeyword_0());
+		}
+		otherlv_1='{'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getTestGenRemediationsBlockAccess().getLeftCurlyBracketKeyword_1());
+		}
+		(
+			otherlv_2='maxRetries'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getTestGenRemediationsBlockAccess().getMaxRetriesKeyword_2_0());
+			}
+			(
+				(
+					lv_maxRetries_3_0=RULE_INT
+					{
+						newLeafNode(lv_maxRetries_3_0, grammarAccess.getTestGenRemediationsBlockAccess().getMaxRetriesINTTerminalRuleCall_2_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getTestGenRemediationsBlockRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"maxRetries",
+							lv_maxRetries_3_0,
+							"org.eclipse.xtext.common.Terminals.INT");
+					}
+				)
+			)
+			(
+				otherlv_4=';'
+				{
+					newLeafNode(otherlv_4, grammarAccess.getTestGenRemediationsBlockAccess().getSemicolonKeyword_2_2());
+				}
+			)?
+		)?
+		(
+			otherlv_5='parseCheck'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getTestGenRemediationsBlockAccess().getParseCheckKeyword_3_0());
+			}
+			(
+				(
+					(
+						lv_parseCheck_6_1='true'
+						{
+							newLeafNode(lv_parseCheck_6_1, grammarAccess.getTestGenRemediationsBlockAccess().getParseCheckTrueKeyword_3_1_0_0());
+						}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getTestGenRemediationsBlockRule());
+							}
+							setWithLastConsumed($current, "parseCheck", lv_parseCheck_6_1, null);
+						}
+						    |
+						lv_parseCheck_6_2='false'
+						{
+							newLeafNode(lv_parseCheck_6_2, grammarAccess.getTestGenRemediationsBlockAccess().getParseCheckFalseKeyword_3_1_0_1());
+						}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getTestGenRemediationsBlockRule());
+							}
+							setWithLastConsumed($current, "parseCheck", lv_parseCheck_6_2, null);
+						}
+					)
+				)
+			)
+			(
+				otherlv_7=';'
+				{
+					newLeafNode(otherlv_7, grammarAccess.getTestGenRemediationsBlockAccess().getSemicolonKeyword_3_2());
+				}
+			)?
+		)?
+		(
+			otherlv_8='defaultCorrection'
+			{
+				newLeafNode(otherlv_8, grammarAccess.getTestGenRemediationsBlockAccess().getDefaultCorrectionKeyword_4_0());
+			}
+			(
+				(
+					lv_defaultCorrection_9_0=RULE_STRING
+					{
+						newLeafNode(lv_defaultCorrection_9_0, grammarAccess.getTestGenRemediationsBlockAccess().getDefaultCorrectionSTRINGTerminalRuleCall_4_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getTestGenRemediationsBlockRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"defaultCorrection",
+							lv_defaultCorrection_9_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+				)
+			)
+			(
+				otherlv_10=';'
+				{
+					newLeafNode(otherlv_10, grammarAccess.getTestGenRemediationsBlockAccess().getSemicolonKeyword_4_2());
+				}
+			)?
+		)?
+		(
+			otherlv_11='forbiddenPatterns'
+			{
+				newLeafNode(otherlv_11, grammarAccess.getTestGenRemediationsBlockAccess().getForbiddenPatternsKeyword_5_0());
+			}
+			otherlv_12='['
+			{
+				newLeafNode(otherlv_12, grammarAccess.getTestGenRemediationsBlockAccess().getLeftSquareBracketKeyword_5_1());
+			}
+			(
+				(
+					lv_forbiddenPatterns_13_0=RULE_STRING
+					{
+						newLeafNode(lv_forbiddenPatterns_13_0, grammarAccess.getTestGenRemediationsBlockAccess().getForbiddenPatternsSTRINGTerminalRuleCall_5_2_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getTestGenRemediationsBlockRule());
+						}
+						addWithLastConsumed(
+							$current,
+							"forbiddenPatterns",
+							lv_forbiddenPatterns_13_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+				)
+			)
+			(
+				otherlv_14=','
+				{
+					newLeafNode(otherlv_14, grammarAccess.getTestGenRemediationsBlockAccess().getCommaKeyword_5_3_0());
+				}
+				(
+					(
+						lv_forbiddenPatterns_15_0=RULE_STRING
+						{
+							newLeafNode(lv_forbiddenPatterns_15_0, grammarAccess.getTestGenRemediationsBlockAccess().getForbiddenPatternsSTRINGTerminalRuleCall_5_3_1_0());
+						}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getTestGenRemediationsBlockRule());
+							}
+							addWithLastConsumed(
+								$current,
+								"forbiddenPatterns",
+								lv_forbiddenPatterns_15_0,
+								"org.eclipse.xtext.common.Terminals.STRING");
+						}
+					)
+				)
+			)*
+			otherlv_16=']'
+			{
+				newLeafNode(otherlv_16, grammarAccess.getTestGenRemediationsBlockAccess().getRightSquareBracketKeyword_5_4());
+			}
+			(
+				otherlv_17=';'
+				{
+					newLeafNode(otherlv_17, grammarAccess.getTestGenRemediationsBlockAccess().getSemicolonKeyword_5_5());
+				}
+			)?
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getTestGenRemediationsBlockAccess().getRulesContainerTestGenRemediationRulesContainerParserRuleCall_6_0());
+				}
+				lv_rulesContainer_18_0=ruleTestGenRemediationRulesContainer
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getTestGenRemediationsBlockRule());
+					}
+					set(
+						$current,
+						"rulesContainer",
+						lv_rulesContainer_18_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.TestGenRemediationRulesContainer");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+		otherlv_19='}'
+		{
+			newLeafNode(otherlv_19, grammarAccess.getTestGenRemediationsBlockAccess().getRightCurlyBracketKeyword_7());
+		}
+	)
+;
+
+// Entry rule entryRuleTestGenRemediationRulesContainer
+entryRuleTestGenRemediationRulesContainer returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTestGenRemediationRulesContainerRule()); }
+	iv_ruleTestGenRemediationRulesContainer=ruleTestGenRemediationRulesContainer
+	{ $current=$iv_ruleTestGenRemediationRulesContainer.current; }
+	EOF;
+
+// Rule TestGenRemediationRulesContainer
+ruleTestGenRemediationRulesContainer returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='rules'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getTestGenRemediationRulesContainerAccess().getRulesKeyword_0());
+		}
+		otherlv_1='{'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getTestGenRemediationRulesContainerAccess().getLeftCurlyBracketKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getTestGenRemediationRulesContainerAccess().getPatternRulesTestGenPatternRemediationRuleParserRuleCall_2_0());
+				}
+				lv_patternRules_2_0=ruleTestGenPatternRemediationRule
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getTestGenRemediationRulesContainerRule());
+					}
+					add(
+						$current,
+						"patternRules",
+						lv_patternRules_2_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.TestGenPatternRemediationRule");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getTestGenRemediationRulesContainerAccess().getDefaultRemediationTestGenDefaultRemediationRuleParserRuleCall_3_0());
+				}
+				lv_defaultRemediation_3_0=ruleTestGenDefaultRemediationRule
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getTestGenRemediationRulesContainerRule());
+					}
+					set(
+						$current,
+						"defaultRemediation",
+						lv_defaultRemediation_3_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.TestGenDefaultRemediationRule");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+		otherlv_4='}'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getTestGenRemediationRulesContainerAccess().getRightCurlyBracketKeyword_4());
+		}
+	)
+;
+
+// Entry rule entryRuleTestGenPatternRemediationRule
+entryRuleTestGenPatternRemediationRule returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTestGenPatternRemediationRuleRule()); }
+	iv_ruleTestGenPatternRemediationRule=ruleTestGenPatternRemediationRule
+	{ $current=$iv_ruleTestGenPatternRemediationRule.current; }
+	EOF;
+
+// Rule TestGenPatternRemediationRule
+ruleTestGenPatternRemediationRule returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='rule'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getTestGenPatternRemediationRuleAccess().getRuleKeyword_0());
+		}
+		otherlv_1='{'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getTestGenPatternRemediationRuleAccess().getLeftCurlyBracketKeyword_1());
+		}
+		otherlv_2='pattern'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getTestGenPatternRemediationRuleAccess().getPatternKeyword_2());
+		}
+		(
+			(
+				lv_pattern_3_0=RULE_STRING
+				{
+					newLeafNode(lv_pattern_3_0, grammarAccess.getTestGenPatternRemediationRuleAccess().getPatternSTRINGTerminalRuleCall_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTestGenPatternRemediationRuleRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"pattern",
+						lv_pattern_3_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		(
+			otherlv_4=';'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getTestGenPatternRemediationRuleAccess().getSemicolonKeyword_4());
+			}
+		)?
+		otherlv_5='code'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getTestGenPatternRemediationRuleAccess().getCodeKeyword_5());
+		}
+		(
+			(
+				lv_code_6_0=RULE_STRING
+				{
+					newLeafNode(lv_code_6_0, grammarAccess.getTestGenPatternRemediationRuleAccess().getCodeSTRINGTerminalRuleCall_6_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTestGenPatternRemediationRuleRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"code",
+						lv_code_6_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		(
+			otherlv_7=';'
+			{
+				newLeafNode(otherlv_7, grammarAccess.getTestGenPatternRemediationRuleAccess().getSemicolonKeyword_7());
+			}
+		)?
+		otherlv_8='correction'
+		{
+			newLeafNode(otherlv_8, grammarAccess.getTestGenPatternRemediationRuleAccess().getCorrectionKeyword_8());
+		}
+		(
+			(
+				lv_correction_9_0=RULE_STRING
+				{
+					newLeafNode(lv_correction_9_0, grammarAccess.getTestGenPatternRemediationRuleAccess().getCorrectionSTRINGTerminalRuleCall_9_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTestGenPatternRemediationRuleRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"correction",
+						lv_correction_9_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		(
+			otherlv_10=';'
+			{
+				newLeafNode(otherlv_10, grammarAccess.getTestGenPatternRemediationRuleAccess().getSemicolonKeyword_10());
+			}
+		)?
+		otherlv_11='}'
+		{
+			newLeafNode(otherlv_11, grammarAccess.getTestGenPatternRemediationRuleAccess().getRightCurlyBracketKeyword_11());
+		}
+	)
+;
+
+// Entry rule entryRuleTestGenDefaultRemediationRule
+entryRuleTestGenDefaultRemediationRule returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTestGenDefaultRemediationRuleRule()); }
+	iv_ruleTestGenDefaultRemediationRule=ruleTestGenDefaultRemediationRule
+	{ $current=$iv_ruleTestGenDefaultRemediationRule.current; }
+	EOF;
+
+// Rule TestGenDefaultRemediationRule
+ruleTestGenDefaultRemediationRule returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='default'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getTestGenDefaultRemediationRuleAccess().getDefaultKeyword_0());
+		}
+		otherlv_1='{'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getTestGenDefaultRemediationRuleAccess().getLeftCurlyBracketKeyword_1());
+		}
+		otherlv_2='code'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getTestGenDefaultRemediationRuleAccess().getCodeKeyword_2());
+		}
+		(
+			(
+				lv_code_3_0=RULE_STRING
+				{
+					newLeafNode(lv_code_3_0, grammarAccess.getTestGenDefaultRemediationRuleAccess().getCodeSTRINGTerminalRuleCall_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTestGenDefaultRemediationRuleRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"code",
+						lv_code_3_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		(
+			otherlv_4=';'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getTestGenDefaultRemediationRuleAccess().getSemicolonKeyword_4());
+			}
+		)?
+		otherlv_5='correction'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getTestGenDefaultRemediationRuleAccess().getCorrectionKeyword_5());
+		}
+		(
+			(
+				lv_correction_6_0=RULE_STRING
+				{
+					newLeafNode(lv_correction_6_0, grammarAccess.getTestGenDefaultRemediationRuleAccess().getCorrectionSTRINGTerminalRuleCall_6_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTestGenDefaultRemediationRuleRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"correction",
+						lv_correction_6_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		(
+			otherlv_7=';'
+			{
+				newLeafNode(otherlv_7, grammarAccess.getTestGenDefaultRemediationRuleAccess().getSemicolonKeyword_7());
+			}
+		)?
+		otherlv_8='}'
+		{
+			newLeafNode(otherlv_8, grammarAccess.getTestGenDefaultRemediationRuleAccess().getRightCurlyBracketKeyword_8());
+		}
+	)
+;
+
+// Entry rule entryRuleTestGenLegacyRemediationRulesBlock
+entryRuleTestGenLegacyRemediationRulesBlock returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTestGenLegacyRemediationRulesBlockRule()); }
+	iv_ruleTestGenLegacyRemediationRulesBlock=ruleTestGenLegacyRemediationRulesBlock
+	{ $current=$iv_ruleTestGenLegacyRemediationRulesBlock.current; }
+	EOF;
+
+// Rule TestGenLegacyRemediationRulesBlock
+ruleTestGenLegacyRemediationRulesBlock returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='remediationRules'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getTestGenLegacyRemediationRulesBlockAccess().getRemediationRulesKeyword_0());
+		}
+		otherlv_1='{'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getTestGenLegacyRemediationRulesBlockAccess().getLeftCurlyBracketKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getTestGenLegacyRemediationRulesBlockAccess().getRulesTestGenLegacyRemediationRuleParserRuleCall_2_0());
+				}
+				lv_rules_2_0=ruleTestGenLegacyRemediationRule
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getTestGenLegacyRemediationRulesBlockRule());
+					}
+					add(
+						$current,
+						"rules",
+						lv_rules_2_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.TestGenLegacyRemediationRule");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_3='}'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getTestGenLegacyRemediationRulesBlockAccess().getRightCurlyBracketKeyword_3());
+		}
+	)
+;
+
+// Entry rule entryRuleTestGenLegacyRemediationRule
+entryRuleTestGenLegacyRemediationRule returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTestGenLegacyRemediationRuleRule()); }
+	iv_ruleTestGenLegacyRemediationRule=ruleTestGenLegacyRemediationRule
+	{ $current=$iv_ruleTestGenLegacyRemediationRule.current; }
+	EOF;
+
+// Rule TestGenLegacyRemediationRule
+ruleTestGenLegacyRemediationRule returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='rule'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getTestGenLegacyRemediationRuleAccess().getRuleKeyword_0());
+		}
+		(
+			(
+				lv_key_1_0=RULE_STRING
+				{
+					newLeafNode(lv_key_1_0, grammarAccess.getTestGenLegacyRemediationRuleAccess().getKeySTRINGTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTestGenLegacyRemediationRuleRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"key",
+						lv_key_1_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_2='instruction'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getTestGenLegacyRemediationRuleAccess().getInstructionKeyword_2());
+		}
+		(
+			(
+				lv_instruction_3_0=RULE_STRING
+				{
+					newLeafNode(lv_instruction_3_0, grammarAccess.getTestGenLegacyRemediationRuleAccess().getInstructionSTRINGTerminalRuleCall_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTestGenLegacyRemediationRuleRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"instruction",
+						lv_instruction_3_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		(
+			otherlv_4=';'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getTestGenLegacyRemediationRuleAccess().getSemicolonKeyword_4());
+			}
+		)?
+	)
+;
+
+// Entry rule entryRuleLlmProvidersBlock
+entryRuleLlmProvidersBlock returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getLlmProvidersBlockRule()); }
+	iv_ruleLlmProvidersBlock=ruleLlmProvidersBlock
+	{ $current=$iv_ruleLlmProvidersBlock.current; }
+	EOF;
+
+// Rule LlmProvidersBlock
+ruleLlmProvidersBlock returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='llmProviders'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getLlmProvidersBlockAccess().getLlmProvidersKeyword_0());
+		}
+		otherlv_1='{'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getLlmProvidersBlockAccess().getLeftCurlyBracketKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getLlmProvidersBlockAccess().getProvidersNamedLlmProviderParserRuleCall_2_0());
+				}
+				lv_providers_2_0=ruleNamedLlmProvider
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getLlmProvidersBlockRule());
+					}
+					add(
+						$current,
+						"providers",
+						lv_providers_2_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.NamedLlmProvider");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_3='}'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getLlmProvidersBlockAccess().getRightCurlyBracketKeyword_3());
+		}
+	)
+;
+
+// Entry rule entryRuleNamedLlmProvider
+entryRuleNamedLlmProvider returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getNamedLlmProviderRule()); }
+	iv_ruleNamedLlmProvider=ruleNamedLlmProvider
+	{ $current=$iv_ruleNamedLlmProvider.current; }
+	EOF;
+
+// Rule NamedLlmProvider
+ruleNamedLlmProvider returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='provider'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getNamedLlmProviderAccess().getProviderKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_STRING
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getNamedLlmProviderAccess().getNameSTRINGTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getNamedLlmProviderRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getNamedLlmProviderAccess().getLeftCurlyBracketKeyword_2());
+		}
+		otherlv_3='kind'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getNamedLlmProviderAccess().getKindKeyword_3());
+		}
+		(
+			(
+				(
+					lv_kind_4_1='local'
+					{
+						newLeafNode(lv_kind_4_1, grammarAccess.getNamedLlmProviderAccess().getKindLocalKeyword_4_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getNamedLlmProviderRule());
+						}
+						setWithLastConsumed($current, "kind", lv_kind_4_1, null);
+					}
+					    |
+					lv_kind_4_2='openai'
+					{
+						newLeafNode(lv_kind_4_2, grammarAccess.getNamedLlmProviderAccess().getKindOpenaiKeyword_4_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getNamedLlmProviderRule());
+						}
+						setWithLastConsumed($current, "kind", lv_kind_4_2, null);
+					}
+					    |
+					lv_kind_4_3='ollama'
+					{
+						newLeafNode(lv_kind_4_3, grammarAccess.getNamedLlmProviderAccess().getKindOllamaKeyword_4_0_2());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getNamedLlmProviderRule());
+						}
+						setWithLastConsumed($current, "kind", lv_kind_4_3, null);
+					}
+				)
+			)
+		)
+		(
+			otherlv_5=';'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getNamedLlmProviderAccess().getSemicolonKeyword_5());
+			}
+		)?
+		(
+			otherlv_6='localModelPath'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getNamedLlmProviderAccess().getLocalModelPathKeyword_6_0());
+			}
+			(
+				(
+					lv_localModelPath_7_0=RULE_STRING
+					{
+						newLeafNode(lv_localModelPath_7_0, grammarAccess.getNamedLlmProviderAccess().getLocalModelPathSTRINGTerminalRuleCall_6_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getNamedLlmProviderRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"localModelPath",
+							lv_localModelPath_7_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+				)
+			)
+			(
+				otherlv_8=';'
+				{
+					newLeafNode(otherlv_8, grammarAccess.getNamedLlmProviderAccess().getSemicolonKeyword_6_2());
+				}
+			)?
+		)?
+		(
+			otherlv_9='model'
+			{
+				newLeafNode(otherlv_9, grammarAccess.getNamedLlmProviderAccess().getModelKeyword_7_0());
+			}
+			(
+				(
+					lv_model_10_0=RULE_STRING
+					{
+						newLeafNode(lv_model_10_0, grammarAccess.getNamedLlmProviderAccess().getModelSTRINGTerminalRuleCall_7_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getNamedLlmProviderRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"model",
+							lv_model_10_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+				)
+			)
+			(
+				otherlv_11=';'
+				{
+					newLeafNode(otherlv_11, grammarAccess.getNamedLlmProviderAccess().getSemicolonKeyword_7_2());
+				}
+			)?
+		)?
+		(
+			otherlv_12='endpoint'
+			{
+				newLeafNode(otherlv_12, grammarAccess.getNamedLlmProviderAccess().getEndpointKeyword_8_0());
+			}
+			(
+				(
+					lv_endpoint_13_0=RULE_STRING
+					{
+						newLeafNode(lv_endpoint_13_0, grammarAccess.getNamedLlmProviderAccess().getEndpointSTRINGTerminalRuleCall_8_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getNamedLlmProviderRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"endpoint",
+							lv_endpoint_13_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+				)
+			)
+			(
+				otherlv_14=';'
+				{
+					newLeafNode(otherlv_14, grammarAccess.getNamedLlmProviderAccess().getSemicolonKeyword_8_2());
+				}
+			)?
+		)?
+		otherlv_15='}'
+		{
+			newLeafNode(otherlv_15, grammarAccess.getNamedLlmProviderAccess().getRightCurlyBracketKeyword_9());
+		}
+	)
+;
+
+// Entry rule entryRuleTestGenUsageBlock
+entryRuleTestGenUsageBlock returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTestGenUsageBlockRule()); }
+	iv_ruleTestGenUsageBlock=ruleTestGenUsageBlock
+	{ $current=$iv_ruleTestGenUsageBlock.current; }
+	EOF;
+
+// Rule TestGenUsageBlock
+ruleTestGenUsageBlock returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='usage'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getTestGenUsageBlockAccess().getUsageKeyword_0());
+		}
+		otherlv_1='{'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getTestGenUsageBlockAccess().getLeftCurlyBracketKeyword_1());
+		}
+		(
+			otherlv_2='primary'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getTestGenUsageBlockAccess().getPrimaryKeyword_2_0());
+			}
+			(
+				(
+					lv_primaryProvider_3_0=RULE_STRING
+					{
+						newLeafNode(lv_primaryProvider_3_0, grammarAccess.getTestGenUsageBlockAccess().getPrimaryProviderSTRINGTerminalRuleCall_2_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getTestGenUsageBlockRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"primaryProvider",
+							lv_primaryProvider_3_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+				)
+			)
+			(
+				otherlv_4=';'
+				{
+					newLeafNode(otherlv_4, grammarAccess.getTestGenUsageBlockAccess().getSemicolonKeyword_2_2());
+				}
+			)?
+		)?
+		(
+			otherlv_5='secondary'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getTestGenUsageBlockAccess().getSecondaryKeyword_3_0());
+			}
+			(
+				(
+					lv_secondaryProvider_6_0=RULE_STRING
+					{
+						newLeafNode(lv_secondaryProvider_6_0, grammarAccess.getTestGenUsageBlockAccess().getSecondaryProviderSTRINGTerminalRuleCall_3_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getTestGenUsageBlockRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"secondaryProvider",
+							lv_secondaryProvider_6_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+				)
+			)
+			(
+				otherlv_7=';'
+				{
+					newLeafNode(otherlv_7, grammarAccess.getTestGenUsageBlockAccess().getSemicolonKeyword_3_2());
+				}
+			)?
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getTestGenUsageBlockAccess().getEscalationTestGenEscalationBlockParserRuleCall_4_0());
+				}
+				lv_escalation_8_0=ruleTestGenEscalationBlock
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getTestGenUsageBlockRule());
+					}
+					set(
+						$current,
+						"escalation",
+						lv_escalation_8_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.TestGenEscalationBlock");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+		otherlv_9='}'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getTestGenUsageBlockAccess().getRightCurlyBracketKeyword_5());
+		}
+	)
+;
+
+// Entry rule entryRuleTestGenEscalationBlock
+entryRuleTestGenEscalationBlock returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTestGenEscalationBlockRule()); }
+	iv_ruleTestGenEscalationBlock=ruleTestGenEscalationBlock
+	{ $current=$iv_ruleTestGenEscalationBlock.current; }
+	EOF;
+
+// Rule TestGenEscalationBlock
+ruleTestGenEscalationBlock returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='escalation'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getTestGenEscalationBlockAccess().getEscalationKeyword_0());
+		}
+		otherlv_1='{'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getTestGenEscalationBlockAccess().getLeftCurlyBracketKeyword_1());
+		}
+		(
+			otherlv_2='enabled'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getTestGenEscalationBlockAccess().getEnabledKeyword_2_0());
+			}
+			(
+				(
+					(
+						lv_enabled_3_1='true'
+						{
+							newLeafNode(lv_enabled_3_1, grammarAccess.getTestGenEscalationBlockAccess().getEnabledTrueKeyword_2_1_0_0());
+						}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getTestGenEscalationBlockRule());
+							}
+							setWithLastConsumed($current, "enabled", lv_enabled_3_1, null);
+						}
+						    |
+						lv_enabled_3_2='false'
+						{
+							newLeafNode(lv_enabled_3_2, grammarAccess.getTestGenEscalationBlockAccess().getEnabledFalseKeyword_2_1_0_1());
+						}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getTestGenEscalationBlockRule());
+							}
+							setWithLastConsumed($current, "enabled", lv_enabled_3_2, null);
+						}
+					)
+				)
+			)
+			(
+				otherlv_4=';'
+				{
+					newLeafNode(otherlv_4, grammarAccess.getTestGenEscalationBlockAccess().getSemicolonKeyword_2_2());
+				}
+			)?
+		)?
+		(
+			otherlv_5='escalateAtRetry'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getTestGenEscalationBlockAccess().getEscalateAtRetryKeyword_3_0());
+			}
+			(
+				(
+					lv_escalateAtRetry_6_0=RULE_INT
+					{
+						newLeafNode(lv_escalateAtRetry_6_0, grammarAccess.getTestGenEscalationBlockAccess().getEscalateAtRetryINTTerminalRuleCall_3_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getTestGenEscalationBlockRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"escalateAtRetry",
+							lv_escalateAtRetry_6_0,
+							"org.eclipse.xtext.common.Terminals.INT");
+					}
+				)
+			)
+			(
+				otherlv_7=';'
+				{
+					newLeafNode(otherlv_7, grammarAccess.getTestGenEscalationBlockAccess().getSemicolonKeyword_3_2());
+				}
+			)?
+		)?
+		(
+			otherlv_8='target'
+			{
+				newLeafNode(otherlv_8, grammarAccess.getTestGenEscalationBlockAccess().getTargetKeyword_4_0());
+			}
+			(
+				(
+					lv_target_9_0='secondary'
+					{
+						newLeafNode(lv_target_9_0, grammarAccess.getTestGenEscalationBlockAccess().getTargetSecondaryKeyword_4_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getTestGenEscalationBlockRule());
+						}
+						setWithLastConsumed($current, "target", lv_target_9_0, "secondary");
+					}
+				)
+			)
+			(
+				otherlv_10=';'
+				{
+					newLeafNode(otherlv_10, grammarAccess.getTestGenEscalationBlockAccess().getSemicolonKeyword_4_2());
+				}
+			)?
+		)?
+		otherlv_11='}'
+		{
+			newLeafNode(otherlv_11, grammarAccess.getTestGenEscalationBlockAccess().getRightCurlyBracketKeyword_5());
 		}
 	)
 ;
@@ -768,10 +2427,12 @@ ruleReturnTypeRule returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_5=';'
-		{
-			newLeafNode(otherlv_5, grammarAccess.getReturnTypeRuleAccess().getSemicolonKeyword_5());
-		}
+		(
+			otherlv_5=';'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getReturnTypeRuleAccess().getSemicolonKeyword_5());
+			}
+		)?
 	)
 ;
 
@@ -840,10 +2501,12 @@ ruleParamTypeRule returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_5=';'
-		{
-			newLeafNode(otherlv_5, grammarAccess.getParamTypeRuleAccess().getSemicolonKeyword_5());
-		}
+		(
+			otherlv_5=';'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getParamTypeRuleAccess().getSemicolonKeyword_5());
+			}
+		)?
 	)
 ;
 
@@ -909,10 +2572,12 @@ ruleRecordSelfReturnRule returns [EObject current=null]
 				)
 			)
 		)*
-		otherlv_4=';'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getRecordSelfReturnRuleAccess().getSemicolonKeyword_3());
-		}
+		(
+			otherlv_4=';'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getRecordSelfReturnRuleAccess().getSemicolonKeyword_3());
+			}
+		)?
 	)
 ;
 
@@ -978,10 +2643,12 @@ ruleMethodOverrideRule returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_4=';'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getMethodOverrideRuleAccess().getSemicolonKeyword_4());
-		}
+		(
+			otherlv_4=';'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getMethodOverrideRuleAccess().getSemicolonKeyword_4());
+			}
+		)?
 	)
 ;
 

@@ -11,6 +11,8 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
+import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 
@@ -18,10 +20,84 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class LibrettoProjectProfileSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected LibrettoProjectProfileGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_MethodOverrideRule_SemicolonKeyword_4_q;
+	protected AbstractElementAlias match_NamedLlmProvider_SemicolonKeyword_5_q;
+	protected AbstractElementAlias match_NamedLlmProvider_SemicolonKeyword_6_2_q;
+	protected AbstractElementAlias match_NamedLlmProvider_SemicolonKeyword_7_2_q;
+	protected AbstractElementAlias match_NamedLlmProvider_SemicolonKeyword_8_2_q;
+	protected AbstractElementAlias match_ParamTypeRule_SemicolonKeyword_5_q;
+	protected AbstractElementAlias match_ProjectBlock_SemicolonKeyword_2_2_q;
+	protected AbstractElementAlias match_ProjectModule_SemicolonKeyword_5_q;
+	protected AbstractElementAlias match_ProjectModule_SemicolonKeyword_6_2_q;
+	protected AbstractElementAlias match_ProjectModule_SemicolonKeyword_7_2_q;
+	protected AbstractElementAlias match_ProjectModule_SemicolonKeyword_8_2_q;
+	protected AbstractElementAlias match_ProjectModule_SemicolonKeyword_9_2_q;
+	protected AbstractElementAlias match_RecordSelfReturnRule_SemicolonKeyword_3_q;
+	protected AbstractElementAlias match_ReturnTypeRule_SemicolonKeyword_5_q;
+	protected AbstractElementAlias match_TestGenBlock_SemicolonKeyword_2_2_q;
+	protected AbstractElementAlias match_TestGenBlock_SemicolonKeyword_3_5_q;
+	protected AbstractElementAlias match_TestGenBlock_SemicolonKeyword_4_2_q;
+	protected AbstractElementAlias match_TestGenBlock_SemicolonKeyword_5_2_q;
+	protected AbstractElementAlias match_TestGenDefaultRemediationRule_SemicolonKeyword_4_q;
+	protected AbstractElementAlias match_TestGenDefaultRemediationRule_SemicolonKeyword_7_q;
+	protected AbstractElementAlias match_TestGenEscalationBlock_SemicolonKeyword_2_2_q;
+	protected AbstractElementAlias match_TestGenEscalationBlock_SemicolonKeyword_3_2_q;
+	protected AbstractElementAlias match_TestGenEscalationBlock_SemicolonKeyword_4_2_q;
+	protected AbstractElementAlias match_TestGenLegacyRemediationRule_SemicolonKeyword_4_q;
+	protected AbstractElementAlias match_TestGenModulePolicy_SemicolonKeyword_3_2_q;
+	protected AbstractElementAlias match_TestGenModulePolicy_SemicolonKeyword_4_5_q;
+	protected AbstractElementAlias match_TestGenModulePolicy_SemicolonKeyword_5_2_q;
+	protected AbstractElementAlias match_TestGenModulePolicy_SemicolonKeyword_6_2_q;
+	protected AbstractElementAlias match_TestGenPatternRemediationRule_SemicolonKeyword_10_q;
+	protected AbstractElementAlias match_TestGenPatternRemediationRule_SemicolonKeyword_4_q;
+	protected AbstractElementAlias match_TestGenPatternRemediationRule_SemicolonKeyword_7_q;
+	protected AbstractElementAlias match_TestGenRemediationsBlock_SemicolonKeyword_2_2_q;
+	protected AbstractElementAlias match_TestGenRemediationsBlock_SemicolonKeyword_3_2_q;
+	protected AbstractElementAlias match_TestGenRemediationsBlock_SemicolonKeyword_4_2_q;
+	protected AbstractElementAlias match_TestGenRemediationsBlock_SemicolonKeyword_5_5_q;
+	protected AbstractElementAlias match_TestGenUsageBlock_SemicolonKeyword_2_2_q;
+	protected AbstractElementAlias match_TestGenUsageBlock_SemicolonKeyword_3_2_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (LibrettoProjectProfileGrammarAccess) access;
+		match_MethodOverrideRule_SemicolonKeyword_4_q = new TokenAlias(false, true, grammarAccess.getMethodOverrideRuleAccess().getSemicolonKeyword_4());
+		match_NamedLlmProvider_SemicolonKeyword_5_q = new TokenAlias(false, true, grammarAccess.getNamedLlmProviderAccess().getSemicolonKeyword_5());
+		match_NamedLlmProvider_SemicolonKeyword_6_2_q = new TokenAlias(false, true, grammarAccess.getNamedLlmProviderAccess().getSemicolonKeyword_6_2());
+		match_NamedLlmProvider_SemicolonKeyword_7_2_q = new TokenAlias(false, true, grammarAccess.getNamedLlmProviderAccess().getSemicolonKeyword_7_2());
+		match_NamedLlmProvider_SemicolonKeyword_8_2_q = new TokenAlias(false, true, grammarAccess.getNamedLlmProviderAccess().getSemicolonKeyword_8_2());
+		match_ParamTypeRule_SemicolonKeyword_5_q = new TokenAlias(false, true, grammarAccess.getParamTypeRuleAccess().getSemicolonKeyword_5());
+		match_ProjectBlock_SemicolonKeyword_2_2_q = new TokenAlias(false, true, grammarAccess.getProjectBlockAccess().getSemicolonKeyword_2_2());
+		match_ProjectModule_SemicolonKeyword_5_q = new TokenAlias(false, true, grammarAccess.getProjectModuleAccess().getSemicolonKeyword_5());
+		match_ProjectModule_SemicolonKeyword_6_2_q = new TokenAlias(false, true, grammarAccess.getProjectModuleAccess().getSemicolonKeyword_6_2());
+		match_ProjectModule_SemicolonKeyword_7_2_q = new TokenAlias(false, true, grammarAccess.getProjectModuleAccess().getSemicolonKeyword_7_2());
+		match_ProjectModule_SemicolonKeyword_8_2_q = new TokenAlias(false, true, grammarAccess.getProjectModuleAccess().getSemicolonKeyword_8_2());
+		match_ProjectModule_SemicolonKeyword_9_2_q = new TokenAlias(false, true, grammarAccess.getProjectModuleAccess().getSemicolonKeyword_9_2());
+		match_RecordSelfReturnRule_SemicolonKeyword_3_q = new TokenAlias(false, true, grammarAccess.getRecordSelfReturnRuleAccess().getSemicolonKeyword_3());
+		match_ReturnTypeRule_SemicolonKeyword_5_q = new TokenAlias(false, true, grammarAccess.getReturnTypeRuleAccess().getSemicolonKeyword_5());
+		match_TestGenBlock_SemicolonKeyword_2_2_q = new TokenAlias(false, true, grammarAccess.getTestGenBlockAccess().getSemicolonKeyword_2_2());
+		match_TestGenBlock_SemicolonKeyword_3_5_q = new TokenAlias(false, true, grammarAccess.getTestGenBlockAccess().getSemicolonKeyword_3_5());
+		match_TestGenBlock_SemicolonKeyword_4_2_q = new TokenAlias(false, true, grammarAccess.getTestGenBlockAccess().getSemicolonKeyword_4_2());
+		match_TestGenBlock_SemicolonKeyword_5_2_q = new TokenAlias(false, true, grammarAccess.getTestGenBlockAccess().getSemicolonKeyword_5_2());
+		match_TestGenDefaultRemediationRule_SemicolonKeyword_4_q = new TokenAlias(false, true, grammarAccess.getTestGenDefaultRemediationRuleAccess().getSemicolonKeyword_4());
+		match_TestGenDefaultRemediationRule_SemicolonKeyword_7_q = new TokenAlias(false, true, grammarAccess.getTestGenDefaultRemediationRuleAccess().getSemicolonKeyword_7());
+		match_TestGenEscalationBlock_SemicolonKeyword_2_2_q = new TokenAlias(false, true, grammarAccess.getTestGenEscalationBlockAccess().getSemicolonKeyword_2_2());
+		match_TestGenEscalationBlock_SemicolonKeyword_3_2_q = new TokenAlias(false, true, grammarAccess.getTestGenEscalationBlockAccess().getSemicolonKeyword_3_2());
+		match_TestGenEscalationBlock_SemicolonKeyword_4_2_q = new TokenAlias(false, true, grammarAccess.getTestGenEscalationBlockAccess().getSemicolonKeyword_4_2());
+		match_TestGenLegacyRemediationRule_SemicolonKeyword_4_q = new TokenAlias(false, true, grammarAccess.getTestGenLegacyRemediationRuleAccess().getSemicolonKeyword_4());
+		match_TestGenModulePolicy_SemicolonKeyword_3_2_q = new TokenAlias(false, true, grammarAccess.getTestGenModulePolicyAccess().getSemicolonKeyword_3_2());
+		match_TestGenModulePolicy_SemicolonKeyword_4_5_q = new TokenAlias(false, true, grammarAccess.getTestGenModulePolicyAccess().getSemicolonKeyword_4_5());
+		match_TestGenModulePolicy_SemicolonKeyword_5_2_q = new TokenAlias(false, true, grammarAccess.getTestGenModulePolicyAccess().getSemicolonKeyword_5_2());
+		match_TestGenModulePolicy_SemicolonKeyword_6_2_q = new TokenAlias(false, true, grammarAccess.getTestGenModulePolicyAccess().getSemicolonKeyword_6_2());
+		match_TestGenPatternRemediationRule_SemicolonKeyword_10_q = new TokenAlias(false, true, grammarAccess.getTestGenPatternRemediationRuleAccess().getSemicolonKeyword_10());
+		match_TestGenPatternRemediationRule_SemicolonKeyword_4_q = new TokenAlias(false, true, grammarAccess.getTestGenPatternRemediationRuleAccess().getSemicolonKeyword_4());
+		match_TestGenPatternRemediationRule_SemicolonKeyword_7_q = new TokenAlias(false, true, grammarAccess.getTestGenPatternRemediationRuleAccess().getSemicolonKeyword_7());
+		match_TestGenRemediationsBlock_SemicolonKeyword_2_2_q = new TokenAlias(false, true, grammarAccess.getTestGenRemediationsBlockAccess().getSemicolonKeyword_2_2());
+		match_TestGenRemediationsBlock_SemicolonKeyword_3_2_q = new TokenAlias(false, true, grammarAccess.getTestGenRemediationsBlockAccess().getSemicolonKeyword_3_2());
+		match_TestGenRemediationsBlock_SemicolonKeyword_4_2_q = new TokenAlias(false, true, grammarAccess.getTestGenRemediationsBlockAccess().getSemicolonKeyword_4_2());
+		match_TestGenRemediationsBlock_SemicolonKeyword_5_5_q = new TokenAlias(false, true, grammarAccess.getTestGenRemediationsBlockAccess().getSemicolonKeyword_5_5());
+		match_TestGenUsageBlock_SemicolonKeyword_2_2_q = new TokenAlias(false, true, grammarAccess.getTestGenUsageBlockAccess().getSemicolonKeyword_2_2());
+		match_TestGenUsageBlock_SemicolonKeyword_3_2_q = new TokenAlias(false, true, grammarAccess.getTestGenUsageBlockAccess().getSemicolonKeyword_3_2());
 	}
 	
 	@Override
@@ -36,8 +112,705 @@ public class LibrettoProjectProfileSyntacticSequencer extends AbstractSyntacticS
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			acceptNodes(getLastNavigableState(), syntaxNodes);
+			if (match_MethodOverrideRule_SemicolonKeyword_4_q.equals(syntax))
+				emit_MethodOverrideRule_SemicolonKeyword_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_NamedLlmProvider_SemicolonKeyword_5_q.equals(syntax))
+				emit_NamedLlmProvider_SemicolonKeyword_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_NamedLlmProvider_SemicolonKeyword_6_2_q.equals(syntax))
+				emit_NamedLlmProvider_SemicolonKeyword_6_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_NamedLlmProvider_SemicolonKeyword_7_2_q.equals(syntax))
+				emit_NamedLlmProvider_SemicolonKeyword_7_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_NamedLlmProvider_SemicolonKeyword_8_2_q.equals(syntax))
+				emit_NamedLlmProvider_SemicolonKeyword_8_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ParamTypeRule_SemicolonKeyword_5_q.equals(syntax))
+				emit_ParamTypeRule_SemicolonKeyword_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ProjectBlock_SemicolonKeyword_2_2_q.equals(syntax))
+				emit_ProjectBlock_SemicolonKeyword_2_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ProjectModule_SemicolonKeyword_5_q.equals(syntax))
+				emit_ProjectModule_SemicolonKeyword_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ProjectModule_SemicolonKeyword_6_2_q.equals(syntax))
+				emit_ProjectModule_SemicolonKeyword_6_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ProjectModule_SemicolonKeyword_7_2_q.equals(syntax))
+				emit_ProjectModule_SemicolonKeyword_7_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ProjectModule_SemicolonKeyword_8_2_q.equals(syntax))
+				emit_ProjectModule_SemicolonKeyword_8_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ProjectModule_SemicolonKeyword_9_2_q.equals(syntax))
+				emit_ProjectModule_SemicolonKeyword_9_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RecordSelfReturnRule_SemicolonKeyword_3_q.equals(syntax))
+				emit_RecordSelfReturnRule_SemicolonKeyword_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ReturnTypeRule_SemicolonKeyword_5_q.equals(syntax))
+				emit_ReturnTypeRule_SemicolonKeyword_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TestGenBlock_SemicolonKeyword_2_2_q.equals(syntax))
+				emit_TestGenBlock_SemicolonKeyword_2_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TestGenBlock_SemicolonKeyword_3_5_q.equals(syntax))
+				emit_TestGenBlock_SemicolonKeyword_3_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TestGenBlock_SemicolonKeyword_4_2_q.equals(syntax))
+				emit_TestGenBlock_SemicolonKeyword_4_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TestGenBlock_SemicolonKeyword_5_2_q.equals(syntax))
+				emit_TestGenBlock_SemicolonKeyword_5_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TestGenDefaultRemediationRule_SemicolonKeyword_4_q.equals(syntax))
+				emit_TestGenDefaultRemediationRule_SemicolonKeyword_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TestGenDefaultRemediationRule_SemicolonKeyword_7_q.equals(syntax))
+				emit_TestGenDefaultRemediationRule_SemicolonKeyword_7_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TestGenEscalationBlock_SemicolonKeyword_2_2_q.equals(syntax))
+				emit_TestGenEscalationBlock_SemicolonKeyword_2_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TestGenEscalationBlock_SemicolonKeyword_3_2_q.equals(syntax))
+				emit_TestGenEscalationBlock_SemicolonKeyword_3_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TestGenEscalationBlock_SemicolonKeyword_4_2_q.equals(syntax))
+				emit_TestGenEscalationBlock_SemicolonKeyword_4_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TestGenLegacyRemediationRule_SemicolonKeyword_4_q.equals(syntax))
+				emit_TestGenLegacyRemediationRule_SemicolonKeyword_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TestGenModulePolicy_SemicolonKeyword_3_2_q.equals(syntax))
+				emit_TestGenModulePolicy_SemicolonKeyword_3_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TestGenModulePolicy_SemicolonKeyword_4_5_q.equals(syntax))
+				emit_TestGenModulePolicy_SemicolonKeyword_4_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TestGenModulePolicy_SemicolonKeyword_5_2_q.equals(syntax))
+				emit_TestGenModulePolicy_SemicolonKeyword_5_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TestGenModulePolicy_SemicolonKeyword_6_2_q.equals(syntax))
+				emit_TestGenModulePolicy_SemicolonKeyword_6_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TestGenPatternRemediationRule_SemicolonKeyword_10_q.equals(syntax))
+				emit_TestGenPatternRemediationRule_SemicolonKeyword_10_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TestGenPatternRemediationRule_SemicolonKeyword_4_q.equals(syntax))
+				emit_TestGenPatternRemediationRule_SemicolonKeyword_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TestGenPatternRemediationRule_SemicolonKeyword_7_q.equals(syntax))
+				emit_TestGenPatternRemediationRule_SemicolonKeyword_7_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TestGenRemediationsBlock_SemicolonKeyword_2_2_q.equals(syntax))
+				emit_TestGenRemediationsBlock_SemicolonKeyword_2_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TestGenRemediationsBlock_SemicolonKeyword_3_2_q.equals(syntax))
+				emit_TestGenRemediationsBlock_SemicolonKeyword_3_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TestGenRemediationsBlock_SemicolonKeyword_4_2_q.equals(syntax))
+				emit_TestGenRemediationsBlock_SemicolonKeyword_4_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TestGenRemediationsBlock_SemicolonKeyword_5_5_q.equals(syntax))
+				emit_TestGenRemediationsBlock_SemicolonKeyword_5_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TestGenUsageBlock_SemicolonKeyword_2_2_q.equals(syntax))
+				emit_TestGenUsageBlock_SemicolonKeyword_2_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TestGenUsageBlock_SemicolonKeyword_3_2_q.equals(syntax))
+				emit_TestGenUsageBlock_SemicolonKeyword_3_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     javaType=JavaType (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_MethodOverrideRule_SemicolonKeyword_4_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     kind='local' (ambiguity) 'endpoint' endpoint=STRING
+	 *     kind='local' (ambiguity) 'localModelPath' localModelPath=STRING
+	 *     kind='local' (ambiguity) 'model' model=STRING
+	 *     kind='local' (ambiguity) '}' (rule end)
+	 *     kind='ollama' (ambiguity) 'endpoint' endpoint=STRING
+	 *     kind='ollama' (ambiguity) 'localModelPath' localModelPath=STRING
+	 *     kind='ollama' (ambiguity) 'model' model=STRING
+	 *     kind='ollama' (ambiguity) '}' (rule end)
+	 *     kind='openai' (ambiguity) 'endpoint' endpoint=STRING
+	 *     kind='openai' (ambiguity) 'localModelPath' localModelPath=STRING
+	 *     kind='openai' (ambiguity) 'model' model=STRING
+	 *     kind='openai' (ambiguity) '}' (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_NamedLlmProvider_SemicolonKeyword_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     localModelPath=STRING (ambiguity) 'endpoint' endpoint=STRING
+	 *     localModelPath=STRING (ambiguity) 'model' model=STRING
+	 *     localModelPath=STRING (ambiguity) '}' (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_NamedLlmProvider_SemicolonKeyword_6_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     model=STRING (ambiguity) 'endpoint' endpoint=STRING
+	 *     model=STRING (ambiguity) '}' (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_NamedLlmProvider_SemicolonKeyword_7_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     endpoint=STRING (ambiguity) '}' (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_NamedLlmProvider_SemicolonKeyword_8_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     javaType=JavaType (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_ParamTypeRule_SemicolonKeyword_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     rootDir=STRING (ambiguity) '}' (rule end)
+	 *     rootDir=STRING (ambiguity) modules=ModulesBlock
+	 *     rootDir=STRING (ambiguity) testGen=TestGenBlock
+	 
+	 * </pre>
+	 */
+	protected void emit_ProjectBlock_SemicolonKeyword_2_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     dir=STRING (ambiguity) 'basePackage' basePackage=STRING
+	 *     dir=STRING (ambiguity) 'mainJavaDir' mainJavaDir=STRING
+	 *     dir=STRING (ambiguity) 'specsDir' specsDir=STRING
+	 *     dir=STRING (ambiguity) 'testsDir' testsDir=STRING
+	 *     dir=STRING (ambiguity) '}' (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_ProjectModule_SemicolonKeyword_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     specsDir=STRING (ambiguity) 'basePackage' basePackage=STRING
+	 *     specsDir=STRING (ambiguity) 'mainJavaDir' mainJavaDir=STRING
+	 *     specsDir=STRING (ambiguity) 'testsDir' testsDir=STRING
+	 *     specsDir=STRING (ambiguity) '}' (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_ProjectModule_SemicolonKeyword_6_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     testsDir=STRING (ambiguity) 'basePackage' basePackage=STRING
+	 *     testsDir=STRING (ambiguity) 'mainJavaDir' mainJavaDir=STRING
+	 *     testsDir=STRING (ambiguity) '}' (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_ProjectModule_SemicolonKeyword_7_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     mainJavaDir=STRING (ambiguity) 'basePackage' basePackage=STRING
+	 *     mainJavaDir=STRING (ambiguity) '}' (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_ProjectModule_SemicolonKeyword_8_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     basePackage=STRING (ambiguity) '}' (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_ProjectModule_SemicolonKeyword_9_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     methods+=ID (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_RecordSelfReturnRule_SemicolonKeyword_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     javaType=JavaType (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_ReturnTypeRule_SemicolonKeyword_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     initialInstruction=STRING (ambiguity) 'forbiddenPatterns' '[' forbiddenPatterns+=STRING
+	 *     initialInstruction=STRING (ambiguity) 'maxRetries' maxRetries=INT
+	 *     initialInstruction=STRING (ambiguity) 'parseCheck' parseCheck='false'
+	 *     initialInstruction=STRING (ambiguity) 'parseCheck' parseCheck='true'
+	 *     initialInstruction=STRING (ambiguity) '}' (rule end)
+	 *     initialInstruction=STRING (ambiguity) legacyRemediationRules=TestGenLegacyRemediationRulesBlock
+	 *     initialInstruction=STRING (ambiguity) modulePolicies+=TestGenModulePolicy
+	 *     initialInstruction=STRING (ambiguity) remediations=TestGenRemediationsBlock
+	 *     initialInstruction=STRING (ambiguity) usage=TestGenUsageBlock
+	 
+	 * </pre>
+	 */
+	protected void emit_TestGenBlock_SemicolonKeyword_2_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     forbiddenPatterns+=STRING ']' (ambiguity) 'maxRetries' maxRetries=INT
+	 *     forbiddenPatterns+=STRING ']' (ambiguity) 'parseCheck' parseCheck='false'
+	 *     forbiddenPatterns+=STRING ']' (ambiguity) 'parseCheck' parseCheck='true'
+	 *     forbiddenPatterns+=STRING ']' (ambiguity) '}' (rule end)
+	 *     forbiddenPatterns+=STRING ']' (ambiguity) legacyRemediationRules=TestGenLegacyRemediationRulesBlock
+	 *     forbiddenPatterns+=STRING ']' (ambiguity) modulePolicies+=TestGenModulePolicy
+	 *     forbiddenPatterns+=STRING ']' (ambiguity) remediations=TestGenRemediationsBlock
+	 *     forbiddenPatterns+=STRING ']' (ambiguity) usage=TestGenUsageBlock
+	 
+	 * </pre>
+	 */
+	protected void emit_TestGenBlock_SemicolonKeyword_3_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     maxRetries=INT (ambiguity) 'parseCheck' parseCheck='false'
+	 *     maxRetries=INT (ambiguity) 'parseCheck' parseCheck='true'
+	 *     maxRetries=INT (ambiguity) '}' (rule end)
+	 *     maxRetries=INT (ambiguity) legacyRemediationRules=TestGenLegacyRemediationRulesBlock
+	 *     maxRetries=INT (ambiguity) modulePolicies+=TestGenModulePolicy
+	 *     maxRetries=INT (ambiguity) remediations=TestGenRemediationsBlock
+	 *     maxRetries=INT (ambiguity) usage=TestGenUsageBlock
+	 
+	 * </pre>
+	 */
+	protected void emit_TestGenBlock_SemicolonKeyword_4_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     parseCheck='false' (ambiguity) '}' (rule end)
+	 *     parseCheck='false' (ambiguity) legacyRemediationRules=TestGenLegacyRemediationRulesBlock
+	 *     parseCheck='false' (ambiguity) modulePolicies+=TestGenModulePolicy
+	 *     parseCheck='false' (ambiguity) remediations=TestGenRemediationsBlock
+	 *     parseCheck='false' (ambiguity) usage=TestGenUsageBlock
+	 *     parseCheck='true' (ambiguity) '}' (rule end)
+	 *     parseCheck='true' (ambiguity) legacyRemediationRules=TestGenLegacyRemediationRulesBlock
+	 *     parseCheck='true' (ambiguity) modulePolicies+=TestGenModulePolicy
+	 *     parseCheck='true' (ambiguity) remediations=TestGenRemediationsBlock
+	 *     parseCheck='true' (ambiguity) usage=TestGenUsageBlock
+	 
+	 * </pre>
+	 */
+	protected void emit_TestGenBlock_SemicolonKeyword_5_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     code=STRING (ambiguity) 'correction' correction=STRING
+	 
+	 * </pre>
+	 */
+	protected void emit_TestGenDefaultRemediationRule_SemicolonKeyword_4_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     correction=STRING (ambiguity) '}' (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_TestGenDefaultRemediationRule_SemicolonKeyword_7_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     enabled='false' (ambiguity) 'escalateAtRetry' escalateAtRetry=INT
+	 *     enabled='false' (ambiguity) 'target' target='secondary'
+	 *     enabled='false' (ambiguity) '}' (rule end)
+	 *     enabled='true' (ambiguity) 'escalateAtRetry' escalateAtRetry=INT
+	 *     enabled='true' (ambiguity) 'target' target='secondary'
+	 *     enabled='true' (ambiguity) '}' (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_TestGenEscalationBlock_SemicolonKeyword_2_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     escalateAtRetry=INT (ambiguity) 'target' target='secondary'
+	 *     escalateAtRetry=INT (ambiguity) '}' (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_TestGenEscalationBlock_SemicolonKeyword_3_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     target='secondary' (ambiguity) '}' (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_TestGenEscalationBlock_SemicolonKeyword_4_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     instruction=STRING (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_TestGenLegacyRemediationRule_SemicolonKeyword_4_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     initialInstruction=STRING (ambiguity) 'forbiddenPatterns' '[' forbiddenPatterns+=STRING
+	 *     initialInstruction=STRING (ambiguity) 'maxRetries' maxRetries=INT
+	 *     initialInstruction=STRING (ambiguity) 'parseCheck' parseCheck='false'
+	 *     initialInstruction=STRING (ambiguity) 'parseCheck' parseCheck='true'
+	 *     initialInstruction=STRING (ambiguity) '}' (rule end)
+	 *     initialInstruction=STRING (ambiguity) legacyRemediationRules=TestGenLegacyRemediationRulesBlock
+	 *     initialInstruction=STRING (ambiguity) remediations=TestGenRemediationsBlock
+	 *     initialInstruction=STRING (ambiguity) usage=TestGenUsageBlock
+	 
+	 * </pre>
+	 */
+	protected void emit_TestGenModulePolicy_SemicolonKeyword_3_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     forbiddenPatterns+=STRING ']' (ambiguity) 'maxRetries' maxRetries=INT
+	 *     forbiddenPatterns+=STRING ']' (ambiguity) 'parseCheck' parseCheck='false'
+	 *     forbiddenPatterns+=STRING ']' (ambiguity) 'parseCheck' parseCheck='true'
+	 *     forbiddenPatterns+=STRING ']' (ambiguity) '}' (rule end)
+	 *     forbiddenPatterns+=STRING ']' (ambiguity) legacyRemediationRules=TestGenLegacyRemediationRulesBlock
+	 *     forbiddenPatterns+=STRING ']' (ambiguity) remediations=TestGenRemediationsBlock
+	 *     forbiddenPatterns+=STRING ']' (ambiguity) usage=TestGenUsageBlock
+	 
+	 * </pre>
+	 */
+	protected void emit_TestGenModulePolicy_SemicolonKeyword_4_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     maxRetries=INT (ambiguity) 'parseCheck' parseCheck='false'
+	 *     maxRetries=INT (ambiguity) 'parseCheck' parseCheck='true'
+	 *     maxRetries=INT (ambiguity) '}' (rule end)
+	 *     maxRetries=INT (ambiguity) legacyRemediationRules=TestGenLegacyRemediationRulesBlock
+	 *     maxRetries=INT (ambiguity) remediations=TestGenRemediationsBlock
+	 *     maxRetries=INT (ambiguity) usage=TestGenUsageBlock
+	 
+	 * </pre>
+	 */
+	protected void emit_TestGenModulePolicy_SemicolonKeyword_5_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     parseCheck='false' (ambiguity) '}' (rule end)
+	 *     parseCheck='false' (ambiguity) legacyRemediationRules=TestGenLegacyRemediationRulesBlock
+	 *     parseCheck='false' (ambiguity) remediations=TestGenRemediationsBlock
+	 *     parseCheck='false' (ambiguity) usage=TestGenUsageBlock
+	 *     parseCheck='true' (ambiguity) '}' (rule end)
+	 *     parseCheck='true' (ambiguity) legacyRemediationRules=TestGenLegacyRemediationRulesBlock
+	 *     parseCheck='true' (ambiguity) remediations=TestGenRemediationsBlock
+	 *     parseCheck='true' (ambiguity) usage=TestGenUsageBlock
+	 
+	 * </pre>
+	 */
+	protected void emit_TestGenModulePolicy_SemicolonKeyword_6_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     correction=STRING (ambiguity) '}' (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_TestGenPatternRemediationRule_SemicolonKeyword_10_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     pattern=STRING (ambiguity) 'code' code=STRING
+	 
+	 * </pre>
+	 */
+	protected void emit_TestGenPatternRemediationRule_SemicolonKeyword_4_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     code=STRING (ambiguity) 'correction' correction=STRING
+	 
+	 * </pre>
+	 */
+	protected void emit_TestGenPatternRemediationRule_SemicolonKeyword_7_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     maxRetries=INT (ambiguity) 'defaultCorrection' defaultCorrection=STRING
+	 *     maxRetries=INT (ambiguity) 'forbiddenPatterns' '[' forbiddenPatterns+=STRING
+	 *     maxRetries=INT (ambiguity) 'parseCheck' parseCheck='false'
+	 *     maxRetries=INT (ambiguity) 'parseCheck' parseCheck='true'
+	 *     maxRetries=INT (ambiguity) '}' (rule end)
+	 *     maxRetries=INT (ambiguity) rulesContainer=TestGenRemediationRulesContainer
+	 
+	 * </pre>
+	 */
+	protected void emit_TestGenRemediationsBlock_SemicolonKeyword_2_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     parseCheck='false' (ambiguity) 'defaultCorrection' defaultCorrection=STRING
+	 *     parseCheck='false' (ambiguity) 'forbiddenPatterns' '[' forbiddenPatterns+=STRING
+	 *     parseCheck='false' (ambiguity) '}' (rule end)
+	 *     parseCheck='false' (ambiguity) rulesContainer=TestGenRemediationRulesContainer
+	 *     parseCheck='true' (ambiguity) 'defaultCorrection' defaultCorrection=STRING
+	 *     parseCheck='true' (ambiguity) 'forbiddenPatterns' '[' forbiddenPatterns+=STRING
+	 *     parseCheck='true' (ambiguity) '}' (rule end)
+	 *     parseCheck='true' (ambiguity) rulesContainer=TestGenRemediationRulesContainer
+	 
+	 * </pre>
+	 */
+	protected void emit_TestGenRemediationsBlock_SemicolonKeyword_3_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     defaultCorrection=STRING (ambiguity) 'forbiddenPatterns' '[' forbiddenPatterns+=STRING
+	 *     defaultCorrection=STRING (ambiguity) '}' (rule end)
+	 *     defaultCorrection=STRING (ambiguity) rulesContainer=TestGenRemediationRulesContainer
+	 
+	 * </pre>
+	 */
+	protected void emit_TestGenRemediationsBlock_SemicolonKeyword_4_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     forbiddenPatterns+=STRING ']' (ambiguity) '}' (rule end)
+	 *     forbiddenPatterns+=STRING ']' (ambiguity) rulesContainer=TestGenRemediationRulesContainer
+	 
+	 * </pre>
+	 */
+	protected void emit_TestGenRemediationsBlock_SemicolonKeyword_5_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     primaryProvider=STRING (ambiguity) 'secondary' secondaryProvider=STRING
+	 *     primaryProvider=STRING (ambiguity) '}' (rule end)
+	 *     primaryProvider=STRING (ambiguity) escalation=TestGenEscalationBlock
+	 
+	 * </pre>
+	 */
+	protected void emit_TestGenUsageBlock_SemicolonKeyword_2_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     secondaryProvider=STRING (ambiguity) '}' (rule end)
+	 *     secondaryProvider=STRING (ambiguity) escalation=TestGenEscalationBlock
+	 
+	 * </pre>
+	 */
+	protected void emit_TestGenUsageBlock_SemicolonKeyword_3_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 }

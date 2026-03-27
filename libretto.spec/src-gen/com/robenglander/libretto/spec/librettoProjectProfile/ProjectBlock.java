@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock#getRootDir <em>Root Dir</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock#getModules <em>Modules</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock#getTestGen <em>Test Gen</em>}</li>
  * </ul>
  *
  * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectBlock()
@@ -67,5 +68,27 @@ public interface ProjectBlock extends EObject
    * @generated
    */
   void setModules(ModulesBlock value);
+
+  /**
+   * Returns the value of the '<em><b>Test Gen</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Test Gen</em>' containment reference.
+   * @see #setTestGen(TestGenBlock)
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectBlock_TestGen()
+   * @model containment="true"
+   * @generated
+   */
+  TestGenBlock getTestGen();
+
+  /**
+   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock#getTestGen <em>Test Gen</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Test Gen</em>' containment reference.
+   * @see #getTestGen()
+   * @generated
+   */
+  void setTestGen(TestGenBlock value);
 
 } // ProjectBlock

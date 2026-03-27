@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getProfileName <em>Profile Name</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getProject <em>Project</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getLlmProviders <em>Llm Providers</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getSurface <em>Surface</em>}</li>
  * </ul>
  *
@@ -68,6 +69,28 @@ public interface ProjectProfile extends EObject
    * @generated
    */
   void setProject(ProjectBlock value);
+
+  /**
+   * Returns the value of the '<em><b>Llm Providers</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Llm Providers</em>' containment reference.
+   * @see #setLlmProviders(LlmProvidersBlock)
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectProfile_LlmProviders()
+   * @model containment="true"
+   * @generated
+   */
+  LlmProvidersBlock getLlmProviders();
+
+  /**
+   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getLlmProviders <em>Llm Providers</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Llm Providers</em>' containment reference.
+   * @see #getLlmProviders()
+   * @generated
+   */
+  void setLlmProviders(LlmProvidersBlock value);
 
   /**
    * Returns the value of the '<em><b>Surface</b></em>' containment reference.

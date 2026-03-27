@@ -60,6 +60,114 @@ public interface LibrettoProjectProfileFactory extends EFactory
   ProjectModule createProjectModule();
 
   /**
+   * Returns a new object of class '<em>Test Gen Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Test Gen Block</em>'.
+   * @generated
+   */
+  TestGenBlock createTestGenBlock();
+
+  /**
+   * Returns a new object of class '<em>Test Gen Module Policy</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Test Gen Module Policy</em>'.
+   * @generated
+   */
+  TestGenModulePolicy createTestGenModulePolicy();
+
+  /**
+   * Returns a new object of class '<em>Test Gen Remediations Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Test Gen Remediations Block</em>'.
+   * @generated
+   */
+  TestGenRemediationsBlock createTestGenRemediationsBlock();
+
+  /**
+   * Returns a new object of class '<em>Test Gen Remediation Rules Container</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Test Gen Remediation Rules Container</em>'.
+   * @generated
+   */
+  TestGenRemediationRulesContainer createTestGenRemediationRulesContainer();
+
+  /**
+   * Returns a new object of class '<em>Test Gen Pattern Remediation Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Test Gen Pattern Remediation Rule</em>'.
+   * @generated
+   */
+  TestGenPatternRemediationRule createTestGenPatternRemediationRule();
+
+  /**
+   * Returns a new object of class '<em>Test Gen Default Remediation Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Test Gen Default Remediation Rule</em>'.
+   * @generated
+   */
+  TestGenDefaultRemediationRule createTestGenDefaultRemediationRule();
+
+  /**
+   * Returns a new object of class '<em>Test Gen Legacy Remediation Rules Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Test Gen Legacy Remediation Rules Block</em>'.
+   * @generated
+   */
+  TestGenLegacyRemediationRulesBlock createTestGenLegacyRemediationRulesBlock();
+
+  /**
+   * Returns a new object of class '<em>Test Gen Legacy Remediation Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Test Gen Legacy Remediation Rule</em>'.
+   * @generated
+   */
+  TestGenLegacyRemediationRule createTestGenLegacyRemediationRule();
+
+  /**
+   * Returns a new object of class '<em>Llm Providers Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Llm Providers Block</em>'.
+   * @generated
+   */
+  LlmProvidersBlock createLlmProvidersBlock();
+
+  /**
+   * Returns a new object of class '<em>Named Llm Provider</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Named Llm Provider</em>'.
+   * @generated
+   */
+  NamedLlmProvider createNamedLlmProvider();
+
+  /**
+   * Returns a new object of class '<em>Test Gen Usage Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Test Gen Usage Block</em>'.
+   * @generated
+   */
+  TestGenUsageBlock createTestGenUsageBlock();
+
+  /**
+   * Returns a new object of class '<em>Test Gen Escalation Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Test Gen Escalation Block</em>'.
+   * @generated
+   */
+  TestGenEscalationBlock createTestGenEscalationBlock();
+
+  /**
    * Returns a new object of class '<em>Surface Block</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -6,7 +6,7 @@ import java.util.List;
  * Result of mapping EMF {@code ProjectProfile} to portable types: {@link LibrettoProjectProfileDomainModel}
  * without EMF or Xtext on the consumer classpath.
  *
- * @param domainModel  domain model (profile name and surface elements)
+ * @param domainModel  domain model (profile name, surface, project, testgen, llm providers)
  */
 public record LibrettoProjectProfileDomainModelProjection(LibrettoProjectProfileDomainModel domainModel) {
 
@@ -21,5 +21,15 @@ public record LibrettoProjectProfileDomainModelProjection(LibrettoProjectProfile
 
 	public List<ProjectedSurfaceElement> surfaceElements() {
 		return domainModel.surfaceElements();
+	}
+
+	/** {@code project { … }} or {@code null}. */
+	public ProjectedProjectBlock projectBlock() {
+		return domainModel.projectBlock();
+	}
+
+	/** Declared {@code llmProviders} entries. */
+	public List<ProjectedLlmProviderEntry> llmProviders() {
+		return domainModel.llmProviders();
 	}
 }

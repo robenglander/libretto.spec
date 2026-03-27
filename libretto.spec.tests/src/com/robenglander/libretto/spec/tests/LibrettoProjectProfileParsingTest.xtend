@@ -54,15 +54,117 @@ class LibrettoProjectProfileParsingTest {
 		val result = parseHelper.parse('''
 			profile "lumiscape" {
 			  project {
-			    rootDir ".";
+			    rootDir "."
 			    modules {
 			      module "common" {
-			        dir "common";
-			        specsDir "src/spec/public";
-			        testsDir "src/test/java";
-			        mainJavaDir "src/main/java";
-			        basePackage "com.lumiscape.common";
+			        dir "common"
+			        specsDir "src/spec/public"
+			        testsDir "src/test/java"
+			        mainJavaDir "src/main/java"
+			        basePackage "com.lumiscape.common"
 			      }
+			    }
+			    testgen {
+			      forbiddenPatterns ["...", "TODO", "implement later"]
+			      maxRetries 1
+			      parseCheck true
+			      remediationRules {
+			        rule "FORBIDDEN_PATTERN" instruction "Replace placeholders with executable statements."
+			        rule "UNPARSEABLE_SYNTHESIS" instruction "Return method body statements only with valid Java syntax."
+			      }
+			      usage {
+			        primary "local-default"
+			        secondary "openai-fast"
+			        escalation {
+			          enabled true
+			          escalateAtRetry 2
+			          target secondary
+			        }
+			      }
+			      forModule "account" {
+			        maxRetries 2
+			        parseCheck false
+			        remediationRules {
+			          rule "FORBIDDEN_PATTERN:TODO" instruction "Eliminate TODO and provide concrete setup/assertions."
+			        }
+			        usage {
+			          primary "ollama-qwen"
+			          secondary "openai-fast"
+			          escalation {
+			            enabled true
+			            escalateAtRetry 1
+			            target secondary
+			          }
+			        }
+			      }
+			    }
+			  }
+			  llmProviders {
+			    provider "local-default" {
+			      kind local
+			      localModelPath "/models/local.bin"
+			    }
+			    provider "openai-fast" {
+			      kind openai
+			      model "gpt-5.4-mini"
+			    }
+			    provider "ollama-qwen" {
+			      kind ollama
+			      model "qwen2.5-coder:14b"
+			      endpoint "http://localhost:11434"
+			    }
+			  }
+			  surface {
+			  }
+			}
+		''')
+		Assertions.assertNotNull(result)
+		val errors = result.eResource.errors
+		Assertions.assertTrue(errors.isEmpty, '''Unexpected errors: «errors.join(", ")»''')
+	}
+
+	@Test
+	def void loadProfileWithStructuredRemediations() {
+		val result = parseHelper.parse('''
+			profile "lumiscape" {
+			  project {
+			    rootDir "."
+			    modules {
+			      module "common" {
+			        dir "common"
+			        specsDir "src/spec/public"
+			        testsDir "src/test/java"
+			        mainJavaDir "src/main/java"
+			        basePackage "com.lumiscape.common"
+			      }
+			    }
+			    testgen {
+			      initialInstruction "Never use placeholders."
+			      remediations {
+			        maxRetries 2
+			        parseCheck true
+			        defaultCorrection "Generic retry."
+			        rules {
+			          rule {
+			            pattern "TODO"
+			            code "FORBIDDEN_PATTERN"
+			            correction "Remove TODO markers."
+			          }
+			          default {
+			            code "UNPARSEABLE_SYNTHESIS"
+			            correction "Fix Java syntax."
+			          }
+			        }
+			      }
+			      usage {
+			        primary "local-default"
+			      }
+			    }
+			  }
+			  llmProviders {
+			    provider "local-default" {
+			      kind local
+			      localModelPath "/models/local.bin"
 			    }
 			  }
 			  surface {

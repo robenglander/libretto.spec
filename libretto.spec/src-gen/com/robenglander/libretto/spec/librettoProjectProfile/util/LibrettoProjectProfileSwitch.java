@@ -101,6 +101,90 @@ public class LibrettoProjectProfileSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LibrettoProjectProfilePackage.TEST_GEN_BLOCK:
+      {
+        TestGenBlock testGenBlock = (TestGenBlock)theEObject;
+        T result = caseTestGenBlock(testGenBlock);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.TEST_GEN_MODULE_POLICY:
+      {
+        TestGenModulePolicy testGenModulePolicy = (TestGenModulePolicy)theEObject;
+        T result = caseTestGenModulePolicy(testGenModulePolicy);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.TEST_GEN_REMEDIATIONS_BLOCK:
+      {
+        TestGenRemediationsBlock testGenRemediationsBlock = (TestGenRemediationsBlock)theEObject;
+        T result = caseTestGenRemediationsBlock(testGenRemediationsBlock);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.TEST_GEN_REMEDIATION_RULES_CONTAINER:
+      {
+        TestGenRemediationRulesContainer testGenRemediationRulesContainer = (TestGenRemediationRulesContainer)theEObject;
+        T result = caseTestGenRemediationRulesContainer(testGenRemediationRulesContainer);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.TEST_GEN_PATTERN_REMEDIATION_RULE:
+      {
+        TestGenPatternRemediationRule testGenPatternRemediationRule = (TestGenPatternRemediationRule)theEObject;
+        T result = caseTestGenPatternRemediationRule(testGenPatternRemediationRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.TEST_GEN_DEFAULT_REMEDIATION_RULE:
+      {
+        TestGenDefaultRemediationRule testGenDefaultRemediationRule = (TestGenDefaultRemediationRule)theEObject;
+        T result = caseTestGenDefaultRemediationRule(testGenDefaultRemediationRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.TEST_GEN_LEGACY_REMEDIATION_RULES_BLOCK:
+      {
+        TestGenLegacyRemediationRulesBlock testGenLegacyRemediationRulesBlock = (TestGenLegacyRemediationRulesBlock)theEObject;
+        T result = caseTestGenLegacyRemediationRulesBlock(testGenLegacyRemediationRulesBlock);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.TEST_GEN_LEGACY_REMEDIATION_RULE:
+      {
+        TestGenLegacyRemediationRule testGenLegacyRemediationRule = (TestGenLegacyRemediationRule)theEObject;
+        T result = caseTestGenLegacyRemediationRule(testGenLegacyRemediationRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.LLM_PROVIDERS_BLOCK:
+      {
+        LlmProvidersBlock llmProvidersBlock = (LlmProvidersBlock)theEObject;
+        T result = caseLlmProvidersBlock(llmProvidersBlock);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER:
+      {
+        NamedLlmProvider namedLlmProvider = (NamedLlmProvider)theEObject;
+        T result = caseNamedLlmProvider(namedLlmProvider);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.TEST_GEN_USAGE_BLOCK:
+      {
+        TestGenUsageBlock testGenUsageBlock = (TestGenUsageBlock)theEObject;
+        T result = caseTestGenUsageBlock(testGenUsageBlock);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.TEST_GEN_ESCALATION_BLOCK:
+      {
+        TestGenEscalationBlock testGenEscalationBlock = (TestGenEscalationBlock)theEObject;
+        T result = caseTestGenEscalationBlock(testGenEscalationBlock);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case LibrettoProjectProfilePackage.SURFACE_BLOCK:
       {
         SurfaceBlock surfaceBlock = (SurfaceBlock)theEObject;
@@ -268,6 +352,198 @@ public class LibrettoProjectProfileSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseProjectModule(ProjectModule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Test Gen Block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Test Gen Block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTestGenBlock(TestGenBlock object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Test Gen Module Policy</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Test Gen Module Policy</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTestGenModulePolicy(TestGenModulePolicy object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Test Gen Remediations Block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Test Gen Remediations Block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTestGenRemediationsBlock(TestGenRemediationsBlock object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Test Gen Remediation Rules Container</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Test Gen Remediation Rules Container</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTestGenRemediationRulesContainer(TestGenRemediationRulesContainer object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Test Gen Pattern Remediation Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Test Gen Pattern Remediation Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTestGenPatternRemediationRule(TestGenPatternRemediationRule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Test Gen Default Remediation Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Test Gen Default Remediation Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTestGenDefaultRemediationRule(TestGenDefaultRemediationRule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Test Gen Legacy Remediation Rules Block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Test Gen Legacy Remediation Rules Block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTestGenLegacyRemediationRulesBlock(TestGenLegacyRemediationRulesBlock object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Test Gen Legacy Remediation Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Test Gen Legacy Remediation Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTestGenLegacyRemediationRule(TestGenLegacyRemediationRule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Llm Providers Block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Llm Providers Block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLlmProvidersBlock(LlmProvidersBlock object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Named Llm Provider</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Named Llm Provider</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNamedLlmProvider(NamedLlmProvider object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Test Gen Usage Block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Test Gen Usage Block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTestGenUsageBlock(TestGenUsageBlock object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Test Gen Escalation Block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Test Gen Escalation Block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTestGenEscalationBlock(TestGenEscalationBlock object)
   {
     return null;
   }

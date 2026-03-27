@@ -4,6 +4,7 @@
 package com.robenglander.libretto.spec.librettoProjectProfile.impl;
 
 import com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage;
+import com.robenglander.libretto.spec.librettoProjectProfile.LlmProvidersBlock;
 import com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock;
 import com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile;
 import com.robenglander.libretto.spec.librettoProjectProfile.SurfaceBlock;
@@ -27,6 +28,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectProfileImpl#getProfileName <em>Profile Name</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectProfileImpl#getProject <em>Project</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectProfileImpl#getLlmProviders <em>Llm Providers</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectProfileImpl#getSurface <em>Surface</em>}</li>
  * </ul>
  *
@@ -63,6 +65,16 @@ public class ProjectProfileImpl extends MinimalEObjectImpl.Container implements 
    * @ordered
    */
   protected ProjectBlock project;
+
+  /**
+   * The cached value of the '{@link #getLlmProviders() <em>Llm Providers</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLlmProviders()
+   * @generated
+   * @ordered
+   */
+  protected LlmProvidersBlock llmProviders;
 
   /**
    * The cached value of the '{@link #getSurface() <em>Surface</em>}' containment reference.
@@ -176,6 +188,56 @@ public class ProjectProfileImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    */
   @Override
+  public LlmProvidersBlock getLlmProviders()
+  {
+    return llmProviders;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetLlmProviders(LlmProvidersBlock newLlmProviders, NotificationChain msgs)
+  {
+    LlmProvidersBlock oldLlmProviders = llmProviders;
+    llmProviders = newLlmProviders;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LibrettoProjectProfilePackage.PROJECT_PROFILE__LLM_PROVIDERS, oldLlmProviders, newLlmProviders);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setLlmProviders(LlmProvidersBlock newLlmProviders)
+  {
+    if (newLlmProviders != llmProviders)
+    {
+      NotificationChain msgs = null;
+      if (llmProviders != null)
+        msgs = ((InternalEObject)llmProviders).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LibrettoProjectProfilePackage.PROJECT_PROFILE__LLM_PROVIDERS, null, msgs);
+      if (newLlmProviders != null)
+        msgs = ((InternalEObject)newLlmProviders).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LibrettoProjectProfilePackage.PROJECT_PROFILE__LLM_PROVIDERS, null, msgs);
+      msgs = basicSetLlmProviders(newLlmProviders, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoProjectProfilePackage.PROJECT_PROFILE__LLM_PROVIDERS, newLlmProviders, newLlmProviders));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public SurfaceBlock getSurface()
   {
     return surface;
@@ -232,6 +294,8 @@ public class ProjectProfileImpl extends MinimalEObjectImpl.Container implements 
     {
       case LibrettoProjectProfilePackage.PROJECT_PROFILE__PROJECT:
         return basicSetProject(null, msgs);
+      case LibrettoProjectProfilePackage.PROJECT_PROFILE__LLM_PROVIDERS:
+        return basicSetLlmProviders(null, msgs);
       case LibrettoProjectProfilePackage.PROJECT_PROFILE__SURFACE:
         return basicSetSurface(null, msgs);
     }
@@ -252,6 +316,8 @@ public class ProjectProfileImpl extends MinimalEObjectImpl.Container implements 
         return getProfileName();
       case LibrettoProjectProfilePackage.PROJECT_PROFILE__PROJECT:
         return getProject();
+      case LibrettoProjectProfilePackage.PROJECT_PROFILE__LLM_PROVIDERS:
+        return getLlmProviders();
       case LibrettoProjectProfilePackage.PROJECT_PROFILE__SURFACE:
         return getSurface();
     }
@@ -273,6 +339,9 @@ public class ProjectProfileImpl extends MinimalEObjectImpl.Container implements 
         return;
       case LibrettoProjectProfilePackage.PROJECT_PROFILE__PROJECT:
         setProject((ProjectBlock)newValue);
+        return;
+      case LibrettoProjectProfilePackage.PROJECT_PROFILE__LLM_PROVIDERS:
+        setLlmProviders((LlmProvidersBlock)newValue);
         return;
       case LibrettoProjectProfilePackage.PROJECT_PROFILE__SURFACE:
         setSurface((SurfaceBlock)newValue);
@@ -297,6 +366,9 @@ public class ProjectProfileImpl extends MinimalEObjectImpl.Container implements 
       case LibrettoProjectProfilePackage.PROJECT_PROFILE__PROJECT:
         setProject((ProjectBlock)null);
         return;
+      case LibrettoProjectProfilePackage.PROJECT_PROFILE__LLM_PROVIDERS:
+        setLlmProviders((LlmProvidersBlock)null);
+        return;
       case LibrettoProjectProfilePackage.PROJECT_PROFILE__SURFACE:
         setSurface((SurfaceBlock)null);
         return;
@@ -318,6 +390,8 @@ public class ProjectProfileImpl extends MinimalEObjectImpl.Container implements 
         return PROFILE_NAME_EDEFAULT == null ? profileName != null : !PROFILE_NAME_EDEFAULT.equals(profileName);
       case LibrettoProjectProfilePackage.PROJECT_PROFILE__PROJECT:
         return project != null;
+      case LibrettoProjectProfilePackage.PROJECT_PROFILE__LLM_PROVIDERS:
+        return llmProviders != null;
       case LibrettoProjectProfilePackage.PROJECT_PROFILE__SURFACE:
         return surface != null;
     }
