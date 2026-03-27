@@ -754,6 +754,7 @@ ruleGenRemediationRules returns [EObject current=null]
 					}
 				)
 			)
+			    |
 			(
 				(
 					{
@@ -1251,19 +1252,20 @@ ruleGenUsageBlock returns [EObject current=null]
 				}
 				(
 					(
-						lv_primaryProviders_4_0=RULE_STRING
 						{
-							newLeafNode(lv_primaryProviders_4_0, grammarAccess.getGenUsageBlockAccess().getPrimaryProvidersSTRINGTerminalRuleCall_3_0_1_0());
+							newCompositeNode(grammarAccess.getGenUsageBlockAccess().getPrimaryProvidersValidIDParserRuleCall_3_0_1_0());
 						}
+						lv_primaryProviders_4_0=ruleValidID
 						{
 							if ($current==null) {
-								$current = createModelElement(grammarAccess.getGenUsageBlockRule());
+								$current = createModelElementForParent(grammarAccess.getGenUsageBlockRule());
 							}
-							addWithLastConsumed(
+							add(
 								$current,
 								"primaryProviders",
 								lv_primaryProviders_4_0,
-								"org.eclipse.xtext.common.Terminals.STRING");
+								"com.robenglander.libretto.spec.LibrettoProjectProfile.ValidID");
+							afterParserOrEnumRuleCall();
 						}
 					)
 				)
@@ -1276,19 +1278,20 @@ ruleGenUsageBlock returns [EObject current=null]
 				}
 				(
 					(
-						lv_secondaryProviders_6_0=RULE_STRING
 						{
-							newLeafNode(lv_secondaryProviders_6_0, grammarAccess.getGenUsageBlockAccess().getSecondaryProvidersSTRINGTerminalRuleCall_3_1_1_0());
+							newCompositeNode(grammarAccess.getGenUsageBlockAccess().getSecondaryProvidersValidIDParserRuleCall_3_1_1_0());
 						}
+						lv_secondaryProviders_6_0=ruleValidID
 						{
 							if ($current==null) {
-								$current = createModelElement(grammarAccess.getGenUsageBlockRule());
+								$current = createModelElementForParent(grammarAccess.getGenUsageBlockRule());
 							}
-							addWithLastConsumed(
+							add(
 								$current,
 								"secondaryProviders",
 								lv_secondaryProviders_6_0,
-								"org.eclipse.xtext.common.Terminals.STRING");
+								"com.robenglander.libretto.spec.LibrettoProjectProfile.ValidID");
+							afterParserOrEnumRuleCall();
 						}
 					)
 				)

@@ -564,10 +564,10 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		private final Action cGenRemediationRulesAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cRulesKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Assignment cPatternRulesAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
+		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
+		private final Assignment cPatternRulesAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
 		private final RuleCall cPatternRulesGenPatternRemediationRuleParserRuleCall_3_0_0 = (RuleCall)cPatternRulesAssignment_3_0.eContents().get(0);
-		private final Assignment cDefaultRemediationsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final Assignment cDefaultRemediationsAssignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
 		private final RuleCall cDefaultRemediationsGenDefaultRemediationRuleParserRuleCall_3_1_0 = (RuleCall)cDefaultRemediationsAssignment_3_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
@@ -576,6 +576,7 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		//    'rules' '{'
 		//        (
 		//            (patternRules+=GenPatternRemediationRule)
+		//            |
 		//            (defaultRemediations+=GenDefaultRemediationRule)
 		//        )*
 		//    '}';
@@ -585,6 +586,7 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		//'rules' '{'
 		//    (
 		//        (patternRules+=GenPatternRemediationRule)
+		//        |
 		//        (defaultRemediations+=GenDefaultRemediationRule)
 		//    )*
 		//'}'
@@ -601,9 +603,10 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		
 		//(
 		//    (patternRules+=GenPatternRemediationRule)
+		//    |
 		//    (defaultRemediations+=GenDefaultRemediationRule)
 		//)*
-		public Group getGroup_3() { return cGroup_3; }
+		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 		
 		//(patternRules+=GenPatternRemediationRule)
 		public Assignment getPatternRulesAssignment_3_0() { return cPatternRulesAssignment_3_0; }
@@ -994,11 +997,11 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		private final Group cGroup_3_0 = (Group)cAlternatives_3.eContents().get(0);
 		private final Keyword cPrimaryKeyword_3_0_0 = (Keyword)cGroup_3_0.eContents().get(0);
 		private final Assignment cPrimaryProvidersAssignment_3_0_1 = (Assignment)cGroup_3_0.eContents().get(1);
-		private final RuleCall cPrimaryProvidersSTRINGTerminalRuleCall_3_0_1_0 = (RuleCall)cPrimaryProvidersAssignment_3_0_1.eContents().get(0);
+		private final RuleCall cPrimaryProvidersValidIDParserRuleCall_3_0_1_0 = (RuleCall)cPrimaryProvidersAssignment_3_0_1.eContents().get(0);
 		private final Group cGroup_3_1 = (Group)cAlternatives_3.eContents().get(1);
 		private final Keyword cSecondaryKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
 		private final Assignment cSecondaryProvidersAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
-		private final RuleCall cSecondaryProvidersSTRINGTerminalRuleCall_3_1_1_0 = (RuleCall)cSecondaryProvidersAssignment_3_1_1.eContents().get(0);
+		private final RuleCall cSecondaryProvidersValidIDParserRuleCall_3_1_1_0 = (RuleCall)cSecondaryProvidersAssignment_3_1_1.eContents().get(0);
 		private final Assignment cEscalationsAssignment_3_2 = (Assignment)cAlternatives_3.eContents().get(2);
 		private final RuleCall cEscalationsGenEscalationBlockParserRuleCall_3_2_0 = (RuleCall)cEscalationsAssignment_3_2.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
@@ -1007,9 +1010,9 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		//    {GenUsageBlock}
 		//    'modelUsage' '{'
 		//        (
-		//            ('primary' primaryProviders+=STRING)
+		//            ('primary' primaryProviders+=ValidID)
 		//            |
-		//            ('secondary' secondaryProviders+=STRING)
+		//            ('secondary' secondaryProviders+=ValidID)
 		//            |
 		//            (escalations+=GenEscalationBlock)
 		//        )*
@@ -1019,9 +1022,9 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		//{GenUsageBlock}
 		//'modelUsage' '{'
 		//    (
-		//        ('primary' primaryProviders+=STRING)
+		//        ('primary' primaryProviders+=ValidID)
 		//        |
-		//        ('secondary' secondaryProviders+=STRING)
+		//        ('secondary' secondaryProviders+=ValidID)
 		//        |
 		//        (escalations+=GenEscalationBlock)
 		//    )*
@@ -1038,37 +1041,37 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
 		//(
-		//    ('primary' primaryProviders+=STRING)
+		//    ('primary' primaryProviders+=ValidID)
 		//    |
-		//    ('secondary' secondaryProviders+=STRING)
+		//    ('secondary' secondaryProviders+=ValidID)
 		//    |
 		//    (escalations+=GenEscalationBlock)
 		//)*
 		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 		
-		//('primary' primaryProviders+=STRING)
+		//('primary' primaryProviders+=ValidID)
 		public Group getGroup_3_0() { return cGroup_3_0; }
 		
 		//'primary'
 		public Keyword getPrimaryKeyword_3_0_0() { return cPrimaryKeyword_3_0_0; }
 		
-		//primaryProviders+=STRING
+		//primaryProviders+=ValidID
 		public Assignment getPrimaryProvidersAssignment_3_0_1() { return cPrimaryProvidersAssignment_3_0_1; }
 		
-		//STRING
-		public RuleCall getPrimaryProvidersSTRINGTerminalRuleCall_3_0_1_0() { return cPrimaryProvidersSTRINGTerminalRuleCall_3_0_1_0; }
+		//ValidID
+		public RuleCall getPrimaryProvidersValidIDParserRuleCall_3_0_1_0() { return cPrimaryProvidersValidIDParserRuleCall_3_0_1_0; }
 		
-		//('secondary' secondaryProviders+=STRING)
+		//('secondary' secondaryProviders+=ValidID)
 		public Group getGroup_3_1() { return cGroup_3_1; }
 		
 		//'secondary'
 		public Keyword getSecondaryKeyword_3_1_0() { return cSecondaryKeyword_3_1_0; }
 		
-		//secondaryProviders+=STRING
+		//secondaryProviders+=ValidID
 		public Assignment getSecondaryProvidersAssignment_3_1_1() { return cSecondaryProvidersAssignment_3_1_1; }
 		
-		//STRING
-		public RuleCall getSecondaryProvidersSTRINGTerminalRuleCall_3_1_1_0() { return cSecondaryProvidersSTRINGTerminalRuleCall_3_1_1_0; }
+		//ValidID
+		public RuleCall getSecondaryProvidersValidIDParserRuleCall_3_1_1_0() { return cSecondaryProvidersValidIDParserRuleCall_3_1_1_0; }
 		
 		//(escalations+=GenEscalationBlock)
 		public Assignment getEscalationsAssignment_3_2() { return cEscalationsAssignment_3_2; }
@@ -1922,6 +1925,7 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 	//    'rules' '{'
 	//        (
 	//            (patternRules+=GenPatternRemediationRule)
+	//            |
 	//            (defaultRemediations+=GenDefaultRemediationRule)
 	//        )*
 	//    '}';
@@ -2006,9 +2010,9 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 	//    {GenUsageBlock}
 	//    'modelUsage' '{'
 	//        (
-	//            ('primary' primaryProviders+=STRING)
+	//            ('primary' primaryProviders+=ValidID)
 	//            |
-	//            ('secondary' secondaryProviders+=STRING)
+	//            ('secondary' secondaryProviders+=ValidID)
 	//            |
 	//            (escalations+=GenEscalationBlock)
 	//        )*

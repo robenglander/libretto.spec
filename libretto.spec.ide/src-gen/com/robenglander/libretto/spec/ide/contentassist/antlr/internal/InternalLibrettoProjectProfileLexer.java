@@ -1504,10 +1504,10 @@ public class InternalLibrettoProjectProfileLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLibrettoProjectProfile.g:6522:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalLibrettoProjectProfile.g:6522:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalLibrettoProjectProfile.g:6489:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalLibrettoProjectProfile.g:6489:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalLibrettoProjectProfile.g:6522:11: ( '^' )?
+            // InternalLibrettoProjectProfile.g:6489:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1516,7 +1516,7 @@ public class InternalLibrettoProjectProfileLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:6522:11: '^'
+                    // InternalLibrettoProjectProfile.g:6489:11: '^'
                     {
                     match('^'); 
 
@@ -1534,7 +1534,7 @@ public class InternalLibrettoProjectProfileLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalLibrettoProjectProfile.g:6522:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalLibrettoProjectProfile.g:6489:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -1583,10 +1583,10 @@ public class InternalLibrettoProjectProfileLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLibrettoProjectProfile.g:6524:10: ( ( '0' .. '9' )+ )
-            // InternalLibrettoProjectProfile.g:6524:12: ( '0' .. '9' )+
+            // InternalLibrettoProjectProfile.g:6491:10: ( ( '0' .. '9' )+ )
+            // InternalLibrettoProjectProfile.g:6491:12: ( '0' .. '9' )+
             {
-            // InternalLibrettoProjectProfile.g:6524:12: ( '0' .. '9' )+
+            // InternalLibrettoProjectProfile.g:6491:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -1600,7 +1600,7 @@ public class InternalLibrettoProjectProfileLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalLibrettoProjectProfile.g:6524:13: '0' .. '9'
+            	    // InternalLibrettoProjectProfile.g:6491:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1632,10 +1632,10 @@ public class InternalLibrettoProjectProfileLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLibrettoProjectProfile.g:6526:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalLibrettoProjectProfile.g:6526:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalLibrettoProjectProfile.g:6493:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalLibrettoProjectProfile.g:6493:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalLibrettoProjectProfile.g:6526:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalLibrettoProjectProfile.g:6493:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1653,10 +1653,10 @@ public class InternalLibrettoProjectProfileLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:6526:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalLibrettoProjectProfile.g:6493:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalLibrettoProjectProfile.g:6526:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalLibrettoProjectProfile.g:6493:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -1672,7 +1672,7 @@ public class InternalLibrettoProjectProfileLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalLibrettoProjectProfile.g:6526:21: '\\\\' .
+                    	    // InternalLibrettoProjectProfile.g:6493:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1680,7 +1680,7 @@ public class InternalLibrettoProjectProfileLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalLibrettoProjectProfile.g:6526:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalLibrettoProjectProfile.g:6493:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1705,10 +1705,10 @@ public class InternalLibrettoProjectProfileLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoProjectProfile.g:6526:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalLibrettoProjectProfile.g:6493:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalLibrettoProjectProfile.g:6526:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalLibrettoProjectProfile.g:6493:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -1724,7 +1724,7 @@ public class InternalLibrettoProjectProfileLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalLibrettoProjectProfile.g:6526:54: '\\\\' .
+                    	    // InternalLibrettoProjectProfile.g:6493:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1732,7 +1732,7 @@ public class InternalLibrettoProjectProfileLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalLibrettoProjectProfile.g:6526:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalLibrettoProjectProfile.g:6493:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1775,12 +1775,12 @@ public class InternalLibrettoProjectProfileLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLibrettoProjectProfile.g:6528:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalLibrettoProjectProfile.g:6528:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalLibrettoProjectProfile.g:6495:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalLibrettoProjectProfile.g:6495:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalLibrettoProjectProfile.g:6528:24: ( options {greedy=false; } : . )*
+            // InternalLibrettoProjectProfile.g:6495:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -1805,7 +1805,7 @@ public class InternalLibrettoProjectProfileLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalLibrettoProjectProfile.g:6528:52: .
+            	    // InternalLibrettoProjectProfile.g:6495:52: .
             	    {
             	    matchAny(); 
 
@@ -1835,12 +1835,12 @@ public class InternalLibrettoProjectProfileLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLibrettoProjectProfile.g:6530:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalLibrettoProjectProfile.g:6530:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalLibrettoProjectProfile.g:6497:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalLibrettoProjectProfile.g:6497:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalLibrettoProjectProfile.g:6530:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalLibrettoProjectProfile.g:6497:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1853,7 +1853,7 @@ public class InternalLibrettoProjectProfileLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalLibrettoProjectProfile.g:6530:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalLibrettoProjectProfile.g:6497:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1873,7 +1873,7 @@ public class InternalLibrettoProjectProfileLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalLibrettoProjectProfile.g:6530:40: ( ( '\\r' )? '\\n' )?
+            // InternalLibrettoProjectProfile.g:6497:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1882,9 +1882,9 @@ public class InternalLibrettoProjectProfileLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:6530:41: ( '\\r' )? '\\n'
+                    // InternalLibrettoProjectProfile.g:6497:41: ( '\\r' )? '\\n'
                     {
-                    // InternalLibrettoProjectProfile.g:6530:41: ( '\\r' )?
+                    // InternalLibrettoProjectProfile.g:6497:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1893,7 +1893,7 @@ public class InternalLibrettoProjectProfileLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalLibrettoProjectProfile.g:6530:41: '\\r'
+                            // InternalLibrettoProjectProfile.g:6497:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1925,10 +1925,10 @@ public class InternalLibrettoProjectProfileLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLibrettoProjectProfile.g:6532:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalLibrettoProjectProfile.g:6532:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalLibrettoProjectProfile.g:6499:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalLibrettoProjectProfile.g:6499:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalLibrettoProjectProfile.g:6532:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalLibrettoProjectProfile.g:6499:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1982,8 +1982,8 @@ public class InternalLibrettoProjectProfileLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLibrettoProjectProfile.g:6534:16: ( . )
-            // InternalLibrettoProjectProfile.g:6534:18: .
+            // InternalLibrettoProjectProfile.g:6501:16: ( . )
+            // InternalLibrettoProjectProfile.g:6501:18: .
             {
             matchAny(); 
 

@@ -2858,48 +2858,139 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
     // $ANTLR end "rule__GenBlock__ParseChecksAlternatives_3_2_1_0"
 
 
-    // $ANTLR start "rule__GenPatternRemediationRule__Alternatives_3"
-    // InternalLibrettoProjectProfile.g:861:1: rule__GenPatternRemediationRule__Alternatives_3 : ( ( ( rule__GenPatternRemediationRule__Group_3_0__0 ) ) | ( ( rule__GenPatternRemediationRule__Group_3_1__0 ) ) | ( ( rule__GenPatternRemediationRule__Group_3_2__0 ) ) );
-    public final void rule__GenPatternRemediationRule__Alternatives_3() throws RecognitionException {
+    // $ANTLR start "rule__GenRemediationRules__Alternatives_3"
+    // InternalLibrettoProjectProfile.g:861:1: rule__GenRemediationRules__Alternatives_3 : ( ( ( rule__GenRemediationRules__PatternRulesAssignment_3_0 ) ) | ( ( rule__GenRemediationRules__DefaultRemediationsAssignment_3_1 ) ) );
+    public final void rule__GenRemediationRules__Alternatives_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:865:1: ( ( ( rule__GenPatternRemediationRule__Group_3_0__0 ) ) | ( ( rule__GenPatternRemediationRule__Group_3_1__0 ) ) | ( ( rule__GenPatternRemediationRule__Group_3_2__0 ) ) )
-            int alt6=3;
-            switch ( input.LA(1) ) {
-            case 47:
-                {
+            // InternalLibrettoProjectProfile.g:865:1: ( ( ( rule__GenRemediationRules__PatternRulesAssignment_3_0 ) ) | ( ( rule__GenRemediationRules__DefaultRemediationsAssignment_3_1 ) ) )
+            int alt6=2;
+            int LA6_0 = input.LA(1);
+
+            if ( (LA6_0==46) ) {
                 alt6=1;
-                }
-                break;
-            case 48:
-                {
+            }
+            else if ( (LA6_0==50) ) {
                 alt6=2;
-                }
-                break;
-            case 49:
-                {
-                alt6=3;
-                }
-                break;
-            default:
+            }
+            else {
                 NoViableAltException nvae =
                     new NoViableAltException("", 6, 0, input);
 
                 throw nvae;
             }
-
             switch (alt6) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:866:2: ( ( rule__GenPatternRemediationRule__Group_3_0__0 ) )
+                    // InternalLibrettoProjectProfile.g:866:2: ( ( rule__GenRemediationRules__PatternRulesAssignment_3_0 ) )
                     {
-                    // InternalLibrettoProjectProfile.g:866:2: ( ( rule__GenPatternRemediationRule__Group_3_0__0 ) )
-                    // InternalLibrettoProjectProfile.g:867:3: ( rule__GenPatternRemediationRule__Group_3_0__0 )
+                    // InternalLibrettoProjectProfile.g:866:2: ( ( rule__GenRemediationRules__PatternRulesAssignment_3_0 ) )
+                    // InternalLibrettoProjectProfile.g:867:3: ( rule__GenRemediationRules__PatternRulesAssignment_3_0 )
+                    {
+                     before(grammarAccess.getGenRemediationRulesAccess().getPatternRulesAssignment_3_0()); 
+                    // InternalLibrettoProjectProfile.g:868:3: ( rule__GenRemediationRules__PatternRulesAssignment_3_0 )
+                    // InternalLibrettoProjectProfile.g:868:4: rule__GenRemediationRules__PatternRulesAssignment_3_0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__GenRemediationRules__PatternRulesAssignment_3_0();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getGenRemediationRulesAccess().getPatternRulesAssignment_3_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalLibrettoProjectProfile.g:872:2: ( ( rule__GenRemediationRules__DefaultRemediationsAssignment_3_1 ) )
+                    {
+                    // InternalLibrettoProjectProfile.g:872:2: ( ( rule__GenRemediationRules__DefaultRemediationsAssignment_3_1 ) )
+                    // InternalLibrettoProjectProfile.g:873:3: ( rule__GenRemediationRules__DefaultRemediationsAssignment_3_1 )
+                    {
+                     before(grammarAccess.getGenRemediationRulesAccess().getDefaultRemediationsAssignment_3_1()); 
+                    // InternalLibrettoProjectProfile.g:874:3: ( rule__GenRemediationRules__DefaultRemediationsAssignment_3_1 )
+                    // InternalLibrettoProjectProfile.g:874:4: rule__GenRemediationRules__DefaultRemediationsAssignment_3_1
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__GenRemediationRules__DefaultRemediationsAssignment_3_1();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getGenRemediationRulesAccess().getDefaultRemediationsAssignment_3_1()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__GenRemediationRules__Alternatives_3"
+
+
+    // $ANTLR start "rule__GenPatternRemediationRule__Alternatives_3"
+    // InternalLibrettoProjectProfile.g:882:1: rule__GenPatternRemediationRule__Alternatives_3 : ( ( ( rule__GenPatternRemediationRule__Group_3_0__0 ) ) | ( ( rule__GenPatternRemediationRule__Group_3_1__0 ) ) | ( ( rule__GenPatternRemediationRule__Group_3_2__0 ) ) );
+    public final void rule__GenPatternRemediationRule__Alternatives_3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLibrettoProjectProfile.g:886:1: ( ( ( rule__GenPatternRemediationRule__Group_3_0__0 ) ) | ( ( rule__GenPatternRemediationRule__Group_3_1__0 ) ) | ( ( rule__GenPatternRemediationRule__Group_3_2__0 ) ) )
+            int alt7=3;
+            switch ( input.LA(1) ) {
+            case 47:
+                {
+                alt7=1;
+                }
+                break;
+            case 48:
+                {
+                alt7=2;
+                }
+                break;
+            case 49:
+                {
+                alt7=3;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 7, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt7) {
+                case 1 :
+                    // InternalLibrettoProjectProfile.g:887:2: ( ( rule__GenPatternRemediationRule__Group_3_0__0 ) )
+                    {
+                    // InternalLibrettoProjectProfile.g:887:2: ( ( rule__GenPatternRemediationRule__Group_3_0__0 ) )
+                    // InternalLibrettoProjectProfile.g:888:3: ( rule__GenPatternRemediationRule__Group_3_0__0 )
                     {
                      before(grammarAccess.getGenPatternRemediationRuleAccess().getGroup_3_0()); 
-                    // InternalLibrettoProjectProfile.g:868:3: ( rule__GenPatternRemediationRule__Group_3_0__0 )
-                    // InternalLibrettoProjectProfile.g:868:4: rule__GenPatternRemediationRule__Group_3_0__0
+                    // InternalLibrettoProjectProfile.g:889:3: ( rule__GenPatternRemediationRule__Group_3_0__0 )
+                    // InternalLibrettoProjectProfile.g:889:4: rule__GenPatternRemediationRule__Group_3_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__GenPatternRemediationRule__Group_3_0__0();
@@ -2917,14 +3008,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoProjectProfile.g:872:2: ( ( rule__GenPatternRemediationRule__Group_3_1__0 ) )
+                    // InternalLibrettoProjectProfile.g:893:2: ( ( rule__GenPatternRemediationRule__Group_3_1__0 ) )
                     {
-                    // InternalLibrettoProjectProfile.g:872:2: ( ( rule__GenPatternRemediationRule__Group_3_1__0 ) )
-                    // InternalLibrettoProjectProfile.g:873:3: ( rule__GenPatternRemediationRule__Group_3_1__0 )
+                    // InternalLibrettoProjectProfile.g:893:2: ( ( rule__GenPatternRemediationRule__Group_3_1__0 ) )
+                    // InternalLibrettoProjectProfile.g:894:3: ( rule__GenPatternRemediationRule__Group_3_1__0 )
                     {
                      before(grammarAccess.getGenPatternRemediationRuleAccess().getGroup_3_1()); 
-                    // InternalLibrettoProjectProfile.g:874:3: ( rule__GenPatternRemediationRule__Group_3_1__0 )
-                    // InternalLibrettoProjectProfile.g:874:4: rule__GenPatternRemediationRule__Group_3_1__0
+                    // InternalLibrettoProjectProfile.g:895:3: ( rule__GenPatternRemediationRule__Group_3_1__0 )
+                    // InternalLibrettoProjectProfile.g:895:4: rule__GenPatternRemediationRule__Group_3_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__GenPatternRemediationRule__Group_3_1__0();
@@ -2942,14 +3033,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
                     }
                     break;
                 case 3 :
-                    // InternalLibrettoProjectProfile.g:878:2: ( ( rule__GenPatternRemediationRule__Group_3_2__0 ) )
+                    // InternalLibrettoProjectProfile.g:899:2: ( ( rule__GenPatternRemediationRule__Group_3_2__0 ) )
                     {
-                    // InternalLibrettoProjectProfile.g:878:2: ( ( rule__GenPatternRemediationRule__Group_3_2__0 ) )
-                    // InternalLibrettoProjectProfile.g:879:3: ( rule__GenPatternRemediationRule__Group_3_2__0 )
+                    // InternalLibrettoProjectProfile.g:899:2: ( ( rule__GenPatternRemediationRule__Group_3_2__0 ) )
+                    // InternalLibrettoProjectProfile.g:900:3: ( rule__GenPatternRemediationRule__Group_3_2__0 )
                     {
                      before(grammarAccess.getGenPatternRemediationRuleAccess().getGroup_3_2()); 
-                    // InternalLibrettoProjectProfile.g:880:3: ( rule__GenPatternRemediationRule__Group_3_2__0 )
-                    // InternalLibrettoProjectProfile.g:880:4: rule__GenPatternRemediationRule__Group_3_2__0
+                    // InternalLibrettoProjectProfile.g:901:3: ( rule__GenPatternRemediationRule__Group_3_2__0 )
+                    // InternalLibrettoProjectProfile.g:901:4: rule__GenPatternRemediationRule__Group_3_2__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__GenPatternRemediationRule__Group_3_2__0();
@@ -2984,38 +3075,38 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenDefaultRemediationRule__Alternatives_3"
-    // InternalLibrettoProjectProfile.g:888:1: rule__GenDefaultRemediationRule__Alternatives_3 : ( ( ( rule__GenDefaultRemediationRule__Group_3_0__0 ) ) | ( ( rule__GenDefaultRemediationRule__Group_3_1__0 ) ) );
+    // InternalLibrettoProjectProfile.g:909:1: rule__GenDefaultRemediationRule__Alternatives_3 : ( ( ( rule__GenDefaultRemediationRule__Group_3_0__0 ) ) | ( ( rule__GenDefaultRemediationRule__Group_3_1__0 ) ) );
     public final void rule__GenDefaultRemediationRule__Alternatives_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:892:1: ( ( ( rule__GenDefaultRemediationRule__Group_3_0__0 ) ) | ( ( rule__GenDefaultRemediationRule__Group_3_1__0 ) ) )
-            int alt7=2;
-            int LA7_0 = input.LA(1);
+            // InternalLibrettoProjectProfile.g:913:1: ( ( ( rule__GenDefaultRemediationRule__Group_3_0__0 ) ) | ( ( rule__GenDefaultRemediationRule__Group_3_1__0 ) ) )
+            int alt8=2;
+            int LA8_0 = input.LA(1);
 
-            if ( (LA7_0==48) ) {
-                alt7=1;
+            if ( (LA8_0==48) ) {
+                alt8=1;
             }
-            else if ( (LA7_0==49) ) {
-                alt7=2;
+            else if ( (LA8_0==49) ) {
+                alt8=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 7, 0, input);
+                    new NoViableAltException("", 8, 0, input);
 
                 throw nvae;
             }
-            switch (alt7) {
+            switch (alt8) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:893:2: ( ( rule__GenDefaultRemediationRule__Group_3_0__0 ) )
+                    // InternalLibrettoProjectProfile.g:914:2: ( ( rule__GenDefaultRemediationRule__Group_3_0__0 ) )
                     {
-                    // InternalLibrettoProjectProfile.g:893:2: ( ( rule__GenDefaultRemediationRule__Group_3_0__0 ) )
-                    // InternalLibrettoProjectProfile.g:894:3: ( rule__GenDefaultRemediationRule__Group_3_0__0 )
+                    // InternalLibrettoProjectProfile.g:914:2: ( ( rule__GenDefaultRemediationRule__Group_3_0__0 ) )
+                    // InternalLibrettoProjectProfile.g:915:3: ( rule__GenDefaultRemediationRule__Group_3_0__0 )
                     {
                      before(grammarAccess.getGenDefaultRemediationRuleAccess().getGroup_3_0()); 
-                    // InternalLibrettoProjectProfile.g:895:3: ( rule__GenDefaultRemediationRule__Group_3_0__0 )
-                    // InternalLibrettoProjectProfile.g:895:4: rule__GenDefaultRemediationRule__Group_3_0__0
+                    // InternalLibrettoProjectProfile.g:916:3: ( rule__GenDefaultRemediationRule__Group_3_0__0 )
+                    // InternalLibrettoProjectProfile.g:916:4: rule__GenDefaultRemediationRule__Group_3_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__GenDefaultRemediationRule__Group_3_0__0();
@@ -3033,14 +3124,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoProjectProfile.g:899:2: ( ( rule__GenDefaultRemediationRule__Group_3_1__0 ) )
+                    // InternalLibrettoProjectProfile.g:920:2: ( ( rule__GenDefaultRemediationRule__Group_3_1__0 ) )
                     {
-                    // InternalLibrettoProjectProfile.g:899:2: ( ( rule__GenDefaultRemediationRule__Group_3_1__0 ) )
-                    // InternalLibrettoProjectProfile.g:900:3: ( rule__GenDefaultRemediationRule__Group_3_1__0 )
+                    // InternalLibrettoProjectProfile.g:920:2: ( ( rule__GenDefaultRemediationRule__Group_3_1__0 ) )
+                    // InternalLibrettoProjectProfile.g:921:3: ( rule__GenDefaultRemediationRule__Group_3_1__0 )
                     {
                      before(grammarAccess.getGenDefaultRemediationRuleAccess().getGroup_3_1()); 
-                    // InternalLibrettoProjectProfile.g:901:3: ( rule__GenDefaultRemediationRule__Group_3_1__0 )
-                    // InternalLibrettoProjectProfile.g:901:4: rule__GenDefaultRemediationRule__Group_3_1__0
+                    // InternalLibrettoProjectProfile.g:922:3: ( rule__GenDefaultRemediationRule__Group_3_1__0 )
+                    // InternalLibrettoProjectProfile.g:922:4: rule__GenDefaultRemediationRule__Group_3_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__GenDefaultRemediationRule__Group_3_1__0();
@@ -3075,52 +3166,52 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__NamedLlmProvider__Alternatives_3"
-    // InternalLibrettoProjectProfile.g:909:1: rule__NamedLlmProvider__Alternatives_3 : ( ( ( rule__NamedLlmProvider__Group_3_0__0 ) ) | ( ( rule__NamedLlmProvider__Group_3_1__0 ) ) | ( ( rule__NamedLlmProvider__Group_3_2__0 ) ) | ( ( rule__NamedLlmProvider__Group_3_3__0 ) ) );
+    // InternalLibrettoProjectProfile.g:930:1: rule__NamedLlmProvider__Alternatives_3 : ( ( ( rule__NamedLlmProvider__Group_3_0__0 ) ) | ( ( rule__NamedLlmProvider__Group_3_1__0 ) ) | ( ( rule__NamedLlmProvider__Group_3_2__0 ) ) | ( ( rule__NamedLlmProvider__Group_3_3__0 ) ) );
     public final void rule__NamedLlmProvider__Alternatives_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:913:1: ( ( ( rule__NamedLlmProvider__Group_3_0__0 ) ) | ( ( rule__NamedLlmProvider__Group_3_1__0 ) ) | ( ( rule__NamedLlmProvider__Group_3_2__0 ) ) | ( ( rule__NamedLlmProvider__Group_3_3__0 ) ) )
-            int alt8=4;
+            // InternalLibrettoProjectProfile.g:934:1: ( ( ( rule__NamedLlmProvider__Group_3_0__0 ) ) | ( ( rule__NamedLlmProvider__Group_3_1__0 ) ) | ( ( rule__NamedLlmProvider__Group_3_2__0 ) ) | ( ( rule__NamedLlmProvider__Group_3_3__0 ) ) )
+            int alt9=4;
             switch ( input.LA(1) ) {
             case 53:
                 {
-                alt8=1;
+                alt9=1;
                 }
                 break;
             case 54:
                 {
-                alt8=2;
+                alt9=2;
                 }
                 break;
             case 55:
                 {
-                alt8=3;
+                alt9=3;
                 }
                 break;
             case 56:
                 {
-                alt8=4;
+                alt9=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 8, 0, input);
+                    new NoViableAltException("", 9, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt8) {
+            switch (alt9) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:914:2: ( ( rule__NamedLlmProvider__Group_3_0__0 ) )
+                    // InternalLibrettoProjectProfile.g:935:2: ( ( rule__NamedLlmProvider__Group_3_0__0 ) )
                     {
-                    // InternalLibrettoProjectProfile.g:914:2: ( ( rule__NamedLlmProvider__Group_3_0__0 ) )
-                    // InternalLibrettoProjectProfile.g:915:3: ( rule__NamedLlmProvider__Group_3_0__0 )
+                    // InternalLibrettoProjectProfile.g:935:2: ( ( rule__NamedLlmProvider__Group_3_0__0 ) )
+                    // InternalLibrettoProjectProfile.g:936:3: ( rule__NamedLlmProvider__Group_3_0__0 )
                     {
                      before(grammarAccess.getNamedLlmProviderAccess().getGroup_3_0()); 
-                    // InternalLibrettoProjectProfile.g:916:3: ( rule__NamedLlmProvider__Group_3_0__0 )
-                    // InternalLibrettoProjectProfile.g:916:4: rule__NamedLlmProvider__Group_3_0__0
+                    // InternalLibrettoProjectProfile.g:937:3: ( rule__NamedLlmProvider__Group_3_0__0 )
+                    // InternalLibrettoProjectProfile.g:937:4: rule__NamedLlmProvider__Group_3_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__NamedLlmProvider__Group_3_0__0();
@@ -3138,14 +3229,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoProjectProfile.g:920:2: ( ( rule__NamedLlmProvider__Group_3_1__0 ) )
+                    // InternalLibrettoProjectProfile.g:941:2: ( ( rule__NamedLlmProvider__Group_3_1__0 ) )
                     {
-                    // InternalLibrettoProjectProfile.g:920:2: ( ( rule__NamedLlmProvider__Group_3_1__0 ) )
-                    // InternalLibrettoProjectProfile.g:921:3: ( rule__NamedLlmProvider__Group_3_1__0 )
+                    // InternalLibrettoProjectProfile.g:941:2: ( ( rule__NamedLlmProvider__Group_3_1__0 ) )
+                    // InternalLibrettoProjectProfile.g:942:3: ( rule__NamedLlmProvider__Group_3_1__0 )
                     {
                      before(grammarAccess.getNamedLlmProviderAccess().getGroup_3_1()); 
-                    // InternalLibrettoProjectProfile.g:922:3: ( rule__NamedLlmProvider__Group_3_1__0 )
-                    // InternalLibrettoProjectProfile.g:922:4: rule__NamedLlmProvider__Group_3_1__0
+                    // InternalLibrettoProjectProfile.g:943:3: ( rule__NamedLlmProvider__Group_3_1__0 )
+                    // InternalLibrettoProjectProfile.g:943:4: rule__NamedLlmProvider__Group_3_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__NamedLlmProvider__Group_3_1__0();
@@ -3163,14 +3254,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
                     }
                     break;
                 case 3 :
-                    // InternalLibrettoProjectProfile.g:926:2: ( ( rule__NamedLlmProvider__Group_3_2__0 ) )
+                    // InternalLibrettoProjectProfile.g:947:2: ( ( rule__NamedLlmProvider__Group_3_2__0 ) )
                     {
-                    // InternalLibrettoProjectProfile.g:926:2: ( ( rule__NamedLlmProvider__Group_3_2__0 ) )
-                    // InternalLibrettoProjectProfile.g:927:3: ( rule__NamedLlmProvider__Group_3_2__0 )
+                    // InternalLibrettoProjectProfile.g:947:2: ( ( rule__NamedLlmProvider__Group_3_2__0 ) )
+                    // InternalLibrettoProjectProfile.g:948:3: ( rule__NamedLlmProvider__Group_3_2__0 )
                     {
                      before(grammarAccess.getNamedLlmProviderAccess().getGroup_3_2()); 
-                    // InternalLibrettoProjectProfile.g:928:3: ( rule__NamedLlmProvider__Group_3_2__0 )
-                    // InternalLibrettoProjectProfile.g:928:4: rule__NamedLlmProvider__Group_3_2__0
+                    // InternalLibrettoProjectProfile.g:949:3: ( rule__NamedLlmProvider__Group_3_2__0 )
+                    // InternalLibrettoProjectProfile.g:949:4: rule__NamedLlmProvider__Group_3_2__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__NamedLlmProvider__Group_3_2__0();
@@ -3188,14 +3279,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
                     }
                     break;
                 case 4 :
-                    // InternalLibrettoProjectProfile.g:932:2: ( ( rule__NamedLlmProvider__Group_3_3__0 ) )
+                    // InternalLibrettoProjectProfile.g:953:2: ( ( rule__NamedLlmProvider__Group_3_3__0 ) )
                     {
-                    // InternalLibrettoProjectProfile.g:932:2: ( ( rule__NamedLlmProvider__Group_3_3__0 ) )
-                    // InternalLibrettoProjectProfile.g:933:3: ( rule__NamedLlmProvider__Group_3_3__0 )
+                    // InternalLibrettoProjectProfile.g:953:2: ( ( rule__NamedLlmProvider__Group_3_3__0 ) )
+                    // InternalLibrettoProjectProfile.g:954:3: ( rule__NamedLlmProvider__Group_3_3__0 )
                     {
                      before(grammarAccess.getNamedLlmProviderAccess().getGroup_3_3()); 
-                    // InternalLibrettoProjectProfile.g:934:3: ( rule__NamedLlmProvider__Group_3_3__0 )
-                    // InternalLibrettoProjectProfile.g:934:4: rule__NamedLlmProvider__Group_3_3__0
+                    // InternalLibrettoProjectProfile.g:955:3: ( rule__NamedLlmProvider__Group_3_3__0 )
+                    // InternalLibrettoProjectProfile.g:955:4: rule__NamedLlmProvider__Group_3_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__NamedLlmProvider__Group_3_3__0();
@@ -3230,43 +3321,43 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__NamedLlmProvider__KindsAlternatives_3_0_1_0"
-    // InternalLibrettoProjectProfile.g:942:1: rule__NamedLlmProvider__KindsAlternatives_3_0_1_0 : ( ( 'local' ) | ( 'openai' ) | ( 'ollama' ) );
+    // InternalLibrettoProjectProfile.g:963:1: rule__NamedLlmProvider__KindsAlternatives_3_0_1_0 : ( ( 'local' ) | ( 'openai' ) | ( 'ollama' ) );
     public final void rule__NamedLlmProvider__KindsAlternatives_3_0_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:946:1: ( ( 'local' ) | ( 'openai' ) | ( 'ollama' ) )
-            int alt9=3;
+            // InternalLibrettoProjectProfile.g:967:1: ( ( 'local' ) | ( 'openai' ) | ( 'ollama' ) )
+            int alt10=3;
             switch ( input.LA(1) ) {
             case 13:
                 {
-                alt9=1;
+                alt10=1;
                 }
                 break;
             case 14:
                 {
-                alt9=2;
+                alt10=2;
                 }
                 break;
             case 15:
                 {
-                alt9=3;
+                alt10=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 9, 0, input);
+                    new NoViableAltException("", 10, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt9) {
+            switch (alt10) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:947:2: ( 'local' )
+                    // InternalLibrettoProjectProfile.g:968:2: ( 'local' )
                     {
-                    // InternalLibrettoProjectProfile.g:947:2: ( 'local' )
-                    // InternalLibrettoProjectProfile.g:948:3: 'local'
+                    // InternalLibrettoProjectProfile.g:968:2: ( 'local' )
+                    // InternalLibrettoProjectProfile.g:969:3: 'local'
                     {
                      before(grammarAccess.getNamedLlmProviderAccess().getKindsLocalKeyword_3_0_1_0_0()); 
                     match(input,13,FOLLOW_2); 
@@ -3278,10 +3369,10 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoProjectProfile.g:953:2: ( 'openai' )
+                    // InternalLibrettoProjectProfile.g:974:2: ( 'openai' )
                     {
-                    // InternalLibrettoProjectProfile.g:953:2: ( 'openai' )
-                    // InternalLibrettoProjectProfile.g:954:3: 'openai'
+                    // InternalLibrettoProjectProfile.g:974:2: ( 'openai' )
+                    // InternalLibrettoProjectProfile.g:975:3: 'openai'
                     {
                      before(grammarAccess.getNamedLlmProviderAccess().getKindsOpenaiKeyword_3_0_1_0_1()); 
                     match(input,14,FOLLOW_2); 
@@ -3293,10 +3384,10 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
                     }
                     break;
                 case 3 :
-                    // InternalLibrettoProjectProfile.g:959:2: ( 'ollama' )
+                    // InternalLibrettoProjectProfile.g:980:2: ( 'ollama' )
                     {
-                    // InternalLibrettoProjectProfile.g:959:2: ( 'ollama' )
-                    // InternalLibrettoProjectProfile.g:960:3: 'ollama'
+                    // InternalLibrettoProjectProfile.g:980:2: ( 'ollama' )
+                    // InternalLibrettoProjectProfile.g:981:3: 'ollama'
                     {
                      before(grammarAccess.getNamedLlmProviderAccess().getKindsOllamaKeyword_3_0_1_0_2()); 
                     match(input,15,FOLLOW_2); 
@@ -3325,47 +3416,47 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenUsageBlock__Alternatives_3"
-    // InternalLibrettoProjectProfile.g:969:1: rule__GenUsageBlock__Alternatives_3 : ( ( ( rule__GenUsageBlock__Group_3_0__0 ) ) | ( ( rule__GenUsageBlock__Group_3_1__0 ) ) | ( ( rule__GenUsageBlock__EscalationsAssignment_3_2 ) ) );
+    // InternalLibrettoProjectProfile.g:990:1: rule__GenUsageBlock__Alternatives_3 : ( ( ( rule__GenUsageBlock__Group_3_0__0 ) ) | ( ( rule__GenUsageBlock__Group_3_1__0 ) ) | ( ( rule__GenUsageBlock__EscalationsAssignment_3_2 ) ) );
     public final void rule__GenUsageBlock__Alternatives_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:973:1: ( ( ( rule__GenUsageBlock__Group_3_0__0 ) ) | ( ( rule__GenUsageBlock__Group_3_1__0 ) ) | ( ( rule__GenUsageBlock__EscalationsAssignment_3_2 ) ) )
-            int alt10=3;
+            // InternalLibrettoProjectProfile.g:994:1: ( ( ( rule__GenUsageBlock__Group_3_0__0 ) ) | ( ( rule__GenUsageBlock__Group_3_1__0 ) ) | ( ( rule__GenUsageBlock__EscalationsAssignment_3_2 ) ) )
+            int alt11=3;
             switch ( input.LA(1) ) {
             case 58:
                 {
-                alt10=1;
+                alt11=1;
                 }
                 break;
             case 59:
                 {
-                alt10=2;
+                alt11=2;
                 }
                 break;
             case 60:
                 {
-                alt10=3;
+                alt11=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 10, 0, input);
+                    new NoViableAltException("", 11, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt10) {
+            switch (alt11) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:974:2: ( ( rule__GenUsageBlock__Group_3_0__0 ) )
+                    // InternalLibrettoProjectProfile.g:995:2: ( ( rule__GenUsageBlock__Group_3_0__0 ) )
                     {
-                    // InternalLibrettoProjectProfile.g:974:2: ( ( rule__GenUsageBlock__Group_3_0__0 ) )
-                    // InternalLibrettoProjectProfile.g:975:3: ( rule__GenUsageBlock__Group_3_0__0 )
+                    // InternalLibrettoProjectProfile.g:995:2: ( ( rule__GenUsageBlock__Group_3_0__0 ) )
+                    // InternalLibrettoProjectProfile.g:996:3: ( rule__GenUsageBlock__Group_3_0__0 )
                     {
                      before(grammarAccess.getGenUsageBlockAccess().getGroup_3_0()); 
-                    // InternalLibrettoProjectProfile.g:976:3: ( rule__GenUsageBlock__Group_3_0__0 )
-                    // InternalLibrettoProjectProfile.g:976:4: rule__GenUsageBlock__Group_3_0__0
+                    // InternalLibrettoProjectProfile.g:997:3: ( rule__GenUsageBlock__Group_3_0__0 )
+                    // InternalLibrettoProjectProfile.g:997:4: rule__GenUsageBlock__Group_3_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__GenUsageBlock__Group_3_0__0();
@@ -3383,14 +3474,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoProjectProfile.g:980:2: ( ( rule__GenUsageBlock__Group_3_1__0 ) )
+                    // InternalLibrettoProjectProfile.g:1001:2: ( ( rule__GenUsageBlock__Group_3_1__0 ) )
                     {
-                    // InternalLibrettoProjectProfile.g:980:2: ( ( rule__GenUsageBlock__Group_3_1__0 ) )
-                    // InternalLibrettoProjectProfile.g:981:3: ( rule__GenUsageBlock__Group_3_1__0 )
+                    // InternalLibrettoProjectProfile.g:1001:2: ( ( rule__GenUsageBlock__Group_3_1__0 ) )
+                    // InternalLibrettoProjectProfile.g:1002:3: ( rule__GenUsageBlock__Group_3_1__0 )
                     {
                      before(grammarAccess.getGenUsageBlockAccess().getGroup_3_1()); 
-                    // InternalLibrettoProjectProfile.g:982:3: ( rule__GenUsageBlock__Group_3_1__0 )
-                    // InternalLibrettoProjectProfile.g:982:4: rule__GenUsageBlock__Group_3_1__0
+                    // InternalLibrettoProjectProfile.g:1003:3: ( rule__GenUsageBlock__Group_3_1__0 )
+                    // InternalLibrettoProjectProfile.g:1003:4: rule__GenUsageBlock__Group_3_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__GenUsageBlock__Group_3_1__0();
@@ -3408,14 +3499,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
                     }
                     break;
                 case 3 :
-                    // InternalLibrettoProjectProfile.g:986:2: ( ( rule__GenUsageBlock__EscalationsAssignment_3_2 ) )
+                    // InternalLibrettoProjectProfile.g:1007:2: ( ( rule__GenUsageBlock__EscalationsAssignment_3_2 ) )
                     {
-                    // InternalLibrettoProjectProfile.g:986:2: ( ( rule__GenUsageBlock__EscalationsAssignment_3_2 ) )
-                    // InternalLibrettoProjectProfile.g:987:3: ( rule__GenUsageBlock__EscalationsAssignment_3_2 )
+                    // InternalLibrettoProjectProfile.g:1007:2: ( ( rule__GenUsageBlock__EscalationsAssignment_3_2 ) )
+                    // InternalLibrettoProjectProfile.g:1008:3: ( rule__GenUsageBlock__EscalationsAssignment_3_2 )
                     {
                      before(grammarAccess.getGenUsageBlockAccess().getEscalationsAssignment_3_2()); 
-                    // InternalLibrettoProjectProfile.g:988:3: ( rule__GenUsageBlock__EscalationsAssignment_3_2 )
-                    // InternalLibrettoProjectProfile.g:988:4: rule__GenUsageBlock__EscalationsAssignment_3_2
+                    // InternalLibrettoProjectProfile.g:1009:3: ( rule__GenUsageBlock__EscalationsAssignment_3_2 )
+                    // InternalLibrettoProjectProfile.g:1009:4: rule__GenUsageBlock__EscalationsAssignment_3_2
                     {
                     pushFollow(FOLLOW_2);
                     rule__GenUsageBlock__EscalationsAssignment_3_2();
@@ -3450,38 +3541,38 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenEscalationBlock__Alternatives_3"
-    // InternalLibrettoProjectProfile.g:996:1: rule__GenEscalationBlock__Alternatives_3 : ( ( ( rule__GenEscalationBlock__Group_3_0__0 ) ) | ( ( rule__GenEscalationBlock__Group_3_1__0 ) ) );
+    // InternalLibrettoProjectProfile.g:1017:1: rule__GenEscalationBlock__Alternatives_3 : ( ( ( rule__GenEscalationBlock__Group_3_0__0 ) ) | ( ( rule__GenEscalationBlock__Group_3_1__0 ) ) );
     public final void rule__GenEscalationBlock__Alternatives_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1000:1: ( ( ( rule__GenEscalationBlock__Group_3_0__0 ) ) | ( ( rule__GenEscalationBlock__Group_3_1__0 ) ) )
-            int alt11=2;
-            int LA11_0 = input.LA(1);
+            // InternalLibrettoProjectProfile.g:1021:1: ( ( ( rule__GenEscalationBlock__Group_3_0__0 ) ) | ( ( rule__GenEscalationBlock__Group_3_1__0 ) ) )
+            int alt12=2;
+            int LA12_0 = input.LA(1);
 
-            if ( (LA11_0==61) ) {
-                alt11=1;
+            if ( (LA12_0==61) ) {
+                alt12=1;
             }
-            else if ( (LA11_0==62) ) {
-                alt11=2;
+            else if ( (LA12_0==62) ) {
+                alt12=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 11, 0, input);
+                    new NoViableAltException("", 12, 0, input);
 
                 throw nvae;
             }
-            switch (alt11) {
+            switch (alt12) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:1001:2: ( ( rule__GenEscalationBlock__Group_3_0__0 ) )
+                    // InternalLibrettoProjectProfile.g:1022:2: ( ( rule__GenEscalationBlock__Group_3_0__0 ) )
                     {
-                    // InternalLibrettoProjectProfile.g:1001:2: ( ( rule__GenEscalationBlock__Group_3_0__0 ) )
-                    // InternalLibrettoProjectProfile.g:1002:3: ( rule__GenEscalationBlock__Group_3_0__0 )
+                    // InternalLibrettoProjectProfile.g:1022:2: ( ( rule__GenEscalationBlock__Group_3_0__0 ) )
+                    // InternalLibrettoProjectProfile.g:1023:3: ( rule__GenEscalationBlock__Group_3_0__0 )
                     {
                      before(grammarAccess.getGenEscalationBlockAccess().getGroup_3_0()); 
-                    // InternalLibrettoProjectProfile.g:1003:3: ( rule__GenEscalationBlock__Group_3_0__0 )
-                    // InternalLibrettoProjectProfile.g:1003:4: rule__GenEscalationBlock__Group_3_0__0
+                    // InternalLibrettoProjectProfile.g:1024:3: ( rule__GenEscalationBlock__Group_3_0__0 )
+                    // InternalLibrettoProjectProfile.g:1024:4: rule__GenEscalationBlock__Group_3_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__GenEscalationBlock__Group_3_0__0();
@@ -3499,14 +3590,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoProjectProfile.g:1007:2: ( ( rule__GenEscalationBlock__Group_3_1__0 ) )
+                    // InternalLibrettoProjectProfile.g:1028:2: ( ( rule__GenEscalationBlock__Group_3_1__0 ) )
                     {
-                    // InternalLibrettoProjectProfile.g:1007:2: ( ( rule__GenEscalationBlock__Group_3_1__0 ) )
-                    // InternalLibrettoProjectProfile.g:1008:3: ( rule__GenEscalationBlock__Group_3_1__0 )
+                    // InternalLibrettoProjectProfile.g:1028:2: ( ( rule__GenEscalationBlock__Group_3_1__0 ) )
+                    // InternalLibrettoProjectProfile.g:1029:3: ( rule__GenEscalationBlock__Group_3_1__0 )
                     {
                      before(grammarAccess.getGenEscalationBlockAccess().getGroup_3_1()); 
-                    // InternalLibrettoProjectProfile.g:1009:3: ( rule__GenEscalationBlock__Group_3_1__0 )
-                    // InternalLibrettoProjectProfile.g:1009:4: rule__GenEscalationBlock__Group_3_1__0
+                    // InternalLibrettoProjectProfile.g:1030:3: ( rule__GenEscalationBlock__Group_3_1__0 )
+                    // InternalLibrettoProjectProfile.g:1030:4: rule__GenEscalationBlock__Group_3_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__GenEscalationBlock__Group_3_1__0();
@@ -3541,34 +3632,34 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenEscalationBlock__EnabledsAlternatives_3_0_1_0"
-    // InternalLibrettoProjectProfile.g:1017:1: rule__GenEscalationBlock__EnabledsAlternatives_3_0_1_0 : ( ( 'true' ) | ( 'false' ) );
+    // InternalLibrettoProjectProfile.g:1038:1: rule__GenEscalationBlock__EnabledsAlternatives_3_0_1_0 : ( ( 'true' ) | ( 'false' ) );
     public final void rule__GenEscalationBlock__EnabledsAlternatives_3_0_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1021:1: ( ( 'true' ) | ( 'false' ) )
-            int alt12=2;
-            int LA12_0 = input.LA(1);
+            // InternalLibrettoProjectProfile.g:1042:1: ( ( 'true' ) | ( 'false' ) )
+            int alt13=2;
+            int LA13_0 = input.LA(1);
 
-            if ( (LA12_0==11) ) {
-                alt12=1;
+            if ( (LA13_0==11) ) {
+                alt13=1;
             }
-            else if ( (LA12_0==12) ) {
-                alt12=2;
+            else if ( (LA13_0==12) ) {
+                alt13=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 12, 0, input);
+                    new NoViableAltException("", 13, 0, input);
 
                 throw nvae;
             }
-            switch (alt12) {
+            switch (alt13) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:1022:2: ( 'true' )
+                    // InternalLibrettoProjectProfile.g:1043:2: ( 'true' )
                     {
-                    // InternalLibrettoProjectProfile.g:1022:2: ( 'true' )
-                    // InternalLibrettoProjectProfile.g:1023:3: 'true'
+                    // InternalLibrettoProjectProfile.g:1043:2: ( 'true' )
+                    // InternalLibrettoProjectProfile.g:1044:3: 'true'
                     {
                      before(grammarAccess.getGenEscalationBlockAccess().getEnabledsTrueKeyword_3_0_1_0_0()); 
                     match(input,11,FOLLOW_2); 
@@ -3580,10 +3671,10 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoProjectProfile.g:1028:2: ( 'false' )
+                    // InternalLibrettoProjectProfile.g:1049:2: ( 'false' )
                     {
-                    // InternalLibrettoProjectProfile.g:1028:2: ( 'false' )
-                    // InternalLibrettoProjectProfile.g:1029:3: 'false'
+                    // InternalLibrettoProjectProfile.g:1049:2: ( 'false' )
+                    // InternalLibrettoProjectProfile.g:1050:3: 'false'
                     {
                      before(grammarAccess.getGenEscalationBlockAccess().getEnabledsFalseKeyword_3_0_1_0_1()); 
                     match(input,12,FOLLOW_2); 
@@ -3612,34 +3703,34 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__SurfaceElement__Alternatives"
-    // InternalLibrettoProjectProfile.g:1038:1: rule__SurfaceElement__Alternatives : ( ( ruleScopedSurface ) | ( ruleSurfaceRule ) );
+    // InternalLibrettoProjectProfile.g:1059:1: rule__SurfaceElement__Alternatives : ( ( ruleScopedSurface ) | ( ruleSurfaceRule ) );
     public final void rule__SurfaceElement__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1042:1: ( ( ruleScopedSurface ) | ( ruleSurfaceRule ) )
-            int alt13=2;
-            int LA13_0 = input.LA(1);
+            // InternalLibrettoProjectProfile.g:1063:1: ( ( ruleScopedSurface ) | ( ruleSurfaceRule ) )
+            int alt14=2;
+            int LA14_0 = input.LA(1);
 
-            if ( (LA13_0==64) ) {
-                alt13=1;
+            if ( (LA14_0==64) ) {
+                alt14=1;
             }
-            else if ( (LA13_0==66||LA13_0==70||LA13_0==72||LA13_0==74) ) {
-                alt13=2;
+            else if ( (LA14_0==66||LA14_0==70||LA14_0==72||LA14_0==74) ) {
+                alt14=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 13, 0, input);
+                    new NoViableAltException("", 14, 0, input);
 
                 throw nvae;
             }
-            switch (alt13) {
+            switch (alt14) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:1043:2: ( ruleScopedSurface )
+                    // InternalLibrettoProjectProfile.g:1064:2: ( ruleScopedSurface )
                     {
-                    // InternalLibrettoProjectProfile.g:1043:2: ( ruleScopedSurface )
-                    // InternalLibrettoProjectProfile.g:1044:3: ruleScopedSurface
+                    // InternalLibrettoProjectProfile.g:1064:2: ( ruleScopedSurface )
+                    // InternalLibrettoProjectProfile.g:1065:3: ruleScopedSurface
                     {
                      before(grammarAccess.getSurfaceElementAccess().getScopedSurfaceParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -3655,10 +3746,10 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoProjectProfile.g:1049:2: ( ruleSurfaceRule )
+                    // InternalLibrettoProjectProfile.g:1070:2: ( ruleSurfaceRule )
                     {
-                    // InternalLibrettoProjectProfile.g:1049:2: ( ruleSurfaceRule )
-                    // InternalLibrettoProjectProfile.g:1050:3: ruleSurfaceRule
+                    // InternalLibrettoProjectProfile.g:1070:2: ( ruleSurfaceRule )
+                    // InternalLibrettoProjectProfile.g:1071:3: ruleSurfaceRule
                     {
                      before(grammarAccess.getSurfaceElementAccess().getSurfaceRuleParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -3691,38 +3782,38 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ScopedSurface__Alternatives_1"
-    // InternalLibrettoProjectProfile.g:1059:1: rule__ScopedSurface__Alternatives_1 : ( ( ( rule__ScopedSurface__Group_1_0__0 ) ) | ( ( rule__ScopedSurface__Group_1_1__0 ) ) );
+    // InternalLibrettoProjectProfile.g:1080:1: rule__ScopedSurface__Alternatives_1 : ( ( ( rule__ScopedSurface__Group_1_0__0 ) ) | ( ( rule__ScopedSurface__Group_1_1__0 ) ) );
     public final void rule__ScopedSurface__Alternatives_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1063:1: ( ( ( rule__ScopedSurface__Group_1_0__0 ) ) | ( ( rule__ScopedSurface__Group_1_1__0 ) ) )
-            int alt14=2;
-            int LA14_0 = input.LA(1);
+            // InternalLibrettoProjectProfile.g:1084:1: ( ( ( rule__ScopedSurface__Group_1_0__0 ) ) | ( ( rule__ScopedSurface__Group_1_1__0 ) ) )
+            int alt15=2;
+            int LA15_0 = input.LA(1);
 
-            if ( (LA14_0==34) ) {
-                alt14=1;
+            if ( (LA15_0==34) ) {
+                alt15=1;
             }
-            else if ( (LA14_0==65) ) {
-                alt14=2;
+            else if ( (LA15_0==65) ) {
+                alt15=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 14, 0, input);
+                    new NoViableAltException("", 15, 0, input);
 
                 throw nvae;
             }
-            switch (alt14) {
+            switch (alt15) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:1064:2: ( ( rule__ScopedSurface__Group_1_0__0 ) )
+                    // InternalLibrettoProjectProfile.g:1085:2: ( ( rule__ScopedSurface__Group_1_0__0 ) )
                     {
-                    // InternalLibrettoProjectProfile.g:1064:2: ( ( rule__ScopedSurface__Group_1_0__0 ) )
-                    // InternalLibrettoProjectProfile.g:1065:3: ( rule__ScopedSurface__Group_1_0__0 )
+                    // InternalLibrettoProjectProfile.g:1085:2: ( ( rule__ScopedSurface__Group_1_0__0 ) )
+                    // InternalLibrettoProjectProfile.g:1086:3: ( rule__ScopedSurface__Group_1_0__0 )
                     {
                      before(grammarAccess.getScopedSurfaceAccess().getGroup_1_0()); 
-                    // InternalLibrettoProjectProfile.g:1066:3: ( rule__ScopedSurface__Group_1_0__0 )
-                    // InternalLibrettoProjectProfile.g:1066:4: rule__ScopedSurface__Group_1_0__0
+                    // InternalLibrettoProjectProfile.g:1087:3: ( rule__ScopedSurface__Group_1_0__0 )
+                    // InternalLibrettoProjectProfile.g:1087:4: rule__ScopedSurface__Group_1_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__ScopedSurface__Group_1_0__0();
@@ -3740,14 +3831,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoProjectProfile.g:1070:2: ( ( rule__ScopedSurface__Group_1_1__0 ) )
+                    // InternalLibrettoProjectProfile.g:1091:2: ( ( rule__ScopedSurface__Group_1_1__0 ) )
                     {
-                    // InternalLibrettoProjectProfile.g:1070:2: ( ( rule__ScopedSurface__Group_1_1__0 ) )
-                    // InternalLibrettoProjectProfile.g:1071:3: ( rule__ScopedSurface__Group_1_1__0 )
+                    // InternalLibrettoProjectProfile.g:1091:2: ( ( rule__ScopedSurface__Group_1_1__0 ) )
+                    // InternalLibrettoProjectProfile.g:1092:3: ( rule__ScopedSurface__Group_1_1__0 )
                     {
                      before(grammarAccess.getScopedSurfaceAccess().getGroup_1_1()); 
-                    // InternalLibrettoProjectProfile.g:1072:3: ( rule__ScopedSurface__Group_1_1__0 )
-                    // InternalLibrettoProjectProfile.g:1072:4: rule__ScopedSurface__Group_1_1__0
+                    // InternalLibrettoProjectProfile.g:1093:3: ( rule__ScopedSurface__Group_1_1__0 )
+                    // InternalLibrettoProjectProfile.g:1093:4: rule__ScopedSurface__Group_1_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__ScopedSurface__Group_1_1__0();
@@ -3782,48 +3873,48 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__SurfaceRule__Alternatives"
-    // InternalLibrettoProjectProfile.g:1080:1: rule__SurfaceRule__Alternatives : ( ( ruleReturnTypeRule ) | ( ruleParamTypeRule ) | ( ruleRecordSelfReturnRule ) | ( ruleMethodOverrideRule ) );
+    // InternalLibrettoProjectProfile.g:1101:1: rule__SurfaceRule__Alternatives : ( ( ruleReturnTypeRule ) | ( ruleParamTypeRule ) | ( ruleRecordSelfReturnRule ) | ( ruleMethodOverrideRule ) );
     public final void rule__SurfaceRule__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1084:1: ( ( ruleReturnTypeRule ) | ( ruleParamTypeRule ) | ( ruleRecordSelfReturnRule ) | ( ruleMethodOverrideRule ) )
-            int alt15=4;
+            // InternalLibrettoProjectProfile.g:1105:1: ( ( ruleReturnTypeRule ) | ( ruleParamTypeRule ) | ( ruleRecordSelfReturnRule ) | ( ruleMethodOverrideRule ) )
+            int alt16=4;
             switch ( input.LA(1) ) {
             case 66:
                 {
-                alt15=1;
+                alt16=1;
                 }
                 break;
             case 70:
                 {
-                alt15=2;
+                alt16=2;
                 }
                 break;
             case 72:
                 {
-                alt15=3;
+                alt16=3;
                 }
                 break;
             case 74:
                 {
-                alt15=4;
+                alt16=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 15, 0, input);
+                    new NoViableAltException("", 16, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt15) {
+            switch (alt16) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:1085:2: ( ruleReturnTypeRule )
+                    // InternalLibrettoProjectProfile.g:1106:2: ( ruleReturnTypeRule )
                     {
-                    // InternalLibrettoProjectProfile.g:1085:2: ( ruleReturnTypeRule )
-                    // InternalLibrettoProjectProfile.g:1086:3: ruleReturnTypeRule
+                    // InternalLibrettoProjectProfile.g:1106:2: ( ruleReturnTypeRule )
+                    // InternalLibrettoProjectProfile.g:1107:3: ruleReturnTypeRule
                     {
                      before(grammarAccess.getSurfaceRuleAccess().getReturnTypeRuleParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -3839,10 +3930,10 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoProjectProfile.g:1091:2: ( ruleParamTypeRule )
+                    // InternalLibrettoProjectProfile.g:1112:2: ( ruleParamTypeRule )
                     {
-                    // InternalLibrettoProjectProfile.g:1091:2: ( ruleParamTypeRule )
-                    // InternalLibrettoProjectProfile.g:1092:3: ruleParamTypeRule
+                    // InternalLibrettoProjectProfile.g:1112:2: ( ruleParamTypeRule )
+                    // InternalLibrettoProjectProfile.g:1113:3: ruleParamTypeRule
                     {
                      before(grammarAccess.getSurfaceRuleAccess().getParamTypeRuleParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -3858,10 +3949,10 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
                     }
                     break;
                 case 3 :
-                    // InternalLibrettoProjectProfile.g:1097:2: ( ruleRecordSelfReturnRule )
+                    // InternalLibrettoProjectProfile.g:1118:2: ( ruleRecordSelfReturnRule )
                     {
-                    // InternalLibrettoProjectProfile.g:1097:2: ( ruleRecordSelfReturnRule )
-                    // InternalLibrettoProjectProfile.g:1098:3: ruleRecordSelfReturnRule
+                    // InternalLibrettoProjectProfile.g:1118:2: ( ruleRecordSelfReturnRule )
+                    // InternalLibrettoProjectProfile.g:1119:3: ruleRecordSelfReturnRule
                     {
                      before(grammarAccess.getSurfaceRuleAccess().getRecordSelfReturnRuleParserRuleCall_2()); 
                     pushFollow(FOLLOW_2);
@@ -3877,10 +3968,10 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
                     }
                     break;
                 case 4 :
-                    // InternalLibrettoProjectProfile.g:1103:2: ( ruleMethodOverrideRule )
+                    // InternalLibrettoProjectProfile.g:1124:2: ( ruleMethodOverrideRule )
                     {
-                    // InternalLibrettoProjectProfile.g:1103:2: ( ruleMethodOverrideRule )
-                    // InternalLibrettoProjectProfile.g:1104:3: ruleMethodOverrideRule
+                    // InternalLibrettoProjectProfile.g:1124:2: ( ruleMethodOverrideRule )
+                    // InternalLibrettoProjectProfile.g:1125:3: ruleMethodOverrideRule
                     {
                      before(grammarAccess.getSurfaceRuleAccess().getMethodOverrideRuleParserRuleCall_3()); 
                     pushFollow(FOLLOW_2);
@@ -3913,34 +4004,34 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__JavaType__Alternatives"
-    // InternalLibrettoProjectProfile.g:1113:1: rule__JavaType__Alternatives : ( ( rulePrimitiveType ) | ( ruleQualifiedName ) );
+    // InternalLibrettoProjectProfile.g:1134:1: rule__JavaType__Alternatives : ( ( rulePrimitiveType ) | ( ruleQualifiedName ) );
     public final void rule__JavaType__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1117:1: ( ( rulePrimitiveType ) | ( ruleQualifiedName ) )
-            int alt16=2;
-            int LA16_0 = input.LA(1);
+            // InternalLibrettoProjectProfile.g:1138:1: ( ( rulePrimitiveType ) | ( ruleQualifiedName ) )
+            int alt17=2;
+            int LA17_0 = input.LA(1);
 
-            if ( ((LA16_0>=16 && LA16_0<=24)) ) {
-                alt16=1;
+            if ( ((LA17_0>=16 && LA17_0<=24)) ) {
+                alt17=1;
             }
-            else if ( (LA16_0==RULE_ID) ) {
-                alt16=2;
+            else if ( (LA17_0==RULE_ID) ) {
+                alt17=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 16, 0, input);
+                    new NoViableAltException("", 17, 0, input);
 
                 throw nvae;
             }
-            switch (alt16) {
+            switch (alt17) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:1118:2: ( rulePrimitiveType )
+                    // InternalLibrettoProjectProfile.g:1139:2: ( rulePrimitiveType )
                     {
-                    // InternalLibrettoProjectProfile.g:1118:2: ( rulePrimitiveType )
-                    // InternalLibrettoProjectProfile.g:1119:3: rulePrimitiveType
+                    // InternalLibrettoProjectProfile.g:1139:2: ( rulePrimitiveType )
+                    // InternalLibrettoProjectProfile.g:1140:3: rulePrimitiveType
                     {
                      before(grammarAccess.getJavaTypeAccess().getPrimitiveTypeParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -3956,10 +4047,10 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoProjectProfile.g:1124:2: ( ruleQualifiedName )
+                    // InternalLibrettoProjectProfile.g:1145:2: ( ruleQualifiedName )
                     {
-                    // InternalLibrettoProjectProfile.g:1124:2: ( ruleQualifiedName )
-                    // InternalLibrettoProjectProfile.g:1125:3: ruleQualifiedName
+                    // InternalLibrettoProjectProfile.g:1145:2: ( ruleQualifiedName )
+                    // InternalLibrettoProjectProfile.g:1146:3: ruleQualifiedName
                     {
                      before(grammarAccess.getJavaTypeAccess().getQualifiedNameParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -3992,73 +4083,73 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__PrimitiveType__KindAlternatives_0"
-    // InternalLibrettoProjectProfile.g:1134:1: rule__PrimitiveType__KindAlternatives_0 : ( ( 'boolean' ) | ( 'int' ) | ( 'long' ) | ( 'double' ) | ( 'float' ) | ( 'short' ) | ( 'byte' ) | ( 'char' ) | ( 'void' ) );
+    // InternalLibrettoProjectProfile.g:1155:1: rule__PrimitiveType__KindAlternatives_0 : ( ( 'boolean' ) | ( 'int' ) | ( 'long' ) | ( 'double' ) | ( 'float' ) | ( 'short' ) | ( 'byte' ) | ( 'char' ) | ( 'void' ) );
     public final void rule__PrimitiveType__KindAlternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1138:1: ( ( 'boolean' ) | ( 'int' ) | ( 'long' ) | ( 'double' ) | ( 'float' ) | ( 'short' ) | ( 'byte' ) | ( 'char' ) | ( 'void' ) )
-            int alt17=9;
+            // InternalLibrettoProjectProfile.g:1159:1: ( ( 'boolean' ) | ( 'int' ) | ( 'long' ) | ( 'double' ) | ( 'float' ) | ( 'short' ) | ( 'byte' ) | ( 'char' ) | ( 'void' ) )
+            int alt18=9;
             switch ( input.LA(1) ) {
             case 16:
                 {
-                alt17=1;
+                alt18=1;
                 }
                 break;
             case 17:
                 {
-                alt17=2;
+                alt18=2;
                 }
                 break;
             case 18:
                 {
-                alt17=3;
+                alt18=3;
                 }
                 break;
             case 19:
                 {
-                alt17=4;
+                alt18=4;
                 }
                 break;
             case 20:
                 {
-                alt17=5;
+                alt18=5;
                 }
                 break;
             case 21:
                 {
-                alt17=6;
+                alt18=6;
                 }
                 break;
             case 22:
                 {
-                alt17=7;
+                alt18=7;
                 }
                 break;
             case 23:
                 {
-                alt17=8;
+                alt18=8;
                 }
                 break;
             case 24:
                 {
-                alt17=9;
+                alt18=9;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 17, 0, input);
+                    new NoViableAltException("", 18, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt17) {
+            switch (alt18) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:1139:2: ( 'boolean' )
+                    // InternalLibrettoProjectProfile.g:1160:2: ( 'boolean' )
                     {
-                    // InternalLibrettoProjectProfile.g:1139:2: ( 'boolean' )
-                    // InternalLibrettoProjectProfile.g:1140:3: 'boolean'
+                    // InternalLibrettoProjectProfile.g:1160:2: ( 'boolean' )
+                    // InternalLibrettoProjectProfile.g:1161:3: 'boolean'
                     {
                      before(grammarAccess.getPrimitiveTypeAccess().getKindBooleanKeyword_0_0()); 
                     match(input,16,FOLLOW_2); 
@@ -4070,10 +4161,10 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoProjectProfile.g:1145:2: ( 'int' )
+                    // InternalLibrettoProjectProfile.g:1166:2: ( 'int' )
                     {
-                    // InternalLibrettoProjectProfile.g:1145:2: ( 'int' )
-                    // InternalLibrettoProjectProfile.g:1146:3: 'int'
+                    // InternalLibrettoProjectProfile.g:1166:2: ( 'int' )
+                    // InternalLibrettoProjectProfile.g:1167:3: 'int'
                     {
                      before(grammarAccess.getPrimitiveTypeAccess().getKindIntKeyword_0_1()); 
                     match(input,17,FOLLOW_2); 
@@ -4085,10 +4176,10 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
                     }
                     break;
                 case 3 :
-                    // InternalLibrettoProjectProfile.g:1151:2: ( 'long' )
+                    // InternalLibrettoProjectProfile.g:1172:2: ( 'long' )
                     {
-                    // InternalLibrettoProjectProfile.g:1151:2: ( 'long' )
-                    // InternalLibrettoProjectProfile.g:1152:3: 'long'
+                    // InternalLibrettoProjectProfile.g:1172:2: ( 'long' )
+                    // InternalLibrettoProjectProfile.g:1173:3: 'long'
                     {
                      before(grammarAccess.getPrimitiveTypeAccess().getKindLongKeyword_0_2()); 
                     match(input,18,FOLLOW_2); 
@@ -4100,10 +4191,10 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
                     }
                     break;
                 case 4 :
-                    // InternalLibrettoProjectProfile.g:1157:2: ( 'double' )
+                    // InternalLibrettoProjectProfile.g:1178:2: ( 'double' )
                     {
-                    // InternalLibrettoProjectProfile.g:1157:2: ( 'double' )
-                    // InternalLibrettoProjectProfile.g:1158:3: 'double'
+                    // InternalLibrettoProjectProfile.g:1178:2: ( 'double' )
+                    // InternalLibrettoProjectProfile.g:1179:3: 'double'
                     {
                      before(grammarAccess.getPrimitiveTypeAccess().getKindDoubleKeyword_0_3()); 
                     match(input,19,FOLLOW_2); 
@@ -4115,10 +4206,10 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
                     }
                     break;
                 case 5 :
-                    // InternalLibrettoProjectProfile.g:1163:2: ( 'float' )
+                    // InternalLibrettoProjectProfile.g:1184:2: ( 'float' )
                     {
-                    // InternalLibrettoProjectProfile.g:1163:2: ( 'float' )
-                    // InternalLibrettoProjectProfile.g:1164:3: 'float'
+                    // InternalLibrettoProjectProfile.g:1184:2: ( 'float' )
+                    // InternalLibrettoProjectProfile.g:1185:3: 'float'
                     {
                      before(grammarAccess.getPrimitiveTypeAccess().getKindFloatKeyword_0_4()); 
                     match(input,20,FOLLOW_2); 
@@ -4130,10 +4221,10 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
                     }
                     break;
                 case 6 :
-                    // InternalLibrettoProjectProfile.g:1169:2: ( 'short' )
+                    // InternalLibrettoProjectProfile.g:1190:2: ( 'short' )
                     {
-                    // InternalLibrettoProjectProfile.g:1169:2: ( 'short' )
-                    // InternalLibrettoProjectProfile.g:1170:3: 'short'
+                    // InternalLibrettoProjectProfile.g:1190:2: ( 'short' )
+                    // InternalLibrettoProjectProfile.g:1191:3: 'short'
                     {
                      before(grammarAccess.getPrimitiveTypeAccess().getKindShortKeyword_0_5()); 
                     match(input,21,FOLLOW_2); 
@@ -4145,10 +4236,10 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
                     }
                     break;
                 case 7 :
-                    // InternalLibrettoProjectProfile.g:1175:2: ( 'byte' )
+                    // InternalLibrettoProjectProfile.g:1196:2: ( 'byte' )
                     {
-                    // InternalLibrettoProjectProfile.g:1175:2: ( 'byte' )
-                    // InternalLibrettoProjectProfile.g:1176:3: 'byte'
+                    // InternalLibrettoProjectProfile.g:1196:2: ( 'byte' )
+                    // InternalLibrettoProjectProfile.g:1197:3: 'byte'
                     {
                      before(grammarAccess.getPrimitiveTypeAccess().getKindByteKeyword_0_6()); 
                     match(input,22,FOLLOW_2); 
@@ -4160,10 +4251,10 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
                     }
                     break;
                 case 8 :
-                    // InternalLibrettoProjectProfile.g:1181:2: ( 'char' )
+                    // InternalLibrettoProjectProfile.g:1202:2: ( 'char' )
                     {
-                    // InternalLibrettoProjectProfile.g:1181:2: ( 'char' )
-                    // InternalLibrettoProjectProfile.g:1182:3: 'char'
+                    // InternalLibrettoProjectProfile.g:1202:2: ( 'char' )
+                    // InternalLibrettoProjectProfile.g:1203:3: 'char'
                     {
                      before(grammarAccess.getPrimitiveTypeAccess().getKindCharKeyword_0_7()); 
                     match(input,23,FOLLOW_2); 
@@ -4175,10 +4266,10 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
                     }
                     break;
                 case 9 :
-                    // InternalLibrettoProjectProfile.g:1187:2: ( 'void' )
+                    // InternalLibrettoProjectProfile.g:1208:2: ( 'void' )
                     {
-                    // InternalLibrettoProjectProfile.g:1187:2: ( 'void' )
-                    // InternalLibrettoProjectProfile.g:1188:3: 'void'
+                    // InternalLibrettoProjectProfile.g:1208:2: ( 'void' )
+                    // InternalLibrettoProjectProfile.g:1209:3: 'void'
                     {
                      before(grammarAccess.getPrimitiveTypeAccess().getKindVoidKeyword_0_8()); 
                     match(input,24,FOLLOW_2); 
@@ -4207,43 +4298,43 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ValidID__Alternatives_1_0"
-    // InternalLibrettoProjectProfile.g:1197:1: rule__ValidID__Alternatives_1_0 : ( ( '.' ) | ( '-' ) | ( '_' ) );
+    // InternalLibrettoProjectProfile.g:1218:1: rule__ValidID__Alternatives_1_0 : ( ( '.' ) | ( '-' ) | ( '_' ) );
     public final void rule__ValidID__Alternatives_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1201:1: ( ( '.' ) | ( '-' ) | ( '_' ) )
-            int alt18=3;
+            // InternalLibrettoProjectProfile.g:1222:1: ( ( '.' ) | ( '-' ) | ( '_' ) )
+            int alt19=3;
             switch ( input.LA(1) ) {
             case 25:
                 {
-                alt18=1;
+                alt19=1;
                 }
                 break;
             case 26:
                 {
-                alt18=2;
+                alt19=2;
                 }
                 break;
             case 27:
                 {
-                alt18=3;
+                alt19=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 18, 0, input);
+                    new NoViableAltException("", 19, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt18) {
+            switch (alt19) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:1202:2: ( '.' )
+                    // InternalLibrettoProjectProfile.g:1223:2: ( '.' )
                     {
-                    // InternalLibrettoProjectProfile.g:1202:2: ( '.' )
-                    // InternalLibrettoProjectProfile.g:1203:3: '.'
+                    // InternalLibrettoProjectProfile.g:1223:2: ( '.' )
+                    // InternalLibrettoProjectProfile.g:1224:3: '.'
                     {
                      before(grammarAccess.getValidIDAccess().getFullStopKeyword_1_0_0()); 
                     match(input,25,FOLLOW_2); 
@@ -4255,10 +4346,10 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoProjectProfile.g:1208:2: ( '-' )
+                    // InternalLibrettoProjectProfile.g:1229:2: ( '-' )
                     {
-                    // InternalLibrettoProjectProfile.g:1208:2: ( '-' )
-                    // InternalLibrettoProjectProfile.g:1209:3: '-'
+                    // InternalLibrettoProjectProfile.g:1229:2: ( '-' )
+                    // InternalLibrettoProjectProfile.g:1230:3: '-'
                     {
                      before(grammarAccess.getValidIDAccess().getHyphenMinusKeyword_1_0_1()); 
                     match(input,26,FOLLOW_2); 
@@ -4270,10 +4361,10 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
                     }
                     break;
                 case 3 :
-                    // InternalLibrettoProjectProfile.g:1214:2: ( '_' )
+                    // InternalLibrettoProjectProfile.g:1235:2: ( '_' )
                     {
-                    // InternalLibrettoProjectProfile.g:1214:2: ( '_' )
-                    // InternalLibrettoProjectProfile.g:1215:3: '_'
+                    // InternalLibrettoProjectProfile.g:1235:2: ( '_' )
+                    // InternalLibrettoProjectProfile.g:1236:3: '_'
                     {
                      before(grammarAccess.getValidIDAccess().get_Keyword_1_0_2()); 
                     match(input,27,FOLLOW_2); 
@@ -4302,14 +4393,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectProfile__Group__0"
-    // InternalLibrettoProjectProfile.g:1224:1: rule__ProjectProfile__Group__0 : rule__ProjectProfile__Group__0__Impl rule__ProjectProfile__Group__1 ;
+    // InternalLibrettoProjectProfile.g:1245:1: rule__ProjectProfile__Group__0 : rule__ProjectProfile__Group__0__Impl rule__ProjectProfile__Group__1 ;
     public final void rule__ProjectProfile__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1228:1: ( rule__ProjectProfile__Group__0__Impl rule__ProjectProfile__Group__1 )
-            // InternalLibrettoProjectProfile.g:1229:2: rule__ProjectProfile__Group__0__Impl rule__ProjectProfile__Group__1
+            // InternalLibrettoProjectProfile.g:1249:1: ( rule__ProjectProfile__Group__0__Impl rule__ProjectProfile__Group__1 )
+            // InternalLibrettoProjectProfile.g:1250:2: rule__ProjectProfile__Group__0__Impl rule__ProjectProfile__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__ProjectProfile__Group__0__Impl();
@@ -4340,21 +4431,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectProfile__Group__0__Impl"
-    // InternalLibrettoProjectProfile.g:1236:1: rule__ProjectProfile__Group__0__Impl : ( () ) ;
+    // InternalLibrettoProjectProfile.g:1257:1: rule__ProjectProfile__Group__0__Impl : ( () ) ;
     public final void rule__ProjectProfile__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1240:1: ( ( () ) )
-            // InternalLibrettoProjectProfile.g:1241:1: ( () )
+            // InternalLibrettoProjectProfile.g:1261:1: ( ( () ) )
+            // InternalLibrettoProjectProfile.g:1262:1: ( () )
             {
-            // InternalLibrettoProjectProfile.g:1241:1: ( () )
-            // InternalLibrettoProjectProfile.g:1242:2: ()
+            // InternalLibrettoProjectProfile.g:1262:1: ( () )
+            // InternalLibrettoProjectProfile.g:1263:2: ()
             {
              before(grammarAccess.getProjectProfileAccess().getProjectProfileAction_0()); 
-            // InternalLibrettoProjectProfile.g:1243:2: ()
-            // InternalLibrettoProjectProfile.g:1243:3: 
+            // InternalLibrettoProjectProfile.g:1264:2: ()
+            // InternalLibrettoProjectProfile.g:1264:3: 
             {
             }
 
@@ -4377,14 +4468,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectProfile__Group__1"
-    // InternalLibrettoProjectProfile.g:1251:1: rule__ProjectProfile__Group__1 : rule__ProjectProfile__Group__1__Impl rule__ProjectProfile__Group__2 ;
+    // InternalLibrettoProjectProfile.g:1272:1: rule__ProjectProfile__Group__1 : rule__ProjectProfile__Group__1__Impl rule__ProjectProfile__Group__2 ;
     public final void rule__ProjectProfile__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1255:1: ( rule__ProjectProfile__Group__1__Impl rule__ProjectProfile__Group__2 )
-            // InternalLibrettoProjectProfile.g:1256:2: rule__ProjectProfile__Group__1__Impl rule__ProjectProfile__Group__2
+            // InternalLibrettoProjectProfile.g:1276:1: ( rule__ProjectProfile__Group__1__Impl rule__ProjectProfile__Group__2 )
+            // InternalLibrettoProjectProfile.g:1277:2: rule__ProjectProfile__Group__1__Impl rule__ProjectProfile__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__ProjectProfile__Group__1__Impl();
@@ -4415,17 +4506,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectProfile__Group__1__Impl"
-    // InternalLibrettoProjectProfile.g:1263:1: rule__ProjectProfile__Group__1__Impl : ( 'profile' ) ;
+    // InternalLibrettoProjectProfile.g:1284:1: rule__ProjectProfile__Group__1__Impl : ( 'profile' ) ;
     public final void rule__ProjectProfile__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1267:1: ( ( 'profile' ) )
-            // InternalLibrettoProjectProfile.g:1268:1: ( 'profile' )
+            // InternalLibrettoProjectProfile.g:1288:1: ( ( 'profile' ) )
+            // InternalLibrettoProjectProfile.g:1289:1: ( 'profile' )
             {
-            // InternalLibrettoProjectProfile.g:1268:1: ( 'profile' )
-            // InternalLibrettoProjectProfile.g:1269:2: 'profile'
+            // InternalLibrettoProjectProfile.g:1289:1: ( 'profile' )
+            // InternalLibrettoProjectProfile.g:1290:2: 'profile'
             {
              before(grammarAccess.getProjectProfileAccess().getProfileKeyword_1()); 
             match(input,28,FOLLOW_2); 
@@ -4452,14 +4543,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectProfile__Group__2"
-    // InternalLibrettoProjectProfile.g:1278:1: rule__ProjectProfile__Group__2 : rule__ProjectProfile__Group__2__Impl rule__ProjectProfile__Group__3 ;
+    // InternalLibrettoProjectProfile.g:1299:1: rule__ProjectProfile__Group__2 : rule__ProjectProfile__Group__2__Impl rule__ProjectProfile__Group__3 ;
     public final void rule__ProjectProfile__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1282:1: ( rule__ProjectProfile__Group__2__Impl rule__ProjectProfile__Group__3 )
-            // InternalLibrettoProjectProfile.g:1283:2: rule__ProjectProfile__Group__2__Impl rule__ProjectProfile__Group__3
+            // InternalLibrettoProjectProfile.g:1303:1: ( rule__ProjectProfile__Group__2__Impl rule__ProjectProfile__Group__3 )
+            // InternalLibrettoProjectProfile.g:1304:2: rule__ProjectProfile__Group__2__Impl rule__ProjectProfile__Group__3
             {
             pushFollow(FOLLOW_5);
             rule__ProjectProfile__Group__2__Impl();
@@ -4490,21 +4581,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectProfile__Group__2__Impl"
-    // InternalLibrettoProjectProfile.g:1290:1: rule__ProjectProfile__Group__2__Impl : ( ( rule__ProjectProfile__NameAssignment_2 ) ) ;
+    // InternalLibrettoProjectProfile.g:1311:1: rule__ProjectProfile__Group__2__Impl : ( ( rule__ProjectProfile__NameAssignment_2 ) ) ;
     public final void rule__ProjectProfile__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1294:1: ( ( ( rule__ProjectProfile__NameAssignment_2 ) ) )
-            // InternalLibrettoProjectProfile.g:1295:1: ( ( rule__ProjectProfile__NameAssignment_2 ) )
+            // InternalLibrettoProjectProfile.g:1315:1: ( ( ( rule__ProjectProfile__NameAssignment_2 ) ) )
+            // InternalLibrettoProjectProfile.g:1316:1: ( ( rule__ProjectProfile__NameAssignment_2 ) )
             {
-            // InternalLibrettoProjectProfile.g:1295:1: ( ( rule__ProjectProfile__NameAssignment_2 ) )
-            // InternalLibrettoProjectProfile.g:1296:2: ( rule__ProjectProfile__NameAssignment_2 )
+            // InternalLibrettoProjectProfile.g:1316:1: ( ( rule__ProjectProfile__NameAssignment_2 ) )
+            // InternalLibrettoProjectProfile.g:1317:2: ( rule__ProjectProfile__NameAssignment_2 )
             {
              before(grammarAccess.getProjectProfileAccess().getNameAssignment_2()); 
-            // InternalLibrettoProjectProfile.g:1297:2: ( rule__ProjectProfile__NameAssignment_2 )
-            // InternalLibrettoProjectProfile.g:1297:3: rule__ProjectProfile__NameAssignment_2
+            // InternalLibrettoProjectProfile.g:1318:2: ( rule__ProjectProfile__NameAssignment_2 )
+            // InternalLibrettoProjectProfile.g:1318:3: rule__ProjectProfile__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__ProjectProfile__NameAssignment_2();
@@ -4537,14 +4628,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectProfile__Group__3"
-    // InternalLibrettoProjectProfile.g:1305:1: rule__ProjectProfile__Group__3 : rule__ProjectProfile__Group__3__Impl rule__ProjectProfile__Group__4 ;
+    // InternalLibrettoProjectProfile.g:1326:1: rule__ProjectProfile__Group__3 : rule__ProjectProfile__Group__3__Impl rule__ProjectProfile__Group__4 ;
     public final void rule__ProjectProfile__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1309:1: ( rule__ProjectProfile__Group__3__Impl rule__ProjectProfile__Group__4 )
-            // InternalLibrettoProjectProfile.g:1310:2: rule__ProjectProfile__Group__3__Impl rule__ProjectProfile__Group__4
+            // InternalLibrettoProjectProfile.g:1330:1: ( rule__ProjectProfile__Group__3__Impl rule__ProjectProfile__Group__4 )
+            // InternalLibrettoProjectProfile.g:1331:2: rule__ProjectProfile__Group__3__Impl rule__ProjectProfile__Group__4
             {
             pushFollow(FOLLOW_6);
             rule__ProjectProfile__Group__3__Impl();
@@ -4575,17 +4666,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectProfile__Group__3__Impl"
-    // InternalLibrettoProjectProfile.g:1317:1: rule__ProjectProfile__Group__3__Impl : ( '{' ) ;
+    // InternalLibrettoProjectProfile.g:1338:1: rule__ProjectProfile__Group__3__Impl : ( '{' ) ;
     public final void rule__ProjectProfile__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1321:1: ( ( '{' ) )
-            // InternalLibrettoProjectProfile.g:1322:1: ( '{' )
+            // InternalLibrettoProjectProfile.g:1342:1: ( ( '{' ) )
+            // InternalLibrettoProjectProfile.g:1343:1: ( '{' )
             {
-            // InternalLibrettoProjectProfile.g:1322:1: ( '{' )
-            // InternalLibrettoProjectProfile.g:1323:2: '{'
+            // InternalLibrettoProjectProfile.g:1343:1: ( '{' )
+            // InternalLibrettoProjectProfile.g:1344:2: '{'
             {
              before(grammarAccess.getProjectProfileAccess().getLeftCurlyBracketKeyword_3()); 
             match(input,29,FOLLOW_2); 
@@ -4612,14 +4703,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectProfile__Group__4"
-    // InternalLibrettoProjectProfile.g:1332:1: rule__ProjectProfile__Group__4 : rule__ProjectProfile__Group__4__Impl rule__ProjectProfile__Group__5 ;
+    // InternalLibrettoProjectProfile.g:1353:1: rule__ProjectProfile__Group__4 : rule__ProjectProfile__Group__4__Impl rule__ProjectProfile__Group__5 ;
     public final void rule__ProjectProfile__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1336:1: ( rule__ProjectProfile__Group__4__Impl rule__ProjectProfile__Group__5 )
-            // InternalLibrettoProjectProfile.g:1337:2: rule__ProjectProfile__Group__4__Impl rule__ProjectProfile__Group__5
+            // InternalLibrettoProjectProfile.g:1357:1: ( rule__ProjectProfile__Group__4__Impl rule__ProjectProfile__Group__5 )
+            // InternalLibrettoProjectProfile.g:1358:2: rule__ProjectProfile__Group__4__Impl rule__ProjectProfile__Group__5
             {
             pushFollow(FOLLOW_6);
             rule__ProjectProfile__Group__4__Impl();
@@ -4650,33 +4741,33 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectProfile__Group__4__Impl"
-    // InternalLibrettoProjectProfile.g:1344:1: rule__ProjectProfile__Group__4__Impl : ( ( rule__ProjectProfile__Alternatives_4 )* ) ;
+    // InternalLibrettoProjectProfile.g:1365:1: rule__ProjectProfile__Group__4__Impl : ( ( rule__ProjectProfile__Alternatives_4 )* ) ;
     public final void rule__ProjectProfile__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1348:1: ( ( ( rule__ProjectProfile__Alternatives_4 )* ) )
-            // InternalLibrettoProjectProfile.g:1349:1: ( ( rule__ProjectProfile__Alternatives_4 )* )
+            // InternalLibrettoProjectProfile.g:1369:1: ( ( ( rule__ProjectProfile__Alternatives_4 )* ) )
+            // InternalLibrettoProjectProfile.g:1370:1: ( ( rule__ProjectProfile__Alternatives_4 )* )
             {
-            // InternalLibrettoProjectProfile.g:1349:1: ( ( rule__ProjectProfile__Alternatives_4 )* )
-            // InternalLibrettoProjectProfile.g:1350:2: ( rule__ProjectProfile__Alternatives_4 )*
+            // InternalLibrettoProjectProfile.g:1370:1: ( ( rule__ProjectProfile__Alternatives_4 )* )
+            // InternalLibrettoProjectProfile.g:1371:2: ( rule__ProjectProfile__Alternatives_4 )*
             {
              before(grammarAccess.getProjectProfileAccess().getAlternatives_4()); 
-            // InternalLibrettoProjectProfile.g:1351:2: ( rule__ProjectProfile__Alternatives_4 )*
-            loop19:
+            // InternalLibrettoProjectProfile.g:1372:2: ( rule__ProjectProfile__Alternatives_4 )*
+            loop20:
             do {
-                int alt19=2;
-                int LA19_0 = input.LA(1);
+                int alt20=2;
+                int LA20_0 = input.LA(1);
 
-                if ( (LA19_0==31||LA19_0==51||LA19_0==63) ) {
-                    alt19=1;
+                if ( (LA20_0==31||LA20_0==51||LA20_0==63) ) {
+                    alt20=1;
                 }
 
 
-                switch (alt19) {
+                switch (alt20) {
             	case 1 :
-            	    // InternalLibrettoProjectProfile.g:1351:3: rule__ProjectProfile__Alternatives_4
+            	    // InternalLibrettoProjectProfile.g:1372:3: rule__ProjectProfile__Alternatives_4
             	    {
             	    pushFollow(FOLLOW_7);
             	    rule__ProjectProfile__Alternatives_4();
@@ -4688,7 +4779,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
             	    break;
 
             	default :
-            	    break loop19;
+            	    break loop20;
                 }
             } while (true);
 
@@ -4715,14 +4806,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectProfile__Group__5"
-    // InternalLibrettoProjectProfile.g:1359:1: rule__ProjectProfile__Group__5 : rule__ProjectProfile__Group__5__Impl ;
+    // InternalLibrettoProjectProfile.g:1380:1: rule__ProjectProfile__Group__5 : rule__ProjectProfile__Group__5__Impl ;
     public final void rule__ProjectProfile__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1363:1: ( rule__ProjectProfile__Group__5__Impl )
-            // InternalLibrettoProjectProfile.g:1364:2: rule__ProjectProfile__Group__5__Impl
+            // InternalLibrettoProjectProfile.g:1384:1: ( rule__ProjectProfile__Group__5__Impl )
+            // InternalLibrettoProjectProfile.g:1385:2: rule__ProjectProfile__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ProjectProfile__Group__5__Impl();
@@ -4748,17 +4839,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectProfile__Group__5__Impl"
-    // InternalLibrettoProjectProfile.g:1370:1: rule__ProjectProfile__Group__5__Impl : ( '}' ) ;
+    // InternalLibrettoProjectProfile.g:1391:1: rule__ProjectProfile__Group__5__Impl : ( '}' ) ;
     public final void rule__ProjectProfile__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1374:1: ( ( '}' ) )
-            // InternalLibrettoProjectProfile.g:1375:1: ( '}' )
+            // InternalLibrettoProjectProfile.g:1395:1: ( ( '}' ) )
+            // InternalLibrettoProjectProfile.g:1396:1: ( '}' )
             {
-            // InternalLibrettoProjectProfile.g:1375:1: ( '}' )
-            // InternalLibrettoProjectProfile.g:1376:2: '}'
+            // InternalLibrettoProjectProfile.g:1396:1: ( '}' )
+            // InternalLibrettoProjectProfile.g:1397:2: '}'
             {
              before(grammarAccess.getProjectProfileAccess().getRightCurlyBracketKeyword_5()); 
             match(input,30,FOLLOW_2); 
@@ -4785,14 +4876,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectBlock__Group__0"
-    // InternalLibrettoProjectProfile.g:1386:1: rule__ProjectBlock__Group__0 : rule__ProjectBlock__Group__0__Impl rule__ProjectBlock__Group__1 ;
+    // InternalLibrettoProjectProfile.g:1407:1: rule__ProjectBlock__Group__0 : rule__ProjectBlock__Group__0__Impl rule__ProjectBlock__Group__1 ;
     public final void rule__ProjectBlock__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1390:1: ( rule__ProjectBlock__Group__0__Impl rule__ProjectBlock__Group__1 )
-            // InternalLibrettoProjectProfile.g:1391:2: rule__ProjectBlock__Group__0__Impl rule__ProjectBlock__Group__1
+            // InternalLibrettoProjectProfile.g:1411:1: ( rule__ProjectBlock__Group__0__Impl rule__ProjectBlock__Group__1 )
+            // InternalLibrettoProjectProfile.g:1412:2: rule__ProjectBlock__Group__0__Impl rule__ProjectBlock__Group__1
             {
             pushFollow(FOLLOW_8);
             rule__ProjectBlock__Group__0__Impl();
@@ -4823,21 +4914,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectBlock__Group__0__Impl"
-    // InternalLibrettoProjectProfile.g:1398:1: rule__ProjectBlock__Group__0__Impl : ( () ) ;
+    // InternalLibrettoProjectProfile.g:1419:1: rule__ProjectBlock__Group__0__Impl : ( () ) ;
     public final void rule__ProjectBlock__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1402:1: ( ( () ) )
-            // InternalLibrettoProjectProfile.g:1403:1: ( () )
+            // InternalLibrettoProjectProfile.g:1423:1: ( ( () ) )
+            // InternalLibrettoProjectProfile.g:1424:1: ( () )
             {
-            // InternalLibrettoProjectProfile.g:1403:1: ( () )
-            // InternalLibrettoProjectProfile.g:1404:2: ()
+            // InternalLibrettoProjectProfile.g:1424:1: ( () )
+            // InternalLibrettoProjectProfile.g:1425:2: ()
             {
              before(grammarAccess.getProjectBlockAccess().getProjectBlockAction_0()); 
-            // InternalLibrettoProjectProfile.g:1405:2: ()
-            // InternalLibrettoProjectProfile.g:1405:3: 
+            // InternalLibrettoProjectProfile.g:1426:2: ()
+            // InternalLibrettoProjectProfile.g:1426:3: 
             {
             }
 
@@ -4860,14 +4951,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectBlock__Group__1"
-    // InternalLibrettoProjectProfile.g:1413:1: rule__ProjectBlock__Group__1 : rule__ProjectBlock__Group__1__Impl rule__ProjectBlock__Group__2 ;
+    // InternalLibrettoProjectProfile.g:1434:1: rule__ProjectBlock__Group__1 : rule__ProjectBlock__Group__1__Impl rule__ProjectBlock__Group__2 ;
     public final void rule__ProjectBlock__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1417:1: ( rule__ProjectBlock__Group__1__Impl rule__ProjectBlock__Group__2 )
-            // InternalLibrettoProjectProfile.g:1418:2: rule__ProjectBlock__Group__1__Impl rule__ProjectBlock__Group__2
+            // InternalLibrettoProjectProfile.g:1438:1: ( rule__ProjectBlock__Group__1__Impl rule__ProjectBlock__Group__2 )
+            // InternalLibrettoProjectProfile.g:1439:2: rule__ProjectBlock__Group__1__Impl rule__ProjectBlock__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__ProjectBlock__Group__1__Impl();
@@ -4898,17 +4989,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectBlock__Group__1__Impl"
-    // InternalLibrettoProjectProfile.g:1425:1: rule__ProjectBlock__Group__1__Impl : ( 'project' ) ;
+    // InternalLibrettoProjectProfile.g:1446:1: rule__ProjectBlock__Group__1__Impl : ( 'project' ) ;
     public final void rule__ProjectBlock__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1429:1: ( ( 'project' ) )
-            // InternalLibrettoProjectProfile.g:1430:1: ( 'project' )
+            // InternalLibrettoProjectProfile.g:1450:1: ( ( 'project' ) )
+            // InternalLibrettoProjectProfile.g:1451:1: ( 'project' )
             {
-            // InternalLibrettoProjectProfile.g:1430:1: ( 'project' )
-            // InternalLibrettoProjectProfile.g:1431:2: 'project'
+            // InternalLibrettoProjectProfile.g:1451:1: ( 'project' )
+            // InternalLibrettoProjectProfile.g:1452:2: 'project'
             {
              before(grammarAccess.getProjectBlockAccess().getProjectKeyword_1()); 
             match(input,31,FOLLOW_2); 
@@ -4935,14 +5026,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectBlock__Group__2"
-    // InternalLibrettoProjectProfile.g:1440:1: rule__ProjectBlock__Group__2 : rule__ProjectBlock__Group__2__Impl rule__ProjectBlock__Group__3 ;
+    // InternalLibrettoProjectProfile.g:1461:1: rule__ProjectBlock__Group__2 : rule__ProjectBlock__Group__2__Impl rule__ProjectBlock__Group__3 ;
     public final void rule__ProjectBlock__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1444:1: ( rule__ProjectBlock__Group__2__Impl rule__ProjectBlock__Group__3 )
-            // InternalLibrettoProjectProfile.g:1445:2: rule__ProjectBlock__Group__2__Impl rule__ProjectBlock__Group__3
+            // InternalLibrettoProjectProfile.g:1465:1: ( rule__ProjectBlock__Group__2__Impl rule__ProjectBlock__Group__3 )
+            // InternalLibrettoProjectProfile.g:1466:2: rule__ProjectBlock__Group__2__Impl rule__ProjectBlock__Group__3
             {
             pushFollow(FOLLOW_9);
             rule__ProjectBlock__Group__2__Impl();
@@ -4973,17 +5064,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectBlock__Group__2__Impl"
-    // InternalLibrettoProjectProfile.g:1452:1: rule__ProjectBlock__Group__2__Impl : ( '{' ) ;
+    // InternalLibrettoProjectProfile.g:1473:1: rule__ProjectBlock__Group__2__Impl : ( '{' ) ;
     public final void rule__ProjectBlock__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1456:1: ( ( '{' ) )
-            // InternalLibrettoProjectProfile.g:1457:1: ( '{' )
+            // InternalLibrettoProjectProfile.g:1477:1: ( ( '{' ) )
+            // InternalLibrettoProjectProfile.g:1478:1: ( '{' )
             {
-            // InternalLibrettoProjectProfile.g:1457:1: ( '{' )
-            // InternalLibrettoProjectProfile.g:1458:2: '{'
+            // InternalLibrettoProjectProfile.g:1478:1: ( '{' )
+            // InternalLibrettoProjectProfile.g:1479:2: '{'
             {
              before(grammarAccess.getProjectBlockAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,29,FOLLOW_2); 
@@ -5010,14 +5101,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectBlock__Group__3"
-    // InternalLibrettoProjectProfile.g:1467:1: rule__ProjectBlock__Group__3 : rule__ProjectBlock__Group__3__Impl rule__ProjectBlock__Group__4 ;
+    // InternalLibrettoProjectProfile.g:1488:1: rule__ProjectBlock__Group__3 : rule__ProjectBlock__Group__3__Impl rule__ProjectBlock__Group__4 ;
     public final void rule__ProjectBlock__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1471:1: ( rule__ProjectBlock__Group__3__Impl rule__ProjectBlock__Group__4 )
-            // InternalLibrettoProjectProfile.g:1472:2: rule__ProjectBlock__Group__3__Impl rule__ProjectBlock__Group__4
+            // InternalLibrettoProjectProfile.g:1492:1: ( rule__ProjectBlock__Group__3__Impl rule__ProjectBlock__Group__4 )
+            // InternalLibrettoProjectProfile.g:1493:2: rule__ProjectBlock__Group__3__Impl rule__ProjectBlock__Group__4
             {
             pushFollow(FOLLOW_9);
             rule__ProjectBlock__Group__3__Impl();
@@ -5048,33 +5139,33 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectBlock__Group__3__Impl"
-    // InternalLibrettoProjectProfile.g:1479:1: rule__ProjectBlock__Group__3__Impl : ( ( rule__ProjectBlock__Alternatives_3 )* ) ;
+    // InternalLibrettoProjectProfile.g:1500:1: rule__ProjectBlock__Group__3__Impl : ( ( rule__ProjectBlock__Alternatives_3 )* ) ;
     public final void rule__ProjectBlock__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1483:1: ( ( ( rule__ProjectBlock__Alternatives_3 )* ) )
-            // InternalLibrettoProjectProfile.g:1484:1: ( ( rule__ProjectBlock__Alternatives_3 )* )
+            // InternalLibrettoProjectProfile.g:1504:1: ( ( ( rule__ProjectBlock__Alternatives_3 )* ) )
+            // InternalLibrettoProjectProfile.g:1505:1: ( ( rule__ProjectBlock__Alternatives_3 )* )
             {
-            // InternalLibrettoProjectProfile.g:1484:1: ( ( rule__ProjectBlock__Alternatives_3 )* )
-            // InternalLibrettoProjectProfile.g:1485:2: ( rule__ProjectBlock__Alternatives_3 )*
+            // InternalLibrettoProjectProfile.g:1505:1: ( ( rule__ProjectBlock__Alternatives_3 )* )
+            // InternalLibrettoProjectProfile.g:1506:2: ( rule__ProjectBlock__Alternatives_3 )*
             {
              before(grammarAccess.getProjectBlockAccess().getAlternatives_3()); 
-            // InternalLibrettoProjectProfile.g:1486:2: ( rule__ProjectBlock__Alternatives_3 )*
-            loop20:
+            // InternalLibrettoProjectProfile.g:1507:2: ( rule__ProjectBlock__Alternatives_3 )*
+            loop21:
             do {
-                int alt20=2;
-                int LA20_0 = input.LA(1);
+                int alt21=2;
+                int LA21_0 = input.LA(1);
 
-                if ( ((LA20_0>=32 && LA20_0<=33)||LA20_0==40) ) {
-                    alt20=1;
+                if ( ((LA21_0>=32 && LA21_0<=33)||LA21_0==40) ) {
+                    alt21=1;
                 }
 
 
-                switch (alt20) {
+                switch (alt21) {
             	case 1 :
-            	    // InternalLibrettoProjectProfile.g:1486:3: rule__ProjectBlock__Alternatives_3
+            	    // InternalLibrettoProjectProfile.g:1507:3: rule__ProjectBlock__Alternatives_3
             	    {
             	    pushFollow(FOLLOW_10);
             	    rule__ProjectBlock__Alternatives_3();
@@ -5086,7 +5177,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
             	    break;
 
             	default :
-            	    break loop20;
+            	    break loop21;
                 }
             } while (true);
 
@@ -5113,14 +5204,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectBlock__Group__4"
-    // InternalLibrettoProjectProfile.g:1494:1: rule__ProjectBlock__Group__4 : rule__ProjectBlock__Group__4__Impl ;
+    // InternalLibrettoProjectProfile.g:1515:1: rule__ProjectBlock__Group__4 : rule__ProjectBlock__Group__4__Impl ;
     public final void rule__ProjectBlock__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1498:1: ( rule__ProjectBlock__Group__4__Impl )
-            // InternalLibrettoProjectProfile.g:1499:2: rule__ProjectBlock__Group__4__Impl
+            // InternalLibrettoProjectProfile.g:1519:1: ( rule__ProjectBlock__Group__4__Impl )
+            // InternalLibrettoProjectProfile.g:1520:2: rule__ProjectBlock__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ProjectBlock__Group__4__Impl();
@@ -5146,17 +5237,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectBlock__Group__4__Impl"
-    // InternalLibrettoProjectProfile.g:1505:1: rule__ProjectBlock__Group__4__Impl : ( '}' ) ;
+    // InternalLibrettoProjectProfile.g:1526:1: rule__ProjectBlock__Group__4__Impl : ( '}' ) ;
     public final void rule__ProjectBlock__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1509:1: ( ( '}' ) )
-            // InternalLibrettoProjectProfile.g:1510:1: ( '}' )
+            // InternalLibrettoProjectProfile.g:1530:1: ( ( '}' ) )
+            // InternalLibrettoProjectProfile.g:1531:1: ( '}' )
             {
-            // InternalLibrettoProjectProfile.g:1510:1: ( '}' )
-            // InternalLibrettoProjectProfile.g:1511:2: '}'
+            // InternalLibrettoProjectProfile.g:1531:1: ( '}' )
+            // InternalLibrettoProjectProfile.g:1532:2: '}'
             {
              before(grammarAccess.getProjectBlockAccess().getRightCurlyBracketKeyword_4()); 
             match(input,30,FOLLOW_2); 
@@ -5183,14 +5274,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectBlock__Group_3_0__0"
-    // InternalLibrettoProjectProfile.g:1521:1: rule__ProjectBlock__Group_3_0__0 : rule__ProjectBlock__Group_3_0__0__Impl rule__ProjectBlock__Group_3_0__1 ;
+    // InternalLibrettoProjectProfile.g:1542:1: rule__ProjectBlock__Group_3_0__0 : rule__ProjectBlock__Group_3_0__0__Impl rule__ProjectBlock__Group_3_0__1 ;
     public final void rule__ProjectBlock__Group_3_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1525:1: ( rule__ProjectBlock__Group_3_0__0__Impl rule__ProjectBlock__Group_3_0__1 )
-            // InternalLibrettoProjectProfile.g:1526:2: rule__ProjectBlock__Group_3_0__0__Impl rule__ProjectBlock__Group_3_0__1
+            // InternalLibrettoProjectProfile.g:1546:1: ( rule__ProjectBlock__Group_3_0__0__Impl rule__ProjectBlock__Group_3_0__1 )
+            // InternalLibrettoProjectProfile.g:1547:2: rule__ProjectBlock__Group_3_0__0__Impl rule__ProjectBlock__Group_3_0__1
             {
             pushFollow(FOLLOW_11);
             rule__ProjectBlock__Group_3_0__0__Impl();
@@ -5221,17 +5312,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectBlock__Group_3_0__0__Impl"
-    // InternalLibrettoProjectProfile.g:1533:1: rule__ProjectBlock__Group_3_0__0__Impl : ( 'rootDir' ) ;
+    // InternalLibrettoProjectProfile.g:1554:1: rule__ProjectBlock__Group_3_0__0__Impl : ( 'rootDir' ) ;
     public final void rule__ProjectBlock__Group_3_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1537:1: ( ( 'rootDir' ) )
-            // InternalLibrettoProjectProfile.g:1538:1: ( 'rootDir' )
+            // InternalLibrettoProjectProfile.g:1558:1: ( ( 'rootDir' ) )
+            // InternalLibrettoProjectProfile.g:1559:1: ( 'rootDir' )
             {
-            // InternalLibrettoProjectProfile.g:1538:1: ( 'rootDir' )
-            // InternalLibrettoProjectProfile.g:1539:2: 'rootDir'
+            // InternalLibrettoProjectProfile.g:1559:1: ( 'rootDir' )
+            // InternalLibrettoProjectProfile.g:1560:2: 'rootDir'
             {
              before(grammarAccess.getProjectBlockAccess().getRootDirKeyword_3_0_0()); 
             match(input,32,FOLLOW_2); 
@@ -5258,14 +5349,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectBlock__Group_3_0__1"
-    // InternalLibrettoProjectProfile.g:1548:1: rule__ProjectBlock__Group_3_0__1 : rule__ProjectBlock__Group_3_0__1__Impl ;
+    // InternalLibrettoProjectProfile.g:1569:1: rule__ProjectBlock__Group_3_0__1 : rule__ProjectBlock__Group_3_0__1__Impl ;
     public final void rule__ProjectBlock__Group_3_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1552:1: ( rule__ProjectBlock__Group_3_0__1__Impl )
-            // InternalLibrettoProjectProfile.g:1553:2: rule__ProjectBlock__Group_3_0__1__Impl
+            // InternalLibrettoProjectProfile.g:1573:1: ( rule__ProjectBlock__Group_3_0__1__Impl )
+            // InternalLibrettoProjectProfile.g:1574:2: rule__ProjectBlock__Group_3_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ProjectBlock__Group_3_0__1__Impl();
@@ -5291,21 +5382,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectBlock__Group_3_0__1__Impl"
-    // InternalLibrettoProjectProfile.g:1559:1: rule__ProjectBlock__Group_3_0__1__Impl : ( ( rule__ProjectBlock__RootDirAssignment_3_0_1 ) ) ;
+    // InternalLibrettoProjectProfile.g:1580:1: rule__ProjectBlock__Group_3_0__1__Impl : ( ( rule__ProjectBlock__RootDirAssignment_3_0_1 ) ) ;
     public final void rule__ProjectBlock__Group_3_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1563:1: ( ( ( rule__ProjectBlock__RootDirAssignment_3_0_1 ) ) )
-            // InternalLibrettoProjectProfile.g:1564:1: ( ( rule__ProjectBlock__RootDirAssignment_3_0_1 ) )
+            // InternalLibrettoProjectProfile.g:1584:1: ( ( ( rule__ProjectBlock__RootDirAssignment_3_0_1 ) ) )
+            // InternalLibrettoProjectProfile.g:1585:1: ( ( rule__ProjectBlock__RootDirAssignment_3_0_1 ) )
             {
-            // InternalLibrettoProjectProfile.g:1564:1: ( ( rule__ProjectBlock__RootDirAssignment_3_0_1 ) )
-            // InternalLibrettoProjectProfile.g:1565:2: ( rule__ProjectBlock__RootDirAssignment_3_0_1 )
+            // InternalLibrettoProjectProfile.g:1585:1: ( ( rule__ProjectBlock__RootDirAssignment_3_0_1 ) )
+            // InternalLibrettoProjectProfile.g:1586:2: ( rule__ProjectBlock__RootDirAssignment_3_0_1 )
             {
              before(grammarAccess.getProjectBlockAccess().getRootDirAssignment_3_0_1()); 
-            // InternalLibrettoProjectProfile.g:1566:2: ( rule__ProjectBlock__RootDirAssignment_3_0_1 )
-            // InternalLibrettoProjectProfile.g:1566:3: rule__ProjectBlock__RootDirAssignment_3_0_1
+            // InternalLibrettoProjectProfile.g:1587:2: ( rule__ProjectBlock__RootDirAssignment_3_0_1 )
+            // InternalLibrettoProjectProfile.g:1587:3: rule__ProjectBlock__RootDirAssignment_3_0_1
             {
             pushFollow(FOLLOW_2);
             rule__ProjectBlock__RootDirAssignment_3_0_1();
@@ -5338,14 +5429,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ModulesBlock__Group__0"
-    // InternalLibrettoProjectProfile.g:1575:1: rule__ModulesBlock__Group__0 : rule__ModulesBlock__Group__0__Impl rule__ModulesBlock__Group__1 ;
+    // InternalLibrettoProjectProfile.g:1596:1: rule__ModulesBlock__Group__0 : rule__ModulesBlock__Group__0__Impl rule__ModulesBlock__Group__1 ;
     public final void rule__ModulesBlock__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1579:1: ( rule__ModulesBlock__Group__0__Impl rule__ModulesBlock__Group__1 )
-            // InternalLibrettoProjectProfile.g:1580:2: rule__ModulesBlock__Group__0__Impl rule__ModulesBlock__Group__1
+            // InternalLibrettoProjectProfile.g:1600:1: ( rule__ModulesBlock__Group__0__Impl rule__ModulesBlock__Group__1 )
+            // InternalLibrettoProjectProfile.g:1601:2: rule__ModulesBlock__Group__0__Impl rule__ModulesBlock__Group__1
             {
             pushFollow(FOLLOW_12);
             rule__ModulesBlock__Group__0__Impl();
@@ -5376,21 +5467,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ModulesBlock__Group__0__Impl"
-    // InternalLibrettoProjectProfile.g:1587:1: rule__ModulesBlock__Group__0__Impl : ( () ) ;
+    // InternalLibrettoProjectProfile.g:1608:1: rule__ModulesBlock__Group__0__Impl : ( () ) ;
     public final void rule__ModulesBlock__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1591:1: ( ( () ) )
-            // InternalLibrettoProjectProfile.g:1592:1: ( () )
+            // InternalLibrettoProjectProfile.g:1612:1: ( ( () ) )
+            // InternalLibrettoProjectProfile.g:1613:1: ( () )
             {
-            // InternalLibrettoProjectProfile.g:1592:1: ( () )
-            // InternalLibrettoProjectProfile.g:1593:2: ()
+            // InternalLibrettoProjectProfile.g:1613:1: ( () )
+            // InternalLibrettoProjectProfile.g:1614:2: ()
             {
              before(grammarAccess.getModulesBlockAccess().getModulesBlockAction_0()); 
-            // InternalLibrettoProjectProfile.g:1594:2: ()
-            // InternalLibrettoProjectProfile.g:1594:3: 
+            // InternalLibrettoProjectProfile.g:1615:2: ()
+            // InternalLibrettoProjectProfile.g:1615:3: 
             {
             }
 
@@ -5413,14 +5504,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ModulesBlock__Group__1"
-    // InternalLibrettoProjectProfile.g:1602:1: rule__ModulesBlock__Group__1 : rule__ModulesBlock__Group__1__Impl rule__ModulesBlock__Group__2 ;
+    // InternalLibrettoProjectProfile.g:1623:1: rule__ModulesBlock__Group__1 : rule__ModulesBlock__Group__1__Impl rule__ModulesBlock__Group__2 ;
     public final void rule__ModulesBlock__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1606:1: ( rule__ModulesBlock__Group__1__Impl rule__ModulesBlock__Group__2 )
-            // InternalLibrettoProjectProfile.g:1607:2: rule__ModulesBlock__Group__1__Impl rule__ModulesBlock__Group__2
+            // InternalLibrettoProjectProfile.g:1627:1: ( rule__ModulesBlock__Group__1__Impl rule__ModulesBlock__Group__2 )
+            // InternalLibrettoProjectProfile.g:1628:2: rule__ModulesBlock__Group__1__Impl rule__ModulesBlock__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__ModulesBlock__Group__1__Impl();
@@ -5451,17 +5542,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ModulesBlock__Group__1__Impl"
-    // InternalLibrettoProjectProfile.g:1614:1: rule__ModulesBlock__Group__1__Impl : ( 'modules' ) ;
+    // InternalLibrettoProjectProfile.g:1635:1: rule__ModulesBlock__Group__1__Impl : ( 'modules' ) ;
     public final void rule__ModulesBlock__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1618:1: ( ( 'modules' ) )
-            // InternalLibrettoProjectProfile.g:1619:1: ( 'modules' )
+            // InternalLibrettoProjectProfile.g:1639:1: ( ( 'modules' ) )
+            // InternalLibrettoProjectProfile.g:1640:1: ( 'modules' )
             {
-            // InternalLibrettoProjectProfile.g:1619:1: ( 'modules' )
-            // InternalLibrettoProjectProfile.g:1620:2: 'modules'
+            // InternalLibrettoProjectProfile.g:1640:1: ( 'modules' )
+            // InternalLibrettoProjectProfile.g:1641:2: 'modules'
             {
              before(grammarAccess.getModulesBlockAccess().getModulesKeyword_1()); 
             match(input,33,FOLLOW_2); 
@@ -5488,14 +5579,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ModulesBlock__Group__2"
-    // InternalLibrettoProjectProfile.g:1629:1: rule__ModulesBlock__Group__2 : rule__ModulesBlock__Group__2__Impl rule__ModulesBlock__Group__3 ;
+    // InternalLibrettoProjectProfile.g:1650:1: rule__ModulesBlock__Group__2 : rule__ModulesBlock__Group__2__Impl rule__ModulesBlock__Group__3 ;
     public final void rule__ModulesBlock__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1633:1: ( rule__ModulesBlock__Group__2__Impl rule__ModulesBlock__Group__3 )
-            // InternalLibrettoProjectProfile.g:1634:2: rule__ModulesBlock__Group__2__Impl rule__ModulesBlock__Group__3
+            // InternalLibrettoProjectProfile.g:1654:1: ( rule__ModulesBlock__Group__2__Impl rule__ModulesBlock__Group__3 )
+            // InternalLibrettoProjectProfile.g:1655:2: rule__ModulesBlock__Group__2__Impl rule__ModulesBlock__Group__3
             {
             pushFollow(FOLLOW_13);
             rule__ModulesBlock__Group__2__Impl();
@@ -5526,17 +5617,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ModulesBlock__Group__2__Impl"
-    // InternalLibrettoProjectProfile.g:1641:1: rule__ModulesBlock__Group__2__Impl : ( '{' ) ;
+    // InternalLibrettoProjectProfile.g:1662:1: rule__ModulesBlock__Group__2__Impl : ( '{' ) ;
     public final void rule__ModulesBlock__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1645:1: ( ( '{' ) )
-            // InternalLibrettoProjectProfile.g:1646:1: ( '{' )
+            // InternalLibrettoProjectProfile.g:1666:1: ( ( '{' ) )
+            // InternalLibrettoProjectProfile.g:1667:1: ( '{' )
             {
-            // InternalLibrettoProjectProfile.g:1646:1: ( '{' )
-            // InternalLibrettoProjectProfile.g:1647:2: '{'
+            // InternalLibrettoProjectProfile.g:1667:1: ( '{' )
+            // InternalLibrettoProjectProfile.g:1668:2: '{'
             {
              before(grammarAccess.getModulesBlockAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,29,FOLLOW_2); 
@@ -5563,14 +5654,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ModulesBlock__Group__3"
-    // InternalLibrettoProjectProfile.g:1656:1: rule__ModulesBlock__Group__3 : rule__ModulesBlock__Group__3__Impl rule__ModulesBlock__Group__4 ;
+    // InternalLibrettoProjectProfile.g:1677:1: rule__ModulesBlock__Group__3 : rule__ModulesBlock__Group__3__Impl rule__ModulesBlock__Group__4 ;
     public final void rule__ModulesBlock__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1660:1: ( rule__ModulesBlock__Group__3__Impl rule__ModulesBlock__Group__4 )
-            // InternalLibrettoProjectProfile.g:1661:2: rule__ModulesBlock__Group__3__Impl rule__ModulesBlock__Group__4
+            // InternalLibrettoProjectProfile.g:1681:1: ( rule__ModulesBlock__Group__3__Impl rule__ModulesBlock__Group__4 )
+            // InternalLibrettoProjectProfile.g:1682:2: rule__ModulesBlock__Group__3__Impl rule__ModulesBlock__Group__4
             {
             pushFollow(FOLLOW_13);
             rule__ModulesBlock__Group__3__Impl();
@@ -5601,33 +5692,33 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ModulesBlock__Group__3__Impl"
-    // InternalLibrettoProjectProfile.g:1668:1: rule__ModulesBlock__Group__3__Impl : ( ( rule__ModulesBlock__ModulesAssignment_3 )* ) ;
+    // InternalLibrettoProjectProfile.g:1689:1: rule__ModulesBlock__Group__3__Impl : ( ( rule__ModulesBlock__ModulesAssignment_3 )* ) ;
     public final void rule__ModulesBlock__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1672:1: ( ( ( rule__ModulesBlock__ModulesAssignment_3 )* ) )
-            // InternalLibrettoProjectProfile.g:1673:1: ( ( rule__ModulesBlock__ModulesAssignment_3 )* )
+            // InternalLibrettoProjectProfile.g:1693:1: ( ( ( rule__ModulesBlock__ModulesAssignment_3 )* ) )
+            // InternalLibrettoProjectProfile.g:1694:1: ( ( rule__ModulesBlock__ModulesAssignment_3 )* )
             {
-            // InternalLibrettoProjectProfile.g:1673:1: ( ( rule__ModulesBlock__ModulesAssignment_3 )* )
-            // InternalLibrettoProjectProfile.g:1674:2: ( rule__ModulesBlock__ModulesAssignment_3 )*
+            // InternalLibrettoProjectProfile.g:1694:1: ( ( rule__ModulesBlock__ModulesAssignment_3 )* )
+            // InternalLibrettoProjectProfile.g:1695:2: ( rule__ModulesBlock__ModulesAssignment_3 )*
             {
              before(grammarAccess.getModulesBlockAccess().getModulesAssignment_3()); 
-            // InternalLibrettoProjectProfile.g:1675:2: ( rule__ModulesBlock__ModulesAssignment_3 )*
-            loop21:
+            // InternalLibrettoProjectProfile.g:1696:2: ( rule__ModulesBlock__ModulesAssignment_3 )*
+            loop22:
             do {
-                int alt21=2;
-                int LA21_0 = input.LA(1);
+                int alt22=2;
+                int LA22_0 = input.LA(1);
 
-                if ( (LA21_0==34) ) {
-                    alt21=1;
+                if ( (LA22_0==34) ) {
+                    alt22=1;
                 }
 
 
-                switch (alt21) {
+                switch (alt22) {
             	case 1 :
-            	    // InternalLibrettoProjectProfile.g:1675:3: rule__ModulesBlock__ModulesAssignment_3
+            	    // InternalLibrettoProjectProfile.g:1696:3: rule__ModulesBlock__ModulesAssignment_3
             	    {
             	    pushFollow(FOLLOW_14);
             	    rule__ModulesBlock__ModulesAssignment_3();
@@ -5639,7 +5730,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
             	    break;
 
             	default :
-            	    break loop21;
+            	    break loop22;
                 }
             } while (true);
 
@@ -5666,14 +5757,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ModulesBlock__Group__4"
-    // InternalLibrettoProjectProfile.g:1683:1: rule__ModulesBlock__Group__4 : rule__ModulesBlock__Group__4__Impl ;
+    // InternalLibrettoProjectProfile.g:1704:1: rule__ModulesBlock__Group__4 : rule__ModulesBlock__Group__4__Impl ;
     public final void rule__ModulesBlock__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1687:1: ( rule__ModulesBlock__Group__4__Impl )
-            // InternalLibrettoProjectProfile.g:1688:2: rule__ModulesBlock__Group__4__Impl
+            // InternalLibrettoProjectProfile.g:1708:1: ( rule__ModulesBlock__Group__4__Impl )
+            // InternalLibrettoProjectProfile.g:1709:2: rule__ModulesBlock__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ModulesBlock__Group__4__Impl();
@@ -5699,17 +5790,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ModulesBlock__Group__4__Impl"
-    // InternalLibrettoProjectProfile.g:1694:1: rule__ModulesBlock__Group__4__Impl : ( '}' ) ;
+    // InternalLibrettoProjectProfile.g:1715:1: rule__ModulesBlock__Group__4__Impl : ( '}' ) ;
     public final void rule__ModulesBlock__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1698:1: ( ( '}' ) )
-            // InternalLibrettoProjectProfile.g:1699:1: ( '}' )
+            // InternalLibrettoProjectProfile.g:1719:1: ( ( '}' ) )
+            // InternalLibrettoProjectProfile.g:1720:1: ( '}' )
             {
-            // InternalLibrettoProjectProfile.g:1699:1: ( '}' )
-            // InternalLibrettoProjectProfile.g:1700:2: '}'
+            // InternalLibrettoProjectProfile.g:1720:1: ( '}' )
+            // InternalLibrettoProjectProfile.g:1721:2: '}'
             {
              before(grammarAccess.getModulesBlockAccess().getRightCurlyBracketKeyword_4()); 
             match(input,30,FOLLOW_2); 
@@ -5736,14 +5827,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__Group__0"
-    // InternalLibrettoProjectProfile.g:1710:1: rule__ProjectModule__Group__0 : rule__ProjectModule__Group__0__Impl rule__ProjectModule__Group__1 ;
+    // InternalLibrettoProjectProfile.g:1731:1: rule__ProjectModule__Group__0 : rule__ProjectModule__Group__0__Impl rule__ProjectModule__Group__1 ;
     public final void rule__ProjectModule__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1714:1: ( rule__ProjectModule__Group__0__Impl rule__ProjectModule__Group__1 )
-            // InternalLibrettoProjectProfile.g:1715:2: rule__ProjectModule__Group__0__Impl rule__ProjectModule__Group__1
+            // InternalLibrettoProjectProfile.g:1735:1: ( rule__ProjectModule__Group__0__Impl rule__ProjectModule__Group__1 )
+            // InternalLibrettoProjectProfile.g:1736:2: rule__ProjectModule__Group__0__Impl rule__ProjectModule__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__ProjectModule__Group__0__Impl();
@@ -5774,17 +5865,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__Group__0__Impl"
-    // InternalLibrettoProjectProfile.g:1722:1: rule__ProjectModule__Group__0__Impl : ( 'module' ) ;
+    // InternalLibrettoProjectProfile.g:1743:1: rule__ProjectModule__Group__0__Impl : ( 'module' ) ;
     public final void rule__ProjectModule__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1726:1: ( ( 'module' ) )
-            // InternalLibrettoProjectProfile.g:1727:1: ( 'module' )
+            // InternalLibrettoProjectProfile.g:1747:1: ( ( 'module' ) )
+            // InternalLibrettoProjectProfile.g:1748:1: ( 'module' )
             {
-            // InternalLibrettoProjectProfile.g:1727:1: ( 'module' )
-            // InternalLibrettoProjectProfile.g:1728:2: 'module'
+            // InternalLibrettoProjectProfile.g:1748:1: ( 'module' )
+            // InternalLibrettoProjectProfile.g:1749:2: 'module'
             {
              before(grammarAccess.getProjectModuleAccess().getModuleKeyword_0()); 
             match(input,34,FOLLOW_2); 
@@ -5811,14 +5902,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__Group__1"
-    // InternalLibrettoProjectProfile.g:1737:1: rule__ProjectModule__Group__1 : rule__ProjectModule__Group__1__Impl rule__ProjectModule__Group__2 ;
+    // InternalLibrettoProjectProfile.g:1758:1: rule__ProjectModule__Group__1 : rule__ProjectModule__Group__1__Impl rule__ProjectModule__Group__2 ;
     public final void rule__ProjectModule__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1741:1: ( rule__ProjectModule__Group__1__Impl rule__ProjectModule__Group__2 )
-            // InternalLibrettoProjectProfile.g:1742:2: rule__ProjectModule__Group__1__Impl rule__ProjectModule__Group__2
+            // InternalLibrettoProjectProfile.g:1762:1: ( rule__ProjectModule__Group__1__Impl rule__ProjectModule__Group__2 )
+            // InternalLibrettoProjectProfile.g:1763:2: rule__ProjectModule__Group__1__Impl rule__ProjectModule__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__ProjectModule__Group__1__Impl();
@@ -5849,21 +5940,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__Group__1__Impl"
-    // InternalLibrettoProjectProfile.g:1749:1: rule__ProjectModule__Group__1__Impl : ( ( rule__ProjectModule__NameAssignment_1 ) ) ;
+    // InternalLibrettoProjectProfile.g:1770:1: rule__ProjectModule__Group__1__Impl : ( ( rule__ProjectModule__NameAssignment_1 ) ) ;
     public final void rule__ProjectModule__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1753:1: ( ( ( rule__ProjectModule__NameAssignment_1 ) ) )
-            // InternalLibrettoProjectProfile.g:1754:1: ( ( rule__ProjectModule__NameAssignment_1 ) )
+            // InternalLibrettoProjectProfile.g:1774:1: ( ( ( rule__ProjectModule__NameAssignment_1 ) ) )
+            // InternalLibrettoProjectProfile.g:1775:1: ( ( rule__ProjectModule__NameAssignment_1 ) )
             {
-            // InternalLibrettoProjectProfile.g:1754:1: ( ( rule__ProjectModule__NameAssignment_1 ) )
-            // InternalLibrettoProjectProfile.g:1755:2: ( rule__ProjectModule__NameAssignment_1 )
+            // InternalLibrettoProjectProfile.g:1775:1: ( ( rule__ProjectModule__NameAssignment_1 ) )
+            // InternalLibrettoProjectProfile.g:1776:2: ( rule__ProjectModule__NameAssignment_1 )
             {
              before(grammarAccess.getProjectModuleAccess().getNameAssignment_1()); 
-            // InternalLibrettoProjectProfile.g:1756:2: ( rule__ProjectModule__NameAssignment_1 )
-            // InternalLibrettoProjectProfile.g:1756:3: rule__ProjectModule__NameAssignment_1
+            // InternalLibrettoProjectProfile.g:1777:2: ( rule__ProjectModule__NameAssignment_1 )
+            // InternalLibrettoProjectProfile.g:1777:3: rule__ProjectModule__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__ProjectModule__NameAssignment_1();
@@ -5896,14 +5987,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__Group__2"
-    // InternalLibrettoProjectProfile.g:1764:1: rule__ProjectModule__Group__2 : rule__ProjectModule__Group__2__Impl rule__ProjectModule__Group__3 ;
+    // InternalLibrettoProjectProfile.g:1785:1: rule__ProjectModule__Group__2 : rule__ProjectModule__Group__2__Impl rule__ProjectModule__Group__3 ;
     public final void rule__ProjectModule__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1768:1: ( rule__ProjectModule__Group__2__Impl rule__ProjectModule__Group__3 )
-            // InternalLibrettoProjectProfile.g:1769:2: rule__ProjectModule__Group__2__Impl rule__ProjectModule__Group__3
+            // InternalLibrettoProjectProfile.g:1789:1: ( rule__ProjectModule__Group__2__Impl rule__ProjectModule__Group__3 )
+            // InternalLibrettoProjectProfile.g:1790:2: rule__ProjectModule__Group__2__Impl rule__ProjectModule__Group__3
             {
             pushFollow(FOLLOW_15);
             rule__ProjectModule__Group__2__Impl();
@@ -5934,17 +6025,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__Group__2__Impl"
-    // InternalLibrettoProjectProfile.g:1776:1: rule__ProjectModule__Group__2__Impl : ( '{' ) ;
+    // InternalLibrettoProjectProfile.g:1797:1: rule__ProjectModule__Group__2__Impl : ( '{' ) ;
     public final void rule__ProjectModule__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1780:1: ( ( '{' ) )
-            // InternalLibrettoProjectProfile.g:1781:1: ( '{' )
+            // InternalLibrettoProjectProfile.g:1801:1: ( ( '{' ) )
+            // InternalLibrettoProjectProfile.g:1802:1: ( '{' )
             {
-            // InternalLibrettoProjectProfile.g:1781:1: ( '{' )
-            // InternalLibrettoProjectProfile.g:1782:2: '{'
+            // InternalLibrettoProjectProfile.g:1802:1: ( '{' )
+            // InternalLibrettoProjectProfile.g:1803:2: '{'
             {
              before(grammarAccess.getProjectModuleAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,29,FOLLOW_2); 
@@ -5971,14 +6062,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__Group__3"
-    // InternalLibrettoProjectProfile.g:1791:1: rule__ProjectModule__Group__3 : rule__ProjectModule__Group__3__Impl rule__ProjectModule__Group__4 ;
+    // InternalLibrettoProjectProfile.g:1812:1: rule__ProjectModule__Group__3 : rule__ProjectModule__Group__3__Impl rule__ProjectModule__Group__4 ;
     public final void rule__ProjectModule__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1795:1: ( rule__ProjectModule__Group__3__Impl rule__ProjectModule__Group__4 )
-            // InternalLibrettoProjectProfile.g:1796:2: rule__ProjectModule__Group__3__Impl rule__ProjectModule__Group__4
+            // InternalLibrettoProjectProfile.g:1816:1: ( rule__ProjectModule__Group__3__Impl rule__ProjectModule__Group__4 )
+            // InternalLibrettoProjectProfile.g:1817:2: rule__ProjectModule__Group__3__Impl rule__ProjectModule__Group__4
             {
             pushFollow(FOLLOW_15);
             rule__ProjectModule__Group__3__Impl();
@@ -6009,33 +6100,33 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__Group__3__Impl"
-    // InternalLibrettoProjectProfile.g:1803:1: rule__ProjectModule__Group__3__Impl : ( ( rule__ProjectModule__Alternatives_3 )* ) ;
+    // InternalLibrettoProjectProfile.g:1824:1: rule__ProjectModule__Group__3__Impl : ( ( rule__ProjectModule__Alternatives_3 )* ) ;
     public final void rule__ProjectModule__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1807:1: ( ( ( rule__ProjectModule__Alternatives_3 )* ) )
-            // InternalLibrettoProjectProfile.g:1808:1: ( ( rule__ProjectModule__Alternatives_3 )* )
+            // InternalLibrettoProjectProfile.g:1828:1: ( ( ( rule__ProjectModule__Alternatives_3 )* ) )
+            // InternalLibrettoProjectProfile.g:1829:1: ( ( rule__ProjectModule__Alternatives_3 )* )
             {
-            // InternalLibrettoProjectProfile.g:1808:1: ( ( rule__ProjectModule__Alternatives_3 )* )
-            // InternalLibrettoProjectProfile.g:1809:2: ( rule__ProjectModule__Alternatives_3 )*
+            // InternalLibrettoProjectProfile.g:1829:1: ( ( rule__ProjectModule__Alternatives_3 )* )
+            // InternalLibrettoProjectProfile.g:1830:2: ( rule__ProjectModule__Alternatives_3 )*
             {
              before(grammarAccess.getProjectModuleAccess().getAlternatives_3()); 
-            // InternalLibrettoProjectProfile.g:1810:2: ( rule__ProjectModule__Alternatives_3 )*
-            loop22:
+            // InternalLibrettoProjectProfile.g:1831:2: ( rule__ProjectModule__Alternatives_3 )*
+            loop23:
             do {
-                int alt22=2;
-                int LA22_0 = input.LA(1);
+                int alt23=2;
+                int LA23_0 = input.LA(1);
 
-                if ( ((LA22_0>=35 && LA22_0<=39)) ) {
-                    alt22=1;
+                if ( ((LA23_0>=35 && LA23_0<=39)) ) {
+                    alt23=1;
                 }
 
 
-                switch (alt22) {
+                switch (alt23) {
             	case 1 :
-            	    // InternalLibrettoProjectProfile.g:1810:3: rule__ProjectModule__Alternatives_3
+            	    // InternalLibrettoProjectProfile.g:1831:3: rule__ProjectModule__Alternatives_3
             	    {
             	    pushFollow(FOLLOW_16);
             	    rule__ProjectModule__Alternatives_3();
@@ -6047,7 +6138,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
             	    break;
 
             	default :
-            	    break loop22;
+            	    break loop23;
                 }
             } while (true);
 
@@ -6074,14 +6165,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__Group__4"
-    // InternalLibrettoProjectProfile.g:1818:1: rule__ProjectModule__Group__4 : rule__ProjectModule__Group__4__Impl ;
+    // InternalLibrettoProjectProfile.g:1839:1: rule__ProjectModule__Group__4 : rule__ProjectModule__Group__4__Impl ;
     public final void rule__ProjectModule__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1822:1: ( rule__ProjectModule__Group__4__Impl )
-            // InternalLibrettoProjectProfile.g:1823:2: rule__ProjectModule__Group__4__Impl
+            // InternalLibrettoProjectProfile.g:1843:1: ( rule__ProjectModule__Group__4__Impl )
+            // InternalLibrettoProjectProfile.g:1844:2: rule__ProjectModule__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ProjectModule__Group__4__Impl();
@@ -6107,17 +6198,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__Group__4__Impl"
-    // InternalLibrettoProjectProfile.g:1829:1: rule__ProjectModule__Group__4__Impl : ( '}' ) ;
+    // InternalLibrettoProjectProfile.g:1850:1: rule__ProjectModule__Group__4__Impl : ( '}' ) ;
     public final void rule__ProjectModule__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1833:1: ( ( '}' ) )
-            // InternalLibrettoProjectProfile.g:1834:1: ( '}' )
+            // InternalLibrettoProjectProfile.g:1854:1: ( ( '}' ) )
+            // InternalLibrettoProjectProfile.g:1855:1: ( '}' )
             {
-            // InternalLibrettoProjectProfile.g:1834:1: ( '}' )
-            // InternalLibrettoProjectProfile.g:1835:2: '}'
+            // InternalLibrettoProjectProfile.g:1855:1: ( '}' )
+            // InternalLibrettoProjectProfile.g:1856:2: '}'
             {
              before(grammarAccess.getProjectModuleAccess().getRightCurlyBracketKeyword_4()); 
             match(input,30,FOLLOW_2); 
@@ -6144,14 +6235,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__Group_3_0__0"
-    // InternalLibrettoProjectProfile.g:1845:1: rule__ProjectModule__Group_3_0__0 : rule__ProjectModule__Group_3_0__0__Impl rule__ProjectModule__Group_3_0__1 ;
+    // InternalLibrettoProjectProfile.g:1866:1: rule__ProjectModule__Group_3_0__0 : rule__ProjectModule__Group_3_0__0__Impl rule__ProjectModule__Group_3_0__1 ;
     public final void rule__ProjectModule__Group_3_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1849:1: ( rule__ProjectModule__Group_3_0__0__Impl rule__ProjectModule__Group_3_0__1 )
-            // InternalLibrettoProjectProfile.g:1850:2: rule__ProjectModule__Group_3_0__0__Impl rule__ProjectModule__Group_3_0__1
+            // InternalLibrettoProjectProfile.g:1870:1: ( rule__ProjectModule__Group_3_0__0__Impl rule__ProjectModule__Group_3_0__1 )
+            // InternalLibrettoProjectProfile.g:1871:2: rule__ProjectModule__Group_3_0__0__Impl rule__ProjectModule__Group_3_0__1
             {
             pushFollow(FOLLOW_11);
             rule__ProjectModule__Group_3_0__0__Impl();
@@ -6182,17 +6273,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__Group_3_0__0__Impl"
-    // InternalLibrettoProjectProfile.g:1857:1: rule__ProjectModule__Group_3_0__0__Impl : ( 'dir' ) ;
+    // InternalLibrettoProjectProfile.g:1878:1: rule__ProjectModule__Group_3_0__0__Impl : ( 'dir' ) ;
     public final void rule__ProjectModule__Group_3_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1861:1: ( ( 'dir' ) )
-            // InternalLibrettoProjectProfile.g:1862:1: ( 'dir' )
+            // InternalLibrettoProjectProfile.g:1882:1: ( ( 'dir' ) )
+            // InternalLibrettoProjectProfile.g:1883:1: ( 'dir' )
             {
-            // InternalLibrettoProjectProfile.g:1862:1: ( 'dir' )
-            // InternalLibrettoProjectProfile.g:1863:2: 'dir'
+            // InternalLibrettoProjectProfile.g:1883:1: ( 'dir' )
+            // InternalLibrettoProjectProfile.g:1884:2: 'dir'
             {
              before(grammarAccess.getProjectModuleAccess().getDirKeyword_3_0_0()); 
             match(input,35,FOLLOW_2); 
@@ -6219,14 +6310,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__Group_3_0__1"
-    // InternalLibrettoProjectProfile.g:1872:1: rule__ProjectModule__Group_3_0__1 : rule__ProjectModule__Group_3_0__1__Impl ;
+    // InternalLibrettoProjectProfile.g:1893:1: rule__ProjectModule__Group_3_0__1 : rule__ProjectModule__Group_3_0__1__Impl ;
     public final void rule__ProjectModule__Group_3_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1876:1: ( rule__ProjectModule__Group_3_0__1__Impl )
-            // InternalLibrettoProjectProfile.g:1877:2: rule__ProjectModule__Group_3_0__1__Impl
+            // InternalLibrettoProjectProfile.g:1897:1: ( rule__ProjectModule__Group_3_0__1__Impl )
+            // InternalLibrettoProjectProfile.g:1898:2: rule__ProjectModule__Group_3_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ProjectModule__Group_3_0__1__Impl();
@@ -6252,21 +6343,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__Group_3_0__1__Impl"
-    // InternalLibrettoProjectProfile.g:1883:1: rule__ProjectModule__Group_3_0__1__Impl : ( ( rule__ProjectModule__DirsAssignment_3_0_1 ) ) ;
+    // InternalLibrettoProjectProfile.g:1904:1: rule__ProjectModule__Group_3_0__1__Impl : ( ( rule__ProjectModule__DirsAssignment_3_0_1 ) ) ;
     public final void rule__ProjectModule__Group_3_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1887:1: ( ( ( rule__ProjectModule__DirsAssignment_3_0_1 ) ) )
-            // InternalLibrettoProjectProfile.g:1888:1: ( ( rule__ProjectModule__DirsAssignment_3_0_1 ) )
+            // InternalLibrettoProjectProfile.g:1908:1: ( ( ( rule__ProjectModule__DirsAssignment_3_0_1 ) ) )
+            // InternalLibrettoProjectProfile.g:1909:1: ( ( rule__ProjectModule__DirsAssignment_3_0_1 ) )
             {
-            // InternalLibrettoProjectProfile.g:1888:1: ( ( rule__ProjectModule__DirsAssignment_3_0_1 ) )
-            // InternalLibrettoProjectProfile.g:1889:2: ( rule__ProjectModule__DirsAssignment_3_0_1 )
+            // InternalLibrettoProjectProfile.g:1909:1: ( ( rule__ProjectModule__DirsAssignment_3_0_1 ) )
+            // InternalLibrettoProjectProfile.g:1910:2: ( rule__ProjectModule__DirsAssignment_3_0_1 )
             {
              before(grammarAccess.getProjectModuleAccess().getDirsAssignment_3_0_1()); 
-            // InternalLibrettoProjectProfile.g:1890:2: ( rule__ProjectModule__DirsAssignment_3_0_1 )
-            // InternalLibrettoProjectProfile.g:1890:3: rule__ProjectModule__DirsAssignment_3_0_1
+            // InternalLibrettoProjectProfile.g:1911:2: ( rule__ProjectModule__DirsAssignment_3_0_1 )
+            // InternalLibrettoProjectProfile.g:1911:3: rule__ProjectModule__DirsAssignment_3_0_1
             {
             pushFollow(FOLLOW_2);
             rule__ProjectModule__DirsAssignment_3_0_1();
@@ -6299,14 +6390,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__Group_3_1__0"
-    // InternalLibrettoProjectProfile.g:1899:1: rule__ProjectModule__Group_3_1__0 : rule__ProjectModule__Group_3_1__0__Impl rule__ProjectModule__Group_3_1__1 ;
+    // InternalLibrettoProjectProfile.g:1920:1: rule__ProjectModule__Group_3_1__0 : rule__ProjectModule__Group_3_1__0__Impl rule__ProjectModule__Group_3_1__1 ;
     public final void rule__ProjectModule__Group_3_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1903:1: ( rule__ProjectModule__Group_3_1__0__Impl rule__ProjectModule__Group_3_1__1 )
-            // InternalLibrettoProjectProfile.g:1904:2: rule__ProjectModule__Group_3_1__0__Impl rule__ProjectModule__Group_3_1__1
+            // InternalLibrettoProjectProfile.g:1924:1: ( rule__ProjectModule__Group_3_1__0__Impl rule__ProjectModule__Group_3_1__1 )
+            // InternalLibrettoProjectProfile.g:1925:2: rule__ProjectModule__Group_3_1__0__Impl rule__ProjectModule__Group_3_1__1
             {
             pushFollow(FOLLOW_11);
             rule__ProjectModule__Group_3_1__0__Impl();
@@ -6337,17 +6428,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__Group_3_1__0__Impl"
-    // InternalLibrettoProjectProfile.g:1911:1: rule__ProjectModule__Group_3_1__0__Impl : ( 'specDir' ) ;
+    // InternalLibrettoProjectProfile.g:1932:1: rule__ProjectModule__Group_3_1__0__Impl : ( 'specDir' ) ;
     public final void rule__ProjectModule__Group_3_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1915:1: ( ( 'specDir' ) )
-            // InternalLibrettoProjectProfile.g:1916:1: ( 'specDir' )
+            // InternalLibrettoProjectProfile.g:1936:1: ( ( 'specDir' ) )
+            // InternalLibrettoProjectProfile.g:1937:1: ( 'specDir' )
             {
-            // InternalLibrettoProjectProfile.g:1916:1: ( 'specDir' )
-            // InternalLibrettoProjectProfile.g:1917:2: 'specDir'
+            // InternalLibrettoProjectProfile.g:1937:1: ( 'specDir' )
+            // InternalLibrettoProjectProfile.g:1938:2: 'specDir'
             {
              before(grammarAccess.getProjectModuleAccess().getSpecDirKeyword_3_1_0()); 
             match(input,36,FOLLOW_2); 
@@ -6374,14 +6465,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__Group_3_1__1"
-    // InternalLibrettoProjectProfile.g:1926:1: rule__ProjectModule__Group_3_1__1 : rule__ProjectModule__Group_3_1__1__Impl ;
+    // InternalLibrettoProjectProfile.g:1947:1: rule__ProjectModule__Group_3_1__1 : rule__ProjectModule__Group_3_1__1__Impl ;
     public final void rule__ProjectModule__Group_3_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1930:1: ( rule__ProjectModule__Group_3_1__1__Impl )
-            // InternalLibrettoProjectProfile.g:1931:2: rule__ProjectModule__Group_3_1__1__Impl
+            // InternalLibrettoProjectProfile.g:1951:1: ( rule__ProjectModule__Group_3_1__1__Impl )
+            // InternalLibrettoProjectProfile.g:1952:2: rule__ProjectModule__Group_3_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ProjectModule__Group_3_1__1__Impl();
@@ -6407,21 +6498,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__Group_3_1__1__Impl"
-    // InternalLibrettoProjectProfile.g:1937:1: rule__ProjectModule__Group_3_1__1__Impl : ( ( rule__ProjectModule__SpecDirsAssignment_3_1_1 ) ) ;
+    // InternalLibrettoProjectProfile.g:1958:1: rule__ProjectModule__Group_3_1__1__Impl : ( ( rule__ProjectModule__SpecDirsAssignment_3_1_1 ) ) ;
     public final void rule__ProjectModule__Group_3_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1941:1: ( ( ( rule__ProjectModule__SpecDirsAssignment_3_1_1 ) ) )
-            // InternalLibrettoProjectProfile.g:1942:1: ( ( rule__ProjectModule__SpecDirsAssignment_3_1_1 ) )
+            // InternalLibrettoProjectProfile.g:1962:1: ( ( ( rule__ProjectModule__SpecDirsAssignment_3_1_1 ) ) )
+            // InternalLibrettoProjectProfile.g:1963:1: ( ( rule__ProjectModule__SpecDirsAssignment_3_1_1 ) )
             {
-            // InternalLibrettoProjectProfile.g:1942:1: ( ( rule__ProjectModule__SpecDirsAssignment_3_1_1 ) )
-            // InternalLibrettoProjectProfile.g:1943:2: ( rule__ProjectModule__SpecDirsAssignment_3_1_1 )
+            // InternalLibrettoProjectProfile.g:1963:1: ( ( rule__ProjectModule__SpecDirsAssignment_3_1_1 ) )
+            // InternalLibrettoProjectProfile.g:1964:2: ( rule__ProjectModule__SpecDirsAssignment_3_1_1 )
             {
              before(grammarAccess.getProjectModuleAccess().getSpecDirsAssignment_3_1_1()); 
-            // InternalLibrettoProjectProfile.g:1944:2: ( rule__ProjectModule__SpecDirsAssignment_3_1_1 )
-            // InternalLibrettoProjectProfile.g:1944:3: rule__ProjectModule__SpecDirsAssignment_3_1_1
+            // InternalLibrettoProjectProfile.g:1965:2: ( rule__ProjectModule__SpecDirsAssignment_3_1_1 )
+            // InternalLibrettoProjectProfile.g:1965:3: rule__ProjectModule__SpecDirsAssignment_3_1_1
             {
             pushFollow(FOLLOW_2);
             rule__ProjectModule__SpecDirsAssignment_3_1_1();
@@ -6454,14 +6545,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__Group_3_2__0"
-    // InternalLibrettoProjectProfile.g:1953:1: rule__ProjectModule__Group_3_2__0 : rule__ProjectModule__Group_3_2__0__Impl rule__ProjectModule__Group_3_2__1 ;
+    // InternalLibrettoProjectProfile.g:1974:1: rule__ProjectModule__Group_3_2__0 : rule__ProjectModule__Group_3_2__0__Impl rule__ProjectModule__Group_3_2__1 ;
     public final void rule__ProjectModule__Group_3_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1957:1: ( rule__ProjectModule__Group_3_2__0__Impl rule__ProjectModule__Group_3_2__1 )
-            // InternalLibrettoProjectProfile.g:1958:2: rule__ProjectModule__Group_3_2__0__Impl rule__ProjectModule__Group_3_2__1
+            // InternalLibrettoProjectProfile.g:1978:1: ( rule__ProjectModule__Group_3_2__0__Impl rule__ProjectModule__Group_3_2__1 )
+            // InternalLibrettoProjectProfile.g:1979:2: rule__ProjectModule__Group_3_2__0__Impl rule__ProjectModule__Group_3_2__1
             {
             pushFollow(FOLLOW_11);
             rule__ProjectModule__Group_3_2__0__Impl();
@@ -6492,17 +6583,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__Group_3_2__0__Impl"
-    // InternalLibrettoProjectProfile.g:1965:1: rule__ProjectModule__Group_3_2__0__Impl : ( 'testDir' ) ;
+    // InternalLibrettoProjectProfile.g:1986:1: rule__ProjectModule__Group_3_2__0__Impl : ( 'testDir' ) ;
     public final void rule__ProjectModule__Group_3_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1969:1: ( ( 'testDir' ) )
-            // InternalLibrettoProjectProfile.g:1970:1: ( 'testDir' )
+            // InternalLibrettoProjectProfile.g:1990:1: ( ( 'testDir' ) )
+            // InternalLibrettoProjectProfile.g:1991:1: ( 'testDir' )
             {
-            // InternalLibrettoProjectProfile.g:1970:1: ( 'testDir' )
-            // InternalLibrettoProjectProfile.g:1971:2: 'testDir'
+            // InternalLibrettoProjectProfile.g:1991:1: ( 'testDir' )
+            // InternalLibrettoProjectProfile.g:1992:2: 'testDir'
             {
              before(grammarAccess.getProjectModuleAccess().getTestDirKeyword_3_2_0()); 
             match(input,37,FOLLOW_2); 
@@ -6529,14 +6620,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__Group_3_2__1"
-    // InternalLibrettoProjectProfile.g:1980:1: rule__ProjectModule__Group_3_2__1 : rule__ProjectModule__Group_3_2__1__Impl ;
+    // InternalLibrettoProjectProfile.g:2001:1: rule__ProjectModule__Group_3_2__1 : rule__ProjectModule__Group_3_2__1__Impl ;
     public final void rule__ProjectModule__Group_3_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1984:1: ( rule__ProjectModule__Group_3_2__1__Impl )
-            // InternalLibrettoProjectProfile.g:1985:2: rule__ProjectModule__Group_3_2__1__Impl
+            // InternalLibrettoProjectProfile.g:2005:1: ( rule__ProjectModule__Group_3_2__1__Impl )
+            // InternalLibrettoProjectProfile.g:2006:2: rule__ProjectModule__Group_3_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ProjectModule__Group_3_2__1__Impl();
@@ -6562,21 +6653,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__Group_3_2__1__Impl"
-    // InternalLibrettoProjectProfile.g:1991:1: rule__ProjectModule__Group_3_2__1__Impl : ( ( rule__ProjectModule__TestDirsAssignment_3_2_1 ) ) ;
+    // InternalLibrettoProjectProfile.g:2012:1: rule__ProjectModule__Group_3_2__1__Impl : ( ( rule__ProjectModule__TestDirsAssignment_3_2_1 ) ) ;
     public final void rule__ProjectModule__Group_3_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:1995:1: ( ( ( rule__ProjectModule__TestDirsAssignment_3_2_1 ) ) )
-            // InternalLibrettoProjectProfile.g:1996:1: ( ( rule__ProjectModule__TestDirsAssignment_3_2_1 ) )
+            // InternalLibrettoProjectProfile.g:2016:1: ( ( ( rule__ProjectModule__TestDirsAssignment_3_2_1 ) ) )
+            // InternalLibrettoProjectProfile.g:2017:1: ( ( rule__ProjectModule__TestDirsAssignment_3_2_1 ) )
             {
-            // InternalLibrettoProjectProfile.g:1996:1: ( ( rule__ProjectModule__TestDirsAssignment_3_2_1 ) )
-            // InternalLibrettoProjectProfile.g:1997:2: ( rule__ProjectModule__TestDirsAssignment_3_2_1 )
+            // InternalLibrettoProjectProfile.g:2017:1: ( ( rule__ProjectModule__TestDirsAssignment_3_2_1 ) )
+            // InternalLibrettoProjectProfile.g:2018:2: ( rule__ProjectModule__TestDirsAssignment_3_2_1 )
             {
              before(grammarAccess.getProjectModuleAccess().getTestDirsAssignment_3_2_1()); 
-            // InternalLibrettoProjectProfile.g:1998:2: ( rule__ProjectModule__TestDirsAssignment_3_2_1 )
-            // InternalLibrettoProjectProfile.g:1998:3: rule__ProjectModule__TestDirsAssignment_3_2_1
+            // InternalLibrettoProjectProfile.g:2019:2: ( rule__ProjectModule__TestDirsAssignment_3_2_1 )
+            // InternalLibrettoProjectProfile.g:2019:3: rule__ProjectModule__TestDirsAssignment_3_2_1
             {
             pushFollow(FOLLOW_2);
             rule__ProjectModule__TestDirsAssignment_3_2_1();
@@ -6609,14 +6700,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__Group_3_3__0"
-    // InternalLibrettoProjectProfile.g:2007:1: rule__ProjectModule__Group_3_3__0 : rule__ProjectModule__Group_3_3__0__Impl rule__ProjectModule__Group_3_3__1 ;
+    // InternalLibrettoProjectProfile.g:2028:1: rule__ProjectModule__Group_3_3__0 : rule__ProjectModule__Group_3_3__0__Impl rule__ProjectModule__Group_3_3__1 ;
     public final void rule__ProjectModule__Group_3_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2011:1: ( rule__ProjectModule__Group_3_3__0__Impl rule__ProjectModule__Group_3_3__1 )
-            // InternalLibrettoProjectProfile.g:2012:2: rule__ProjectModule__Group_3_3__0__Impl rule__ProjectModule__Group_3_3__1
+            // InternalLibrettoProjectProfile.g:2032:1: ( rule__ProjectModule__Group_3_3__0__Impl rule__ProjectModule__Group_3_3__1 )
+            // InternalLibrettoProjectProfile.g:2033:2: rule__ProjectModule__Group_3_3__0__Impl rule__ProjectModule__Group_3_3__1
             {
             pushFollow(FOLLOW_11);
             rule__ProjectModule__Group_3_3__0__Impl();
@@ -6647,17 +6738,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__Group_3_3__0__Impl"
-    // InternalLibrettoProjectProfile.g:2019:1: rule__ProjectModule__Group_3_3__0__Impl : ( 'mainDir' ) ;
+    // InternalLibrettoProjectProfile.g:2040:1: rule__ProjectModule__Group_3_3__0__Impl : ( 'mainDir' ) ;
     public final void rule__ProjectModule__Group_3_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2023:1: ( ( 'mainDir' ) )
-            // InternalLibrettoProjectProfile.g:2024:1: ( 'mainDir' )
+            // InternalLibrettoProjectProfile.g:2044:1: ( ( 'mainDir' ) )
+            // InternalLibrettoProjectProfile.g:2045:1: ( 'mainDir' )
             {
-            // InternalLibrettoProjectProfile.g:2024:1: ( 'mainDir' )
-            // InternalLibrettoProjectProfile.g:2025:2: 'mainDir'
+            // InternalLibrettoProjectProfile.g:2045:1: ( 'mainDir' )
+            // InternalLibrettoProjectProfile.g:2046:2: 'mainDir'
             {
              before(grammarAccess.getProjectModuleAccess().getMainDirKeyword_3_3_0()); 
             match(input,38,FOLLOW_2); 
@@ -6684,14 +6775,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__Group_3_3__1"
-    // InternalLibrettoProjectProfile.g:2034:1: rule__ProjectModule__Group_3_3__1 : rule__ProjectModule__Group_3_3__1__Impl ;
+    // InternalLibrettoProjectProfile.g:2055:1: rule__ProjectModule__Group_3_3__1 : rule__ProjectModule__Group_3_3__1__Impl ;
     public final void rule__ProjectModule__Group_3_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2038:1: ( rule__ProjectModule__Group_3_3__1__Impl )
-            // InternalLibrettoProjectProfile.g:2039:2: rule__ProjectModule__Group_3_3__1__Impl
+            // InternalLibrettoProjectProfile.g:2059:1: ( rule__ProjectModule__Group_3_3__1__Impl )
+            // InternalLibrettoProjectProfile.g:2060:2: rule__ProjectModule__Group_3_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ProjectModule__Group_3_3__1__Impl();
@@ -6717,21 +6808,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__Group_3_3__1__Impl"
-    // InternalLibrettoProjectProfile.g:2045:1: rule__ProjectModule__Group_3_3__1__Impl : ( ( rule__ProjectModule__MainDirsAssignment_3_3_1 ) ) ;
+    // InternalLibrettoProjectProfile.g:2066:1: rule__ProjectModule__Group_3_3__1__Impl : ( ( rule__ProjectModule__MainDirsAssignment_3_3_1 ) ) ;
     public final void rule__ProjectModule__Group_3_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2049:1: ( ( ( rule__ProjectModule__MainDirsAssignment_3_3_1 ) ) )
-            // InternalLibrettoProjectProfile.g:2050:1: ( ( rule__ProjectModule__MainDirsAssignment_3_3_1 ) )
+            // InternalLibrettoProjectProfile.g:2070:1: ( ( ( rule__ProjectModule__MainDirsAssignment_3_3_1 ) ) )
+            // InternalLibrettoProjectProfile.g:2071:1: ( ( rule__ProjectModule__MainDirsAssignment_3_3_1 ) )
             {
-            // InternalLibrettoProjectProfile.g:2050:1: ( ( rule__ProjectModule__MainDirsAssignment_3_3_1 ) )
-            // InternalLibrettoProjectProfile.g:2051:2: ( rule__ProjectModule__MainDirsAssignment_3_3_1 )
+            // InternalLibrettoProjectProfile.g:2071:1: ( ( rule__ProjectModule__MainDirsAssignment_3_3_1 ) )
+            // InternalLibrettoProjectProfile.g:2072:2: ( rule__ProjectModule__MainDirsAssignment_3_3_1 )
             {
              before(grammarAccess.getProjectModuleAccess().getMainDirsAssignment_3_3_1()); 
-            // InternalLibrettoProjectProfile.g:2052:2: ( rule__ProjectModule__MainDirsAssignment_3_3_1 )
-            // InternalLibrettoProjectProfile.g:2052:3: rule__ProjectModule__MainDirsAssignment_3_3_1
+            // InternalLibrettoProjectProfile.g:2073:2: ( rule__ProjectModule__MainDirsAssignment_3_3_1 )
+            // InternalLibrettoProjectProfile.g:2073:3: rule__ProjectModule__MainDirsAssignment_3_3_1
             {
             pushFollow(FOLLOW_2);
             rule__ProjectModule__MainDirsAssignment_3_3_1();
@@ -6764,14 +6855,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__Group_3_4__0"
-    // InternalLibrettoProjectProfile.g:2061:1: rule__ProjectModule__Group_3_4__0 : rule__ProjectModule__Group_3_4__0__Impl rule__ProjectModule__Group_3_4__1 ;
+    // InternalLibrettoProjectProfile.g:2082:1: rule__ProjectModule__Group_3_4__0 : rule__ProjectModule__Group_3_4__0__Impl rule__ProjectModule__Group_3_4__1 ;
     public final void rule__ProjectModule__Group_3_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2065:1: ( rule__ProjectModule__Group_3_4__0__Impl rule__ProjectModule__Group_3_4__1 )
-            // InternalLibrettoProjectProfile.g:2066:2: rule__ProjectModule__Group_3_4__0__Impl rule__ProjectModule__Group_3_4__1
+            // InternalLibrettoProjectProfile.g:2086:1: ( rule__ProjectModule__Group_3_4__0__Impl rule__ProjectModule__Group_3_4__1 )
+            // InternalLibrettoProjectProfile.g:2087:2: rule__ProjectModule__Group_3_4__0__Impl rule__ProjectModule__Group_3_4__1
             {
             pushFollow(FOLLOW_11);
             rule__ProjectModule__Group_3_4__0__Impl();
@@ -6802,17 +6893,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__Group_3_4__0__Impl"
-    // InternalLibrettoProjectProfile.g:2073:1: rule__ProjectModule__Group_3_4__0__Impl : ( 'basePackage' ) ;
+    // InternalLibrettoProjectProfile.g:2094:1: rule__ProjectModule__Group_3_4__0__Impl : ( 'basePackage' ) ;
     public final void rule__ProjectModule__Group_3_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2077:1: ( ( 'basePackage' ) )
-            // InternalLibrettoProjectProfile.g:2078:1: ( 'basePackage' )
+            // InternalLibrettoProjectProfile.g:2098:1: ( ( 'basePackage' ) )
+            // InternalLibrettoProjectProfile.g:2099:1: ( 'basePackage' )
             {
-            // InternalLibrettoProjectProfile.g:2078:1: ( 'basePackage' )
-            // InternalLibrettoProjectProfile.g:2079:2: 'basePackage'
+            // InternalLibrettoProjectProfile.g:2099:1: ( 'basePackage' )
+            // InternalLibrettoProjectProfile.g:2100:2: 'basePackage'
             {
              before(grammarAccess.getProjectModuleAccess().getBasePackageKeyword_3_4_0()); 
             match(input,39,FOLLOW_2); 
@@ -6839,14 +6930,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__Group_3_4__1"
-    // InternalLibrettoProjectProfile.g:2088:1: rule__ProjectModule__Group_3_4__1 : rule__ProjectModule__Group_3_4__1__Impl ;
+    // InternalLibrettoProjectProfile.g:2109:1: rule__ProjectModule__Group_3_4__1 : rule__ProjectModule__Group_3_4__1__Impl ;
     public final void rule__ProjectModule__Group_3_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2092:1: ( rule__ProjectModule__Group_3_4__1__Impl )
-            // InternalLibrettoProjectProfile.g:2093:2: rule__ProjectModule__Group_3_4__1__Impl
+            // InternalLibrettoProjectProfile.g:2113:1: ( rule__ProjectModule__Group_3_4__1__Impl )
+            // InternalLibrettoProjectProfile.g:2114:2: rule__ProjectModule__Group_3_4__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ProjectModule__Group_3_4__1__Impl();
@@ -6872,21 +6963,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__Group_3_4__1__Impl"
-    // InternalLibrettoProjectProfile.g:2099:1: rule__ProjectModule__Group_3_4__1__Impl : ( ( rule__ProjectModule__BasePackagesAssignment_3_4_1 ) ) ;
+    // InternalLibrettoProjectProfile.g:2120:1: rule__ProjectModule__Group_3_4__1__Impl : ( ( rule__ProjectModule__BasePackagesAssignment_3_4_1 ) ) ;
     public final void rule__ProjectModule__Group_3_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2103:1: ( ( ( rule__ProjectModule__BasePackagesAssignment_3_4_1 ) ) )
-            // InternalLibrettoProjectProfile.g:2104:1: ( ( rule__ProjectModule__BasePackagesAssignment_3_4_1 ) )
+            // InternalLibrettoProjectProfile.g:2124:1: ( ( ( rule__ProjectModule__BasePackagesAssignment_3_4_1 ) ) )
+            // InternalLibrettoProjectProfile.g:2125:1: ( ( rule__ProjectModule__BasePackagesAssignment_3_4_1 ) )
             {
-            // InternalLibrettoProjectProfile.g:2104:1: ( ( rule__ProjectModule__BasePackagesAssignment_3_4_1 ) )
-            // InternalLibrettoProjectProfile.g:2105:2: ( rule__ProjectModule__BasePackagesAssignment_3_4_1 )
+            // InternalLibrettoProjectProfile.g:2125:1: ( ( rule__ProjectModule__BasePackagesAssignment_3_4_1 ) )
+            // InternalLibrettoProjectProfile.g:2126:2: ( rule__ProjectModule__BasePackagesAssignment_3_4_1 )
             {
              before(grammarAccess.getProjectModuleAccess().getBasePackagesAssignment_3_4_1()); 
-            // InternalLibrettoProjectProfile.g:2106:2: ( rule__ProjectModule__BasePackagesAssignment_3_4_1 )
-            // InternalLibrettoProjectProfile.g:2106:3: rule__ProjectModule__BasePackagesAssignment_3_4_1
+            // InternalLibrettoProjectProfile.g:2127:2: ( rule__ProjectModule__BasePackagesAssignment_3_4_1 )
+            // InternalLibrettoProjectProfile.g:2127:3: rule__ProjectModule__BasePackagesAssignment_3_4_1
             {
             pushFollow(FOLLOW_2);
             rule__ProjectModule__BasePackagesAssignment_3_4_1();
@@ -6919,14 +7010,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenBlock__Group__0"
-    // InternalLibrettoProjectProfile.g:2115:1: rule__GenBlock__Group__0 : rule__GenBlock__Group__0__Impl rule__GenBlock__Group__1 ;
+    // InternalLibrettoProjectProfile.g:2136:1: rule__GenBlock__Group__0 : rule__GenBlock__Group__0__Impl rule__GenBlock__Group__1 ;
     public final void rule__GenBlock__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2119:1: ( rule__GenBlock__Group__0__Impl rule__GenBlock__Group__1 )
-            // InternalLibrettoProjectProfile.g:2120:2: rule__GenBlock__Group__0__Impl rule__GenBlock__Group__1
+            // InternalLibrettoProjectProfile.g:2140:1: ( rule__GenBlock__Group__0__Impl rule__GenBlock__Group__1 )
+            // InternalLibrettoProjectProfile.g:2141:2: rule__GenBlock__Group__0__Impl rule__GenBlock__Group__1
             {
             pushFollow(FOLLOW_17);
             rule__GenBlock__Group__0__Impl();
@@ -6957,21 +7048,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenBlock__Group__0__Impl"
-    // InternalLibrettoProjectProfile.g:2127:1: rule__GenBlock__Group__0__Impl : ( () ) ;
+    // InternalLibrettoProjectProfile.g:2148:1: rule__GenBlock__Group__0__Impl : ( () ) ;
     public final void rule__GenBlock__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2131:1: ( ( () ) )
-            // InternalLibrettoProjectProfile.g:2132:1: ( () )
+            // InternalLibrettoProjectProfile.g:2152:1: ( ( () ) )
+            // InternalLibrettoProjectProfile.g:2153:1: ( () )
             {
-            // InternalLibrettoProjectProfile.g:2132:1: ( () )
-            // InternalLibrettoProjectProfile.g:2133:2: ()
+            // InternalLibrettoProjectProfile.g:2153:1: ( () )
+            // InternalLibrettoProjectProfile.g:2154:2: ()
             {
              before(grammarAccess.getGenBlockAccess().getGenBlockAction_0()); 
-            // InternalLibrettoProjectProfile.g:2134:2: ()
-            // InternalLibrettoProjectProfile.g:2134:3: 
+            // InternalLibrettoProjectProfile.g:2155:2: ()
+            // InternalLibrettoProjectProfile.g:2155:3: 
             {
             }
 
@@ -6994,14 +7085,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenBlock__Group__1"
-    // InternalLibrettoProjectProfile.g:2142:1: rule__GenBlock__Group__1 : rule__GenBlock__Group__1__Impl rule__GenBlock__Group__2 ;
+    // InternalLibrettoProjectProfile.g:2163:1: rule__GenBlock__Group__1 : rule__GenBlock__Group__1__Impl rule__GenBlock__Group__2 ;
     public final void rule__GenBlock__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2146:1: ( rule__GenBlock__Group__1__Impl rule__GenBlock__Group__2 )
-            // InternalLibrettoProjectProfile.g:2147:2: rule__GenBlock__Group__1__Impl rule__GenBlock__Group__2
+            // InternalLibrettoProjectProfile.g:2167:1: ( rule__GenBlock__Group__1__Impl rule__GenBlock__Group__2 )
+            // InternalLibrettoProjectProfile.g:2168:2: rule__GenBlock__Group__1__Impl rule__GenBlock__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__GenBlock__Group__1__Impl();
@@ -7032,17 +7123,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenBlock__Group__1__Impl"
-    // InternalLibrettoProjectProfile.g:2154:1: rule__GenBlock__Group__1__Impl : ( 'gen' ) ;
+    // InternalLibrettoProjectProfile.g:2175:1: rule__GenBlock__Group__1__Impl : ( 'gen' ) ;
     public final void rule__GenBlock__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2158:1: ( ( 'gen' ) )
-            // InternalLibrettoProjectProfile.g:2159:1: ( 'gen' )
+            // InternalLibrettoProjectProfile.g:2179:1: ( ( 'gen' ) )
+            // InternalLibrettoProjectProfile.g:2180:1: ( 'gen' )
             {
-            // InternalLibrettoProjectProfile.g:2159:1: ( 'gen' )
-            // InternalLibrettoProjectProfile.g:2160:2: 'gen'
+            // InternalLibrettoProjectProfile.g:2180:1: ( 'gen' )
+            // InternalLibrettoProjectProfile.g:2181:2: 'gen'
             {
              before(grammarAccess.getGenBlockAccess().getGenKeyword_1()); 
             match(input,40,FOLLOW_2); 
@@ -7069,14 +7160,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenBlock__Group__2"
-    // InternalLibrettoProjectProfile.g:2169:1: rule__GenBlock__Group__2 : rule__GenBlock__Group__2__Impl rule__GenBlock__Group__3 ;
+    // InternalLibrettoProjectProfile.g:2190:1: rule__GenBlock__Group__2 : rule__GenBlock__Group__2__Impl rule__GenBlock__Group__3 ;
     public final void rule__GenBlock__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2173:1: ( rule__GenBlock__Group__2__Impl rule__GenBlock__Group__3 )
-            // InternalLibrettoProjectProfile.g:2174:2: rule__GenBlock__Group__2__Impl rule__GenBlock__Group__3
+            // InternalLibrettoProjectProfile.g:2194:1: ( rule__GenBlock__Group__2__Impl rule__GenBlock__Group__3 )
+            // InternalLibrettoProjectProfile.g:2195:2: rule__GenBlock__Group__2__Impl rule__GenBlock__Group__3
             {
             pushFollow(FOLLOW_18);
             rule__GenBlock__Group__2__Impl();
@@ -7107,17 +7198,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenBlock__Group__2__Impl"
-    // InternalLibrettoProjectProfile.g:2181:1: rule__GenBlock__Group__2__Impl : ( '{' ) ;
+    // InternalLibrettoProjectProfile.g:2202:1: rule__GenBlock__Group__2__Impl : ( '{' ) ;
     public final void rule__GenBlock__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2185:1: ( ( '{' ) )
-            // InternalLibrettoProjectProfile.g:2186:1: ( '{' )
+            // InternalLibrettoProjectProfile.g:2206:1: ( ( '{' ) )
+            // InternalLibrettoProjectProfile.g:2207:1: ( '{' )
             {
-            // InternalLibrettoProjectProfile.g:2186:1: ( '{' )
-            // InternalLibrettoProjectProfile.g:2187:2: '{'
+            // InternalLibrettoProjectProfile.g:2207:1: ( '{' )
+            // InternalLibrettoProjectProfile.g:2208:2: '{'
             {
              before(grammarAccess.getGenBlockAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,29,FOLLOW_2); 
@@ -7144,14 +7235,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenBlock__Group__3"
-    // InternalLibrettoProjectProfile.g:2196:1: rule__GenBlock__Group__3 : rule__GenBlock__Group__3__Impl rule__GenBlock__Group__4 ;
+    // InternalLibrettoProjectProfile.g:2217:1: rule__GenBlock__Group__3 : rule__GenBlock__Group__3__Impl rule__GenBlock__Group__4 ;
     public final void rule__GenBlock__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2200:1: ( rule__GenBlock__Group__3__Impl rule__GenBlock__Group__4 )
-            // InternalLibrettoProjectProfile.g:2201:2: rule__GenBlock__Group__3__Impl rule__GenBlock__Group__4
+            // InternalLibrettoProjectProfile.g:2221:1: ( rule__GenBlock__Group__3__Impl rule__GenBlock__Group__4 )
+            // InternalLibrettoProjectProfile.g:2222:2: rule__GenBlock__Group__3__Impl rule__GenBlock__Group__4
             {
             pushFollow(FOLLOW_18);
             rule__GenBlock__Group__3__Impl();
@@ -7182,33 +7273,33 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenBlock__Group__3__Impl"
-    // InternalLibrettoProjectProfile.g:2208:1: rule__GenBlock__Group__3__Impl : ( ( rule__GenBlock__Alternatives_3 )* ) ;
+    // InternalLibrettoProjectProfile.g:2229:1: rule__GenBlock__Group__3__Impl : ( ( rule__GenBlock__Alternatives_3 )* ) ;
     public final void rule__GenBlock__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2212:1: ( ( ( rule__GenBlock__Alternatives_3 )* ) )
-            // InternalLibrettoProjectProfile.g:2213:1: ( ( rule__GenBlock__Alternatives_3 )* )
+            // InternalLibrettoProjectProfile.g:2233:1: ( ( ( rule__GenBlock__Alternatives_3 )* ) )
+            // InternalLibrettoProjectProfile.g:2234:1: ( ( rule__GenBlock__Alternatives_3 )* )
             {
-            // InternalLibrettoProjectProfile.g:2213:1: ( ( rule__GenBlock__Alternatives_3 )* )
-            // InternalLibrettoProjectProfile.g:2214:2: ( rule__GenBlock__Alternatives_3 )*
+            // InternalLibrettoProjectProfile.g:2234:1: ( ( rule__GenBlock__Alternatives_3 )* )
+            // InternalLibrettoProjectProfile.g:2235:2: ( rule__GenBlock__Alternatives_3 )*
             {
              before(grammarAccess.getGenBlockAccess().getAlternatives_3()); 
-            // InternalLibrettoProjectProfile.g:2215:2: ( rule__GenBlock__Alternatives_3 )*
-            loop23:
+            // InternalLibrettoProjectProfile.g:2236:2: ( rule__GenBlock__Alternatives_3 )*
+            loop24:
             do {
-                int alt23=2;
-                int LA23_0 = input.LA(1);
+                int alt24=2;
+                int LA24_0 = input.LA(1);
 
-                if ( ((LA23_0>=41 && LA23_0<=45)||LA23_0==57) ) {
-                    alt23=1;
+                if ( ((LA24_0>=41 && LA24_0<=45)||LA24_0==57) ) {
+                    alt24=1;
                 }
 
 
-                switch (alt23) {
+                switch (alt24) {
             	case 1 :
-            	    // InternalLibrettoProjectProfile.g:2215:3: rule__GenBlock__Alternatives_3
+            	    // InternalLibrettoProjectProfile.g:2236:3: rule__GenBlock__Alternatives_3
             	    {
             	    pushFollow(FOLLOW_19);
             	    rule__GenBlock__Alternatives_3();
@@ -7220,7 +7311,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
             	    break;
 
             	default :
-            	    break loop23;
+            	    break loop24;
                 }
             } while (true);
 
@@ -7247,14 +7338,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenBlock__Group__4"
-    // InternalLibrettoProjectProfile.g:2223:1: rule__GenBlock__Group__4 : rule__GenBlock__Group__4__Impl ;
+    // InternalLibrettoProjectProfile.g:2244:1: rule__GenBlock__Group__4 : rule__GenBlock__Group__4__Impl ;
     public final void rule__GenBlock__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2227:1: ( rule__GenBlock__Group__4__Impl )
-            // InternalLibrettoProjectProfile.g:2228:2: rule__GenBlock__Group__4__Impl
+            // InternalLibrettoProjectProfile.g:2248:1: ( rule__GenBlock__Group__4__Impl )
+            // InternalLibrettoProjectProfile.g:2249:2: rule__GenBlock__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__GenBlock__Group__4__Impl();
@@ -7280,17 +7371,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenBlock__Group__4__Impl"
-    // InternalLibrettoProjectProfile.g:2234:1: rule__GenBlock__Group__4__Impl : ( '}' ) ;
+    // InternalLibrettoProjectProfile.g:2255:1: rule__GenBlock__Group__4__Impl : ( '}' ) ;
     public final void rule__GenBlock__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2238:1: ( ( '}' ) )
-            // InternalLibrettoProjectProfile.g:2239:1: ( '}' )
+            // InternalLibrettoProjectProfile.g:2259:1: ( ( '}' ) )
+            // InternalLibrettoProjectProfile.g:2260:1: ( '}' )
             {
-            // InternalLibrettoProjectProfile.g:2239:1: ( '}' )
-            // InternalLibrettoProjectProfile.g:2240:2: '}'
+            // InternalLibrettoProjectProfile.g:2260:1: ( '}' )
+            // InternalLibrettoProjectProfile.g:2261:2: '}'
             {
              before(grammarAccess.getGenBlockAccess().getRightCurlyBracketKeyword_4()); 
             match(input,30,FOLLOW_2); 
@@ -7317,14 +7408,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenBlock__Group_3_0__0"
-    // InternalLibrettoProjectProfile.g:2250:1: rule__GenBlock__Group_3_0__0 : rule__GenBlock__Group_3_0__0__Impl rule__GenBlock__Group_3_0__1 ;
+    // InternalLibrettoProjectProfile.g:2271:1: rule__GenBlock__Group_3_0__0 : rule__GenBlock__Group_3_0__0__Impl rule__GenBlock__Group_3_0__1 ;
     public final void rule__GenBlock__Group_3_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2254:1: ( rule__GenBlock__Group_3_0__0__Impl rule__GenBlock__Group_3_0__1 )
-            // InternalLibrettoProjectProfile.g:2255:2: rule__GenBlock__Group_3_0__0__Impl rule__GenBlock__Group_3_0__1
+            // InternalLibrettoProjectProfile.g:2275:1: ( rule__GenBlock__Group_3_0__0__Impl rule__GenBlock__Group_3_0__1 )
+            // InternalLibrettoProjectProfile.g:2276:2: rule__GenBlock__Group_3_0__0__Impl rule__GenBlock__Group_3_0__1
             {
             pushFollow(FOLLOW_11);
             rule__GenBlock__Group_3_0__0__Impl();
@@ -7355,17 +7446,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenBlock__Group_3_0__0__Impl"
-    // InternalLibrettoProjectProfile.g:2262:1: rule__GenBlock__Group_3_0__0__Impl : ( 'initialInstruction' ) ;
+    // InternalLibrettoProjectProfile.g:2283:1: rule__GenBlock__Group_3_0__0__Impl : ( 'initialInstruction' ) ;
     public final void rule__GenBlock__Group_3_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2266:1: ( ( 'initialInstruction' ) )
-            // InternalLibrettoProjectProfile.g:2267:1: ( 'initialInstruction' )
+            // InternalLibrettoProjectProfile.g:2287:1: ( ( 'initialInstruction' ) )
+            // InternalLibrettoProjectProfile.g:2288:1: ( 'initialInstruction' )
             {
-            // InternalLibrettoProjectProfile.g:2267:1: ( 'initialInstruction' )
-            // InternalLibrettoProjectProfile.g:2268:2: 'initialInstruction'
+            // InternalLibrettoProjectProfile.g:2288:1: ( 'initialInstruction' )
+            // InternalLibrettoProjectProfile.g:2289:2: 'initialInstruction'
             {
              before(grammarAccess.getGenBlockAccess().getInitialInstructionKeyword_3_0_0()); 
             match(input,41,FOLLOW_2); 
@@ -7392,14 +7483,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenBlock__Group_3_0__1"
-    // InternalLibrettoProjectProfile.g:2277:1: rule__GenBlock__Group_3_0__1 : rule__GenBlock__Group_3_0__1__Impl ;
+    // InternalLibrettoProjectProfile.g:2298:1: rule__GenBlock__Group_3_0__1 : rule__GenBlock__Group_3_0__1__Impl ;
     public final void rule__GenBlock__Group_3_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2281:1: ( rule__GenBlock__Group_3_0__1__Impl )
-            // InternalLibrettoProjectProfile.g:2282:2: rule__GenBlock__Group_3_0__1__Impl
+            // InternalLibrettoProjectProfile.g:2302:1: ( rule__GenBlock__Group_3_0__1__Impl )
+            // InternalLibrettoProjectProfile.g:2303:2: rule__GenBlock__Group_3_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__GenBlock__Group_3_0__1__Impl();
@@ -7425,21 +7516,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenBlock__Group_3_0__1__Impl"
-    // InternalLibrettoProjectProfile.g:2288:1: rule__GenBlock__Group_3_0__1__Impl : ( ( rule__GenBlock__InitialInstructionsAssignment_3_0_1 ) ) ;
+    // InternalLibrettoProjectProfile.g:2309:1: rule__GenBlock__Group_3_0__1__Impl : ( ( rule__GenBlock__InitialInstructionsAssignment_3_0_1 ) ) ;
     public final void rule__GenBlock__Group_3_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2292:1: ( ( ( rule__GenBlock__InitialInstructionsAssignment_3_0_1 ) ) )
-            // InternalLibrettoProjectProfile.g:2293:1: ( ( rule__GenBlock__InitialInstructionsAssignment_3_0_1 ) )
+            // InternalLibrettoProjectProfile.g:2313:1: ( ( ( rule__GenBlock__InitialInstructionsAssignment_3_0_1 ) ) )
+            // InternalLibrettoProjectProfile.g:2314:1: ( ( rule__GenBlock__InitialInstructionsAssignment_3_0_1 ) )
             {
-            // InternalLibrettoProjectProfile.g:2293:1: ( ( rule__GenBlock__InitialInstructionsAssignment_3_0_1 ) )
-            // InternalLibrettoProjectProfile.g:2294:2: ( rule__GenBlock__InitialInstructionsAssignment_3_0_1 )
+            // InternalLibrettoProjectProfile.g:2314:1: ( ( rule__GenBlock__InitialInstructionsAssignment_3_0_1 ) )
+            // InternalLibrettoProjectProfile.g:2315:2: ( rule__GenBlock__InitialInstructionsAssignment_3_0_1 )
             {
              before(grammarAccess.getGenBlockAccess().getInitialInstructionsAssignment_3_0_1()); 
-            // InternalLibrettoProjectProfile.g:2295:2: ( rule__GenBlock__InitialInstructionsAssignment_3_0_1 )
-            // InternalLibrettoProjectProfile.g:2295:3: rule__GenBlock__InitialInstructionsAssignment_3_0_1
+            // InternalLibrettoProjectProfile.g:2316:2: ( rule__GenBlock__InitialInstructionsAssignment_3_0_1 )
+            // InternalLibrettoProjectProfile.g:2316:3: rule__GenBlock__InitialInstructionsAssignment_3_0_1
             {
             pushFollow(FOLLOW_2);
             rule__GenBlock__InitialInstructionsAssignment_3_0_1();
@@ -7472,14 +7563,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenBlock__Group_3_1__0"
-    // InternalLibrettoProjectProfile.g:2304:1: rule__GenBlock__Group_3_1__0 : rule__GenBlock__Group_3_1__0__Impl rule__GenBlock__Group_3_1__1 ;
+    // InternalLibrettoProjectProfile.g:2325:1: rule__GenBlock__Group_3_1__0 : rule__GenBlock__Group_3_1__0__Impl rule__GenBlock__Group_3_1__1 ;
     public final void rule__GenBlock__Group_3_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2308:1: ( rule__GenBlock__Group_3_1__0__Impl rule__GenBlock__Group_3_1__1 )
-            // InternalLibrettoProjectProfile.g:2309:2: rule__GenBlock__Group_3_1__0__Impl rule__GenBlock__Group_3_1__1
+            // InternalLibrettoProjectProfile.g:2329:1: ( rule__GenBlock__Group_3_1__0__Impl rule__GenBlock__Group_3_1__1 )
+            // InternalLibrettoProjectProfile.g:2330:2: rule__GenBlock__Group_3_1__0__Impl rule__GenBlock__Group_3_1__1
             {
             pushFollow(FOLLOW_20);
             rule__GenBlock__Group_3_1__0__Impl();
@@ -7510,17 +7601,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenBlock__Group_3_1__0__Impl"
-    // InternalLibrettoProjectProfile.g:2316:1: rule__GenBlock__Group_3_1__0__Impl : ( 'maxRetries' ) ;
+    // InternalLibrettoProjectProfile.g:2337:1: rule__GenBlock__Group_3_1__0__Impl : ( 'maxRetries' ) ;
     public final void rule__GenBlock__Group_3_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2320:1: ( ( 'maxRetries' ) )
-            // InternalLibrettoProjectProfile.g:2321:1: ( 'maxRetries' )
+            // InternalLibrettoProjectProfile.g:2341:1: ( ( 'maxRetries' ) )
+            // InternalLibrettoProjectProfile.g:2342:1: ( 'maxRetries' )
             {
-            // InternalLibrettoProjectProfile.g:2321:1: ( 'maxRetries' )
-            // InternalLibrettoProjectProfile.g:2322:2: 'maxRetries'
+            // InternalLibrettoProjectProfile.g:2342:1: ( 'maxRetries' )
+            // InternalLibrettoProjectProfile.g:2343:2: 'maxRetries'
             {
              before(grammarAccess.getGenBlockAccess().getMaxRetriesKeyword_3_1_0()); 
             match(input,42,FOLLOW_2); 
@@ -7547,14 +7638,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenBlock__Group_3_1__1"
-    // InternalLibrettoProjectProfile.g:2331:1: rule__GenBlock__Group_3_1__1 : rule__GenBlock__Group_3_1__1__Impl ;
+    // InternalLibrettoProjectProfile.g:2352:1: rule__GenBlock__Group_3_1__1 : rule__GenBlock__Group_3_1__1__Impl ;
     public final void rule__GenBlock__Group_3_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2335:1: ( rule__GenBlock__Group_3_1__1__Impl )
-            // InternalLibrettoProjectProfile.g:2336:2: rule__GenBlock__Group_3_1__1__Impl
+            // InternalLibrettoProjectProfile.g:2356:1: ( rule__GenBlock__Group_3_1__1__Impl )
+            // InternalLibrettoProjectProfile.g:2357:2: rule__GenBlock__Group_3_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__GenBlock__Group_3_1__1__Impl();
@@ -7580,21 +7671,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenBlock__Group_3_1__1__Impl"
-    // InternalLibrettoProjectProfile.g:2342:1: rule__GenBlock__Group_3_1__1__Impl : ( ( rule__GenBlock__MaxRetriesAssignment_3_1_1 ) ) ;
+    // InternalLibrettoProjectProfile.g:2363:1: rule__GenBlock__Group_3_1__1__Impl : ( ( rule__GenBlock__MaxRetriesAssignment_3_1_1 ) ) ;
     public final void rule__GenBlock__Group_3_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2346:1: ( ( ( rule__GenBlock__MaxRetriesAssignment_3_1_1 ) ) )
-            // InternalLibrettoProjectProfile.g:2347:1: ( ( rule__GenBlock__MaxRetriesAssignment_3_1_1 ) )
+            // InternalLibrettoProjectProfile.g:2367:1: ( ( ( rule__GenBlock__MaxRetriesAssignment_3_1_1 ) ) )
+            // InternalLibrettoProjectProfile.g:2368:1: ( ( rule__GenBlock__MaxRetriesAssignment_3_1_1 ) )
             {
-            // InternalLibrettoProjectProfile.g:2347:1: ( ( rule__GenBlock__MaxRetriesAssignment_3_1_1 ) )
-            // InternalLibrettoProjectProfile.g:2348:2: ( rule__GenBlock__MaxRetriesAssignment_3_1_1 )
+            // InternalLibrettoProjectProfile.g:2368:1: ( ( rule__GenBlock__MaxRetriesAssignment_3_1_1 ) )
+            // InternalLibrettoProjectProfile.g:2369:2: ( rule__GenBlock__MaxRetriesAssignment_3_1_1 )
             {
              before(grammarAccess.getGenBlockAccess().getMaxRetriesAssignment_3_1_1()); 
-            // InternalLibrettoProjectProfile.g:2349:2: ( rule__GenBlock__MaxRetriesAssignment_3_1_1 )
-            // InternalLibrettoProjectProfile.g:2349:3: rule__GenBlock__MaxRetriesAssignment_3_1_1
+            // InternalLibrettoProjectProfile.g:2370:2: ( rule__GenBlock__MaxRetriesAssignment_3_1_1 )
+            // InternalLibrettoProjectProfile.g:2370:3: rule__GenBlock__MaxRetriesAssignment_3_1_1
             {
             pushFollow(FOLLOW_2);
             rule__GenBlock__MaxRetriesAssignment_3_1_1();
@@ -7627,14 +7718,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenBlock__Group_3_2__0"
-    // InternalLibrettoProjectProfile.g:2358:1: rule__GenBlock__Group_3_2__0 : rule__GenBlock__Group_3_2__0__Impl rule__GenBlock__Group_3_2__1 ;
+    // InternalLibrettoProjectProfile.g:2379:1: rule__GenBlock__Group_3_2__0 : rule__GenBlock__Group_3_2__0__Impl rule__GenBlock__Group_3_2__1 ;
     public final void rule__GenBlock__Group_3_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2362:1: ( rule__GenBlock__Group_3_2__0__Impl rule__GenBlock__Group_3_2__1 )
-            // InternalLibrettoProjectProfile.g:2363:2: rule__GenBlock__Group_3_2__0__Impl rule__GenBlock__Group_3_2__1
+            // InternalLibrettoProjectProfile.g:2383:1: ( rule__GenBlock__Group_3_2__0__Impl rule__GenBlock__Group_3_2__1 )
+            // InternalLibrettoProjectProfile.g:2384:2: rule__GenBlock__Group_3_2__0__Impl rule__GenBlock__Group_3_2__1
             {
             pushFollow(FOLLOW_21);
             rule__GenBlock__Group_3_2__0__Impl();
@@ -7665,17 +7756,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenBlock__Group_3_2__0__Impl"
-    // InternalLibrettoProjectProfile.g:2370:1: rule__GenBlock__Group_3_2__0__Impl : ( 'parseCheck' ) ;
+    // InternalLibrettoProjectProfile.g:2391:1: rule__GenBlock__Group_3_2__0__Impl : ( 'parseCheck' ) ;
     public final void rule__GenBlock__Group_3_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2374:1: ( ( 'parseCheck' ) )
-            // InternalLibrettoProjectProfile.g:2375:1: ( 'parseCheck' )
+            // InternalLibrettoProjectProfile.g:2395:1: ( ( 'parseCheck' ) )
+            // InternalLibrettoProjectProfile.g:2396:1: ( 'parseCheck' )
             {
-            // InternalLibrettoProjectProfile.g:2375:1: ( 'parseCheck' )
-            // InternalLibrettoProjectProfile.g:2376:2: 'parseCheck'
+            // InternalLibrettoProjectProfile.g:2396:1: ( 'parseCheck' )
+            // InternalLibrettoProjectProfile.g:2397:2: 'parseCheck'
             {
              before(grammarAccess.getGenBlockAccess().getParseCheckKeyword_3_2_0()); 
             match(input,43,FOLLOW_2); 
@@ -7702,14 +7793,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenBlock__Group_3_2__1"
-    // InternalLibrettoProjectProfile.g:2385:1: rule__GenBlock__Group_3_2__1 : rule__GenBlock__Group_3_2__1__Impl ;
+    // InternalLibrettoProjectProfile.g:2406:1: rule__GenBlock__Group_3_2__1 : rule__GenBlock__Group_3_2__1__Impl ;
     public final void rule__GenBlock__Group_3_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2389:1: ( rule__GenBlock__Group_3_2__1__Impl )
-            // InternalLibrettoProjectProfile.g:2390:2: rule__GenBlock__Group_3_2__1__Impl
+            // InternalLibrettoProjectProfile.g:2410:1: ( rule__GenBlock__Group_3_2__1__Impl )
+            // InternalLibrettoProjectProfile.g:2411:2: rule__GenBlock__Group_3_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__GenBlock__Group_3_2__1__Impl();
@@ -7735,21 +7826,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenBlock__Group_3_2__1__Impl"
-    // InternalLibrettoProjectProfile.g:2396:1: rule__GenBlock__Group_3_2__1__Impl : ( ( rule__GenBlock__ParseChecksAssignment_3_2_1 ) ) ;
+    // InternalLibrettoProjectProfile.g:2417:1: rule__GenBlock__Group_3_2__1__Impl : ( ( rule__GenBlock__ParseChecksAssignment_3_2_1 ) ) ;
     public final void rule__GenBlock__Group_3_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2400:1: ( ( ( rule__GenBlock__ParseChecksAssignment_3_2_1 ) ) )
-            // InternalLibrettoProjectProfile.g:2401:1: ( ( rule__GenBlock__ParseChecksAssignment_3_2_1 ) )
+            // InternalLibrettoProjectProfile.g:2421:1: ( ( ( rule__GenBlock__ParseChecksAssignment_3_2_1 ) ) )
+            // InternalLibrettoProjectProfile.g:2422:1: ( ( rule__GenBlock__ParseChecksAssignment_3_2_1 ) )
             {
-            // InternalLibrettoProjectProfile.g:2401:1: ( ( rule__GenBlock__ParseChecksAssignment_3_2_1 ) )
-            // InternalLibrettoProjectProfile.g:2402:2: ( rule__GenBlock__ParseChecksAssignment_3_2_1 )
+            // InternalLibrettoProjectProfile.g:2422:1: ( ( rule__GenBlock__ParseChecksAssignment_3_2_1 ) )
+            // InternalLibrettoProjectProfile.g:2423:2: ( rule__GenBlock__ParseChecksAssignment_3_2_1 )
             {
              before(grammarAccess.getGenBlockAccess().getParseChecksAssignment_3_2_1()); 
-            // InternalLibrettoProjectProfile.g:2403:2: ( rule__GenBlock__ParseChecksAssignment_3_2_1 )
-            // InternalLibrettoProjectProfile.g:2403:3: rule__GenBlock__ParseChecksAssignment_3_2_1
+            // InternalLibrettoProjectProfile.g:2424:2: ( rule__GenBlock__ParseChecksAssignment_3_2_1 )
+            // InternalLibrettoProjectProfile.g:2424:3: rule__GenBlock__ParseChecksAssignment_3_2_1
             {
             pushFollow(FOLLOW_2);
             rule__GenBlock__ParseChecksAssignment_3_2_1();
@@ -7782,14 +7873,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenBlock__Group_3_3__0"
-    // InternalLibrettoProjectProfile.g:2412:1: rule__GenBlock__Group_3_3__0 : rule__GenBlock__Group_3_3__0__Impl rule__GenBlock__Group_3_3__1 ;
+    // InternalLibrettoProjectProfile.g:2433:1: rule__GenBlock__Group_3_3__0 : rule__GenBlock__Group_3_3__0__Impl rule__GenBlock__Group_3_3__1 ;
     public final void rule__GenBlock__Group_3_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2416:1: ( rule__GenBlock__Group_3_3__0__Impl rule__GenBlock__Group_3_3__1 )
-            // InternalLibrettoProjectProfile.g:2417:2: rule__GenBlock__Group_3_3__0__Impl rule__GenBlock__Group_3_3__1
+            // InternalLibrettoProjectProfile.g:2437:1: ( rule__GenBlock__Group_3_3__0__Impl rule__GenBlock__Group_3_3__1 )
+            // InternalLibrettoProjectProfile.g:2438:2: rule__GenBlock__Group_3_3__0__Impl rule__GenBlock__Group_3_3__1
             {
             pushFollow(FOLLOW_11);
             rule__GenBlock__Group_3_3__0__Impl();
@@ -7820,17 +7911,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenBlock__Group_3_3__0__Impl"
-    // InternalLibrettoProjectProfile.g:2424:1: rule__GenBlock__Group_3_3__0__Impl : ( 'defaultCorrection' ) ;
+    // InternalLibrettoProjectProfile.g:2445:1: rule__GenBlock__Group_3_3__0__Impl : ( 'defaultCorrection' ) ;
     public final void rule__GenBlock__Group_3_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2428:1: ( ( 'defaultCorrection' ) )
-            // InternalLibrettoProjectProfile.g:2429:1: ( 'defaultCorrection' )
+            // InternalLibrettoProjectProfile.g:2449:1: ( ( 'defaultCorrection' ) )
+            // InternalLibrettoProjectProfile.g:2450:1: ( 'defaultCorrection' )
             {
-            // InternalLibrettoProjectProfile.g:2429:1: ( 'defaultCorrection' )
-            // InternalLibrettoProjectProfile.g:2430:2: 'defaultCorrection'
+            // InternalLibrettoProjectProfile.g:2450:1: ( 'defaultCorrection' )
+            // InternalLibrettoProjectProfile.g:2451:2: 'defaultCorrection'
             {
              before(grammarAccess.getGenBlockAccess().getDefaultCorrectionKeyword_3_3_0()); 
             match(input,44,FOLLOW_2); 
@@ -7857,14 +7948,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenBlock__Group_3_3__1"
-    // InternalLibrettoProjectProfile.g:2439:1: rule__GenBlock__Group_3_3__1 : rule__GenBlock__Group_3_3__1__Impl ;
+    // InternalLibrettoProjectProfile.g:2460:1: rule__GenBlock__Group_3_3__1 : rule__GenBlock__Group_3_3__1__Impl ;
     public final void rule__GenBlock__Group_3_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2443:1: ( rule__GenBlock__Group_3_3__1__Impl )
-            // InternalLibrettoProjectProfile.g:2444:2: rule__GenBlock__Group_3_3__1__Impl
+            // InternalLibrettoProjectProfile.g:2464:1: ( rule__GenBlock__Group_3_3__1__Impl )
+            // InternalLibrettoProjectProfile.g:2465:2: rule__GenBlock__Group_3_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__GenBlock__Group_3_3__1__Impl();
@@ -7890,21 +7981,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenBlock__Group_3_3__1__Impl"
-    // InternalLibrettoProjectProfile.g:2450:1: rule__GenBlock__Group_3_3__1__Impl : ( ( rule__GenBlock__DefaultCorrectionsAssignment_3_3_1 ) ) ;
+    // InternalLibrettoProjectProfile.g:2471:1: rule__GenBlock__Group_3_3__1__Impl : ( ( rule__GenBlock__DefaultCorrectionsAssignment_3_3_1 ) ) ;
     public final void rule__GenBlock__Group_3_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2454:1: ( ( ( rule__GenBlock__DefaultCorrectionsAssignment_3_3_1 ) ) )
-            // InternalLibrettoProjectProfile.g:2455:1: ( ( rule__GenBlock__DefaultCorrectionsAssignment_3_3_1 ) )
+            // InternalLibrettoProjectProfile.g:2475:1: ( ( ( rule__GenBlock__DefaultCorrectionsAssignment_3_3_1 ) ) )
+            // InternalLibrettoProjectProfile.g:2476:1: ( ( rule__GenBlock__DefaultCorrectionsAssignment_3_3_1 ) )
             {
-            // InternalLibrettoProjectProfile.g:2455:1: ( ( rule__GenBlock__DefaultCorrectionsAssignment_3_3_1 ) )
-            // InternalLibrettoProjectProfile.g:2456:2: ( rule__GenBlock__DefaultCorrectionsAssignment_3_3_1 )
+            // InternalLibrettoProjectProfile.g:2476:1: ( ( rule__GenBlock__DefaultCorrectionsAssignment_3_3_1 ) )
+            // InternalLibrettoProjectProfile.g:2477:2: ( rule__GenBlock__DefaultCorrectionsAssignment_3_3_1 )
             {
              before(grammarAccess.getGenBlockAccess().getDefaultCorrectionsAssignment_3_3_1()); 
-            // InternalLibrettoProjectProfile.g:2457:2: ( rule__GenBlock__DefaultCorrectionsAssignment_3_3_1 )
-            // InternalLibrettoProjectProfile.g:2457:3: rule__GenBlock__DefaultCorrectionsAssignment_3_3_1
+            // InternalLibrettoProjectProfile.g:2478:2: ( rule__GenBlock__DefaultCorrectionsAssignment_3_3_1 )
+            // InternalLibrettoProjectProfile.g:2478:3: rule__GenBlock__DefaultCorrectionsAssignment_3_3_1
             {
             pushFollow(FOLLOW_2);
             rule__GenBlock__DefaultCorrectionsAssignment_3_3_1();
@@ -7937,14 +8028,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenRemediationRules__Group__0"
-    // InternalLibrettoProjectProfile.g:2466:1: rule__GenRemediationRules__Group__0 : rule__GenRemediationRules__Group__0__Impl rule__GenRemediationRules__Group__1 ;
+    // InternalLibrettoProjectProfile.g:2487:1: rule__GenRemediationRules__Group__0 : rule__GenRemediationRules__Group__0__Impl rule__GenRemediationRules__Group__1 ;
     public final void rule__GenRemediationRules__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2470:1: ( rule__GenRemediationRules__Group__0__Impl rule__GenRemediationRules__Group__1 )
-            // InternalLibrettoProjectProfile.g:2471:2: rule__GenRemediationRules__Group__0__Impl rule__GenRemediationRules__Group__1
+            // InternalLibrettoProjectProfile.g:2491:1: ( rule__GenRemediationRules__Group__0__Impl rule__GenRemediationRules__Group__1 )
+            // InternalLibrettoProjectProfile.g:2492:2: rule__GenRemediationRules__Group__0__Impl rule__GenRemediationRules__Group__1
             {
             pushFollow(FOLLOW_22);
             rule__GenRemediationRules__Group__0__Impl();
@@ -7975,21 +8066,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenRemediationRules__Group__0__Impl"
-    // InternalLibrettoProjectProfile.g:2478:1: rule__GenRemediationRules__Group__0__Impl : ( () ) ;
+    // InternalLibrettoProjectProfile.g:2499:1: rule__GenRemediationRules__Group__0__Impl : ( () ) ;
     public final void rule__GenRemediationRules__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2482:1: ( ( () ) )
-            // InternalLibrettoProjectProfile.g:2483:1: ( () )
+            // InternalLibrettoProjectProfile.g:2503:1: ( ( () ) )
+            // InternalLibrettoProjectProfile.g:2504:1: ( () )
             {
-            // InternalLibrettoProjectProfile.g:2483:1: ( () )
-            // InternalLibrettoProjectProfile.g:2484:2: ()
+            // InternalLibrettoProjectProfile.g:2504:1: ( () )
+            // InternalLibrettoProjectProfile.g:2505:2: ()
             {
              before(grammarAccess.getGenRemediationRulesAccess().getGenRemediationRulesAction_0()); 
-            // InternalLibrettoProjectProfile.g:2485:2: ()
-            // InternalLibrettoProjectProfile.g:2485:3: 
+            // InternalLibrettoProjectProfile.g:2506:2: ()
+            // InternalLibrettoProjectProfile.g:2506:3: 
             {
             }
 
@@ -8012,14 +8103,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenRemediationRules__Group__1"
-    // InternalLibrettoProjectProfile.g:2493:1: rule__GenRemediationRules__Group__1 : rule__GenRemediationRules__Group__1__Impl rule__GenRemediationRules__Group__2 ;
+    // InternalLibrettoProjectProfile.g:2514:1: rule__GenRemediationRules__Group__1 : rule__GenRemediationRules__Group__1__Impl rule__GenRemediationRules__Group__2 ;
     public final void rule__GenRemediationRules__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2497:1: ( rule__GenRemediationRules__Group__1__Impl rule__GenRemediationRules__Group__2 )
-            // InternalLibrettoProjectProfile.g:2498:2: rule__GenRemediationRules__Group__1__Impl rule__GenRemediationRules__Group__2
+            // InternalLibrettoProjectProfile.g:2518:1: ( rule__GenRemediationRules__Group__1__Impl rule__GenRemediationRules__Group__2 )
+            // InternalLibrettoProjectProfile.g:2519:2: rule__GenRemediationRules__Group__1__Impl rule__GenRemediationRules__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__GenRemediationRules__Group__1__Impl();
@@ -8050,17 +8141,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenRemediationRules__Group__1__Impl"
-    // InternalLibrettoProjectProfile.g:2505:1: rule__GenRemediationRules__Group__1__Impl : ( 'rules' ) ;
+    // InternalLibrettoProjectProfile.g:2526:1: rule__GenRemediationRules__Group__1__Impl : ( 'rules' ) ;
     public final void rule__GenRemediationRules__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2509:1: ( ( 'rules' ) )
-            // InternalLibrettoProjectProfile.g:2510:1: ( 'rules' )
+            // InternalLibrettoProjectProfile.g:2530:1: ( ( 'rules' ) )
+            // InternalLibrettoProjectProfile.g:2531:1: ( 'rules' )
             {
-            // InternalLibrettoProjectProfile.g:2510:1: ( 'rules' )
-            // InternalLibrettoProjectProfile.g:2511:2: 'rules'
+            // InternalLibrettoProjectProfile.g:2531:1: ( 'rules' )
+            // InternalLibrettoProjectProfile.g:2532:2: 'rules'
             {
              before(grammarAccess.getGenRemediationRulesAccess().getRulesKeyword_1()); 
             match(input,45,FOLLOW_2); 
@@ -8087,14 +8178,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenRemediationRules__Group__2"
-    // InternalLibrettoProjectProfile.g:2520:1: rule__GenRemediationRules__Group__2 : rule__GenRemediationRules__Group__2__Impl rule__GenRemediationRules__Group__3 ;
+    // InternalLibrettoProjectProfile.g:2541:1: rule__GenRemediationRules__Group__2 : rule__GenRemediationRules__Group__2__Impl rule__GenRemediationRules__Group__3 ;
     public final void rule__GenRemediationRules__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2524:1: ( rule__GenRemediationRules__Group__2__Impl rule__GenRemediationRules__Group__3 )
-            // InternalLibrettoProjectProfile.g:2525:2: rule__GenRemediationRules__Group__2__Impl rule__GenRemediationRules__Group__3
+            // InternalLibrettoProjectProfile.g:2545:1: ( rule__GenRemediationRules__Group__2__Impl rule__GenRemediationRules__Group__3 )
+            // InternalLibrettoProjectProfile.g:2546:2: rule__GenRemediationRules__Group__2__Impl rule__GenRemediationRules__Group__3
             {
             pushFollow(FOLLOW_23);
             rule__GenRemediationRules__Group__2__Impl();
@@ -8125,17 +8216,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenRemediationRules__Group__2__Impl"
-    // InternalLibrettoProjectProfile.g:2532:1: rule__GenRemediationRules__Group__2__Impl : ( '{' ) ;
+    // InternalLibrettoProjectProfile.g:2553:1: rule__GenRemediationRules__Group__2__Impl : ( '{' ) ;
     public final void rule__GenRemediationRules__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2536:1: ( ( '{' ) )
-            // InternalLibrettoProjectProfile.g:2537:1: ( '{' )
+            // InternalLibrettoProjectProfile.g:2557:1: ( ( '{' ) )
+            // InternalLibrettoProjectProfile.g:2558:1: ( '{' )
             {
-            // InternalLibrettoProjectProfile.g:2537:1: ( '{' )
-            // InternalLibrettoProjectProfile.g:2538:2: '{'
+            // InternalLibrettoProjectProfile.g:2558:1: ( '{' )
+            // InternalLibrettoProjectProfile.g:2559:2: '{'
             {
              before(grammarAccess.getGenRemediationRulesAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,29,FOLLOW_2); 
@@ -8162,14 +8253,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenRemediationRules__Group__3"
-    // InternalLibrettoProjectProfile.g:2547:1: rule__GenRemediationRules__Group__3 : rule__GenRemediationRules__Group__3__Impl rule__GenRemediationRules__Group__4 ;
+    // InternalLibrettoProjectProfile.g:2568:1: rule__GenRemediationRules__Group__3 : rule__GenRemediationRules__Group__3__Impl rule__GenRemediationRules__Group__4 ;
     public final void rule__GenRemediationRules__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2551:1: ( rule__GenRemediationRules__Group__3__Impl rule__GenRemediationRules__Group__4 )
-            // InternalLibrettoProjectProfile.g:2552:2: rule__GenRemediationRules__Group__3__Impl rule__GenRemediationRules__Group__4
+            // InternalLibrettoProjectProfile.g:2572:1: ( rule__GenRemediationRules__Group__3__Impl rule__GenRemediationRules__Group__4 )
+            // InternalLibrettoProjectProfile.g:2573:2: rule__GenRemediationRules__Group__3__Impl rule__GenRemediationRules__Group__4
             {
             pushFollow(FOLLOW_23);
             rule__GenRemediationRules__Group__3__Impl();
@@ -8200,36 +8291,36 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenRemediationRules__Group__3__Impl"
-    // InternalLibrettoProjectProfile.g:2559:1: rule__GenRemediationRules__Group__3__Impl : ( ( rule__GenRemediationRules__Group_3__0 )* ) ;
+    // InternalLibrettoProjectProfile.g:2580:1: rule__GenRemediationRules__Group__3__Impl : ( ( rule__GenRemediationRules__Alternatives_3 )* ) ;
     public final void rule__GenRemediationRules__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2563:1: ( ( ( rule__GenRemediationRules__Group_3__0 )* ) )
-            // InternalLibrettoProjectProfile.g:2564:1: ( ( rule__GenRemediationRules__Group_3__0 )* )
+            // InternalLibrettoProjectProfile.g:2584:1: ( ( ( rule__GenRemediationRules__Alternatives_3 )* ) )
+            // InternalLibrettoProjectProfile.g:2585:1: ( ( rule__GenRemediationRules__Alternatives_3 )* )
             {
-            // InternalLibrettoProjectProfile.g:2564:1: ( ( rule__GenRemediationRules__Group_3__0 )* )
-            // InternalLibrettoProjectProfile.g:2565:2: ( rule__GenRemediationRules__Group_3__0 )*
+            // InternalLibrettoProjectProfile.g:2585:1: ( ( rule__GenRemediationRules__Alternatives_3 )* )
+            // InternalLibrettoProjectProfile.g:2586:2: ( rule__GenRemediationRules__Alternatives_3 )*
             {
-             before(grammarAccess.getGenRemediationRulesAccess().getGroup_3()); 
-            // InternalLibrettoProjectProfile.g:2566:2: ( rule__GenRemediationRules__Group_3__0 )*
-            loop24:
+             before(grammarAccess.getGenRemediationRulesAccess().getAlternatives_3()); 
+            // InternalLibrettoProjectProfile.g:2587:2: ( rule__GenRemediationRules__Alternatives_3 )*
+            loop25:
             do {
-                int alt24=2;
-                int LA24_0 = input.LA(1);
+                int alt25=2;
+                int LA25_0 = input.LA(1);
 
-                if ( (LA24_0==46) ) {
-                    alt24=1;
+                if ( (LA25_0==46||LA25_0==50) ) {
+                    alt25=1;
                 }
 
 
-                switch (alt24) {
+                switch (alt25) {
             	case 1 :
-            	    // InternalLibrettoProjectProfile.g:2566:3: rule__GenRemediationRules__Group_3__0
+            	    // InternalLibrettoProjectProfile.g:2587:3: rule__GenRemediationRules__Alternatives_3
             	    {
             	    pushFollow(FOLLOW_24);
-            	    rule__GenRemediationRules__Group_3__0();
+            	    rule__GenRemediationRules__Alternatives_3();
 
             	    state._fsp--;
 
@@ -8238,11 +8329,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
             	    break;
 
             	default :
-            	    break loop24;
+            	    break loop25;
                 }
             } while (true);
 
-             after(grammarAccess.getGenRemediationRulesAccess().getGroup_3()); 
+             after(grammarAccess.getGenRemediationRulesAccess().getAlternatives_3()); 
 
             }
 
@@ -8265,14 +8356,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenRemediationRules__Group__4"
-    // InternalLibrettoProjectProfile.g:2574:1: rule__GenRemediationRules__Group__4 : rule__GenRemediationRules__Group__4__Impl ;
+    // InternalLibrettoProjectProfile.g:2595:1: rule__GenRemediationRules__Group__4 : rule__GenRemediationRules__Group__4__Impl ;
     public final void rule__GenRemediationRules__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2578:1: ( rule__GenRemediationRules__Group__4__Impl )
-            // InternalLibrettoProjectProfile.g:2579:2: rule__GenRemediationRules__Group__4__Impl
+            // InternalLibrettoProjectProfile.g:2599:1: ( rule__GenRemediationRules__Group__4__Impl )
+            // InternalLibrettoProjectProfile.g:2600:2: rule__GenRemediationRules__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__GenRemediationRules__Group__4__Impl();
@@ -8298,17 +8389,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenRemediationRules__Group__4__Impl"
-    // InternalLibrettoProjectProfile.g:2585:1: rule__GenRemediationRules__Group__4__Impl : ( '}' ) ;
+    // InternalLibrettoProjectProfile.g:2606:1: rule__GenRemediationRules__Group__4__Impl : ( '}' ) ;
     public final void rule__GenRemediationRules__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2589:1: ( ( '}' ) )
-            // InternalLibrettoProjectProfile.g:2590:1: ( '}' )
+            // InternalLibrettoProjectProfile.g:2610:1: ( ( '}' ) )
+            // InternalLibrettoProjectProfile.g:2611:1: ( '}' )
             {
-            // InternalLibrettoProjectProfile.g:2590:1: ( '}' )
-            // InternalLibrettoProjectProfile.g:2591:2: '}'
+            // InternalLibrettoProjectProfile.g:2611:1: ( '}' )
+            // InternalLibrettoProjectProfile.g:2612:2: '}'
             {
              before(grammarAccess.getGenRemediationRulesAccess().getRightCurlyBracketKeyword_4()); 
             match(input,30,FOLLOW_2); 
@@ -8334,182 +8425,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
     // $ANTLR end "rule__GenRemediationRules__Group__4__Impl"
 
 
-    // $ANTLR start "rule__GenRemediationRules__Group_3__0"
-    // InternalLibrettoProjectProfile.g:2601:1: rule__GenRemediationRules__Group_3__0 : rule__GenRemediationRules__Group_3__0__Impl rule__GenRemediationRules__Group_3__1 ;
-    public final void rule__GenRemediationRules__Group_3__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalLibrettoProjectProfile.g:2605:1: ( rule__GenRemediationRules__Group_3__0__Impl rule__GenRemediationRules__Group_3__1 )
-            // InternalLibrettoProjectProfile.g:2606:2: rule__GenRemediationRules__Group_3__0__Impl rule__GenRemediationRules__Group_3__1
-            {
-            pushFollow(FOLLOW_25);
-            rule__GenRemediationRules__Group_3__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__GenRemediationRules__Group_3__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__GenRemediationRules__Group_3__0"
-
-
-    // $ANTLR start "rule__GenRemediationRules__Group_3__0__Impl"
-    // InternalLibrettoProjectProfile.g:2613:1: rule__GenRemediationRules__Group_3__0__Impl : ( ( rule__GenRemediationRules__PatternRulesAssignment_3_0 ) ) ;
-    public final void rule__GenRemediationRules__Group_3__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalLibrettoProjectProfile.g:2617:1: ( ( ( rule__GenRemediationRules__PatternRulesAssignment_3_0 ) ) )
-            // InternalLibrettoProjectProfile.g:2618:1: ( ( rule__GenRemediationRules__PatternRulesAssignment_3_0 ) )
-            {
-            // InternalLibrettoProjectProfile.g:2618:1: ( ( rule__GenRemediationRules__PatternRulesAssignment_3_0 ) )
-            // InternalLibrettoProjectProfile.g:2619:2: ( rule__GenRemediationRules__PatternRulesAssignment_3_0 )
-            {
-             before(grammarAccess.getGenRemediationRulesAccess().getPatternRulesAssignment_3_0()); 
-            // InternalLibrettoProjectProfile.g:2620:2: ( rule__GenRemediationRules__PatternRulesAssignment_3_0 )
-            // InternalLibrettoProjectProfile.g:2620:3: rule__GenRemediationRules__PatternRulesAssignment_3_0
-            {
-            pushFollow(FOLLOW_2);
-            rule__GenRemediationRules__PatternRulesAssignment_3_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getGenRemediationRulesAccess().getPatternRulesAssignment_3_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__GenRemediationRules__Group_3__0__Impl"
-
-
-    // $ANTLR start "rule__GenRemediationRules__Group_3__1"
-    // InternalLibrettoProjectProfile.g:2628:1: rule__GenRemediationRules__Group_3__1 : rule__GenRemediationRules__Group_3__1__Impl ;
-    public final void rule__GenRemediationRules__Group_3__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalLibrettoProjectProfile.g:2632:1: ( rule__GenRemediationRules__Group_3__1__Impl )
-            // InternalLibrettoProjectProfile.g:2633:2: rule__GenRemediationRules__Group_3__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__GenRemediationRules__Group_3__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__GenRemediationRules__Group_3__1"
-
-
-    // $ANTLR start "rule__GenRemediationRules__Group_3__1__Impl"
-    // InternalLibrettoProjectProfile.g:2639:1: rule__GenRemediationRules__Group_3__1__Impl : ( ( rule__GenRemediationRules__DefaultRemediationsAssignment_3_1 ) ) ;
-    public final void rule__GenRemediationRules__Group_3__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalLibrettoProjectProfile.g:2643:1: ( ( ( rule__GenRemediationRules__DefaultRemediationsAssignment_3_1 ) ) )
-            // InternalLibrettoProjectProfile.g:2644:1: ( ( rule__GenRemediationRules__DefaultRemediationsAssignment_3_1 ) )
-            {
-            // InternalLibrettoProjectProfile.g:2644:1: ( ( rule__GenRemediationRules__DefaultRemediationsAssignment_3_1 ) )
-            // InternalLibrettoProjectProfile.g:2645:2: ( rule__GenRemediationRules__DefaultRemediationsAssignment_3_1 )
-            {
-             before(grammarAccess.getGenRemediationRulesAccess().getDefaultRemediationsAssignment_3_1()); 
-            // InternalLibrettoProjectProfile.g:2646:2: ( rule__GenRemediationRules__DefaultRemediationsAssignment_3_1 )
-            // InternalLibrettoProjectProfile.g:2646:3: rule__GenRemediationRules__DefaultRemediationsAssignment_3_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__GenRemediationRules__DefaultRemediationsAssignment_3_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getGenRemediationRulesAccess().getDefaultRemediationsAssignment_3_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__GenRemediationRules__Group_3__1__Impl"
-
-
     // $ANTLR start "rule__GenPatternRemediationRule__Group__0"
-    // InternalLibrettoProjectProfile.g:2655:1: rule__GenPatternRemediationRule__Group__0 : rule__GenPatternRemediationRule__Group__0__Impl rule__GenPatternRemediationRule__Group__1 ;
+    // InternalLibrettoProjectProfile.g:2622:1: rule__GenPatternRemediationRule__Group__0 : rule__GenPatternRemediationRule__Group__0__Impl rule__GenPatternRemediationRule__Group__1 ;
     public final void rule__GenPatternRemediationRule__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2659:1: ( rule__GenPatternRemediationRule__Group__0__Impl rule__GenPatternRemediationRule__Group__1 )
-            // InternalLibrettoProjectProfile.g:2660:2: rule__GenPatternRemediationRule__Group__0__Impl rule__GenPatternRemediationRule__Group__1
+            // InternalLibrettoProjectProfile.g:2626:1: ( rule__GenPatternRemediationRule__Group__0__Impl rule__GenPatternRemediationRule__Group__1 )
+            // InternalLibrettoProjectProfile.g:2627:2: rule__GenPatternRemediationRule__Group__0__Impl rule__GenPatternRemediationRule__Group__1
             {
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_25);
             rule__GenPatternRemediationRule__Group__0__Impl();
 
             state._fsp--;
@@ -8538,21 +8464,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenPatternRemediationRule__Group__0__Impl"
-    // InternalLibrettoProjectProfile.g:2667:1: rule__GenPatternRemediationRule__Group__0__Impl : ( () ) ;
+    // InternalLibrettoProjectProfile.g:2634:1: rule__GenPatternRemediationRule__Group__0__Impl : ( () ) ;
     public final void rule__GenPatternRemediationRule__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2671:1: ( ( () ) )
-            // InternalLibrettoProjectProfile.g:2672:1: ( () )
+            // InternalLibrettoProjectProfile.g:2638:1: ( ( () ) )
+            // InternalLibrettoProjectProfile.g:2639:1: ( () )
             {
-            // InternalLibrettoProjectProfile.g:2672:1: ( () )
-            // InternalLibrettoProjectProfile.g:2673:2: ()
+            // InternalLibrettoProjectProfile.g:2639:1: ( () )
+            // InternalLibrettoProjectProfile.g:2640:2: ()
             {
              before(grammarAccess.getGenPatternRemediationRuleAccess().getGenPatternRemediationRuleAction_0()); 
-            // InternalLibrettoProjectProfile.g:2674:2: ()
-            // InternalLibrettoProjectProfile.g:2674:3: 
+            // InternalLibrettoProjectProfile.g:2641:2: ()
+            // InternalLibrettoProjectProfile.g:2641:3: 
             {
             }
 
@@ -8575,14 +8501,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenPatternRemediationRule__Group__1"
-    // InternalLibrettoProjectProfile.g:2682:1: rule__GenPatternRemediationRule__Group__1 : rule__GenPatternRemediationRule__Group__1__Impl rule__GenPatternRemediationRule__Group__2 ;
+    // InternalLibrettoProjectProfile.g:2649:1: rule__GenPatternRemediationRule__Group__1 : rule__GenPatternRemediationRule__Group__1__Impl rule__GenPatternRemediationRule__Group__2 ;
     public final void rule__GenPatternRemediationRule__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2686:1: ( rule__GenPatternRemediationRule__Group__1__Impl rule__GenPatternRemediationRule__Group__2 )
-            // InternalLibrettoProjectProfile.g:2687:2: rule__GenPatternRemediationRule__Group__1__Impl rule__GenPatternRemediationRule__Group__2
+            // InternalLibrettoProjectProfile.g:2653:1: ( rule__GenPatternRemediationRule__Group__1__Impl rule__GenPatternRemediationRule__Group__2 )
+            // InternalLibrettoProjectProfile.g:2654:2: rule__GenPatternRemediationRule__Group__1__Impl rule__GenPatternRemediationRule__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__GenPatternRemediationRule__Group__1__Impl();
@@ -8613,17 +8539,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenPatternRemediationRule__Group__1__Impl"
-    // InternalLibrettoProjectProfile.g:2694:1: rule__GenPatternRemediationRule__Group__1__Impl : ( 'rule' ) ;
+    // InternalLibrettoProjectProfile.g:2661:1: rule__GenPatternRemediationRule__Group__1__Impl : ( 'rule' ) ;
     public final void rule__GenPatternRemediationRule__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2698:1: ( ( 'rule' ) )
-            // InternalLibrettoProjectProfile.g:2699:1: ( 'rule' )
+            // InternalLibrettoProjectProfile.g:2665:1: ( ( 'rule' ) )
+            // InternalLibrettoProjectProfile.g:2666:1: ( 'rule' )
             {
-            // InternalLibrettoProjectProfile.g:2699:1: ( 'rule' )
-            // InternalLibrettoProjectProfile.g:2700:2: 'rule'
+            // InternalLibrettoProjectProfile.g:2666:1: ( 'rule' )
+            // InternalLibrettoProjectProfile.g:2667:2: 'rule'
             {
              before(grammarAccess.getGenPatternRemediationRuleAccess().getRuleKeyword_1()); 
             match(input,46,FOLLOW_2); 
@@ -8650,16 +8576,16 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenPatternRemediationRule__Group__2"
-    // InternalLibrettoProjectProfile.g:2709:1: rule__GenPatternRemediationRule__Group__2 : rule__GenPatternRemediationRule__Group__2__Impl rule__GenPatternRemediationRule__Group__3 ;
+    // InternalLibrettoProjectProfile.g:2676:1: rule__GenPatternRemediationRule__Group__2 : rule__GenPatternRemediationRule__Group__2__Impl rule__GenPatternRemediationRule__Group__3 ;
     public final void rule__GenPatternRemediationRule__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2713:1: ( rule__GenPatternRemediationRule__Group__2__Impl rule__GenPatternRemediationRule__Group__3 )
-            // InternalLibrettoProjectProfile.g:2714:2: rule__GenPatternRemediationRule__Group__2__Impl rule__GenPatternRemediationRule__Group__3
+            // InternalLibrettoProjectProfile.g:2680:1: ( rule__GenPatternRemediationRule__Group__2__Impl rule__GenPatternRemediationRule__Group__3 )
+            // InternalLibrettoProjectProfile.g:2681:2: rule__GenPatternRemediationRule__Group__2__Impl rule__GenPatternRemediationRule__Group__3
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_26);
             rule__GenPatternRemediationRule__Group__2__Impl();
 
             state._fsp--;
@@ -8688,17 +8614,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenPatternRemediationRule__Group__2__Impl"
-    // InternalLibrettoProjectProfile.g:2721:1: rule__GenPatternRemediationRule__Group__2__Impl : ( '{' ) ;
+    // InternalLibrettoProjectProfile.g:2688:1: rule__GenPatternRemediationRule__Group__2__Impl : ( '{' ) ;
     public final void rule__GenPatternRemediationRule__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2725:1: ( ( '{' ) )
-            // InternalLibrettoProjectProfile.g:2726:1: ( '{' )
+            // InternalLibrettoProjectProfile.g:2692:1: ( ( '{' ) )
+            // InternalLibrettoProjectProfile.g:2693:1: ( '{' )
             {
-            // InternalLibrettoProjectProfile.g:2726:1: ( '{' )
-            // InternalLibrettoProjectProfile.g:2727:2: '{'
+            // InternalLibrettoProjectProfile.g:2693:1: ( '{' )
+            // InternalLibrettoProjectProfile.g:2694:2: '{'
             {
              before(grammarAccess.getGenPatternRemediationRuleAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,29,FOLLOW_2); 
@@ -8725,16 +8651,16 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenPatternRemediationRule__Group__3"
-    // InternalLibrettoProjectProfile.g:2736:1: rule__GenPatternRemediationRule__Group__3 : rule__GenPatternRemediationRule__Group__3__Impl rule__GenPatternRemediationRule__Group__4 ;
+    // InternalLibrettoProjectProfile.g:2703:1: rule__GenPatternRemediationRule__Group__3 : rule__GenPatternRemediationRule__Group__3__Impl rule__GenPatternRemediationRule__Group__4 ;
     public final void rule__GenPatternRemediationRule__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2740:1: ( rule__GenPatternRemediationRule__Group__3__Impl rule__GenPatternRemediationRule__Group__4 )
-            // InternalLibrettoProjectProfile.g:2741:2: rule__GenPatternRemediationRule__Group__3__Impl rule__GenPatternRemediationRule__Group__4
+            // InternalLibrettoProjectProfile.g:2707:1: ( rule__GenPatternRemediationRule__Group__3__Impl rule__GenPatternRemediationRule__Group__4 )
+            // InternalLibrettoProjectProfile.g:2708:2: rule__GenPatternRemediationRule__Group__3__Impl rule__GenPatternRemediationRule__Group__4
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_26);
             rule__GenPatternRemediationRule__Group__3__Impl();
 
             state._fsp--;
@@ -8763,35 +8689,35 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenPatternRemediationRule__Group__3__Impl"
-    // InternalLibrettoProjectProfile.g:2748:1: rule__GenPatternRemediationRule__Group__3__Impl : ( ( rule__GenPatternRemediationRule__Alternatives_3 )* ) ;
+    // InternalLibrettoProjectProfile.g:2715:1: rule__GenPatternRemediationRule__Group__3__Impl : ( ( rule__GenPatternRemediationRule__Alternatives_3 )* ) ;
     public final void rule__GenPatternRemediationRule__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2752:1: ( ( ( rule__GenPatternRemediationRule__Alternatives_3 )* ) )
-            // InternalLibrettoProjectProfile.g:2753:1: ( ( rule__GenPatternRemediationRule__Alternatives_3 )* )
+            // InternalLibrettoProjectProfile.g:2719:1: ( ( ( rule__GenPatternRemediationRule__Alternatives_3 )* ) )
+            // InternalLibrettoProjectProfile.g:2720:1: ( ( rule__GenPatternRemediationRule__Alternatives_3 )* )
             {
-            // InternalLibrettoProjectProfile.g:2753:1: ( ( rule__GenPatternRemediationRule__Alternatives_3 )* )
-            // InternalLibrettoProjectProfile.g:2754:2: ( rule__GenPatternRemediationRule__Alternatives_3 )*
+            // InternalLibrettoProjectProfile.g:2720:1: ( ( rule__GenPatternRemediationRule__Alternatives_3 )* )
+            // InternalLibrettoProjectProfile.g:2721:2: ( rule__GenPatternRemediationRule__Alternatives_3 )*
             {
              before(grammarAccess.getGenPatternRemediationRuleAccess().getAlternatives_3()); 
-            // InternalLibrettoProjectProfile.g:2755:2: ( rule__GenPatternRemediationRule__Alternatives_3 )*
-            loop25:
+            // InternalLibrettoProjectProfile.g:2722:2: ( rule__GenPatternRemediationRule__Alternatives_3 )*
+            loop26:
             do {
-                int alt25=2;
-                int LA25_0 = input.LA(1);
+                int alt26=2;
+                int LA26_0 = input.LA(1);
 
-                if ( ((LA25_0>=47 && LA25_0<=49)) ) {
-                    alt25=1;
+                if ( ((LA26_0>=47 && LA26_0<=49)) ) {
+                    alt26=1;
                 }
 
 
-                switch (alt25) {
+                switch (alt26) {
             	case 1 :
-            	    // InternalLibrettoProjectProfile.g:2755:3: rule__GenPatternRemediationRule__Alternatives_3
+            	    // InternalLibrettoProjectProfile.g:2722:3: rule__GenPatternRemediationRule__Alternatives_3
             	    {
-            	    pushFollow(FOLLOW_28);
+            	    pushFollow(FOLLOW_27);
             	    rule__GenPatternRemediationRule__Alternatives_3();
 
             	    state._fsp--;
@@ -8801,7 +8727,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
             	    break;
 
             	default :
-            	    break loop25;
+            	    break loop26;
                 }
             } while (true);
 
@@ -8828,14 +8754,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenPatternRemediationRule__Group__4"
-    // InternalLibrettoProjectProfile.g:2763:1: rule__GenPatternRemediationRule__Group__4 : rule__GenPatternRemediationRule__Group__4__Impl ;
+    // InternalLibrettoProjectProfile.g:2730:1: rule__GenPatternRemediationRule__Group__4 : rule__GenPatternRemediationRule__Group__4__Impl ;
     public final void rule__GenPatternRemediationRule__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2767:1: ( rule__GenPatternRemediationRule__Group__4__Impl )
-            // InternalLibrettoProjectProfile.g:2768:2: rule__GenPatternRemediationRule__Group__4__Impl
+            // InternalLibrettoProjectProfile.g:2734:1: ( rule__GenPatternRemediationRule__Group__4__Impl )
+            // InternalLibrettoProjectProfile.g:2735:2: rule__GenPatternRemediationRule__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__GenPatternRemediationRule__Group__4__Impl();
@@ -8861,17 +8787,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenPatternRemediationRule__Group__4__Impl"
-    // InternalLibrettoProjectProfile.g:2774:1: rule__GenPatternRemediationRule__Group__4__Impl : ( '}' ) ;
+    // InternalLibrettoProjectProfile.g:2741:1: rule__GenPatternRemediationRule__Group__4__Impl : ( '}' ) ;
     public final void rule__GenPatternRemediationRule__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2778:1: ( ( '}' ) )
-            // InternalLibrettoProjectProfile.g:2779:1: ( '}' )
+            // InternalLibrettoProjectProfile.g:2745:1: ( ( '}' ) )
+            // InternalLibrettoProjectProfile.g:2746:1: ( '}' )
             {
-            // InternalLibrettoProjectProfile.g:2779:1: ( '}' )
-            // InternalLibrettoProjectProfile.g:2780:2: '}'
+            // InternalLibrettoProjectProfile.g:2746:1: ( '}' )
+            // InternalLibrettoProjectProfile.g:2747:2: '}'
             {
              before(grammarAccess.getGenPatternRemediationRuleAccess().getRightCurlyBracketKeyword_4()); 
             match(input,30,FOLLOW_2); 
@@ -8898,14 +8824,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenPatternRemediationRule__Group_3_0__0"
-    // InternalLibrettoProjectProfile.g:2790:1: rule__GenPatternRemediationRule__Group_3_0__0 : rule__GenPatternRemediationRule__Group_3_0__0__Impl rule__GenPatternRemediationRule__Group_3_0__1 ;
+    // InternalLibrettoProjectProfile.g:2757:1: rule__GenPatternRemediationRule__Group_3_0__0 : rule__GenPatternRemediationRule__Group_3_0__0__Impl rule__GenPatternRemediationRule__Group_3_0__1 ;
     public final void rule__GenPatternRemediationRule__Group_3_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2794:1: ( rule__GenPatternRemediationRule__Group_3_0__0__Impl rule__GenPatternRemediationRule__Group_3_0__1 )
-            // InternalLibrettoProjectProfile.g:2795:2: rule__GenPatternRemediationRule__Group_3_0__0__Impl rule__GenPatternRemediationRule__Group_3_0__1
+            // InternalLibrettoProjectProfile.g:2761:1: ( rule__GenPatternRemediationRule__Group_3_0__0__Impl rule__GenPatternRemediationRule__Group_3_0__1 )
+            // InternalLibrettoProjectProfile.g:2762:2: rule__GenPatternRemediationRule__Group_3_0__0__Impl rule__GenPatternRemediationRule__Group_3_0__1
             {
             pushFollow(FOLLOW_11);
             rule__GenPatternRemediationRule__Group_3_0__0__Impl();
@@ -8936,17 +8862,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenPatternRemediationRule__Group_3_0__0__Impl"
-    // InternalLibrettoProjectProfile.g:2802:1: rule__GenPatternRemediationRule__Group_3_0__0__Impl : ( 'pattern' ) ;
+    // InternalLibrettoProjectProfile.g:2769:1: rule__GenPatternRemediationRule__Group_3_0__0__Impl : ( 'pattern' ) ;
     public final void rule__GenPatternRemediationRule__Group_3_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2806:1: ( ( 'pattern' ) )
-            // InternalLibrettoProjectProfile.g:2807:1: ( 'pattern' )
+            // InternalLibrettoProjectProfile.g:2773:1: ( ( 'pattern' ) )
+            // InternalLibrettoProjectProfile.g:2774:1: ( 'pattern' )
             {
-            // InternalLibrettoProjectProfile.g:2807:1: ( 'pattern' )
-            // InternalLibrettoProjectProfile.g:2808:2: 'pattern'
+            // InternalLibrettoProjectProfile.g:2774:1: ( 'pattern' )
+            // InternalLibrettoProjectProfile.g:2775:2: 'pattern'
             {
              before(grammarAccess.getGenPatternRemediationRuleAccess().getPatternKeyword_3_0_0()); 
             match(input,47,FOLLOW_2); 
@@ -8973,14 +8899,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenPatternRemediationRule__Group_3_0__1"
-    // InternalLibrettoProjectProfile.g:2817:1: rule__GenPatternRemediationRule__Group_3_0__1 : rule__GenPatternRemediationRule__Group_3_0__1__Impl ;
+    // InternalLibrettoProjectProfile.g:2784:1: rule__GenPatternRemediationRule__Group_3_0__1 : rule__GenPatternRemediationRule__Group_3_0__1__Impl ;
     public final void rule__GenPatternRemediationRule__Group_3_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2821:1: ( rule__GenPatternRemediationRule__Group_3_0__1__Impl )
-            // InternalLibrettoProjectProfile.g:2822:2: rule__GenPatternRemediationRule__Group_3_0__1__Impl
+            // InternalLibrettoProjectProfile.g:2788:1: ( rule__GenPatternRemediationRule__Group_3_0__1__Impl )
+            // InternalLibrettoProjectProfile.g:2789:2: rule__GenPatternRemediationRule__Group_3_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__GenPatternRemediationRule__Group_3_0__1__Impl();
@@ -9006,21 +8932,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenPatternRemediationRule__Group_3_0__1__Impl"
-    // InternalLibrettoProjectProfile.g:2828:1: rule__GenPatternRemediationRule__Group_3_0__1__Impl : ( ( rule__GenPatternRemediationRule__PatternsAssignment_3_0_1 ) ) ;
+    // InternalLibrettoProjectProfile.g:2795:1: rule__GenPatternRemediationRule__Group_3_0__1__Impl : ( ( rule__GenPatternRemediationRule__PatternsAssignment_3_0_1 ) ) ;
     public final void rule__GenPatternRemediationRule__Group_3_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2832:1: ( ( ( rule__GenPatternRemediationRule__PatternsAssignment_3_0_1 ) ) )
-            // InternalLibrettoProjectProfile.g:2833:1: ( ( rule__GenPatternRemediationRule__PatternsAssignment_3_0_1 ) )
+            // InternalLibrettoProjectProfile.g:2799:1: ( ( ( rule__GenPatternRemediationRule__PatternsAssignment_3_0_1 ) ) )
+            // InternalLibrettoProjectProfile.g:2800:1: ( ( rule__GenPatternRemediationRule__PatternsAssignment_3_0_1 ) )
             {
-            // InternalLibrettoProjectProfile.g:2833:1: ( ( rule__GenPatternRemediationRule__PatternsAssignment_3_0_1 ) )
-            // InternalLibrettoProjectProfile.g:2834:2: ( rule__GenPatternRemediationRule__PatternsAssignment_3_0_1 )
+            // InternalLibrettoProjectProfile.g:2800:1: ( ( rule__GenPatternRemediationRule__PatternsAssignment_3_0_1 ) )
+            // InternalLibrettoProjectProfile.g:2801:2: ( rule__GenPatternRemediationRule__PatternsAssignment_3_0_1 )
             {
              before(grammarAccess.getGenPatternRemediationRuleAccess().getPatternsAssignment_3_0_1()); 
-            // InternalLibrettoProjectProfile.g:2835:2: ( rule__GenPatternRemediationRule__PatternsAssignment_3_0_1 )
-            // InternalLibrettoProjectProfile.g:2835:3: rule__GenPatternRemediationRule__PatternsAssignment_3_0_1
+            // InternalLibrettoProjectProfile.g:2802:2: ( rule__GenPatternRemediationRule__PatternsAssignment_3_0_1 )
+            // InternalLibrettoProjectProfile.g:2802:3: rule__GenPatternRemediationRule__PatternsAssignment_3_0_1
             {
             pushFollow(FOLLOW_2);
             rule__GenPatternRemediationRule__PatternsAssignment_3_0_1();
@@ -9053,14 +8979,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenPatternRemediationRule__Group_3_1__0"
-    // InternalLibrettoProjectProfile.g:2844:1: rule__GenPatternRemediationRule__Group_3_1__0 : rule__GenPatternRemediationRule__Group_3_1__0__Impl rule__GenPatternRemediationRule__Group_3_1__1 ;
+    // InternalLibrettoProjectProfile.g:2811:1: rule__GenPatternRemediationRule__Group_3_1__0 : rule__GenPatternRemediationRule__Group_3_1__0__Impl rule__GenPatternRemediationRule__Group_3_1__1 ;
     public final void rule__GenPatternRemediationRule__Group_3_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2848:1: ( rule__GenPatternRemediationRule__Group_3_1__0__Impl rule__GenPatternRemediationRule__Group_3_1__1 )
-            // InternalLibrettoProjectProfile.g:2849:2: rule__GenPatternRemediationRule__Group_3_1__0__Impl rule__GenPatternRemediationRule__Group_3_1__1
+            // InternalLibrettoProjectProfile.g:2815:1: ( rule__GenPatternRemediationRule__Group_3_1__0__Impl rule__GenPatternRemediationRule__Group_3_1__1 )
+            // InternalLibrettoProjectProfile.g:2816:2: rule__GenPatternRemediationRule__Group_3_1__0__Impl rule__GenPatternRemediationRule__Group_3_1__1
             {
             pushFollow(FOLLOW_11);
             rule__GenPatternRemediationRule__Group_3_1__0__Impl();
@@ -9091,17 +9017,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenPatternRemediationRule__Group_3_1__0__Impl"
-    // InternalLibrettoProjectProfile.g:2856:1: rule__GenPatternRemediationRule__Group_3_1__0__Impl : ( 'code' ) ;
+    // InternalLibrettoProjectProfile.g:2823:1: rule__GenPatternRemediationRule__Group_3_1__0__Impl : ( 'code' ) ;
     public final void rule__GenPatternRemediationRule__Group_3_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2860:1: ( ( 'code' ) )
-            // InternalLibrettoProjectProfile.g:2861:1: ( 'code' )
+            // InternalLibrettoProjectProfile.g:2827:1: ( ( 'code' ) )
+            // InternalLibrettoProjectProfile.g:2828:1: ( 'code' )
             {
-            // InternalLibrettoProjectProfile.g:2861:1: ( 'code' )
-            // InternalLibrettoProjectProfile.g:2862:2: 'code'
+            // InternalLibrettoProjectProfile.g:2828:1: ( 'code' )
+            // InternalLibrettoProjectProfile.g:2829:2: 'code'
             {
              before(grammarAccess.getGenPatternRemediationRuleAccess().getCodeKeyword_3_1_0()); 
             match(input,48,FOLLOW_2); 
@@ -9128,14 +9054,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenPatternRemediationRule__Group_3_1__1"
-    // InternalLibrettoProjectProfile.g:2871:1: rule__GenPatternRemediationRule__Group_3_1__1 : rule__GenPatternRemediationRule__Group_3_1__1__Impl ;
+    // InternalLibrettoProjectProfile.g:2838:1: rule__GenPatternRemediationRule__Group_3_1__1 : rule__GenPatternRemediationRule__Group_3_1__1__Impl ;
     public final void rule__GenPatternRemediationRule__Group_3_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2875:1: ( rule__GenPatternRemediationRule__Group_3_1__1__Impl )
-            // InternalLibrettoProjectProfile.g:2876:2: rule__GenPatternRemediationRule__Group_3_1__1__Impl
+            // InternalLibrettoProjectProfile.g:2842:1: ( rule__GenPatternRemediationRule__Group_3_1__1__Impl )
+            // InternalLibrettoProjectProfile.g:2843:2: rule__GenPatternRemediationRule__Group_3_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__GenPatternRemediationRule__Group_3_1__1__Impl();
@@ -9161,21 +9087,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenPatternRemediationRule__Group_3_1__1__Impl"
-    // InternalLibrettoProjectProfile.g:2882:1: rule__GenPatternRemediationRule__Group_3_1__1__Impl : ( ( rule__GenPatternRemediationRule__CodesAssignment_3_1_1 ) ) ;
+    // InternalLibrettoProjectProfile.g:2849:1: rule__GenPatternRemediationRule__Group_3_1__1__Impl : ( ( rule__GenPatternRemediationRule__CodesAssignment_3_1_1 ) ) ;
     public final void rule__GenPatternRemediationRule__Group_3_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2886:1: ( ( ( rule__GenPatternRemediationRule__CodesAssignment_3_1_1 ) ) )
-            // InternalLibrettoProjectProfile.g:2887:1: ( ( rule__GenPatternRemediationRule__CodesAssignment_3_1_1 ) )
+            // InternalLibrettoProjectProfile.g:2853:1: ( ( ( rule__GenPatternRemediationRule__CodesAssignment_3_1_1 ) ) )
+            // InternalLibrettoProjectProfile.g:2854:1: ( ( rule__GenPatternRemediationRule__CodesAssignment_3_1_1 ) )
             {
-            // InternalLibrettoProjectProfile.g:2887:1: ( ( rule__GenPatternRemediationRule__CodesAssignment_3_1_1 ) )
-            // InternalLibrettoProjectProfile.g:2888:2: ( rule__GenPatternRemediationRule__CodesAssignment_3_1_1 )
+            // InternalLibrettoProjectProfile.g:2854:1: ( ( rule__GenPatternRemediationRule__CodesAssignment_3_1_1 ) )
+            // InternalLibrettoProjectProfile.g:2855:2: ( rule__GenPatternRemediationRule__CodesAssignment_3_1_1 )
             {
              before(grammarAccess.getGenPatternRemediationRuleAccess().getCodesAssignment_3_1_1()); 
-            // InternalLibrettoProjectProfile.g:2889:2: ( rule__GenPatternRemediationRule__CodesAssignment_3_1_1 )
-            // InternalLibrettoProjectProfile.g:2889:3: rule__GenPatternRemediationRule__CodesAssignment_3_1_1
+            // InternalLibrettoProjectProfile.g:2856:2: ( rule__GenPatternRemediationRule__CodesAssignment_3_1_1 )
+            // InternalLibrettoProjectProfile.g:2856:3: rule__GenPatternRemediationRule__CodesAssignment_3_1_1
             {
             pushFollow(FOLLOW_2);
             rule__GenPatternRemediationRule__CodesAssignment_3_1_1();
@@ -9208,14 +9134,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenPatternRemediationRule__Group_3_2__0"
-    // InternalLibrettoProjectProfile.g:2898:1: rule__GenPatternRemediationRule__Group_3_2__0 : rule__GenPatternRemediationRule__Group_3_2__0__Impl rule__GenPatternRemediationRule__Group_3_2__1 ;
+    // InternalLibrettoProjectProfile.g:2865:1: rule__GenPatternRemediationRule__Group_3_2__0 : rule__GenPatternRemediationRule__Group_3_2__0__Impl rule__GenPatternRemediationRule__Group_3_2__1 ;
     public final void rule__GenPatternRemediationRule__Group_3_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2902:1: ( rule__GenPatternRemediationRule__Group_3_2__0__Impl rule__GenPatternRemediationRule__Group_3_2__1 )
-            // InternalLibrettoProjectProfile.g:2903:2: rule__GenPatternRemediationRule__Group_3_2__0__Impl rule__GenPatternRemediationRule__Group_3_2__1
+            // InternalLibrettoProjectProfile.g:2869:1: ( rule__GenPatternRemediationRule__Group_3_2__0__Impl rule__GenPatternRemediationRule__Group_3_2__1 )
+            // InternalLibrettoProjectProfile.g:2870:2: rule__GenPatternRemediationRule__Group_3_2__0__Impl rule__GenPatternRemediationRule__Group_3_2__1
             {
             pushFollow(FOLLOW_11);
             rule__GenPatternRemediationRule__Group_3_2__0__Impl();
@@ -9246,17 +9172,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenPatternRemediationRule__Group_3_2__0__Impl"
-    // InternalLibrettoProjectProfile.g:2910:1: rule__GenPatternRemediationRule__Group_3_2__0__Impl : ( 'correction' ) ;
+    // InternalLibrettoProjectProfile.g:2877:1: rule__GenPatternRemediationRule__Group_3_2__0__Impl : ( 'correction' ) ;
     public final void rule__GenPatternRemediationRule__Group_3_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2914:1: ( ( 'correction' ) )
-            // InternalLibrettoProjectProfile.g:2915:1: ( 'correction' )
+            // InternalLibrettoProjectProfile.g:2881:1: ( ( 'correction' ) )
+            // InternalLibrettoProjectProfile.g:2882:1: ( 'correction' )
             {
-            // InternalLibrettoProjectProfile.g:2915:1: ( 'correction' )
-            // InternalLibrettoProjectProfile.g:2916:2: 'correction'
+            // InternalLibrettoProjectProfile.g:2882:1: ( 'correction' )
+            // InternalLibrettoProjectProfile.g:2883:2: 'correction'
             {
              before(grammarAccess.getGenPatternRemediationRuleAccess().getCorrectionKeyword_3_2_0()); 
             match(input,49,FOLLOW_2); 
@@ -9283,14 +9209,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenPatternRemediationRule__Group_3_2__1"
-    // InternalLibrettoProjectProfile.g:2925:1: rule__GenPatternRemediationRule__Group_3_2__1 : rule__GenPatternRemediationRule__Group_3_2__1__Impl ;
+    // InternalLibrettoProjectProfile.g:2892:1: rule__GenPatternRemediationRule__Group_3_2__1 : rule__GenPatternRemediationRule__Group_3_2__1__Impl ;
     public final void rule__GenPatternRemediationRule__Group_3_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2929:1: ( rule__GenPatternRemediationRule__Group_3_2__1__Impl )
-            // InternalLibrettoProjectProfile.g:2930:2: rule__GenPatternRemediationRule__Group_3_2__1__Impl
+            // InternalLibrettoProjectProfile.g:2896:1: ( rule__GenPatternRemediationRule__Group_3_2__1__Impl )
+            // InternalLibrettoProjectProfile.g:2897:2: rule__GenPatternRemediationRule__Group_3_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__GenPatternRemediationRule__Group_3_2__1__Impl();
@@ -9316,21 +9242,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenPatternRemediationRule__Group_3_2__1__Impl"
-    // InternalLibrettoProjectProfile.g:2936:1: rule__GenPatternRemediationRule__Group_3_2__1__Impl : ( ( rule__GenPatternRemediationRule__CorrectionsAssignment_3_2_1 ) ) ;
+    // InternalLibrettoProjectProfile.g:2903:1: rule__GenPatternRemediationRule__Group_3_2__1__Impl : ( ( rule__GenPatternRemediationRule__CorrectionsAssignment_3_2_1 ) ) ;
     public final void rule__GenPatternRemediationRule__Group_3_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2940:1: ( ( ( rule__GenPatternRemediationRule__CorrectionsAssignment_3_2_1 ) ) )
-            // InternalLibrettoProjectProfile.g:2941:1: ( ( rule__GenPatternRemediationRule__CorrectionsAssignment_3_2_1 ) )
+            // InternalLibrettoProjectProfile.g:2907:1: ( ( ( rule__GenPatternRemediationRule__CorrectionsAssignment_3_2_1 ) ) )
+            // InternalLibrettoProjectProfile.g:2908:1: ( ( rule__GenPatternRemediationRule__CorrectionsAssignment_3_2_1 ) )
             {
-            // InternalLibrettoProjectProfile.g:2941:1: ( ( rule__GenPatternRemediationRule__CorrectionsAssignment_3_2_1 ) )
-            // InternalLibrettoProjectProfile.g:2942:2: ( rule__GenPatternRemediationRule__CorrectionsAssignment_3_2_1 )
+            // InternalLibrettoProjectProfile.g:2908:1: ( ( rule__GenPatternRemediationRule__CorrectionsAssignment_3_2_1 ) )
+            // InternalLibrettoProjectProfile.g:2909:2: ( rule__GenPatternRemediationRule__CorrectionsAssignment_3_2_1 )
             {
              before(grammarAccess.getGenPatternRemediationRuleAccess().getCorrectionsAssignment_3_2_1()); 
-            // InternalLibrettoProjectProfile.g:2943:2: ( rule__GenPatternRemediationRule__CorrectionsAssignment_3_2_1 )
-            // InternalLibrettoProjectProfile.g:2943:3: rule__GenPatternRemediationRule__CorrectionsAssignment_3_2_1
+            // InternalLibrettoProjectProfile.g:2910:2: ( rule__GenPatternRemediationRule__CorrectionsAssignment_3_2_1 )
+            // InternalLibrettoProjectProfile.g:2910:3: rule__GenPatternRemediationRule__CorrectionsAssignment_3_2_1
             {
             pushFollow(FOLLOW_2);
             rule__GenPatternRemediationRule__CorrectionsAssignment_3_2_1();
@@ -9363,16 +9289,16 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenDefaultRemediationRule__Group__0"
-    // InternalLibrettoProjectProfile.g:2952:1: rule__GenDefaultRemediationRule__Group__0 : rule__GenDefaultRemediationRule__Group__0__Impl rule__GenDefaultRemediationRule__Group__1 ;
+    // InternalLibrettoProjectProfile.g:2919:1: rule__GenDefaultRemediationRule__Group__0 : rule__GenDefaultRemediationRule__Group__0__Impl rule__GenDefaultRemediationRule__Group__1 ;
     public final void rule__GenDefaultRemediationRule__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2956:1: ( rule__GenDefaultRemediationRule__Group__0__Impl rule__GenDefaultRemediationRule__Group__1 )
-            // InternalLibrettoProjectProfile.g:2957:2: rule__GenDefaultRemediationRule__Group__0__Impl rule__GenDefaultRemediationRule__Group__1
+            // InternalLibrettoProjectProfile.g:2923:1: ( rule__GenDefaultRemediationRule__Group__0__Impl rule__GenDefaultRemediationRule__Group__1 )
+            // InternalLibrettoProjectProfile.g:2924:2: rule__GenDefaultRemediationRule__Group__0__Impl rule__GenDefaultRemediationRule__Group__1
             {
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_28);
             rule__GenDefaultRemediationRule__Group__0__Impl();
 
             state._fsp--;
@@ -9401,21 +9327,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenDefaultRemediationRule__Group__0__Impl"
-    // InternalLibrettoProjectProfile.g:2964:1: rule__GenDefaultRemediationRule__Group__0__Impl : ( () ) ;
+    // InternalLibrettoProjectProfile.g:2931:1: rule__GenDefaultRemediationRule__Group__0__Impl : ( () ) ;
     public final void rule__GenDefaultRemediationRule__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2968:1: ( ( () ) )
-            // InternalLibrettoProjectProfile.g:2969:1: ( () )
+            // InternalLibrettoProjectProfile.g:2935:1: ( ( () ) )
+            // InternalLibrettoProjectProfile.g:2936:1: ( () )
             {
-            // InternalLibrettoProjectProfile.g:2969:1: ( () )
-            // InternalLibrettoProjectProfile.g:2970:2: ()
+            // InternalLibrettoProjectProfile.g:2936:1: ( () )
+            // InternalLibrettoProjectProfile.g:2937:2: ()
             {
              before(grammarAccess.getGenDefaultRemediationRuleAccess().getGenDefaultRemediationRuleAction_0()); 
-            // InternalLibrettoProjectProfile.g:2971:2: ()
-            // InternalLibrettoProjectProfile.g:2971:3: 
+            // InternalLibrettoProjectProfile.g:2938:2: ()
+            // InternalLibrettoProjectProfile.g:2938:3: 
             {
             }
 
@@ -9438,14 +9364,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenDefaultRemediationRule__Group__1"
-    // InternalLibrettoProjectProfile.g:2979:1: rule__GenDefaultRemediationRule__Group__1 : rule__GenDefaultRemediationRule__Group__1__Impl rule__GenDefaultRemediationRule__Group__2 ;
+    // InternalLibrettoProjectProfile.g:2946:1: rule__GenDefaultRemediationRule__Group__1 : rule__GenDefaultRemediationRule__Group__1__Impl rule__GenDefaultRemediationRule__Group__2 ;
     public final void rule__GenDefaultRemediationRule__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2983:1: ( rule__GenDefaultRemediationRule__Group__1__Impl rule__GenDefaultRemediationRule__Group__2 )
-            // InternalLibrettoProjectProfile.g:2984:2: rule__GenDefaultRemediationRule__Group__1__Impl rule__GenDefaultRemediationRule__Group__2
+            // InternalLibrettoProjectProfile.g:2950:1: ( rule__GenDefaultRemediationRule__Group__1__Impl rule__GenDefaultRemediationRule__Group__2 )
+            // InternalLibrettoProjectProfile.g:2951:2: rule__GenDefaultRemediationRule__Group__1__Impl rule__GenDefaultRemediationRule__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__GenDefaultRemediationRule__Group__1__Impl();
@@ -9476,17 +9402,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenDefaultRemediationRule__Group__1__Impl"
-    // InternalLibrettoProjectProfile.g:2991:1: rule__GenDefaultRemediationRule__Group__1__Impl : ( 'default' ) ;
+    // InternalLibrettoProjectProfile.g:2958:1: rule__GenDefaultRemediationRule__Group__1__Impl : ( 'default' ) ;
     public final void rule__GenDefaultRemediationRule__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:2995:1: ( ( 'default' ) )
-            // InternalLibrettoProjectProfile.g:2996:1: ( 'default' )
+            // InternalLibrettoProjectProfile.g:2962:1: ( ( 'default' ) )
+            // InternalLibrettoProjectProfile.g:2963:1: ( 'default' )
             {
-            // InternalLibrettoProjectProfile.g:2996:1: ( 'default' )
-            // InternalLibrettoProjectProfile.g:2997:2: 'default'
+            // InternalLibrettoProjectProfile.g:2963:1: ( 'default' )
+            // InternalLibrettoProjectProfile.g:2964:2: 'default'
             {
              before(grammarAccess.getGenDefaultRemediationRuleAccess().getDefaultKeyword_1()); 
             match(input,50,FOLLOW_2); 
@@ -9513,14 +9439,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenDefaultRemediationRule__Group__2"
-    // InternalLibrettoProjectProfile.g:3006:1: rule__GenDefaultRemediationRule__Group__2 : rule__GenDefaultRemediationRule__Group__2__Impl rule__GenDefaultRemediationRule__Group__3 ;
+    // InternalLibrettoProjectProfile.g:2973:1: rule__GenDefaultRemediationRule__Group__2 : rule__GenDefaultRemediationRule__Group__2__Impl rule__GenDefaultRemediationRule__Group__3 ;
     public final void rule__GenDefaultRemediationRule__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3010:1: ( rule__GenDefaultRemediationRule__Group__2__Impl rule__GenDefaultRemediationRule__Group__3 )
-            // InternalLibrettoProjectProfile.g:3011:2: rule__GenDefaultRemediationRule__Group__2__Impl rule__GenDefaultRemediationRule__Group__3
+            // InternalLibrettoProjectProfile.g:2977:1: ( rule__GenDefaultRemediationRule__Group__2__Impl rule__GenDefaultRemediationRule__Group__3 )
+            // InternalLibrettoProjectProfile.g:2978:2: rule__GenDefaultRemediationRule__Group__2__Impl rule__GenDefaultRemediationRule__Group__3
             {
             pushFollow(FOLLOW_29);
             rule__GenDefaultRemediationRule__Group__2__Impl();
@@ -9551,17 +9477,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenDefaultRemediationRule__Group__2__Impl"
-    // InternalLibrettoProjectProfile.g:3018:1: rule__GenDefaultRemediationRule__Group__2__Impl : ( '{' ) ;
+    // InternalLibrettoProjectProfile.g:2985:1: rule__GenDefaultRemediationRule__Group__2__Impl : ( '{' ) ;
     public final void rule__GenDefaultRemediationRule__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3022:1: ( ( '{' ) )
-            // InternalLibrettoProjectProfile.g:3023:1: ( '{' )
+            // InternalLibrettoProjectProfile.g:2989:1: ( ( '{' ) )
+            // InternalLibrettoProjectProfile.g:2990:1: ( '{' )
             {
-            // InternalLibrettoProjectProfile.g:3023:1: ( '{' )
-            // InternalLibrettoProjectProfile.g:3024:2: '{'
+            // InternalLibrettoProjectProfile.g:2990:1: ( '{' )
+            // InternalLibrettoProjectProfile.g:2991:2: '{'
             {
              before(grammarAccess.getGenDefaultRemediationRuleAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,29,FOLLOW_2); 
@@ -9588,14 +9514,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenDefaultRemediationRule__Group__3"
-    // InternalLibrettoProjectProfile.g:3033:1: rule__GenDefaultRemediationRule__Group__3 : rule__GenDefaultRemediationRule__Group__3__Impl rule__GenDefaultRemediationRule__Group__4 ;
+    // InternalLibrettoProjectProfile.g:3000:1: rule__GenDefaultRemediationRule__Group__3 : rule__GenDefaultRemediationRule__Group__3__Impl rule__GenDefaultRemediationRule__Group__4 ;
     public final void rule__GenDefaultRemediationRule__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3037:1: ( rule__GenDefaultRemediationRule__Group__3__Impl rule__GenDefaultRemediationRule__Group__4 )
-            // InternalLibrettoProjectProfile.g:3038:2: rule__GenDefaultRemediationRule__Group__3__Impl rule__GenDefaultRemediationRule__Group__4
+            // InternalLibrettoProjectProfile.g:3004:1: ( rule__GenDefaultRemediationRule__Group__3__Impl rule__GenDefaultRemediationRule__Group__4 )
+            // InternalLibrettoProjectProfile.g:3005:2: rule__GenDefaultRemediationRule__Group__3__Impl rule__GenDefaultRemediationRule__Group__4
             {
             pushFollow(FOLLOW_29);
             rule__GenDefaultRemediationRule__Group__3__Impl();
@@ -9626,33 +9552,33 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenDefaultRemediationRule__Group__3__Impl"
-    // InternalLibrettoProjectProfile.g:3045:1: rule__GenDefaultRemediationRule__Group__3__Impl : ( ( rule__GenDefaultRemediationRule__Alternatives_3 )* ) ;
+    // InternalLibrettoProjectProfile.g:3012:1: rule__GenDefaultRemediationRule__Group__3__Impl : ( ( rule__GenDefaultRemediationRule__Alternatives_3 )* ) ;
     public final void rule__GenDefaultRemediationRule__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3049:1: ( ( ( rule__GenDefaultRemediationRule__Alternatives_3 )* ) )
-            // InternalLibrettoProjectProfile.g:3050:1: ( ( rule__GenDefaultRemediationRule__Alternatives_3 )* )
+            // InternalLibrettoProjectProfile.g:3016:1: ( ( ( rule__GenDefaultRemediationRule__Alternatives_3 )* ) )
+            // InternalLibrettoProjectProfile.g:3017:1: ( ( rule__GenDefaultRemediationRule__Alternatives_3 )* )
             {
-            // InternalLibrettoProjectProfile.g:3050:1: ( ( rule__GenDefaultRemediationRule__Alternatives_3 )* )
-            // InternalLibrettoProjectProfile.g:3051:2: ( rule__GenDefaultRemediationRule__Alternatives_3 )*
+            // InternalLibrettoProjectProfile.g:3017:1: ( ( rule__GenDefaultRemediationRule__Alternatives_3 )* )
+            // InternalLibrettoProjectProfile.g:3018:2: ( rule__GenDefaultRemediationRule__Alternatives_3 )*
             {
              before(grammarAccess.getGenDefaultRemediationRuleAccess().getAlternatives_3()); 
-            // InternalLibrettoProjectProfile.g:3052:2: ( rule__GenDefaultRemediationRule__Alternatives_3 )*
-            loop26:
+            // InternalLibrettoProjectProfile.g:3019:2: ( rule__GenDefaultRemediationRule__Alternatives_3 )*
+            loop27:
             do {
-                int alt26=2;
-                int LA26_0 = input.LA(1);
+                int alt27=2;
+                int LA27_0 = input.LA(1);
 
-                if ( ((LA26_0>=48 && LA26_0<=49)) ) {
-                    alt26=1;
+                if ( ((LA27_0>=48 && LA27_0<=49)) ) {
+                    alt27=1;
                 }
 
 
-                switch (alt26) {
+                switch (alt27) {
             	case 1 :
-            	    // InternalLibrettoProjectProfile.g:3052:3: rule__GenDefaultRemediationRule__Alternatives_3
+            	    // InternalLibrettoProjectProfile.g:3019:3: rule__GenDefaultRemediationRule__Alternatives_3
             	    {
             	    pushFollow(FOLLOW_30);
             	    rule__GenDefaultRemediationRule__Alternatives_3();
@@ -9664,7 +9590,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
             	    break;
 
             	default :
-            	    break loop26;
+            	    break loop27;
                 }
             } while (true);
 
@@ -9691,14 +9617,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenDefaultRemediationRule__Group__4"
-    // InternalLibrettoProjectProfile.g:3060:1: rule__GenDefaultRemediationRule__Group__4 : rule__GenDefaultRemediationRule__Group__4__Impl ;
+    // InternalLibrettoProjectProfile.g:3027:1: rule__GenDefaultRemediationRule__Group__4 : rule__GenDefaultRemediationRule__Group__4__Impl ;
     public final void rule__GenDefaultRemediationRule__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3064:1: ( rule__GenDefaultRemediationRule__Group__4__Impl )
-            // InternalLibrettoProjectProfile.g:3065:2: rule__GenDefaultRemediationRule__Group__4__Impl
+            // InternalLibrettoProjectProfile.g:3031:1: ( rule__GenDefaultRemediationRule__Group__4__Impl )
+            // InternalLibrettoProjectProfile.g:3032:2: rule__GenDefaultRemediationRule__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__GenDefaultRemediationRule__Group__4__Impl();
@@ -9724,17 +9650,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenDefaultRemediationRule__Group__4__Impl"
-    // InternalLibrettoProjectProfile.g:3071:1: rule__GenDefaultRemediationRule__Group__4__Impl : ( '}' ) ;
+    // InternalLibrettoProjectProfile.g:3038:1: rule__GenDefaultRemediationRule__Group__4__Impl : ( '}' ) ;
     public final void rule__GenDefaultRemediationRule__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3075:1: ( ( '}' ) )
-            // InternalLibrettoProjectProfile.g:3076:1: ( '}' )
+            // InternalLibrettoProjectProfile.g:3042:1: ( ( '}' ) )
+            // InternalLibrettoProjectProfile.g:3043:1: ( '}' )
             {
-            // InternalLibrettoProjectProfile.g:3076:1: ( '}' )
-            // InternalLibrettoProjectProfile.g:3077:2: '}'
+            // InternalLibrettoProjectProfile.g:3043:1: ( '}' )
+            // InternalLibrettoProjectProfile.g:3044:2: '}'
             {
              before(grammarAccess.getGenDefaultRemediationRuleAccess().getRightCurlyBracketKeyword_4()); 
             match(input,30,FOLLOW_2); 
@@ -9761,14 +9687,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenDefaultRemediationRule__Group_3_0__0"
-    // InternalLibrettoProjectProfile.g:3087:1: rule__GenDefaultRemediationRule__Group_3_0__0 : rule__GenDefaultRemediationRule__Group_3_0__0__Impl rule__GenDefaultRemediationRule__Group_3_0__1 ;
+    // InternalLibrettoProjectProfile.g:3054:1: rule__GenDefaultRemediationRule__Group_3_0__0 : rule__GenDefaultRemediationRule__Group_3_0__0__Impl rule__GenDefaultRemediationRule__Group_3_0__1 ;
     public final void rule__GenDefaultRemediationRule__Group_3_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3091:1: ( rule__GenDefaultRemediationRule__Group_3_0__0__Impl rule__GenDefaultRemediationRule__Group_3_0__1 )
-            // InternalLibrettoProjectProfile.g:3092:2: rule__GenDefaultRemediationRule__Group_3_0__0__Impl rule__GenDefaultRemediationRule__Group_3_0__1
+            // InternalLibrettoProjectProfile.g:3058:1: ( rule__GenDefaultRemediationRule__Group_3_0__0__Impl rule__GenDefaultRemediationRule__Group_3_0__1 )
+            // InternalLibrettoProjectProfile.g:3059:2: rule__GenDefaultRemediationRule__Group_3_0__0__Impl rule__GenDefaultRemediationRule__Group_3_0__1
             {
             pushFollow(FOLLOW_11);
             rule__GenDefaultRemediationRule__Group_3_0__0__Impl();
@@ -9799,17 +9725,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenDefaultRemediationRule__Group_3_0__0__Impl"
-    // InternalLibrettoProjectProfile.g:3099:1: rule__GenDefaultRemediationRule__Group_3_0__0__Impl : ( 'code' ) ;
+    // InternalLibrettoProjectProfile.g:3066:1: rule__GenDefaultRemediationRule__Group_3_0__0__Impl : ( 'code' ) ;
     public final void rule__GenDefaultRemediationRule__Group_3_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3103:1: ( ( 'code' ) )
-            // InternalLibrettoProjectProfile.g:3104:1: ( 'code' )
+            // InternalLibrettoProjectProfile.g:3070:1: ( ( 'code' ) )
+            // InternalLibrettoProjectProfile.g:3071:1: ( 'code' )
             {
-            // InternalLibrettoProjectProfile.g:3104:1: ( 'code' )
-            // InternalLibrettoProjectProfile.g:3105:2: 'code'
+            // InternalLibrettoProjectProfile.g:3071:1: ( 'code' )
+            // InternalLibrettoProjectProfile.g:3072:2: 'code'
             {
              before(grammarAccess.getGenDefaultRemediationRuleAccess().getCodeKeyword_3_0_0()); 
             match(input,48,FOLLOW_2); 
@@ -9836,14 +9762,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenDefaultRemediationRule__Group_3_0__1"
-    // InternalLibrettoProjectProfile.g:3114:1: rule__GenDefaultRemediationRule__Group_3_0__1 : rule__GenDefaultRemediationRule__Group_3_0__1__Impl ;
+    // InternalLibrettoProjectProfile.g:3081:1: rule__GenDefaultRemediationRule__Group_3_0__1 : rule__GenDefaultRemediationRule__Group_3_0__1__Impl ;
     public final void rule__GenDefaultRemediationRule__Group_3_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3118:1: ( rule__GenDefaultRemediationRule__Group_3_0__1__Impl )
-            // InternalLibrettoProjectProfile.g:3119:2: rule__GenDefaultRemediationRule__Group_3_0__1__Impl
+            // InternalLibrettoProjectProfile.g:3085:1: ( rule__GenDefaultRemediationRule__Group_3_0__1__Impl )
+            // InternalLibrettoProjectProfile.g:3086:2: rule__GenDefaultRemediationRule__Group_3_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__GenDefaultRemediationRule__Group_3_0__1__Impl();
@@ -9869,21 +9795,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenDefaultRemediationRule__Group_3_0__1__Impl"
-    // InternalLibrettoProjectProfile.g:3125:1: rule__GenDefaultRemediationRule__Group_3_0__1__Impl : ( ( rule__GenDefaultRemediationRule__CodesAssignment_3_0_1 ) ) ;
+    // InternalLibrettoProjectProfile.g:3092:1: rule__GenDefaultRemediationRule__Group_3_0__1__Impl : ( ( rule__GenDefaultRemediationRule__CodesAssignment_3_0_1 ) ) ;
     public final void rule__GenDefaultRemediationRule__Group_3_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3129:1: ( ( ( rule__GenDefaultRemediationRule__CodesAssignment_3_0_1 ) ) )
-            // InternalLibrettoProjectProfile.g:3130:1: ( ( rule__GenDefaultRemediationRule__CodesAssignment_3_0_1 ) )
+            // InternalLibrettoProjectProfile.g:3096:1: ( ( ( rule__GenDefaultRemediationRule__CodesAssignment_3_0_1 ) ) )
+            // InternalLibrettoProjectProfile.g:3097:1: ( ( rule__GenDefaultRemediationRule__CodesAssignment_3_0_1 ) )
             {
-            // InternalLibrettoProjectProfile.g:3130:1: ( ( rule__GenDefaultRemediationRule__CodesAssignment_3_0_1 ) )
-            // InternalLibrettoProjectProfile.g:3131:2: ( rule__GenDefaultRemediationRule__CodesAssignment_3_0_1 )
+            // InternalLibrettoProjectProfile.g:3097:1: ( ( rule__GenDefaultRemediationRule__CodesAssignment_3_0_1 ) )
+            // InternalLibrettoProjectProfile.g:3098:2: ( rule__GenDefaultRemediationRule__CodesAssignment_3_0_1 )
             {
              before(grammarAccess.getGenDefaultRemediationRuleAccess().getCodesAssignment_3_0_1()); 
-            // InternalLibrettoProjectProfile.g:3132:2: ( rule__GenDefaultRemediationRule__CodesAssignment_3_0_1 )
-            // InternalLibrettoProjectProfile.g:3132:3: rule__GenDefaultRemediationRule__CodesAssignment_3_0_1
+            // InternalLibrettoProjectProfile.g:3099:2: ( rule__GenDefaultRemediationRule__CodesAssignment_3_0_1 )
+            // InternalLibrettoProjectProfile.g:3099:3: rule__GenDefaultRemediationRule__CodesAssignment_3_0_1
             {
             pushFollow(FOLLOW_2);
             rule__GenDefaultRemediationRule__CodesAssignment_3_0_1();
@@ -9916,14 +9842,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenDefaultRemediationRule__Group_3_1__0"
-    // InternalLibrettoProjectProfile.g:3141:1: rule__GenDefaultRemediationRule__Group_3_1__0 : rule__GenDefaultRemediationRule__Group_3_1__0__Impl rule__GenDefaultRemediationRule__Group_3_1__1 ;
+    // InternalLibrettoProjectProfile.g:3108:1: rule__GenDefaultRemediationRule__Group_3_1__0 : rule__GenDefaultRemediationRule__Group_3_1__0__Impl rule__GenDefaultRemediationRule__Group_3_1__1 ;
     public final void rule__GenDefaultRemediationRule__Group_3_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3145:1: ( rule__GenDefaultRemediationRule__Group_3_1__0__Impl rule__GenDefaultRemediationRule__Group_3_1__1 )
-            // InternalLibrettoProjectProfile.g:3146:2: rule__GenDefaultRemediationRule__Group_3_1__0__Impl rule__GenDefaultRemediationRule__Group_3_1__1
+            // InternalLibrettoProjectProfile.g:3112:1: ( rule__GenDefaultRemediationRule__Group_3_1__0__Impl rule__GenDefaultRemediationRule__Group_3_1__1 )
+            // InternalLibrettoProjectProfile.g:3113:2: rule__GenDefaultRemediationRule__Group_3_1__0__Impl rule__GenDefaultRemediationRule__Group_3_1__1
             {
             pushFollow(FOLLOW_11);
             rule__GenDefaultRemediationRule__Group_3_1__0__Impl();
@@ -9954,17 +9880,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenDefaultRemediationRule__Group_3_1__0__Impl"
-    // InternalLibrettoProjectProfile.g:3153:1: rule__GenDefaultRemediationRule__Group_3_1__0__Impl : ( 'correction' ) ;
+    // InternalLibrettoProjectProfile.g:3120:1: rule__GenDefaultRemediationRule__Group_3_1__0__Impl : ( 'correction' ) ;
     public final void rule__GenDefaultRemediationRule__Group_3_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3157:1: ( ( 'correction' ) )
-            // InternalLibrettoProjectProfile.g:3158:1: ( 'correction' )
+            // InternalLibrettoProjectProfile.g:3124:1: ( ( 'correction' ) )
+            // InternalLibrettoProjectProfile.g:3125:1: ( 'correction' )
             {
-            // InternalLibrettoProjectProfile.g:3158:1: ( 'correction' )
-            // InternalLibrettoProjectProfile.g:3159:2: 'correction'
+            // InternalLibrettoProjectProfile.g:3125:1: ( 'correction' )
+            // InternalLibrettoProjectProfile.g:3126:2: 'correction'
             {
              before(grammarAccess.getGenDefaultRemediationRuleAccess().getCorrectionKeyword_3_1_0()); 
             match(input,49,FOLLOW_2); 
@@ -9991,14 +9917,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenDefaultRemediationRule__Group_3_1__1"
-    // InternalLibrettoProjectProfile.g:3168:1: rule__GenDefaultRemediationRule__Group_3_1__1 : rule__GenDefaultRemediationRule__Group_3_1__1__Impl ;
+    // InternalLibrettoProjectProfile.g:3135:1: rule__GenDefaultRemediationRule__Group_3_1__1 : rule__GenDefaultRemediationRule__Group_3_1__1__Impl ;
     public final void rule__GenDefaultRemediationRule__Group_3_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3172:1: ( rule__GenDefaultRemediationRule__Group_3_1__1__Impl )
-            // InternalLibrettoProjectProfile.g:3173:2: rule__GenDefaultRemediationRule__Group_3_1__1__Impl
+            // InternalLibrettoProjectProfile.g:3139:1: ( rule__GenDefaultRemediationRule__Group_3_1__1__Impl )
+            // InternalLibrettoProjectProfile.g:3140:2: rule__GenDefaultRemediationRule__Group_3_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__GenDefaultRemediationRule__Group_3_1__1__Impl();
@@ -10024,21 +9950,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenDefaultRemediationRule__Group_3_1__1__Impl"
-    // InternalLibrettoProjectProfile.g:3179:1: rule__GenDefaultRemediationRule__Group_3_1__1__Impl : ( ( rule__GenDefaultRemediationRule__CorrectionAssignment_3_1_1 ) ) ;
+    // InternalLibrettoProjectProfile.g:3146:1: rule__GenDefaultRemediationRule__Group_3_1__1__Impl : ( ( rule__GenDefaultRemediationRule__CorrectionAssignment_3_1_1 ) ) ;
     public final void rule__GenDefaultRemediationRule__Group_3_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3183:1: ( ( ( rule__GenDefaultRemediationRule__CorrectionAssignment_3_1_1 ) ) )
-            // InternalLibrettoProjectProfile.g:3184:1: ( ( rule__GenDefaultRemediationRule__CorrectionAssignment_3_1_1 ) )
+            // InternalLibrettoProjectProfile.g:3150:1: ( ( ( rule__GenDefaultRemediationRule__CorrectionAssignment_3_1_1 ) ) )
+            // InternalLibrettoProjectProfile.g:3151:1: ( ( rule__GenDefaultRemediationRule__CorrectionAssignment_3_1_1 ) )
             {
-            // InternalLibrettoProjectProfile.g:3184:1: ( ( rule__GenDefaultRemediationRule__CorrectionAssignment_3_1_1 ) )
-            // InternalLibrettoProjectProfile.g:3185:2: ( rule__GenDefaultRemediationRule__CorrectionAssignment_3_1_1 )
+            // InternalLibrettoProjectProfile.g:3151:1: ( ( rule__GenDefaultRemediationRule__CorrectionAssignment_3_1_1 ) )
+            // InternalLibrettoProjectProfile.g:3152:2: ( rule__GenDefaultRemediationRule__CorrectionAssignment_3_1_1 )
             {
              before(grammarAccess.getGenDefaultRemediationRuleAccess().getCorrectionAssignment_3_1_1()); 
-            // InternalLibrettoProjectProfile.g:3186:2: ( rule__GenDefaultRemediationRule__CorrectionAssignment_3_1_1 )
-            // InternalLibrettoProjectProfile.g:3186:3: rule__GenDefaultRemediationRule__CorrectionAssignment_3_1_1
+            // InternalLibrettoProjectProfile.g:3153:2: ( rule__GenDefaultRemediationRule__CorrectionAssignment_3_1_1 )
+            // InternalLibrettoProjectProfile.g:3153:3: rule__GenDefaultRemediationRule__CorrectionAssignment_3_1_1
             {
             pushFollow(FOLLOW_2);
             rule__GenDefaultRemediationRule__CorrectionAssignment_3_1_1();
@@ -10071,14 +9997,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__LlmProvidersBlock__Group__0"
-    // InternalLibrettoProjectProfile.g:3195:1: rule__LlmProvidersBlock__Group__0 : rule__LlmProvidersBlock__Group__0__Impl rule__LlmProvidersBlock__Group__1 ;
+    // InternalLibrettoProjectProfile.g:3162:1: rule__LlmProvidersBlock__Group__0 : rule__LlmProvidersBlock__Group__0__Impl rule__LlmProvidersBlock__Group__1 ;
     public final void rule__LlmProvidersBlock__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3199:1: ( rule__LlmProvidersBlock__Group__0__Impl rule__LlmProvidersBlock__Group__1 )
-            // InternalLibrettoProjectProfile.g:3200:2: rule__LlmProvidersBlock__Group__0__Impl rule__LlmProvidersBlock__Group__1
+            // InternalLibrettoProjectProfile.g:3166:1: ( rule__LlmProvidersBlock__Group__0__Impl rule__LlmProvidersBlock__Group__1 )
+            // InternalLibrettoProjectProfile.g:3167:2: rule__LlmProvidersBlock__Group__0__Impl rule__LlmProvidersBlock__Group__1
             {
             pushFollow(FOLLOW_31);
             rule__LlmProvidersBlock__Group__0__Impl();
@@ -10109,21 +10035,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__LlmProvidersBlock__Group__0__Impl"
-    // InternalLibrettoProjectProfile.g:3207:1: rule__LlmProvidersBlock__Group__0__Impl : ( () ) ;
+    // InternalLibrettoProjectProfile.g:3174:1: rule__LlmProvidersBlock__Group__0__Impl : ( () ) ;
     public final void rule__LlmProvidersBlock__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3211:1: ( ( () ) )
-            // InternalLibrettoProjectProfile.g:3212:1: ( () )
+            // InternalLibrettoProjectProfile.g:3178:1: ( ( () ) )
+            // InternalLibrettoProjectProfile.g:3179:1: ( () )
             {
-            // InternalLibrettoProjectProfile.g:3212:1: ( () )
-            // InternalLibrettoProjectProfile.g:3213:2: ()
+            // InternalLibrettoProjectProfile.g:3179:1: ( () )
+            // InternalLibrettoProjectProfile.g:3180:2: ()
             {
              before(grammarAccess.getLlmProvidersBlockAccess().getLlmProvidersBlockAction_0()); 
-            // InternalLibrettoProjectProfile.g:3214:2: ()
-            // InternalLibrettoProjectProfile.g:3214:3: 
+            // InternalLibrettoProjectProfile.g:3181:2: ()
+            // InternalLibrettoProjectProfile.g:3181:3: 
             {
             }
 
@@ -10146,14 +10072,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__LlmProvidersBlock__Group__1"
-    // InternalLibrettoProjectProfile.g:3222:1: rule__LlmProvidersBlock__Group__1 : rule__LlmProvidersBlock__Group__1__Impl rule__LlmProvidersBlock__Group__2 ;
+    // InternalLibrettoProjectProfile.g:3189:1: rule__LlmProvidersBlock__Group__1 : rule__LlmProvidersBlock__Group__1__Impl rule__LlmProvidersBlock__Group__2 ;
     public final void rule__LlmProvidersBlock__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3226:1: ( rule__LlmProvidersBlock__Group__1__Impl rule__LlmProvidersBlock__Group__2 )
-            // InternalLibrettoProjectProfile.g:3227:2: rule__LlmProvidersBlock__Group__1__Impl rule__LlmProvidersBlock__Group__2
+            // InternalLibrettoProjectProfile.g:3193:1: ( rule__LlmProvidersBlock__Group__1__Impl rule__LlmProvidersBlock__Group__2 )
+            // InternalLibrettoProjectProfile.g:3194:2: rule__LlmProvidersBlock__Group__1__Impl rule__LlmProvidersBlock__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__LlmProvidersBlock__Group__1__Impl();
@@ -10184,17 +10110,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__LlmProvidersBlock__Group__1__Impl"
-    // InternalLibrettoProjectProfile.g:3234:1: rule__LlmProvidersBlock__Group__1__Impl : ( 'llmProviders' ) ;
+    // InternalLibrettoProjectProfile.g:3201:1: rule__LlmProvidersBlock__Group__1__Impl : ( 'llmProviders' ) ;
     public final void rule__LlmProvidersBlock__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3238:1: ( ( 'llmProviders' ) )
-            // InternalLibrettoProjectProfile.g:3239:1: ( 'llmProviders' )
+            // InternalLibrettoProjectProfile.g:3205:1: ( ( 'llmProviders' ) )
+            // InternalLibrettoProjectProfile.g:3206:1: ( 'llmProviders' )
             {
-            // InternalLibrettoProjectProfile.g:3239:1: ( 'llmProviders' )
-            // InternalLibrettoProjectProfile.g:3240:2: 'llmProviders'
+            // InternalLibrettoProjectProfile.g:3206:1: ( 'llmProviders' )
+            // InternalLibrettoProjectProfile.g:3207:2: 'llmProviders'
             {
              before(grammarAccess.getLlmProvidersBlockAccess().getLlmProvidersKeyword_1()); 
             match(input,51,FOLLOW_2); 
@@ -10221,14 +10147,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__LlmProvidersBlock__Group__2"
-    // InternalLibrettoProjectProfile.g:3249:1: rule__LlmProvidersBlock__Group__2 : rule__LlmProvidersBlock__Group__2__Impl rule__LlmProvidersBlock__Group__3 ;
+    // InternalLibrettoProjectProfile.g:3216:1: rule__LlmProvidersBlock__Group__2 : rule__LlmProvidersBlock__Group__2__Impl rule__LlmProvidersBlock__Group__3 ;
     public final void rule__LlmProvidersBlock__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3253:1: ( rule__LlmProvidersBlock__Group__2__Impl rule__LlmProvidersBlock__Group__3 )
-            // InternalLibrettoProjectProfile.g:3254:2: rule__LlmProvidersBlock__Group__2__Impl rule__LlmProvidersBlock__Group__3
+            // InternalLibrettoProjectProfile.g:3220:1: ( rule__LlmProvidersBlock__Group__2__Impl rule__LlmProvidersBlock__Group__3 )
+            // InternalLibrettoProjectProfile.g:3221:2: rule__LlmProvidersBlock__Group__2__Impl rule__LlmProvidersBlock__Group__3
             {
             pushFollow(FOLLOW_32);
             rule__LlmProvidersBlock__Group__2__Impl();
@@ -10259,17 +10185,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__LlmProvidersBlock__Group__2__Impl"
-    // InternalLibrettoProjectProfile.g:3261:1: rule__LlmProvidersBlock__Group__2__Impl : ( '{' ) ;
+    // InternalLibrettoProjectProfile.g:3228:1: rule__LlmProvidersBlock__Group__2__Impl : ( '{' ) ;
     public final void rule__LlmProvidersBlock__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3265:1: ( ( '{' ) )
-            // InternalLibrettoProjectProfile.g:3266:1: ( '{' )
+            // InternalLibrettoProjectProfile.g:3232:1: ( ( '{' ) )
+            // InternalLibrettoProjectProfile.g:3233:1: ( '{' )
             {
-            // InternalLibrettoProjectProfile.g:3266:1: ( '{' )
-            // InternalLibrettoProjectProfile.g:3267:2: '{'
+            // InternalLibrettoProjectProfile.g:3233:1: ( '{' )
+            // InternalLibrettoProjectProfile.g:3234:2: '{'
             {
              before(grammarAccess.getLlmProvidersBlockAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,29,FOLLOW_2); 
@@ -10296,14 +10222,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__LlmProvidersBlock__Group__3"
-    // InternalLibrettoProjectProfile.g:3276:1: rule__LlmProvidersBlock__Group__3 : rule__LlmProvidersBlock__Group__3__Impl rule__LlmProvidersBlock__Group__4 ;
+    // InternalLibrettoProjectProfile.g:3243:1: rule__LlmProvidersBlock__Group__3 : rule__LlmProvidersBlock__Group__3__Impl rule__LlmProvidersBlock__Group__4 ;
     public final void rule__LlmProvidersBlock__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3280:1: ( rule__LlmProvidersBlock__Group__3__Impl rule__LlmProvidersBlock__Group__4 )
-            // InternalLibrettoProjectProfile.g:3281:2: rule__LlmProvidersBlock__Group__3__Impl rule__LlmProvidersBlock__Group__4
+            // InternalLibrettoProjectProfile.g:3247:1: ( rule__LlmProvidersBlock__Group__3__Impl rule__LlmProvidersBlock__Group__4 )
+            // InternalLibrettoProjectProfile.g:3248:2: rule__LlmProvidersBlock__Group__3__Impl rule__LlmProvidersBlock__Group__4
             {
             pushFollow(FOLLOW_32);
             rule__LlmProvidersBlock__Group__3__Impl();
@@ -10334,33 +10260,33 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__LlmProvidersBlock__Group__3__Impl"
-    // InternalLibrettoProjectProfile.g:3288:1: rule__LlmProvidersBlock__Group__3__Impl : ( ( rule__LlmProvidersBlock__ProvidersAssignment_3 )* ) ;
+    // InternalLibrettoProjectProfile.g:3255:1: rule__LlmProvidersBlock__Group__3__Impl : ( ( rule__LlmProvidersBlock__ProvidersAssignment_3 )* ) ;
     public final void rule__LlmProvidersBlock__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3292:1: ( ( ( rule__LlmProvidersBlock__ProvidersAssignment_3 )* ) )
-            // InternalLibrettoProjectProfile.g:3293:1: ( ( rule__LlmProvidersBlock__ProvidersAssignment_3 )* )
+            // InternalLibrettoProjectProfile.g:3259:1: ( ( ( rule__LlmProvidersBlock__ProvidersAssignment_3 )* ) )
+            // InternalLibrettoProjectProfile.g:3260:1: ( ( rule__LlmProvidersBlock__ProvidersAssignment_3 )* )
             {
-            // InternalLibrettoProjectProfile.g:3293:1: ( ( rule__LlmProvidersBlock__ProvidersAssignment_3 )* )
-            // InternalLibrettoProjectProfile.g:3294:2: ( rule__LlmProvidersBlock__ProvidersAssignment_3 )*
+            // InternalLibrettoProjectProfile.g:3260:1: ( ( rule__LlmProvidersBlock__ProvidersAssignment_3 )* )
+            // InternalLibrettoProjectProfile.g:3261:2: ( rule__LlmProvidersBlock__ProvidersAssignment_3 )*
             {
              before(grammarAccess.getLlmProvidersBlockAccess().getProvidersAssignment_3()); 
-            // InternalLibrettoProjectProfile.g:3295:2: ( rule__LlmProvidersBlock__ProvidersAssignment_3 )*
-            loop27:
+            // InternalLibrettoProjectProfile.g:3262:2: ( rule__LlmProvidersBlock__ProvidersAssignment_3 )*
+            loop28:
             do {
-                int alt27=2;
-                int LA27_0 = input.LA(1);
+                int alt28=2;
+                int LA28_0 = input.LA(1);
 
-                if ( (LA27_0==52) ) {
-                    alt27=1;
+                if ( (LA28_0==52) ) {
+                    alt28=1;
                 }
 
 
-                switch (alt27) {
+                switch (alt28) {
             	case 1 :
-            	    // InternalLibrettoProjectProfile.g:3295:3: rule__LlmProvidersBlock__ProvidersAssignment_3
+            	    // InternalLibrettoProjectProfile.g:3262:3: rule__LlmProvidersBlock__ProvidersAssignment_3
             	    {
             	    pushFollow(FOLLOW_33);
             	    rule__LlmProvidersBlock__ProvidersAssignment_3();
@@ -10372,7 +10298,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
             	    break;
 
             	default :
-            	    break loop27;
+            	    break loop28;
                 }
             } while (true);
 
@@ -10399,14 +10325,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__LlmProvidersBlock__Group__4"
-    // InternalLibrettoProjectProfile.g:3303:1: rule__LlmProvidersBlock__Group__4 : rule__LlmProvidersBlock__Group__4__Impl ;
+    // InternalLibrettoProjectProfile.g:3270:1: rule__LlmProvidersBlock__Group__4 : rule__LlmProvidersBlock__Group__4__Impl ;
     public final void rule__LlmProvidersBlock__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3307:1: ( rule__LlmProvidersBlock__Group__4__Impl )
-            // InternalLibrettoProjectProfile.g:3308:2: rule__LlmProvidersBlock__Group__4__Impl
+            // InternalLibrettoProjectProfile.g:3274:1: ( rule__LlmProvidersBlock__Group__4__Impl )
+            // InternalLibrettoProjectProfile.g:3275:2: rule__LlmProvidersBlock__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__LlmProvidersBlock__Group__4__Impl();
@@ -10432,17 +10358,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__LlmProvidersBlock__Group__4__Impl"
-    // InternalLibrettoProjectProfile.g:3314:1: rule__LlmProvidersBlock__Group__4__Impl : ( '}' ) ;
+    // InternalLibrettoProjectProfile.g:3281:1: rule__LlmProvidersBlock__Group__4__Impl : ( '}' ) ;
     public final void rule__LlmProvidersBlock__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3318:1: ( ( '}' ) )
-            // InternalLibrettoProjectProfile.g:3319:1: ( '}' )
+            // InternalLibrettoProjectProfile.g:3285:1: ( ( '}' ) )
+            // InternalLibrettoProjectProfile.g:3286:1: ( '}' )
             {
-            // InternalLibrettoProjectProfile.g:3319:1: ( '}' )
-            // InternalLibrettoProjectProfile.g:3320:2: '}'
+            // InternalLibrettoProjectProfile.g:3286:1: ( '}' )
+            // InternalLibrettoProjectProfile.g:3287:2: '}'
             {
              before(grammarAccess.getLlmProvidersBlockAccess().getRightCurlyBracketKeyword_4()); 
             match(input,30,FOLLOW_2); 
@@ -10469,14 +10395,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__NamedLlmProvider__Group__0"
-    // InternalLibrettoProjectProfile.g:3330:1: rule__NamedLlmProvider__Group__0 : rule__NamedLlmProvider__Group__0__Impl rule__NamedLlmProvider__Group__1 ;
+    // InternalLibrettoProjectProfile.g:3297:1: rule__NamedLlmProvider__Group__0 : rule__NamedLlmProvider__Group__0__Impl rule__NamedLlmProvider__Group__1 ;
     public final void rule__NamedLlmProvider__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3334:1: ( rule__NamedLlmProvider__Group__0__Impl rule__NamedLlmProvider__Group__1 )
-            // InternalLibrettoProjectProfile.g:3335:2: rule__NamedLlmProvider__Group__0__Impl rule__NamedLlmProvider__Group__1
+            // InternalLibrettoProjectProfile.g:3301:1: ( rule__NamedLlmProvider__Group__0__Impl rule__NamedLlmProvider__Group__1 )
+            // InternalLibrettoProjectProfile.g:3302:2: rule__NamedLlmProvider__Group__0__Impl rule__NamedLlmProvider__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__NamedLlmProvider__Group__0__Impl();
@@ -10507,17 +10433,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__NamedLlmProvider__Group__0__Impl"
-    // InternalLibrettoProjectProfile.g:3342:1: rule__NamedLlmProvider__Group__0__Impl : ( 'provider' ) ;
+    // InternalLibrettoProjectProfile.g:3309:1: rule__NamedLlmProvider__Group__0__Impl : ( 'provider' ) ;
     public final void rule__NamedLlmProvider__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3346:1: ( ( 'provider' ) )
-            // InternalLibrettoProjectProfile.g:3347:1: ( 'provider' )
+            // InternalLibrettoProjectProfile.g:3313:1: ( ( 'provider' ) )
+            // InternalLibrettoProjectProfile.g:3314:1: ( 'provider' )
             {
-            // InternalLibrettoProjectProfile.g:3347:1: ( 'provider' )
-            // InternalLibrettoProjectProfile.g:3348:2: 'provider'
+            // InternalLibrettoProjectProfile.g:3314:1: ( 'provider' )
+            // InternalLibrettoProjectProfile.g:3315:2: 'provider'
             {
              before(grammarAccess.getNamedLlmProviderAccess().getProviderKeyword_0()); 
             match(input,52,FOLLOW_2); 
@@ -10544,14 +10470,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__NamedLlmProvider__Group__1"
-    // InternalLibrettoProjectProfile.g:3357:1: rule__NamedLlmProvider__Group__1 : rule__NamedLlmProvider__Group__1__Impl rule__NamedLlmProvider__Group__2 ;
+    // InternalLibrettoProjectProfile.g:3324:1: rule__NamedLlmProvider__Group__1 : rule__NamedLlmProvider__Group__1__Impl rule__NamedLlmProvider__Group__2 ;
     public final void rule__NamedLlmProvider__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3361:1: ( rule__NamedLlmProvider__Group__1__Impl rule__NamedLlmProvider__Group__2 )
-            // InternalLibrettoProjectProfile.g:3362:2: rule__NamedLlmProvider__Group__1__Impl rule__NamedLlmProvider__Group__2
+            // InternalLibrettoProjectProfile.g:3328:1: ( rule__NamedLlmProvider__Group__1__Impl rule__NamedLlmProvider__Group__2 )
+            // InternalLibrettoProjectProfile.g:3329:2: rule__NamedLlmProvider__Group__1__Impl rule__NamedLlmProvider__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__NamedLlmProvider__Group__1__Impl();
@@ -10582,21 +10508,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__NamedLlmProvider__Group__1__Impl"
-    // InternalLibrettoProjectProfile.g:3369:1: rule__NamedLlmProvider__Group__1__Impl : ( ( rule__NamedLlmProvider__NameAssignment_1 ) ) ;
+    // InternalLibrettoProjectProfile.g:3336:1: rule__NamedLlmProvider__Group__1__Impl : ( ( rule__NamedLlmProvider__NameAssignment_1 ) ) ;
     public final void rule__NamedLlmProvider__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3373:1: ( ( ( rule__NamedLlmProvider__NameAssignment_1 ) ) )
-            // InternalLibrettoProjectProfile.g:3374:1: ( ( rule__NamedLlmProvider__NameAssignment_1 ) )
+            // InternalLibrettoProjectProfile.g:3340:1: ( ( ( rule__NamedLlmProvider__NameAssignment_1 ) ) )
+            // InternalLibrettoProjectProfile.g:3341:1: ( ( rule__NamedLlmProvider__NameAssignment_1 ) )
             {
-            // InternalLibrettoProjectProfile.g:3374:1: ( ( rule__NamedLlmProvider__NameAssignment_1 ) )
-            // InternalLibrettoProjectProfile.g:3375:2: ( rule__NamedLlmProvider__NameAssignment_1 )
+            // InternalLibrettoProjectProfile.g:3341:1: ( ( rule__NamedLlmProvider__NameAssignment_1 ) )
+            // InternalLibrettoProjectProfile.g:3342:2: ( rule__NamedLlmProvider__NameAssignment_1 )
             {
              before(grammarAccess.getNamedLlmProviderAccess().getNameAssignment_1()); 
-            // InternalLibrettoProjectProfile.g:3376:2: ( rule__NamedLlmProvider__NameAssignment_1 )
-            // InternalLibrettoProjectProfile.g:3376:3: rule__NamedLlmProvider__NameAssignment_1
+            // InternalLibrettoProjectProfile.g:3343:2: ( rule__NamedLlmProvider__NameAssignment_1 )
+            // InternalLibrettoProjectProfile.g:3343:3: rule__NamedLlmProvider__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__NamedLlmProvider__NameAssignment_1();
@@ -10629,14 +10555,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__NamedLlmProvider__Group__2"
-    // InternalLibrettoProjectProfile.g:3384:1: rule__NamedLlmProvider__Group__2 : rule__NamedLlmProvider__Group__2__Impl rule__NamedLlmProvider__Group__3 ;
+    // InternalLibrettoProjectProfile.g:3351:1: rule__NamedLlmProvider__Group__2 : rule__NamedLlmProvider__Group__2__Impl rule__NamedLlmProvider__Group__3 ;
     public final void rule__NamedLlmProvider__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3388:1: ( rule__NamedLlmProvider__Group__2__Impl rule__NamedLlmProvider__Group__3 )
-            // InternalLibrettoProjectProfile.g:3389:2: rule__NamedLlmProvider__Group__2__Impl rule__NamedLlmProvider__Group__3
+            // InternalLibrettoProjectProfile.g:3355:1: ( rule__NamedLlmProvider__Group__2__Impl rule__NamedLlmProvider__Group__3 )
+            // InternalLibrettoProjectProfile.g:3356:2: rule__NamedLlmProvider__Group__2__Impl rule__NamedLlmProvider__Group__3
             {
             pushFollow(FOLLOW_34);
             rule__NamedLlmProvider__Group__2__Impl();
@@ -10667,17 +10593,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__NamedLlmProvider__Group__2__Impl"
-    // InternalLibrettoProjectProfile.g:3396:1: rule__NamedLlmProvider__Group__2__Impl : ( '{' ) ;
+    // InternalLibrettoProjectProfile.g:3363:1: rule__NamedLlmProvider__Group__2__Impl : ( '{' ) ;
     public final void rule__NamedLlmProvider__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3400:1: ( ( '{' ) )
-            // InternalLibrettoProjectProfile.g:3401:1: ( '{' )
+            // InternalLibrettoProjectProfile.g:3367:1: ( ( '{' ) )
+            // InternalLibrettoProjectProfile.g:3368:1: ( '{' )
             {
-            // InternalLibrettoProjectProfile.g:3401:1: ( '{' )
-            // InternalLibrettoProjectProfile.g:3402:2: '{'
+            // InternalLibrettoProjectProfile.g:3368:1: ( '{' )
+            // InternalLibrettoProjectProfile.g:3369:2: '{'
             {
              before(grammarAccess.getNamedLlmProviderAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,29,FOLLOW_2); 
@@ -10704,14 +10630,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__NamedLlmProvider__Group__3"
-    // InternalLibrettoProjectProfile.g:3411:1: rule__NamedLlmProvider__Group__3 : rule__NamedLlmProvider__Group__3__Impl rule__NamedLlmProvider__Group__4 ;
+    // InternalLibrettoProjectProfile.g:3378:1: rule__NamedLlmProvider__Group__3 : rule__NamedLlmProvider__Group__3__Impl rule__NamedLlmProvider__Group__4 ;
     public final void rule__NamedLlmProvider__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3415:1: ( rule__NamedLlmProvider__Group__3__Impl rule__NamedLlmProvider__Group__4 )
-            // InternalLibrettoProjectProfile.g:3416:2: rule__NamedLlmProvider__Group__3__Impl rule__NamedLlmProvider__Group__4
+            // InternalLibrettoProjectProfile.g:3382:1: ( rule__NamedLlmProvider__Group__3__Impl rule__NamedLlmProvider__Group__4 )
+            // InternalLibrettoProjectProfile.g:3383:2: rule__NamedLlmProvider__Group__3__Impl rule__NamedLlmProvider__Group__4
             {
             pushFollow(FOLLOW_34);
             rule__NamedLlmProvider__Group__3__Impl();
@@ -10742,33 +10668,33 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__NamedLlmProvider__Group__3__Impl"
-    // InternalLibrettoProjectProfile.g:3423:1: rule__NamedLlmProvider__Group__3__Impl : ( ( rule__NamedLlmProvider__Alternatives_3 )* ) ;
+    // InternalLibrettoProjectProfile.g:3390:1: rule__NamedLlmProvider__Group__3__Impl : ( ( rule__NamedLlmProvider__Alternatives_3 )* ) ;
     public final void rule__NamedLlmProvider__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3427:1: ( ( ( rule__NamedLlmProvider__Alternatives_3 )* ) )
-            // InternalLibrettoProjectProfile.g:3428:1: ( ( rule__NamedLlmProvider__Alternatives_3 )* )
+            // InternalLibrettoProjectProfile.g:3394:1: ( ( ( rule__NamedLlmProvider__Alternatives_3 )* ) )
+            // InternalLibrettoProjectProfile.g:3395:1: ( ( rule__NamedLlmProvider__Alternatives_3 )* )
             {
-            // InternalLibrettoProjectProfile.g:3428:1: ( ( rule__NamedLlmProvider__Alternatives_3 )* )
-            // InternalLibrettoProjectProfile.g:3429:2: ( rule__NamedLlmProvider__Alternatives_3 )*
+            // InternalLibrettoProjectProfile.g:3395:1: ( ( rule__NamedLlmProvider__Alternatives_3 )* )
+            // InternalLibrettoProjectProfile.g:3396:2: ( rule__NamedLlmProvider__Alternatives_3 )*
             {
              before(grammarAccess.getNamedLlmProviderAccess().getAlternatives_3()); 
-            // InternalLibrettoProjectProfile.g:3430:2: ( rule__NamedLlmProvider__Alternatives_3 )*
-            loop28:
+            // InternalLibrettoProjectProfile.g:3397:2: ( rule__NamedLlmProvider__Alternatives_3 )*
+            loop29:
             do {
-                int alt28=2;
-                int LA28_0 = input.LA(1);
+                int alt29=2;
+                int LA29_0 = input.LA(1);
 
-                if ( ((LA28_0>=53 && LA28_0<=56)) ) {
-                    alt28=1;
+                if ( ((LA29_0>=53 && LA29_0<=56)) ) {
+                    alt29=1;
                 }
 
 
-                switch (alt28) {
+                switch (alt29) {
             	case 1 :
-            	    // InternalLibrettoProjectProfile.g:3430:3: rule__NamedLlmProvider__Alternatives_3
+            	    // InternalLibrettoProjectProfile.g:3397:3: rule__NamedLlmProvider__Alternatives_3
             	    {
             	    pushFollow(FOLLOW_35);
             	    rule__NamedLlmProvider__Alternatives_3();
@@ -10780,7 +10706,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
             	    break;
 
             	default :
-            	    break loop28;
+            	    break loop29;
                 }
             } while (true);
 
@@ -10807,14 +10733,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__NamedLlmProvider__Group__4"
-    // InternalLibrettoProjectProfile.g:3438:1: rule__NamedLlmProvider__Group__4 : rule__NamedLlmProvider__Group__4__Impl ;
+    // InternalLibrettoProjectProfile.g:3405:1: rule__NamedLlmProvider__Group__4 : rule__NamedLlmProvider__Group__4__Impl ;
     public final void rule__NamedLlmProvider__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3442:1: ( rule__NamedLlmProvider__Group__4__Impl )
-            // InternalLibrettoProjectProfile.g:3443:2: rule__NamedLlmProvider__Group__4__Impl
+            // InternalLibrettoProjectProfile.g:3409:1: ( rule__NamedLlmProvider__Group__4__Impl )
+            // InternalLibrettoProjectProfile.g:3410:2: rule__NamedLlmProvider__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__NamedLlmProvider__Group__4__Impl();
@@ -10840,17 +10766,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__NamedLlmProvider__Group__4__Impl"
-    // InternalLibrettoProjectProfile.g:3449:1: rule__NamedLlmProvider__Group__4__Impl : ( '}' ) ;
+    // InternalLibrettoProjectProfile.g:3416:1: rule__NamedLlmProvider__Group__4__Impl : ( '}' ) ;
     public final void rule__NamedLlmProvider__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3453:1: ( ( '}' ) )
-            // InternalLibrettoProjectProfile.g:3454:1: ( '}' )
+            // InternalLibrettoProjectProfile.g:3420:1: ( ( '}' ) )
+            // InternalLibrettoProjectProfile.g:3421:1: ( '}' )
             {
-            // InternalLibrettoProjectProfile.g:3454:1: ( '}' )
-            // InternalLibrettoProjectProfile.g:3455:2: '}'
+            // InternalLibrettoProjectProfile.g:3421:1: ( '}' )
+            // InternalLibrettoProjectProfile.g:3422:2: '}'
             {
              before(grammarAccess.getNamedLlmProviderAccess().getRightCurlyBracketKeyword_4()); 
             match(input,30,FOLLOW_2); 
@@ -10877,14 +10803,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__NamedLlmProvider__Group_3_0__0"
-    // InternalLibrettoProjectProfile.g:3465:1: rule__NamedLlmProvider__Group_3_0__0 : rule__NamedLlmProvider__Group_3_0__0__Impl rule__NamedLlmProvider__Group_3_0__1 ;
+    // InternalLibrettoProjectProfile.g:3432:1: rule__NamedLlmProvider__Group_3_0__0 : rule__NamedLlmProvider__Group_3_0__0__Impl rule__NamedLlmProvider__Group_3_0__1 ;
     public final void rule__NamedLlmProvider__Group_3_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3469:1: ( rule__NamedLlmProvider__Group_3_0__0__Impl rule__NamedLlmProvider__Group_3_0__1 )
-            // InternalLibrettoProjectProfile.g:3470:2: rule__NamedLlmProvider__Group_3_0__0__Impl rule__NamedLlmProvider__Group_3_0__1
+            // InternalLibrettoProjectProfile.g:3436:1: ( rule__NamedLlmProvider__Group_3_0__0__Impl rule__NamedLlmProvider__Group_3_0__1 )
+            // InternalLibrettoProjectProfile.g:3437:2: rule__NamedLlmProvider__Group_3_0__0__Impl rule__NamedLlmProvider__Group_3_0__1
             {
             pushFollow(FOLLOW_36);
             rule__NamedLlmProvider__Group_3_0__0__Impl();
@@ -10915,17 +10841,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__NamedLlmProvider__Group_3_0__0__Impl"
-    // InternalLibrettoProjectProfile.g:3477:1: rule__NamedLlmProvider__Group_3_0__0__Impl : ( 'kind' ) ;
+    // InternalLibrettoProjectProfile.g:3444:1: rule__NamedLlmProvider__Group_3_0__0__Impl : ( 'kind' ) ;
     public final void rule__NamedLlmProvider__Group_3_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3481:1: ( ( 'kind' ) )
-            // InternalLibrettoProjectProfile.g:3482:1: ( 'kind' )
+            // InternalLibrettoProjectProfile.g:3448:1: ( ( 'kind' ) )
+            // InternalLibrettoProjectProfile.g:3449:1: ( 'kind' )
             {
-            // InternalLibrettoProjectProfile.g:3482:1: ( 'kind' )
-            // InternalLibrettoProjectProfile.g:3483:2: 'kind'
+            // InternalLibrettoProjectProfile.g:3449:1: ( 'kind' )
+            // InternalLibrettoProjectProfile.g:3450:2: 'kind'
             {
              before(grammarAccess.getNamedLlmProviderAccess().getKindKeyword_3_0_0()); 
             match(input,53,FOLLOW_2); 
@@ -10952,14 +10878,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__NamedLlmProvider__Group_3_0__1"
-    // InternalLibrettoProjectProfile.g:3492:1: rule__NamedLlmProvider__Group_3_0__1 : rule__NamedLlmProvider__Group_3_0__1__Impl ;
+    // InternalLibrettoProjectProfile.g:3459:1: rule__NamedLlmProvider__Group_3_0__1 : rule__NamedLlmProvider__Group_3_0__1__Impl ;
     public final void rule__NamedLlmProvider__Group_3_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3496:1: ( rule__NamedLlmProvider__Group_3_0__1__Impl )
-            // InternalLibrettoProjectProfile.g:3497:2: rule__NamedLlmProvider__Group_3_0__1__Impl
+            // InternalLibrettoProjectProfile.g:3463:1: ( rule__NamedLlmProvider__Group_3_0__1__Impl )
+            // InternalLibrettoProjectProfile.g:3464:2: rule__NamedLlmProvider__Group_3_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__NamedLlmProvider__Group_3_0__1__Impl();
@@ -10985,21 +10911,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__NamedLlmProvider__Group_3_0__1__Impl"
-    // InternalLibrettoProjectProfile.g:3503:1: rule__NamedLlmProvider__Group_3_0__1__Impl : ( ( rule__NamedLlmProvider__KindsAssignment_3_0_1 ) ) ;
+    // InternalLibrettoProjectProfile.g:3470:1: rule__NamedLlmProvider__Group_3_0__1__Impl : ( ( rule__NamedLlmProvider__KindsAssignment_3_0_1 ) ) ;
     public final void rule__NamedLlmProvider__Group_3_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3507:1: ( ( ( rule__NamedLlmProvider__KindsAssignment_3_0_1 ) ) )
-            // InternalLibrettoProjectProfile.g:3508:1: ( ( rule__NamedLlmProvider__KindsAssignment_3_0_1 ) )
+            // InternalLibrettoProjectProfile.g:3474:1: ( ( ( rule__NamedLlmProvider__KindsAssignment_3_0_1 ) ) )
+            // InternalLibrettoProjectProfile.g:3475:1: ( ( rule__NamedLlmProvider__KindsAssignment_3_0_1 ) )
             {
-            // InternalLibrettoProjectProfile.g:3508:1: ( ( rule__NamedLlmProvider__KindsAssignment_3_0_1 ) )
-            // InternalLibrettoProjectProfile.g:3509:2: ( rule__NamedLlmProvider__KindsAssignment_3_0_1 )
+            // InternalLibrettoProjectProfile.g:3475:1: ( ( rule__NamedLlmProvider__KindsAssignment_3_0_1 ) )
+            // InternalLibrettoProjectProfile.g:3476:2: ( rule__NamedLlmProvider__KindsAssignment_3_0_1 )
             {
              before(grammarAccess.getNamedLlmProviderAccess().getKindsAssignment_3_0_1()); 
-            // InternalLibrettoProjectProfile.g:3510:2: ( rule__NamedLlmProvider__KindsAssignment_3_0_1 )
-            // InternalLibrettoProjectProfile.g:3510:3: rule__NamedLlmProvider__KindsAssignment_3_0_1
+            // InternalLibrettoProjectProfile.g:3477:2: ( rule__NamedLlmProvider__KindsAssignment_3_0_1 )
+            // InternalLibrettoProjectProfile.g:3477:3: rule__NamedLlmProvider__KindsAssignment_3_0_1
             {
             pushFollow(FOLLOW_2);
             rule__NamedLlmProvider__KindsAssignment_3_0_1();
@@ -11032,14 +10958,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__NamedLlmProvider__Group_3_1__0"
-    // InternalLibrettoProjectProfile.g:3519:1: rule__NamedLlmProvider__Group_3_1__0 : rule__NamedLlmProvider__Group_3_1__0__Impl rule__NamedLlmProvider__Group_3_1__1 ;
+    // InternalLibrettoProjectProfile.g:3486:1: rule__NamedLlmProvider__Group_3_1__0 : rule__NamedLlmProvider__Group_3_1__0__Impl rule__NamedLlmProvider__Group_3_1__1 ;
     public final void rule__NamedLlmProvider__Group_3_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3523:1: ( rule__NamedLlmProvider__Group_3_1__0__Impl rule__NamedLlmProvider__Group_3_1__1 )
-            // InternalLibrettoProjectProfile.g:3524:2: rule__NamedLlmProvider__Group_3_1__0__Impl rule__NamedLlmProvider__Group_3_1__1
+            // InternalLibrettoProjectProfile.g:3490:1: ( rule__NamedLlmProvider__Group_3_1__0__Impl rule__NamedLlmProvider__Group_3_1__1 )
+            // InternalLibrettoProjectProfile.g:3491:2: rule__NamedLlmProvider__Group_3_1__0__Impl rule__NamedLlmProvider__Group_3_1__1
             {
             pushFollow(FOLLOW_11);
             rule__NamedLlmProvider__Group_3_1__0__Impl();
@@ -11070,17 +10996,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__NamedLlmProvider__Group_3_1__0__Impl"
-    // InternalLibrettoProjectProfile.g:3531:1: rule__NamedLlmProvider__Group_3_1__0__Impl : ( 'localModelPath' ) ;
+    // InternalLibrettoProjectProfile.g:3498:1: rule__NamedLlmProvider__Group_3_1__0__Impl : ( 'localModelPath' ) ;
     public final void rule__NamedLlmProvider__Group_3_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3535:1: ( ( 'localModelPath' ) )
-            // InternalLibrettoProjectProfile.g:3536:1: ( 'localModelPath' )
+            // InternalLibrettoProjectProfile.g:3502:1: ( ( 'localModelPath' ) )
+            // InternalLibrettoProjectProfile.g:3503:1: ( 'localModelPath' )
             {
-            // InternalLibrettoProjectProfile.g:3536:1: ( 'localModelPath' )
-            // InternalLibrettoProjectProfile.g:3537:2: 'localModelPath'
+            // InternalLibrettoProjectProfile.g:3503:1: ( 'localModelPath' )
+            // InternalLibrettoProjectProfile.g:3504:2: 'localModelPath'
             {
              before(grammarAccess.getNamedLlmProviderAccess().getLocalModelPathKeyword_3_1_0()); 
             match(input,54,FOLLOW_2); 
@@ -11107,14 +11033,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__NamedLlmProvider__Group_3_1__1"
-    // InternalLibrettoProjectProfile.g:3546:1: rule__NamedLlmProvider__Group_3_1__1 : rule__NamedLlmProvider__Group_3_1__1__Impl ;
+    // InternalLibrettoProjectProfile.g:3513:1: rule__NamedLlmProvider__Group_3_1__1 : rule__NamedLlmProvider__Group_3_1__1__Impl ;
     public final void rule__NamedLlmProvider__Group_3_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3550:1: ( rule__NamedLlmProvider__Group_3_1__1__Impl )
-            // InternalLibrettoProjectProfile.g:3551:2: rule__NamedLlmProvider__Group_3_1__1__Impl
+            // InternalLibrettoProjectProfile.g:3517:1: ( rule__NamedLlmProvider__Group_3_1__1__Impl )
+            // InternalLibrettoProjectProfile.g:3518:2: rule__NamedLlmProvider__Group_3_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__NamedLlmProvider__Group_3_1__1__Impl();
@@ -11140,21 +11066,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__NamedLlmProvider__Group_3_1__1__Impl"
-    // InternalLibrettoProjectProfile.g:3557:1: rule__NamedLlmProvider__Group_3_1__1__Impl : ( ( rule__NamedLlmProvider__LocalModelPathsAssignment_3_1_1 ) ) ;
+    // InternalLibrettoProjectProfile.g:3524:1: rule__NamedLlmProvider__Group_3_1__1__Impl : ( ( rule__NamedLlmProvider__LocalModelPathsAssignment_3_1_1 ) ) ;
     public final void rule__NamedLlmProvider__Group_3_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3561:1: ( ( ( rule__NamedLlmProvider__LocalModelPathsAssignment_3_1_1 ) ) )
-            // InternalLibrettoProjectProfile.g:3562:1: ( ( rule__NamedLlmProvider__LocalModelPathsAssignment_3_1_1 ) )
+            // InternalLibrettoProjectProfile.g:3528:1: ( ( ( rule__NamedLlmProvider__LocalModelPathsAssignment_3_1_1 ) ) )
+            // InternalLibrettoProjectProfile.g:3529:1: ( ( rule__NamedLlmProvider__LocalModelPathsAssignment_3_1_1 ) )
             {
-            // InternalLibrettoProjectProfile.g:3562:1: ( ( rule__NamedLlmProvider__LocalModelPathsAssignment_3_1_1 ) )
-            // InternalLibrettoProjectProfile.g:3563:2: ( rule__NamedLlmProvider__LocalModelPathsAssignment_3_1_1 )
+            // InternalLibrettoProjectProfile.g:3529:1: ( ( rule__NamedLlmProvider__LocalModelPathsAssignment_3_1_1 ) )
+            // InternalLibrettoProjectProfile.g:3530:2: ( rule__NamedLlmProvider__LocalModelPathsAssignment_3_1_1 )
             {
              before(grammarAccess.getNamedLlmProviderAccess().getLocalModelPathsAssignment_3_1_1()); 
-            // InternalLibrettoProjectProfile.g:3564:2: ( rule__NamedLlmProvider__LocalModelPathsAssignment_3_1_1 )
-            // InternalLibrettoProjectProfile.g:3564:3: rule__NamedLlmProvider__LocalModelPathsAssignment_3_1_1
+            // InternalLibrettoProjectProfile.g:3531:2: ( rule__NamedLlmProvider__LocalModelPathsAssignment_3_1_1 )
+            // InternalLibrettoProjectProfile.g:3531:3: rule__NamedLlmProvider__LocalModelPathsAssignment_3_1_1
             {
             pushFollow(FOLLOW_2);
             rule__NamedLlmProvider__LocalModelPathsAssignment_3_1_1();
@@ -11187,14 +11113,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__NamedLlmProvider__Group_3_2__0"
-    // InternalLibrettoProjectProfile.g:3573:1: rule__NamedLlmProvider__Group_3_2__0 : rule__NamedLlmProvider__Group_3_2__0__Impl rule__NamedLlmProvider__Group_3_2__1 ;
+    // InternalLibrettoProjectProfile.g:3540:1: rule__NamedLlmProvider__Group_3_2__0 : rule__NamedLlmProvider__Group_3_2__0__Impl rule__NamedLlmProvider__Group_3_2__1 ;
     public final void rule__NamedLlmProvider__Group_3_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3577:1: ( rule__NamedLlmProvider__Group_3_2__0__Impl rule__NamedLlmProvider__Group_3_2__1 )
-            // InternalLibrettoProjectProfile.g:3578:2: rule__NamedLlmProvider__Group_3_2__0__Impl rule__NamedLlmProvider__Group_3_2__1
+            // InternalLibrettoProjectProfile.g:3544:1: ( rule__NamedLlmProvider__Group_3_2__0__Impl rule__NamedLlmProvider__Group_3_2__1 )
+            // InternalLibrettoProjectProfile.g:3545:2: rule__NamedLlmProvider__Group_3_2__0__Impl rule__NamedLlmProvider__Group_3_2__1
             {
             pushFollow(FOLLOW_11);
             rule__NamedLlmProvider__Group_3_2__0__Impl();
@@ -11225,17 +11151,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__NamedLlmProvider__Group_3_2__0__Impl"
-    // InternalLibrettoProjectProfile.g:3585:1: rule__NamedLlmProvider__Group_3_2__0__Impl : ( 'model' ) ;
+    // InternalLibrettoProjectProfile.g:3552:1: rule__NamedLlmProvider__Group_3_2__0__Impl : ( 'model' ) ;
     public final void rule__NamedLlmProvider__Group_3_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3589:1: ( ( 'model' ) )
-            // InternalLibrettoProjectProfile.g:3590:1: ( 'model' )
+            // InternalLibrettoProjectProfile.g:3556:1: ( ( 'model' ) )
+            // InternalLibrettoProjectProfile.g:3557:1: ( 'model' )
             {
-            // InternalLibrettoProjectProfile.g:3590:1: ( 'model' )
-            // InternalLibrettoProjectProfile.g:3591:2: 'model'
+            // InternalLibrettoProjectProfile.g:3557:1: ( 'model' )
+            // InternalLibrettoProjectProfile.g:3558:2: 'model'
             {
              before(grammarAccess.getNamedLlmProviderAccess().getModelKeyword_3_2_0()); 
             match(input,55,FOLLOW_2); 
@@ -11262,14 +11188,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__NamedLlmProvider__Group_3_2__1"
-    // InternalLibrettoProjectProfile.g:3600:1: rule__NamedLlmProvider__Group_3_2__1 : rule__NamedLlmProvider__Group_3_2__1__Impl ;
+    // InternalLibrettoProjectProfile.g:3567:1: rule__NamedLlmProvider__Group_3_2__1 : rule__NamedLlmProvider__Group_3_2__1__Impl ;
     public final void rule__NamedLlmProvider__Group_3_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3604:1: ( rule__NamedLlmProvider__Group_3_2__1__Impl )
-            // InternalLibrettoProjectProfile.g:3605:2: rule__NamedLlmProvider__Group_3_2__1__Impl
+            // InternalLibrettoProjectProfile.g:3571:1: ( rule__NamedLlmProvider__Group_3_2__1__Impl )
+            // InternalLibrettoProjectProfile.g:3572:2: rule__NamedLlmProvider__Group_3_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__NamedLlmProvider__Group_3_2__1__Impl();
@@ -11295,21 +11221,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__NamedLlmProvider__Group_3_2__1__Impl"
-    // InternalLibrettoProjectProfile.g:3611:1: rule__NamedLlmProvider__Group_3_2__1__Impl : ( ( rule__NamedLlmProvider__ModelsAssignment_3_2_1 ) ) ;
+    // InternalLibrettoProjectProfile.g:3578:1: rule__NamedLlmProvider__Group_3_2__1__Impl : ( ( rule__NamedLlmProvider__ModelsAssignment_3_2_1 ) ) ;
     public final void rule__NamedLlmProvider__Group_3_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3615:1: ( ( ( rule__NamedLlmProvider__ModelsAssignment_3_2_1 ) ) )
-            // InternalLibrettoProjectProfile.g:3616:1: ( ( rule__NamedLlmProvider__ModelsAssignment_3_2_1 ) )
+            // InternalLibrettoProjectProfile.g:3582:1: ( ( ( rule__NamedLlmProvider__ModelsAssignment_3_2_1 ) ) )
+            // InternalLibrettoProjectProfile.g:3583:1: ( ( rule__NamedLlmProvider__ModelsAssignment_3_2_1 ) )
             {
-            // InternalLibrettoProjectProfile.g:3616:1: ( ( rule__NamedLlmProvider__ModelsAssignment_3_2_1 ) )
-            // InternalLibrettoProjectProfile.g:3617:2: ( rule__NamedLlmProvider__ModelsAssignment_3_2_1 )
+            // InternalLibrettoProjectProfile.g:3583:1: ( ( rule__NamedLlmProvider__ModelsAssignment_3_2_1 ) )
+            // InternalLibrettoProjectProfile.g:3584:2: ( rule__NamedLlmProvider__ModelsAssignment_3_2_1 )
             {
              before(grammarAccess.getNamedLlmProviderAccess().getModelsAssignment_3_2_1()); 
-            // InternalLibrettoProjectProfile.g:3618:2: ( rule__NamedLlmProvider__ModelsAssignment_3_2_1 )
-            // InternalLibrettoProjectProfile.g:3618:3: rule__NamedLlmProvider__ModelsAssignment_3_2_1
+            // InternalLibrettoProjectProfile.g:3585:2: ( rule__NamedLlmProvider__ModelsAssignment_3_2_1 )
+            // InternalLibrettoProjectProfile.g:3585:3: rule__NamedLlmProvider__ModelsAssignment_3_2_1
             {
             pushFollow(FOLLOW_2);
             rule__NamedLlmProvider__ModelsAssignment_3_2_1();
@@ -11342,14 +11268,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__NamedLlmProvider__Group_3_3__0"
-    // InternalLibrettoProjectProfile.g:3627:1: rule__NamedLlmProvider__Group_3_3__0 : rule__NamedLlmProvider__Group_3_3__0__Impl rule__NamedLlmProvider__Group_3_3__1 ;
+    // InternalLibrettoProjectProfile.g:3594:1: rule__NamedLlmProvider__Group_3_3__0 : rule__NamedLlmProvider__Group_3_3__0__Impl rule__NamedLlmProvider__Group_3_3__1 ;
     public final void rule__NamedLlmProvider__Group_3_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3631:1: ( rule__NamedLlmProvider__Group_3_3__0__Impl rule__NamedLlmProvider__Group_3_3__1 )
-            // InternalLibrettoProjectProfile.g:3632:2: rule__NamedLlmProvider__Group_3_3__0__Impl rule__NamedLlmProvider__Group_3_3__1
+            // InternalLibrettoProjectProfile.g:3598:1: ( rule__NamedLlmProvider__Group_3_3__0__Impl rule__NamedLlmProvider__Group_3_3__1 )
+            // InternalLibrettoProjectProfile.g:3599:2: rule__NamedLlmProvider__Group_3_3__0__Impl rule__NamedLlmProvider__Group_3_3__1
             {
             pushFollow(FOLLOW_11);
             rule__NamedLlmProvider__Group_3_3__0__Impl();
@@ -11380,17 +11306,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__NamedLlmProvider__Group_3_3__0__Impl"
-    // InternalLibrettoProjectProfile.g:3639:1: rule__NamedLlmProvider__Group_3_3__0__Impl : ( 'endpoint' ) ;
+    // InternalLibrettoProjectProfile.g:3606:1: rule__NamedLlmProvider__Group_3_3__0__Impl : ( 'endpoint' ) ;
     public final void rule__NamedLlmProvider__Group_3_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3643:1: ( ( 'endpoint' ) )
-            // InternalLibrettoProjectProfile.g:3644:1: ( 'endpoint' )
+            // InternalLibrettoProjectProfile.g:3610:1: ( ( 'endpoint' ) )
+            // InternalLibrettoProjectProfile.g:3611:1: ( 'endpoint' )
             {
-            // InternalLibrettoProjectProfile.g:3644:1: ( 'endpoint' )
-            // InternalLibrettoProjectProfile.g:3645:2: 'endpoint'
+            // InternalLibrettoProjectProfile.g:3611:1: ( 'endpoint' )
+            // InternalLibrettoProjectProfile.g:3612:2: 'endpoint'
             {
              before(grammarAccess.getNamedLlmProviderAccess().getEndpointKeyword_3_3_0()); 
             match(input,56,FOLLOW_2); 
@@ -11417,14 +11343,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__NamedLlmProvider__Group_3_3__1"
-    // InternalLibrettoProjectProfile.g:3654:1: rule__NamedLlmProvider__Group_3_3__1 : rule__NamedLlmProvider__Group_3_3__1__Impl ;
+    // InternalLibrettoProjectProfile.g:3621:1: rule__NamedLlmProvider__Group_3_3__1 : rule__NamedLlmProvider__Group_3_3__1__Impl ;
     public final void rule__NamedLlmProvider__Group_3_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3658:1: ( rule__NamedLlmProvider__Group_3_3__1__Impl )
-            // InternalLibrettoProjectProfile.g:3659:2: rule__NamedLlmProvider__Group_3_3__1__Impl
+            // InternalLibrettoProjectProfile.g:3625:1: ( rule__NamedLlmProvider__Group_3_3__1__Impl )
+            // InternalLibrettoProjectProfile.g:3626:2: rule__NamedLlmProvider__Group_3_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__NamedLlmProvider__Group_3_3__1__Impl();
@@ -11450,21 +11376,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__NamedLlmProvider__Group_3_3__1__Impl"
-    // InternalLibrettoProjectProfile.g:3665:1: rule__NamedLlmProvider__Group_3_3__1__Impl : ( ( rule__NamedLlmProvider__EndpointsAssignment_3_3_1 ) ) ;
+    // InternalLibrettoProjectProfile.g:3632:1: rule__NamedLlmProvider__Group_3_3__1__Impl : ( ( rule__NamedLlmProvider__EndpointsAssignment_3_3_1 ) ) ;
     public final void rule__NamedLlmProvider__Group_3_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3669:1: ( ( ( rule__NamedLlmProvider__EndpointsAssignment_3_3_1 ) ) )
-            // InternalLibrettoProjectProfile.g:3670:1: ( ( rule__NamedLlmProvider__EndpointsAssignment_3_3_1 ) )
+            // InternalLibrettoProjectProfile.g:3636:1: ( ( ( rule__NamedLlmProvider__EndpointsAssignment_3_3_1 ) ) )
+            // InternalLibrettoProjectProfile.g:3637:1: ( ( rule__NamedLlmProvider__EndpointsAssignment_3_3_1 ) )
             {
-            // InternalLibrettoProjectProfile.g:3670:1: ( ( rule__NamedLlmProvider__EndpointsAssignment_3_3_1 ) )
-            // InternalLibrettoProjectProfile.g:3671:2: ( rule__NamedLlmProvider__EndpointsAssignment_3_3_1 )
+            // InternalLibrettoProjectProfile.g:3637:1: ( ( rule__NamedLlmProvider__EndpointsAssignment_3_3_1 ) )
+            // InternalLibrettoProjectProfile.g:3638:2: ( rule__NamedLlmProvider__EndpointsAssignment_3_3_1 )
             {
              before(grammarAccess.getNamedLlmProviderAccess().getEndpointsAssignment_3_3_1()); 
-            // InternalLibrettoProjectProfile.g:3672:2: ( rule__NamedLlmProvider__EndpointsAssignment_3_3_1 )
-            // InternalLibrettoProjectProfile.g:3672:3: rule__NamedLlmProvider__EndpointsAssignment_3_3_1
+            // InternalLibrettoProjectProfile.g:3639:2: ( rule__NamedLlmProvider__EndpointsAssignment_3_3_1 )
+            // InternalLibrettoProjectProfile.g:3639:3: rule__NamedLlmProvider__EndpointsAssignment_3_3_1
             {
             pushFollow(FOLLOW_2);
             rule__NamedLlmProvider__EndpointsAssignment_3_3_1();
@@ -11497,14 +11423,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenUsageBlock__Group__0"
-    // InternalLibrettoProjectProfile.g:3681:1: rule__GenUsageBlock__Group__0 : rule__GenUsageBlock__Group__0__Impl rule__GenUsageBlock__Group__1 ;
+    // InternalLibrettoProjectProfile.g:3648:1: rule__GenUsageBlock__Group__0 : rule__GenUsageBlock__Group__0__Impl rule__GenUsageBlock__Group__1 ;
     public final void rule__GenUsageBlock__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3685:1: ( rule__GenUsageBlock__Group__0__Impl rule__GenUsageBlock__Group__1 )
-            // InternalLibrettoProjectProfile.g:3686:2: rule__GenUsageBlock__Group__0__Impl rule__GenUsageBlock__Group__1
+            // InternalLibrettoProjectProfile.g:3652:1: ( rule__GenUsageBlock__Group__0__Impl rule__GenUsageBlock__Group__1 )
+            // InternalLibrettoProjectProfile.g:3653:2: rule__GenUsageBlock__Group__0__Impl rule__GenUsageBlock__Group__1
             {
             pushFollow(FOLLOW_37);
             rule__GenUsageBlock__Group__0__Impl();
@@ -11535,21 +11461,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenUsageBlock__Group__0__Impl"
-    // InternalLibrettoProjectProfile.g:3693:1: rule__GenUsageBlock__Group__0__Impl : ( () ) ;
+    // InternalLibrettoProjectProfile.g:3660:1: rule__GenUsageBlock__Group__0__Impl : ( () ) ;
     public final void rule__GenUsageBlock__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3697:1: ( ( () ) )
-            // InternalLibrettoProjectProfile.g:3698:1: ( () )
+            // InternalLibrettoProjectProfile.g:3664:1: ( ( () ) )
+            // InternalLibrettoProjectProfile.g:3665:1: ( () )
             {
-            // InternalLibrettoProjectProfile.g:3698:1: ( () )
-            // InternalLibrettoProjectProfile.g:3699:2: ()
+            // InternalLibrettoProjectProfile.g:3665:1: ( () )
+            // InternalLibrettoProjectProfile.g:3666:2: ()
             {
              before(grammarAccess.getGenUsageBlockAccess().getGenUsageBlockAction_0()); 
-            // InternalLibrettoProjectProfile.g:3700:2: ()
-            // InternalLibrettoProjectProfile.g:3700:3: 
+            // InternalLibrettoProjectProfile.g:3667:2: ()
+            // InternalLibrettoProjectProfile.g:3667:3: 
             {
             }
 
@@ -11572,14 +11498,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenUsageBlock__Group__1"
-    // InternalLibrettoProjectProfile.g:3708:1: rule__GenUsageBlock__Group__1 : rule__GenUsageBlock__Group__1__Impl rule__GenUsageBlock__Group__2 ;
+    // InternalLibrettoProjectProfile.g:3675:1: rule__GenUsageBlock__Group__1 : rule__GenUsageBlock__Group__1__Impl rule__GenUsageBlock__Group__2 ;
     public final void rule__GenUsageBlock__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3712:1: ( rule__GenUsageBlock__Group__1__Impl rule__GenUsageBlock__Group__2 )
-            // InternalLibrettoProjectProfile.g:3713:2: rule__GenUsageBlock__Group__1__Impl rule__GenUsageBlock__Group__2
+            // InternalLibrettoProjectProfile.g:3679:1: ( rule__GenUsageBlock__Group__1__Impl rule__GenUsageBlock__Group__2 )
+            // InternalLibrettoProjectProfile.g:3680:2: rule__GenUsageBlock__Group__1__Impl rule__GenUsageBlock__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__GenUsageBlock__Group__1__Impl();
@@ -11610,17 +11536,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenUsageBlock__Group__1__Impl"
-    // InternalLibrettoProjectProfile.g:3720:1: rule__GenUsageBlock__Group__1__Impl : ( 'modelUsage' ) ;
+    // InternalLibrettoProjectProfile.g:3687:1: rule__GenUsageBlock__Group__1__Impl : ( 'modelUsage' ) ;
     public final void rule__GenUsageBlock__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3724:1: ( ( 'modelUsage' ) )
-            // InternalLibrettoProjectProfile.g:3725:1: ( 'modelUsage' )
+            // InternalLibrettoProjectProfile.g:3691:1: ( ( 'modelUsage' ) )
+            // InternalLibrettoProjectProfile.g:3692:1: ( 'modelUsage' )
             {
-            // InternalLibrettoProjectProfile.g:3725:1: ( 'modelUsage' )
-            // InternalLibrettoProjectProfile.g:3726:2: 'modelUsage'
+            // InternalLibrettoProjectProfile.g:3692:1: ( 'modelUsage' )
+            // InternalLibrettoProjectProfile.g:3693:2: 'modelUsage'
             {
              before(grammarAccess.getGenUsageBlockAccess().getModelUsageKeyword_1()); 
             match(input,57,FOLLOW_2); 
@@ -11647,14 +11573,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenUsageBlock__Group__2"
-    // InternalLibrettoProjectProfile.g:3735:1: rule__GenUsageBlock__Group__2 : rule__GenUsageBlock__Group__2__Impl rule__GenUsageBlock__Group__3 ;
+    // InternalLibrettoProjectProfile.g:3702:1: rule__GenUsageBlock__Group__2 : rule__GenUsageBlock__Group__2__Impl rule__GenUsageBlock__Group__3 ;
     public final void rule__GenUsageBlock__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3739:1: ( rule__GenUsageBlock__Group__2__Impl rule__GenUsageBlock__Group__3 )
-            // InternalLibrettoProjectProfile.g:3740:2: rule__GenUsageBlock__Group__2__Impl rule__GenUsageBlock__Group__3
+            // InternalLibrettoProjectProfile.g:3706:1: ( rule__GenUsageBlock__Group__2__Impl rule__GenUsageBlock__Group__3 )
+            // InternalLibrettoProjectProfile.g:3707:2: rule__GenUsageBlock__Group__2__Impl rule__GenUsageBlock__Group__3
             {
             pushFollow(FOLLOW_38);
             rule__GenUsageBlock__Group__2__Impl();
@@ -11685,17 +11611,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenUsageBlock__Group__2__Impl"
-    // InternalLibrettoProjectProfile.g:3747:1: rule__GenUsageBlock__Group__2__Impl : ( '{' ) ;
+    // InternalLibrettoProjectProfile.g:3714:1: rule__GenUsageBlock__Group__2__Impl : ( '{' ) ;
     public final void rule__GenUsageBlock__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3751:1: ( ( '{' ) )
-            // InternalLibrettoProjectProfile.g:3752:1: ( '{' )
+            // InternalLibrettoProjectProfile.g:3718:1: ( ( '{' ) )
+            // InternalLibrettoProjectProfile.g:3719:1: ( '{' )
             {
-            // InternalLibrettoProjectProfile.g:3752:1: ( '{' )
-            // InternalLibrettoProjectProfile.g:3753:2: '{'
+            // InternalLibrettoProjectProfile.g:3719:1: ( '{' )
+            // InternalLibrettoProjectProfile.g:3720:2: '{'
             {
              before(grammarAccess.getGenUsageBlockAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,29,FOLLOW_2); 
@@ -11722,14 +11648,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenUsageBlock__Group__3"
-    // InternalLibrettoProjectProfile.g:3762:1: rule__GenUsageBlock__Group__3 : rule__GenUsageBlock__Group__3__Impl rule__GenUsageBlock__Group__4 ;
+    // InternalLibrettoProjectProfile.g:3729:1: rule__GenUsageBlock__Group__3 : rule__GenUsageBlock__Group__3__Impl rule__GenUsageBlock__Group__4 ;
     public final void rule__GenUsageBlock__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3766:1: ( rule__GenUsageBlock__Group__3__Impl rule__GenUsageBlock__Group__4 )
-            // InternalLibrettoProjectProfile.g:3767:2: rule__GenUsageBlock__Group__3__Impl rule__GenUsageBlock__Group__4
+            // InternalLibrettoProjectProfile.g:3733:1: ( rule__GenUsageBlock__Group__3__Impl rule__GenUsageBlock__Group__4 )
+            // InternalLibrettoProjectProfile.g:3734:2: rule__GenUsageBlock__Group__3__Impl rule__GenUsageBlock__Group__4
             {
             pushFollow(FOLLOW_38);
             rule__GenUsageBlock__Group__3__Impl();
@@ -11760,33 +11686,33 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenUsageBlock__Group__3__Impl"
-    // InternalLibrettoProjectProfile.g:3774:1: rule__GenUsageBlock__Group__3__Impl : ( ( rule__GenUsageBlock__Alternatives_3 )* ) ;
+    // InternalLibrettoProjectProfile.g:3741:1: rule__GenUsageBlock__Group__3__Impl : ( ( rule__GenUsageBlock__Alternatives_3 )* ) ;
     public final void rule__GenUsageBlock__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3778:1: ( ( ( rule__GenUsageBlock__Alternatives_3 )* ) )
-            // InternalLibrettoProjectProfile.g:3779:1: ( ( rule__GenUsageBlock__Alternatives_3 )* )
+            // InternalLibrettoProjectProfile.g:3745:1: ( ( ( rule__GenUsageBlock__Alternatives_3 )* ) )
+            // InternalLibrettoProjectProfile.g:3746:1: ( ( rule__GenUsageBlock__Alternatives_3 )* )
             {
-            // InternalLibrettoProjectProfile.g:3779:1: ( ( rule__GenUsageBlock__Alternatives_3 )* )
-            // InternalLibrettoProjectProfile.g:3780:2: ( rule__GenUsageBlock__Alternatives_3 )*
+            // InternalLibrettoProjectProfile.g:3746:1: ( ( rule__GenUsageBlock__Alternatives_3 )* )
+            // InternalLibrettoProjectProfile.g:3747:2: ( rule__GenUsageBlock__Alternatives_3 )*
             {
              before(grammarAccess.getGenUsageBlockAccess().getAlternatives_3()); 
-            // InternalLibrettoProjectProfile.g:3781:2: ( rule__GenUsageBlock__Alternatives_3 )*
-            loop29:
+            // InternalLibrettoProjectProfile.g:3748:2: ( rule__GenUsageBlock__Alternatives_3 )*
+            loop30:
             do {
-                int alt29=2;
-                int LA29_0 = input.LA(1);
+                int alt30=2;
+                int LA30_0 = input.LA(1);
 
-                if ( ((LA29_0>=58 && LA29_0<=60)) ) {
-                    alt29=1;
+                if ( ((LA30_0>=58 && LA30_0<=60)) ) {
+                    alt30=1;
                 }
 
 
-                switch (alt29) {
+                switch (alt30) {
             	case 1 :
-            	    // InternalLibrettoProjectProfile.g:3781:3: rule__GenUsageBlock__Alternatives_3
+            	    // InternalLibrettoProjectProfile.g:3748:3: rule__GenUsageBlock__Alternatives_3
             	    {
             	    pushFollow(FOLLOW_39);
             	    rule__GenUsageBlock__Alternatives_3();
@@ -11798,7 +11724,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
             	    break;
 
             	default :
-            	    break loop29;
+            	    break loop30;
                 }
             } while (true);
 
@@ -11825,14 +11751,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenUsageBlock__Group__4"
-    // InternalLibrettoProjectProfile.g:3789:1: rule__GenUsageBlock__Group__4 : rule__GenUsageBlock__Group__4__Impl ;
+    // InternalLibrettoProjectProfile.g:3756:1: rule__GenUsageBlock__Group__4 : rule__GenUsageBlock__Group__4__Impl ;
     public final void rule__GenUsageBlock__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3793:1: ( rule__GenUsageBlock__Group__4__Impl )
-            // InternalLibrettoProjectProfile.g:3794:2: rule__GenUsageBlock__Group__4__Impl
+            // InternalLibrettoProjectProfile.g:3760:1: ( rule__GenUsageBlock__Group__4__Impl )
+            // InternalLibrettoProjectProfile.g:3761:2: rule__GenUsageBlock__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__GenUsageBlock__Group__4__Impl();
@@ -11858,17 +11784,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenUsageBlock__Group__4__Impl"
-    // InternalLibrettoProjectProfile.g:3800:1: rule__GenUsageBlock__Group__4__Impl : ( '}' ) ;
+    // InternalLibrettoProjectProfile.g:3767:1: rule__GenUsageBlock__Group__4__Impl : ( '}' ) ;
     public final void rule__GenUsageBlock__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3804:1: ( ( '}' ) )
-            // InternalLibrettoProjectProfile.g:3805:1: ( '}' )
+            // InternalLibrettoProjectProfile.g:3771:1: ( ( '}' ) )
+            // InternalLibrettoProjectProfile.g:3772:1: ( '}' )
             {
-            // InternalLibrettoProjectProfile.g:3805:1: ( '}' )
-            // InternalLibrettoProjectProfile.g:3806:2: '}'
+            // InternalLibrettoProjectProfile.g:3772:1: ( '}' )
+            // InternalLibrettoProjectProfile.g:3773:2: '}'
             {
              before(grammarAccess.getGenUsageBlockAccess().getRightCurlyBracketKeyword_4()); 
             match(input,30,FOLLOW_2); 
@@ -11895,16 +11821,16 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenUsageBlock__Group_3_0__0"
-    // InternalLibrettoProjectProfile.g:3816:1: rule__GenUsageBlock__Group_3_0__0 : rule__GenUsageBlock__Group_3_0__0__Impl rule__GenUsageBlock__Group_3_0__1 ;
+    // InternalLibrettoProjectProfile.g:3783:1: rule__GenUsageBlock__Group_3_0__0 : rule__GenUsageBlock__Group_3_0__0__Impl rule__GenUsageBlock__Group_3_0__1 ;
     public final void rule__GenUsageBlock__Group_3_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3820:1: ( rule__GenUsageBlock__Group_3_0__0__Impl rule__GenUsageBlock__Group_3_0__1 )
-            // InternalLibrettoProjectProfile.g:3821:2: rule__GenUsageBlock__Group_3_0__0__Impl rule__GenUsageBlock__Group_3_0__1
+            // InternalLibrettoProjectProfile.g:3787:1: ( rule__GenUsageBlock__Group_3_0__0__Impl rule__GenUsageBlock__Group_3_0__1 )
+            // InternalLibrettoProjectProfile.g:3788:2: rule__GenUsageBlock__Group_3_0__0__Impl rule__GenUsageBlock__Group_3_0__1
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_4);
             rule__GenUsageBlock__Group_3_0__0__Impl();
 
             state._fsp--;
@@ -11933,17 +11859,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenUsageBlock__Group_3_0__0__Impl"
-    // InternalLibrettoProjectProfile.g:3828:1: rule__GenUsageBlock__Group_3_0__0__Impl : ( 'primary' ) ;
+    // InternalLibrettoProjectProfile.g:3795:1: rule__GenUsageBlock__Group_3_0__0__Impl : ( 'primary' ) ;
     public final void rule__GenUsageBlock__Group_3_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3832:1: ( ( 'primary' ) )
-            // InternalLibrettoProjectProfile.g:3833:1: ( 'primary' )
+            // InternalLibrettoProjectProfile.g:3799:1: ( ( 'primary' ) )
+            // InternalLibrettoProjectProfile.g:3800:1: ( 'primary' )
             {
-            // InternalLibrettoProjectProfile.g:3833:1: ( 'primary' )
-            // InternalLibrettoProjectProfile.g:3834:2: 'primary'
+            // InternalLibrettoProjectProfile.g:3800:1: ( 'primary' )
+            // InternalLibrettoProjectProfile.g:3801:2: 'primary'
             {
              before(grammarAccess.getGenUsageBlockAccess().getPrimaryKeyword_3_0_0()); 
             match(input,58,FOLLOW_2); 
@@ -11970,14 +11896,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenUsageBlock__Group_3_0__1"
-    // InternalLibrettoProjectProfile.g:3843:1: rule__GenUsageBlock__Group_3_0__1 : rule__GenUsageBlock__Group_3_0__1__Impl ;
+    // InternalLibrettoProjectProfile.g:3810:1: rule__GenUsageBlock__Group_3_0__1 : rule__GenUsageBlock__Group_3_0__1__Impl ;
     public final void rule__GenUsageBlock__Group_3_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3847:1: ( rule__GenUsageBlock__Group_3_0__1__Impl )
-            // InternalLibrettoProjectProfile.g:3848:2: rule__GenUsageBlock__Group_3_0__1__Impl
+            // InternalLibrettoProjectProfile.g:3814:1: ( rule__GenUsageBlock__Group_3_0__1__Impl )
+            // InternalLibrettoProjectProfile.g:3815:2: rule__GenUsageBlock__Group_3_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__GenUsageBlock__Group_3_0__1__Impl();
@@ -12003,21 +11929,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenUsageBlock__Group_3_0__1__Impl"
-    // InternalLibrettoProjectProfile.g:3854:1: rule__GenUsageBlock__Group_3_0__1__Impl : ( ( rule__GenUsageBlock__PrimaryProvidersAssignment_3_0_1 ) ) ;
+    // InternalLibrettoProjectProfile.g:3821:1: rule__GenUsageBlock__Group_3_0__1__Impl : ( ( rule__GenUsageBlock__PrimaryProvidersAssignment_3_0_1 ) ) ;
     public final void rule__GenUsageBlock__Group_3_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3858:1: ( ( ( rule__GenUsageBlock__PrimaryProvidersAssignment_3_0_1 ) ) )
-            // InternalLibrettoProjectProfile.g:3859:1: ( ( rule__GenUsageBlock__PrimaryProvidersAssignment_3_0_1 ) )
+            // InternalLibrettoProjectProfile.g:3825:1: ( ( ( rule__GenUsageBlock__PrimaryProvidersAssignment_3_0_1 ) ) )
+            // InternalLibrettoProjectProfile.g:3826:1: ( ( rule__GenUsageBlock__PrimaryProvidersAssignment_3_0_1 ) )
             {
-            // InternalLibrettoProjectProfile.g:3859:1: ( ( rule__GenUsageBlock__PrimaryProvidersAssignment_3_0_1 ) )
-            // InternalLibrettoProjectProfile.g:3860:2: ( rule__GenUsageBlock__PrimaryProvidersAssignment_3_0_1 )
+            // InternalLibrettoProjectProfile.g:3826:1: ( ( rule__GenUsageBlock__PrimaryProvidersAssignment_3_0_1 ) )
+            // InternalLibrettoProjectProfile.g:3827:2: ( rule__GenUsageBlock__PrimaryProvidersAssignment_3_0_1 )
             {
              before(grammarAccess.getGenUsageBlockAccess().getPrimaryProvidersAssignment_3_0_1()); 
-            // InternalLibrettoProjectProfile.g:3861:2: ( rule__GenUsageBlock__PrimaryProvidersAssignment_3_0_1 )
-            // InternalLibrettoProjectProfile.g:3861:3: rule__GenUsageBlock__PrimaryProvidersAssignment_3_0_1
+            // InternalLibrettoProjectProfile.g:3828:2: ( rule__GenUsageBlock__PrimaryProvidersAssignment_3_0_1 )
+            // InternalLibrettoProjectProfile.g:3828:3: rule__GenUsageBlock__PrimaryProvidersAssignment_3_0_1
             {
             pushFollow(FOLLOW_2);
             rule__GenUsageBlock__PrimaryProvidersAssignment_3_0_1();
@@ -12050,16 +11976,16 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenUsageBlock__Group_3_1__0"
-    // InternalLibrettoProjectProfile.g:3870:1: rule__GenUsageBlock__Group_3_1__0 : rule__GenUsageBlock__Group_3_1__0__Impl rule__GenUsageBlock__Group_3_1__1 ;
+    // InternalLibrettoProjectProfile.g:3837:1: rule__GenUsageBlock__Group_3_1__0 : rule__GenUsageBlock__Group_3_1__0__Impl rule__GenUsageBlock__Group_3_1__1 ;
     public final void rule__GenUsageBlock__Group_3_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3874:1: ( rule__GenUsageBlock__Group_3_1__0__Impl rule__GenUsageBlock__Group_3_1__1 )
-            // InternalLibrettoProjectProfile.g:3875:2: rule__GenUsageBlock__Group_3_1__0__Impl rule__GenUsageBlock__Group_3_1__1
+            // InternalLibrettoProjectProfile.g:3841:1: ( rule__GenUsageBlock__Group_3_1__0__Impl rule__GenUsageBlock__Group_3_1__1 )
+            // InternalLibrettoProjectProfile.g:3842:2: rule__GenUsageBlock__Group_3_1__0__Impl rule__GenUsageBlock__Group_3_1__1
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_4);
             rule__GenUsageBlock__Group_3_1__0__Impl();
 
             state._fsp--;
@@ -12088,17 +12014,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenUsageBlock__Group_3_1__0__Impl"
-    // InternalLibrettoProjectProfile.g:3882:1: rule__GenUsageBlock__Group_3_1__0__Impl : ( 'secondary' ) ;
+    // InternalLibrettoProjectProfile.g:3849:1: rule__GenUsageBlock__Group_3_1__0__Impl : ( 'secondary' ) ;
     public final void rule__GenUsageBlock__Group_3_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3886:1: ( ( 'secondary' ) )
-            // InternalLibrettoProjectProfile.g:3887:1: ( 'secondary' )
+            // InternalLibrettoProjectProfile.g:3853:1: ( ( 'secondary' ) )
+            // InternalLibrettoProjectProfile.g:3854:1: ( 'secondary' )
             {
-            // InternalLibrettoProjectProfile.g:3887:1: ( 'secondary' )
-            // InternalLibrettoProjectProfile.g:3888:2: 'secondary'
+            // InternalLibrettoProjectProfile.g:3854:1: ( 'secondary' )
+            // InternalLibrettoProjectProfile.g:3855:2: 'secondary'
             {
              before(grammarAccess.getGenUsageBlockAccess().getSecondaryKeyword_3_1_0()); 
             match(input,59,FOLLOW_2); 
@@ -12125,14 +12051,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenUsageBlock__Group_3_1__1"
-    // InternalLibrettoProjectProfile.g:3897:1: rule__GenUsageBlock__Group_3_1__1 : rule__GenUsageBlock__Group_3_1__1__Impl ;
+    // InternalLibrettoProjectProfile.g:3864:1: rule__GenUsageBlock__Group_3_1__1 : rule__GenUsageBlock__Group_3_1__1__Impl ;
     public final void rule__GenUsageBlock__Group_3_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3901:1: ( rule__GenUsageBlock__Group_3_1__1__Impl )
-            // InternalLibrettoProjectProfile.g:3902:2: rule__GenUsageBlock__Group_3_1__1__Impl
+            // InternalLibrettoProjectProfile.g:3868:1: ( rule__GenUsageBlock__Group_3_1__1__Impl )
+            // InternalLibrettoProjectProfile.g:3869:2: rule__GenUsageBlock__Group_3_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__GenUsageBlock__Group_3_1__1__Impl();
@@ -12158,21 +12084,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenUsageBlock__Group_3_1__1__Impl"
-    // InternalLibrettoProjectProfile.g:3908:1: rule__GenUsageBlock__Group_3_1__1__Impl : ( ( rule__GenUsageBlock__SecondaryProvidersAssignment_3_1_1 ) ) ;
+    // InternalLibrettoProjectProfile.g:3875:1: rule__GenUsageBlock__Group_3_1__1__Impl : ( ( rule__GenUsageBlock__SecondaryProvidersAssignment_3_1_1 ) ) ;
     public final void rule__GenUsageBlock__Group_3_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3912:1: ( ( ( rule__GenUsageBlock__SecondaryProvidersAssignment_3_1_1 ) ) )
-            // InternalLibrettoProjectProfile.g:3913:1: ( ( rule__GenUsageBlock__SecondaryProvidersAssignment_3_1_1 ) )
+            // InternalLibrettoProjectProfile.g:3879:1: ( ( ( rule__GenUsageBlock__SecondaryProvidersAssignment_3_1_1 ) ) )
+            // InternalLibrettoProjectProfile.g:3880:1: ( ( rule__GenUsageBlock__SecondaryProvidersAssignment_3_1_1 ) )
             {
-            // InternalLibrettoProjectProfile.g:3913:1: ( ( rule__GenUsageBlock__SecondaryProvidersAssignment_3_1_1 ) )
-            // InternalLibrettoProjectProfile.g:3914:2: ( rule__GenUsageBlock__SecondaryProvidersAssignment_3_1_1 )
+            // InternalLibrettoProjectProfile.g:3880:1: ( ( rule__GenUsageBlock__SecondaryProvidersAssignment_3_1_1 ) )
+            // InternalLibrettoProjectProfile.g:3881:2: ( rule__GenUsageBlock__SecondaryProvidersAssignment_3_1_1 )
             {
              before(grammarAccess.getGenUsageBlockAccess().getSecondaryProvidersAssignment_3_1_1()); 
-            // InternalLibrettoProjectProfile.g:3915:2: ( rule__GenUsageBlock__SecondaryProvidersAssignment_3_1_1 )
-            // InternalLibrettoProjectProfile.g:3915:3: rule__GenUsageBlock__SecondaryProvidersAssignment_3_1_1
+            // InternalLibrettoProjectProfile.g:3882:2: ( rule__GenUsageBlock__SecondaryProvidersAssignment_3_1_1 )
+            // InternalLibrettoProjectProfile.g:3882:3: rule__GenUsageBlock__SecondaryProvidersAssignment_3_1_1
             {
             pushFollow(FOLLOW_2);
             rule__GenUsageBlock__SecondaryProvidersAssignment_3_1_1();
@@ -12205,14 +12131,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenEscalationBlock__Group__0"
-    // InternalLibrettoProjectProfile.g:3924:1: rule__GenEscalationBlock__Group__0 : rule__GenEscalationBlock__Group__0__Impl rule__GenEscalationBlock__Group__1 ;
+    // InternalLibrettoProjectProfile.g:3891:1: rule__GenEscalationBlock__Group__0 : rule__GenEscalationBlock__Group__0__Impl rule__GenEscalationBlock__Group__1 ;
     public final void rule__GenEscalationBlock__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3928:1: ( rule__GenEscalationBlock__Group__0__Impl rule__GenEscalationBlock__Group__1 )
-            // InternalLibrettoProjectProfile.g:3929:2: rule__GenEscalationBlock__Group__0__Impl rule__GenEscalationBlock__Group__1
+            // InternalLibrettoProjectProfile.g:3895:1: ( rule__GenEscalationBlock__Group__0__Impl rule__GenEscalationBlock__Group__1 )
+            // InternalLibrettoProjectProfile.g:3896:2: rule__GenEscalationBlock__Group__0__Impl rule__GenEscalationBlock__Group__1
             {
             pushFollow(FOLLOW_40);
             rule__GenEscalationBlock__Group__0__Impl();
@@ -12243,21 +12169,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenEscalationBlock__Group__0__Impl"
-    // InternalLibrettoProjectProfile.g:3936:1: rule__GenEscalationBlock__Group__0__Impl : ( () ) ;
+    // InternalLibrettoProjectProfile.g:3903:1: rule__GenEscalationBlock__Group__0__Impl : ( () ) ;
     public final void rule__GenEscalationBlock__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3940:1: ( ( () ) )
-            // InternalLibrettoProjectProfile.g:3941:1: ( () )
+            // InternalLibrettoProjectProfile.g:3907:1: ( ( () ) )
+            // InternalLibrettoProjectProfile.g:3908:1: ( () )
             {
-            // InternalLibrettoProjectProfile.g:3941:1: ( () )
-            // InternalLibrettoProjectProfile.g:3942:2: ()
+            // InternalLibrettoProjectProfile.g:3908:1: ( () )
+            // InternalLibrettoProjectProfile.g:3909:2: ()
             {
              before(grammarAccess.getGenEscalationBlockAccess().getGenEscalationBlockAction_0()); 
-            // InternalLibrettoProjectProfile.g:3943:2: ()
-            // InternalLibrettoProjectProfile.g:3943:3: 
+            // InternalLibrettoProjectProfile.g:3910:2: ()
+            // InternalLibrettoProjectProfile.g:3910:3: 
             {
             }
 
@@ -12280,14 +12206,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenEscalationBlock__Group__1"
-    // InternalLibrettoProjectProfile.g:3951:1: rule__GenEscalationBlock__Group__1 : rule__GenEscalationBlock__Group__1__Impl rule__GenEscalationBlock__Group__2 ;
+    // InternalLibrettoProjectProfile.g:3918:1: rule__GenEscalationBlock__Group__1 : rule__GenEscalationBlock__Group__1__Impl rule__GenEscalationBlock__Group__2 ;
     public final void rule__GenEscalationBlock__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3955:1: ( rule__GenEscalationBlock__Group__1__Impl rule__GenEscalationBlock__Group__2 )
-            // InternalLibrettoProjectProfile.g:3956:2: rule__GenEscalationBlock__Group__1__Impl rule__GenEscalationBlock__Group__2
+            // InternalLibrettoProjectProfile.g:3922:1: ( rule__GenEscalationBlock__Group__1__Impl rule__GenEscalationBlock__Group__2 )
+            // InternalLibrettoProjectProfile.g:3923:2: rule__GenEscalationBlock__Group__1__Impl rule__GenEscalationBlock__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__GenEscalationBlock__Group__1__Impl();
@@ -12318,17 +12244,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenEscalationBlock__Group__1__Impl"
-    // InternalLibrettoProjectProfile.g:3963:1: rule__GenEscalationBlock__Group__1__Impl : ( 'escalation' ) ;
+    // InternalLibrettoProjectProfile.g:3930:1: rule__GenEscalationBlock__Group__1__Impl : ( 'escalation' ) ;
     public final void rule__GenEscalationBlock__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3967:1: ( ( 'escalation' ) )
-            // InternalLibrettoProjectProfile.g:3968:1: ( 'escalation' )
+            // InternalLibrettoProjectProfile.g:3934:1: ( ( 'escalation' ) )
+            // InternalLibrettoProjectProfile.g:3935:1: ( 'escalation' )
             {
-            // InternalLibrettoProjectProfile.g:3968:1: ( 'escalation' )
-            // InternalLibrettoProjectProfile.g:3969:2: 'escalation'
+            // InternalLibrettoProjectProfile.g:3935:1: ( 'escalation' )
+            // InternalLibrettoProjectProfile.g:3936:2: 'escalation'
             {
              before(grammarAccess.getGenEscalationBlockAccess().getEscalationKeyword_1()); 
             match(input,60,FOLLOW_2); 
@@ -12355,14 +12281,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenEscalationBlock__Group__2"
-    // InternalLibrettoProjectProfile.g:3978:1: rule__GenEscalationBlock__Group__2 : rule__GenEscalationBlock__Group__2__Impl rule__GenEscalationBlock__Group__3 ;
+    // InternalLibrettoProjectProfile.g:3945:1: rule__GenEscalationBlock__Group__2 : rule__GenEscalationBlock__Group__2__Impl rule__GenEscalationBlock__Group__3 ;
     public final void rule__GenEscalationBlock__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3982:1: ( rule__GenEscalationBlock__Group__2__Impl rule__GenEscalationBlock__Group__3 )
-            // InternalLibrettoProjectProfile.g:3983:2: rule__GenEscalationBlock__Group__2__Impl rule__GenEscalationBlock__Group__3
+            // InternalLibrettoProjectProfile.g:3949:1: ( rule__GenEscalationBlock__Group__2__Impl rule__GenEscalationBlock__Group__3 )
+            // InternalLibrettoProjectProfile.g:3950:2: rule__GenEscalationBlock__Group__2__Impl rule__GenEscalationBlock__Group__3
             {
             pushFollow(FOLLOW_41);
             rule__GenEscalationBlock__Group__2__Impl();
@@ -12393,17 +12319,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenEscalationBlock__Group__2__Impl"
-    // InternalLibrettoProjectProfile.g:3990:1: rule__GenEscalationBlock__Group__2__Impl : ( '{' ) ;
+    // InternalLibrettoProjectProfile.g:3957:1: rule__GenEscalationBlock__Group__2__Impl : ( '{' ) ;
     public final void rule__GenEscalationBlock__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:3994:1: ( ( '{' ) )
-            // InternalLibrettoProjectProfile.g:3995:1: ( '{' )
+            // InternalLibrettoProjectProfile.g:3961:1: ( ( '{' ) )
+            // InternalLibrettoProjectProfile.g:3962:1: ( '{' )
             {
-            // InternalLibrettoProjectProfile.g:3995:1: ( '{' )
-            // InternalLibrettoProjectProfile.g:3996:2: '{'
+            // InternalLibrettoProjectProfile.g:3962:1: ( '{' )
+            // InternalLibrettoProjectProfile.g:3963:2: '{'
             {
              before(grammarAccess.getGenEscalationBlockAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,29,FOLLOW_2); 
@@ -12430,14 +12356,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenEscalationBlock__Group__3"
-    // InternalLibrettoProjectProfile.g:4005:1: rule__GenEscalationBlock__Group__3 : rule__GenEscalationBlock__Group__3__Impl rule__GenEscalationBlock__Group__4 ;
+    // InternalLibrettoProjectProfile.g:3972:1: rule__GenEscalationBlock__Group__3 : rule__GenEscalationBlock__Group__3__Impl rule__GenEscalationBlock__Group__4 ;
     public final void rule__GenEscalationBlock__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4009:1: ( rule__GenEscalationBlock__Group__3__Impl rule__GenEscalationBlock__Group__4 )
-            // InternalLibrettoProjectProfile.g:4010:2: rule__GenEscalationBlock__Group__3__Impl rule__GenEscalationBlock__Group__4
+            // InternalLibrettoProjectProfile.g:3976:1: ( rule__GenEscalationBlock__Group__3__Impl rule__GenEscalationBlock__Group__4 )
+            // InternalLibrettoProjectProfile.g:3977:2: rule__GenEscalationBlock__Group__3__Impl rule__GenEscalationBlock__Group__4
             {
             pushFollow(FOLLOW_41);
             rule__GenEscalationBlock__Group__3__Impl();
@@ -12468,33 +12394,33 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenEscalationBlock__Group__3__Impl"
-    // InternalLibrettoProjectProfile.g:4017:1: rule__GenEscalationBlock__Group__3__Impl : ( ( rule__GenEscalationBlock__Alternatives_3 )* ) ;
+    // InternalLibrettoProjectProfile.g:3984:1: rule__GenEscalationBlock__Group__3__Impl : ( ( rule__GenEscalationBlock__Alternatives_3 )* ) ;
     public final void rule__GenEscalationBlock__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4021:1: ( ( ( rule__GenEscalationBlock__Alternatives_3 )* ) )
-            // InternalLibrettoProjectProfile.g:4022:1: ( ( rule__GenEscalationBlock__Alternatives_3 )* )
+            // InternalLibrettoProjectProfile.g:3988:1: ( ( ( rule__GenEscalationBlock__Alternatives_3 )* ) )
+            // InternalLibrettoProjectProfile.g:3989:1: ( ( rule__GenEscalationBlock__Alternatives_3 )* )
             {
-            // InternalLibrettoProjectProfile.g:4022:1: ( ( rule__GenEscalationBlock__Alternatives_3 )* )
-            // InternalLibrettoProjectProfile.g:4023:2: ( rule__GenEscalationBlock__Alternatives_3 )*
+            // InternalLibrettoProjectProfile.g:3989:1: ( ( rule__GenEscalationBlock__Alternatives_3 )* )
+            // InternalLibrettoProjectProfile.g:3990:2: ( rule__GenEscalationBlock__Alternatives_3 )*
             {
              before(grammarAccess.getGenEscalationBlockAccess().getAlternatives_3()); 
-            // InternalLibrettoProjectProfile.g:4024:2: ( rule__GenEscalationBlock__Alternatives_3 )*
-            loop30:
+            // InternalLibrettoProjectProfile.g:3991:2: ( rule__GenEscalationBlock__Alternatives_3 )*
+            loop31:
             do {
-                int alt30=2;
-                int LA30_0 = input.LA(1);
+                int alt31=2;
+                int LA31_0 = input.LA(1);
 
-                if ( ((LA30_0>=61 && LA30_0<=62)) ) {
-                    alt30=1;
+                if ( ((LA31_0>=61 && LA31_0<=62)) ) {
+                    alt31=1;
                 }
 
 
-                switch (alt30) {
+                switch (alt31) {
             	case 1 :
-            	    // InternalLibrettoProjectProfile.g:4024:3: rule__GenEscalationBlock__Alternatives_3
+            	    // InternalLibrettoProjectProfile.g:3991:3: rule__GenEscalationBlock__Alternatives_3
             	    {
             	    pushFollow(FOLLOW_42);
             	    rule__GenEscalationBlock__Alternatives_3();
@@ -12506,7 +12432,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
             	    break;
 
             	default :
-            	    break loop30;
+            	    break loop31;
                 }
             } while (true);
 
@@ -12533,14 +12459,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenEscalationBlock__Group__4"
-    // InternalLibrettoProjectProfile.g:4032:1: rule__GenEscalationBlock__Group__4 : rule__GenEscalationBlock__Group__4__Impl ;
+    // InternalLibrettoProjectProfile.g:3999:1: rule__GenEscalationBlock__Group__4 : rule__GenEscalationBlock__Group__4__Impl ;
     public final void rule__GenEscalationBlock__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4036:1: ( rule__GenEscalationBlock__Group__4__Impl )
-            // InternalLibrettoProjectProfile.g:4037:2: rule__GenEscalationBlock__Group__4__Impl
+            // InternalLibrettoProjectProfile.g:4003:1: ( rule__GenEscalationBlock__Group__4__Impl )
+            // InternalLibrettoProjectProfile.g:4004:2: rule__GenEscalationBlock__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__GenEscalationBlock__Group__4__Impl();
@@ -12566,17 +12492,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenEscalationBlock__Group__4__Impl"
-    // InternalLibrettoProjectProfile.g:4043:1: rule__GenEscalationBlock__Group__4__Impl : ( '}' ) ;
+    // InternalLibrettoProjectProfile.g:4010:1: rule__GenEscalationBlock__Group__4__Impl : ( '}' ) ;
     public final void rule__GenEscalationBlock__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4047:1: ( ( '}' ) )
-            // InternalLibrettoProjectProfile.g:4048:1: ( '}' )
+            // InternalLibrettoProjectProfile.g:4014:1: ( ( '}' ) )
+            // InternalLibrettoProjectProfile.g:4015:1: ( '}' )
             {
-            // InternalLibrettoProjectProfile.g:4048:1: ( '}' )
-            // InternalLibrettoProjectProfile.g:4049:2: '}'
+            // InternalLibrettoProjectProfile.g:4015:1: ( '}' )
+            // InternalLibrettoProjectProfile.g:4016:2: '}'
             {
              before(grammarAccess.getGenEscalationBlockAccess().getRightCurlyBracketKeyword_4()); 
             match(input,30,FOLLOW_2); 
@@ -12603,14 +12529,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenEscalationBlock__Group_3_0__0"
-    // InternalLibrettoProjectProfile.g:4059:1: rule__GenEscalationBlock__Group_3_0__0 : rule__GenEscalationBlock__Group_3_0__0__Impl rule__GenEscalationBlock__Group_3_0__1 ;
+    // InternalLibrettoProjectProfile.g:4026:1: rule__GenEscalationBlock__Group_3_0__0 : rule__GenEscalationBlock__Group_3_0__0__Impl rule__GenEscalationBlock__Group_3_0__1 ;
     public final void rule__GenEscalationBlock__Group_3_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4063:1: ( rule__GenEscalationBlock__Group_3_0__0__Impl rule__GenEscalationBlock__Group_3_0__1 )
-            // InternalLibrettoProjectProfile.g:4064:2: rule__GenEscalationBlock__Group_3_0__0__Impl rule__GenEscalationBlock__Group_3_0__1
+            // InternalLibrettoProjectProfile.g:4030:1: ( rule__GenEscalationBlock__Group_3_0__0__Impl rule__GenEscalationBlock__Group_3_0__1 )
+            // InternalLibrettoProjectProfile.g:4031:2: rule__GenEscalationBlock__Group_3_0__0__Impl rule__GenEscalationBlock__Group_3_0__1
             {
             pushFollow(FOLLOW_21);
             rule__GenEscalationBlock__Group_3_0__0__Impl();
@@ -12641,17 +12567,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenEscalationBlock__Group_3_0__0__Impl"
-    // InternalLibrettoProjectProfile.g:4071:1: rule__GenEscalationBlock__Group_3_0__0__Impl : ( 'enabled' ) ;
+    // InternalLibrettoProjectProfile.g:4038:1: rule__GenEscalationBlock__Group_3_0__0__Impl : ( 'enabled' ) ;
     public final void rule__GenEscalationBlock__Group_3_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4075:1: ( ( 'enabled' ) )
-            // InternalLibrettoProjectProfile.g:4076:1: ( 'enabled' )
+            // InternalLibrettoProjectProfile.g:4042:1: ( ( 'enabled' ) )
+            // InternalLibrettoProjectProfile.g:4043:1: ( 'enabled' )
             {
-            // InternalLibrettoProjectProfile.g:4076:1: ( 'enabled' )
-            // InternalLibrettoProjectProfile.g:4077:2: 'enabled'
+            // InternalLibrettoProjectProfile.g:4043:1: ( 'enabled' )
+            // InternalLibrettoProjectProfile.g:4044:2: 'enabled'
             {
              before(grammarAccess.getGenEscalationBlockAccess().getEnabledKeyword_3_0_0()); 
             match(input,61,FOLLOW_2); 
@@ -12678,14 +12604,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenEscalationBlock__Group_3_0__1"
-    // InternalLibrettoProjectProfile.g:4086:1: rule__GenEscalationBlock__Group_3_0__1 : rule__GenEscalationBlock__Group_3_0__1__Impl ;
+    // InternalLibrettoProjectProfile.g:4053:1: rule__GenEscalationBlock__Group_3_0__1 : rule__GenEscalationBlock__Group_3_0__1__Impl ;
     public final void rule__GenEscalationBlock__Group_3_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4090:1: ( rule__GenEscalationBlock__Group_3_0__1__Impl )
-            // InternalLibrettoProjectProfile.g:4091:2: rule__GenEscalationBlock__Group_3_0__1__Impl
+            // InternalLibrettoProjectProfile.g:4057:1: ( rule__GenEscalationBlock__Group_3_0__1__Impl )
+            // InternalLibrettoProjectProfile.g:4058:2: rule__GenEscalationBlock__Group_3_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__GenEscalationBlock__Group_3_0__1__Impl();
@@ -12711,21 +12637,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenEscalationBlock__Group_3_0__1__Impl"
-    // InternalLibrettoProjectProfile.g:4097:1: rule__GenEscalationBlock__Group_3_0__1__Impl : ( ( rule__GenEscalationBlock__EnabledsAssignment_3_0_1 ) ) ;
+    // InternalLibrettoProjectProfile.g:4064:1: rule__GenEscalationBlock__Group_3_0__1__Impl : ( ( rule__GenEscalationBlock__EnabledsAssignment_3_0_1 ) ) ;
     public final void rule__GenEscalationBlock__Group_3_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4101:1: ( ( ( rule__GenEscalationBlock__EnabledsAssignment_3_0_1 ) ) )
-            // InternalLibrettoProjectProfile.g:4102:1: ( ( rule__GenEscalationBlock__EnabledsAssignment_3_0_1 ) )
+            // InternalLibrettoProjectProfile.g:4068:1: ( ( ( rule__GenEscalationBlock__EnabledsAssignment_3_0_1 ) ) )
+            // InternalLibrettoProjectProfile.g:4069:1: ( ( rule__GenEscalationBlock__EnabledsAssignment_3_0_1 ) )
             {
-            // InternalLibrettoProjectProfile.g:4102:1: ( ( rule__GenEscalationBlock__EnabledsAssignment_3_0_1 ) )
-            // InternalLibrettoProjectProfile.g:4103:2: ( rule__GenEscalationBlock__EnabledsAssignment_3_0_1 )
+            // InternalLibrettoProjectProfile.g:4069:1: ( ( rule__GenEscalationBlock__EnabledsAssignment_3_0_1 ) )
+            // InternalLibrettoProjectProfile.g:4070:2: ( rule__GenEscalationBlock__EnabledsAssignment_3_0_1 )
             {
              before(grammarAccess.getGenEscalationBlockAccess().getEnabledsAssignment_3_0_1()); 
-            // InternalLibrettoProjectProfile.g:4104:2: ( rule__GenEscalationBlock__EnabledsAssignment_3_0_1 )
-            // InternalLibrettoProjectProfile.g:4104:3: rule__GenEscalationBlock__EnabledsAssignment_3_0_1
+            // InternalLibrettoProjectProfile.g:4071:2: ( rule__GenEscalationBlock__EnabledsAssignment_3_0_1 )
+            // InternalLibrettoProjectProfile.g:4071:3: rule__GenEscalationBlock__EnabledsAssignment_3_0_1
             {
             pushFollow(FOLLOW_2);
             rule__GenEscalationBlock__EnabledsAssignment_3_0_1();
@@ -12758,14 +12684,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenEscalationBlock__Group_3_1__0"
-    // InternalLibrettoProjectProfile.g:4113:1: rule__GenEscalationBlock__Group_3_1__0 : rule__GenEscalationBlock__Group_3_1__0__Impl rule__GenEscalationBlock__Group_3_1__1 ;
+    // InternalLibrettoProjectProfile.g:4080:1: rule__GenEscalationBlock__Group_3_1__0 : rule__GenEscalationBlock__Group_3_1__0__Impl rule__GenEscalationBlock__Group_3_1__1 ;
     public final void rule__GenEscalationBlock__Group_3_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4117:1: ( rule__GenEscalationBlock__Group_3_1__0__Impl rule__GenEscalationBlock__Group_3_1__1 )
-            // InternalLibrettoProjectProfile.g:4118:2: rule__GenEscalationBlock__Group_3_1__0__Impl rule__GenEscalationBlock__Group_3_1__1
+            // InternalLibrettoProjectProfile.g:4084:1: ( rule__GenEscalationBlock__Group_3_1__0__Impl rule__GenEscalationBlock__Group_3_1__1 )
+            // InternalLibrettoProjectProfile.g:4085:2: rule__GenEscalationBlock__Group_3_1__0__Impl rule__GenEscalationBlock__Group_3_1__1
             {
             pushFollow(FOLLOW_20);
             rule__GenEscalationBlock__Group_3_1__0__Impl();
@@ -12796,17 +12722,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenEscalationBlock__Group_3_1__0__Impl"
-    // InternalLibrettoProjectProfile.g:4125:1: rule__GenEscalationBlock__Group_3_1__0__Impl : ( 'escalateAtRetry' ) ;
+    // InternalLibrettoProjectProfile.g:4092:1: rule__GenEscalationBlock__Group_3_1__0__Impl : ( 'escalateAtRetry' ) ;
     public final void rule__GenEscalationBlock__Group_3_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4129:1: ( ( 'escalateAtRetry' ) )
-            // InternalLibrettoProjectProfile.g:4130:1: ( 'escalateAtRetry' )
+            // InternalLibrettoProjectProfile.g:4096:1: ( ( 'escalateAtRetry' ) )
+            // InternalLibrettoProjectProfile.g:4097:1: ( 'escalateAtRetry' )
             {
-            // InternalLibrettoProjectProfile.g:4130:1: ( 'escalateAtRetry' )
-            // InternalLibrettoProjectProfile.g:4131:2: 'escalateAtRetry'
+            // InternalLibrettoProjectProfile.g:4097:1: ( 'escalateAtRetry' )
+            // InternalLibrettoProjectProfile.g:4098:2: 'escalateAtRetry'
             {
              before(grammarAccess.getGenEscalationBlockAccess().getEscalateAtRetryKeyword_3_1_0()); 
             match(input,62,FOLLOW_2); 
@@ -12833,14 +12759,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenEscalationBlock__Group_3_1__1"
-    // InternalLibrettoProjectProfile.g:4140:1: rule__GenEscalationBlock__Group_3_1__1 : rule__GenEscalationBlock__Group_3_1__1__Impl ;
+    // InternalLibrettoProjectProfile.g:4107:1: rule__GenEscalationBlock__Group_3_1__1 : rule__GenEscalationBlock__Group_3_1__1__Impl ;
     public final void rule__GenEscalationBlock__Group_3_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4144:1: ( rule__GenEscalationBlock__Group_3_1__1__Impl )
-            // InternalLibrettoProjectProfile.g:4145:2: rule__GenEscalationBlock__Group_3_1__1__Impl
+            // InternalLibrettoProjectProfile.g:4111:1: ( rule__GenEscalationBlock__Group_3_1__1__Impl )
+            // InternalLibrettoProjectProfile.g:4112:2: rule__GenEscalationBlock__Group_3_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__GenEscalationBlock__Group_3_1__1__Impl();
@@ -12866,21 +12792,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenEscalationBlock__Group_3_1__1__Impl"
-    // InternalLibrettoProjectProfile.g:4151:1: rule__GenEscalationBlock__Group_3_1__1__Impl : ( ( rule__GenEscalationBlock__EscalateAtRetriesAssignment_3_1_1 ) ) ;
+    // InternalLibrettoProjectProfile.g:4118:1: rule__GenEscalationBlock__Group_3_1__1__Impl : ( ( rule__GenEscalationBlock__EscalateAtRetriesAssignment_3_1_1 ) ) ;
     public final void rule__GenEscalationBlock__Group_3_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4155:1: ( ( ( rule__GenEscalationBlock__EscalateAtRetriesAssignment_3_1_1 ) ) )
-            // InternalLibrettoProjectProfile.g:4156:1: ( ( rule__GenEscalationBlock__EscalateAtRetriesAssignment_3_1_1 ) )
+            // InternalLibrettoProjectProfile.g:4122:1: ( ( ( rule__GenEscalationBlock__EscalateAtRetriesAssignment_3_1_1 ) ) )
+            // InternalLibrettoProjectProfile.g:4123:1: ( ( rule__GenEscalationBlock__EscalateAtRetriesAssignment_3_1_1 ) )
             {
-            // InternalLibrettoProjectProfile.g:4156:1: ( ( rule__GenEscalationBlock__EscalateAtRetriesAssignment_3_1_1 ) )
-            // InternalLibrettoProjectProfile.g:4157:2: ( rule__GenEscalationBlock__EscalateAtRetriesAssignment_3_1_1 )
+            // InternalLibrettoProjectProfile.g:4123:1: ( ( rule__GenEscalationBlock__EscalateAtRetriesAssignment_3_1_1 ) )
+            // InternalLibrettoProjectProfile.g:4124:2: ( rule__GenEscalationBlock__EscalateAtRetriesAssignment_3_1_1 )
             {
              before(grammarAccess.getGenEscalationBlockAccess().getEscalateAtRetriesAssignment_3_1_1()); 
-            // InternalLibrettoProjectProfile.g:4158:2: ( rule__GenEscalationBlock__EscalateAtRetriesAssignment_3_1_1 )
-            // InternalLibrettoProjectProfile.g:4158:3: rule__GenEscalationBlock__EscalateAtRetriesAssignment_3_1_1
+            // InternalLibrettoProjectProfile.g:4125:2: ( rule__GenEscalationBlock__EscalateAtRetriesAssignment_3_1_1 )
+            // InternalLibrettoProjectProfile.g:4125:3: rule__GenEscalationBlock__EscalateAtRetriesAssignment_3_1_1
             {
             pushFollow(FOLLOW_2);
             rule__GenEscalationBlock__EscalateAtRetriesAssignment_3_1_1();
@@ -12913,14 +12839,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__SurfaceBlock__Group__0"
-    // InternalLibrettoProjectProfile.g:4167:1: rule__SurfaceBlock__Group__0 : rule__SurfaceBlock__Group__0__Impl rule__SurfaceBlock__Group__1 ;
+    // InternalLibrettoProjectProfile.g:4134:1: rule__SurfaceBlock__Group__0 : rule__SurfaceBlock__Group__0__Impl rule__SurfaceBlock__Group__1 ;
     public final void rule__SurfaceBlock__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4171:1: ( rule__SurfaceBlock__Group__0__Impl rule__SurfaceBlock__Group__1 )
-            // InternalLibrettoProjectProfile.g:4172:2: rule__SurfaceBlock__Group__0__Impl rule__SurfaceBlock__Group__1
+            // InternalLibrettoProjectProfile.g:4138:1: ( rule__SurfaceBlock__Group__0__Impl rule__SurfaceBlock__Group__1 )
+            // InternalLibrettoProjectProfile.g:4139:2: rule__SurfaceBlock__Group__0__Impl rule__SurfaceBlock__Group__1
             {
             pushFollow(FOLLOW_43);
             rule__SurfaceBlock__Group__0__Impl();
@@ -12951,21 +12877,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__SurfaceBlock__Group__0__Impl"
-    // InternalLibrettoProjectProfile.g:4179:1: rule__SurfaceBlock__Group__0__Impl : ( () ) ;
+    // InternalLibrettoProjectProfile.g:4146:1: rule__SurfaceBlock__Group__0__Impl : ( () ) ;
     public final void rule__SurfaceBlock__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4183:1: ( ( () ) )
-            // InternalLibrettoProjectProfile.g:4184:1: ( () )
+            // InternalLibrettoProjectProfile.g:4150:1: ( ( () ) )
+            // InternalLibrettoProjectProfile.g:4151:1: ( () )
             {
-            // InternalLibrettoProjectProfile.g:4184:1: ( () )
-            // InternalLibrettoProjectProfile.g:4185:2: ()
+            // InternalLibrettoProjectProfile.g:4151:1: ( () )
+            // InternalLibrettoProjectProfile.g:4152:2: ()
             {
              before(grammarAccess.getSurfaceBlockAccess().getSurfaceBlockAction_0()); 
-            // InternalLibrettoProjectProfile.g:4186:2: ()
-            // InternalLibrettoProjectProfile.g:4186:3: 
+            // InternalLibrettoProjectProfile.g:4153:2: ()
+            // InternalLibrettoProjectProfile.g:4153:3: 
             {
             }
 
@@ -12988,14 +12914,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__SurfaceBlock__Group__1"
-    // InternalLibrettoProjectProfile.g:4194:1: rule__SurfaceBlock__Group__1 : rule__SurfaceBlock__Group__1__Impl rule__SurfaceBlock__Group__2 ;
+    // InternalLibrettoProjectProfile.g:4161:1: rule__SurfaceBlock__Group__1 : rule__SurfaceBlock__Group__1__Impl rule__SurfaceBlock__Group__2 ;
     public final void rule__SurfaceBlock__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4198:1: ( rule__SurfaceBlock__Group__1__Impl rule__SurfaceBlock__Group__2 )
-            // InternalLibrettoProjectProfile.g:4199:2: rule__SurfaceBlock__Group__1__Impl rule__SurfaceBlock__Group__2
+            // InternalLibrettoProjectProfile.g:4165:1: ( rule__SurfaceBlock__Group__1__Impl rule__SurfaceBlock__Group__2 )
+            // InternalLibrettoProjectProfile.g:4166:2: rule__SurfaceBlock__Group__1__Impl rule__SurfaceBlock__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__SurfaceBlock__Group__1__Impl();
@@ -13026,17 +12952,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__SurfaceBlock__Group__1__Impl"
-    // InternalLibrettoProjectProfile.g:4206:1: rule__SurfaceBlock__Group__1__Impl : ( 'surface' ) ;
+    // InternalLibrettoProjectProfile.g:4173:1: rule__SurfaceBlock__Group__1__Impl : ( 'surface' ) ;
     public final void rule__SurfaceBlock__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4210:1: ( ( 'surface' ) )
-            // InternalLibrettoProjectProfile.g:4211:1: ( 'surface' )
+            // InternalLibrettoProjectProfile.g:4177:1: ( ( 'surface' ) )
+            // InternalLibrettoProjectProfile.g:4178:1: ( 'surface' )
             {
-            // InternalLibrettoProjectProfile.g:4211:1: ( 'surface' )
-            // InternalLibrettoProjectProfile.g:4212:2: 'surface'
+            // InternalLibrettoProjectProfile.g:4178:1: ( 'surface' )
+            // InternalLibrettoProjectProfile.g:4179:2: 'surface'
             {
              before(grammarAccess.getSurfaceBlockAccess().getSurfaceKeyword_1()); 
             match(input,63,FOLLOW_2); 
@@ -13063,14 +12989,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__SurfaceBlock__Group__2"
-    // InternalLibrettoProjectProfile.g:4221:1: rule__SurfaceBlock__Group__2 : rule__SurfaceBlock__Group__2__Impl rule__SurfaceBlock__Group__3 ;
+    // InternalLibrettoProjectProfile.g:4188:1: rule__SurfaceBlock__Group__2 : rule__SurfaceBlock__Group__2__Impl rule__SurfaceBlock__Group__3 ;
     public final void rule__SurfaceBlock__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4225:1: ( rule__SurfaceBlock__Group__2__Impl rule__SurfaceBlock__Group__3 )
-            // InternalLibrettoProjectProfile.g:4226:2: rule__SurfaceBlock__Group__2__Impl rule__SurfaceBlock__Group__3
+            // InternalLibrettoProjectProfile.g:4192:1: ( rule__SurfaceBlock__Group__2__Impl rule__SurfaceBlock__Group__3 )
+            // InternalLibrettoProjectProfile.g:4193:2: rule__SurfaceBlock__Group__2__Impl rule__SurfaceBlock__Group__3
             {
             pushFollow(FOLLOW_44);
             rule__SurfaceBlock__Group__2__Impl();
@@ -13101,17 +13027,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__SurfaceBlock__Group__2__Impl"
-    // InternalLibrettoProjectProfile.g:4233:1: rule__SurfaceBlock__Group__2__Impl : ( '{' ) ;
+    // InternalLibrettoProjectProfile.g:4200:1: rule__SurfaceBlock__Group__2__Impl : ( '{' ) ;
     public final void rule__SurfaceBlock__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4237:1: ( ( '{' ) )
-            // InternalLibrettoProjectProfile.g:4238:1: ( '{' )
+            // InternalLibrettoProjectProfile.g:4204:1: ( ( '{' ) )
+            // InternalLibrettoProjectProfile.g:4205:1: ( '{' )
             {
-            // InternalLibrettoProjectProfile.g:4238:1: ( '{' )
-            // InternalLibrettoProjectProfile.g:4239:2: '{'
+            // InternalLibrettoProjectProfile.g:4205:1: ( '{' )
+            // InternalLibrettoProjectProfile.g:4206:2: '{'
             {
              before(grammarAccess.getSurfaceBlockAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,29,FOLLOW_2); 
@@ -13138,14 +13064,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__SurfaceBlock__Group__3"
-    // InternalLibrettoProjectProfile.g:4248:1: rule__SurfaceBlock__Group__3 : rule__SurfaceBlock__Group__3__Impl rule__SurfaceBlock__Group__4 ;
+    // InternalLibrettoProjectProfile.g:4215:1: rule__SurfaceBlock__Group__3 : rule__SurfaceBlock__Group__3__Impl rule__SurfaceBlock__Group__4 ;
     public final void rule__SurfaceBlock__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4252:1: ( rule__SurfaceBlock__Group__3__Impl rule__SurfaceBlock__Group__4 )
-            // InternalLibrettoProjectProfile.g:4253:2: rule__SurfaceBlock__Group__3__Impl rule__SurfaceBlock__Group__4
+            // InternalLibrettoProjectProfile.g:4219:1: ( rule__SurfaceBlock__Group__3__Impl rule__SurfaceBlock__Group__4 )
+            // InternalLibrettoProjectProfile.g:4220:2: rule__SurfaceBlock__Group__3__Impl rule__SurfaceBlock__Group__4
             {
             pushFollow(FOLLOW_44);
             rule__SurfaceBlock__Group__3__Impl();
@@ -13176,33 +13102,33 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__SurfaceBlock__Group__3__Impl"
-    // InternalLibrettoProjectProfile.g:4260:1: rule__SurfaceBlock__Group__3__Impl : ( ( rule__SurfaceBlock__ElementsAssignment_3 )* ) ;
+    // InternalLibrettoProjectProfile.g:4227:1: rule__SurfaceBlock__Group__3__Impl : ( ( rule__SurfaceBlock__ElementsAssignment_3 )* ) ;
     public final void rule__SurfaceBlock__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4264:1: ( ( ( rule__SurfaceBlock__ElementsAssignment_3 )* ) )
-            // InternalLibrettoProjectProfile.g:4265:1: ( ( rule__SurfaceBlock__ElementsAssignment_3 )* )
+            // InternalLibrettoProjectProfile.g:4231:1: ( ( ( rule__SurfaceBlock__ElementsAssignment_3 )* ) )
+            // InternalLibrettoProjectProfile.g:4232:1: ( ( rule__SurfaceBlock__ElementsAssignment_3 )* )
             {
-            // InternalLibrettoProjectProfile.g:4265:1: ( ( rule__SurfaceBlock__ElementsAssignment_3 )* )
-            // InternalLibrettoProjectProfile.g:4266:2: ( rule__SurfaceBlock__ElementsAssignment_3 )*
+            // InternalLibrettoProjectProfile.g:4232:1: ( ( rule__SurfaceBlock__ElementsAssignment_3 )* )
+            // InternalLibrettoProjectProfile.g:4233:2: ( rule__SurfaceBlock__ElementsAssignment_3 )*
             {
              before(grammarAccess.getSurfaceBlockAccess().getElementsAssignment_3()); 
-            // InternalLibrettoProjectProfile.g:4267:2: ( rule__SurfaceBlock__ElementsAssignment_3 )*
-            loop31:
+            // InternalLibrettoProjectProfile.g:4234:2: ( rule__SurfaceBlock__ElementsAssignment_3 )*
+            loop32:
             do {
-                int alt31=2;
-                int LA31_0 = input.LA(1);
+                int alt32=2;
+                int LA32_0 = input.LA(1);
 
-                if ( (LA31_0==64||LA31_0==66||LA31_0==70||LA31_0==72||LA31_0==74) ) {
-                    alt31=1;
+                if ( (LA32_0==64||LA32_0==66||LA32_0==70||LA32_0==72||LA32_0==74) ) {
+                    alt32=1;
                 }
 
 
-                switch (alt31) {
+                switch (alt32) {
             	case 1 :
-            	    // InternalLibrettoProjectProfile.g:4267:3: rule__SurfaceBlock__ElementsAssignment_3
+            	    // InternalLibrettoProjectProfile.g:4234:3: rule__SurfaceBlock__ElementsAssignment_3
             	    {
             	    pushFollow(FOLLOW_45);
             	    rule__SurfaceBlock__ElementsAssignment_3();
@@ -13214,7 +13140,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
             	    break;
 
             	default :
-            	    break loop31;
+            	    break loop32;
                 }
             } while (true);
 
@@ -13241,14 +13167,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__SurfaceBlock__Group__4"
-    // InternalLibrettoProjectProfile.g:4275:1: rule__SurfaceBlock__Group__4 : rule__SurfaceBlock__Group__4__Impl ;
+    // InternalLibrettoProjectProfile.g:4242:1: rule__SurfaceBlock__Group__4 : rule__SurfaceBlock__Group__4__Impl ;
     public final void rule__SurfaceBlock__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4279:1: ( rule__SurfaceBlock__Group__4__Impl )
-            // InternalLibrettoProjectProfile.g:4280:2: rule__SurfaceBlock__Group__4__Impl
+            // InternalLibrettoProjectProfile.g:4246:1: ( rule__SurfaceBlock__Group__4__Impl )
+            // InternalLibrettoProjectProfile.g:4247:2: rule__SurfaceBlock__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SurfaceBlock__Group__4__Impl();
@@ -13274,17 +13200,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__SurfaceBlock__Group__4__Impl"
-    // InternalLibrettoProjectProfile.g:4286:1: rule__SurfaceBlock__Group__4__Impl : ( '}' ) ;
+    // InternalLibrettoProjectProfile.g:4253:1: rule__SurfaceBlock__Group__4__Impl : ( '}' ) ;
     public final void rule__SurfaceBlock__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4290:1: ( ( '}' ) )
-            // InternalLibrettoProjectProfile.g:4291:1: ( '}' )
+            // InternalLibrettoProjectProfile.g:4257:1: ( ( '}' ) )
+            // InternalLibrettoProjectProfile.g:4258:1: ( '}' )
             {
-            // InternalLibrettoProjectProfile.g:4291:1: ( '}' )
-            // InternalLibrettoProjectProfile.g:4292:2: '}'
+            // InternalLibrettoProjectProfile.g:4258:1: ( '}' )
+            // InternalLibrettoProjectProfile.g:4259:2: '}'
             {
              before(grammarAccess.getSurfaceBlockAccess().getRightCurlyBracketKeyword_4()); 
             match(input,30,FOLLOW_2); 
@@ -13311,14 +13237,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ScopedSurface__Group__0"
-    // InternalLibrettoProjectProfile.g:4302:1: rule__ScopedSurface__Group__0 : rule__ScopedSurface__Group__0__Impl rule__ScopedSurface__Group__1 ;
+    // InternalLibrettoProjectProfile.g:4269:1: rule__ScopedSurface__Group__0 : rule__ScopedSurface__Group__0__Impl rule__ScopedSurface__Group__1 ;
     public final void rule__ScopedSurface__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4306:1: ( rule__ScopedSurface__Group__0__Impl rule__ScopedSurface__Group__1 )
-            // InternalLibrettoProjectProfile.g:4307:2: rule__ScopedSurface__Group__0__Impl rule__ScopedSurface__Group__1
+            // InternalLibrettoProjectProfile.g:4273:1: ( rule__ScopedSurface__Group__0__Impl rule__ScopedSurface__Group__1 )
+            // InternalLibrettoProjectProfile.g:4274:2: rule__ScopedSurface__Group__0__Impl rule__ScopedSurface__Group__1
             {
             pushFollow(FOLLOW_46);
             rule__ScopedSurface__Group__0__Impl();
@@ -13349,17 +13275,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ScopedSurface__Group__0__Impl"
-    // InternalLibrettoProjectProfile.g:4314:1: rule__ScopedSurface__Group__0__Impl : ( 'for' ) ;
+    // InternalLibrettoProjectProfile.g:4281:1: rule__ScopedSurface__Group__0__Impl : ( 'for' ) ;
     public final void rule__ScopedSurface__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4318:1: ( ( 'for' ) )
-            // InternalLibrettoProjectProfile.g:4319:1: ( 'for' )
+            // InternalLibrettoProjectProfile.g:4285:1: ( ( 'for' ) )
+            // InternalLibrettoProjectProfile.g:4286:1: ( 'for' )
             {
-            // InternalLibrettoProjectProfile.g:4319:1: ( 'for' )
-            // InternalLibrettoProjectProfile.g:4320:2: 'for'
+            // InternalLibrettoProjectProfile.g:4286:1: ( 'for' )
+            // InternalLibrettoProjectProfile.g:4287:2: 'for'
             {
              before(grammarAccess.getScopedSurfaceAccess().getForKeyword_0()); 
             match(input,64,FOLLOW_2); 
@@ -13386,14 +13312,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ScopedSurface__Group__1"
-    // InternalLibrettoProjectProfile.g:4329:1: rule__ScopedSurface__Group__1 : rule__ScopedSurface__Group__1__Impl rule__ScopedSurface__Group__2 ;
+    // InternalLibrettoProjectProfile.g:4296:1: rule__ScopedSurface__Group__1 : rule__ScopedSurface__Group__1__Impl rule__ScopedSurface__Group__2 ;
     public final void rule__ScopedSurface__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4333:1: ( rule__ScopedSurface__Group__1__Impl rule__ScopedSurface__Group__2 )
-            // InternalLibrettoProjectProfile.g:4334:2: rule__ScopedSurface__Group__1__Impl rule__ScopedSurface__Group__2
+            // InternalLibrettoProjectProfile.g:4300:1: ( rule__ScopedSurface__Group__1__Impl rule__ScopedSurface__Group__2 )
+            // InternalLibrettoProjectProfile.g:4301:2: rule__ScopedSurface__Group__1__Impl rule__ScopedSurface__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__ScopedSurface__Group__1__Impl();
@@ -13424,21 +13350,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ScopedSurface__Group__1__Impl"
-    // InternalLibrettoProjectProfile.g:4341:1: rule__ScopedSurface__Group__1__Impl : ( ( rule__ScopedSurface__Alternatives_1 ) ) ;
+    // InternalLibrettoProjectProfile.g:4308:1: rule__ScopedSurface__Group__1__Impl : ( ( rule__ScopedSurface__Alternatives_1 ) ) ;
     public final void rule__ScopedSurface__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4345:1: ( ( ( rule__ScopedSurface__Alternatives_1 ) ) )
-            // InternalLibrettoProjectProfile.g:4346:1: ( ( rule__ScopedSurface__Alternatives_1 ) )
+            // InternalLibrettoProjectProfile.g:4312:1: ( ( ( rule__ScopedSurface__Alternatives_1 ) ) )
+            // InternalLibrettoProjectProfile.g:4313:1: ( ( rule__ScopedSurface__Alternatives_1 ) )
             {
-            // InternalLibrettoProjectProfile.g:4346:1: ( ( rule__ScopedSurface__Alternatives_1 ) )
-            // InternalLibrettoProjectProfile.g:4347:2: ( rule__ScopedSurface__Alternatives_1 )
+            // InternalLibrettoProjectProfile.g:4313:1: ( ( rule__ScopedSurface__Alternatives_1 ) )
+            // InternalLibrettoProjectProfile.g:4314:2: ( rule__ScopedSurface__Alternatives_1 )
             {
              before(grammarAccess.getScopedSurfaceAccess().getAlternatives_1()); 
-            // InternalLibrettoProjectProfile.g:4348:2: ( rule__ScopedSurface__Alternatives_1 )
-            // InternalLibrettoProjectProfile.g:4348:3: rule__ScopedSurface__Alternatives_1
+            // InternalLibrettoProjectProfile.g:4315:2: ( rule__ScopedSurface__Alternatives_1 )
+            // InternalLibrettoProjectProfile.g:4315:3: rule__ScopedSurface__Alternatives_1
             {
             pushFollow(FOLLOW_2);
             rule__ScopedSurface__Alternatives_1();
@@ -13471,14 +13397,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ScopedSurface__Group__2"
-    // InternalLibrettoProjectProfile.g:4356:1: rule__ScopedSurface__Group__2 : rule__ScopedSurface__Group__2__Impl rule__ScopedSurface__Group__3 ;
+    // InternalLibrettoProjectProfile.g:4323:1: rule__ScopedSurface__Group__2 : rule__ScopedSurface__Group__2__Impl rule__ScopedSurface__Group__3 ;
     public final void rule__ScopedSurface__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4360:1: ( rule__ScopedSurface__Group__2__Impl rule__ScopedSurface__Group__3 )
-            // InternalLibrettoProjectProfile.g:4361:2: rule__ScopedSurface__Group__2__Impl rule__ScopedSurface__Group__3
+            // InternalLibrettoProjectProfile.g:4327:1: ( rule__ScopedSurface__Group__2__Impl rule__ScopedSurface__Group__3 )
+            // InternalLibrettoProjectProfile.g:4328:2: rule__ScopedSurface__Group__2__Impl rule__ScopedSurface__Group__3
             {
             pushFollow(FOLLOW_44);
             rule__ScopedSurface__Group__2__Impl();
@@ -13509,17 +13435,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ScopedSurface__Group__2__Impl"
-    // InternalLibrettoProjectProfile.g:4368:1: rule__ScopedSurface__Group__2__Impl : ( '{' ) ;
+    // InternalLibrettoProjectProfile.g:4335:1: rule__ScopedSurface__Group__2__Impl : ( '{' ) ;
     public final void rule__ScopedSurface__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4372:1: ( ( '{' ) )
-            // InternalLibrettoProjectProfile.g:4373:1: ( '{' )
+            // InternalLibrettoProjectProfile.g:4339:1: ( ( '{' ) )
+            // InternalLibrettoProjectProfile.g:4340:1: ( '{' )
             {
-            // InternalLibrettoProjectProfile.g:4373:1: ( '{' )
-            // InternalLibrettoProjectProfile.g:4374:2: '{'
+            // InternalLibrettoProjectProfile.g:4340:1: ( '{' )
+            // InternalLibrettoProjectProfile.g:4341:2: '{'
             {
              before(grammarAccess.getScopedSurfaceAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,29,FOLLOW_2); 
@@ -13546,14 +13472,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ScopedSurface__Group__3"
-    // InternalLibrettoProjectProfile.g:4383:1: rule__ScopedSurface__Group__3 : rule__ScopedSurface__Group__3__Impl rule__ScopedSurface__Group__4 ;
+    // InternalLibrettoProjectProfile.g:4350:1: rule__ScopedSurface__Group__3 : rule__ScopedSurface__Group__3__Impl rule__ScopedSurface__Group__4 ;
     public final void rule__ScopedSurface__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4387:1: ( rule__ScopedSurface__Group__3__Impl rule__ScopedSurface__Group__4 )
-            // InternalLibrettoProjectProfile.g:4388:2: rule__ScopedSurface__Group__3__Impl rule__ScopedSurface__Group__4
+            // InternalLibrettoProjectProfile.g:4354:1: ( rule__ScopedSurface__Group__3__Impl rule__ScopedSurface__Group__4 )
+            // InternalLibrettoProjectProfile.g:4355:2: rule__ScopedSurface__Group__3__Impl rule__ScopedSurface__Group__4
             {
             pushFollow(FOLLOW_44);
             rule__ScopedSurface__Group__3__Impl();
@@ -13584,33 +13510,33 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ScopedSurface__Group__3__Impl"
-    // InternalLibrettoProjectProfile.g:4395:1: rule__ScopedSurface__Group__3__Impl : ( ( rule__ScopedSurface__RulesAssignment_3 )* ) ;
+    // InternalLibrettoProjectProfile.g:4362:1: rule__ScopedSurface__Group__3__Impl : ( ( rule__ScopedSurface__RulesAssignment_3 )* ) ;
     public final void rule__ScopedSurface__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4399:1: ( ( ( rule__ScopedSurface__RulesAssignment_3 )* ) )
-            // InternalLibrettoProjectProfile.g:4400:1: ( ( rule__ScopedSurface__RulesAssignment_3 )* )
+            // InternalLibrettoProjectProfile.g:4366:1: ( ( ( rule__ScopedSurface__RulesAssignment_3 )* ) )
+            // InternalLibrettoProjectProfile.g:4367:1: ( ( rule__ScopedSurface__RulesAssignment_3 )* )
             {
-            // InternalLibrettoProjectProfile.g:4400:1: ( ( rule__ScopedSurface__RulesAssignment_3 )* )
-            // InternalLibrettoProjectProfile.g:4401:2: ( rule__ScopedSurface__RulesAssignment_3 )*
+            // InternalLibrettoProjectProfile.g:4367:1: ( ( rule__ScopedSurface__RulesAssignment_3 )* )
+            // InternalLibrettoProjectProfile.g:4368:2: ( rule__ScopedSurface__RulesAssignment_3 )*
             {
              before(grammarAccess.getScopedSurfaceAccess().getRulesAssignment_3()); 
-            // InternalLibrettoProjectProfile.g:4402:2: ( rule__ScopedSurface__RulesAssignment_3 )*
-            loop32:
+            // InternalLibrettoProjectProfile.g:4369:2: ( rule__ScopedSurface__RulesAssignment_3 )*
+            loop33:
             do {
-                int alt32=2;
-                int LA32_0 = input.LA(1);
+                int alt33=2;
+                int LA33_0 = input.LA(1);
 
-                if ( (LA32_0==66||LA32_0==70||LA32_0==72||LA32_0==74) ) {
-                    alt32=1;
+                if ( (LA33_0==66||LA33_0==70||LA33_0==72||LA33_0==74) ) {
+                    alt33=1;
                 }
 
 
-                switch (alt32) {
+                switch (alt33) {
             	case 1 :
-            	    // InternalLibrettoProjectProfile.g:4402:3: rule__ScopedSurface__RulesAssignment_3
+            	    // InternalLibrettoProjectProfile.g:4369:3: rule__ScopedSurface__RulesAssignment_3
             	    {
             	    pushFollow(FOLLOW_45);
             	    rule__ScopedSurface__RulesAssignment_3();
@@ -13622,7 +13548,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
             	    break;
 
             	default :
-            	    break loop32;
+            	    break loop33;
                 }
             } while (true);
 
@@ -13649,14 +13575,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ScopedSurface__Group__4"
-    // InternalLibrettoProjectProfile.g:4410:1: rule__ScopedSurface__Group__4 : rule__ScopedSurface__Group__4__Impl ;
+    // InternalLibrettoProjectProfile.g:4377:1: rule__ScopedSurface__Group__4 : rule__ScopedSurface__Group__4__Impl ;
     public final void rule__ScopedSurface__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4414:1: ( rule__ScopedSurface__Group__4__Impl )
-            // InternalLibrettoProjectProfile.g:4415:2: rule__ScopedSurface__Group__4__Impl
+            // InternalLibrettoProjectProfile.g:4381:1: ( rule__ScopedSurface__Group__4__Impl )
+            // InternalLibrettoProjectProfile.g:4382:2: rule__ScopedSurface__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ScopedSurface__Group__4__Impl();
@@ -13682,17 +13608,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ScopedSurface__Group__4__Impl"
-    // InternalLibrettoProjectProfile.g:4421:1: rule__ScopedSurface__Group__4__Impl : ( '}' ) ;
+    // InternalLibrettoProjectProfile.g:4388:1: rule__ScopedSurface__Group__4__Impl : ( '}' ) ;
     public final void rule__ScopedSurface__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4425:1: ( ( '}' ) )
-            // InternalLibrettoProjectProfile.g:4426:1: ( '}' )
+            // InternalLibrettoProjectProfile.g:4392:1: ( ( '}' ) )
+            // InternalLibrettoProjectProfile.g:4393:1: ( '}' )
             {
-            // InternalLibrettoProjectProfile.g:4426:1: ( '}' )
-            // InternalLibrettoProjectProfile.g:4427:2: '}'
+            // InternalLibrettoProjectProfile.g:4393:1: ( '}' )
+            // InternalLibrettoProjectProfile.g:4394:2: '}'
             {
              before(grammarAccess.getScopedSurfaceAccess().getRightCurlyBracketKeyword_4()); 
             match(input,30,FOLLOW_2); 
@@ -13719,14 +13645,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ScopedSurface__Group_1_0__0"
-    // InternalLibrettoProjectProfile.g:4437:1: rule__ScopedSurface__Group_1_0__0 : rule__ScopedSurface__Group_1_0__0__Impl rule__ScopedSurface__Group_1_0__1 ;
+    // InternalLibrettoProjectProfile.g:4404:1: rule__ScopedSurface__Group_1_0__0 : rule__ScopedSurface__Group_1_0__0__Impl rule__ScopedSurface__Group_1_0__1 ;
     public final void rule__ScopedSurface__Group_1_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4441:1: ( rule__ScopedSurface__Group_1_0__0__Impl rule__ScopedSurface__Group_1_0__1 )
-            // InternalLibrettoProjectProfile.g:4442:2: rule__ScopedSurface__Group_1_0__0__Impl rule__ScopedSurface__Group_1_0__1
+            // InternalLibrettoProjectProfile.g:4408:1: ( rule__ScopedSurface__Group_1_0__0__Impl rule__ScopedSurface__Group_1_0__1 )
+            // InternalLibrettoProjectProfile.g:4409:2: rule__ScopedSurface__Group_1_0__0__Impl rule__ScopedSurface__Group_1_0__1
             {
             pushFollow(FOLLOW_11);
             rule__ScopedSurface__Group_1_0__0__Impl();
@@ -13757,17 +13683,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ScopedSurface__Group_1_0__0__Impl"
-    // InternalLibrettoProjectProfile.g:4449:1: rule__ScopedSurface__Group_1_0__0__Impl : ( 'module' ) ;
+    // InternalLibrettoProjectProfile.g:4416:1: rule__ScopedSurface__Group_1_0__0__Impl : ( 'module' ) ;
     public final void rule__ScopedSurface__Group_1_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4453:1: ( ( 'module' ) )
-            // InternalLibrettoProjectProfile.g:4454:1: ( 'module' )
+            // InternalLibrettoProjectProfile.g:4420:1: ( ( 'module' ) )
+            // InternalLibrettoProjectProfile.g:4421:1: ( 'module' )
             {
-            // InternalLibrettoProjectProfile.g:4454:1: ( 'module' )
-            // InternalLibrettoProjectProfile.g:4455:2: 'module'
+            // InternalLibrettoProjectProfile.g:4421:1: ( 'module' )
+            // InternalLibrettoProjectProfile.g:4422:2: 'module'
             {
              before(grammarAccess.getScopedSurfaceAccess().getModuleKeyword_1_0_0()); 
             match(input,34,FOLLOW_2); 
@@ -13794,14 +13720,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ScopedSurface__Group_1_0__1"
-    // InternalLibrettoProjectProfile.g:4464:1: rule__ScopedSurface__Group_1_0__1 : rule__ScopedSurface__Group_1_0__1__Impl ;
+    // InternalLibrettoProjectProfile.g:4431:1: rule__ScopedSurface__Group_1_0__1 : rule__ScopedSurface__Group_1_0__1__Impl ;
     public final void rule__ScopedSurface__Group_1_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4468:1: ( rule__ScopedSurface__Group_1_0__1__Impl )
-            // InternalLibrettoProjectProfile.g:4469:2: rule__ScopedSurface__Group_1_0__1__Impl
+            // InternalLibrettoProjectProfile.g:4435:1: ( rule__ScopedSurface__Group_1_0__1__Impl )
+            // InternalLibrettoProjectProfile.g:4436:2: rule__ScopedSurface__Group_1_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ScopedSurface__Group_1_0__1__Impl();
@@ -13827,21 +13753,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ScopedSurface__Group_1_0__1__Impl"
-    // InternalLibrettoProjectProfile.g:4475:1: rule__ScopedSurface__Group_1_0__1__Impl : ( ( rule__ScopedSurface__ModuleIdAssignment_1_0_1 ) ) ;
+    // InternalLibrettoProjectProfile.g:4442:1: rule__ScopedSurface__Group_1_0__1__Impl : ( ( rule__ScopedSurface__ModuleIdAssignment_1_0_1 ) ) ;
     public final void rule__ScopedSurface__Group_1_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4479:1: ( ( ( rule__ScopedSurface__ModuleIdAssignment_1_0_1 ) ) )
-            // InternalLibrettoProjectProfile.g:4480:1: ( ( rule__ScopedSurface__ModuleIdAssignment_1_0_1 ) )
+            // InternalLibrettoProjectProfile.g:4446:1: ( ( ( rule__ScopedSurface__ModuleIdAssignment_1_0_1 ) ) )
+            // InternalLibrettoProjectProfile.g:4447:1: ( ( rule__ScopedSurface__ModuleIdAssignment_1_0_1 ) )
             {
-            // InternalLibrettoProjectProfile.g:4480:1: ( ( rule__ScopedSurface__ModuleIdAssignment_1_0_1 ) )
-            // InternalLibrettoProjectProfile.g:4481:2: ( rule__ScopedSurface__ModuleIdAssignment_1_0_1 )
+            // InternalLibrettoProjectProfile.g:4447:1: ( ( rule__ScopedSurface__ModuleIdAssignment_1_0_1 ) )
+            // InternalLibrettoProjectProfile.g:4448:2: ( rule__ScopedSurface__ModuleIdAssignment_1_0_1 )
             {
              before(grammarAccess.getScopedSurfaceAccess().getModuleIdAssignment_1_0_1()); 
-            // InternalLibrettoProjectProfile.g:4482:2: ( rule__ScopedSurface__ModuleIdAssignment_1_0_1 )
-            // InternalLibrettoProjectProfile.g:4482:3: rule__ScopedSurface__ModuleIdAssignment_1_0_1
+            // InternalLibrettoProjectProfile.g:4449:2: ( rule__ScopedSurface__ModuleIdAssignment_1_0_1 )
+            // InternalLibrettoProjectProfile.g:4449:3: rule__ScopedSurface__ModuleIdAssignment_1_0_1
             {
             pushFollow(FOLLOW_2);
             rule__ScopedSurface__ModuleIdAssignment_1_0_1();
@@ -13874,14 +13800,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ScopedSurface__Group_1_1__0"
-    // InternalLibrettoProjectProfile.g:4491:1: rule__ScopedSurface__Group_1_1__0 : rule__ScopedSurface__Group_1_1__0__Impl rule__ScopedSurface__Group_1_1__1 ;
+    // InternalLibrettoProjectProfile.g:4458:1: rule__ScopedSurface__Group_1_1__0 : rule__ScopedSurface__Group_1_1__0__Impl rule__ScopedSurface__Group_1_1__1 ;
     public final void rule__ScopedSurface__Group_1_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4495:1: ( rule__ScopedSurface__Group_1_1__0__Impl rule__ScopedSurface__Group_1_1__1 )
-            // InternalLibrettoProjectProfile.g:4496:2: rule__ScopedSurface__Group_1_1__0__Impl rule__ScopedSurface__Group_1_1__1
+            // InternalLibrettoProjectProfile.g:4462:1: ( rule__ScopedSurface__Group_1_1__0__Impl rule__ScopedSurface__Group_1_1__1 )
+            // InternalLibrettoProjectProfile.g:4463:2: rule__ScopedSurface__Group_1_1__0__Impl rule__ScopedSurface__Group_1_1__1
             {
             pushFollow(FOLLOW_11);
             rule__ScopedSurface__Group_1_1__0__Impl();
@@ -13912,17 +13838,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ScopedSurface__Group_1_1__0__Impl"
-    // InternalLibrettoProjectProfile.g:4503:1: rule__ScopedSurface__Group_1_1__0__Impl : ( 'spec' ) ;
+    // InternalLibrettoProjectProfile.g:4470:1: rule__ScopedSurface__Group_1_1__0__Impl : ( 'spec' ) ;
     public final void rule__ScopedSurface__Group_1_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4507:1: ( ( 'spec' ) )
-            // InternalLibrettoProjectProfile.g:4508:1: ( 'spec' )
+            // InternalLibrettoProjectProfile.g:4474:1: ( ( 'spec' ) )
+            // InternalLibrettoProjectProfile.g:4475:1: ( 'spec' )
             {
-            // InternalLibrettoProjectProfile.g:4508:1: ( 'spec' )
-            // InternalLibrettoProjectProfile.g:4509:2: 'spec'
+            // InternalLibrettoProjectProfile.g:4475:1: ( 'spec' )
+            // InternalLibrettoProjectProfile.g:4476:2: 'spec'
             {
              before(grammarAccess.getScopedSurfaceAccess().getSpecKeyword_1_1_0()); 
             match(input,65,FOLLOW_2); 
@@ -13949,14 +13875,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ScopedSurface__Group_1_1__1"
-    // InternalLibrettoProjectProfile.g:4518:1: rule__ScopedSurface__Group_1_1__1 : rule__ScopedSurface__Group_1_1__1__Impl ;
+    // InternalLibrettoProjectProfile.g:4485:1: rule__ScopedSurface__Group_1_1__1 : rule__ScopedSurface__Group_1_1__1__Impl ;
     public final void rule__ScopedSurface__Group_1_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4522:1: ( rule__ScopedSurface__Group_1_1__1__Impl )
-            // InternalLibrettoProjectProfile.g:4523:2: rule__ScopedSurface__Group_1_1__1__Impl
+            // InternalLibrettoProjectProfile.g:4489:1: ( rule__ScopedSurface__Group_1_1__1__Impl )
+            // InternalLibrettoProjectProfile.g:4490:2: rule__ScopedSurface__Group_1_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ScopedSurface__Group_1_1__1__Impl();
@@ -13982,21 +13908,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ScopedSurface__Group_1_1__1__Impl"
-    // InternalLibrettoProjectProfile.g:4529:1: rule__ScopedSurface__Group_1_1__1__Impl : ( ( rule__ScopedSurface__SpecIdAssignment_1_1_1 ) ) ;
+    // InternalLibrettoProjectProfile.g:4496:1: rule__ScopedSurface__Group_1_1__1__Impl : ( ( rule__ScopedSurface__SpecIdAssignment_1_1_1 ) ) ;
     public final void rule__ScopedSurface__Group_1_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4533:1: ( ( ( rule__ScopedSurface__SpecIdAssignment_1_1_1 ) ) )
-            // InternalLibrettoProjectProfile.g:4534:1: ( ( rule__ScopedSurface__SpecIdAssignment_1_1_1 ) )
+            // InternalLibrettoProjectProfile.g:4500:1: ( ( ( rule__ScopedSurface__SpecIdAssignment_1_1_1 ) ) )
+            // InternalLibrettoProjectProfile.g:4501:1: ( ( rule__ScopedSurface__SpecIdAssignment_1_1_1 ) )
             {
-            // InternalLibrettoProjectProfile.g:4534:1: ( ( rule__ScopedSurface__SpecIdAssignment_1_1_1 ) )
-            // InternalLibrettoProjectProfile.g:4535:2: ( rule__ScopedSurface__SpecIdAssignment_1_1_1 )
+            // InternalLibrettoProjectProfile.g:4501:1: ( ( rule__ScopedSurface__SpecIdAssignment_1_1_1 ) )
+            // InternalLibrettoProjectProfile.g:4502:2: ( rule__ScopedSurface__SpecIdAssignment_1_1_1 )
             {
              before(grammarAccess.getScopedSurfaceAccess().getSpecIdAssignment_1_1_1()); 
-            // InternalLibrettoProjectProfile.g:4536:2: ( rule__ScopedSurface__SpecIdAssignment_1_1_1 )
-            // InternalLibrettoProjectProfile.g:4536:3: rule__ScopedSurface__SpecIdAssignment_1_1_1
+            // InternalLibrettoProjectProfile.g:4503:2: ( rule__ScopedSurface__SpecIdAssignment_1_1_1 )
+            // InternalLibrettoProjectProfile.g:4503:3: rule__ScopedSurface__SpecIdAssignment_1_1_1
             {
             pushFollow(FOLLOW_2);
             rule__ScopedSurface__SpecIdAssignment_1_1_1();
@@ -14029,14 +13955,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ReturnTypeRule__Group__0"
-    // InternalLibrettoProjectProfile.g:4545:1: rule__ReturnTypeRule__Group__0 : rule__ReturnTypeRule__Group__0__Impl rule__ReturnTypeRule__Group__1 ;
+    // InternalLibrettoProjectProfile.g:4512:1: rule__ReturnTypeRule__Group__0 : rule__ReturnTypeRule__Group__0__Impl rule__ReturnTypeRule__Group__1 ;
     public final void rule__ReturnTypeRule__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4549:1: ( rule__ReturnTypeRule__Group__0__Impl rule__ReturnTypeRule__Group__1 )
-            // InternalLibrettoProjectProfile.g:4550:2: rule__ReturnTypeRule__Group__0__Impl rule__ReturnTypeRule__Group__1
+            // InternalLibrettoProjectProfile.g:4516:1: ( rule__ReturnTypeRule__Group__0__Impl rule__ReturnTypeRule__Group__1 )
+            // InternalLibrettoProjectProfile.g:4517:2: rule__ReturnTypeRule__Group__0__Impl rule__ReturnTypeRule__Group__1
             {
             pushFollow(FOLLOW_47);
             rule__ReturnTypeRule__Group__0__Impl();
@@ -14067,17 +13993,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ReturnTypeRule__Group__0__Impl"
-    // InternalLibrettoProjectProfile.g:4557:1: rule__ReturnTypeRule__Group__0__Impl : ( 'returnType' ) ;
+    // InternalLibrettoProjectProfile.g:4524:1: rule__ReturnTypeRule__Group__0__Impl : ( 'returnType' ) ;
     public final void rule__ReturnTypeRule__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4561:1: ( ( 'returnType' ) )
-            // InternalLibrettoProjectProfile.g:4562:1: ( 'returnType' )
+            // InternalLibrettoProjectProfile.g:4528:1: ( ( 'returnType' ) )
+            // InternalLibrettoProjectProfile.g:4529:1: ( 'returnType' )
             {
-            // InternalLibrettoProjectProfile.g:4562:1: ( 'returnType' )
-            // InternalLibrettoProjectProfile.g:4563:2: 'returnType'
+            // InternalLibrettoProjectProfile.g:4529:1: ( 'returnType' )
+            // InternalLibrettoProjectProfile.g:4530:2: 'returnType'
             {
              before(grammarAccess.getReturnTypeRuleAccess().getReturnTypeKeyword_0()); 
             match(input,66,FOLLOW_2); 
@@ -14104,14 +14030,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ReturnTypeRule__Group__1"
-    // InternalLibrettoProjectProfile.g:4572:1: rule__ReturnTypeRule__Group__1 : rule__ReturnTypeRule__Group__1__Impl rule__ReturnTypeRule__Group__2 ;
+    // InternalLibrettoProjectProfile.g:4539:1: rule__ReturnTypeRule__Group__1 : rule__ReturnTypeRule__Group__1__Impl rule__ReturnTypeRule__Group__2 ;
     public final void rule__ReturnTypeRule__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4576:1: ( rule__ReturnTypeRule__Group__1__Impl rule__ReturnTypeRule__Group__2 )
-            // InternalLibrettoProjectProfile.g:4577:2: rule__ReturnTypeRule__Group__1__Impl rule__ReturnTypeRule__Group__2
+            // InternalLibrettoProjectProfile.g:4543:1: ( rule__ReturnTypeRule__Group__1__Impl rule__ReturnTypeRule__Group__2 )
+            // InternalLibrettoProjectProfile.g:4544:2: rule__ReturnTypeRule__Group__1__Impl rule__ReturnTypeRule__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__ReturnTypeRule__Group__1__Impl();
@@ -14142,17 +14068,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ReturnTypeRule__Group__1__Impl"
-    // InternalLibrettoProjectProfile.g:4584:1: rule__ReturnTypeRule__Group__1__Impl : ( 'method' ) ;
+    // InternalLibrettoProjectProfile.g:4551:1: rule__ReturnTypeRule__Group__1__Impl : ( 'method' ) ;
     public final void rule__ReturnTypeRule__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4588:1: ( ( 'method' ) )
-            // InternalLibrettoProjectProfile.g:4589:1: ( 'method' )
+            // InternalLibrettoProjectProfile.g:4555:1: ( ( 'method' ) )
+            // InternalLibrettoProjectProfile.g:4556:1: ( 'method' )
             {
-            // InternalLibrettoProjectProfile.g:4589:1: ( 'method' )
-            // InternalLibrettoProjectProfile.g:4590:2: 'method'
+            // InternalLibrettoProjectProfile.g:4556:1: ( 'method' )
+            // InternalLibrettoProjectProfile.g:4557:2: 'method'
             {
              before(grammarAccess.getReturnTypeRuleAccess().getMethodKeyword_1()); 
             match(input,67,FOLLOW_2); 
@@ -14179,14 +14105,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ReturnTypeRule__Group__2"
-    // InternalLibrettoProjectProfile.g:4599:1: rule__ReturnTypeRule__Group__2 : rule__ReturnTypeRule__Group__2__Impl rule__ReturnTypeRule__Group__3 ;
+    // InternalLibrettoProjectProfile.g:4566:1: rule__ReturnTypeRule__Group__2 : rule__ReturnTypeRule__Group__2__Impl rule__ReturnTypeRule__Group__3 ;
     public final void rule__ReturnTypeRule__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4603:1: ( rule__ReturnTypeRule__Group__2__Impl rule__ReturnTypeRule__Group__3 )
-            // InternalLibrettoProjectProfile.g:4604:2: rule__ReturnTypeRule__Group__2__Impl rule__ReturnTypeRule__Group__3
+            // InternalLibrettoProjectProfile.g:4570:1: ( rule__ReturnTypeRule__Group__2__Impl rule__ReturnTypeRule__Group__3 )
+            // InternalLibrettoProjectProfile.g:4571:2: rule__ReturnTypeRule__Group__2__Impl rule__ReturnTypeRule__Group__3
             {
             pushFollow(FOLLOW_48);
             rule__ReturnTypeRule__Group__2__Impl();
@@ -14217,21 +14143,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ReturnTypeRule__Group__2__Impl"
-    // InternalLibrettoProjectProfile.g:4611:1: rule__ReturnTypeRule__Group__2__Impl : ( ( rule__ReturnTypeRule__NameAssignment_2 ) ) ;
+    // InternalLibrettoProjectProfile.g:4578:1: rule__ReturnTypeRule__Group__2__Impl : ( ( rule__ReturnTypeRule__NameAssignment_2 ) ) ;
     public final void rule__ReturnTypeRule__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4615:1: ( ( ( rule__ReturnTypeRule__NameAssignment_2 ) ) )
-            // InternalLibrettoProjectProfile.g:4616:1: ( ( rule__ReturnTypeRule__NameAssignment_2 ) )
+            // InternalLibrettoProjectProfile.g:4582:1: ( ( ( rule__ReturnTypeRule__NameAssignment_2 ) ) )
+            // InternalLibrettoProjectProfile.g:4583:1: ( ( rule__ReturnTypeRule__NameAssignment_2 ) )
             {
-            // InternalLibrettoProjectProfile.g:4616:1: ( ( rule__ReturnTypeRule__NameAssignment_2 ) )
-            // InternalLibrettoProjectProfile.g:4617:2: ( rule__ReturnTypeRule__NameAssignment_2 )
+            // InternalLibrettoProjectProfile.g:4583:1: ( ( rule__ReturnTypeRule__NameAssignment_2 ) )
+            // InternalLibrettoProjectProfile.g:4584:2: ( rule__ReturnTypeRule__NameAssignment_2 )
             {
              before(grammarAccess.getReturnTypeRuleAccess().getNameAssignment_2()); 
-            // InternalLibrettoProjectProfile.g:4618:2: ( rule__ReturnTypeRule__NameAssignment_2 )
-            // InternalLibrettoProjectProfile.g:4618:3: rule__ReturnTypeRule__NameAssignment_2
+            // InternalLibrettoProjectProfile.g:4585:2: ( rule__ReturnTypeRule__NameAssignment_2 )
+            // InternalLibrettoProjectProfile.g:4585:3: rule__ReturnTypeRule__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__ReturnTypeRule__NameAssignment_2();
@@ -14264,14 +14190,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ReturnTypeRule__Group__3"
-    // InternalLibrettoProjectProfile.g:4626:1: rule__ReturnTypeRule__Group__3 : rule__ReturnTypeRule__Group__3__Impl rule__ReturnTypeRule__Group__4 ;
+    // InternalLibrettoProjectProfile.g:4593:1: rule__ReturnTypeRule__Group__3 : rule__ReturnTypeRule__Group__3__Impl rule__ReturnTypeRule__Group__4 ;
     public final void rule__ReturnTypeRule__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4630:1: ( rule__ReturnTypeRule__Group__3__Impl rule__ReturnTypeRule__Group__4 )
-            // InternalLibrettoProjectProfile.g:4631:2: rule__ReturnTypeRule__Group__3__Impl rule__ReturnTypeRule__Group__4
+            // InternalLibrettoProjectProfile.g:4597:1: ( rule__ReturnTypeRule__Group__3__Impl rule__ReturnTypeRule__Group__4 )
+            // InternalLibrettoProjectProfile.g:4598:2: rule__ReturnTypeRule__Group__3__Impl rule__ReturnTypeRule__Group__4
             {
             pushFollow(FOLLOW_49);
             rule__ReturnTypeRule__Group__3__Impl();
@@ -14302,17 +14228,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ReturnTypeRule__Group__3__Impl"
-    // InternalLibrettoProjectProfile.g:4638:1: rule__ReturnTypeRule__Group__3__Impl : ( 'as' ) ;
+    // InternalLibrettoProjectProfile.g:4605:1: rule__ReturnTypeRule__Group__3__Impl : ( 'as' ) ;
     public final void rule__ReturnTypeRule__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4642:1: ( ( 'as' ) )
-            // InternalLibrettoProjectProfile.g:4643:1: ( 'as' )
+            // InternalLibrettoProjectProfile.g:4609:1: ( ( 'as' ) )
+            // InternalLibrettoProjectProfile.g:4610:1: ( 'as' )
             {
-            // InternalLibrettoProjectProfile.g:4643:1: ( 'as' )
-            // InternalLibrettoProjectProfile.g:4644:2: 'as'
+            // InternalLibrettoProjectProfile.g:4610:1: ( 'as' )
+            // InternalLibrettoProjectProfile.g:4611:2: 'as'
             {
              before(grammarAccess.getReturnTypeRuleAccess().getAsKeyword_3()); 
             match(input,68,FOLLOW_2); 
@@ -14339,14 +14265,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ReturnTypeRule__Group__4"
-    // InternalLibrettoProjectProfile.g:4653:1: rule__ReturnTypeRule__Group__4 : rule__ReturnTypeRule__Group__4__Impl rule__ReturnTypeRule__Group__5 ;
+    // InternalLibrettoProjectProfile.g:4620:1: rule__ReturnTypeRule__Group__4 : rule__ReturnTypeRule__Group__4__Impl rule__ReturnTypeRule__Group__5 ;
     public final void rule__ReturnTypeRule__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4657:1: ( rule__ReturnTypeRule__Group__4__Impl rule__ReturnTypeRule__Group__5 )
-            // InternalLibrettoProjectProfile.g:4658:2: rule__ReturnTypeRule__Group__4__Impl rule__ReturnTypeRule__Group__5
+            // InternalLibrettoProjectProfile.g:4624:1: ( rule__ReturnTypeRule__Group__4__Impl rule__ReturnTypeRule__Group__5 )
+            // InternalLibrettoProjectProfile.g:4625:2: rule__ReturnTypeRule__Group__4__Impl rule__ReturnTypeRule__Group__5
             {
             pushFollow(FOLLOW_50);
             rule__ReturnTypeRule__Group__4__Impl();
@@ -14377,21 +14303,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ReturnTypeRule__Group__4__Impl"
-    // InternalLibrettoProjectProfile.g:4665:1: rule__ReturnTypeRule__Group__4__Impl : ( ( rule__ReturnTypeRule__JavaTypeAssignment_4 ) ) ;
+    // InternalLibrettoProjectProfile.g:4632:1: rule__ReturnTypeRule__Group__4__Impl : ( ( rule__ReturnTypeRule__JavaTypeAssignment_4 ) ) ;
     public final void rule__ReturnTypeRule__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4669:1: ( ( ( rule__ReturnTypeRule__JavaTypeAssignment_4 ) ) )
-            // InternalLibrettoProjectProfile.g:4670:1: ( ( rule__ReturnTypeRule__JavaTypeAssignment_4 ) )
+            // InternalLibrettoProjectProfile.g:4636:1: ( ( ( rule__ReturnTypeRule__JavaTypeAssignment_4 ) ) )
+            // InternalLibrettoProjectProfile.g:4637:1: ( ( rule__ReturnTypeRule__JavaTypeAssignment_4 ) )
             {
-            // InternalLibrettoProjectProfile.g:4670:1: ( ( rule__ReturnTypeRule__JavaTypeAssignment_4 ) )
-            // InternalLibrettoProjectProfile.g:4671:2: ( rule__ReturnTypeRule__JavaTypeAssignment_4 )
+            // InternalLibrettoProjectProfile.g:4637:1: ( ( rule__ReturnTypeRule__JavaTypeAssignment_4 ) )
+            // InternalLibrettoProjectProfile.g:4638:2: ( rule__ReturnTypeRule__JavaTypeAssignment_4 )
             {
              before(grammarAccess.getReturnTypeRuleAccess().getJavaTypeAssignment_4()); 
-            // InternalLibrettoProjectProfile.g:4672:2: ( rule__ReturnTypeRule__JavaTypeAssignment_4 )
-            // InternalLibrettoProjectProfile.g:4672:3: rule__ReturnTypeRule__JavaTypeAssignment_4
+            // InternalLibrettoProjectProfile.g:4639:2: ( rule__ReturnTypeRule__JavaTypeAssignment_4 )
+            // InternalLibrettoProjectProfile.g:4639:3: rule__ReturnTypeRule__JavaTypeAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__ReturnTypeRule__JavaTypeAssignment_4();
@@ -14424,14 +14350,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ReturnTypeRule__Group__5"
-    // InternalLibrettoProjectProfile.g:4680:1: rule__ReturnTypeRule__Group__5 : rule__ReturnTypeRule__Group__5__Impl ;
+    // InternalLibrettoProjectProfile.g:4647:1: rule__ReturnTypeRule__Group__5 : rule__ReturnTypeRule__Group__5__Impl ;
     public final void rule__ReturnTypeRule__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4684:1: ( rule__ReturnTypeRule__Group__5__Impl )
-            // InternalLibrettoProjectProfile.g:4685:2: rule__ReturnTypeRule__Group__5__Impl
+            // InternalLibrettoProjectProfile.g:4651:1: ( rule__ReturnTypeRule__Group__5__Impl )
+            // InternalLibrettoProjectProfile.g:4652:2: rule__ReturnTypeRule__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ReturnTypeRule__Group__5__Impl();
@@ -14457,29 +14383,29 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ReturnTypeRule__Group__5__Impl"
-    // InternalLibrettoProjectProfile.g:4691:1: rule__ReturnTypeRule__Group__5__Impl : ( ( ';' )? ) ;
+    // InternalLibrettoProjectProfile.g:4658:1: rule__ReturnTypeRule__Group__5__Impl : ( ( ';' )? ) ;
     public final void rule__ReturnTypeRule__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4695:1: ( ( ( ';' )? ) )
-            // InternalLibrettoProjectProfile.g:4696:1: ( ( ';' )? )
+            // InternalLibrettoProjectProfile.g:4662:1: ( ( ( ';' )? ) )
+            // InternalLibrettoProjectProfile.g:4663:1: ( ( ';' )? )
             {
-            // InternalLibrettoProjectProfile.g:4696:1: ( ( ';' )? )
-            // InternalLibrettoProjectProfile.g:4697:2: ( ';' )?
+            // InternalLibrettoProjectProfile.g:4663:1: ( ( ';' )? )
+            // InternalLibrettoProjectProfile.g:4664:2: ( ';' )?
             {
              before(grammarAccess.getReturnTypeRuleAccess().getSemicolonKeyword_5()); 
-            // InternalLibrettoProjectProfile.g:4698:2: ( ';' )?
-            int alt33=2;
-            int LA33_0 = input.LA(1);
+            // InternalLibrettoProjectProfile.g:4665:2: ( ';' )?
+            int alt34=2;
+            int LA34_0 = input.LA(1);
 
-            if ( (LA33_0==69) ) {
-                alt33=1;
+            if ( (LA34_0==69) ) {
+                alt34=1;
             }
-            switch (alt33) {
+            switch (alt34) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:4698:3: ';'
+                    // InternalLibrettoProjectProfile.g:4665:3: ';'
                     {
                     match(input,69,FOLLOW_2); 
 
@@ -14511,14 +14437,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ParamTypeRule__Group__0"
-    // InternalLibrettoProjectProfile.g:4707:1: rule__ParamTypeRule__Group__0 : rule__ParamTypeRule__Group__0__Impl rule__ParamTypeRule__Group__1 ;
+    // InternalLibrettoProjectProfile.g:4674:1: rule__ParamTypeRule__Group__0 : rule__ParamTypeRule__Group__0__Impl rule__ParamTypeRule__Group__1 ;
     public final void rule__ParamTypeRule__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4711:1: ( rule__ParamTypeRule__Group__0__Impl rule__ParamTypeRule__Group__1 )
-            // InternalLibrettoProjectProfile.g:4712:2: rule__ParamTypeRule__Group__0__Impl rule__ParamTypeRule__Group__1
+            // InternalLibrettoProjectProfile.g:4678:1: ( rule__ParamTypeRule__Group__0__Impl rule__ParamTypeRule__Group__1 )
+            // InternalLibrettoProjectProfile.g:4679:2: rule__ParamTypeRule__Group__0__Impl rule__ParamTypeRule__Group__1
             {
             pushFollow(FOLLOW_51);
             rule__ParamTypeRule__Group__0__Impl();
@@ -14549,17 +14475,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ParamTypeRule__Group__0__Impl"
-    // InternalLibrettoProjectProfile.g:4719:1: rule__ParamTypeRule__Group__0__Impl : ( 'paramType' ) ;
+    // InternalLibrettoProjectProfile.g:4686:1: rule__ParamTypeRule__Group__0__Impl : ( 'paramType' ) ;
     public final void rule__ParamTypeRule__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4723:1: ( ( 'paramType' ) )
-            // InternalLibrettoProjectProfile.g:4724:1: ( 'paramType' )
+            // InternalLibrettoProjectProfile.g:4690:1: ( ( 'paramType' ) )
+            // InternalLibrettoProjectProfile.g:4691:1: ( 'paramType' )
             {
-            // InternalLibrettoProjectProfile.g:4724:1: ( 'paramType' )
-            // InternalLibrettoProjectProfile.g:4725:2: 'paramType'
+            // InternalLibrettoProjectProfile.g:4691:1: ( 'paramType' )
+            // InternalLibrettoProjectProfile.g:4692:2: 'paramType'
             {
              before(grammarAccess.getParamTypeRuleAccess().getParamTypeKeyword_0()); 
             match(input,70,FOLLOW_2); 
@@ -14586,14 +14512,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ParamTypeRule__Group__1"
-    // InternalLibrettoProjectProfile.g:4734:1: rule__ParamTypeRule__Group__1 : rule__ParamTypeRule__Group__1__Impl rule__ParamTypeRule__Group__2 ;
+    // InternalLibrettoProjectProfile.g:4701:1: rule__ParamTypeRule__Group__1 : rule__ParamTypeRule__Group__1__Impl rule__ParamTypeRule__Group__2 ;
     public final void rule__ParamTypeRule__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4738:1: ( rule__ParamTypeRule__Group__1__Impl rule__ParamTypeRule__Group__2 )
-            // InternalLibrettoProjectProfile.g:4739:2: rule__ParamTypeRule__Group__1__Impl rule__ParamTypeRule__Group__2
+            // InternalLibrettoProjectProfile.g:4705:1: ( rule__ParamTypeRule__Group__1__Impl rule__ParamTypeRule__Group__2 )
+            // InternalLibrettoProjectProfile.g:4706:2: rule__ParamTypeRule__Group__1__Impl rule__ParamTypeRule__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__ParamTypeRule__Group__1__Impl();
@@ -14624,17 +14550,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ParamTypeRule__Group__1__Impl"
-    // InternalLibrettoProjectProfile.g:4746:1: rule__ParamTypeRule__Group__1__Impl : ( 'name' ) ;
+    // InternalLibrettoProjectProfile.g:4713:1: rule__ParamTypeRule__Group__1__Impl : ( 'name' ) ;
     public final void rule__ParamTypeRule__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4750:1: ( ( 'name' ) )
-            // InternalLibrettoProjectProfile.g:4751:1: ( 'name' )
+            // InternalLibrettoProjectProfile.g:4717:1: ( ( 'name' ) )
+            // InternalLibrettoProjectProfile.g:4718:1: ( 'name' )
             {
-            // InternalLibrettoProjectProfile.g:4751:1: ( 'name' )
-            // InternalLibrettoProjectProfile.g:4752:2: 'name'
+            // InternalLibrettoProjectProfile.g:4718:1: ( 'name' )
+            // InternalLibrettoProjectProfile.g:4719:2: 'name'
             {
              before(grammarAccess.getParamTypeRuleAccess().getNameKeyword_1()); 
             match(input,71,FOLLOW_2); 
@@ -14661,14 +14587,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ParamTypeRule__Group__2"
-    // InternalLibrettoProjectProfile.g:4761:1: rule__ParamTypeRule__Group__2 : rule__ParamTypeRule__Group__2__Impl rule__ParamTypeRule__Group__3 ;
+    // InternalLibrettoProjectProfile.g:4728:1: rule__ParamTypeRule__Group__2 : rule__ParamTypeRule__Group__2__Impl rule__ParamTypeRule__Group__3 ;
     public final void rule__ParamTypeRule__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4765:1: ( rule__ParamTypeRule__Group__2__Impl rule__ParamTypeRule__Group__3 )
-            // InternalLibrettoProjectProfile.g:4766:2: rule__ParamTypeRule__Group__2__Impl rule__ParamTypeRule__Group__3
+            // InternalLibrettoProjectProfile.g:4732:1: ( rule__ParamTypeRule__Group__2__Impl rule__ParamTypeRule__Group__3 )
+            // InternalLibrettoProjectProfile.g:4733:2: rule__ParamTypeRule__Group__2__Impl rule__ParamTypeRule__Group__3
             {
             pushFollow(FOLLOW_48);
             rule__ParamTypeRule__Group__2__Impl();
@@ -14699,21 +14625,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ParamTypeRule__Group__2__Impl"
-    // InternalLibrettoProjectProfile.g:4773:1: rule__ParamTypeRule__Group__2__Impl : ( ( rule__ParamTypeRule__ParamNameAssignment_2 ) ) ;
+    // InternalLibrettoProjectProfile.g:4740:1: rule__ParamTypeRule__Group__2__Impl : ( ( rule__ParamTypeRule__ParamNameAssignment_2 ) ) ;
     public final void rule__ParamTypeRule__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4777:1: ( ( ( rule__ParamTypeRule__ParamNameAssignment_2 ) ) )
-            // InternalLibrettoProjectProfile.g:4778:1: ( ( rule__ParamTypeRule__ParamNameAssignment_2 ) )
+            // InternalLibrettoProjectProfile.g:4744:1: ( ( ( rule__ParamTypeRule__ParamNameAssignment_2 ) ) )
+            // InternalLibrettoProjectProfile.g:4745:1: ( ( rule__ParamTypeRule__ParamNameAssignment_2 ) )
             {
-            // InternalLibrettoProjectProfile.g:4778:1: ( ( rule__ParamTypeRule__ParamNameAssignment_2 ) )
-            // InternalLibrettoProjectProfile.g:4779:2: ( rule__ParamTypeRule__ParamNameAssignment_2 )
+            // InternalLibrettoProjectProfile.g:4745:1: ( ( rule__ParamTypeRule__ParamNameAssignment_2 ) )
+            // InternalLibrettoProjectProfile.g:4746:2: ( rule__ParamTypeRule__ParamNameAssignment_2 )
             {
              before(grammarAccess.getParamTypeRuleAccess().getParamNameAssignment_2()); 
-            // InternalLibrettoProjectProfile.g:4780:2: ( rule__ParamTypeRule__ParamNameAssignment_2 )
-            // InternalLibrettoProjectProfile.g:4780:3: rule__ParamTypeRule__ParamNameAssignment_2
+            // InternalLibrettoProjectProfile.g:4747:2: ( rule__ParamTypeRule__ParamNameAssignment_2 )
+            // InternalLibrettoProjectProfile.g:4747:3: rule__ParamTypeRule__ParamNameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__ParamTypeRule__ParamNameAssignment_2();
@@ -14746,14 +14672,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ParamTypeRule__Group__3"
-    // InternalLibrettoProjectProfile.g:4788:1: rule__ParamTypeRule__Group__3 : rule__ParamTypeRule__Group__3__Impl rule__ParamTypeRule__Group__4 ;
+    // InternalLibrettoProjectProfile.g:4755:1: rule__ParamTypeRule__Group__3 : rule__ParamTypeRule__Group__3__Impl rule__ParamTypeRule__Group__4 ;
     public final void rule__ParamTypeRule__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4792:1: ( rule__ParamTypeRule__Group__3__Impl rule__ParamTypeRule__Group__4 )
-            // InternalLibrettoProjectProfile.g:4793:2: rule__ParamTypeRule__Group__3__Impl rule__ParamTypeRule__Group__4
+            // InternalLibrettoProjectProfile.g:4759:1: ( rule__ParamTypeRule__Group__3__Impl rule__ParamTypeRule__Group__4 )
+            // InternalLibrettoProjectProfile.g:4760:2: rule__ParamTypeRule__Group__3__Impl rule__ParamTypeRule__Group__4
             {
             pushFollow(FOLLOW_49);
             rule__ParamTypeRule__Group__3__Impl();
@@ -14784,17 +14710,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ParamTypeRule__Group__3__Impl"
-    // InternalLibrettoProjectProfile.g:4800:1: rule__ParamTypeRule__Group__3__Impl : ( 'as' ) ;
+    // InternalLibrettoProjectProfile.g:4767:1: rule__ParamTypeRule__Group__3__Impl : ( 'as' ) ;
     public final void rule__ParamTypeRule__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4804:1: ( ( 'as' ) )
-            // InternalLibrettoProjectProfile.g:4805:1: ( 'as' )
+            // InternalLibrettoProjectProfile.g:4771:1: ( ( 'as' ) )
+            // InternalLibrettoProjectProfile.g:4772:1: ( 'as' )
             {
-            // InternalLibrettoProjectProfile.g:4805:1: ( 'as' )
-            // InternalLibrettoProjectProfile.g:4806:2: 'as'
+            // InternalLibrettoProjectProfile.g:4772:1: ( 'as' )
+            // InternalLibrettoProjectProfile.g:4773:2: 'as'
             {
              before(grammarAccess.getParamTypeRuleAccess().getAsKeyword_3()); 
             match(input,68,FOLLOW_2); 
@@ -14821,14 +14747,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ParamTypeRule__Group__4"
-    // InternalLibrettoProjectProfile.g:4815:1: rule__ParamTypeRule__Group__4 : rule__ParamTypeRule__Group__4__Impl rule__ParamTypeRule__Group__5 ;
+    // InternalLibrettoProjectProfile.g:4782:1: rule__ParamTypeRule__Group__4 : rule__ParamTypeRule__Group__4__Impl rule__ParamTypeRule__Group__5 ;
     public final void rule__ParamTypeRule__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4819:1: ( rule__ParamTypeRule__Group__4__Impl rule__ParamTypeRule__Group__5 )
-            // InternalLibrettoProjectProfile.g:4820:2: rule__ParamTypeRule__Group__4__Impl rule__ParamTypeRule__Group__5
+            // InternalLibrettoProjectProfile.g:4786:1: ( rule__ParamTypeRule__Group__4__Impl rule__ParamTypeRule__Group__5 )
+            // InternalLibrettoProjectProfile.g:4787:2: rule__ParamTypeRule__Group__4__Impl rule__ParamTypeRule__Group__5
             {
             pushFollow(FOLLOW_50);
             rule__ParamTypeRule__Group__4__Impl();
@@ -14859,21 +14785,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ParamTypeRule__Group__4__Impl"
-    // InternalLibrettoProjectProfile.g:4827:1: rule__ParamTypeRule__Group__4__Impl : ( ( rule__ParamTypeRule__JavaTypeAssignment_4 ) ) ;
+    // InternalLibrettoProjectProfile.g:4794:1: rule__ParamTypeRule__Group__4__Impl : ( ( rule__ParamTypeRule__JavaTypeAssignment_4 ) ) ;
     public final void rule__ParamTypeRule__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4831:1: ( ( ( rule__ParamTypeRule__JavaTypeAssignment_4 ) ) )
-            // InternalLibrettoProjectProfile.g:4832:1: ( ( rule__ParamTypeRule__JavaTypeAssignment_4 ) )
+            // InternalLibrettoProjectProfile.g:4798:1: ( ( ( rule__ParamTypeRule__JavaTypeAssignment_4 ) ) )
+            // InternalLibrettoProjectProfile.g:4799:1: ( ( rule__ParamTypeRule__JavaTypeAssignment_4 ) )
             {
-            // InternalLibrettoProjectProfile.g:4832:1: ( ( rule__ParamTypeRule__JavaTypeAssignment_4 ) )
-            // InternalLibrettoProjectProfile.g:4833:2: ( rule__ParamTypeRule__JavaTypeAssignment_4 )
+            // InternalLibrettoProjectProfile.g:4799:1: ( ( rule__ParamTypeRule__JavaTypeAssignment_4 ) )
+            // InternalLibrettoProjectProfile.g:4800:2: ( rule__ParamTypeRule__JavaTypeAssignment_4 )
             {
              before(grammarAccess.getParamTypeRuleAccess().getJavaTypeAssignment_4()); 
-            // InternalLibrettoProjectProfile.g:4834:2: ( rule__ParamTypeRule__JavaTypeAssignment_4 )
-            // InternalLibrettoProjectProfile.g:4834:3: rule__ParamTypeRule__JavaTypeAssignment_4
+            // InternalLibrettoProjectProfile.g:4801:2: ( rule__ParamTypeRule__JavaTypeAssignment_4 )
+            // InternalLibrettoProjectProfile.g:4801:3: rule__ParamTypeRule__JavaTypeAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__ParamTypeRule__JavaTypeAssignment_4();
@@ -14906,14 +14832,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ParamTypeRule__Group__5"
-    // InternalLibrettoProjectProfile.g:4842:1: rule__ParamTypeRule__Group__5 : rule__ParamTypeRule__Group__5__Impl ;
+    // InternalLibrettoProjectProfile.g:4809:1: rule__ParamTypeRule__Group__5 : rule__ParamTypeRule__Group__5__Impl ;
     public final void rule__ParamTypeRule__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4846:1: ( rule__ParamTypeRule__Group__5__Impl )
-            // InternalLibrettoProjectProfile.g:4847:2: rule__ParamTypeRule__Group__5__Impl
+            // InternalLibrettoProjectProfile.g:4813:1: ( rule__ParamTypeRule__Group__5__Impl )
+            // InternalLibrettoProjectProfile.g:4814:2: rule__ParamTypeRule__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParamTypeRule__Group__5__Impl();
@@ -14939,29 +14865,29 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ParamTypeRule__Group__5__Impl"
-    // InternalLibrettoProjectProfile.g:4853:1: rule__ParamTypeRule__Group__5__Impl : ( ( ';' )? ) ;
+    // InternalLibrettoProjectProfile.g:4820:1: rule__ParamTypeRule__Group__5__Impl : ( ( ';' )? ) ;
     public final void rule__ParamTypeRule__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4857:1: ( ( ( ';' )? ) )
-            // InternalLibrettoProjectProfile.g:4858:1: ( ( ';' )? )
+            // InternalLibrettoProjectProfile.g:4824:1: ( ( ( ';' )? ) )
+            // InternalLibrettoProjectProfile.g:4825:1: ( ( ';' )? )
             {
-            // InternalLibrettoProjectProfile.g:4858:1: ( ( ';' )? )
-            // InternalLibrettoProjectProfile.g:4859:2: ( ';' )?
+            // InternalLibrettoProjectProfile.g:4825:1: ( ( ';' )? )
+            // InternalLibrettoProjectProfile.g:4826:2: ( ';' )?
             {
              before(grammarAccess.getParamTypeRuleAccess().getSemicolonKeyword_5()); 
-            // InternalLibrettoProjectProfile.g:4860:2: ( ';' )?
-            int alt34=2;
-            int LA34_0 = input.LA(1);
+            // InternalLibrettoProjectProfile.g:4827:2: ( ';' )?
+            int alt35=2;
+            int LA35_0 = input.LA(1);
 
-            if ( (LA34_0==69) ) {
-                alt34=1;
+            if ( (LA35_0==69) ) {
+                alt35=1;
             }
-            switch (alt34) {
+            switch (alt35) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:4860:3: ';'
+                    // InternalLibrettoProjectProfile.g:4827:3: ';'
                     {
                     match(input,69,FOLLOW_2); 
 
@@ -14993,14 +14919,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__RecordSelfReturnRule__Group__0"
-    // InternalLibrettoProjectProfile.g:4869:1: rule__RecordSelfReturnRule__Group__0 : rule__RecordSelfReturnRule__Group__0__Impl rule__RecordSelfReturnRule__Group__1 ;
+    // InternalLibrettoProjectProfile.g:4836:1: rule__RecordSelfReturnRule__Group__0 : rule__RecordSelfReturnRule__Group__0__Impl rule__RecordSelfReturnRule__Group__1 ;
     public final void rule__RecordSelfReturnRule__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4873:1: ( rule__RecordSelfReturnRule__Group__0__Impl rule__RecordSelfReturnRule__Group__1 )
-            // InternalLibrettoProjectProfile.g:4874:2: rule__RecordSelfReturnRule__Group__0__Impl rule__RecordSelfReturnRule__Group__1
+            // InternalLibrettoProjectProfile.g:4840:1: ( rule__RecordSelfReturnRule__Group__0__Impl rule__RecordSelfReturnRule__Group__1 )
+            // InternalLibrettoProjectProfile.g:4841:2: rule__RecordSelfReturnRule__Group__0__Impl rule__RecordSelfReturnRule__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__RecordSelfReturnRule__Group__0__Impl();
@@ -15031,17 +14957,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__RecordSelfReturnRule__Group__0__Impl"
-    // InternalLibrettoProjectProfile.g:4881:1: rule__RecordSelfReturnRule__Group__0__Impl : ( 'recordSelfReturn' ) ;
+    // InternalLibrettoProjectProfile.g:4848:1: rule__RecordSelfReturnRule__Group__0__Impl : ( 'recordSelfReturn' ) ;
     public final void rule__RecordSelfReturnRule__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4885:1: ( ( 'recordSelfReturn' ) )
-            // InternalLibrettoProjectProfile.g:4886:1: ( 'recordSelfReturn' )
+            // InternalLibrettoProjectProfile.g:4852:1: ( ( 'recordSelfReturn' ) )
+            // InternalLibrettoProjectProfile.g:4853:1: ( 'recordSelfReturn' )
             {
-            // InternalLibrettoProjectProfile.g:4886:1: ( 'recordSelfReturn' )
-            // InternalLibrettoProjectProfile.g:4887:2: 'recordSelfReturn'
+            // InternalLibrettoProjectProfile.g:4853:1: ( 'recordSelfReturn' )
+            // InternalLibrettoProjectProfile.g:4854:2: 'recordSelfReturn'
             {
              before(grammarAccess.getRecordSelfReturnRuleAccess().getRecordSelfReturnKeyword_0()); 
             match(input,72,FOLLOW_2); 
@@ -15068,14 +14994,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__RecordSelfReturnRule__Group__1"
-    // InternalLibrettoProjectProfile.g:4896:1: rule__RecordSelfReturnRule__Group__1 : rule__RecordSelfReturnRule__Group__1__Impl rule__RecordSelfReturnRule__Group__2 ;
+    // InternalLibrettoProjectProfile.g:4863:1: rule__RecordSelfReturnRule__Group__1 : rule__RecordSelfReturnRule__Group__1__Impl rule__RecordSelfReturnRule__Group__2 ;
     public final void rule__RecordSelfReturnRule__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4900:1: ( rule__RecordSelfReturnRule__Group__1__Impl rule__RecordSelfReturnRule__Group__2 )
-            // InternalLibrettoProjectProfile.g:4901:2: rule__RecordSelfReturnRule__Group__1__Impl rule__RecordSelfReturnRule__Group__2
+            // InternalLibrettoProjectProfile.g:4867:1: ( rule__RecordSelfReturnRule__Group__1__Impl rule__RecordSelfReturnRule__Group__2 )
+            // InternalLibrettoProjectProfile.g:4868:2: rule__RecordSelfReturnRule__Group__1__Impl rule__RecordSelfReturnRule__Group__2
             {
             pushFollow(FOLLOW_52);
             rule__RecordSelfReturnRule__Group__1__Impl();
@@ -15106,21 +15032,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__RecordSelfReturnRule__Group__1__Impl"
-    // InternalLibrettoProjectProfile.g:4908:1: rule__RecordSelfReturnRule__Group__1__Impl : ( ( rule__RecordSelfReturnRule__MethodsAssignment_1 ) ) ;
+    // InternalLibrettoProjectProfile.g:4875:1: rule__RecordSelfReturnRule__Group__1__Impl : ( ( rule__RecordSelfReturnRule__MethodsAssignment_1 ) ) ;
     public final void rule__RecordSelfReturnRule__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4912:1: ( ( ( rule__RecordSelfReturnRule__MethodsAssignment_1 ) ) )
-            // InternalLibrettoProjectProfile.g:4913:1: ( ( rule__RecordSelfReturnRule__MethodsAssignment_1 ) )
+            // InternalLibrettoProjectProfile.g:4879:1: ( ( ( rule__RecordSelfReturnRule__MethodsAssignment_1 ) ) )
+            // InternalLibrettoProjectProfile.g:4880:1: ( ( rule__RecordSelfReturnRule__MethodsAssignment_1 ) )
             {
-            // InternalLibrettoProjectProfile.g:4913:1: ( ( rule__RecordSelfReturnRule__MethodsAssignment_1 ) )
-            // InternalLibrettoProjectProfile.g:4914:2: ( rule__RecordSelfReturnRule__MethodsAssignment_1 )
+            // InternalLibrettoProjectProfile.g:4880:1: ( ( rule__RecordSelfReturnRule__MethodsAssignment_1 ) )
+            // InternalLibrettoProjectProfile.g:4881:2: ( rule__RecordSelfReturnRule__MethodsAssignment_1 )
             {
              before(grammarAccess.getRecordSelfReturnRuleAccess().getMethodsAssignment_1()); 
-            // InternalLibrettoProjectProfile.g:4915:2: ( rule__RecordSelfReturnRule__MethodsAssignment_1 )
-            // InternalLibrettoProjectProfile.g:4915:3: rule__RecordSelfReturnRule__MethodsAssignment_1
+            // InternalLibrettoProjectProfile.g:4882:2: ( rule__RecordSelfReturnRule__MethodsAssignment_1 )
+            // InternalLibrettoProjectProfile.g:4882:3: rule__RecordSelfReturnRule__MethodsAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__RecordSelfReturnRule__MethodsAssignment_1();
@@ -15153,14 +15079,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__RecordSelfReturnRule__Group__2"
-    // InternalLibrettoProjectProfile.g:4923:1: rule__RecordSelfReturnRule__Group__2 : rule__RecordSelfReturnRule__Group__2__Impl rule__RecordSelfReturnRule__Group__3 ;
+    // InternalLibrettoProjectProfile.g:4890:1: rule__RecordSelfReturnRule__Group__2 : rule__RecordSelfReturnRule__Group__2__Impl rule__RecordSelfReturnRule__Group__3 ;
     public final void rule__RecordSelfReturnRule__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4927:1: ( rule__RecordSelfReturnRule__Group__2__Impl rule__RecordSelfReturnRule__Group__3 )
-            // InternalLibrettoProjectProfile.g:4928:2: rule__RecordSelfReturnRule__Group__2__Impl rule__RecordSelfReturnRule__Group__3
+            // InternalLibrettoProjectProfile.g:4894:1: ( rule__RecordSelfReturnRule__Group__2__Impl rule__RecordSelfReturnRule__Group__3 )
+            // InternalLibrettoProjectProfile.g:4895:2: rule__RecordSelfReturnRule__Group__2__Impl rule__RecordSelfReturnRule__Group__3
             {
             pushFollow(FOLLOW_52);
             rule__RecordSelfReturnRule__Group__2__Impl();
@@ -15191,33 +15117,33 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__RecordSelfReturnRule__Group__2__Impl"
-    // InternalLibrettoProjectProfile.g:4935:1: rule__RecordSelfReturnRule__Group__2__Impl : ( ( rule__RecordSelfReturnRule__Group_2__0 )* ) ;
+    // InternalLibrettoProjectProfile.g:4902:1: rule__RecordSelfReturnRule__Group__2__Impl : ( ( rule__RecordSelfReturnRule__Group_2__0 )* ) ;
     public final void rule__RecordSelfReturnRule__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4939:1: ( ( ( rule__RecordSelfReturnRule__Group_2__0 )* ) )
-            // InternalLibrettoProjectProfile.g:4940:1: ( ( rule__RecordSelfReturnRule__Group_2__0 )* )
+            // InternalLibrettoProjectProfile.g:4906:1: ( ( ( rule__RecordSelfReturnRule__Group_2__0 )* ) )
+            // InternalLibrettoProjectProfile.g:4907:1: ( ( rule__RecordSelfReturnRule__Group_2__0 )* )
             {
-            // InternalLibrettoProjectProfile.g:4940:1: ( ( rule__RecordSelfReturnRule__Group_2__0 )* )
-            // InternalLibrettoProjectProfile.g:4941:2: ( rule__RecordSelfReturnRule__Group_2__0 )*
+            // InternalLibrettoProjectProfile.g:4907:1: ( ( rule__RecordSelfReturnRule__Group_2__0 )* )
+            // InternalLibrettoProjectProfile.g:4908:2: ( rule__RecordSelfReturnRule__Group_2__0 )*
             {
              before(grammarAccess.getRecordSelfReturnRuleAccess().getGroup_2()); 
-            // InternalLibrettoProjectProfile.g:4942:2: ( rule__RecordSelfReturnRule__Group_2__0 )*
-            loop35:
+            // InternalLibrettoProjectProfile.g:4909:2: ( rule__RecordSelfReturnRule__Group_2__0 )*
+            loop36:
             do {
-                int alt35=2;
-                int LA35_0 = input.LA(1);
+                int alt36=2;
+                int LA36_0 = input.LA(1);
 
-                if ( (LA35_0==73) ) {
-                    alt35=1;
+                if ( (LA36_0==73) ) {
+                    alt36=1;
                 }
 
 
-                switch (alt35) {
+                switch (alt36) {
             	case 1 :
-            	    // InternalLibrettoProjectProfile.g:4942:3: rule__RecordSelfReturnRule__Group_2__0
+            	    // InternalLibrettoProjectProfile.g:4909:3: rule__RecordSelfReturnRule__Group_2__0
             	    {
             	    pushFollow(FOLLOW_53);
             	    rule__RecordSelfReturnRule__Group_2__0();
@@ -15229,7 +15155,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
             	    break;
 
             	default :
-            	    break loop35;
+            	    break loop36;
                 }
             } while (true);
 
@@ -15256,14 +15182,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__RecordSelfReturnRule__Group__3"
-    // InternalLibrettoProjectProfile.g:4950:1: rule__RecordSelfReturnRule__Group__3 : rule__RecordSelfReturnRule__Group__3__Impl ;
+    // InternalLibrettoProjectProfile.g:4917:1: rule__RecordSelfReturnRule__Group__3 : rule__RecordSelfReturnRule__Group__3__Impl ;
     public final void rule__RecordSelfReturnRule__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4954:1: ( rule__RecordSelfReturnRule__Group__3__Impl )
-            // InternalLibrettoProjectProfile.g:4955:2: rule__RecordSelfReturnRule__Group__3__Impl
+            // InternalLibrettoProjectProfile.g:4921:1: ( rule__RecordSelfReturnRule__Group__3__Impl )
+            // InternalLibrettoProjectProfile.g:4922:2: rule__RecordSelfReturnRule__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__RecordSelfReturnRule__Group__3__Impl();
@@ -15289,29 +15215,29 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__RecordSelfReturnRule__Group__3__Impl"
-    // InternalLibrettoProjectProfile.g:4961:1: rule__RecordSelfReturnRule__Group__3__Impl : ( ( ';' )? ) ;
+    // InternalLibrettoProjectProfile.g:4928:1: rule__RecordSelfReturnRule__Group__3__Impl : ( ( ';' )? ) ;
     public final void rule__RecordSelfReturnRule__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4965:1: ( ( ( ';' )? ) )
-            // InternalLibrettoProjectProfile.g:4966:1: ( ( ';' )? )
+            // InternalLibrettoProjectProfile.g:4932:1: ( ( ( ';' )? ) )
+            // InternalLibrettoProjectProfile.g:4933:1: ( ( ';' )? )
             {
-            // InternalLibrettoProjectProfile.g:4966:1: ( ( ';' )? )
-            // InternalLibrettoProjectProfile.g:4967:2: ( ';' )?
+            // InternalLibrettoProjectProfile.g:4933:1: ( ( ';' )? )
+            // InternalLibrettoProjectProfile.g:4934:2: ( ';' )?
             {
              before(grammarAccess.getRecordSelfReturnRuleAccess().getSemicolonKeyword_3()); 
-            // InternalLibrettoProjectProfile.g:4968:2: ( ';' )?
-            int alt36=2;
-            int LA36_0 = input.LA(1);
+            // InternalLibrettoProjectProfile.g:4935:2: ( ';' )?
+            int alt37=2;
+            int LA37_0 = input.LA(1);
 
-            if ( (LA36_0==69) ) {
-                alt36=1;
+            if ( (LA37_0==69) ) {
+                alt37=1;
             }
-            switch (alt36) {
+            switch (alt37) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:4968:3: ';'
+                    // InternalLibrettoProjectProfile.g:4935:3: ';'
                     {
                     match(input,69,FOLLOW_2); 
 
@@ -15343,14 +15269,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__RecordSelfReturnRule__Group_2__0"
-    // InternalLibrettoProjectProfile.g:4977:1: rule__RecordSelfReturnRule__Group_2__0 : rule__RecordSelfReturnRule__Group_2__0__Impl rule__RecordSelfReturnRule__Group_2__1 ;
+    // InternalLibrettoProjectProfile.g:4944:1: rule__RecordSelfReturnRule__Group_2__0 : rule__RecordSelfReturnRule__Group_2__0__Impl rule__RecordSelfReturnRule__Group_2__1 ;
     public final void rule__RecordSelfReturnRule__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4981:1: ( rule__RecordSelfReturnRule__Group_2__0__Impl rule__RecordSelfReturnRule__Group_2__1 )
-            // InternalLibrettoProjectProfile.g:4982:2: rule__RecordSelfReturnRule__Group_2__0__Impl rule__RecordSelfReturnRule__Group_2__1
+            // InternalLibrettoProjectProfile.g:4948:1: ( rule__RecordSelfReturnRule__Group_2__0__Impl rule__RecordSelfReturnRule__Group_2__1 )
+            // InternalLibrettoProjectProfile.g:4949:2: rule__RecordSelfReturnRule__Group_2__0__Impl rule__RecordSelfReturnRule__Group_2__1
             {
             pushFollow(FOLLOW_4);
             rule__RecordSelfReturnRule__Group_2__0__Impl();
@@ -15381,17 +15307,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__RecordSelfReturnRule__Group_2__0__Impl"
-    // InternalLibrettoProjectProfile.g:4989:1: rule__RecordSelfReturnRule__Group_2__0__Impl : ( ',' ) ;
+    // InternalLibrettoProjectProfile.g:4956:1: rule__RecordSelfReturnRule__Group_2__0__Impl : ( ',' ) ;
     public final void rule__RecordSelfReturnRule__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:4993:1: ( ( ',' ) )
-            // InternalLibrettoProjectProfile.g:4994:1: ( ',' )
+            // InternalLibrettoProjectProfile.g:4960:1: ( ( ',' ) )
+            // InternalLibrettoProjectProfile.g:4961:1: ( ',' )
             {
-            // InternalLibrettoProjectProfile.g:4994:1: ( ',' )
-            // InternalLibrettoProjectProfile.g:4995:2: ','
+            // InternalLibrettoProjectProfile.g:4961:1: ( ',' )
+            // InternalLibrettoProjectProfile.g:4962:2: ','
             {
              before(grammarAccess.getRecordSelfReturnRuleAccess().getCommaKeyword_2_0()); 
             match(input,73,FOLLOW_2); 
@@ -15418,14 +15344,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__RecordSelfReturnRule__Group_2__1"
-    // InternalLibrettoProjectProfile.g:5004:1: rule__RecordSelfReturnRule__Group_2__1 : rule__RecordSelfReturnRule__Group_2__1__Impl ;
+    // InternalLibrettoProjectProfile.g:4971:1: rule__RecordSelfReturnRule__Group_2__1 : rule__RecordSelfReturnRule__Group_2__1__Impl ;
     public final void rule__RecordSelfReturnRule__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5008:1: ( rule__RecordSelfReturnRule__Group_2__1__Impl )
-            // InternalLibrettoProjectProfile.g:5009:2: rule__RecordSelfReturnRule__Group_2__1__Impl
+            // InternalLibrettoProjectProfile.g:4975:1: ( rule__RecordSelfReturnRule__Group_2__1__Impl )
+            // InternalLibrettoProjectProfile.g:4976:2: rule__RecordSelfReturnRule__Group_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__RecordSelfReturnRule__Group_2__1__Impl();
@@ -15451,21 +15377,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__RecordSelfReturnRule__Group_2__1__Impl"
-    // InternalLibrettoProjectProfile.g:5015:1: rule__RecordSelfReturnRule__Group_2__1__Impl : ( ( rule__RecordSelfReturnRule__MethodsAssignment_2_1 ) ) ;
+    // InternalLibrettoProjectProfile.g:4982:1: rule__RecordSelfReturnRule__Group_2__1__Impl : ( ( rule__RecordSelfReturnRule__MethodsAssignment_2_1 ) ) ;
     public final void rule__RecordSelfReturnRule__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5019:1: ( ( ( rule__RecordSelfReturnRule__MethodsAssignment_2_1 ) ) )
-            // InternalLibrettoProjectProfile.g:5020:1: ( ( rule__RecordSelfReturnRule__MethodsAssignment_2_1 ) )
+            // InternalLibrettoProjectProfile.g:4986:1: ( ( ( rule__RecordSelfReturnRule__MethodsAssignment_2_1 ) ) )
+            // InternalLibrettoProjectProfile.g:4987:1: ( ( rule__RecordSelfReturnRule__MethodsAssignment_2_1 ) )
             {
-            // InternalLibrettoProjectProfile.g:5020:1: ( ( rule__RecordSelfReturnRule__MethodsAssignment_2_1 ) )
-            // InternalLibrettoProjectProfile.g:5021:2: ( rule__RecordSelfReturnRule__MethodsAssignment_2_1 )
+            // InternalLibrettoProjectProfile.g:4987:1: ( ( rule__RecordSelfReturnRule__MethodsAssignment_2_1 ) )
+            // InternalLibrettoProjectProfile.g:4988:2: ( rule__RecordSelfReturnRule__MethodsAssignment_2_1 )
             {
              before(grammarAccess.getRecordSelfReturnRuleAccess().getMethodsAssignment_2_1()); 
-            // InternalLibrettoProjectProfile.g:5022:2: ( rule__RecordSelfReturnRule__MethodsAssignment_2_1 )
-            // InternalLibrettoProjectProfile.g:5022:3: rule__RecordSelfReturnRule__MethodsAssignment_2_1
+            // InternalLibrettoProjectProfile.g:4989:2: ( rule__RecordSelfReturnRule__MethodsAssignment_2_1 )
+            // InternalLibrettoProjectProfile.g:4989:3: rule__RecordSelfReturnRule__MethodsAssignment_2_1
             {
             pushFollow(FOLLOW_2);
             rule__RecordSelfReturnRule__MethodsAssignment_2_1();
@@ -15498,14 +15424,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__MethodOverrideRule__Group__0"
-    // InternalLibrettoProjectProfile.g:5031:1: rule__MethodOverrideRule__Group__0 : rule__MethodOverrideRule__Group__0__Impl rule__MethodOverrideRule__Group__1 ;
+    // InternalLibrettoProjectProfile.g:4998:1: rule__MethodOverrideRule__Group__0 : rule__MethodOverrideRule__Group__0__Impl rule__MethodOverrideRule__Group__1 ;
     public final void rule__MethodOverrideRule__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5035:1: ( rule__MethodOverrideRule__Group__0__Impl rule__MethodOverrideRule__Group__1 )
-            // InternalLibrettoProjectProfile.g:5036:2: rule__MethodOverrideRule__Group__0__Impl rule__MethodOverrideRule__Group__1
+            // InternalLibrettoProjectProfile.g:5002:1: ( rule__MethodOverrideRule__Group__0__Impl rule__MethodOverrideRule__Group__1 )
+            // InternalLibrettoProjectProfile.g:5003:2: rule__MethodOverrideRule__Group__0__Impl rule__MethodOverrideRule__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__MethodOverrideRule__Group__0__Impl();
@@ -15536,17 +15462,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__MethodOverrideRule__Group__0__Impl"
-    // InternalLibrettoProjectProfile.g:5043:1: rule__MethodOverrideRule__Group__0__Impl : ( 'methodOverride' ) ;
+    // InternalLibrettoProjectProfile.g:5010:1: rule__MethodOverrideRule__Group__0__Impl : ( 'methodOverride' ) ;
     public final void rule__MethodOverrideRule__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5047:1: ( ( 'methodOverride' ) )
-            // InternalLibrettoProjectProfile.g:5048:1: ( 'methodOverride' )
+            // InternalLibrettoProjectProfile.g:5014:1: ( ( 'methodOverride' ) )
+            // InternalLibrettoProjectProfile.g:5015:1: ( 'methodOverride' )
             {
-            // InternalLibrettoProjectProfile.g:5048:1: ( 'methodOverride' )
-            // InternalLibrettoProjectProfile.g:5049:2: 'methodOverride'
+            // InternalLibrettoProjectProfile.g:5015:1: ( 'methodOverride' )
+            // InternalLibrettoProjectProfile.g:5016:2: 'methodOverride'
             {
              before(grammarAccess.getMethodOverrideRuleAccess().getMethodOverrideKeyword_0()); 
             match(input,74,FOLLOW_2); 
@@ -15573,14 +15499,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__MethodOverrideRule__Group__1"
-    // InternalLibrettoProjectProfile.g:5058:1: rule__MethodOverrideRule__Group__1 : rule__MethodOverrideRule__Group__1__Impl rule__MethodOverrideRule__Group__2 ;
+    // InternalLibrettoProjectProfile.g:5025:1: rule__MethodOverrideRule__Group__1 : rule__MethodOverrideRule__Group__1__Impl rule__MethodOverrideRule__Group__2 ;
     public final void rule__MethodOverrideRule__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5062:1: ( rule__MethodOverrideRule__Group__1__Impl rule__MethodOverrideRule__Group__2 )
-            // InternalLibrettoProjectProfile.g:5063:2: rule__MethodOverrideRule__Group__1__Impl rule__MethodOverrideRule__Group__2
+            // InternalLibrettoProjectProfile.g:5029:1: ( rule__MethodOverrideRule__Group__1__Impl rule__MethodOverrideRule__Group__2 )
+            // InternalLibrettoProjectProfile.g:5030:2: rule__MethodOverrideRule__Group__1__Impl rule__MethodOverrideRule__Group__2
             {
             pushFollow(FOLLOW_54);
             rule__MethodOverrideRule__Group__1__Impl();
@@ -15611,21 +15537,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__MethodOverrideRule__Group__1__Impl"
-    // InternalLibrettoProjectProfile.g:5070:1: rule__MethodOverrideRule__Group__1__Impl : ( ( rule__MethodOverrideRule__SignatureAssignment_1 ) ) ;
+    // InternalLibrettoProjectProfile.g:5037:1: rule__MethodOverrideRule__Group__1__Impl : ( ( rule__MethodOverrideRule__SignatureAssignment_1 ) ) ;
     public final void rule__MethodOverrideRule__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5074:1: ( ( ( rule__MethodOverrideRule__SignatureAssignment_1 ) ) )
-            // InternalLibrettoProjectProfile.g:5075:1: ( ( rule__MethodOverrideRule__SignatureAssignment_1 ) )
+            // InternalLibrettoProjectProfile.g:5041:1: ( ( ( rule__MethodOverrideRule__SignatureAssignment_1 ) ) )
+            // InternalLibrettoProjectProfile.g:5042:1: ( ( rule__MethodOverrideRule__SignatureAssignment_1 ) )
             {
-            // InternalLibrettoProjectProfile.g:5075:1: ( ( rule__MethodOverrideRule__SignatureAssignment_1 ) )
-            // InternalLibrettoProjectProfile.g:5076:2: ( rule__MethodOverrideRule__SignatureAssignment_1 )
+            // InternalLibrettoProjectProfile.g:5042:1: ( ( rule__MethodOverrideRule__SignatureAssignment_1 ) )
+            // InternalLibrettoProjectProfile.g:5043:2: ( rule__MethodOverrideRule__SignatureAssignment_1 )
             {
              before(grammarAccess.getMethodOverrideRuleAccess().getSignatureAssignment_1()); 
-            // InternalLibrettoProjectProfile.g:5077:2: ( rule__MethodOverrideRule__SignatureAssignment_1 )
-            // InternalLibrettoProjectProfile.g:5077:3: rule__MethodOverrideRule__SignatureAssignment_1
+            // InternalLibrettoProjectProfile.g:5044:2: ( rule__MethodOverrideRule__SignatureAssignment_1 )
+            // InternalLibrettoProjectProfile.g:5044:3: rule__MethodOverrideRule__SignatureAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__MethodOverrideRule__SignatureAssignment_1();
@@ -15658,14 +15584,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__MethodOverrideRule__Group__2"
-    // InternalLibrettoProjectProfile.g:5085:1: rule__MethodOverrideRule__Group__2 : rule__MethodOverrideRule__Group__2__Impl rule__MethodOverrideRule__Group__3 ;
+    // InternalLibrettoProjectProfile.g:5052:1: rule__MethodOverrideRule__Group__2 : rule__MethodOverrideRule__Group__2__Impl rule__MethodOverrideRule__Group__3 ;
     public final void rule__MethodOverrideRule__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5089:1: ( rule__MethodOverrideRule__Group__2__Impl rule__MethodOverrideRule__Group__3 )
-            // InternalLibrettoProjectProfile.g:5090:2: rule__MethodOverrideRule__Group__2__Impl rule__MethodOverrideRule__Group__3
+            // InternalLibrettoProjectProfile.g:5056:1: ( rule__MethodOverrideRule__Group__2__Impl rule__MethodOverrideRule__Group__3 )
+            // InternalLibrettoProjectProfile.g:5057:2: rule__MethodOverrideRule__Group__2__Impl rule__MethodOverrideRule__Group__3
             {
             pushFollow(FOLLOW_49);
             rule__MethodOverrideRule__Group__2__Impl();
@@ -15696,17 +15622,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__MethodOverrideRule__Group__2__Impl"
-    // InternalLibrettoProjectProfile.g:5097:1: rule__MethodOverrideRule__Group__2__Impl : ( 'returns' ) ;
+    // InternalLibrettoProjectProfile.g:5064:1: rule__MethodOverrideRule__Group__2__Impl : ( 'returns' ) ;
     public final void rule__MethodOverrideRule__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5101:1: ( ( 'returns' ) )
-            // InternalLibrettoProjectProfile.g:5102:1: ( 'returns' )
+            // InternalLibrettoProjectProfile.g:5068:1: ( ( 'returns' ) )
+            // InternalLibrettoProjectProfile.g:5069:1: ( 'returns' )
             {
-            // InternalLibrettoProjectProfile.g:5102:1: ( 'returns' )
-            // InternalLibrettoProjectProfile.g:5103:2: 'returns'
+            // InternalLibrettoProjectProfile.g:5069:1: ( 'returns' )
+            // InternalLibrettoProjectProfile.g:5070:2: 'returns'
             {
              before(grammarAccess.getMethodOverrideRuleAccess().getReturnsKeyword_2()); 
             match(input,75,FOLLOW_2); 
@@ -15733,14 +15659,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__MethodOverrideRule__Group__3"
-    // InternalLibrettoProjectProfile.g:5112:1: rule__MethodOverrideRule__Group__3 : rule__MethodOverrideRule__Group__3__Impl rule__MethodOverrideRule__Group__4 ;
+    // InternalLibrettoProjectProfile.g:5079:1: rule__MethodOverrideRule__Group__3 : rule__MethodOverrideRule__Group__3__Impl rule__MethodOverrideRule__Group__4 ;
     public final void rule__MethodOverrideRule__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5116:1: ( rule__MethodOverrideRule__Group__3__Impl rule__MethodOverrideRule__Group__4 )
-            // InternalLibrettoProjectProfile.g:5117:2: rule__MethodOverrideRule__Group__3__Impl rule__MethodOverrideRule__Group__4
+            // InternalLibrettoProjectProfile.g:5083:1: ( rule__MethodOverrideRule__Group__3__Impl rule__MethodOverrideRule__Group__4 )
+            // InternalLibrettoProjectProfile.g:5084:2: rule__MethodOverrideRule__Group__3__Impl rule__MethodOverrideRule__Group__4
             {
             pushFollow(FOLLOW_50);
             rule__MethodOverrideRule__Group__3__Impl();
@@ -15771,21 +15697,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__MethodOverrideRule__Group__3__Impl"
-    // InternalLibrettoProjectProfile.g:5124:1: rule__MethodOverrideRule__Group__3__Impl : ( ( rule__MethodOverrideRule__JavaTypeAssignment_3 ) ) ;
+    // InternalLibrettoProjectProfile.g:5091:1: rule__MethodOverrideRule__Group__3__Impl : ( ( rule__MethodOverrideRule__JavaTypeAssignment_3 ) ) ;
     public final void rule__MethodOverrideRule__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5128:1: ( ( ( rule__MethodOverrideRule__JavaTypeAssignment_3 ) ) )
-            // InternalLibrettoProjectProfile.g:5129:1: ( ( rule__MethodOverrideRule__JavaTypeAssignment_3 ) )
+            // InternalLibrettoProjectProfile.g:5095:1: ( ( ( rule__MethodOverrideRule__JavaTypeAssignment_3 ) ) )
+            // InternalLibrettoProjectProfile.g:5096:1: ( ( rule__MethodOverrideRule__JavaTypeAssignment_3 ) )
             {
-            // InternalLibrettoProjectProfile.g:5129:1: ( ( rule__MethodOverrideRule__JavaTypeAssignment_3 ) )
-            // InternalLibrettoProjectProfile.g:5130:2: ( rule__MethodOverrideRule__JavaTypeAssignment_3 )
+            // InternalLibrettoProjectProfile.g:5096:1: ( ( rule__MethodOverrideRule__JavaTypeAssignment_3 ) )
+            // InternalLibrettoProjectProfile.g:5097:2: ( rule__MethodOverrideRule__JavaTypeAssignment_3 )
             {
              before(grammarAccess.getMethodOverrideRuleAccess().getJavaTypeAssignment_3()); 
-            // InternalLibrettoProjectProfile.g:5131:2: ( rule__MethodOverrideRule__JavaTypeAssignment_3 )
-            // InternalLibrettoProjectProfile.g:5131:3: rule__MethodOverrideRule__JavaTypeAssignment_3
+            // InternalLibrettoProjectProfile.g:5098:2: ( rule__MethodOverrideRule__JavaTypeAssignment_3 )
+            // InternalLibrettoProjectProfile.g:5098:3: rule__MethodOverrideRule__JavaTypeAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__MethodOverrideRule__JavaTypeAssignment_3();
@@ -15818,14 +15744,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__MethodOverrideRule__Group__4"
-    // InternalLibrettoProjectProfile.g:5139:1: rule__MethodOverrideRule__Group__4 : rule__MethodOverrideRule__Group__4__Impl ;
+    // InternalLibrettoProjectProfile.g:5106:1: rule__MethodOverrideRule__Group__4 : rule__MethodOverrideRule__Group__4__Impl ;
     public final void rule__MethodOverrideRule__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5143:1: ( rule__MethodOverrideRule__Group__4__Impl )
-            // InternalLibrettoProjectProfile.g:5144:2: rule__MethodOverrideRule__Group__4__Impl
+            // InternalLibrettoProjectProfile.g:5110:1: ( rule__MethodOverrideRule__Group__4__Impl )
+            // InternalLibrettoProjectProfile.g:5111:2: rule__MethodOverrideRule__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__MethodOverrideRule__Group__4__Impl();
@@ -15851,29 +15777,29 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__MethodOverrideRule__Group__4__Impl"
-    // InternalLibrettoProjectProfile.g:5150:1: rule__MethodOverrideRule__Group__4__Impl : ( ( ';' )? ) ;
+    // InternalLibrettoProjectProfile.g:5117:1: rule__MethodOverrideRule__Group__4__Impl : ( ( ';' )? ) ;
     public final void rule__MethodOverrideRule__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5154:1: ( ( ( ';' )? ) )
-            // InternalLibrettoProjectProfile.g:5155:1: ( ( ';' )? )
+            // InternalLibrettoProjectProfile.g:5121:1: ( ( ( ';' )? ) )
+            // InternalLibrettoProjectProfile.g:5122:1: ( ( ';' )? )
             {
-            // InternalLibrettoProjectProfile.g:5155:1: ( ( ';' )? )
-            // InternalLibrettoProjectProfile.g:5156:2: ( ';' )?
+            // InternalLibrettoProjectProfile.g:5122:1: ( ( ';' )? )
+            // InternalLibrettoProjectProfile.g:5123:2: ( ';' )?
             {
              before(grammarAccess.getMethodOverrideRuleAccess().getSemicolonKeyword_4()); 
-            // InternalLibrettoProjectProfile.g:5157:2: ( ';' )?
-            int alt37=2;
-            int LA37_0 = input.LA(1);
+            // InternalLibrettoProjectProfile.g:5124:2: ( ';' )?
+            int alt38=2;
+            int LA38_0 = input.LA(1);
 
-            if ( (LA37_0==69) ) {
-                alt37=1;
+            if ( (LA38_0==69) ) {
+                alt38=1;
             }
-            switch (alt37) {
+            switch (alt38) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:5157:3: ';'
+                    // InternalLibrettoProjectProfile.g:5124:3: ';'
                     {
                     match(input,69,FOLLOW_2); 
 
@@ -15905,14 +15831,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__QualifiedName__Group__0"
-    // InternalLibrettoProjectProfile.g:5166:1: rule__QualifiedName__Group__0 : rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 ;
+    // InternalLibrettoProjectProfile.g:5133:1: rule__QualifiedName__Group__0 : rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 ;
     public final void rule__QualifiedName__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5170:1: ( rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 )
-            // InternalLibrettoProjectProfile.g:5171:2: rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1
+            // InternalLibrettoProjectProfile.g:5137:1: ( rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 )
+            // InternalLibrettoProjectProfile.g:5138:2: rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1
             {
             pushFollow(FOLLOW_55);
             rule__QualifiedName__Group__0__Impl();
@@ -15943,21 +15869,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__QualifiedName__Group__0__Impl"
-    // InternalLibrettoProjectProfile.g:5178:1: rule__QualifiedName__Group__0__Impl : ( ( rule__QualifiedName__SegmentsAssignment_0 ) ) ;
+    // InternalLibrettoProjectProfile.g:5145:1: rule__QualifiedName__Group__0__Impl : ( ( rule__QualifiedName__SegmentsAssignment_0 ) ) ;
     public final void rule__QualifiedName__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5182:1: ( ( ( rule__QualifiedName__SegmentsAssignment_0 ) ) )
-            // InternalLibrettoProjectProfile.g:5183:1: ( ( rule__QualifiedName__SegmentsAssignment_0 ) )
+            // InternalLibrettoProjectProfile.g:5149:1: ( ( ( rule__QualifiedName__SegmentsAssignment_0 ) ) )
+            // InternalLibrettoProjectProfile.g:5150:1: ( ( rule__QualifiedName__SegmentsAssignment_0 ) )
             {
-            // InternalLibrettoProjectProfile.g:5183:1: ( ( rule__QualifiedName__SegmentsAssignment_0 ) )
-            // InternalLibrettoProjectProfile.g:5184:2: ( rule__QualifiedName__SegmentsAssignment_0 )
+            // InternalLibrettoProjectProfile.g:5150:1: ( ( rule__QualifiedName__SegmentsAssignment_0 ) )
+            // InternalLibrettoProjectProfile.g:5151:2: ( rule__QualifiedName__SegmentsAssignment_0 )
             {
              before(grammarAccess.getQualifiedNameAccess().getSegmentsAssignment_0()); 
-            // InternalLibrettoProjectProfile.g:5185:2: ( rule__QualifiedName__SegmentsAssignment_0 )
-            // InternalLibrettoProjectProfile.g:5185:3: rule__QualifiedName__SegmentsAssignment_0
+            // InternalLibrettoProjectProfile.g:5152:2: ( rule__QualifiedName__SegmentsAssignment_0 )
+            // InternalLibrettoProjectProfile.g:5152:3: rule__QualifiedName__SegmentsAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__QualifiedName__SegmentsAssignment_0();
@@ -15990,14 +15916,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__QualifiedName__Group__1"
-    // InternalLibrettoProjectProfile.g:5193:1: rule__QualifiedName__Group__1 : rule__QualifiedName__Group__1__Impl ;
+    // InternalLibrettoProjectProfile.g:5160:1: rule__QualifiedName__Group__1 : rule__QualifiedName__Group__1__Impl ;
     public final void rule__QualifiedName__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5197:1: ( rule__QualifiedName__Group__1__Impl )
-            // InternalLibrettoProjectProfile.g:5198:2: rule__QualifiedName__Group__1__Impl
+            // InternalLibrettoProjectProfile.g:5164:1: ( rule__QualifiedName__Group__1__Impl )
+            // InternalLibrettoProjectProfile.g:5165:2: rule__QualifiedName__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__QualifiedName__Group__1__Impl();
@@ -16023,33 +15949,33 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__QualifiedName__Group__1__Impl"
-    // InternalLibrettoProjectProfile.g:5204:1: rule__QualifiedName__Group__1__Impl : ( ( rule__QualifiedName__Group_1__0 )* ) ;
+    // InternalLibrettoProjectProfile.g:5171:1: rule__QualifiedName__Group__1__Impl : ( ( rule__QualifiedName__Group_1__0 )* ) ;
     public final void rule__QualifiedName__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5208:1: ( ( ( rule__QualifiedName__Group_1__0 )* ) )
-            // InternalLibrettoProjectProfile.g:5209:1: ( ( rule__QualifiedName__Group_1__0 )* )
+            // InternalLibrettoProjectProfile.g:5175:1: ( ( ( rule__QualifiedName__Group_1__0 )* ) )
+            // InternalLibrettoProjectProfile.g:5176:1: ( ( rule__QualifiedName__Group_1__0 )* )
             {
-            // InternalLibrettoProjectProfile.g:5209:1: ( ( rule__QualifiedName__Group_1__0 )* )
-            // InternalLibrettoProjectProfile.g:5210:2: ( rule__QualifiedName__Group_1__0 )*
+            // InternalLibrettoProjectProfile.g:5176:1: ( ( rule__QualifiedName__Group_1__0 )* )
+            // InternalLibrettoProjectProfile.g:5177:2: ( rule__QualifiedName__Group_1__0 )*
             {
              before(grammarAccess.getQualifiedNameAccess().getGroup_1()); 
-            // InternalLibrettoProjectProfile.g:5211:2: ( rule__QualifiedName__Group_1__0 )*
-            loop38:
+            // InternalLibrettoProjectProfile.g:5178:2: ( rule__QualifiedName__Group_1__0 )*
+            loop39:
             do {
-                int alt38=2;
-                int LA38_0 = input.LA(1);
+                int alt39=2;
+                int LA39_0 = input.LA(1);
 
-                if ( (LA38_0==25) ) {
-                    alt38=1;
+                if ( (LA39_0==25) ) {
+                    alt39=1;
                 }
 
 
-                switch (alt38) {
+                switch (alt39) {
             	case 1 :
-            	    // InternalLibrettoProjectProfile.g:5211:3: rule__QualifiedName__Group_1__0
+            	    // InternalLibrettoProjectProfile.g:5178:3: rule__QualifiedName__Group_1__0
             	    {
             	    pushFollow(FOLLOW_56);
             	    rule__QualifiedName__Group_1__0();
@@ -16061,7 +15987,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
             	    break;
 
             	default :
-            	    break loop38;
+            	    break loop39;
                 }
             } while (true);
 
@@ -16088,14 +16014,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__0"
-    // InternalLibrettoProjectProfile.g:5220:1: rule__QualifiedName__Group_1__0 : rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 ;
+    // InternalLibrettoProjectProfile.g:5187:1: rule__QualifiedName__Group_1__0 : rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 ;
     public final void rule__QualifiedName__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5224:1: ( rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 )
-            // InternalLibrettoProjectProfile.g:5225:2: rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1
+            // InternalLibrettoProjectProfile.g:5191:1: ( rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 )
+            // InternalLibrettoProjectProfile.g:5192:2: rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1
             {
             pushFollow(FOLLOW_4);
             rule__QualifiedName__Group_1__0__Impl();
@@ -16126,17 +16052,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__0__Impl"
-    // InternalLibrettoProjectProfile.g:5232:1: rule__QualifiedName__Group_1__0__Impl : ( '.' ) ;
+    // InternalLibrettoProjectProfile.g:5199:1: rule__QualifiedName__Group_1__0__Impl : ( '.' ) ;
     public final void rule__QualifiedName__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5236:1: ( ( '.' ) )
-            // InternalLibrettoProjectProfile.g:5237:1: ( '.' )
+            // InternalLibrettoProjectProfile.g:5203:1: ( ( '.' ) )
+            // InternalLibrettoProjectProfile.g:5204:1: ( '.' )
             {
-            // InternalLibrettoProjectProfile.g:5237:1: ( '.' )
-            // InternalLibrettoProjectProfile.g:5238:2: '.'
+            // InternalLibrettoProjectProfile.g:5204:1: ( '.' )
+            // InternalLibrettoProjectProfile.g:5205:2: '.'
             {
              before(grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
             match(input,25,FOLLOW_2); 
@@ -16163,14 +16089,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__1"
-    // InternalLibrettoProjectProfile.g:5247:1: rule__QualifiedName__Group_1__1 : rule__QualifiedName__Group_1__1__Impl ;
+    // InternalLibrettoProjectProfile.g:5214:1: rule__QualifiedName__Group_1__1 : rule__QualifiedName__Group_1__1__Impl ;
     public final void rule__QualifiedName__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5251:1: ( rule__QualifiedName__Group_1__1__Impl )
-            // InternalLibrettoProjectProfile.g:5252:2: rule__QualifiedName__Group_1__1__Impl
+            // InternalLibrettoProjectProfile.g:5218:1: ( rule__QualifiedName__Group_1__1__Impl )
+            // InternalLibrettoProjectProfile.g:5219:2: rule__QualifiedName__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__QualifiedName__Group_1__1__Impl();
@@ -16196,21 +16122,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__1__Impl"
-    // InternalLibrettoProjectProfile.g:5258:1: rule__QualifiedName__Group_1__1__Impl : ( ( rule__QualifiedName__SegmentsAssignment_1_1 ) ) ;
+    // InternalLibrettoProjectProfile.g:5225:1: rule__QualifiedName__Group_1__1__Impl : ( ( rule__QualifiedName__SegmentsAssignment_1_1 ) ) ;
     public final void rule__QualifiedName__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5262:1: ( ( ( rule__QualifiedName__SegmentsAssignment_1_1 ) ) )
-            // InternalLibrettoProjectProfile.g:5263:1: ( ( rule__QualifiedName__SegmentsAssignment_1_1 ) )
+            // InternalLibrettoProjectProfile.g:5229:1: ( ( ( rule__QualifiedName__SegmentsAssignment_1_1 ) ) )
+            // InternalLibrettoProjectProfile.g:5230:1: ( ( rule__QualifiedName__SegmentsAssignment_1_1 ) )
             {
-            // InternalLibrettoProjectProfile.g:5263:1: ( ( rule__QualifiedName__SegmentsAssignment_1_1 ) )
-            // InternalLibrettoProjectProfile.g:5264:2: ( rule__QualifiedName__SegmentsAssignment_1_1 )
+            // InternalLibrettoProjectProfile.g:5230:1: ( ( rule__QualifiedName__SegmentsAssignment_1_1 ) )
+            // InternalLibrettoProjectProfile.g:5231:2: ( rule__QualifiedName__SegmentsAssignment_1_1 )
             {
              before(grammarAccess.getQualifiedNameAccess().getSegmentsAssignment_1_1()); 
-            // InternalLibrettoProjectProfile.g:5265:2: ( rule__QualifiedName__SegmentsAssignment_1_1 )
-            // InternalLibrettoProjectProfile.g:5265:3: rule__QualifiedName__SegmentsAssignment_1_1
+            // InternalLibrettoProjectProfile.g:5232:2: ( rule__QualifiedName__SegmentsAssignment_1_1 )
+            // InternalLibrettoProjectProfile.g:5232:3: rule__QualifiedName__SegmentsAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__QualifiedName__SegmentsAssignment_1_1();
@@ -16243,14 +16169,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__OperationSignature__Group__0"
-    // InternalLibrettoProjectProfile.g:5274:1: rule__OperationSignature__Group__0 : rule__OperationSignature__Group__0__Impl rule__OperationSignature__Group__1 ;
+    // InternalLibrettoProjectProfile.g:5241:1: rule__OperationSignature__Group__0 : rule__OperationSignature__Group__0__Impl rule__OperationSignature__Group__1 ;
     public final void rule__OperationSignature__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5278:1: ( rule__OperationSignature__Group__0__Impl rule__OperationSignature__Group__1 )
-            // InternalLibrettoProjectProfile.g:5279:2: rule__OperationSignature__Group__0__Impl rule__OperationSignature__Group__1
+            // InternalLibrettoProjectProfile.g:5245:1: ( rule__OperationSignature__Group__0__Impl rule__OperationSignature__Group__1 )
+            // InternalLibrettoProjectProfile.g:5246:2: rule__OperationSignature__Group__0__Impl rule__OperationSignature__Group__1
             {
             pushFollow(FOLLOW_57);
             rule__OperationSignature__Group__0__Impl();
@@ -16281,21 +16207,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__OperationSignature__Group__0__Impl"
-    // InternalLibrettoProjectProfile.g:5286:1: rule__OperationSignature__Group__0__Impl : ( ( rule__OperationSignature__NameAssignment_0 ) ) ;
+    // InternalLibrettoProjectProfile.g:5253:1: rule__OperationSignature__Group__0__Impl : ( ( rule__OperationSignature__NameAssignment_0 ) ) ;
     public final void rule__OperationSignature__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5290:1: ( ( ( rule__OperationSignature__NameAssignment_0 ) ) )
-            // InternalLibrettoProjectProfile.g:5291:1: ( ( rule__OperationSignature__NameAssignment_0 ) )
+            // InternalLibrettoProjectProfile.g:5257:1: ( ( ( rule__OperationSignature__NameAssignment_0 ) ) )
+            // InternalLibrettoProjectProfile.g:5258:1: ( ( rule__OperationSignature__NameAssignment_0 ) )
             {
-            // InternalLibrettoProjectProfile.g:5291:1: ( ( rule__OperationSignature__NameAssignment_0 ) )
-            // InternalLibrettoProjectProfile.g:5292:2: ( rule__OperationSignature__NameAssignment_0 )
+            // InternalLibrettoProjectProfile.g:5258:1: ( ( rule__OperationSignature__NameAssignment_0 ) )
+            // InternalLibrettoProjectProfile.g:5259:2: ( rule__OperationSignature__NameAssignment_0 )
             {
              before(grammarAccess.getOperationSignatureAccess().getNameAssignment_0()); 
-            // InternalLibrettoProjectProfile.g:5293:2: ( rule__OperationSignature__NameAssignment_0 )
-            // InternalLibrettoProjectProfile.g:5293:3: rule__OperationSignature__NameAssignment_0
+            // InternalLibrettoProjectProfile.g:5260:2: ( rule__OperationSignature__NameAssignment_0 )
+            // InternalLibrettoProjectProfile.g:5260:3: rule__OperationSignature__NameAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__OperationSignature__NameAssignment_0();
@@ -16328,14 +16254,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__OperationSignature__Group__1"
-    // InternalLibrettoProjectProfile.g:5301:1: rule__OperationSignature__Group__1 : rule__OperationSignature__Group__1__Impl rule__OperationSignature__Group__2 ;
+    // InternalLibrettoProjectProfile.g:5268:1: rule__OperationSignature__Group__1 : rule__OperationSignature__Group__1__Impl rule__OperationSignature__Group__2 ;
     public final void rule__OperationSignature__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5305:1: ( rule__OperationSignature__Group__1__Impl rule__OperationSignature__Group__2 )
-            // InternalLibrettoProjectProfile.g:5306:2: rule__OperationSignature__Group__1__Impl rule__OperationSignature__Group__2
+            // InternalLibrettoProjectProfile.g:5272:1: ( rule__OperationSignature__Group__1__Impl rule__OperationSignature__Group__2 )
+            // InternalLibrettoProjectProfile.g:5273:2: rule__OperationSignature__Group__1__Impl rule__OperationSignature__Group__2
             {
             pushFollow(FOLLOW_58);
             rule__OperationSignature__Group__1__Impl();
@@ -16366,17 +16292,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__OperationSignature__Group__1__Impl"
-    // InternalLibrettoProjectProfile.g:5313:1: rule__OperationSignature__Group__1__Impl : ( '(' ) ;
+    // InternalLibrettoProjectProfile.g:5280:1: rule__OperationSignature__Group__1__Impl : ( '(' ) ;
     public final void rule__OperationSignature__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5317:1: ( ( '(' ) )
-            // InternalLibrettoProjectProfile.g:5318:1: ( '(' )
+            // InternalLibrettoProjectProfile.g:5284:1: ( ( '(' ) )
+            // InternalLibrettoProjectProfile.g:5285:1: ( '(' )
             {
-            // InternalLibrettoProjectProfile.g:5318:1: ( '(' )
-            // InternalLibrettoProjectProfile.g:5319:2: '('
+            // InternalLibrettoProjectProfile.g:5285:1: ( '(' )
+            // InternalLibrettoProjectProfile.g:5286:2: '('
             {
              before(grammarAccess.getOperationSignatureAccess().getLeftParenthesisKeyword_1()); 
             match(input,76,FOLLOW_2); 
@@ -16403,14 +16329,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__OperationSignature__Group__2"
-    // InternalLibrettoProjectProfile.g:5328:1: rule__OperationSignature__Group__2 : rule__OperationSignature__Group__2__Impl rule__OperationSignature__Group__3 ;
+    // InternalLibrettoProjectProfile.g:5295:1: rule__OperationSignature__Group__2 : rule__OperationSignature__Group__2__Impl rule__OperationSignature__Group__3 ;
     public final void rule__OperationSignature__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5332:1: ( rule__OperationSignature__Group__2__Impl rule__OperationSignature__Group__3 )
-            // InternalLibrettoProjectProfile.g:5333:2: rule__OperationSignature__Group__2__Impl rule__OperationSignature__Group__3
+            // InternalLibrettoProjectProfile.g:5299:1: ( rule__OperationSignature__Group__2__Impl rule__OperationSignature__Group__3 )
+            // InternalLibrettoProjectProfile.g:5300:2: rule__OperationSignature__Group__2__Impl rule__OperationSignature__Group__3
             {
             pushFollow(FOLLOW_58);
             rule__OperationSignature__Group__2__Impl();
@@ -16441,29 +16367,29 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__OperationSignature__Group__2__Impl"
-    // InternalLibrettoProjectProfile.g:5340:1: rule__OperationSignature__Group__2__Impl : ( ( rule__OperationSignature__Group_2__0 )? ) ;
+    // InternalLibrettoProjectProfile.g:5307:1: rule__OperationSignature__Group__2__Impl : ( ( rule__OperationSignature__Group_2__0 )? ) ;
     public final void rule__OperationSignature__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5344:1: ( ( ( rule__OperationSignature__Group_2__0 )? ) )
-            // InternalLibrettoProjectProfile.g:5345:1: ( ( rule__OperationSignature__Group_2__0 )? )
+            // InternalLibrettoProjectProfile.g:5311:1: ( ( ( rule__OperationSignature__Group_2__0 )? ) )
+            // InternalLibrettoProjectProfile.g:5312:1: ( ( rule__OperationSignature__Group_2__0 )? )
             {
-            // InternalLibrettoProjectProfile.g:5345:1: ( ( rule__OperationSignature__Group_2__0 )? )
-            // InternalLibrettoProjectProfile.g:5346:2: ( rule__OperationSignature__Group_2__0 )?
+            // InternalLibrettoProjectProfile.g:5312:1: ( ( rule__OperationSignature__Group_2__0 )? )
+            // InternalLibrettoProjectProfile.g:5313:2: ( rule__OperationSignature__Group_2__0 )?
             {
              before(grammarAccess.getOperationSignatureAccess().getGroup_2()); 
-            // InternalLibrettoProjectProfile.g:5347:2: ( rule__OperationSignature__Group_2__0 )?
-            int alt39=2;
-            int LA39_0 = input.LA(1);
+            // InternalLibrettoProjectProfile.g:5314:2: ( rule__OperationSignature__Group_2__0 )?
+            int alt40=2;
+            int LA40_0 = input.LA(1);
 
-            if ( (LA39_0==RULE_ID||(LA39_0>=16 && LA39_0<=24)) ) {
-                alt39=1;
+            if ( (LA40_0==RULE_ID||(LA40_0>=16 && LA40_0<=24)) ) {
+                alt40=1;
             }
-            switch (alt39) {
+            switch (alt40) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:5347:3: rule__OperationSignature__Group_2__0
+                    // InternalLibrettoProjectProfile.g:5314:3: rule__OperationSignature__Group_2__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__OperationSignature__Group_2__0();
@@ -16499,14 +16425,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__OperationSignature__Group__3"
-    // InternalLibrettoProjectProfile.g:5355:1: rule__OperationSignature__Group__3 : rule__OperationSignature__Group__3__Impl ;
+    // InternalLibrettoProjectProfile.g:5322:1: rule__OperationSignature__Group__3 : rule__OperationSignature__Group__3__Impl ;
     public final void rule__OperationSignature__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5359:1: ( rule__OperationSignature__Group__3__Impl )
-            // InternalLibrettoProjectProfile.g:5360:2: rule__OperationSignature__Group__3__Impl
+            // InternalLibrettoProjectProfile.g:5326:1: ( rule__OperationSignature__Group__3__Impl )
+            // InternalLibrettoProjectProfile.g:5327:2: rule__OperationSignature__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__OperationSignature__Group__3__Impl();
@@ -16532,17 +16458,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__OperationSignature__Group__3__Impl"
-    // InternalLibrettoProjectProfile.g:5366:1: rule__OperationSignature__Group__3__Impl : ( ')' ) ;
+    // InternalLibrettoProjectProfile.g:5333:1: rule__OperationSignature__Group__3__Impl : ( ')' ) ;
     public final void rule__OperationSignature__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5370:1: ( ( ')' ) )
-            // InternalLibrettoProjectProfile.g:5371:1: ( ')' )
+            // InternalLibrettoProjectProfile.g:5337:1: ( ( ')' ) )
+            // InternalLibrettoProjectProfile.g:5338:1: ( ')' )
             {
-            // InternalLibrettoProjectProfile.g:5371:1: ( ')' )
-            // InternalLibrettoProjectProfile.g:5372:2: ')'
+            // InternalLibrettoProjectProfile.g:5338:1: ( ')' )
+            // InternalLibrettoProjectProfile.g:5339:2: ')'
             {
              before(grammarAccess.getOperationSignatureAccess().getRightParenthesisKeyword_3()); 
             match(input,77,FOLLOW_2); 
@@ -16569,14 +16495,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__OperationSignature__Group_2__0"
-    // InternalLibrettoProjectProfile.g:5382:1: rule__OperationSignature__Group_2__0 : rule__OperationSignature__Group_2__0__Impl rule__OperationSignature__Group_2__1 ;
+    // InternalLibrettoProjectProfile.g:5349:1: rule__OperationSignature__Group_2__0 : rule__OperationSignature__Group_2__0__Impl rule__OperationSignature__Group_2__1 ;
     public final void rule__OperationSignature__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5386:1: ( rule__OperationSignature__Group_2__0__Impl rule__OperationSignature__Group_2__1 )
-            // InternalLibrettoProjectProfile.g:5387:2: rule__OperationSignature__Group_2__0__Impl rule__OperationSignature__Group_2__1
+            // InternalLibrettoProjectProfile.g:5353:1: ( rule__OperationSignature__Group_2__0__Impl rule__OperationSignature__Group_2__1 )
+            // InternalLibrettoProjectProfile.g:5354:2: rule__OperationSignature__Group_2__0__Impl rule__OperationSignature__Group_2__1
             {
             pushFollow(FOLLOW_59);
             rule__OperationSignature__Group_2__0__Impl();
@@ -16607,21 +16533,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__OperationSignature__Group_2__0__Impl"
-    // InternalLibrettoProjectProfile.g:5394:1: rule__OperationSignature__Group_2__0__Impl : ( ( rule__OperationSignature__ParamsAssignment_2_0 ) ) ;
+    // InternalLibrettoProjectProfile.g:5361:1: rule__OperationSignature__Group_2__0__Impl : ( ( rule__OperationSignature__ParamsAssignment_2_0 ) ) ;
     public final void rule__OperationSignature__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5398:1: ( ( ( rule__OperationSignature__ParamsAssignment_2_0 ) ) )
-            // InternalLibrettoProjectProfile.g:5399:1: ( ( rule__OperationSignature__ParamsAssignment_2_0 ) )
+            // InternalLibrettoProjectProfile.g:5365:1: ( ( ( rule__OperationSignature__ParamsAssignment_2_0 ) ) )
+            // InternalLibrettoProjectProfile.g:5366:1: ( ( rule__OperationSignature__ParamsAssignment_2_0 ) )
             {
-            // InternalLibrettoProjectProfile.g:5399:1: ( ( rule__OperationSignature__ParamsAssignment_2_0 ) )
-            // InternalLibrettoProjectProfile.g:5400:2: ( rule__OperationSignature__ParamsAssignment_2_0 )
+            // InternalLibrettoProjectProfile.g:5366:1: ( ( rule__OperationSignature__ParamsAssignment_2_0 ) )
+            // InternalLibrettoProjectProfile.g:5367:2: ( rule__OperationSignature__ParamsAssignment_2_0 )
             {
              before(grammarAccess.getOperationSignatureAccess().getParamsAssignment_2_0()); 
-            // InternalLibrettoProjectProfile.g:5401:2: ( rule__OperationSignature__ParamsAssignment_2_0 )
-            // InternalLibrettoProjectProfile.g:5401:3: rule__OperationSignature__ParamsAssignment_2_0
+            // InternalLibrettoProjectProfile.g:5368:2: ( rule__OperationSignature__ParamsAssignment_2_0 )
+            // InternalLibrettoProjectProfile.g:5368:3: rule__OperationSignature__ParamsAssignment_2_0
             {
             pushFollow(FOLLOW_2);
             rule__OperationSignature__ParamsAssignment_2_0();
@@ -16654,14 +16580,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__OperationSignature__Group_2__1"
-    // InternalLibrettoProjectProfile.g:5409:1: rule__OperationSignature__Group_2__1 : rule__OperationSignature__Group_2__1__Impl ;
+    // InternalLibrettoProjectProfile.g:5376:1: rule__OperationSignature__Group_2__1 : rule__OperationSignature__Group_2__1__Impl ;
     public final void rule__OperationSignature__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5413:1: ( rule__OperationSignature__Group_2__1__Impl )
-            // InternalLibrettoProjectProfile.g:5414:2: rule__OperationSignature__Group_2__1__Impl
+            // InternalLibrettoProjectProfile.g:5380:1: ( rule__OperationSignature__Group_2__1__Impl )
+            // InternalLibrettoProjectProfile.g:5381:2: rule__OperationSignature__Group_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__OperationSignature__Group_2__1__Impl();
@@ -16687,33 +16613,33 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__OperationSignature__Group_2__1__Impl"
-    // InternalLibrettoProjectProfile.g:5420:1: rule__OperationSignature__Group_2__1__Impl : ( ( rule__OperationSignature__Group_2_1__0 )* ) ;
+    // InternalLibrettoProjectProfile.g:5387:1: rule__OperationSignature__Group_2__1__Impl : ( ( rule__OperationSignature__Group_2_1__0 )* ) ;
     public final void rule__OperationSignature__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5424:1: ( ( ( rule__OperationSignature__Group_2_1__0 )* ) )
-            // InternalLibrettoProjectProfile.g:5425:1: ( ( rule__OperationSignature__Group_2_1__0 )* )
+            // InternalLibrettoProjectProfile.g:5391:1: ( ( ( rule__OperationSignature__Group_2_1__0 )* ) )
+            // InternalLibrettoProjectProfile.g:5392:1: ( ( rule__OperationSignature__Group_2_1__0 )* )
             {
-            // InternalLibrettoProjectProfile.g:5425:1: ( ( rule__OperationSignature__Group_2_1__0 )* )
-            // InternalLibrettoProjectProfile.g:5426:2: ( rule__OperationSignature__Group_2_1__0 )*
+            // InternalLibrettoProjectProfile.g:5392:1: ( ( rule__OperationSignature__Group_2_1__0 )* )
+            // InternalLibrettoProjectProfile.g:5393:2: ( rule__OperationSignature__Group_2_1__0 )*
             {
              before(grammarAccess.getOperationSignatureAccess().getGroup_2_1()); 
-            // InternalLibrettoProjectProfile.g:5427:2: ( rule__OperationSignature__Group_2_1__0 )*
-            loop40:
+            // InternalLibrettoProjectProfile.g:5394:2: ( rule__OperationSignature__Group_2_1__0 )*
+            loop41:
             do {
-                int alt40=2;
-                int LA40_0 = input.LA(1);
+                int alt41=2;
+                int LA41_0 = input.LA(1);
 
-                if ( (LA40_0==73) ) {
-                    alt40=1;
+                if ( (LA41_0==73) ) {
+                    alt41=1;
                 }
 
 
-                switch (alt40) {
+                switch (alt41) {
             	case 1 :
-            	    // InternalLibrettoProjectProfile.g:5427:3: rule__OperationSignature__Group_2_1__0
+            	    // InternalLibrettoProjectProfile.g:5394:3: rule__OperationSignature__Group_2_1__0
             	    {
             	    pushFollow(FOLLOW_53);
             	    rule__OperationSignature__Group_2_1__0();
@@ -16725,7 +16651,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
             	    break;
 
             	default :
-            	    break loop40;
+            	    break loop41;
                 }
             } while (true);
 
@@ -16752,14 +16678,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__OperationSignature__Group_2_1__0"
-    // InternalLibrettoProjectProfile.g:5436:1: rule__OperationSignature__Group_2_1__0 : rule__OperationSignature__Group_2_1__0__Impl rule__OperationSignature__Group_2_1__1 ;
+    // InternalLibrettoProjectProfile.g:5403:1: rule__OperationSignature__Group_2_1__0 : rule__OperationSignature__Group_2_1__0__Impl rule__OperationSignature__Group_2_1__1 ;
     public final void rule__OperationSignature__Group_2_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5440:1: ( rule__OperationSignature__Group_2_1__0__Impl rule__OperationSignature__Group_2_1__1 )
-            // InternalLibrettoProjectProfile.g:5441:2: rule__OperationSignature__Group_2_1__0__Impl rule__OperationSignature__Group_2_1__1
+            // InternalLibrettoProjectProfile.g:5407:1: ( rule__OperationSignature__Group_2_1__0__Impl rule__OperationSignature__Group_2_1__1 )
+            // InternalLibrettoProjectProfile.g:5408:2: rule__OperationSignature__Group_2_1__0__Impl rule__OperationSignature__Group_2_1__1
             {
             pushFollow(FOLLOW_49);
             rule__OperationSignature__Group_2_1__0__Impl();
@@ -16790,17 +16716,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__OperationSignature__Group_2_1__0__Impl"
-    // InternalLibrettoProjectProfile.g:5448:1: rule__OperationSignature__Group_2_1__0__Impl : ( ',' ) ;
+    // InternalLibrettoProjectProfile.g:5415:1: rule__OperationSignature__Group_2_1__0__Impl : ( ',' ) ;
     public final void rule__OperationSignature__Group_2_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5452:1: ( ( ',' ) )
-            // InternalLibrettoProjectProfile.g:5453:1: ( ',' )
+            // InternalLibrettoProjectProfile.g:5419:1: ( ( ',' ) )
+            // InternalLibrettoProjectProfile.g:5420:1: ( ',' )
             {
-            // InternalLibrettoProjectProfile.g:5453:1: ( ',' )
-            // InternalLibrettoProjectProfile.g:5454:2: ','
+            // InternalLibrettoProjectProfile.g:5420:1: ( ',' )
+            // InternalLibrettoProjectProfile.g:5421:2: ','
             {
              before(grammarAccess.getOperationSignatureAccess().getCommaKeyword_2_1_0()); 
             match(input,73,FOLLOW_2); 
@@ -16827,14 +16753,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__OperationSignature__Group_2_1__1"
-    // InternalLibrettoProjectProfile.g:5463:1: rule__OperationSignature__Group_2_1__1 : rule__OperationSignature__Group_2_1__1__Impl ;
+    // InternalLibrettoProjectProfile.g:5430:1: rule__OperationSignature__Group_2_1__1 : rule__OperationSignature__Group_2_1__1__Impl ;
     public final void rule__OperationSignature__Group_2_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5467:1: ( rule__OperationSignature__Group_2_1__1__Impl )
-            // InternalLibrettoProjectProfile.g:5468:2: rule__OperationSignature__Group_2_1__1__Impl
+            // InternalLibrettoProjectProfile.g:5434:1: ( rule__OperationSignature__Group_2_1__1__Impl )
+            // InternalLibrettoProjectProfile.g:5435:2: rule__OperationSignature__Group_2_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__OperationSignature__Group_2_1__1__Impl();
@@ -16860,21 +16786,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__OperationSignature__Group_2_1__1__Impl"
-    // InternalLibrettoProjectProfile.g:5474:1: rule__OperationSignature__Group_2_1__1__Impl : ( ( rule__OperationSignature__ParamsAssignment_2_1_1 ) ) ;
+    // InternalLibrettoProjectProfile.g:5441:1: rule__OperationSignature__Group_2_1__1__Impl : ( ( rule__OperationSignature__ParamsAssignment_2_1_1 ) ) ;
     public final void rule__OperationSignature__Group_2_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5478:1: ( ( ( rule__OperationSignature__ParamsAssignment_2_1_1 ) ) )
-            // InternalLibrettoProjectProfile.g:5479:1: ( ( rule__OperationSignature__ParamsAssignment_2_1_1 ) )
+            // InternalLibrettoProjectProfile.g:5445:1: ( ( ( rule__OperationSignature__ParamsAssignment_2_1_1 ) ) )
+            // InternalLibrettoProjectProfile.g:5446:1: ( ( rule__OperationSignature__ParamsAssignment_2_1_1 ) )
             {
-            // InternalLibrettoProjectProfile.g:5479:1: ( ( rule__OperationSignature__ParamsAssignment_2_1_1 ) )
-            // InternalLibrettoProjectProfile.g:5480:2: ( rule__OperationSignature__ParamsAssignment_2_1_1 )
+            // InternalLibrettoProjectProfile.g:5446:1: ( ( rule__OperationSignature__ParamsAssignment_2_1_1 ) )
+            // InternalLibrettoProjectProfile.g:5447:2: ( rule__OperationSignature__ParamsAssignment_2_1_1 )
             {
              before(grammarAccess.getOperationSignatureAccess().getParamsAssignment_2_1_1()); 
-            // InternalLibrettoProjectProfile.g:5481:2: ( rule__OperationSignature__ParamsAssignment_2_1_1 )
-            // InternalLibrettoProjectProfile.g:5481:3: rule__OperationSignature__ParamsAssignment_2_1_1
+            // InternalLibrettoProjectProfile.g:5448:2: ( rule__OperationSignature__ParamsAssignment_2_1_1 )
+            // InternalLibrettoProjectProfile.g:5448:3: rule__OperationSignature__ParamsAssignment_2_1_1
             {
             pushFollow(FOLLOW_2);
             rule__OperationSignature__ParamsAssignment_2_1_1();
@@ -16907,14 +16833,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__TypedParam__Group__0"
-    // InternalLibrettoProjectProfile.g:5490:1: rule__TypedParam__Group__0 : rule__TypedParam__Group__0__Impl rule__TypedParam__Group__1 ;
+    // InternalLibrettoProjectProfile.g:5457:1: rule__TypedParam__Group__0 : rule__TypedParam__Group__0__Impl rule__TypedParam__Group__1 ;
     public final void rule__TypedParam__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5494:1: ( rule__TypedParam__Group__0__Impl rule__TypedParam__Group__1 )
-            // InternalLibrettoProjectProfile.g:5495:2: rule__TypedParam__Group__0__Impl rule__TypedParam__Group__1
+            // InternalLibrettoProjectProfile.g:5461:1: ( rule__TypedParam__Group__0__Impl rule__TypedParam__Group__1 )
+            // InternalLibrettoProjectProfile.g:5462:2: rule__TypedParam__Group__0__Impl rule__TypedParam__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__TypedParam__Group__0__Impl();
@@ -16945,21 +16871,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__TypedParam__Group__0__Impl"
-    // InternalLibrettoProjectProfile.g:5502:1: rule__TypedParam__Group__0__Impl : ( ( rule__TypedParam__TypeAssignment_0 ) ) ;
+    // InternalLibrettoProjectProfile.g:5469:1: rule__TypedParam__Group__0__Impl : ( ( rule__TypedParam__TypeAssignment_0 ) ) ;
     public final void rule__TypedParam__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5506:1: ( ( ( rule__TypedParam__TypeAssignment_0 ) ) )
-            // InternalLibrettoProjectProfile.g:5507:1: ( ( rule__TypedParam__TypeAssignment_0 ) )
+            // InternalLibrettoProjectProfile.g:5473:1: ( ( ( rule__TypedParam__TypeAssignment_0 ) ) )
+            // InternalLibrettoProjectProfile.g:5474:1: ( ( rule__TypedParam__TypeAssignment_0 ) )
             {
-            // InternalLibrettoProjectProfile.g:5507:1: ( ( rule__TypedParam__TypeAssignment_0 ) )
-            // InternalLibrettoProjectProfile.g:5508:2: ( rule__TypedParam__TypeAssignment_0 )
+            // InternalLibrettoProjectProfile.g:5474:1: ( ( rule__TypedParam__TypeAssignment_0 ) )
+            // InternalLibrettoProjectProfile.g:5475:2: ( rule__TypedParam__TypeAssignment_0 )
             {
              before(grammarAccess.getTypedParamAccess().getTypeAssignment_0()); 
-            // InternalLibrettoProjectProfile.g:5509:2: ( rule__TypedParam__TypeAssignment_0 )
-            // InternalLibrettoProjectProfile.g:5509:3: rule__TypedParam__TypeAssignment_0
+            // InternalLibrettoProjectProfile.g:5476:2: ( rule__TypedParam__TypeAssignment_0 )
+            // InternalLibrettoProjectProfile.g:5476:3: rule__TypedParam__TypeAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__TypedParam__TypeAssignment_0();
@@ -16992,14 +16918,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__TypedParam__Group__1"
-    // InternalLibrettoProjectProfile.g:5517:1: rule__TypedParam__Group__1 : rule__TypedParam__Group__1__Impl ;
+    // InternalLibrettoProjectProfile.g:5484:1: rule__TypedParam__Group__1 : rule__TypedParam__Group__1__Impl ;
     public final void rule__TypedParam__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5521:1: ( rule__TypedParam__Group__1__Impl )
-            // InternalLibrettoProjectProfile.g:5522:2: rule__TypedParam__Group__1__Impl
+            // InternalLibrettoProjectProfile.g:5488:1: ( rule__TypedParam__Group__1__Impl )
+            // InternalLibrettoProjectProfile.g:5489:2: rule__TypedParam__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__TypedParam__Group__1__Impl();
@@ -17025,21 +16951,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__TypedParam__Group__1__Impl"
-    // InternalLibrettoProjectProfile.g:5528:1: rule__TypedParam__Group__1__Impl : ( ( rule__TypedParam__ParamNameAssignment_1 ) ) ;
+    // InternalLibrettoProjectProfile.g:5495:1: rule__TypedParam__Group__1__Impl : ( ( rule__TypedParam__ParamNameAssignment_1 ) ) ;
     public final void rule__TypedParam__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5532:1: ( ( ( rule__TypedParam__ParamNameAssignment_1 ) ) )
-            // InternalLibrettoProjectProfile.g:5533:1: ( ( rule__TypedParam__ParamNameAssignment_1 ) )
+            // InternalLibrettoProjectProfile.g:5499:1: ( ( ( rule__TypedParam__ParamNameAssignment_1 ) ) )
+            // InternalLibrettoProjectProfile.g:5500:1: ( ( rule__TypedParam__ParamNameAssignment_1 ) )
             {
-            // InternalLibrettoProjectProfile.g:5533:1: ( ( rule__TypedParam__ParamNameAssignment_1 ) )
-            // InternalLibrettoProjectProfile.g:5534:2: ( rule__TypedParam__ParamNameAssignment_1 )
+            // InternalLibrettoProjectProfile.g:5500:1: ( ( rule__TypedParam__ParamNameAssignment_1 ) )
+            // InternalLibrettoProjectProfile.g:5501:2: ( rule__TypedParam__ParamNameAssignment_1 )
             {
              before(grammarAccess.getTypedParamAccess().getParamNameAssignment_1()); 
-            // InternalLibrettoProjectProfile.g:5535:2: ( rule__TypedParam__ParamNameAssignment_1 )
-            // InternalLibrettoProjectProfile.g:5535:3: rule__TypedParam__ParamNameAssignment_1
+            // InternalLibrettoProjectProfile.g:5502:2: ( rule__TypedParam__ParamNameAssignment_1 )
+            // InternalLibrettoProjectProfile.g:5502:3: rule__TypedParam__ParamNameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__TypedParam__ParamNameAssignment_1();
@@ -17072,14 +16998,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ValidID__Group__0"
-    // InternalLibrettoProjectProfile.g:5544:1: rule__ValidID__Group__0 : rule__ValidID__Group__0__Impl rule__ValidID__Group__1 ;
+    // InternalLibrettoProjectProfile.g:5511:1: rule__ValidID__Group__0 : rule__ValidID__Group__0__Impl rule__ValidID__Group__1 ;
     public final void rule__ValidID__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5548:1: ( rule__ValidID__Group__0__Impl rule__ValidID__Group__1 )
-            // InternalLibrettoProjectProfile.g:5549:2: rule__ValidID__Group__0__Impl rule__ValidID__Group__1
+            // InternalLibrettoProjectProfile.g:5515:1: ( rule__ValidID__Group__0__Impl rule__ValidID__Group__1 )
+            // InternalLibrettoProjectProfile.g:5516:2: rule__ValidID__Group__0__Impl rule__ValidID__Group__1
             {
             pushFollow(FOLLOW_60);
             rule__ValidID__Group__0__Impl();
@@ -17110,17 +17036,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ValidID__Group__0__Impl"
-    // InternalLibrettoProjectProfile.g:5556:1: rule__ValidID__Group__0__Impl : ( RULE_ID ) ;
+    // InternalLibrettoProjectProfile.g:5523:1: rule__ValidID__Group__0__Impl : ( RULE_ID ) ;
     public final void rule__ValidID__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5560:1: ( ( RULE_ID ) )
-            // InternalLibrettoProjectProfile.g:5561:1: ( RULE_ID )
+            // InternalLibrettoProjectProfile.g:5527:1: ( ( RULE_ID ) )
+            // InternalLibrettoProjectProfile.g:5528:1: ( RULE_ID )
             {
-            // InternalLibrettoProjectProfile.g:5561:1: ( RULE_ID )
-            // InternalLibrettoProjectProfile.g:5562:2: RULE_ID
+            // InternalLibrettoProjectProfile.g:5528:1: ( RULE_ID )
+            // InternalLibrettoProjectProfile.g:5529:2: RULE_ID
             {
              before(grammarAccess.getValidIDAccess().getIDTerminalRuleCall_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -17147,14 +17073,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ValidID__Group__1"
-    // InternalLibrettoProjectProfile.g:5571:1: rule__ValidID__Group__1 : rule__ValidID__Group__1__Impl ;
+    // InternalLibrettoProjectProfile.g:5538:1: rule__ValidID__Group__1 : rule__ValidID__Group__1__Impl ;
     public final void rule__ValidID__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5575:1: ( rule__ValidID__Group__1__Impl )
-            // InternalLibrettoProjectProfile.g:5576:2: rule__ValidID__Group__1__Impl
+            // InternalLibrettoProjectProfile.g:5542:1: ( rule__ValidID__Group__1__Impl )
+            // InternalLibrettoProjectProfile.g:5543:2: rule__ValidID__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ValidID__Group__1__Impl();
@@ -17180,33 +17106,33 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ValidID__Group__1__Impl"
-    // InternalLibrettoProjectProfile.g:5582:1: rule__ValidID__Group__1__Impl : ( ( rule__ValidID__Group_1__0 )* ) ;
+    // InternalLibrettoProjectProfile.g:5549:1: rule__ValidID__Group__1__Impl : ( ( rule__ValidID__Group_1__0 )* ) ;
     public final void rule__ValidID__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5586:1: ( ( ( rule__ValidID__Group_1__0 )* ) )
-            // InternalLibrettoProjectProfile.g:5587:1: ( ( rule__ValidID__Group_1__0 )* )
+            // InternalLibrettoProjectProfile.g:5553:1: ( ( ( rule__ValidID__Group_1__0 )* ) )
+            // InternalLibrettoProjectProfile.g:5554:1: ( ( rule__ValidID__Group_1__0 )* )
             {
-            // InternalLibrettoProjectProfile.g:5587:1: ( ( rule__ValidID__Group_1__0 )* )
-            // InternalLibrettoProjectProfile.g:5588:2: ( rule__ValidID__Group_1__0 )*
+            // InternalLibrettoProjectProfile.g:5554:1: ( ( rule__ValidID__Group_1__0 )* )
+            // InternalLibrettoProjectProfile.g:5555:2: ( rule__ValidID__Group_1__0 )*
             {
              before(grammarAccess.getValidIDAccess().getGroup_1()); 
-            // InternalLibrettoProjectProfile.g:5589:2: ( rule__ValidID__Group_1__0 )*
-            loop41:
+            // InternalLibrettoProjectProfile.g:5556:2: ( rule__ValidID__Group_1__0 )*
+            loop42:
             do {
-                int alt41=2;
-                int LA41_0 = input.LA(1);
+                int alt42=2;
+                int LA42_0 = input.LA(1);
 
-                if ( ((LA41_0>=25 && LA41_0<=27)) ) {
-                    alt41=1;
+                if ( ((LA42_0>=25 && LA42_0<=27)) ) {
+                    alt42=1;
                 }
 
 
-                switch (alt41) {
+                switch (alt42) {
             	case 1 :
-            	    // InternalLibrettoProjectProfile.g:5589:3: rule__ValidID__Group_1__0
+            	    // InternalLibrettoProjectProfile.g:5556:3: rule__ValidID__Group_1__0
             	    {
             	    pushFollow(FOLLOW_61);
             	    rule__ValidID__Group_1__0();
@@ -17218,7 +17144,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
             	    break;
 
             	default :
-            	    break loop41;
+            	    break loop42;
                 }
             } while (true);
 
@@ -17245,14 +17171,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ValidID__Group_1__0"
-    // InternalLibrettoProjectProfile.g:5598:1: rule__ValidID__Group_1__0 : rule__ValidID__Group_1__0__Impl rule__ValidID__Group_1__1 ;
+    // InternalLibrettoProjectProfile.g:5565:1: rule__ValidID__Group_1__0 : rule__ValidID__Group_1__0__Impl rule__ValidID__Group_1__1 ;
     public final void rule__ValidID__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5602:1: ( rule__ValidID__Group_1__0__Impl rule__ValidID__Group_1__1 )
-            // InternalLibrettoProjectProfile.g:5603:2: rule__ValidID__Group_1__0__Impl rule__ValidID__Group_1__1
+            // InternalLibrettoProjectProfile.g:5569:1: ( rule__ValidID__Group_1__0__Impl rule__ValidID__Group_1__1 )
+            // InternalLibrettoProjectProfile.g:5570:2: rule__ValidID__Group_1__0__Impl rule__ValidID__Group_1__1
             {
             pushFollow(FOLLOW_4);
             rule__ValidID__Group_1__0__Impl();
@@ -17283,21 +17209,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ValidID__Group_1__0__Impl"
-    // InternalLibrettoProjectProfile.g:5610:1: rule__ValidID__Group_1__0__Impl : ( ( rule__ValidID__Alternatives_1_0 ) ) ;
+    // InternalLibrettoProjectProfile.g:5577:1: rule__ValidID__Group_1__0__Impl : ( ( rule__ValidID__Alternatives_1_0 ) ) ;
     public final void rule__ValidID__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5614:1: ( ( ( rule__ValidID__Alternatives_1_0 ) ) )
-            // InternalLibrettoProjectProfile.g:5615:1: ( ( rule__ValidID__Alternatives_1_0 ) )
+            // InternalLibrettoProjectProfile.g:5581:1: ( ( ( rule__ValidID__Alternatives_1_0 ) ) )
+            // InternalLibrettoProjectProfile.g:5582:1: ( ( rule__ValidID__Alternatives_1_0 ) )
             {
-            // InternalLibrettoProjectProfile.g:5615:1: ( ( rule__ValidID__Alternatives_1_0 ) )
-            // InternalLibrettoProjectProfile.g:5616:2: ( rule__ValidID__Alternatives_1_0 )
+            // InternalLibrettoProjectProfile.g:5582:1: ( ( rule__ValidID__Alternatives_1_0 ) )
+            // InternalLibrettoProjectProfile.g:5583:2: ( rule__ValidID__Alternatives_1_0 )
             {
              before(grammarAccess.getValidIDAccess().getAlternatives_1_0()); 
-            // InternalLibrettoProjectProfile.g:5617:2: ( rule__ValidID__Alternatives_1_0 )
-            // InternalLibrettoProjectProfile.g:5617:3: rule__ValidID__Alternatives_1_0
+            // InternalLibrettoProjectProfile.g:5584:2: ( rule__ValidID__Alternatives_1_0 )
+            // InternalLibrettoProjectProfile.g:5584:3: rule__ValidID__Alternatives_1_0
             {
             pushFollow(FOLLOW_2);
             rule__ValidID__Alternatives_1_0();
@@ -17330,14 +17256,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ValidID__Group_1__1"
-    // InternalLibrettoProjectProfile.g:5625:1: rule__ValidID__Group_1__1 : rule__ValidID__Group_1__1__Impl ;
+    // InternalLibrettoProjectProfile.g:5592:1: rule__ValidID__Group_1__1 : rule__ValidID__Group_1__1__Impl ;
     public final void rule__ValidID__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5629:1: ( rule__ValidID__Group_1__1__Impl )
-            // InternalLibrettoProjectProfile.g:5630:2: rule__ValidID__Group_1__1__Impl
+            // InternalLibrettoProjectProfile.g:5596:1: ( rule__ValidID__Group_1__1__Impl )
+            // InternalLibrettoProjectProfile.g:5597:2: rule__ValidID__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ValidID__Group_1__1__Impl();
@@ -17363,17 +17289,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ValidID__Group_1__1__Impl"
-    // InternalLibrettoProjectProfile.g:5636:1: rule__ValidID__Group_1__1__Impl : ( RULE_ID ) ;
+    // InternalLibrettoProjectProfile.g:5603:1: rule__ValidID__Group_1__1__Impl : ( RULE_ID ) ;
     public final void rule__ValidID__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5640:1: ( ( RULE_ID ) )
-            // InternalLibrettoProjectProfile.g:5641:1: ( RULE_ID )
+            // InternalLibrettoProjectProfile.g:5607:1: ( ( RULE_ID ) )
+            // InternalLibrettoProjectProfile.g:5608:1: ( RULE_ID )
             {
-            // InternalLibrettoProjectProfile.g:5641:1: ( RULE_ID )
-            // InternalLibrettoProjectProfile.g:5642:2: RULE_ID
+            // InternalLibrettoProjectProfile.g:5608:1: ( RULE_ID )
+            // InternalLibrettoProjectProfile.g:5609:2: RULE_ID
             {
              before(grammarAccess.getValidIDAccess().getIDTerminalRuleCall_1_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -17400,17 +17326,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectProfile__NameAssignment_2"
-    // InternalLibrettoProjectProfile.g:5652:1: rule__ProjectProfile__NameAssignment_2 : ( ruleValidID ) ;
+    // InternalLibrettoProjectProfile.g:5619:1: rule__ProjectProfile__NameAssignment_2 : ( ruleValidID ) ;
     public final void rule__ProjectProfile__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5656:1: ( ( ruleValidID ) )
-            // InternalLibrettoProjectProfile.g:5657:2: ( ruleValidID )
+            // InternalLibrettoProjectProfile.g:5623:1: ( ( ruleValidID ) )
+            // InternalLibrettoProjectProfile.g:5624:2: ( ruleValidID )
             {
-            // InternalLibrettoProjectProfile.g:5657:2: ( ruleValidID )
-            // InternalLibrettoProjectProfile.g:5658:3: ruleValidID
+            // InternalLibrettoProjectProfile.g:5624:2: ( ruleValidID )
+            // InternalLibrettoProjectProfile.g:5625:3: ruleValidID
             {
              before(grammarAccess.getProjectProfileAccess().getNameValidIDParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -17441,17 +17367,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectProfile__ProjectsAssignment_4_0"
-    // InternalLibrettoProjectProfile.g:5667:1: rule__ProjectProfile__ProjectsAssignment_4_0 : ( ruleProjectBlock ) ;
+    // InternalLibrettoProjectProfile.g:5634:1: rule__ProjectProfile__ProjectsAssignment_4_0 : ( ruleProjectBlock ) ;
     public final void rule__ProjectProfile__ProjectsAssignment_4_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5671:1: ( ( ruleProjectBlock ) )
-            // InternalLibrettoProjectProfile.g:5672:2: ( ruleProjectBlock )
+            // InternalLibrettoProjectProfile.g:5638:1: ( ( ruleProjectBlock ) )
+            // InternalLibrettoProjectProfile.g:5639:2: ( ruleProjectBlock )
             {
-            // InternalLibrettoProjectProfile.g:5672:2: ( ruleProjectBlock )
-            // InternalLibrettoProjectProfile.g:5673:3: ruleProjectBlock
+            // InternalLibrettoProjectProfile.g:5639:2: ( ruleProjectBlock )
+            // InternalLibrettoProjectProfile.g:5640:3: ruleProjectBlock
             {
              before(grammarAccess.getProjectProfileAccess().getProjectsProjectBlockParserRuleCall_4_0_0()); 
             pushFollow(FOLLOW_2);
@@ -17482,17 +17408,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectProfile__LlmProvidersAssignment_4_1"
-    // InternalLibrettoProjectProfile.g:5682:1: rule__ProjectProfile__LlmProvidersAssignment_4_1 : ( ruleLlmProvidersBlock ) ;
+    // InternalLibrettoProjectProfile.g:5649:1: rule__ProjectProfile__LlmProvidersAssignment_4_1 : ( ruleLlmProvidersBlock ) ;
     public final void rule__ProjectProfile__LlmProvidersAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5686:1: ( ( ruleLlmProvidersBlock ) )
-            // InternalLibrettoProjectProfile.g:5687:2: ( ruleLlmProvidersBlock )
+            // InternalLibrettoProjectProfile.g:5653:1: ( ( ruleLlmProvidersBlock ) )
+            // InternalLibrettoProjectProfile.g:5654:2: ( ruleLlmProvidersBlock )
             {
-            // InternalLibrettoProjectProfile.g:5687:2: ( ruleLlmProvidersBlock )
-            // InternalLibrettoProjectProfile.g:5688:3: ruleLlmProvidersBlock
+            // InternalLibrettoProjectProfile.g:5654:2: ( ruleLlmProvidersBlock )
+            // InternalLibrettoProjectProfile.g:5655:3: ruleLlmProvidersBlock
             {
              before(grammarAccess.getProjectProfileAccess().getLlmProvidersLlmProvidersBlockParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -17523,17 +17449,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectProfile__SurfacesAssignment_4_2"
-    // InternalLibrettoProjectProfile.g:5697:1: rule__ProjectProfile__SurfacesAssignment_4_2 : ( ruleSurfaceBlock ) ;
+    // InternalLibrettoProjectProfile.g:5664:1: rule__ProjectProfile__SurfacesAssignment_4_2 : ( ruleSurfaceBlock ) ;
     public final void rule__ProjectProfile__SurfacesAssignment_4_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5701:1: ( ( ruleSurfaceBlock ) )
-            // InternalLibrettoProjectProfile.g:5702:2: ( ruleSurfaceBlock )
+            // InternalLibrettoProjectProfile.g:5668:1: ( ( ruleSurfaceBlock ) )
+            // InternalLibrettoProjectProfile.g:5669:2: ( ruleSurfaceBlock )
             {
-            // InternalLibrettoProjectProfile.g:5702:2: ( ruleSurfaceBlock )
-            // InternalLibrettoProjectProfile.g:5703:3: ruleSurfaceBlock
+            // InternalLibrettoProjectProfile.g:5669:2: ( ruleSurfaceBlock )
+            // InternalLibrettoProjectProfile.g:5670:3: ruleSurfaceBlock
             {
              before(grammarAccess.getProjectProfileAccess().getSurfacesSurfaceBlockParserRuleCall_4_2_0()); 
             pushFollow(FOLLOW_2);
@@ -17564,17 +17490,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectBlock__RootDirAssignment_3_0_1"
-    // InternalLibrettoProjectProfile.g:5712:1: rule__ProjectBlock__RootDirAssignment_3_0_1 : ( RULE_STRING ) ;
+    // InternalLibrettoProjectProfile.g:5679:1: rule__ProjectBlock__RootDirAssignment_3_0_1 : ( RULE_STRING ) ;
     public final void rule__ProjectBlock__RootDirAssignment_3_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5716:1: ( ( RULE_STRING ) )
-            // InternalLibrettoProjectProfile.g:5717:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:5683:1: ( ( RULE_STRING ) )
+            // InternalLibrettoProjectProfile.g:5684:2: ( RULE_STRING )
             {
-            // InternalLibrettoProjectProfile.g:5717:2: ( RULE_STRING )
-            // InternalLibrettoProjectProfile.g:5718:3: RULE_STRING
+            // InternalLibrettoProjectProfile.g:5684:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:5685:3: RULE_STRING
             {
              before(grammarAccess.getProjectBlockAccess().getRootDirSTRINGTerminalRuleCall_3_0_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -17601,17 +17527,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectBlock__ModulesAssignment_3_1"
-    // InternalLibrettoProjectProfile.g:5727:1: rule__ProjectBlock__ModulesAssignment_3_1 : ( ruleModulesBlock ) ;
+    // InternalLibrettoProjectProfile.g:5694:1: rule__ProjectBlock__ModulesAssignment_3_1 : ( ruleModulesBlock ) ;
     public final void rule__ProjectBlock__ModulesAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5731:1: ( ( ruleModulesBlock ) )
-            // InternalLibrettoProjectProfile.g:5732:2: ( ruleModulesBlock )
+            // InternalLibrettoProjectProfile.g:5698:1: ( ( ruleModulesBlock ) )
+            // InternalLibrettoProjectProfile.g:5699:2: ( ruleModulesBlock )
             {
-            // InternalLibrettoProjectProfile.g:5732:2: ( ruleModulesBlock )
-            // InternalLibrettoProjectProfile.g:5733:3: ruleModulesBlock
+            // InternalLibrettoProjectProfile.g:5699:2: ( ruleModulesBlock )
+            // InternalLibrettoProjectProfile.g:5700:3: ruleModulesBlock
             {
              before(grammarAccess.getProjectBlockAccess().getModulesModulesBlockParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -17642,17 +17568,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectBlock__GensAssignment_3_2"
-    // InternalLibrettoProjectProfile.g:5742:1: rule__ProjectBlock__GensAssignment_3_2 : ( ruleGenBlock ) ;
+    // InternalLibrettoProjectProfile.g:5709:1: rule__ProjectBlock__GensAssignment_3_2 : ( ruleGenBlock ) ;
     public final void rule__ProjectBlock__GensAssignment_3_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5746:1: ( ( ruleGenBlock ) )
-            // InternalLibrettoProjectProfile.g:5747:2: ( ruleGenBlock )
+            // InternalLibrettoProjectProfile.g:5713:1: ( ( ruleGenBlock ) )
+            // InternalLibrettoProjectProfile.g:5714:2: ( ruleGenBlock )
             {
-            // InternalLibrettoProjectProfile.g:5747:2: ( ruleGenBlock )
-            // InternalLibrettoProjectProfile.g:5748:3: ruleGenBlock
+            // InternalLibrettoProjectProfile.g:5714:2: ( ruleGenBlock )
+            // InternalLibrettoProjectProfile.g:5715:3: ruleGenBlock
             {
              before(grammarAccess.getProjectBlockAccess().getGensGenBlockParserRuleCall_3_2_0()); 
             pushFollow(FOLLOW_2);
@@ -17683,17 +17609,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ModulesBlock__ModulesAssignment_3"
-    // InternalLibrettoProjectProfile.g:5757:1: rule__ModulesBlock__ModulesAssignment_3 : ( ruleProjectModule ) ;
+    // InternalLibrettoProjectProfile.g:5724:1: rule__ModulesBlock__ModulesAssignment_3 : ( ruleProjectModule ) ;
     public final void rule__ModulesBlock__ModulesAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5761:1: ( ( ruleProjectModule ) )
-            // InternalLibrettoProjectProfile.g:5762:2: ( ruleProjectModule )
+            // InternalLibrettoProjectProfile.g:5728:1: ( ( ruleProjectModule ) )
+            // InternalLibrettoProjectProfile.g:5729:2: ( ruleProjectModule )
             {
-            // InternalLibrettoProjectProfile.g:5762:2: ( ruleProjectModule )
-            // InternalLibrettoProjectProfile.g:5763:3: ruleProjectModule
+            // InternalLibrettoProjectProfile.g:5729:2: ( ruleProjectModule )
+            // InternalLibrettoProjectProfile.g:5730:3: ruleProjectModule
             {
              before(grammarAccess.getModulesBlockAccess().getModulesProjectModuleParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -17724,17 +17650,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__NameAssignment_1"
-    // InternalLibrettoProjectProfile.g:5772:1: rule__ProjectModule__NameAssignment_1 : ( ruleValidID ) ;
+    // InternalLibrettoProjectProfile.g:5739:1: rule__ProjectModule__NameAssignment_1 : ( ruleValidID ) ;
     public final void rule__ProjectModule__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5776:1: ( ( ruleValidID ) )
-            // InternalLibrettoProjectProfile.g:5777:2: ( ruleValidID )
+            // InternalLibrettoProjectProfile.g:5743:1: ( ( ruleValidID ) )
+            // InternalLibrettoProjectProfile.g:5744:2: ( ruleValidID )
             {
-            // InternalLibrettoProjectProfile.g:5777:2: ( ruleValidID )
-            // InternalLibrettoProjectProfile.g:5778:3: ruleValidID
+            // InternalLibrettoProjectProfile.g:5744:2: ( ruleValidID )
+            // InternalLibrettoProjectProfile.g:5745:3: ruleValidID
             {
              before(grammarAccess.getProjectModuleAccess().getNameValidIDParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -17765,17 +17691,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__DirsAssignment_3_0_1"
-    // InternalLibrettoProjectProfile.g:5787:1: rule__ProjectModule__DirsAssignment_3_0_1 : ( RULE_STRING ) ;
+    // InternalLibrettoProjectProfile.g:5754:1: rule__ProjectModule__DirsAssignment_3_0_1 : ( RULE_STRING ) ;
     public final void rule__ProjectModule__DirsAssignment_3_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5791:1: ( ( RULE_STRING ) )
-            // InternalLibrettoProjectProfile.g:5792:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:5758:1: ( ( RULE_STRING ) )
+            // InternalLibrettoProjectProfile.g:5759:2: ( RULE_STRING )
             {
-            // InternalLibrettoProjectProfile.g:5792:2: ( RULE_STRING )
-            // InternalLibrettoProjectProfile.g:5793:3: RULE_STRING
+            // InternalLibrettoProjectProfile.g:5759:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:5760:3: RULE_STRING
             {
              before(grammarAccess.getProjectModuleAccess().getDirsSTRINGTerminalRuleCall_3_0_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -17802,17 +17728,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__SpecDirsAssignment_3_1_1"
-    // InternalLibrettoProjectProfile.g:5802:1: rule__ProjectModule__SpecDirsAssignment_3_1_1 : ( RULE_STRING ) ;
+    // InternalLibrettoProjectProfile.g:5769:1: rule__ProjectModule__SpecDirsAssignment_3_1_1 : ( RULE_STRING ) ;
     public final void rule__ProjectModule__SpecDirsAssignment_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5806:1: ( ( RULE_STRING ) )
-            // InternalLibrettoProjectProfile.g:5807:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:5773:1: ( ( RULE_STRING ) )
+            // InternalLibrettoProjectProfile.g:5774:2: ( RULE_STRING )
             {
-            // InternalLibrettoProjectProfile.g:5807:2: ( RULE_STRING )
-            // InternalLibrettoProjectProfile.g:5808:3: RULE_STRING
+            // InternalLibrettoProjectProfile.g:5774:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:5775:3: RULE_STRING
             {
              before(grammarAccess.getProjectModuleAccess().getSpecDirsSTRINGTerminalRuleCall_3_1_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -17839,17 +17765,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__TestDirsAssignment_3_2_1"
-    // InternalLibrettoProjectProfile.g:5817:1: rule__ProjectModule__TestDirsAssignment_3_2_1 : ( RULE_STRING ) ;
+    // InternalLibrettoProjectProfile.g:5784:1: rule__ProjectModule__TestDirsAssignment_3_2_1 : ( RULE_STRING ) ;
     public final void rule__ProjectModule__TestDirsAssignment_3_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5821:1: ( ( RULE_STRING ) )
-            // InternalLibrettoProjectProfile.g:5822:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:5788:1: ( ( RULE_STRING ) )
+            // InternalLibrettoProjectProfile.g:5789:2: ( RULE_STRING )
             {
-            // InternalLibrettoProjectProfile.g:5822:2: ( RULE_STRING )
-            // InternalLibrettoProjectProfile.g:5823:3: RULE_STRING
+            // InternalLibrettoProjectProfile.g:5789:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:5790:3: RULE_STRING
             {
              before(grammarAccess.getProjectModuleAccess().getTestDirsSTRINGTerminalRuleCall_3_2_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -17876,17 +17802,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__MainDirsAssignment_3_3_1"
-    // InternalLibrettoProjectProfile.g:5832:1: rule__ProjectModule__MainDirsAssignment_3_3_1 : ( RULE_STRING ) ;
+    // InternalLibrettoProjectProfile.g:5799:1: rule__ProjectModule__MainDirsAssignment_3_3_1 : ( RULE_STRING ) ;
     public final void rule__ProjectModule__MainDirsAssignment_3_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5836:1: ( ( RULE_STRING ) )
-            // InternalLibrettoProjectProfile.g:5837:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:5803:1: ( ( RULE_STRING ) )
+            // InternalLibrettoProjectProfile.g:5804:2: ( RULE_STRING )
             {
-            // InternalLibrettoProjectProfile.g:5837:2: ( RULE_STRING )
-            // InternalLibrettoProjectProfile.g:5838:3: RULE_STRING
+            // InternalLibrettoProjectProfile.g:5804:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:5805:3: RULE_STRING
             {
              before(grammarAccess.getProjectModuleAccess().getMainDirsSTRINGTerminalRuleCall_3_3_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -17913,17 +17839,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ProjectModule__BasePackagesAssignment_3_4_1"
-    // InternalLibrettoProjectProfile.g:5847:1: rule__ProjectModule__BasePackagesAssignment_3_4_1 : ( RULE_STRING ) ;
+    // InternalLibrettoProjectProfile.g:5814:1: rule__ProjectModule__BasePackagesAssignment_3_4_1 : ( RULE_STRING ) ;
     public final void rule__ProjectModule__BasePackagesAssignment_3_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5851:1: ( ( RULE_STRING ) )
-            // InternalLibrettoProjectProfile.g:5852:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:5818:1: ( ( RULE_STRING ) )
+            // InternalLibrettoProjectProfile.g:5819:2: ( RULE_STRING )
             {
-            // InternalLibrettoProjectProfile.g:5852:2: ( RULE_STRING )
-            // InternalLibrettoProjectProfile.g:5853:3: RULE_STRING
+            // InternalLibrettoProjectProfile.g:5819:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:5820:3: RULE_STRING
             {
              before(grammarAccess.getProjectModuleAccess().getBasePackagesSTRINGTerminalRuleCall_3_4_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -17950,17 +17876,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenBlock__InitialInstructionsAssignment_3_0_1"
-    // InternalLibrettoProjectProfile.g:5862:1: rule__GenBlock__InitialInstructionsAssignment_3_0_1 : ( RULE_STRING ) ;
+    // InternalLibrettoProjectProfile.g:5829:1: rule__GenBlock__InitialInstructionsAssignment_3_0_1 : ( RULE_STRING ) ;
     public final void rule__GenBlock__InitialInstructionsAssignment_3_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5866:1: ( ( RULE_STRING ) )
-            // InternalLibrettoProjectProfile.g:5867:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:5833:1: ( ( RULE_STRING ) )
+            // InternalLibrettoProjectProfile.g:5834:2: ( RULE_STRING )
             {
-            // InternalLibrettoProjectProfile.g:5867:2: ( RULE_STRING )
-            // InternalLibrettoProjectProfile.g:5868:3: RULE_STRING
+            // InternalLibrettoProjectProfile.g:5834:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:5835:3: RULE_STRING
             {
              before(grammarAccess.getGenBlockAccess().getInitialInstructionsSTRINGTerminalRuleCall_3_0_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -17987,17 +17913,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenBlock__MaxRetriesAssignment_3_1_1"
-    // InternalLibrettoProjectProfile.g:5877:1: rule__GenBlock__MaxRetriesAssignment_3_1_1 : ( RULE_INT ) ;
+    // InternalLibrettoProjectProfile.g:5844:1: rule__GenBlock__MaxRetriesAssignment_3_1_1 : ( RULE_INT ) ;
     public final void rule__GenBlock__MaxRetriesAssignment_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5881:1: ( ( RULE_INT ) )
-            // InternalLibrettoProjectProfile.g:5882:2: ( RULE_INT )
+            // InternalLibrettoProjectProfile.g:5848:1: ( ( RULE_INT ) )
+            // InternalLibrettoProjectProfile.g:5849:2: ( RULE_INT )
             {
-            // InternalLibrettoProjectProfile.g:5882:2: ( RULE_INT )
-            // InternalLibrettoProjectProfile.g:5883:3: RULE_INT
+            // InternalLibrettoProjectProfile.g:5849:2: ( RULE_INT )
+            // InternalLibrettoProjectProfile.g:5850:3: RULE_INT
             {
              before(grammarAccess.getGenBlockAccess().getMaxRetriesINTTerminalRuleCall_3_1_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -18024,21 +17950,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenBlock__ParseChecksAssignment_3_2_1"
-    // InternalLibrettoProjectProfile.g:5892:1: rule__GenBlock__ParseChecksAssignment_3_2_1 : ( ( rule__GenBlock__ParseChecksAlternatives_3_2_1_0 ) ) ;
+    // InternalLibrettoProjectProfile.g:5859:1: rule__GenBlock__ParseChecksAssignment_3_2_1 : ( ( rule__GenBlock__ParseChecksAlternatives_3_2_1_0 ) ) ;
     public final void rule__GenBlock__ParseChecksAssignment_3_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5896:1: ( ( ( rule__GenBlock__ParseChecksAlternatives_3_2_1_0 ) ) )
-            // InternalLibrettoProjectProfile.g:5897:2: ( ( rule__GenBlock__ParseChecksAlternatives_3_2_1_0 ) )
+            // InternalLibrettoProjectProfile.g:5863:1: ( ( ( rule__GenBlock__ParseChecksAlternatives_3_2_1_0 ) ) )
+            // InternalLibrettoProjectProfile.g:5864:2: ( ( rule__GenBlock__ParseChecksAlternatives_3_2_1_0 ) )
             {
-            // InternalLibrettoProjectProfile.g:5897:2: ( ( rule__GenBlock__ParseChecksAlternatives_3_2_1_0 ) )
-            // InternalLibrettoProjectProfile.g:5898:3: ( rule__GenBlock__ParseChecksAlternatives_3_2_1_0 )
+            // InternalLibrettoProjectProfile.g:5864:2: ( ( rule__GenBlock__ParseChecksAlternatives_3_2_1_0 ) )
+            // InternalLibrettoProjectProfile.g:5865:3: ( rule__GenBlock__ParseChecksAlternatives_3_2_1_0 )
             {
              before(grammarAccess.getGenBlockAccess().getParseChecksAlternatives_3_2_1_0()); 
-            // InternalLibrettoProjectProfile.g:5899:3: ( rule__GenBlock__ParseChecksAlternatives_3_2_1_0 )
-            // InternalLibrettoProjectProfile.g:5899:4: rule__GenBlock__ParseChecksAlternatives_3_2_1_0
+            // InternalLibrettoProjectProfile.g:5866:3: ( rule__GenBlock__ParseChecksAlternatives_3_2_1_0 )
+            // InternalLibrettoProjectProfile.g:5866:4: rule__GenBlock__ParseChecksAlternatives_3_2_1_0
             {
             pushFollow(FOLLOW_2);
             rule__GenBlock__ParseChecksAlternatives_3_2_1_0();
@@ -18071,17 +17997,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenBlock__DefaultCorrectionsAssignment_3_3_1"
-    // InternalLibrettoProjectProfile.g:5907:1: rule__GenBlock__DefaultCorrectionsAssignment_3_3_1 : ( RULE_STRING ) ;
+    // InternalLibrettoProjectProfile.g:5874:1: rule__GenBlock__DefaultCorrectionsAssignment_3_3_1 : ( RULE_STRING ) ;
     public final void rule__GenBlock__DefaultCorrectionsAssignment_3_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5911:1: ( ( RULE_STRING ) )
-            // InternalLibrettoProjectProfile.g:5912:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:5878:1: ( ( RULE_STRING ) )
+            // InternalLibrettoProjectProfile.g:5879:2: ( RULE_STRING )
             {
-            // InternalLibrettoProjectProfile.g:5912:2: ( RULE_STRING )
-            // InternalLibrettoProjectProfile.g:5913:3: RULE_STRING
+            // InternalLibrettoProjectProfile.g:5879:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:5880:3: RULE_STRING
             {
              before(grammarAccess.getGenBlockAccess().getDefaultCorrectionsSTRINGTerminalRuleCall_3_3_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -18108,17 +18034,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenBlock__RemediationsAssignment_3_4"
-    // InternalLibrettoProjectProfile.g:5922:1: rule__GenBlock__RemediationsAssignment_3_4 : ( ruleGenRemediationRules ) ;
+    // InternalLibrettoProjectProfile.g:5889:1: rule__GenBlock__RemediationsAssignment_3_4 : ( ruleGenRemediationRules ) ;
     public final void rule__GenBlock__RemediationsAssignment_3_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5926:1: ( ( ruleGenRemediationRules ) )
-            // InternalLibrettoProjectProfile.g:5927:2: ( ruleGenRemediationRules )
+            // InternalLibrettoProjectProfile.g:5893:1: ( ( ruleGenRemediationRules ) )
+            // InternalLibrettoProjectProfile.g:5894:2: ( ruleGenRemediationRules )
             {
-            // InternalLibrettoProjectProfile.g:5927:2: ( ruleGenRemediationRules )
-            // InternalLibrettoProjectProfile.g:5928:3: ruleGenRemediationRules
+            // InternalLibrettoProjectProfile.g:5894:2: ( ruleGenRemediationRules )
+            // InternalLibrettoProjectProfile.g:5895:3: ruleGenRemediationRules
             {
              before(grammarAccess.getGenBlockAccess().getRemediationsGenRemediationRulesParserRuleCall_3_4_0()); 
             pushFollow(FOLLOW_2);
@@ -18149,17 +18075,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenBlock__ModelUsagesAssignment_3_5"
-    // InternalLibrettoProjectProfile.g:5937:1: rule__GenBlock__ModelUsagesAssignment_3_5 : ( ruleGenUsageBlock ) ;
+    // InternalLibrettoProjectProfile.g:5904:1: rule__GenBlock__ModelUsagesAssignment_3_5 : ( ruleGenUsageBlock ) ;
     public final void rule__GenBlock__ModelUsagesAssignment_3_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5941:1: ( ( ruleGenUsageBlock ) )
-            // InternalLibrettoProjectProfile.g:5942:2: ( ruleGenUsageBlock )
+            // InternalLibrettoProjectProfile.g:5908:1: ( ( ruleGenUsageBlock ) )
+            // InternalLibrettoProjectProfile.g:5909:2: ( ruleGenUsageBlock )
             {
-            // InternalLibrettoProjectProfile.g:5942:2: ( ruleGenUsageBlock )
-            // InternalLibrettoProjectProfile.g:5943:3: ruleGenUsageBlock
+            // InternalLibrettoProjectProfile.g:5909:2: ( ruleGenUsageBlock )
+            // InternalLibrettoProjectProfile.g:5910:3: ruleGenUsageBlock
             {
              before(grammarAccess.getGenBlockAccess().getModelUsagesGenUsageBlockParserRuleCall_3_5_0()); 
             pushFollow(FOLLOW_2);
@@ -18190,17 +18116,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenRemediationRules__PatternRulesAssignment_3_0"
-    // InternalLibrettoProjectProfile.g:5952:1: rule__GenRemediationRules__PatternRulesAssignment_3_0 : ( ruleGenPatternRemediationRule ) ;
+    // InternalLibrettoProjectProfile.g:5919:1: rule__GenRemediationRules__PatternRulesAssignment_3_0 : ( ruleGenPatternRemediationRule ) ;
     public final void rule__GenRemediationRules__PatternRulesAssignment_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5956:1: ( ( ruleGenPatternRemediationRule ) )
-            // InternalLibrettoProjectProfile.g:5957:2: ( ruleGenPatternRemediationRule )
+            // InternalLibrettoProjectProfile.g:5923:1: ( ( ruleGenPatternRemediationRule ) )
+            // InternalLibrettoProjectProfile.g:5924:2: ( ruleGenPatternRemediationRule )
             {
-            // InternalLibrettoProjectProfile.g:5957:2: ( ruleGenPatternRemediationRule )
-            // InternalLibrettoProjectProfile.g:5958:3: ruleGenPatternRemediationRule
+            // InternalLibrettoProjectProfile.g:5924:2: ( ruleGenPatternRemediationRule )
+            // InternalLibrettoProjectProfile.g:5925:3: ruleGenPatternRemediationRule
             {
              before(grammarAccess.getGenRemediationRulesAccess().getPatternRulesGenPatternRemediationRuleParserRuleCall_3_0_0()); 
             pushFollow(FOLLOW_2);
@@ -18231,17 +18157,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenRemediationRules__DefaultRemediationsAssignment_3_1"
-    // InternalLibrettoProjectProfile.g:5967:1: rule__GenRemediationRules__DefaultRemediationsAssignment_3_1 : ( ruleGenDefaultRemediationRule ) ;
+    // InternalLibrettoProjectProfile.g:5934:1: rule__GenRemediationRules__DefaultRemediationsAssignment_3_1 : ( ruleGenDefaultRemediationRule ) ;
     public final void rule__GenRemediationRules__DefaultRemediationsAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5971:1: ( ( ruleGenDefaultRemediationRule ) )
-            // InternalLibrettoProjectProfile.g:5972:2: ( ruleGenDefaultRemediationRule )
+            // InternalLibrettoProjectProfile.g:5938:1: ( ( ruleGenDefaultRemediationRule ) )
+            // InternalLibrettoProjectProfile.g:5939:2: ( ruleGenDefaultRemediationRule )
             {
-            // InternalLibrettoProjectProfile.g:5972:2: ( ruleGenDefaultRemediationRule )
-            // InternalLibrettoProjectProfile.g:5973:3: ruleGenDefaultRemediationRule
+            // InternalLibrettoProjectProfile.g:5939:2: ( ruleGenDefaultRemediationRule )
+            // InternalLibrettoProjectProfile.g:5940:3: ruleGenDefaultRemediationRule
             {
              before(grammarAccess.getGenRemediationRulesAccess().getDefaultRemediationsGenDefaultRemediationRuleParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -18272,17 +18198,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenPatternRemediationRule__PatternsAssignment_3_0_1"
-    // InternalLibrettoProjectProfile.g:5982:1: rule__GenPatternRemediationRule__PatternsAssignment_3_0_1 : ( RULE_STRING ) ;
+    // InternalLibrettoProjectProfile.g:5949:1: rule__GenPatternRemediationRule__PatternsAssignment_3_0_1 : ( RULE_STRING ) ;
     public final void rule__GenPatternRemediationRule__PatternsAssignment_3_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:5986:1: ( ( RULE_STRING ) )
-            // InternalLibrettoProjectProfile.g:5987:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:5953:1: ( ( RULE_STRING ) )
+            // InternalLibrettoProjectProfile.g:5954:2: ( RULE_STRING )
             {
-            // InternalLibrettoProjectProfile.g:5987:2: ( RULE_STRING )
-            // InternalLibrettoProjectProfile.g:5988:3: RULE_STRING
+            // InternalLibrettoProjectProfile.g:5954:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:5955:3: RULE_STRING
             {
              before(grammarAccess.getGenPatternRemediationRuleAccess().getPatternsSTRINGTerminalRuleCall_3_0_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -18309,17 +18235,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenPatternRemediationRule__CodesAssignment_3_1_1"
-    // InternalLibrettoProjectProfile.g:5997:1: rule__GenPatternRemediationRule__CodesAssignment_3_1_1 : ( RULE_STRING ) ;
+    // InternalLibrettoProjectProfile.g:5964:1: rule__GenPatternRemediationRule__CodesAssignment_3_1_1 : ( RULE_STRING ) ;
     public final void rule__GenPatternRemediationRule__CodesAssignment_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6001:1: ( ( RULE_STRING ) )
-            // InternalLibrettoProjectProfile.g:6002:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:5968:1: ( ( RULE_STRING ) )
+            // InternalLibrettoProjectProfile.g:5969:2: ( RULE_STRING )
             {
-            // InternalLibrettoProjectProfile.g:6002:2: ( RULE_STRING )
-            // InternalLibrettoProjectProfile.g:6003:3: RULE_STRING
+            // InternalLibrettoProjectProfile.g:5969:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:5970:3: RULE_STRING
             {
              before(grammarAccess.getGenPatternRemediationRuleAccess().getCodesSTRINGTerminalRuleCall_3_1_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -18346,17 +18272,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenPatternRemediationRule__CorrectionsAssignment_3_2_1"
-    // InternalLibrettoProjectProfile.g:6012:1: rule__GenPatternRemediationRule__CorrectionsAssignment_3_2_1 : ( RULE_STRING ) ;
+    // InternalLibrettoProjectProfile.g:5979:1: rule__GenPatternRemediationRule__CorrectionsAssignment_3_2_1 : ( RULE_STRING ) ;
     public final void rule__GenPatternRemediationRule__CorrectionsAssignment_3_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6016:1: ( ( RULE_STRING ) )
-            // InternalLibrettoProjectProfile.g:6017:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:5983:1: ( ( RULE_STRING ) )
+            // InternalLibrettoProjectProfile.g:5984:2: ( RULE_STRING )
             {
-            // InternalLibrettoProjectProfile.g:6017:2: ( RULE_STRING )
-            // InternalLibrettoProjectProfile.g:6018:3: RULE_STRING
+            // InternalLibrettoProjectProfile.g:5984:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:5985:3: RULE_STRING
             {
              before(grammarAccess.getGenPatternRemediationRuleAccess().getCorrectionsSTRINGTerminalRuleCall_3_2_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -18383,17 +18309,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenDefaultRemediationRule__CodesAssignment_3_0_1"
-    // InternalLibrettoProjectProfile.g:6027:1: rule__GenDefaultRemediationRule__CodesAssignment_3_0_1 : ( RULE_STRING ) ;
+    // InternalLibrettoProjectProfile.g:5994:1: rule__GenDefaultRemediationRule__CodesAssignment_3_0_1 : ( RULE_STRING ) ;
     public final void rule__GenDefaultRemediationRule__CodesAssignment_3_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6031:1: ( ( RULE_STRING ) )
-            // InternalLibrettoProjectProfile.g:6032:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:5998:1: ( ( RULE_STRING ) )
+            // InternalLibrettoProjectProfile.g:5999:2: ( RULE_STRING )
             {
-            // InternalLibrettoProjectProfile.g:6032:2: ( RULE_STRING )
-            // InternalLibrettoProjectProfile.g:6033:3: RULE_STRING
+            // InternalLibrettoProjectProfile.g:5999:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:6000:3: RULE_STRING
             {
              before(grammarAccess.getGenDefaultRemediationRuleAccess().getCodesSTRINGTerminalRuleCall_3_0_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -18420,17 +18346,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenDefaultRemediationRule__CorrectionAssignment_3_1_1"
-    // InternalLibrettoProjectProfile.g:6042:1: rule__GenDefaultRemediationRule__CorrectionAssignment_3_1_1 : ( RULE_STRING ) ;
+    // InternalLibrettoProjectProfile.g:6009:1: rule__GenDefaultRemediationRule__CorrectionAssignment_3_1_1 : ( RULE_STRING ) ;
     public final void rule__GenDefaultRemediationRule__CorrectionAssignment_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6046:1: ( ( RULE_STRING ) )
-            // InternalLibrettoProjectProfile.g:6047:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:6013:1: ( ( RULE_STRING ) )
+            // InternalLibrettoProjectProfile.g:6014:2: ( RULE_STRING )
             {
-            // InternalLibrettoProjectProfile.g:6047:2: ( RULE_STRING )
-            // InternalLibrettoProjectProfile.g:6048:3: RULE_STRING
+            // InternalLibrettoProjectProfile.g:6014:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:6015:3: RULE_STRING
             {
              before(grammarAccess.getGenDefaultRemediationRuleAccess().getCorrectionSTRINGTerminalRuleCall_3_1_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -18457,17 +18383,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__LlmProvidersBlock__ProvidersAssignment_3"
-    // InternalLibrettoProjectProfile.g:6057:1: rule__LlmProvidersBlock__ProvidersAssignment_3 : ( ruleNamedLlmProvider ) ;
+    // InternalLibrettoProjectProfile.g:6024:1: rule__LlmProvidersBlock__ProvidersAssignment_3 : ( ruleNamedLlmProvider ) ;
     public final void rule__LlmProvidersBlock__ProvidersAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6061:1: ( ( ruleNamedLlmProvider ) )
-            // InternalLibrettoProjectProfile.g:6062:2: ( ruleNamedLlmProvider )
+            // InternalLibrettoProjectProfile.g:6028:1: ( ( ruleNamedLlmProvider ) )
+            // InternalLibrettoProjectProfile.g:6029:2: ( ruleNamedLlmProvider )
             {
-            // InternalLibrettoProjectProfile.g:6062:2: ( ruleNamedLlmProvider )
-            // InternalLibrettoProjectProfile.g:6063:3: ruleNamedLlmProvider
+            // InternalLibrettoProjectProfile.g:6029:2: ( ruleNamedLlmProvider )
+            // InternalLibrettoProjectProfile.g:6030:3: ruleNamedLlmProvider
             {
              before(grammarAccess.getLlmProvidersBlockAccess().getProvidersNamedLlmProviderParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -18498,17 +18424,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__NamedLlmProvider__NameAssignment_1"
-    // InternalLibrettoProjectProfile.g:6072:1: rule__NamedLlmProvider__NameAssignment_1 : ( ruleValidID ) ;
+    // InternalLibrettoProjectProfile.g:6039:1: rule__NamedLlmProvider__NameAssignment_1 : ( ruleValidID ) ;
     public final void rule__NamedLlmProvider__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6076:1: ( ( ruleValidID ) )
-            // InternalLibrettoProjectProfile.g:6077:2: ( ruleValidID )
+            // InternalLibrettoProjectProfile.g:6043:1: ( ( ruleValidID ) )
+            // InternalLibrettoProjectProfile.g:6044:2: ( ruleValidID )
             {
-            // InternalLibrettoProjectProfile.g:6077:2: ( ruleValidID )
-            // InternalLibrettoProjectProfile.g:6078:3: ruleValidID
+            // InternalLibrettoProjectProfile.g:6044:2: ( ruleValidID )
+            // InternalLibrettoProjectProfile.g:6045:3: ruleValidID
             {
              before(grammarAccess.getNamedLlmProviderAccess().getNameValidIDParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -18539,21 +18465,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__NamedLlmProvider__KindsAssignment_3_0_1"
-    // InternalLibrettoProjectProfile.g:6087:1: rule__NamedLlmProvider__KindsAssignment_3_0_1 : ( ( rule__NamedLlmProvider__KindsAlternatives_3_0_1_0 ) ) ;
+    // InternalLibrettoProjectProfile.g:6054:1: rule__NamedLlmProvider__KindsAssignment_3_0_1 : ( ( rule__NamedLlmProvider__KindsAlternatives_3_0_1_0 ) ) ;
     public final void rule__NamedLlmProvider__KindsAssignment_3_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6091:1: ( ( ( rule__NamedLlmProvider__KindsAlternatives_3_0_1_0 ) ) )
-            // InternalLibrettoProjectProfile.g:6092:2: ( ( rule__NamedLlmProvider__KindsAlternatives_3_0_1_0 ) )
+            // InternalLibrettoProjectProfile.g:6058:1: ( ( ( rule__NamedLlmProvider__KindsAlternatives_3_0_1_0 ) ) )
+            // InternalLibrettoProjectProfile.g:6059:2: ( ( rule__NamedLlmProvider__KindsAlternatives_3_0_1_0 ) )
             {
-            // InternalLibrettoProjectProfile.g:6092:2: ( ( rule__NamedLlmProvider__KindsAlternatives_3_0_1_0 ) )
-            // InternalLibrettoProjectProfile.g:6093:3: ( rule__NamedLlmProvider__KindsAlternatives_3_0_1_0 )
+            // InternalLibrettoProjectProfile.g:6059:2: ( ( rule__NamedLlmProvider__KindsAlternatives_3_0_1_0 ) )
+            // InternalLibrettoProjectProfile.g:6060:3: ( rule__NamedLlmProvider__KindsAlternatives_3_0_1_0 )
             {
              before(grammarAccess.getNamedLlmProviderAccess().getKindsAlternatives_3_0_1_0()); 
-            // InternalLibrettoProjectProfile.g:6094:3: ( rule__NamedLlmProvider__KindsAlternatives_3_0_1_0 )
-            // InternalLibrettoProjectProfile.g:6094:4: rule__NamedLlmProvider__KindsAlternatives_3_0_1_0
+            // InternalLibrettoProjectProfile.g:6061:3: ( rule__NamedLlmProvider__KindsAlternatives_3_0_1_0 )
+            // InternalLibrettoProjectProfile.g:6061:4: rule__NamedLlmProvider__KindsAlternatives_3_0_1_0
             {
             pushFollow(FOLLOW_2);
             rule__NamedLlmProvider__KindsAlternatives_3_0_1_0();
@@ -18586,17 +18512,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__NamedLlmProvider__LocalModelPathsAssignment_3_1_1"
-    // InternalLibrettoProjectProfile.g:6102:1: rule__NamedLlmProvider__LocalModelPathsAssignment_3_1_1 : ( RULE_STRING ) ;
+    // InternalLibrettoProjectProfile.g:6069:1: rule__NamedLlmProvider__LocalModelPathsAssignment_3_1_1 : ( RULE_STRING ) ;
     public final void rule__NamedLlmProvider__LocalModelPathsAssignment_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6106:1: ( ( RULE_STRING ) )
-            // InternalLibrettoProjectProfile.g:6107:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:6073:1: ( ( RULE_STRING ) )
+            // InternalLibrettoProjectProfile.g:6074:2: ( RULE_STRING )
             {
-            // InternalLibrettoProjectProfile.g:6107:2: ( RULE_STRING )
-            // InternalLibrettoProjectProfile.g:6108:3: RULE_STRING
+            // InternalLibrettoProjectProfile.g:6074:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:6075:3: RULE_STRING
             {
              before(grammarAccess.getNamedLlmProviderAccess().getLocalModelPathsSTRINGTerminalRuleCall_3_1_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -18623,17 +18549,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__NamedLlmProvider__ModelsAssignment_3_2_1"
-    // InternalLibrettoProjectProfile.g:6117:1: rule__NamedLlmProvider__ModelsAssignment_3_2_1 : ( RULE_STRING ) ;
+    // InternalLibrettoProjectProfile.g:6084:1: rule__NamedLlmProvider__ModelsAssignment_3_2_1 : ( RULE_STRING ) ;
     public final void rule__NamedLlmProvider__ModelsAssignment_3_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6121:1: ( ( RULE_STRING ) )
-            // InternalLibrettoProjectProfile.g:6122:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:6088:1: ( ( RULE_STRING ) )
+            // InternalLibrettoProjectProfile.g:6089:2: ( RULE_STRING )
             {
-            // InternalLibrettoProjectProfile.g:6122:2: ( RULE_STRING )
-            // InternalLibrettoProjectProfile.g:6123:3: RULE_STRING
+            // InternalLibrettoProjectProfile.g:6089:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:6090:3: RULE_STRING
             {
              before(grammarAccess.getNamedLlmProviderAccess().getModelsSTRINGTerminalRuleCall_3_2_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -18660,17 +18586,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__NamedLlmProvider__EndpointsAssignment_3_3_1"
-    // InternalLibrettoProjectProfile.g:6132:1: rule__NamedLlmProvider__EndpointsAssignment_3_3_1 : ( RULE_STRING ) ;
+    // InternalLibrettoProjectProfile.g:6099:1: rule__NamedLlmProvider__EndpointsAssignment_3_3_1 : ( RULE_STRING ) ;
     public final void rule__NamedLlmProvider__EndpointsAssignment_3_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6136:1: ( ( RULE_STRING ) )
-            // InternalLibrettoProjectProfile.g:6137:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:6103:1: ( ( RULE_STRING ) )
+            // InternalLibrettoProjectProfile.g:6104:2: ( RULE_STRING )
             {
-            // InternalLibrettoProjectProfile.g:6137:2: ( RULE_STRING )
-            // InternalLibrettoProjectProfile.g:6138:3: RULE_STRING
+            // InternalLibrettoProjectProfile.g:6104:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:6105:3: RULE_STRING
             {
              before(grammarAccess.getNamedLlmProviderAccess().getEndpointsSTRINGTerminalRuleCall_3_3_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -18697,21 +18623,25 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenUsageBlock__PrimaryProvidersAssignment_3_0_1"
-    // InternalLibrettoProjectProfile.g:6147:1: rule__GenUsageBlock__PrimaryProvidersAssignment_3_0_1 : ( RULE_STRING ) ;
+    // InternalLibrettoProjectProfile.g:6114:1: rule__GenUsageBlock__PrimaryProvidersAssignment_3_0_1 : ( ruleValidID ) ;
     public final void rule__GenUsageBlock__PrimaryProvidersAssignment_3_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6151:1: ( ( RULE_STRING ) )
-            // InternalLibrettoProjectProfile.g:6152:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:6118:1: ( ( ruleValidID ) )
+            // InternalLibrettoProjectProfile.g:6119:2: ( ruleValidID )
             {
-            // InternalLibrettoProjectProfile.g:6152:2: ( RULE_STRING )
-            // InternalLibrettoProjectProfile.g:6153:3: RULE_STRING
+            // InternalLibrettoProjectProfile.g:6119:2: ( ruleValidID )
+            // InternalLibrettoProjectProfile.g:6120:3: ruleValidID
             {
-             before(grammarAccess.getGenUsageBlockAccess().getPrimaryProvidersSTRINGTerminalRuleCall_3_0_1_0()); 
-            match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getGenUsageBlockAccess().getPrimaryProvidersSTRINGTerminalRuleCall_3_0_1_0()); 
+             before(grammarAccess.getGenUsageBlockAccess().getPrimaryProvidersValidIDParserRuleCall_3_0_1_0()); 
+            pushFollow(FOLLOW_2);
+            ruleValidID();
+
+            state._fsp--;
+
+             after(grammarAccess.getGenUsageBlockAccess().getPrimaryProvidersValidIDParserRuleCall_3_0_1_0()); 
 
             }
 
@@ -18734,21 +18664,25 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenUsageBlock__SecondaryProvidersAssignment_3_1_1"
-    // InternalLibrettoProjectProfile.g:6162:1: rule__GenUsageBlock__SecondaryProvidersAssignment_3_1_1 : ( RULE_STRING ) ;
+    // InternalLibrettoProjectProfile.g:6129:1: rule__GenUsageBlock__SecondaryProvidersAssignment_3_1_1 : ( ruleValidID ) ;
     public final void rule__GenUsageBlock__SecondaryProvidersAssignment_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6166:1: ( ( RULE_STRING ) )
-            // InternalLibrettoProjectProfile.g:6167:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:6133:1: ( ( ruleValidID ) )
+            // InternalLibrettoProjectProfile.g:6134:2: ( ruleValidID )
             {
-            // InternalLibrettoProjectProfile.g:6167:2: ( RULE_STRING )
-            // InternalLibrettoProjectProfile.g:6168:3: RULE_STRING
+            // InternalLibrettoProjectProfile.g:6134:2: ( ruleValidID )
+            // InternalLibrettoProjectProfile.g:6135:3: ruleValidID
             {
-             before(grammarAccess.getGenUsageBlockAccess().getSecondaryProvidersSTRINGTerminalRuleCall_3_1_1_0()); 
-            match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getGenUsageBlockAccess().getSecondaryProvidersSTRINGTerminalRuleCall_3_1_1_0()); 
+             before(grammarAccess.getGenUsageBlockAccess().getSecondaryProvidersValidIDParserRuleCall_3_1_1_0()); 
+            pushFollow(FOLLOW_2);
+            ruleValidID();
+
+            state._fsp--;
+
+             after(grammarAccess.getGenUsageBlockAccess().getSecondaryProvidersValidIDParserRuleCall_3_1_1_0()); 
 
             }
 
@@ -18771,17 +18705,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenUsageBlock__EscalationsAssignment_3_2"
-    // InternalLibrettoProjectProfile.g:6177:1: rule__GenUsageBlock__EscalationsAssignment_3_2 : ( ruleGenEscalationBlock ) ;
+    // InternalLibrettoProjectProfile.g:6144:1: rule__GenUsageBlock__EscalationsAssignment_3_2 : ( ruleGenEscalationBlock ) ;
     public final void rule__GenUsageBlock__EscalationsAssignment_3_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6181:1: ( ( ruleGenEscalationBlock ) )
-            // InternalLibrettoProjectProfile.g:6182:2: ( ruleGenEscalationBlock )
+            // InternalLibrettoProjectProfile.g:6148:1: ( ( ruleGenEscalationBlock ) )
+            // InternalLibrettoProjectProfile.g:6149:2: ( ruleGenEscalationBlock )
             {
-            // InternalLibrettoProjectProfile.g:6182:2: ( ruleGenEscalationBlock )
-            // InternalLibrettoProjectProfile.g:6183:3: ruleGenEscalationBlock
+            // InternalLibrettoProjectProfile.g:6149:2: ( ruleGenEscalationBlock )
+            // InternalLibrettoProjectProfile.g:6150:3: ruleGenEscalationBlock
             {
              before(grammarAccess.getGenUsageBlockAccess().getEscalationsGenEscalationBlockParserRuleCall_3_2_0()); 
             pushFollow(FOLLOW_2);
@@ -18812,21 +18746,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenEscalationBlock__EnabledsAssignment_3_0_1"
-    // InternalLibrettoProjectProfile.g:6192:1: rule__GenEscalationBlock__EnabledsAssignment_3_0_1 : ( ( rule__GenEscalationBlock__EnabledsAlternatives_3_0_1_0 ) ) ;
+    // InternalLibrettoProjectProfile.g:6159:1: rule__GenEscalationBlock__EnabledsAssignment_3_0_1 : ( ( rule__GenEscalationBlock__EnabledsAlternatives_3_0_1_0 ) ) ;
     public final void rule__GenEscalationBlock__EnabledsAssignment_3_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6196:1: ( ( ( rule__GenEscalationBlock__EnabledsAlternatives_3_0_1_0 ) ) )
-            // InternalLibrettoProjectProfile.g:6197:2: ( ( rule__GenEscalationBlock__EnabledsAlternatives_3_0_1_0 ) )
+            // InternalLibrettoProjectProfile.g:6163:1: ( ( ( rule__GenEscalationBlock__EnabledsAlternatives_3_0_1_0 ) ) )
+            // InternalLibrettoProjectProfile.g:6164:2: ( ( rule__GenEscalationBlock__EnabledsAlternatives_3_0_1_0 ) )
             {
-            // InternalLibrettoProjectProfile.g:6197:2: ( ( rule__GenEscalationBlock__EnabledsAlternatives_3_0_1_0 ) )
-            // InternalLibrettoProjectProfile.g:6198:3: ( rule__GenEscalationBlock__EnabledsAlternatives_3_0_1_0 )
+            // InternalLibrettoProjectProfile.g:6164:2: ( ( rule__GenEscalationBlock__EnabledsAlternatives_3_0_1_0 ) )
+            // InternalLibrettoProjectProfile.g:6165:3: ( rule__GenEscalationBlock__EnabledsAlternatives_3_0_1_0 )
             {
              before(grammarAccess.getGenEscalationBlockAccess().getEnabledsAlternatives_3_0_1_0()); 
-            // InternalLibrettoProjectProfile.g:6199:3: ( rule__GenEscalationBlock__EnabledsAlternatives_3_0_1_0 )
-            // InternalLibrettoProjectProfile.g:6199:4: rule__GenEscalationBlock__EnabledsAlternatives_3_0_1_0
+            // InternalLibrettoProjectProfile.g:6166:3: ( rule__GenEscalationBlock__EnabledsAlternatives_3_0_1_0 )
+            // InternalLibrettoProjectProfile.g:6166:4: rule__GenEscalationBlock__EnabledsAlternatives_3_0_1_0
             {
             pushFollow(FOLLOW_2);
             rule__GenEscalationBlock__EnabledsAlternatives_3_0_1_0();
@@ -18859,17 +18793,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__GenEscalationBlock__EscalateAtRetriesAssignment_3_1_1"
-    // InternalLibrettoProjectProfile.g:6207:1: rule__GenEscalationBlock__EscalateAtRetriesAssignment_3_1_1 : ( RULE_INT ) ;
+    // InternalLibrettoProjectProfile.g:6174:1: rule__GenEscalationBlock__EscalateAtRetriesAssignment_3_1_1 : ( RULE_INT ) ;
     public final void rule__GenEscalationBlock__EscalateAtRetriesAssignment_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6211:1: ( ( RULE_INT ) )
-            // InternalLibrettoProjectProfile.g:6212:2: ( RULE_INT )
+            // InternalLibrettoProjectProfile.g:6178:1: ( ( RULE_INT ) )
+            // InternalLibrettoProjectProfile.g:6179:2: ( RULE_INT )
             {
-            // InternalLibrettoProjectProfile.g:6212:2: ( RULE_INT )
-            // InternalLibrettoProjectProfile.g:6213:3: RULE_INT
+            // InternalLibrettoProjectProfile.g:6179:2: ( RULE_INT )
+            // InternalLibrettoProjectProfile.g:6180:3: RULE_INT
             {
              before(grammarAccess.getGenEscalationBlockAccess().getEscalateAtRetriesINTTerminalRuleCall_3_1_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -18896,17 +18830,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__SurfaceBlock__ElementsAssignment_3"
-    // InternalLibrettoProjectProfile.g:6222:1: rule__SurfaceBlock__ElementsAssignment_3 : ( ruleSurfaceElement ) ;
+    // InternalLibrettoProjectProfile.g:6189:1: rule__SurfaceBlock__ElementsAssignment_3 : ( ruleSurfaceElement ) ;
     public final void rule__SurfaceBlock__ElementsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6226:1: ( ( ruleSurfaceElement ) )
-            // InternalLibrettoProjectProfile.g:6227:2: ( ruleSurfaceElement )
+            // InternalLibrettoProjectProfile.g:6193:1: ( ( ruleSurfaceElement ) )
+            // InternalLibrettoProjectProfile.g:6194:2: ( ruleSurfaceElement )
             {
-            // InternalLibrettoProjectProfile.g:6227:2: ( ruleSurfaceElement )
-            // InternalLibrettoProjectProfile.g:6228:3: ruleSurfaceElement
+            // InternalLibrettoProjectProfile.g:6194:2: ( ruleSurfaceElement )
+            // InternalLibrettoProjectProfile.g:6195:3: ruleSurfaceElement
             {
              before(grammarAccess.getSurfaceBlockAccess().getElementsSurfaceElementParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -18937,17 +18871,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ScopedSurface__ModuleIdAssignment_1_0_1"
-    // InternalLibrettoProjectProfile.g:6237:1: rule__ScopedSurface__ModuleIdAssignment_1_0_1 : ( RULE_STRING ) ;
+    // InternalLibrettoProjectProfile.g:6204:1: rule__ScopedSurface__ModuleIdAssignment_1_0_1 : ( RULE_STRING ) ;
     public final void rule__ScopedSurface__ModuleIdAssignment_1_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6241:1: ( ( RULE_STRING ) )
-            // InternalLibrettoProjectProfile.g:6242:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:6208:1: ( ( RULE_STRING ) )
+            // InternalLibrettoProjectProfile.g:6209:2: ( RULE_STRING )
             {
-            // InternalLibrettoProjectProfile.g:6242:2: ( RULE_STRING )
-            // InternalLibrettoProjectProfile.g:6243:3: RULE_STRING
+            // InternalLibrettoProjectProfile.g:6209:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:6210:3: RULE_STRING
             {
              before(grammarAccess.getScopedSurfaceAccess().getModuleIdSTRINGTerminalRuleCall_1_0_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -18974,17 +18908,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ScopedSurface__SpecIdAssignment_1_1_1"
-    // InternalLibrettoProjectProfile.g:6252:1: rule__ScopedSurface__SpecIdAssignment_1_1_1 : ( RULE_STRING ) ;
+    // InternalLibrettoProjectProfile.g:6219:1: rule__ScopedSurface__SpecIdAssignment_1_1_1 : ( RULE_STRING ) ;
     public final void rule__ScopedSurface__SpecIdAssignment_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6256:1: ( ( RULE_STRING ) )
-            // InternalLibrettoProjectProfile.g:6257:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:6223:1: ( ( RULE_STRING ) )
+            // InternalLibrettoProjectProfile.g:6224:2: ( RULE_STRING )
             {
-            // InternalLibrettoProjectProfile.g:6257:2: ( RULE_STRING )
-            // InternalLibrettoProjectProfile.g:6258:3: RULE_STRING
+            // InternalLibrettoProjectProfile.g:6224:2: ( RULE_STRING )
+            // InternalLibrettoProjectProfile.g:6225:3: RULE_STRING
             {
              before(grammarAccess.getScopedSurfaceAccess().getSpecIdSTRINGTerminalRuleCall_1_1_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -19011,17 +18945,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ScopedSurface__RulesAssignment_3"
-    // InternalLibrettoProjectProfile.g:6267:1: rule__ScopedSurface__RulesAssignment_3 : ( ruleSurfaceRule ) ;
+    // InternalLibrettoProjectProfile.g:6234:1: rule__ScopedSurface__RulesAssignment_3 : ( ruleSurfaceRule ) ;
     public final void rule__ScopedSurface__RulesAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6271:1: ( ( ruleSurfaceRule ) )
-            // InternalLibrettoProjectProfile.g:6272:2: ( ruleSurfaceRule )
+            // InternalLibrettoProjectProfile.g:6238:1: ( ( ruleSurfaceRule ) )
+            // InternalLibrettoProjectProfile.g:6239:2: ( ruleSurfaceRule )
             {
-            // InternalLibrettoProjectProfile.g:6272:2: ( ruleSurfaceRule )
-            // InternalLibrettoProjectProfile.g:6273:3: ruleSurfaceRule
+            // InternalLibrettoProjectProfile.g:6239:2: ( ruleSurfaceRule )
+            // InternalLibrettoProjectProfile.g:6240:3: ruleSurfaceRule
             {
              before(grammarAccess.getScopedSurfaceAccess().getRulesSurfaceRuleParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -19052,17 +18986,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ReturnTypeRule__NameAssignment_2"
-    // InternalLibrettoProjectProfile.g:6282:1: rule__ReturnTypeRule__NameAssignment_2 : ( RULE_ID ) ;
+    // InternalLibrettoProjectProfile.g:6249:1: rule__ReturnTypeRule__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__ReturnTypeRule__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6286:1: ( ( RULE_ID ) )
-            // InternalLibrettoProjectProfile.g:6287:2: ( RULE_ID )
+            // InternalLibrettoProjectProfile.g:6253:1: ( ( RULE_ID ) )
+            // InternalLibrettoProjectProfile.g:6254:2: ( RULE_ID )
             {
-            // InternalLibrettoProjectProfile.g:6287:2: ( RULE_ID )
-            // InternalLibrettoProjectProfile.g:6288:3: RULE_ID
+            // InternalLibrettoProjectProfile.g:6254:2: ( RULE_ID )
+            // InternalLibrettoProjectProfile.g:6255:3: RULE_ID
             {
              before(grammarAccess.getReturnTypeRuleAccess().getNameIDTerminalRuleCall_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -19089,17 +19023,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ReturnTypeRule__JavaTypeAssignment_4"
-    // InternalLibrettoProjectProfile.g:6297:1: rule__ReturnTypeRule__JavaTypeAssignment_4 : ( ruleJavaType ) ;
+    // InternalLibrettoProjectProfile.g:6264:1: rule__ReturnTypeRule__JavaTypeAssignment_4 : ( ruleJavaType ) ;
     public final void rule__ReturnTypeRule__JavaTypeAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6301:1: ( ( ruleJavaType ) )
-            // InternalLibrettoProjectProfile.g:6302:2: ( ruleJavaType )
+            // InternalLibrettoProjectProfile.g:6268:1: ( ( ruleJavaType ) )
+            // InternalLibrettoProjectProfile.g:6269:2: ( ruleJavaType )
             {
-            // InternalLibrettoProjectProfile.g:6302:2: ( ruleJavaType )
-            // InternalLibrettoProjectProfile.g:6303:3: ruleJavaType
+            // InternalLibrettoProjectProfile.g:6269:2: ( ruleJavaType )
+            // InternalLibrettoProjectProfile.g:6270:3: ruleJavaType
             {
              before(grammarAccess.getReturnTypeRuleAccess().getJavaTypeJavaTypeParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -19130,17 +19064,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ParamTypeRule__ParamNameAssignment_2"
-    // InternalLibrettoProjectProfile.g:6312:1: rule__ParamTypeRule__ParamNameAssignment_2 : ( RULE_ID ) ;
+    // InternalLibrettoProjectProfile.g:6279:1: rule__ParamTypeRule__ParamNameAssignment_2 : ( RULE_ID ) ;
     public final void rule__ParamTypeRule__ParamNameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6316:1: ( ( RULE_ID ) )
-            // InternalLibrettoProjectProfile.g:6317:2: ( RULE_ID )
+            // InternalLibrettoProjectProfile.g:6283:1: ( ( RULE_ID ) )
+            // InternalLibrettoProjectProfile.g:6284:2: ( RULE_ID )
             {
-            // InternalLibrettoProjectProfile.g:6317:2: ( RULE_ID )
-            // InternalLibrettoProjectProfile.g:6318:3: RULE_ID
+            // InternalLibrettoProjectProfile.g:6284:2: ( RULE_ID )
+            // InternalLibrettoProjectProfile.g:6285:3: RULE_ID
             {
              before(grammarAccess.getParamTypeRuleAccess().getParamNameIDTerminalRuleCall_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -19167,17 +19101,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ParamTypeRule__JavaTypeAssignment_4"
-    // InternalLibrettoProjectProfile.g:6327:1: rule__ParamTypeRule__JavaTypeAssignment_4 : ( ruleJavaType ) ;
+    // InternalLibrettoProjectProfile.g:6294:1: rule__ParamTypeRule__JavaTypeAssignment_4 : ( ruleJavaType ) ;
     public final void rule__ParamTypeRule__JavaTypeAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6331:1: ( ( ruleJavaType ) )
-            // InternalLibrettoProjectProfile.g:6332:2: ( ruleJavaType )
+            // InternalLibrettoProjectProfile.g:6298:1: ( ( ruleJavaType ) )
+            // InternalLibrettoProjectProfile.g:6299:2: ( ruleJavaType )
             {
-            // InternalLibrettoProjectProfile.g:6332:2: ( ruleJavaType )
-            // InternalLibrettoProjectProfile.g:6333:3: ruleJavaType
+            // InternalLibrettoProjectProfile.g:6299:2: ( ruleJavaType )
+            // InternalLibrettoProjectProfile.g:6300:3: ruleJavaType
             {
              before(grammarAccess.getParamTypeRuleAccess().getJavaTypeJavaTypeParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -19208,17 +19142,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__RecordSelfReturnRule__MethodsAssignment_1"
-    // InternalLibrettoProjectProfile.g:6342:1: rule__RecordSelfReturnRule__MethodsAssignment_1 : ( RULE_ID ) ;
+    // InternalLibrettoProjectProfile.g:6309:1: rule__RecordSelfReturnRule__MethodsAssignment_1 : ( RULE_ID ) ;
     public final void rule__RecordSelfReturnRule__MethodsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6346:1: ( ( RULE_ID ) )
-            // InternalLibrettoProjectProfile.g:6347:2: ( RULE_ID )
+            // InternalLibrettoProjectProfile.g:6313:1: ( ( RULE_ID ) )
+            // InternalLibrettoProjectProfile.g:6314:2: ( RULE_ID )
             {
-            // InternalLibrettoProjectProfile.g:6347:2: ( RULE_ID )
-            // InternalLibrettoProjectProfile.g:6348:3: RULE_ID
+            // InternalLibrettoProjectProfile.g:6314:2: ( RULE_ID )
+            // InternalLibrettoProjectProfile.g:6315:3: RULE_ID
             {
              before(grammarAccess.getRecordSelfReturnRuleAccess().getMethodsIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -19245,17 +19179,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__RecordSelfReturnRule__MethodsAssignment_2_1"
-    // InternalLibrettoProjectProfile.g:6357:1: rule__RecordSelfReturnRule__MethodsAssignment_2_1 : ( RULE_ID ) ;
+    // InternalLibrettoProjectProfile.g:6324:1: rule__RecordSelfReturnRule__MethodsAssignment_2_1 : ( RULE_ID ) ;
     public final void rule__RecordSelfReturnRule__MethodsAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6361:1: ( ( RULE_ID ) )
-            // InternalLibrettoProjectProfile.g:6362:2: ( RULE_ID )
+            // InternalLibrettoProjectProfile.g:6328:1: ( ( RULE_ID ) )
+            // InternalLibrettoProjectProfile.g:6329:2: ( RULE_ID )
             {
-            // InternalLibrettoProjectProfile.g:6362:2: ( RULE_ID )
-            // InternalLibrettoProjectProfile.g:6363:3: RULE_ID
+            // InternalLibrettoProjectProfile.g:6329:2: ( RULE_ID )
+            // InternalLibrettoProjectProfile.g:6330:3: RULE_ID
             {
              before(grammarAccess.getRecordSelfReturnRuleAccess().getMethodsIDTerminalRuleCall_2_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -19282,17 +19216,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__MethodOverrideRule__SignatureAssignment_1"
-    // InternalLibrettoProjectProfile.g:6372:1: rule__MethodOverrideRule__SignatureAssignment_1 : ( ruleOperationSignature ) ;
+    // InternalLibrettoProjectProfile.g:6339:1: rule__MethodOverrideRule__SignatureAssignment_1 : ( ruleOperationSignature ) ;
     public final void rule__MethodOverrideRule__SignatureAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6376:1: ( ( ruleOperationSignature ) )
-            // InternalLibrettoProjectProfile.g:6377:2: ( ruleOperationSignature )
+            // InternalLibrettoProjectProfile.g:6343:1: ( ( ruleOperationSignature ) )
+            // InternalLibrettoProjectProfile.g:6344:2: ( ruleOperationSignature )
             {
-            // InternalLibrettoProjectProfile.g:6377:2: ( ruleOperationSignature )
-            // InternalLibrettoProjectProfile.g:6378:3: ruleOperationSignature
+            // InternalLibrettoProjectProfile.g:6344:2: ( ruleOperationSignature )
+            // InternalLibrettoProjectProfile.g:6345:3: ruleOperationSignature
             {
              before(grammarAccess.getMethodOverrideRuleAccess().getSignatureOperationSignatureParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -19323,17 +19257,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__MethodOverrideRule__JavaTypeAssignment_3"
-    // InternalLibrettoProjectProfile.g:6387:1: rule__MethodOverrideRule__JavaTypeAssignment_3 : ( ruleJavaType ) ;
+    // InternalLibrettoProjectProfile.g:6354:1: rule__MethodOverrideRule__JavaTypeAssignment_3 : ( ruleJavaType ) ;
     public final void rule__MethodOverrideRule__JavaTypeAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6391:1: ( ( ruleJavaType ) )
-            // InternalLibrettoProjectProfile.g:6392:2: ( ruleJavaType )
+            // InternalLibrettoProjectProfile.g:6358:1: ( ( ruleJavaType ) )
+            // InternalLibrettoProjectProfile.g:6359:2: ( ruleJavaType )
             {
-            // InternalLibrettoProjectProfile.g:6392:2: ( ruleJavaType )
-            // InternalLibrettoProjectProfile.g:6393:3: ruleJavaType
+            // InternalLibrettoProjectProfile.g:6359:2: ( ruleJavaType )
+            // InternalLibrettoProjectProfile.g:6360:3: ruleJavaType
             {
              before(grammarAccess.getMethodOverrideRuleAccess().getJavaTypeJavaTypeParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -19364,17 +19298,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__QualifiedName__SegmentsAssignment_0"
-    // InternalLibrettoProjectProfile.g:6402:1: rule__QualifiedName__SegmentsAssignment_0 : ( RULE_ID ) ;
+    // InternalLibrettoProjectProfile.g:6369:1: rule__QualifiedName__SegmentsAssignment_0 : ( RULE_ID ) ;
     public final void rule__QualifiedName__SegmentsAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6406:1: ( ( RULE_ID ) )
-            // InternalLibrettoProjectProfile.g:6407:2: ( RULE_ID )
+            // InternalLibrettoProjectProfile.g:6373:1: ( ( RULE_ID ) )
+            // InternalLibrettoProjectProfile.g:6374:2: ( RULE_ID )
             {
-            // InternalLibrettoProjectProfile.g:6407:2: ( RULE_ID )
-            // InternalLibrettoProjectProfile.g:6408:3: RULE_ID
+            // InternalLibrettoProjectProfile.g:6374:2: ( RULE_ID )
+            // InternalLibrettoProjectProfile.g:6375:3: RULE_ID
             {
              before(grammarAccess.getQualifiedNameAccess().getSegmentsIDTerminalRuleCall_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -19401,17 +19335,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__QualifiedName__SegmentsAssignment_1_1"
-    // InternalLibrettoProjectProfile.g:6417:1: rule__QualifiedName__SegmentsAssignment_1_1 : ( RULE_ID ) ;
+    // InternalLibrettoProjectProfile.g:6384:1: rule__QualifiedName__SegmentsAssignment_1_1 : ( RULE_ID ) ;
     public final void rule__QualifiedName__SegmentsAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6421:1: ( ( RULE_ID ) )
-            // InternalLibrettoProjectProfile.g:6422:2: ( RULE_ID )
+            // InternalLibrettoProjectProfile.g:6388:1: ( ( RULE_ID ) )
+            // InternalLibrettoProjectProfile.g:6389:2: ( RULE_ID )
             {
-            // InternalLibrettoProjectProfile.g:6422:2: ( RULE_ID )
-            // InternalLibrettoProjectProfile.g:6423:3: RULE_ID
+            // InternalLibrettoProjectProfile.g:6389:2: ( RULE_ID )
+            // InternalLibrettoProjectProfile.g:6390:3: RULE_ID
             {
              before(grammarAccess.getQualifiedNameAccess().getSegmentsIDTerminalRuleCall_1_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -19438,21 +19372,21 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__PrimitiveType__KindAssignment"
-    // InternalLibrettoProjectProfile.g:6432:1: rule__PrimitiveType__KindAssignment : ( ( rule__PrimitiveType__KindAlternatives_0 ) ) ;
+    // InternalLibrettoProjectProfile.g:6399:1: rule__PrimitiveType__KindAssignment : ( ( rule__PrimitiveType__KindAlternatives_0 ) ) ;
     public final void rule__PrimitiveType__KindAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6436:1: ( ( ( rule__PrimitiveType__KindAlternatives_0 ) ) )
-            // InternalLibrettoProjectProfile.g:6437:2: ( ( rule__PrimitiveType__KindAlternatives_0 ) )
+            // InternalLibrettoProjectProfile.g:6403:1: ( ( ( rule__PrimitiveType__KindAlternatives_0 ) ) )
+            // InternalLibrettoProjectProfile.g:6404:2: ( ( rule__PrimitiveType__KindAlternatives_0 ) )
             {
-            // InternalLibrettoProjectProfile.g:6437:2: ( ( rule__PrimitiveType__KindAlternatives_0 ) )
-            // InternalLibrettoProjectProfile.g:6438:3: ( rule__PrimitiveType__KindAlternatives_0 )
+            // InternalLibrettoProjectProfile.g:6404:2: ( ( rule__PrimitiveType__KindAlternatives_0 ) )
+            // InternalLibrettoProjectProfile.g:6405:3: ( rule__PrimitiveType__KindAlternatives_0 )
             {
              before(grammarAccess.getPrimitiveTypeAccess().getKindAlternatives_0()); 
-            // InternalLibrettoProjectProfile.g:6439:3: ( rule__PrimitiveType__KindAlternatives_0 )
-            // InternalLibrettoProjectProfile.g:6439:4: rule__PrimitiveType__KindAlternatives_0
+            // InternalLibrettoProjectProfile.g:6406:3: ( rule__PrimitiveType__KindAlternatives_0 )
+            // InternalLibrettoProjectProfile.g:6406:4: rule__PrimitiveType__KindAlternatives_0
             {
             pushFollow(FOLLOW_2);
             rule__PrimitiveType__KindAlternatives_0();
@@ -19485,17 +19419,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__OperationSignature__NameAssignment_0"
-    // InternalLibrettoProjectProfile.g:6447:1: rule__OperationSignature__NameAssignment_0 : ( RULE_ID ) ;
+    // InternalLibrettoProjectProfile.g:6414:1: rule__OperationSignature__NameAssignment_0 : ( RULE_ID ) ;
     public final void rule__OperationSignature__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6451:1: ( ( RULE_ID ) )
-            // InternalLibrettoProjectProfile.g:6452:2: ( RULE_ID )
+            // InternalLibrettoProjectProfile.g:6418:1: ( ( RULE_ID ) )
+            // InternalLibrettoProjectProfile.g:6419:2: ( RULE_ID )
             {
-            // InternalLibrettoProjectProfile.g:6452:2: ( RULE_ID )
-            // InternalLibrettoProjectProfile.g:6453:3: RULE_ID
+            // InternalLibrettoProjectProfile.g:6419:2: ( RULE_ID )
+            // InternalLibrettoProjectProfile.g:6420:3: RULE_ID
             {
              before(grammarAccess.getOperationSignatureAccess().getNameIDTerminalRuleCall_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -19522,17 +19456,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__OperationSignature__ParamsAssignment_2_0"
-    // InternalLibrettoProjectProfile.g:6462:1: rule__OperationSignature__ParamsAssignment_2_0 : ( ruleTypedParam ) ;
+    // InternalLibrettoProjectProfile.g:6429:1: rule__OperationSignature__ParamsAssignment_2_0 : ( ruleTypedParam ) ;
     public final void rule__OperationSignature__ParamsAssignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6466:1: ( ( ruleTypedParam ) )
-            // InternalLibrettoProjectProfile.g:6467:2: ( ruleTypedParam )
+            // InternalLibrettoProjectProfile.g:6433:1: ( ( ruleTypedParam ) )
+            // InternalLibrettoProjectProfile.g:6434:2: ( ruleTypedParam )
             {
-            // InternalLibrettoProjectProfile.g:6467:2: ( ruleTypedParam )
-            // InternalLibrettoProjectProfile.g:6468:3: ruleTypedParam
+            // InternalLibrettoProjectProfile.g:6434:2: ( ruleTypedParam )
+            // InternalLibrettoProjectProfile.g:6435:3: ruleTypedParam
             {
              before(grammarAccess.getOperationSignatureAccess().getParamsTypedParamParserRuleCall_2_0_0()); 
             pushFollow(FOLLOW_2);
@@ -19563,17 +19497,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__OperationSignature__ParamsAssignment_2_1_1"
-    // InternalLibrettoProjectProfile.g:6477:1: rule__OperationSignature__ParamsAssignment_2_1_1 : ( ruleTypedParam ) ;
+    // InternalLibrettoProjectProfile.g:6444:1: rule__OperationSignature__ParamsAssignment_2_1_1 : ( ruleTypedParam ) ;
     public final void rule__OperationSignature__ParamsAssignment_2_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6481:1: ( ( ruleTypedParam ) )
-            // InternalLibrettoProjectProfile.g:6482:2: ( ruleTypedParam )
+            // InternalLibrettoProjectProfile.g:6448:1: ( ( ruleTypedParam ) )
+            // InternalLibrettoProjectProfile.g:6449:2: ( ruleTypedParam )
             {
-            // InternalLibrettoProjectProfile.g:6482:2: ( ruleTypedParam )
-            // InternalLibrettoProjectProfile.g:6483:3: ruleTypedParam
+            // InternalLibrettoProjectProfile.g:6449:2: ( ruleTypedParam )
+            // InternalLibrettoProjectProfile.g:6450:3: ruleTypedParam
             {
              before(grammarAccess.getOperationSignatureAccess().getParamsTypedParamParserRuleCall_2_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -19604,17 +19538,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__TypedParam__TypeAssignment_0"
-    // InternalLibrettoProjectProfile.g:6492:1: rule__TypedParam__TypeAssignment_0 : ( ruleJavaType ) ;
+    // InternalLibrettoProjectProfile.g:6459:1: rule__TypedParam__TypeAssignment_0 : ( ruleJavaType ) ;
     public final void rule__TypedParam__TypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6496:1: ( ( ruleJavaType ) )
-            // InternalLibrettoProjectProfile.g:6497:2: ( ruleJavaType )
+            // InternalLibrettoProjectProfile.g:6463:1: ( ( ruleJavaType ) )
+            // InternalLibrettoProjectProfile.g:6464:2: ( ruleJavaType )
             {
-            // InternalLibrettoProjectProfile.g:6497:2: ( ruleJavaType )
-            // InternalLibrettoProjectProfile.g:6498:3: ruleJavaType
+            // InternalLibrettoProjectProfile.g:6464:2: ( ruleJavaType )
+            // InternalLibrettoProjectProfile.g:6465:3: ruleJavaType
             {
              before(grammarAccess.getTypedParamAccess().getTypeJavaTypeParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -19645,17 +19579,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__TypedParam__ParamNameAssignment_1"
-    // InternalLibrettoProjectProfile.g:6507:1: rule__TypedParam__ParamNameAssignment_1 : ( RULE_ID ) ;
+    // InternalLibrettoProjectProfile.g:6474:1: rule__TypedParam__ParamNameAssignment_1 : ( RULE_ID ) ;
     public final void rule__TypedParam__ParamNameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLibrettoProjectProfile.g:6511:1: ( ( RULE_ID ) )
-            // InternalLibrettoProjectProfile.g:6512:2: ( RULE_ID )
+            // InternalLibrettoProjectProfile.g:6478:1: ( ( RULE_ID ) )
+            // InternalLibrettoProjectProfile.g:6479:2: ( RULE_ID )
             {
-            // InternalLibrettoProjectProfile.g:6512:2: ( RULE_ID )
-            // InternalLibrettoProjectProfile.g:6513:3: RULE_ID
+            // InternalLibrettoProjectProfile.g:6479:2: ( RULE_ID )
+            // InternalLibrettoProjectProfile.g:6480:3: RULE_ID
             {
              before(grammarAccess.getTypedParamAccess().getParamNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -19707,12 +19641,12 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalConten
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000001800L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000200000000000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000400040000000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000400000000002L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0004000000000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000400000000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0003800040000000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0003800000000002L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0004400040000000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0004400000000002L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0003800040000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0003800000000002L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0004400000000000L});
     public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0003000040000000L});
     public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0003000000000002L});
     public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0008000000000000L});

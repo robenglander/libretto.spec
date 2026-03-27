@@ -3,15 +3,23 @@ package com.robenglander.libretto.spec.projection;
 import java.util.List;
 
 /**
- * Portable view of {@code project { rootDir; modules { … } testgen { … } }}.
+ * Portable view of {@code project { rootDir* modules* gen* }} preserving block order as lists.
  */
 public record ProjectedProjectBlock(
-		String rootDir,
-		List<ProjectedProjectModuleEntry> modules,
-		ProjectedTestGenBlock testGen) {
+		List<String> rootDirs,
+		List<ProjectedModulesBlock> modulesBlocks,
+		List<ProjectedGenBlock> genBlocks) {
 
 	public ProjectedProjectBlock {
-		rootDir = rootDir == null ? "" : rootDir.trim();
-		modules = modules == null ? List.of() : List.copyOf(modules);
+		rootDirs = normalizeStrings(rootDirs);
+		modulesBlocks = modulesBlocks == null ? List.of() : List.copyOf(modulesBlocks);
+		genBlocks = genBlocks == null ? List.of() : List.copyOf(genBlocks);
+	}
+
+	private static List<String> normalizeStrings(List<String> in) {
+		if (in == null || in.isEmpty()) {
+			return List.of();
+		}
+		return List.copyOf(in.stream().map(s -> s == null ? "" : s.trim()).toList());
 	}
 }

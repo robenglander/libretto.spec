@@ -1,28 +1,41 @@
 package com.robenglander.libretto.spec.projection;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Portable domain model of a Libretto project profile ({@code .lpp}): name, surface, project layout, LLM providers.
+ * Portable domain model of a Libretto project profile ({@code .lpp}): name, surface, project blocks,
+ * LLM provider blocks — aligned with the Xtext grammar (multiple {@code project} / {@code llmProviders}
+ * / {@code surface} sections in document order).
  *
- * @param profileName     root {@code profile "<string>"} — logical name; should match spec metadata {@code project_profile_id} when binding
- * @param surfaceElements contents of {@code surface { … }} in document order; empty if absent
- * @param projectBlock    {@code project { … }} or {@code null} when absent
- * @param llmProviders    entries from {@code llmProviders { … }}; empty when absent
+ * @param profileName       root {@code profile} name ({@code ValidID})
+ * @param surfaceElements   all {@code surface} blocks' elements concatenated in profile order
+ * @param projectBlocks     each {@code project { … }} block
+ * @param llmProviderBlocks each {@code llmProviders { … }} block
  */
 public record LibrettoProjectProfileDomainModel(
 		String profileName,
 		List<ProjectedSurfaceElement> surfaceElements,
-		ProjectedProjectBlock projectBlock,
-		List<ProjectedLlmProviderEntry> llmProviders) {
+		List<ProjectedProjectBlock> projectBlocks,
+		List<ProjectedLlmProvidersBlock> llmProviderBlocks) {
 
 	public LibrettoProjectProfileDomainModel {
 		profileName = profileName == null ? "" : profileName.trim();
 		surfaceElements = surfaceElements == null ? List.of() : List.copyOf(surfaceElements);
-		llmProviders = llmProviders == null ? List.of() : List.copyOf(llmProviders);
+		projectBlocks = projectBlocks == null ? List.of() : List.copyOf(projectBlocks);
+		llmProviderBlocks = llmProviderBlocks == null ? List.of() : List.copyOf(llmProviderBlocks);
 	}
 
 	public static LibrettoProjectProfileDomainModel empty() {
-		return new LibrettoProjectProfileDomainModel("", List.of(), null, List.of());
+		return new LibrettoProjectProfileDomainModel("", List.of(), List.of(), List.of());
+	}
+
+	/** All providers from all {@code llmProviders} blocks, in order. */
+	public List<ProjectedLlmProviderEntry> allLlmProviders() {
+		List<ProjectedLlmProviderEntry> out = new ArrayList<>();
+		for (ProjectedLlmProvidersBlock b : llmProviderBlocks) {
+			out.addAll(b.providers());
+		}
+		return List.copyOf(out);
 	}
 }

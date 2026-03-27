@@ -194,7 +194,7 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 	 *     GenRemediationRules returns GenRemediationRules
 	 *
 	 * Constraint:
-	 *     (patternRules+=GenPatternRemediationRule defaultRemediations+=GenDefaultRemediationRule)*
+	 *     (patternRules+=GenPatternRemediationRule | defaultRemediations+=GenDefaultRemediationRule)*
 	 * </pre>
 	 */
 	protected void sequence_GenRemediationRules(ISerializationContext context, GenRemediationRules semanticObject) {
@@ -208,7 +208,7 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 	 *     GenUsageBlock returns GenUsageBlock
 	 *
 	 * Constraint:
-	 *     (primaryProviders+=STRING | secondaryProviders+=STRING | escalations+=GenEscalationBlock)*
+	 *     (primaryProviders+=ValidID | secondaryProviders+=ValidID | escalations+=GenEscalationBlock)*
 	 * </pre>
 	 */
 	protected void sequence_GenUsageBlock(ISerializationContext context, GenUsageBlock semanticObject) {

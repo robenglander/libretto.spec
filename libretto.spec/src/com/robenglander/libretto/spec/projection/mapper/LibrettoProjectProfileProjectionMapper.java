@@ -3,6 +3,14 @@ package com.robenglander.libretto.spec.projection.mapper;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.emf.common.util.EList;
+
+import com.robenglander.libretto.spec.librettoProjectProfile.GenBlock;
+import com.robenglander.libretto.spec.librettoProjectProfile.GenDefaultRemediationRule;
+import com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock;
+import com.robenglander.libretto.spec.librettoProjectProfile.GenPatternRemediationRule;
+import com.robenglander.libretto.spec.librettoProjectProfile.GenRemediationRules;
+import com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock;
 import com.robenglander.libretto.spec.librettoProjectProfile.JavaType;
 import com.robenglander.libretto.spec.librettoProjectProfile.LlmProvidersBlock;
 import com.robenglander.libretto.spec.librettoProjectProfile.MethodOverrideRule;
@@ -21,23 +29,21 @@ import com.robenglander.libretto.spec.librettoProjectProfile.ScopedSurface;
 import com.robenglander.libretto.spec.librettoProjectProfile.SurfaceBlock;
 import com.robenglander.libretto.spec.librettoProjectProfile.SurfaceElement;
 import com.robenglander.libretto.spec.librettoProjectProfile.SurfaceRule;
-import com.robenglander.libretto.spec.librettoProjectProfile.TestGenBlock;
-import com.robenglander.libretto.spec.librettoProjectProfile.TestGenDefaultRemediationRule;
-import com.robenglander.libretto.spec.librettoProjectProfile.TestGenEscalationBlock;
-import com.robenglander.libretto.spec.librettoProjectProfile.TestGenLegacyRemediationRule;
-import com.robenglander.libretto.spec.librettoProjectProfile.TestGenLegacyRemediationRulesBlock;
-import com.robenglander.libretto.spec.librettoProjectProfile.TestGenModulePolicy;
-import com.robenglander.libretto.spec.librettoProjectProfile.TestGenPatternRemediationRule;
-import com.robenglander.libretto.spec.librettoProjectProfile.TestGenRemediationRulesContainer;
-import com.robenglander.libretto.spec.librettoProjectProfile.TestGenRemediationsBlock;
-import com.robenglander.libretto.spec.librettoProjectProfile.TestGenUsageBlock;
 import com.robenglander.libretto.spec.librettoProjectProfile.TypedParam;
 import com.robenglander.libretto.spec.projection.LibrettoProjectProfileDomainModel;
 import com.robenglander.libretto.spec.projection.LibrettoProjectProfileDomainModelProjection;
 import com.robenglander.libretto.spec.projection.ProjectProfileScopeKind;
+import com.robenglander.libretto.spec.projection.ProjectedGenBlock;
+import com.robenglander.libretto.spec.projection.ProjectedGenDefaultRemediationRule;
+import com.robenglander.libretto.spec.projection.ProjectedGenEscalationBlock;
+import com.robenglander.libretto.spec.projection.ProjectedGenPatternRemediationRule;
+import com.robenglander.libretto.spec.projection.ProjectedGenRemediationRules;
+import com.robenglander.libretto.spec.projection.ProjectedGenUsageBlock;
 import com.robenglander.libretto.spec.projection.ProjectedJavaType;
 import com.robenglander.libretto.spec.projection.ProjectedLlmProviderEntry;
+import com.robenglander.libretto.spec.projection.ProjectedLlmProvidersBlock;
 import com.robenglander.libretto.spec.projection.ProjectedMethodOverrideRule;
+import com.robenglander.libretto.spec.projection.ProjectedModulesBlock;
 import com.robenglander.libretto.spec.projection.ProjectedOperationSignature;
 import com.robenglander.libretto.spec.projection.ProjectedParamTypeRule;
 import com.robenglander.libretto.spec.projection.ProjectedPrimitiveJavaType;
@@ -49,14 +55,6 @@ import com.robenglander.libretto.spec.projection.ProjectedReturnTypeRule;
 import com.robenglander.libretto.spec.projection.ProjectedScopedSurface;
 import com.robenglander.libretto.spec.projection.ProjectedSurfaceElement;
 import com.robenglander.libretto.spec.projection.ProjectedSurfaceRule;
-import com.robenglander.libretto.spec.projection.ProjectedTestGenBlock;
-import com.robenglander.libretto.spec.projection.ProjectedTestGenDefaultRemediation;
-import com.robenglander.libretto.spec.projection.ProjectedTestGenEscalation;
-import com.robenglander.libretto.spec.projection.ProjectedTestGenLegacyRule;
-import com.robenglander.libretto.spec.projection.ProjectedTestGenModulePolicy;
-import com.robenglander.libretto.spec.projection.ProjectedTestGenPatternRemediation;
-import com.robenglander.libretto.spec.projection.ProjectedTestGenRemediations;
-import com.robenglander.libretto.spec.projection.ProjectedTestGenUsage;
 import com.robenglander.libretto.spec.projection.ProjectedTypedParam;
 
 /**
@@ -71,169 +69,155 @@ public final class LibrettoProjectProfileProjectionMapper {
 		if (profile == null) {
 			return new LibrettoProjectProfileDomainModelProjection(LibrettoProjectProfileDomainModel.empty());
 		}
-		String profileName = profile.getProfileName() == null ? "" : profile.getProfileName().trim();
-		List<ProjectedSurfaceElement> elements = mapSurface(profile.getSurface());
-		ProjectedProjectBlock projectBlock = mapProjectBlock(profile.getProject());
-		List<ProjectedLlmProviderEntry> llm = mapLlmProviders(profile.getLlmProviders());
+		String profileName = s(profile.getName());
+		List<ProjectedSurfaceElement> surfaceElements = new ArrayList<>();
+		for (SurfaceBlock sb : profile.getSurfaces()) {
+			surfaceElements.addAll(mapSurfaceBlock(sb));
+		}
+		List<ProjectedProjectBlock> projectBlocks = new ArrayList<>();
+		for (ProjectBlock pb : profile.getProjects()) {
+			projectBlocks.add(mapProjectBlock(pb));
+		}
+		List<ProjectedLlmProvidersBlock> llmBlocks = new ArrayList<>();
+		for (LlmProvidersBlock lb : profile.getLlmProviders()) {
+			llmBlocks.add(mapLlmProvidersBlock(lb));
+		}
 		return new LibrettoProjectProfileDomainModelProjection(
-				new LibrettoProjectProfileDomainModel(profileName, elements, projectBlock, llm));
+				new LibrettoProjectProfileDomainModel(profileName, surfaceElements, projectBlocks, llmBlocks));
 	}
 
-	private static List<ProjectedLlmProviderEntry> mapLlmProviders(LlmProvidersBlock block) {
+	private static ProjectedLlmProvidersBlock mapLlmProvidersBlock(LlmProvidersBlock block) {
 		if (block == null) {
-			return List.of();
+			return new ProjectedLlmProvidersBlock(List.of());
 		}
 		List<ProjectedLlmProviderEntry> out = new ArrayList<>();
 		for (NamedLlmProvider p : block.getProviders()) {
 			out.add(new ProjectedLlmProviderEntry(
 					s(p.getName()),
-					s(p.getKind()),
-					s(p.getLocalModelPath()),
-					s(p.getModel()),
-					s(p.getEndpoint())));
+					copyStrings(p.getKinds()),
+					copyStrings(p.getLocalModelPaths()),
+					copyStrings(p.getModels()),
+					copyStrings(p.getEndpoints())));
 		}
-		return List.copyOf(out);
+		return new ProjectedLlmProvidersBlock(List.copyOf(out));
 	}
 
 	private static ProjectedProjectBlock mapProjectBlock(ProjectBlock pb) {
 		if (pb == null) {
-			return null;
+			return new ProjectedProjectBlock(List.of(), List.of(), List.of());
 		}
-		String rootDir = s(pb.getRootDir());
+		List<String> rootDirs = copyStrings(pb.getRootDir());
+		List<ProjectedModulesBlock> modulesBlocks = new ArrayList<>();
+		for (ModulesBlock mb : pb.getModules()) {
+			modulesBlocks.add(mapModulesBlock(mb));
+		}
+		List<ProjectedGenBlock> genBlocks = new ArrayList<>();
+		for (GenBlock g : pb.getGens()) {
+			genBlocks.add(mapGenBlock(g));
+		}
+		return new ProjectedProjectBlock(rootDirs, List.copyOf(modulesBlocks), List.copyOf(genBlocks));
+	}
+
+	private static ProjectedModulesBlock mapModulesBlock(ModulesBlock mb) {
+		if (mb == null) {
+			return new ProjectedModulesBlock(List.of());
+		}
 		List<ProjectedProjectModuleEntry> modules = new ArrayList<>();
-		ModulesBlock mb = pb.getModules();
-		if (mb != null) {
-			for (ProjectModule m : mb.getModules()) {
-				modules.add(mapModule(m));
-			}
+		for (ProjectModule m : mb.getModules()) {
+			modules.add(mapModule(m));
 		}
-		ProjectedTestGenBlock testGen = mapTestGenBlock(pb.getTestGen());
-		return new ProjectedProjectBlock(rootDir, modules, testGen);
+		return new ProjectedModulesBlock(List.copyOf(modules));
 	}
 
 	private static ProjectedProjectModuleEntry mapModule(ProjectModule m) {
 		return new ProjectedProjectModuleEntry(
 				s(m.getName()),
-				s(m.getDir()),
-				s(m.getSpecsDir()),
-				s(m.getTestsDir()),
-				s(m.getMainJavaDir()),
-				s(m.getBasePackage()));
+				copyStrings(m.getDirs()),
+				copyStrings(m.getSpecDirs()),
+				copyStrings(m.getTestDirs()),
+				copyStrings(m.getMainDirs()),
+				copyStrings(m.getBasePackages()));
 	}
 
-	private static ProjectedTestGenBlock mapTestGenBlock(TestGenBlock b) {
+	private static ProjectedGenBlock mapGenBlock(GenBlock b) {
 		if (b == null) {
-			return null;
+			return new ProjectedGenBlock(List.of(), List.of(), List.of(), List.of(), List.of(), List.of());
 		}
-		List<String> forbidden = new ArrayList<>(b.getForbiddenPatterns());
-		String initial = b.getInitialInstruction() == null ? "" : b.getInitialInstruction();
-		int maxRetries = b.getMaxRetries();
-		String parseCheckRaw = b.getParseCheck() == null ? "" : b.getParseCheck().trim();
-		ProjectedTestGenRemediations rem = mapTestGenRemediations(b.getRemediations());
-		List<ProjectedTestGenLegacyRule> legacy = mapLegacyRemediationRulesBlock(b.getLegacyRemediationRules());
-		ProjectedTestGenUsage usage = mapUsage(b.getUsage());
-		List<ProjectedTestGenModulePolicy> mods = new ArrayList<>();
-		for (TestGenModulePolicy mp : b.getModulePolicies()) {
-			mods.add(mapModulePolicy(mp));
+		List<ProjectedGenRemediationRules> rem = new ArrayList<>();
+		for (GenRemediationRules r : b.getRemediations()) {
+			rem.add(mapGenRemediationRules(r));
 		}
-		return new ProjectedTestGenBlock(
-				initial,
-				forbidden,
-				maxRetries,
-				parseCheckRaw,
-				rem,
-				legacy,
-				usage,
-				mods);
+		List<ProjectedGenUsageBlock> usages = new ArrayList<>();
+		for (GenUsageBlock u : b.getModelUsages()) {
+			usages.add(mapGenUsageBlock(u));
+		}
+		return new ProjectedGenBlock(
+				copyStrings(b.getInitialInstructions()),
+				copyIntegers(b.getMaxRetries()),
+				copyStrings(b.getParseChecks()),
+				copyStrings(b.getDefaultCorrections()),
+				List.copyOf(rem),
+				List.copyOf(usages));
 	}
 
-	private static ProjectedTestGenModulePolicy mapModulePolicy(TestGenModulePolicy m) {
-		List<String> f = new ArrayList<>(m.getForbiddenPatterns());
-		ProjectedTestGenRemediations rem = mapTestGenRemediations(m.getRemediations());
-		List<ProjectedTestGenLegacyRule> leg = mapLegacyRemediationRulesBlock(m.getLegacyRemediationRules());
-		ProjectedTestGenUsage usage = mapUsage(m.getUsage());
-		return new ProjectedTestGenModulePolicy(
-				s(m.getModuleId()),
-				m.getInitialInstruction() == null ? "" : m.getInitialInstruction(),
-				f,
-				m.getMaxRetries(),
-				m.getParseCheck() == null ? "" : m.getParseCheck().trim(),
-				rem,
-				leg,
-				usage);
+	private static ProjectedGenRemediationRules mapGenRemediationRules(GenRemediationRules rules) {
+		if (rules == null) {
+			return new ProjectedGenRemediationRules(List.of(), List.of());
+		}
+		List<ProjectedGenPatternRemediationRule> pattern = new ArrayList<>();
+		for (GenPatternRemediationRule pr : rules.getPatternRules()) {
+			pattern.add(new ProjectedGenPatternRemediationRule(
+					copyStrings(pr.getPatterns()),
+					copyStrings(pr.getCodes()),
+					copyStrings(pr.getCorrections())));
+		}
+		List<ProjectedGenDefaultRemediationRule> defaults = new ArrayList<>();
+		for (GenDefaultRemediationRule dr : rules.getDefaultRemediations()) {
+			defaults.add(new ProjectedGenDefaultRemediationRule(
+					copyStrings(dr.getCodes()),
+					copyStrings(dr.getCorrection())));
+		}
+		return new ProjectedGenRemediationRules(List.copyOf(pattern), List.copyOf(defaults));
 	}
 
-	private static ProjectedTestGenUsage mapUsage(TestGenUsageBlock u) {
+	private static ProjectedGenUsageBlock mapGenUsageBlock(GenUsageBlock u) {
 		if (u == null) {
-			return new ProjectedTestGenUsage("", "", mapEscalation(null));
+			return new ProjectedGenUsageBlock(List.of(), List.of(), List.of());
 		}
-		return new ProjectedTestGenUsage(
-				s(u.getPrimaryProvider()),
-				s(u.getSecondaryProvider()),
-				mapEscalation(u.getEscalation()));
+		List<ProjectedGenEscalationBlock> esc = new ArrayList<>();
+		for (GenEscalationBlock e : u.getEscalations()) {
+			esc.add(mapGenEscalation(e));
+		}
+		return new ProjectedGenUsageBlock(
+				copyStrings(u.getPrimaryProviders()),
+				copyStrings(u.getSecondaryProviders()),
+				List.copyOf(esc));
 	}
 
-	private static ProjectedTestGenEscalation mapEscalation(TestGenEscalationBlock e) {
+	private static ProjectedGenEscalationBlock mapGenEscalation(GenEscalationBlock e) {
 		if (e == null) {
-			return new ProjectedTestGenEscalation(false, 1, false);
+			return new ProjectedGenEscalationBlock(List.of(), List.of());
 		}
-		String en = e.getEnabled();
-		boolean enabled = en != null && Boolean.parseBoolean(en.trim());
-		int ear = e.getEscalateAtRetry();
-		if (ear < 1) {
-			ear = 1;
-		}
-		String t = e.getTarget() == null ? "" : e.getTarget().trim().toLowerCase();
-		boolean targetSecondary = t.contains("secondary");
-		return new ProjectedTestGenEscalation(enabled, ear, targetSecondary);
+		return new ProjectedGenEscalationBlock(
+				copyStrings(e.getEnableds()),
+				copyIntegers(e.getEscalateAtRetries()));
 	}
 
-	private static ProjectedTestGenRemediations mapTestGenRemediations(TestGenRemediationsBlock r) {
-		if (r == null) {
-			return null;
-		}
-		Integer maxRetries = Integer.valueOf(r.getMaxRetries());
-		Boolean parseCheck = null;
-		String pc = r.getParseCheck();
-		if (pc != null && !pc.isBlank()) {
-			parseCheck = Boolean.valueOf(Boolean.parseBoolean(pc.trim()));
-		}
-		String defaultCorr = r.getDefaultCorrection() == null ? "" : r.getDefaultCorrection();
-		List<String> extra = new ArrayList<>(r.getForbiddenPatterns());
-		List<ProjectedTestGenPatternRemediation> patternRules = new ArrayList<>();
-		ProjectedTestGenDefaultRemediation def = null;
-		TestGenRemediationRulesContainer rc = r.getRulesContainer();
-		if (rc != null) {
-			for (TestGenPatternRemediationRule pr : rc.getPatternRules()) {
-				patternRules.add(new ProjectedTestGenPatternRemediation(
-						pr.getPattern(),
-						pr.getCode(),
-						pr.getCorrection()));
-			}
-			TestGenDefaultRemediationRule dr = rc.getDefaultRemediation();
-			if (dr != null) {
-				def = new ProjectedTestGenDefaultRemediation(dr.getCode(), dr.getCorrection());
-			}
-		}
-		return new ProjectedTestGenRemediations(maxRetries, parseCheck, defaultCorr, extra, patternRules, def);
-	}
-
-	private static List<ProjectedTestGenLegacyRule> mapLegacyRemediationRulesBlock(TestGenLegacyRemediationRulesBlock b) {
-		if (b == null) {
+	private static List<String> copyStrings(EList<String> from) {
+		if (from == null || from.isEmpty()) {
 			return List.of();
 		}
-		List<ProjectedTestGenLegacyRule> out = new ArrayList<>();
-		for (TestGenLegacyRemediationRule r : b.getRules()) {
-			out.add(new ProjectedTestGenLegacyRule(r.getKey(), r.getInstruction()));
+		return List.copyOf(from);
+	}
+
+	private static List<Integer> copyIntegers(EList<Integer> from) {
+		if (from == null || from.isEmpty()) {
+			return List.of();
 		}
-		return List.copyOf(out);
+		return List.copyOf(from);
 	}
 
-	private static String s(String v) {
-		return v == null ? "" : v.trim();
-	}
-
-	private static List<ProjectedSurfaceElement> mapSurface(SurfaceBlock surface) {
+	private static List<ProjectedSurfaceElement> mapSurfaceBlock(SurfaceBlock surface) {
 		if (surface == null) {
 			return List.of();
 		}
@@ -343,5 +327,9 @@ public final class LibrettoProjectProfileProjectionMapper {
 			return new ProjectedQualifiedJavaType(new ArrayList<>(qn.getSegments()));
 		}
 		return null;
+	}
+
+	private static String s(String v) {
+		return v == null ? "" : v.trim();
 	}
 }

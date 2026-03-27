@@ -83,6 +83,7 @@ GenRemediationRules:
 	'rules' '{'
 		(
 			(patternRules+=GenPatternRemediationRule)
+			|
 			(defaultRemediations+=GenDefaultRemediationRule)
 		)*
 	'}';
@@ -132,9 +133,9 @@ GenUsageBlock:
 	{GenUsageBlock} 
 	'modelUsage' '{'
 		(
-			('primary' primaryProviders+=STRING)
+			('primary' primaryProviders+=ValidID)
 			|
-			('secondary' secondaryProviders+=STRING)
+			('secondary' secondaryProviders+=ValidID)
 			|
 			(escalations+=GenEscalationBlock)
 		)*
@@ -146,7 +147,7 @@ GenEscalationBlock:
 		(
 			('enabled' enableds+=('true' | 'false'))
 			|
-			('escalateAtRetries' escalateAtRetries+=INT)
+			('escalateAtRetry' escalateAtRetries+=INT)
 		)*
 	'}';
 

@@ -36,6 +36,7 @@ public class LibrettoProjectProfileParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getProjectModuleAccess().getAlternatives_3(), "rule__ProjectModule__Alternatives_3");
 			builder.put(grammarAccess.getGenBlockAccess().getAlternatives_3(), "rule__GenBlock__Alternatives_3");
 			builder.put(grammarAccess.getGenBlockAccess().getParseChecksAlternatives_3_2_1_0(), "rule__GenBlock__ParseChecksAlternatives_3_2_1_0");
+			builder.put(grammarAccess.getGenRemediationRulesAccess().getAlternatives_3(), "rule__GenRemediationRules__Alternatives_3");
 			builder.put(grammarAccess.getGenPatternRemediationRuleAccess().getAlternatives_3(), "rule__GenPatternRemediationRule__Alternatives_3");
 			builder.put(grammarAccess.getGenDefaultRemediationRuleAccess().getAlternatives_3(), "rule__GenDefaultRemediationRule__Alternatives_3");
 			builder.put(grammarAccess.getNamedLlmProviderAccess().getAlternatives_3(), "rule__NamedLlmProvider__Alternatives_3");
@@ -65,7 +66,6 @@ public class LibrettoProjectProfileParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getGenBlockAccess().getGroup_3_2(), "rule__GenBlock__Group_3_2__0");
 			builder.put(grammarAccess.getGenBlockAccess().getGroup_3_3(), "rule__GenBlock__Group_3_3__0");
 			builder.put(grammarAccess.getGenRemediationRulesAccess().getGroup(), "rule__GenRemediationRules__Group__0");
-			builder.put(grammarAccess.getGenRemediationRulesAccess().getGroup_3(), "rule__GenRemediationRules__Group_3__0");
 			builder.put(grammarAccess.getGenPatternRemediationRuleAccess().getGroup(), "rule__GenPatternRemediationRule__Group__0");
 			builder.put(grammarAccess.getGenPatternRemediationRuleAccess().getGroup_3_0(), "rule__GenPatternRemediationRule__Group_3_0__0");
 			builder.put(grammarAccess.getGenPatternRemediationRuleAccess().getGroup_3_1(), "rule__GenPatternRemediationRule__Group_3_1__0");

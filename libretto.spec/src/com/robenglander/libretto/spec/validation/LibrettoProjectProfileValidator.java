@@ -3,55 +3,105 @@
  */
 package com.robenglander.libretto.spec.validation;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.validation.Check;
 
 import com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage;
+import com.robenglander.libretto.spec.librettoProjectProfile.ModulesBlock;
 import com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock;
 import com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile;
 
 
 /**
- * This class contains custom validation rules. 
+ * This class contains custom validation rules.
  *
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 public class LibrettoProjectProfileValidator extends AbstractLibrettoProjectProfileValidator {
 
+	public static final String MISSING_PROFILE_NAME = "missing_profile_name";
 	public static final String MISSING_PROJECT_SECTION = "missing_project_section";
+	public static final String TOO_MANY_PROJECT_SECTIONS = "too_many_project_sections";
 	public static final String MISSING_ROOT_DIR = "missing_root_dir";
 	public static final String MISSING_MODULES_SECTION = "missing_modules_section";
 	public static final String EMPTY_MODULES_SECTION = "empty_modules_section";
 
 	@Check
+	public void checkProfileName(ProjectProfile profile) {
+		String name = profile.getName();
+		if (name == null || name.isBlank()) {
+			error(
+					"profile name is required.",
+					LibrettoProjectProfilePackage.Literals.PROJECT_PROFILE__NAME,
+					MISSING_PROFILE_NAME);
+		}
+	}
+
+	@Check
 	public void checkRequiredProjectStructure(ProjectProfile profile) {
-		ProjectBlock project = profile.getProject();
-		if (project == null) {
+		EList<ProjectBlock> projects = profile.getProjects();
+		if (projects.isEmpty()) {
 			error(
 					"project { ... } is required exactly once.",
-					LibrettoProjectProfilePackage.Literals.PROJECT_PROFILE__PROFILE_NAME,
+					LibrettoProjectProfilePackage.Literals.PROJECT_PROFILE__PROJECTS,
 					MISSING_PROJECT_SECTION);
 			return;
 		}
-		String rootDir = project.getRootDir();
-		if (rootDir == null || rootDir.trim().isEmpty()) {
+		if (projects.size() > 1) {
+			for (int i = 1; i < projects.size(); i++) {
+				error(
+						"Only one project { ... } block is allowed.",
+						projects.get(i),
+						LibrettoProjectProfilePackage.Literals.PROJECT_BLOCK__ROOT_DIR,
+						TOO_MANY_PROJECT_SECTIONS);
+			}
+		}
+
+		ProjectBlock project = projects.get(0);
+		EList<String> rootDirs = project.getRootDir();
+		if (rootDirs.isEmpty() || rootDirs.stream().noneMatch(LibrettoProjectProfileValidator::nonBlank)) {
 			error(
-					"project.rootDir is required exactly once.",
+					"project.rootDir is required at least once with a non-empty path.",
+					project,
 					LibrettoProjectProfilePackage.Literals.PROJECT_BLOCK__ROOT_DIR,
 					MISSING_ROOT_DIR);
+		} else {
+			for (int i = 0; i < rootDirs.size(); i++) {
+				String rd = rootDirs.get(i);
+				if (rd != null && rd.isBlank()) {
+					error(
+							"rootDir value must not be empty.",
+							project,
+							LibrettoProjectProfilePackage.Literals.PROJECT_BLOCK__ROOT_DIR,
+							i,
+							MISSING_ROOT_DIR);
+				}
+			}
 		}
-		if (project.getModules() == null) {
+
+		EList<ModulesBlock> moduleSections = project.getModules();
+		if (moduleSections.isEmpty()) {
 			error(
-					"project.modules { ... } is required exactly once.",
+					"project.modules { ... } is required at least once.",
+					project,
 					LibrettoProjectProfilePackage.Literals.PROJECT_BLOCK__MODULES,
 					MISSING_MODULES_SECTION);
 			return;
 		}
-		if (project.getModules().getModules().isEmpty()) {
-			error(
-					"project.modules must contain at least one module.",
-					LibrettoProjectProfilePackage.Literals.MODULES_BLOCK__MODULES,
-					EMPTY_MODULES_SECTION);
+
+		for (ModulesBlock section : moduleSections) {
+			if (section.getModules().isEmpty()) {
+				error(
+						"modules { ... } must contain at least one module.",
+						section,
+						LibrettoProjectProfilePackage.Literals.MODULES_BLOCK__MODULES,
+						EMPTY_MODULES_SECTION);
+			}
 		}
+	}
+
+	private static boolean nonBlank(String s) {
+		return s != null && !s.isBlank();
 	}
 
 }

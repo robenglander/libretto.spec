@@ -31,9 +31,72 @@ public class LibrettoProjectProfileSemanticHighlightingCalculator extends Defaul
 		if (cancelIndicator.isCanceled()) {
 			return true;
 		}
-		if (object.eClass() == PKG.getProjectProfile() && object.eIsSet(PKG.getProjectProfile_ProfileName())) {
-			highlightAllNodesForFeature(acceptor, object, PKG.getProjectProfile_ProfileName(),
+		if (object.eClass() == PKG.getProjectProfile() && object.eIsSet(PKG.getProjectProfile_Name())) {
+			highlightAllNodesForFeature(acceptor, object, PKG.getProjectProfile_Name(),
+					SemanticTokenTypes.Namespace);
+		}
+		if (object.eClass() == PKG.getProjectBlock() && object.eIsSet(PKG.getProjectBlock_RootDir())) {
+			highlightAllNodesForFeature(acceptor, object, PKG.getProjectBlock_RootDir(),
 					SemanticTokenTypes.String);
+		}
+		if (object.eClass() == PKG.getProjectModule()) {
+			if (object.eIsSet(PKG.getProjectModule_Name())) {
+				highlightAllNodesForFeature(acceptor, object, PKG.getProjectModule_Name(),
+						SemanticTokenTypes.Namespace);
+			}
+			highlightStrings(acceptor, object, PKG.getProjectModule_Dirs());
+			highlightStrings(acceptor, object, PKG.getProjectModule_SpecDirs());
+			highlightStrings(acceptor, object, PKG.getProjectModule_TestDirs());
+			highlightStrings(acceptor, object, PKG.getProjectModule_MainDirs());
+			highlightStrings(acceptor, object, PKG.getProjectModule_BasePackages());
+		}
+		if (object.eClass() == PKG.getGenBlock()) {
+			highlightStrings(acceptor, object, PKG.getGenBlock_InitialInstructions());
+			if (object.eIsSet(PKG.getGenBlock_MaxRetries())) {
+				highlightAllNodesForFeature(acceptor, object, PKG.getGenBlock_MaxRetries(),
+						SemanticTokenTypes.Number);
+			}
+			if (object.eIsSet(PKG.getGenBlock_ParseChecks())) {
+				highlightAllNodesForFeature(acceptor, object, PKG.getGenBlock_ParseChecks(),
+						SemanticTokenTypes.EnumMember);
+			}
+			highlightStrings(acceptor, object, PKG.getGenBlock_DefaultCorrections());
+		}
+		if (object.eClass() == PKG.getGenPatternRemediationRule()) {
+			highlightStrings(acceptor, object, PKG.getGenPatternRemediationRule_Patterns());
+			highlightStrings(acceptor, object, PKG.getGenPatternRemediationRule_Codes());
+			highlightStrings(acceptor, object, PKG.getGenPatternRemediationRule_Corrections());
+		}
+		if (object.eClass() == PKG.getGenDefaultRemediationRule()) {
+			highlightStrings(acceptor, object, PKG.getGenDefaultRemediationRule_Codes());
+			highlightStrings(acceptor, object, PKG.getGenDefaultRemediationRule_Correction());
+		}
+		if (object.eClass() == PKG.getNamedLlmProvider()) {
+			if (object.eIsSet(PKG.getNamedLlmProvider_Name())) {
+				highlightAllNodesForFeature(acceptor, object, PKG.getNamedLlmProvider_Name(),
+						SemanticTokenTypes.Namespace);
+			}
+			if (object.eIsSet(PKG.getNamedLlmProvider_Kinds())) {
+				highlightAllNodesForFeature(acceptor, object, PKG.getNamedLlmProvider_Kinds(),
+						SemanticTokenTypes.EnumMember);
+			}
+			highlightStrings(acceptor, object, PKG.getNamedLlmProvider_LocalModelPaths());
+			highlightStrings(acceptor, object, PKG.getNamedLlmProvider_Models());
+			highlightStrings(acceptor, object, PKG.getNamedLlmProvider_Endpoints());
+		}
+		if (object.eClass() == PKG.getGenUsageBlock()) {
+			highlightStrings(acceptor, object, PKG.getGenUsageBlock_PrimaryProviders());
+			highlightStrings(acceptor, object, PKG.getGenUsageBlock_SecondaryProviders());
+		}
+		if (object.eClass() == PKG.getGenEscalationBlock()) {
+			if (object.eIsSet(PKG.getGenEscalationBlock_Enableds())) {
+				highlightAllNodesForFeature(acceptor, object, PKG.getGenEscalationBlock_Enableds(),
+						SemanticTokenTypes.EnumMember);
+			}
+			if (object.eIsSet(PKG.getGenEscalationBlock_EscalateAtRetries())) {
+				highlightAllNodesForFeature(acceptor, object, PKG.getGenEscalationBlock_EscalateAtRetries(),
+						SemanticTokenTypes.Number);
+			}
 		}
 		if (object.eClass() == PKG.getScopedSurface()) {
 			if (object.eIsSet(PKG.getScopedSurface_ModuleId())) {
@@ -75,6 +138,13 @@ public class LibrettoProjectProfileSemanticHighlightingCalculator extends Defaul
 					SemanticTokenTypes.Type);
 		}
 		return false;
+	}
+
+	private void highlightStrings(IHighlightedPositionAcceptor acceptor, EObject object,
+			EStructuralFeature feature) {
+		if (object.eIsSet(feature)) {
+			highlightAllNodesForFeature(acceptor, object, feature, SemanticTokenTypes.String);
+		}
 	}
 
 	private void highlightAllNodesForFeature(IHighlightedPositionAcceptor acceptor, EObject object,
