@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getKeyword <em>Keyword</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getName <em>Name</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getDirs <em>Dirs</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getSpecDirs <em>Spec Dirs</em>}</li>
@@ -30,6 +31,28 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface ProjectModule extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Keyword</em>' containment reference.
+   * @see #setKeyword(ModuleKeyword)
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectModule_Keyword()
+   * @model containment="true"
+   * @generated
+   */
+  ModuleKeyword getKeyword();
+
+  /**
+   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getKeyword <em>Keyword</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Keyword</em>' containment reference.
+   * @see #getKeyword()
+   * @generated
+   */
+  void setKeyword(ModuleKeyword value);
+
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -53,63 +76,63 @@ public interface ProjectModule extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Dirs</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Dirs</b></em>' containment reference list.
+   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.Directory}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Dirs</em>' attribute list.
+   * @return the value of the '<em>Dirs</em>' containment reference list.
    * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectModule_Dirs()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getDirs();
+  EList<Directory> getDirs();
 
   /**
-   * Returns the value of the '<em><b>Spec Dirs</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Spec Dirs</b></em>' containment reference list.
+   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.SpecDirectory}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Spec Dirs</em>' attribute list.
+   * @return the value of the '<em>Spec Dirs</em>' containment reference list.
    * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectModule_SpecDirs()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getSpecDirs();
+  EList<SpecDirectory> getSpecDirs();
 
   /**
-   * Returns the value of the '<em><b>Test Dirs</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Test Dirs</b></em>' containment reference list.
+   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.TestDirectory}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Test Dirs</em>' attribute list.
+   * @return the value of the '<em>Test Dirs</em>' containment reference list.
    * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectModule_TestDirs()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getTestDirs();
+  EList<TestDirectory> getTestDirs();
 
   /**
-   * Returns the value of the '<em><b>Main Dirs</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Main Dirs</b></em>' containment reference list.
+   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.MainDirectory}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Main Dirs</em>' attribute list.
+   * @return the value of the '<em>Main Dirs</em>' containment reference list.
    * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectModule_MainDirs()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getMainDirs();
+  EList<MainDirectory> getMainDirs();
 
   /**
-   * Returns the value of the '<em><b>Base Packages</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Base Packages</b></em>' containment reference list.
+   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.BasePackage}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Base Packages</em>' attribute list.
+   * @return the value of the '<em>Base Packages</em>' containment reference list.
    * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectModule_BasePackages()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getBasePackages();
+  EList<BasePackage> getBasePackages();
 
 } // ProjectModule

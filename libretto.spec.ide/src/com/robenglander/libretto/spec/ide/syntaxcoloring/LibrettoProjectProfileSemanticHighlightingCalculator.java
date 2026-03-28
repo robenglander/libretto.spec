@@ -1,11 +1,16 @@
 /*
  * LSP semantic tokens for .lpp (VS Code / Cursor). Token type strings must match
  * org.eclipse.lsp4j.SemanticTokenTypes.
+ * <p>
+ * {@link SemanticTokenTypes#Variable} is used for {@code name=ValidID} (and equivalent) assignments;
+ * surface rules use {@code ID} and keep distinct token types.
  */
 package com.robenglander.libretto.spec.ide.syntaxcoloring;
 
 import java.util.List;
 
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.lsp4j.SemanticTokenTypes;
@@ -31,72 +36,98 @@ public class LibrettoProjectProfileSemanticHighlightingCalculator extends Defaul
 		if (cancelIndicator.isCanceled()) {
 			return true;
 		}
-		if (object.eClass() == PKG.getProjectProfile() && object.eIsSet(PKG.getProjectProfile_Name())) {
-			highlightAllNodesForFeature(acceptor, object, PKG.getProjectProfile_Name(),
-					SemanticTokenTypes.Namespace);
+		// TrueFalseKeyword → concrete TrueKeyword ("true" | "false"); red in librettoprofile, not maroon keyword.
+		if (object.eClass() == PKG.getTrueKeyword() && object.eIsSet(PKG.getTrueKeyword_Keyword())) {
+			highlightAllNodesForFeature(acceptor, object, PKG.getTrueKeyword_Keyword(),
+					SemanticTokenTypes.Macro);
+			return false;
 		}
-		if (object.eClass() == PKG.getProjectBlock() && object.eIsSet(PKG.getProjectBlock_RootDir())) {
-			highlightAllNodesForFeature(acceptor, object, PKG.getProjectBlock_RootDir(),
+		// Grammar convention: types named *Keyword carry the fixed terminal on feature "keyword".
+		if (isGrammarKeywordType(object.eClass().getName())) {
+			EStructuralFeature kw = object.eClass().getEStructuralFeature("keyword");
+			if (kw != null && object.eIsSet(kw)) {
+				highlightAllNodesForFeature(acceptor, object, kw, SemanticTokenTypes.Keyword);
+			}
+			return false;
+		}
+		// ValidID assignments (grammar rule ValidID) — themed as variable (green in librettoprofile).
+		// Name may be on file root ProjectProfile (older shape) or on inner Profile (profiles+=Profile*).
+		highlightNameFeatureAsVariable(acceptor, object, PKG.getEClassifier("ProjectProfile"));
+		highlightNameFeatureAsVariable(acceptor, object, PKG.getEClassifier("Profile"));
+		if (object.eClass() == PKG.getRootDirectory() && object.eIsSet(PKG.getRootDirectory_Dir())) {
+			highlightAllNodesForFeature(acceptor, object, PKG.getRootDirectory_Dir(),
 					SemanticTokenTypes.String);
 		}
-		if (object.eClass() == PKG.getProjectModule()) {
-			if (object.eIsSet(PKG.getProjectModule_Name())) {
-				highlightAllNodesForFeature(acceptor, object, PKG.getProjectModule_Name(),
-						SemanticTokenTypes.Namespace);
-			}
-			highlightStrings(acceptor, object, PKG.getProjectModule_Dirs());
-			highlightStrings(acceptor, object, PKG.getProjectModule_SpecDirs());
-			highlightStrings(acceptor, object, PKG.getProjectModule_TestDirs());
-			highlightStrings(acceptor, object, PKG.getProjectModule_MainDirs());
-			highlightStrings(acceptor, object, PKG.getProjectModule_BasePackages());
+		if (object.eClass() == PKG.getProjectModule() && object.eIsSet(PKG.getProjectModule_Name())) {
+			highlightAllNodesForFeature(acceptor, object, PKG.getProjectModule_Name(),
+					SemanticTokenTypes.Variable);
 		}
-		if (object.eClass() == PKG.getGenBlock()) {
-			highlightStrings(acceptor, object, PKG.getGenBlock_InitialInstructions());
-			if (object.eIsSet(PKG.getGenBlock_MaxRetries())) {
-				highlightAllNodesForFeature(acceptor, object, PKG.getGenBlock_MaxRetries(),
-						SemanticTokenTypes.Number);
-			}
-			if (object.eIsSet(PKG.getGenBlock_ParseChecks())) {
-				highlightAllNodesForFeature(acceptor, object, PKG.getGenBlock_ParseChecks(),
-						SemanticTokenTypes.EnumMember);
-			}
-			highlightStrings(acceptor, object, PKG.getGenBlock_DefaultCorrections());
+		if (object.eClass() == PKG.getDirectory() && object.eIsSet(PKG.getDirectory_Dir())) {
+			highlightAllNodesForFeature(acceptor, object, PKG.getDirectory_Dir(), SemanticTokenTypes.String);
 		}
-		if (object.eClass() == PKG.getGenPatternRemediationRule()) {
-			highlightStrings(acceptor, object, PKG.getGenPatternRemediationRule_Patterns());
-			highlightStrings(acceptor, object, PKG.getGenPatternRemediationRule_Codes());
-			highlightStrings(acceptor, object, PKG.getGenPatternRemediationRule_Corrections());
+		if (object.eClass() == PKG.getSpecDirectory() && object.eIsSet(PKG.getSpecDirectory_Dir())) {
+			highlightAllNodesForFeature(acceptor, object, PKG.getSpecDirectory_Dir(), SemanticTokenTypes.String);
 		}
-		if (object.eClass() == PKG.getGenDefaultRemediationRule()) {
-			highlightStrings(acceptor, object, PKG.getGenDefaultRemediationRule_Codes());
-			highlightStrings(acceptor, object, PKG.getGenDefaultRemediationRule_Correction());
+		if (object.eClass() == PKG.getTestDirectory() && object.eIsSet(PKG.getTestDirectory_Dir())) {
+			highlightAllNodesForFeature(acceptor, object, PKG.getTestDirectory_Dir(), SemanticTokenTypes.String);
 		}
-		if (object.eClass() == PKG.getNamedLlmProvider()) {
-			if (object.eIsSet(PKG.getNamedLlmProvider_Name())) {
-				highlightAllNodesForFeature(acceptor, object, PKG.getNamedLlmProvider_Name(),
-						SemanticTokenTypes.Namespace);
-			}
-			if (object.eIsSet(PKG.getNamedLlmProvider_Kinds())) {
-				highlightAllNodesForFeature(acceptor, object, PKG.getNamedLlmProvider_Kinds(),
-						SemanticTokenTypes.EnumMember);
-			}
-			highlightStrings(acceptor, object, PKG.getNamedLlmProvider_LocalModelPaths());
-			highlightStrings(acceptor, object, PKG.getNamedLlmProvider_Models());
-			highlightStrings(acceptor, object, PKG.getNamedLlmProvider_Endpoints());
+		if (object.eClass() == PKG.getMainDirectory() && object.eIsSet(PKG.getMainDirectory_Dir())) {
+			highlightAllNodesForFeature(acceptor, object, PKG.getMainDirectory_Dir(), SemanticTokenTypes.String);
 		}
-		if (object.eClass() == PKG.getGenUsageBlock()) {
-			highlightStrings(acceptor, object, PKG.getGenUsageBlock_PrimaryProviders());
-			highlightStrings(acceptor, object, PKG.getGenUsageBlock_SecondaryProviders());
+		if (object.eClass() == PKG.getBasePackage() && object.eIsSet(PKG.getBasePackage_Dir())) {
+			highlightAllNodesForFeature(acceptor, object, PKG.getBasePackage_Dir(), SemanticTokenTypes.String);
 		}
-		if (object.eClass() == PKG.getGenEscalationBlock()) {
-			if (object.eIsSet(PKG.getGenEscalationBlock_Enableds())) {
-				highlightAllNodesForFeature(acceptor, object, PKG.getGenEscalationBlock_Enableds(),
-						SemanticTokenTypes.EnumMember);
-			}
-			if (object.eIsSet(PKG.getGenEscalationBlock_EscalateAtRetries())) {
-				highlightAllNodesForFeature(acceptor, object, PKG.getGenEscalationBlock_EscalateAtRetries(),
-						SemanticTokenTypes.Number);
-			}
+		if (object.eClass() == PKG.getInitialInstruction() && object.eIsSet(PKG.getInitialInstruction_Instruction())) {
+			highlightAllNodesForFeature(acceptor, object, PKG.getInitialInstruction_Instruction(),
+					SemanticTokenTypes.String);
+		}
+		if (object.eClass() == PKG.getMaxRetries() && object.eIsSet(PKG.getMaxRetries_MaxRetries())) {
+			highlightAllNodesForFeature(acceptor, object, PKG.getMaxRetries_MaxRetries(),
+					SemanticTokenTypes.Number);
+		}
+		if (object.eClass() == PKG.getDefaultCorrection() && object.eIsSet(PKG.getDefaultCorrection_Correction())) {
+			highlightAllNodesForFeature(acceptor, object, PKG.getDefaultCorrection_Correction(),
+					SemanticTokenTypes.String);
+		}
+		if (object.eClass() == PKG.getPattern() && object.eIsSet(PKG.getPattern_Pattern())) {
+			highlightAllNodesForFeature(acceptor, object, PKG.getPattern_Pattern(), SemanticTokenTypes.String);
+		}
+		if (object.eClass() == PKG.getCode() && object.eIsSet(PKG.getCode_Code())) {
+			highlightAllNodesForFeature(acceptor, object, PKG.getCode_Code(), SemanticTokenTypes.String);
+		}
+		if (object.eClass() == PKG.getCorrection() && object.eIsSet(PKG.getCorrection_Correction())) {
+			highlightAllNodesForFeature(acceptor, object, PKG.getCorrection_Correction(),
+					SemanticTokenTypes.String);
+		}
+		if (object.eClass() == PKG.getLLMProvider() && object.eIsSet(PKG.getLLMProvider_Name())) {
+			highlightAllNodesForFeature(acceptor, object, PKG.getLLMProvider_Name(),
+					SemanticTokenTypes.Variable);
+		}
+		if (object.eClass() == PKG.getLocalModelPath() && object.eIsSet(PKG.getLocalModelPath_Path())) {
+			highlightAllNodesForFeature(acceptor, object, PKG.getLocalModelPath_Path(),
+					SemanticTokenTypes.String);
+		}
+		if (object.eClass() == PKG.getProviderType() && object.eIsSet(PKG.getProviderType_Name())) {
+			highlightAllNodesForFeature(acceptor, object, PKG.getProviderType_Name(),
+					SemanticTokenTypes.Variable);
+		}
+		if (object.eClass() == PKG.getModel() && object.eIsSet(PKG.getModel_Mode())) {
+			highlightAllNodesForFeature(acceptor, object, PKG.getModel_Mode(), SemanticTokenTypes.String);
+		}
+		if (object.eClass() == PKG.getEndpoint() && object.eIsSet(PKG.getEndpoint_Mode())) {
+			highlightAllNodesForFeature(acceptor, object, PKG.getEndpoint_Mode(), SemanticTokenTypes.String);
+		}
+		if (object.eClass() == PKG.getPrimaryProvider() && object.eIsSet(PKG.getPrimaryProvider_Name())) {
+			highlightAllNodesForFeature(acceptor, object, PKG.getPrimaryProvider_Name(),
+					SemanticTokenTypes.Variable);
+		}
+		if (object.eClass() == PKG.getSecondaryProvider() && object.eIsSet(PKG.getSecondaryProvider_Name())) {
+			highlightAllNodesForFeature(acceptor, object, PKG.getSecondaryProvider_Name(),
+					SemanticTokenTypes.Variable);
+		}
+		if (object.eClass() == PKG.getAtRetry() && object.eIsSet(PKG.getAtRetry_Value())) {
+			highlightAllNodesForFeature(acceptor, object, PKG.getAtRetry_Value(),
+					SemanticTokenTypes.Number);
 		}
 		if (object.eClass() == PKG.getScopedSurface()) {
 			if (object.eIsSet(PKG.getScopedSurface_ModuleId())) {
@@ -140,11 +171,19 @@ public class LibrettoProjectProfileSemanticHighlightingCalculator extends Defaul
 		return false;
 	}
 
-	private void highlightStrings(IHighlightedPositionAcceptor acceptor, EObject object,
-			EStructuralFeature feature) {
-		if (object.eIsSet(feature)) {
-			highlightAllNodesForFeature(acceptor, object, feature, SemanticTokenTypes.String);
+	private void highlightNameFeatureAsVariable(IHighlightedPositionAcceptor acceptor, EObject object,
+			EClassifier classifier) {
+		if (!(classifier instanceof EClass eClass) || !eClass.isInstance(object)) {
+			return;
 		}
+		EStructuralFeature nameFeature = eClass.getEStructuralFeature("name");
+		if (nameFeature != null && object.eIsSet(nameFeature)) {
+			highlightAllNodesForFeature(acceptor, object, nameFeature, SemanticTokenTypes.Variable);
+		}
+	}
+
+	private static boolean isGrammarKeywordType(String eClassName) {
+		return eClassName != null && eClassName.endsWith("Keyword");
 	}
 
 	private void highlightAllNodesForFeature(IHighlightedPositionAcceptor acceptor, EObject object,

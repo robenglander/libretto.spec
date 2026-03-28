@@ -3,13 +3,56 @@
  */
 package com.robenglander.libretto.spec.validation;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.function.Function;
+
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
 
+import com.robenglander.libretto.spec.librettoProjectProfile.AtRetry;
+import com.robenglander.libretto.spec.librettoProjectProfile.BasePackage;
+import com.robenglander.libretto.spec.librettoProjectProfile.Code;
+import com.robenglander.libretto.spec.librettoProjectProfile.Correction;
+import com.robenglander.libretto.spec.librettoProjectProfile.DefaultCorrection;
+import com.robenglander.libretto.spec.librettoProjectProfile.Directory;
+import com.robenglander.libretto.spec.librettoProjectProfile.Enabled;
+import com.robenglander.libretto.spec.librettoProjectProfile.Endpoint;
+import com.robenglander.libretto.spec.librettoProjectProfile.GenBlock;
+import com.robenglander.libretto.spec.librettoProjectProfile.GenDefaultRemediationRule;
+import com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock;
+import com.robenglander.libretto.spec.librettoProjectProfile.GenPatternRemediationRule;
+import com.robenglander.libretto.spec.librettoProjectProfile.GenRemediationRules;
+import com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock;
+import com.robenglander.libretto.spec.librettoProjectProfile.InitialInstruction;
+import com.robenglander.libretto.spec.librettoProjectProfile.LLMProvider;
+import com.robenglander.libretto.spec.librettoProjectProfile.LocalModelPath;
 import com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage;
+import com.robenglander.libretto.spec.librettoProjectProfile.LlmProvidersBlock;
 import com.robenglander.libretto.spec.librettoProjectProfile.ModulesBlock;
+import com.robenglander.libretto.spec.librettoProjectProfile.ModulesKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.Profile;
+import com.robenglander.libretto.spec.librettoProjectProfile.ProfileKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock;
+import com.robenglander.libretto.spec.librettoProjectProfile.MainDirectory;
+import com.robenglander.libretto.spec.librettoProjectProfile.MaxRetries;
+import com.robenglander.libretto.spec.librettoProjectProfile.Model;
+import com.robenglander.libretto.spec.librettoProjectProfile.ParseCheck;
+import com.robenglander.libretto.spec.librettoProjectProfile.Pattern;
+import com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider;
+import com.robenglander.libretto.spec.librettoProjectProfile.ProviderType;
+import com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule;
 import com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile;
+import com.robenglander.libretto.spec.librettoProjectProfile.RootDirectory;
+import com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProvider;
+import com.robenglander.libretto.spec.librettoProjectProfile.SpecDirectory;
+import com.robenglander.libretto.spec.librettoProjectProfile.TestDirectory;
+import com.robenglander.libretto.spec.librettoProjectProfile.TrueKeyword;
 
 
 /**
@@ -23,85 +66,2004 @@ public class LibrettoProjectProfileValidator extends AbstractLibrettoProjectProf
 	public static final String MISSING_PROJECT_SECTION = "missing_project_section";
 	public static final String TOO_MANY_PROJECT_SECTIONS = "too_many_project_sections";
 	public static final String MISSING_ROOT_DIR = "missing_root_dir";
+	public static final String TOO_MANY_ROOT_DIRS = "too_many_root_dirs";
 	public static final String MISSING_MODULES_SECTION = "missing_modules_section";
 	public static final String EMPTY_MODULES_SECTION = "empty_modules_section";
+	public static final String EMPTY_LLM_PROVIDERS_SECTION = "empty_llm_providers_section";
+	public static final String MISSING_LLM_PROVIDERS_SECTION = "missing_llm_providers_section";
+	public static final String TOO_MANY_LLM_PROVIDERS_SECTIONS = "too_many_llm_providers_sections";
+	public static final String TOO_MANY_MODULES_SECTIONS = "too_many_modules_sections";
+	public static final String MISSING_GEN_SECTION = "missing_gen_section";
+	public static final String TOO_MANY_GEN_SECTIONS = "too_many_gen_sections";
+	public static final String GEN_MISSING_INITIAL_INSTRUCTION = "gen_missing_initial_instruction";
+	public static final String GEN_MISSING_MAX_RETRIES = "gen_missing_max_retries";
+	public static final String GEN_MISSING_PARSE_CHECK = "gen_missing_parse_check";
+	public static final String GEN_MISSING_DEFAULT_CORRECTION = "gen_missing_default_correction";
+	public static final String GEN_MISSING_RULES = "gen_missing_rules";
+	public static final String GEN_MISSING_MODEL_USAGE = "gen_missing_model_usage";
+	public static final String GEN_TOO_MANY_MODEL_USAGES = "gen_too_many_model_usage";
+	public static final String GEN_TOO_MANY_INITIAL_INSTRUCTIONS = "gen_too_many_initial_instruction";
+	public static final String GEN_TOO_MANY_MAX_RETRIES = "gen_too_many_max_retries";
+	public static final String GEN_TOO_MANY_PARSE_CHECKS = "gen_too_many_parse_check";
+	public static final String GEN_TOO_MANY_DEFAULT_CORRECTIONS = "gen_too_many_default_correction";
+	public static final String GEN_TOO_MANY_RULES_SECTIONS = "gen_too_many_rules";
+	/** {@code rules { ... }} with no {@code rule { ... }} blocks (pattern rules). */
+	public static final String RULES_WITHOUT_PATTERN_RULES = "rules_without_pattern_rules";
+	public static final String RULES_MISSING_DEFAULT_SECTION = "rules_missing_default_section";
+	public static final String RULES_TOO_MANY_DEFAULT_SECTIONS = "rules_too_many_default_sections";
+	public static final String DUPLICATE_MODULE_NAME = "duplicate_module_name";
+	public static final String DUPLICATE_LLM_PROVIDER_NAME = "duplicate_llm_provider_name";
+	public static final String LLM_PROVIDER_MISSING_TYPE = "llm_provider_missing_type";
+	public static final String LLM_PROVIDER_TOO_MANY_TYPES = "llm_provider_too_many_type";
+	/** {@code type local} with a {@code model} line; anchor on {@link LibrettoProjectProfilePackage.Literals#MODEL_KEYWORD__KEYWORD}. */
+	public static final String LLM_PROVIDER_LOCAL_MUST_NOT_MODEL = "llm_provider_local_must_not_model";
+	/** {@code type local} with an {@code endpoint} line; anchor on {@link LibrettoProjectProfilePackage.Literals#ENDPOINT_KEYWORD__KEYWORD}. */
+	public static final String LLM_PROVIDER_LOCAL_MUST_NOT_ENDPOINT = "llm_provider_local_must_not_endpoint";
+	/** {@code type local} with no {@code filePath} line; anchor on {@link LibrettoProjectProfilePackage.Literals#PROVIDER_KEYWORD__KEYWORD}. */
+	public static final String LLM_PROVIDER_LOCAL_MISSING_FILE_PATH = "llm_provider_local_missing_file_path";
+	/** {@code type local} with more than one {@code filePath}; anchor on {@link LibrettoProjectProfilePackage.Literals#FILE_PATH_KEYWORD__KEYWORD}. */
+	public static final String LLM_PROVIDER_LOCAL_TOO_MANY_FILE_PATHS = "llm_provider_local_too_many_file_path";
+	/** Same {@code filePath} string on multiple {@code type local} providers; anchor on {@link LibrettoProjectProfilePackage.Literals#LOCAL_MODEL_PATH__PATH}. */
+	public static final String LLM_PROVIDER_LOCAL_FILE_PATH_VALUE_DUPLICATE_ACROSS_PROVIDERS =
+			"llm_provider_local_file_path_value_duplicate_across_providers";
+	/**
+	 * Same {@code model} string for multiple providers of the same {@link #LLM_PROVIDER_SINGLE_MODEL_NO_FILE_PATH_TYPES type};
+	 * anchor on {@link LibrettoProjectProfilePackage.Literals#MODEL__MODE}.
+	 */
+	public static final String LLM_PROVIDER_MODEL_VALUE_DUPLICATE_FOR_TYPE = "llm_provider_model_value_duplicate_for_type";
+	/** {@code type} is {@link #LLM_PROVIDER_SINGLE_MODEL_NO_FILE_PATH_TYPES managed or ollama} with a {@code filePath} line. */
+	public static final String LLM_PROVIDER_MANAGED_MUST_NOT_FILE_PATH = "llm_provider_managed_must_not_file_path";
+	/** Managed type with an {@code endpoint} line; anchor on endpoint keyword. */
+	public static final String LLM_PROVIDER_MANAGED_MUST_NOT_ENDPOINT = "llm_provider_managed_must_not_endpoint";
+	/** Managed or {@code ollama} with no {@code model}; anchor on {@code provider} keyword. */
+	public static final String LLM_PROVIDER_MANAGED_MISSING_MODEL = "llm_provider_managed_missing_model";
+	/** Managed or {@code ollama} with more than one {@code model}; anchor on each {@code model} keyword. */
+	public static final String LLM_PROVIDER_MANAGED_TOO_MANY_MODELS = "llm_provider_managed_too_many_models";
+	/** {@code type ollama} with no {@code endpoint}; anchor on {@code provider} keyword. */
+	public static final String LLM_PROVIDER_OLLAMA_MISSING_ENDPOINT = "llm_provider_ollama_missing_endpoint";
+	/** {@code type ollama} with more than one {@code endpoint}; anchor on each endpoint keyword. */
+	public static final String LLM_PROVIDER_OLLAMA_TOO_MANY_ENDPOINTS = "llm_provider_ollama_too_many_endpoints";
+	/** {@code type} name is not one of the allowed provider kinds (anchor: {@link LibrettoProjectProfilePackage.Literals#PROVIDER_TYPE__NAME}). */
+	public static final String LLM_PROVIDER_TYPE_INVALID = "llm_provider_type_invalid";
 
+	/**
+	 * Allowed {@code type} names after the {@code type} keyword in {@code llmProviders} (canonical spelling; shared with
+	 * quick fixes).
+	 */
+	public static final List<String> ALLOWED_LLM_PROVIDER_TYPE_NAMES = List.of("local", "openai", "anthropic", "gemini", "ollama");
+	/**
+	 * {@code openai}, {@code gemini}, {@code anthropic}: exactly one {@code model}, no {@code filePath}, no {@code endpoint}.
+	 */
+	public static final List<String> LLM_PROVIDER_MANAGED_MODEL_TYPES = List.of("openai", "gemini", "anthropic");
+	/**
+	 * {@link #LLM_PROVIDER_MANAGED_MODEL_TYPES} plus {@code ollama}: exactly one {@code model}, no {@code filePath}.
+	 * {@code ollama} additionally requires exactly one {@code endpoint} (see {@link #LLM_PROVIDER_OLLAMA_MISSING_ENDPOINT}).
+	 */
+	public static final List<String> LLM_PROVIDER_SINGLE_MODEL_NO_FILE_PATH_TYPES = List.of(
+			"openai", "gemini", "anthropic", "ollama");
+	public static final String MODULE_MISSING_DECLARATIONS = "module_missing_declarations";
+	public static final String MODULE_DUPLICATE_PATH_DECLARATION = "module_duplicate_path_declaration";
+	public static final String TOO_MANY_PROFILES = "too_many_profiles";
+	public static final String GEN_MAX_RETRIES_OUT_OF_RANGE = "gen_max_retries_out_of_range";
+	public static final String AT_RETRY_OUT_OF_RANGE = "at_retry_out_of_range";
+	public static final String AT_RETRY_EXCEEDS_MAX_RETRIES = "at_retry_exceeds_max_retries";
+	public static final String MODEL_USAGE_MISSING_PRIMARY = "model_usage_missing_primary";
+	public static final String MODEL_USAGE_MISSING_SECONDARY = "model_usage_missing_secondary";
+	public static final String MODEL_USAGE_MISSING_ESCALATION = "model_usage_missing_escalation";
+	public static final String MODEL_USAGE_TOO_MANY_PRIMARIES = "model_usage_too_many_primary";
+	public static final String MODEL_USAGE_TOO_MANY_SECONDARIES = "model_usage_too_many_secondary";
+	public static final String MODEL_USAGE_TOO_MANY_ESCALATIONS = "model_usage_too_many_escalation";
+	public static final String MODEL_USAGE_PRIMARY_UNKNOWN_PROVIDER = "model_usage_primary_unknown_provider";
+	public static final String MODEL_USAGE_SECONDARY_UNKNOWN_PROVIDER = "model_usage_secondary_unknown_provider";
+	/** {@code primary} and {@code secondary} name the same provider; anchor on each keyword. */
+	public static final String MODEL_USAGE_PRIMARY_SECONDARY_SAME_NAME = "model_usage_primary_secondary_same_name";
+	public static final String RULE_MISSING_PATTERN = "rule_missing_pattern";
+	public static final String RULE_MISSING_CODE = "rule_missing_code";
+	public static final String RULE_MISSING_CORRECTION = "rule_missing_correction";
+	public static final String RULE_TOO_MANY_PATTERNS = "rule_too_many_pattern";
+	public static final String RULE_TOO_MANY_CODES = "rule_too_many_code";
+	public static final String RULE_TOO_MANY_CORRECTIONS = "rule_too_many_correction";
+	public static final String DEFAULT_MISSING_CODE = "default_missing_code";
+	public static final String DEFAULT_MISSING_CORRECTION = "default_missing_correction";
+	public static final String DEFAULT_TOO_MANY_CODES = "default_too_many_code";
+	public static final String DEFAULT_TOO_MANY_CORRECTIONS = "default_too_many_correction";
+
+	private static final int MIN_RETRY_BOUND = 0;
+	private static final int MAX_RETRY_BOUND = 5;
+
+	/**
+	 * At most one {@code profile "…" { … }} block per file. If there are two or more, <em>every</em> excess block
+	 * is in error; the squiggle is anchored on each block’s {@code profile} keyword ({@link ProfileKeyword}).
+	 */
 	@Check
-	public void checkProfileName(ProjectProfile profile) {
-		String name = profile.getName();
-		if (name == null || name.isBlank()) {
-			error(
-					"profile name is required.",
-					LibrettoProjectProfilePackage.Literals.PROJECT_PROFILE__NAME,
-					MISSING_PROFILE_NAME);
+	public void checkAtMostOneProfile(ProjectProfile file) {
+		EList<Profile> profiles = file.getProfiles();
+		if (profiles.size() <= 1) {
+			return;
+		}
+		String message = "Only one profile { ... } block is allowed.";
+		for (Profile p : profiles) {
+			ProfileKeyword kw = p.getProfileKeyword();
+			if (kw != null) {
+				error(
+						message,
+						kw,
+						LibrettoProjectProfilePackage.Literals.PROFILE_KEYWORD__KEYWORD,
+						TOO_MANY_PROFILES);
+			} else {
+				error(
+						message,
+						p,
+						LibrettoProjectProfilePackage.Literals.PROFILE__PROFILE_KEYWORD,
+						TOO_MANY_PROFILES);
+			}
 		}
 	}
 
 	@Check
-	public void checkRequiredProjectStructure(ProjectProfile profile) {
-		EList<ProjectBlock> projects = profile.getProjects();
-		if (projects.isEmpty()) {
-			error(
-					"project { ... } is required exactly once.",
-					LibrettoProjectProfilePackage.Literals.PROJECT_PROFILE__PROJECTS,
-					MISSING_PROJECT_SECTION);
+	public void checkProfileName(Profile profile) {
+		String name = profile.getName();
+		if (name == null || name.isBlank()) {
+			errorOnProfileKeyword(profile, "profile name is required.", MISSING_PROFILE_NAME);
+		}
+	}
+
+	/**
+	 * Each {@link Profile} must contain exactly one {@code llmProviders { ... }} block. Missing section is an error on
+	 * the {@code profile} keyword; more than one is an error on each {@code llmProviders} keyword.
+	 */
+	@Check
+	public void checkProfileLlmProvidersSection(Profile profile) {
+		if (profile == null) {
 			return;
 		}
-		if (projects.size() > 1) {
-			for (int i = 1; i < projects.size(); i++) {
-				error(
-						"Only one project { ... } block is allowed.",
-						projects.get(i),
-						LibrettoProjectProfilePackage.Literals.PROJECT_BLOCK__ROOT_DIR,
-						TOO_MANY_PROJECT_SECTIONS);
+		EList<LlmProvidersBlock> blocks = profile.getLlmProviders();
+		if (blocks == null || blocks.isEmpty()) {
+			errorOnProfileKeyword(
+					profile,
+					"llmProviders { ... } is required exactly once.",
+					MISSING_LLM_PROVIDERS_SECTION);
+			return;
+		}
+		if (blocks.size() > 1) {
+			String message = "Only one llmProviders { ... } section is allowed.";
+			for (LlmProvidersBlock b : blocks) {
+				if (b != null) {
+					errorOnLlmProvidersKeyword(b, message, TOO_MANY_LLM_PROVIDERS_SECTIONS);
+				}
 			}
 		}
+	}
 
-		ProjectBlock project = projects.get(0);
-		EList<String> rootDirs = project.getRootDir();
-		if (rootDirs.isEmpty() || rootDirs.stream().noneMatch(LibrettoProjectProfileValidator::nonBlank)) {
-			error(
-					"project.rootDir is required at least once with a non-empty path.",
-					project,
-					LibrettoProjectProfilePackage.Literals.PROJECT_BLOCK__ROOT_DIR,
-					MISSING_ROOT_DIR);
-		} else {
-			for (int i = 0; i < rootDirs.size(); i++) {
-				String rd = rootDirs.get(i);
-				if (rd != null && rd.isBlank()) {
-					error(
-							"rootDir value must not be empty.",
-							project,
-							LibrettoProjectProfilePackage.Literals.PROJECT_BLOCK__ROOT_DIR,
-							i,
-							MISSING_ROOT_DIR);
+	/**
+	 * Among all {@code type local} providers in the profile, each non-blank {@code filePath} value must be unique
+	 * (comparison uses {@link String#trim()}). Duplicates: error on {@link LibrettoProjectProfilePackage.Literals#LOCAL_MODEL_PATH__PATH}
+	 * for every occurrence.
+	 */
+	@Check
+	public void checkLocalFilePathValueUniqueAcrossProfile(Profile profile) {
+		if (profile == null) {
+			return;
+		}
+		List<LocalModelPath> paths = localProviderFilePathsInProfile(profile);
+		if (paths.size() <= 1) {
+			return;
+		}
+		Map<String, List<LocalModelPath>> byTrimmedPath = new HashMap<>();
+		for (LocalModelPath lm : paths) {
+			if (lm == null) {
+				continue;
+			}
+			String raw = lm.getPath();
+			if (!nonBlank(raw)) {
+				continue;
+			}
+			String key = raw.trim();
+			byTrimmedPath.computeIfAbsent(key, k -> new ArrayList<>()).add(lm);
+		}
+		String message = "filePath value must be unique across all type local providers.";
+		for (List<LocalModelPath> group : byTrimmedPath.values()) {
+			if (group == null || group.size() <= 1) {
+				continue;
+			}
+			for (LocalModelPath lm : group) {
+				if (lm != null) {
+					errorOnFilePathValue(lm, message, LLM_PROVIDER_LOCAL_FILE_PATH_VALUE_DUPLICATE_ACROSS_PROVIDERS);
+				}
+			}
+		}
+	}
+
+	/** Non-null {@link LocalModelPath} entries from every {@code type local} provider (sole type, name local). */
+	private static List<LocalModelPath> localProviderFilePathsInProfile(Profile profile) {
+		List<LocalModelPath> out = new ArrayList<>();
+		if (profile == null) {
+			return out;
+		}
+		EList<LlmProvidersBlock> blocks = profile.getLlmProviders();
+		if (blocks == null) {
+			return out;
+		}
+		for (LlmProvidersBlock lb : blocks) {
+			if (lb == null) {
+				continue;
+			}
+			EList<LLMProvider> providers = lb.getProviders();
+			if (providers == null) {
+				continue;
+			}
+			for (LLMProvider p : providers) {
+				if (p == null || !soleProviderTypeNameIsLocal(p)) {
+					continue;
+				}
+				for (LocalModelPath lm : nonNullLocalModelPaths(p)) {
+					if (lm != null) {
+						out.add(lm);
+					}
+				}
+			}
+		}
+		return out;
+	}
+
+	/**
+	 * For each {@link #LLM_PROVIDER_SINGLE_MODEL_NO_FILE_PATH_TYPES managed or ollama} type, every non-blank {@code model}
+	 * value must be unique across providers of that type (comparison uses {@link String#trim()}). Duplicates: error on
+	 * {@link LibrettoProjectProfilePackage.Literals#MODEL__MODE} for each occurrence.
+	 */
+	@Check
+	public void checkManagedAndOllamaModelValueUniquePerTypeAcrossProfile(Profile profile) {
+		if (profile == null) {
+			return;
+		}
+		Map<String, Map<String, List<Model>>> byTypeThenTrimmedMode = new HashMap<>();
+		EList<LlmProvidersBlock> blocks = profile.getLlmProviders();
+		if (blocks == null) {
+			return;
+		}
+		for (LlmProvidersBlock lb : blocks) {
+			if (lb == null) {
+				continue;
+			}
+			EList<LLMProvider> providers = lb.getProviders();
+			if (providers == null) {
+				continue;
+			}
+			for (LLMProvider p : providers) {
+				if (p == null) {
+					continue;
+				}
+				String typeName = soleProviderTrimmedTypeName(p);
+				if (typeName == null || !LLM_PROVIDER_SINGLE_MODEL_NO_FILE_PATH_TYPES.contains(typeName)) {
+					continue;
+				}
+				for (Model m : nonNullModels(p)) {
+					if (m == null) {
+						continue;
+					}
+					String raw = m.getMode();
+					if (!nonBlank(raw)) {
+						continue;
+					}
+					String key = raw.trim();
+					byTypeThenTrimmedMode
+							.computeIfAbsent(typeName, k -> new HashMap<>())
+							.computeIfAbsent(key, k -> new ArrayList<>())
+							.add(m);
+				}
+			}
+		}
+		for (Map.Entry<String, Map<String, List<Model>>> typeEntry : byTypeThenTrimmedMode.entrySet()) {
+			String typeName = typeEntry.getKey();
+			String message = "model value must be unique across all type " + typeName + " providers.";
+			for (List<Model> group : typeEntry.getValue().values()) {
+				if (group == null || group.size() <= 1) {
+					continue;
+				}
+				for (Model m : group) {
+					if (m != null) {
+						errorOnModelModeValue(m, message, LLM_PROVIDER_MODEL_VALUE_DUPLICATE_FOR_TYPE);
+					}
+				}
+			}
+		}
+	}
+
+	/**
+	 * Each {@code llmProviders { ... }} block must list at least one {@code provider}. When empty, anchor on the
+	 * {@code llmProviders} keyword ({@link LibrettoProjectProfilePackage.Literals#LLM_PROVIDERS_KEYWORD__KEYWORD}).
+	 */
+	@Check
+	public void checkLlmProvidersNonEmpty(LlmProvidersBlock block) {
+		if (block == null) {
+			return;
+		}
+		EList<LLMProvider> providers = block.getProviders();
+		if (providers == null || providers.isEmpty()) {
+			errorOnLlmProvidersKeyword(
+					block,
+					"llmProviders { ... } must contain at least one provider.",
+					EMPTY_LLM_PROVIDERS_SECTION);
+		}
+	}
+
+	/**
+	 * Within {@code llmProviders { ... }}, every {@code provider} name must be distinct. Duplicates are anchored on
+	 * {@link LibrettoProjectProfilePackage.Literals#LLM_PROVIDER__NAME}.
+	 */
+	@Check
+	public void checkUniqueLlmProviderNames(LlmProvidersBlock block) {
+		if (block == null) {
+			return;
+		}
+		EList<LLMProvider> providers = block.getProviders();
+		if (providers == null || providers.size() <= 1) {
+			return;
+		}
+		List<LLMProvider> withName = new ArrayList<>();
+		for (LLMProvider p : providers) {
+			if (p != null && nonBlank(p.getName())) {
+				withName.add(p);
+			}
+		}
+		Map<String, List<LLMProvider>> byName = new HashMap<>();
+		for (LLMProvider p : withName) {
+			byName.computeIfAbsent(p.getName(), k -> new ArrayList<>()).add(p);
+		}
+		String message = "Duplicate provider name in llmProviders; each provider name must be unique.";
+		for (List<LLMProvider> group : byName.values()) {
+			if (group.size() <= 1) {
+				continue;
+			}
+			for (LLMProvider p : group) {
+				error(
+						message,
+						p,
+						LibrettoProjectProfilePackage.Literals.LLM_PROVIDER__NAME,
+						DUPLICATE_LLM_PROVIDER_NAME);
+			}
+		}
+	}
+
+	/**
+	 * Each {@code provider { ... }} must declare exactly one {@code type}. Missing {@code type} is anchored on the
+	 * {@code provider} keyword ({@link com.robenglander.libretto.spec.librettoProjectProfile.ProviderKeyword}); more than
+	 * one matches {@link #errorIfDuplicateInitialInstructions}: every {@code type} is in error, each anchored on its
+	 * {@code type} keyword ({@link LibrettoProjectProfilePackage.Literals#PROVIDER_TYPE_KEYWORD__KEYWORD}).
+	 */
+	@Check
+	public void checkLlmProviderTypeCount(LLMProvider p) {
+		if (p == null) {
+			return;
+		}
+		EList<ProviderType> types = p.getTypes();
+		List<ProviderType> nonNullTypes = new ArrayList<>();
+		if (types != null) {
+			for (ProviderType t : types) {
+				if (t != null) {
+					nonNullTypes.add(t);
+				}
+			}
+		}
+		if (nonNullTypes.isEmpty()) {
+			errorOnProviderKeyword(
+					p,
+					"provider { ... } must declare exactly one type.",
+					LLM_PROVIDER_MISSING_TYPE);
+			return;
+		}
+		errorIfDuplicateProviderTypes(nonNullTypes);
+	}
+
+	/** Same pattern as {@link #errorIfDuplicateInitialInstructions}: if count &gt; 1, error on every occurrence’s keyword. */
+	private void errorIfDuplicateProviderTypes(List<ProviderType> nonNullTypes) {
+		if (nonNullTypes == null || nonNullTypes.size() <= 1) {
+			return;
+		}
+		String message = "Only one type is allowed per provider { ... }.";
+		for (ProviderType t : nonNullTypes) {
+			if (t != null) {
+				errorOnProviderTypeKeyword(t, message, LLM_PROVIDER_TOO_MANY_TYPES);
+			}
+		}
+	}
+
+	/**
+	 * When {@code type} is {@code local} (exactly one type, name {@code local}), {@code model} must not appear. Each
+	 * {@code model} is in error on its {@code model} keyword ({@link LibrettoProjectProfilePackage.Literals#MODEL_KEYWORD__KEYWORD}).
+	 */
+	@Check
+	public void checkLocalProviderMustNotDeclareModel(LLMProvider p) {
+		if (p == null || !soleProviderTypeNameIsLocal(p)) {
+			return;
+		}
+		EList<Model> models = p.getModels();
+		if (models == null || models.isEmpty()) {
+			return;
+		}
+		String message = "model must not be specified when type is local; use filePath only.";
+		for (Model m : models) {
+			if (m != null) {
+				errorOnModelKeyword(m, message, LLM_PROVIDER_LOCAL_MUST_NOT_MODEL);
+			}
+		}
+	}
+
+	/**
+	 * When {@code type} is {@code local} (exactly one type, name {@code local}), {@code endpoint} must not appear. Each
+	 * {@code endpoint} is in error on its {@code endpoint} keyword ({@link LibrettoProjectProfilePackage.Literals#ENDPOINT_KEYWORD__KEYWORD}).
+	 */
+	@Check
+	public void checkLocalProviderMustNotDeclareEndpoint(LLMProvider p) {
+		if (p == null || !soleProviderTypeNameIsLocal(p)) {
+			return;
+		}
+		EList<Endpoint> endpoints = p.getEndpoints();
+		if (endpoints == null || endpoints.isEmpty()) {
+			return;
+		}
+		String message = "endpoint must not be specified when type is local.";
+		for (Endpoint e : endpoints) {
+			if (e != null) {
+				errorOnEndpointKeyword(e, message, LLM_PROVIDER_LOCAL_MUST_NOT_ENDPOINT);
+			}
+		}
+	}
+
+	/**
+	 * When {@code type} is {@code local} (exactly one type), exactly one {@code filePath} entry is required. Missing
+	 * {@code filePath}: anchor on {@code provider} keyword. More than one: same pattern as duplicate {@code type} lines —
+	 * every {@code filePath} is in error on its keyword ({@link LibrettoProjectProfilePackage.Literals#FILE_PATH_KEYWORD__KEYWORD}).
+	 */
+	@Check
+	public void checkLocalProviderFilePathCount(LLMProvider p) {
+		if (p == null || !soleProviderTypeNameIsLocal(p)) {
+			return;
+		}
+		List<LocalModelPath> paths = nonNullLocalModelPaths(p);
+		if (paths.isEmpty()) {
+			errorOnProviderKeyword(
+					p,
+					"type local requires exactly one filePath entry in provider { ... }.",
+					LLM_PROVIDER_LOCAL_MISSING_FILE_PATH);
+			return;
+		}
+		errorIfDuplicateFilePathsWhenLocal(paths);
+	}
+
+	private static List<LocalModelPath> nonNullLocalModelPaths(LLMProvider p) {
+		List<LocalModelPath> out = new ArrayList<>();
+		EList<LocalModelPath> list = p.getLocalModelPaths();
+		if (list != null) {
+			for (LocalModelPath lm : list) {
+				if (lm != null) {
+					out.add(lm);
+				}
+			}
+		}
+		return out;
+	}
+
+	private void errorIfDuplicateFilePathsWhenLocal(List<LocalModelPath> paths) {
+		if (paths == null || paths.size() <= 1) {
+			return;
+		}
+		String message = "Only one filePath is allowed when type is local.";
+		for (LocalModelPath lm : paths) {
+			if (lm != null) {
+				errorOnFilePathKeyword(lm, message, LLM_PROVIDER_LOCAL_TOO_MANY_FILE_PATHS);
+			}
+		}
+	}
+
+	private static boolean soleProviderTypeNameIsLocal(LLMProvider p) {
+		return soleProviderTypeNameEquals(p, "local");
+	}
+
+	/** Trimmed sole {@code type} name, or {@code null} if not exactly one non-null type. */
+	private static String soleProviderTrimmedTypeName(LLMProvider p) {
+		if (p == null) {
+			return null;
+		}
+		EList<ProviderType> types = p.getTypes();
+		if (types == null) {
+			return null;
+		}
+		ProviderType sole = null;
+		int n = 0;
+		for (ProviderType t : types) {
+			if (t != null) {
+				n++;
+				sole = t;
+			}
+		}
+		if (n != 1 || sole == null) {
+			return null;
+		}
+		String name = sole.getName();
+		if (name == null) {
+			return null;
+		}
+		String trimmed = name.trim();
+		return trimmed.isEmpty() ? null : trimmed;
+	}
+
+	/**
+	 * Sole type name when it is one of {@link #LLM_PROVIDER_MANAGED_MODEL_TYPES} (cloud: no {@code endpoint});
+	 * otherwise {@code null}.
+	 */
+	private static String soleManagedModelTypeNameOrNull(LLMProvider p) {
+		String t = soleProviderTrimmedTypeName(p);
+		if (t != null && LLM_PROVIDER_MANAGED_MODEL_TYPES.contains(t)) {
+			return t;
+		}
+		return null;
+	}
+
+	/**
+	 * Sole type name when it is one of {@link #LLM_PROVIDER_SINGLE_MODEL_NO_FILE_PATH_TYPES}; otherwise {@code null}.
+	 */
+	private static String soleSingleModelNoFilePathTypeNameOrNull(LLMProvider p) {
+		String t = soleProviderTrimmedTypeName(p);
+		if (t != null && LLM_PROVIDER_SINGLE_MODEL_NO_FILE_PATH_TYPES.contains(t)) {
+			return t;
+		}
+		return null;
+	}
+
+	/**
+	 * True when this provider has exactly one non-null {@link ProviderType} and its trimmed name equals {@code expected}.
+	 */
+	private static boolean soleProviderTypeNameEquals(LLMProvider p, String expected) {
+		if (expected == null) {
+			return false;
+		}
+		String t = soleProviderTrimmedTypeName(p);
+		return t != null && expected.equals(t);
+	}
+
+	/**
+	 * When {@code type} is {@link #LLM_PROVIDER_SINGLE_MODEL_NO_FILE_PATH_TYPES managed or ollama}, {@code filePath} must
+	 * not appear. Each {@code filePath} is in error on its keyword.
+	 */
+	@Check
+	public void checkManagedModelProviderMustNotDeclareFilePath(LLMProvider p) {
+		String typeName = soleSingleModelNoFilePathTypeNameOrNull(p);
+		if (typeName == null) {
+			return;
+		}
+		List<LocalModelPath> paths = nonNullLocalModelPaths(p);
+		if (paths.isEmpty()) {
+			return;
+		}
+		String message = "filePath must not be specified when type is " + typeName + ".";
+		for (LocalModelPath lm : paths) {
+			if (lm != null) {
+				errorOnFilePathKeyword(lm, message, LLM_PROVIDER_MANAGED_MUST_NOT_FILE_PATH);
+			}
+		}
+	}
+
+	/**
+	 * When {@code type} is {@link #LLM_PROVIDER_MANAGED_MODEL_TYPES cloud managed} only, {@code endpoint} must not
+	 * appear ({@code ollama} requires an endpoint instead). Each line is in error on its endpoint keyword.
+	 */
+	@Check
+	public void checkManagedModelProviderMustNotDeclareEndpoint(LLMProvider p) {
+		String typeName = soleManagedModelTypeNameOrNull(p);
+		if (typeName == null) {
+			return;
+		}
+		EList<Endpoint> endpoints = p.getEndpoints();
+		if (endpoints == null || endpoints.isEmpty()) {
+			return;
+		}
+		String message = "endpoint must not be specified when type is " + typeName + ".";
+		for (Endpoint e : endpoints) {
+			if (e != null) {
+				errorOnEndpointKeyword(e, message, LLM_PROVIDER_MANAGED_MUST_NOT_ENDPOINT);
+			}
+		}
+	}
+
+	/**
+	 * When {@code type} is managed or {@code ollama}, exactly one {@code model} is required. Missing: anchor on
+	 * {@code provider}. More than one: every {@code model} in error on its keyword.
+	 */
+	@Check
+	public void checkManagedModelProviderModelCount(LLMProvider p) {
+		String typeName = soleSingleModelNoFilePathTypeNameOrNull(p);
+		if (typeName == null) {
+			return;
+		}
+		List<Model> models = nonNullModels(p);
+		if (models.isEmpty()) {
+			errorOnProviderKeyword(
+					p,
+					"type " + typeName + " requires exactly one model entry in provider { ... }.",
+					LLM_PROVIDER_MANAGED_MISSING_MODEL);
+			return;
+		}
+		if (models.size() > 1) {
+			String message = "Only one model is allowed when type is " + typeName + ".";
+			for (Model m : models) {
+				if (m != null) {
+					errorOnModelKeyword(m, message, LLM_PROVIDER_MANAGED_TOO_MANY_MODELS);
+				}
+			}
+		}
+	}
+
+	/**
+	 * When {@code type} is {@code ollama}, exactly one {@code endpoint} is required. Missing: anchor on {@code provider}.
+	 * More than one: every {@code endpoint} in error on its keyword.
+	 */
+	@Check
+	public void checkOllamaProviderEndpointCount(LLMProvider p) {
+		if (p == null || !soleProviderTypeNameEquals(p, "ollama")) {
+			return;
+		}
+		List<Endpoint> endpoints = nonNullEndpoints(p);
+		if (endpoints.isEmpty()) {
+			errorOnProviderKeyword(
+					p,
+					"type ollama requires exactly one endpoint entry in provider { ... }.",
+					LLM_PROVIDER_OLLAMA_MISSING_ENDPOINT);
+			return;
+		}
+		if (endpoints.size() > 1) {
+			String message = "Only one endpoint is allowed when type is ollama.";
+			for (Endpoint e : endpoints) {
+				if (e != null) {
+					errorOnEndpointKeyword(e, message, LLM_PROVIDER_OLLAMA_TOO_MANY_ENDPOINTS);
+				}
+			}
+		}
+	}
+
+	private static List<Endpoint> nonNullEndpoints(LLMProvider p) {
+		List<Endpoint> out = new ArrayList<>();
+		EList<Endpoint> list = p.getEndpoints();
+		if (list != null) {
+			for (Endpoint e : list) {
+				if (e != null) {
+					out.add(e);
+				}
+			}
+		}
+		return out;
+	}
+
+	private static List<Model> nonNullModels(LLMProvider p) {
+		List<Model> out = new ArrayList<>();
+		EList<Model> list = p.getModels();
+		if (list != null) {
+			for (Model m : list) {
+				if (m != null) {
+					out.add(m);
+				}
+			}
+		}
+		return out;
+	}
+
+	/**
+	 * The name after {@code type} must be exactly one of {@link #ALLOWED_LLM_PROVIDER_TYPE_NAMES}. Invalid names are
+	 * anchored on {@link LibrettoProjectProfilePackage.Literals#PROVIDER_TYPE__NAME}.
+	 */
+	@Check
+	public void checkLlmProviderTypeName(ProviderType t) {
+		if (t == null) {
+			return;
+		}
+		String name = t.getName();
+		if (name == null || name.isBlank()) {
+			return;
+		}
+		String n = name.trim();
+		if (ALLOWED_LLM_PROVIDER_TYPE_NAMES.contains(n)) {
+			return;
+		}
+		error(
+				"Provider type must be one of: " + String.join(", ", ALLOWED_LLM_PROVIDER_TYPE_NAMES) + ".",
+				t,
+				LibrettoProjectProfilePackage.Literals.PROVIDER_TYPE__NAME,
+				LLM_PROVIDER_TYPE_INVALID);
+	}
+
+	/**
+	 * {@code maxRetries} must be between 0 and 5 (inclusive). Anchor on the {@code maxRetries} keyword.
+	 */
+	@Check
+	public void checkMaxRetriesRange(MaxRetries mr) {
+		if (mr == null) {
+			return;
+		}
+		int v = mr.getMaxRetries();
+		if (v < MIN_RETRY_BOUND || v > MAX_RETRY_BOUND) {
+			errorOnMaxRetriesKeyword(
+					mr,
+					"maxRetries must be between 0 and 5.",
+					GEN_MAX_RETRIES_OUT_OF_RANGE);
+		}
+	}
+
+	/**
+	 * {@code atRetry} must be between 0 and 5 (inclusive). Anchor on the {@code atRetry} keyword.
+	 */
+	@Check
+	public void checkAtRetryRange(AtRetry ar) {
+		if (ar == null) {
+			return;
+		}
+		int v = ar.getValue();
+		if (v < MIN_RETRY_BOUND || v > MAX_RETRY_BOUND) {
+			errorOnAtRetryKeyword(
+					ar,
+					"atRetry must be between 0 and 5.",
+					AT_RETRY_OUT_OF_RANGE);
+		}
+	}
+
+	/**
+	 * When {@code atRetry} is greater than this {@code gen} block’s {@code maxRetries} (first declaration), warn on
+	 * {@code atRetry}.
+	 */
+	@Check
+	public void checkAtRetryVsMaxRetries(AtRetry ar) {
+		if (ar == null) {
+			return;
+		}
+		GenBlock gen = enclosingGenBlock(ar);
+		Integer maxVal = firstMaxRetriesValue(gen);
+		if (maxVal == null) {
+			return;
+		}
+		if (ar.getValue() > maxVal.intValue()) {
+			warningOnAtRetryKeyword(
+					ar,
+					"atRetry is greater than maxRetries for this gen block.",
+					AT_RETRY_EXCEEDS_MAX_RETRIES);
+		}
+	}
+
+	/**
+	 * Each {@code modelUsage { ... }} block must contain exactly one {@code primary} and one {@code escalation { ... }}.
+	 * {@code secondary} is required only when {@code escalation.enabled} is {@code true}. Duplicates are anchored on each
+	 * extra {@code primary}, {@code secondary}, or {@code escalation} keyword.
+	 * <p>
+	 * When there is exactly one primary and one secondary, each name must match a {@code provider} in
+	 * {@code llmProviders { ... }}, and primary and secondary must not name the same provider (errors on both keywords).
+	 */
+	@Check
+	public void checkModelUsageShape(GenUsageBlock block) {
+		if (block == null) {
+			return;
+		}
+		EList<PrimaryProvider> primaries = block.getPrimaryProviders();
+		int np = primaries == null ? 0 : primaries.size();
+		if (np == 0) {
+			errorOnModelUsageKeyword(
+					block,
+					"modelUsage.primary is required.",
+					MODEL_USAGE_MISSING_PRIMARY);
+		} else if (np > 1) {
+			String msg = "Only one primary is allowed in modelUsage { ... }.";
+			for (PrimaryProvider p : primaries) {
+				if (p != null) {
+					errorOnPrimaryProviderKeyword(p, msg, MODEL_USAGE_TOO_MANY_PRIMARIES);
 				}
 			}
 		}
 
+		EList<GenEscalationBlock> escalations = block.getEscalations();
+		int ne = escalations == null ? 0 : escalations.size();
+		if (ne == 0) {
+			errorOnModelUsageKeyword(
+					block,
+					"modelUsage.escalation { ... } is required.",
+					MODEL_USAGE_MISSING_ESCALATION);
+		} else if (ne > 1) {
+			String msg = "Only one escalation { ... } block is allowed in modelUsage { ... }.";
+			for (GenEscalationBlock e : escalations) {
+				if (e != null) {
+					errorOnEscalationKeyword(e, msg, MODEL_USAGE_TOO_MANY_ESCALATIONS);
+				}
+			}
+		}
+
+		EList<SecondaryProvider> secondaries = block.getSecondaryProviders();
+		int ns = secondaries == null ? 0 : secondaries.size();
+		GenEscalationBlock soleEscalation = ne == 1 && escalations != null ? escalations.get(0) : null;
+		boolean secondaryRequired = soleEscalation != null && modelUsageEscalationEnabled(soleEscalation);
+		if (secondaryRequired && ns == 0) {
+			errorOnModelUsageKeyword(
+					block,
+					"modelUsage.secondary is required when escalation.enabled is true.",
+					MODEL_USAGE_MISSING_SECONDARY);
+		}
+		if (ns > 1) {
+			String msg = "Only one secondary is allowed in modelUsage { ... }.";
+			for (SecondaryProvider s : secondaries) {
+				if (s != null) {
+					errorOnSecondaryProviderKeyword(s, msg, MODEL_USAGE_TOO_MANY_SECONDARIES);
+				}
+			}
+		}
+
+		checkModelUsageProviderNamesMatchLlmProviders(block);
+		checkModelUsagePrimarySecondaryDistinctNames(block);
+	}
+
+	/**
+	 * True if any {@code enabled true} appears in the escalation block. The grammar maps both {@code true} and
+	 * {@code false} literals to {@link TrueKeyword} with {@link TrueKeyword#getKeyword()} carrying the actual token.
+	 */
+	private static boolean modelUsageEscalationEnabled(GenEscalationBlock e) {
+		if (e == null) {
+			return false;
+		}
+		EList<Enabled> list = e.getEnableds();
+		if (list == null) {
+			return false;
+		}
+		for (Enabled en : list) {
+			if (en == null) {
+				continue;
+			}
+			if (en.getValue() instanceof TrueKeyword tk && literalTrueSpelledTrue(tk)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	private static boolean literalTrueSpelledTrue(TrueKeyword tk) {
+		if (tk == null) {
+			return false;
+		}
+		String kw = tk.getKeyword();
+		return kw != null && "true".equalsIgnoreCase(kw.trim());
+	}
+
+	/**
+	 * When there is exactly one {@code primary} and one {@code secondary} with non-blank names, they must differ. Errors on
+	 * {@link LibrettoProjectProfilePackage.Literals#PRIMARY_PROVIDER_KEYWORD__KEYWORD} and
+	 * {@link LibrettoProjectProfilePackage.Literals#SECONDARY_PROVIDER_KEYWORD__KEYWORD}.
+	 */
+	private void checkModelUsagePrimarySecondaryDistinctNames(GenUsageBlock block) {
+		EList<PrimaryProvider> primaries = block.getPrimaryProviders();
+		EList<SecondaryProvider> secondaries = block.getSecondaryProviders();
+		if (primaries == null || primaries.size() != 1 || secondaries == null || secondaries.size() != 1) {
+			return;
+		}
+		PrimaryProvider p = primaries.get(0);
+		SecondaryProvider s = secondaries.get(0);
+		if (p == null || s == null) {
+			return;
+		}
+		String pn = p.getName();
+		String sn = s.getName();
+		if (!nonBlank(pn) || !nonBlank(sn)) {
+			return;
+		}
+		if (!pn.trim().equals(sn.trim())) {
+			return;
+		}
+		String msg = "primary and secondary must not name the same provider.";
+		errorOnPrimaryProviderKeyword(p, msg, MODEL_USAGE_PRIMARY_SECONDARY_SAME_NAME);
+		errorOnSecondaryProviderKeyword(s, msg, MODEL_USAGE_PRIMARY_SECONDARY_SAME_NAME);
+	}
+
+	/**
+	 * When {@code modelUsage} has exactly one {@code primary} and one {@code secondary}, each name must match a
+	 * {@code provider} declared in {@code llmProviders { ... }}. Unknown names are anchored on
+	 * {@link LibrettoProjectProfilePackage.Literals#PRIMARY_PROVIDER__NAME} or
+	 * {@link LibrettoProjectProfilePackage.Literals#SECONDARY_PROVIDER__NAME}.
+	 * <p>
+	 * Invoked from {@link #checkModelUsageShape(GenUsageBlock)} so it always runs with shape validation.
+	 */
+	private void checkModelUsageProviderNamesMatchLlmProviders(GenUsageBlock block) {
+		Profile profile = LlmProviderReferenceSupport.enclosingProfile(block);
+		Set<String> declared = LlmProviderReferenceSupport.declaredProviderNames(profile);
+		String declaredCsv = LlmProviderReferenceSupport.declaredProviderNamesCsv(profile);
+
+		EList<PrimaryProvider> primaries = block.getPrimaryProviders();
+		if (primaries != null && primaries.size() == 1) {
+			PrimaryProvider p = primaries.get(0);
+			if (p != null && nonBlank(p.getName()) && !declared.contains(p.getName())) {
+				error(
+						"primary must name a provider declared in llmProviders { ... }.",
+						p,
+						LibrettoProjectProfilePackage.Literals.PRIMARY_PROVIDER__NAME,
+						MODEL_USAGE_PRIMARY_UNKNOWN_PROVIDER,
+						declaredCsv);
+			}
+		}
+
+		EList<SecondaryProvider> secondaries = block.getSecondaryProviders();
+		if (secondaries != null && secondaries.size() == 1) {
+			SecondaryProvider s = secondaries.get(0);
+			if (s != null && nonBlank(s.getName()) && !declared.contains(s.getName())) {
+				error(
+						"secondary must name a provider declared in llmProviders { ... }.",
+						s,
+						LibrettoProjectProfilePackage.Literals.SECONDARY_PROVIDER__NAME,
+						MODEL_USAGE_SECONDARY_UNKNOWN_PROVIDER,
+						declaredCsv);
+			}
+		}
+	}
+
+	/**
+	 * Each {@code rule { ... }} block must contain exactly one non-blank {@code pattern}, {@code code}, and
+	 * {@code correction}. Missing entries are anchored on the {@code rule} keyword; duplicates are anchored on each extra
+	 * {@code pattern}, {@code code}, or {@code correction} keyword.
+	 */
+	@Check
+	public void checkGenPatternRemediationRuleShape(GenPatternRemediationRule rule) {
+		if (rule == null) {
+			return;
+		}
+		checkRulePatterns(rule);
+		checkRuleCodes(rule);
+		checkRuleCorrections(rule);
+	}
+
+	private void checkRulePatterns(GenPatternRemediationRule rule) {
+		EList<Pattern> list = rule.getPatterns();
+		int n = list == null ? 0 : list.size();
+		if (n > 1) {
+			String msg = "Only one pattern is allowed in a rule { ... } block.";
+			for (Pattern p : list) {
+				if (p != null) {
+					errorOnPatternKeyword(p, msg, RULE_TOO_MANY_PATTERNS);
+				}
+			}
+			return;
+		}
+		if (n == 0 || list.get(0) == null || !nonBlank(list.get(0).getPattern())) {
+			errorOnGenPatternRuleKeyword(rule, "rule.pattern is required.", RULE_MISSING_PATTERN);
+		}
+	}
+
+	private void checkRuleCodes(GenPatternRemediationRule rule) {
+		EList<Code> list = rule.getCodes();
+		int n = list == null ? 0 : list.size();
+		if (n > 1) {
+			String msg = "Only one code is allowed in a rule { ... } block.";
+			for (Code c : list) {
+				if (c != null) {
+					errorOnRemediationCodeKeyword(c, msg, RULE_TOO_MANY_CODES);
+				}
+			}
+			return;
+		}
+		if (n == 0 || list.get(0) == null || !nonBlank(list.get(0).getCode())) {
+			errorOnGenPatternRuleKeyword(rule, "rule.code is required.", RULE_MISSING_CODE);
+		}
+	}
+
+	private void checkRuleCorrections(GenPatternRemediationRule rule) {
+		EList<Correction> list = rule.getCorrections();
+		int n = list == null ? 0 : list.size();
+		if (n > 1) {
+			String msg = "Only one correction is allowed in a rule { ... } block.";
+			for (Correction c : list) {
+				if (c != null) {
+					errorOnRemediationCorrectionKeyword(c, msg, RULE_TOO_MANY_CORRECTIONS);
+				}
+			}
+			return;
+		}
+		if (n == 0 || list.get(0) == null || !nonBlank(list.get(0).getCorrection())) {
+			errorOnGenPatternRuleKeyword(rule, "rule.correction is required.", RULE_MISSING_CORRECTION);
+		}
+	}
+
+	private void errorOnGenPatternRuleKeyword(GenPatternRemediationRule rule, String message, String issueCode) {
+		if (rule.getKeyword() != null) {
+			error(
+					message,
+					rule.getKeyword(),
+					LibrettoProjectProfilePackage.Literals.RULE_KEYWORD__KEYWORD,
+					issueCode);
+		} else {
+			error(
+					message,
+					rule,
+					LibrettoProjectProfilePackage.Literals.GEN_PATTERN_REMEDIATION_RULE__KEYWORD,
+					issueCode);
+		}
+	}
+
+	private void errorOnPatternKeyword(Pattern p, String message, String issueCode) {
+		if (p.getKeyword() != null) {
+			error(
+					message,
+					p.getKeyword(),
+					LibrettoProjectProfilePackage.Literals.PATTERN_KEYWORD__KEYWORD,
+					issueCode);
+		} else {
+			error(
+					message,
+					p,
+					LibrettoProjectProfilePackage.Literals.PATTERN__KEYWORD,
+					issueCode);
+		}
+	}
+
+	private void errorOnRemediationCodeKeyword(Code c, String message, String issueCode) {
+		if (c.getKeyword() != null) {
+			error(
+					message,
+					c.getKeyword(),
+					LibrettoProjectProfilePackage.Literals.CODE_KEYWORD__KEYWORD,
+					issueCode);
+		} else {
+			error(
+					message,
+					c,
+					LibrettoProjectProfilePackage.Literals.CODE__KEYWORD,
+					issueCode);
+		}
+	}
+
+	private void errorOnRemediationCorrectionKeyword(Correction c, String message, String issueCode) {
+		if (c.getKeyword() != null) {
+			error(
+					message,
+					c.getKeyword(),
+					LibrettoProjectProfilePackage.Literals.CORRECTION_KEYWORD__KEYWORD,
+					issueCode);
+		} else {
+			error(
+					message,
+					c,
+					LibrettoProjectProfilePackage.Literals.CORRECTION__KEYWORD,
+					issueCode);
+		}
+	}
+
+	/**
+	 * Each {@code default { ... }} block must contain exactly one non-blank {@code code} and {@code correction}. Missing
+	 * entries are anchored on the {@code default} keyword; duplicates are anchored on each extra {@code code} or
+	 * {@code correction} keyword.
+	 */
+	@Check
+	public void checkGenDefaultRemediationRuleShape(GenDefaultRemediationRule def) {
+		if (def == null) {
+			return;
+		}
+		checkDefaultCodes(def);
+		checkDefaultCorrections(def);
+	}
+
+	private void checkDefaultCodes(GenDefaultRemediationRule def) {
+		EList<Code> list = def.getCodes();
+		int n = list == null ? 0 : list.size();
+		if (n > 1) {
+			String msg = "Only one code is allowed in a default { ... } section.";
+			for (Code c : list) {
+				if (c != null) {
+					errorOnRemediationCodeKeyword(c, msg, DEFAULT_TOO_MANY_CODES);
+				}
+			}
+			return;
+		}
+		if (n == 0 || list.get(0) == null || !nonBlank(list.get(0).getCode())) {
+			errorOnGenDefaultRuleKeyword(def, "default.code is required.", DEFAULT_MISSING_CODE);
+		}
+	}
+
+	private void checkDefaultCorrections(GenDefaultRemediationRule def) {
+		EList<Correction> list = def.getCorrections();
+		int n = list == null ? 0 : list.size();
+		if (n > 1) {
+			String msg = "Only one correction is allowed in a default { ... } section.";
+			for (Correction c : list) {
+				if (c != null) {
+					errorOnRemediationCorrectionKeyword(c, msg, DEFAULT_TOO_MANY_CORRECTIONS);
+				}
+			}
+			return;
+		}
+		if (n == 0 || list.get(0) == null || !nonBlank(list.get(0).getCorrection())) {
+			errorOnGenDefaultRuleKeyword(def, "default.correction is required.", DEFAULT_MISSING_CORRECTION);
+		}
+	}
+
+	private void errorOnGenDefaultRuleKeyword(GenDefaultRemediationRule def, String message, String issueCode) {
+		if (def.getKeyword() != null) {
+			error(
+					message,
+					def.getKeyword(),
+					LibrettoProjectProfilePackage.Literals.DEFAULT_KEYWORD__KEYWORD,
+					issueCode);
+		} else {
+			error(
+					message,
+					def,
+					LibrettoProjectProfilePackage.Literals.GEN_DEFAULT_REMEDIATION_RULE__KEYWORD,
+					issueCode);
+		}
+	}
+
+	/**
+	 * Each {@code module} must declare {@code dir}, {@code specDir}, {@code testDir}, {@code mainDir}, and
+	 * {@code basePackage} (at least one non-blank value each). Anchor on the {@code module} keyword via
+	 * {@link LibrettoProjectProfilePackage.Literals#PROJECT_MODULE__KEYWORD}.
+	 */
+	@Check
+	public void checkProjectModuleDeclarations(ProjectModule m) {
+		if (m == null) {
+			return;
+		}
+		List<String> missing = new ArrayList<>();
+		if (!anyNonBlankDir(m.getDirs(), Directory::getDir)) {
+			missing.add("dir");
+		}
+		if (!anyNonBlankDir(m.getSpecDirs(), SpecDirectory::getDir)) {
+			missing.add("specDir");
+		}
+		if (!anyNonBlankDir(m.getTestDirs(), TestDirectory::getDir)) {
+			missing.add("testDir");
+		}
+		if (!anyNonBlankDir(m.getMainDirs(), MainDirectory::getDir)) {
+			missing.add("mainDir");
+		}
+		if (!anyNonBlankDir(m.getBasePackages(), BasePackage::getDir)) {
+			missing.add("basePackage");
+		}
+		if (missing.isEmpty()) {
+			return;
+		}
+		errorOnModuleKeyword(
+				m,
+				"Module is missing required declaration(s): " + String.join(", ", missing) + ".",
+				MODULE_MISSING_DECLARATIONS);
+	}
+
+	/**
+	 * At most one {@code dir}, {@code specDir}, {@code testDir}, {@code mainDir}, and {@code basePackage} per
+	 * {@link ProjectModule}. When duplicated, <em>every</em> occurrence is in error; anchor on that line’s keyword via
+	 * the parent object’s {@code keyword} containment reference (e.g. {@link LibrettoProjectProfilePackage.Literals#DIRECTORY__KEYWORD}).
+	 */
+	@Check
+	public void checkProjectModuleDuplicatePathDeclarations(ProjectModule m) {
+		if (m == null) {
+			return;
+		}
+		errorIfDuplicateDirectories(m.getDirs(), "Only one dir declaration is allowed per module.");
+		errorIfDuplicateSpecDirectories(m.getSpecDirs(), "Only one specDir declaration is allowed per module.");
+		errorIfDuplicateTestDirectories(m.getTestDirs(), "Only one testDir declaration is allowed per module.");
+		errorIfDuplicateMainDirectories(m.getMainDirs(), "Only one mainDir declaration is allowed per module.");
+		errorIfDuplicateBasePackages(m.getBasePackages(), "Only one basePackage declaration is allowed per module.");
+	}
+
+	/**
+	 * A {@code rules { ... }} block should contain at least one {@code rule { ... }} (pattern rule). If it has none,
+	 * report a warning anchored on the {@code rules} keyword ({@link LibrettoProjectProfilePackage.Literals#GEN_REMEDIATION_RULES__RULES_KEYWORD}).
+	 */
+	@Check
+	public void checkGenRemediationRulesHasPatternRuleBlocks(GenRemediationRules rules) {
+		if (rules == null) {
+			return;
+		}
+		EList<GenPatternRemediationRule> patternRules = rules.getPatternRules();
+		if (patternRules != null && !patternRules.isEmpty()) {
+			return;
+		}
+		String message = "rules { ... } contains no rule { ... } blocks.";
+		warning(
+				message,
+				rules,
+				LibrettoProjectProfilePackage.Literals.GEN_REMEDIATION_RULES__RULES_KEYWORD,
+				RULES_WITHOUT_PATTERN_RULES);
+	}
+
+	/**
+	 * Each {@code rules { ... }} block must contain exactly one {@code default { ... }}. Missing {@code default} is an
+	 * error on the {@code rules} keyword; more than one is an error on each {@code default} keyword.
+	 */
+	@Check
+	public void checkGenRemediationRulesDefaultSection(GenRemediationRules rules) {
+		if (rules == null) {
+			return;
+		}
+		EList<GenDefaultRemediationRule> defaults = rules.getDefaultRemediations();
+		if (defaults == null || defaults.isEmpty()) {
+			error(
+					"rules { ... } must contain a default { ... } section.",
+					rules,
+					LibrettoProjectProfilePackage.Literals.GEN_REMEDIATION_RULES__RULES_KEYWORD,
+					RULES_MISSING_DEFAULT_SECTION);
+			return;
+		}
+		if (defaults.size() > 1) {
+			String message = "Only one default { ... } section is allowed in rules { ... }.";
+			for (GenDefaultRemediationRule dr : defaults) {
+				if (dr != null) {
+					error(
+							message,
+							dr,
+							LibrettoProjectProfilePackage.Literals.GEN_DEFAULT_REMEDIATION_RULE__KEYWORD,
+							RULES_TOO_MANY_DEFAULT_SECTIONS);
+				}
+			}
+		}
+	}
+
+	private void errorIfDuplicateDirectories(EList<Directory> list, String message) {
+		if (list == null || list.size() <= 1) {
+			return;
+		}
+		for (Directory d : list) {
+			if (d != null) {
+				error(
+						message,
+						d,
+						LibrettoProjectProfilePackage.Literals.DIRECTORY__KEYWORD,
+						MODULE_DUPLICATE_PATH_DECLARATION);
+			}
+		}
+	}
+
+	private void errorIfDuplicateSpecDirectories(EList<SpecDirectory> list, String message) {
+		if (list == null || list.size() <= 1) {
+			return;
+		}
+		for (SpecDirectory d : list) {
+			if (d != null) {
+				error(
+						message,
+						d,
+						LibrettoProjectProfilePackage.Literals.SPEC_DIRECTORY__KEYWORD,
+						MODULE_DUPLICATE_PATH_DECLARATION);
+			}
+		}
+	}
+
+	private void errorIfDuplicateTestDirectories(EList<TestDirectory> list, String message) {
+		if (list == null || list.size() <= 1) {
+			return;
+		}
+		for (TestDirectory d : list) {
+			if (d != null) {
+				error(
+						message,
+						d,
+						LibrettoProjectProfilePackage.Literals.TEST_DIRECTORY__KEYWORD,
+						MODULE_DUPLICATE_PATH_DECLARATION);
+			}
+		}
+	}
+
+	private void errorIfDuplicateMainDirectories(EList<MainDirectory> list, String message) {
+		if (list == null || list.size() <= 1) {
+			return;
+		}
+		for (MainDirectory d : list) {
+			if (d != null) {
+				error(
+						message,
+						d,
+						LibrettoProjectProfilePackage.Literals.MAIN_DIRECTORY__KEYWORD,
+						MODULE_DUPLICATE_PATH_DECLARATION);
+			}
+		}
+	}
+
+	private void errorIfDuplicateBasePackages(EList<BasePackage> list, String message) {
+		if (list == null || list.size() <= 1) {
+			return;
+		}
+		for (BasePackage p : list) {
+			if (p != null) {
+				error(
+						message,
+						p,
+						LibrettoProjectProfilePackage.Literals.BASE_PACKAGE__KEYWORD,
+						MODULE_DUPLICATE_PATH_DECLARATION);
+			}
+		}
+	}
+
+	@Check
+	public void checkRequiredProjectStructure(Profile profile) {
+		EList<ProjectBlock> projects = profile.getProjects();
+		if (projects.isEmpty()) {
+			errorOnProfileKeyword(
+					profile,
+					"project { ... } is required exactly once.",
+					MISSING_PROJECT_SECTION);
+			return;
+		}
+		if (projects.size() > 1) {
+			String tooManyProjects = "Only one project { ... } block is allowed.";
+			for (ProjectBlock pb : projects) {
+				if (pb != null) {
+					errorOnProjectKeyword(pb, tooManyProjects, TOO_MANY_PROJECT_SECTIONS);
+				}
+			}
+		}
+
+		for (ProjectBlock project : projects) {
+			if (project != null) {
+				checkRootDirsForProject(project);
+				checkModulesForProject(project);
+				checkGenForProject(project);
+			}
+		}
+	}
+
+	/** One {@code rootDir} with non-empty path per {@link ProjectBlock}. */
+	private void checkRootDirsForProject(ProjectBlock project) {
+		EList<RootDirectory> rootDirs = project.getRootDirs();
+		if (rootDirs.isEmpty()) {
+			errorOnProjectKeyword(
+					project,
+					"project.rootDir is required exactly once with a non-empty path.",
+					MISSING_ROOT_DIR);
+		} else {
+			if (rootDirs.size() > 1) {
+				for (int i = 0; i < rootDirs.size(); i++) {
+					RootDirectory extra = rootDirs.get(i);
+					if (extra != null) {
+						errorOnRootDirKeywordOrDir(
+								"Only one rootDir is allowed.",
+								extra,
+								TOO_MANY_ROOT_DIRS);
+					}
+				}
+			}
+			RootDirectory first = rootDirs.get(0);
+			if (first == null || !nonBlank(first.getDir())) {
+				if (first != null) {
+					errorOnRootDirKeywordOrDir(
+							"rootDir path must not be empty.",
+							first,
+							MISSING_ROOT_DIR);
+				} else {
+					error(
+							"rootDir path must not be empty.",
+							project,
+							LibrettoProjectProfilePackage.Literals.PROJECT_BLOCK__ROOT_DIRS,
+							MISSING_ROOT_DIR);
+				}
+			}
+		}
+	}
+
+	/** At least one non-empty {@code modules} block per {@link ProjectBlock}. */
+	private void checkModulesForProject(ProjectBlock project) {
 		EList<ModulesBlock> moduleSections = project.getModules();
 		if (moduleSections.isEmpty()) {
-			error(
-					"project.modules { ... } is required at least once.",
+			errorOnProjectKeyword(
 					project,
-					LibrettoProjectProfilePackage.Literals.PROJECT_BLOCK__MODULES,
+					"project.modules { ... } is required at least once.",
 					MISSING_MODULES_SECTION);
 			return;
 		}
+		if (moduleSections.size() > 1) {
+			String message = "Only one modules { ... } section is allowed.";
+			for (ModulesBlock section : moduleSections) {
+				if (section != null) {
+					errorOnModulesKeyword(section, message, TOO_MANY_MODULES_SECTIONS);
+				}
+			}
+		}
 
 		for (ModulesBlock section : moduleSections) {
-			if (section.getModules().isEmpty()) {
-				error(
-						"modules { ... } must contain at least one module.",
+			if (section != null && section.getModules().isEmpty()) {
+				errorOnModulesKeyword(
 						section,
-						LibrettoProjectProfilePackage.Literals.MODULES_BLOCK__MODULES,
+						"modules { ... } must contain at least one module.",
 						EMPTY_MODULES_SECTION);
+			}
+		}
+
+		checkUniqueModuleNames(moduleSections);
+	}
+
+	/** Exactly one {@code gen { ... }} block per {@link ProjectBlock}. */
+	private void checkGenForProject(ProjectBlock project) {
+		EList<GenBlock> gens = project.getGens();
+		if (gens.isEmpty()) {
+			errorOnProjectKeyword(
+					project,
+					"project.gen { ... } is required exactly once.",
+					MISSING_GEN_SECTION);
+			return;
+		}
+		if (gens.size() > 1) {
+			String message = "Only one gen { ... } section is allowed.";
+			for (GenBlock g : gens) {
+				if (g != null) {
+					errorOnGenKeyword(g, message, TOO_MANY_GEN_SECTIONS);
+				}
+			}
+		}
+
+		for (GenBlock g : gens) {
+			if (g != null) {
+				checkGenModelUsage(g);
+				checkGenRequiredDeclarations(g);
+				checkGenDuplicateDeclarations(g);
+			}
+		}
+	}
+
+	/** At least one {@code modelUsage { ... }} block per {@link GenBlock}; at most one is enforced in
+	 * {@link #errorIfDuplicateModelUsages(org.eclipse.emf.common.util.EList)}. */
+	private void checkGenModelUsage(GenBlock gen) {
+		EList<GenUsageBlock> usages = gen.getModelUsages();
+		if (usages == null || usages.isEmpty()) {
+			errorOnGenKeyword(gen, "gen.modelUsage { ... } is required.", GEN_MISSING_MODEL_USAGE);
+		}
+	}
+
+	/**
+	 * At most one of each {@code initialInstruction}, {@code maxRetries}, {@code parseCheck}, {@code defaultCorrection},
+	 * and {@code rules { ... }} per {@link GenBlock}. Duplicates are anchored on each occurrence’s keyword
+	 * ({@link LibrettoProjectProfilePackage.Literals#INITIAL_INSTRUCTION__KEYWORD}, etc.).
+	 */
+	private void checkGenDuplicateDeclarations(GenBlock gen) {
+		errorIfDuplicateInitialInstructions(gen.getInitialInstructions());
+		errorIfDuplicateMaxRetries(gen.getMaxRetries());
+		errorIfDuplicateParseChecks(gen.getParseChecks());
+		errorIfDuplicateDefaultCorrections(gen.getDefaultCorrections());
+		errorIfDuplicateRulesSections(gen.getRemediations());
+		errorIfDuplicateModelUsages(gen.getModelUsages());
+	}
+
+	private void errorIfDuplicateInitialInstructions(EList<InitialInstruction> list) {
+		if (list == null || list.size() <= 1) {
+			return;
+		}
+		String message = "Only one initialInstruction is allowed in gen { ... }.";
+		for (InitialInstruction ii : list) {
+			if (ii != null) {
+				error(
+						message,
+						ii,
+						LibrettoProjectProfilePackage.Literals.INITIAL_INSTRUCTION__KEYWORD,
+						GEN_TOO_MANY_INITIAL_INSTRUCTIONS);
+			}
+		}
+	}
+
+	private void errorIfDuplicateMaxRetries(EList<MaxRetries> list) {
+		if (list == null || list.size() <= 1) {
+			return;
+		}
+		String message = "Only one maxRetries is allowed in gen { ... }.";
+		for (MaxRetries mr : list) {
+			if (mr != null) {
+				error(
+						message,
+						mr,
+						LibrettoProjectProfilePackage.Literals.MAX_RETRIES__KEYWORD,
+						GEN_TOO_MANY_MAX_RETRIES);
+			}
+		}
+	}
+
+	private void errorIfDuplicateParseChecks(EList<ParseCheck> list) {
+		if (list == null || list.size() <= 1) {
+			return;
+		}
+		String message = "Only one parseCheck is allowed in gen { ... }.";
+		for (ParseCheck pc : list) {
+			if (pc != null) {
+				error(
+						message,
+						pc,
+						LibrettoProjectProfilePackage.Literals.PARSE_CHECK__KEYWORD,
+						GEN_TOO_MANY_PARSE_CHECKS);
+			}
+		}
+	}
+
+	private void errorIfDuplicateDefaultCorrections(EList<DefaultCorrection> list) {
+		if (list == null || list.size() <= 1) {
+			return;
+		}
+		String message = "Only one defaultCorrection is allowed in gen { ... }.";
+		for (DefaultCorrection dc : list) {
+			if (dc != null) {
+				error(
+						message,
+						dc,
+						LibrettoProjectProfilePackage.Literals.DEFAULT_CORRECTION__KEYWORD,
+						GEN_TOO_MANY_DEFAULT_CORRECTIONS);
+			}
+		}
+	}
+
+	private void errorIfDuplicateRulesSections(EList<GenRemediationRules> list) {
+		if (list == null || list.size() <= 1) {
+			return;
+		}
+		String message = "Only one rules { ... } section is allowed in gen { ... }.";
+		for (GenRemediationRules rules : list) {
+			if (rules != null) {
+				error(
+						message,
+						rules,
+						LibrettoProjectProfilePackage.Literals.GEN_REMEDIATION_RULES__RULES_KEYWORD,
+						GEN_TOO_MANY_RULES_SECTIONS);
+			}
+		}
+	}
+
+	private void errorIfDuplicateModelUsages(EList<GenUsageBlock> list) {
+		if (list == null || list.size() <= 1) {
+			return;
+		}
+		String message = "Only one modelUsage { ... } section is allowed in gen { ... }.";
+		for (GenUsageBlock block : list) {
+			if (block != null) {
+				errorOnModelUsageKeyword(block, message, GEN_TOO_MANY_MODEL_USAGES);
+			}
+		}
+	}
+
+	private void errorOnModelUsageKeyword(GenUsageBlock block, String message, String code) {
+		if (block.getKeyword() != null) {
+			error(
+					message,
+					block.getKeyword(),
+					LibrettoProjectProfilePackage.Literals.MODEL_USAGE_KEYWORD__KEYWORD,
+					code);
+		} else {
+			error(
+					message,
+					block,
+					LibrettoProjectProfilePackage.Literals.GEN_USAGE_BLOCK__KEYWORD,
+					code);
+		}
+	}
+
+	private void errorOnPrimaryProviderKeyword(PrimaryProvider p, String message, String code) {
+		if (p.getKeyword() != null) {
+			error(
+					message,
+					p.getKeyword(),
+					LibrettoProjectProfilePackage.Literals.PRIMARY_PROVIDER_KEYWORD__KEYWORD,
+					code);
+		} else {
+			error(
+					message,
+					p,
+					LibrettoProjectProfilePackage.Literals.PRIMARY_PROVIDER__KEYWORD,
+					code);
+		}
+	}
+
+	private void errorOnSecondaryProviderKeyword(SecondaryProvider s, String message, String code) {
+		if (s.getKeyword() != null) {
+			error(
+					message,
+					s.getKeyword(),
+					LibrettoProjectProfilePackage.Literals.SECONDARY_PROVIDER_KEYWORD__KEYWORD,
+					code);
+		} else {
+			error(
+					message,
+					s,
+					LibrettoProjectProfilePackage.Literals.SECONDARY_PROVIDER__KEYWORD,
+					code);
+		}
+	}
+
+	private void errorOnEscalationKeyword(GenEscalationBlock e, String message, String code) {
+		if (e.getKeyword() != null) {
+			error(
+					message,
+					e.getKeyword(),
+					LibrettoProjectProfilePackage.Literals.ESCALATION_KEYWORD__KEYWORD,
+					code);
+		} else {
+			error(
+					message,
+					e,
+					LibrettoProjectProfilePackage.Literals.GEN_ESCALATION_BLOCK__KEYWORD,
+					code);
+		}
+	}
+
+	/**
+	 * Each {@code gen} block must declare {@code initialInstruction}, {@code maxRetries}, {@code parseCheck},
+	 * {@code defaultCorrection}, and {@code rules { ... }}. Missing entries are reported on the parent {@code gen}
+	 * keyword ({@link LibrettoProjectProfilePackage.Literals#GEN_BLOCK__KEYWORD}).
+	 */
+	private void checkGenRequiredDeclarations(GenBlock gen) {
+		if (!anyNonBlankInitialInstruction(gen.getInitialInstructions())) {
+			errorOnGenKeyword(gen, "gen.initialInstruction is required.", GEN_MISSING_INITIAL_INSTRUCTION);
+		}
+		if (gen.getMaxRetries().isEmpty()) {
+			errorOnGenKeyword(gen, "gen.maxRetries is required.", GEN_MISSING_MAX_RETRIES);
+		}
+		if (!anyParseCheckWithValue(gen.getParseChecks())) {
+			errorOnGenKeyword(gen, "gen.parseCheck is required.", GEN_MISSING_PARSE_CHECK);
+		}
+		if (!anyNonBlankDefaultCorrection(gen.getDefaultCorrections())) {
+			errorOnGenKeyword(gen, "gen.defaultCorrection is required.", GEN_MISSING_DEFAULT_CORRECTION);
+		}
+		if (gen.getRemediations().isEmpty()) {
+			errorOnGenKeyword(gen, "gen.rules { ... } is required.", GEN_MISSING_RULES);
+		}
+	}
+
+	private static boolean anyNonBlankInitialInstruction(EList<InitialInstruction> list) {
+		if (list == null || list.isEmpty()) {
+			return false;
+		}
+		for (InitialInstruction ii : list) {
+			if (ii != null && nonBlank(ii.getInstruction())) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	private static boolean anyParseCheckWithValue(EList<ParseCheck> list) {
+		if (list == null || list.isEmpty()) {
+			return false;
+		}
+		for (ParseCheck pc : list) {
+			if (pc != null && pc.getValue() != null) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	private static boolean anyNonBlankDefaultCorrection(EList<DefaultCorrection> list) {
+		if (list == null || list.isEmpty()) {
+			return false;
+		}
+		for (DefaultCorrection dc : list) {
+			if (dc != null && nonBlank(dc.getCorrection())) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * Within one {@link ProjectBlock}, every {@code module "name"} must have a distinct name (all {@code modules { }}
+	 * sections combined). Each duplicate is in error; anchor on {@link ProjectModule#getName()}.
+	 */
+	private void checkUniqueModuleNames(EList<ModulesBlock> moduleSections) {
+		List<ProjectModule> withName = new ArrayList<>();
+		for (ModulesBlock section : moduleSections) {
+			if (section == null) {
+				continue;
+			}
+			for (ProjectModule m : section.getModules()) {
+				if (m != null && nonBlank(m.getName())) {
+					withName.add(m);
+				}
+			}
+		}
+		Map<String, List<ProjectModule>> byName = new HashMap<>();
+		for (ProjectModule m : withName) {
+			byName.computeIfAbsent(m.getName(), k -> new ArrayList<>()).add(m);
+		}
+		String message = "Duplicate module name in project; each module name must be unique.";
+		for (List<ProjectModule> group : byName.values()) {
+			if (group.size() <= 1) {
+				continue;
+			}
+			for (ProjectModule m : group) {
+				error(
+						message,
+						m,
+						LibrettoProjectProfilePackage.Literals.PROJECT_MODULE__NAME,
+						DUPLICATE_MODULE_NAME);
 			}
 		}
 	}
 
 	private static boolean nonBlank(String s) {
 		return s != null && !s.isBlank();
+	}
+
+	private static <T> boolean anyNonBlankDir(EList<T> list, Function<T, String> path) {
+		if (list == null || list.isEmpty()) {
+			return false;
+		}
+		for (T item : list) {
+			if (item != null && nonBlank(path.apply(item))) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * When a profile is missing required structure (name, project, …), anchor the diagnostic on the
+	 * {@code profile} keyword so the squiggle appears at the start of the block.
+	 */
+	private void errorOnProfileKeyword(Profile profile, String message, String code) {
+		ProfileKeyword kw = profile.getProfileKeyword();
+		if (kw != null) {
+			error(
+					message,
+					kw,
+					LibrettoProjectProfilePackage.Literals.PROFILE_KEYWORD__KEYWORD,
+					code);
+		} else {
+			error(
+					message,
+					profile,
+					LibrettoProjectProfilePackage.Literals.PROFILE__PROFILE_KEYWORD,
+					code);
+		}
+	}
+
+	/**
+	 * Anchor on the {@code project} keyword text by reporting on {@link ProjectBlock}'s {@code projectKeyword}
+	 * containment reference. Using {@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectKeyword} +
+	 * {@code PROJECT_KEYWORD__KEYWORD} often yields no parse-tree nodes (parser-rule assignment), so the IDE shows no
+	 * squiggle.
+	 */
+	private void errorOnProjectKeyword(ProjectBlock project, String message, String code) {
+		error(
+				message,
+				project,
+				LibrettoProjectProfilePackage.Literals.PROJECT_BLOCK__PROJECT_KEYWORD,
+				code);
+	}
+
+	/** Anchor on {@code gen} via {@link GenBlock}'s {@code keyword} containment reference. */
+	private void errorOnGenKeyword(GenBlock gen, String message, String code) {
+		error(
+				message,
+				gen,
+				LibrettoProjectProfilePackage.Literals.GEN_BLOCK__KEYWORD,
+				code);
+	}
+
+	/**
+	 * Anchor on {@code module} by reporting on {@link ProjectModule}'s {@code keyword} containment reference (same idea
+	 * as {@link #errorOnProjectKeyword(ProjectBlock, String, String)}).
+	 */
+	private void errorOnModuleKeyword(ProjectModule module, String message, String code) {
+		error(
+				message,
+				module,
+				LibrettoProjectProfilePackage.Literals.PROJECT_MODULE__KEYWORD,
+				code);
+	}
+
+	/** Anchor on the {@code modules} keyword inside {@link ModulesBlock}. */
+	private void errorOnModulesKeyword(ModulesBlock section, String message, String code) {
+		ModulesKeyword kw = section.getModulesKeyword();
+		if (kw != null) {
+			error(
+					message,
+					kw,
+					LibrettoProjectProfilePackage.Literals.MODULES_KEYWORD__KEYWORD,
+					code);
+		} else {
+			error(
+					message,
+					section,
+					LibrettoProjectProfilePackage.Literals.MODULES_BLOCK__MODULES_KEYWORD,
+					code);
+		}
+	}
+
+	/** Anchor on the {@code llmProviders} keyword inside {@link LlmProvidersBlock}. */
+	private void errorOnLlmProvidersKeyword(LlmProvidersBlock block, String message, String code) {
+		if (block.getKeyword() != null) {
+			error(
+					message,
+					block.getKeyword(),
+					LibrettoProjectProfilePackage.Literals.LLM_PROVIDERS_KEYWORD__KEYWORD,
+					code);
+		} else {
+			error(
+					message,
+					block,
+					LibrettoProjectProfilePackage.Literals.LLM_PROVIDERS_BLOCK__KEYWORD,
+					code);
+		}
+	}
+
+	/** Anchor on the {@code provider} keyword inside {@link LLMProvider}. */
+	private void errorOnProviderKeyword(LLMProvider p, String message, String code) {
+		if (p.getKeyword() != null) {
+			error(
+					message,
+					p.getKeyword(),
+					LibrettoProjectProfilePackage.Literals.PROVIDER_KEYWORD__KEYWORD,
+					code);
+		} else {
+			error(
+					message,
+					p,
+					LibrettoProjectProfilePackage.Literals.LLM_PROVIDER__KEYWORD,
+					code);
+		}
+	}
+
+	/** Anchor on the {@code type} keyword inside {@link ProviderType}. */
+	private void errorOnProviderTypeKeyword(ProviderType t, String message, String code) {
+		if (t.getKeyword() != null) {
+			error(
+					message,
+					t.getKeyword(),
+					LibrettoProjectProfilePackage.Literals.PROVIDER_TYPE_KEYWORD__KEYWORD,
+					code);
+		} else {
+			error(
+					message,
+					t,
+					LibrettoProjectProfilePackage.Literals.PROVIDER_TYPE__KEYWORD,
+					code);
+		}
+	}
+
+	/** Anchor on the {@code model} keyword inside {@link Model}. */
+	private void errorOnModelKeyword(Model m, String message, String code) {
+		if (m.getKeyword() != null) {
+			error(
+					message,
+					m.getKeyword(),
+					LibrettoProjectProfilePackage.Literals.MODEL_KEYWORD__KEYWORD,
+					code);
+		} else {
+			error(
+					message,
+					m,
+					LibrettoProjectProfilePackage.Literals.MODEL__KEYWORD,
+					code);
+		}
+	}
+
+	/** Anchor on the model id string ({@link LibrettoProjectProfilePackage.Literals#MODEL__MODE}). */
+	private void errorOnModelModeValue(Model m, String message, String code) {
+		error(
+				message,
+				m,
+				LibrettoProjectProfilePackage.Literals.MODEL__MODE,
+				code);
+	}
+
+	/** Anchor on the {@code endpoint} / {@code endPoint} keyword inside {@link Endpoint}. */
+	private void errorOnEndpointKeyword(Endpoint e, String message, String code) {
+		if (e.getKeyword() != null) {
+			error(
+					message,
+					e.getKeyword(),
+					LibrettoProjectProfilePackage.Literals.ENDPOINT_KEYWORD__KEYWORD,
+					code);
+		} else {
+			error(
+					message,
+					e,
+					LibrettoProjectProfilePackage.Literals.ENDPOINT__KEYWORD,
+					code);
+		}
+	}
+
+	/** Anchor on the {@code filePath} / {@code filepath} keyword inside {@link LocalModelPath}. */
+	private void errorOnFilePathKeyword(LocalModelPath lm, String message, String code) {
+		if (lm.getKeyword() != null) {
+			error(
+					message,
+					lm.getKeyword(),
+					LibrettoProjectProfilePackage.Literals.FILE_PATH_KEYWORD__KEYWORD,
+					code);
+		} else {
+			error(
+					message,
+					lm,
+					LibrettoProjectProfilePackage.Literals.LOCAL_MODEL_PATH__KEYWORD,
+					code);
+		}
+	}
+
+	/** Anchor on the path string value ({@link LibrettoProjectProfilePackage.Literals#LOCAL_MODEL_PATH__PATH}). */
+	private void errorOnFilePathValue(LocalModelPath lm, String message, String code) {
+		error(
+				message,
+				lm,
+				LibrettoProjectProfilePackage.Literals.LOCAL_MODEL_PATH__PATH,
+				code);
+	}
+
+	/** Prefer squiggle on {@code rootDir} keyword text; feature must match anchor {@link org.eclipse.emf.ecore.EObject}'s class. */
+	private void errorOnRootDirKeywordOrDir(String message, RootDirectory rd, String code) {
+		if (rd.getKeyword() != null) {
+			error(
+					message,
+					rd.getKeyword(),
+					LibrettoProjectProfilePackage.Literals.ROOT_DIR_KEYWORD__KEYWORD,
+					code);
+		} else {
+			error(
+					message,
+					rd,
+					LibrettoProjectProfilePackage.Literals.ROOT_DIRECTORY__DIR,
+					code);
+		}
+	}
+
+	private void errorOnMaxRetriesKeyword(MaxRetries mr, String message, String code) {
+		if (mr.getKeyword() != null) {
+			error(
+					message,
+					mr.getKeyword(),
+					LibrettoProjectProfilePackage.Literals.MAX_RETRIES_KEYWORD__KEYWORD,
+					code);
+		} else {
+			error(
+					message,
+					mr,
+					LibrettoProjectProfilePackage.Literals.MAX_RETRIES__KEYWORD,
+					code);
+		}
+	}
+
+	private void errorOnAtRetryKeyword(AtRetry ar, String message, String code) {
+		if (ar.getKeyword() != null) {
+			error(
+					message,
+					ar.getKeyword(),
+					LibrettoProjectProfilePackage.Literals.AT_RETRY_KEYWORD__KEYWORD,
+					code);
+		} else {
+			error(
+					message,
+					ar,
+					LibrettoProjectProfilePackage.Literals.AT_RETRY__KEYWORD,
+					code);
+		}
+	}
+
+	private void warningOnAtRetryKeyword(AtRetry ar, String message, String code) {
+		if (ar.getKeyword() != null) {
+			warning(
+					message,
+					ar.getKeyword(),
+					LibrettoProjectProfilePackage.Literals.AT_RETRY_KEYWORD__KEYWORD,
+					code);
+		} else {
+			warning(
+					message,
+					ar,
+					LibrettoProjectProfilePackage.Literals.AT_RETRY__KEYWORD,
+					code);
+		}
+	}
+
+	private static GenBlock enclosingGenBlock(EObject from) {
+		EObject c = from;
+		while (c != null) {
+			if (c instanceof GenBlock gb) {
+				return gb;
+			}
+			c = c.eContainer();
+		}
+		return null;
+	}
+
+	/** First {@code maxRetries} value in the gen block (matches tooling that uses the first declaration). */
+	private static Integer firstMaxRetriesValue(GenBlock gen) {
+		if (gen == null) {
+			return null;
+		}
+		EList<MaxRetries> list = gen.getMaxRetries();
+		if (list == null || list.isEmpty()) {
+			return null;
+		}
+		MaxRetries first = list.get(0);
+		return first != null ? Integer.valueOf(first.getMaxRetries()) : null;
 	}
 
 }

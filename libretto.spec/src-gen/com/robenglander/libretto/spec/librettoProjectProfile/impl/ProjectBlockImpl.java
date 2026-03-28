@@ -7,9 +7,12 @@ import com.robenglander.libretto.spec.librettoProjectProfile.GenBlock;
 import com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage;
 import com.robenglander.libretto.spec.librettoProjectProfile.ModulesBlock;
 import com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock;
+import com.robenglander.libretto.spec.librettoProjectProfile.ProjectKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.RootDirectory;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -17,9 +20,9 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -31,7 +34,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectBlockImpl#getRootDir <em>Root Dir</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectBlockImpl#getProjectKeyword <em>Project Keyword</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectBlockImpl#getRootDirs <em>Root Dirs</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectBlockImpl#getModules <em>Modules</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectBlockImpl#getGens <em>Gens</em>}</li>
  * </ul>
@@ -41,14 +45,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ProjectBlockImpl extends MinimalEObjectImpl.Container implements ProjectBlock
 {
   /**
-   * The cached value of the '{@link #getRootDir() <em>Root Dir</em>}' attribute list.
+   * The cached value of the '{@link #getProjectKeyword() <em>Project Keyword</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRootDir()
+   * @see #getProjectKeyword()
    * @generated
    * @ordered
    */
-  protected EList<String> rootDir;
+  protected ProjectKeyword projectKeyword;
+
+  /**
+   * The cached value of the '{@link #getRootDirs() <em>Root Dirs</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRootDirs()
+   * @generated
+   * @ordered
+   */
+  protected EList<RootDirectory> rootDirs;
 
   /**
    * The cached value of the '{@link #getModules() <em>Modules</em>}' containment reference list.
@@ -97,13 +111,63 @@ public class ProjectBlockImpl extends MinimalEObjectImpl.Container implements Pr
    * @generated
    */
   @Override
-  public EList<String> getRootDir()
+  public ProjectKeyword getProjectKeyword()
   {
-    if (rootDir == null)
+    return projectKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetProjectKeyword(ProjectKeyword newProjectKeyword, NotificationChain msgs)
+  {
+    ProjectKeyword oldProjectKeyword = projectKeyword;
+    projectKeyword = newProjectKeyword;
+    if (eNotificationRequired())
     {
-      rootDir = new EDataTypeEList<String>(String.class, this, LibrettoProjectProfilePackage.PROJECT_BLOCK__ROOT_DIR);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LibrettoProjectProfilePackage.PROJECT_BLOCK__PROJECT_KEYWORD, oldProjectKeyword, newProjectKeyword);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return rootDir;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setProjectKeyword(ProjectKeyword newProjectKeyword)
+  {
+    if (newProjectKeyword != projectKeyword)
+    {
+      NotificationChain msgs = null;
+      if (projectKeyword != null)
+        msgs = ((InternalEObject)projectKeyword).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LibrettoProjectProfilePackage.PROJECT_BLOCK__PROJECT_KEYWORD, null, msgs);
+      if (newProjectKeyword != null)
+        msgs = ((InternalEObject)newProjectKeyword).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LibrettoProjectProfilePackage.PROJECT_BLOCK__PROJECT_KEYWORD, null, msgs);
+      msgs = basicSetProjectKeyword(newProjectKeyword, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoProjectProfilePackage.PROJECT_BLOCK__PROJECT_KEYWORD, newProjectKeyword, newProjectKeyword));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<RootDirectory> getRootDirs()
+  {
+    if (rootDirs == null)
+    {
+      rootDirs = new EObjectContainmentEList<RootDirectory>(RootDirectory.class, this, LibrettoProjectProfilePackage.PROJECT_BLOCK__ROOT_DIRS);
+    }
+    return rootDirs;
   }
 
   /**
@@ -146,6 +210,10 @@ public class ProjectBlockImpl extends MinimalEObjectImpl.Container implements Pr
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.PROJECT_BLOCK__PROJECT_KEYWORD:
+        return basicSetProjectKeyword(null, msgs);
+      case LibrettoProjectProfilePackage.PROJECT_BLOCK__ROOT_DIRS:
+        return ((InternalEList<?>)getRootDirs()).basicRemove(otherEnd, msgs);
       case LibrettoProjectProfilePackage.PROJECT_BLOCK__MODULES:
         return ((InternalEList<?>)getModules()).basicRemove(otherEnd, msgs);
       case LibrettoProjectProfilePackage.PROJECT_BLOCK__GENS:
@@ -164,8 +232,10 @@ public class ProjectBlockImpl extends MinimalEObjectImpl.Container implements Pr
   {
     switch (featureID)
     {
-      case LibrettoProjectProfilePackage.PROJECT_BLOCK__ROOT_DIR:
-        return getRootDir();
+      case LibrettoProjectProfilePackage.PROJECT_BLOCK__PROJECT_KEYWORD:
+        return getProjectKeyword();
+      case LibrettoProjectProfilePackage.PROJECT_BLOCK__ROOT_DIRS:
+        return getRootDirs();
       case LibrettoProjectProfilePackage.PROJECT_BLOCK__MODULES:
         return getModules();
       case LibrettoProjectProfilePackage.PROJECT_BLOCK__GENS:
@@ -185,9 +255,12 @@ public class ProjectBlockImpl extends MinimalEObjectImpl.Container implements Pr
   {
     switch (featureID)
     {
-      case LibrettoProjectProfilePackage.PROJECT_BLOCK__ROOT_DIR:
-        getRootDir().clear();
-        getRootDir().addAll((Collection<? extends String>)newValue);
+      case LibrettoProjectProfilePackage.PROJECT_BLOCK__PROJECT_KEYWORD:
+        setProjectKeyword((ProjectKeyword)newValue);
+        return;
+      case LibrettoProjectProfilePackage.PROJECT_BLOCK__ROOT_DIRS:
+        getRootDirs().clear();
+        getRootDirs().addAll((Collection<? extends RootDirectory>)newValue);
         return;
       case LibrettoProjectProfilePackage.PROJECT_BLOCK__MODULES:
         getModules().clear();
@@ -211,8 +284,11 @@ public class ProjectBlockImpl extends MinimalEObjectImpl.Container implements Pr
   {
     switch (featureID)
     {
-      case LibrettoProjectProfilePackage.PROJECT_BLOCK__ROOT_DIR:
-        getRootDir().clear();
+      case LibrettoProjectProfilePackage.PROJECT_BLOCK__PROJECT_KEYWORD:
+        setProjectKeyword((ProjectKeyword)null);
+        return;
+      case LibrettoProjectProfilePackage.PROJECT_BLOCK__ROOT_DIRS:
+        getRootDirs().clear();
         return;
       case LibrettoProjectProfilePackage.PROJECT_BLOCK__MODULES:
         getModules().clear();
@@ -234,31 +310,16 @@ public class ProjectBlockImpl extends MinimalEObjectImpl.Container implements Pr
   {
     switch (featureID)
     {
-      case LibrettoProjectProfilePackage.PROJECT_BLOCK__ROOT_DIR:
-        return rootDir != null && !rootDir.isEmpty();
+      case LibrettoProjectProfilePackage.PROJECT_BLOCK__PROJECT_KEYWORD:
+        return projectKeyword != null;
+      case LibrettoProjectProfilePackage.PROJECT_BLOCK__ROOT_DIRS:
+        return rootDirs != null && !rootDirs.isEmpty();
       case LibrettoProjectProfilePackage.PROJECT_BLOCK__MODULES:
         return modules != null && !modules.isEmpty();
       case LibrettoProjectProfilePackage.PROJECT_BLOCK__GENS:
         return gens != null && !gens.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (rootDir: ");
-    result.append(rootDir);
-    result.append(')');
-    return result.toString();
   }
 
 } //ProjectBlockImpl

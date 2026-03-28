@@ -83,19 +83,79 @@ ruleProjectProfile returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='profile'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getProjectProfileAccess().getProfileKeyword_1());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getProjectProfileAccess().getNameValidIDParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getProjectProfileAccess().getProfilesProfileParserRuleCall_1_0());
+				}
+				lv_profiles_1_0=ruleProfile
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getProjectProfileRule());
+					}
+					add(
+						$current,
+						"profiles",
+						lv_profiles_1_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.Profile");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+	)
+;
+
+// Entry rule entryRuleProfile
+entryRuleProfile returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getProfileRule()); }
+	iv_ruleProfile=ruleProfile
+	{ $current=$iv_ruleProfile.current; }
+	EOF;
+
+// Rule Profile
+ruleProfile returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getProfileAccess().getProfileAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getProfileAccess().getProfileKeywordProfileKeywordParserRuleCall_1_0());
+				}
+				lv_profileKeyword_1_0=ruleProfileKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getProfileRule());
+					}
+					set(
+						$current,
+						"profileKeyword",
+						lv_profileKeyword_1_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.ProfileKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getProfileAccess().getNameValidIDParserRuleCall_2_0());
 				}
 				lv_name_2_0=ruleValidID
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getProjectProfileRule());
+						$current = createModelElementForParent(grammarAccess.getProfileRule());
 					}
 					set(
 						$current,
@@ -108,18 +168,18 @@ ruleProjectProfile returns [EObject current=null]
 		)
 		otherlv_3='{'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getProjectProfileAccess().getLeftCurlyBracketKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getProfileAccess().getLeftCurlyBracketKeyword_3());
 		}
 		(
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getProjectProfileAccess().getProjectsProjectBlockParserRuleCall_4_0_0());
+						newCompositeNode(grammarAccess.getProfileAccess().getProjectsProjectBlockParserRuleCall_4_0_0());
 					}
 					lv_projects_4_0=ruleProjectBlock
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getProjectProfileRule());
+							$current = createModelElementForParent(grammarAccess.getProfileRule());
 						}
 						add(
 							$current,
@@ -134,12 +194,12 @@ ruleProjectProfile returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getProjectProfileAccess().getLlmProvidersLlmProvidersBlockParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getProfileAccess().getLlmProvidersLlmProvidersBlockParserRuleCall_4_1_0());
 					}
 					lv_llmProviders_5_0=ruleLlmProvidersBlock
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getProjectProfileRule());
+							$current = createModelElementForParent(grammarAccess.getProfileRule());
 						}
 						add(
 							$current,
@@ -154,12 +214,12 @@ ruleProjectProfile returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getProjectProfileAccess().getSurfacesSurfaceBlockParserRuleCall_4_2_0());
+						newCompositeNode(grammarAccess.getProfileAccess().getSurfacesSurfaceBlockParserRuleCall_4_2_0());
 					}
 					lv_surfaces_6_0=ruleSurfaceBlock
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getProjectProfileRule());
+							$current = createModelElementForParent(grammarAccess.getProfileRule());
 						}
 						add(
 							$current,
@@ -173,8 +233,48 @@ ruleProjectProfile returns [EObject current=null]
 		)*
 		otherlv_7='}'
 		{
-			newLeafNode(otherlv_7, grammarAccess.getProjectProfileAccess().getRightCurlyBracketKeyword_5());
+			newLeafNode(otherlv_7, grammarAccess.getProfileAccess().getRightCurlyBracketKeyword_5());
 		}
+	)
+;
+
+// Entry rule entryRuleProfileKeyword
+entryRuleProfileKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getProfileKeywordRule()); }
+	iv_ruleProfileKeyword=ruleProfileKeyword
+	{ $current=$iv_ruleProfileKeyword.current; }
+	EOF;
+
+// Rule ProfileKeyword
+ruleProfileKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getProfileKeywordAccess().getProfileKeywordAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				lv_keyword_1_0='profile'
+				{
+					newLeafNode(lv_keyword_1_0, grammarAccess.getProfileKeywordAccess().getKeywordProfileKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getProfileKeywordRule());
+					}
+					setWithLastConsumed($current, "keyword", lv_keyword_1_0, "profile");
+				}
+			)
+		)
 	)
 ;
 
@@ -201,37 +301,47 @@ ruleProjectBlock returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='project'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getProjectBlockAccess().getProjectKeyword_1());
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getProjectBlockAccess().getProjectKeywordProjectKeywordParserRuleCall_1_0());
+				}
+				lv_projectKeyword_1_0=ruleProjectKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getProjectBlockRule());
+					}
+					set(
+						$current,
+						"projectKeyword",
+						lv_projectKeyword_1_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.ProjectKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 		otherlv_2='{'
 		{
 			newLeafNode(otherlv_2, grammarAccess.getProjectBlockAccess().getLeftCurlyBracketKeyword_2());
 		}
 		(
 			(
-				otherlv_3='rootDir'
-				{
-					newLeafNode(otherlv_3, grammarAccess.getProjectBlockAccess().getRootDirKeyword_3_0_0());
-				}
 				(
-					(
-						lv_rootDir_4_0=RULE_STRING
-						{
-							newLeafNode(lv_rootDir_4_0, grammarAccess.getProjectBlockAccess().getRootDirSTRINGTerminalRuleCall_3_0_1_0());
+					{
+						newCompositeNode(grammarAccess.getProjectBlockAccess().getRootDirsRootDirectoryParserRuleCall_3_0_0());
+					}
+					lv_rootDirs_3_0=ruleRootDirectory
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getProjectBlockRule());
 						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getProjectBlockRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"rootDir",
-								lv_rootDir_4_0,
-								"org.eclipse.xtext.common.Terminals.STRING");
-						}
-					)
+						add(
+							$current,
+							"rootDirs",
+							lv_rootDirs_3_0,
+							"com.robenglander.libretto.spec.LibrettoProjectProfile.RootDirectory");
+						afterParserOrEnumRuleCall();
+					}
 				)
 			)
 			    |
@@ -240,7 +350,7 @@ ruleProjectBlock returns [EObject current=null]
 					{
 						newCompositeNode(grammarAccess.getProjectBlockAccess().getModulesModulesBlockParserRuleCall_3_1_0());
 					}
-					lv_modules_5_0=ruleModulesBlock
+					lv_modules_4_0=ruleModulesBlock
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getProjectBlockRule());
@@ -248,7 +358,7 @@ ruleProjectBlock returns [EObject current=null]
 						add(
 							$current,
 							"modules",
-							lv_modules_5_0,
+							lv_modules_4_0,
 							"com.robenglander.libretto.spec.LibrettoProjectProfile.ModulesBlock");
 						afterParserOrEnumRuleCall();
 					}
@@ -260,7 +370,7 @@ ruleProjectBlock returns [EObject current=null]
 					{
 						newCompositeNode(grammarAccess.getProjectBlockAccess().getGensGenBlockParserRuleCall_3_2_0());
 					}
-					lv_gens_6_0=ruleGenBlock
+					lv_gens_5_0=ruleGenBlock
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getProjectBlockRule());
@@ -268,17 +378,173 @@ ruleProjectBlock returns [EObject current=null]
 						add(
 							$current,
 							"gens",
-							lv_gens_6_0,
+							lv_gens_5_0,
 							"com.robenglander.libretto.spec.LibrettoProjectProfile.GenBlock");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)*
-		otherlv_7='}'
+		otherlv_6='}'
 		{
-			newLeafNode(otherlv_7, grammarAccess.getProjectBlockAccess().getRightCurlyBracketKeyword_4());
+			newLeafNode(otherlv_6, grammarAccess.getProjectBlockAccess().getRightCurlyBracketKeyword_4());
 		}
+	)
+;
+
+// Entry rule entryRuleRootDirectory
+entryRuleRootDirectory returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getRootDirectoryRule()); }
+	iv_ruleRootDirectory=ruleRootDirectory
+	{ $current=$iv_ruleRootDirectory.current; }
+	EOF;
+
+// Rule RootDirectory
+ruleRootDirectory returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getRootDirectoryAccess().getRootDirectoryAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getRootDirectoryAccess().getKeywordRootDirKeywordParserRuleCall_1_0());
+				}
+				lv_keyword_1_0=ruleRootDirKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getRootDirectoryRule());
+					}
+					set(
+						$current,
+						"keyword",
+						lv_keyword_1_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.RootDirKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				lv_dir_2_0=RULE_STRING
+				{
+					newLeafNode(lv_dir_2_0, grammarAccess.getRootDirectoryAccess().getDirSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRootDirectoryRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"dir",
+						lv_dir_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleProjectKeyword
+entryRuleProjectKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getProjectKeywordRule()); }
+	iv_ruleProjectKeyword=ruleProjectKeyword
+	{ $current=$iv_ruleProjectKeyword.current; }
+	EOF;
+
+// Rule ProjectKeyword
+ruleProjectKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getProjectKeywordAccess().getProjectKeywordAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				lv_keyword_1_0='project'
+				{
+					newLeafNode(lv_keyword_1_0, grammarAccess.getProjectKeywordAccess().getKeywordProjectKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getProjectKeywordRule());
+					}
+					setWithLastConsumed($current, "keyword", lv_keyword_1_0, "project");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleRootDirKeyword
+entryRuleRootDirKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getRootDirKeywordRule()); }
+	iv_ruleRootDirKeyword=ruleRootDirKeyword
+	{ $current=$iv_ruleRootDirKeyword.current; }
+	EOF;
+
+// Rule RootDirKeyword
+ruleRootDirKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getRootDirKeywordAccess().getRootDirKeywordAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				(
+					lv_keyword_1_1='rootdir'
+					{
+						newLeafNode(lv_keyword_1_1, grammarAccess.getRootDirKeywordAccess().getKeywordRootdirKeyword_1_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getRootDirKeywordRule());
+						}
+						setWithLastConsumed($current, "keyword", lv_keyword_1_1, null);
+					}
+					    |
+					lv_keyword_1_2='rootDir'
+					{
+						newLeafNode(lv_keyword_1_2, grammarAccess.getRootDirKeywordAccess().getKeywordRootDirKeyword_1_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getRootDirKeywordRule());
+						}
+						setWithLastConsumed($current, "keyword", lv_keyword_1_2, null);
+					}
+				)
+			)
+		)
 	)
 ;
 
@@ -305,10 +571,25 @@ ruleModulesBlock returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='modules'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getModulesBlockAccess().getModulesKeyword_1());
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getModulesBlockAccess().getModulesKeywordModulesKeywordParserRuleCall_1_0());
+				}
+				lv_modulesKeyword_1_0=ruleModulesKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getModulesBlockRule());
+					}
+					set(
+						$current,
+						"modulesKeyword",
+						lv_modulesKeyword_1_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.ModulesKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 		otherlv_2='{'
 		{
 			newLeafNode(otherlv_2, grammarAccess.getModulesBlockAccess().getLeftCurlyBracketKeyword_2());
@@ -339,6 +620,46 @@ ruleModulesBlock returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleModulesKeyword
+entryRuleModulesKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getModulesKeywordRule()); }
+	iv_ruleModulesKeyword=ruleModulesKeyword
+	{ $current=$iv_ruleModulesKeyword.current; }
+	EOF;
+
+// Rule ModulesKeyword
+ruleModulesKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getModulesKeywordAccess().getModulesKeywordAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				lv_keyword_1_0='modules'
+				{
+					newLeafNode(lv_keyword_1_0, grammarAccess.getModulesKeywordAccess().getKeywordModulesKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getModulesKeywordRule());
+					}
+					setWithLastConsumed($current, "keyword", lv_keyword_1_0, "modules");
+				}
+			)
+		)
+	)
+;
+
 // Entry rule entryRuleProjectModule
 entryRuleProjectModule returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getProjectModuleRule()); }
@@ -355,10 +676,25 @@ ruleProjectModule returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='module'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getProjectModuleAccess().getModuleKeyword_0());
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getProjectModuleAccess().getKeywordModuleKeywordParserRuleCall_0_0());
+				}
+				lv_keyword_0_0=ruleModuleKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getProjectModuleRule());
+					}
+					set(
+						$current,
+						"keyword",
+						lv_keyword_0_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.ModuleKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 		(
 			(
 				{
@@ -384,134 +720,716 @@ ruleProjectModule returns [EObject current=null]
 		}
 		(
 			(
-				otherlv_3='dir'
-				{
-					newLeafNode(otherlv_3, grammarAccess.getProjectModuleAccess().getDirKeyword_3_0_0());
-				}
 				(
-					(
-						lv_dirs_4_0=RULE_STRING
-						{
-							newLeafNode(lv_dirs_4_0, grammarAccess.getProjectModuleAccess().getDirsSTRINGTerminalRuleCall_3_0_1_0());
+					{
+						newCompositeNode(grammarAccess.getProjectModuleAccess().getDirsDirectoryParserRuleCall_3_0_0());
+					}
+					lv_dirs_3_0=ruleDirectory
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getProjectModuleRule());
 						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getProjectModuleRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"dirs",
-								lv_dirs_4_0,
-								"org.eclipse.xtext.common.Terminals.STRING");
-						}
-					)
+						add(
+							$current,
+							"dirs",
+							lv_dirs_3_0,
+							"com.robenglander.libretto.spec.LibrettoProjectProfile.Directory");
+						afterParserOrEnumRuleCall();
+					}
 				)
 			)
 			    |
 			(
-				otherlv_5='specDir'
-				{
-					newLeafNode(otherlv_5, grammarAccess.getProjectModuleAccess().getSpecDirKeyword_3_1_0());
-				}
 				(
-					(
-						lv_specDirs_6_0=RULE_STRING
-						{
-							newLeafNode(lv_specDirs_6_0, grammarAccess.getProjectModuleAccess().getSpecDirsSTRINGTerminalRuleCall_3_1_1_0());
+					{
+						newCompositeNode(grammarAccess.getProjectModuleAccess().getSpecDirsSpecDirectoryParserRuleCall_3_1_0());
+					}
+					lv_specDirs_4_0=ruleSpecDirectory
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getProjectModuleRule());
 						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getProjectModuleRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"specDirs",
-								lv_specDirs_6_0,
-								"org.eclipse.xtext.common.Terminals.STRING");
-						}
-					)
+						add(
+							$current,
+							"specDirs",
+							lv_specDirs_4_0,
+							"com.robenglander.libretto.spec.LibrettoProjectProfile.SpecDirectory");
+						afterParserOrEnumRuleCall();
+					}
 				)
 			)
 			    |
 			(
-				otherlv_7='testDir'
-				{
-					newLeafNode(otherlv_7, grammarAccess.getProjectModuleAccess().getTestDirKeyword_3_2_0());
-				}
 				(
-					(
-						lv_testDirs_8_0=RULE_STRING
-						{
-							newLeafNode(lv_testDirs_8_0, grammarAccess.getProjectModuleAccess().getTestDirsSTRINGTerminalRuleCall_3_2_1_0());
+					{
+						newCompositeNode(grammarAccess.getProjectModuleAccess().getTestDirsTestDirectoryParserRuleCall_3_2_0());
+					}
+					lv_testDirs_5_0=ruleTestDirectory
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getProjectModuleRule());
 						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getProjectModuleRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"testDirs",
-								lv_testDirs_8_0,
-								"org.eclipse.xtext.common.Terminals.STRING");
-						}
-					)
+						add(
+							$current,
+							"testDirs",
+							lv_testDirs_5_0,
+							"com.robenglander.libretto.spec.LibrettoProjectProfile.TestDirectory");
+						afterParserOrEnumRuleCall();
+					}
 				)
 			)
 			    |
 			(
-				otherlv_9='mainDir'
-				{
-					newLeafNode(otherlv_9, grammarAccess.getProjectModuleAccess().getMainDirKeyword_3_3_0());
-				}
 				(
-					(
-						lv_mainDirs_10_0=RULE_STRING
-						{
-							newLeafNode(lv_mainDirs_10_0, grammarAccess.getProjectModuleAccess().getMainDirsSTRINGTerminalRuleCall_3_3_1_0());
+					{
+						newCompositeNode(grammarAccess.getProjectModuleAccess().getMainDirsMainDirectoryParserRuleCall_3_3_0());
+					}
+					lv_mainDirs_6_0=ruleMainDirectory
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getProjectModuleRule());
 						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getProjectModuleRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"mainDirs",
-								lv_mainDirs_10_0,
-								"org.eclipse.xtext.common.Terminals.STRING");
-						}
-					)
+						add(
+							$current,
+							"mainDirs",
+							lv_mainDirs_6_0,
+							"com.robenglander.libretto.spec.LibrettoProjectProfile.MainDirectory");
+						afterParserOrEnumRuleCall();
+					}
 				)
 			)
 			    |
 			(
-				otherlv_11='basePackage'
-				{
-					newLeafNode(otherlv_11, grammarAccess.getProjectModuleAccess().getBasePackageKeyword_3_4_0());
-				}
 				(
-					(
-						lv_basePackages_12_0=RULE_STRING
-						{
-							newLeafNode(lv_basePackages_12_0, grammarAccess.getProjectModuleAccess().getBasePackagesSTRINGTerminalRuleCall_3_4_1_0());
+					{
+						newCompositeNode(grammarAccess.getProjectModuleAccess().getBasePackagesBasePackageParserRuleCall_3_4_0());
+					}
+					lv_basePackages_7_0=ruleBasePackage
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getProjectModuleRule());
 						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getProjectModuleRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"basePackages",
-								lv_basePackages_12_0,
-								"org.eclipse.xtext.common.Terminals.STRING");
-						}
-					)
+						add(
+							$current,
+							"basePackages",
+							lv_basePackages_7_0,
+							"com.robenglander.libretto.spec.LibrettoProjectProfile.BasePackage");
+						afterParserOrEnumRuleCall();
+					}
 				)
 			)
 		)*
-		otherlv_13='}'
+		otherlv_8='}'
 		{
-			newLeafNode(otherlv_13, grammarAccess.getProjectModuleAccess().getRightCurlyBracketKeyword_4());
+			newLeafNode(otherlv_8, grammarAccess.getProjectModuleAccess().getRightCurlyBracketKeyword_4());
 		}
+	)
+;
+
+// Entry rule entryRuleModuleKeyword
+entryRuleModuleKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getModuleKeywordRule()); }
+	iv_ruleModuleKeyword=ruleModuleKeyword
+	{ $current=$iv_ruleModuleKeyword.current; }
+	EOF;
+
+// Rule ModuleKeyword
+ruleModuleKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getModuleKeywordAccess().getModuleKeywordAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				lv_keyword_1_0='module'
+				{
+					newLeafNode(lv_keyword_1_0, grammarAccess.getModuleKeywordAccess().getKeywordModuleKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getModuleKeywordRule());
+					}
+					setWithLastConsumed($current, "keyword", lv_keyword_1_0, "module");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleDirectory
+entryRuleDirectory returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getDirectoryRule()); }
+	iv_ruleDirectory=ruleDirectory
+	{ $current=$iv_ruleDirectory.current; }
+	EOF;
+
+// Rule Directory
+ruleDirectory returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getDirectoryAccess().getDirectoryAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getDirectoryAccess().getKeywordDirKeywordParserRuleCall_1_0());
+				}
+				lv_keyword_1_0=ruleDirKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getDirectoryRule());
+					}
+					set(
+						$current,
+						"keyword",
+						lv_keyword_1_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.DirKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				lv_dir_2_0=RULE_STRING
+				{
+					newLeafNode(lv_dir_2_0, grammarAccess.getDirectoryAccess().getDirSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDirectoryRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"dir",
+						lv_dir_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleSpecDirectory
+entryRuleSpecDirectory returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSpecDirectoryRule()); }
+	iv_ruleSpecDirectory=ruleSpecDirectory
+	{ $current=$iv_ruleSpecDirectory.current; }
+	EOF;
+
+// Rule SpecDirectory
+ruleSpecDirectory returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getSpecDirectoryAccess().getSpecDirectoryAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getSpecDirectoryAccess().getKeywordSpecDirKeywordParserRuleCall_1_0());
+				}
+				lv_keyword_1_0=ruleSpecDirKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSpecDirectoryRule());
+					}
+					set(
+						$current,
+						"keyword",
+						lv_keyword_1_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.SpecDirKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				lv_dir_2_0=RULE_STRING
+				{
+					newLeafNode(lv_dir_2_0, grammarAccess.getSpecDirectoryAccess().getDirSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSpecDirectoryRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"dir",
+						lv_dir_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleTestDirectory
+entryRuleTestDirectory returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTestDirectoryRule()); }
+	iv_ruleTestDirectory=ruleTestDirectory
+	{ $current=$iv_ruleTestDirectory.current; }
+	EOF;
+
+// Rule TestDirectory
+ruleTestDirectory returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getTestDirectoryAccess().getTestDirectoryAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getTestDirectoryAccess().getKeywordTestDirKeywordParserRuleCall_1_0());
+				}
+				lv_keyword_1_0=ruleTestDirKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getTestDirectoryRule());
+					}
+					set(
+						$current,
+						"keyword",
+						lv_keyword_1_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.TestDirKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				lv_dir_2_0=RULE_STRING
+				{
+					newLeafNode(lv_dir_2_0, grammarAccess.getTestDirectoryAccess().getDirSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTestDirectoryRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"dir",
+						lv_dir_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleMainDirectory
+entryRuleMainDirectory returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getMainDirectoryRule()); }
+	iv_ruleMainDirectory=ruleMainDirectory
+	{ $current=$iv_ruleMainDirectory.current; }
+	EOF;
+
+// Rule MainDirectory
+ruleMainDirectory returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getMainDirectoryAccess().getMainDirectoryAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getMainDirectoryAccess().getKeywordMainDirKeywordParserRuleCall_1_0());
+				}
+				lv_keyword_1_0=ruleMainDirKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getMainDirectoryRule());
+					}
+					set(
+						$current,
+						"keyword",
+						lv_keyword_1_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.MainDirKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				lv_dir_2_0=RULE_STRING
+				{
+					newLeafNode(lv_dir_2_0, grammarAccess.getMainDirectoryAccess().getDirSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getMainDirectoryRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"dir",
+						lv_dir_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleBasePackage
+entryRuleBasePackage returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getBasePackageRule()); }
+	iv_ruleBasePackage=ruleBasePackage
+	{ $current=$iv_ruleBasePackage.current; }
+	EOF;
+
+// Rule BasePackage
+ruleBasePackage returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getBasePackageAccess().getBasePackageAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getBasePackageAccess().getKeywordBasePackageKeywordParserRuleCall_1_0());
+				}
+				lv_keyword_1_0=ruleBasePackageKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getBasePackageRule());
+					}
+					set(
+						$current,
+						"keyword",
+						lv_keyword_1_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.BasePackageKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				lv_dir_2_0=RULE_STRING
+				{
+					newLeafNode(lv_dir_2_0, grammarAccess.getBasePackageAccess().getDirSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getBasePackageRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"dir",
+						lv_dir_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleDirKeyword
+entryRuleDirKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getDirKeywordRule()); }
+	iv_ruleDirKeyword=ruleDirKeyword
+	{ $current=$iv_ruleDirKeyword.current; }
+	EOF;
+
+// Rule DirKeyword
+ruleDirKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getDirKeywordAccess().getDirKeywordAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				lv_keyword_1_0='dir'
+				{
+					newLeafNode(lv_keyword_1_0, grammarAccess.getDirKeywordAccess().getKeywordDirKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDirKeywordRule());
+					}
+					setWithLastConsumed($current, "keyword", lv_keyword_1_0, "dir");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleSpecDirKeyword
+entryRuleSpecDirKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSpecDirKeywordRule()); }
+	iv_ruleSpecDirKeyword=ruleSpecDirKeyword
+	{ $current=$iv_ruleSpecDirKeyword.current; }
+	EOF;
+
+// Rule SpecDirKeyword
+ruleSpecDirKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getSpecDirKeywordAccess().getSpecDirKeywordAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				(
+					lv_keyword_1_1='specdir'
+					{
+						newLeafNode(lv_keyword_1_1, grammarAccess.getSpecDirKeywordAccess().getKeywordSpecdirKeyword_1_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getSpecDirKeywordRule());
+						}
+						setWithLastConsumed($current, "keyword", lv_keyword_1_1, null);
+					}
+					    |
+					lv_keyword_1_2='specDir'
+					{
+						newLeafNode(lv_keyword_1_2, grammarAccess.getSpecDirKeywordAccess().getKeywordSpecDirKeyword_1_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getSpecDirKeywordRule());
+						}
+						setWithLastConsumed($current, "keyword", lv_keyword_1_2, null);
+					}
+				)
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleTestDirKeyword
+entryRuleTestDirKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTestDirKeywordRule()); }
+	iv_ruleTestDirKeyword=ruleTestDirKeyword
+	{ $current=$iv_ruleTestDirKeyword.current; }
+	EOF;
+
+// Rule TestDirKeyword
+ruleTestDirKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getTestDirKeywordAccess().getTestDirKeywordAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				(
+					lv_keyword_1_1='testdir'
+					{
+						newLeafNode(lv_keyword_1_1, grammarAccess.getTestDirKeywordAccess().getKeywordTestdirKeyword_1_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getTestDirKeywordRule());
+						}
+						setWithLastConsumed($current, "keyword", lv_keyword_1_1, null);
+					}
+					    |
+					lv_keyword_1_2='testDir'
+					{
+						newLeafNode(lv_keyword_1_2, grammarAccess.getTestDirKeywordAccess().getKeywordTestDirKeyword_1_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getTestDirKeywordRule());
+						}
+						setWithLastConsumed($current, "keyword", lv_keyword_1_2, null);
+					}
+				)
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleMainDirKeyword
+entryRuleMainDirKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getMainDirKeywordRule()); }
+	iv_ruleMainDirKeyword=ruleMainDirKeyword
+	{ $current=$iv_ruleMainDirKeyword.current; }
+	EOF;
+
+// Rule MainDirKeyword
+ruleMainDirKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getMainDirKeywordAccess().getMainDirKeywordAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				(
+					lv_keyword_1_1='maindir'
+					{
+						newLeafNode(lv_keyword_1_1, grammarAccess.getMainDirKeywordAccess().getKeywordMaindirKeyword_1_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getMainDirKeywordRule());
+						}
+						setWithLastConsumed($current, "keyword", lv_keyword_1_1, null);
+					}
+					    |
+					lv_keyword_1_2='mainDir'
+					{
+						newLeafNode(lv_keyword_1_2, grammarAccess.getMainDirKeywordAccess().getKeywordMainDirKeyword_1_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getMainDirKeywordRule());
+						}
+						setWithLastConsumed($current, "keyword", lv_keyword_1_2, null);
+					}
+				)
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleBasePackageKeyword
+entryRuleBasePackageKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getBasePackageKeywordRule()); }
+	iv_ruleBasePackageKeyword=ruleBasePackageKeyword
+	{ $current=$iv_ruleBasePackageKeyword.current; }
+	EOF;
+
+// Rule BasePackageKeyword
+ruleBasePackageKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getBasePackageKeywordAccess().getBasePackageKeywordAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				(
+					lv_keyword_1_1='basepackage'
+					{
+						newLeafNode(lv_keyword_1_1, grammarAccess.getBasePackageKeywordAccess().getKeywordBasepackageKeyword_1_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getBasePackageKeywordRule());
+						}
+						setWithLastConsumed($current, "keyword", lv_keyword_1_1, null);
+					}
+					    |
+					lv_keyword_1_2='basePackage'
+					{
+						newLeafNode(lv_keyword_1_2, grammarAccess.getBasePackageKeywordAccess().getKeywordBasePackageKeyword_1_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getBasePackageKeywordRule());
+						}
+						setWithLastConsumed($current, "keyword", lv_keyword_1_2, null);
+					}
+				)
+			)
+		)
 	)
 ;
 
@@ -538,121 +1456,107 @@ ruleGenBlock returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='gen'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getGenBlockAccess().getGenKeyword_1());
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getGenBlockAccess().getKeywordGenKeywordParserRuleCall_1_0());
+				}
+				lv_keyword_1_0=ruleGenKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getGenBlockRule());
+					}
+					set(
+						$current,
+						"keyword",
+						lv_keyword_1_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.GenKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 		otherlv_2='{'
 		{
 			newLeafNode(otherlv_2, grammarAccess.getGenBlockAccess().getLeftCurlyBracketKeyword_2());
 		}
 		(
 			(
-				otherlv_3='initialInstruction'
-				{
-					newLeafNode(otherlv_3, grammarAccess.getGenBlockAccess().getInitialInstructionKeyword_3_0_0());
-				}
 				(
-					(
-						lv_initialInstructions_4_0=RULE_STRING
-						{
-							newLeafNode(lv_initialInstructions_4_0, grammarAccess.getGenBlockAccess().getInitialInstructionsSTRINGTerminalRuleCall_3_0_1_0());
+					{
+						newCompositeNode(grammarAccess.getGenBlockAccess().getInitialInstructionsInitialInstructionParserRuleCall_3_0_0());
+					}
+					lv_initialInstructions_3_0=ruleInitialInstruction
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getGenBlockRule());
 						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getGenBlockRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"initialInstructions",
-								lv_initialInstructions_4_0,
-								"org.eclipse.xtext.common.Terminals.STRING");
-						}
-					)
+						add(
+							$current,
+							"initialInstructions",
+							lv_initialInstructions_3_0,
+							"com.robenglander.libretto.spec.LibrettoProjectProfile.InitialInstruction");
+						afterParserOrEnumRuleCall();
+					}
 				)
 			)
 			    |
 			(
-				otherlv_5='maxRetries'
-				{
-					newLeafNode(otherlv_5, grammarAccess.getGenBlockAccess().getMaxRetriesKeyword_3_1_0());
-				}
 				(
-					(
-						lv_maxRetries_6_0=RULE_INT
-						{
-							newLeafNode(lv_maxRetries_6_0, grammarAccess.getGenBlockAccess().getMaxRetriesINTTerminalRuleCall_3_1_1_0());
+					{
+						newCompositeNode(grammarAccess.getGenBlockAccess().getMaxRetriesMaxRetriesParserRuleCall_3_1_0());
+					}
+					lv_maxRetries_4_0=ruleMaxRetries
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getGenBlockRule());
 						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getGenBlockRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"maxRetries",
-								lv_maxRetries_6_0,
-								"org.eclipse.xtext.common.Terminals.INT");
-						}
-					)
+						add(
+							$current,
+							"maxRetries",
+							lv_maxRetries_4_0,
+							"com.robenglander.libretto.spec.LibrettoProjectProfile.MaxRetries");
+						afterParserOrEnumRuleCall();
+					}
 				)
 			)
 			    |
 			(
-				otherlv_7='parseCheck'
-				{
-					newLeafNode(otherlv_7, grammarAccess.getGenBlockAccess().getParseCheckKeyword_3_2_0());
-				}
 				(
-					(
-						(
-							lv_parseChecks_8_1='true'
-							{
-								newLeafNode(lv_parseChecks_8_1, grammarAccess.getGenBlockAccess().getParseChecksTrueKeyword_3_2_1_0_0());
-							}
-							{
-								if ($current==null) {
-									$current = createModelElement(grammarAccess.getGenBlockRule());
-								}
-								addWithLastConsumed($current, "parseChecks", lv_parseChecks_8_1, null);
-							}
-							    |
-							lv_parseChecks_8_2='false'
-							{
-								newLeafNode(lv_parseChecks_8_2, grammarAccess.getGenBlockAccess().getParseChecksFalseKeyword_3_2_1_0_1());
-							}
-							{
-								if ($current==null) {
-									$current = createModelElement(grammarAccess.getGenBlockRule());
-								}
-								addWithLastConsumed($current, "parseChecks", lv_parseChecks_8_2, null);
-							}
-						)
-					)
+					{
+						newCompositeNode(grammarAccess.getGenBlockAccess().getParseChecksParseCheckParserRuleCall_3_2_0());
+					}
+					lv_parseChecks_5_0=ruleParseCheck
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getGenBlockRule());
+						}
+						add(
+							$current,
+							"parseChecks",
+							lv_parseChecks_5_0,
+							"com.robenglander.libretto.spec.LibrettoProjectProfile.ParseCheck");
+						afterParserOrEnumRuleCall();
+					}
 				)
 			)
 			    |
 			(
-				otherlv_9='defaultCorrection'
-				{
-					newLeafNode(otherlv_9, grammarAccess.getGenBlockAccess().getDefaultCorrectionKeyword_3_3_0());
-				}
 				(
-					(
-						lv_defaultCorrections_10_0=RULE_STRING
-						{
-							newLeafNode(lv_defaultCorrections_10_0, grammarAccess.getGenBlockAccess().getDefaultCorrectionsSTRINGTerminalRuleCall_3_3_1_0());
+					{
+						newCompositeNode(grammarAccess.getGenBlockAccess().getDefaultCorrectionsDefaultCorrectionParserRuleCall_3_3_0());
+					}
+					lv_defaultCorrections_6_0=ruleDefaultCorrection
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getGenBlockRule());
 						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getGenBlockRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"defaultCorrections",
-								lv_defaultCorrections_10_0,
-								"org.eclipse.xtext.common.Terminals.STRING");
-						}
-					)
+						add(
+							$current,
+							"defaultCorrections",
+							lv_defaultCorrections_6_0,
+							"com.robenglander.libretto.spec.LibrettoProjectProfile.DefaultCorrection");
+						afterParserOrEnumRuleCall();
+					}
 				)
 			)
 			    |
@@ -661,7 +1565,7 @@ ruleGenBlock returns [EObject current=null]
 					{
 						newCompositeNode(grammarAccess.getGenBlockAccess().getRemediationsGenRemediationRulesParserRuleCall_3_4_0());
 					}
-					lv_remediations_11_0=ruleGenRemediationRules
+					lv_remediations_7_0=ruleGenRemediationRules
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getGenBlockRule());
@@ -669,7 +1573,7 @@ ruleGenBlock returns [EObject current=null]
 						add(
 							$current,
 							"remediations",
-							lv_remediations_11_0,
+							lv_remediations_7_0,
 							"com.robenglander.libretto.spec.LibrettoProjectProfile.GenRemediationRules");
 						afterParserOrEnumRuleCall();
 					}
@@ -681,7 +1585,7 @@ ruleGenBlock returns [EObject current=null]
 					{
 						newCompositeNode(grammarAccess.getGenBlockAccess().getModelUsagesGenUsageBlockParserRuleCall_3_5_0());
 					}
-					lv_modelUsages_12_0=ruleGenUsageBlock
+					lv_modelUsages_8_0=ruleGenUsageBlock
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getGenBlockRule());
@@ -689,17 +1593,575 @@ ruleGenBlock returns [EObject current=null]
 						add(
 							$current,
 							"modelUsages",
-							lv_modelUsages_12_0,
+							lv_modelUsages_8_0,
 							"com.robenglander.libretto.spec.LibrettoProjectProfile.GenUsageBlock");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)*
-		otherlv_13='}'
+		otherlv_9='}'
 		{
-			newLeafNode(otherlv_13, grammarAccess.getGenBlockAccess().getRightCurlyBracketKeyword_4());
+			newLeafNode(otherlv_9, grammarAccess.getGenBlockAccess().getRightCurlyBracketKeyword_4());
 		}
+	)
+;
+
+// Entry rule entryRuleGenKeyword
+entryRuleGenKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getGenKeywordRule()); }
+	iv_ruleGenKeyword=ruleGenKeyword
+	{ $current=$iv_ruleGenKeyword.current; }
+	EOF;
+
+// Rule GenKeyword
+ruleGenKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getGenKeywordAccess().getGenKeywordAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				lv_keyword_1_0='gen'
+				{
+					newLeafNode(lv_keyword_1_0, grammarAccess.getGenKeywordAccess().getKeywordGenKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGenKeywordRule());
+					}
+					setWithLastConsumed($current, "keyword", lv_keyword_1_0, "gen");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleInitialInstruction
+entryRuleInitialInstruction returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getInitialInstructionRule()); }
+	iv_ruleInitialInstruction=ruleInitialInstruction
+	{ $current=$iv_ruleInitialInstruction.current; }
+	EOF;
+
+// Rule InitialInstruction
+ruleInitialInstruction returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getInitialInstructionAccess().getInitialInstructionAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getInitialInstructionAccess().getKeywordInitialInstructionKeywordParserRuleCall_1_0());
+				}
+				lv_keyword_1_0=ruleInitialInstructionKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getInitialInstructionRule());
+					}
+					set(
+						$current,
+						"keyword",
+						lv_keyword_1_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.InitialInstructionKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				lv_instruction_2_0=RULE_STRING
+				{
+					newLeafNode(lv_instruction_2_0, grammarAccess.getInitialInstructionAccess().getInstructionSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getInitialInstructionRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"instruction",
+						lv_instruction_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleMaxRetries
+entryRuleMaxRetries returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getMaxRetriesRule()); }
+	iv_ruleMaxRetries=ruleMaxRetries
+	{ $current=$iv_ruleMaxRetries.current; }
+	EOF;
+
+// Rule MaxRetries
+ruleMaxRetries returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getMaxRetriesAccess().getMaxRetriesAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getMaxRetriesAccess().getKeywordMaxRetriesKeywordParserRuleCall_1_0());
+				}
+				lv_keyword_1_0=ruleMaxRetriesKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getMaxRetriesRule());
+					}
+					set(
+						$current,
+						"keyword",
+						lv_keyword_1_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.MaxRetriesKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				lv_maxRetries_2_0=RULE_INT
+				{
+					newLeafNode(lv_maxRetries_2_0, grammarAccess.getMaxRetriesAccess().getMaxRetriesINTTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getMaxRetriesRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"maxRetries",
+						lv_maxRetries_2_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleParseCheck
+entryRuleParseCheck returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getParseCheckRule()); }
+	iv_ruleParseCheck=ruleParseCheck
+	{ $current=$iv_ruleParseCheck.current; }
+	EOF;
+
+// Rule ParseCheck
+ruleParseCheck returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getParseCheckAccess().getParseCheckAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getParseCheckAccess().getKeywordParseCheckKeywordParserRuleCall_1_0());
+				}
+				lv_keyword_1_0=ruleParseCheckKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getParseCheckRule());
+					}
+					set(
+						$current,
+						"keyword",
+						lv_keyword_1_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.ParseCheckKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getParseCheckAccess().getValueTrueFalseKeywordParserRuleCall_2_0());
+				}
+				lv_value_2_0=ruleTrueFalseKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getParseCheckRule());
+					}
+					set(
+						$current,
+						"value",
+						lv_value_2_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.TrueFalseKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleDefaultCorrection
+entryRuleDefaultCorrection returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getDefaultCorrectionRule()); }
+	iv_ruleDefaultCorrection=ruleDefaultCorrection
+	{ $current=$iv_ruleDefaultCorrection.current; }
+	EOF;
+
+// Rule DefaultCorrection
+ruleDefaultCorrection returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getDefaultCorrectionAccess().getDefaultCorrectionAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getDefaultCorrectionAccess().getKeywordDefaultCorrectionKeywordParserRuleCall_1_0());
+				}
+				lv_keyword_1_0=ruleDefaultCorrectionKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getDefaultCorrectionRule());
+					}
+					set(
+						$current,
+						"keyword",
+						lv_keyword_1_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.DefaultCorrectionKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				lv_correction_2_0=RULE_STRING
+				{
+					newLeafNode(lv_correction_2_0, grammarAccess.getDefaultCorrectionAccess().getCorrectionSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDefaultCorrectionRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"correction",
+						lv_correction_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleInitialInstructionKeyword
+entryRuleInitialInstructionKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getInitialInstructionKeywordRule()); }
+	iv_ruleInitialInstructionKeyword=ruleInitialInstructionKeyword
+	{ $current=$iv_ruleInitialInstructionKeyword.current; }
+	EOF;
+
+// Rule InitialInstructionKeyword
+ruleInitialInstructionKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getInitialInstructionKeywordAccess().getInitialInstructionKeywordAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				(
+					lv_keyword_1_1='initialinstruction'
+					{
+						newLeafNode(lv_keyword_1_1, grammarAccess.getInitialInstructionKeywordAccess().getKeywordInitialinstructionKeyword_1_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getInitialInstructionKeywordRule());
+						}
+						setWithLastConsumed($current, "keyword", lv_keyword_1_1, null);
+					}
+					    |
+					lv_keyword_1_2='initialInstruction'
+					{
+						newLeafNode(lv_keyword_1_2, grammarAccess.getInitialInstructionKeywordAccess().getKeywordInitialInstructionKeyword_1_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getInitialInstructionKeywordRule());
+						}
+						setWithLastConsumed($current, "keyword", lv_keyword_1_2, null);
+					}
+				)
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleMaxRetriesKeyword
+entryRuleMaxRetriesKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getMaxRetriesKeywordRule()); }
+	iv_ruleMaxRetriesKeyword=ruleMaxRetriesKeyword
+	{ $current=$iv_ruleMaxRetriesKeyword.current; }
+	EOF;
+
+// Rule MaxRetriesKeyword
+ruleMaxRetriesKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getMaxRetriesKeywordAccess().getMaxRetriesKeywordAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				(
+					lv_keyword_1_1='maxretries'
+					{
+						newLeafNode(lv_keyword_1_1, grammarAccess.getMaxRetriesKeywordAccess().getKeywordMaxretriesKeyword_1_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getMaxRetriesKeywordRule());
+						}
+						setWithLastConsumed($current, "keyword", lv_keyword_1_1, null);
+					}
+					    |
+					lv_keyword_1_2='maxRetries'
+					{
+						newLeafNode(lv_keyword_1_2, grammarAccess.getMaxRetriesKeywordAccess().getKeywordMaxRetriesKeyword_1_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getMaxRetriesKeywordRule());
+						}
+						setWithLastConsumed($current, "keyword", lv_keyword_1_2, null);
+					}
+				)
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleParseCheckKeyword
+entryRuleParseCheckKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getParseCheckKeywordRule()); }
+	iv_ruleParseCheckKeyword=ruleParseCheckKeyword
+	{ $current=$iv_ruleParseCheckKeyword.current; }
+	EOF;
+
+// Rule ParseCheckKeyword
+ruleParseCheckKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getParseCheckKeywordAccess().getParseCheckKeywordAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				(
+					lv_keyword_1_1='parsecheck'
+					{
+						newLeafNode(lv_keyword_1_1, grammarAccess.getParseCheckKeywordAccess().getKeywordParsecheckKeyword_1_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getParseCheckKeywordRule());
+						}
+						setWithLastConsumed($current, "keyword", lv_keyword_1_1, null);
+					}
+					    |
+					lv_keyword_1_2='parseCheck'
+					{
+						newLeafNode(lv_keyword_1_2, grammarAccess.getParseCheckKeywordAccess().getKeywordParseCheckKeyword_1_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getParseCheckKeywordRule());
+						}
+						setWithLastConsumed($current, "keyword", lv_keyword_1_2, null);
+					}
+				)
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleDefaultCorrectionKeyword
+entryRuleDefaultCorrectionKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getDefaultCorrectionKeywordRule()); }
+	iv_ruleDefaultCorrectionKeyword=ruleDefaultCorrectionKeyword
+	{ $current=$iv_ruleDefaultCorrectionKeyword.current; }
+	EOF;
+
+// Rule DefaultCorrectionKeyword
+ruleDefaultCorrectionKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getDefaultCorrectionKeywordAccess().getDefaultCorrectionKeywordAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				(
+					lv_keyword_1_1='defaultcorrection'
+					{
+						newLeafNode(lv_keyword_1_1, grammarAccess.getDefaultCorrectionKeywordAccess().getKeywordDefaultcorrectionKeyword_1_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDefaultCorrectionKeywordRule());
+						}
+						setWithLastConsumed($current, "keyword", lv_keyword_1_1, null);
+					}
+					    |
+					lv_keyword_1_2='defaultCorrection'
+					{
+						newLeafNode(lv_keyword_1_2, grammarAccess.getDefaultCorrectionKeywordAccess().getKeywordDefaultCorrectionKeyword_1_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDefaultCorrectionKeywordRule());
+						}
+						setWithLastConsumed($current, "keyword", lv_keyword_1_2, null);
+					}
+				)
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleTrueFalseKeyword
+entryRuleTrueFalseKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTrueFalseKeywordRule()); }
+	iv_ruleTrueFalseKeyword=ruleTrueFalseKeyword
+	{ $current=$iv_ruleTrueFalseKeyword.current; }
+	EOF;
+
+// Rule TrueFalseKeyword
+ruleTrueFalseKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getTrueFalseKeywordAccess().getTrueKeywordAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				(
+					lv_keyword_1_1='true'
+					{
+						newLeafNode(lv_keyword_1_1, grammarAccess.getTrueFalseKeywordAccess().getKeywordTrueKeyword_1_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getTrueFalseKeywordRule());
+						}
+						setWithLastConsumed($current, "keyword", lv_keyword_1_1, null);
+					}
+					    |
+					lv_keyword_1_2='false'
+					{
+						newLeafNode(lv_keyword_1_2, grammarAccess.getTrueFalseKeywordAccess().getKeywordFalseKeyword_1_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getTrueFalseKeywordRule());
+						}
+						setWithLastConsumed($current, "keyword", lv_keyword_1_2, null);
+					}
+				)
+			)
+		)
 	)
 ;
 
@@ -726,10 +2188,25 @@ ruleGenRemediationRules returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='rules'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getGenRemediationRulesAccess().getRulesKeyword_1());
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getGenRemediationRulesAccess().getRulesKeywordRulesKeywordParserRuleCall_1_0());
+				}
+				lv_rulesKeyword_1_0=ruleRulesKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getGenRemediationRulesRule());
+					}
+					set(
+						$current,
+						"rulesKeyword",
+						lv_rulesKeyword_1_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.RulesKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 		otherlv_2='{'
 		{
 			newLeafNode(otherlv_2, grammarAccess.getGenRemediationRulesAccess().getLeftCurlyBracketKeyword_2());
@@ -782,6 +2259,46 @@ ruleGenRemediationRules returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleRulesKeyword
+entryRuleRulesKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getRulesKeywordRule()); }
+	iv_ruleRulesKeyword=ruleRulesKeyword
+	{ $current=$iv_ruleRulesKeyword.current; }
+	EOF;
+
+// Rule RulesKeyword
+ruleRulesKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getRulesKeywordAccess().getRulesKeywordAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				lv_keyword_1_0='rules'
+				{
+					newLeafNode(lv_keyword_1_0, grammarAccess.getRulesKeywordAccess().getKeywordRulesKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRulesKeywordRule());
+					}
+					setWithLastConsumed($current, "keyword", lv_keyword_1_0, "rules");
+				}
+			)
+		)
+	)
+;
+
 // Entry rule entryRuleGenPatternRemediationRule
 entryRuleGenPatternRemediationRule returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getGenPatternRemediationRuleRule()); }
@@ -805,94 +2322,443 @@ ruleGenPatternRemediationRule returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='rule'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getGenPatternRemediationRuleAccess().getRuleKeyword_1());
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getGenPatternRemediationRuleAccess().getKeywordRuleKeywordParserRuleCall_1_0());
+				}
+				lv_keyword_1_0=ruleRuleKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getGenPatternRemediationRuleRule());
+					}
+					set(
+						$current,
+						"keyword",
+						lv_keyword_1_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.RuleKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 		otherlv_2='{'
 		{
 			newLeafNode(otherlv_2, grammarAccess.getGenPatternRemediationRuleAccess().getLeftCurlyBracketKeyword_2());
 		}
 		(
 			(
-				otherlv_3='pattern'
-				{
-					newLeafNode(otherlv_3, grammarAccess.getGenPatternRemediationRuleAccess().getPatternKeyword_3_0_0());
-				}
 				(
-					(
-						lv_patterns_4_0=RULE_STRING
-						{
-							newLeafNode(lv_patterns_4_0, grammarAccess.getGenPatternRemediationRuleAccess().getPatternsSTRINGTerminalRuleCall_3_0_1_0());
+					{
+						newCompositeNode(grammarAccess.getGenPatternRemediationRuleAccess().getPatternsPatternParserRuleCall_3_0_0());
+					}
+					lv_patterns_3_0=rulePattern
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getGenPatternRemediationRuleRule());
 						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getGenPatternRemediationRuleRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"patterns",
-								lv_patterns_4_0,
-								"org.eclipse.xtext.common.Terminals.STRING");
-						}
-					)
+						add(
+							$current,
+							"patterns",
+							lv_patterns_3_0,
+							"com.robenglander.libretto.spec.LibrettoProjectProfile.Pattern");
+						afterParserOrEnumRuleCall();
+					}
 				)
 			)
 			    |
 			(
-				otherlv_5='code'
-				{
-					newLeafNode(otherlv_5, grammarAccess.getGenPatternRemediationRuleAccess().getCodeKeyword_3_1_0());
-				}
 				(
-					(
-						lv_codes_6_0=RULE_STRING
-						{
-							newLeafNode(lv_codes_6_0, grammarAccess.getGenPatternRemediationRuleAccess().getCodesSTRINGTerminalRuleCall_3_1_1_0());
+					{
+						newCompositeNode(grammarAccess.getGenPatternRemediationRuleAccess().getCodesCodeParserRuleCall_3_1_0());
+					}
+					lv_codes_4_0=ruleCode
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getGenPatternRemediationRuleRule());
 						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getGenPatternRemediationRuleRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"codes",
-								lv_codes_6_0,
-								"org.eclipse.xtext.common.Terminals.STRING");
-						}
-					)
+						add(
+							$current,
+							"codes",
+							lv_codes_4_0,
+							"com.robenglander.libretto.spec.LibrettoProjectProfile.Code");
+						afterParserOrEnumRuleCall();
+					}
 				)
 			)
 			    |
 			(
-				otherlv_7='correction'
-				{
-					newLeafNode(otherlv_7, grammarAccess.getGenPatternRemediationRuleAccess().getCorrectionKeyword_3_2_0());
-				}
 				(
-					(
-						lv_corrections_8_0=RULE_STRING
-						{
-							newLeafNode(lv_corrections_8_0, grammarAccess.getGenPatternRemediationRuleAccess().getCorrectionsSTRINGTerminalRuleCall_3_2_1_0());
+					{
+						newCompositeNode(grammarAccess.getGenPatternRemediationRuleAccess().getCorrectionsCorrectionParserRuleCall_3_2_0());
+					}
+					lv_corrections_5_0=ruleCorrection
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getGenPatternRemediationRuleRule());
 						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getGenPatternRemediationRuleRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"corrections",
-								lv_corrections_8_0,
-								"org.eclipse.xtext.common.Terminals.STRING");
-						}
-					)
+						add(
+							$current,
+							"corrections",
+							lv_corrections_5_0,
+							"com.robenglander.libretto.spec.LibrettoProjectProfile.Correction");
+						afterParserOrEnumRuleCall();
+					}
 				)
 			)
 		)*
-		otherlv_9='}'
+		otherlv_6='}'
 		{
-			newLeafNode(otherlv_9, grammarAccess.getGenPatternRemediationRuleAccess().getRightCurlyBracketKeyword_4());
+			newLeafNode(otherlv_6, grammarAccess.getGenPatternRemediationRuleAccess().getRightCurlyBracketKeyword_4());
 		}
+	)
+;
+
+// Entry rule entryRuleRuleKeyword
+entryRuleRuleKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getRuleKeywordRule()); }
+	iv_ruleRuleKeyword=ruleRuleKeyword
+	{ $current=$iv_ruleRuleKeyword.current; }
+	EOF;
+
+// Rule RuleKeyword
+ruleRuleKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getRuleKeywordAccess().getRuleKeywordAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				lv_keyword_1_0='rule'
+				{
+					newLeafNode(lv_keyword_1_0, grammarAccess.getRuleKeywordAccess().getKeywordRuleKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRuleKeywordRule());
+					}
+					setWithLastConsumed($current, "keyword", lv_keyword_1_0, "rule");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRulePattern
+entryRulePattern returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getPatternRule()); }
+	iv_rulePattern=rulePattern
+	{ $current=$iv_rulePattern.current; }
+	EOF;
+
+// Rule Pattern
+rulePattern returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getPatternAccess().getPatternAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getPatternAccess().getKeywordPatternKeywordParserRuleCall_1_0());
+				}
+				lv_keyword_1_0=rulePatternKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPatternRule());
+					}
+					set(
+						$current,
+						"keyword",
+						lv_keyword_1_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.PatternKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				lv_pattern_2_0=RULE_STRING
+				{
+					newLeafNode(lv_pattern_2_0, grammarAccess.getPatternAccess().getPatternSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getPatternRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"pattern",
+						lv_pattern_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRulePatternKeyword
+entryRulePatternKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getPatternKeywordRule()); }
+	iv_rulePatternKeyword=rulePatternKeyword
+	{ $current=$iv_rulePatternKeyword.current; }
+	EOF;
+
+// Rule PatternKeyword
+rulePatternKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getPatternKeywordAccess().getPatternKeywordAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				lv_keyword_1_0='pattern'
+				{
+					newLeafNode(lv_keyword_1_0, grammarAccess.getPatternKeywordAccess().getKeywordPatternKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getPatternKeywordRule());
+					}
+					setWithLastConsumed($current, "keyword", lv_keyword_1_0, "pattern");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleCode
+entryRuleCode returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCodeRule()); }
+	iv_ruleCode=ruleCode
+	{ $current=$iv_ruleCode.current; }
+	EOF;
+
+// Rule Code
+ruleCode returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getCodeAccess().getCodeAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCodeAccess().getKeywordCodeKeywordParserRuleCall_1_0());
+				}
+				lv_keyword_1_0=ruleCodeKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCodeRule());
+					}
+					set(
+						$current,
+						"keyword",
+						lv_keyword_1_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.CodeKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				lv_code_2_0=RULE_STRING
+				{
+					newLeafNode(lv_code_2_0, grammarAccess.getCodeAccess().getCodeSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getCodeRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"code",
+						lv_code_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleCodeKeyword
+entryRuleCodeKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCodeKeywordRule()); }
+	iv_ruleCodeKeyword=ruleCodeKeyword
+	{ $current=$iv_ruleCodeKeyword.current; }
+	EOF;
+
+// Rule CodeKeyword
+ruleCodeKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getCodeKeywordAccess().getCodeKeywordAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				lv_keyword_1_0='code'
+				{
+					newLeafNode(lv_keyword_1_0, grammarAccess.getCodeKeywordAccess().getKeywordCodeKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getCodeKeywordRule());
+					}
+					setWithLastConsumed($current, "keyword", lv_keyword_1_0, "code");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleCorrection
+entryRuleCorrection returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCorrectionRule()); }
+	iv_ruleCorrection=ruleCorrection
+	{ $current=$iv_ruleCorrection.current; }
+	EOF;
+
+// Rule Correction
+ruleCorrection returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getCorrectionAccess().getCorrectionAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCorrectionAccess().getKeywordCorrectionKeywordParserRuleCall_1_0());
+				}
+				lv_keyword_1_0=ruleCorrectionKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCorrectionRule());
+					}
+					set(
+						$current,
+						"keyword",
+						lv_keyword_1_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.CorrectionKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				lv_correction_2_0=RULE_STRING
+				{
+					newLeafNode(lv_correction_2_0, grammarAccess.getCorrectionAccess().getCorrectionSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getCorrectionRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"correction",
+						lv_correction_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleCorrectionKeyword
+entryRuleCorrectionKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCorrectionKeywordRule()); }
+	iv_ruleCorrectionKeyword=ruleCorrectionKeyword
+	{ $current=$iv_ruleCorrectionKeyword.current; }
+	EOF;
+
+// Rule CorrectionKeyword
+ruleCorrectionKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getCorrectionKeywordAccess().getCorrectionKeywordAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				lv_keyword_1_0='correction'
+				{
+					newLeafNode(lv_keyword_1_0, grammarAccess.getCorrectionKeywordAccess().getKeywordCorrectionKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getCorrectionKeywordRule());
+					}
+					setWithLastConsumed($current, "keyword", lv_keyword_1_0, "correction");
+				}
+			)
+		)
 	)
 ;
 
@@ -919,69 +2785,114 @@ ruleGenDefaultRemediationRule returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='default'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getGenDefaultRemediationRuleAccess().getDefaultKeyword_1());
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getGenDefaultRemediationRuleAccess().getKeywordDefaultKeywordParserRuleCall_1_0());
+				}
+				lv_keyword_1_0=ruleDefaultKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getGenDefaultRemediationRuleRule());
+					}
+					set(
+						$current,
+						"keyword",
+						lv_keyword_1_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.DefaultKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 		otherlv_2='{'
 		{
 			newLeafNode(otherlv_2, grammarAccess.getGenDefaultRemediationRuleAccess().getLeftCurlyBracketKeyword_2());
 		}
 		(
 			(
-				otherlv_3='code'
-				{
-					newLeafNode(otherlv_3, grammarAccess.getGenDefaultRemediationRuleAccess().getCodeKeyword_3_0_0());
-				}
 				(
-					(
-						lv_codes_4_0=RULE_STRING
-						{
-							newLeafNode(lv_codes_4_0, grammarAccess.getGenDefaultRemediationRuleAccess().getCodesSTRINGTerminalRuleCall_3_0_1_0());
+					{
+						newCompositeNode(grammarAccess.getGenDefaultRemediationRuleAccess().getCodesCodeParserRuleCall_3_0_0());
+					}
+					lv_codes_3_0=ruleCode
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getGenDefaultRemediationRuleRule());
 						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getGenDefaultRemediationRuleRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"codes",
-								lv_codes_4_0,
-								"org.eclipse.xtext.common.Terminals.STRING");
-						}
-					)
+						add(
+							$current,
+							"codes",
+							lv_codes_3_0,
+							"com.robenglander.libretto.spec.LibrettoProjectProfile.Code");
+						afterParserOrEnumRuleCall();
+					}
 				)
 			)
 			    |
 			(
-				otherlv_5='correction'
-				{
-					newLeafNode(otherlv_5, grammarAccess.getGenDefaultRemediationRuleAccess().getCorrectionKeyword_3_1_0());
-				}
 				(
-					(
-						lv_correction_6_0=RULE_STRING
-						{
-							newLeafNode(lv_correction_6_0, grammarAccess.getGenDefaultRemediationRuleAccess().getCorrectionSTRINGTerminalRuleCall_3_1_1_0());
+					{
+						newCompositeNode(grammarAccess.getGenDefaultRemediationRuleAccess().getCorrectionsCorrectionParserRuleCall_3_1_0());
+					}
+					lv_corrections_4_0=ruleCorrection
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getGenDefaultRemediationRuleRule());
 						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getGenDefaultRemediationRuleRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"correction",
-								lv_correction_6_0,
-								"org.eclipse.xtext.common.Terminals.STRING");
-						}
-					)
+						add(
+							$current,
+							"corrections",
+							lv_corrections_4_0,
+							"com.robenglander.libretto.spec.LibrettoProjectProfile.Correction");
+						afterParserOrEnumRuleCall();
+					}
 				)
 			)
 		)*
-		otherlv_7='}'
+		otherlv_5='}'
 		{
-			newLeafNode(otherlv_7, grammarAccess.getGenDefaultRemediationRuleAccess().getRightCurlyBracketKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getGenDefaultRemediationRuleAccess().getRightCurlyBracketKeyword_4());
 		}
+	)
+;
+
+// Entry rule entryRuleDefaultKeyword
+entryRuleDefaultKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getDefaultKeywordRule()); }
+	iv_ruleDefaultKeyword=ruleDefaultKeyword
+	{ $current=$iv_ruleDefaultKeyword.current; }
+	EOF;
+
+// Rule DefaultKeyword
+ruleDefaultKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getDefaultKeywordAccess().getDefaultKeywordAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				lv_keyword_1_0='default'
+				{
+					newLeafNode(lv_keyword_1_0, grammarAccess.getDefaultKeywordAccess().getKeywordDefaultKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDefaultKeywordRule());
+					}
+					setWithLastConsumed($current, "keyword", lv_keyword_1_0, "default");
+				}
+			)
+		)
 	)
 ;
 
@@ -1008,10 +2919,25 @@ ruleLlmProvidersBlock returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='llmProviders'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getLlmProvidersBlockAccess().getLlmProvidersKeyword_1());
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getLlmProvidersBlockAccess().getKeywordLLMProvidersKeywordParserRuleCall_1_0());
+				}
+				lv_keyword_1_0=ruleLLMProvidersKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getLlmProvidersBlockRule());
+					}
+					set(
+						$current,
+						"keyword",
+						lv_keyword_1_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.LLMProvidersKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 		otherlv_2='{'
 		{
 			newLeafNode(otherlv_2, grammarAccess.getLlmProvidersBlockAccess().getLeftCurlyBracketKeyword_2());
@@ -1019,9 +2945,9 @@ ruleLlmProvidersBlock returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getLlmProvidersBlockAccess().getProvidersNamedLlmProviderParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getLlmProvidersBlockAccess().getProvidersLLMProviderParserRuleCall_3_0());
 				}
-				lv_providers_3_0=ruleNamedLlmProvider
+				lv_providers_3_0=ruleLLMProvider
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getLlmProvidersBlockRule());
@@ -1030,7 +2956,7 @@ ruleLlmProvidersBlock returns [EObject current=null]
 						$current,
 						"providers",
 						lv_providers_3_0,
-						"com.robenglander.libretto.spec.LibrettoProjectProfile.NamedLlmProvider");
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.LLMProvider");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -1042,15 +2968,15 @@ ruleLlmProvidersBlock returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleNamedLlmProvider
-entryRuleNamedLlmProvider returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getNamedLlmProviderRule()); }
-	iv_ruleNamedLlmProvider=ruleNamedLlmProvider
-	{ $current=$iv_ruleNamedLlmProvider.current; }
+// Entry rule entryRuleLLMProvidersKeyword
+entryRuleLLMProvidersKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getLLMProvidersKeywordRule()); }
+	iv_ruleLLMProvidersKeyword=ruleLLMProvidersKeyword
+	{ $current=$iv_ruleLLMProvidersKeyword.current; }
 	EOF;
 
-// Rule NamedLlmProvider
-ruleNamedLlmProvider returns [EObject current=null]
+// Rule LLMProvidersKeyword
+ruleLLMProvidersKeyword returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1058,19 +2984,87 @@ ruleNamedLlmProvider returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='provider'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getNamedLlmProviderAccess().getProviderKeyword_0());
-		}
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getLLMProvidersKeywordAccess().getLLMProvidersKeywordAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				(
+					lv_keyword_1_1='llmproviders'
+					{
+						newLeafNode(lv_keyword_1_1, grammarAccess.getLLMProvidersKeywordAccess().getKeywordLlmprovidersKeyword_1_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getLLMProvidersKeywordRule());
+						}
+						setWithLastConsumed($current, "keyword", lv_keyword_1_1, null);
+					}
+					    |
+					lv_keyword_1_2='llmProviders'
+					{
+						newLeafNode(lv_keyword_1_2, grammarAccess.getLLMProvidersKeywordAccess().getKeywordLlmProvidersKeyword_1_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getLLMProvidersKeywordRule());
+						}
+						setWithLastConsumed($current, "keyword", lv_keyword_1_2, null);
+					}
+				)
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleLLMProvider
+entryRuleLLMProvider returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getLLMProviderRule()); }
+	iv_ruleLLMProvider=ruleLLMProvider
+	{ $current=$iv_ruleLLMProvider.current; }
+	EOF;
+
+// Rule LLMProvider
+ruleLLMProvider returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getNamedLlmProviderAccess().getNameValidIDParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getLLMProviderAccess().getKeywordProviderKeywordParserRuleCall_0_0());
+				}
+				lv_keyword_0_0=ruleProviderKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getLLMProviderRule());
+					}
+					set(
+						$current,
+						"keyword",
+						lv_keyword_0_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.ProviderKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getLLMProviderAccess().getNameValidIDParserRuleCall_1_0());
 				}
 				lv_name_1_0=ruleValidID
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getNamedLlmProviderRule());
+						$current = createModelElementForParent(grammarAccess.getLLMProviderRule());
 					}
 					set(
 						$current,
@@ -1083,133 +3077,572 @@ ruleNamedLlmProvider returns [EObject current=null]
 		)
 		otherlv_2='{'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getNamedLlmProviderAccess().getLeftCurlyBracketKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getLLMProviderAccess().getLeftCurlyBracketKeyword_2());
 		}
 		(
 			(
-				otherlv_3='kind'
-				{
-					newLeafNode(otherlv_3, grammarAccess.getNamedLlmProviderAccess().getKindKeyword_3_0_0());
-				}
 				(
-					(
-						(
-							lv_kinds_4_1='local'
-							{
-								newLeafNode(lv_kinds_4_1, grammarAccess.getNamedLlmProviderAccess().getKindsLocalKeyword_3_0_1_0_0());
-							}
-							{
-								if ($current==null) {
-									$current = createModelElement(grammarAccess.getNamedLlmProviderRule());
-								}
-								addWithLastConsumed($current, "kinds", lv_kinds_4_1, null);
-							}
-							    |
-							lv_kinds_4_2='openai'
-							{
-								newLeafNode(lv_kinds_4_2, grammarAccess.getNamedLlmProviderAccess().getKindsOpenaiKeyword_3_0_1_0_1());
-							}
-							{
-								if ($current==null) {
-									$current = createModelElement(grammarAccess.getNamedLlmProviderRule());
-								}
-								addWithLastConsumed($current, "kinds", lv_kinds_4_2, null);
-							}
-							    |
-							lv_kinds_4_3='ollama'
-							{
-								newLeafNode(lv_kinds_4_3, grammarAccess.getNamedLlmProviderAccess().getKindsOllamaKeyword_3_0_1_0_2());
-							}
-							{
-								if ($current==null) {
-									$current = createModelElement(grammarAccess.getNamedLlmProviderRule());
-								}
-								addWithLastConsumed($current, "kinds", lv_kinds_4_3, null);
-							}
-						)
-					)
+					{
+						newCompositeNode(grammarAccess.getLLMProviderAccess().getTypesProviderTypeParserRuleCall_3_0_0());
+					}
+					lv_types_3_0=ruleProviderType
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getLLMProviderRule());
+						}
+						add(
+							$current,
+							"types",
+							lv_types_3_0,
+							"com.robenglander.libretto.spec.LibrettoProjectProfile.ProviderType");
+						afterParserOrEnumRuleCall();
+					}
 				)
 			)
 			    |
 			(
-				otherlv_5='localModelPath'
-				{
-					newLeafNode(otherlv_5, grammarAccess.getNamedLlmProviderAccess().getLocalModelPathKeyword_3_1_0());
-				}
 				(
-					(
-						lv_localModelPaths_6_0=RULE_STRING
-						{
-							newLeafNode(lv_localModelPaths_6_0, grammarAccess.getNamedLlmProviderAccess().getLocalModelPathsSTRINGTerminalRuleCall_3_1_1_0());
+					{
+						newCompositeNode(grammarAccess.getLLMProviderAccess().getLocalModelPathsLocalModelPathParserRuleCall_3_1_0());
+					}
+					lv_localModelPaths_4_0=ruleLocalModelPath
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getLLMProviderRule());
 						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getNamedLlmProviderRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"localModelPaths",
-								lv_localModelPaths_6_0,
-								"org.eclipse.xtext.common.Terminals.STRING");
-						}
-					)
+						add(
+							$current,
+							"localModelPaths",
+							lv_localModelPaths_4_0,
+							"com.robenglander.libretto.spec.LibrettoProjectProfile.LocalModelPath");
+						afterParserOrEnumRuleCall();
+					}
 				)
 			)
 			    |
 			(
-				otherlv_7='model'
-				{
-					newLeafNode(otherlv_7, grammarAccess.getNamedLlmProviderAccess().getModelKeyword_3_2_0());
-				}
 				(
-					(
-						lv_models_8_0=RULE_STRING
-						{
-							newLeafNode(lv_models_8_0, grammarAccess.getNamedLlmProviderAccess().getModelsSTRINGTerminalRuleCall_3_2_1_0());
+					{
+						newCompositeNode(grammarAccess.getLLMProviderAccess().getModelsModelParserRuleCall_3_2_0());
+					}
+					lv_models_5_0=ruleModel
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getLLMProviderRule());
 						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getNamedLlmProviderRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"models",
-								lv_models_8_0,
-								"org.eclipse.xtext.common.Terminals.STRING");
-						}
-					)
+						add(
+							$current,
+							"models",
+							lv_models_5_0,
+							"com.robenglander.libretto.spec.LibrettoProjectProfile.Model");
+						afterParserOrEnumRuleCall();
+					}
 				)
 			)
 			    |
 			(
-				otherlv_9='endpoint'
-				{
-					newLeafNode(otherlv_9, grammarAccess.getNamedLlmProviderAccess().getEndpointKeyword_3_3_0());
-				}
 				(
-					(
-						lv_endpoints_10_0=RULE_STRING
-						{
-							newLeafNode(lv_endpoints_10_0, grammarAccess.getNamedLlmProviderAccess().getEndpointsSTRINGTerminalRuleCall_3_3_1_0());
+					{
+						newCompositeNode(grammarAccess.getLLMProviderAccess().getEndpointsEndpointParserRuleCall_3_3_0());
+					}
+					lv_endpoints_6_0=ruleEndpoint
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getLLMProviderRule());
 						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getNamedLlmProviderRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"endpoints",
-								lv_endpoints_10_0,
-								"org.eclipse.xtext.common.Terminals.STRING");
-						}
-					)
+						add(
+							$current,
+							"endpoints",
+							lv_endpoints_6_0,
+							"com.robenglander.libretto.spec.LibrettoProjectProfile.Endpoint");
+						afterParserOrEnumRuleCall();
+					}
 				)
 			)
 		)*
-		otherlv_11='}'
+		otherlv_7='}'
 		{
-			newLeafNode(otherlv_11, grammarAccess.getNamedLlmProviderAccess().getRightCurlyBracketKeyword_4());
+			newLeafNode(otherlv_7, grammarAccess.getLLMProviderAccess().getRightCurlyBracketKeyword_4());
 		}
+	)
+;
+
+// Entry rule entryRuleProviderKeyword
+entryRuleProviderKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getProviderKeywordRule()); }
+	iv_ruleProviderKeyword=ruleProviderKeyword
+	{ $current=$iv_ruleProviderKeyword.current; }
+	EOF;
+
+// Rule ProviderKeyword
+ruleProviderKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getProviderKeywordAccess().getProviderKeywordAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				lv_keyword_1_0='provider'
+				{
+					newLeafNode(lv_keyword_1_0, grammarAccess.getProviderKeywordAccess().getKeywordProviderKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getProviderKeywordRule());
+					}
+					setWithLastConsumed($current, "keyword", lv_keyword_1_0, "provider");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleProviderType
+entryRuleProviderType returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getProviderTypeRule()); }
+	iv_ruleProviderType=ruleProviderType
+	{ $current=$iv_ruleProviderType.current; }
+	EOF;
+
+// Rule ProviderType
+ruleProviderType returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getProviderTypeAccess().getProviderTypeAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getProviderTypeAccess().getKeywordProviderTypeKeywordParserRuleCall_1_0());
+				}
+				lv_keyword_1_0=ruleProviderTypeKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getProviderTypeRule());
+					}
+					set(
+						$current,
+						"keyword",
+						lv_keyword_1_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.ProviderTypeKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getProviderTypeAccess().getNameValidIDParserRuleCall_2_0());
+				}
+				lv_name_2_0=ruleValidID
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getProviderTypeRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_2_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.ValidID");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleProviderTypeKeyword
+entryRuleProviderTypeKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getProviderTypeKeywordRule()); }
+	iv_ruleProviderTypeKeyword=ruleProviderTypeKeyword
+	{ $current=$iv_ruleProviderTypeKeyword.current; }
+	EOF;
+
+// Rule ProviderTypeKeyword
+ruleProviderTypeKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getProviderTypeKeywordAccess().getProviderTypeKeywordAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				lv_keyword_1_0='type'
+				{
+					newLeafNode(lv_keyword_1_0, grammarAccess.getProviderTypeKeywordAccess().getKeywordTypeKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getProviderTypeKeywordRule());
+					}
+					setWithLastConsumed($current, "keyword", lv_keyword_1_0, "type");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleLocalModelPath
+entryRuleLocalModelPath returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getLocalModelPathRule()); }
+	iv_ruleLocalModelPath=ruleLocalModelPath
+	{ $current=$iv_ruleLocalModelPath.current; }
+	EOF;
+
+// Rule LocalModelPath
+ruleLocalModelPath returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getLocalModelPathAccess().getLocalModelPathAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getLocalModelPathAccess().getKeywordFilePathKeywordParserRuleCall_1_0());
+				}
+				lv_keyword_1_0=ruleFilePathKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getLocalModelPathRule());
+					}
+					set(
+						$current,
+						"keyword",
+						lv_keyword_1_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.FilePathKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				lv_path_2_0=RULE_STRING
+				{
+					newLeafNode(lv_path_2_0, grammarAccess.getLocalModelPathAccess().getPathSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getLocalModelPathRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"path",
+						lv_path_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleModel
+entryRuleModel returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getModelRule()); }
+	iv_ruleModel=ruleModel
+	{ $current=$iv_ruleModel.current; }
+	EOF;
+
+// Rule Model
+ruleModel returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getModelAccess().getModelAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getModelAccess().getKeywordModelKeywordParserRuleCall_1_0());
+				}
+				lv_keyword_1_0=ruleModelKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getModelRule());
+					}
+					set(
+						$current,
+						"keyword",
+						lv_keyword_1_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.ModelKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				lv_mode_2_0=RULE_STRING
+				{
+					newLeafNode(lv_mode_2_0, grammarAccess.getModelAccess().getModeSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getModelRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"mode",
+						lv_mode_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleModelKeyword
+entryRuleModelKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getModelKeywordRule()); }
+	iv_ruleModelKeyword=ruleModelKeyword
+	{ $current=$iv_ruleModelKeyword.current; }
+	EOF;
+
+// Rule ModelKeyword
+ruleModelKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getModelKeywordAccess().getModelKeywordAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				lv_keyword_1_0='model'
+				{
+					newLeafNode(lv_keyword_1_0, grammarAccess.getModelKeywordAccess().getKeywordModelKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getModelKeywordRule());
+					}
+					setWithLastConsumed($current, "keyword", lv_keyword_1_0, "model");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleFilePathKeyword
+entryRuleFilePathKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getFilePathKeywordRule()); }
+	iv_ruleFilePathKeyword=ruleFilePathKeyword
+	{ $current=$iv_ruleFilePathKeyword.current; }
+	EOF;
+
+// Rule FilePathKeyword
+ruleFilePathKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getFilePathKeywordAccess().getFilePathKeywordAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				(
+					lv_keyword_1_1='filepath'
+					{
+						newLeafNode(lv_keyword_1_1, grammarAccess.getFilePathKeywordAccess().getKeywordFilepathKeyword_1_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getFilePathKeywordRule());
+						}
+						setWithLastConsumed($current, "keyword", lv_keyword_1_1, null);
+					}
+					    |
+					lv_keyword_1_2='filePath'
+					{
+						newLeafNode(lv_keyword_1_2, grammarAccess.getFilePathKeywordAccess().getKeywordFilePathKeyword_1_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getFilePathKeywordRule());
+						}
+						setWithLastConsumed($current, "keyword", lv_keyword_1_2, null);
+					}
+				)
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleEndpoint
+entryRuleEndpoint returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getEndpointRule()); }
+	iv_ruleEndpoint=ruleEndpoint
+	{ $current=$iv_ruleEndpoint.current; }
+	EOF;
+
+// Rule Endpoint
+ruleEndpoint returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getEndpointAccess().getEndpointAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getEndpointAccess().getKeywordEndpointKeywordParserRuleCall_1_0());
+				}
+				lv_keyword_1_0=ruleEndpointKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getEndpointRule());
+					}
+					set(
+						$current,
+						"keyword",
+						lv_keyword_1_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.EndpointKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				lv_mode_2_0=RULE_STRING
+				{
+					newLeafNode(lv_mode_2_0, grammarAccess.getEndpointAccess().getModeSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getEndpointRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"mode",
+						lv_mode_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleEndpointKeyword
+entryRuleEndpointKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getEndpointKeywordRule()); }
+	iv_ruleEndpointKeyword=ruleEndpointKeyword
+	{ $current=$iv_ruleEndpointKeyword.current; }
+	EOF;
+
+// Rule EndpointKeyword
+ruleEndpointKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getEndpointKeywordAccess().getEndpointKeywordAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				(
+					lv_keyword_1_1='endpoint'
+					{
+						newLeafNode(lv_keyword_1_1, grammarAccess.getEndpointKeywordAccess().getKeywordEndpointKeyword_1_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getEndpointKeywordRule());
+						}
+						setWithLastConsumed($current, "keyword", lv_keyword_1_1, null);
+					}
+					    |
+					lv_keyword_1_2='endPoint'
+					{
+						newLeafNode(lv_keyword_1_2, grammarAccess.getEndpointKeywordAccess().getKeywordEndPointKeyword_1_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getEndpointKeywordRule());
+						}
+						setWithLastConsumed($current, "keyword", lv_keyword_1_2, null);
+					}
+				)
+			)
+		)
 	)
 ;
 
@@ -1236,64 +3669,67 @@ ruleGenUsageBlock returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='modelUsage'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getGenUsageBlockAccess().getModelUsageKeyword_1());
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getGenUsageBlockAccess().getKeywordModelUsageKeywordParserRuleCall_1_0());
+				}
+				lv_keyword_1_0=ruleModelUsageKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getGenUsageBlockRule());
+					}
+					set(
+						$current,
+						"keyword",
+						lv_keyword_1_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.ModelUsageKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 		otherlv_2='{'
 		{
 			newLeafNode(otherlv_2, grammarAccess.getGenUsageBlockAccess().getLeftCurlyBracketKeyword_2());
 		}
 		(
 			(
-				otherlv_3='primary'
-				{
-					newLeafNode(otherlv_3, grammarAccess.getGenUsageBlockAccess().getPrimaryKeyword_3_0_0());
-				}
 				(
-					(
-						{
-							newCompositeNode(grammarAccess.getGenUsageBlockAccess().getPrimaryProvidersValidIDParserRuleCall_3_0_1_0());
+					{
+						newCompositeNode(grammarAccess.getGenUsageBlockAccess().getPrimaryProvidersPrimaryProviderParserRuleCall_3_0_0());
+					}
+					lv_primaryProviders_3_0=rulePrimaryProvider
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getGenUsageBlockRule());
 						}
-						lv_primaryProviders_4_0=ruleValidID
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getGenUsageBlockRule());
-							}
-							add(
-								$current,
-								"primaryProviders",
-								lv_primaryProviders_4_0,
-								"com.robenglander.libretto.spec.LibrettoProjectProfile.ValidID");
-							afterParserOrEnumRuleCall();
-						}
-					)
+						add(
+							$current,
+							"primaryProviders",
+							lv_primaryProviders_3_0,
+							"com.robenglander.libretto.spec.LibrettoProjectProfile.PrimaryProvider");
+						afterParserOrEnumRuleCall();
+					}
 				)
 			)
 			    |
 			(
-				otherlv_5='secondary'
-				{
-					newLeafNode(otherlv_5, grammarAccess.getGenUsageBlockAccess().getSecondaryKeyword_3_1_0());
-				}
 				(
-					(
-						{
-							newCompositeNode(grammarAccess.getGenUsageBlockAccess().getSecondaryProvidersValidIDParserRuleCall_3_1_1_0());
+					{
+						newCompositeNode(grammarAccess.getGenUsageBlockAccess().getSecondaryProvidersSecondaryProviderParserRuleCall_3_1_0());
+					}
+					lv_secondaryProviders_4_0=ruleSecondaryProvider
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getGenUsageBlockRule());
 						}
-						lv_secondaryProviders_6_0=ruleValidID
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getGenUsageBlockRule());
-							}
-							add(
-								$current,
-								"secondaryProviders",
-								lv_secondaryProviders_6_0,
-								"com.robenglander.libretto.spec.LibrettoProjectProfile.ValidID");
-							afterParserOrEnumRuleCall();
-						}
-					)
+						add(
+							$current,
+							"secondaryProviders",
+							lv_secondaryProviders_4_0,
+							"com.robenglander.libretto.spec.LibrettoProjectProfile.SecondaryProvider");
+						afterParserOrEnumRuleCall();
+					}
 				)
 			)
 			    |
@@ -1302,7 +3738,7 @@ ruleGenUsageBlock returns [EObject current=null]
 					{
 						newCompositeNode(grammarAccess.getGenUsageBlockAccess().getEscalationsGenEscalationBlockParserRuleCall_3_2_0());
 					}
-					lv_escalations_7_0=ruleGenEscalationBlock
+					lv_escalations_5_0=ruleGenEscalationBlock
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getGenUsageBlockRule());
@@ -1310,17 +3746,278 @@ ruleGenUsageBlock returns [EObject current=null]
 						add(
 							$current,
 							"escalations",
-							lv_escalations_7_0,
+							lv_escalations_5_0,
 							"com.robenglander.libretto.spec.LibrettoProjectProfile.GenEscalationBlock");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)*
-		otherlv_8='}'
+		otherlv_6='}'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getGenUsageBlockAccess().getRightCurlyBracketKeyword_4());
+			newLeafNode(otherlv_6, grammarAccess.getGenUsageBlockAccess().getRightCurlyBracketKeyword_4());
 		}
+	)
+;
+
+// Entry rule entryRuleModelUsageKeyword
+entryRuleModelUsageKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getModelUsageKeywordRule()); }
+	iv_ruleModelUsageKeyword=ruleModelUsageKeyword
+	{ $current=$iv_ruleModelUsageKeyword.current; }
+	EOF;
+
+// Rule ModelUsageKeyword
+ruleModelUsageKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getModelUsageKeywordAccess().getModelUsageKeywordAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				(
+					lv_keyword_1_1='modelusage'
+					{
+						newLeafNode(lv_keyword_1_1, grammarAccess.getModelUsageKeywordAccess().getKeywordModelusageKeyword_1_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getModelUsageKeywordRule());
+						}
+						setWithLastConsumed($current, "keyword", lv_keyword_1_1, null);
+					}
+					    |
+					lv_keyword_1_2='modelUsage'
+					{
+						newLeafNode(lv_keyword_1_2, grammarAccess.getModelUsageKeywordAccess().getKeywordModelUsageKeyword_1_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getModelUsageKeywordRule());
+						}
+						setWithLastConsumed($current, "keyword", lv_keyword_1_2, null);
+					}
+				)
+			)
+		)
+	)
+;
+
+// Entry rule entryRulePrimaryProvider
+entryRulePrimaryProvider returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getPrimaryProviderRule()); }
+	iv_rulePrimaryProvider=rulePrimaryProvider
+	{ $current=$iv_rulePrimaryProvider.current; }
+	EOF;
+
+// Rule PrimaryProvider
+rulePrimaryProvider returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getPrimaryProviderAccess().getPrimaryProviderAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getPrimaryProviderAccess().getKeywordPrimaryProviderKeywordParserRuleCall_1_0());
+				}
+				lv_keyword_1_0=rulePrimaryProviderKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPrimaryProviderRule());
+					}
+					set(
+						$current,
+						"keyword",
+						lv_keyword_1_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.PrimaryProviderKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getPrimaryProviderAccess().getNameValidIDParserRuleCall_2_0());
+				}
+				lv_name_2_0=ruleValidID
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPrimaryProviderRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_2_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.ValidID");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRulePrimaryProviderKeyword
+entryRulePrimaryProviderKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getPrimaryProviderKeywordRule()); }
+	iv_rulePrimaryProviderKeyword=rulePrimaryProviderKeyword
+	{ $current=$iv_rulePrimaryProviderKeyword.current; }
+	EOF;
+
+// Rule PrimaryProviderKeyword
+rulePrimaryProviderKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getPrimaryProviderKeywordAccess().getPrimaryProviderKeywordAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				lv_keyword_1_0='primary'
+				{
+					newLeafNode(lv_keyword_1_0, grammarAccess.getPrimaryProviderKeywordAccess().getKeywordPrimaryKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getPrimaryProviderKeywordRule());
+					}
+					setWithLastConsumed($current, "keyword", lv_keyword_1_0, "primary");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleSecondaryProvider
+entryRuleSecondaryProvider returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSecondaryProviderRule()); }
+	iv_ruleSecondaryProvider=ruleSecondaryProvider
+	{ $current=$iv_ruleSecondaryProvider.current; }
+	EOF;
+
+// Rule SecondaryProvider
+ruleSecondaryProvider returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getSecondaryProviderAccess().getSecondaryProviderAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getSecondaryProviderAccess().getKeywordSecondaryProviderKeywordParserRuleCall_1_0());
+				}
+				lv_keyword_1_0=ruleSecondaryProviderKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSecondaryProviderRule());
+					}
+					set(
+						$current,
+						"keyword",
+						lv_keyword_1_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.SecondaryProviderKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getSecondaryProviderAccess().getNameValidIDParserRuleCall_2_0());
+				}
+				lv_name_2_0=ruleValidID
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSecondaryProviderRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_2_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.ValidID");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleSecondaryProviderKeyword
+entryRuleSecondaryProviderKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSecondaryProviderKeywordRule()); }
+	iv_ruleSecondaryProviderKeyword=ruleSecondaryProviderKeyword
+	{ $current=$iv_ruleSecondaryProviderKeyword.current; }
+	EOF;
+
+// Rule SecondaryProviderKeyword
+ruleSecondaryProviderKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getSecondaryProviderKeywordAccess().getSecondaryProviderKeywordAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				lv_keyword_1_0='secondary'
+				{
+					newLeafNode(lv_keyword_1_0, grammarAccess.getSecondaryProviderKeywordAccess().getKeywordSecondaryKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSecondaryProviderKeywordRule());
+					}
+					setWithLastConsumed($current, "keyword", lv_keyword_1_0, "secondary");
+				}
+			)
+		)
 	)
 ;
 
@@ -1347,78 +4044,334 @@ ruleGenEscalationBlock returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='escalation'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getGenEscalationBlockAccess().getEscalationKeyword_1());
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getGenEscalationBlockAccess().getKeywordEscalationKeywordParserRuleCall_1_0());
+				}
+				lv_keyword_1_0=ruleEscalationKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getGenEscalationBlockRule());
+					}
+					set(
+						$current,
+						"keyword",
+						lv_keyword_1_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.EscalationKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 		otherlv_2='{'
 		{
 			newLeafNode(otherlv_2, grammarAccess.getGenEscalationBlockAccess().getLeftCurlyBracketKeyword_2());
 		}
 		(
 			(
-				otherlv_3='enabled'
-				{
-					newLeafNode(otherlv_3, grammarAccess.getGenEscalationBlockAccess().getEnabledKeyword_3_0_0());
-				}
 				(
-					(
-						(
-							lv_enableds_4_1='true'
-							{
-								newLeafNode(lv_enableds_4_1, grammarAccess.getGenEscalationBlockAccess().getEnabledsTrueKeyword_3_0_1_0_0());
-							}
-							{
-								if ($current==null) {
-									$current = createModelElement(grammarAccess.getGenEscalationBlockRule());
-								}
-								addWithLastConsumed($current, "enableds", lv_enableds_4_1, null);
-							}
-							    |
-							lv_enableds_4_2='false'
-							{
-								newLeafNode(lv_enableds_4_2, grammarAccess.getGenEscalationBlockAccess().getEnabledsFalseKeyword_3_0_1_0_1());
-							}
-							{
-								if ($current==null) {
-									$current = createModelElement(grammarAccess.getGenEscalationBlockRule());
-								}
-								addWithLastConsumed($current, "enableds", lv_enableds_4_2, null);
-							}
-						)
-					)
+					{
+						newCompositeNode(grammarAccess.getGenEscalationBlockAccess().getEnabledsEnabledParserRuleCall_3_0_0());
+					}
+					lv_enableds_3_0=ruleEnabled
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getGenEscalationBlockRule());
+						}
+						add(
+							$current,
+							"enableds",
+							lv_enableds_3_0,
+							"com.robenglander.libretto.spec.LibrettoProjectProfile.Enabled");
+						afterParserOrEnumRuleCall();
+					}
 				)
 			)
 			    |
 			(
-				otherlv_5='escalateAtRetry'
-				{
-					newLeafNode(otherlv_5, grammarAccess.getGenEscalationBlockAccess().getEscalateAtRetryKeyword_3_1_0());
-				}
 				(
-					(
-						lv_escalateAtRetries_6_0=RULE_INT
-						{
-							newLeafNode(lv_escalateAtRetries_6_0, grammarAccess.getGenEscalationBlockAccess().getEscalateAtRetriesINTTerminalRuleCall_3_1_1_0());
+					{
+						newCompositeNode(grammarAccess.getGenEscalationBlockAccess().getAtRetriesAtRetryParserRuleCall_3_1_0());
+					}
+					lv_atRetries_4_0=ruleAtRetry
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getGenEscalationBlockRule());
 						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getGenEscalationBlockRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"escalateAtRetries",
-								lv_escalateAtRetries_6_0,
-								"org.eclipse.xtext.common.Terminals.INT");
-						}
-					)
+						add(
+							$current,
+							"atRetries",
+							lv_atRetries_4_0,
+							"com.robenglander.libretto.spec.LibrettoProjectProfile.AtRetry");
+						afterParserOrEnumRuleCall();
+					}
 				)
 			)
 		)*
-		otherlv_7='}'
+		otherlv_5='}'
 		{
-			newLeafNode(otherlv_7, grammarAccess.getGenEscalationBlockAccess().getRightCurlyBracketKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getGenEscalationBlockAccess().getRightCurlyBracketKeyword_4());
 		}
+	)
+;
+
+// Entry rule entryRuleEscalationKeyword
+entryRuleEscalationKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getEscalationKeywordRule()); }
+	iv_ruleEscalationKeyword=ruleEscalationKeyword
+	{ $current=$iv_ruleEscalationKeyword.current; }
+	EOF;
+
+// Rule EscalationKeyword
+ruleEscalationKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getEscalationKeywordAccess().getEscalationKeywordAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				lv_keyword_1_0='escalation'
+				{
+					newLeafNode(lv_keyword_1_0, grammarAccess.getEscalationKeywordAccess().getKeywordEscalationKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getEscalationKeywordRule());
+					}
+					setWithLastConsumed($current, "keyword", lv_keyword_1_0, "escalation");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleEnabled
+entryRuleEnabled returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getEnabledRule()); }
+	iv_ruleEnabled=ruleEnabled
+	{ $current=$iv_ruleEnabled.current; }
+	EOF;
+
+// Rule Enabled
+ruleEnabled returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getEnabledAccess().getEnabledAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getEnabledAccess().getKeywordEnabledKeywordParserRuleCall_1_0());
+				}
+				lv_keyword_1_0=ruleEnabledKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getEnabledRule());
+					}
+					set(
+						$current,
+						"keyword",
+						lv_keyword_1_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.EnabledKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getEnabledAccess().getValueTrueFalseKeywordParserRuleCall_2_0());
+				}
+				lv_value_2_0=ruleTrueFalseKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getEnabledRule());
+					}
+					set(
+						$current,
+						"value",
+						lv_value_2_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.TrueFalseKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleEnabledKeyword
+entryRuleEnabledKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getEnabledKeywordRule()); }
+	iv_ruleEnabledKeyword=ruleEnabledKeyword
+	{ $current=$iv_ruleEnabledKeyword.current; }
+	EOF;
+
+// Rule EnabledKeyword
+ruleEnabledKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getEnabledKeywordAccess().getEnabledKeywordAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				lv_keyword_1_0='enabled'
+				{
+					newLeafNode(lv_keyword_1_0, grammarAccess.getEnabledKeywordAccess().getKeywordEnabledKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getEnabledKeywordRule());
+					}
+					setWithLastConsumed($current, "keyword", lv_keyword_1_0, "enabled");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleAtRetry
+entryRuleAtRetry returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getAtRetryRule()); }
+	iv_ruleAtRetry=ruleAtRetry
+	{ $current=$iv_ruleAtRetry.current; }
+	EOF;
+
+// Rule AtRetry
+ruleAtRetry returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getAtRetryAccess().getAtRetryAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getAtRetryAccess().getKeywordAtRetryKeywordParserRuleCall_1_0());
+				}
+				lv_keyword_1_0=ruleAtRetryKeyword
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getAtRetryRule());
+					}
+					set(
+						$current,
+						"keyword",
+						lv_keyword_1_0,
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.AtRetryKeyword");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				lv_value_2_0=RULE_INT
+				{
+					newLeafNode(lv_value_2_0, grammarAccess.getAtRetryAccess().getValueINTTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getAtRetryRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"value",
+						lv_value_2_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleAtRetryKeyword
+entryRuleAtRetryKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getAtRetryKeywordRule()); }
+	iv_ruleAtRetryKeyword=ruleAtRetryKeyword
+	{ $current=$iv_ruleAtRetryKeyword.current; }
+	EOF;
+
+// Rule AtRetryKeyword
+ruleAtRetryKeyword returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getAtRetryKeywordAccess().getAtRetryKeywordAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				(
+					lv_keyword_1_1='atretry'
+					{
+						newLeafNode(lv_keyword_1_1, grammarAccess.getAtRetryKeywordAccess().getKeywordAtretryKeyword_1_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getAtRetryKeywordRule());
+						}
+						setWithLastConsumed($current, "keyword", lv_keyword_1_1, null);
+					}
+					    |
+					lv_keyword_1_2='atRetry'
+					{
+						newLeafNode(lv_keyword_1_2, grammarAccess.getAtRetryKeywordAccess().getKeywordAtRetryKeyword_1_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getAtRetryKeywordRule());
+						}
+						setWithLastConsumed($current, "keyword", lv_keyword_1_2, null);
+					}
+				)
+			)
+		)
 	)
 ;
 

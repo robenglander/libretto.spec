@@ -68,40 +68,13 @@ public interface LibrettoProjectProfilePackage extends EPackage
   int PROJECT_PROFILE = 0;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Profiles</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROJECT_PROFILE__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Projects</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PROJECT_PROFILE__PROJECTS = 1;
-
-  /**
-   * The feature id for the '<em><b>Llm Providers</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PROJECT_PROFILE__LLM_PROVIDERS = 2;
-
-  /**
-   * The feature id for the '<em><b>Surfaces</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PROJECT_PROFILE__SURFACES = 3;
+  int PROJECT_PROFILE__PROFILES = 0;
 
   /**
    * The number of structural features of the '<em>Project Profile</em>' class.
@@ -110,7 +83,99 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int PROJECT_PROFILE_FEATURE_COUNT = 4;
+  int PROJECT_PROFILE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProfileImpl <em>Profile</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.ProfileImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getProfile()
+   * @generated
+   */
+  int PROFILE = 1;
+
+  /**
+   * The feature id for the '<em><b>Profile Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROFILE__PROFILE_KEYWORD = 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROFILE__NAME = 1;
+
+  /**
+   * The feature id for the '<em><b>Projects</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROFILE__PROJECTS = 2;
+
+  /**
+   * The feature id for the '<em><b>Llm Providers</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROFILE__LLM_PROVIDERS = 3;
+
+  /**
+   * The feature id for the '<em><b>Surfaces</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROFILE__SURFACES = 4;
+
+  /**
+   * The number of structural features of the '<em>Profile</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROFILE_FEATURE_COUNT = 5;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProfileKeywordImpl <em>Profile Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.ProfileKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getProfileKeyword()
+   * @generated
+   */
+  int PROFILE_KEYWORD = 2;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROFILE_KEYWORD__KEYWORD = 0;
+
+  /**
+   * The number of structural features of the '<em>Profile Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROFILE_KEYWORD_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectBlockImpl <em>Project Block</em>}' class.
@@ -120,16 +185,25 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getProjectBlock()
    * @generated
    */
-  int PROJECT_BLOCK = 1;
+  int PROJECT_BLOCK = 3;
 
   /**
-   * The feature id for the '<em><b>Root Dir</b></em>' attribute list.
+   * The feature id for the '<em><b>Project Keyword</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROJECT_BLOCK__ROOT_DIR = 0;
+  int PROJECT_BLOCK__PROJECT_KEYWORD = 0;
+
+  /**
+   * The feature id for the '<em><b>Root Dirs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROJECT_BLOCK__ROOT_DIRS = 1;
 
   /**
    * The feature id for the '<em><b>Modules</b></em>' containment reference list.
@@ -138,7 +212,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int PROJECT_BLOCK__MODULES = 1;
+  int PROJECT_BLOCK__MODULES = 2;
 
   /**
    * The feature id for the '<em><b>Gens</b></em>' containment reference list.
@@ -147,7 +221,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int PROJECT_BLOCK__GENS = 2;
+  int PROJECT_BLOCK__GENS = 3;
 
   /**
    * The number of structural features of the '<em>Project Block</em>' class.
@@ -156,7 +230,100 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int PROJECT_BLOCK_FEATURE_COUNT = 3;
+  int PROJECT_BLOCK_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.RootDirectoryImpl <em>Root Directory</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.RootDirectoryImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getRootDirectory()
+   * @generated
+   */
+  int ROOT_DIRECTORY = 4;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROOT_DIRECTORY__KEYWORD = 0;
+
+  /**
+   * The feature id for the '<em><b>Dir</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROOT_DIRECTORY__DIR = 1;
+
+  /**
+   * The number of structural features of the '<em>Root Directory</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROOT_DIRECTORY_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectKeywordImpl <em>Project Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getProjectKeyword()
+   * @generated
+   */
+  int PROJECT_KEYWORD = 5;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROJECT_KEYWORD__KEYWORD = 0;
+
+  /**
+   * The number of structural features of the '<em>Project Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROJECT_KEYWORD_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.RootDirKeywordImpl <em>Root Dir Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.RootDirKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getRootDirKeyword()
+   * @generated
+   */
+  int ROOT_DIR_KEYWORD = 6;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROOT_DIR_KEYWORD__KEYWORD = 0;
+
+  /**
+   * The number of structural features of the '<em>Root Dir Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROOT_DIR_KEYWORD_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ModulesBlockImpl <em>Modules Block</em>}' class.
@@ -166,7 +333,16 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getModulesBlock()
    * @generated
    */
-  int MODULES_BLOCK = 2;
+  int MODULES_BLOCK = 7;
+
+  /**
+   * The feature id for the '<em><b>Modules Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODULES_BLOCK__MODULES_KEYWORD = 0;
 
   /**
    * The feature id for the '<em><b>Modules</b></em>' containment reference list.
@@ -175,7 +351,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODULES_BLOCK__MODULES = 0;
+  int MODULES_BLOCK__MODULES = 1;
 
   /**
    * The number of structural features of the '<em>Modules Block</em>' class.
@@ -184,7 +360,35 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODULES_BLOCK_FEATURE_COUNT = 1;
+  int MODULES_BLOCK_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ModulesKeywordImpl <em>Modules Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.ModulesKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getModulesKeyword()
+   * @generated
+   */
+  int MODULES_KEYWORD = 8;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODULES_KEYWORD__KEYWORD = 0;
+
+  /**
+   * The number of structural features of the '<em>Modules Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODULES_KEYWORD_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectModuleImpl <em>Project Module</em>}' class.
@@ -194,7 +398,16 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getProjectModule()
    * @generated
    */
-  int PROJECT_MODULE = 3;
+  int PROJECT_MODULE = 9;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROJECT_MODULE__KEYWORD = 0;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -203,52 +416,52 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int PROJECT_MODULE__NAME = 0;
+  int PROJECT_MODULE__NAME = 1;
 
   /**
-   * The feature id for the '<em><b>Dirs</b></em>' attribute list.
+   * The feature id for the '<em><b>Dirs</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROJECT_MODULE__DIRS = 1;
+  int PROJECT_MODULE__DIRS = 2;
 
   /**
-   * The feature id for the '<em><b>Spec Dirs</b></em>' attribute list.
+   * The feature id for the '<em><b>Spec Dirs</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROJECT_MODULE__SPEC_DIRS = 2;
+  int PROJECT_MODULE__SPEC_DIRS = 3;
 
   /**
-   * The feature id for the '<em><b>Test Dirs</b></em>' attribute list.
+   * The feature id for the '<em><b>Test Dirs</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROJECT_MODULE__TEST_DIRS = 3;
+  int PROJECT_MODULE__TEST_DIRS = 4;
 
   /**
-   * The feature id for the '<em><b>Main Dirs</b></em>' attribute list.
+   * The feature id for the '<em><b>Main Dirs</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROJECT_MODULE__MAIN_DIRS = 4;
+  int PROJECT_MODULE__MAIN_DIRS = 5;
 
   /**
-   * The feature id for the '<em><b>Base Packages</b></em>' attribute list.
+   * The feature id for the '<em><b>Base Packages</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROJECT_MODULE__BASE_PACKAGES = 5;
+  int PROJECT_MODULE__BASE_PACKAGES = 6;
 
   /**
    * The number of structural features of the '<em>Project Module</em>' class.
@@ -257,7 +470,360 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int PROJECT_MODULE_FEATURE_COUNT = 6;
+  int PROJECT_MODULE_FEATURE_COUNT = 7;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ModuleKeywordImpl <em>Module Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.ModuleKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getModuleKeyword()
+   * @generated
+   */
+  int MODULE_KEYWORD = 10;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODULE_KEYWORD__KEYWORD = 0;
+
+  /**
+   * The number of structural features of the '<em>Module Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODULE_KEYWORD_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.DirectoryImpl <em>Directory</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.DirectoryImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getDirectory()
+   * @generated
+   */
+  int DIRECTORY = 11;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIRECTORY__KEYWORD = 0;
+
+  /**
+   * The feature id for the '<em><b>Dir</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIRECTORY__DIR = 1;
+
+  /**
+   * The number of structural features of the '<em>Directory</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIRECTORY_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.SpecDirectoryImpl <em>Spec Directory</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.SpecDirectoryImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getSpecDirectory()
+   * @generated
+   */
+  int SPEC_DIRECTORY = 12;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SPEC_DIRECTORY__KEYWORD = 0;
+
+  /**
+   * The feature id for the '<em><b>Dir</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SPEC_DIRECTORY__DIR = 1;
+
+  /**
+   * The number of structural features of the '<em>Spec Directory</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SPEC_DIRECTORY_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.TestDirectoryImpl <em>Test Directory</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.TestDirectoryImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getTestDirectory()
+   * @generated
+   */
+  int TEST_DIRECTORY = 13;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEST_DIRECTORY__KEYWORD = 0;
+
+  /**
+   * The feature id for the '<em><b>Dir</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEST_DIRECTORY__DIR = 1;
+
+  /**
+   * The number of structural features of the '<em>Test Directory</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEST_DIRECTORY_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.MainDirectoryImpl <em>Main Directory</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.MainDirectoryImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getMainDirectory()
+   * @generated
+   */
+  int MAIN_DIRECTORY = 14;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAIN_DIRECTORY__KEYWORD = 0;
+
+  /**
+   * The feature id for the '<em><b>Dir</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAIN_DIRECTORY__DIR = 1;
+
+  /**
+   * The number of structural features of the '<em>Main Directory</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAIN_DIRECTORY_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.BasePackageImpl <em>Base Package</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.BasePackageImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getBasePackage()
+   * @generated
+   */
+  int BASE_PACKAGE = 15;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BASE_PACKAGE__KEYWORD = 0;
+
+  /**
+   * The feature id for the '<em><b>Dir</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BASE_PACKAGE__DIR = 1;
+
+  /**
+   * The number of structural features of the '<em>Base Package</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BASE_PACKAGE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.DirKeywordImpl <em>Dir Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.DirKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getDirKeyword()
+   * @generated
+   */
+  int DIR_KEYWORD = 16;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIR_KEYWORD__KEYWORD = 0;
+
+  /**
+   * The number of structural features of the '<em>Dir Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIR_KEYWORD_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.SpecDirKeywordImpl <em>Spec Dir Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.SpecDirKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getSpecDirKeyword()
+   * @generated
+   */
+  int SPEC_DIR_KEYWORD = 17;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SPEC_DIR_KEYWORD__KEYWORD = 0;
+
+  /**
+   * The number of structural features of the '<em>Spec Dir Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SPEC_DIR_KEYWORD_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.TestDirKeywordImpl <em>Test Dir Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.TestDirKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getTestDirKeyword()
+   * @generated
+   */
+  int TEST_DIR_KEYWORD = 18;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEST_DIR_KEYWORD__KEYWORD = 0;
+
+  /**
+   * The number of structural features of the '<em>Test Dir Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEST_DIR_KEYWORD_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.MainDirKeywordImpl <em>Main Dir Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.MainDirKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getMainDirKeyword()
+   * @generated
+   */
+  int MAIN_DIR_KEYWORD = 19;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAIN_DIR_KEYWORD__KEYWORD = 0;
+
+  /**
+   * The number of structural features of the '<em>Main Dir Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAIN_DIR_KEYWORD_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.BasePackageKeywordImpl <em>Base Package Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.BasePackageKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getBasePackageKeyword()
+   * @generated
+   */
+  int BASE_PACKAGE_KEYWORD = 20;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BASE_PACKAGE_KEYWORD__KEYWORD = 0;
+
+  /**
+   * The number of structural features of the '<em>Base Package Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BASE_PACKAGE_KEYWORD_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenBlockImpl <em>Gen Block</em>}' class.
@@ -267,43 +833,52 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getGenBlock()
    * @generated
    */
-  int GEN_BLOCK = 4;
+  int GEN_BLOCK = 21;
 
   /**
-   * The feature id for the '<em><b>Initial Instructions</b></em>' attribute list.
+   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GEN_BLOCK__INITIAL_INSTRUCTIONS = 0;
+  int GEN_BLOCK__KEYWORD = 0;
 
   /**
-   * The feature id for the '<em><b>Max Retries</b></em>' attribute list.
+   * The feature id for the '<em><b>Initial Instructions</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GEN_BLOCK__MAX_RETRIES = 1;
+  int GEN_BLOCK__INITIAL_INSTRUCTIONS = 1;
 
   /**
-   * The feature id for the '<em><b>Parse Checks</b></em>' attribute list.
+   * The feature id for the '<em><b>Max Retries</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GEN_BLOCK__PARSE_CHECKS = 2;
+  int GEN_BLOCK__MAX_RETRIES = 2;
 
   /**
-   * The feature id for the '<em><b>Default Corrections</b></em>' attribute list.
+   * The feature id for the '<em><b>Parse Checks</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GEN_BLOCK__DEFAULT_CORRECTIONS = 3;
+  int GEN_BLOCK__PARSE_CHECKS = 3;
+
+  /**
+   * The feature id for the '<em><b>Default Corrections</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GEN_BLOCK__DEFAULT_CORRECTIONS = 4;
 
   /**
    * The feature id for the '<em><b>Remediations</b></em>' containment reference list.
@@ -312,7 +887,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int GEN_BLOCK__REMEDIATIONS = 4;
+  int GEN_BLOCK__REMEDIATIONS = 5;
 
   /**
    * The feature id for the '<em><b>Model Usages</b></em>' containment reference list.
@@ -321,7 +896,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int GEN_BLOCK__MODEL_USAGES = 5;
+  int GEN_BLOCK__MODEL_USAGES = 6;
 
   /**
    * The number of structural features of the '<em>Gen Block</em>' class.
@@ -330,7 +905,314 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int GEN_BLOCK_FEATURE_COUNT = 6;
+  int GEN_BLOCK_FEATURE_COUNT = 7;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenKeywordImpl <em>Gen Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.GenKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getGenKeyword()
+   * @generated
+   */
+  int GEN_KEYWORD = 22;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GEN_KEYWORD__KEYWORD = 0;
+
+  /**
+   * The number of structural features of the '<em>Gen Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GEN_KEYWORD_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.InitialInstructionImpl <em>Initial Instruction</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.InitialInstructionImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getInitialInstruction()
+   * @generated
+   */
+  int INITIAL_INSTRUCTION = 23;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INITIAL_INSTRUCTION__KEYWORD = 0;
+
+  /**
+   * The feature id for the '<em><b>Instruction</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INITIAL_INSTRUCTION__INSTRUCTION = 1;
+
+  /**
+   * The number of structural features of the '<em>Initial Instruction</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INITIAL_INSTRUCTION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.MaxRetriesImpl <em>Max Retries</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.MaxRetriesImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getMaxRetries()
+   * @generated
+   */
+  int MAX_RETRIES = 24;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAX_RETRIES__KEYWORD = 0;
+
+  /**
+   * The feature id for the '<em><b>Max Retries</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAX_RETRIES__MAX_RETRIES = 1;
+
+  /**
+   * The number of structural features of the '<em>Max Retries</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAX_RETRIES_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ParseCheckImpl <em>Parse Check</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.ParseCheckImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getParseCheck()
+   * @generated
+   */
+  int PARSE_CHECK = 25;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARSE_CHECK__KEYWORD = 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARSE_CHECK__VALUE = 1;
+
+  /**
+   * The number of structural features of the '<em>Parse Check</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARSE_CHECK_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.DefaultCorrectionImpl <em>Default Correction</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.DefaultCorrectionImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getDefaultCorrection()
+   * @generated
+   */
+  int DEFAULT_CORRECTION = 26;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFAULT_CORRECTION__KEYWORD = 0;
+
+  /**
+   * The feature id for the '<em><b>Correction</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFAULT_CORRECTION__CORRECTION = 1;
+
+  /**
+   * The number of structural features of the '<em>Default Correction</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFAULT_CORRECTION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.InitialInstructionKeywordImpl <em>Initial Instruction Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.InitialInstructionKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getInitialInstructionKeyword()
+   * @generated
+   */
+  int INITIAL_INSTRUCTION_KEYWORD = 27;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INITIAL_INSTRUCTION_KEYWORD__KEYWORD = 0;
+
+  /**
+   * The number of structural features of the '<em>Initial Instruction Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INITIAL_INSTRUCTION_KEYWORD_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.MaxRetriesKeywordImpl <em>Max Retries Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.MaxRetriesKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getMaxRetriesKeyword()
+   * @generated
+   */
+  int MAX_RETRIES_KEYWORD = 28;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAX_RETRIES_KEYWORD__KEYWORD = 0;
+
+  /**
+   * The number of structural features of the '<em>Max Retries Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAX_RETRIES_KEYWORD_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ParseCheckKeywordImpl <em>Parse Check Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.ParseCheckKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getParseCheckKeyword()
+   * @generated
+   */
+  int PARSE_CHECK_KEYWORD = 29;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARSE_CHECK_KEYWORD__KEYWORD = 0;
+
+  /**
+   * The number of structural features of the '<em>Parse Check Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARSE_CHECK_KEYWORD_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.DefaultCorrectionKeywordImpl <em>Default Correction Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.DefaultCorrectionKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getDefaultCorrectionKeyword()
+   * @generated
+   */
+  int DEFAULT_CORRECTION_KEYWORD = 30;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFAULT_CORRECTION_KEYWORD__KEYWORD = 0;
+
+  /**
+   * The number of structural features of the '<em>Default Correction Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFAULT_CORRECTION_KEYWORD_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.TrueFalseKeywordImpl <em>True False Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.TrueFalseKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getTrueFalseKeyword()
+   * @generated
+   */
+  int TRUE_FALSE_KEYWORD = 31;
+
+  /**
+   * The number of structural features of the '<em>True False Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRUE_FALSE_KEYWORD_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenRemediationRulesImpl <em>Gen Remediation Rules</em>}' class.
@@ -340,7 +1222,16 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getGenRemediationRules()
    * @generated
    */
-  int GEN_REMEDIATION_RULES = 5;
+  int GEN_REMEDIATION_RULES = 32;
+
+  /**
+   * The feature id for the '<em><b>Rules Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GEN_REMEDIATION_RULES__RULES_KEYWORD = 0;
 
   /**
    * The feature id for the '<em><b>Pattern Rules</b></em>' containment reference list.
@@ -349,7 +1240,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int GEN_REMEDIATION_RULES__PATTERN_RULES = 0;
+  int GEN_REMEDIATION_RULES__PATTERN_RULES = 1;
 
   /**
    * The feature id for the '<em><b>Default Remediations</b></em>' containment reference list.
@@ -358,7 +1249,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int GEN_REMEDIATION_RULES__DEFAULT_REMEDIATIONS = 1;
+  int GEN_REMEDIATION_RULES__DEFAULT_REMEDIATIONS = 2;
 
   /**
    * The number of structural features of the '<em>Gen Remediation Rules</em>' class.
@@ -367,7 +1258,35 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int GEN_REMEDIATION_RULES_FEATURE_COUNT = 2;
+  int GEN_REMEDIATION_RULES_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.RulesKeywordImpl <em>Rules Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.RulesKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getRulesKeyword()
+   * @generated
+   */
+  int RULES_KEYWORD = 33;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULES_KEYWORD__KEYWORD = 0;
+
+  /**
+   * The number of structural features of the '<em>Rules Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULES_KEYWORD_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenPatternRemediationRuleImpl <em>Gen Pattern Remediation Rule</em>}' class.
@@ -377,34 +1296,43 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getGenPatternRemediationRule()
    * @generated
    */
-  int GEN_PATTERN_REMEDIATION_RULE = 6;
+  int GEN_PATTERN_REMEDIATION_RULE = 34;
 
   /**
-   * The feature id for the '<em><b>Patterns</b></em>' attribute list.
+   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GEN_PATTERN_REMEDIATION_RULE__PATTERNS = 0;
+  int GEN_PATTERN_REMEDIATION_RULE__KEYWORD = 0;
 
   /**
-   * The feature id for the '<em><b>Codes</b></em>' attribute list.
+   * The feature id for the '<em><b>Patterns</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GEN_PATTERN_REMEDIATION_RULE__CODES = 1;
+  int GEN_PATTERN_REMEDIATION_RULE__PATTERNS = 1;
 
   /**
-   * The feature id for the '<em><b>Corrections</b></em>' attribute list.
+   * The feature id for the '<em><b>Codes</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GEN_PATTERN_REMEDIATION_RULE__CORRECTIONS = 2;
+  int GEN_PATTERN_REMEDIATION_RULE__CODES = 2;
+
+  /**
+   * The feature id for the '<em><b>Corrections</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GEN_PATTERN_REMEDIATION_RULE__CORRECTIONS = 3;
 
   /**
    * The number of structural features of the '<em>Gen Pattern Remediation Rule</em>' class.
@@ -413,7 +1341,230 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int GEN_PATTERN_REMEDIATION_RULE_FEATURE_COUNT = 3;
+  int GEN_PATTERN_REMEDIATION_RULE_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.RuleKeywordImpl <em>Rule Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.RuleKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getRuleKeyword()
+   * @generated
+   */
+  int RULE_KEYWORD = 35;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE_KEYWORD__KEYWORD = 0;
+
+  /**
+   * The number of structural features of the '<em>Rule Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE_KEYWORD_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.PatternImpl <em>Pattern</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.PatternImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getPattern()
+   * @generated
+   */
+  int PATTERN = 36;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PATTERN__KEYWORD = 0;
+
+  /**
+   * The feature id for the '<em><b>Pattern</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PATTERN__PATTERN = 1;
+
+  /**
+   * The number of structural features of the '<em>Pattern</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PATTERN_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.PatternKeywordImpl <em>Pattern Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.PatternKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getPatternKeyword()
+   * @generated
+   */
+  int PATTERN_KEYWORD = 37;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PATTERN_KEYWORD__KEYWORD = 0;
+
+  /**
+   * The number of structural features of the '<em>Pattern Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PATTERN_KEYWORD_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.CodeImpl <em>Code</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.CodeImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getCode()
+   * @generated
+   */
+  int CODE = 38;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CODE__KEYWORD = 0;
+
+  /**
+   * The feature id for the '<em><b>Code</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CODE__CODE = 1;
+
+  /**
+   * The number of structural features of the '<em>Code</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CODE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.CodeKeywordImpl <em>Code Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.CodeKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getCodeKeyword()
+   * @generated
+   */
+  int CODE_KEYWORD = 39;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CODE_KEYWORD__KEYWORD = 0;
+
+  /**
+   * The number of structural features of the '<em>Code Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CODE_KEYWORD_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.CorrectionImpl <em>Correction</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.CorrectionImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getCorrection()
+   * @generated
+   */
+  int CORRECTION = 40;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CORRECTION__KEYWORD = 0;
+
+  /**
+   * The feature id for the '<em><b>Correction</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CORRECTION__CORRECTION = 1;
+
+  /**
+   * The number of structural features of the '<em>Correction</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CORRECTION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.CorrectionKeywordImpl <em>Correction Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.CorrectionKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getCorrectionKeyword()
+   * @generated
+   */
+  int CORRECTION_KEYWORD = 41;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CORRECTION_KEYWORD__KEYWORD = 0;
+
+  /**
+   * The number of structural features of the '<em>Correction Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CORRECTION_KEYWORD_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenDefaultRemediationRuleImpl <em>Gen Default Remediation Rule</em>}' class.
@@ -423,25 +1574,34 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getGenDefaultRemediationRule()
    * @generated
    */
-  int GEN_DEFAULT_REMEDIATION_RULE = 7;
+  int GEN_DEFAULT_REMEDIATION_RULE = 42;
 
   /**
-   * The feature id for the '<em><b>Codes</b></em>' attribute list.
+   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GEN_DEFAULT_REMEDIATION_RULE__CODES = 0;
+  int GEN_DEFAULT_REMEDIATION_RULE__KEYWORD = 0;
 
   /**
-   * The feature id for the '<em><b>Correction</b></em>' attribute list.
+   * The feature id for the '<em><b>Codes</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GEN_DEFAULT_REMEDIATION_RULE__CORRECTION = 1;
+  int GEN_DEFAULT_REMEDIATION_RULE__CODES = 1;
+
+  /**
+   * The feature id for the '<em><b>Corrections</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GEN_DEFAULT_REMEDIATION_RULE__CORRECTIONS = 2;
 
   /**
    * The number of structural features of the '<em>Gen Default Remediation Rule</em>' class.
@@ -450,7 +1610,35 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int GEN_DEFAULT_REMEDIATION_RULE_FEATURE_COUNT = 2;
+  int GEN_DEFAULT_REMEDIATION_RULE_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.DefaultKeywordImpl <em>Default Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.DefaultKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getDefaultKeyword()
+   * @generated
+   */
+  int DEFAULT_KEYWORD = 43;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFAULT_KEYWORD__KEYWORD = 0;
+
+  /**
+   * The number of structural features of the '<em>Default Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFAULT_KEYWORD_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.LlmProvidersBlockImpl <em>Llm Providers Block</em>}' class.
@@ -460,7 +1648,16 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getLlmProvidersBlock()
    * @generated
    */
-  int LLM_PROVIDERS_BLOCK = 8;
+  int LLM_PROVIDERS_BLOCK = 44;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LLM_PROVIDERS_BLOCK__KEYWORD = 0;
 
   /**
    * The feature id for the '<em><b>Providers</b></em>' containment reference list.
@@ -469,7 +1666,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int LLM_PROVIDERS_BLOCK__PROVIDERS = 0;
+  int LLM_PROVIDERS_BLOCK__PROVIDERS = 1;
 
   /**
    * The number of structural features of the '<em>Llm Providers Block</em>' class.
@@ -478,17 +1675,54 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int LLM_PROVIDERS_BLOCK_FEATURE_COUNT = 1;
+  int LLM_PROVIDERS_BLOCK_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.NamedLlmProviderImpl <em>Named Llm Provider</em>}' class.
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.LLMProvidersKeywordImpl <em>LLM Providers Keyword</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.NamedLlmProviderImpl
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getNamedLlmProvider()
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LLMProvidersKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getLLMProvidersKeyword()
    * @generated
    */
-  int NAMED_LLM_PROVIDER = 9;
+  int LLM_PROVIDERS_KEYWORD = 45;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LLM_PROVIDERS_KEYWORD__KEYWORD = 0;
+
+  /**
+   * The number of structural features of the '<em>LLM Providers Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LLM_PROVIDERS_KEYWORD_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.LLMProviderImpl <em>LLM Provider</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LLMProviderImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getLLMProvider()
+   * @generated
+   */
+  int LLM_PROVIDER = 46;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LLM_PROVIDER__KEYWORD = 0;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -497,52 +1731,340 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int NAMED_LLM_PROVIDER__NAME = 0;
+  int LLM_PROVIDER__NAME = 1;
 
   /**
-   * The feature id for the '<em><b>Kinds</b></em>' attribute list.
+   * The feature id for the '<em><b>Types</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NAMED_LLM_PROVIDER__KINDS = 1;
+  int LLM_PROVIDER__TYPES = 2;
 
   /**
-   * The feature id for the '<em><b>Local Model Paths</b></em>' attribute list.
+   * The feature id for the '<em><b>Local Model Paths</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NAMED_LLM_PROVIDER__LOCAL_MODEL_PATHS = 2;
+  int LLM_PROVIDER__LOCAL_MODEL_PATHS = 3;
 
   /**
-   * The feature id for the '<em><b>Models</b></em>' attribute list.
+   * The feature id for the '<em><b>Models</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NAMED_LLM_PROVIDER__MODELS = 3;
+  int LLM_PROVIDER__MODELS = 4;
 
   /**
-   * The feature id for the '<em><b>Endpoints</b></em>' attribute list.
+   * The feature id for the '<em><b>Endpoints</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NAMED_LLM_PROVIDER__ENDPOINTS = 4;
+  int LLM_PROVIDER__ENDPOINTS = 5;
 
   /**
-   * The number of structural features of the '<em>Named Llm Provider</em>' class.
+   * The number of structural features of the '<em>LLM Provider</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NAMED_LLM_PROVIDER_FEATURE_COUNT = 5;
+  int LLM_PROVIDER_FEATURE_COUNT = 6;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProviderKeywordImpl <em>Provider Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.ProviderKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getProviderKeyword()
+   * @generated
+   */
+  int PROVIDER_KEYWORD = 47;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROVIDER_KEYWORD__KEYWORD = 0;
+
+  /**
+   * The number of structural features of the '<em>Provider Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROVIDER_KEYWORD_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProviderTypeImpl <em>Provider Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.ProviderTypeImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getProviderType()
+   * @generated
+   */
+  int PROVIDER_TYPE = 48;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROVIDER_TYPE__KEYWORD = 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROVIDER_TYPE__NAME = 1;
+
+  /**
+   * The number of structural features of the '<em>Provider Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROVIDER_TYPE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProviderTypeKeywordImpl <em>Provider Type Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.ProviderTypeKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getProviderTypeKeyword()
+   * @generated
+   */
+  int PROVIDER_TYPE_KEYWORD = 49;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROVIDER_TYPE_KEYWORD__KEYWORD = 0;
+
+  /**
+   * The number of structural features of the '<em>Provider Type Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROVIDER_TYPE_KEYWORD_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.LocalModelPathImpl <em>Local Model Path</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LocalModelPathImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getLocalModelPath()
+   * @generated
+   */
+  int LOCAL_MODEL_PATH = 50;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOCAL_MODEL_PATH__KEYWORD = 0;
+
+  /**
+   * The feature id for the '<em><b>Path</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOCAL_MODEL_PATH__PATH = 1;
+
+  /**
+   * The number of structural features of the '<em>Local Model Path</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOCAL_MODEL_PATH_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ModelImpl <em>Model</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.ModelImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getModel()
+   * @generated
+   */
+  int MODEL = 51;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__KEYWORD = 0;
+
+  /**
+   * The feature id for the '<em><b>Mode</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__MODE = 1;
+
+  /**
+   * The number of structural features of the '<em>Model</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ModelKeywordImpl <em>Model Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.ModelKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getModelKeyword()
+   * @generated
+   */
+  int MODEL_KEYWORD = 52;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL_KEYWORD__KEYWORD = 0;
+
+  /**
+   * The number of structural features of the '<em>Model Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL_KEYWORD_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.FilePathKeywordImpl <em>File Path Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.FilePathKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getFilePathKeyword()
+   * @generated
+   */
+  int FILE_PATH_KEYWORD = 53;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FILE_PATH_KEYWORD__KEYWORD = 0;
+
+  /**
+   * The number of structural features of the '<em>File Path Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FILE_PATH_KEYWORD_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.EndpointImpl <em>Endpoint</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.EndpointImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getEndpoint()
+   * @generated
+   */
+  int ENDPOINT = 54;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENDPOINT__KEYWORD = 0;
+
+  /**
+   * The feature id for the '<em><b>Mode</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENDPOINT__MODE = 1;
+
+  /**
+   * The number of structural features of the '<em>Endpoint</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENDPOINT_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.EndpointKeywordImpl <em>Endpoint Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.EndpointKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getEndpointKeyword()
+   * @generated
+   */
+  int ENDPOINT_KEYWORD = 55;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENDPOINT_KEYWORD__KEYWORD = 0;
+
+  /**
+   * The number of structural features of the '<em>Endpoint Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENDPOINT_KEYWORD_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenUsageBlockImpl <em>Gen Usage Block</em>}' class.
@@ -552,25 +2074,34 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getGenUsageBlock()
    * @generated
    */
-  int GEN_USAGE_BLOCK = 10;
+  int GEN_USAGE_BLOCK = 56;
 
   /**
-   * The feature id for the '<em><b>Primary Providers</b></em>' attribute list.
+   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GEN_USAGE_BLOCK__PRIMARY_PROVIDERS = 0;
+  int GEN_USAGE_BLOCK__KEYWORD = 0;
 
   /**
-   * The feature id for the '<em><b>Secondary Providers</b></em>' attribute list.
+   * The feature id for the '<em><b>Primary Providers</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GEN_USAGE_BLOCK__SECONDARY_PROVIDERS = 1;
+  int GEN_USAGE_BLOCK__PRIMARY_PROVIDERS = 1;
+
+  /**
+   * The feature id for the '<em><b>Secondary Providers</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GEN_USAGE_BLOCK__SECONDARY_PROVIDERS = 2;
 
   /**
    * The feature id for the '<em><b>Escalations</b></em>' containment reference list.
@@ -579,7 +2110,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int GEN_USAGE_BLOCK__ESCALATIONS = 2;
+  int GEN_USAGE_BLOCK__ESCALATIONS = 3;
 
   /**
    * The number of structural features of the '<em>Gen Usage Block</em>' class.
@@ -588,7 +2119,165 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int GEN_USAGE_BLOCK_FEATURE_COUNT = 3;
+  int GEN_USAGE_BLOCK_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ModelUsageKeywordImpl <em>Model Usage Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.ModelUsageKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getModelUsageKeyword()
+   * @generated
+   */
+  int MODEL_USAGE_KEYWORD = 57;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL_USAGE_KEYWORD__KEYWORD = 0;
+
+  /**
+   * The number of structural features of the '<em>Model Usage Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL_USAGE_KEYWORD_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.PrimaryProviderImpl <em>Primary Provider</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.PrimaryProviderImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getPrimaryProvider()
+   * @generated
+   */
+  int PRIMARY_PROVIDER = 58;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_PROVIDER__KEYWORD = 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_PROVIDER__NAME = 1;
+
+  /**
+   * The number of structural features of the '<em>Primary Provider</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_PROVIDER_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.PrimaryProviderKeywordImpl <em>Primary Provider Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.PrimaryProviderKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getPrimaryProviderKeyword()
+   * @generated
+   */
+  int PRIMARY_PROVIDER_KEYWORD = 59;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_PROVIDER_KEYWORD__KEYWORD = 0;
+
+  /**
+   * The number of structural features of the '<em>Primary Provider Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_PROVIDER_KEYWORD_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.SecondaryProviderImpl <em>Secondary Provider</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.SecondaryProviderImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getSecondaryProvider()
+   * @generated
+   */
+  int SECONDARY_PROVIDER = 60;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SECONDARY_PROVIDER__KEYWORD = 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SECONDARY_PROVIDER__NAME = 1;
+
+  /**
+   * The number of structural features of the '<em>Secondary Provider</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SECONDARY_PROVIDER_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.SecondaryProviderKeywordImpl <em>Secondary Provider Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.SecondaryProviderKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getSecondaryProviderKeyword()
+   * @generated
+   */
+  int SECONDARY_PROVIDER_KEYWORD = 61;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SECONDARY_PROVIDER_KEYWORD__KEYWORD = 0;
+
+  /**
+   * The number of structural features of the '<em>Secondary Provider Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SECONDARY_PROVIDER_KEYWORD_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenEscalationBlockImpl <em>Gen Escalation Block</em>}' class.
@@ -598,25 +2287,34 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getGenEscalationBlock()
    * @generated
    */
-  int GEN_ESCALATION_BLOCK = 11;
+  int GEN_ESCALATION_BLOCK = 62;
 
   /**
-   * The feature id for the '<em><b>Enableds</b></em>' attribute list.
+   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GEN_ESCALATION_BLOCK__ENABLEDS = 0;
+  int GEN_ESCALATION_BLOCK__KEYWORD = 0;
 
   /**
-   * The feature id for the '<em><b>Escalate At Retries</b></em>' attribute list.
+   * The feature id for the '<em><b>Enableds</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GEN_ESCALATION_BLOCK__ESCALATE_AT_RETRIES = 1;
+  int GEN_ESCALATION_BLOCK__ENABLEDS = 1;
+
+  /**
+   * The feature id for the '<em><b>At Retries</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GEN_ESCALATION_BLOCK__AT_RETRIES = 2;
 
   /**
    * The number of structural features of the '<em>Gen Escalation Block</em>' class.
@@ -625,7 +2323,165 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int GEN_ESCALATION_BLOCK_FEATURE_COUNT = 2;
+  int GEN_ESCALATION_BLOCK_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.EscalationKeywordImpl <em>Escalation Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.EscalationKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getEscalationKeyword()
+   * @generated
+   */
+  int ESCALATION_KEYWORD = 63;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ESCALATION_KEYWORD__KEYWORD = 0;
+
+  /**
+   * The number of structural features of the '<em>Escalation Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ESCALATION_KEYWORD_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.EnabledImpl <em>Enabled</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.EnabledImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getEnabled()
+   * @generated
+   */
+  int ENABLED = 64;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENABLED__KEYWORD = 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENABLED__VALUE = 1;
+
+  /**
+   * The number of structural features of the '<em>Enabled</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENABLED_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.EnabledKeywordImpl <em>Enabled Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.EnabledKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getEnabledKeyword()
+   * @generated
+   */
+  int ENABLED_KEYWORD = 65;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENABLED_KEYWORD__KEYWORD = 0;
+
+  /**
+   * The number of structural features of the '<em>Enabled Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENABLED_KEYWORD_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.AtRetryImpl <em>At Retry</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.AtRetryImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getAtRetry()
+   * @generated
+   */
+  int AT_RETRY = 66;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AT_RETRY__KEYWORD = 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AT_RETRY__VALUE = 1;
+
+  /**
+   * The number of structural features of the '<em>At Retry</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AT_RETRY_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.AtRetryKeywordImpl <em>At Retry Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.AtRetryKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getAtRetryKeyword()
+   * @generated
+   */
+  int AT_RETRY_KEYWORD = 67;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AT_RETRY_KEYWORD__KEYWORD = 0;
+
+  /**
+   * The number of structural features of the '<em>At Retry Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AT_RETRY_KEYWORD_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.SurfaceBlockImpl <em>Surface Block</em>}' class.
@@ -635,7 +2491,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getSurfaceBlock()
    * @generated
    */
-  int SURFACE_BLOCK = 12;
+  int SURFACE_BLOCK = 68;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -663,7 +2519,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getSurfaceElement()
    * @generated
    */
-  int SURFACE_ELEMENT = 13;
+  int SURFACE_ELEMENT = 69;
 
   /**
    * The number of structural features of the '<em>Surface Element</em>' class.
@@ -682,7 +2538,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getScopedSurface()
    * @generated
    */
-  int SCOPED_SURFACE = 14;
+  int SCOPED_SURFACE = 70;
 
   /**
    * The feature id for the '<em><b>Module Id</b></em>' attribute.
@@ -728,7 +2584,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getSurfaceRule()
    * @generated
    */
-  int SURFACE_RULE = 15;
+  int SURFACE_RULE = 71;
 
   /**
    * The number of structural features of the '<em>Surface Rule</em>' class.
@@ -747,7 +2603,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getReturnTypeRule()
    * @generated
    */
-  int RETURN_TYPE_RULE = 16;
+  int RETURN_TYPE_RULE = 72;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -784,7 +2640,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getParamTypeRule()
    * @generated
    */
-  int PARAM_TYPE_RULE = 17;
+  int PARAM_TYPE_RULE = 73;
 
   /**
    * The feature id for the '<em><b>Param Name</b></em>' attribute.
@@ -821,7 +2677,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getRecordSelfReturnRule()
    * @generated
    */
-  int RECORD_SELF_RETURN_RULE = 18;
+  int RECORD_SELF_RETURN_RULE = 74;
 
   /**
    * The feature id for the '<em><b>Methods</b></em>' attribute list.
@@ -849,7 +2705,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getMethodOverrideRule()
    * @generated
    */
-  int METHOD_OVERRIDE_RULE = 19;
+  int METHOD_OVERRIDE_RULE = 75;
 
   /**
    * The feature id for the '<em><b>Signature</b></em>' containment reference.
@@ -886,7 +2742,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getJavaType()
    * @generated
    */
-  int JAVA_TYPE = 20;
+  int JAVA_TYPE = 76;
 
   /**
    * The number of structural features of the '<em>Java Type</em>' class.
@@ -905,7 +2761,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getQualifiedName()
    * @generated
    */
-  int QUALIFIED_NAME = 21;
+  int QUALIFIED_NAME = 77;
 
   /**
    * The feature id for the '<em><b>Segments</b></em>' attribute list.
@@ -933,7 +2789,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getPrimitiveType()
    * @generated
    */
-  int PRIMITIVE_TYPE = 22;
+  int PRIMITIVE_TYPE = 78;
 
   /**
    * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -961,7 +2817,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getOperationSignature()
    * @generated
    */
-  int OPERATION_SIGNATURE = 23;
+  int OPERATION_SIGNATURE = 79;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -998,7 +2854,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getTypedParam()
    * @generated
    */
-  int TYPED_PARAM = 24;
+  int TYPED_PARAM = 80;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -1027,6 +2883,34 @@ public interface LibrettoProjectProfilePackage extends EPackage
    */
   int TYPED_PARAM_FEATURE_COUNT = 2;
 
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.TrueKeywordImpl <em>True Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.TrueKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getTrueKeyword()
+   * @generated
+   */
+  int TRUE_KEYWORD = 81;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRUE_KEYWORD__KEYWORD = TRUE_FALSE_KEYWORD_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>True Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRUE_KEYWORD_FEATURE_COUNT = TRUE_FALSE_KEYWORD_FEATURE_COUNT + 1;
+
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile <em>Project Profile</em>}'.
@@ -1039,48 +2923,101 @@ public interface LibrettoProjectProfilePackage extends EPackage
   EClass getProjectProfile();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getName <em>Name</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getProfiles <em>Profiles</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Profiles</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getProfiles()
+   * @see #getProjectProfile()
+   * @generated
+   */
+  EReference getProjectProfile_Profiles();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.Profile <em>Profile</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Profile</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Profile
+   * @generated
+   */
+  EClass getProfile();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.Profile#getProfileKeyword <em>Profile Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Profile Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Profile#getProfileKeyword()
+   * @see #getProfile()
+   * @generated
+   */
+  EReference getProfile_ProfileKeyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.Profile#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getName()
-   * @see #getProjectProfile()
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Profile#getName()
+   * @see #getProfile()
    * @generated
    */
-  EAttribute getProjectProfile_Name();
+  EAttribute getProfile_Name();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getProjects <em>Projects</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.Profile#getProjects <em>Projects</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Projects</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getProjects()
-   * @see #getProjectProfile()
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Profile#getProjects()
+   * @see #getProfile()
    * @generated
    */
-  EReference getProjectProfile_Projects();
+  EReference getProfile_Projects();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getLlmProviders <em>Llm Providers</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.Profile#getLlmProviders <em>Llm Providers</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Llm Providers</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getLlmProviders()
-   * @see #getProjectProfile()
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Profile#getLlmProviders()
+   * @see #getProfile()
    * @generated
    */
-  EReference getProjectProfile_LlmProviders();
+  EReference getProfile_LlmProviders();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getSurfaces <em>Surfaces</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.Profile#getSurfaces <em>Surfaces</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Surfaces</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getSurfaces()
-   * @see #getProjectProfile()
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Profile#getSurfaces()
+   * @see #getProfile()
    * @generated
    */
-  EReference getProjectProfile_Surfaces();
+  EReference getProfile_Surfaces();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProfileKeyword <em>Profile Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Profile Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProfileKeyword
+   * @generated
+   */
+  EClass getProfileKeyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProfileKeyword#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProfileKeyword#getKeyword()
+   * @see #getProfileKeyword()
+   * @generated
+   */
+  EAttribute getProfileKeyword_Keyword();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock <em>Project Block</em>}'.
@@ -1093,15 +3030,26 @@ public interface LibrettoProjectProfilePackage extends EPackage
   EClass getProjectBlock();
 
   /**
-   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock#getRootDir <em>Root Dir</em>}'.
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock#getProjectKeyword <em>Project Keyword</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Root Dir</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock#getRootDir()
+   * @return the meta object for the containment reference '<em>Project Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock#getProjectKeyword()
    * @see #getProjectBlock()
    * @generated
    */
-  EAttribute getProjectBlock_RootDir();
+  EReference getProjectBlock_ProjectKeyword();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock#getRootDirs <em>Root Dirs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Root Dirs</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock#getRootDirs()
+   * @see #getProjectBlock()
+   * @generated
+   */
+  EReference getProjectBlock_RootDirs();
 
   /**
    * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock#getModules <em>Modules</em>}'.
@@ -1126,6 +3074,80 @@ public interface LibrettoProjectProfilePackage extends EPackage
   EReference getProjectBlock_Gens();
 
   /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.RootDirectory <em>Root Directory</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Root Directory</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.RootDirectory
+   * @generated
+   */
+  EClass getRootDirectory();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.RootDirectory#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.RootDirectory#getKeyword()
+   * @see #getRootDirectory()
+   * @generated
+   */
+  EReference getRootDirectory_Keyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.RootDirectory#getDir <em>Dir</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Dir</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.RootDirectory#getDir()
+   * @see #getRootDirectory()
+   * @generated
+   */
+  EAttribute getRootDirectory_Dir();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectKeyword <em>Project Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Project Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectKeyword
+   * @generated
+   */
+  EClass getProjectKeyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectKeyword#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectKeyword#getKeyword()
+   * @see #getProjectKeyword()
+   * @generated
+   */
+  EAttribute getProjectKeyword_Keyword();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.RootDirKeyword <em>Root Dir Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Root Dir Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.RootDirKeyword
+   * @generated
+   */
+  EClass getRootDirKeyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.RootDirKeyword#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.RootDirKeyword#getKeyword()
+   * @see #getRootDirKeyword()
+   * @generated
+   */
+  EAttribute getRootDirKeyword_Keyword();
+
+  /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.ModulesBlock <em>Modules Block</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1134,6 +3156,17 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @generated
    */
   EClass getModulesBlock();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.ModulesBlock#getModulesKeyword <em>Modules Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Modules Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ModulesBlock#getModulesKeyword()
+   * @see #getModulesBlock()
+   * @generated
+   */
+  EReference getModulesBlock_ModulesKeyword();
 
   /**
    * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.ModulesBlock#getModules <em>Modules</em>}'.
@@ -1147,6 +3180,27 @@ public interface LibrettoProjectProfilePackage extends EPackage
   EReference getModulesBlock_Modules();
 
   /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.ModulesKeyword <em>Modules Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Modules Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ModulesKeyword
+   * @generated
+   */
+  EClass getModulesKeyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.ModulesKeyword#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ModulesKeyword#getKeyword()
+   * @see #getModulesKeyword()
+   * @generated
+   */
+  EAttribute getModulesKeyword_Keyword();
+
+  /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule <em>Project Module</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1155,6 +3209,17 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @generated
    */
   EClass getProjectModule();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getKeyword()
+   * @see #getProjectModule()
+   * @generated
+   */
+  EReference getProjectModule_Keyword();
 
   /**
    * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getName <em>Name</em>}'.
@@ -1168,59 +3233,345 @@ public interface LibrettoProjectProfilePackage extends EPackage
   EAttribute getProjectModule_Name();
 
   /**
-   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getDirs <em>Dirs</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getDirs <em>Dirs</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Dirs</em>'.
+   * @return the meta object for the containment reference list '<em>Dirs</em>'.
    * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getDirs()
    * @see #getProjectModule()
    * @generated
    */
-  EAttribute getProjectModule_Dirs();
+  EReference getProjectModule_Dirs();
 
   /**
-   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getSpecDirs <em>Spec Dirs</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getSpecDirs <em>Spec Dirs</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Spec Dirs</em>'.
+   * @return the meta object for the containment reference list '<em>Spec Dirs</em>'.
    * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getSpecDirs()
    * @see #getProjectModule()
    * @generated
    */
-  EAttribute getProjectModule_SpecDirs();
+  EReference getProjectModule_SpecDirs();
 
   /**
-   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getTestDirs <em>Test Dirs</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getTestDirs <em>Test Dirs</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Test Dirs</em>'.
+   * @return the meta object for the containment reference list '<em>Test Dirs</em>'.
    * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getTestDirs()
    * @see #getProjectModule()
    * @generated
    */
-  EAttribute getProjectModule_TestDirs();
+  EReference getProjectModule_TestDirs();
 
   /**
-   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getMainDirs <em>Main Dirs</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getMainDirs <em>Main Dirs</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Main Dirs</em>'.
+   * @return the meta object for the containment reference list '<em>Main Dirs</em>'.
    * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getMainDirs()
    * @see #getProjectModule()
    * @generated
    */
-  EAttribute getProjectModule_MainDirs();
+  EReference getProjectModule_MainDirs();
 
   /**
-   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getBasePackages <em>Base Packages</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getBasePackages <em>Base Packages</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Base Packages</em>'.
+   * @return the meta object for the containment reference list '<em>Base Packages</em>'.
    * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule#getBasePackages()
    * @see #getProjectModule()
    * @generated
    */
-  EAttribute getProjectModule_BasePackages();
+  EReference getProjectModule_BasePackages();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.ModuleKeyword <em>Module Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Module Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ModuleKeyword
+   * @generated
+   */
+  EClass getModuleKeyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.ModuleKeyword#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ModuleKeyword#getKeyword()
+   * @see #getModuleKeyword()
+   * @generated
+   */
+  EAttribute getModuleKeyword_Keyword();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.Directory <em>Directory</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Directory</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Directory
+   * @generated
+   */
+  EClass getDirectory();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.Directory#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Directory#getKeyword()
+   * @see #getDirectory()
+   * @generated
+   */
+  EReference getDirectory_Keyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.Directory#getDir <em>Dir</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Dir</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Directory#getDir()
+   * @see #getDirectory()
+   * @generated
+   */
+  EAttribute getDirectory_Dir();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.SpecDirectory <em>Spec Directory</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Spec Directory</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.SpecDirectory
+   * @generated
+   */
+  EClass getSpecDirectory();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.SpecDirectory#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.SpecDirectory#getKeyword()
+   * @see #getSpecDirectory()
+   * @generated
+   */
+  EReference getSpecDirectory_Keyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.SpecDirectory#getDir <em>Dir</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Dir</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.SpecDirectory#getDir()
+   * @see #getSpecDirectory()
+   * @generated
+   */
+  EAttribute getSpecDirectory_Dir();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestDirectory <em>Test Directory</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Test Directory</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestDirectory
+   * @generated
+   */
+  EClass getTestDirectory();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestDirectory#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestDirectory#getKeyword()
+   * @see #getTestDirectory()
+   * @generated
+   */
+  EReference getTestDirectory_Keyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestDirectory#getDir <em>Dir</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Dir</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestDirectory#getDir()
+   * @see #getTestDirectory()
+   * @generated
+   */
+  EAttribute getTestDirectory_Dir();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.MainDirectory <em>Main Directory</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Main Directory</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.MainDirectory
+   * @generated
+   */
+  EClass getMainDirectory();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.MainDirectory#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.MainDirectory#getKeyword()
+   * @see #getMainDirectory()
+   * @generated
+   */
+  EReference getMainDirectory_Keyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.MainDirectory#getDir <em>Dir</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Dir</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.MainDirectory#getDir()
+   * @see #getMainDirectory()
+   * @generated
+   */
+  EAttribute getMainDirectory_Dir();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.BasePackage <em>Base Package</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Base Package</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.BasePackage
+   * @generated
+   */
+  EClass getBasePackage();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.BasePackage#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.BasePackage#getKeyword()
+   * @see #getBasePackage()
+   * @generated
+   */
+  EReference getBasePackage_Keyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.BasePackage#getDir <em>Dir</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Dir</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.BasePackage#getDir()
+   * @see #getBasePackage()
+   * @generated
+   */
+  EAttribute getBasePackage_Dir();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.DirKeyword <em>Dir Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Dir Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.DirKeyword
+   * @generated
+   */
+  EClass getDirKeyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.DirKeyword#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.DirKeyword#getKeyword()
+   * @see #getDirKeyword()
+   * @generated
+   */
+  EAttribute getDirKeyword_Keyword();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.SpecDirKeyword <em>Spec Dir Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Spec Dir Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.SpecDirKeyword
+   * @generated
+   */
+  EClass getSpecDirKeyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.SpecDirKeyword#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.SpecDirKeyword#getKeyword()
+   * @see #getSpecDirKeyword()
+   * @generated
+   */
+  EAttribute getSpecDirKeyword_Keyword();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestDirKeyword <em>Test Dir Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Test Dir Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestDirKeyword
+   * @generated
+   */
+  EClass getTestDirKeyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestDirKeyword#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestDirKeyword#getKeyword()
+   * @see #getTestDirKeyword()
+   * @generated
+   */
+  EAttribute getTestDirKeyword_Keyword();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.MainDirKeyword <em>Main Dir Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Main Dir Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.MainDirKeyword
+   * @generated
+   */
+  EClass getMainDirKeyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.MainDirKeyword#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.MainDirKeyword#getKeyword()
+   * @see #getMainDirKeyword()
+   * @generated
+   */
+  EAttribute getMainDirKeyword_Keyword();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.BasePackageKeyword <em>Base Package Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Base Package Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.BasePackageKeyword
+   * @generated
+   */
+  EClass getBasePackageKeyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.BasePackageKeyword#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.BasePackageKeyword#getKeyword()
+   * @see #getBasePackageKeyword()
+   * @generated
+   */
+  EAttribute getBasePackageKeyword_Keyword();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenBlock <em>Gen Block</em>}'.
@@ -1233,48 +3584,59 @@ public interface LibrettoProjectProfilePackage extends EPackage
   EClass getGenBlock();
 
   /**
-   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getInitialInstructions <em>Initial Instructions</em>}'.
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getKeyword <em>Keyword</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Initial Instructions</em>'.
+   * @return the meta object for the containment reference '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getKeyword()
+   * @see #getGenBlock()
+   * @generated
+   */
+  EReference getGenBlock_Keyword();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getInitialInstructions <em>Initial Instructions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Initial Instructions</em>'.
    * @see com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getInitialInstructions()
    * @see #getGenBlock()
    * @generated
    */
-  EAttribute getGenBlock_InitialInstructions();
+  EReference getGenBlock_InitialInstructions();
 
   /**
-   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getMaxRetries <em>Max Retries</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getMaxRetries <em>Max Retries</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Max Retries</em>'.
+   * @return the meta object for the containment reference list '<em>Max Retries</em>'.
    * @see com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getMaxRetries()
    * @see #getGenBlock()
    * @generated
    */
-  EAttribute getGenBlock_MaxRetries();
+  EReference getGenBlock_MaxRetries();
 
   /**
-   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getParseChecks <em>Parse Checks</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getParseChecks <em>Parse Checks</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Parse Checks</em>'.
+   * @return the meta object for the containment reference list '<em>Parse Checks</em>'.
    * @see com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getParseChecks()
    * @see #getGenBlock()
    * @generated
    */
-  EAttribute getGenBlock_ParseChecks();
+  EReference getGenBlock_ParseChecks();
 
   /**
-   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getDefaultCorrections <em>Default Corrections</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getDefaultCorrections <em>Default Corrections</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Default Corrections</em>'.
+   * @return the meta object for the containment reference list '<em>Default Corrections</em>'.
    * @see com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getDefaultCorrections()
    * @see #getGenBlock()
    * @generated
    */
-  EAttribute getGenBlock_DefaultCorrections();
+  EReference getGenBlock_DefaultCorrections();
 
   /**
    * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getRemediations <em>Remediations</em>}'.
@@ -1299,6 +3661,249 @@ public interface LibrettoProjectProfilePackage extends EPackage
   EReference getGenBlock_ModelUsages();
 
   /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenKeyword <em>Gen Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Gen Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenKeyword
+   * @generated
+   */
+  EClass getGenKeyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenKeyword#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenKeyword#getKeyword()
+   * @see #getGenKeyword()
+   * @generated
+   */
+  EAttribute getGenKeyword_Keyword();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.InitialInstruction <em>Initial Instruction</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Initial Instruction</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.InitialInstruction
+   * @generated
+   */
+  EClass getInitialInstruction();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.InitialInstruction#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.InitialInstruction#getKeyword()
+   * @see #getInitialInstruction()
+   * @generated
+   */
+  EReference getInitialInstruction_Keyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.InitialInstruction#getInstruction <em>Instruction</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Instruction</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.InitialInstruction#getInstruction()
+   * @see #getInitialInstruction()
+   * @generated
+   */
+  EAttribute getInitialInstruction_Instruction();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.MaxRetries <em>Max Retries</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Max Retries</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.MaxRetries
+   * @generated
+   */
+  EClass getMaxRetries();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.MaxRetries#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.MaxRetries#getKeyword()
+   * @see #getMaxRetries()
+   * @generated
+   */
+  EReference getMaxRetries_Keyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.MaxRetries#getMaxRetries <em>Max Retries</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Max Retries</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.MaxRetries#getMaxRetries()
+   * @see #getMaxRetries()
+   * @generated
+   */
+  EAttribute getMaxRetries_MaxRetries();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.ParseCheck <em>Parse Check</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Parse Check</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ParseCheck
+   * @generated
+   */
+  EClass getParseCheck();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.ParseCheck#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ParseCheck#getKeyword()
+   * @see #getParseCheck()
+   * @generated
+   */
+  EReference getParseCheck_Keyword();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.ParseCheck#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Value</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ParseCheck#getValue()
+   * @see #getParseCheck()
+   * @generated
+   */
+  EReference getParseCheck_Value();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.DefaultCorrection <em>Default Correction</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Default Correction</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.DefaultCorrection
+   * @generated
+   */
+  EClass getDefaultCorrection();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.DefaultCorrection#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.DefaultCorrection#getKeyword()
+   * @see #getDefaultCorrection()
+   * @generated
+   */
+  EReference getDefaultCorrection_Keyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.DefaultCorrection#getCorrection <em>Correction</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Correction</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.DefaultCorrection#getCorrection()
+   * @see #getDefaultCorrection()
+   * @generated
+   */
+  EAttribute getDefaultCorrection_Correction();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.InitialInstructionKeyword <em>Initial Instruction Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Initial Instruction Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.InitialInstructionKeyword
+   * @generated
+   */
+  EClass getInitialInstructionKeyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.InitialInstructionKeyword#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.InitialInstructionKeyword#getKeyword()
+   * @see #getInitialInstructionKeyword()
+   * @generated
+   */
+  EAttribute getInitialInstructionKeyword_Keyword();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.MaxRetriesKeyword <em>Max Retries Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Max Retries Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.MaxRetriesKeyword
+   * @generated
+   */
+  EClass getMaxRetriesKeyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.MaxRetriesKeyword#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.MaxRetriesKeyword#getKeyword()
+   * @see #getMaxRetriesKeyword()
+   * @generated
+   */
+  EAttribute getMaxRetriesKeyword_Keyword();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.ParseCheckKeyword <em>Parse Check Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Parse Check Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ParseCheckKeyword
+   * @generated
+   */
+  EClass getParseCheckKeyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.ParseCheckKeyword#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ParseCheckKeyword#getKeyword()
+   * @see #getParseCheckKeyword()
+   * @generated
+   */
+  EAttribute getParseCheckKeyword_Keyword();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.DefaultCorrectionKeyword <em>Default Correction Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Default Correction Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.DefaultCorrectionKeyword
+   * @generated
+   */
+  EClass getDefaultCorrectionKeyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.DefaultCorrectionKeyword#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.DefaultCorrectionKeyword#getKeyword()
+   * @see #getDefaultCorrectionKeyword()
+   * @generated
+   */
+  EAttribute getDefaultCorrectionKeyword_Keyword();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.TrueFalseKeyword <em>True False Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>True False Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.TrueFalseKeyword
+   * @generated
+   */
+  EClass getTrueFalseKeyword();
+
+  /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenRemediationRules <em>Gen Remediation Rules</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1307,6 +3912,17 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @generated
    */
   EClass getGenRemediationRules();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenRemediationRules#getRulesKeyword <em>Rules Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Rules Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenRemediationRules#getRulesKeyword()
+   * @see #getGenRemediationRules()
+   * @generated
+   */
+  EReference getGenRemediationRules_RulesKeyword();
 
   /**
    * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenRemediationRules#getPatternRules <em>Pattern Rules</em>}'.
@@ -1331,6 +3947,27 @@ public interface LibrettoProjectProfilePackage extends EPackage
   EReference getGenRemediationRules_DefaultRemediations();
 
   /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.RulesKeyword <em>Rules Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Rules Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.RulesKeyword
+   * @generated
+   */
+  EClass getRulesKeyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.RulesKeyword#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.RulesKeyword#getKeyword()
+   * @see #getRulesKeyword()
+   * @generated
+   */
+  EAttribute getRulesKeyword_Keyword();
+
+  /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenPatternRemediationRule <em>Gen Pattern Remediation Rule</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1341,37 +3978,228 @@ public interface LibrettoProjectProfilePackage extends EPackage
   EClass getGenPatternRemediationRule();
 
   /**
-   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenPatternRemediationRule#getPatterns <em>Patterns</em>}'.
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenPatternRemediationRule#getKeyword <em>Keyword</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Patterns</em>'.
+   * @return the meta object for the containment reference '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenPatternRemediationRule#getKeyword()
+   * @see #getGenPatternRemediationRule()
+   * @generated
+   */
+  EReference getGenPatternRemediationRule_Keyword();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenPatternRemediationRule#getPatterns <em>Patterns</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Patterns</em>'.
    * @see com.robenglander.libretto.spec.librettoProjectProfile.GenPatternRemediationRule#getPatterns()
    * @see #getGenPatternRemediationRule()
    * @generated
    */
-  EAttribute getGenPatternRemediationRule_Patterns();
+  EReference getGenPatternRemediationRule_Patterns();
 
   /**
-   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenPatternRemediationRule#getCodes <em>Codes</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenPatternRemediationRule#getCodes <em>Codes</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Codes</em>'.
+   * @return the meta object for the containment reference list '<em>Codes</em>'.
    * @see com.robenglander.libretto.spec.librettoProjectProfile.GenPatternRemediationRule#getCodes()
    * @see #getGenPatternRemediationRule()
    * @generated
    */
-  EAttribute getGenPatternRemediationRule_Codes();
+  EReference getGenPatternRemediationRule_Codes();
 
   /**
-   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenPatternRemediationRule#getCorrections <em>Corrections</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenPatternRemediationRule#getCorrections <em>Corrections</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Corrections</em>'.
+   * @return the meta object for the containment reference list '<em>Corrections</em>'.
    * @see com.robenglander.libretto.spec.librettoProjectProfile.GenPatternRemediationRule#getCorrections()
    * @see #getGenPatternRemediationRule()
    * @generated
    */
-  EAttribute getGenPatternRemediationRule_Corrections();
+  EReference getGenPatternRemediationRule_Corrections();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.RuleKeyword <em>Rule Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Rule Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.RuleKeyword
+   * @generated
+   */
+  EClass getRuleKeyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.RuleKeyword#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.RuleKeyword#getKeyword()
+   * @see #getRuleKeyword()
+   * @generated
+   */
+  EAttribute getRuleKeyword_Keyword();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.Pattern <em>Pattern</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Pattern</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Pattern
+   * @generated
+   */
+  EClass getPattern();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.Pattern#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Pattern#getKeyword()
+   * @see #getPattern()
+   * @generated
+   */
+  EReference getPattern_Keyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.Pattern#getPattern <em>Pattern</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Pattern</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Pattern#getPattern()
+   * @see #getPattern()
+   * @generated
+   */
+  EAttribute getPattern_Pattern();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.PatternKeyword <em>Pattern Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Pattern Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.PatternKeyword
+   * @generated
+   */
+  EClass getPatternKeyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.PatternKeyword#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.PatternKeyword#getKeyword()
+   * @see #getPatternKeyword()
+   * @generated
+   */
+  EAttribute getPatternKeyword_Keyword();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.Code <em>Code</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Code</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Code
+   * @generated
+   */
+  EClass getCode();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.Code#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Code#getKeyword()
+   * @see #getCode()
+   * @generated
+   */
+  EReference getCode_Keyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.Code#getCode <em>Code</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Code</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Code#getCode()
+   * @see #getCode()
+   * @generated
+   */
+  EAttribute getCode_Code();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.CodeKeyword <em>Code Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Code Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.CodeKeyword
+   * @generated
+   */
+  EClass getCodeKeyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.CodeKeyword#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.CodeKeyword#getKeyword()
+   * @see #getCodeKeyword()
+   * @generated
+   */
+  EAttribute getCodeKeyword_Keyword();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.Correction <em>Correction</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Correction</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Correction
+   * @generated
+   */
+  EClass getCorrection();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.Correction#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Correction#getKeyword()
+   * @see #getCorrection()
+   * @generated
+   */
+  EReference getCorrection_Keyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.Correction#getCorrection <em>Correction</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Correction</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Correction#getCorrection()
+   * @see #getCorrection()
+   * @generated
+   */
+  EAttribute getCorrection_Correction();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.CorrectionKeyword <em>Correction Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Correction Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.CorrectionKeyword
+   * @generated
+   */
+  EClass getCorrectionKeyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.CorrectionKeyword#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.CorrectionKeyword#getKeyword()
+   * @see #getCorrectionKeyword()
+   * @generated
+   */
+  EAttribute getCorrectionKeyword_Keyword();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenDefaultRemediationRule <em>Gen Default Remediation Rule</em>}'.
@@ -1384,26 +4212,58 @@ public interface LibrettoProjectProfilePackage extends EPackage
   EClass getGenDefaultRemediationRule();
 
   /**
-   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenDefaultRemediationRule#getCodes <em>Codes</em>}'.
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenDefaultRemediationRule#getKeyword <em>Keyword</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Codes</em>'.
+   * @return the meta object for the containment reference '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenDefaultRemediationRule#getKeyword()
+   * @see #getGenDefaultRemediationRule()
+   * @generated
+   */
+  EReference getGenDefaultRemediationRule_Keyword();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenDefaultRemediationRule#getCodes <em>Codes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Codes</em>'.
    * @see com.robenglander.libretto.spec.librettoProjectProfile.GenDefaultRemediationRule#getCodes()
    * @see #getGenDefaultRemediationRule()
    * @generated
    */
-  EAttribute getGenDefaultRemediationRule_Codes();
+  EReference getGenDefaultRemediationRule_Codes();
 
   /**
-   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenDefaultRemediationRule#getCorrection <em>Correction</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenDefaultRemediationRule#getCorrections <em>Corrections</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Correction</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenDefaultRemediationRule#getCorrection()
+   * @return the meta object for the containment reference list '<em>Corrections</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenDefaultRemediationRule#getCorrections()
    * @see #getGenDefaultRemediationRule()
    * @generated
    */
-  EAttribute getGenDefaultRemediationRule_Correction();
+  EReference getGenDefaultRemediationRule_Corrections();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.DefaultKeyword <em>Default Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Default Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.DefaultKeyword
+   * @generated
+   */
+  EClass getDefaultKeyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.DefaultKeyword#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.DefaultKeyword#getKeyword()
+   * @see #getDefaultKeyword()
+   * @generated
+   */
+  EAttribute getDefaultKeyword_Keyword();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.LlmProvidersBlock <em>Llm Providers Block</em>}'.
@@ -1414,6 +4274,17 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @generated
    */
   EClass getLlmProvidersBlock();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.LlmProvidersBlock#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LlmProvidersBlock#getKeyword()
+   * @see #getLlmProvidersBlock()
+   * @generated
+   */
+  EReference getLlmProvidersBlock_Keyword();
 
   /**
    * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.LlmProvidersBlock#getProviders <em>Providers</em>}'.
@@ -1427,69 +4298,334 @@ public interface LibrettoProjectProfilePackage extends EPackage
   EReference getLlmProvidersBlock_Providers();
 
   /**
-   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider <em>Named Llm Provider</em>}'.
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.LLMProvidersKeyword <em>LLM Providers Keyword</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Named Llm Provider</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider
+   * @return the meta object for class '<em>LLM Providers Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LLMProvidersKeyword
    * @generated
    */
-  EClass getNamedLlmProvider();
+  EClass getLLMProvidersKeyword();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.LLMProvidersKeyword#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LLMProvidersKeyword#getKeyword()
+   * @see #getLLMProvidersKeyword()
+   * @generated
+   */
+  EAttribute getLLMProvidersKeyword_Keyword();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.LLMProvider <em>LLM Provider</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>LLM Provider</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LLMProvider
+   * @generated
+   */
+  EClass getLLMProvider();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.LLMProvider#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LLMProvider#getKeyword()
+   * @see #getLLMProvider()
+   * @generated
+   */
+  EReference getLLMProvider_Keyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.LLMProvider#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getName()
-   * @see #getNamedLlmProvider()
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LLMProvider#getName()
+   * @see #getLLMProvider()
    * @generated
    */
-  EAttribute getNamedLlmProvider_Name();
+  EAttribute getLLMProvider_Name();
 
   /**
-   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getKinds <em>Kinds</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.LLMProvider#getTypes <em>Types</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Kinds</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getKinds()
-   * @see #getNamedLlmProvider()
+   * @return the meta object for the containment reference list '<em>Types</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LLMProvider#getTypes()
+   * @see #getLLMProvider()
    * @generated
    */
-  EAttribute getNamedLlmProvider_Kinds();
+  EReference getLLMProvider_Types();
 
   /**
-   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getLocalModelPaths <em>Local Model Paths</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.LLMProvider#getLocalModelPaths <em>Local Model Paths</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Local Model Paths</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getLocalModelPaths()
-   * @see #getNamedLlmProvider()
+   * @return the meta object for the containment reference list '<em>Local Model Paths</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LLMProvider#getLocalModelPaths()
+   * @see #getLLMProvider()
    * @generated
    */
-  EAttribute getNamedLlmProvider_LocalModelPaths();
+  EReference getLLMProvider_LocalModelPaths();
 
   /**
-   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getModels <em>Models</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.LLMProvider#getModels <em>Models</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Models</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getModels()
-   * @see #getNamedLlmProvider()
+   * @return the meta object for the containment reference list '<em>Models</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LLMProvider#getModels()
+   * @see #getLLMProvider()
    * @generated
    */
-  EAttribute getNamedLlmProvider_Models();
+  EReference getLLMProvider_Models();
 
   /**
-   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getEndpoints <em>Endpoints</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.LLMProvider#getEndpoints <em>Endpoints</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Endpoints</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider#getEndpoints()
-   * @see #getNamedLlmProvider()
+   * @return the meta object for the containment reference list '<em>Endpoints</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LLMProvider#getEndpoints()
+   * @see #getLLMProvider()
    * @generated
    */
-  EAttribute getNamedLlmProvider_Endpoints();
+  EReference getLLMProvider_Endpoints();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProviderKeyword <em>Provider Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Provider Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProviderKeyword
+   * @generated
+   */
+  EClass getProviderKeyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProviderKeyword#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProviderKeyword#getKeyword()
+   * @see #getProviderKeyword()
+   * @generated
+   */
+  EAttribute getProviderKeyword_Keyword();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProviderType <em>Provider Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Provider Type</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProviderType
+   * @generated
+   */
+  EClass getProviderType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProviderType#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProviderType#getKeyword()
+   * @see #getProviderType()
+   * @generated
+   */
+  EReference getProviderType_Keyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProviderType#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProviderType#getName()
+   * @see #getProviderType()
+   * @generated
+   */
+  EAttribute getProviderType_Name();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProviderTypeKeyword <em>Provider Type Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Provider Type Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProviderTypeKeyword
+   * @generated
+   */
+  EClass getProviderTypeKeyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProviderTypeKeyword#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProviderTypeKeyword#getKeyword()
+   * @see #getProviderTypeKeyword()
+   * @generated
+   */
+  EAttribute getProviderTypeKeyword_Keyword();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.LocalModelPath <em>Local Model Path</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Local Model Path</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LocalModelPath
+   * @generated
+   */
+  EClass getLocalModelPath();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.LocalModelPath#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LocalModelPath#getKeyword()
+   * @see #getLocalModelPath()
+   * @generated
+   */
+  EReference getLocalModelPath_Keyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.LocalModelPath#getPath <em>Path</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Path</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LocalModelPath#getPath()
+   * @see #getLocalModelPath()
+   * @generated
+   */
+  EAttribute getLocalModelPath_Path();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.Model <em>Model</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Model</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Model
+   * @generated
+   */
+  EClass getModel();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.Model#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Model#getKeyword()
+   * @see #getModel()
+   * @generated
+   */
+  EReference getModel_Keyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.Model#getMode <em>Mode</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Mode</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Model#getMode()
+   * @see #getModel()
+   * @generated
+   */
+  EAttribute getModel_Mode();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.ModelKeyword <em>Model Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Model Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ModelKeyword
+   * @generated
+   */
+  EClass getModelKeyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.ModelKeyword#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ModelKeyword#getKeyword()
+   * @see #getModelKeyword()
+   * @generated
+   */
+  EAttribute getModelKeyword_Keyword();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.FilePathKeyword <em>File Path Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>File Path Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.FilePathKeyword
+   * @generated
+   */
+  EClass getFilePathKeyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.FilePathKeyword#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.FilePathKeyword#getKeyword()
+   * @see #getFilePathKeyword()
+   * @generated
+   */
+  EAttribute getFilePathKeyword_Keyword();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.Endpoint <em>Endpoint</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Endpoint</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Endpoint
+   * @generated
+   */
+  EClass getEndpoint();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.Endpoint#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Endpoint#getKeyword()
+   * @see #getEndpoint()
+   * @generated
+   */
+  EReference getEndpoint_Keyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.Endpoint#getMode <em>Mode</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Mode</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Endpoint#getMode()
+   * @see #getEndpoint()
+   * @generated
+   */
+  EAttribute getEndpoint_Mode();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.EndpointKeyword <em>Endpoint Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Endpoint Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.EndpointKeyword
+   * @generated
+   */
+  EClass getEndpointKeyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.EndpointKeyword#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.EndpointKeyword#getKeyword()
+   * @see #getEndpointKeyword()
+   * @generated
+   */
+  EAttribute getEndpointKeyword_Keyword();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock <em>Gen Usage Block</em>}'.
@@ -1502,26 +4638,37 @@ public interface LibrettoProjectProfilePackage extends EPackage
   EClass getGenUsageBlock();
 
   /**
-   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getPrimaryProviders <em>Primary Providers</em>}'.
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getKeyword <em>Keyword</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Primary Providers</em>'.
+   * @return the meta object for the containment reference '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getKeyword()
+   * @see #getGenUsageBlock()
+   * @generated
+   */
+  EReference getGenUsageBlock_Keyword();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getPrimaryProviders <em>Primary Providers</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Primary Providers</em>'.
    * @see com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getPrimaryProviders()
    * @see #getGenUsageBlock()
    * @generated
    */
-  EAttribute getGenUsageBlock_PrimaryProviders();
+  EReference getGenUsageBlock_PrimaryProviders();
 
   /**
-   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getSecondaryProviders <em>Secondary Providers</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getSecondaryProviders <em>Secondary Providers</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Secondary Providers</em>'.
+   * @return the meta object for the containment reference list '<em>Secondary Providers</em>'.
    * @see com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getSecondaryProviders()
    * @see #getGenUsageBlock()
    * @generated
    */
-  EAttribute getGenUsageBlock_SecondaryProviders();
+  EReference getGenUsageBlock_SecondaryProviders();
 
   /**
    * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getEscalations <em>Escalations</em>}'.
@@ -1535,6 +4682,133 @@ public interface LibrettoProjectProfilePackage extends EPackage
   EReference getGenUsageBlock_Escalations();
 
   /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.ModelUsageKeyword <em>Model Usage Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Model Usage Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ModelUsageKeyword
+   * @generated
+   */
+  EClass getModelUsageKeyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.ModelUsageKeyword#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ModelUsageKeyword#getKeyword()
+   * @see #getModelUsageKeyword()
+   * @generated
+   */
+  EAttribute getModelUsageKeyword_Keyword();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider <em>Primary Provider</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Primary Provider</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider
+   * @generated
+   */
+  EClass getPrimaryProvider();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider#getKeyword()
+   * @see #getPrimaryProvider()
+   * @generated
+   */
+  EReference getPrimaryProvider_Keyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider#getName()
+   * @see #getPrimaryProvider()
+   * @generated
+   */
+  EAttribute getPrimaryProvider_Name();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProviderKeyword <em>Primary Provider Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Primary Provider Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProviderKeyword
+   * @generated
+   */
+  EClass getPrimaryProviderKeyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProviderKeyword#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProviderKeyword#getKeyword()
+   * @see #getPrimaryProviderKeyword()
+   * @generated
+   */
+  EAttribute getPrimaryProviderKeyword_Keyword();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProvider <em>Secondary Provider</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Secondary Provider</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProvider
+   * @generated
+   */
+  EClass getSecondaryProvider();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProvider#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProvider#getKeyword()
+   * @see #getSecondaryProvider()
+   * @generated
+   */
+  EReference getSecondaryProvider_Keyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProvider#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProvider#getName()
+   * @see #getSecondaryProvider()
+   * @generated
+   */
+  EAttribute getSecondaryProvider_Name();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProviderKeyword <em>Secondary Provider Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Secondary Provider Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProviderKeyword
+   * @generated
+   */
+  EClass getSecondaryProviderKeyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProviderKeyword#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProviderKeyword#getKeyword()
+   * @see #getSecondaryProviderKeyword()
+   * @generated
+   */
+  EAttribute getSecondaryProviderKeyword_Keyword();
+
+  /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock <em>Gen Escalation Block</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1545,26 +4819,164 @@ public interface LibrettoProjectProfilePackage extends EPackage
   EClass getGenEscalationBlock();
 
   /**
-   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock#getEnableds <em>Enableds</em>}'.
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock#getKeyword <em>Keyword</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Enableds</em>'.
+   * @return the meta object for the containment reference '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock#getKeyword()
+   * @see #getGenEscalationBlock()
+   * @generated
+   */
+  EReference getGenEscalationBlock_Keyword();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock#getEnableds <em>Enableds</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Enableds</em>'.
    * @see com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock#getEnableds()
    * @see #getGenEscalationBlock()
    * @generated
    */
-  EAttribute getGenEscalationBlock_Enableds();
+  EReference getGenEscalationBlock_Enableds();
 
   /**
-   * Returns the meta object for the attribute list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock#getEscalateAtRetries <em>Escalate At Retries</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock#getAtRetries <em>At Retries</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Escalate At Retries</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock#getEscalateAtRetries()
+   * @return the meta object for the containment reference list '<em>At Retries</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock#getAtRetries()
    * @see #getGenEscalationBlock()
    * @generated
    */
-  EAttribute getGenEscalationBlock_EscalateAtRetries();
+  EReference getGenEscalationBlock_AtRetries();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.EscalationKeyword <em>Escalation Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Escalation Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.EscalationKeyword
+   * @generated
+   */
+  EClass getEscalationKeyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.EscalationKeyword#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.EscalationKeyword#getKeyword()
+   * @see #getEscalationKeyword()
+   * @generated
+   */
+  EAttribute getEscalationKeyword_Keyword();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.Enabled <em>Enabled</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Enabled</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Enabled
+   * @generated
+   */
+  EClass getEnabled();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.Enabled#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Enabled#getKeyword()
+   * @see #getEnabled()
+   * @generated
+   */
+  EReference getEnabled_Keyword();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.Enabled#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Value</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Enabled#getValue()
+   * @see #getEnabled()
+   * @generated
+   */
+  EReference getEnabled_Value();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.EnabledKeyword <em>Enabled Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Enabled Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.EnabledKeyword
+   * @generated
+   */
+  EClass getEnabledKeyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.EnabledKeyword#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.EnabledKeyword#getKeyword()
+   * @see #getEnabledKeyword()
+   * @generated
+   */
+  EAttribute getEnabledKeyword_Keyword();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.AtRetry <em>At Retry</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>At Retry</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.AtRetry
+   * @generated
+   */
+  EClass getAtRetry();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.AtRetry#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.AtRetry#getKeyword()
+   * @see #getAtRetry()
+   * @generated
+   */
+  EReference getAtRetry_Keyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.AtRetry#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.AtRetry#getValue()
+   * @see #getAtRetry()
+   * @generated
+   */
+  EAttribute getAtRetry_Value();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.AtRetryKeyword <em>At Retry Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>At Retry Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.AtRetryKeyword
+   * @generated
+   */
+  EClass getAtRetryKeyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.AtRetryKeyword#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.AtRetryKeyword#getKeyword()
+   * @see #getAtRetryKeyword()
+   * @generated
+   */
+  EAttribute getAtRetryKeyword_Keyword();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.SurfaceBlock <em>Surface Block</em>}'.
@@ -1884,6 +5296,27 @@ public interface LibrettoProjectProfilePackage extends EPackage
   EAttribute getTypedParam_ParamName();
 
   /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.TrueKeyword <em>True Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>True Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.TrueKeyword
+   * @generated
+   */
+  EClass getTrueKeyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.TrueKeyword#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.TrueKeyword#getKeyword()
+   * @see #getTrueKeyword()
+   * @generated
+   */
+  EAttribute getTrueKeyword_Keyword();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1917,12 +5350,38 @@ public interface LibrettoProjectProfilePackage extends EPackage
     EClass PROJECT_PROFILE = eINSTANCE.getProjectProfile();
 
     /**
+     * The meta object literal for the '<em><b>Profiles</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PROJECT_PROFILE__PROFILES = eINSTANCE.getProjectProfile_Profiles();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProfileImpl <em>Profile</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.ProfileImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getProfile()
+     * @generated
+     */
+    EClass PROFILE = eINSTANCE.getProfile();
+
+    /**
+     * The meta object literal for the '<em><b>Profile Keyword</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PROFILE__PROFILE_KEYWORD = eINSTANCE.getProfile_ProfileKeyword();
+
+    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PROJECT_PROFILE__NAME = eINSTANCE.getProjectProfile_Name();
+    EAttribute PROFILE__NAME = eINSTANCE.getProfile_Name();
 
     /**
      * The meta object literal for the '<em><b>Projects</b></em>' containment reference list feature.
@@ -1930,7 +5389,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PROJECT_PROFILE__PROJECTS = eINSTANCE.getProjectProfile_Projects();
+    EReference PROFILE__PROJECTS = eINSTANCE.getProfile_Projects();
 
     /**
      * The meta object literal for the '<em><b>Llm Providers</b></em>' containment reference list feature.
@@ -1938,7 +5397,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PROJECT_PROFILE__LLM_PROVIDERS = eINSTANCE.getProjectProfile_LlmProviders();
+    EReference PROFILE__LLM_PROVIDERS = eINSTANCE.getProfile_LlmProviders();
 
     /**
      * The meta object literal for the '<em><b>Surfaces</b></em>' containment reference list feature.
@@ -1946,7 +5405,25 @@ public interface LibrettoProjectProfilePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PROJECT_PROFILE__SURFACES = eINSTANCE.getProjectProfile_Surfaces();
+    EReference PROFILE__SURFACES = eINSTANCE.getProfile_Surfaces();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProfileKeywordImpl <em>Profile Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.ProfileKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getProfileKeyword()
+     * @generated
+     */
+    EClass PROFILE_KEYWORD = eINSTANCE.getProfileKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PROFILE_KEYWORD__KEYWORD = eINSTANCE.getProfileKeyword_Keyword();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectBlockImpl <em>Project Block</em>}' class.
@@ -1959,12 +5436,20 @@ public interface LibrettoProjectProfilePackage extends EPackage
     EClass PROJECT_BLOCK = eINSTANCE.getProjectBlock();
 
     /**
-     * The meta object literal for the '<em><b>Root Dir</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Project Keyword</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PROJECT_BLOCK__ROOT_DIR = eINSTANCE.getProjectBlock_RootDir();
+    EReference PROJECT_BLOCK__PROJECT_KEYWORD = eINSTANCE.getProjectBlock_ProjectKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Root Dirs</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PROJECT_BLOCK__ROOT_DIRS = eINSTANCE.getProjectBlock_RootDirs();
 
     /**
      * The meta object literal for the '<em><b>Modules</b></em>' containment reference list feature.
@@ -1983,6 +5468,68 @@ public interface LibrettoProjectProfilePackage extends EPackage
     EReference PROJECT_BLOCK__GENS = eINSTANCE.getProjectBlock_Gens();
 
     /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.RootDirectoryImpl <em>Root Directory</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.RootDirectoryImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getRootDirectory()
+     * @generated
+     */
+    EClass ROOT_DIRECTORY = eINSTANCE.getRootDirectory();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ROOT_DIRECTORY__KEYWORD = eINSTANCE.getRootDirectory_Keyword();
+
+    /**
+     * The meta object literal for the '<em><b>Dir</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ROOT_DIRECTORY__DIR = eINSTANCE.getRootDirectory_Dir();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectKeywordImpl <em>Project Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getProjectKeyword()
+     * @generated
+     */
+    EClass PROJECT_KEYWORD = eINSTANCE.getProjectKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PROJECT_KEYWORD__KEYWORD = eINSTANCE.getProjectKeyword_Keyword();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.RootDirKeywordImpl <em>Root Dir Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.RootDirKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getRootDirKeyword()
+     * @generated
+     */
+    EClass ROOT_DIR_KEYWORD = eINSTANCE.getRootDirKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ROOT_DIR_KEYWORD__KEYWORD = eINSTANCE.getRootDirKeyword_Keyword();
+
+    /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ModulesBlockImpl <em>Modules Block</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1993,12 +5540,38 @@ public interface LibrettoProjectProfilePackage extends EPackage
     EClass MODULES_BLOCK = eINSTANCE.getModulesBlock();
 
     /**
+     * The meta object literal for the '<em><b>Modules Keyword</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODULES_BLOCK__MODULES_KEYWORD = eINSTANCE.getModulesBlock_ModulesKeyword();
+
+    /**
      * The meta object literal for the '<em><b>Modules</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference MODULES_BLOCK__MODULES = eINSTANCE.getModulesBlock_Modules();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ModulesKeywordImpl <em>Modules Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.ModulesKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getModulesKeyword()
+     * @generated
+     */
+    EClass MODULES_KEYWORD = eINSTANCE.getModulesKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MODULES_KEYWORD__KEYWORD = eINSTANCE.getModulesKeyword_Keyword();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectModuleImpl <em>Project Module</em>}' class.
@@ -2011,6 +5584,14 @@ public interface LibrettoProjectProfilePackage extends EPackage
     EClass PROJECT_MODULE = eINSTANCE.getProjectModule();
 
     /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PROJECT_MODULE__KEYWORD = eINSTANCE.getProjectModule_Keyword();
+
+    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2019,44 +5600,282 @@ public interface LibrettoProjectProfilePackage extends EPackage
     EAttribute PROJECT_MODULE__NAME = eINSTANCE.getProjectModule_Name();
 
     /**
-     * The meta object literal for the '<em><b>Dirs</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Dirs</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PROJECT_MODULE__DIRS = eINSTANCE.getProjectModule_Dirs();
+    EReference PROJECT_MODULE__DIRS = eINSTANCE.getProjectModule_Dirs();
 
     /**
-     * The meta object literal for the '<em><b>Spec Dirs</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Spec Dirs</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PROJECT_MODULE__SPEC_DIRS = eINSTANCE.getProjectModule_SpecDirs();
+    EReference PROJECT_MODULE__SPEC_DIRS = eINSTANCE.getProjectModule_SpecDirs();
 
     /**
-     * The meta object literal for the '<em><b>Test Dirs</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Test Dirs</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PROJECT_MODULE__TEST_DIRS = eINSTANCE.getProjectModule_TestDirs();
+    EReference PROJECT_MODULE__TEST_DIRS = eINSTANCE.getProjectModule_TestDirs();
 
     /**
-     * The meta object literal for the '<em><b>Main Dirs</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Main Dirs</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PROJECT_MODULE__MAIN_DIRS = eINSTANCE.getProjectModule_MainDirs();
+    EReference PROJECT_MODULE__MAIN_DIRS = eINSTANCE.getProjectModule_MainDirs();
 
     /**
-     * The meta object literal for the '<em><b>Base Packages</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Base Packages</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PROJECT_MODULE__BASE_PACKAGES = eINSTANCE.getProjectModule_BasePackages();
+    EReference PROJECT_MODULE__BASE_PACKAGES = eINSTANCE.getProjectModule_BasePackages();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ModuleKeywordImpl <em>Module Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.ModuleKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getModuleKeyword()
+     * @generated
+     */
+    EClass MODULE_KEYWORD = eINSTANCE.getModuleKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MODULE_KEYWORD__KEYWORD = eINSTANCE.getModuleKeyword_Keyword();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.DirectoryImpl <em>Directory</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.DirectoryImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getDirectory()
+     * @generated
+     */
+    EClass DIRECTORY = eINSTANCE.getDirectory();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DIRECTORY__KEYWORD = eINSTANCE.getDirectory_Keyword();
+
+    /**
+     * The meta object literal for the '<em><b>Dir</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DIRECTORY__DIR = eINSTANCE.getDirectory_Dir();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.SpecDirectoryImpl <em>Spec Directory</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.SpecDirectoryImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getSpecDirectory()
+     * @generated
+     */
+    EClass SPEC_DIRECTORY = eINSTANCE.getSpecDirectory();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SPEC_DIRECTORY__KEYWORD = eINSTANCE.getSpecDirectory_Keyword();
+
+    /**
+     * The meta object literal for the '<em><b>Dir</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SPEC_DIRECTORY__DIR = eINSTANCE.getSpecDirectory_Dir();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.TestDirectoryImpl <em>Test Directory</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.TestDirectoryImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getTestDirectory()
+     * @generated
+     */
+    EClass TEST_DIRECTORY = eINSTANCE.getTestDirectory();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TEST_DIRECTORY__KEYWORD = eINSTANCE.getTestDirectory_Keyword();
+
+    /**
+     * The meta object literal for the '<em><b>Dir</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TEST_DIRECTORY__DIR = eINSTANCE.getTestDirectory_Dir();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.MainDirectoryImpl <em>Main Directory</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.MainDirectoryImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getMainDirectory()
+     * @generated
+     */
+    EClass MAIN_DIRECTORY = eINSTANCE.getMainDirectory();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MAIN_DIRECTORY__KEYWORD = eINSTANCE.getMainDirectory_Keyword();
+
+    /**
+     * The meta object literal for the '<em><b>Dir</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MAIN_DIRECTORY__DIR = eINSTANCE.getMainDirectory_Dir();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.BasePackageImpl <em>Base Package</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.BasePackageImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getBasePackage()
+     * @generated
+     */
+    EClass BASE_PACKAGE = eINSTANCE.getBasePackage();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BASE_PACKAGE__KEYWORD = eINSTANCE.getBasePackage_Keyword();
+
+    /**
+     * The meta object literal for the '<em><b>Dir</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BASE_PACKAGE__DIR = eINSTANCE.getBasePackage_Dir();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.DirKeywordImpl <em>Dir Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.DirKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getDirKeyword()
+     * @generated
+     */
+    EClass DIR_KEYWORD = eINSTANCE.getDirKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DIR_KEYWORD__KEYWORD = eINSTANCE.getDirKeyword_Keyword();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.SpecDirKeywordImpl <em>Spec Dir Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.SpecDirKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getSpecDirKeyword()
+     * @generated
+     */
+    EClass SPEC_DIR_KEYWORD = eINSTANCE.getSpecDirKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SPEC_DIR_KEYWORD__KEYWORD = eINSTANCE.getSpecDirKeyword_Keyword();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.TestDirKeywordImpl <em>Test Dir Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.TestDirKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getTestDirKeyword()
+     * @generated
+     */
+    EClass TEST_DIR_KEYWORD = eINSTANCE.getTestDirKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TEST_DIR_KEYWORD__KEYWORD = eINSTANCE.getTestDirKeyword_Keyword();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.MainDirKeywordImpl <em>Main Dir Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.MainDirKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getMainDirKeyword()
+     * @generated
+     */
+    EClass MAIN_DIR_KEYWORD = eINSTANCE.getMainDirKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MAIN_DIR_KEYWORD__KEYWORD = eINSTANCE.getMainDirKeyword_Keyword();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.BasePackageKeywordImpl <em>Base Package Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.BasePackageKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getBasePackageKeyword()
+     * @generated
+     */
+    EClass BASE_PACKAGE_KEYWORD = eINSTANCE.getBasePackageKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BASE_PACKAGE_KEYWORD__KEYWORD = eINSTANCE.getBasePackageKeyword_Keyword();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenBlockImpl <em>Gen Block</em>}' class.
@@ -2069,36 +5888,44 @@ public interface LibrettoProjectProfilePackage extends EPackage
     EClass GEN_BLOCK = eINSTANCE.getGenBlock();
 
     /**
-     * The meta object literal for the '<em><b>Initial Instructions</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GEN_BLOCK__INITIAL_INSTRUCTIONS = eINSTANCE.getGenBlock_InitialInstructions();
+    EReference GEN_BLOCK__KEYWORD = eINSTANCE.getGenBlock_Keyword();
 
     /**
-     * The meta object literal for the '<em><b>Max Retries</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Initial Instructions</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GEN_BLOCK__MAX_RETRIES = eINSTANCE.getGenBlock_MaxRetries();
+    EReference GEN_BLOCK__INITIAL_INSTRUCTIONS = eINSTANCE.getGenBlock_InitialInstructions();
 
     /**
-     * The meta object literal for the '<em><b>Parse Checks</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Max Retries</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GEN_BLOCK__PARSE_CHECKS = eINSTANCE.getGenBlock_ParseChecks();
+    EReference GEN_BLOCK__MAX_RETRIES = eINSTANCE.getGenBlock_MaxRetries();
 
     /**
-     * The meta object literal for the '<em><b>Default Corrections</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Parse Checks</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GEN_BLOCK__DEFAULT_CORRECTIONS = eINSTANCE.getGenBlock_DefaultCorrections();
+    EReference GEN_BLOCK__PARSE_CHECKS = eINSTANCE.getGenBlock_ParseChecks();
+
+    /**
+     * The meta object literal for the '<em><b>Default Corrections</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GEN_BLOCK__DEFAULT_CORRECTIONS = eINSTANCE.getGenBlock_DefaultCorrections();
 
     /**
      * The meta object literal for the '<em><b>Remediations</b></em>' containment reference list feature.
@@ -2117,6 +5944,210 @@ public interface LibrettoProjectProfilePackage extends EPackage
     EReference GEN_BLOCK__MODEL_USAGES = eINSTANCE.getGenBlock_ModelUsages();
 
     /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenKeywordImpl <em>Gen Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.GenKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getGenKeyword()
+     * @generated
+     */
+    EClass GEN_KEYWORD = eINSTANCE.getGenKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GEN_KEYWORD__KEYWORD = eINSTANCE.getGenKeyword_Keyword();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.InitialInstructionImpl <em>Initial Instruction</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.InitialInstructionImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getInitialInstruction()
+     * @generated
+     */
+    EClass INITIAL_INSTRUCTION = eINSTANCE.getInitialInstruction();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INITIAL_INSTRUCTION__KEYWORD = eINSTANCE.getInitialInstruction_Keyword();
+
+    /**
+     * The meta object literal for the '<em><b>Instruction</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INITIAL_INSTRUCTION__INSTRUCTION = eINSTANCE.getInitialInstruction_Instruction();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.MaxRetriesImpl <em>Max Retries</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.MaxRetriesImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getMaxRetries()
+     * @generated
+     */
+    EClass MAX_RETRIES = eINSTANCE.getMaxRetries();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MAX_RETRIES__KEYWORD = eINSTANCE.getMaxRetries_Keyword();
+
+    /**
+     * The meta object literal for the '<em><b>Max Retries</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MAX_RETRIES__MAX_RETRIES = eINSTANCE.getMaxRetries_MaxRetries();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ParseCheckImpl <em>Parse Check</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.ParseCheckImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getParseCheck()
+     * @generated
+     */
+    EClass PARSE_CHECK = eINSTANCE.getParseCheck();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PARSE_CHECK__KEYWORD = eINSTANCE.getParseCheck_Keyword();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PARSE_CHECK__VALUE = eINSTANCE.getParseCheck_Value();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.DefaultCorrectionImpl <em>Default Correction</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.DefaultCorrectionImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getDefaultCorrection()
+     * @generated
+     */
+    EClass DEFAULT_CORRECTION = eINSTANCE.getDefaultCorrection();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DEFAULT_CORRECTION__KEYWORD = eINSTANCE.getDefaultCorrection_Keyword();
+
+    /**
+     * The meta object literal for the '<em><b>Correction</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DEFAULT_CORRECTION__CORRECTION = eINSTANCE.getDefaultCorrection_Correction();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.InitialInstructionKeywordImpl <em>Initial Instruction Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.InitialInstructionKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getInitialInstructionKeyword()
+     * @generated
+     */
+    EClass INITIAL_INSTRUCTION_KEYWORD = eINSTANCE.getInitialInstructionKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INITIAL_INSTRUCTION_KEYWORD__KEYWORD = eINSTANCE.getInitialInstructionKeyword_Keyword();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.MaxRetriesKeywordImpl <em>Max Retries Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.MaxRetriesKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getMaxRetriesKeyword()
+     * @generated
+     */
+    EClass MAX_RETRIES_KEYWORD = eINSTANCE.getMaxRetriesKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MAX_RETRIES_KEYWORD__KEYWORD = eINSTANCE.getMaxRetriesKeyword_Keyword();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ParseCheckKeywordImpl <em>Parse Check Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.ParseCheckKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getParseCheckKeyword()
+     * @generated
+     */
+    EClass PARSE_CHECK_KEYWORD = eINSTANCE.getParseCheckKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PARSE_CHECK_KEYWORD__KEYWORD = eINSTANCE.getParseCheckKeyword_Keyword();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.DefaultCorrectionKeywordImpl <em>Default Correction Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.DefaultCorrectionKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getDefaultCorrectionKeyword()
+     * @generated
+     */
+    EClass DEFAULT_CORRECTION_KEYWORD = eINSTANCE.getDefaultCorrectionKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DEFAULT_CORRECTION_KEYWORD__KEYWORD = eINSTANCE.getDefaultCorrectionKeyword_Keyword();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.TrueFalseKeywordImpl <em>True False Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.TrueFalseKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getTrueFalseKeyword()
+     * @generated
+     */
+    EClass TRUE_FALSE_KEYWORD = eINSTANCE.getTrueFalseKeyword();
+
+    /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenRemediationRulesImpl <em>Gen Remediation Rules</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2125,6 +6156,14 @@ public interface LibrettoProjectProfilePackage extends EPackage
      * @generated
      */
     EClass GEN_REMEDIATION_RULES = eINSTANCE.getGenRemediationRules();
+
+    /**
+     * The meta object literal for the '<em><b>Rules Keyword</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GEN_REMEDIATION_RULES__RULES_KEYWORD = eINSTANCE.getGenRemediationRules_RulesKeyword();
 
     /**
      * The meta object literal for the '<em><b>Pattern Rules</b></em>' containment reference list feature.
@@ -2143,6 +6182,24 @@ public interface LibrettoProjectProfilePackage extends EPackage
     EReference GEN_REMEDIATION_RULES__DEFAULT_REMEDIATIONS = eINSTANCE.getGenRemediationRules_DefaultRemediations();
 
     /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.RulesKeywordImpl <em>Rules Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.RulesKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getRulesKeyword()
+     * @generated
+     */
+    EClass RULES_KEYWORD = eINSTANCE.getRulesKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RULES_KEYWORD__KEYWORD = eINSTANCE.getRulesKeyword_Keyword();
+
+    /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenPatternRemediationRuleImpl <em>Gen Pattern Remediation Rule</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2153,28 +6210,186 @@ public interface LibrettoProjectProfilePackage extends EPackage
     EClass GEN_PATTERN_REMEDIATION_RULE = eINSTANCE.getGenPatternRemediationRule();
 
     /**
-     * The meta object literal for the '<em><b>Patterns</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GEN_PATTERN_REMEDIATION_RULE__PATTERNS = eINSTANCE.getGenPatternRemediationRule_Patterns();
+    EReference GEN_PATTERN_REMEDIATION_RULE__KEYWORD = eINSTANCE.getGenPatternRemediationRule_Keyword();
 
     /**
-     * The meta object literal for the '<em><b>Codes</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Patterns</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GEN_PATTERN_REMEDIATION_RULE__CODES = eINSTANCE.getGenPatternRemediationRule_Codes();
+    EReference GEN_PATTERN_REMEDIATION_RULE__PATTERNS = eINSTANCE.getGenPatternRemediationRule_Patterns();
 
     /**
-     * The meta object literal for the '<em><b>Corrections</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Codes</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GEN_PATTERN_REMEDIATION_RULE__CORRECTIONS = eINSTANCE.getGenPatternRemediationRule_Corrections();
+    EReference GEN_PATTERN_REMEDIATION_RULE__CODES = eINSTANCE.getGenPatternRemediationRule_Codes();
+
+    /**
+     * The meta object literal for the '<em><b>Corrections</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GEN_PATTERN_REMEDIATION_RULE__CORRECTIONS = eINSTANCE.getGenPatternRemediationRule_Corrections();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.RuleKeywordImpl <em>Rule Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.RuleKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getRuleKeyword()
+     * @generated
+     */
+    EClass RULE_KEYWORD = eINSTANCE.getRuleKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RULE_KEYWORD__KEYWORD = eINSTANCE.getRuleKeyword_Keyword();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.PatternImpl <em>Pattern</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.PatternImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getPattern()
+     * @generated
+     */
+    EClass PATTERN = eINSTANCE.getPattern();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PATTERN__KEYWORD = eINSTANCE.getPattern_Keyword();
+
+    /**
+     * The meta object literal for the '<em><b>Pattern</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PATTERN__PATTERN = eINSTANCE.getPattern_Pattern();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.PatternKeywordImpl <em>Pattern Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.PatternKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getPatternKeyword()
+     * @generated
+     */
+    EClass PATTERN_KEYWORD = eINSTANCE.getPatternKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PATTERN_KEYWORD__KEYWORD = eINSTANCE.getPatternKeyword_Keyword();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.CodeImpl <em>Code</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.CodeImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getCode()
+     * @generated
+     */
+    EClass CODE = eINSTANCE.getCode();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CODE__KEYWORD = eINSTANCE.getCode_Keyword();
+
+    /**
+     * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CODE__CODE = eINSTANCE.getCode_Code();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.CodeKeywordImpl <em>Code Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.CodeKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getCodeKeyword()
+     * @generated
+     */
+    EClass CODE_KEYWORD = eINSTANCE.getCodeKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CODE_KEYWORD__KEYWORD = eINSTANCE.getCodeKeyword_Keyword();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.CorrectionImpl <em>Correction</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.CorrectionImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getCorrection()
+     * @generated
+     */
+    EClass CORRECTION = eINSTANCE.getCorrection();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CORRECTION__KEYWORD = eINSTANCE.getCorrection_Keyword();
+
+    /**
+     * The meta object literal for the '<em><b>Correction</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CORRECTION__CORRECTION = eINSTANCE.getCorrection_Correction();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.CorrectionKeywordImpl <em>Correction Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.CorrectionKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getCorrectionKeyword()
+     * @generated
+     */
+    EClass CORRECTION_KEYWORD = eINSTANCE.getCorrectionKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CORRECTION_KEYWORD__KEYWORD = eINSTANCE.getCorrectionKeyword_Keyword();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenDefaultRemediationRuleImpl <em>Gen Default Remediation Rule</em>}' class.
@@ -2187,20 +6402,46 @@ public interface LibrettoProjectProfilePackage extends EPackage
     EClass GEN_DEFAULT_REMEDIATION_RULE = eINSTANCE.getGenDefaultRemediationRule();
 
     /**
-     * The meta object literal for the '<em><b>Codes</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GEN_DEFAULT_REMEDIATION_RULE__CODES = eINSTANCE.getGenDefaultRemediationRule_Codes();
+    EReference GEN_DEFAULT_REMEDIATION_RULE__KEYWORD = eINSTANCE.getGenDefaultRemediationRule_Keyword();
 
     /**
-     * The meta object literal for the '<em><b>Correction</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Codes</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GEN_DEFAULT_REMEDIATION_RULE__CORRECTION = eINSTANCE.getGenDefaultRemediationRule_Correction();
+    EReference GEN_DEFAULT_REMEDIATION_RULE__CODES = eINSTANCE.getGenDefaultRemediationRule_Codes();
+
+    /**
+     * The meta object literal for the '<em><b>Corrections</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GEN_DEFAULT_REMEDIATION_RULE__CORRECTIONS = eINSTANCE.getGenDefaultRemediationRule_Corrections();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.DefaultKeywordImpl <em>Default Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.DefaultKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getDefaultKeyword()
+     * @generated
+     */
+    EClass DEFAULT_KEYWORD = eINSTANCE.getDefaultKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DEFAULT_KEYWORD__KEYWORD = eINSTANCE.getDefaultKeyword_Keyword();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.LlmProvidersBlockImpl <em>Llm Providers Block</em>}' class.
@@ -2213,6 +6454,14 @@ public interface LibrettoProjectProfilePackage extends EPackage
     EClass LLM_PROVIDERS_BLOCK = eINSTANCE.getLlmProvidersBlock();
 
     /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LLM_PROVIDERS_BLOCK__KEYWORD = eINSTANCE.getLlmProvidersBlock_Keyword();
+
+    /**
      * The meta object literal for the '<em><b>Providers</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2221,14 +6470,40 @@ public interface LibrettoProjectProfilePackage extends EPackage
     EReference LLM_PROVIDERS_BLOCK__PROVIDERS = eINSTANCE.getLlmProvidersBlock_Providers();
 
     /**
-     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.NamedLlmProviderImpl <em>Named Llm Provider</em>}' class.
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.LLMProvidersKeywordImpl <em>LLM Providers Keyword</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.NamedLlmProviderImpl
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getNamedLlmProvider()
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LLMProvidersKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getLLMProvidersKeyword()
      * @generated
      */
-    EClass NAMED_LLM_PROVIDER = eINSTANCE.getNamedLlmProvider();
+    EClass LLM_PROVIDERS_KEYWORD = eINSTANCE.getLLMProvidersKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LLM_PROVIDERS_KEYWORD__KEYWORD = eINSTANCE.getLLMProvidersKeyword_Keyword();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.LLMProviderImpl <em>LLM Provider</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LLMProviderImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getLLMProvider()
+     * @generated
+     */
+    EClass LLM_PROVIDER = eINSTANCE.getLLMProvider();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LLM_PROVIDER__KEYWORD = eINSTANCE.getLLMProvider_Keyword();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -2236,39 +6511,233 @@ public interface LibrettoProjectProfilePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute NAMED_LLM_PROVIDER__NAME = eINSTANCE.getNamedLlmProvider_Name();
+    EAttribute LLM_PROVIDER__NAME = eINSTANCE.getLLMProvider_Name();
 
     /**
-     * The meta object literal for the '<em><b>Kinds</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Types</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute NAMED_LLM_PROVIDER__KINDS = eINSTANCE.getNamedLlmProvider_Kinds();
+    EReference LLM_PROVIDER__TYPES = eINSTANCE.getLLMProvider_Types();
 
     /**
-     * The meta object literal for the '<em><b>Local Model Paths</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Local Model Paths</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute NAMED_LLM_PROVIDER__LOCAL_MODEL_PATHS = eINSTANCE.getNamedLlmProvider_LocalModelPaths();
+    EReference LLM_PROVIDER__LOCAL_MODEL_PATHS = eINSTANCE.getLLMProvider_LocalModelPaths();
 
     /**
-     * The meta object literal for the '<em><b>Models</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Models</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute NAMED_LLM_PROVIDER__MODELS = eINSTANCE.getNamedLlmProvider_Models();
+    EReference LLM_PROVIDER__MODELS = eINSTANCE.getLLMProvider_Models();
 
     /**
-     * The meta object literal for the '<em><b>Endpoints</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Endpoints</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute NAMED_LLM_PROVIDER__ENDPOINTS = eINSTANCE.getNamedLlmProvider_Endpoints();
+    EReference LLM_PROVIDER__ENDPOINTS = eINSTANCE.getLLMProvider_Endpoints();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProviderKeywordImpl <em>Provider Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.ProviderKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getProviderKeyword()
+     * @generated
+     */
+    EClass PROVIDER_KEYWORD = eINSTANCE.getProviderKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PROVIDER_KEYWORD__KEYWORD = eINSTANCE.getProviderKeyword_Keyword();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProviderTypeImpl <em>Provider Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.ProviderTypeImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getProviderType()
+     * @generated
+     */
+    EClass PROVIDER_TYPE = eINSTANCE.getProviderType();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PROVIDER_TYPE__KEYWORD = eINSTANCE.getProviderType_Keyword();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PROVIDER_TYPE__NAME = eINSTANCE.getProviderType_Name();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProviderTypeKeywordImpl <em>Provider Type Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.ProviderTypeKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getProviderTypeKeyword()
+     * @generated
+     */
+    EClass PROVIDER_TYPE_KEYWORD = eINSTANCE.getProviderTypeKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PROVIDER_TYPE_KEYWORD__KEYWORD = eINSTANCE.getProviderTypeKeyword_Keyword();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.LocalModelPathImpl <em>Local Model Path</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LocalModelPathImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getLocalModelPath()
+     * @generated
+     */
+    EClass LOCAL_MODEL_PATH = eINSTANCE.getLocalModelPath();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LOCAL_MODEL_PATH__KEYWORD = eINSTANCE.getLocalModelPath_Keyword();
+
+    /**
+     * The meta object literal for the '<em><b>Path</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LOCAL_MODEL_PATH__PATH = eINSTANCE.getLocalModelPath_Path();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ModelImpl <em>Model</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.ModelImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getModel()
+     * @generated
+     */
+    EClass MODEL = eINSTANCE.getModel();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODEL__KEYWORD = eINSTANCE.getModel_Keyword();
+
+    /**
+     * The meta object literal for the '<em><b>Mode</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MODEL__MODE = eINSTANCE.getModel_Mode();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ModelKeywordImpl <em>Model Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.ModelKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getModelKeyword()
+     * @generated
+     */
+    EClass MODEL_KEYWORD = eINSTANCE.getModelKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MODEL_KEYWORD__KEYWORD = eINSTANCE.getModelKeyword_Keyword();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.FilePathKeywordImpl <em>File Path Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.FilePathKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getFilePathKeyword()
+     * @generated
+     */
+    EClass FILE_PATH_KEYWORD = eINSTANCE.getFilePathKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FILE_PATH_KEYWORD__KEYWORD = eINSTANCE.getFilePathKeyword_Keyword();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.EndpointImpl <em>Endpoint</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.EndpointImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getEndpoint()
+     * @generated
+     */
+    EClass ENDPOINT = eINSTANCE.getEndpoint();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ENDPOINT__KEYWORD = eINSTANCE.getEndpoint_Keyword();
+
+    /**
+     * The meta object literal for the '<em><b>Mode</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ENDPOINT__MODE = eINSTANCE.getEndpoint_Mode();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.EndpointKeywordImpl <em>Endpoint Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.EndpointKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getEndpointKeyword()
+     * @generated
+     */
+    EClass ENDPOINT_KEYWORD = eINSTANCE.getEndpointKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ENDPOINT_KEYWORD__KEYWORD = eINSTANCE.getEndpointKeyword_Keyword();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenUsageBlockImpl <em>Gen Usage Block</em>}' class.
@@ -2281,20 +6750,28 @@ public interface LibrettoProjectProfilePackage extends EPackage
     EClass GEN_USAGE_BLOCK = eINSTANCE.getGenUsageBlock();
 
     /**
-     * The meta object literal for the '<em><b>Primary Providers</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GEN_USAGE_BLOCK__PRIMARY_PROVIDERS = eINSTANCE.getGenUsageBlock_PrimaryProviders();
+    EReference GEN_USAGE_BLOCK__KEYWORD = eINSTANCE.getGenUsageBlock_Keyword();
 
     /**
-     * The meta object literal for the '<em><b>Secondary Providers</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Primary Providers</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GEN_USAGE_BLOCK__SECONDARY_PROVIDERS = eINSTANCE.getGenUsageBlock_SecondaryProviders();
+    EReference GEN_USAGE_BLOCK__PRIMARY_PROVIDERS = eINSTANCE.getGenUsageBlock_PrimaryProviders();
+
+    /**
+     * The meta object literal for the '<em><b>Secondary Providers</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GEN_USAGE_BLOCK__SECONDARY_PROVIDERS = eINSTANCE.getGenUsageBlock_SecondaryProviders();
 
     /**
      * The meta object literal for the '<em><b>Escalations</b></em>' containment reference list feature.
@@ -2303,6 +6780,112 @@ public interface LibrettoProjectProfilePackage extends EPackage
      * @generated
      */
     EReference GEN_USAGE_BLOCK__ESCALATIONS = eINSTANCE.getGenUsageBlock_Escalations();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ModelUsageKeywordImpl <em>Model Usage Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.ModelUsageKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getModelUsageKeyword()
+     * @generated
+     */
+    EClass MODEL_USAGE_KEYWORD = eINSTANCE.getModelUsageKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MODEL_USAGE_KEYWORD__KEYWORD = eINSTANCE.getModelUsageKeyword_Keyword();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.PrimaryProviderImpl <em>Primary Provider</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.PrimaryProviderImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getPrimaryProvider()
+     * @generated
+     */
+    EClass PRIMARY_PROVIDER = eINSTANCE.getPrimaryProvider();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_PROVIDER__KEYWORD = eINSTANCE.getPrimaryProvider_Keyword();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PRIMARY_PROVIDER__NAME = eINSTANCE.getPrimaryProvider_Name();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.PrimaryProviderKeywordImpl <em>Primary Provider Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.PrimaryProviderKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getPrimaryProviderKeyword()
+     * @generated
+     */
+    EClass PRIMARY_PROVIDER_KEYWORD = eINSTANCE.getPrimaryProviderKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PRIMARY_PROVIDER_KEYWORD__KEYWORD = eINSTANCE.getPrimaryProviderKeyword_Keyword();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.SecondaryProviderImpl <em>Secondary Provider</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.SecondaryProviderImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getSecondaryProvider()
+     * @generated
+     */
+    EClass SECONDARY_PROVIDER = eINSTANCE.getSecondaryProvider();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SECONDARY_PROVIDER__KEYWORD = eINSTANCE.getSecondaryProvider_Keyword();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SECONDARY_PROVIDER__NAME = eINSTANCE.getSecondaryProvider_Name();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.SecondaryProviderKeywordImpl <em>Secondary Provider Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.SecondaryProviderKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getSecondaryProviderKeyword()
+     * @generated
+     */
+    EClass SECONDARY_PROVIDER_KEYWORD = eINSTANCE.getSecondaryProviderKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SECONDARY_PROVIDER_KEYWORD__KEYWORD = eINSTANCE.getSecondaryProviderKeyword_Keyword();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenEscalationBlockImpl <em>Gen Escalation Block</em>}' class.
@@ -2315,20 +6898,134 @@ public interface LibrettoProjectProfilePackage extends EPackage
     EClass GEN_ESCALATION_BLOCK = eINSTANCE.getGenEscalationBlock();
 
     /**
-     * The meta object literal for the '<em><b>Enableds</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GEN_ESCALATION_BLOCK__ENABLEDS = eINSTANCE.getGenEscalationBlock_Enableds();
+    EReference GEN_ESCALATION_BLOCK__KEYWORD = eINSTANCE.getGenEscalationBlock_Keyword();
 
     /**
-     * The meta object literal for the '<em><b>Escalate At Retries</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Enableds</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GEN_ESCALATION_BLOCK__ESCALATE_AT_RETRIES = eINSTANCE.getGenEscalationBlock_EscalateAtRetries();
+    EReference GEN_ESCALATION_BLOCK__ENABLEDS = eINSTANCE.getGenEscalationBlock_Enableds();
+
+    /**
+     * The meta object literal for the '<em><b>At Retries</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GEN_ESCALATION_BLOCK__AT_RETRIES = eINSTANCE.getGenEscalationBlock_AtRetries();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.EscalationKeywordImpl <em>Escalation Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.EscalationKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getEscalationKeyword()
+     * @generated
+     */
+    EClass ESCALATION_KEYWORD = eINSTANCE.getEscalationKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ESCALATION_KEYWORD__KEYWORD = eINSTANCE.getEscalationKeyword_Keyword();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.EnabledImpl <em>Enabled</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.EnabledImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getEnabled()
+     * @generated
+     */
+    EClass ENABLED = eINSTANCE.getEnabled();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ENABLED__KEYWORD = eINSTANCE.getEnabled_Keyword();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ENABLED__VALUE = eINSTANCE.getEnabled_Value();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.EnabledKeywordImpl <em>Enabled Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.EnabledKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getEnabledKeyword()
+     * @generated
+     */
+    EClass ENABLED_KEYWORD = eINSTANCE.getEnabledKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ENABLED_KEYWORD__KEYWORD = eINSTANCE.getEnabledKeyword_Keyword();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.AtRetryImpl <em>At Retry</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.AtRetryImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getAtRetry()
+     * @generated
+     */
+    EClass AT_RETRY = eINSTANCE.getAtRetry();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference AT_RETRY__KEYWORD = eINSTANCE.getAtRetry_Keyword();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute AT_RETRY__VALUE = eINSTANCE.getAtRetry_Value();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.AtRetryKeywordImpl <em>At Retry Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.AtRetryKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getAtRetryKeyword()
+     * @generated
+     */
+    EClass AT_RETRY_KEYWORD = eINSTANCE.getAtRetryKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute AT_RETRY_KEYWORD__KEYWORD = eINSTANCE.getAtRetryKeyword_Keyword();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.SurfaceBlockImpl <em>Surface Block</em>}' class.
@@ -2595,6 +7292,24 @@ public interface LibrettoProjectProfilePackage extends EPackage
      * @generated
      */
     EAttribute TYPED_PARAM__PARAM_NAME = eINSTANCE.getTypedParam_ParamName();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.TrueKeywordImpl <em>True Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.TrueKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getTrueKeyword()
+     * @generated
+     */
+    EClass TRUE_KEYWORD = eINSTANCE.getTrueKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TRUE_KEYWORD__KEYWORD = eINSTANCE.getTrueKeyword_Keyword();
 
   }
 

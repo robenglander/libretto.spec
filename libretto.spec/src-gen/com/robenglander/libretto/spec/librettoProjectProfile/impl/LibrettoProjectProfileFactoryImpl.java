@@ -66,17 +66,73 @@ public class LibrettoProjectProfileFactoryImpl extends EFactoryImpl implements L
     switch (eClass.getClassifierID())
     {
       case LibrettoProjectProfilePackage.PROJECT_PROFILE: return createProjectProfile();
+      case LibrettoProjectProfilePackage.PROFILE: return createProfile();
+      case LibrettoProjectProfilePackage.PROFILE_KEYWORD: return createProfileKeyword();
       case LibrettoProjectProfilePackage.PROJECT_BLOCK: return createProjectBlock();
+      case LibrettoProjectProfilePackage.ROOT_DIRECTORY: return createRootDirectory();
+      case LibrettoProjectProfilePackage.PROJECT_KEYWORD: return createProjectKeyword();
+      case LibrettoProjectProfilePackage.ROOT_DIR_KEYWORD: return createRootDirKeyword();
       case LibrettoProjectProfilePackage.MODULES_BLOCK: return createModulesBlock();
+      case LibrettoProjectProfilePackage.MODULES_KEYWORD: return createModulesKeyword();
       case LibrettoProjectProfilePackage.PROJECT_MODULE: return createProjectModule();
+      case LibrettoProjectProfilePackage.MODULE_KEYWORD: return createModuleKeyword();
+      case LibrettoProjectProfilePackage.DIRECTORY: return createDirectory();
+      case LibrettoProjectProfilePackage.SPEC_DIRECTORY: return createSpecDirectory();
+      case LibrettoProjectProfilePackage.TEST_DIRECTORY: return createTestDirectory();
+      case LibrettoProjectProfilePackage.MAIN_DIRECTORY: return createMainDirectory();
+      case LibrettoProjectProfilePackage.BASE_PACKAGE: return createBasePackage();
+      case LibrettoProjectProfilePackage.DIR_KEYWORD: return createDirKeyword();
+      case LibrettoProjectProfilePackage.SPEC_DIR_KEYWORD: return createSpecDirKeyword();
+      case LibrettoProjectProfilePackage.TEST_DIR_KEYWORD: return createTestDirKeyword();
+      case LibrettoProjectProfilePackage.MAIN_DIR_KEYWORD: return createMainDirKeyword();
+      case LibrettoProjectProfilePackage.BASE_PACKAGE_KEYWORD: return createBasePackageKeyword();
       case LibrettoProjectProfilePackage.GEN_BLOCK: return createGenBlock();
+      case LibrettoProjectProfilePackage.GEN_KEYWORD: return createGenKeyword();
+      case LibrettoProjectProfilePackage.INITIAL_INSTRUCTION: return createInitialInstruction();
+      case LibrettoProjectProfilePackage.MAX_RETRIES: return createMaxRetries();
+      case LibrettoProjectProfilePackage.PARSE_CHECK: return createParseCheck();
+      case LibrettoProjectProfilePackage.DEFAULT_CORRECTION: return createDefaultCorrection();
+      case LibrettoProjectProfilePackage.INITIAL_INSTRUCTION_KEYWORD: return createInitialInstructionKeyword();
+      case LibrettoProjectProfilePackage.MAX_RETRIES_KEYWORD: return createMaxRetriesKeyword();
+      case LibrettoProjectProfilePackage.PARSE_CHECK_KEYWORD: return createParseCheckKeyword();
+      case LibrettoProjectProfilePackage.DEFAULT_CORRECTION_KEYWORD: return createDefaultCorrectionKeyword();
+      case LibrettoProjectProfilePackage.TRUE_FALSE_KEYWORD: return createTrueFalseKeyword();
       case LibrettoProjectProfilePackage.GEN_REMEDIATION_RULES: return createGenRemediationRules();
+      case LibrettoProjectProfilePackage.RULES_KEYWORD: return createRulesKeyword();
       case LibrettoProjectProfilePackage.GEN_PATTERN_REMEDIATION_RULE: return createGenPatternRemediationRule();
+      case LibrettoProjectProfilePackage.RULE_KEYWORD: return createRuleKeyword();
+      case LibrettoProjectProfilePackage.PATTERN: return createPattern();
+      case LibrettoProjectProfilePackage.PATTERN_KEYWORD: return createPatternKeyword();
+      case LibrettoProjectProfilePackage.CODE: return createCode();
+      case LibrettoProjectProfilePackage.CODE_KEYWORD: return createCodeKeyword();
+      case LibrettoProjectProfilePackage.CORRECTION: return createCorrection();
+      case LibrettoProjectProfilePackage.CORRECTION_KEYWORD: return createCorrectionKeyword();
       case LibrettoProjectProfilePackage.GEN_DEFAULT_REMEDIATION_RULE: return createGenDefaultRemediationRule();
+      case LibrettoProjectProfilePackage.DEFAULT_KEYWORD: return createDefaultKeyword();
       case LibrettoProjectProfilePackage.LLM_PROVIDERS_BLOCK: return createLlmProvidersBlock();
-      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER: return createNamedLlmProvider();
+      case LibrettoProjectProfilePackage.LLM_PROVIDERS_KEYWORD: return createLLMProvidersKeyword();
+      case LibrettoProjectProfilePackage.LLM_PROVIDER: return createLLMProvider();
+      case LibrettoProjectProfilePackage.PROVIDER_KEYWORD: return createProviderKeyword();
+      case LibrettoProjectProfilePackage.PROVIDER_TYPE: return createProviderType();
+      case LibrettoProjectProfilePackage.PROVIDER_TYPE_KEYWORD: return createProviderTypeKeyword();
+      case LibrettoProjectProfilePackage.LOCAL_MODEL_PATH: return createLocalModelPath();
+      case LibrettoProjectProfilePackage.MODEL: return createModel();
+      case LibrettoProjectProfilePackage.MODEL_KEYWORD: return createModelKeyword();
+      case LibrettoProjectProfilePackage.FILE_PATH_KEYWORD: return createFilePathKeyword();
+      case LibrettoProjectProfilePackage.ENDPOINT: return createEndpoint();
+      case LibrettoProjectProfilePackage.ENDPOINT_KEYWORD: return createEndpointKeyword();
       case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK: return createGenUsageBlock();
+      case LibrettoProjectProfilePackage.MODEL_USAGE_KEYWORD: return createModelUsageKeyword();
+      case LibrettoProjectProfilePackage.PRIMARY_PROVIDER: return createPrimaryProvider();
+      case LibrettoProjectProfilePackage.PRIMARY_PROVIDER_KEYWORD: return createPrimaryProviderKeyword();
+      case LibrettoProjectProfilePackage.SECONDARY_PROVIDER: return createSecondaryProvider();
+      case LibrettoProjectProfilePackage.SECONDARY_PROVIDER_KEYWORD: return createSecondaryProviderKeyword();
       case LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK: return createGenEscalationBlock();
+      case LibrettoProjectProfilePackage.ESCALATION_KEYWORD: return createEscalationKeyword();
+      case LibrettoProjectProfilePackage.ENABLED: return createEnabled();
+      case LibrettoProjectProfilePackage.ENABLED_KEYWORD: return createEnabledKeyword();
+      case LibrettoProjectProfilePackage.AT_RETRY: return createAtRetry();
+      case LibrettoProjectProfilePackage.AT_RETRY_KEYWORD: return createAtRetryKeyword();
       case LibrettoProjectProfilePackage.SURFACE_BLOCK: return createSurfaceBlock();
       case LibrettoProjectProfilePackage.SURFACE_ELEMENT: return createSurfaceElement();
       case LibrettoProjectProfilePackage.SCOPED_SURFACE: return createScopedSurface();
@@ -90,6 +146,7 @@ public class LibrettoProjectProfileFactoryImpl extends EFactoryImpl implements L
       case LibrettoProjectProfilePackage.PRIMITIVE_TYPE: return createPrimitiveType();
       case LibrettoProjectProfilePackage.OPERATION_SIGNATURE: return createOperationSignature();
       case LibrettoProjectProfilePackage.TYPED_PARAM: return createTypedParam();
+      case LibrettoProjectProfilePackage.TRUE_KEYWORD: return createTrueKeyword();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -113,10 +170,70 @@ public class LibrettoProjectProfileFactoryImpl extends EFactoryImpl implements L
    * @generated
    */
   @Override
+  public Profile createProfile()
+  {
+    ProfileImpl profile = new ProfileImpl();
+    return profile;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ProfileKeyword createProfileKeyword()
+  {
+    ProfileKeywordImpl profileKeyword = new ProfileKeywordImpl();
+    return profileKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public ProjectBlock createProjectBlock()
   {
     ProjectBlockImpl projectBlock = new ProjectBlockImpl();
     return projectBlock;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public RootDirectory createRootDirectory()
+  {
+    RootDirectoryImpl rootDirectory = new RootDirectoryImpl();
+    return rootDirectory;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ProjectKeyword createProjectKeyword()
+  {
+    ProjectKeywordImpl projectKeyword = new ProjectKeywordImpl();
+    return projectKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public RootDirKeyword createRootDirKeyword()
+  {
+    RootDirKeywordImpl rootDirKeyword = new RootDirKeywordImpl();
+    return rootDirKeyword;
   }
 
   /**
@@ -137,10 +254,154 @@ public class LibrettoProjectProfileFactoryImpl extends EFactoryImpl implements L
    * @generated
    */
   @Override
+  public ModulesKeyword createModulesKeyword()
+  {
+    ModulesKeywordImpl modulesKeyword = new ModulesKeywordImpl();
+    return modulesKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public ProjectModule createProjectModule()
   {
     ProjectModuleImpl projectModule = new ProjectModuleImpl();
     return projectModule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ModuleKeyword createModuleKeyword()
+  {
+    ModuleKeywordImpl moduleKeyword = new ModuleKeywordImpl();
+    return moduleKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Directory createDirectory()
+  {
+    DirectoryImpl directory = new DirectoryImpl();
+    return directory;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SpecDirectory createSpecDirectory()
+  {
+    SpecDirectoryImpl specDirectory = new SpecDirectoryImpl();
+    return specDirectory;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TestDirectory createTestDirectory()
+  {
+    TestDirectoryImpl testDirectory = new TestDirectoryImpl();
+    return testDirectory;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public MainDirectory createMainDirectory()
+  {
+    MainDirectoryImpl mainDirectory = new MainDirectoryImpl();
+    return mainDirectory;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public BasePackage createBasePackage()
+  {
+    BasePackageImpl basePackage = new BasePackageImpl();
+    return basePackage;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DirKeyword createDirKeyword()
+  {
+    DirKeywordImpl dirKeyword = new DirKeywordImpl();
+    return dirKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SpecDirKeyword createSpecDirKeyword()
+  {
+    SpecDirKeywordImpl specDirKeyword = new SpecDirKeywordImpl();
+    return specDirKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TestDirKeyword createTestDirKeyword()
+  {
+    TestDirKeywordImpl testDirKeyword = new TestDirKeywordImpl();
+    return testDirKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public MainDirKeyword createMainDirKeyword()
+  {
+    MainDirKeywordImpl mainDirKeyword = new MainDirKeywordImpl();
+    return mainDirKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public BasePackageKeyword createBasePackageKeyword()
+  {
+    BasePackageKeywordImpl basePackageKeyword = new BasePackageKeywordImpl();
+    return basePackageKeyword;
   }
 
   /**
@@ -161,10 +422,142 @@ public class LibrettoProjectProfileFactoryImpl extends EFactoryImpl implements L
    * @generated
    */
   @Override
+  public GenKeyword createGenKeyword()
+  {
+    GenKeywordImpl genKeyword = new GenKeywordImpl();
+    return genKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public InitialInstruction createInitialInstruction()
+  {
+    InitialInstructionImpl initialInstruction = new InitialInstructionImpl();
+    return initialInstruction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public MaxRetries createMaxRetries()
+  {
+    MaxRetriesImpl maxRetries = new MaxRetriesImpl();
+    return maxRetries;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ParseCheck createParseCheck()
+  {
+    ParseCheckImpl parseCheck = new ParseCheckImpl();
+    return parseCheck;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DefaultCorrection createDefaultCorrection()
+  {
+    DefaultCorrectionImpl defaultCorrection = new DefaultCorrectionImpl();
+    return defaultCorrection;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public InitialInstructionKeyword createInitialInstructionKeyword()
+  {
+    InitialInstructionKeywordImpl initialInstructionKeyword = new InitialInstructionKeywordImpl();
+    return initialInstructionKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public MaxRetriesKeyword createMaxRetriesKeyword()
+  {
+    MaxRetriesKeywordImpl maxRetriesKeyword = new MaxRetriesKeywordImpl();
+    return maxRetriesKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ParseCheckKeyword createParseCheckKeyword()
+  {
+    ParseCheckKeywordImpl parseCheckKeyword = new ParseCheckKeywordImpl();
+    return parseCheckKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DefaultCorrectionKeyword createDefaultCorrectionKeyword()
+  {
+    DefaultCorrectionKeywordImpl defaultCorrectionKeyword = new DefaultCorrectionKeywordImpl();
+    return defaultCorrectionKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TrueFalseKeyword createTrueFalseKeyword()
+  {
+    TrueFalseKeywordImpl trueFalseKeyword = new TrueFalseKeywordImpl();
+    return trueFalseKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public GenRemediationRules createGenRemediationRules()
   {
     GenRemediationRulesImpl genRemediationRules = new GenRemediationRulesImpl();
     return genRemediationRules;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public RulesKeyword createRulesKeyword()
+  {
+    RulesKeywordImpl rulesKeyword = new RulesKeywordImpl();
+    return rulesKeyword;
   }
 
   /**
@@ -185,10 +578,106 @@ public class LibrettoProjectProfileFactoryImpl extends EFactoryImpl implements L
    * @generated
    */
   @Override
+  public RuleKeyword createRuleKeyword()
+  {
+    RuleKeywordImpl ruleKeyword = new RuleKeywordImpl();
+    return ruleKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Pattern createPattern()
+  {
+    PatternImpl pattern = new PatternImpl();
+    return pattern;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PatternKeyword createPatternKeyword()
+  {
+    PatternKeywordImpl patternKeyword = new PatternKeywordImpl();
+    return patternKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Code createCode()
+  {
+    CodeImpl code = new CodeImpl();
+    return code;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public CodeKeyword createCodeKeyword()
+  {
+    CodeKeywordImpl codeKeyword = new CodeKeywordImpl();
+    return codeKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Correction createCorrection()
+  {
+    CorrectionImpl correction = new CorrectionImpl();
+    return correction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public CorrectionKeyword createCorrectionKeyword()
+  {
+    CorrectionKeywordImpl correctionKeyword = new CorrectionKeywordImpl();
+    return correctionKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public GenDefaultRemediationRule createGenDefaultRemediationRule()
   {
     GenDefaultRemediationRuleImpl genDefaultRemediationRule = new GenDefaultRemediationRuleImpl();
     return genDefaultRemediationRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DefaultKeyword createDefaultKeyword()
+  {
+    DefaultKeywordImpl defaultKeyword = new DefaultKeywordImpl();
+    return defaultKeyword;
   }
 
   /**
@@ -209,10 +698,130 @@ public class LibrettoProjectProfileFactoryImpl extends EFactoryImpl implements L
    * @generated
    */
   @Override
-  public NamedLlmProvider createNamedLlmProvider()
+  public LLMProvidersKeyword createLLMProvidersKeyword()
   {
-    NamedLlmProviderImpl namedLlmProvider = new NamedLlmProviderImpl();
-    return namedLlmProvider;
+    LLMProvidersKeywordImpl llmProvidersKeyword = new LLMProvidersKeywordImpl();
+    return llmProvidersKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public LLMProvider createLLMProvider()
+  {
+    LLMProviderImpl llmProvider = new LLMProviderImpl();
+    return llmProvider;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ProviderKeyword createProviderKeyword()
+  {
+    ProviderKeywordImpl providerKeyword = new ProviderKeywordImpl();
+    return providerKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ProviderType createProviderType()
+  {
+    ProviderTypeImpl providerType = new ProviderTypeImpl();
+    return providerType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ProviderTypeKeyword createProviderTypeKeyword()
+  {
+    ProviderTypeKeywordImpl providerTypeKeyword = new ProviderTypeKeywordImpl();
+    return providerTypeKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public LocalModelPath createLocalModelPath()
+  {
+    LocalModelPathImpl localModelPath = new LocalModelPathImpl();
+    return localModelPath;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Model createModel()
+  {
+    ModelImpl model = new ModelImpl();
+    return model;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ModelKeyword createModelKeyword()
+  {
+    ModelKeywordImpl modelKeyword = new ModelKeywordImpl();
+    return modelKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FilePathKeyword createFilePathKeyword()
+  {
+    FilePathKeywordImpl filePathKeyword = new FilePathKeywordImpl();
+    return filePathKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Endpoint createEndpoint()
+  {
+    EndpointImpl endpoint = new EndpointImpl();
+    return endpoint;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EndpointKeyword createEndpointKeyword()
+  {
+    EndpointKeywordImpl endpointKeyword = new EndpointKeywordImpl();
+    return endpointKeyword;
   }
 
   /**
@@ -233,10 +842,130 @@ public class LibrettoProjectProfileFactoryImpl extends EFactoryImpl implements L
    * @generated
    */
   @Override
+  public ModelUsageKeyword createModelUsageKeyword()
+  {
+    ModelUsageKeywordImpl modelUsageKeyword = new ModelUsageKeywordImpl();
+    return modelUsageKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PrimaryProvider createPrimaryProvider()
+  {
+    PrimaryProviderImpl primaryProvider = new PrimaryProviderImpl();
+    return primaryProvider;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PrimaryProviderKeyword createPrimaryProviderKeyword()
+  {
+    PrimaryProviderKeywordImpl primaryProviderKeyword = new PrimaryProviderKeywordImpl();
+    return primaryProviderKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SecondaryProvider createSecondaryProvider()
+  {
+    SecondaryProviderImpl secondaryProvider = new SecondaryProviderImpl();
+    return secondaryProvider;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SecondaryProviderKeyword createSecondaryProviderKeyword()
+  {
+    SecondaryProviderKeywordImpl secondaryProviderKeyword = new SecondaryProviderKeywordImpl();
+    return secondaryProviderKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public GenEscalationBlock createGenEscalationBlock()
   {
     GenEscalationBlockImpl genEscalationBlock = new GenEscalationBlockImpl();
     return genEscalationBlock;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EscalationKeyword createEscalationKeyword()
+  {
+    EscalationKeywordImpl escalationKeyword = new EscalationKeywordImpl();
+    return escalationKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Enabled createEnabled()
+  {
+    EnabledImpl enabled = new EnabledImpl();
+    return enabled;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EnabledKeyword createEnabledKeyword()
+  {
+    EnabledKeywordImpl enabledKeyword = new EnabledKeywordImpl();
+    return enabledKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public AtRetry createAtRetry()
+  {
+    AtRetryImpl atRetry = new AtRetryImpl();
+    return atRetry;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public AtRetryKeyword createAtRetryKeyword()
+  {
+    AtRetryKeywordImpl atRetryKeyword = new AtRetryKeywordImpl();
+    return atRetryKeyword;
   }
 
   /**
@@ -393,6 +1122,18 @@ public class LibrettoProjectProfileFactoryImpl extends EFactoryImpl implements L
   {
     TypedParamImpl typedParam = new TypedParamImpl();
     return typedParam;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TrueKeyword createTrueKeyword()
+  {
+    TrueKeywordImpl trueKeyword = new TrueKeywordImpl();
+    return trueKeyword;
   }
 
   /**

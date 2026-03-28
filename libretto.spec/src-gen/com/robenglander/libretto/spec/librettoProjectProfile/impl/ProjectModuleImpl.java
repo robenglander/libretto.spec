@@ -3,21 +3,30 @@
  */
 package com.robenglander.libretto.spec.librettoProjectProfile.impl;
 
+import com.robenglander.libretto.spec.librettoProjectProfile.BasePackage;
+import com.robenglander.libretto.spec.librettoProjectProfile.Directory;
 import com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage;
+import com.robenglander.libretto.spec.librettoProjectProfile.MainDirectory;
+import com.robenglander.libretto.spec.librettoProjectProfile.ModuleKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule;
+import com.robenglander.libretto.spec.librettoProjectProfile.SpecDirectory;
+import com.robenglander.libretto.spec.librettoProjectProfile.TestDirectory;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,6 +36,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectModuleImpl#getKeyword <em>Keyword</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectModuleImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectModuleImpl#getDirs <em>Dirs</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectModuleImpl#getSpecDirs <em>Spec Dirs</em>}</li>
@@ -39,6 +49,16 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  */
 public class ProjectModuleImpl extends MinimalEObjectImpl.Container implements ProjectModule
 {
+  /**
+   * The cached value of the '{@link #getKeyword() <em>Keyword</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getKeyword()
+   * @generated
+   * @ordered
+   */
+  protected ModuleKeyword keyword;
+
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -60,54 +80,54 @@ public class ProjectModuleImpl extends MinimalEObjectImpl.Container implements P
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getDirs() <em>Dirs</em>}' attribute list.
+   * The cached value of the '{@link #getDirs() <em>Dirs</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getDirs()
    * @generated
    * @ordered
    */
-  protected EList<String> dirs;
+  protected EList<Directory> dirs;
 
   /**
-   * The cached value of the '{@link #getSpecDirs() <em>Spec Dirs</em>}' attribute list.
+   * The cached value of the '{@link #getSpecDirs() <em>Spec Dirs</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getSpecDirs()
    * @generated
    * @ordered
    */
-  protected EList<String> specDirs;
+  protected EList<SpecDirectory> specDirs;
 
   /**
-   * The cached value of the '{@link #getTestDirs() <em>Test Dirs</em>}' attribute list.
+   * The cached value of the '{@link #getTestDirs() <em>Test Dirs</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getTestDirs()
    * @generated
    * @ordered
    */
-  protected EList<String> testDirs;
+  protected EList<TestDirectory> testDirs;
 
   /**
-   * The cached value of the '{@link #getMainDirs() <em>Main Dirs</em>}' attribute list.
+   * The cached value of the '{@link #getMainDirs() <em>Main Dirs</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getMainDirs()
    * @generated
    * @ordered
    */
-  protected EList<String> mainDirs;
+  protected EList<MainDirectory> mainDirs;
 
   /**
-   * The cached value of the '{@link #getBasePackages() <em>Base Packages</em>}' attribute list.
+   * The cached value of the '{@link #getBasePackages() <em>Base Packages</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getBasePackages()
    * @generated
    * @ordered
    */
-  protected EList<String> basePackages;
+  protected EList<BasePackage> basePackages;
 
   /**
    * <!-- begin-user-doc -->
@@ -128,6 +148,56 @@ public class ProjectModuleImpl extends MinimalEObjectImpl.Container implements P
   protected EClass eStaticClass()
   {
     return LibrettoProjectProfilePackage.Literals.PROJECT_MODULE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ModuleKeyword getKeyword()
+  {
+    return keyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetKeyword(ModuleKeyword newKeyword, NotificationChain msgs)
+  {
+    ModuleKeyword oldKeyword = keyword;
+    keyword = newKeyword;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LibrettoProjectProfilePackage.PROJECT_MODULE__KEYWORD, oldKeyword, newKeyword);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setKeyword(ModuleKeyword newKeyword)
+  {
+    if (newKeyword != keyword)
+    {
+      NotificationChain msgs = null;
+      if (keyword != null)
+        msgs = ((InternalEObject)keyword).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LibrettoProjectProfilePackage.PROJECT_MODULE__KEYWORD, null, msgs);
+      if (newKeyword != null)
+        msgs = ((InternalEObject)newKeyword).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LibrettoProjectProfilePackage.PROJECT_MODULE__KEYWORD, null, msgs);
+      msgs = basicSetKeyword(newKeyword, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoProjectProfilePackage.PROJECT_MODULE__KEYWORD, newKeyword, newKeyword));
   }
 
   /**
@@ -161,11 +231,11 @@ public class ProjectModuleImpl extends MinimalEObjectImpl.Container implements P
    * @generated
    */
   @Override
-  public EList<String> getDirs()
+  public EList<Directory> getDirs()
   {
     if (dirs == null)
     {
-      dirs = new EDataTypeEList<String>(String.class, this, LibrettoProjectProfilePackage.PROJECT_MODULE__DIRS);
+      dirs = new EObjectContainmentEList<Directory>(Directory.class, this, LibrettoProjectProfilePackage.PROJECT_MODULE__DIRS);
     }
     return dirs;
   }
@@ -176,11 +246,11 @@ public class ProjectModuleImpl extends MinimalEObjectImpl.Container implements P
    * @generated
    */
   @Override
-  public EList<String> getSpecDirs()
+  public EList<SpecDirectory> getSpecDirs()
   {
     if (specDirs == null)
     {
-      specDirs = new EDataTypeEList<String>(String.class, this, LibrettoProjectProfilePackage.PROJECT_MODULE__SPEC_DIRS);
+      specDirs = new EObjectContainmentEList<SpecDirectory>(SpecDirectory.class, this, LibrettoProjectProfilePackage.PROJECT_MODULE__SPEC_DIRS);
     }
     return specDirs;
   }
@@ -191,11 +261,11 @@ public class ProjectModuleImpl extends MinimalEObjectImpl.Container implements P
    * @generated
    */
   @Override
-  public EList<String> getTestDirs()
+  public EList<TestDirectory> getTestDirs()
   {
     if (testDirs == null)
     {
-      testDirs = new EDataTypeEList<String>(String.class, this, LibrettoProjectProfilePackage.PROJECT_MODULE__TEST_DIRS);
+      testDirs = new EObjectContainmentEList<TestDirectory>(TestDirectory.class, this, LibrettoProjectProfilePackage.PROJECT_MODULE__TEST_DIRS);
     }
     return testDirs;
   }
@@ -206,11 +276,11 @@ public class ProjectModuleImpl extends MinimalEObjectImpl.Container implements P
    * @generated
    */
   @Override
-  public EList<String> getMainDirs()
+  public EList<MainDirectory> getMainDirs()
   {
     if (mainDirs == null)
     {
-      mainDirs = new EDataTypeEList<String>(String.class, this, LibrettoProjectProfilePackage.PROJECT_MODULE__MAIN_DIRS);
+      mainDirs = new EObjectContainmentEList<MainDirectory>(MainDirectory.class, this, LibrettoProjectProfilePackage.PROJECT_MODULE__MAIN_DIRS);
     }
     return mainDirs;
   }
@@ -221,13 +291,39 @@ public class ProjectModuleImpl extends MinimalEObjectImpl.Container implements P
    * @generated
    */
   @Override
-  public EList<String> getBasePackages()
+  public EList<BasePackage> getBasePackages()
   {
     if (basePackages == null)
     {
-      basePackages = new EDataTypeEList<String>(String.class, this, LibrettoProjectProfilePackage.PROJECT_MODULE__BASE_PACKAGES);
+      basePackages = new EObjectContainmentEList<BasePackage>(BasePackage.class, this, LibrettoProjectProfilePackage.PROJECT_MODULE__BASE_PACKAGES);
     }
     return basePackages;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case LibrettoProjectProfilePackage.PROJECT_MODULE__KEYWORD:
+        return basicSetKeyword(null, msgs);
+      case LibrettoProjectProfilePackage.PROJECT_MODULE__DIRS:
+        return ((InternalEList<?>)getDirs()).basicRemove(otherEnd, msgs);
+      case LibrettoProjectProfilePackage.PROJECT_MODULE__SPEC_DIRS:
+        return ((InternalEList<?>)getSpecDirs()).basicRemove(otherEnd, msgs);
+      case LibrettoProjectProfilePackage.PROJECT_MODULE__TEST_DIRS:
+        return ((InternalEList<?>)getTestDirs()).basicRemove(otherEnd, msgs);
+      case LibrettoProjectProfilePackage.PROJECT_MODULE__MAIN_DIRS:
+        return ((InternalEList<?>)getMainDirs()).basicRemove(otherEnd, msgs);
+      case LibrettoProjectProfilePackage.PROJECT_MODULE__BASE_PACKAGES:
+        return ((InternalEList<?>)getBasePackages()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -240,6 +336,8 @@ public class ProjectModuleImpl extends MinimalEObjectImpl.Container implements P
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.PROJECT_MODULE__KEYWORD:
+        return getKeyword();
       case LibrettoProjectProfilePackage.PROJECT_MODULE__NAME:
         return getName();
       case LibrettoProjectProfilePackage.PROJECT_MODULE__DIRS:
@@ -267,28 +365,31 @@ public class ProjectModuleImpl extends MinimalEObjectImpl.Container implements P
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.PROJECT_MODULE__KEYWORD:
+        setKeyword((ModuleKeyword)newValue);
+        return;
       case LibrettoProjectProfilePackage.PROJECT_MODULE__NAME:
         setName((String)newValue);
         return;
       case LibrettoProjectProfilePackage.PROJECT_MODULE__DIRS:
         getDirs().clear();
-        getDirs().addAll((Collection<? extends String>)newValue);
+        getDirs().addAll((Collection<? extends Directory>)newValue);
         return;
       case LibrettoProjectProfilePackage.PROJECT_MODULE__SPEC_DIRS:
         getSpecDirs().clear();
-        getSpecDirs().addAll((Collection<? extends String>)newValue);
+        getSpecDirs().addAll((Collection<? extends SpecDirectory>)newValue);
         return;
       case LibrettoProjectProfilePackage.PROJECT_MODULE__TEST_DIRS:
         getTestDirs().clear();
-        getTestDirs().addAll((Collection<? extends String>)newValue);
+        getTestDirs().addAll((Collection<? extends TestDirectory>)newValue);
         return;
       case LibrettoProjectProfilePackage.PROJECT_MODULE__MAIN_DIRS:
         getMainDirs().clear();
-        getMainDirs().addAll((Collection<? extends String>)newValue);
+        getMainDirs().addAll((Collection<? extends MainDirectory>)newValue);
         return;
       case LibrettoProjectProfilePackage.PROJECT_MODULE__BASE_PACKAGES:
         getBasePackages().clear();
-        getBasePackages().addAll((Collection<? extends String>)newValue);
+        getBasePackages().addAll((Collection<? extends BasePackage>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -304,6 +405,9 @@ public class ProjectModuleImpl extends MinimalEObjectImpl.Container implements P
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.PROJECT_MODULE__KEYWORD:
+        setKeyword((ModuleKeyword)null);
+        return;
       case LibrettoProjectProfilePackage.PROJECT_MODULE__NAME:
         setName(NAME_EDEFAULT);
         return;
@@ -336,6 +440,8 @@ public class ProjectModuleImpl extends MinimalEObjectImpl.Container implements P
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.PROJECT_MODULE__KEYWORD:
+        return keyword != null;
       case LibrettoProjectProfilePackage.PROJECT_MODULE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case LibrettoProjectProfilePackage.PROJECT_MODULE__DIRS:
@@ -365,16 +471,6 @@ public class ProjectModuleImpl extends MinimalEObjectImpl.Container implements P
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", dirs: ");
-    result.append(dirs);
-    result.append(", specDirs: ");
-    result.append(specDirs);
-    result.append(", testDirs: ");
-    result.append(testDirs);
-    result.append(", mainDirs: ");
-    result.append(mainDirs);
-    result.append(", basePackages: ");
-    result.append(basePackages);
     result.append(')');
     return result.toString();
   }

@@ -3,18 +3,27 @@
  */
 package com.robenglander.libretto.spec.librettoProjectProfile.impl;
 
+import com.robenglander.libretto.spec.librettoProjectProfile.Code;
+import com.robenglander.libretto.spec.librettoProjectProfile.Correction;
+import com.robenglander.libretto.spec.librettoProjectProfile.DefaultKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.GenDefaultRemediationRule;
 import com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,8 +33,9 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenDefaultRemediationRuleImpl#getKeyword <em>Keyword</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenDefaultRemediationRuleImpl#getCodes <em>Codes</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenDefaultRemediationRuleImpl#getCorrection <em>Correction</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenDefaultRemediationRuleImpl#getCorrections <em>Corrections</em>}</li>
  * </ul>
  *
  * @generated
@@ -33,24 +43,34 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 public class GenDefaultRemediationRuleImpl extends MinimalEObjectImpl.Container implements GenDefaultRemediationRule
 {
   /**
-   * The cached value of the '{@link #getCodes() <em>Codes</em>}' attribute list.
+   * The cached value of the '{@link #getKeyword() <em>Keyword</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getKeyword()
+   * @generated
+   * @ordered
+   */
+  protected DefaultKeyword keyword;
+
+  /**
+   * The cached value of the '{@link #getCodes() <em>Codes</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getCodes()
    * @generated
    * @ordered
    */
-  protected EList<String> codes;
+  protected EList<Code> codes;
 
   /**
-   * The cached value of the '{@link #getCorrection() <em>Correction</em>}' attribute list.
+   * The cached value of the '{@link #getCorrections() <em>Corrections</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCorrection()
+   * @see #getCorrections()
    * @generated
    * @ordered
    */
-  protected EList<String> correction;
+  protected EList<Correction> corrections;
 
   /**
    * <!-- begin-user-doc -->
@@ -79,11 +99,61 @@ public class GenDefaultRemediationRuleImpl extends MinimalEObjectImpl.Container 
    * @generated
    */
   @Override
-  public EList<String> getCodes()
+  public DefaultKeyword getKeyword()
+  {
+    return keyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetKeyword(DefaultKeyword newKeyword, NotificationChain msgs)
+  {
+    DefaultKeyword oldKeyword = keyword;
+    keyword = newKeyword;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LibrettoProjectProfilePackage.GEN_DEFAULT_REMEDIATION_RULE__KEYWORD, oldKeyword, newKeyword);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setKeyword(DefaultKeyword newKeyword)
+  {
+    if (newKeyword != keyword)
+    {
+      NotificationChain msgs = null;
+      if (keyword != null)
+        msgs = ((InternalEObject)keyword).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LibrettoProjectProfilePackage.GEN_DEFAULT_REMEDIATION_RULE__KEYWORD, null, msgs);
+      if (newKeyword != null)
+        msgs = ((InternalEObject)newKeyword).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LibrettoProjectProfilePackage.GEN_DEFAULT_REMEDIATION_RULE__KEYWORD, null, msgs);
+      msgs = basicSetKeyword(newKeyword, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoProjectProfilePackage.GEN_DEFAULT_REMEDIATION_RULE__KEYWORD, newKeyword, newKeyword));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<Code> getCodes()
   {
     if (codes == null)
     {
-      codes = new EDataTypeEList<String>(String.class, this, LibrettoProjectProfilePackage.GEN_DEFAULT_REMEDIATION_RULE__CODES);
+      codes = new EObjectContainmentEList<Code>(Code.class, this, LibrettoProjectProfilePackage.GEN_DEFAULT_REMEDIATION_RULE__CODES);
     }
     return codes;
   }
@@ -94,13 +164,33 @@ public class GenDefaultRemediationRuleImpl extends MinimalEObjectImpl.Container 
    * @generated
    */
   @Override
-  public EList<String> getCorrection()
+  public EList<Correction> getCorrections()
   {
-    if (correction == null)
+    if (corrections == null)
     {
-      correction = new EDataTypeEList<String>(String.class, this, LibrettoProjectProfilePackage.GEN_DEFAULT_REMEDIATION_RULE__CORRECTION);
+      corrections = new EObjectContainmentEList<Correction>(Correction.class, this, LibrettoProjectProfilePackage.GEN_DEFAULT_REMEDIATION_RULE__CORRECTIONS);
     }
-    return correction;
+    return corrections;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case LibrettoProjectProfilePackage.GEN_DEFAULT_REMEDIATION_RULE__KEYWORD:
+        return basicSetKeyword(null, msgs);
+      case LibrettoProjectProfilePackage.GEN_DEFAULT_REMEDIATION_RULE__CODES:
+        return ((InternalEList<?>)getCodes()).basicRemove(otherEnd, msgs);
+      case LibrettoProjectProfilePackage.GEN_DEFAULT_REMEDIATION_RULE__CORRECTIONS:
+        return ((InternalEList<?>)getCorrections()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -113,10 +203,12 @@ public class GenDefaultRemediationRuleImpl extends MinimalEObjectImpl.Container 
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.GEN_DEFAULT_REMEDIATION_RULE__KEYWORD:
+        return getKeyword();
       case LibrettoProjectProfilePackage.GEN_DEFAULT_REMEDIATION_RULE__CODES:
         return getCodes();
-      case LibrettoProjectProfilePackage.GEN_DEFAULT_REMEDIATION_RULE__CORRECTION:
-        return getCorrection();
+      case LibrettoProjectProfilePackage.GEN_DEFAULT_REMEDIATION_RULE__CORRECTIONS:
+        return getCorrections();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -132,13 +224,16 @@ public class GenDefaultRemediationRuleImpl extends MinimalEObjectImpl.Container 
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.GEN_DEFAULT_REMEDIATION_RULE__KEYWORD:
+        setKeyword((DefaultKeyword)newValue);
+        return;
       case LibrettoProjectProfilePackage.GEN_DEFAULT_REMEDIATION_RULE__CODES:
         getCodes().clear();
-        getCodes().addAll((Collection<? extends String>)newValue);
+        getCodes().addAll((Collection<? extends Code>)newValue);
         return;
-      case LibrettoProjectProfilePackage.GEN_DEFAULT_REMEDIATION_RULE__CORRECTION:
-        getCorrection().clear();
-        getCorrection().addAll((Collection<? extends String>)newValue);
+      case LibrettoProjectProfilePackage.GEN_DEFAULT_REMEDIATION_RULE__CORRECTIONS:
+        getCorrections().clear();
+        getCorrections().addAll((Collection<? extends Correction>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -154,11 +249,14 @@ public class GenDefaultRemediationRuleImpl extends MinimalEObjectImpl.Container 
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.GEN_DEFAULT_REMEDIATION_RULE__KEYWORD:
+        setKeyword((DefaultKeyword)null);
+        return;
       case LibrettoProjectProfilePackage.GEN_DEFAULT_REMEDIATION_RULE__CODES:
         getCodes().clear();
         return;
-      case LibrettoProjectProfilePackage.GEN_DEFAULT_REMEDIATION_RULE__CORRECTION:
-        getCorrection().clear();
+      case LibrettoProjectProfilePackage.GEN_DEFAULT_REMEDIATION_RULE__CORRECTIONS:
+        getCorrections().clear();
         return;
     }
     super.eUnset(featureID);
@@ -174,31 +272,14 @@ public class GenDefaultRemediationRuleImpl extends MinimalEObjectImpl.Container 
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.GEN_DEFAULT_REMEDIATION_RULE__KEYWORD:
+        return keyword != null;
       case LibrettoProjectProfilePackage.GEN_DEFAULT_REMEDIATION_RULE__CODES:
         return codes != null && !codes.isEmpty();
-      case LibrettoProjectProfilePackage.GEN_DEFAULT_REMEDIATION_RULE__CORRECTION:
-        return correction != null && !correction.isEmpty();
+      case LibrettoProjectProfilePackage.GEN_DEFAULT_REMEDIATION_RULE__CORRECTIONS:
+        return corrections != null && !corrections.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (codes: ");
-    result.append(codes);
-    result.append(", correction: ");
-    result.append(correction);
-    result.append(')');
-    return result.toString();
   }
 
 } //GenDefaultRemediationRuleImpl

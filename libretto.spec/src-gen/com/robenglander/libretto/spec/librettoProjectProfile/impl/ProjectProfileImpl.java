@@ -4,14 +4,11 @@
 package com.robenglander.libretto.spec.librettoProjectProfile.impl;
 
 import com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage;
-import com.robenglander.libretto.spec.librettoProjectProfile.LlmProvidersBlock;
-import com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock;
+import com.robenglander.libretto.spec.librettoProjectProfile.Profile;
 import com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile;
-import com.robenglander.libretto.spec.librettoProjectProfile.SurfaceBlock;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -19,7 +16,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -33,10 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectProfileImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectProfileImpl#getProjects <em>Projects</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectProfileImpl#getLlmProviders <em>Llm Providers</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectProfileImpl#getSurfaces <em>Surfaces</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProjectProfileImpl#getProfiles <em>Profiles</em>}</li>
  * </ul>
  *
  * @generated
@@ -44,54 +37,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ProjectProfileImpl extends MinimalEObjectImpl.Container implements ProjectProfile
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getProfiles() <em>Profiles</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getProfiles()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getProjects() <em>Projects</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getProjects()
-   * @generated
-   * @ordered
-   */
-  protected EList<ProjectBlock> projects;
-
-  /**
-   * The cached value of the '{@link #getLlmProviders() <em>Llm Providers</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getLlmProviders()
-   * @generated
-   * @ordered
-   */
-  protected EList<LlmProvidersBlock> llmProviders;
-
-  /**
-   * The cached value of the '{@link #getSurfaces() <em>Surfaces</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSurfaces()
-   * @generated
-   * @ordered
-   */
-  protected EList<SurfaceBlock> surfaces;
+  protected EList<Profile> profiles;
 
   /**
    * <!-- begin-user-doc -->
@@ -120,68 +73,13 @@ public class ProjectProfileImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    */
   @Override
-  public String getName()
+  public EList<Profile> getProfiles()
   {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoProjectProfilePackage.PROJECT_PROFILE__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<ProjectBlock> getProjects()
-  {
-    if (projects == null)
+    if (profiles == null)
     {
-      projects = new EObjectContainmentEList<ProjectBlock>(ProjectBlock.class, this, LibrettoProjectProfilePackage.PROJECT_PROFILE__PROJECTS);
+      profiles = new EObjectContainmentEList<Profile>(Profile.class, this, LibrettoProjectProfilePackage.PROJECT_PROFILE__PROFILES);
     }
-    return projects;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<LlmProvidersBlock> getLlmProviders()
-  {
-    if (llmProviders == null)
-    {
-      llmProviders = new EObjectContainmentEList<LlmProvidersBlock>(LlmProvidersBlock.class, this, LibrettoProjectProfilePackage.PROJECT_PROFILE__LLM_PROVIDERS);
-    }
-    return llmProviders;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<SurfaceBlock> getSurfaces()
-  {
-    if (surfaces == null)
-    {
-      surfaces = new EObjectContainmentEList<SurfaceBlock>(SurfaceBlock.class, this, LibrettoProjectProfilePackage.PROJECT_PROFILE__SURFACES);
-    }
-    return surfaces;
+    return profiles;
   }
 
   /**
@@ -194,12 +92,8 @@ public class ProjectProfileImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case LibrettoProjectProfilePackage.PROJECT_PROFILE__PROJECTS:
-        return ((InternalEList<?>)getProjects()).basicRemove(otherEnd, msgs);
-      case LibrettoProjectProfilePackage.PROJECT_PROFILE__LLM_PROVIDERS:
-        return ((InternalEList<?>)getLlmProviders()).basicRemove(otherEnd, msgs);
-      case LibrettoProjectProfilePackage.PROJECT_PROFILE__SURFACES:
-        return ((InternalEList<?>)getSurfaces()).basicRemove(otherEnd, msgs);
+      case LibrettoProjectProfilePackage.PROJECT_PROFILE__PROFILES:
+        return ((InternalEList<?>)getProfiles()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -214,14 +108,8 @@ public class ProjectProfileImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case LibrettoProjectProfilePackage.PROJECT_PROFILE__NAME:
-        return getName();
-      case LibrettoProjectProfilePackage.PROJECT_PROFILE__PROJECTS:
-        return getProjects();
-      case LibrettoProjectProfilePackage.PROJECT_PROFILE__LLM_PROVIDERS:
-        return getLlmProviders();
-      case LibrettoProjectProfilePackage.PROJECT_PROFILE__SURFACES:
-        return getSurfaces();
+      case LibrettoProjectProfilePackage.PROJECT_PROFILE__PROFILES:
+        return getProfiles();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -237,20 +125,9 @@ public class ProjectProfileImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case LibrettoProjectProfilePackage.PROJECT_PROFILE__NAME:
-        setName((String)newValue);
-        return;
-      case LibrettoProjectProfilePackage.PROJECT_PROFILE__PROJECTS:
-        getProjects().clear();
-        getProjects().addAll((Collection<? extends ProjectBlock>)newValue);
-        return;
-      case LibrettoProjectProfilePackage.PROJECT_PROFILE__LLM_PROVIDERS:
-        getLlmProviders().clear();
-        getLlmProviders().addAll((Collection<? extends LlmProvidersBlock>)newValue);
-        return;
-      case LibrettoProjectProfilePackage.PROJECT_PROFILE__SURFACES:
-        getSurfaces().clear();
-        getSurfaces().addAll((Collection<? extends SurfaceBlock>)newValue);
+      case LibrettoProjectProfilePackage.PROJECT_PROFILE__PROFILES:
+        getProfiles().clear();
+        getProfiles().addAll((Collection<? extends Profile>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -266,17 +143,8 @@ public class ProjectProfileImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case LibrettoProjectProfilePackage.PROJECT_PROFILE__NAME:
-        setName(NAME_EDEFAULT);
-        return;
-      case LibrettoProjectProfilePackage.PROJECT_PROFILE__PROJECTS:
-        getProjects().clear();
-        return;
-      case LibrettoProjectProfilePackage.PROJECT_PROFILE__LLM_PROVIDERS:
-        getLlmProviders().clear();
-        return;
-      case LibrettoProjectProfilePackage.PROJECT_PROFILE__SURFACES:
-        getSurfaces().clear();
+      case LibrettoProjectProfilePackage.PROJECT_PROFILE__PROFILES:
+        getProfiles().clear();
         return;
     }
     super.eUnset(featureID);
@@ -292,33 +160,10 @@ public class ProjectProfileImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case LibrettoProjectProfilePackage.PROJECT_PROFILE__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case LibrettoProjectProfilePackage.PROJECT_PROFILE__PROJECTS:
-        return projects != null && !projects.isEmpty();
-      case LibrettoProjectProfilePackage.PROJECT_PROFILE__LLM_PROVIDERS:
-        return llmProviders != null && !llmProviders.isEmpty();
-      case LibrettoProjectProfilePackage.PROJECT_PROFILE__SURFACES:
-        return surfaces != null && !surfaces.isEmpty();
+      case LibrettoProjectProfilePackage.PROJECT_PROFILE__PROFILES:
+        return profiles != null && !profiles.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //ProjectProfileImpl

@@ -27,18 +27,8 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.ProjectProfile");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cProjectProfileAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cProfileKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameValidIDParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Alternatives cAlternatives_4 = (Alternatives)cGroup.eContents().get(4);
-		private final Assignment cProjectsAssignment_4_0 = (Assignment)cAlternatives_4.eContents().get(0);
-		private final RuleCall cProjectsProjectBlockParserRuleCall_4_0_0 = (RuleCall)cProjectsAssignment_4_0.eContents().get(0);
-		private final Assignment cLlmProvidersAssignment_4_1 = (Assignment)cAlternatives_4.eContents().get(1);
-		private final RuleCall cLlmProvidersLlmProvidersBlockParserRuleCall_4_1_0 = (RuleCall)cLlmProvidersAssignment_4_1.eContents().get(0);
-		private final Assignment cSurfacesAssignment_4_2 = (Assignment)cAlternatives_4.eContents().get(2);
-		private final RuleCall cSurfacesSurfaceBlockParserRuleCall_4_2_0 = (RuleCall)cSurfacesAssignment_4_2.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cProfilesAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cProfilesProfileParserRuleCall_1_0 = (RuleCall)cProfilesAssignment_1.eContents().get(0);
 		
 		///**
 		// * Libretto <b>project profile</b> — declarative tooling configuration (not the `.libretto` spec language).
@@ -52,7 +42,44 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		// */
 		//ProjectProfile:
 		//    {ProjectProfile}
-		//    'profile' name=ValidID '{'
+		//    profiles+=Profile*
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{ProjectProfile}
+		//profiles+=Profile*
+		public Group getGroup() { return cGroup; }
+		
+		//{ProjectProfile}
+		public Action getProjectProfileAction_0() { return cProjectProfileAction_0; }
+		
+		//profiles+=Profile*
+		public Assignment getProfilesAssignment_1() { return cProfilesAssignment_1; }
+		
+		//Profile
+		public RuleCall getProfilesProfileParserRuleCall_1_0() { return cProfilesProfileParserRuleCall_1_0; }
+	}
+	public class ProfileElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.Profile");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cProfileAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cProfileKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cProfileKeywordProfileKeywordParserRuleCall_1_0 = (RuleCall)cProfileKeywordAssignment_1.eContents().get(0);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameValidIDParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Alternatives cAlternatives_4 = (Alternatives)cGroup.eContents().get(4);
+		private final Assignment cProjectsAssignment_4_0 = (Assignment)cAlternatives_4.eContents().get(0);
+		private final RuleCall cProjectsProjectBlockParserRuleCall_4_0_0 = (RuleCall)cProjectsAssignment_4_0.eContents().get(0);
+		private final Assignment cLlmProvidersAssignment_4_1 = (Assignment)cAlternatives_4.eContents().get(1);
+		private final RuleCall cLlmProvidersLlmProvidersBlockParserRuleCall_4_1_0 = (RuleCall)cLlmProvidersAssignment_4_1.eContents().get(0);
+		private final Assignment cSurfacesAssignment_4_2 = (Assignment)cAlternatives_4.eContents().get(2);
+		private final RuleCall cSurfacesSurfaceBlockParserRuleCall_4_2_0 = (RuleCall)cSurfacesAssignment_4_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//Profile:
+		//    {Profile}
+		//    profileKeyword = ProfileKeyword name=ValidID '{'
 		//        (
 		//        projects+=ProjectBlock
 		//        |
@@ -63,8 +90,8 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{ProjectProfile}
-		//'profile' name=ValidID '{'
+		//{Profile}
+		//profileKeyword = ProfileKeyword name=ValidID '{'
 		//    (
 		//    projects+=ProjectBlock
 		//    |
@@ -75,11 +102,14 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
-		//{ProjectProfile}
-		public Action getProjectProfileAction_0() { return cProjectProfileAction_0; }
+		//{Profile}
+		public Action getProfileAction_0() { return cProfileAction_0; }
 		
-		//'profile'
-		public Keyword getProfileKeyword_1() { return cProfileKeyword_1; }
+		//profileKeyword = ProfileKeyword
+		public Assignment getProfileKeywordAssignment_1() { return cProfileKeywordAssignment_1; }
+		
+		//ProfileKeyword
+		public RuleCall getProfileKeywordProfileKeywordParserRuleCall_1_0() { return cProfileKeywordProfileKeywordParserRuleCall_1_0; }
 		
 		//name=ValidID
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
@@ -120,17 +150,42 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
+	public class ProfileKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.ProfileKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cProfileKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cKeywordProfileKeyword_1_0 = (Keyword)cKeywordAssignment_1.eContents().get(0);
+		
+		//ProfileKeyword:
+		//    {ProfileKeyword}
+		//    keyword = 'profile'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{ProfileKeyword}
+		//keyword = 'profile'
+		public Group getGroup() { return cGroup; }
+		
+		//{ProfileKeyword}
+		public Action getProfileKeywordAction_0() { return cProfileKeywordAction_0; }
+		
+		//keyword = 'profile'
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//'profile'
+		public Keyword getKeywordProfileKeyword_1_0() { return cKeywordProfileKeyword_1_0; }
+	}
 	public class ProjectBlockElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.ProjectBlock");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cProjectBlockAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cProjectKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cProjectKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cProjectKeywordProjectKeywordParserRuleCall_1_0 = (RuleCall)cProjectKeywordAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
-		private final Group cGroup_3_0 = (Group)cAlternatives_3.eContents().get(0);
-		private final Keyword cRootDirKeyword_3_0_0 = (Keyword)cGroup_3_0.eContents().get(0);
-		private final Assignment cRootDirAssignment_3_0_1 = (Assignment)cGroup_3_0.eContents().get(1);
-		private final RuleCall cRootDirSTRINGTerminalRuleCall_3_0_1_0 = (RuleCall)cRootDirAssignment_3_0_1.eContents().get(0);
+		private final Assignment cRootDirsAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
+		private final RuleCall cRootDirsRootDirectoryParserRuleCall_3_0_0 = (RuleCall)cRootDirsAssignment_3_0.eContents().get(0);
 		private final Assignment cModulesAssignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
 		private final RuleCall cModulesModulesBlockParserRuleCall_3_1_0 = (RuleCall)cModulesAssignment_3_1.eContents().get(0);
 		private final Assignment cGensAssignment_3_2 = (Assignment)cAlternatives_3.eContents().get(2);
@@ -139,9 +194,9 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		
 		//ProjectBlock:
 		//    {ProjectBlock}
-		//    'project' '{'
+		//    projectKeyword = ProjectKeyword '{'
 		//        (
-		//            ('rootDir' rootDir+=STRING)
+		//            (rootDirs+=RootDirectory)
 		//            |
 		//            (modules+=ModulesBlock)
 		//            |
@@ -151,9 +206,9 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{ProjectBlock}
-		//'project' '{'
+		//projectKeyword = ProjectKeyword '{'
 		//    (
-		//        ('rootDir' rootDir+=STRING)
+		//        (rootDirs+=RootDirectory)
 		//        |
 		//        (modules+=ModulesBlock)
 		//        |
@@ -165,14 +220,17 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		//{ProjectBlock}
 		public Action getProjectBlockAction_0() { return cProjectBlockAction_0; }
 		
-		//'project'
-		public Keyword getProjectKeyword_1() { return cProjectKeyword_1; }
+		//projectKeyword = ProjectKeyword
+		public Assignment getProjectKeywordAssignment_1() { return cProjectKeywordAssignment_1; }
+		
+		//ProjectKeyword
+		public RuleCall getProjectKeywordProjectKeywordParserRuleCall_1_0() { return cProjectKeywordProjectKeywordParserRuleCall_1_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
 		//(
-		//    ('rootDir' rootDir+=STRING)
+		//    (rootDirs+=RootDirectory)
 		//    |
 		//    (modules+=ModulesBlock)
 		//    |
@@ -180,17 +238,11 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		//)*
 		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 		
-		//('rootDir' rootDir+=STRING)
-		public Group getGroup_3_0() { return cGroup_3_0; }
+		//(rootDirs+=RootDirectory)
+		public Assignment getRootDirsAssignment_3_0() { return cRootDirsAssignment_3_0; }
 		
-		//'rootDir'
-		public Keyword getRootDirKeyword_3_0_0() { return cRootDirKeyword_3_0_0; }
-		
-		//rootDir+=STRING
-		public Assignment getRootDirAssignment_3_0_1() { return cRootDirAssignment_3_0_1; }
-		
-		//STRING
-		public RuleCall getRootDirSTRINGTerminalRuleCall_3_0_1_0() { return cRootDirSTRINGTerminalRuleCall_3_0_1_0; }
+		//RootDirectory
+		public RuleCall getRootDirsRootDirectoryParserRuleCall_3_0_0() { return cRootDirsRootDirectoryParserRuleCall_3_0_0; }
 		
 		//(modules+=ModulesBlock)
 		public Assignment getModulesAssignment_3_1() { return cModulesAssignment_3_1; }
@@ -207,11 +259,106 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
+	public class RootDirectoryElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.RootDirectory");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cRootDirectoryAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cKeywordRootDirKeywordParserRuleCall_1_0 = (RuleCall)cKeywordAssignment_1.eContents().get(0);
+		private final Assignment cDirAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cDirSTRINGTerminalRuleCall_2_0 = (RuleCall)cDirAssignment_2.eContents().get(0);
+		
+		//RootDirectory:
+		//    {RootDirectory}
+		//    keyword = RootDirKeyword dir = STRING
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{RootDirectory}
+		//keyword = RootDirKeyword dir = STRING
+		public Group getGroup() { return cGroup; }
+		
+		//{RootDirectory}
+		public Action getRootDirectoryAction_0() { return cRootDirectoryAction_0; }
+		
+		//keyword = RootDirKeyword
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//RootDirKeyword
+		public RuleCall getKeywordRootDirKeywordParserRuleCall_1_0() { return cKeywordRootDirKeywordParserRuleCall_1_0; }
+		
+		//dir = STRING
+		public Assignment getDirAssignment_2() { return cDirAssignment_2; }
+		
+		//STRING
+		public RuleCall getDirSTRINGTerminalRuleCall_2_0() { return cDirSTRINGTerminalRuleCall_2_0; }
+	}
+	public class ProjectKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.ProjectKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cProjectKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cKeywordProjectKeyword_1_0 = (Keyword)cKeywordAssignment_1.eContents().get(0);
+		
+		//ProjectKeyword:
+		//    {ProjectKeyword}
+		//    keyword = 'project'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{ProjectKeyword}
+		//keyword = 'project'
+		public Group getGroup() { return cGroup; }
+		
+		//{ProjectKeyword}
+		public Action getProjectKeywordAction_0() { return cProjectKeywordAction_0; }
+		
+		//keyword = 'project'
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//'project'
+		public Keyword getKeywordProjectKeyword_1_0() { return cKeywordProjectKeyword_1_0; }
+	}
+	public class RootDirKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.RootDirKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cRootDirKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Alternatives cKeywordAlternatives_1_0 = (Alternatives)cKeywordAssignment_1.eContents().get(0);
+		private final Keyword cKeywordRootdirKeyword_1_0_0 = (Keyword)cKeywordAlternatives_1_0.eContents().get(0);
+		private final Keyword cKeywordRootDirKeyword_1_0_1 = (Keyword)cKeywordAlternatives_1_0.eContents().get(1);
+		
+		//RootDirKeyword:
+		//    {RootDirKeyword}
+		//    keyword = ('rootdir' | 'rootDir')
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{RootDirKeyword}
+		//keyword = ('rootdir' | 'rootDir')
+		public Group getGroup() { return cGroup; }
+		
+		//{RootDirKeyword}
+		public Action getRootDirKeywordAction_0() { return cRootDirKeywordAction_0; }
+		
+		//keyword = ('rootdir' | 'rootDir')
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//('rootdir' | 'rootDir')
+		public Alternatives getKeywordAlternatives_1_0() { return cKeywordAlternatives_1_0; }
+		
+		//'rootdir'
+		public Keyword getKeywordRootdirKeyword_1_0_0() { return cKeywordRootdirKeyword_1_0_0; }
+		
+		//'rootDir'
+		public Keyword getKeywordRootDirKeyword_1_0_1() { return cKeywordRootDirKeyword_1_0_1; }
+	}
 	public class ModulesBlockElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.ModulesBlock");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cModulesBlockAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cModulesKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cModulesKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cModulesKeywordModulesKeywordParserRuleCall_1_0 = (RuleCall)cModulesKeywordAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cModulesAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cModulesProjectModuleParserRuleCall_3_0 = (RuleCall)cModulesAssignment_3.eContents().get(0);
@@ -219,13 +366,13 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		
 		//ModulesBlock:
 		//    {ModulesBlock}
-		//    'modules' '{'
+		//    modulesKeyword = ModulesKeyword '{'
 		//        modules+=ProjectModule*
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{ModulesBlock}
-		//'modules' '{'
+		//modulesKeyword = ModulesKeyword '{'
 		//    modules+=ProjectModule*
 		//'}'
 		public Group getGroup() { return cGroup; }
@@ -233,8 +380,11 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		//{ModulesBlock}
 		public Action getModulesBlockAction_0() { return cModulesBlockAction_0; }
 		
-		//'modules'
-		public Keyword getModulesKeyword_1() { return cModulesKeyword_1; }
+		//modulesKeyword = ModulesKeyword
+		public Assignment getModulesKeywordAssignment_1() { return cModulesKeywordAssignment_1; }
+		
+		//ModulesKeyword
+		public RuleCall getModulesKeywordModulesKeywordParserRuleCall_1_0() { return cModulesKeywordModulesKeywordParserRuleCall_1_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
@@ -248,69 +398,89 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
+	public class ModulesKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.ModulesKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cModulesKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cKeywordModulesKeyword_1_0 = (Keyword)cKeywordAssignment_1.eContents().get(0);
+		
+		//ModulesKeyword:
+		//    {ModulesKeyword}
+		//    keyword = 'modules'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{ModulesKeyword}
+		//keyword = 'modules'
+		public Group getGroup() { return cGroup; }
+		
+		//{ModulesKeyword}
+		public Action getModulesKeywordAction_0() { return cModulesKeywordAction_0; }
+		
+		//keyword = 'modules'
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//'modules'
+		public Keyword getKeywordModulesKeyword_1_0() { return cKeywordModulesKeyword_1_0; }
+	}
 	public class ProjectModuleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.ProjectModule");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cModuleKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cKeywordModuleKeywordParserRuleCall_0_0 = (RuleCall)cKeywordAssignment_0.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameValidIDParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
-		private final Group cGroup_3_0 = (Group)cAlternatives_3.eContents().get(0);
-		private final Keyword cDirKeyword_3_0_0 = (Keyword)cGroup_3_0.eContents().get(0);
-		private final Assignment cDirsAssignment_3_0_1 = (Assignment)cGroup_3_0.eContents().get(1);
-		private final RuleCall cDirsSTRINGTerminalRuleCall_3_0_1_0 = (RuleCall)cDirsAssignment_3_0_1.eContents().get(0);
-		private final Group cGroup_3_1 = (Group)cAlternatives_3.eContents().get(1);
-		private final Keyword cSpecDirKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
-		private final Assignment cSpecDirsAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
-		private final RuleCall cSpecDirsSTRINGTerminalRuleCall_3_1_1_0 = (RuleCall)cSpecDirsAssignment_3_1_1.eContents().get(0);
-		private final Group cGroup_3_2 = (Group)cAlternatives_3.eContents().get(2);
-		private final Keyword cTestDirKeyword_3_2_0 = (Keyword)cGroup_3_2.eContents().get(0);
-		private final Assignment cTestDirsAssignment_3_2_1 = (Assignment)cGroup_3_2.eContents().get(1);
-		private final RuleCall cTestDirsSTRINGTerminalRuleCall_3_2_1_0 = (RuleCall)cTestDirsAssignment_3_2_1.eContents().get(0);
-		private final Group cGroup_3_3 = (Group)cAlternatives_3.eContents().get(3);
-		private final Keyword cMainDirKeyword_3_3_0 = (Keyword)cGroup_3_3.eContents().get(0);
-		private final Assignment cMainDirsAssignment_3_3_1 = (Assignment)cGroup_3_3.eContents().get(1);
-		private final RuleCall cMainDirsSTRINGTerminalRuleCall_3_3_1_0 = (RuleCall)cMainDirsAssignment_3_3_1.eContents().get(0);
-		private final Group cGroup_3_4 = (Group)cAlternatives_3.eContents().get(4);
-		private final Keyword cBasePackageKeyword_3_4_0 = (Keyword)cGroup_3_4.eContents().get(0);
-		private final Assignment cBasePackagesAssignment_3_4_1 = (Assignment)cGroup_3_4.eContents().get(1);
-		private final RuleCall cBasePackagesSTRINGTerminalRuleCall_3_4_1_0 = (RuleCall)cBasePackagesAssignment_3_4_1.eContents().get(0);
+		private final Assignment cDirsAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
+		private final RuleCall cDirsDirectoryParserRuleCall_3_0_0 = (RuleCall)cDirsAssignment_3_0.eContents().get(0);
+		private final Assignment cSpecDirsAssignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
+		private final RuleCall cSpecDirsSpecDirectoryParserRuleCall_3_1_0 = (RuleCall)cSpecDirsAssignment_3_1.eContents().get(0);
+		private final Assignment cTestDirsAssignment_3_2 = (Assignment)cAlternatives_3.eContents().get(2);
+		private final RuleCall cTestDirsTestDirectoryParserRuleCall_3_2_0 = (RuleCall)cTestDirsAssignment_3_2.eContents().get(0);
+		private final Assignment cMainDirsAssignment_3_3 = (Assignment)cAlternatives_3.eContents().get(3);
+		private final RuleCall cMainDirsMainDirectoryParserRuleCall_3_3_0 = (RuleCall)cMainDirsAssignment_3_3.eContents().get(0);
+		private final Assignment cBasePackagesAssignment_3_4 = (Assignment)cAlternatives_3.eContents().get(4);
+		private final RuleCall cBasePackagesBasePackageParserRuleCall_3_4_0 = (RuleCall)cBasePackagesAssignment_3_4.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//ProjectModule:
-		//    'module' name=ValidID '{'
+		//    keyword = ModuleKeyword name=ValidID '{'
 		//        (
-		//            ('dir' dirs+=STRING)
+		//            (dirs+=Directory)
 		//            |
-		//            ('specDir' specDirs+=STRING)
+		//            (specDirs+=SpecDirectory)
 		//            |
-		//            ('testDir' testDirs+=STRING)
+		//            (testDirs+=TestDirectory)
 		//            |
-		//            ('mainDir' mainDirs+=STRING)
+		//            (mainDirs+=MainDirectory)
 		//            |
-		//            ('basePackage' basePackages+=STRING)
+		//            (basePackages+=BasePackage)
 		//        )*
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'module' name=ValidID '{'
+		//keyword = ModuleKeyword name=ValidID '{'
 		//    (
-		//        ('dir' dirs+=STRING)
+		//        (dirs+=Directory)
 		//        |
-		//        ('specDir' specDirs+=STRING)
+		//        (specDirs+=SpecDirectory)
 		//        |
-		//        ('testDir' testDirs+=STRING)
+		//        (testDirs+=TestDirectory)
 		//        |
-		//        ('mainDir' mainDirs+=STRING)
+		//        (mainDirs+=MainDirectory)
 		//        |
-		//        ('basePackage' basePackages+=STRING)
+		//        (basePackages+=BasePackage)
 		//    )*
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
-		//'module'
-		public Keyword getModuleKeyword_0() { return cModuleKeyword_0; }
+		//keyword = ModuleKeyword
+		public Assignment getKeywordAssignment_0() { return cKeywordAssignment_0; }
+		
+		//ModuleKeyword
+		public RuleCall getKeywordModuleKeywordParserRuleCall_0_0() { return cKeywordModuleKeywordParserRuleCall_0_0; }
 		
 		//name=ValidID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -322,106 +492,425 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
 		//(
-		//    ('dir' dirs+=STRING)
+		//    (dirs+=Directory)
 		//    |
-		//    ('specDir' specDirs+=STRING)
+		//    (specDirs+=SpecDirectory)
 		//    |
-		//    ('testDir' testDirs+=STRING)
+		//    (testDirs+=TestDirectory)
 		//    |
-		//    ('mainDir' mainDirs+=STRING)
+		//    (mainDirs+=MainDirectory)
 		//    |
-		//    ('basePackage' basePackages+=STRING)
+		//    (basePackages+=BasePackage)
 		//)*
 		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 		
-		//('dir' dirs+=STRING)
-		public Group getGroup_3_0() { return cGroup_3_0; }
+		//(dirs+=Directory)
+		public Assignment getDirsAssignment_3_0() { return cDirsAssignment_3_0; }
 		
-		//'dir'
-		public Keyword getDirKeyword_3_0_0() { return cDirKeyword_3_0_0; }
+		//Directory
+		public RuleCall getDirsDirectoryParserRuleCall_3_0_0() { return cDirsDirectoryParserRuleCall_3_0_0; }
 		
-		//dirs+=STRING
-		public Assignment getDirsAssignment_3_0_1() { return cDirsAssignment_3_0_1; }
+		//(specDirs+=SpecDirectory)
+		public Assignment getSpecDirsAssignment_3_1() { return cSpecDirsAssignment_3_1; }
 		
-		//STRING
-		public RuleCall getDirsSTRINGTerminalRuleCall_3_0_1_0() { return cDirsSTRINGTerminalRuleCall_3_0_1_0; }
+		//SpecDirectory
+		public RuleCall getSpecDirsSpecDirectoryParserRuleCall_3_1_0() { return cSpecDirsSpecDirectoryParserRuleCall_3_1_0; }
 		
-		//('specDir' specDirs+=STRING)
-		public Group getGroup_3_1() { return cGroup_3_1; }
+		//(testDirs+=TestDirectory)
+		public Assignment getTestDirsAssignment_3_2() { return cTestDirsAssignment_3_2; }
 		
-		//'specDir'
-		public Keyword getSpecDirKeyword_3_1_0() { return cSpecDirKeyword_3_1_0; }
+		//TestDirectory
+		public RuleCall getTestDirsTestDirectoryParserRuleCall_3_2_0() { return cTestDirsTestDirectoryParserRuleCall_3_2_0; }
 		
-		//specDirs+=STRING
-		public Assignment getSpecDirsAssignment_3_1_1() { return cSpecDirsAssignment_3_1_1; }
+		//(mainDirs+=MainDirectory)
+		public Assignment getMainDirsAssignment_3_3() { return cMainDirsAssignment_3_3; }
 		
-		//STRING
-		public RuleCall getSpecDirsSTRINGTerminalRuleCall_3_1_1_0() { return cSpecDirsSTRINGTerminalRuleCall_3_1_1_0; }
+		//MainDirectory
+		public RuleCall getMainDirsMainDirectoryParserRuleCall_3_3_0() { return cMainDirsMainDirectoryParserRuleCall_3_3_0; }
 		
-		//('testDir' testDirs+=STRING)
-		public Group getGroup_3_2() { return cGroup_3_2; }
+		//(basePackages+=BasePackage)
+		public Assignment getBasePackagesAssignment_3_4() { return cBasePackagesAssignment_3_4; }
 		
-		//'testDir'
-		public Keyword getTestDirKeyword_3_2_0() { return cTestDirKeyword_3_2_0; }
-		
-		//testDirs+=STRING
-		public Assignment getTestDirsAssignment_3_2_1() { return cTestDirsAssignment_3_2_1; }
-		
-		//STRING
-		public RuleCall getTestDirsSTRINGTerminalRuleCall_3_2_1_0() { return cTestDirsSTRINGTerminalRuleCall_3_2_1_0; }
-		
-		//('mainDir' mainDirs+=STRING)
-		public Group getGroup_3_3() { return cGroup_3_3; }
-		
-		//'mainDir'
-		public Keyword getMainDirKeyword_3_3_0() { return cMainDirKeyword_3_3_0; }
-		
-		//mainDirs+=STRING
-		public Assignment getMainDirsAssignment_3_3_1() { return cMainDirsAssignment_3_3_1; }
-		
-		//STRING
-		public RuleCall getMainDirsSTRINGTerminalRuleCall_3_3_1_0() { return cMainDirsSTRINGTerminalRuleCall_3_3_1_0; }
-		
-		//('basePackage' basePackages+=STRING)
-		public Group getGroup_3_4() { return cGroup_3_4; }
-		
-		//'basePackage'
-		public Keyword getBasePackageKeyword_3_4_0() { return cBasePackageKeyword_3_4_0; }
-		
-		//basePackages+=STRING
-		public Assignment getBasePackagesAssignment_3_4_1() { return cBasePackagesAssignment_3_4_1; }
-		
-		//STRING
-		public RuleCall getBasePackagesSTRINGTerminalRuleCall_3_4_1_0() { return cBasePackagesSTRINGTerminalRuleCall_3_4_1_0; }
+		//BasePackage
+		public RuleCall getBasePackagesBasePackageParserRuleCall_3_4_0() { return cBasePackagesBasePackageParserRuleCall_3_4_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+	}
+	public class ModuleKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.ModuleKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cModuleKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cKeywordModuleKeyword_1_0 = (Keyword)cKeywordAssignment_1.eContents().get(0);
+		
+		//ModuleKeyword:
+		//    {ModuleKeyword}
+		//    keyword = 'module'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{ModuleKeyword}
+		//keyword = 'module'
+		public Group getGroup() { return cGroup; }
+		
+		//{ModuleKeyword}
+		public Action getModuleKeywordAction_0() { return cModuleKeywordAction_0; }
+		
+		//keyword = 'module'
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//'module'
+		public Keyword getKeywordModuleKeyword_1_0() { return cKeywordModuleKeyword_1_0; }
+	}
+	public class DirectoryElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.Directory");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cDirectoryAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cKeywordDirKeywordParserRuleCall_1_0 = (RuleCall)cKeywordAssignment_1.eContents().get(0);
+		private final Assignment cDirAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cDirSTRINGTerminalRuleCall_2_0 = (RuleCall)cDirAssignment_2.eContents().get(0);
+		
+		//Directory:
+		//    {Directory}
+		//    keyword = DirKeyword dir = STRING
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Directory}
+		//keyword = DirKeyword dir = STRING
+		public Group getGroup() { return cGroup; }
+		
+		//{Directory}
+		public Action getDirectoryAction_0() { return cDirectoryAction_0; }
+		
+		//keyword = DirKeyword
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//DirKeyword
+		public RuleCall getKeywordDirKeywordParserRuleCall_1_0() { return cKeywordDirKeywordParserRuleCall_1_0; }
+		
+		//dir = STRING
+		public Assignment getDirAssignment_2() { return cDirAssignment_2; }
+		
+		//STRING
+		public RuleCall getDirSTRINGTerminalRuleCall_2_0() { return cDirSTRINGTerminalRuleCall_2_0; }
+	}
+	public class SpecDirectoryElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.SpecDirectory");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cSpecDirectoryAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cKeywordSpecDirKeywordParserRuleCall_1_0 = (RuleCall)cKeywordAssignment_1.eContents().get(0);
+		private final Assignment cDirAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cDirSTRINGTerminalRuleCall_2_0 = (RuleCall)cDirAssignment_2.eContents().get(0);
+		
+		//SpecDirectory:
+		//    {SpecDirectory}
+		//    keyword = SpecDirKeyword dir = STRING
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{SpecDirectory}
+		//keyword = SpecDirKeyword dir = STRING
+		public Group getGroup() { return cGroup; }
+		
+		//{SpecDirectory}
+		public Action getSpecDirectoryAction_0() { return cSpecDirectoryAction_0; }
+		
+		//keyword = SpecDirKeyword
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//SpecDirKeyword
+		public RuleCall getKeywordSpecDirKeywordParserRuleCall_1_0() { return cKeywordSpecDirKeywordParserRuleCall_1_0; }
+		
+		//dir = STRING
+		public Assignment getDirAssignment_2() { return cDirAssignment_2; }
+		
+		//STRING
+		public RuleCall getDirSTRINGTerminalRuleCall_2_0() { return cDirSTRINGTerminalRuleCall_2_0; }
+	}
+	public class TestDirectoryElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.TestDirectory");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cTestDirectoryAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cKeywordTestDirKeywordParserRuleCall_1_0 = (RuleCall)cKeywordAssignment_1.eContents().get(0);
+		private final Assignment cDirAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cDirSTRINGTerminalRuleCall_2_0 = (RuleCall)cDirAssignment_2.eContents().get(0);
+		
+		//TestDirectory:
+		//    {TestDirectory}
+		//    keyword = TestDirKeyword dir = STRING
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{TestDirectory}
+		//keyword = TestDirKeyword dir = STRING
+		public Group getGroup() { return cGroup; }
+		
+		//{TestDirectory}
+		public Action getTestDirectoryAction_0() { return cTestDirectoryAction_0; }
+		
+		//keyword = TestDirKeyword
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//TestDirKeyword
+		public RuleCall getKeywordTestDirKeywordParserRuleCall_1_0() { return cKeywordTestDirKeywordParserRuleCall_1_0; }
+		
+		//dir = STRING
+		public Assignment getDirAssignment_2() { return cDirAssignment_2; }
+		
+		//STRING
+		public RuleCall getDirSTRINGTerminalRuleCall_2_0() { return cDirSTRINGTerminalRuleCall_2_0; }
+	}
+	public class MainDirectoryElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.MainDirectory");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMainDirectoryAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cKeywordMainDirKeywordParserRuleCall_1_0 = (RuleCall)cKeywordAssignment_1.eContents().get(0);
+		private final Assignment cDirAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cDirSTRINGTerminalRuleCall_2_0 = (RuleCall)cDirAssignment_2.eContents().get(0);
+		
+		//MainDirectory:
+		//    {MainDirectory}
+		//    keyword = MainDirKeyword dir = STRING
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{MainDirectory}
+		//keyword = MainDirKeyword dir = STRING
+		public Group getGroup() { return cGroup; }
+		
+		//{MainDirectory}
+		public Action getMainDirectoryAction_0() { return cMainDirectoryAction_0; }
+		
+		//keyword = MainDirKeyword
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//MainDirKeyword
+		public RuleCall getKeywordMainDirKeywordParserRuleCall_1_0() { return cKeywordMainDirKeywordParserRuleCall_1_0; }
+		
+		//dir = STRING
+		public Assignment getDirAssignment_2() { return cDirAssignment_2; }
+		
+		//STRING
+		public RuleCall getDirSTRINGTerminalRuleCall_2_0() { return cDirSTRINGTerminalRuleCall_2_0; }
+	}
+	public class BasePackageElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.BasePackage");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cBasePackageAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cKeywordBasePackageKeywordParserRuleCall_1_0 = (RuleCall)cKeywordAssignment_1.eContents().get(0);
+		private final Assignment cDirAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cDirSTRINGTerminalRuleCall_2_0 = (RuleCall)cDirAssignment_2.eContents().get(0);
+		
+		//BasePackage:
+		//    {BasePackage}
+		//    keyword = BasePackageKeyword dir = STRING
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{BasePackage}
+		//keyword = BasePackageKeyword dir = STRING
+		public Group getGroup() { return cGroup; }
+		
+		//{BasePackage}
+		public Action getBasePackageAction_0() { return cBasePackageAction_0; }
+		
+		//keyword = BasePackageKeyword
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//BasePackageKeyword
+		public RuleCall getKeywordBasePackageKeywordParserRuleCall_1_0() { return cKeywordBasePackageKeywordParserRuleCall_1_0; }
+		
+		//dir = STRING
+		public Assignment getDirAssignment_2() { return cDirAssignment_2; }
+		
+		//STRING
+		public RuleCall getDirSTRINGTerminalRuleCall_2_0() { return cDirSTRINGTerminalRuleCall_2_0; }
+	}
+	public class DirKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.DirKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cDirKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cKeywordDirKeyword_1_0 = (Keyword)cKeywordAssignment_1.eContents().get(0);
+		
+		//DirKeyword:
+		//    {DirKeyword}
+		//    keyword = 'dir'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{DirKeyword}
+		//keyword = 'dir'
+		public Group getGroup() { return cGroup; }
+		
+		//{DirKeyword}
+		public Action getDirKeywordAction_0() { return cDirKeywordAction_0; }
+		
+		//keyword = 'dir'
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//'dir'
+		public Keyword getKeywordDirKeyword_1_0() { return cKeywordDirKeyword_1_0; }
+	}
+	public class SpecDirKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.SpecDirKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cSpecDirKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Alternatives cKeywordAlternatives_1_0 = (Alternatives)cKeywordAssignment_1.eContents().get(0);
+		private final Keyword cKeywordSpecdirKeyword_1_0_0 = (Keyword)cKeywordAlternatives_1_0.eContents().get(0);
+		private final Keyword cKeywordSpecDirKeyword_1_0_1 = (Keyword)cKeywordAlternatives_1_0.eContents().get(1);
+		
+		//SpecDirKeyword:
+		//    {SpecDirKeyword}
+		//    keyword = ('specdir' | 'specDir')
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{SpecDirKeyword}
+		//keyword = ('specdir' | 'specDir')
+		public Group getGroup() { return cGroup; }
+		
+		//{SpecDirKeyword}
+		public Action getSpecDirKeywordAction_0() { return cSpecDirKeywordAction_0; }
+		
+		//keyword = ('specdir' | 'specDir')
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//('specdir' | 'specDir')
+		public Alternatives getKeywordAlternatives_1_0() { return cKeywordAlternatives_1_0; }
+		
+		//'specdir'
+		public Keyword getKeywordSpecdirKeyword_1_0_0() { return cKeywordSpecdirKeyword_1_0_0; }
+		
+		//'specDir'
+		public Keyword getKeywordSpecDirKeyword_1_0_1() { return cKeywordSpecDirKeyword_1_0_1; }
+	}
+	public class TestDirKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.TestDirKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cTestDirKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Alternatives cKeywordAlternatives_1_0 = (Alternatives)cKeywordAssignment_1.eContents().get(0);
+		private final Keyword cKeywordTestdirKeyword_1_0_0 = (Keyword)cKeywordAlternatives_1_0.eContents().get(0);
+		private final Keyword cKeywordTestDirKeyword_1_0_1 = (Keyword)cKeywordAlternatives_1_0.eContents().get(1);
+		
+		//TestDirKeyword:
+		//    {TestDirKeyword}
+		//    keyword = ('testdir' | 'testDir')
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{TestDirKeyword}
+		//keyword = ('testdir' | 'testDir')
+		public Group getGroup() { return cGroup; }
+		
+		//{TestDirKeyword}
+		public Action getTestDirKeywordAction_0() { return cTestDirKeywordAction_0; }
+		
+		//keyword = ('testdir' | 'testDir')
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//('testdir' | 'testDir')
+		public Alternatives getKeywordAlternatives_1_0() { return cKeywordAlternatives_1_0; }
+		
+		//'testdir'
+		public Keyword getKeywordTestdirKeyword_1_0_0() { return cKeywordTestdirKeyword_1_0_0; }
+		
+		//'testDir'
+		public Keyword getKeywordTestDirKeyword_1_0_1() { return cKeywordTestDirKeyword_1_0_1; }
+	}
+	public class MainDirKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.MainDirKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMainDirKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Alternatives cKeywordAlternatives_1_0 = (Alternatives)cKeywordAssignment_1.eContents().get(0);
+		private final Keyword cKeywordMaindirKeyword_1_0_0 = (Keyword)cKeywordAlternatives_1_0.eContents().get(0);
+		private final Keyword cKeywordMainDirKeyword_1_0_1 = (Keyword)cKeywordAlternatives_1_0.eContents().get(1);
+		
+		//MainDirKeyword:
+		//    {MainDirKeyword}
+		//    keyword = ('maindir' | 'mainDir')
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{MainDirKeyword}
+		//keyword = ('maindir' | 'mainDir')
+		public Group getGroup() { return cGroup; }
+		
+		//{MainDirKeyword}
+		public Action getMainDirKeywordAction_0() { return cMainDirKeywordAction_0; }
+		
+		//keyword = ('maindir' | 'mainDir')
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//('maindir' | 'mainDir')
+		public Alternatives getKeywordAlternatives_1_0() { return cKeywordAlternatives_1_0; }
+		
+		//'maindir'
+		public Keyword getKeywordMaindirKeyword_1_0_0() { return cKeywordMaindirKeyword_1_0_0; }
+		
+		//'mainDir'
+		public Keyword getKeywordMainDirKeyword_1_0_1() { return cKeywordMainDirKeyword_1_0_1; }
+	}
+	public class BasePackageKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.BasePackageKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cBasePackageKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Alternatives cKeywordAlternatives_1_0 = (Alternatives)cKeywordAssignment_1.eContents().get(0);
+		private final Keyword cKeywordBasepackageKeyword_1_0_0 = (Keyword)cKeywordAlternatives_1_0.eContents().get(0);
+		private final Keyword cKeywordBasePackageKeyword_1_0_1 = (Keyword)cKeywordAlternatives_1_0.eContents().get(1);
+		
+		//BasePackageKeyword:
+		//    {BasePackageKeyword}
+		//    keyword = ('basepackage' | 'basePackage')
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{BasePackageKeyword}
+		//keyword = ('basepackage' | 'basePackage')
+		public Group getGroup() { return cGroup; }
+		
+		//{BasePackageKeyword}
+		public Action getBasePackageKeywordAction_0() { return cBasePackageKeywordAction_0; }
+		
+		//keyword = ('basepackage' | 'basePackage')
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//('basepackage' | 'basePackage')
+		public Alternatives getKeywordAlternatives_1_0() { return cKeywordAlternatives_1_0; }
+		
+		//'basepackage'
+		public Keyword getKeywordBasepackageKeyword_1_0_0() { return cKeywordBasepackageKeyword_1_0_0; }
+		
+		//'basePackage'
+		public Keyword getKeywordBasePackageKeyword_1_0_1() { return cKeywordBasePackageKeyword_1_0_1; }
 	}
 	public class GenBlockElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.GenBlock");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cGenBlockAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cGenKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cKeywordGenKeywordParserRuleCall_1_0 = (RuleCall)cKeywordAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
-		private final Group cGroup_3_0 = (Group)cAlternatives_3.eContents().get(0);
-		private final Keyword cInitialInstructionKeyword_3_0_0 = (Keyword)cGroup_3_0.eContents().get(0);
-		private final Assignment cInitialInstructionsAssignment_3_0_1 = (Assignment)cGroup_3_0.eContents().get(1);
-		private final RuleCall cInitialInstructionsSTRINGTerminalRuleCall_3_0_1_0 = (RuleCall)cInitialInstructionsAssignment_3_0_1.eContents().get(0);
-		private final Group cGroup_3_1 = (Group)cAlternatives_3.eContents().get(1);
-		private final Keyword cMaxRetriesKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
-		private final Assignment cMaxRetriesAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
-		private final RuleCall cMaxRetriesINTTerminalRuleCall_3_1_1_0 = (RuleCall)cMaxRetriesAssignment_3_1_1.eContents().get(0);
-		private final Group cGroup_3_2 = (Group)cAlternatives_3.eContents().get(2);
-		private final Keyword cParseCheckKeyword_3_2_0 = (Keyword)cGroup_3_2.eContents().get(0);
-		private final Assignment cParseChecksAssignment_3_2_1 = (Assignment)cGroup_3_2.eContents().get(1);
-		private final Alternatives cParseChecksAlternatives_3_2_1_0 = (Alternatives)cParseChecksAssignment_3_2_1.eContents().get(0);
-		private final Keyword cParseChecksTrueKeyword_3_2_1_0_0 = (Keyword)cParseChecksAlternatives_3_2_1_0.eContents().get(0);
-		private final Keyword cParseChecksFalseKeyword_3_2_1_0_1 = (Keyword)cParseChecksAlternatives_3_2_1_0.eContents().get(1);
-		private final Group cGroup_3_3 = (Group)cAlternatives_3.eContents().get(3);
-		private final Keyword cDefaultCorrectionKeyword_3_3_0 = (Keyword)cGroup_3_3.eContents().get(0);
-		private final Assignment cDefaultCorrectionsAssignment_3_3_1 = (Assignment)cGroup_3_3.eContents().get(1);
-		private final RuleCall cDefaultCorrectionsSTRINGTerminalRuleCall_3_3_1_0 = (RuleCall)cDefaultCorrectionsAssignment_3_3_1.eContents().get(0);
+		private final Assignment cInitialInstructionsAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
+		private final RuleCall cInitialInstructionsInitialInstructionParserRuleCall_3_0_0 = (RuleCall)cInitialInstructionsAssignment_3_0.eContents().get(0);
+		private final Assignment cMaxRetriesAssignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
+		private final RuleCall cMaxRetriesMaxRetriesParserRuleCall_3_1_0 = (RuleCall)cMaxRetriesAssignment_3_1.eContents().get(0);
+		private final Assignment cParseChecksAssignment_3_2 = (Assignment)cAlternatives_3.eContents().get(2);
+		private final RuleCall cParseChecksParseCheckParserRuleCall_3_2_0 = (RuleCall)cParseChecksAssignment_3_2.eContents().get(0);
+		private final Assignment cDefaultCorrectionsAssignment_3_3 = (Assignment)cAlternatives_3.eContents().get(3);
+		private final RuleCall cDefaultCorrectionsDefaultCorrectionParserRuleCall_3_3_0 = (RuleCall)cDefaultCorrectionsAssignment_3_3.eContents().get(0);
 		private final Assignment cRemediationsAssignment_3_4 = (Assignment)cAlternatives_3.eContents().get(4);
 		private final RuleCall cRemediationsGenRemediationRulesParserRuleCall_3_4_0 = (RuleCall)cRemediationsAssignment_3_4.eContents().get(0);
 		private final Assignment cModelUsagesAssignment_3_5 = (Assignment)cAlternatives_3.eContents().get(5);
@@ -430,15 +919,15 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		
 		//GenBlock:
 		//    {GenBlock}
-		//    'gen' '{'
+		//    keyword = GenKeyword '{'
 		//        (
-		//            ('initialInstruction' initialInstructions+=STRING)
+		//            (initialInstructions+=InitialInstruction)
 		//            |
-		//            ('maxRetries' maxRetries+=INT)
+		//            (maxRetries+=MaxRetries)
 		//            |
-		//            ('parseCheck' parseChecks+=('true' | 'false'))
+		//            (parseChecks+=ParseCheck)
 		//            |
-		//            ('defaultCorrection' defaultCorrections+=STRING)
+		//            (defaultCorrections+=DefaultCorrection)
 		//            |
 		//            (remediations+=GenRemediationRules)
 		//            |
@@ -448,15 +937,15 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{GenBlock}
-		//'gen' '{'
+		//keyword = GenKeyword '{'
 		//    (
-		//        ('initialInstruction' initialInstructions+=STRING)
+		//        (initialInstructions+=InitialInstruction)
 		//        |
-		//        ('maxRetries' maxRetries+=INT)
+		//        (maxRetries+=MaxRetries)
 		//        |
-		//        ('parseCheck' parseChecks+=('true' | 'false'))
+		//        (parseChecks+=ParseCheck)
 		//        |
-		//        ('defaultCorrection' defaultCorrections+=STRING)
+		//        (defaultCorrections+=DefaultCorrection)
 		//        |
 		//        (remediations+=GenRemediationRules)
 		//        |
@@ -468,20 +957,23 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		//{GenBlock}
 		public Action getGenBlockAction_0() { return cGenBlockAction_0; }
 		
-		//'gen'
-		public Keyword getGenKeyword_1() { return cGenKeyword_1; }
+		//keyword = GenKeyword
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//GenKeyword
+		public RuleCall getKeywordGenKeywordParserRuleCall_1_0() { return cKeywordGenKeywordParserRuleCall_1_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
 		//(
-		//    ('initialInstruction' initialInstructions+=STRING)
+		//    (initialInstructions+=InitialInstruction)
 		//    |
-		//    ('maxRetries' maxRetries+=INT)
+		//    (maxRetries+=MaxRetries)
 		//    |
-		//    ('parseCheck' parseChecks+=('true' | 'false'))
+		//    (parseChecks+=ParseCheck)
 		//    |
-		//    ('defaultCorrection' defaultCorrections+=STRING)
+		//    (defaultCorrections+=DefaultCorrection)
 		//    |
 		//    (remediations+=GenRemediationRules)
 		//    |
@@ -489,59 +981,29 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		//)*
 		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 		
-		//('initialInstruction' initialInstructions+=STRING)
-		public Group getGroup_3_0() { return cGroup_3_0; }
+		//(initialInstructions+=InitialInstruction)
+		public Assignment getInitialInstructionsAssignment_3_0() { return cInitialInstructionsAssignment_3_0; }
 		
-		//'initialInstruction'
-		public Keyword getInitialInstructionKeyword_3_0_0() { return cInitialInstructionKeyword_3_0_0; }
+		//InitialInstruction
+		public RuleCall getInitialInstructionsInitialInstructionParserRuleCall_3_0_0() { return cInitialInstructionsInitialInstructionParserRuleCall_3_0_0; }
 		
-		//initialInstructions+=STRING
-		public Assignment getInitialInstructionsAssignment_3_0_1() { return cInitialInstructionsAssignment_3_0_1; }
+		//(maxRetries+=MaxRetries)
+		public Assignment getMaxRetriesAssignment_3_1() { return cMaxRetriesAssignment_3_1; }
 		
-		//STRING
-		public RuleCall getInitialInstructionsSTRINGTerminalRuleCall_3_0_1_0() { return cInitialInstructionsSTRINGTerminalRuleCall_3_0_1_0; }
+		//MaxRetries
+		public RuleCall getMaxRetriesMaxRetriesParserRuleCall_3_1_0() { return cMaxRetriesMaxRetriesParserRuleCall_3_1_0; }
 		
-		//('maxRetries' maxRetries+=INT)
-		public Group getGroup_3_1() { return cGroup_3_1; }
+		//(parseChecks+=ParseCheck)
+		public Assignment getParseChecksAssignment_3_2() { return cParseChecksAssignment_3_2; }
 		
-		//'maxRetries'
-		public Keyword getMaxRetriesKeyword_3_1_0() { return cMaxRetriesKeyword_3_1_0; }
+		//ParseCheck
+		public RuleCall getParseChecksParseCheckParserRuleCall_3_2_0() { return cParseChecksParseCheckParserRuleCall_3_2_0; }
 		
-		//maxRetries+=INT
-		public Assignment getMaxRetriesAssignment_3_1_1() { return cMaxRetriesAssignment_3_1_1; }
+		//(defaultCorrections+=DefaultCorrection)
+		public Assignment getDefaultCorrectionsAssignment_3_3() { return cDefaultCorrectionsAssignment_3_3; }
 		
-		//INT
-		public RuleCall getMaxRetriesINTTerminalRuleCall_3_1_1_0() { return cMaxRetriesINTTerminalRuleCall_3_1_1_0; }
-		
-		//('parseCheck' parseChecks+=('true' | 'false'))
-		public Group getGroup_3_2() { return cGroup_3_2; }
-		
-		//'parseCheck'
-		public Keyword getParseCheckKeyword_3_2_0() { return cParseCheckKeyword_3_2_0; }
-		
-		//parseChecks+=('true' | 'false')
-		public Assignment getParseChecksAssignment_3_2_1() { return cParseChecksAssignment_3_2_1; }
-		
-		//('true' | 'false')
-		public Alternatives getParseChecksAlternatives_3_2_1_0() { return cParseChecksAlternatives_3_2_1_0; }
-		
-		//'true'
-		public Keyword getParseChecksTrueKeyword_3_2_1_0_0() { return cParseChecksTrueKeyword_3_2_1_0_0; }
-		
-		//'false'
-		public Keyword getParseChecksFalseKeyword_3_2_1_0_1() { return cParseChecksFalseKeyword_3_2_1_0_1; }
-		
-		//('defaultCorrection' defaultCorrections+=STRING)
-		public Group getGroup_3_3() { return cGroup_3_3; }
-		
-		//'defaultCorrection'
-		public Keyword getDefaultCorrectionKeyword_3_3_0() { return cDefaultCorrectionKeyword_3_3_0; }
-		
-		//defaultCorrections+=STRING
-		public Assignment getDefaultCorrectionsAssignment_3_3_1() { return cDefaultCorrectionsAssignment_3_3_1; }
-		
-		//STRING
-		public RuleCall getDefaultCorrectionsSTRINGTerminalRuleCall_3_3_1_0() { return cDefaultCorrectionsSTRINGTerminalRuleCall_3_3_1_0; }
+		//DefaultCorrection
+		public RuleCall getDefaultCorrectionsDefaultCorrectionParserRuleCall_3_3_0() { return cDefaultCorrectionsDefaultCorrectionParserRuleCall_3_3_0; }
 		
 		//(remediations+=GenRemediationRules)
 		public Assignment getRemediationsAssignment_3_4() { return cRemediationsAssignment_3_4; }
@@ -558,11 +1020,344 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
+	public class GenKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.GenKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cGenKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cKeywordGenKeyword_1_0 = (Keyword)cKeywordAssignment_1.eContents().get(0);
+		
+		//GenKeyword:
+		//    {GenKeyword}
+		//    keyword = 'gen'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{GenKeyword}
+		//keyword = 'gen'
+		public Group getGroup() { return cGroup; }
+		
+		//{GenKeyword}
+		public Action getGenKeywordAction_0() { return cGenKeywordAction_0; }
+		
+		//keyword = 'gen'
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//'gen'
+		public Keyword getKeywordGenKeyword_1_0() { return cKeywordGenKeyword_1_0; }
+	}
+	public class InitialInstructionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.InitialInstruction");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cInitialInstructionAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cKeywordInitialInstructionKeywordParserRuleCall_1_0 = (RuleCall)cKeywordAssignment_1.eContents().get(0);
+		private final Assignment cInstructionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cInstructionSTRINGTerminalRuleCall_2_0 = (RuleCall)cInstructionAssignment_2.eContents().get(0);
+		
+		//InitialInstruction:
+		//    {InitialInstruction}
+		//    keyword = InitialInstructionKeyword instruction = STRING
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{InitialInstruction}
+		//keyword = InitialInstructionKeyword instruction = STRING
+		public Group getGroup() { return cGroup; }
+		
+		//{InitialInstruction}
+		public Action getInitialInstructionAction_0() { return cInitialInstructionAction_0; }
+		
+		//keyword = InitialInstructionKeyword
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//InitialInstructionKeyword
+		public RuleCall getKeywordInitialInstructionKeywordParserRuleCall_1_0() { return cKeywordInitialInstructionKeywordParserRuleCall_1_0; }
+		
+		//instruction = STRING
+		public Assignment getInstructionAssignment_2() { return cInstructionAssignment_2; }
+		
+		//STRING
+		public RuleCall getInstructionSTRINGTerminalRuleCall_2_0() { return cInstructionSTRINGTerminalRuleCall_2_0; }
+	}
+	public class MaxRetriesElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.MaxRetries");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMaxRetriesAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cKeywordMaxRetriesKeywordParserRuleCall_1_0 = (RuleCall)cKeywordAssignment_1.eContents().get(0);
+		private final Assignment cMaxRetriesAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cMaxRetriesINTTerminalRuleCall_2_0 = (RuleCall)cMaxRetriesAssignment_2.eContents().get(0);
+		
+		//MaxRetries:
+		//    {MaxRetries}
+		//    keyword = MaxRetriesKeyword maxRetries = INT
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{MaxRetries}
+		//keyword = MaxRetriesKeyword maxRetries = INT
+		public Group getGroup() { return cGroup; }
+		
+		//{MaxRetries}
+		public Action getMaxRetriesAction_0() { return cMaxRetriesAction_0; }
+		
+		//keyword = MaxRetriesKeyword
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//MaxRetriesKeyword
+		public RuleCall getKeywordMaxRetriesKeywordParserRuleCall_1_0() { return cKeywordMaxRetriesKeywordParserRuleCall_1_0; }
+		
+		//maxRetries = INT
+		public Assignment getMaxRetriesAssignment_2() { return cMaxRetriesAssignment_2; }
+		
+		//INT
+		public RuleCall getMaxRetriesINTTerminalRuleCall_2_0() { return cMaxRetriesINTTerminalRuleCall_2_0; }
+	}
+	public class ParseCheckElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.ParseCheck");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cParseCheckAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cKeywordParseCheckKeywordParserRuleCall_1_0 = (RuleCall)cKeywordAssignment_1.eContents().get(0);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cValueTrueFalseKeywordParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		
+		//ParseCheck:
+		//    {ParseCheck}
+		//    keyword = ParseCheckKeyword value = TrueFalseKeyword
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{ParseCheck}
+		//keyword = ParseCheckKeyword value = TrueFalseKeyword
+		public Group getGroup() { return cGroup; }
+		
+		//{ParseCheck}
+		public Action getParseCheckAction_0() { return cParseCheckAction_0; }
+		
+		//keyword = ParseCheckKeyword
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//ParseCheckKeyword
+		public RuleCall getKeywordParseCheckKeywordParserRuleCall_1_0() { return cKeywordParseCheckKeywordParserRuleCall_1_0; }
+		
+		//value = TrueFalseKeyword
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+		
+		//TrueFalseKeyword
+		public RuleCall getValueTrueFalseKeywordParserRuleCall_2_0() { return cValueTrueFalseKeywordParserRuleCall_2_0; }
+	}
+	public class DefaultCorrectionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.DefaultCorrection");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cDefaultCorrectionAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cKeywordDefaultCorrectionKeywordParserRuleCall_1_0 = (RuleCall)cKeywordAssignment_1.eContents().get(0);
+		private final Assignment cCorrectionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cCorrectionSTRINGTerminalRuleCall_2_0 = (RuleCall)cCorrectionAssignment_2.eContents().get(0);
+		
+		//DefaultCorrection:
+		//    {DefaultCorrection}
+		//    keyword = DefaultCorrectionKeyword correction = STRING
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{DefaultCorrection}
+		//keyword = DefaultCorrectionKeyword correction = STRING
+		public Group getGroup() { return cGroup; }
+		
+		//{DefaultCorrection}
+		public Action getDefaultCorrectionAction_0() { return cDefaultCorrectionAction_0; }
+		
+		//keyword = DefaultCorrectionKeyword
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//DefaultCorrectionKeyword
+		public RuleCall getKeywordDefaultCorrectionKeywordParserRuleCall_1_0() { return cKeywordDefaultCorrectionKeywordParserRuleCall_1_0; }
+		
+		//correction = STRING
+		public Assignment getCorrectionAssignment_2() { return cCorrectionAssignment_2; }
+		
+		//STRING
+		public RuleCall getCorrectionSTRINGTerminalRuleCall_2_0() { return cCorrectionSTRINGTerminalRuleCall_2_0; }
+	}
+	public class InitialInstructionKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.InitialInstructionKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cInitialInstructionKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Alternatives cKeywordAlternatives_1_0 = (Alternatives)cKeywordAssignment_1.eContents().get(0);
+		private final Keyword cKeywordInitialinstructionKeyword_1_0_0 = (Keyword)cKeywordAlternatives_1_0.eContents().get(0);
+		private final Keyword cKeywordInitialInstructionKeyword_1_0_1 = (Keyword)cKeywordAlternatives_1_0.eContents().get(1);
+		
+		//InitialInstructionKeyword:
+		//    {InitialInstructionKeyword}
+		//    keyword = ('initialinstruction' | 'initialInstruction')
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{InitialInstructionKeyword}
+		//keyword = ('initialinstruction' | 'initialInstruction')
+		public Group getGroup() { return cGroup; }
+		
+		//{InitialInstructionKeyword}
+		public Action getInitialInstructionKeywordAction_0() { return cInitialInstructionKeywordAction_0; }
+		
+		//keyword = ('initialinstruction' | 'initialInstruction')
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//('initialinstruction' | 'initialInstruction')
+		public Alternatives getKeywordAlternatives_1_0() { return cKeywordAlternatives_1_0; }
+		
+		//'initialinstruction'
+		public Keyword getKeywordInitialinstructionKeyword_1_0_0() { return cKeywordInitialinstructionKeyword_1_0_0; }
+		
+		//'initialInstruction'
+		public Keyword getKeywordInitialInstructionKeyword_1_0_1() { return cKeywordInitialInstructionKeyword_1_0_1; }
+	}
+	public class MaxRetriesKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.MaxRetriesKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMaxRetriesKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Alternatives cKeywordAlternatives_1_0 = (Alternatives)cKeywordAssignment_1.eContents().get(0);
+		private final Keyword cKeywordMaxretriesKeyword_1_0_0 = (Keyword)cKeywordAlternatives_1_0.eContents().get(0);
+		private final Keyword cKeywordMaxRetriesKeyword_1_0_1 = (Keyword)cKeywordAlternatives_1_0.eContents().get(1);
+		
+		//MaxRetriesKeyword:
+		//    {MaxRetriesKeyword}
+		//    keyword = ('maxretries' | 'maxRetries')
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{MaxRetriesKeyword}
+		//keyword = ('maxretries' | 'maxRetries')
+		public Group getGroup() { return cGroup; }
+		
+		//{MaxRetriesKeyword}
+		public Action getMaxRetriesKeywordAction_0() { return cMaxRetriesKeywordAction_0; }
+		
+		//keyword = ('maxretries' | 'maxRetries')
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//('maxretries' | 'maxRetries')
+		public Alternatives getKeywordAlternatives_1_0() { return cKeywordAlternatives_1_0; }
+		
+		//'maxretries'
+		public Keyword getKeywordMaxretriesKeyword_1_0_0() { return cKeywordMaxretriesKeyword_1_0_0; }
+		
+		//'maxRetries'
+		public Keyword getKeywordMaxRetriesKeyword_1_0_1() { return cKeywordMaxRetriesKeyword_1_0_1; }
+	}
+	public class ParseCheckKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.ParseCheckKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cParseCheckKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Alternatives cKeywordAlternatives_1_0 = (Alternatives)cKeywordAssignment_1.eContents().get(0);
+		private final Keyword cKeywordParsecheckKeyword_1_0_0 = (Keyword)cKeywordAlternatives_1_0.eContents().get(0);
+		private final Keyword cKeywordParseCheckKeyword_1_0_1 = (Keyword)cKeywordAlternatives_1_0.eContents().get(1);
+		
+		//ParseCheckKeyword:
+		//    {ParseCheckKeyword}
+		//    keyword = ('parsecheck' | 'parseCheck')
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{ParseCheckKeyword}
+		//keyword = ('parsecheck' | 'parseCheck')
+		public Group getGroup() { return cGroup; }
+		
+		//{ParseCheckKeyword}
+		public Action getParseCheckKeywordAction_0() { return cParseCheckKeywordAction_0; }
+		
+		//keyword = ('parsecheck' | 'parseCheck')
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//('parsecheck' | 'parseCheck')
+		public Alternatives getKeywordAlternatives_1_0() { return cKeywordAlternatives_1_0; }
+		
+		//'parsecheck'
+		public Keyword getKeywordParsecheckKeyword_1_0_0() { return cKeywordParsecheckKeyword_1_0_0; }
+		
+		//'parseCheck'
+		public Keyword getKeywordParseCheckKeyword_1_0_1() { return cKeywordParseCheckKeyword_1_0_1; }
+	}
+	public class DefaultCorrectionKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.DefaultCorrectionKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cDefaultCorrectionKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Alternatives cKeywordAlternatives_1_0 = (Alternatives)cKeywordAssignment_1.eContents().get(0);
+		private final Keyword cKeywordDefaultcorrectionKeyword_1_0_0 = (Keyword)cKeywordAlternatives_1_0.eContents().get(0);
+		private final Keyword cKeywordDefaultCorrectionKeyword_1_0_1 = (Keyword)cKeywordAlternatives_1_0.eContents().get(1);
+		
+		//DefaultCorrectionKeyword:
+		//    {DefaultCorrectionKeyword}
+		//    keyword = ('defaultcorrection' | 'defaultCorrection')
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{DefaultCorrectionKeyword}
+		//keyword = ('defaultcorrection' | 'defaultCorrection')
+		public Group getGroup() { return cGroup; }
+		
+		//{DefaultCorrectionKeyword}
+		public Action getDefaultCorrectionKeywordAction_0() { return cDefaultCorrectionKeywordAction_0; }
+		
+		//keyword = ('defaultcorrection' | 'defaultCorrection')
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//('defaultcorrection' | 'defaultCorrection')
+		public Alternatives getKeywordAlternatives_1_0() { return cKeywordAlternatives_1_0; }
+		
+		//'defaultcorrection'
+		public Keyword getKeywordDefaultcorrectionKeyword_1_0_0() { return cKeywordDefaultcorrectionKeyword_1_0_0; }
+		
+		//'defaultCorrection'
+		public Keyword getKeywordDefaultCorrectionKeyword_1_0_1() { return cKeywordDefaultCorrectionKeyword_1_0_1; }
+	}
+	public class TrueFalseKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.TrueFalseKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cTrueKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Alternatives cKeywordAlternatives_1_0 = (Alternatives)cKeywordAssignment_1.eContents().get(0);
+		private final Keyword cKeywordTrueKeyword_1_0_0 = (Keyword)cKeywordAlternatives_1_0.eContents().get(0);
+		private final Keyword cKeywordFalseKeyword_1_0_1 = (Keyword)cKeywordAlternatives_1_0.eContents().get(1);
+		
+		//TrueFalseKeyword:
+		//    {TrueKeyword}
+		//    keyword = ('true' | 'false')
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{TrueKeyword}
+		//keyword = ('true' | 'false')
+		public Group getGroup() { return cGroup; }
+		
+		//{TrueKeyword}
+		public Action getTrueKeywordAction_0() { return cTrueKeywordAction_0; }
+		
+		//keyword = ('true' | 'false')
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//('true' | 'false')
+		public Alternatives getKeywordAlternatives_1_0() { return cKeywordAlternatives_1_0; }
+		
+		//'true'
+		public Keyword getKeywordTrueKeyword_1_0_0() { return cKeywordTrueKeyword_1_0_0; }
+		
+		//'false'
+		public Keyword getKeywordFalseKeyword_1_0_1() { return cKeywordFalseKeyword_1_0_1; }
+	}
 	public class GenRemediationRulesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.GenRemediationRules");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cGenRemediationRulesAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cRulesKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cRulesKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cRulesKeywordRulesKeywordParserRuleCall_1_0 = (RuleCall)cRulesKeywordAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
 		private final Assignment cPatternRulesAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
@@ -573,7 +1368,7 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		
 		//GenRemediationRules:
 		//    {GenRemediationRules}
-		//    'rules' '{'
+		//    rulesKeyword = RulesKeyword '{'
 		//        (
 		//            (patternRules+=GenPatternRemediationRule)
 		//            |
@@ -583,7 +1378,7 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{GenRemediationRules}
-		//'rules' '{'
+		//rulesKeyword = RulesKeyword '{'
 		//    (
 		//        (patternRules+=GenPatternRemediationRule)
 		//        |
@@ -595,8 +1390,11 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		//{GenRemediationRules}
 		public Action getGenRemediationRulesAction_0() { return cGenRemediationRulesAction_0; }
 		
-		//'rules'
-		public Keyword getRulesKeyword_1() { return cRulesKeyword_1; }
+		//rulesKeyword = RulesKeyword
+		public Assignment getRulesKeywordAssignment_1() { return cRulesKeywordAssignment_1; }
+		
+		//RulesKeyword
+		public RuleCall getRulesKeywordRulesKeywordParserRuleCall_1_0() { return cRulesKeywordRulesKeywordParserRuleCall_1_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
@@ -623,48 +1421,69 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
+	public class RulesKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.RulesKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cRulesKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cKeywordRulesKeyword_1_0 = (Keyword)cKeywordAssignment_1.eContents().get(0);
+		
+		//RulesKeyword:
+		//    {RulesKeyword}
+		//    keyword = 'rules'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{RulesKeyword}
+		//keyword = 'rules'
+		public Group getGroup() { return cGroup; }
+		
+		//{RulesKeyword}
+		public Action getRulesKeywordAction_0() { return cRulesKeywordAction_0; }
+		
+		//keyword = 'rules'
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//'rules'
+		public Keyword getKeywordRulesKeyword_1_0() { return cKeywordRulesKeyword_1_0; }
+	}
 	public class GenPatternRemediationRuleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.GenPatternRemediationRule");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cGenPatternRemediationRuleAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cRuleKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cKeywordRuleKeywordParserRuleCall_1_0 = (RuleCall)cKeywordAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
-		private final Group cGroup_3_0 = (Group)cAlternatives_3.eContents().get(0);
-		private final Keyword cPatternKeyword_3_0_0 = (Keyword)cGroup_3_0.eContents().get(0);
-		private final Assignment cPatternsAssignment_3_0_1 = (Assignment)cGroup_3_0.eContents().get(1);
-		private final RuleCall cPatternsSTRINGTerminalRuleCall_3_0_1_0 = (RuleCall)cPatternsAssignment_3_0_1.eContents().get(0);
-		private final Group cGroup_3_1 = (Group)cAlternatives_3.eContents().get(1);
-		private final Keyword cCodeKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
-		private final Assignment cCodesAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
-		private final RuleCall cCodesSTRINGTerminalRuleCall_3_1_1_0 = (RuleCall)cCodesAssignment_3_1_1.eContents().get(0);
-		private final Group cGroup_3_2 = (Group)cAlternatives_3.eContents().get(2);
-		private final Keyword cCorrectionKeyword_3_2_0 = (Keyword)cGroup_3_2.eContents().get(0);
-		private final Assignment cCorrectionsAssignment_3_2_1 = (Assignment)cGroup_3_2.eContents().get(1);
-		private final RuleCall cCorrectionsSTRINGTerminalRuleCall_3_2_1_0 = (RuleCall)cCorrectionsAssignment_3_2_1.eContents().get(0);
+		private final Assignment cPatternsAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
+		private final RuleCall cPatternsPatternParserRuleCall_3_0_0 = (RuleCall)cPatternsAssignment_3_0.eContents().get(0);
+		private final Assignment cCodesAssignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
+		private final RuleCall cCodesCodeParserRuleCall_3_1_0 = (RuleCall)cCodesAssignment_3_1.eContents().get(0);
+		private final Assignment cCorrectionsAssignment_3_2 = (Assignment)cAlternatives_3.eContents().get(2);
+		private final RuleCall cCorrectionsCorrectionParserRuleCall_3_2_0 = (RuleCall)cCorrectionsAssignment_3_2.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//GenPatternRemediationRule:
 		//    {GenPatternRemediationRule}
-		//    'rule' '{'
+		//    keyword = RuleKeyword '{'
 		//        (
-		//            ('pattern' patterns+=STRING)
+		//            (patterns+=Pattern)
 		//            |
-		//            ('code' codes+=STRING)
+		//            (codes+=Code)
 		//            |
-		//            ('correction' corrections+=STRING)
+		//            (corrections+=Correction)
 		//        )*
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{GenPatternRemediationRule}
-		//'rule' '{'
+		//keyword = RuleKeyword '{'
 		//    (
-		//        ('pattern' patterns+=STRING)
+		//        (patterns+=Pattern)
 		//        |
-		//        ('code' codes+=STRING)
+		//        (codes+=Code)
 		//        |
-		//        ('correction' corrections+=STRING)
+		//        (corrections+=Correction)
 		//    )*
 		//'}'
 		public Group getGroup() { return cGroup; }
@@ -672,94 +1491,282 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		//{GenPatternRemediationRule}
 		public Action getGenPatternRemediationRuleAction_0() { return cGenPatternRemediationRuleAction_0; }
 		
-		//'rule'
-		public Keyword getRuleKeyword_1() { return cRuleKeyword_1; }
+		//keyword = RuleKeyword
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//RuleKeyword
+		public RuleCall getKeywordRuleKeywordParserRuleCall_1_0() { return cKeywordRuleKeywordParserRuleCall_1_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
 		//(
-		//    ('pattern' patterns+=STRING)
+		//    (patterns+=Pattern)
 		//    |
-		//    ('code' codes+=STRING)
+		//    (codes+=Code)
 		//    |
-		//    ('correction' corrections+=STRING)
+		//    (corrections+=Correction)
 		//)*
 		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 		
-		//('pattern' patterns+=STRING)
-		public Group getGroup_3_0() { return cGroup_3_0; }
+		//(patterns+=Pattern)
+		public Assignment getPatternsAssignment_3_0() { return cPatternsAssignment_3_0; }
 		
-		//'pattern'
-		public Keyword getPatternKeyword_3_0_0() { return cPatternKeyword_3_0_0; }
+		//Pattern
+		public RuleCall getPatternsPatternParserRuleCall_3_0_0() { return cPatternsPatternParserRuleCall_3_0_0; }
 		
-		//patterns+=STRING
-		public Assignment getPatternsAssignment_3_0_1() { return cPatternsAssignment_3_0_1; }
+		//(codes+=Code)
+		public Assignment getCodesAssignment_3_1() { return cCodesAssignment_3_1; }
 		
-		//STRING
-		public RuleCall getPatternsSTRINGTerminalRuleCall_3_0_1_0() { return cPatternsSTRINGTerminalRuleCall_3_0_1_0; }
+		//Code
+		public RuleCall getCodesCodeParserRuleCall_3_1_0() { return cCodesCodeParserRuleCall_3_1_0; }
 		
-		//('code' codes+=STRING)
-		public Group getGroup_3_1() { return cGroup_3_1; }
+		//(corrections+=Correction)
+		public Assignment getCorrectionsAssignment_3_2() { return cCorrectionsAssignment_3_2; }
 		
-		//'code'
-		public Keyword getCodeKeyword_3_1_0() { return cCodeKeyword_3_1_0; }
-		
-		//codes+=STRING
-		public Assignment getCodesAssignment_3_1_1() { return cCodesAssignment_3_1_1; }
-		
-		//STRING
-		public RuleCall getCodesSTRINGTerminalRuleCall_3_1_1_0() { return cCodesSTRINGTerminalRuleCall_3_1_1_0; }
-		
-		//('correction' corrections+=STRING)
-		public Group getGroup_3_2() { return cGroup_3_2; }
-		
-		//'correction'
-		public Keyword getCorrectionKeyword_3_2_0() { return cCorrectionKeyword_3_2_0; }
-		
-		//corrections+=STRING
-		public Assignment getCorrectionsAssignment_3_2_1() { return cCorrectionsAssignment_3_2_1; }
-		
-		//STRING
-		public RuleCall getCorrectionsSTRINGTerminalRuleCall_3_2_1_0() { return cCorrectionsSTRINGTerminalRuleCall_3_2_1_0; }
+		//Correction
+		public RuleCall getCorrectionsCorrectionParserRuleCall_3_2_0() { return cCorrectionsCorrectionParserRuleCall_3_2_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+	}
+	public class RuleKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.RuleKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cRuleKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cKeywordRuleKeyword_1_0 = (Keyword)cKeywordAssignment_1.eContents().get(0);
+		
+		//RuleKeyword:
+		//    {RuleKeyword}
+		//    keyword = 'rule'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{RuleKeyword}
+		//keyword = 'rule'
+		public Group getGroup() { return cGroup; }
+		
+		//{RuleKeyword}
+		public Action getRuleKeywordAction_0() { return cRuleKeywordAction_0; }
+		
+		//keyword = 'rule'
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//'rule'
+		public Keyword getKeywordRuleKeyword_1_0() { return cKeywordRuleKeyword_1_0; }
+	}
+	public class PatternElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.Pattern");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cPatternAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cKeywordPatternKeywordParserRuleCall_1_0 = (RuleCall)cKeywordAssignment_1.eContents().get(0);
+		private final Assignment cPatternAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cPatternSTRINGTerminalRuleCall_2_0 = (RuleCall)cPatternAssignment_2.eContents().get(0);
+		
+		//Pattern:
+		//    {Pattern}
+		//    keyword = PatternKeyword pattern = STRING
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Pattern}
+		//keyword = PatternKeyword pattern = STRING
+		public Group getGroup() { return cGroup; }
+		
+		//{Pattern}
+		public Action getPatternAction_0() { return cPatternAction_0; }
+		
+		//keyword = PatternKeyword
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//PatternKeyword
+		public RuleCall getKeywordPatternKeywordParserRuleCall_1_0() { return cKeywordPatternKeywordParserRuleCall_1_0; }
+		
+		//pattern = STRING
+		public Assignment getPatternAssignment_2() { return cPatternAssignment_2; }
+		
+		//STRING
+		public RuleCall getPatternSTRINGTerminalRuleCall_2_0() { return cPatternSTRINGTerminalRuleCall_2_0; }
+	}
+	public class PatternKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.PatternKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cPatternKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cKeywordPatternKeyword_1_0 = (Keyword)cKeywordAssignment_1.eContents().get(0);
+		
+		//PatternKeyword:
+		//    {PatternKeyword}
+		//    keyword = 'pattern'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{PatternKeyword}
+		//keyword = 'pattern'
+		public Group getGroup() { return cGroup; }
+		
+		//{PatternKeyword}
+		public Action getPatternKeywordAction_0() { return cPatternKeywordAction_0; }
+		
+		//keyword = 'pattern'
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//'pattern'
+		public Keyword getKeywordPatternKeyword_1_0() { return cKeywordPatternKeyword_1_0; }
+	}
+	public class CodeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.Code");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cCodeAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cKeywordCodeKeywordParserRuleCall_1_0 = (RuleCall)cKeywordAssignment_1.eContents().get(0);
+		private final Assignment cCodeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cCodeSTRINGTerminalRuleCall_2_0 = (RuleCall)cCodeAssignment_2.eContents().get(0);
+		
+		//Code:
+		//    {Code}
+		//    keyword = CodeKeyword code = STRING
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Code}
+		//keyword = CodeKeyword code = STRING
+		public Group getGroup() { return cGroup; }
+		
+		//{Code}
+		public Action getCodeAction_0() { return cCodeAction_0; }
+		
+		//keyword = CodeKeyword
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//CodeKeyword
+		public RuleCall getKeywordCodeKeywordParserRuleCall_1_0() { return cKeywordCodeKeywordParserRuleCall_1_0; }
+		
+		//code = STRING
+		public Assignment getCodeAssignment_2() { return cCodeAssignment_2; }
+		
+		//STRING
+		public RuleCall getCodeSTRINGTerminalRuleCall_2_0() { return cCodeSTRINGTerminalRuleCall_2_0; }
+	}
+	public class CodeKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.CodeKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cCodeKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cKeywordCodeKeyword_1_0 = (Keyword)cKeywordAssignment_1.eContents().get(0);
+		
+		//CodeKeyword:
+		//    {CodeKeyword}
+		//    keyword = 'code'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{CodeKeyword}
+		//keyword = 'code'
+		public Group getGroup() { return cGroup; }
+		
+		//{CodeKeyword}
+		public Action getCodeKeywordAction_0() { return cCodeKeywordAction_0; }
+		
+		//keyword = 'code'
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//'code'
+		public Keyword getKeywordCodeKeyword_1_0() { return cKeywordCodeKeyword_1_0; }
+	}
+	public class CorrectionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.Correction");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cCorrectionAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cKeywordCorrectionKeywordParserRuleCall_1_0 = (RuleCall)cKeywordAssignment_1.eContents().get(0);
+		private final Assignment cCorrectionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cCorrectionSTRINGTerminalRuleCall_2_0 = (RuleCall)cCorrectionAssignment_2.eContents().get(0);
+		
+		//Correction:
+		//    {Correction}
+		//    keyword = CorrectionKeyword correction = STRING
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Correction}
+		//keyword = CorrectionKeyword correction = STRING
+		public Group getGroup() { return cGroup; }
+		
+		//{Correction}
+		public Action getCorrectionAction_0() { return cCorrectionAction_0; }
+		
+		//keyword = CorrectionKeyword
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//CorrectionKeyword
+		public RuleCall getKeywordCorrectionKeywordParserRuleCall_1_0() { return cKeywordCorrectionKeywordParserRuleCall_1_0; }
+		
+		//correction = STRING
+		public Assignment getCorrectionAssignment_2() { return cCorrectionAssignment_2; }
+		
+		//STRING
+		public RuleCall getCorrectionSTRINGTerminalRuleCall_2_0() { return cCorrectionSTRINGTerminalRuleCall_2_0; }
+	}
+	public class CorrectionKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.CorrectionKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cCorrectionKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cKeywordCorrectionKeyword_1_0 = (Keyword)cKeywordAssignment_1.eContents().get(0);
+		
+		//CorrectionKeyword:
+		//    {CorrectionKeyword}
+		//    keyword = 'correction'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{CorrectionKeyword}
+		//keyword = 'correction'
+		public Group getGroup() { return cGroup; }
+		
+		//{CorrectionKeyword}
+		public Action getCorrectionKeywordAction_0() { return cCorrectionKeywordAction_0; }
+		
+		//keyword = 'correction'
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//'correction'
+		public Keyword getKeywordCorrectionKeyword_1_0() { return cKeywordCorrectionKeyword_1_0; }
 	}
 	public class GenDefaultRemediationRuleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.GenDefaultRemediationRule");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cGenDefaultRemediationRuleAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cDefaultKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cKeywordDefaultKeywordParserRuleCall_1_0 = (RuleCall)cKeywordAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
-		private final Group cGroup_3_0 = (Group)cAlternatives_3.eContents().get(0);
-		private final Keyword cCodeKeyword_3_0_0 = (Keyword)cGroup_3_0.eContents().get(0);
-		private final Assignment cCodesAssignment_3_0_1 = (Assignment)cGroup_3_0.eContents().get(1);
-		private final RuleCall cCodesSTRINGTerminalRuleCall_3_0_1_0 = (RuleCall)cCodesAssignment_3_0_1.eContents().get(0);
-		private final Group cGroup_3_1 = (Group)cAlternatives_3.eContents().get(1);
-		private final Keyword cCorrectionKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
-		private final Assignment cCorrectionAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
-		private final RuleCall cCorrectionSTRINGTerminalRuleCall_3_1_1_0 = (RuleCall)cCorrectionAssignment_3_1_1.eContents().get(0);
+		private final Assignment cCodesAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
+		private final RuleCall cCodesCodeParserRuleCall_3_0_0 = (RuleCall)cCodesAssignment_3_0.eContents().get(0);
+		private final Assignment cCorrectionsAssignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
+		private final RuleCall cCorrectionsCorrectionParserRuleCall_3_1_0 = (RuleCall)cCorrectionsAssignment_3_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//GenDefaultRemediationRule:
 		//    {GenDefaultRemediationRule}
-		//    'default' '{'
+		//    keyword = DefaultKeyword '{'
 		//        (
-		//            ('code' codes+=STRING)
+		//            (codes+=Code)
 		//            |
-		//            ('correction' correction+=STRING)
+		//            (corrections+=Correction)
 		//        )*
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{GenDefaultRemediationRule}
-		//'default' '{'
+		//keyword = DefaultKeyword '{'
 		//    (
-		//        ('code' codes+=STRING)
+		//        (codes+=Code)
 		//        |
-		//        ('correction' correction+=STRING)
+		//        (corrections+=Correction)
 		//    )*
 		//'}'
 		public Group getGroup() { return cGroup; }
@@ -767,145 +1774,193 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		//{GenDefaultRemediationRule}
 		public Action getGenDefaultRemediationRuleAction_0() { return cGenDefaultRemediationRuleAction_0; }
 		
-		//'default'
-		public Keyword getDefaultKeyword_1() { return cDefaultKeyword_1; }
+		//keyword = DefaultKeyword
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//DefaultKeyword
+		public RuleCall getKeywordDefaultKeywordParserRuleCall_1_0() { return cKeywordDefaultKeywordParserRuleCall_1_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
 		//(
-		//    ('code' codes+=STRING)
+		//    (codes+=Code)
 		//    |
-		//    ('correction' correction+=STRING)
+		//    (corrections+=Correction)
 		//)*
 		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 		
-		//('code' codes+=STRING)
-		public Group getGroup_3_0() { return cGroup_3_0; }
+		//(codes+=Code)
+		public Assignment getCodesAssignment_3_0() { return cCodesAssignment_3_0; }
 		
-		//'code'
-		public Keyword getCodeKeyword_3_0_0() { return cCodeKeyword_3_0_0; }
+		//Code
+		public RuleCall getCodesCodeParserRuleCall_3_0_0() { return cCodesCodeParserRuleCall_3_0_0; }
 		
-		//codes+=STRING
-		public Assignment getCodesAssignment_3_0_1() { return cCodesAssignment_3_0_1; }
+		//(corrections+=Correction)
+		public Assignment getCorrectionsAssignment_3_1() { return cCorrectionsAssignment_3_1; }
 		
-		//STRING
-		public RuleCall getCodesSTRINGTerminalRuleCall_3_0_1_0() { return cCodesSTRINGTerminalRuleCall_3_0_1_0; }
-		
-		//('correction' correction+=STRING)
-		public Group getGroup_3_1() { return cGroup_3_1; }
-		
-		//'correction'
-		public Keyword getCorrectionKeyword_3_1_0() { return cCorrectionKeyword_3_1_0; }
-		
-		//correction+=STRING
-		public Assignment getCorrectionAssignment_3_1_1() { return cCorrectionAssignment_3_1_1; }
-		
-		//STRING
-		public RuleCall getCorrectionSTRINGTerminalRuleCall_3_1_1_0() { return cCorrectionSTRINGTerminalRuleCall_3_1_1_0; }
+		//Correction
+		public RuleCall getCorrectionsCorrectionParserRuleCall_3_1_0() { return cCorrectionsCorrectionParserRuleCall_3_1_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+	}
+	public class DefaultKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.DefaultKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cDefaultKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cKeywordDefaultKeyword_1_0 = (Keyword)cKeywordAssignment_1.eContents().get(0);
+		
+		//DefaultKeyword:
+		//    {DefaultKeyword}
+		//    keyword = 'default'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{DefaultKeyword}
+		//keyword = 'default'
+		public Group getGroup() { return cGroup; }
+		
+		//{DefaultKeyword}
+		public Action getDefaultKeywordAction_0() { return cDefaultKeywordAction_0; }
+		
+		//keyword = 'default'
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//'default'
+		public Keyword getKeywordDefaultKeyword_1_0() { return cKeywordDefaultKeyword_1_0; }
 	}
 	public class LlmProvidersBlockElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.LlmProvidersBlock");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cLlmProvidersBlockAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cLlmProvidersKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cKeywordLLMProvidersKeywordParserRuleCall_1_0 = (RuleCall)cKeywordAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cProvidersAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cProvidersNamedLlmProviderParserRuleCall_3_0 = (RuleCall)cProvidersAssignment_3.eContents().get(0);
+		private final RuleCall cProvidersLLMProviderParserRuleCall_3_0 = (RuleCall)cProvidersAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//LlmProvidersBlock:
 		//    {LlmProvidersBlock}
-		//    'llmProviders' '{'
-		//        providers+=NamedLlmProvider*
+		//    keyword = LLMProvidersKeyword '{'
+		//        providers+=LLMProvider*
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{LlmProvidersBlock}
-		//'llmProviders' '{'
-		//    providers+=NamedLlmProvider*
+		//keyword = LLMProvidersKeyword '{'
+		//    providers+=LLMProvider*
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//{LlmProvidersBlock}
 		public Action getLlmProvidersBlockAction_0() { return cLlmProvidersBlockAction_0; }
 		
-		//'llmProviders'
-		public Keyword getLlmProvidersKeyword_1() { return cLlmProvidersKeyword_1; }
+		//keyword = LLMProvidersKeyword
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//LLMProvidersKeyword
+		public RuleCall getKeywordLLMProvidersKeywordParserRuleCall_1_0() { return cKeywordLLMProvidersKeywordParserRuleCall_1_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//providers+=NamedLlmProvider*
+		//providers+=LLMProvider*
 		public Assignment getProvidersAssignment_3() { return cProvidersAssignment_3; }
 		
-		//NamedLlmProvider
-		public RuleCall getProvidersNamedLlmProviderParserRuleCall_3_0() { return cProvidersNamedLlmProviderParserRuleCall_3_0; }
+		//LLMProvider
+		public RuleCall getProvidersLLMProviderParserRuleCall_3_0() { return cProvidersLLMProviderParserRuleCall_3_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
-	public class NamedLlmProviderElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.NamedLlmProvider");
+	public class LLMProvidersKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.LLMProvidersKeyword");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cProviderKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Action cLLMProvidersKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Alternatives cKeywordAlternatives_1_0 = (Alternatives)cKeywordAssignment_1.eContents().get(0);
+		private final Keyword cKeywordLlmprovidersKeyword_1_0_0 = (Keyword)cKeywordAlternatives_1_0.eContents().get(0);
+		private final Keyword cKeywordLlmProvidersKeyword_1_0_1 = (Keyword)cKeywordAlternatives_1_0.eContents().get(1);
+		
+		//LLMProvidersKeyword:
+		//    {LLMProvidersKeyword}
+		//    keyword = ('llmproviders' | 'llmProviders')
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{LLMProvidersKeyword}
+		//keyword = ('llmproviders' | 'llmProviders')
+		public Group getGroup() { return cGroup; }
+		
+		//{LLMProvidersKeyword}
+		public Action getLLMProvidersKeywordAction_0() { return cLLMProvidersKeywordAction_0; }
+		
+		//keyword = ('llmproviders' | 'llmProviders')
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//('llmproviders' | 'llmProviders')
+		public Alternatives getKeywordAlternatives_1_0() { return cKeywordAlternatives_1_0; }
+		
+		//'llmproviders'
+		public Keyword getKeywordLlmprovidersKeyword_1_0_0() { return cKeywordLlmprovidersKeyword_1_0_0; }
+		
+		//'llmProviders'
+		public Keyword getKeywordLlmProvidersKeyword_1_0_1() { return cKeywordLlmProvidersKeyword_1_0_1; }
+	}
+	public class LLMProviderElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.LLMProvider");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cKeywordAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cKeywordProviderKeywordParserRuleCall_0_0 = (RuleCall)cKeywordAssignment_0.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameValidIDParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
-		private final Group cGroup_3_0 = (Group)cAlternatives_3.eContents().get(0);
-		private final Keyword cKindKeyword_3_0_0 = (Keyword)cGroup_3_0.eContents().get(0);
-		private final Assignment cKindsAssignment_3_0_1 = (Assignment)cGroup_3_0.eContents().get(1);
-		private final Alternatives cKindsAlternatives_3_0_1_0 = (Alternatives)cKindsAssignment_3_0_1.eContents().get(0);
-		private final Keyword cKindsLocalKeyword_3_0_1_0_0 = (Keyword)cKindsAlternatives_3_0_1_0.eContents().get(0);
-		private final Keyword cKindsOpenaiKeyword_3_0_1_0_1 = (Keyword)cKindsAlternatives_3_0_1_0.eContents().get(1);
-		private final Keyword cKindsOllamaKeyword_3_0_1_0_2 = (Keyword)cKindsAlternatives_3_0_1_0.eContents().get(2);
-		private final Group cGroup_3_1 = (Group)cAlternatives_3.eContents().get(1);
-		private final Keyword cLocalModelPathKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
-		private final Assignment cLocalModelPathsAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
-		private final RuleCall cLocalModelPathsSTRINGTerminalRuleCall_3_1_1_0 = (RuleCall)cLocalModelPathsAssignment_3_1_1.eContents().get(0);
-		private final Group cGroup_3_2 = (Group)cAlternatives_3.eContents().get(2);
-		private final Keyword cModelKeyword_3_2_0 = (Keyword)cGroup_3_2.eContents().get(0);
-		private final Assignment cModelsAssignment_3_2_1 = (Assignment)cGroup_3_2.eContents().get(1);
-		private final RuleCall cModelsSTRINGTerminalRuleCall_3_2_1_0 = (RuleCall)cModelsAssignment_3_2_1.eContents().get(0);
-		private final Group cGroup_3_3 = (Group)cAlternatives_3.eContents().get(3);
-		private final Keyword cEndpointKeyword_3_3_0 = (Keyword)cGroup_3_3.eContents().get(0);
-		private final Assignment cEndpointsAssignment_3_3_1 = (Assignment)cGroup_3_3.eContents().get(1);
-		private final RuleCall cEndpointsSTRINGTerminalRuleCall_3_3_1_0 = (RuleCall)cEndpointsAssignment_3_3_1.eContents().get(0);
+		private final Assignment cTypesAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
+		private final RuleCall cTypesProviderTypeParserRuleCall_3_0_0 = (RuleCall)cTypesAssignment_3_0.eContents().get(0);
+		private final Assignment cLocalModelPathsAssignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
+		private final RuleCall cLocalModelPathsLocalModelPathParserRuleCall_3_1_0 = (RuleCall)cLocalModelPathsAssignment_3_1.eContents().get(0);
+		private final Assignment cModelsAssignment_3_2 = (Assignment)cAlternatives_3.eContents().get(2);
+		private final RuleCall cModelsModelParserRuleCall_3_2_0 = (RuleCall)cModelsAssignment_3_2.eContents().get(0);
+		private final Assignment cEndpointsAssignment_3_3 = (Assignment)cAlternatives_3.eContents().get(3);
+		private final RuleCall cEndpointsEndpointParserRuleCall_3_3_0 = (RuleCall)cEndpointsAssignment_3_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//NamedLlmProvider:
-		//    'provider' name=ValidID '{'
+		//LLMProvider:
+		//    keyword = ProviderKeyword name=ValidID '{'
 		//        (
-		//            ('kind' kinds+=('local' | 'openai' | 'ollama'))
+		//            (types+=ProviderType)
 		//            |
-		//            ('localModelPath' localModelPaths+=STRING)
+		//            (localModelPaths+=LocalModelPath)
 		//            |
-		//            ('model' models+=STRING)
+		//            (models+=Model)
 		//            |
-		//            ('endpoint' endpoints+=STRING)
+		//            (endpoints+=Endpoint)
 		//        )*
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'provider' name=ValidID '{'
+		//keyword = ProviderKeyword name=ValidID '{'
 		//    (
-		//        ('kind' kinds+=('local' | 'openai' | 'ollama'))
+		//        (types+=ProviderType)
 		//        |
-		//        ('localModelPath' localModelPaths+=STRING)
+		//        (localModelPaths+=LocalModelPath)
 		//        |
-		//        ('model' models+=STRING)
+		//        (models+=Model)
 		//        |
-		//        ('endpoint' endpoints+=STRING)
+		//        (endpoints+=Endpoint)
 		//    )*
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
-		//'provider'
-		public Keyword getProviderKeyword_0() { return cProviderKeyword_0; }
+		//keyword = ProviderKeyword
+		public Assignment getKeywordAssignment_0() { return cKeywordAssignment_0; }
+		
+		//ProviderKeyword
+		public RuleCall getKeywordProviderKeywordParserRuleCall_0_0() { return cKeywordProviderKeywordParserRuleCall_0_0; }
 		
 		//name=ValidID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -917,102 +1972,348 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
 		//(
-		//    ('kind' kinds+=('local' | 'openai' | 'ollama'))
+		//    (types+=ProviderType)
 		//    |
-		//    ('localModelPath' localModelPaths+=STRING)
+		//    (localModelPaths+=LocalModelPath)
 		//    |
-		//    ('model' models+=STRING)
+		//    (models+=Model)
 		//    |
-		//    ('endpoint' endpoints+=STRING)
+		//    (endpoints+=Endpoint)
 		//)*
 		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 		
-		//('kind' kinds+=('local' | 'openai' | 'ollama'))
-		public Group getGroup_3_0() { return cGroup_3_0; }
+		//(types+=ProviderType)
+		public Assignment getTypesAssignment_3_0() { return cTypesAssignment_3_0; }
 		
-		//'kind'
-		public Keyword getKindKeyword_3_0_0() { return cKindKeyword_3_0_0; }
+		//ProviderType
+		public RuleCall getTypesProviderTypeParserRuleCall_3_0_0() { return cTypesProviderTypeParserRuleCall_3_0_0; }
 		
-		//kinds+=('local' | 'openai' | 'ollama')
-		public Assignment getKindsAssignment_3_0_1() { return cKindsAssignment_3_0_1; }
+		//(localModelPaths+=LocalModelPath)
+		public Assignment getLocalModelPathsAssignment_3_1() { return cLocalModelPathsAssignment_3_1; }
 		
-		//('local' | 'openai' | 'ollama')
-		public Alternatives getKindsAlternatives_3_0_1_0() { return cKindsAlternatives_3_0_1_0; }
+		//LocalModelPath
+		public RuleCall getLocalModelPathsLocalModelPathParserRuleCall_3_1_0() { return cLocalModelPathsLocalModelPathParserRuleCall_3_1_0; }
 		
-		//'local'
-		public Keyword getKindsLocalKeyword_3_0_1_0_0() { return cKindsLocalKeyword_3_0_1_0_0; }
+		//(models+=Model)
+		public Assignment getModelsAssignment_3_2() { return cModelsAssignment_3_2; }
 		
-		//'openai'
-		public Keyword getKindsOpenaiKeyword_3_0_1_0_1() { return cKindsOpenaiKeyword_3_0_1_0_1; }
+		//Model
+		public RuleCall getModelsModelParserRuleCall_3_2_0() { return cModelsModelParserRuleCall_3_2_0; }
 		
-		//'ollama'
-		public Keyword getKindsOllamaKeyword_3_0_1_0_2() { return cKindsOllamaKeyword_3_0_1_0_2; }
+		//(endpoints+=Endpoint)
+		public Assignment getEndpointsAssignment_3_3() { return cEndpointsAssignment_3_3; }
 		
-		//('localModelPath' localModelPaths+=STRING)
-		public Group getGroup_3_1() { return cGroup_3_1; }
-		
-		//'localModelPath'
-		public Keyword getLocalModelPathKeyword_3_1_0() { return cLocalModelPathKeyword_3_1_0; }
-		
-		//localModelPaths+=STRING
-		public Assignment getLocalModelPathsAssignment_3_1_1() { return cLocalModelPathsAssignment_3_1_1; }
-		
-		//STRING
-		public RuleCall getLocalModelPathsSTRINGTerminalRuleCall_3_1_1_0() { return cLocalModelPathsSTRINGTerminalRuleCall_3_1_1_0; }
-		
-		//('model' models+=STRING)
-		public Group getGroup_3_2() { return cGroup_3_2; }
-		
-		//'model'
-		public Keyword getModelKeyword_3_2_0() { return cModelKeyword_3_2_0; }
-		
-		//models+=STRING
-		public Assignment getModelsAssignment_3_2_1() { return cModelsAssignment_3_2_1; }
-		
-		//STRING
-		public RuleCall getModelsSTRINGTerminalRuleCall_3_2_1_0() { return cModelsSTRINGTerminalRuleCall_3_2_1_0; }
-		
-		//('endpoint' endpoints+=STRING)
-		public Group getGroup_3_3() { return cGroup_3_3; }
-		
-		//'endpoint'
-		public Keyword getEndpointKeyword_3_3_0() { return cEndpointKeyword_3_3_0; }
-		
-		//endpoints+=STRING
-		public Assignment getEndpointsAssignment_3_3_1() { return cEndpointsAssignment_3_3_1; }
-		
-		//STRING
-		public RuleCall getEndpointsSTRINGTerminalRuleCall_3_3_1_0() { return cEndpointsSTRINGTerminalRuleCall_3_3_1_0; }
+		//Endpoint
+		public RuleCall getEndpointsEndpointParserRuleCall_3_3_0() { return cEndpointsEndpointParserRuleCall_3_3_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+	}
+	public class ProviderKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.ProviderKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cProviderKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cKeywordProviderKeyword_1_0 = (Keyword)cKeywordAssignment_1.eContents().get(0);
+		
+		//ProviderKeyword:
+		//    {ProviderKeyword}
+		//    keyword = 'provider'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{ProviderKeyword}
+		//keyword = 'provider'
+		public Group getGroup() { return cGroup; }
+		
+		//{ProviderKeyword}
+		public Action getProviderKeywordAction_0() { return cProviderKeywordAction_0; }
+		
+		//keyword = 'provider'
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//'provider'
+		public Keyword getKeywordProviderKeyword_1_0() { return cKeywordProviderKeyword_1_0; }
+	}
+	public class ProviderTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.ProviderType");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cProviderTypeAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cKeywordProviderTypeKeywordParserRuleCall_1_0 = (RuleCall)cKeywordAssignment_1.eContents().get(0);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameValidIDParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		
+		//ProviderType:
+		//    {ProviderType}
+		//    keyword = ProviderTypeKeyword name = ValidID
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{ProviderType}
+		//keyword = ProviderTypeKeyword name = ValidID
+		public Group getGroup() { return cGroup; }
+		
+		//{ProviderType}
+		public Action getProviderTypeAction_0() { return cProviderTypeAction_0; }
+		
+		//keyword = ProviderTypeKeyword
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//ProviderTypeKeyword
+		public RuleCall getKeywordProviderTypeKeywordParserRuleCall_1_0() { return cKeywordProviderTypeKeywordParserRuleCall_1_0; }
+		
+		//name = ValidID
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//ValidID
+		public RuleCall getNameValidIDParserRuleCall_2_0() { return cNameValidIDParserRuleCall_2_0; }
+	}
+	public class ProviderTypeKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.ProviderTypeKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cProviderTypeKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cKeywordTypeKeyword_1_0 = (Keyword)cKeywordAssignment_1.eContents().get(0);
+		
+		//ProviderTypeKeyword:
+		//    {ProviderTypeKeyword}
+		//    keyword = 'type'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{ProviderTypeKeyword}
+		//keyword = 'type'
+		public Group getGroup() { return cGroup; }
+		
+		//{ProviderTypeKeyword}
+		public Action getProviderTypeKeywordAction_0() { return cProviderTypeKeywordAction_0; }
+		
+		//keyword = 'type'
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//'type'
+		public Keyword getKeywordTypeKeyword_1_0() { return cKeywordTypeKeyword_1_0; }
+	}
+	public class LocalModelPathElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.LocalModelPath");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cLocalModelPathAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cKeywordFilePathKeywordParserRuleCall_1_0 = (RuleCall)cKeywordAssignment_1.eContents().get(0);
+		private final Assignment cPathAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cPathSTRINGTerminalRuleCall_2_0 = (RuleCall)cPathAssignment_2.eContents().get(0);
+		
+		//LocalModelPath:
+		//    {LocalModelPath}
+		//    keyword = FilePathKeyword path = STRING
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{LocalModelPath}
+		//keyword = FilePathKeyword path = STRING
+		public Group getGroup() { return cGroup; }
+		
+		//{LocalModelPath}
+		public Action getLocalModelPathAction_0() { return cLocalModelPathAction_0; }
+		
+		//keyword = FilePathKeyword
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//FilePathKeyword
+		public RuleCall getKeywordFilePathKeywordParserRuleCall_1_0() { return cKeywordFilePathKeywordParserRuleCall_1_0; }
+		
+		//path = STRING
+		public Assignment getPathAssignment_2() { return cPathAssignment_2; }
+		
+		//STRING
+		public RuleCall getPathSTRINGTerminalRuleCall_2_0() { return cPathSTRINGTerminalRuleCall_2_0; }
+	}
+	public class ModelElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.Model");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cModelAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cKeywordModelKeywordParserRuleCall_1_0 = (RuleCall)cKeywordAssignment_1.eContents().get(0);
+		private final Assignment cModeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cModeSTRINGTerminalRuleCall_2_0 = (RuleCall)cModeAssignment_2.eContents().get(0);
+		
+		//Model:
+		//    {Model}
+		//    keyword = ModelKeyword mode = STRING
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Model}
+		//keyword = ModelKeyword mode = STRING
+		public Group getGroup() { return cGroup; }
+		
+		//{Model}
+		public Action getModelAction_0() { return cModelAction_0; }
+		
+		//keyword = ModelKeyword
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//ModelKeyword
+		public RuleCall getKeywordModelKeywordParserRuleCall_1_0() { return cKeywordModelKeywordParserRuleCall_1_0; }
+		
+		//mode = STRING
+		public Assignment getModeAssignment_2() { return cModeAssignment_2; }
+		
+		//STRING
+		public RuleCall getModeSTRINGTerminalRuleCall_2_0() { return cModeSTRINGTerminalRuleCall_2_0; }
+	}
+	public class ModelKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.ModelKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cModelKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cKeywordModelKeyword_1_0 = (Keyword)cKeywordAssignment_1.eContents().get(0);
+		
+		//ModelKeyword:
+		//    {ModelKeyword}
+		//    keyword = 'model'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{ModelKeyword}
+		//keyword = 'model'
+		public Group getGroup() { return cGroup; }
+		
+		//{ModelKeyword}
+		public Action getModelKeywordAction_0() { return cModelKeywordAction_0; }
+		
+		//keyword = 'model'
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//'model'
+		public Keyword getKeywordModelKeyword_1_0() { return cKeywordModelKeyword_1_0; }
+	}
+	public class FilePathKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.FilePathKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cFilePathKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Alternatives cKeywordAlternatives_1_0 = (Alternatives)cKeywordAssignment_1.eContents().get(0);
+		private final Keyword cKeywordFilepathKeyword_1_0_0 = (Keyword)cKeywordAlternatives_1_0.eContents().get(0);
+		private final Keyword cKeywordFilePathKeyword_1_0_1 = (Keyword)cKeywordAlternatives_1_0.eContents().get(1);
+		
+		//FilePathKeyword:
+		//    {FilePathKeyword}
+		//    keyword = ('filepath' | 'filePath')
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{FilePathKeyword}
+		//keyword = ('filepath' | 'filePath')
+		public Group getGroup() { return cGroup; }
+		
+		//{FilePathKeyword}
+		public Action getFilePathKeywordAction_0() { return cFilePathKeywordAction_0; }
+		
+		//keyword = ('filepath' | 'filePath')
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//('filepath' | 'filePath')
+		public Alternatives getKeywordAlternatives_1_0() { return cKeywordAlternatives_1_0; }
+		
+		//'filepath'
+		public Keyword getKeywordFilepathKeyword_1_0_0() { return cKeywordFilepathKeyword_1_0_0; }
+		
+		//'filePath'
+		public Keyword getKeywordFilePathKeyword_1_0_1() { return cKeywordFilePathKeyword_1_0_1; }
+	}
+	public class EndpointElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.Endpoint");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cEndpointAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cKeywordEndpointKeywordParserRuleCall_1_0 = (RuleCall)cKeywordAssignment_1.eContents().get(0);
+		private final Assignment cModeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cModeSTRINGTerminalRuleCall_2_0 = (RuleCall)cModeAssignment_2.eContents().get(0);
+		
+		//Endpoint:
+		//    {Endpoint}
+		//    keyword = EndpointKeyword mode = STRING
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Endpoint}
+		//keyword = EndpointKeyword mode = STRING
+		public Group getGroup() { return cGroup; }
+		
+		//{Endpoint}
+		public Action getEndpointAction_0() { return cEndpointAction_0; }
+		
+		//keyword = EndpointKeyword
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//EndpointKeyword
+		public RuleCall getKeywordEndpointKeywordParserRuleCall_1_0() { return cKeywordEndpointKeywordParserRuleCall_1_0; }
+		
+		//mode = STRING
+		public Assignment getModeAssignment_2() { return cModeAssignment_2; }
+		
+		//STRING
+		public RuleCall getModeSTRINGTerminalRuleCall_2_0() { return cModeSTRINGTerminalRuleCall_2_0; }
+	}
+	public class EndpointKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.EndpointKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cEndpointKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Alternatives cKeywordAlternatives_1_0 = (Alternatives)cKeywordAssignment_1.eContents().get(0);
+		private final Keyword cKeywordEndpointKeyword_1_0_0 = (Keyword)cKeywordAlternatives_1_0.eContents().get(0);
+		private final Keyword cKeywordEndPointKeyword_1_0_1 = (Keyword)cKeywordAlternatives_1_0.eContents().get(1);
+		
+		//EndpointKeyword:
+		//    {EndpointKeyword}
+		//    keyword = ('endpoint' | 'endPoint')
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{EndpointKeyword}
+		//keyword = ('endpoint' | 'endPoint')
+		public Group getGroup() { return cGroup; }
+		
+		//{EndpointKeyword}
+		public Action getEndpointKeywordAction_0() { return cEndpointKeywordAction_0; }
+		
+		//keyword = ('endpoint' | 'endPoint')
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//('endpoint' | 'endPoint')
+		public Alternatives getKeywordAlternatives_1_0() { return cKeywordAlternatives_1_0; }
+		
+		//'endpoint'
+		public Keyword getKeywordEndpointKeyword_1_0_0() { return cKeywordEndpointKeyword_1_0_0; }
+		
+		//'endPoint'
+		public Keyword getKeywordEndPointKeyword_1_0_1() { return cKeywordEndPointKeyword_1_0_1; }
 	}
 	public class GenUsageBlockElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.GenUsageBlock");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cGenUsageBlockAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cModelUsageKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cKeywordModelUsageKeywordParserRuleCall_1_0 = (RuleCall)cKeywordAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
-		private final Group cGroup_3_0 = (Group)cAlternatives_3.eContents().get(0);
-		private final Keyword cPrimaryKeyword_3_0_0 = (Keyword)cGroup_3_0.eContents().get(0);
-		private final Assignment cPrimaryProvidersAssignment_3_0_1 = (Assignment)cGroup_3_0.eContents().get(1);
-		private final RuleCall cPrimaryProvidersValidIDParserRuleCall_3_0_1_0 = (RuleCall)cPrimaryProvidersAssignment_3_0_1.eContents().get(0);
-		private final Group cGroup_3_1 = (Group)cAlternatives_3.eContents().get(1);
-		private final Keyword cSecondaryKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
-		private final Assignment cSecondaryProvidersAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
-		private final RuleCall cSecondaryProvidersValidIDParserRuleCall_3_1_1_0 = (RuleCall)cSecondaryProvidersAssignment_3_1_1.eContents().get(0);
+		private final Assignment cPrimaryProvidersAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
+		private final RuleCall cPrimaryProvidersPrimaryProviderParserRuleCall_3_0_0 = (RuleCall)cPrimaryProvidersAssignment_3_0.eContents().get(0);
+		private final Assignment cSecondaryProvidersAssignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
+		private final RuleCall cSecondaryProvidersSecondaryProviderParserRuleCall_3_1_0 = (RuleCall)cSecondaryProvidersAssignment_3_1.eContents().get(0);
 		private final Assignment cEscalationsAssignment_3_2 = (Assignment)cAlternatives_3.eContents().get(2);
 		private final RuleCall cEscalationsGenEscalationBlockParserRuleCall_3_2_0 = (RuleCall)cEscalationsAssignment_3_2.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//GenUsageBlock:
 		//    {GenUsageBlock}
-		//    'modelUsage' '{'
+		//    keyword = ModelUsageKeyword '{'
 		//        (
-		//            ('primary' primaryProviders+=ValidID)
+		//            (primaryProviders+=PrimaryProvider)
 		//            |
-		//            ('secondary' secondaryProviders+=ValidID)
+		//            (secondaryProviders+=SecondaryProvider)
 		//            |
 		//            (escalations+=GenEscalationBlock)
 		//        )*
@@ -1020,11 +2321,11 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{GenUsageBlock}
-		//'modelUsage' '{'
+		//keyword = ModelUsageKeyword '{'
 		//    (
-		//        ('primary' primaryProviders+=ValidID)
+		//        (primaryProviders+=PrimaryProvider)
 		//        |
-		//        ('secondary' secondaryProviders+=ValidID)
+		//        (secondaryProviders+=SecondaryProvider)
 		//        |
 		//        (escalations+=GenEscalationBlock)
 		//    )*
@@ -1034,44 +2335,35 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		//{GenUsageBlock}
 		public Action getGenUsageBlockAction_0() { return cGenUsageBlockAction_0; }
 		
-		//'modelUsage'
-		public Keyword getModelUsageKeyword_1() { return cModelUsageKeyword_1; }
+		//keyword = ModelUsageKeyword
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//ModelUsageKeyword
+		public RuleCall getKeywordModelUsageKeywordParserRuleCall_1_0() { return cKeywordModelUsageKeywordParserRuleCall_1_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
 		//(
-		//    ('primary' primaryProviders+=ValidID)
+		//    (primaryProviders+=PrimaryProvider)
 		//    |
-		//    ('secondary' secondaryProviders+=ValidID)
+		//    (secondaryProviders+=SecondaryProvider)
 		//    |
 		//    (escalations+=GenEscalationBlock)
 		//)*
 		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 		
-		//('primary' primaryProviders+=ValidID)
-		public Group getGroup_3_0() { return cGroup_3_0; }
+		//(primaryProviders+=PrimaryProvider)
+		public Assignment getPrimaryProvidersAssignment_3_0() { return cPrimaryProvidersAssignment_3_0; }
 		
-		//'primary'
-		public Keyword getPrimaryKeyword_3_0_0() { return cPrimaryKeyword_3_0_0; }
+		//PrimaryProvider
+		public RuleCall getPrimaryProvidersPrimaryProviderParserRuleCall_3_0_0() { return cPrimaryProvidersPrimaryProviderParserRuleCall_3_0_0; }
 		
-		//primaryProviders+=ValidID
-		public Assignment getPrimaryProvidersAssignment_3_0_1() { return cPrimaryProvidersAssignment_3_0_1; }
+		//(secondaryProviders+=SecondaryProvider)
+		public Assignment getSecondaryProvidersAssignment_3_1() { return cSecondaryProvidersAssignment_3_1; }
 		
-		//ValidID
-		public RuleCall getPrimaryProvidersValidIDParserRuleCall_3_0_1_0() { return cPrimaryProvidersValidIDParserRuleCall_3_0_1_0; }
-		
-		//('secondary' secondaryProviders+=ValidID)
-		public Group getGroup_3_1() { return cGroup_3_1; }
-		
-		//'secondary'
-		public Keyword getSecondaryKeyword_3_1_0() { return cSecondaryKeyword_3_1_0; }
-		
-		//secondaryProviders+=ValidID
-		public Assignment getSecondaryProvidersAssignment_3_1_1() { return cSecondaryProvidersAssignment_3_1_1; }
-		
-		//ValidID
-		public RuleCall getSecondaryProvidersValidIDParserRuleCall_3_1_1_0() { return cSecondaryProvidersValidIDParserRuleCall_3_1_1_0; }
+		//SecondaryProvider
+		public RuleCall getSecondaryProvidersSecondaryProviderParserRuleCall_3_1_0() { return cSecondaryProvidersSecondaryProviderParserRuleCall_3_1_0; }
 		
 		//(escalations+=GenEscalationBlock)
 		public Assignment getEscalationsAssignment_3_2() { return cEscalationsAssignment_3_2; }
@@ -1082,42 +2374,191 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
+	public class ModelUsageKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.ModelUsageKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cModelUsageKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Alternatives cKeywordAlternatives_1_0 = (Alternatives)cKeywordAssignment_1.eContents().get(0);
+		private final Keyword cKeywordModelusageKeyword_1_0_0 = (Keyword)cKeywordAlternatives_1_0.eContents().get(0);
+		private final Keyword cKeywordModelUsageKeyword_1_0_1 = (Keyword)cKeywordAlternatives_1_0.eContents().get(1);
+		
+		//ModelUsageKeyword:
+		//    {ModelUsageKeyword}
+		//    keyword = ('modelusage' | 'modelUsage')
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{ModelUsageKeyword}
+		//keyword = ('modelusage' | 'modelUsage')
+		public Group getGroup() { return cGroup; }
+		
+		//{ModelUsageKeyword}
+		public Action getModelUsageKeywordAction_0() { return cModelUsageKeywordAction_0; }
+		
+		//keyword = ('modelusage' | 'modelUsage')
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//('modelusage' | 'modelUsage')
+		public Alternatives getKeywordAlternatives_1_0() { return cKeywordAlternatives_1_0; }
+		
+		//'modelusage'
+		public Keyword getKeywordModelusageKeyword_1_0_0() { return cKeywordModelusageKeyword_1_0_0; }
+		
+		//'modelUsage'
+		public Keyword getKeywordModelUsageKeyword_1_0_1() { return cKeywordModelUsageKeyword_1_0_1; }
+	}
+	public class PrimaryProviderElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.PrimaryProvider");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cPrimaryProviderAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cKeywordPrimaryProviderKeywordParserRuleCall_1_0 = (RuleCall)cKeywordAssignment_1.eContents().get(0);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameValidIDParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		
+		//PrimaryProvider:
+		//    {PrimaryProvider}
+		//    keyword = PrimaryProviderKeyword name = ValidID
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{PrimaryProvider}
+		//keyword = PrimaryProviderKeyword name = ValidID
+		public Group getGroup() { return cGroup; }
+		
+		//{PrimaryProvider}
+		public Action getPrimaryProviderAction_0() { return cPrimaryProviderAction_0; }
+		
+		//keyword = PrimaryProviderKeyword
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//PrimaryProviderKeyword
+		public RuleCall getKeywordPrimaryProviderKeywordParserRuleCall_1_0() { return cKeywordPrimaryProviderKeywordParserRuleCall_1_0; }
+		
+		//name = ValidID
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//ValidID
+		public RuleCall getNameValidIDParserRuleCall_2_0() { return cNameValidIDParserRuleCall_2_0; }
+	}
+	public class PrimaryProviderKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.PrimaryProviderKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cPrimaryProviderKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cKeywordPrimaryKeyword_1_0 = (Keyword)cKeywordAssignment_1.eContents().get(0);
+		
+		//PrimaryProviderKeyword:
+		//    {PrimaryProviderKeyword}
+		//    keyword = 'primary'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{PrimaryProviderKeyword}
+		//keyword = 'primary'
+		public Group getGroup() { return cGroup; }
+		
+		//{PrimaryProviderKeyword}
+		public Action getPrimaryProviderKeywordAction_0() { return cPrimaryProviderKeywordAction_0; }
+		
+		//keyword = 'primary'
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//'primary'
+		public Keyword getKeywordPrimaryKeyword_1_0() { return cKeywordPrimaryKeyword_1_0; }
+	}
+	public class SecondaryProviderElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.SecondaryProvider");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cSecondaryProviderAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cKeywordSecondaryProviderKeywordParserRuleCall_1_0 = (RuleCall)cKeywordAssignment_1.eContents().get(0);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameValidIDParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		
+		//SecondaryProvider:
+		//    {SecondaryProvider}
+		//    keyword = SecondaryProviderKeyword name = ValidID
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{SecondaryProvider}
+		//keyword = SecondaryProviderKeyword name = ValidID
+		public Group getGroup() { return cGroup; }
+		
+		//{SecondaryProvider}
+		public Action getSecondaryProviderAction_0() { return cSecondaryProviderAction_0; }
+		
+		//keyword = SecondaryProviderKeyword
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//SecondaryProviderKeyword
+		public RuleCall getKeywordSecondaryProviderKeywordParserRuleCall_1_0() { return cKeywordSecondaryProviderKeywordParserRuleCall_1_0; }
+		
+		//name = ValidID
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//ValidID
+		public RuleCall getNameValidIDParserRuleCall_2_0() { return cNameValidIDParserRuleCall_2_0; }
+	}
+	public class SecondaryProviderKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.SecondaryProviderKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cSecondaryProviderKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cKeywordSecondaryKeyword_1_0 = (Keyword)cKeywordAssignment_1.eContents().get(0);
+		
+		//SecondaryProviderKeyword:
+		//    {SecondaryProviderKeyword}
+		//    keyword = 'secondary'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{SecondaryProviderKeyword}
+		//keyword = 'secondary'
+		public Group getGroup() { return cGroup; }
+		
+		//{SecondaryProviderKeyword}
+		public Action getSecondaryProviderKeywordAction_0() { return cSecondaryProviderKeywordAction_0; }
+		
+		//keyword = 'secondary'
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//'secondary'
+		public Keyword getKeywordSecondaryKeyword_1_0() { return cKeywordSecondaryKeyword_1_0; }
+	}
 	public class GenEscalationBlockElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.GenEscalationBlock");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cGenEscalationBlockAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cEscalationKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cKeywordEscalationKeywordParserRuleCall_1_0 = (RuleCall)cKeywordAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
-		private final Group cGroup_3_0 = (Group)cAlternatives_3.eContents().get(0);
-		private final Keyword cEnabledKeyword_3_0_0 = (Keyword)cGroup_3_0.eContents().get(0);
-		private final Assignment cEnabledsAssignment_3_0_1 = (Assignment)cGroup_3_0.eContents().get(1);
-		private final Alternatives cEnabledsAlternatives_3_0_1_0 = (Alternatives)cEnabledsAssignment_3_0_1.eContents().get(0);
-		private final Keyword cEnabledsTrueKeyword_3_0_1_0_0 = (Keyword)cEnabledsAlternatives_3_0_1_0.eContents().get(0);
-		private final Keyword cEnabledsFalseKeyword_3_0_1_0_1 = (Keyword)cEnabledsAlternatives_3_0_1_0.eContents().get(1);
-		private final Group cGroup_3_1 = (Group)cAlternatives_3.eContents().get(1);
-		private final Keyword cEscalateAtRetryKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
-		private final Assignment cEscalateAtRetriesAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
-		private final RuleCall cEscalateAtRetriesINTTerminalRuleCall_3_1_1_0 = (RuleCall)cEscalateAtRetriesAssignment_3_1_1.eContents().get(0);
+		private final Assignment cEnabledsAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
+		private final RuleCall cEnabledsEnabledParserRuleCall_3_0_0 = (RuleCall)cEnabledsAssignment_3_0.eContents().get(0);
+		private final Assignment cAtRetriesAssignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
+		private final RuleCall cAtRetriesAtRetryParserRuleCall_3_1_0 = (RuleCall)cAtRetriesAssignment_3_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//GenEscalationBlock:
 		//    {GenEscalationBlock}
-		//    'escalation' '{'
+		//    keyword = EscalationKeyword '{'
 		//        (
-		//            ('enabled' enableds+=('true' | 'false'))
+		//            (enableds+=Enabled)
 		//            |
-		//            ('escalateAtRetry' escalateAtRetries+=INT)
+		//            (atRetries+=AtRetry)
 		//        )*
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{GenEscalationBlock}
-		//'escalation' '{'
+		//keyword = EscalationKeyword '{'
 		//    (
-		//        ('enabled' enableds+=('true' | 'false'))
+		//        (enableds+=Enabled)
 		//        |
-		//        ('escalateAtRetry' escalateAtRetries+=INT)
+		//        (atRetries+=AtRetry)
 		//    )*
 		//'}'
 		public Group getGroup() { return cGroup; }
@@ -1125,51 +2566,190 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		//{GenEscalationBlock}
 		public Action getGenEscalationBlockAction_0() { return cGenEscalationBlockAction_0; }
 		
-		//'escalation'
-		public Keyword getEscalationKeyword_1() { return cEscalationKeyword_1; }
+		//keyword = EscalationKeyword
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//EscalationKeyword
+		public RuleCall getKeywordEscalationKeywordParserRuleCall_1_0() { return cKeywordEscalationKeywordParserRuleCall_1_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
 		//(
-		//    ('enabled' enableds+=('true' | 'false'))
+		//    (enableds+=Enabled)
 		//    |
-		//    ('escalateAtRetry' escalateAtRetries+=INT)
+		//    (atRetries+=AtRetry)
 		//)*
 		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 		
-		//('enabled' enableds+=('true' | 'false'))
-		public Group getGroup_3_0() { return cGroup_3_0; }
+		//(enableds+=Enabled)
+		public Assignment getEnabledsAssignment_3_0() { return cEnabledsAssignment_3_0; }
 		
-		//'enabled'
-		public Keyword getEnabledKeyword_3_0_0() { return cEnabledKeyword_3_0_0; }
+		//Enabled
+		public RuleCall getEnabledsEnabledParserRuleCall_3_0_0() { return cEnabledsEnabledParserRuleCall_3_0_0; }
 		
-		//enableds+=('true' | 'false')
-		public Assignment getEnabledsAssignment_3_0_1() { return cEnabledsAssignment_3_0_1; }
+		//(atRetries+=AtRetry)
+		public Assignment getAtRetriesAssignment_3_1() { return cAtRetriesAssignment_3_1; }
 		
-		//('true' | 'false')
-		public Alternatives getEnabledsAlternatives_3_0_1_0() { return cEnabledsAlternatives_3_0_1_0; }
-		
-		//'true'
-		public Keyword getEnabledsTrueKeyword_3_0_1_0_0() { return cEnabledsTrueKeyword_3_0_1_0_0; }
-		
-		//'false'
-		public Keyword getEnabledsFalseKeyword_3_0_1_0_1() { return cEnabledsFalseKeyword_3_0_1_0_1; }
-		
-		//('escalateAtRetry' escalateAtRetries+=INT)
-		public Group getGroup_3_1() { return cGroup_3_1; }
-		
-		//'escalateAtRetry'
-		public Keyword getEscalateAtRetryKeyword_3_1_0() { return cEscalateAtRetryKeyword_3_1_0; }
-		
-		//escalateAtRetries+=INT
-		public Assignment getEscalateAtRetriesAssignment_3_1_1() { return cEscalateAtRetriesAssignment_3_1_1; }
-		
-		//INT
-		public RuleCall getEscalateAtRetriesINTTerminalRuleCall_3_1_1_0() { return cEscalateAtRetriesINTTerminalRuleCall_3_1_1_0; }
+		//AtRetry
+		public RuleCall getAtRetriesAtRetryParserRuleCall_3_1_0() { return cAtRetriesAtRetryParserRuleCall_3_1_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+	}
+	public class EscalationKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.EscalationKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cEscalationKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cKeywordEscalationKeyword_1_0 = (Keyword)cKeywordAssignment_1.eContents().get(0);
+		
+		//EscalationKeyword:
+		//    {EscalationKeyword}
+		//    keyword = 'escalation'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{EscalationKeyword}
+		//keyword = 'escalation'
+		public Group getGroup() { return cGroup; }
+		
+		//{EscalationKeyword}
+		public Action getEscalationKeywordAction_0() { return cEscalationKeywordAction_0; }
+		
+		//keyword = 'escalation'
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//'escalation'
+		public Keyword getKeywordEscalationKeyword_1_0() { return cKeywordEscalationKeyword_1_0; }
+	}
+	public class EnabledElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.Enabled");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cEnabledAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cKeywordEnabledKeywordParserRuleCall_1_0 = (RuleCall)cKeywordAssignment_1.eContents().get(0);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cValueTrueFalseKeywordParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		
+		//Enabled:
+		//    {Enabled}
+		//    keyword = EnabledKeyword value = TrueFalseKeyword
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Enabled}
+		//keyword = EnabledKeyword value = TrueFalseKeyword
+		public Group getGroup() { return cGroup; }
+		
+		//{Enabled}
+		public Action getEnabledAction_0() { return cEnabledAction_0; }
+		
+		//keyword = EnabledKeyword
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//EnabledKeyword
+		public RuleCall getKeywordEnabledKeywordParserRuleCall_1_0() { return cKeywordEnabledKeywordParserRuleCall_1_0; }
+		
+		//value = TrueFalseKeyword
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+		
+		//TrueFalseKeyword
+		public RuleCall getValueTrueFalseKeywordParserRuleCall_2_0() { return cValueTrueFalseKeywordParserRuleCall_2_0; }
+	}
+	public class EnabledKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.EnabledKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cEnabledKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cKeywordEnabledKeyword_1_0 = (Keyword)cKeywordAssignment_1.eContents().get(0);
+		
+		//EnabledKeyword:
+		//    {EnabledKeyword}
+		//    keyword = 'enabled'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{EnabledKeyword}
+		//keyword = 'enabled'
+		public Group getGroup() { return cGroup; }
+		
+		//{EnabledKeyword}
+		public Action getEnabledKeywordAction_0() { return cEnabledKeywordAction_0; }
+		
+		//keyword = 'enabled'
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//'enabled'
+		public Keyword getKeywordEnabledKeyword_1_0() { return cKeywordEnabledKeyword_1_0; }
+	}
+	public class AtRetryElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.AtRetry");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cAtRetryAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cKeywordAtRetryKeywordParserRuleCall_1_0 = (RuleCall)cKeywordAssignment_1.eContents().get(0);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cValueINTTerminalRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		
+		//AtRetry:
+		//    {AtRetry}
+		//    keyword = AtRetryKeyword value = INT
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{AtRetry}
+		//keyword = AtRetryKeyword value = INT
+		public Group getGroup() { return cGroup; }
+		
+		//{AtRetry}
+		public Action getAtRetryAction_0() { return cAtRetryAction_0; }
+		
+		//keyword = AtRetryKeyword
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//AtRetryKeyword
+		public RuleCall getKeywordAtRetryKeywordParserRuleCall_1_0() { return cKeywordAtRetryKeywordParserRuleCall_1_0; }
+		
+		//value = INT
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+		
+		//INT
+		public RuleCall getValueINTTerminalRuleCall_2_0() { return cValueINTTerminalRuleCall_2_0; }
+	}
+	public class AtRetryKeywordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.AtRetryKeyword");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cAtRetryKeywordAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeywordAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Alternatives cKeywordAlternatives_1_0 = (Alternatives)cKeywordAssignment_1.eContents().get(0);
+		private final Keyword cKeywordAtretryKeyword_1_0_0 = (Keyword)cKeywordAlternatives_1_0.eContents().get(0);
+		private final Keyword cKeywordAtRetryKeyword_1_0_1 = (Keyword)cKeywordAlternatives_1_0.eContents().get(1);
+		
+		//AtRetryKeyword:
+		//    {AtRetryKeyword}
+		//    keyword = ('atretry' | 'atRetry')
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{AtRetryKeyword}
+		//keyword = ('atretry' | 'atRetry')
+		public Group getGroup() { return cGroup; }
+		
+		//{AtRetryKeyword}
+		public Action getAtRetryKeywordAction_0() { return cAtRetryKeywordAction_0; }
+		
+		//keyword = ('atretry' | 'atRetry')
+		public Assignment getKeywordAssignment_1() { return cKeywordAssignment_1; }
+		
+		//('atretry' | 'atRetry')
+		public Alternatives getKeywordAlternatives_1_0() { return cKeywordAlternatives_1_0; }
+		
+		//'atretry'
+		public Keyword getKeywordAtretryKeyword_1_0_0() { return cKeywordAtretryKeyword_1_0_0; }
+		
+		//'atRetry'
+		public Keyword getKeywordAtRetryKeyword_1_0_1() { return cKeywordAtRetryKeyword_1_0_1; }
 	}
 	public class SurfaceBlockElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.robenglander.libretto.spec.LibrettoProjectProfile.SurfaceBlock");
@@ -1722,17 +3302,73 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 	
 	
 	private final ProjectProfileElements pProjectProfile;
+	private final ProfileElements pProfile;
+	private final ProfileKeywordElements pProfileKeyword;
 	private final ProjectBlockElements pProjectBlock;
+	private final RootDirectoryElements pRootDirectory;
+	private final ProjectKeywordElements pProjectKeyword;
+	private final RootDirKeywordElements pRootDirKeyword;
 	private final ModulesBlockElements pModulesBlock;
+	private final ModulesKeywordElements pModulesKeyword;
 	private final ProjectModuleElements pProjectModule;
+	private final ModuleKeywordElements pModuleKeyword;
+	private final DirectoryElements pDirectory;
+	private final SpecDirectoryElements pSpecDirectory;
+	private final TestDirectoryElements pTestDirectory;
+	private final MainDirectoryElements pMainDirectory;
+	private final BasePackageElements pBasePackage;
+	private final DirKeywordElements pDirKeyword;
+	private final SpecDirKeywordElements pSpecDirKeyword;
+	private final TestDirKeywordElements pTestDirKeyword;
+	private final MainDirKeywordElements pMainDirKeyword;
+	private final BasePackageKeywordElements pBasePackageKeyword;
 	private final GenBlockElements pGenBlock;
+	private final GenKeywordElements pGenKeyword;
+	private final InitialInstructionElements pInitialInstruction;
+	private final MaxRetriesElements pMaxRetries;
+	private final ParseCheckElements pParseCheck;
+	private final DefaultCorrectionElements pDefaultCorrection;
+	private final InitialInstructionKeywordElements pInitialInstructionKeyword;
+	private final MaxRetriesKeywordElements pMaxRetriesKeyword;
+	private final ParseCheckKeywordElements pParseCheckKeyword;
+	private final DefaultCorrectionKeywordElements pDefaultCorrectionKeyword;
+	private final TrueFalseKeywordElements pTrueFalseKeyword;
 	private final GenRemediationRulesElements pGenRemediationRules;
+	private final RulesKeywordElements pRulesKeyword;
 	private final GenPatternRemediationRuleElements pGenPatternRemediationRule;
+	private final RuleKeywordElements pRuleKeyword;
+	private final PatternElements pPattern;
+	private final PatternKeywordElements pPatternKeyword;
+	private final CodeElements pCode;
+	private final CodeKeywordElements pCodeKeyword;
+	private final CorrectionElements pCorrection;
+	private final CorrectionKeywordElements pCorrectionKeyword;
 	private final GenDefaultRemediationRuleElements pGenDefaultRemediationRule;
+	private final DefaultKeywordElements pDefaultKeyword;
 	private final LlmProvidersBlockElements pLlmProvidersBlock;
-	private final NamedLlmProviderElements pNamedLlmProvider;
+	private final LLMProvidersKeywordElements pLLMProvidersKeyword;
+	private final LLMProviderElements pLLMProvider;
+	private final ProviderKeywordElements pProviderKeyword;
+	private final ProviderTypeElements pProviderType;
+	private final ProviderTypeKeywordElements pProviderTypeKeyword;
+	private final LocalModelPathElements pLocalModelPath;
+	private final ModelElements pModel;
+	private final ModelKeywordElements pModelKeyword;
+	private final FilePathKeywordElements pFilePathKeyword;
+	private final EndpointElements pEndpoint;
+	private final EndpointKeywordElements pEndpointKeyword;
 	private final GenUsageBlockElements pGenUsageBlock;
+	private final ModelUsageKeywordElements pModelUsageKeyword;
+	private final PrimaryProviderElements pPrimaryProvider;
+	private final PrimaryProviderKeywordElements pPrimaryProviderKeyword;
+	private final SecondaryProviderElements pSecondaryProvider;
+	private final SecondaryProviderKeywordElements pSecondaryProviderKeyword;
 	private final GenEscalationBlockElements pGenEscalationBlock;
+	private final EscalationKeywordElements pEscalationKeyword;
+	private final EnabledElements pEnabled;
+	private final EnabledKeywordElements pEnabledKeyword;
+	private final AtRetryElements pAtRetry;
+	private final AtRetryKeywordElements pAtRetryKeyword;
 	private final SurfaceBlockElements pSurfaceBlock;
 	private final SurfaceElementElements pSurfaceElement;
 	private final ScopedSurfaceElements pScopedSurface;
@@ -1758,17 +3394,73 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pProjectProfile = new ProjectProfileElements();
+		this.pProfile = new ProfileElements();
+		this.pProfileKeyword = new ProfileKeywordElements();
 		this.pProjectBlock = new ProjectBlockElements();
+		this.pRootDirectory = new RootDirectoryElements();
+		this.pProjectKeyword = new ProjectKeywordElements();
+		this.pRootDirKeyword = new RootDirKeywordElements();
 		this.pModulesBlock = new ModulesBlockElements();
+		this.pModulesKeyword = new ModulesKeywordElements();
 		this.pProjectModule = new ProjectModuleElements();
+		this.pModuleKeyword = new ModuleKeywordElements();
+		this.pDirectory = new DirectoryElements();
+		this.pSpecDirectory = new SpecDirectoryElements();
+		this.pTestDirectory = new TestDirectoryElements();
+		this.pMainDirectory = new MainDirectoryElements();
+		this.pBasePackage = new BasePackageElements();
+		this.pDirKeyword = new DirKeywordElements();
+		this.pSpecDirKeyword = new SpecDirKeywordElements();
+		this.pTestDirKeyword = new TestDirKeywordElements();
+		this.pMainDirKeyword = new MainDirKeywordElements();
+		this.pBasePackageKeyword = new BasePackageKeywordElements();
 		this.pGenBlock = new GenBlockElements();
+		this.pGenKeyword = new GenKeywordElements();
+		this.pInitialInstruction = new InitialInstructionElements();
+		this.pMaxRetries = new MaxRetriesElements();
+		this.pParseCheck = new ParseCheckElements();
+		this.pDefaultCorrection = new DefaultCorrectionElements();
+		this.pInitialInstructionKeyword = new InitialInstructionKeywordElements();
+		this.pMaxRetriesKeyword = new MaxRetriesKeywordElements();
+		this.pParseCheckKeyword = new ParseCheckKeywordElements();
+		this.pDefaultCorrectionKeyword = new DefaultCorrectionKeywordElements();
+		this.pTrueFalseKeyword = new TrueFalseKeywordElements();
 		this.pGenRemediationRules = new GenRemediationRulesElements();
+		this.pRulesKeyword = new RulesKeywordElements();
 		this.pGenPatternRemediationRule = new GenPatternRemediationRuleElements();
+		this.pRuleKeyword = new RuleKeywordElements();
+		this.pPattern = new PatternElements();
+		this.pPatternKeyword = new PatternKeywordElements();
+		this.pCode = new CodeElements();
+		this.pCodeKeyword = new CodeKeywordElements();
+		this.pCorrection = new CorrectionElements();
+		this.pCorrectionKeyword = new CorrectionKeywordElements();
 		this.pGenDefaultRemediationRule = new GenDefaultRemediationRuleElements();
+		this.pDefaultKeyword = new DefaultKeywordElements();
 		this.pLlmProvidersBlock = new LlmProvidersBlockElements();
-		this.pNamedLlmProvider = new NamedLlmProviderElements();
+		this.pLLMProvidersKeyword = new LLMProvidersKeywordElements();
+		this.pLLMProvider = new LLMProviderElements();
+		this.pProviderKeyword = new ProviderKeywordElements();
+		this.pProviderType = new ProviderTypeElements();
+		this.pProviderTypeKeyword = new ProviderTypeKeywordElements();
+		this.pLocalModelPath = new LocalModelPathElements();
+		this.pModel = new ModelElements();
+		this.pModelKeyword = new ModelKeywordElements();
+		this.pFilePathKeyword = new FilePathKeywordElements();
+		this.pEndpoint = new EndpointElements();
+		this.pEndpointKeyword = new EndpointKeywordElements();
 		this.pGenUsageBlock = new GenUsageBlockElements();
+		this.pModelUsageKeyword = new ModelUsageKeywordElements();
+		this.pPrimaryProvider = new PrimaryProviderElements();
+		this.pPrimaryProviderKeyword = new PrimaryProviderKeywordElements();
+		this.pSecondaryProvider = new SecondaryProviderElements();
+		this.pSecondaryProviderKeyword = new SecondaryProviderKeywordElements();
 		this.pGenEscalationBlock = new GenEscalationBlockElements();
+		this.pEscalationKeyword = new EscalationKeywordElements();
+		this.pEnabled = new EnabledElements();
+		this.pEnabledKeyword = new EnabledKeywordElements();
+		this.pAtRetry = new AtRetryElements();
+		this.pAtRetryKeyword = new AtRetryKeywordElements();
 		this.pSurfaceBlock = new SurfaceBlockElements();
 		this.pSurfaceElement = new SurfaceElementElements();
 		this.pScopedSurface = new ScopedSurfaceElements();
@@ -1824,15 +3516,8 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 	// */
 	//ProjectProfile:
 	//    {ProjectProfile}
-	//    'profile' name=ValidID '{'
-	//        (
-	//        projects+=ProjectBlock
-	//        |
-	//        llmProviders+=LlmProvidersBlock
-	//        |
-	//        surfaces+=SurfaceBlock
-	//        )*
-	//    '}';
+	//    profiles+=Profile*
+	//;
 	public ProjectProfileElements getProjectProfileAccess() {
 		return pProjectProfile;
 	}
@@ -1841,11 +3526,42 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		return getProjectProfileAccess().getRule();
 	}
 	
+	//Profile:
+	//    {Profile}
+	//    profileKeyword = ProfileKeyword name=ValidID '{'
+	//        (
+	//        projects+=ProjectBlock
+	//        |
+	//        llmProviders+=LlmProvidersBlock
+	//        |
+	//        surfaces+=SurfaceBlock
+	//        )*
+	//    '}';
+	public ProfileElements getProfileAccess() {
+		return pProfile;
+	}
+	
+	public ParserRule getProfileRule() {
+		return getProfileAccess().getRule();
+	}
+	
+	//ProfileKeyword:
+	//    {ProfileKeyword}
+	//    keyword = 'profile'
+	//;
+	public ProfileKeywordElements getProfileKeywordAccess() {
+		return pProfileKeyword;
+	}
+	
+	public ParserRule getProfileKeywordRule() {
+		return getProfileKeywordAccess().getRule();
+	}
+	
 	//ProjectBlock:
 	//    {ProjectBlock}
-	//    'project' '{'
+	//    projectKeyword = ProjectKeyword '{'
 	//        (
-	//            ('rootDir' rootDir+=STRING)
+	//            (rootDirs+=RootDirectory)
 	//            |
 	//            (modules+=ModulesBlock)
 	//            |
@@ -1860,9 +3576,45 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		return getProjectBlockAccess().getRule();
 	}
 	
+	//RootDirectory:
+	//    {RootDirectory}
+	//    keyword = RootDirKeyword dir = STRING
+	//;
+	public RootDirectoryElements getRootDirectoryAccess() {
+		return pRootDirectory;
+	}
+	
+	public ParserRule getRootDirectoryRule() {
+		return getRootDirectoryAccess().getRule();
+	}
+	
+	//ProjectKeyword:
+	//    {ProjectKeyword}
+	//    keyword = 'project'
+	//;
+	public ProjectKeywordElements getProjectKeywordAccess() {
+		return pProjectKeyword;
+	}
+	
+	public ParserRule getProjectKeywordRule() {
+		return getProjectKeywordAccess().getRule();
+	}
+	
+	//RootDirKeyword:
+	//    {RootDirKeyword}
+	//    keyword = ('rootdir' | 'rootDir')
+	//;
+	public RootDirKeywordElements getRootDirKeywordAccess() {
+		return pRootDirKeyword;
+	}
+	
+	public ParserRule getRootDirKeywordRule() {
+		return getRootDirKeywordAccess().getRule();
+	}
+	
 	//ModulesBlock:
 	//    {ModulesBlock}
-	//    'modules' '{'
+	//    modulesKeyword = ModulesKeyword '{'
 	//        modules+=ProjectModule*
 	//    '}';
 	public ModulesBlockElements getModulesBlockAccess() {
@@ -1873,18 +3625,30 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		return getModulesBlockAccess().getRule();
 	}
 	
+	//ModulesKeyword:
+	//    {ModulesKeyword}
+	//    keyword = 'modules'
+	//;
+	public ModulesKeywordElements getModulesKeywordAccess() {
+		return pModulesKeyword;
+	}
+	
+	public ParserRule getModulesKeywordRule() {
+		return getModulesKeywordAccess().getRule();
+	}
+	
 	//ProjectModule:
-	//    'module' name=ValidID '{'
+	//    keyword = ModuleKeyword name=ValidID '{'
 	//        (
-	//            ('dir' dirs+=STRING)
+	//            (dirs+=Directory)
 	//            |
-	//            ('specDir' specDirs+=STRING)
+	//            (specDirs+=SpecDirectory)
 	//            |
-	//            ('testDir' testDirs+=STRING)
+	//            (testDirs+=TestDirectory)
 	//            |
-	//            ('mainDir' mainDirs+=STRING)
+	//            (mainDirs+=MainDirectory)
 	//            |
-	//            ('basePackage' basePackages+=STRING)
+	//            (basePackages+=BasePackage)
 	//        )*
 	//    '}';
 	public ProjectModuleElements getProjectModuleAccess() {
@@ -1895,17 +3659,149 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		return getProjectModuleAccess().getRule();
 	}
 	
+	//ModuleKeyword:
+	//    {ModuleKeyword}
+	//    keyword = 'module'
+	//;
+	public ModuleKeywordElements getModuleKeywordAccess() {
+		return pModuleKeyword;
+	}
+	
+	public ParserRule getModuleKeywordRule() {
+		return getModuleKeywordAccess().getRule();
+	}
+	
+	//Directory:
+	//    {Directory}
+	//    keyword = DirKeyword dir = STRING
+	//;
+	public DirectoryElements getDirectoryAccess() {
+		return pDirectory;
+	}
+	
+	public ParserRule getDirectoryRule() {
+		return getDirectoryAccess().getRule();
+	}
+	
+	//SpecDirectory:
+	//    {SpecDirectory}
+	//    keyword = SpecDirKeyword dir = STRING
+	//;
+	public SpecDirectoryElements getSpecDirectoryAccess() {
+		return pSpecDirectory;
+	}
+	
+	public ParserRule getSpecDirectoryRule() {
+		return getSpecDirectoryAccess().getRule();
+	}
+	
+	//TestDirectory:
+	//    {TestDirectory}
+	//    keyword = TestDirKeyword dir = STRING
+	//;
+	public TestDirectoryElements getTestDirectoryAccess() {
+		return pTestDirectory;
+	}
+	
+	public ParserRule getTestDirectoryRule() {
+		return getTestDirectoryAccess().getRule();
+	}
+	
+	//MainDirectory:
+	//    {MainDirectory}
+	//    keyword = MainDirKeyword dir = STRING
+	//;
+	public MainDirectoryElements getMainDirectoryAccess() {
+		return pMainDirectory;
+	}
+	
+	public ParserRule getMainDirectoryRule() {
+		return getMainDirectoryAccess().getRule();
+	}
+	
+	//BasePackage:
+	//    {BasePackage}
+	//    keyword = BasePackageKeyword dir = STRING
+	//;
+	public BasePackageElements getBasePackageAccess() {
+		return pBasePackage;
+	}
+	
+	public ParserRule getBasePackageRule() {
+		return getBasePackageAccess().getRule();
+	}
+	
+	//DirKeyword:
+	//    {DirKeyword}
+	//    keyword = 'dir'
+	//;
+	public DirKeywordElements getDirKeywordAccess() {
+		return pDirKeyword;
+	}
+	
+	public ParserRule getDirKeywordRule() {
+		return getDirKeywordAccess().getRule();
+	}
+	
+	//SpecDirKeyword:
+	//    {SpecDirKeyword}
+	//    keyword = ('specdir' | 'specDir')
+	//;
+	public SpecDirKeywordElements getSpecDirKeywordAccess() {
+		return pSpecDirKeyword;
+	}
+	
+	public ParserRule getSpecDirKeywordRule() {
+		return getSpecDirKeywordAccess().getRule();
+	}
+	
+	//TestDirKeyword:
+	//    {TestDirKeyword}
+	//    keyword = ('testdir' | 'testDir')
+	//;
+	public TestDirKeywordElements getTestDirKeywordAccess() {
+		return pTestDirKeyword;
+	}
+	
+	public ParserRule getTestDirKeywordRule() {
+		return getTestDirKeywordAccess().getRule();
+	}
+	
+	//MainDirKeyword:
+	//    {MainDirKeyword}
+	//    keyword = ('maindir' | 'mainDir')
+	//;
+	public MainDirKeywordElements getMainDirKeywordAccess() {
+		return pMainDirKeyword;
+	}
+	
+	public ParserRule getMainDirKeywordRule() {
+		return getMainDirKeywordAccess().getRule();
+	}
+	
+	//BasePackageKeyword:
+	//    {BasePackageKeyword}
+	//    keyword = ('basepackage' | 'basePackage')
+	//;
+	public BasePackageKeywordElements getBasePackageKeywordAccess() {
+		return pBasePackageKeyword;
+	}
+	
+	public ParserRule getBasePackageKeywordRule() {
+		return getBasePackageKeywordAccess().getRule();
+	}
+	
 	//GenBlock:
 	//    {GenBlock}
-	//    'gen' '{'
+	//    keyword = GenKeyword '{'
 	//        (
-	//            ('initialInstruction' initialInstructions+=STRING)
+	//            (initialInstructions+=InitialInstruction)
 	//            |
-	//            ('maxRetries' maxRetries+=INT)
+	//            (maxRetries+=MaxRetries)
 	//            |
-	//            ('parseCheck' parseChecks+=('true' | 'false'))
+	//            (parseChecks+=ParseCheck)
 	//            |
-	//            ('defaultCorrection' defaultCorrections+=STRING)
+	//            (defaultCorrections+=DefaultCorrection)
 	//            |
 	//            (remediations+=GenRemediationRules)
 	//            |
@@ -1920,9 +3816,129 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		return getGenBlockAccess().getRule();
 	}
 	
+	//GenKeyword:
+	//    {GenKeyword}
+	//    keyword = 'gen'
+	//;
+	public GenKeywordElements getGenKeywordAccess() {
+		return pGenKeyword;
+	}
+	
+	public ParserRule getGenKeywordRule() {
+		return getGenKeywordAccess().getRule();
+	}
+	
+	//InitialInstruction:
+	//    {InitialInstruction}
+	//    keyword = InitialInstructionKeyword instruction = STRING
+	//;
+	public InitialInstructionElements getInitialInstructionAccess() {
+		return pInitialInstruction;
+	}
+	
+	public ParserRule getInitialInstructionRule() {
+		return getInitialInstructionAccess().getRule();
+	}
+	
+	//MaxRetries:
+	//    {MaxRetries}
+	//    keyword = MaxRetriesKeyword maxRetries = INT
+	//;
+	public MaxRetriesElements getMaxRetriesAccess() {
+		return pMaxRetries;
+	}
+	
+	public ParserRule getMaxRetriesRule() {
+		return getMaxRetriesAccess().getRule();
+	}
+	
+	//ParseCheck:
+	//    {ParseCheck}
+	//    keyword = ParseCheckKeyword value = TrueFalseKeyword
+	//;
+	public ParseCheckElements getParseCheckAccess() {
+		return pParseCheck;
+	}
+	
+	public ParserRule getParseCheckRule() {
+		return getParseCheckAccess().getRule();
+	}
+	
+	//DefaultCorrection:
+	//    {DefaultCorrection}
+	//    keyword = DefaultCorrectionKeyword correction = STRING
+	//;
+	public DefaultCorrectionElements getDefaultCorrectionAccess() {
+		return pDefaultCorrection;
+	}
+	
+	public ParserRule getDefaultCorrectionRule() {
+		return getDefaultCorrectionAccess().getRule();
+	}
+	
+	//InitialInstructionKeyword:
+	//    {InitialInstructionKeyword}
+	//    keyword = ('initialinstruction' | 'initialInstruction')
+	//;
+	public InitialInstructionKeywordElements getInitialInstructionKeywordAccess() {
+		return pInitialInstructionKeyword;
+	}
+	
+	public ParserRule getInitialInstructionKeywordRule() {
+		return getInitialInstructionKeywordAccess().getRule();
+	}
+	
+	//MaxRetriesKeyword:
+	//    {MaxRetriesKeyword}
+	//    keyword = ('maxretries' | 'maxRetries')
+	//;
+	public MaxRetriesKeywordElements getMaxRetriesKeywordAccess() {
+		return pMaxRetriesKeyword;
+	}
+	
+	public ParserRule getMaxRetriesKeywordRule() {
+		return getMaxRetriesKeywordAccess().getRule();
+	}
+	
+	//ParseCheckKeyword:
+	//    {ParseCheckKeyword}
+	//    keyword = ('parsecheck' | 'parseCheck')
+	//;
+	public ParseCheckKeywordElements getParseCheckKeywordAccess() {
+		return pParseCheckKeyword;
+	}
+	
+	public ParserRule getParseCheckKeywordRule() {
+		return getParseCheckKeywordAccess().getRule();
+	}
+	
+	//DefaultCorrectionKeyword:
+	//    {DefaultCorrectionKeyword}
+	//    keyword = ('defaultcorrection' | 'defaultCorrection')
+	//;
+	public DefaultCorrectionKeywordElements getDefaultCorrectionKeywordAccess() {
+		return pDefaultCorrectionKeyword;
+	}
+	
+	public ParserRule getDefaultCorrectionKeywordRule() {
+		return getDefaultCorrectionKeywordAccess().getRule();
+	}
+	
+	//TrueFalseKeyword:
+	//    {TrueKeyword}
+	//    keyword = ('true' | 'false')
+	//;
+	public TrueFalseKeywordElements getTrueFalseKeywordAccess() {
+		return pTrueFalseKeyword;
+	}
+	
+	public ParserRule getTrueFalseKeywordRule() {
+		return getTrueFalseKeywordAccess().getRule();
+	}
+	
 	//GenRemediationRules:
 	//    {GenRemediationRules}
-	//    'rules' '{'
+	//    rulesKeyword = RulesKeyword '{'
 	//        (
 	//            (patternRules+=GenPatternRemediationRule)
 	//            |
@@ -1937,15 +3953,27 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		return getGenRemediationRulesAccess().getRule();
 	}
 	
+	//RulesKeyword:
+	//    {RulesKeyword}
+	//    keyword = 'rules'
+	//;
+	public RulesKeywordElements getRulesKeywordAccess() {
+		return pRulesKeyword;
+	}
+	
+	public ParserRule getRulesKeywordRule() {
+		return getRulesKeywordAccess().getRule();
+	}
+	
 	//GenPatternRemediationRule:
 	//    {GenPatternRemediationRule}
-	//    'rule' '{'
+	//    keyword = RuleKeyword '{'
 	//        (
-	//            ('pattern' patterns+=STRING)
+	//            (patterns+=Pattern)
 	//            |
-	//            ('code' codes+=STRING)
+	//            (codes+=Code)
 	//            |
-	//            ('correction' corrections+=STRING)
+	//            (corrections+=Correction)
 	//        )*
 	//    '}';
 	public GenPatternRemediationRuleElements getGenPatternRemediationRuleAccess() {
@@ -1956,13 +3984,97 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		return getGenPatternRemediationRuleAccess().getRule();
 	}
 	
+	//RuleKeyword:
+	//    {RuleKeyword}
+	//    keyword = 'rule'
+	//;
+	public RuleKeywordElements getRuleKeywordAccess() {
+		return pRuleKeyword;
+	}
+	
+	public ParserRule getRuleKeywordRule() {
+		return getRuleKeywordAccess().getRule();
+	}
+	
+	//Pattern:
+	//    {Pattern}
+	//    keyword = PatternKeyword pattern = STRING
+	//;
+	public PatternElements getPatternAccess() {
+		return pPattern;
+	}
+	
+	public ParserRule getPatternRule() {
+		return getPatternAccess().getRule();
+	}
+	
+	//PatternKeyword:
+	//    {PatternKeyword}
+	//    keyword = 'pattern'
+	//;
+	public PatternKeywordElements getPatternKeywordAccess() {
+		return pPatternKeyword;
+	}
+	
+	public ParserRule getPatternKeywordRule() {
+		return getPatternKeywordAccess().getRule();
+	}
+	
+	//Code:
+	//    {Code}
+	//    keyword = CodeKeyword code = STRING
+	//;
+	public CodeElements getCodeAccess() {
+		return pCode;
+	}
+	
+	public ParserRule getCodeRule() {
+		return getCodeAccess().getRule();
+	}
+	
+	//CodeKeyword:
+	//    {CodeKeyword}
+	//    keyword = 'code'
+	//;
+	public CodeKeywordElements getCodeKeywordAccess() {
+		return pCodeKeyword;
+	}
+	
+	public ParserRule getCodeKeywordRule() {
+		return getCodeKeywordAccess().getRule();
+	}
+	
+	//Correction:
+	//    {Correction}
+	//    keyword = CorrectionKeyword correction = STRING
+	//;
+	public CorrectionElements getCorrectionAccess() {
+		return pCorrection;
+	}
+	
+	public ParserRule getCorrectionRule() {
+		return getCorrectionAccess().getRule();
+	}
+	
+	//CorrectionKeyword:
+	//    {CorrectionKeyword}
+	//    keyword = 'correction'
+	//;
+	public CorrectionKeywordElements getCorrectionKeywordAccess() {
+		return pCorrectionKeyword;
+	}
+	
+	public ParserRule getCorrectionKeywordRule() {
+		return getCorrectionKeywordAccess().getRule();
+	}
+	
 	//GenDefaultRemediationRule:
 	//    {GenDefaultRemediationRule}
-	//    'default' '{'
+	//    keyword = DefaultKeyword '{'
 	//        (
-	//            ('code' codes+=STRING)
+	//            (codes+=Code)
 	//            |
-	//            ('correction' correction+=STRING)
+	//            (corrections+=Correction)
 	//        )*
 	//    '}';
 	public GenDefaultRemediationRuleElements getGenDefaultRemediationRuleAccess() {
@@ -1973,10 +4085,22 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		return getGenDefaultRemediationRuleAccess().getRule();
 	}
 	
+	//DefaultKeyword:
+	//    {DefaultKeyword}
+	//    keyword = 'default'
+	//;
+	public DefaultKeywordElements getDefaultKeywordAccess() {
+		return pDefaultKeyword;
+	}
+	
+	public ParserRule getDefaultKeywordRule() {
+		return getDefaultKeywordAccess().getRule();
+	}
+	
 	//LlmProvidersBlock:
 	//    {LlmProvidersBlock}
-	//    'llmProviders' '{'
-	//        providers+=NamedLlmProvider*
+	//    keyword = LLMProvidersKeyword '{'
+	//        providers+=LLMProvider*
 	//    '}';
 	public LlmProvidersBlockElements getLlmProvidersBlockAccess() {
 		return pLlmProvidersBlock;
@@ -1986,33 +4110,153 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		return getLlmProvidersBlockAccess().getRule();
 	}
 	
-	//NamedLlmProvider:
-	//    'provider' name=ValidID '{'
-	//        (
-	//            ('kind' kinds+=('local' | 'openai' | 'ollama'))
-	//            |
-	//            ('localModelPath' localModelPaths+=STRING)
-	//            |
-	//            ('model' models+=STRING)
-	//            |
-	//            ('endpoint' endpoints+=STRING)
-	//        )*
-	//    '}';
-	public NamedLlmProviderElements getNamedLlmProviderAccess() {
-		return pNamedLlmProvider;
+	//LLMProvidersKeyword:
+	//    {LLMProvidersKeyword}
+	//    keyword = ('llmproviders' | 'llmProviders')
+	//;
+	public LLMProvidersKeywordElements getLLMProvidersKeywordAccess() {
+		return pLLMProvidersKeyword;
 	}
 	
-	public ParserRule getNamedLlmProviderRule() {
-		return getNamedLlmProviderAccess().getRule();
+	public ParserRule getLLMProvidersKeywordRule() {
+		return getLLMProvidersKeywordAccess().getRule();
+	}
+	
+	//LLMProvider:
+	//    keyword = ProviderKeyword name=ValidID '{'
+	//        (
+	//            (types+=ProviderType)
+	//            |
+	//            (localModelPaths+=LocalModelPath)
+	//            |
+	//            (models+=Model)
+	//            |
+	//            (endpoints+=Endpoint)
+	//        )*
+	//    '}';
+	public LLMProviderElements getLLMProviderAccess() {
+		return pLLMProvider;
+	}
+	
+	public ParserRule getLLMProviderRule() {
+		return getLLMProviderAccess().getRule();
+	}
+	
+	//ProviderKeyword:
+	//    {ProviderKeyword}
+	//    keyword = 'provider'
+	//;
+	public ProviderKeywordElements getProviderKeywordAccess() {
+		return pProviderKeyword;
+	}
+	
+	public ParserRule getProviderKeywordRule() {
+		return getProviderKeywordAccess().getRule();
+	}
+	
+	//ProviderType:
+	//    {ProviderType}
+	//    keyword = ProviderTypeKeyword name = ValidID
+	//;
+	public ProviderTypeElements getProviderTypeAccess() {
+		return pProviderType;
+	}
+	
+	public ParserRule getProviderTypeRule() {
+		return getProviderTypeAccess().getRule();
+	}
+	
+	//ProviderTypeKeyword:
+	//    {ProviderTypeKeyword}
+	//    keyword = 'type'
+	//;
+	public ProviderTypeKeywordElements getProviderTypeKeywordAccess() {
+		return pProviderTypeKeyword;
+	}
+	
+	public ParserRule getProviderTypeKeywordRule() {
+		return getProviderTypeKeywordAccess().getRule();
+	}
+	
+	//LocalModelPath:
+	//    {LocalModelPath}
+	//    keyword = FilePathKeyword path = STRING
+	//;
+	public LocalModelPathElements getLocalModelPathAccess() {
+		return pLocalModelPath;
+	}
+	
+	public ParserRule getLocalModelPathRule() {
+		return getLocalModelPathAccess().getRule();
+	}
+	
+	//Model:
+	//    {Model}
+	//    keyword = ModelKeyword mode = STRING
+	//;
+	public ModelElements getModelAccess() {
+		return pModel;
+	}
+	
+	public ParserRule getModelRule() {
+		return getModelAccess().getRule();
+	}
+	
+	//ModelKeyword:
+	//    {ModelKeyword}
+	//    keyword = 'model'
+	//;
+	public ModelKeywordElements getModelKeywordAccess() {
+		return pModelKeyword;
+	}
+	
+	public ParserRule getModelKeywordRule() {
+		return getModelKeywordAccess().getRule();
+	}
+	
+	//FilePathKeyword:
+	//    {FilePathKeyword}
+	//    keyword = ('filepath' | 'filePath')
+	//;
+	public FilePathKeywordElements getFilePathKeywordAccess() {
+		return pFilePathKeyword;
+	}
+	
+	public ParserRule getFilePathKeywordRule() {
+		return getFilePathKeywordAccess().getRule();
+	}
+	
+	//Endpoint:
+	//    {Endpoint}
+	//    keyword = EndpointKeyword mode = STRING
+	//;
+	public EndpointElements getEndpointAccess() {
+		return pEndpoint;
+	}
+	
+	public ParserRule getEndpointRule() {
+		return getEndpointAccess().getRule();
+	}
+	
+	//EndpointKeyword:
+	//    {EndpointKeyword}
+	//    keyword = ('endpoint' | 'endPoint')
+	//;
+	public EndpointKeywordElements getEndpointKeywordAccess() {
+		return pEndpointKeyword;
+	}
+	
+	public ParserRule getEndpointKeywordRule() {
+		return getEndpointKeywordAccess().getRule();
 	}
 	
 	//GenUsageBlock:
 	//    {GenUsageBlock}
-	//    'modelUsage' '{'
+	//    keyword = ModelUsageKeyword '{'
 	//        (
-	//            ('primary' primaryProviders+=ValidID)
+	//            (primaryProviders+=PrimaryProvider)
 	//            |
-	//            ('secondary' secondaryProviders+=ValidID)
+	//            (secondaryProviders+=SecondaryProvider)
 	//            |
 	//            (escalations+=GenEscalationBlock)
 	//        )*
@@ -2025,13 +4269,73 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 		return getGenUsageBlockAccess().getRule();
 	}
 	
+	//ModelUsageKeyword:
+	//    {ModelUsageKeyword}
+	//    keyword = ('modelusage' | 'modelUsage')
+	//;
+	public ModelUsageKeywordElements getModelUsageKeywordAccess() {
+		return pModelUsageKeyword;
+	}
+	
+	public ParserRule getModelUsageKeywordRule() {
+		return getModelUsageKeywordAccess().getRule();
+	}
+	
+	//PrimaryProvider:
+	//    {PrimaryProvider}
+	//    keyword = PrimaryProviderKeyword name = ValidID
+	//;
+	public PrimaryProviderElements getPrimaryProviderAccess() {
+		return pPrimaryProvider;
+	}
+	
+	public ParserRule getPrimaryProviderRule() {
+		return getPrimaryProviderAccess().getRule();
+	}
+	
+	//PrimaryProviderKeyword:
+	//    {PrimaryProviderKeyword}
+	//    keyword = 'primary'
+	//;
+	public PrimaryProviderKeywordElements getPrimaryProviderKeywordAccess() {
+		return pPrimaryProviderKeyword;
+	}
+	
+	public ParserRule getPrimaryProviderKeywordRule() {
+		return getPrimaryProviderKeywordAccess().getRule();
+	}
+	
+	//SecondaryProvider:
+	//    {SecondaryProvider}
+	//    keyword = SecondaryProviderKeyword name = ValidID
+	//;
+	public SecondaryProviderElements getSecondaryProviderAccess() {
+		return pSecondaryProvider;
+	}
+	
+	public ParserRule getSecondaryProviderRule() {
+		return getSecondaryProviderAccess().getRule();
+	}
+	
+	//SecondaryProviderKeyword:
+	//    {SecondaryProviderKeyword}
+	//    keyword = 'secondary'
+	//;
+	public SecondaryProviderKeywordElements getSecondaryProviderKeywordAccess() {
+		return pSecondaryProviderKeyword;
+	}
+	
+	public ParserRule getSecondaryProviderKeywordRule() {
+		return getSecondaryProviderKeywordAccess().getRule();
+	}
+	
 	//GenEscalationBlock:
 	//    {GenEscalationBlock}
-	//    'escalation' '{'
+	//    keyword = EscalationKeyword '{'
 	//        (
-	//            ('enabled' enableds+=('true' | 'false'))
+	//            (enableds+=Enabled)
 	//            |
-	//            ('escalateAtRetry' escalateAtRetries+=INT)
+	//            (atRetries+=AtRetry)
 	//        )*
 	//    '}';
 	public GenEscalationBlockElements getGenEscalationBlockAccess() {
@@ -2040,6 +4344,66 @@ public class LibrettoProjectProfileGrammarAccess extends AbstractElementFinder.A
 	
 	public ParserRule getGenEscalationBlockRule() {
 		return getGenEscalationBlockAccess().getRule();
+	}
+	
+	//EscalationKeyword:
+	//    {EscalationKeyword}
+	//    keyword = 'escalation'
+	//;
+	public EscalationKeywordElements getEscalationKeywordAccess() {
+		return pEscalationKeyword;
+	}
+	
+	public ParserRule getEscalationKeywordRule() {
+		return getEscalationKeywordAccess().getRule();
+	}
+	
+	//Enabled:
+	//    {Enabled}
+	//    keyword = EnabledKeyword value = TrueFalseKeyword
+	//;
+	public EnabledElements getEnabledAccess() {
+		return pEnabled;
+	}
+	
+	public ParserRule getEnabledRule() {
+		return getEnabledAccess().getRule();
+	}
+	
+	//EnabledKeyword:
+	//    {EnabledKeyword}
+	//    keyword = 'enabled'
+	//;
+	public EnabledKeywordElements getEnabledKeywordAccess() {
+		return pEnabledKeyword;
+	}
+	
+	public ParserRule getEnabledKeywordRule() {
+		return getEnabledKeywordAccess().getRule();
+	}
+	
+	//AtRetry:
+	//    {AtRetry}
+	//    keyword = AtRetryKeyword value = INT
+	//;
+	public AtRetryElements getAtRetryAccess() {
+		return pAtRetry;
+	}
+	
+	public ParserRule getAtRetryRule() {
+		return getAtRetryAccess().getRule();
+	}
+	
+	//AtRetryKeyword:
+	//    {AtRetryKeyword}
+	//    keyword = ('atretry' | 'atRetry')
+	//;
+	public AtRetryKeywordElements getAtRetryKeywordAccess() {
+		return pAtRetryKeyword;
+	}
+	
+	public ParserRule getAtRetryKeywordRule() {
+		return getAtRetryKeywordAccess().getRule();
 	}
 	
 	//SurfaceBlock:

@@ -23,6 +23,9 @@
         "editor.semanticHighlighting.enabled": true,
         "editor.semanticTokenColorCustomizations": {
           "rules": {
+            "keyword": "#800000",
+            "macro": "#f85149",
+            "variable": "#3fb950",
             "namespace": "#f0883e",
             "type": "#d2a8ff",
             "parameter": "#ffa657",

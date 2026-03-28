@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenPatternRemediationRule#getKeyword <em>Keyword</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenPatternRemediationRule#getPatterns <em>Patterns</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenPatternRemediationRule#getCodes <em>Codes</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenPatternRemediationRule#getCorrections <em>Corrections</em>}</li>
@@ -28,39 +29,61 @@ import org.eclipse.emf.ecore.EObject;
 public interface GenPatternRemediationRule extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Patterns</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Keyword</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Patterns</em>' attribute list.
+   * @return the value of the '<em>Keyword</em>' containment reference.
+   * @see #setKeyword(RuleKeyword)
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenPatternRemediationRule_Keyword()
+   * @model containment="true"
+   * @generated
+   */
+  RuleKeyword getKeyword();
+
+  /**
+   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenPatternRemediationRule#getKeyword <em>Keyword</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Keyword</em>' containment reference.
+   * @see #getKeyword()
+   * @generated
+   */
+  void setKeyword(RuleKeyword value);
+
+  /**
+   * Returns the value of the '<em><b>Patterns</b></em>' containment reference list.
+   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.Pattern}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Patterns</em>' containment reference list.
    * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenPatternRemediationRule_Patterns()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getPatterns();
+  EList<Pattern> getPatterns();
 
   /**
-   * Returns the value of the '<em><b>Codes</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Codes</b></em>' containment reference list.
+   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.Code}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Codes</em>' attribute list.
+   * @return the value of the '<em>Codes</em>' containment reference list.
    * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenPatternRemediationRule_Codes()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getCodes();
+  EList<Code> getCodes();
 
   /**
-   * Returns the value of the '<em><b>Corrections</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Corrections</b></em>' containment reference list.
+   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.Correction}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Corrections</em>' attribute list.
+   * @return the value of the '<em>Corrections</em>' containment reference list.
    * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenPatternRemediationRule_Corrections()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getCorrections();
+  EList<Correction> getCorrections();
 
 } // GenPatternRemediationRule

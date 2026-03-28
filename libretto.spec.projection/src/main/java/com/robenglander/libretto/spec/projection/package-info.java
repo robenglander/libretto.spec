@@ -12,7 +12,7 @@
  * </p>
  * <p>
  * <b>Populate</b> from EMF in {@code libretto.spec} (mappers). <b>Consume</b> from {@code libretto-core}
- * for validation, surface generation, and tooling.
+ * for validation and tooling.
  * </p>
  * <p>
  * Decoded text-value bodies (grammar {@code TextValue}) are plain {@link String}s

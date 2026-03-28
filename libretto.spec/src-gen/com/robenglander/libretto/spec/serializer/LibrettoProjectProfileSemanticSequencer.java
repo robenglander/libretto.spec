@@ -4,28 +4,84 @@
 package com.robenglander.libretto.spec.serializer;
 
 import com.google.inject.Inject;
+import com.robenglander.libretto.spec.librettoProjectProfile.AtRetry;
+import com.robenglander.libretto.spec.librettoProjectProfile.AtRetryKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.BasePackage;
+import com.robenglander.libretto.spec.librettoProjectProfile.BasePackageKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.Code;
+import com.robenglander.libretto.spec.librettoProjectProfile.CodeKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.Correction;
+import com.robenglander.libretto.spec.librettoProjectProfile.CorrectionKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.DefaultCorrection;
+import com.robenglander.libretto.spec.librettoProjectProfile.DefaultCorrectionKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.DefaultKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.DirKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.Directory;
+import com.robenglander.libretto.spec.librettoProjectProfile.Enabled;
+import com.robenglander.libretto.spec.librettoProjectProfile.EnabledKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.Endpoint;
+import com.robenglander.libretto.spec.librettoProjectProfile.EndpointKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.EscalationKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.FilePathKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.GenBlock;
 import com.robenglander.libretto.spec.librettoProjectProfile.GenDefaultRemediationRule;
 import com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock;
+import com.robenglander.libretto.spec.librettoProjectProfile.GenKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.GenPatternRemediationRule;
 import com.robenglander.libretto.spec.librettoProjectProfile.GenRemediationRules;
 import com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock;
+import com.robenglander.libretto.spec.librettoProjectProfile.InitialInstruction;
+import com.robenglander.libretto.spec.librettoProjectProfile.InitialInstructionKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.LLMProvider;
+import com.robenglander.libretto.spec.librettoProjectProfile.LLMProvidersKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage;
 import com.robenglander.libretto.spec.librettoProjectProfile.LlmProvidersBlock;
+import com.robenglander.libretto.spec.librettoProjectProfile.LocalModelPath;
+import com.robenglander.libretto.spec.librettoProjectProfile.MainDirKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.MainDirectory;
+import com.robenglander.libretto.spec.librettoProjectProfile.MaxRetries;
+import com.robenglander.libretto.spec.librettoProjectProfile.MaxRetriesKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.MethodOverrideRule;
+import com.robenglander.libretto.spec.librettoProjectProfile.Model;
+import com.robenglander.libretto.spec.librettoProjectProfile.ModelKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.ModelUsageKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.ModuleKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.ModulesBlock;
-import com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider;
+import com.robenglander.libretto.spec.librettoProjectProfile.ModulesKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.OperationSignature;
 import com.robenglander.libretto.spec.librettoProjectProfile.ParamTypeRule;
+import com.robenglander.libretto.spec.librettoProjectProfile.ParseCheck;
+import com.robenglander.libretto.spec.librettoProjectProfile.ParseCheckKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.Pattern;
+import com.robenglander.libretto.spec.librettoProjectProfile.PatternKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider;
+import com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProviderKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.PrimitiveType;
+import com.robenglander.libretto.spec.librettoProjectProfile.Profile;
+import com.robenglander.libretto.spec.librettoProjectProfile.ProfileKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock;
+import com.robenglander.libretto.spec.librettoProjectProfile.ProjectKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule;
 import com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile;
+import com.robenglander.libretto.spec.librettoProjectProfile.ProviderKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.ProviderType;
+import com.robenglander.libretto.spec.librettoProjectProfile.ProviderTypeKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.QualifiedName;
 import com.robenglander.libretto.spec.librettoProjectProfile.RecordSelfReturnRule;
 import com.robenglander.libretto.spec.librettoProjectProfile.ReturnTypeRule;
+import com.robenglander.libretto.spec.librettoProjectProfile.RootDirKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.RootDirectory;
+import com.robenglander.libretto.spec.librettoProjectProfile.RuleKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.RulesKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.ScopedSurface;
+import com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProvider;
+import com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProviderKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.SpecDirKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.SpecDirectory;
 import com.robenglander.libretto.spec.librettoProjectProfile.SurfaceBlock;
+import com.robenglander.libretto.spec.librettoProjectProfile.TestDirKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.TestDirectory;
+import com.robenglander.libretto.spec.librettoProjectProfile.TrueKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.TypedParam;
 import com.robenglander.libretto.spec.services.LibrettoProjectProfileGrammarAccess;
 import java.util.Set;
@@ -53,6 +109,63 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == LibrettoProjectProfilePackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case LibrettoProjectProfilePackage.AT_RETRY:
+				sequence_AtRetry(context, (AtRetry) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.AT_RETRY_KEYWORD:
+				sequence_AtRetryKeyword(context, (AtRetryKeyword) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.BASE_PACKAGE:
+				sequence_BasePackage(context, (BasePackage) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.BASE_PACKAGE_KEYWORD:
+				sequence_BasePackageKeyword(context, (BasePackageKeyword) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.CODE:
+				sequence_Code(context, (Code) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.CODE_KEYWORD:
+				sequence_CodeKeyword(context, (CodeKeyword) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.CORRECTION:
+				sequence_Correction(context, (Correction) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.CORRECTION_KEYWORD:
+				sequence_CorrectionKeyword(context, (CorrectionKeyword) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.DEFAULT_CORRECTION:
+				sequence_DefaultCorrection(context, (DefaultCorrection) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.DEFAULT_CORRECTION_KEYWORD:
+				sequence_DefaultCorrectionKeyword(context, (DefaultCorrectionKeyword) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.DEFAULT_KEYWORD:
+				sequence_DefaultKeyword(context, (DefaultKeyword) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.DIR_KEYWORD:
+				sequence_DirKeyword(context, (DirKeyword) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.DIRECTORY:
+				sequence_Directory(context, (Directory) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.ENABLED:
+				sequence_Enabled(context, (Enabled) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.ENABLED_KEYWORD:
+				sequence_EnabledKeyword(context, (EnabledKeyword) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.ENDPOINT:
+				sequence_Endpoint(context, (Endpoint) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.ENDPOINT_KEYWORD:
+				sequence_EndpointKeyword(context, (EndpointKeyword) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.ESCALATION_KEYWORD:
+				sequence_EscalationKeyword(context, (EscalationKeyword) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.FILE_PATH_KEYWORD:
+				sequence_FilePathKeyword(context, (FilePathKeyword) semanticObject); 
+				return; 
 			case LibrettoProjectProfilePackage.GEN_BLOCK:
 				sequence_GenBlock(context, (GenBlock) semanticObject); 
 				return; 
@@ -61,6 +174,9 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 				return; 
 			case LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK:
 				sequence_GenEscalationBlock(context, (GenEscalationBlock) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.GEN_KEYWORD:
+				sequence_GenKeyword(context, (GenKeyword) semanticObject); 
 				return; 
 			case LibrettoProjectProfilePackage.GEN_PATTERN_REMEDIATION_RULE:
 				sequence_GenPatternRemediationRule(context, (GenPatternRemediationRule) semanticObject); 
@@ -71,17 +187,56 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 			case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK:
 				sequence_GenUsageBlock(context, (GenUsageBlock) semanticObject); 
 				return; 
+			case LibrettoProjectProfilePackage.INITIAL_INSTRUCTION:
+				sequence_InitialInstruction(context, (InitialInstruction) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.INITIAL_INSTRUCTION_KEYWORD:
+				sequence_InitialInstructionKeyword(context, (InitialInstructionKeyword) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.LLM_PROVIDER:
+				sequence_LLMProvider(context, (LLMProvider) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.LLM_PROVIDERS_KEYWORD:
+				sequence_LLMProvidersKeyword(context, (LLMProvidersKeyword) semanticObject); 
+				return; 
 			case LibrettoProjectProfilePackage.LLM_PROVIDERS_BLOCK:
 				sequence_LlmProvidersBlock(context, (LlmProvidersBlock) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.LOCAL_MODEL_PATH:
+				sequence_LocalModelPath(context, (LocalModelPath) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.MAIN_DIR_KEYWORD:
+				sequence_MainDirKeyword(context, (MainDirKeyword) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.MAIN_DIRECTORY:
+				sequence_MainDirectory(context, (MainDirectory) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.MAX_RETRIES:
+				sequence_MaxRetries(context, (MaxRetries) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.MAX_RETRIES_KEYWORD:
+				sequence_MaxRetriesKeyword(context, (MaxRetriesKeyword) semanticObject); 
 				return; 
 			case LibrettoProjectProfilePackage.METHOD_OVERRIDE_RULE:
 				sequence_MethodOverrideRule(context, (MethodOverrideRule) semanticObject); 
 				return; 
+			case LibrettoProjectProfilePackage.MODEL:
+				sequence_Model(context, (Model) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.MODEL_KEYWORD:
+				sequence_ModelKeyword(context, (ModelKeyword) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.MODEL_USAGE_KEYWORD:
+				sequence_ModelUsageKeyword(context, (ModelUsageKeyword) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.MODULE_KEYWORD:
+				sequence_ModuleKeyword(context, (ModuleKeyword) semanticObject); 
+				return; 
 			case LibrettoProjectProfilePackage.MODULES_BLOCK:
 				sequence_ModulesBlock(context, (ModulesBlock) semanticObject); 
 				return; 
-			case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER:
-				sequence_NamedLlmProvider(context, (NamedLlmProvider) semanticObject); 
+			case LibrettoProjectProfilePackage.MODULES_KEYWORD:
+				sequence_ModulesKeyword(context, (ModulesKeyword) semanticObject); 
 				return; 
 			case LibrettoProjectProfilePackage.OPERATION_SIGNATURE:
 				sequence_OperationSignature(context, (OperationSignature) semanticObject); 
@@ -89,17 +244,53 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 			case LibrettoProjectProfilePackage.PARAM_TYPE_RULE:
 				sequence_ParamTypeRule(context, (ParamTypeRule) semanticObject); 
 				return; 
+			case LibrettoProjectProfilePackage.PARSE_CHECK:
+				sequence_ParseCheck(context, (ParseCheck) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.PARSE_CHECK_KEYWORD:
+				sequence_ParseCheckKeyword(context, (ParseCheckKeyword) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.PATTERN:
+				sequence_Pattern(context, (Pattern) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.PATTERN_KEYWORD:
+				sequence_PatternKeyword(context, (PatternKeyword) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.PRIMARY_PROVIDER:
+				sequence_PrimaryProvider(context, (PrimaryProvider) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.PRIMARY_PROVIDER_KEYWORD:
+				sequence_PrimaryProviderKeyword(context, (PrimaryProviderKeyword) semanticObject); 
+				return; 
 			case LibrettoProjectProfilePackage.PRIMITIVE_TYPE:
 				sequence_PrimitiveType(context, (PrimitiveType) semanticObject); 
 				return; 
+			case LibrettoProjectProfilePackage.PROFILE:
+				sequence_Profile(context, (Profile) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.PROFILE_KEYWORD:
+				sequence_ProfileKeyword(context, (ProfileKeyword) semanticObject); 
+				return; 
 			case LibrettoProjectProfilePackage.PROJECT_BLOCK:
 				sequence_ProjectBlock(context, (ProjectBlock) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.PROJECT_KEYWORD:
+				sequence_ProjectKeyword(context, (ProjectKeyword) semanticObject); 
 				return; 
 			case LibrettoProjectProfilePackage.PROJECT_MODULE:
 				sequence_ProjectModule(context, (ProjectModule) semanticObject); 
 				return; 
 			case LibrettoProjectProfilePackage.PROJECT_PROFILE:
 				sequence_ProjectProfile(context, (ProjectProfile) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.PROVIDER_KEYWORD:
+				sequence_ProviderKeyword(context, (ProviderKeyword) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.PROVIDER_TYPE:
+				sequence_ProviderType(context, (ProviderType) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.PROVIDER_TYPE_KEYWORD:
+				sequence_ProviderTypeKeyword(context, (ProviderTypeKeyword) semanticObject); 
 				return; 
 			case LibrettoProjectProfilePackage.QUALIFIED_NAME:
 				sequence_QualifiedName(context, (QualifiedName) semanticObject); 
@@ -110,11 +301,44 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 			case LibrettoProjectProfilePackage.RETURN_TYPE_RULE:
 				sequence_ReturnTypeRule(context, (ReturnTypeRule) semanticObject); 
 				return; 
+			case LibrettoProjectProfilePackage.ROOT_DIR_KEYWORD:
+				sequence_RootDirKeyword(context, (RootDirKeyword) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.ROOT_DIRECTORY:
+				sequence_RootDirectory(context, (RootDirectory) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.RULE_KEYWORD:
+				sequence_RuleKeyword(context, (RuleKeyword) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.RULES_KEYWORD:
+				sequence_RulesKeyword(context, (RulesKeyword) semanticObject); 
+				return; 
 			case LibrettoProjectProfilePackage.SCOPED_SURFACE:
 				sequence_ScopedSurface(context, (ScopedSurface) semanticObject); 
 				return; 
+			case LibrettoProjectProfilePackage.SECONDARY_PROVIDER:
+				sequence_SecondaryProvider(context, (SecondaryProvider) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.SECONDARY_PROVIDER_KEYWORD:
+				sequence_SecondaryProviderKeyword(context, (SecondaryProviderKeyword) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.SPEC_DIR_KEYWORD:
+				sequence_SpecDirKeyword(context, (SpecDirKeyword) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.SPEC_DIRECTORY:
+				sequence_SpecDirectory(context, (SpecDirectory) semanticObject); 
+				return; 
 			case LibrettoProjectProfilePackage.SURFACE_BLOCK:
 				sequence_SurfaceBlock(context, (SurfaceBlock) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.TEST_DIR_KEYWORD:
+				sequence_TestDirKeyword(context, (TestDirKeyword) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.TEST_DIRECTORY:
+				sequence_TestDirectory(context, (TestDirectory) semanticObject); 
+				return; 
+			case LibrettoProjectProfilePackage.TRUE_KEYWORD:
+				sequence_TrueFalseKeyword(context, (TrueKeyword) semanticObject); 
 				return; 
 			case LibrettoProjectProfilePackage.TYPED_PARAM:
 				sequence_TypedParam(context, (TypedParam) semanticObject); 
@@ -127,18 +351,394 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     AtRetryKeyword returns AtRetryKeyword
+	 *
+	 * Constraint:
+	 *     (keyword='atretry' | keyword='atRetry')
+	 * </pre>
+	 */
+	protected void sequence_AtRetryKeyword(ISerializationContext context, AtRetryKeyword semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     AtRetry returns AtRetry
+	 *
+	 * Constraint:
+	 *     (keyword=AtRetryKeyword value=INT)
+	 * </pre>
+	 */
+	protected void sequence_AtRetry(ISerializationContext context, AtRetry semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.AT_RETRY__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.AT_RETRY__KEYWORD));
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.AT_RETRY__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.AT_RETRY__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getAtRetryAccess().getKeywordAtRetryKeywordParserRuleCall_1_0(), semanticObject.getKeyword());
+		feeder.accept(grammarAccess.getAtRetryAccess().getValueINTTerminalRuleCall_2_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     BasePackageKeyword returns BasePackageKeyword
+	 *
+	 * Constraint:
+	 *     (keyword='basepackage' | keyword='basePackage')
+	 * </pre>
+	 */
+	protected void sequence_BasePackageKeyword(ISerializationContext context, BasePackageKeyword semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     BasePackage returns BasePackage
+	 *
+	 * Constraint:
+	 *     (keyword=BasePackageKeyword dir=STRING)
+	 * </pre>
+	 */
+	protected void sequence_BasePackage(ISerializationContext context, BasePackage semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.BASE_PACKAGE__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.BASE_PACKAGE__KEYWORD));
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.BASE_PACKAGE__DIR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.BASE_PACKAGE__DIR));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getBasePackageAccess().getKeywordBasePackageKeywordParserRuleCall_1_0(), semanticObject.getKeyword());
+		feeder.accept(grammarAccess.getBasePackageAccess().getDirSTRINGTerminalRuleCall_2_0(), semanticObject.getDir());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     CodeKeyword returns CodeKeyword
+	 *
+	 * Constraint:
+	 *     keyword='code'
+	 * </pre>
+	 */
+	protected void sequence_CodeKeyword(ISerializationContext context, CodeKeyword semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.CODE_KEYWORD__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.CODE_KEYWORD__KEYWORD));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCodeKeywordAccess().getKeywordCodeKeyword_1_0(), semanticObject.getKeyword());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Code returns Code
+	 *
+	 * Constraint:
+	 *     (keyword=CodeKeyword code=STRING)
+	 * </pre>
+	 */
+	protected void sequence_Code(ISerializationContext context, Code semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.CODE__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.CODE__KEYWORD));
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.CODE__CODE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.CODE__CODE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCodeAccess().getKeywordCodeKeywordParserRuleCall_1_0(), semanticObject.getKeyword());
+		feeder.accept(grammarAccess.getCodeAccess().getCodeSTRINGTerminalRuleCall_2_0(), semanticObject.getCode());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     CorrectionKeyword returns CorrectionKeyword
+	 *
+	 * Constraint:
+	 *     keyword='correction'
+	 * </pre>
+	 */
+	protected void sequence_CorrectionKeyword(ISerializationContext context, CorrectionKeyword semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.CORRECTION_KEYWORD__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.CORRECTION_KEYWORD__KEYWORD));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCorrectionKeywordAccess().getKeywordCorrectionKeyword_1_0(), semanticObject.getKeyword());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Correction returns Correction
+	 *
+	 * Constraint:
+	 *     (keyword=CorrectionKeyword correction=STRING)
+	 * </pre>
+	 */
+	protected void sequence_Correction(ISerializationContext context, Correction semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.CORRECTION__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.CORRECTION__KEYWORD));
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.CORRECTION__CORRECTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.CORRECTION__CORRECTION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCorrectionAccess().getKeywordCorrectionKeywordParserRuleCall_1_0(), semanticObject.getKeyword());
+		feeder.accept(grammarAccess.getCorrectionAccess().getCorrectionSTRINGTerminalRuleCall_2_0(), semanticObject.getCorrection());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     DefaultCorrectionKeyword returns DefaultCorrectionKeyword
+	 *
+	 * Constraint:
+	 *     (keyword='defaultcorrection' | keyword='defaultCorrection')
+	 * </pre>
+	 */
+	protected void sequence_DefaultCorrectionKeyword(ISerializationContext context, DefaultCorrectionKeyword semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     DefaultCorrection returns DefaultCorrection
+	 *
+	 * Constraint:
+	 *     (keyword=DefaultCorrectionKeyword correction=STRING)
+	 * </pre>
+	 */
+	protected void sequence_DefaultCorrection(ISerializationContext context, DefaultCorrection semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.DEFAULT_CORRECTION__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.DEFAULT_CORRECTION__KEYWORD));
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.DEFAULT_CORRECTION__CORRECTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.DEFAULT_CORRECTION__CORRECTION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getDefaultCorrectionAccess().getKeywordDefaultCorrectionKeywordParserRuleCall_1_0(), semanticObject.getKeyword());
+		feeder.accept(grammarAccess.getDefaultCorrectionAccess().getCorrectionSTRINGTerminalRuleCall_2_0(), semanticObject.getCorrection());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     DefaultKeyword returns DefaultKeyword
+	 *
+	 * Constraint:
+	 *     keyword='default'
+	 * </pre>
+	 */
+	protected void sequence_DefaultKeyword(ISerializationContext context, DefaultKeyword semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.DEFAULT_KEYWORD__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.DEFAULT_KEYWORD__KEYWORD));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getDefaultKeywordAccess().getKeywordDefaultKeyword_1_0(), semanticObject.getKeyword());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     DirKeyword returns DirKeyword
+	 *
+	 * Constraint:
+	 *     keyword='dir'
+	 * </pre>
+	 */
+	protected void sequence_DirKeyword(ISerializationContext context, DirKeyword semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.DIR_KEYWORD__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.DIR_KEYWORD__KEYWORD));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getDirKeywordAccess().getKeywordDirKeyword_1_0(), semanticObject.getKeyword());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Directory returns Directory
+	 *
+	 * Constraint:
+	 *     (keyword=DirKeyword dir=STRING)
+	 * </pre>
+	 */
+	protected void sequence_Directory(ISerializationContext context, Directory semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.DIRECTORY__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.DIRECTORY__KEYWORD));
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.DIRECTORY__DIR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.DIRECTORY__DIR));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getDirectoryAccess().getKeywordDirKeywordParserRuleCall_1_0(), semanticObject.getKeyword());
+		feeder.accept(grammarAccess.getDirectoryAccess().getDirSTRINGTerminalRuleCall_2_0(), semanticObject.getDir());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     EnabledKeyword returns EnabledKeyword
+	 *
+	 * Constraint:
+	 *     keyword='enabled'
+	 * </pre>
+	 */
+	protected void sequence_EnabledKeyword(ISerializationContext context, EnabledKeyword semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.ENABLED_KEYWORD__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.ENABLED_KEYWORD__KEYWORD));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getEnabledKeywordAccess().getKeywordEnabledKeyword_1_0(), semanticObject.getKeyword());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Enabled returns Enabled
+	 *
+	 * Constraint:
+	 *     (keyword=EnabledKeyword value=TrueFalseKeyword)
+	 * </pre>
+	 */
+	protected void sequence_Enabled(ISerializationContext context, Enabled semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.ENABLED__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.ENABLED__KEYWORD));
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.ENABLED__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.ENABLED__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getEnabledAccess().getKeywordEnabledKeywordParserRuleCall_1_0(), semanticObject.getKeyword());
+		feeder.accept(grammarAccess.getEnabledAccess().getValueTrueFalseKeywordParserRuleCall_2_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     EndpointKeyword returns EndpointKeyword
+	 *
+	 * Constraint:
+	 *     (keyword='endpoint' | keyword='endPoint')
+	 * </pre>
+	 */
+	protected void sequence_EndpointKeyword(ISerializationContext context, EndpointKeyword semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Endpoint returns Endpoint
+	 *
+	 * Constraint:
+	 *     (keyword=EndpointKeyword mode=STRING)
+	 * </pre>
+	 */
+	protected void sequence_Endpoint(ISerializationContext context, Endpoint semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.ENDPOINT__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.ENDPOINT__KEYWORD));
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.ENDPOINT__MODE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.ENDPOINT__MODE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getEndpointAccess().getKeywordEndpointKeywordParserRuleCall_1_0(), semanticObject.getKeyword());
+		feeder.accept(grammarAccess.getEndpointAccess().getModeSTRINGTerminalRuleCall_2_0(), semanticObject.getMode());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     EscalationKeyword returns EscalationKeyword
+	 *
+	 * Constraint:
+	 *     keyword='escalation'
+	 * </pre>
+	 */
+	protected void sequence_EscalationKeyword(ISerializationContext context, EscalationKeyword semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.ESCALATION_KEYWORD__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.ESCALATION_KEYWORD__KEYWORD));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getEscalationKeywordAccess().getKeywordEscalationKeyword_1_0(), semanticObject.getKeyword());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     FilePathKeyword returns FilePathKeyword
+	 *
+	 * Constraint:
+	 *     (keyword='filepath' | keyword='filePath')
+	 * </pre>
+	 */
+	protected void sequence_FilePathKeyword(ISerializationContext context, FilePathKeyword semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     GenBlock returns GenBlock
 	 *
 	 * Constraint:
 	 *     (
-	 *         initialInstructions+=STRING | 
-	 *         maxRetries+=INT | 
-	 *         parseChecks+='true' | 
-	 *         parseChecks+='false' | 
-	 *         defaultCorrections+=STRING | 
-	 *         remediations+=GenRemediationRules | 
-	 *         modelUsages+=GenUsageBlock
-	 *     )*
+	 *         keyword=GenKeyword 
+	 *         (
+	 *             initialInstructions+=InitialInstruction | 
+	 *             maxRetries+=MaxRetries | 
+	 *             parseChecks+=ParseCheck | 
+	 *             defaultCorrections+=DefaultCorrection | 
+	 *             remediations+=GenRemediationRules | 
+	 *             modelUsages+=GenUsageBlock
+	 *         )*
+	 *     )
 	 * </pre>
 	 */
 	protected void sequence_GenBlock(ISerializationContext context, GenBlock semanticObject) {
@@ -152,7 +752,7 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 	 *     GenDefaultRemediationRule returns GenDefaultRemediationRule
 	 *
 	 * Constraint:
-	 *     (codes+=STRING | correction+=STRING)*
+	 *     (keyword=DefaultKeyword (codes+=Code | corrections+=Correction)*)
 	 * </pre>
 	 */
 	protected void sequence_GenDefaultRemediationRule(ISerializationContext context, GenDefaultRemediationRule semanticObject) {
@@ -166,7 +766,7 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 	 *     GenEscalationBlock returns GenEscalationBlock
 	 *
 	 * Constraint:
-	 *     (enableds+='true' | enableds+='false' | escalateAtRetries+=INT)*
+	 *     (keyword=EscalationKeyword (enableds+=Enabled | atRetries+=AtRetry)*)
 	 * </pre>
 	 */
 	protected void sequence_GenEscalationBlock(ISerializationContext context, GenEscalationBlock semanticObject) {
@@ -177,10 +777,30 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     GenKeyword returns GenKeyword
+	 *
+	 * Constraint:
+	 *     keyword='gen'
+	 * </pre>
+	 */
+	protected void sequence_GenKeyword(ISerializationContext context, GenKeyword semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.GEN_KEYWORD__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.GEN_KEYWORD__KEYWORD));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getGenKeywordAccess().getKeywordGenKeyword_1_0(), semanticObject.getKeyword());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     GenPatternRemediationRule returns GenPatternRemediationRule
 	 *
 	 * Constraint:
-	 *     (patterns+=STRING | codes+=STRING | corrections+=STRING)*
+	 *     (keyword=RuleKeyword (patterns+=Pattern | codes+=Code | corrections+=Correction)*)
 	 * </pre>
 	 */
 	protected void sequence_GenPatternRemediationRule(ISerializationContext context, GenPatternRemediationRule semanticObject) {
@@ -194,7 +814,7 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 	 *     GenRemediationRules returns GenRemediationRules
 	 *
 	 * Constraint:
-	 *     (patternRules+=GenPatternRemediationRule | defaultRemediations+=GenDefaultRemediationRule)*
+	 *     (rulesKeyword=RulesKeyword (patternRules+=GenPatternRemediationRule | defaultRemediations+=GenDefaultRemediationRule)*)
 	 * </pre>
 	 */
 	protected void sequence_GenRemediationRules(ISerializationContext context, GenRemediationRules semanticObject) {
@@ -208,7 +828,7 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 	 *     GenUsageBlock returns GenUsageBlock
 	 *
 	 * Constraint:
-	 *     (primaryProviders+=ValidID | secondaryProviders+=ValidID | escalations+=GenEscalationBlock)*
+	 *     (keyword=ModelUsageKeyword (primaryProviders+=PrimaryProvider | secondaryProviders+=SecondaryProvider | escalations+=GenEscalationBlock)*)
 	 * </pre>
 	 */
 	protected void sequence_GenUsageBlock(ISerializationContext context, GenUsageBlock semanticObject) {
@@ -219,14 +839,176 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     InitialInstructionKeyword returns InitialInstructionKeyword
+	 *
+	 * Constraint:
+	 *     (keyword='initialinstruction' | keyword='initialInstruction')
+	 * </pre>
+	 */
+	protected void sequence_InitialInstructionKeyword(ISerializationContext context, InitialInstructionKeyword semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     InitialInstruction returns InitialInstruction
+	 *
+	 * Constraint:
+	 *     (keyword=InitialInstructionKeyword instruction=STRING)
+	 * </pre>
+	 */
+	protected void sequence_InitialInstruction(ISerializationContext context, InitialInstruction semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.INITIAL_INSTRUCTION__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.INITIAL_INSTRUCTION__KEYWORD));
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.INITIAL_INSTRUCTION__INSTRUCTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.INITIAL_INSTRUCTION__INSTRUCTION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getInitialInstructionAccess().getKeywordInitialInstructionKeywordParserRuleCall_1_0(), semanticObject.getKeyword());
+		feeder.accept(grammarAccess.getInitialInstructionAccess().getInstructionSTRINGTerminalRuleCall_2_0(), semanticObject.getInstruction());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     LLMProvider returns LLMProvider
+	 *
+	 * Constraint:
+	 *     (keyword=ProviderKeyword name=ValidID (types+=ProviderType | localModelPaths+=LocalModelPath | models+=Model | endpoints+=Endpoint)*)
+	 * </pre>
+	 */
+	protected void sequence_LLMProvider(ISerializationContext context, LLMProvider semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     LLMProvidersKeyword returns LLMProvidersKeyword
+	 *
+	 * Constraint:
+	 *     (keyword='llmproviders' | keyword='llmProviders')
+	 * </pre>
+	 */
+	protected void sequence_LLMProvidersKeyword(ISerializationContext context, LLMProvidersKeyword semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     LlmProvidersBlock returns LlmProvidersBlock
 	 *
 	 * Constraint:
-	 *     providers+=NamedLlmProvider*
+	 *     (keyword=LLMProvidersKeyword providers+=LLMProvider*)
 	 * </pre>
 	 */
 	protected void sequence_LlmProvidersBlock(ISerializationContext context, LlmProvidersBlock semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     LocalModelPath returns LocalModelPath
+	 *
+	 * Constraint:
+	 *     (keyword=FilePathKeyword path=STRING)
+	 * </pre>
+	 */
+	protected void sequence_LocalModelPath(ISerializationContext context, LocalModelPath semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.LOCAL_MODEL_PATH__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.LOCAL_MODEL_PATH__KEYWORD));
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.LOCAL_MODEL_PATH__PATH) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.LOCAL_MODEL_PATH__PATH));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getLocalModelPathAccess().getKeywordFilePathKeywordParserRuleCall_1_0(), semanticObject.getKeyword());
+		feeder.accept(grammarAccess.getLocalModelPathAccess().getPathSTRINGTerminalRuleCall_2_0(), semanticObject.getPath());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     MainDirKeyword returns MainDirKeyword
+	 *
+	 * Constraint:
+	 *     (keyword='maindir' | keyword='mainDir')
+	 * </pre>
+	 */
+	protected void sequence_MainDirKeyword(ISerializationContext context, MainDirKeyword semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     MainDirectory returns MainDirectory
+	 *
+	 * Constraint:
+	 *     (keyword=MainDirKeyword dir=STRING)
+	 * </pre>
+	 */
+	protected void sequence_MainDirectory(ISerializationContext context, MainDirectory semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.MAIN_DIRECTORY__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.MAIN_DIRECTORY__KEYWORD));
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.MAIN_DIRECTORY__DIR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.MAIN_DIRECTORY__DIR));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMainDirectoryAccess().getKeywordMainDirKeywordParserRuleCall_1_0(), semanticObject.getKeyword());
+		feeder.accept(grammarAccess.getMainDirectoryAccess().getDirSTRINGTerminalRuleCall_2_0(), semanticObject.getDir());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     MaxRetriesKeyword returns MaxRetriesKeyword
+	 *
+	 * Constraint:
+	 *     (keyword='maxretries' | keyword='maxRetries')
+	 * </pre>
+	 */
+	protected void sequence_MaxRetriesKeyword(ISerializationContext context, MaxRetriesKeyword semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     MaxRetries returns MaxRetries
+	 *
+	 * Constraint:
+	 *     (keyword=MaxRetriesKeyword maxRetries=INT)
+	 * </pre>
+	 */
+	protected void sequence_MaxRetries(ISerializationContext context, MaxRetries semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.MAX_RETRIES__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.MAX_RETRIES__KEYWORD));
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.MAX_RETRIES__MAX_RETRIES) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.MAX_RETRIES__MAX_RETRIES));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMaxRetriesAccess().getKeywordMaxRetriesKeywordParserRuleCall_1_0(), semanticObject.getKeyword());
+		feeder.accept(grammarAccess.getMaxRetriesAccess().getMaxRetriesINTTerminalRuleCall_2_0(), semanticObject.getMaxRetries());
+		feeder.finish();
 	}
 	
 	
@@ -258,10 +1040,87 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     ModelKeyword returns ModelKeyword
+	 *
+	 * Constraint:
+	 *     keyword='model'
+	 * </pre>
+	 */
+	protected void sequence_ModelKeyword(ISerializationContext context, ModelKeyword semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.MODEL_KEYWORD__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.MODEL_KEYWORD__KEYWORD));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getModelKeywordAccess().getKeywordModelKeyword_1_0(), semanticObject.getKeyword());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ModelUsageKeyword returns ModelUsageKeyword
+	 *
+	 * Constraint:
+	 *     (keyword='modelusage' | keyword='modelUsage')
+	 * </pre>
+	 */
+	protected void sequence_ModelUsageKeyword(ISerializationContext context, ModelUsageKeyword semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Model returns Model
+	 *
+	 * Constraint:
+	 *     (keyword=ModelKeyword mode=STRING)
+	 * </pre>
+	 */
+	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.MODEL__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.MODEL__KEYWORD));
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.MODEL__MODE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.MODEL__MODE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getModelAccess().getKeywordModelKeywordParserRuleCall_1_0(), semanticObject.getKeyword());
+		feeder.accept(grammarAccess.getModelAccess().getModeSTRINGTerminalRuleCall_2_0(), semanticObject.getMode());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ModuleKeyword returns ModuleKeyword
+	 *
+	 * Constraint:
+	 *     keyword='module'
+	 * </pre>
+	 */
+	protected void sequence_ModuleKeyword(ISerializationContext context, ModuleKeyword semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.MODULE_KEYWORD__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.MODULE_KEYWORD__KEYWORD));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getModuleKeywordAccess().getKeywordModuleKeyword_1_0(), semanticObject.getKeyword());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     ModulesBlock returns ModulesBlock
 	 *
 	 * Constraint:
-	 *     modules+=ProjectModule*
+	 *     (modulesKeyword=ModulesKeyword modules+=ProjectModule*)
 	 * </pre>
 	 */
 	protected void sequence_ModulesBlock(ISerializationContext context, ModulesBlock semanticObject) {
@@ -272,24 +1131,20 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     NamedLlmProvider returns NamedLlmProvider
+	 *     ModulesKeyword returns ModulesKeyword
 	 *
 	 * Constraint:
-	 *     (
-	 *         name=ValidID 
-	 *         (
-	 *             kinds+='local' | 
-	 *             kinds+='openai' | 
-	 *             kinds+='ollama' | 
-	 *             localModelPaths+=STRING | 
-	 *             models+=STRING | 
-	 *             endpoints+=STRING
-	 *         )*
-	 *     )
+	 *     keyword='modules'
 	 * </pre>
 	 */
-	protected void sequence_NamedLlmProvider(ISerializationContext context, NamedLlmProvider semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_ModulesKeyword(ISerializationContext context, ModulesKeyword semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.MODULES_KEYWORD__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.MODULES_KEYWORD__KEYWORD));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getModulesKeywordAccess().getKeywordModulesKeyword_1_0(), semanticObject.getKeyword());
+		feeder.finish();
 	}
 	
 	
@@ -335,6 +1190,129 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     ParseCheckKeyword returns ParseCheckKeyword
+	 *
+	 * Constraint:
+	 *     (keyword='parsecheck' | keyword='parseCheck')
+	 * </pre>
+	 */
+	protected void sequence_ParseCheckKeyword(ISerializationContext context, ParseCheckKeyword semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ParseCheck returns ParseCheck
+	 *
+	 * Constraint:
+	 *     (keyword=ParseCheckKeyword value=TrueFalseKeyword)
+	 * </pre>
+	 */
+	protected void sequence_ParseCheck(ISerializationContext context, ParseCheck semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.PARSE_CHECK__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.PARSE_CHECK__KEYWORD));
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.PARSE_CHECK__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.PARSE_CHECK__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getParseCheckAccess().getKeywordParseCheckKeywordParserRuleCall_1_0(), semanticObject.getKeyword());
+		feeder.accept(grammarAccess.getParseCheckAccess().getValueTrueFalseKeywordParserRuleCall_2_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     PatternKeyword returns PatternKeyword
+	 *
+	 * Constraint:
+	 *     keyword='pattern'
+	 * </pre>
+	 */
+	protected void sequence_PatternKeyword(ISerializationContext context, PatternKeyword semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.PATTERN_KEYWORD__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.PATTERN_KEYWORD__KEYWORD));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPatternKeywordAccess().getKeywordPatternKeyword_1_0(), semanticObject.getKeyword());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Pattern returns Pattern
+	 *
+	 * Constraint:
+	 *     (keyword=PatternKeyword pattern=STRING)
+	 * </pre>
+	 */
+	protected void sequence_Pattern(ISerializationContext context, Pattern semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.PATTERN__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.PATTERN__KEYWORD));
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.PATTERN__PATTERN) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.PATTERN__PATTERN));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPatternAccess().getKeywordPatternKeywordParserRuleCall_1_0(), semanticObject.getKeyword());
+		feeder.accept(grammarAccess.getPatternAccess().getPatternSTRINGTerminalRuleCall_2_0(), semanticObject.getPattern());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     PrimaryProviderKeyword returns PrimaryProviderKeyword
+	 *
+	 * Constraint:
+	 *     keyword='primary'
+	 * </pre>
+	 */
+	protected void sequence_PrimaryProviderKeyword(ISerializationContext context, PrimaryProviderKeyword semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.PRIMARY_PROVIDER_KEYWORD__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.PRIMARY_PROVIDER_KEYWORD__KEYWORD));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPrimaryProviderKeywordAccess().getKeywordPrimaryKeyword_1_0(), semanticObject.getKeyword());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     PrimaryProvider returns PrimaryProvider
+	 *
+	 * Constraint:
+	 *     (keyword=PrimaryProviderKeyword name=ValidID)
+	 * </pre>
+	 */
+	protected void sequence_PrimaryProvider(ISerializationContext context, PrimaryProvider semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.PRIMARY_PROVIDER__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.PRIMARY_PROVIDER__KEYWORD));
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.PRIMARY_PROVIDER__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.PRIMARY_PROVIDER__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPrimaryProviderAccess().getKeywordPrimaryProviderKeywordParserRuleCall_1_0(), semanticObject.getKeyword());
+		feeder.accept(grammarAccess.getPrimaryProviderAccess().getNameValidIDParserRuleCall_2_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     JavaType returns PrimitiveType
 	 *     PrimitiveType returns PrimitiveType
 	 *
@@ -360,10 +1338,44 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     ProfileKeyword returns ProfileKeyword
+	 *
+	 * Constraint:
+	 *     keyword='profile'
+	 * </pre>
+	 */
+	protected void sequence_ProfileKeyword(ISerializationContext context, ProfileKeyword semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.PROFILE_KEYWORD__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.PROFILE_KEYWORD__KEYWORD));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getProfileKeywordAccess().getKeywordProfileKeyword_1_0(), semanticObject.getKeyword());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Profile returns Profile
+	 *
+	 * Constraint:
+	 *     (profileKeyword=ProfileKeyword name=ValidID (projects+=ProjectBlock | llmProviders+=LlmProvidersBlock | surfaces+=SurfaceBlock)*)
+	 * </pre>
+	 */
+	protected void sequence_Profile(ISerializationContext context, Profile semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     ProjectBlock returns ProjectBlock
 	 *
 	 * Constraint:
-	 *     (rootDir+=STRING | modules+=ModulesBlock | gens+=GenBlock)*
+	 *     (projectKeyword=ProjectKeyword (rootDirs+=RootDirectory | modules+=ModulesBlock | gens+=GenBlock)*)
 	 * </pre>
 	 */
 	protected void sequence_ProjectBlock(ISerializationContext context, ProjectBlock semanticObject) {
@@ -374,10 +1386,34 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     ProjectKeyword returns ProjectKeyword
+	 *
+	 * Constraint:
+	 *     keyword='project'
+	 * </pre>
+	 */
+	protected void sequence_ProjectKeyword(ISerializationContext context, ProjectKeyword semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.PROJECT_KEYWORD__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.PROJECT_KEYWORD__KEYWORD));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getProjectKeywordAccess().getKeywordProjectKeyword_1_0(), semanticObject.getKeyword());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     ProjectModule returns ProjectModule
 	 *
 	 * Constraint:
-	 *     (name=ValidID (dirs+=STRING | specDirs+=STRING | testDirs+=STRING | mainDirs+=STRING | basePackages+=STRING)*)
+	 *     (
+	 *         keyword=ModuleKeyword 
+	 *         name=ValidID 
+	 *         (dirs+=Directory | specDirs+=SpecDirectory | testDirs+=TestDirectory | mainDirs+=MainDirectory | basePackages+=BasePackage)*
+	 *     )
 	 * </pre>
 	 */
 	protected void sequence_ProjectModule(ISerializationContext context, ProjectModule semanticObject) {
@@ -391,11 +1427,74 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 	 *     ProjectProfile returns ProjectProfile
 	 *
 	 * Constraint:
-	 *     (name=ValidID (projects+=ProjectBlock | llmProviders+=LlmProvidersBlock | surfaces+=SurfaceBlock)*)
+	 *     profiles+=Profile*
 	 * </pre>
 	 */
 	protected void sequence_ProjectProfile(ISerializationContext context, ProjectProfile semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ProviderKeyword returns ProviderKeyword
+	 *
+	 * Constraint:
+	 *     keyword='provider'
+	 * </pre>
+	 */
+	protected void sequence_ProviderKeyword(ISerializationContext context, ProviderKeyword semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.PROVIDER_KEYWORD__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.PROVIDER_KEYWORD__KEYWORD));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getProviderKeywordAccess().getKeywordProviderKeyword_1_0(), semanticObject.getKeyword());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ProviderTypeKeyword returns ProviderTypeKeyword
+	 *
+	 * Constraint:
+	 *     keyword='type'
+	 * </pre>
+	 */
+	protected void sequence_ProviderTypeKeyword(ISerializationContext context, ProviderTypeKeyword semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.PROVIDER_TYPE_KEYWORD__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.PROVIDER_TYPE_KEYWORD__KEYWORD));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getProviderTypeKeywordAccess().getKeywordTypeKeyword_1_0(), semanticObject.getKeyword());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ProviderType returns ProviderType
+	 *
+	 * Constraint:
+	 *     (keyword=ProviderTypeKeyword name=ValidID)
+	 * </pre>
+	 */
+	protected void sequence_ProviderType(ISerializationContext context, ProviderType semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.PROVIDER_TYPE__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.PROVIDER_TYPE__KEYWORD));
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.PROVIDER_TYPE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.PROVIDER_TYPE__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getProviderTypeAccess().getKeywordProviderTypeKeywordParserRuleCall_1_0(), semanticObject.getKeyword());
+		feeder.accept(grammarAccess.getProviderTypeAccess().getNameValidIDParserRuleCall_2_0(), semanticObject.getName());
+		feeder.finish();
 	}
 	
 	
@@ -458,6 +1557,83 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     RootDirKeyword returns RootDirKeyword
+	 *
+	 * Constraint:
+	 *     (keyword='rootdir' | keyword='rootDir')
+	 * </pre>
+	 */
+	protected void sequence_RootDirKeyword(ISerializationContext context, RootDirKeyword semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     RootDirectory returns RootDirectory
+	 *
+	 * Constraint:
+	 *     (keyword=RootDirKeyword dir=STRING)
+	 * </pre>
+	 */
+	protected void sequence_RootDirectory(ISerializationContext context, RootDirectory semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.ROOT_DIRECTORY__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.ROOT_DIRECTORY__KEYWORD));
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.ROOT_DIRECTORY__DIR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.ROOT_DIRECTORY__DIR));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRootDirectoryAccess().getKeywordRootDirKeywordParserRuleCall_1_0(), semanticObject.getKeyword());
+		feeder.accept(grammarAccess.getRootDirectoryAccess().getDirSTRINGTerminalRuleCall_2_0(), semanticObject.getDir());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     RuleKeyword returns RuleKeyword
+	 *
+	 * Constraint:
+	 *     keyword='rule'
+	 * </pre>
+	 */
+	protected void sequence_RuleKeyword(ISerializationContext context, RuleKeyword semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.RULE_KEYWORD__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.RULE_KEYWORD__KEYWORD));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRuleKeywordAccess().getKeywordRuleKeyword_1_0(), semanticObject.getKeyword());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     RulesKeyword returns RulesKeyword
+	 *
+	 * Constraint:
+	 *     keyword='rules'
+	 * </pre>
+	 */
+	protected void sequence_RulesKeyword(ISerializationContext context, RulesKeyword semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.RULES_KEYWORD__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.RULES_KEYWORD__KEYWORD));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRulesKeywordAccess().getKeywordRulesKeyword_1_0(), semanticObject.getKeyword());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     SurfaceElement returns ScopedSurface
 	 *     ScopedSurface returns ScopedSurface
 	 *
@@ -473,6 +1649,86 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     SecondaryProviderKeyword returns SecondaryProviderKeyword
+	 *
+	 * Constraint:
+	 *     keyword='secondary'
+	 * </pre>
+	 */
+	protected void sequence_SecondaryProviderKeyword(ISerializationContext context, SecondaryProviderKeyword semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.SECONDARY_PROVIDER_KEYWORD__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.SECONDARY_PROVIDER_KEYWORD__KEYWORD));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSecondaryProviderKeywordAccess().getKeywordSecondaryKeyword_1_0(), semanticObject.getKeyword());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SecondaryProvider returns SecondaryProvider
+	 *
+	 * Constraint:
+	 *     (keyword=SecondaryProviderKeyword name=ValidID)
+	 * </pre>
+	 */
+	protected void sequence_SecondaryProvider(ISerializationContext context, SecondaryProvider semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.SECONDARY_PROVIDER__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.SECONDARY_PROVIDER__KEYWORD));
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.SECONDARY_PROVIDER__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.SECONDARY_PROVIDER__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSecondaryProviderAccess().getKeywordSecondaryProviderKeywordParserRuleCall_1_0(), semanticObject.getKeyword());
+		feeder.accept(grammarAccess.getSecondaryProviderAccess().getNameValidIDParserRuleCall_2_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SpecDirKeyword returns SpecDirKeyword
+	 *
+	 * Constraint:
+	 *     (keyword='specdir' | keyword='specDir')
+	 * </pre>
+	 */
+	protected void sequence_SpecDirKeyword(ISerializationContext context, SpecDirKeyword semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SpecDirectory returns SpecDirectory
+	 *
+	 * Constraint:
+	 *     (keyword=SpecDirKeyword dir=STRING)
+	 * </pre>
+	 */
+	protected void sequence_SpecDirectory(ISerializationContext context, SpecDirectory semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.SPEC_DIRECTORY__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.SPEC_DIRECTORY__KEYWORD));
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.SPEC_DIRECTORY__DIR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.SPEC_DIRECTORY__DIR));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSpecDirectoryAccess().getKeywordSpecDirKeywordParserRuleCall_1_0(), semanticObject.getKeyword());
+		feeder.accept(grammarAccess.getSpecDirectoryAccess().getDirSTRINGTerminalRuleCall_2_0(), semanticObject.getDir());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     SurfaceBlock returns SurfaceBlock
 	 *
 	 * Constraint:
@@ -480,6 +1736,57 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 	 * </pre>
 	 */
 	protected void sequence_SurfaceBlock(ISerializationContext context, SurfaceBlock semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     TestDirKeyword returns TestDirKeyword
+	 *
+	 * Constraint:
+	 *     (keyword='testdir' | keyword='testDir')
+	 * </pre>
+	 */
+	protected void sequence_TestDirKeyword(ISerializationContext context, TestDirKeyword semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     TestDirectory returns TestDirectory
+	 *
+	 * Constraint:
+	 *     (keyword=TestDirKeyword dir=STRING)
+	 * </pre>
+	 */
+	protected void sequence_TestDirectory(ISerializationContext context, TestDirectory semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.TEST_DIRECTORY__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.TEST_DIRECTORY__KEYWORD));
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.TEST_DIRECTORY__DIR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.TEST_DIRECTORY__DIR));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getTestDirectoryAccess().getKeywordTestDirKeywordParserRuleCall_1_0(), semanticObject.getKeyword());
+		feeder.accept(grammarAccess.getTestDirectoryAccess().getDirSTRINGTerminalRuleCall_2_0(), semanticObject.getDir());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     TrueFalseKeyword returns TrueKeyword
+	 *
+	 * Constraint:
+	 *     (keyword='true' | keyword='false')
+	 * </pre>
+	 */
+	protected void sequence_TrueFalseKeyword(ISerializationContext context, TrueKeyword semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

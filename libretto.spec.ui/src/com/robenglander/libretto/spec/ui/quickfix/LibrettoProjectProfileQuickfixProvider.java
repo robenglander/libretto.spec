@@ -3,7 +3,25 @@
  */
 package com.robenglander.libretto.spec.ui.quickfix;
 
+import java.util.List;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.jface.text.BadLocationException;
+import org.eclipse.xtext.resource.XtextResource;
+import org.eclipse.xtext.ui.editor.model.edit.IModification;
+import org.eclipse.xtext.ui.editor.model.edit.IModificationContext;
 import org.eclipse.xtext.ui.editor.quickfix.DefaultQuickfixProvider;
+import org.eclipse.xtext.ui.editor.quickfix.Fix;
+import org.eclipse.xtext.ui.editor.quickfix.IssueResolutionAcceptor;
+import org.eclipse.xtext.util.concurrent.IUnitOfWork;
+import org.eclipse.xtext.validation.Issue;
+
+import com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider;
+import com.robenglander.libretto.spec.librettoProjectProfile.ProviderType;
+import com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProvider;
+import com.robenglander.libretto.spec.validation.LibrettoProjectProfileDuplicateRemoval;
+import com.robenglander.libretto.spec.validation.LibrettoProjectProfileValidator;
+import com.robenglander.libretto.spec.validation.LlmProviderReferenceSupport;
 
 /**
  * Custom quickfixes.
@@ -12,15 +30,433 @@ import org.eclipse.xtext.ui.editor.quickfix.DefaultQuickfixProvider;
  */
 public class LibrettoProjectProfileQuickfixProvider extends DefaultQuickfixProvider {
 
-//	@Fix(LibrettoProjectProfileValidator.INVALID_NAME)
-//	public void capitalizeName(final Issue issue, IssueResolutionAcceptor acceptor) {
-//		acceptor.accept(issue, "Capitalize name", "Capitalize the name.", "upcase.png", new IModification() {
-//			public void apply(IModificationContext context) throws BadLocationException {
-//				IXtextDocument xtextDocument = context.getXtextDocument();
-//				String firstLetter = xtextDocument.get(issue.getOffset(), 1);
-//				xtextDocument.replace(issue.getOffset(), 1, firstLetter.toUpperCase());
-//			}
-//		});
-//	}
+	@Fix(LibrettoProjectProfileValidator.TOO_MANY_PROFILES)
+	public void removeDuplicateProfile(final Issue issue, IssueResolutionAcceptor acceptor) {
+		removeDuplicate(
+				issue,
+				acceptor,
+				LibrettoProjectProfileValidator.TOO_MANY_PROFILES,
+				"Remove this profile block",
+				"Deletes this profile { ... } block from the file.");
+	}
 
+	@Fix(LibrettoProjectProfileValidator.TOO_MANY_PROJECT_SECTIONS)
+	public void removeDuplicateProject(final Issue issue, IssueResolutionAcceptor acceptor) {
+		removeDuplicate(
+				issue,
+				acceptor,
+				LibrettoProjectProfileValidator.TOO_MANY_PROJECT_SECTIONS,
+				"Remove this project block",
+				"Deletes this project { ... } block.");
+	}
+
+	@Fix(LibrettoProjectProfileValidator.TOO_MANY_ROOT_DIRS)
+	public void removeDuplicateRootDir(final Issue issue, IssueResolutionAcceptor acceptor) {
+		removeDuplicate(
+				issue,
+				acceptor,
+				LibrettoProjectProfileValidator.TOO_MANY_ROOT_DIRS,
+				"Remove this rootDir entry",
+				"Deletes this rootDir declaration from the project block.");
+	}
+
+	@Fix(LibrettoProjectProfileValidator.TOO_MANY_MODULES_SECTIONS)
+	public void removeDuplicateModulesSection(final Issue issue, IssueResolutionAcceptor acceptor) {
+		removeDuplicate(
+				issue,
+				acceptor,
+				LibrettoProjectProfileValidator.TOO_MANY_MODULES_SECTIONS,
+				"Remove this modules section",
+				"Deletes this modules { ... } section from the project block.");
+	}
+
+	@Fix(LibrettoProjectProfileValidator.TOO_MANY_LLM_PROVIDERS_SECTIONS)
+	public void removeDuplicateLlmProvidersSection(final Issue issue, IssueResolutionAcceptor acceptor) {
+		removeDuplicate(
+				issue,
+				acceptor,
+				LibrettoProjectProfileValidator.TOO_MANY_LLM_PROVIDERS_SECTIONS,
+				"Remove this llmProviders section",
+				"Deletes this llmProviders { ... } section from the profile.");
+	}
+
+	@Fix(LibrettoProjectProfileValidator.TOO_MANY_GEN_SECTIONS)
+	public void removeDuplicateGenSection(final Issue issue, IssueResolutionAcceptor acceptor) {
+		removeDuplicate(
+				issue,
+				acceptor,
+				LibrettoProjectProfileValidator.TOO_MANY_GEN_SECTIONS,
+				"Remove this gen section",
+				"Deletes this gen { ... } section from the project block.");
+	}
+
+	@Fix(LibrettoProjectProfileValidator.MODULE_DUPLICATE_PATH_DECLARATION)
+	public void removeDuplicateModulePathDecl(final Issue issue, IssueResolutionAcceptor acceptor) {
+		removeDuplicate(
+				issue,
+				acceptor,
+				LibrettoProjectProfileValidator.MODULE_DUPLICATE_PATH_DECLARATION,
+				"Remove this declaration",
+				"Deletes this duplicate dir, specDir, testDir, mainDir, or basePackage line.");
+	}
+
+	@Fix(LibrettoProjectProfileValidator.GEN_TOO_MANY_INITIAL_INSTRUCTIONS)
+	public void removeDuplicateInitialInstruction(final Issue issue, IssueResolutionAcceptor acceptor) {
+		removeDuplicate(
+				issue,
+				acceptor,
+				LibrettoProjectProfileValidator.GEN_TOO_MANY_INITIAL_INSTRUCTIONS,
+				"Remove this initialInstruction",
+				"Deletes this initialInstruction from gen { ... }.");
+	}
+
+	@Fix(LibrettoProjectProfileValidator.GEN_TOO_MANY_MAX_RETRIES)
+	public void removeDuplicateMaxRetries(final Issue issue, IssueResolutionAcceptor acceptor) {
+		removeDuplicate(
+				issue,
+				acceptor,
+				LibrettoProjectProfileValidator.GEN_TOO_MANY_MAX_RETRIES,
+				"Remove this maxRetries",
+				"Deletes this maxRetries from gen { ... }.");
+	}
+
+	@Fix(LibrettoProjectProfileValidator.GEN_TOO_MANY_PARSE_CHECKS)
+	public void removeDuplicateParseCheck(final Issue issue, IssueResolutionAcceptor acceptor) {
+		removeDuplicate(
+				issue,
+				acceptor,
+				LibrettoProjectProfileValidator.GEN_TOO_MANY_PARSE_CHECKS,
+				"Remove this parseCheck",
+				"Deletes this parseCheck from gen { ... }.");
+	}
+
+	@Fix(LibrettoProjectProfileValidator.GEN_TOO_MANY_DEFAULT_CORRECTIONS)
+	public void removeDuplicateGenDefaultCorrection(final Issue issue, IssueResolutionAcceptor acceptor) {
+		removeDuplicate(
+				issue,
+				acceptor,
+				LibrettoProjectProfileValidator.GEN_TOO_MANY_DEFAULT_CORRECTIONS,
+				"Remove this defaultCorrection",
+				"Deletes this defaultCorrection from gen { ... }.");
+	}
+
+	@Fix(LibrettoProjectProfileValidator.GEN_TOO_MANY_RULES_SECTIONS)
+	public void removeDuplicateRulesSection(final Issue issue, IssueResolutionAcceptor acceptor) {
+		removeDuplicate(
+				issue,
+				acceptor,
+				LibrettoProjectProfileValidator.GEN_TOO_MANY_RULES_SECTIONS,
+				"Remove this rules section",
+				"Deletes this rules { ... } section from gen { ... }.");
+	}
+
+	@Fix(LibrettoProjectProfileValidator.GEN_TOO_MANY_MODEL_USAGES)
+	public void removeDuplicateModelUsageSection(final Issue issue, IssueResolutionAcceptor acceptor) {
+		removeDuplicate(
+				issue,
+				acceptor,
+				LibrettoProjectProfileValidator.GEN_TOO_MANY_MODEL_USAGES,
+				"Remove this modelUsage section",
+				"Deletes this modelUsage { ... } section from gen { ... }.");
+	}
+
+	@Fix(LibrettoProjectProfileValidator.MODEL_USAGE_TOO_MANY_PRIMARIES)
+	public void removeDuplicatePrimaryProvider(final Issue issue, IssueResolutionAcceptor acceptor) {
+		removeDuplicate(
+				issue,
+				acceptor,
+				LibrettoProjectProfileValidator.MODEL_USAGE_TOO_MANY_PRIMARIES,
+				"Remove this primary entry",
+				"Deletes this primary line from modelUsage { ... }.");
+	}
+
+	@Fix(LibrettoProjectProfileValidator.MODEL_USAGE_TOO_MANY_SECONDARIES)
+	public void removeDuplicateSecondaryProvider(final Issue issue, IssueResolutionAcceptor acceptor) {
+		removeDuplicate(
+				issue,
+				acceptor,
+				LibrettoProjectProfileValidator.MODEL_USAGE_TOO_MANY_SECONDARIES,
+				"Remove this secondary entry",
+				"Deletes this secondary line from modelUsage { ... }.");
+	}
+
+	@Fix(LibrettoProjectProfileValidator.MODEL_USAGE_TOO_MANY_ESCALATIONS)
+	public void removeDuplicateEscalationBlock(final Issue issue, IssueResolutionAcceptor acceptor) {
+		removeDuplicate(
+				issue,
+				acceptor,
+				LibrettoProjectProfileValidator.MODEL_USAGE_TOO_MANY_ESCALATIONS,
+				"Remove this escalation block",
+				"Deletes this escalation { ... } block from modelUsage { ... }.");
+	}
+
+	@Fix(LibrettoProjectProfileValidator.MODEL_USAGE_PRIMARY_SECONDARY_SAME_NAME)
+	public void removePrimaryOrSecondaryForSameName(final Issue issue, IssueResolutionAcceptor acceptor) {
+		removeDuplicate(
+				issue,
+				acceptor,
+				LibrettoProjectProfileValidator.MODEL_USAGE_PRIMARY_SECONDARY_SAME_NAME,
+				"Remove this primary or secondary entry",
+				"Deletes the primary or secondary line at the diagnostic (they must not name the same provider).");
+	}
+
+	@Fix(LibrettoProjectProfileValidator.LLM_PROVIDER_TOO_MANY_TYPES)
+	public void removeDuplicateProviderType(final Issue issue, IssueResolutionAcceptor acceptor) {
+		removeDuplicate(
+				issue,
+				acceptor,
+				LibrettoProjectProfileValidator.LLM_PROVIDER_TOO_MANY_TYPES,
+				"Remove this type entry",
+				"Deletes this type line from provider { ... } (only one type is allowed).");
+	}
+
+	@Fix(LibrettoProjectProfileValidator.LLM_PROVIDER_LOCAL_TOO_MANY_FILE_PATHS)
+	public void removeDuplicateLocalFilePath(final Issue issue, IssueResolutionAcceptor acceptor) {
+		removeDuplicate(
+				issue,
+				acceptor,
+				LibrettoProjectProfileValidator.LLM_PROVIDER_LOCAL_TOO_MANY_FILE_PATHS,
+				"Remove this filePath entry",
+				"Deletes this filePath line from provider { ... } (type local allows only one).");
+	}
+
+	@Fix(LibrettoProjectProfileValidator.LLM_PROVIDER_LOCAL_FILE_PATH_VALUE_DUPLICATE_ACROSS_PROVIDERS)
+	public void removeDuplicateLocalFilePathAcrossProviders(final Issue issue, IssueResolutionAcceptor acceptor) {
+		removeDuplicate(
+				issue,
+				acceptor,
+				LibrettoProjectProfileValidator.LLM_PROVIDER_LOCAL_FILE_PATH_VALUE_DUPLICATE_ACROSS_PROVIDERS,
+				"Remove this filePath entry",
+				"Deletes this filePath line (value must be unique across all type local providers).");
+	}
+
+	@Fix(LibrettoProjectProfileValidator.LLM_PROVIDER_LOCAL_MUST_NOT_ENDPOINT)
+	public void removeLocalProviderEndpoint(final Issue issue, IssueResolutionAcceptor acceptor) {
+		removeDuplicate(
+				issue,
+				acceptor,
+				LibrettoProjectProfileValidator.LLM_PROVIDER_LOCAL_MUST_NOT_ENDPOINT,
+				"Remove this endpoint entry",
+				"Deletes this endpoint line (not allowed when type is local).");
+	}
+
+	@Fix(LibrettoProjectProfileValidator.LLM_PROVIDER_MANAGED_MUST_NOT_FILE_PATH)
+	public void removeManagedProviderFilePath(final Issue issue, IssueResolutionAcceptor acceptor) {
+		removeDuplicate(
+				issue,
+				acceptor,
+				LibrettoProjectProfileValidator.LLM_PROVIDER_MANAGED_MUST_NOT_FILE_PATH,
+				"Remove this filePath entry",
+				"Deletes this filePath line (not allowed for type openai, gemini, anthropic, or ollama).");
+	}
+
+	@Fix(LibrettoProjectProfileValidator.LLM_PROVIDER_MANAGED_MUST_NOT_ENDPOINT)
+	public void removeManagedProviderEndpoint(final Issue issue, IssueResolutionAcceptor acceptor) {
+		removeDuplicate(
+				issue,
+				acceptor,
+				LibrettoProjectProfileValidator.LLM_PROVIDER_MANAGED_MUST_NOT_ENDPOINT,
+				"Remove this endpoint entry",
+				"Deletes this endpoint line (not allowed for type openai, gemini, or anthropic).");
+	}
+
+	@Fix(LibrettoProjectProfileValidator.LLM_PROVIDER_MANAGED_TOO_MANY_MODELS)
+	public void removeDuplicateManagedModel(final Issue issue, IssueResolutionAcceptor acceptor) {
+		removeDuplicate(
+				issue,
+				acceptor,
+				LibrettoProjectProfileValidator.LLM_PROVIDER_MANAGED_TOO_MANY_MODELS,
+				"Remove this model entry",
+				"Deletes this model line (openai, gemini, anthropic, and ollama allow only one model).");
+	}
+
+	@Fix(LibrettoProjectProfileValidator.LLM_PROVIDER_MODEL_VALUE_DUPLICATE_FOR_TYPE)
+	public void removeDuplicateModelValueForType(final Issue issue, IssueResolutionAcceptor acceptor) {
+		removeDuplicate(
+				issue,
+				acceptor,
+				LibrettoProjectProfileValidator.LLM_PROVIDER_MODEL_VALUE_DUPLICATE_FOR_TYPE,
+				"Remove this model entry",
+				"Deletes this model line (model id must be unique per provider type across the profile).");
+	}
+
+	@Fix(LibrettoProjectProfileValidator.LLM_PROVIDER_OLLAMA_TOO_MANY_ENDPOINTS)
+	public void removeDuplicateOllamaEndpoint(final Issue issue, IssueResolutionAcceptor acceptor) {
+		removeDuplicate(
+				issue,
+				acceptor,
+				LibrettoProjectProfileValidator.LLM_PROVIDER_OLLAMA_TOO_MANY_ENDPOINTS,
+				"Remove this endpoint entry",
+				"Deletes this endpoint line from provider { ... } (type ollama allows only one).");
+	}
+
+	@Fix(LibrettoProjectProfileValidator.MODEL_USAGE_PRIMARY_UNKNOWN_PROVIDER)
+	public void changePrimaryToDeclaredProvider(final Issue issue, IssueResolutionAcceptor acceptor) {
+		acceptDeclaredProviderNameReplacements(issue, acceptor, true);
+	}
+
+	@Fix(LibrettoProjectProfileValidator.MODEL_USAGE_SECONDARY_UNKNOWN_PROVIDER)
+	public void changeSecondaryToDeclaredProvider(final Issue issue, IssueResolutionAcceptor acceptor) {
+		acceptDeclaredProviderNameReplacements(issue, acceptor, false);
+	}
+
+	@Fix(LibrettoProjectProfileValidator.LLM_PROVIDER_TYPE_INVALID)
+	public void changeProviderTypeToAllowed(final Issue issue, IssueResolutionAcceptor acceptor) {
+		for (String allowed : LibrettoProjectProfileValidator.ALLOWED_LLM_PROVIDER_TYPE_NAMES) {
+			acceptor.accept(
+					issue,
+					"Change type to '" + allowed + "'",
+					"Sets this provider type to " + allowed + ".",
+					null,
+					new IModification() {
+						@Override
+						public void apply(IModificationContext context) throws BadLocationException {
+							try {
+								context.getXtextDocument().modify(new IUnitOfWork.Void<XtextResource>() {
+									@Override
+									public void process(XtextResource state) throws Exception {
+										String fragment = issue.getUriToProblem().fragment();
+										EObject object = state.getEObject(fragment);
+										if (object instanceof ProviderType pt) {
+											pt.setName(allowed);
+										}
+									}
+								});
+							} catch (Exception e) {
+								throw new RuntimeException(e);
+							}
+						}
+					});
+		}
+	}
+
+	@Fix(LibrettoProjectProfileValidator.RULES_TOO_MANY_DEFAULT_SECTIONS)
+	public void removeDuplicateDefaultRemediationSection(final Issue issue, IssueResolutionAcceptor acceptor) {
+		removeDuplicate(
+				issue,
+				acceptor,
+				LibrettoProjectProfileValidator.RULES_TOO_MANY_DEFAULT_SECTIONS,
+				"Remove this default section",
+				"Deletes this default { ... } section from rules { ... }.");
+	}
+
+	@Fix(LibrettoProjectProfileValidator.RULE_TOO_MANY_PATTERNS)
+	public void removeDuplicateRulePattern(final Issue issue, IssueResolutionAcceptor acceptor) {
+		removeDuplicate(
+				issue,
+				acceptor,
+				LibrettoProjectProfileValidator.RULE_TOO_MANY_PATTERNS,
+				"Remove this pattern entry",
+				"Deletes this pattern line from rule { ... }.");
+	}
+
+	@Fix(LibrettoProjectProfileValidator.RULE_TOO_MANY_CODES)
+	public void removeDuplicateRuleCode(final Issue issue, IssueResolutionAcceptor acceptor) {
+		removeDuplicate(
+				issue,
+				acceptor,
+				LibrettoProjectProfileValidator.RULE_TOO_MANY_CODES,
+				"Remove this code entry",
+				"Deletes this code line from rule { ... }.");
+	}
+
+	@Fix(LibrettoProjectProfileValidator.RULE_TOO_MANY_CORRECTIONS)
+	public void removeDuplicateRuleCorrection(final Issue issue, IssueResolutionAcceptor acceptor) {
+		removeDuplicate(
+				issue,
+				acceptor,
+				LibrettoProjectProfileValidator.RULE_TOO_MANY_CORRECTIONS,
+				"Remove this correction entry",
+				"Deletes this correction line from rule { ... }.");
+	}
+
+	@Fix(LibrettoProjectProfileValidator.DEFAULT_TOO_MANY_CODES)
+	public void removeDuplicateDefaultCode(final Issue issue, IssueResolutionAcceptor acceptor) {
+		removeDuplicate(
+				issue,
+				acceptor,
+				LibrettoProjectProfileValidator.DEFAULT_TOO_MANY_CODES,
+				"Remove this code entry",
+				"Deletes this code line from default { ... }.");
+	}
+
+	@Fix(LibrettoProjectProfileValidator.DEFAULT_TOO_MANY_CORRECTIONS)
+	public void removeDuplicateDefaultCorrection(final Issue issue, IssueResolutionAcceptor acceptor) {
+		removeDuplicate(
+				issue,
+				acceptor,
+				LibrettoProjectProfileValidator.DEFAULT_TOO_MANY_CORRECTIONS,
+				"Remove this correction entry",
+				"Deletes this correction line from default { ... }.");
+	}
+
+	private static void acceptDeclaredProviderNameReplacements(
+			final Issue issue,
+			IssueResolutionAcceptor acceptor,
+			boolean primary) {
+		String[] data = issue.getData();
+		String csv = data != null && data.length > 0 ? data[0] : "";
+		List<String> names = LlmProviderReferenceSupport.splitDeclaredNamesCsv(csv);
+		String role = primary ? "primary" : "secondary";
+		for (String name : names) {
+			acceptor.accept(
+					issue,
+					"Change to provider '" + name + "'",
+					"Sets this " + role + " to a name declared in llmProviders { ... }.",
+					null,
+					new IModification() {
+						@Override
+						public void apply(IModificationContext context) throws BadLocationException {
+							try {
+								context.getXtextDocument().modify(new IUnitOfWork.Void<XtextResource>() {
+									@Override
+									public void process(XtextResource state) throws Exception {
+										String fragment = issue.getUriToProblem().fragment();
+										EObject object = state.getEObject(fragment);
+										if (primary) {
+											if (object instanceof PrimaryProvider pp) {
+												pp.setName(name);
+											}
+										} else if (object instanceof SecondaryProvider sp) {
+											sp.setName(name);
+										}
+									}
+								});
+							} catch (Exception e) {
+								throw new RuntimeException(e);
+							}
+						}
+					});
+		}
+	}
+
+	private static void removeDuplicate(
+			final Issue issue,
+			IssueResolutionAcceptor acceptor,
+			String issueCode,
+			String label,
+			String description) {
+		acceptor.accept(
+				issue,
+				label,
+				description,
+				null,
+				new IModification() {
+					@Override
+					public void apply(IModificationContext context) throws BadLocationException {
+						try {
+							context.getXtextDocument().modify(new IUnitOfWork.Void<XtextResource>() {
+								@Override
+								public void process(XtextResource state) throws Exception {
+									String fragment = issue.getUriToProblem().fragment();
+									EObject object = state.getEObject(fragment);
+									LibrettoProjectProfileDuplicateRemoval.removeForIssueCode(object, issueCode);
+								}
+							});
+						} catch (Exception e) {
+							throw new RuntimeException(e);
+						}
+					}
+				});
+	}
 }

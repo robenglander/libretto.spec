@@ -3,32 +3,89 @@
  */
 package com.robenglander.libretto.spec.librettoProjectProfile.impl;
 
+import com.robenglander.libretto.spec.librettoProjectProfile.AtRetry;
+import com.robenglander.libretto.spec.librettoProjectProfile.AtRetryKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.BasePackage;
+import com.robenglander.libretto.spec.librettoProjectProfile.BasePackageKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.Code;
+import com.robenglander.libretto.spec.librettoProjectProfile.CodeKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.Correction;
+import com.robenglander.libretto.spec.librettoProjectProfile.CorrectionKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.DefaultCorrection;
+import com.robenglander.libretto.spec.librettoProjectProfile.DefaultCorrectionKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.DefaultKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.DirKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.Directory;
+import com.robenglander.libretto.spec.librettoProjectProfile.Enabled;
+import com.robenglander.libretto.spec.librettoProjectProfile.EnabledKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.Endpoint;
+import com.robenglander.libretto.spec.librettoProjectProfile.EndpointKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.EscalationKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.FilePathKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.GenBlock;
 import com.robenglander.libretto.spec.librettoProjectProfile.GenDefaultRemediationRule;
 import com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock;
+import com.robenglander.libretto.spec.librettoProjectProfile.GenKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.GenPatternRemediationRule;
 import com.robenglander.libretto.spec.librettoProjectProfile.GenRemediationRules;
 import com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock;
+import com.robenglander.libretto.spec.librettoProjectProfile.InitialInstruction;
+import com.robenglander.libretto.spec.librettoProjectProfile.InitialInstructionKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.JavaType;
+import com.robenglander.libretto.spec.librettoProjectProfile.LLMProvider;
+import com.robenglander.libretto.spec.librettoProjectProfile.LLMProvidersKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfileFactory;
 import com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage;
 import com.robenglander.libretto.spec.librettoProjectProfile.LlmProvidersBlock;
+import com.robenglander.libretto.spec.librettoProjectProfile.LocalModelPath;
+import com.robenglander.libretto.spec.librettoProjectProfile.MainDirKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.MainDirectory;
+import com.robenglander.libretto.spec.librettoProjectProfile.MaxRetries;
+import com.robenglander.libretto.spec.librettoProjectProfile.MaxRetriesKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.MethodOverrideRule;
+import com.robenglander.libretto.spec.librettoProjectProfile.Model;
+import com.robenglander.libretto.spec.librettoProjectProfile.ModelKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.ModelUsageKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.ModuleKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.ModulesBlock;
-import com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider;
+import com.robenglander.libretto.spec.librettoProjectProfile.ModulesKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.OperationSignature;
 import com.robenglander.libretto.spec.librettoProjectProfile.ParamTypeRule;
+import com.robenglander.libretto.spec.librettoProjectProfile.ParseCheck;
+import com.robenglander.libretto.spec.librettoProjectProfile.ParseCheckKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.Pattern;
+import com.robenglander.libretto.spec.librettoProjectProfile.PatternKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider;
+import com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProviderKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.PrimitiveType;
+import com.robenglander.libretto.spec.librettoProjectProfile.Profile;
+import com.robenglander.libretto.spec.librettoProjectProfile.ProfileKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock;
+import com.robenglander.libretto.spec.librettoProjectProfile.ProjectKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule;
 import com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile;
+import com.robenglander.libretto.spec.librettoProjectProfile.ProviderKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.ProviderType;
+import com.robenglander.libretto.spec.librettoProjectProfile.ProviderTypeKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.QualifiedName;
 import com.robenglander.libretto.spec.librettoProjectProfile.RecordSelfReturnRule;
 import com.robenglander.libretto.spec.librettoProjectProfile.ReturnTypeRule;
+import com.robenglander.libretto.spec.librettoProjectProfile.RootDirKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.RootDirectory;
+import com.robenglander.libretto.spec.librettoProjectProfile.RuleKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.RulesKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.ScopedSurface;
+import com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProvider;
+import com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProviderKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.SpecDirKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.SpecDirectory;
 import com.robenglander.libretto.spec.librettoProjectProfile.SurfaceBlock;
 import com.robenglander.libretto.spec.librettoProjectProfile.SurfaceElement;
 import com.robenglander.libretto.spec.librettoProjectProfile.SurfaceRule;
+import com.robenglander.libretto.spec.librettoProjectProfile.TestDirKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.TestDirectory;
+import com.robenglander.libretto.spec.librettoProjectProfile.TrueFalseKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.TrueKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.TypedParam;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -58,7 +115,42 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass profileEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass profileKeywordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass projectBlockEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass rootDirectoryEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass projectKeywordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass rootDirKeywordEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,7 +164,91 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass modulesKeywordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass projectModuleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass moduleKeywordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass directoryEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass specDirectoryEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass testDirectoryEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass mainDirectoryEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass basePackageEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass dirKeywordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass specDirKeywordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass testDirKeywordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass mainDirKeywordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass basePackageKeywordEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -86,7 +262,84 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass genKeywordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass initialInstructionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass maxRetriesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass parseCheckEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass defaultCorrectionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass initialInstructionKeywordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass maxRetriesKeywordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass parseCheckKeywordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass defaultCorrectionKeywordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass trueFalseKeywordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass genRemediationRulesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass rulesKeywordEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -100,7 +353,63 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass ruleKeywordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass patternEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass patternKeywordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass codeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass codeKeywordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass correctionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass correctionKeywordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass genDefaultRemediationRuleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass defaultKeywordEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -114,7 +423,77 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass namedLlmProviderEClass = null;
+  private EClass llmProvidersKeywordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass llmProviderEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass providerKeywordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass providerTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass providerTypeKeywordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass localModelPathEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass modelEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass modelKeywordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass filePathKeywordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass endpointEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass endpointKeywordEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -128,7 +507,77 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass modelUsageKeywordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass primaryProviderEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass primaryProviderKeywordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass secondaryProviderEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass secondaryProviderKeywordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass genEscalationBlockEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass escalationKeywordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass enabledEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass enabledKeywordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass atRetryEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass atRetryKeywordEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -222,6 +671,13 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
   private EClass typedParamEClass = null;
 
   /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass trueKeywordEClass = null;
+
+  /**
    * Creates an instance of the model <b>Package</b>, registered with
    * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
    * package URI value.
@@ -300,9 +756,9 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EAttribute getProjectProfile_Name()
+  public EReference getProjectProfile_Profiles()
   {
-    return (EAttribute)projectProfileEClass.getEStructuralFeatures().get(0);
+    return (EReference)projectProfileEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -311,9 +767,9 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EReference getProjectProfile_Projects()
+  public EClass getProfile()
   {
-    return (EReference)projectProfileEClass.getEStructuralFeatures().get(1);
+    return profileEClass;
   }
 
   /**
@@ -322,9 +778,9 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EReference getProjectProfile_LlmProviders()
+  public EReference getProfile_ProfileKeyword()
   {
-    return (EReference)projectProfileEClass.getEStructuralFeatures().get(2);
+    return (EReference)profileEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -333,9 +789,64 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EReference getProjectProfile_Surfaces()
+  public EAttribute getProfile_Name()
   {
-    return (EReference)projectProfileEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)profileEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getProfile_Projects()
+  {
+    return (EReference)profileEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getProfile_LlmProviders()
+  {
+    return (EReference)profileEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getProfile_Surfaces()
+  {
+    return (EReference)profileEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getProfileKeyword()
+  {
+    return profileKeywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getProfileKeyword_Keyword()
+  {
+    return (EAttribute)profileKeywordEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -355,9 +866,9 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EAttribute getProjectBlock_RootDir()
+  public EReference getProjectBlock_ProjectKeyword()
   {
-    return (EAttribute)projectBlockEClass.getEStructuralFeatures().get(0);
+    return (EReference)projectBlockEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -366,7 +877,7 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EReference getProjectBlock_Modules()
+  public EReference getProjectBlock_RootDirs()
   {
     return (EReference)projectBlockEClass.getEStructuralFeatures().get(1);
   }
@@ -377,9 +888,97 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EReference getProjectBlock_Gens()
+  public EReference getProjectBlock_Modules()
   {
     return (EReference)projectBlockEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getProjectBlock_Gens()
+  {
+    return (EReference)projectBlockEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getRootDirectory()
+  {
+    return rootDirectoryEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getRootDirectory_Keyword()
+  {
+    return (EReference)rootDirectoryEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getRootDirectory_Dir()
+  {
+    return (EAttribute)rootDirectoryEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getProjectKeyword()
+  {
+    return projectKeywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getProjectKeyword_Keyword()
+  {
+    return (EAttribute)projectKeywordEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getRootDirKeyword()
+  {
+    return rootDirKeywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getRootDirKeyword_Keyword()
+  {
+    return (EAttribute)rootDirKeywordEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -399,9 +998,42 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EReference getModulesBlock_Modules()
+  public EReference getModulesBlock_ModulesKeyword()
   {
     return (EReference)modulesBlockEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getModulesBlock_Modules()
+  {
+    return (EReference)modulesBlockEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getModulesKeyword()
+  {
+    return modulesKeywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getModulesKeyword_Keyword()
+  {
+    return (EAttribute)modulesKeywordEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -421,9 +1053,9 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EAttribute getProjectModule_Name()
+  public EReference getProjectModule_Keyword()
   {
-    return (EAttribute)projectModuleEClass.getEStructuralFeatures().get(0);
+    return (EReference)projectModuleEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -432,7 +1064,7 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EAttribute getProjectModule_Dirs()
+  public EAttribute getProjectModule_Name()
   {
     return (EAttribute)projectModuleEClass.getEStructuralFeatures().get(1);
   }
@@ -443,9 +1075,9 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EAttribute getProjectModule_SpecDirs()
+  public EReference getProjectModule_Dirs()
   {
-    return (EAttribute)projectModuleEClass.getEStructuralFeatures().get(2);
+    return (EReference)projectModuleEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -454,9 +1086,9 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EAttribute getProjectModule_TestDirs()
+  public EReference getProjectModule_SpecDirs()
   {
-    return (EAttribute)projectModuleEClass.getEStructuralFeatures().get(3);
+    return (EReference)projectModuleEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -465,9 +1097,9 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EAttribute getProjectModule_MainDirs()
+  public EReference getProjectModule_TestDirs()
   {
-    return (EAttribute)projectModuleEClass.getEStructuralFeatures().get(4);
+    return (EReference)projectModuleEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -476,9 +1108,317 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EAttribute getProjectModule_BasePackages()
+  public EReference getProjectModule_MainDirs()
   {
-    return (EAttribute)projectModuleEClass.getEStructuralFeatures().get(5);
+    return (EReference)projectModuleEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getProjectModule_BasePackages()
+  {
+    return (EReference)projectModuleEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getModuleKeyword()
+  {
+    return moduleKeywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getModuleKeyword_Keyword()
+  {
+    return (EAttribute)moduleKeywordEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDirectory()
+  {
+    return directoryEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDirectory_Keyword()
+  {
+    return (EReference)directoryEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDirectory_Dir()
+  {
+    return (EAttribute)directoryEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSpecDirectory()
+  {
+    return specDirectoryEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSpecDirectory_Keyword()
+  {
+    return (EReference)specDirectoryEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSpecDirectory_Dir()
+  {
+    return (EAttribute)specDirectoryEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTestDirectory()
+  {
+    return testDirectoryEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTestDirectory_Keyword()
+  {
+    return (EReference)testDirectoryEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTestDirectory_Dir()
+  {
+    return (EAttribute)testDirectoryEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMainDirectory()
+  {
+    return mainDirectoryEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getMainDirectory_Keyword()
+  {
+    return (EReference)mainDirectoryEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getMainDirectory_Dir()
+  {
+    return (EAttribute)mainDirectoryEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getBasePackage()
+  {
+    return basePackageEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getBasePackage_Keyword()
+  {
+    return (EReference)basePackageEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getBasePackage_Dir()
+  {
+    return (EAttribute)basePackageEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDirKeyword()
+  {
+    return dirKeywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDirKeyword_Keyword()
+  {
+    return (EAttribute)dirKeywordEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSpecDirKeyword()
+  {
+    return specDirKeywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSpecDirKeyword_Keyword()
+  {
+    return (EAttribute)specDirKeywordEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTestDirKeyword()
+  {
+    return testDirKeywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTestDirKeyword_Keyword()
+  {
+    return (EAttribute)testDirKeywordEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMainDirKeyword()
+  {
+    return mainDirKeywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getMainDirKeyword_Keyword()
+  {
+    return (EAttribute)mainDirKeywordEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getBasePackageKeyword()
+  {
+    return basePackageKeywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getBasePackageKeyword_Keyword()
+  {
+    return (EAttribute)basePackageKeywordEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -498,9 +1438,9 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EAttribute getGenBlock_InitialInstructions()
+  public EReference getGenBlock_Keyword()
   {
-    return (EAttribute)genBlockEClass.getEStructuralFeatures().get(0);
+    return (EReference)genBlockEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -509,9 +1449,9 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EAttribute getGenBlock_MaxRetries()
+  public EReference getGenBlock_InitialInstructions()
   {
-    return (EAttribute)genBlockEClass.getEStructuralFeatures().get(1);
+    return (EReference)genBlockEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -520,9 +1460,9 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EAttribute getGenBlock_ParseChecks()
+  public EReference getGenBlock_MaxRetries()
   {
-    return (EAttribute)genBlockEClass.getEStructuralFeatures().get(2);
+    return (EReference)genBlockEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -531,9 +1471,9 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EAttribute getGenBlock_DefaultCorrections()
+  public EReference getGenBlock_ParseChecks()
   {
-    return (EAttribute)genBlockEClass.getEStructuralFeatures().get(3);
+    return (EReference)genBlockEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -542,7 +1482,7 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EReference getGenBlock_Remediations()
+  public EReference getGenBlock_DefaultCorrections()
   {
     return (EReference)genBlockEClass.getEStructuralFeatures().get(4);
   }
@@ -553,9 +1493,273 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EReference getGenBlock_ModelUsages()
+  public EReference getGenBlock_Remediations()
   {
     return (EReference)genBlockEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getGenBlock_ModelUsages()
+  {
+    return (EReference)genBlockEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getGenKeyword()
+  {
+    return genKeywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getGenKeyword_Keyword()
+  {
+    return (EAttribute)genKeywordEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getInitialInstruction()
+  {
+    return initialInstructionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getInitialInstruction_Keyword()
+  {
+    return (EReference)initialInstructionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getInitialInstruction_Instruction()
+  {
+    return (EAttribute)initialInstructionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMaxRetries()
+  {
+    return maxRetriesEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getMaxRetries_Keyword()
+  {
+    return (EReference)maxRetriesEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getMaxRetries_MaxRetries()
+  {
+    return (EAttribute)maxRetriesEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getParseCheck()
+  {
+    return parseCheckEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getParseCheck_Keyword()
+  {
+    return (EReference)parseCheckEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getParseCheck_Value()
+  {
+    return (EReference)parseCheckEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDefaultCorrection()
+  {
+    return defaultCorrectionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDefaultCorrection_Keyword()
+  {
+    return (EReference)defaultCorrectionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDefaultCorrection_Correction()
+  {
+    return (EAttribute)defaultCorrectionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getInitialInstructionKeyword()
+  {
+    return initialInstructionKeywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getInitialInstructionKeyword_Keyword()
+  {
+    return (EAttribute)initialInstructionKeywordEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMaxRetriesKeyword()
+  {
+    return maxRetriesKeywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getMaxRetriesKeyword_Keyword()
+  {
+    return (EAttribute)maxRetriesKeywordEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getParseCheckKeyword()
+  {
+    return parseCheckKeywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getParseCheckKeyword_Keyword()
+  {
+    return (EAttribute)parseCheckKeywordEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDefaultCorrectionKeyword()
+  {
+    return defaultCorrectionKeywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDefaultCorrectionKeyword_Keyword()
+  {
+    return (EAttribute)defaultCorrectionKeywordEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTrueFalseKeyword()
+  {
+    return trueFalseKeywordEClass;
   }
 
   /**
@@ -575,7 +1779,7 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EReference getGenRemediationRules_PatternRules()
+  public EReference getGenRemediationRules_RulesKeyword()
   {
     return (EReference)genRemediationRulesEClass.getEStructuralFeatures().get(0);
   }
@@ -586,9 +1790,42 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EReference getGenRemediationRules_DefaultRemediations()
+  public EReference getGenRemediationRules_PatternRules()
   {
     return (EReference)genRemediationRulesEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getGenRemediationRules_DefaultRemediations()
+  {
+    return (EReference)genRemediationRulesEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getRulesKeyword()
+  {
+    return rulesKeywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getRulesKeyword_Keyword()
+  {
+    return (EAttribute)rulesKeywordEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -608,9 +1845,9 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EAttribute getGenPatternRemediationRule_Patterns()
+  public EReference getGenPatternRemediationRule_Keyword()
   {
-    return (EAttribute)genPatternRemediationRuleEClass.getEStructuralFeatures().get(0);
+    return (EReference)genPatternRemediationRuleEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -619,9 +1856,9 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EAttribute getGenPatternRemediationRule_Codes()
+  public EReference getGenPatternRemediationRule_Patterns()
   {
-    return (EAttribute)genPatternRemediationRuleEClass.getEStructuralFeatures().get(1);
+    return (EReference)genPatternRemediationRuleEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -630,9 +1867,207 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EAttribute getGenPatternRemediationRule_Corrections()
+  public EReference getGenPatternRemediationRule_Codes()
   {
-    return (EAttribute)genPatternRemediationRuleEClass.getEStructuralFeatures().get(2);
+    return (EReference)genPatternRemediationRuleEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getGenPatternRemediationRule_Corrections()
+  {
+    return (EReference)genPatternRemediationRuleEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getRuleKeyword()
+  {
+    return ruleKeywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getRuleKeyword_Keyword()
+  {
+    return (EAttribute)ruleKeywordEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPattern()
+  {
+    return patternEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getPattern_Keyword()
+  {
+    return (EReference)patternEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getPattern_Pattern()
+  {
+    return (EAttribute)patternEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPatternKeyword()
+  {
+    return patternKeywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getPatternKeyword_Keyword()
+  {
+    return (EAttribute)patternKeywordEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getCode()
+  {
+    return codeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getCode_Keyword()
+  {
+    return (EReference)codeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCode_Code()
+  {
+    return (EAttribute)codeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getCodeKeyword()
+  {
+    return codeKeywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCodeKeyword_Keyword()
+  {
+    return (EAttribute)codeKeywordEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getCorrection()
+  {
+    return correctionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getCorrection_Keyword()
+  {
+    return (EReference)correctionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCorrection_Correction()
+  {
+    return (EAttribute)correctionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getCorrectionKeyword()
+  {
+    return correctionKeywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCorrectionKeyword_Keyword()
+  {
+    return (EAttribute)correctionKeywordEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -652,9 +2087,9 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EAttribute getGenDefaultRemediationRule_Codes()
+  public EReference getGenDefaultRemediationRule_Keyword()
   {
-    return (EAttribute)genDefaultRemediationRuleEClass.getEStructuralFeatures().get(0);
+    return (EReference)genDefaultRemediationRuleEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -663,9 +2098,42 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EAttribute getGenDefaultRemediationRule_Correction()
+  public EReference getGenDefaultRemediationRule_Codes()
   {
-    return (EAttribute)genDefaultRemediationRuleEClass.getEStructuralFeatures().get(1);
+    return (EReference)genDefaultRemediationRuleEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getGenDefaultRemediationRule_Corrections()
+  {
+    return (EReference)genDefaultRemediationRuleEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDefaultKeyword()
+  {
+    return defaultKeywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDefaultKeyword_Keyword()
+  {
+    return (EAttribute)defaultKeywordEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -685,7 +2153,7 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EReference getLlmProvidersBlock_Providers()
+  public EReference getLlmProvidersBlock_Keyword()
   {
     return (EReference)llmProvidersBlockEClass.getEStructuralFeatures().get(0);
   }
@@ -696,9 +2164,9 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EClass getNamedLlmProvider()
+  public EReference getLlmProvidersBlock_Providers()
   {
-    return namedLlmProviderEClass;
+    return (EReference)llmProvidersBlockEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -707,9 +2175,9 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EAttribute getNamedLlmProvider_Name()
+  public EClass getLLMProvidersKeyword()
   {
-    return (EAttribute)namedLlmProviderEClass.getEStructuralFeatures().get(0);
+    return llmProvidersKeywordEClass;
   }
 
   /**
@@ -718,9 +2186,9 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EAttribute getNamedLlmProvider_Kinds()
+  public EAttribute getLLMProvidersKeyword_Keyword()
   {
-    return (EAttribute)namedLlmProviderEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)llmProvidersKeywordEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -729,9 +2197,9 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EAttribute getNamedLlmProvider_LocalModelPaths()
+  public EClass getLLMProvider()
   {
-    return (EAttribute)namedLlmProviderEClass.getEStructuralFeatures().get(2);
+    return llmProviderEClass;
   }
 
   /**
@@ -740,9 +2208,9 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EAttribute getNamedLlmProvider_Models()
+  public EReference getLLMProvider_Keyword()
   {
-    return (EAttribute)namedLlmProviderEClass.getEStructuralFeatures().get(3);
+    return (EReference)llmProviderEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -751,9 +2219,295 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EAttribute getNamedLlmProvider_Endpoints()
+  public EAttribute getLLMProvider_Name()
   {
-    return (EAttribute)namedLlmProviderEClass.getEStructuralFeatures().get(4);
+    return (EAttribute)llmProviderEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getLLMProvider_Types()
+  {
+    return (EReference)llmProviderEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getLLMProvider_LocalModelPaths()
+  {
+    return (EReference)llmProviderEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getLLMProvider_Models()
+  {
+    return (EReference)llmProviderEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getLLMProvider_Endpoints()
+  {
+    return (EReference)llmProviderEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getProviderKeyword()
+  {
+    return providerKeywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getProviderKeyword_Keyword()
+  {
+    return (EAttribute)providerKeywordEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getProviderType()
+  {
+    return providerTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getProviderType_Keyword()
+  {
+    return (EReference)providerTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getProviderType_Name()
+  {
+    return (EAttribute)providerTypeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getProviderTypeKeyword()
+  {
+    return providerTypeKeywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getProviderTypeKeyword_Keyword()
+  {
+    return (EAttribute)providerTypeKeywordEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getLocalModelPath()
+  {
+    return localModelPathEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getLocalModelPath_Keyword()
+  {
+    return (EReference)localModelPathEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getLocalModelPath_Path()
+  {
+    return (EAttribute)localModelPathEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getModel()
+  {
+    return modelEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getModel_Keyword()
+  {
+    return (EReference)modelEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getModel_Mode()
+  {
+    return (EAttribute)modelEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getModelKeyword()
+  {
+    return modelKeywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getModelKeyword_Keyword()
+  {
+    return (EAttribute)modelKeywordEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getFilePathKeyword()
+  {
+    return filePathKeywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getFilePathKeyword_Keyword()
+  {
+    return (EAttribute)filePathKeywordEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getEndpoint()
+  {
+    return endpointEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getEndpoint_Keyword()
+  {
+    return (EReference)endpointEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getEndpoint_Mode()
+  {
+    return (EAttribute)endpointEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getEndpointKeyword()
+  {
+    return endpointKeywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getEndpointKeyword_Keyword()
+  {
+    return (EAttribute)endpointKeywordEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -773,9 +2527,9 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EAttribute getGenUsageBlock_PrimaryProviders()
+  public EReference getGenUsageBlock_Keyword()
   {
-    return (EAttribute)genUsageBlockEClass.getEStructuralFeatures().get(0);
+    return (EReference)genUsageBlockEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -784,9 +2538,20 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EAttribute getGenUsageBlock_SecondaryProviders()
+  public EReference getGenUsageBlock_PrimaryProviders()
   {
-    return (EAttribute)genUsageBlockEClass.getEStructuralFeatures().get(1);
+    return (EReference)genUsageBlockEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getGenUsageBlock_SecondaryProviders()
+  {
+    return (EReference)genUsageBlockEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -797,7 +2562,139 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
   @Override
   public EReference getGenUsageBlock_Escalations()
   {
-    return (EReference)genUsageBlockEClass.getEStructuralFeatures().get(2);
+    return (EReference)genUsageBlockEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getModelUsageKeyword()
+  {
+    return modelUsageKeywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getModelUsageKeyword_Keyword()
+  {
+    return (EAttribute)modelUsageKeywordEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPrimaryProvider()
+  {
+    return primaryProviderEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getPrimaryProvider_Keyword()
+  {
+    return (EReference)primaryProviderEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getPrimaryProvider_Name()
+  {
+    return (EAttribute)primaryProviderEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPrimaryProviderKeyword()
+  {
+    return primaryProviderKeywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getPrimaryProviderKeyword_Keyword()
+  {
+    return (EAttribute)primaryProviderKeywordEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSecondaryProvider()
+  {
+    return secondaryProviderEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSecondaryProvider_Keyword()
+  {
+    return (EReference)secondaryProviderEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSecondaryProvider_Name()
+  {
+    return (EAttribute)secondaryProviderEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSecondaryProviderKeyword()
+  {
+    return secondaryProviderKeywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSecondaryProviderKeyword_Keyword()
+  {
+    return (EAttribute)secondaryProviderKeywordEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -817,9 +2714,9 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EAttribute getGenEscalationBlock_Enableds()
+  public EReference getGenEscalationBlock_Keyword()
   {
-    return (EAttribute)genEscalationBlockEClass.getEStructuralFeatures().get(0);
+    return (EReference)genEscalationBlockEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -828,9 +2725,152 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EAttribute getGenEscalationBlock_EscalateAtRetries()
+  public EReference getGenEscalationBlock_Enableds()
   {
-    return (EAttribute)genEscalationBlockEClass.getEStructuralFeatures().get(1);
+    return (EReference)genEscalationBlockEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getGenEscalationBlock_AtRetries()
+  {
+    return (EReference)genEscalationBlockEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getEscalationKeyword()
+  {
+    return escalationKeywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getEscalationKeyword_Keyword()
+  {
+    return (EAttribute)escalationKeywordEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getEnabled()
+  {
+    return enabledEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getEnabled_Keyword()
+  {
+    return (EReference)enabledEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getEnabled_Value()
+  {
+    return (EReference)enabledEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getEnabledKeyword()
+  {
+    return enabledKeywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getEnabledKeyword_Keyword()
+  {
+    return (EAttribute)enabledKeywordEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getAtRetry()
+  {
+    return atRetryEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getAtRetry_Keyword()
+  {
+    return (EReference)atRetryEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getAtRetry_Value()
+  {
+    return (EAttribute)atRetryEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getAtRetryKeyword()
+  {
+    return atRetryKeywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getAtRetryKeyword_Keyword()
+  {
+    return (EAttribute)atRetryKeywordEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1169,6 +3209,28 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
+  public EClass getTrueKeyword()
+  {
+    return trueKeywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTrueKeyword_Keyword()
+  {
+    return (EAttribute)trueKeywordEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public LibrettoProjectProfileFactory getLibrettoProjectProfileFactory()
   {
     return (LibrettoProjectProfileFactory)getEFactoryInstance();
@@ -1195,66 +3257,266 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
 
     // Create classes and their features
     projectProfileEClass = createEClass(PROJECT_PROFILE);
-    createEAttribute(projectProfileEClass, PROJECT_PROFILE__NAME);
-    createEReference(projectProfileEClass, PROJECT_PROFILE__PROJECTS);
-    createEReference(projectProfileEClass, PROJECT_PROFILE__LLM_PROVIDERS);
-    createEReference(projectProfileEClass, PROJECT_PROFILE__SURFACES);
+    createEReference(projectProfileEClass, PROJECT_PROFILE__PROFILES);
+
+    profileEClass = createEClass(PROFILE);
+    createEReference(profileEClass, PROFILE__PROFILE_KEYWORD);
+    createEAttribute(profileEClass, PROFILE__NAME);
+    createEReference(profileEClass, PROFILE__PROJECTS);
+    createEReference(profileEClass, PROFILE__LLM_PROVIDERS);
+    createEReference(profileEClass, PROFILE__SURFACES);
+
+    profileKeywordEClass = createEClass(PROFILE_KEYWORD);
+    createEAttribute(profileKeywordEClass, PROFILE_KEYWORD__KEYWORD);
 
     projectBlockEClass = createEClass(PROJECT_BLOCK);
-    createEAttribute(projectBlockEClass, PROJECT_BLOCK__ROOT_DIR);
+    createEReference(projectBlockEClass, PROJECT_BLOCK__PROJECT_KEYWORD);
+    createEReference(projectBlockEClass, PROJECT_BLOCK__ROOT_DIRS);
     createEReference(projectBlockEClass, PROJECT_BLOCK__MODULES);
     createEReference(projectBlockEClass, PROJECT_BLOCK__GENS);
 
+    rootDirectoryEClass = createEClass(ROOT_DIRECTORY);
+    createEReference(rootDirectoryEClass, ROOT_DIRECTORY__KEYWORD);
+    createEAttribute(rootDirectoryEClass, ROOT_DIRECTORY__DIR);
+
+    projectKeywordEClass = createEClass(PROJECT_KEYWORD);
+    createEAttribute(projectKeywordEClass, PROJECT_KEYWORD__KEYWORD);
+
+    rootDirKeywordEClass = createEClass(ROOT_DIR_KEYWORD);
+    createEAttribute(rootDirKeywordEClass, ROOT_DIR_KEYWORD__KEYWORD);
+
     modulesBlockEClass = createEClass(MODULES_BLOCK);
+    createEReference(modulesBlockEClass, MODULES_BLOCK__MODULES_KEYWORD);
     createEReference(modulesBlockEClass, MODULES_BLOCK__MODULES);
 
+    modulesKeywordEClass = createEClass(MODULES_KEYWORD);
+    createEAttribute(modulesKeywordEClass, MODULES_KEYWORD__KEYWORD);
+
     projectModuleEClass = createEClass(PROJECT_MODULE);
+    createEReference(projectModuleEClass, PROJECT_MODULE__KEYWORD);
     createEAttribute(projectModuleEClass, PROJECT_MODULE__NAME);
-    createEAttribute(projectModuleEClass, PROJECT_MODULE__DIRS);
-    createEAttribute(projectModuleEClass, PROJECT_MODULE__SPEC_DIRS);
-    createEAttribute(projectModuleEClass, PROJECT_MODULE__TEST_DIRS);
-    createEAttribute(projectModuleEClass, PROJECT_MODULE__MAIN_DIRS);
-    createEAttribute(projectModuleEClass, PROJECT_MODULE__BASE_PACKAGES);
+    createEReference(projectModuleEClass, PROJECT_MODULE__DIRS);
+    createEReference(projectModuleEClass, PROJECT_MODULE__SPEC_DIRS);
+    createEReference(projectModuleEClass, PROJECT_MODULE__TEST_DIRS);
+    createEReference(projectModuleEClass, PROJECT_MODULE__MAIN_DIRS);
+    createEReference(projectModuleEClass, PROJECT_MODULE__BASE_PACKAGES);
+
+    moduleKeywordEClass = createEClass(MODULE_KEYWORD);
+    createEAttribute(moduleKeywordEClass, MODULE_KEYWORD__KEYWORD);
+
+    directoryEClass = createEClass(DIRECTORY);
+    createEReference(directoryEClass, DIRECTORY__KEYWORD);
+    createEAttribute(directoryEClass, DIRECTORY__DIR);
+
+    specDirectoryEClass = createEClass(SPEC_DIRECTORY);
+    createEReference(specDirectoryEClass, SPEC_DIRECTORY__KEYWORD);
+    createEAttribute(specDirectoryEClass, SPEC_DIRECTORY__DIR);
+
+    testDirectoryEClass = createEClass(TEST_DIRECTORY);
+    createEReference(testDirectoryEClass, TEST_DIRECTORY__KEYWORD);
+    createEAttribute(testDirectoryEClass, TEST_DIRECTORY__DIR);
+
+    mainDirectoryEClass = createEClass(MAIN_DIRECTORY);
+    createEReference(mainDirectoryEClass, MAIN_DIRECTORY__KEYWORD);
+    createEAttribute(mainDirectoryEClass, MAIN_DIRECTORY__DIR);
+
+    basePackageEClass = createEClass(BASE_PACKAGE);
+    createEReference(basePackageEClass, BASE_PACKAGE__KEYWORD);
+    createEAttribute(basePackageEClass, BASE_PACKAGE__DIR);
+
+    dirKeywordEClass = createEClass(DIR_KEYWORD);
+    createEAttribute(dirKeywordEClass, DIR_KEYWORD__KEYWORD);
+
+    specDirKeywordEClass = createEClass(SPEC_DIR_KEYWORD);
+    createEAttribute(specDirKeywordEClass, SPEC_DIR_KEYWORD__KEYWORD);
+
+    testDirKeywordEClass = createEClass(TEST_DIR_KEYWORD);
+    createEAttribute(testDirKeywordEClass, TEST_DIR_KEYWORD__KEYWORD);
+
+    mainDirKeywordEClass = createEClass(MAIN_DIR_KEYWORD);
+    createEAttribute(mainDirKeywordEClass, MAIN_DIR_KEYWORD__KEYWORD);
+
+    basePackageKeywordEClass = createEClass(BASE_PACKAGE_KEYWORD);
+    createEAttribute(basePackageKeywordEClass, BASE_PACKAGE_KEYWORD__KEYWORD);
 
     genBlockEClass = createEClass(GEN_BLOCK);
-    createEAttribute(genBlockEClass, GEN_BLOCK__INITIAL_INSTRUCTIONS);
-    createEAttribute(genBlockEClass, GEN_BLOCK__MAX_RETRIES);
-    createEAttribute(genBlockEClass, GEN_BLOCK__PARSE_CHECKS);
-    createEAttribute(genBlockEClass, GEN_BLOCK__DEFAULT_CORRECTIONS);
+    createEReference(genBlockEClass, GEN_BLOCK__KEYWORD);
+    createEReference(genBlockEClass, GEN_BLOCK__INITIAL_INSTRUCTIONS);
+    createEReference(genBlockEClass, GEN_BLOCK__MAX_RETRIES);
+    createEReference(genBlockEClass, GEN_BLOCK__PARSE_CHECKS);
+    createEReference(genBlockEClass, GEN_BLOCK__DEFAULT_CORRECTIONS);
     createEReference(genBlockEClass, GEN_BLOCK__REMEDIATIONS);
     createEReference(genBlockEClass, GEN_BLOCK__MODEL_USAGES);
 
+    genKeywordEClass = createEClass(GEN_KEYWORD);
+    createEAttribute(genKeywordEClass, GEN_KEYWORD__KEYWORD);
+
+    initialInstructionEClass = createEClass(INITIAL_INSTRUCTION);
+    createEReference(initialInstructionEClass, INITIAL_INSTRUCTION__KEYWORD);
+    createEAttribute(initialInstructionEClass, INITIAL_INSTRUCTION__INSTRUCTION);
+
+    maxRetriesEClass = createEClass(MAX_RETRIES);
+    createEReference(maxRetriesEClass, MAX_RETRIES__KEYWORD);
+    createEAttribute(maxRetriesEClass, MAX_RETRIES__MAX_RETRIES);
+
+    parseCheckEClass = createEClass(PARSE_CHECK);
+    createEReference(parseCheckEClass, PARSE_CHECK__KEYWORD);
+    createEReference(parseCheckEClass, PARSE_CHECK__VALUE);
+
+    defaultCorrectionEClass = createEClass(DEFAULT_CORRECTION);
+    createEReference(defaultCorrectionEClass, DEFAULT_CORRECTION__KEYWORD);
+    createEAttribute(defaultCorrectionEClass, DEFAULT_CORRECTION__CORRECTION);
+
+    initialInstructionKeywordEClass = createEClass(INITIAL_INSTRUCTION_KEYWORD);
+    createEAttribute(initialInstructionKeywordEClass, INITIAL_INSTRUCTION_KEYWORD__KEYWORD);
+
+    maxRetriesKeywordEClass = createEClass(MAX_RETRIES_KEYWORD);
+    createEAttribute(maxRetriesKeywordEClass, MAX_RETRIES_KEYWORD__KEYWORD);
+
+    parseCheckKeywordEClass = createEClass(PARSE_CHECK_KEYWORD);
+    createEAttribute(parseCheckKeywordEClass, PARSE_CHECK_KEYWORD__KEYWORD);
+
+    defaultCorrectionKeywordEClass = createEClass(DEFAULT_CORRECTION_KEYWORD);
+    createEAttribute(defaultCorrectionKeywordEClass, DEFAULT_CORRECTION_KEYWORD__KEYWORD);
+
+    trueFalseKeywordEClass = createEClass(TRUE_FALSE_KEYWORD);
+
     genRemediationRulesEClass = createEClass(GEN_REMEDIATION_RULES);
+    createEReference(genRemediationRulesEClass, GEN_REMEDIATION_RULES__RULES_KEYWORD);
     createEReference(genRemediationRulesEClass, GEN_REMEDIATION_RULES__PATTERN_RULES);
     createEReference(genRemediationRulesEClass, GEN_REMEDIATION_RULES__DEFAULT_REMEDIATIONS);
 
+    rulesKeywordEClass = createEClass(RULES_KEYWORD);
+    createEAttribute(rulesKeywordEClass, RULES_KEYWORD__KEYWORD);
+
     genPatternRemediationRuleEClass = createEClass(GEN_PATTERN_REMEDIATION_RULE);
-    createEAttribute(genPatternRemediationRuleEClass, GEN_PATTERN_REMEDIATION_RULE__PATTERNS);
-    createEAttribute(genPatternRemediationRuleEClass, GEN_PATTERN_REMEDIATION_RULE__CODES);
-    createEAttribute(genPatternRemediationRuleEClass, GEN_PATTERN_REMEDIATION_RULE__CORRECTIONS);
+    createEReference(genPatternRemediationRuleEClass, GEN_PATTERN_REMEDIATION_RULE__KEYWORD);
+    createEReference(genPatternRemediationRuleEClass, GEN_PATTERN_REMEDIATION_RULE__PATTERNS);
+    createEReference(genPatternRemediationRuleEClass, GEN_PATTERN_REMEDIATION_RULE__CODES);
+    createEReference(genPatternRemediationRuleEClass, GEN_PATTERN_REMEDIATION_RULE__CORRECTIONS);
+
+    ruleKeywordEClass = createEClass(RULE_KEYWORD);
+    createEAttribute(ruleKeywordEClass, RULE_KEYWORD__KEYWORD);
+
+    patternEClass = createEClass(PATTERN);
+    createEReference(patternEClass, PATTERN__KEYWORD);
+    createEAttribute(patternEClass, PATTERN__PATTERN);
+
+    patternKeywordEClass = createEClass(PATTERN_KEYWORD);
+    createEAttribute(patternKeywordEClass, PATTERN_KEYWORD__KEYWORD);
+
+    codeEClass = createEClass(CODE);
+    createEReference(codeEClass, CODE__KEYWORD);
+    createEAttribute(codeEClass, CODE__CODE);
+
+    codeKeywordEClass = createEClass(CODE_KEYWORD);
+    createEAttribute(codeKeywordEClass, CODE_KEYWORD__KEYWORD);
+
+    correctionEClass = createEClass(CORRECTION);
+    createEReference(correctionEClass, CORRECTION__KEYWORD);
+    createEAttribute(correctionEClass, CORRECTION__CORRECTION);
+
+    correctionKeywordEClass = createEClass(CORRECTION_KEYWORD);
+    createEAttribute(correctionKeywordEClass, CORRECTION_KEYWORD__KEYWORD);
 
     genDefaultRemediationRuleEClass = createEClass(GEN_DEFAULT_REMEDIATION_RULE);
-    createEAttribute(genDefaultRemediationRuleEClass, GEN_DEFAULT_REMEDIATION_RULE__CODES);
-    createEAttribute(genDefaultRemediationRuleEClass, GEN_DEFAULT_REMEDIATION_RULE__CORRECTION);
+    createEReference(genDefaultRemediationRuleEClass, GEN_DEFAULT_REMEDIATION_RULE__KEYWORD);
+    createEReference(genDefaultRemediationRuleEClass, GEN_DEFAULT_REMEDIATION_RULE__CODES);
+    createEReference(genDefaultRemediationRuleEClass, GEN_DEFAULT_REMEDIATION_RULE__CORRECTIONS);
+
+    defaultKeywordEClass = createEClass(DEFAULT_KEYWORD);
+    createEAttribute(defaultKeywordEClass, DEFAULT_KEYWORD__KEYWORD);
 
     llmProvidersBlockEClass = createEClass(LLM_PROVIDERS_BLOCK);
+    createEReference(llmProvidersBlockEClass, LLM_PROVIDERS_BLOCK__KEYWORD);
     createEReference(llmProvidersBlockEClass, LLM_PROVIDERS_BLOCK__PROVIDERS);
 
-    namedLlmProviderEClass = createEClass(NAMED_LLM_PROVIDER);
-    createEAttribute(namedLlmProviderEClass, NAMED_LLM_PROVIDER__NAME);
-    createEAttribute(namedLlmProviderEClass, NAMED_LLM_PROVIDER__KINDS);
-    createEAttribute(namedLlmProviderEClass, NAMED_LLM_PROVIDER__LOCAL_MODEL_PATHS);
-    createEAttribute(namedLlmProviderEClass, NAMED_LLM_PROVIDER__MODELS);
-    createEAttribute(namedLlmProviderEClass, NAMED_LLM_PROVIDER__ENDPOINTS);
+    llmProvidersKeywordEClass = createEClass(LLM_PROVIDERS_KEYWORD);
+    createEAttribute(llmProvidersKeywordEClass, LLM_PROVIDERS_KEYWORD__KEYWORD);
+
+    llmProviderEClass = createEClass(LLM_PROVIDER);
+    createEReference(llmProviderEClass, LLM_PROVIDER__KEYWORD);
+    createEAttribute(llmProviderEClass, LLM_PROVIDER__NAME);
+    createEReference(llmProviderEClass, LLM_PROVIDER__TYPES);
+    createEReference(llmProviderEClass, LLM_PROVIDER__LOCAL_MODEL_PATHS);
+    createEReference(llmProviderEClass, LLM_PROVIDER__MODELS);
+    createEReference(llmProviderEClass, LLM_PROVIDER__ENDPOINTS);
+
+    providerKeywordEClass = createEClass(PROVIDER_KEYWORD);
+    createEAttribute(providerKeywordEClass, PROVIDER_KEYWORD__KEYWORD);
+
+    providerTypeEClass = createEClass(PROVIDER_TYPE);
+    createEReference(providerTypeEClass, PROVIDER_TYPE__KEYWORD);
+    createEAttribute(providerTypeEClass, PROVIDER_TYPE__NAME);
+
+    providerTypeKeywordEClass = createEClass(PROVIDER_TYPE_KEYWORD);
+    createEAttribute(providerTypeKeywordEClass, PROVIDER_TYPE_KEYWORD__KEYWORD);
+
+    localModelPathEClass = createEClass(LOCAL_MODEL_PATH);
+    createEReference(localModelPathEClass, LOCAL_MODEL_PATH__KEYWORD);
+    createEAttribute(localModelPathEClass, LOCAL_MODEL_PATH__PATH);
+
+    modelEClass = createEClass(MODEL);
+    createEReference(modelEClass, MODEL__KEYWORD);
+    createEAttribute(modelEClass, MODEL__MODE);
+
+    modelKeywordEClass = createEClass(MODEL_KEYWORD);
+    createEAttribute(modelKeywordEClass, MODEL_KEYWORD__KEYWORD);
+
+    filePathKeywordEClass = createEClass(FILE_PATH_KEYWORD);
+    createEAttribute(filePathKeywordEClass, FILE_PATH_KEYWORD__KEYWORD);
+
+    endpointEClass = createEClass(ENDPOINT);
+    createEReference(endpointEClass, ENDPOINT__KEYWORD);
+    createEAttribute(endpointEClass, ENDPOINT__MODE);
+
+    endpointKeywordEClass = createEClass(ENDPOINT_KEYWORD);
+    createEAttribute(endpointKeywordEClass, ENDPOINT_KEYWORD__KEYWORD);
 
     genUsageBlockEClass = createEClass(GEN_USAGE_BLOCK);
-    createEAttribute(genUsageBlockEClass, GEN_USAGE_BLOCK__PRIMARY_PROVIDERS);
-    createEAttribute(genUsageBlockEClass, GEN_USAGE_BLOCK__SECONDARY_PROVIDERS);
+    createEReference(genUsageBlockEClass, GEN_USAGE_BLOCK__KEYWORD);
+    createEReference(genUsageBlockEClass, GEN_USAGE_BLOCK__PRIMARY_PROVIDERS);
+    createEReference(genUsageBlockEClass, GEN_USAGE_BLOCK__SECONDARY_PROVIDERS);
     createEReference(genUsageBlockEClass, GEN_USAGE_BLOCK__ESCALATIONS);
 
+    modelUsageKeywordEClass = createEClass(MODEL_USAGE_KEYWORD);
+    createEAttribute(modelUsageKeywordEClass, MODEL_USAGE_KEYWORD__KEYWORD);
+
+    primaryProviderEClass = createEClass(PRIMARY_PROVIDER);
+    createEReference(primaryProviderEClass, PRIMARY_PROVIDER__KEYWORD);
+    createEAttribute(primaryProviderEClass, PRIMARY_PROVIDER__NAME);
+
+    primaryProviderKeywordEClass = createEClass(PRIMARY_PROVIDER_KEYWORD);
+    createEAttribute(primaryProviderKeywordEClass, PRIMARY_PROVIDER_KEYWORD__KEYWORD);
+
+    secondaryProviderEClass = createEClass(SECONDARY_PROVIDER);
+    createEReference(secondaryProviderEClass, SECONDARY_PROVIDER__KEYWORD);
+    createEAttribute(secondaryProviderEClass, SECONDARY_PROVIDER__NAME);
+
+    secondaryProviderKeywordEClass = createEClass(SECONDARY_PROVIDER_KEYWORD);
+    createEAttribute(secondaryProviderKeywordEClass, SECONDARY_PROVIDER_KEYWORD__KEYWORD);
+
     genEscalationBlockEClass = createEClass(GEN_ESCALATION_BLOCK);
-    createEAttribute(genEscalationBlockEClass, GEN_ESCALATION_BLOCK__ENABLEDS);
-    createEAttribute(genEscalationBlockEClass, GEN_ESCALATION_BLOCK__ESCALATE_AT_RETRIES);
+    createEReference(genEscalationBlockEClass, GEN_ESCALATION_BLOCK__KEYWORD);
+    createEReference(genEscalationBlockEClass, GEN_ESCALATION_BLOCK__ENABLEDS);
+    createEReference(genEscalationBlockEClass, GEN_ESCALATION_BLOCK__AT_RETRIES);
+
+    escalationKeywordEClass = createEClass(ESCALATION_KEYWORD);
+    createEAttribute(escalationKeywordEClass, ESCALATION_KEYWORD__KEYWORD);
+
+    enabledEClass = createEClass(ENABLED);
+    createEReference(enabledEClass, ENABLED__KEYWORD);
+    createEReference(enabledEClass, ENABLED__VALUE);
+
+    enabledKeywordEClass = createEClass(ENABLED_KEYWORD);
+    createEAttribute(enabledKeywordEClass, ENABLED_KEYWORD__KEYWORD);
+
+    atRetryEClass = createEClass(AT_RETRY);
+    createEReference(atRetryEClass, AT_RETRY__KEYWORD);
+    createEAttribute(atRetryEClass, AT_RETRY__VALUE);
+
+    atRetryKeywordEClass = createEClass(AT_RETRY_KEYWORD);
+    createEAttribute(atRetryKeywordEClass, AT_RETRY_KEYWORD__KEYWORD);
 
     surfaceBlockEClass = createEClass(SURFACE_BLOCK);
     createEReference(surfaceBlockEClass, SURFACE_BLOCK__ELEMENTS);
@@ -1298,6 +3560,9 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
     typedParamEClass = createEClass(TYPED_PARAM);
     createEReference(typedParamEClass, TYPED_PARAM__TYPE);
     createEAttribute(typedParamEClass, TYPED_PARAM__PARAM_NAME);
+
+    trueKeywordEClass = createEClass(TRUE_KEYWORD);
+    createEAttribute(trueKeywordEClass, TRUE_KEYWORD__KEYWORD);
   }
 
   /**
@@ -1337,69 +3602,270 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
     methodOverrideRuleEClass.getESuperTypes().add(this.getSurfaceRule());
     qualifiedNameEClass.getESuperTypes().add(this.getJavaType());
     primitiveTypeEClass.getESuperTypes().add(this.getJavaType());
+    trueKeywordEClass.getESuperTypes().add(this.getTrueFalseKeyword());
 
     // Initialize classes and features; add operations and parameters
     initEClass(projectProfileEClass, ProjectProfile.class, "ProjectProfile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getProjectProfile_Name(), ecorePackage.getEString(), "name", null, 0, 1, ProjectProfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getProjectProfile_Projects(), this.getProjectBlock(), null, "projects", null, 0, -1, ProjectProfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getProjectProfile_LlmProviders(), this.getLlmProvidersBlock(), null, "llmProviders", null, 0, -1, ProjectProfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getProjectProfile_Surfaces(), this.getSurfaceBlock(), null, "surfaces", null, 0, -1, ProjectProfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProjectProfile_Profiles(), this.getProfile(), null, "profiles", null, 0, -1, ProjectProfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(profileEClass, Profile.class, "Profile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getProfile_ProfileKeyword(), this.getProfileKeyword(), null, "profileKeyword", null, 0, 1, Profile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getProfile_Name(), ecorePackage.getEString(), "name", null, 0, 1, Profile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProfile_Projects(), this.getProjectBlock(), null, "projects", null, 0, -1, Profile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProfile_LlmProviders(), this.getLlmProvidersBlock(), null, "llmProviders", null, 0, -1, Profile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProfile_Surfaces(), this.getSurfaceBlock(), null, "surfaces", null, 0, -1, Profile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(profileKeywordEClass, ProfileKeyword.class, "ProfileKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getProfileKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, ProfileKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(projectBlockEClass, ProjectBlock.class, "ProjectBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getProjectBlock_RootDir(), ecorePackage.getEString(), "rootDir", null, 0, -1, ProjectBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProjectBlock_ProjectKeyword(), this.getProjectKeyword(), null, "projectKeyword", null, 0, 1, ProjectBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProjectBlock_RootDirs(), this.getRootDirectory(), null, "rootDirs", null, 0, -1, ProjectBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProjectBlock_Modules(), this.getModulesBlock(), null, "modules", null, 0, -1, ProjectBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProjectBlock_Gens(), this.getGenBlock(), null, "gens", null, 0, -1, ProjectBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(rootDirectoryEClass, RootDirectory.class, "RootDirectory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRootDirectory_Keyword(), this.getRootDirKeyword(), null, "keyword", null, 0, 1, RootDirectory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRootDirectory_Dir(), ecorePackage.getEString(), "dir", null, 0, 1, RootDirectory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(projectKeywordEClass, ProjectKeyword.class, "ProjectKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getProjectKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, ProjectKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(rootDirKeywordEClass, RootDirKeyword.class, "RootDirKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRootDirKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, RootDirKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(modulesBlockEClass, ModulesBlock.class, "ModulesBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getModulesBlock_ModulesKeyword(), this.getModulesKeyword(), null, "modulesKeyword", null, 0, 1, ModulesBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModulesBlock_Modules(), this.getProjectModule(), null, "modules", null, 0, -1, ModulesBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(modulesKeywordEClass, ModulesKeyword.class, "ModulesKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getModulesKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, ModulesKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(projectModuleEClass, ProjectModule.class, "ProjectModule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getProjectModule_Keyword(), this.getModuleKeyword(), null, "keyword", null, 0, 1, ProjectModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getProjectModule_Name(), ecorePackage.getEString(), "name", null, 0, 1, ProjectModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getProjectModule_Dirs(), ecorePackage.getEString(), "dirs", null, 0, -1, ProjectModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getProjectModule_SpecDirs(), ecorePackage.getEString(), "specDirs", null, 0, -1, ProjectModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getProjectModule_TestDirs(), ecorePackage.getEString(), "testDirs", null, 0, -1, ProjectModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getProjectModule_MainDirs(), ecorePackage.getEString(), "mainDirs", null, 0, -1, ProjectModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getProjectModule_BasePackages(), ecorePackage.getEString(), "basePackages", null, 0, -1, ProjectModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProjectModule_Dirs(), this.getDirectory(), null, "dirs", null, 0, -1, ProjectModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProjectModule_SpecDirs(), this.getSpecDirectory(), null, "specDirs", null, 0, -1, ProjectModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProjectModule_TestDirs(), this.getTestDirectory(), null, "testDirs", null, 0, -1, ProjectModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProjectModule_MainDirs(), this.getMainDirectory(), null, "mainDirs", null, 0, -1, ProjectModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProjectModule_BasePackages(), this.getBasePackage(), null, "basePackages", null, 0, -1, ProjectModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(moduleKeywordEClass, ModuleKeyword.class, "ModuleKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getModuleKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, ModuleKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(directoryEClass, Directory.class, "Directory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDirectory_Keyword(), this.getDirKeyword(), null, "keyword", null, 0, 1, Directory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDirectory_Dir(), ecorePackage.getEString(), "dir", null, 0, 1, Directory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(specDirectoryEClass, SpecDirectory.class, "SpecDirectory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSpecDirectory_Keyword(), this.getSpecDirKeyword(), null, "keyword", null, 0, 1, SpecDirectory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSpecDirectory_Dir(), ecorePackage.getEString(), "dir", null, 0, 1, SpecDirectory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(testDirectoryEClass, TestDirectory.class, "TestDirectory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTestDirectory_Keyword(), this.getTestDirKeyword(), null, "keyword", null, 0, 1, TestDirectory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTestDirectory_Dir(), ecorePackage.getEString(), "dir", null, 0, 1, TestDirectory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(mainDirectoryEClass, MainDirectory.class, "MainDirectory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMainDirectory_Keyword(), this.getMainDirKeyword(), null, "keyword", null, 0, 1, MainDirectory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMainDirectory_Dir(), ecorePackage.getEString(), "dir", null, 0, 1, MainDirectory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(basePackageEClass, BasePackage.class, "BasePackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBasePackage_Keyword(), this.getBasePackageKeyword(), null, "keyword", null, 0, 1, BasePackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getBasePackage_Dir(), ecorePackage.getEString(), "dir", null, 0, 1, BasePackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(dirKeywordEClass, DirKeyword.class, "DirKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDirKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, DirKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(specDirKeywordEClass, SpecDirKeyword.class, "SpecDirKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSpecDirKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, SpecDirKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(testDirKeywordEClass, TestDirKeyword.class, "TestDirKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTestDirKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, TestDirKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(mainDirKeywordEClass, MainDirKeyword.class, "MainDirKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMainDirKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, MainDirKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(basePackageKeywordEClass, BasePackageKeyword.class, "BasePackageKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getBasePackageKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, BasePackageKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(genBlockEClass, GenBlock.class, "GenBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getGenBlock_InitialInstructions(), ecorePackage.getEString(), "initialInstructions", null, 0, -1, GenBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGenBlock_MaxRetries(), ecorePackage.getEInt(), "maxRetries", null, 0, -1, GenBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGenBlock_ParseChecks(), ecorePackage.getEString(), "parseChecks", null, 0, -1, GenBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGenBlock_DefaultCorrections(), ecorePackage.getEString(), "defaultCorrections", null, 0, -1, GenBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGenBlock_Keyword(), this.getGenKeyword(), null, "keyword", null, 0, 1, GenBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGenBlock_InitialInstructions(), this.getInitialInstruction(), null, "initialInstructions", null, 0, -1, GenBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGenBlock_MaxRetries(), this.getMaxRetries(), null, "maxRetries", null, 0, -1, GenBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGenBlock_ParseChecks(), this.getParseCheck(), null, "parseChecks", null, 0, -1, GenBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGenBlock_DefaultCorrections(), this.getDefaultCorrection(), null, "defaultCorrections", null, 0, -1, GenBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGenBlock_Remediations(), this.getGenRemediationRules(), null, "remediations", null, 0, -1, GenBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGenBlock_ModelUsages(), this.getGenUsageBlock(), null, "modelUsages", null, 0, -1, GenBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(genKeywordEClass, GenKeyword.class, "GenKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getGenKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, GenKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(initialInstructionEClass, InitialInstruction.class, "InitialInstruction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getInitialInstruction_Keyword(), this.getInitialInstructionKeyword(), null, "keyword", null, 0, 1, InitialInstruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInitialInstruction_Instruction(), ecorePackage.getEString(), "instruction", null, 0, 1, InitialInstruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(maxRetriesEClass, MaxRetries.class, "MaxRetries", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMaxRetries_Keyword(), this.getMaxRetriesKeyword(), null, "keyword", null, 0, 1, MaxRetries.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMaxRetries_MaxRetries(), ecorePackage.getEInt(), "maxRetries", null, 0, 1, MaxRetries.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(parseCheckEClass, ParseCheck.class, "ParseCheck", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getParseCheck_Keyword(), this.getParseCheckKeyword(), null, "keyword", null, 0, 1, ParseCheck.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getParseCheck_Value(), this.getTrueFalseKeyword(), null, "value", null, 0, 1, ParseCheck.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(defaultCorrectionEClass, DefaultCorrection.class, "DefaultCorrection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDefaultCorrection_Keyword(), this.getDefaultCorrectionKeyword(), null, "keyword", null, 0, 1, DefaultCorrection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDefaultCorrection_Correction(), ecorePackage.getEString(), "correction", null, 0, 1, DefaultCorrection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(initialInstructionKeywordEClass, InitialInstructionKeyword.class, "InitialInstructionKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getInitialInstructionKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, InitialInstructionKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(maxRetriesKeywordEClass, MaxRetriesKeyword.class, "MaxRetriesKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMaxRetriesKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, MaxRetriesKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(parseCheckKeywordEClass, ParseCheckKeyword.class, "ParseCheckKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getParseCheckKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, ParseCheckKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(defaultCorrectionKeywordEClass, DefaultCorrectionKeyword.class, "DefaultCorrectionKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDefaultCorrectionKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, DefaultCorrectionKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(trueFalseKeywordEClass, TrueFalseKeyword.class, "TrueFalseKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
     initEClass(genRemediationRulesEClass, GenRemediationRules.class, "GenRemediationRules", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getGenRemediationRules_RulesKeyword(), this.getRulesKeyword(), null, "rulesKeyword", null, 0, 1, GenRemediationRules.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGenRemediationRules_PatternRules(), this.getGenPatternRemediationRule(), null, "patternRules", null, 0, -1, GenRemediationRules.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGenRemediationRules_DefaultRemediations(), this.getGenDefaultRemediationRule(), null, "defaultRemediations", null, 0, -1, GenRemediationRules.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(rulesKeywordEClass, RulesKeyword.class, "RulesKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRulesKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, RulesKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(genPatternRemediationRuleEClass, GenPatternRemediationRule.class, "GenPatternRemediationRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getGenPatternRemediationRule_Patterns(), ecorePackage.getEString(), "patterns", null, 0, -1, GenPatternRemediationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGenPatternRemediationRule_Codes(), ecorePackage.getEString(), "codes", null, 0, -1, GenPatternRemediationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGenPatternRemediationRule_Corrections(), ecorePackage.getEString(), "corrections", null, 0, -1, GenPatternRemediationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGenPatternRemediationRule_Keyword(), this.getRuleKeyword(), null, "keyword", null, 0, 1, GenPatternRemediationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGenPatternRemediationRule_Patterns(), this.getPattern(), null, "patterns", null, 0, -1, GenPatternRemediationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGenPatternRemediationRule_Codes(), this.getCode(), null, "codes", null, 0, -1, GenPatternRemediationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGenPatternRemediationRule_Corrections(), this.getCorrection(), null, "corrections", null, 0, -1, GenPatternRemediationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(ruleKeywordEClass, RuleKeyword.class, "RuleKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRuleKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, RuleKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(patternEClass, Pattern.class, "Pattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPattern_Keyword(), this.getPatternKeyword(), null, "keyword", null, 0, 1, Pattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPattern_Pattern(), ecorePackage.getEString(), "pattern", null, 0, 1, Pattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(patternKeywordEClass, PatternKeyword.class, "PatternKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPatternKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, PatternKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(codeEClass, Code.class, "Code", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCode_Keyword(), this.getCodeKeyword(), null, "keyword", null, 0, 1, Code.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCode_Code(), ecorePackage.getEString(), "code", null, 0, 1, Code.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(codeKeywordEClass, CodeKeyword.class, "CodeKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCodeKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, CodeKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(correctionEClass, Correction.class, "Correction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCorrection_Keyword(), this.getCorrectionKeyword(), null, "keyword", null, 0, 1, Correction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCorrection_Correction(), ecorePackage.getEString(), "correction", null, 0, 1, Correction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(correctionKeywordEClass, CorrectionKeyword.class, "CorrectionKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCorrectionKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, CorrectionKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(genDefaultRemediationRuleEClass, GenDefaultRemediationRule.class, "GenDefaultRemediationRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getGenDefaultRemediationRule_Codes(), ecorePackage.getEString(), "codes", null, 0, -1, GenDefaultRemediationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGenDefaultRemediationRule_Correction(), ecorePackage.getEString(), "correction", null, 0, -1, GenDefaultRemediationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGenDefaultRemediationRule_Keyword(), this.getDefaultKeyword(), null, "keyword", null, 0, 1, GenDefaultRemediationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGenDefaultRemediationRule_Codes(), this.getCode(), null, "codes", null, 0, -1, GenDefaultRemediationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGenDefaultRemediationRule_Corrections(), this.getCorrection(), null, "corrections", null, 0, -1, GenDefaultRemediationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(defaultKeywordEClass, DefaultKeyword.class, "DefaultKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDefaultKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, DefaultKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(llmProvidersBlockEClass, LlmProvidersBlock.class, "LlmProvidersBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getLlmProvidersBlock_Providers(), this.getNamedLlmProvider(), null, "providers", null, 0, -1, LlmProvidersBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLlmProvidersBlock_Keyword(), this.getLLMProvidersKeyword(), null, "keyword", null, 0, 1, LlmProvidersBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLlmProvidersBlock_Providers(), this.getLLMProvider(), null, "providers", null, 0, -1, LlmProvidersBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(namedLlmProviderEClass, NamedLlmProvider.class, "NamedLlmProvider", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getNamedLlmProvider_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedLlmProvider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getNamedLlmProvider_Kinds(), ecorePackage.getEString(), "kinds", null, 0, -1, NamedLlmProvider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getNamedLlmProvider_LocalModelPaths(), ecorePackage.getEString(), "localModelPaths", null, 0, -1, NamedLlmProvider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getNamedLlmProvider_Models(), ecorePackage.getEString(), "models", null, 0, -1, NamedLlmProvider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getNamedLlmProvider_Endpoints(), ecorePackage.getEString(), "endpoints", null, 0, -1, NamedLlmProvider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(llmProvidersKeywordEClass, LLMProvidersKeyword.class, "LLMProvidersKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLLMProvidersKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, LLMProvidersKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(llmProviderEClass, LLMProvider.class, "LLMProvider", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getLLMProvider_Keyword(), this.getProviderKeyword(), null, "keyword", null, 0, 1, LLMProvider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLLMProvider_Name(), ecorePackage.getEString(), "name", null, 0, 1, LLMProvider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLLMProvider_Types(), this.getProviderType(), null, "types", null, 0, -1, LLMProvider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLLMProvider_LocalModelPaths(), this.getLocalModelPath(), null, "localModelPaths", null, 0, -1, LLMProvider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLLMProvider_Models(), this.getModel(), null, "models", null, 0, -1, LLMProvider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLLMProvider_Endpoints(), this.getEndpoint(), null, "endpoints", null, 0, -1, LLMProvider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(providerKeywordEClass, ProviderKeyword.class, "ProviderKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getProviderKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, ProviderKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(providerTypeEClass, ProviderType.class, "ProviderType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getProviderType_Keyword(), this.getProviderTypeKeyword(), null, "keyword", null, 0, 1, ProviderType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getProviderType_Name(), ecorePackage.getEString(), "name", null, 0, 1, ProviderType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(providerTypeKeywordEClass, ProviderTypeKeyword.class, "ProviderTypeKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getProviderTypeKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, ProviderTypeKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(localModelPathEClass, LocalModelPath.class, "LocalModelPath", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getLocalModelPath_Keyword(), this.getFilePathKeyword(), null, "keyword", null, 0, 1, LocalModelPath.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLocalModelPath_Path(), ecorePackage.getEString(), "path", null, 0, 1, LocalModelPath.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getModel_Keyword(), this.getModelKeyword(), null, "keyword", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getModel_Mode(), ecorePackage.getEString(), "mode", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(modelKeywordEClass, ModelKeyword.class, "ModelKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getModelKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, ModelKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(filePathKeywordEClass, FilePathKeyword.class, "FilePathKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFilePathKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, FilePathKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(endpointEClass, Endpoint.class, "Endpoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEndpoint_Keyword(), this.getEndpointKeyword(), null, "keyword", null, 0, 1, Endpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEndpoint_Mode(), ecorePackage.getEString(), "mode", null, 0, 1, Endpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(endpointKeywordEClass, EndpointKeyword.class, "EndpointKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEndpointKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, EndpointKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(genUsageBlockEClass, GenUsageBlock.class, "GenUsageBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getGenUsageBlock_PrimaryProviders(), ecorePackage.getEString(), "primaryProviders", null, 0, -1, GenUsageBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGenUsageBlock_SecondaryProviders(), ecorePackage.getEString(), "secondaryProviders", null, 0, -1, GenUsageBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGenUsageBlock_Keyword(), this.getModelUsageKeyword(), null, "keyword", null, 0, 1, GenUsageBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGenUsageBlock_PrimaryProviders(), this.getPrimaryProvider(), null, "primaryProviders", null, 0, -1, GenUsageBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGenUsageBlock_SecondaryProviders(), this.getSecondaryProvider(), null, "secondaryProviders", null, 0, -1, GenUsageBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGenUsageBlock_Escalations(), this.getGenEscalationBlock(), null, "escalations", null, 0, -1, GenUsageBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(modelUsageKeywordEClass, ModelUsageKeyword.class, "ModelUsageKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getModelUsageKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, ModelUsageKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(primaryProviderEClass, PrimaryProvider.class, "PrimaryProvider", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPrimaryProvider_Keyword(), this.getPrimaryProviderKeyword(), null, "keyword", null, 0, 1, PrimaryProvider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPrimaryProvider_Name(), ecorePackage.getEString(), "name", null, 0, 1, PrimaryProvider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(primaryProviderKeywordEClass, PrimaryProviderKeyword.class, "PrimaryProviderKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPrimaryProviderKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, PrimaryProviderKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(secondaryProviderEClass, SecondaryProvider.class, "SecondaryProvider", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSecondaryProvider_Keyword(), this.getSecondaryProviderKeyword(), null, "keyword", null, 0, 1, SecondaryProvider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSecondaryProvider_Name(), ecorePackage.getEString(), "name", null, 0, 1, SecondaryProvider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(secondaryProviderKeywordEClass, SecondaryProviderKeyword.class, "SecondaryProviderKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSecondaryProviderKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, SecondaryProviderKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(genEscalationBlockEClass, GenEscalationBlock.class, "GenEscalationBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getGenEscalationBlock_Enableds(), ecorePackage.getEString(), "enableds", null, 0, -1, GenEscalationBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGenEscalationBlock_EscalateAtRetries(), ecorePackage.getEInt(), "escalateAtRetries", null, 0, -1, GenEscalationBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGenEscalationBlock_Keyword(), this.getEscalationKeyword(), null, "keyword", null, 0, 1, GenEscalationBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGenEscalationBlock_Enableds(), this.getEnabled(), null, "enableds", null, 0, -1, GenEscalationBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGenEscalationBlock_AtRetries(), this.getAtRetry(), null, "atRetries", null, 0, -1, GenEscalationBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(escalationKeywordEClass, EscalationKeyword.class, "EscalationKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEscalationKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, EscalationKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(enabledEClass, Enabled.class, "Enabled", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEnabled_Keyword(), this.getEnabledKeyword(), null, "keyword", null, 0, 1, Enabled.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEnabled_Value(), this.getTrueFalseKeyword(), null, "value", null, 0, 1, Enabled.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(enabledKeywordEClass, EnabledKeyword.class, "EnabledKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEnabledKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, EnabledKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(atRetryEClass, AtRetry.class, "AtRetry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAtRetry_Keyword(), this.getAtRetryKeyword(), null, "keyword", null, 0, 1, AtRetry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAtRetry_Value(), ecorePackage.getEInt(), "value", null, 0, 1, AtRetry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(atRetryKeywordEClass, AtRetryKeyword.class, "AtRetryKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAtRetryKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, AtRetryKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(surfaceBlockEClass, SurfaceBlock.class, "SurfaceBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSurfaceBlock_Elements(), this.getSurfaceElement(), null, "elements", null, 0, -1, SurfaceBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1443,6 +3909,9 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
     initEClass(typedParamEClass, TypedParam.class, "TypedParam", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTypedParam_Type(), this.getJavaType(), null, "type", null, 0, 1, TypedParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTypedParam_ParamName(), ecorePackage.getEString(), "paramName", null, 0, 1, TypedParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(trueKeywordEClass, TrueKeyword.class, "TrueKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTrueKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, TrueKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

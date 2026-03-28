@@ -81,9 +81,34 @@ public class LibrettoProjectProfileAdapterFactory extends AdapterFactoryImpl
         return createProjectProfileAdapter();
       }
       @Override
+      public Adapter caseProfile(Profile object)
+      {
+        return createProfileAdapter();
+      }
+      @Override
+      public Adapter caseProfileKeyword(ProfileKeyword object)
+      {
+        return createProfileKeywordAdapter();
+      }
+      @Override
       public Adapter caseProjectBlock(ProjectBlock object)
       {
         return createProjectBlockAdapter();
+      }
+      @Override
+      public Adapter caseRootDirectory(RootDirectory object)
+      {
+        return createRootDirectoryAdapter();
+      }
+      @Override
+      public Adapter caseProjectKeyword(ProjectKeyword object)
+      {
+        return createProjectKeywordAdapter();
+      }
+      @Override
+      public Adapter caseRootDirKeyword(RootDirKeyword object)
+      {
+        return createRootDirKeywordAdapter();
       }
       @Override
       public Adapter caseModulesBlock(ModulesBlock object)
@@ -91,9 +116,69 @@ public class LibrettoProjectProfileAdapterFactory extends AdapterFactoryImpl
         return createModulesBlockAdapter();
       }
       @Override
+      public Adapter caseModulesKeyword(ModulesKeyword object)
+      {
+        return createModulesKeywordAdapter();
+      }
+      @Override
       public Adapter caseProjectModule(ProjectModule object)
       {
         return createProjectModuleAdapter();
+      }
+      @Override
+      public Adapter caseModuleKeyword(ModuleKeyword object)
+      {
+        return createModuleKeywordAdapter();
+      }
+      @Override
+      public Adapter caseDirectory(Directory object)
+      {
+        return createDirectoryAdapter();
+      }
+      @Override
+      public Adapter caseSpecDirectory(SpecDirectory object)
+      {
+        return createSpecDirectoryAdapter();
+      }
+      @Override
+      public Adapter caseTestDirectory(TestDirectory object)
+      {
+        return createTestDirectoryAdapter();
+      }
+      @Override
+      public Adapter caseMainDirectory(MainDirectory object)
+      {
+        return createMainDirectoryAdapter();
+      }
+      @Override
+      public Adapter caseBasePackage(BasePackage object)
+      {
+        return createBasePackageAdapter();
+      }
+      @Override
+      public Adapter caseDirKeyword(DirKeyword object)
+      {
+        return createDirKeywordAdapter();
+      }
+      @Override
+      public Adapter caseSpecDirKeyword(SpecDirKeyword object)
+      {
+        return createSpecDirKeywordAdapter();
+      }
+      @Override
+      public Adapter caseTestDirKeyword(TestDirKeyword object)
+      {
+        return createTestDirKeywordAdapter();
+      }
+      @Override
+      public Adapter caseMainDirKeyword(MainDirKeyword object)
+      {
+        return createMainDirKeywordAdapter();
+      }
+      @Override
+      public Adapter caseBasePackageKeyword(BasePackageKeyword object)
+      {
+        return createBasePackageKeywordAdapter();
       }
       @Override
       public Adapter caseGenBlock(GenBlock object)
@@ -101,9 +186,64 @@ public class LibrettoProjectProfileAdapterFactory extends AdapterFactoryImpl
         return createGenBlockAdapter();
       }
       @Override
+      public Adapter caseGenKeyword(GenKeyword object)
+      {
+        return createGenKeywordAdapter();
+      }
+      @Override
+      public Adapter caseInitialInstruction(InitialInstruction object)
+      {
+        return createInitialInstructionAdapter();
+      }
+      @Override
+      public Adapter caseMaxRetries(MaxRetries object)
+      {
+        return createMaxRetriesAdapter();
+      }
+      @Override
+      public Adapter caseParseCheck(ParseCheck object)
+      {
+        return createParseCheckAdapter();
+      }
+      @Override
+      public Adapter caseDefaultCorrection(DefaultCorrection object)
+      {
+        return createDefaultCorrectionAdapter();
+      }
+      @Override
+      public Adapter caseInitialInstructionKeyword(InitialInstructionKeyword object)
+      {
+        return createInitialInstructionKeywordAdapter();
+      }
+      @Override
+      public Adapter caseMaxRetriesKeyword(MaxRetriesKeyword object)
+      {
+        return createMaxRetriesKeywordAdapter();
+      }
+      @Override
+      public Adapter caseParseCheckKeyword(ParseCheckKeyword object)
+      {
+        return createParseCheckKeywordAdapter();
+      }
+      @Override
+      public Adapter caseDefaultCorrectionKeyword(DefaultCorrectionKeyword object)
+      {
+        return createDefaultCorrectionKeywordAdapter();
+      }
+      @Override
+      public Adapter caseTrueFalseKeyword(TrueFalseKeyword object)
+      {
+        return createTrueFalseKeywordAdapter();
+      }
+      @Override
       public Adapter caseGenRemediationRules(GenRemediationRules object)
       {
         return createGenRemediationRulesAdapter();
+      }
+      @Override
+      public Adapter caseRulesKeyword(RulesKeyword object)
+      {
+        return createRulesKeywordAdapter();
       }
       @Override
       public Adapter caseGenPatternRemediationRule(GenPatternRemediationRule object)
@@ -111,9 +251,49 @@ public class LibrettoProjectProfileAdapterFactory extends AdapterFactoryImpl
         return createGenPatternRemediationRuleAdapter();
       }
       @Override
+      public Adapter caseRuleKeyword(RuleKeyword object)
+      {
+        return createRuleKeywordAdapter();
+      }
+      @Override
+      public Adapter casePattern(Pattern object)
+      {
+        return createPatternAdapter();
+      }
+      @Override
+      public Adapter casePatternKeyword(PatternKeyword object)
+      {
+        return createPatternKeywordAdapter();
+      }
+      @Override
+      public Adapter caseCode(Code object)
+      {
+        return createCodeAdapter();
+      }
+      @Override
+      public Adapter caseCodeKeyword(CodeKeyword object)
+      {
+        return createCodeKeywordAdapter();
+      }
+      @Override
+      public Adapter caseCorrection(Correction object)
+      {
+        return createCorrectionAdapter();
+      }
+      @Override
+      public Adapter caseCorrectionKeyword(CorrectionKeyword object)
+      {
+        return createCorrectionKeywordAdapter();
+      }
+      @Override
       public Adapter caseGenDefaultRemediationRule(GenDefaultRemediationRule object)
       {
         return createGenDefaultRemediationRuleAdapter();
+      }
+      @Override
+      public Adapter caseDefaultKeyword(DefaultKeyword object)
+      {
+        return createDefaultKeywordAdapter();
       }
       @Override
       public Adapter caseLlmProvidersBlock(LlmProvidersBlock object)
@@ -121,9 +301,59 @@ public class LibrettoProjectProfileAdapterFactory extends AdapterFactoryImpl
         return createLlmProvidersBlockAdapter();
       }
       @Override
-      public Adapter caseNamedLlmProvider(NamedLlmProvider object)
+      public Adapter caseLLMProvidersKeyword(LLMProvidersKeyword object)
       {
-        return createNamedLlmProviderAdapter();
+        return createLLMProvidersKeywordAdapter();
+      }
+      @Override
+      public Adapter caseLLMProvider(LLMProvider object)
+      {
+        return createLLMProviderAdapter();
+      }
+      @Override
+      public Adapter caseProviderKeyword(ProviderKeyword object)
+      {
+        return createProviderKeywordAdapter();
+      }
+      @Override
+      public Adapter caseProviderType(ProviderType object)
+      {
+        return createProviderTypeAdapter();
+      }
+      @Override
+      public Adapter caseProviderTypeKeyword(ProviderTypeKeyword object)
+      {
+        return createProviderTypeKeywordAdapter();
+      }
+      @Override
+      public Adapter caseLocalModelPath(LocalModelPath object)
+      {
+        return createLocalModelPathAdapter();
+      }
+      @Override
+      public Adapter caseModel(Model object)
+      {
+        return createModelAdapter();
+      }
+      @Override
+      public Adapter caseModelKeyword(ModelKeyword object)
+      {
+        return createModelKeywordAdapter();
+      }
+      @Override
+      public Adapter caseFilePathKeyword(FilePathKeyword object)
+      {
+        return createFilePathKeywordAdapter();
+      }
+      @Override
+      public Adapter caseEndpoint(Endpoint object)
+      {
+        return createEndpointAdapter();
+      }
+      @Override
+      public Adapter caseEndpointKeyword(EndpointKeyword object)
+      {
+        return createEndpointKeywordAdapter();
       }
       @Override
       public Adapter caseGenUsageBlock(GenUsageBlock object)
@@ -131,9 +361,59 @@ public class LibrettoProjectProfileAdapterFactory extends AdapterFactoryImpl
         return createGenUsageBlockAdapter();
       }
       @Override
+      public Adapter caseModelUsageKeyword(ModelUsageKeyword object)
+      {
+        return createModelUsageKeywordAdapter();
+      }
+      @Override
+      public Adapter casePrimaryProvider(PrimaryProvider object)
+      {
+        return createPrimaryProviderAdapter();
+      }
+      @Override
+      public Adapter casePrimaryProviderKeyword(PrimaryProviderKeyword object)
+      {
+        return createPrimaryProviderKeywordAdapter();
+      }
+      @Override
+      public Adapter caseSecondaryProvider(SecondaryProvider object)
+      {
+        return createSecondaryProviderAdapter();
+      }
+      @Override
+      public Adapter caseSecondaryProviderKeyword(SecondaryProviderKeyword object)
+      {
+        return createSecondaryProviderKeywordAdapter();
+      }
+      @Override
       public Adapter caseGenEscalationBlock(GenEscalationBlock object)
       {
         return createGenEscalationBlockAdapter();
+      }
+      @Override
+      public Adapter caseEscalationKeyword(EscalationKeyword object)
+      {
+        return createEscalationKeywordAdapter();
+      }
+      @Override
+      public Adapter caseEnabled(Enabled object)
+      {
+        return createEnabledAdapter();
+      }
+      @Override
+      public Adapter caseEnabledKeyword(EnabledKeyword object)
+      {
+        return createEnabledKeywordAdapter();
+      }
+      @Override
+      public Adapter caseAtRetry(AtRetry object)
+      {
+        return createAtRetryAdapter();
+      }
+      @Override
+      public Adapter caseAtRetryKeyword(AtRetryKeyword object)
+      {
+        return createAtRetryKeywordAdapter();
       }
       @Override
       public Adapter caseSurfaceBlock(SurfaceBlock object)
@@ -201,6 +481,11 @@ public class LibrettoProjectProfileAdapterFactory extends AdapterFactoryImpl
         return createTypedParamAdapter();
       }
       @Override
+      public Adapter caseTrueKeyword(TrueKeyword object)
+      {
+        return createTrueKeywordAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -238,6 +523,36 @@ public class LibrettoProjectProfileAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.Profile <em>Profile</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Profile
+   * @generated
+   */
+  public Adapter createProfileAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProfileKeyword <em>Profile Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProfileKeyword
+   * @generated
+   */
+  public Adapter createProfileKeywordAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock <em>Project Block</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -248,6 +563,51 @@ public class LibrettoProjectProfileAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createProjectBlockAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.RootDirectory <em>Root Directory</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.RootDirectory
+   * @generated
+   */
+  public Adapter createRootDirectoryAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectKeyword <em>Project Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProjectKeyword
+   * @generated
+   */
+  public Adapter createProjectKeywordAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.RootDirKeyword <em>Root Dir Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.RootDirKeyword
+   * @generated
+   */
+  public Adapter createRootDirKeywordAdapter()
   {
     return null;
   }
@@ -268,6 +628,21 @@ public class LibrettoProjectProfileAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.ModulesKeyword <em>Modules Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ModulesKeyword
+   * @generated
+   */
+  public Adapter createModulesKeywordAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule <em>Project Module</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -278,6 +653,171 @@ public class LibrettoProjectProfileAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createProjectModuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.ModuleKeyword <em>Module Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ModuleKeyword
+   * @generated
+   */
+  public Adapter createModuleKeywordAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.Directory <em>Directory</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Directory
+   * @generated
+   */
+  public Adapter createDirectoryAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.SpecDirectory <em>Spec Directory</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.SpecDirectory
+   * @generated
+   */
+  public Adapter createSpecDirectoryAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestDirectory <em>Test Directory</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestDirectory
+   * @generated
+   */
+  public Adapter createTestDirectoryAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.MainDirectory <em>Main Directory</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.MainDirectory
+   * @generated
+   */
+  public Adapter createMainDirectoryAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.BasePackage <em>Base Package</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.BasePackage
+   * @generated
+   */
+  public Adapter createBasePackageAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.DirKeyword <em>Dir Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.DirKeyword
+   * @generated
+   */
+  public Adapter createDirKeywordAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.SpecDirKeyword <em>Spec Dir Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.SpecDirKeyword
+   * @generated
+   */
+  public Adapter createSpecDirKeywordAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.TestDirKeyword <em>Test Dir Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.TestDirKeyword
+   * @generated
+   */
+  public Adapter createTestDirKeywordAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.MainDirKeyword <em>Main Dir Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.MainDirKeyword
+   * @generated
+   */
+  public Adapter createMainDirKeywordAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.BasePackageKeyword <em>Base Package Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.BasePackageKeyword
+   * @generated
+   */
+  public Adapter createBasePackageKeywordAdapter()
   {
     return null;
   }
@@ -298,6 +838,156 @@ public class LibrettoProjectProfileAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenKeyword <em>Gen Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenKeyword
+   * @generated
+   */
+  public Adapter createGenKeywordAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.InitialInstruction <em>Initial Instruction</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.InitialInstruction
+   * @generated
+   */
+  public Adapter createInitialInstructionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.MaxRetries <em>Max Retries</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.MaxRetries
+   * @generated
+   */
+  public Adapter createMaxRetriesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.ParseCheck <em>Parse Check</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ParseCheck
+   * @generated
+   */
+  public Adapter createParseCheckAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.DefaultCorrection <em>Default Correction</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.DefaultCorrection
+   * @generated
+   */
+  public Adapter createDefaultCorrectionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.InitialInstructionKeyword <em>Initial Instruction Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.InitialInstructionKeyword
+   * @generated
+   */
+  public Adapter createInitialInstructionKeywordAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.MaxRetriesKeyword <em>Max Retries Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.MaxRetriesKeyword
+   * @generated
+   */
+  public Adapter createMaxRetriesKeywordAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.ParseCheckKeyword <em>Parse Check Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ParseCheckKeyword
+   * @generated
+   */
+  public Adapter createParseCheckKeywordAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.DefaultCorrectionKeyword <em>Default Correction Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.DefaultCorrectionKeyword
+   * @generated
+   */
+  public Adapter createDefaultCorrectionKeywordAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.TrueFalseKeyword <em>True False Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.TrueFalseKeyword
+   * @generated
+   */
+  public Adapter createTrueFalseKeywordAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenRemediationRules <em>Gen Remediation Rules</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -308,6 +998,21 @@ public class LibrettoProjectProfileAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createGenRemediationRulesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.RulesKeyword <em>Rules Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.RulesKeyword
+   * @generated
+   */
+  public Adapter createRulesKeywordAdapter()
   {
     return null;
   }
@@ -328,6 +1033,111 @@ public class LibrettoProjectProfileAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.RuleKeyword <em>Rule Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.RuleKeyword
+   * @generated
+   */
+  public Adapter createRuleKeywordAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.Pattern <em>Pattern</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Pattern
+   * @generated
+   */
+  public Adapter createPatternAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.PatternKeyword <em>Pattern Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.PatternKeyword
+   * @generated
+   */
+  public Adapter createPatternKeywordAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.Code <em>Code</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Code
+   * @generated
+   */
+  public Adapter createCodeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.CodeKeyword <em>Code Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.CodeKeyword
+   * @generated
+   */
+  public Adapter createCodeKeywordAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.Correction <em>Correction</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Correction
+   * @generated
+   */
+  public Adapter createCorrectionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.CorrectionKeyword <em>Correction Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.CorrectionKeyword
+   * @generated
+   */
+  public Adapter createCorrectionKeywordAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenDefaultRemediationRule <em>Gen Default Remediation Rule</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -338,6 +1148,21 @@ public class LibrettoProjectProfileAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createGenDefaultRemediationRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.DefaultKeyword <em>Default Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.DefaultKeyword
+   * @generated
+   */
+  public Adapter createDefaultKeywordAdapter()
   {
     return null;
   }
@@ -358,16 +1183,166 @@ public class LibrettoProjectProfileAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider <em>Named Llm Provider</em>}'.
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.LLMProvidersKeyword <em>LLM Providers Keyword</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LLMProvidersKeyword
    * @generated
    */
-  public Adapter createNamedLlmProviderAdapter()
+  public Adapter createLLMProvidersKeywordAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.LLMProvider <em>LLM Provider</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LLMProvider
+   * @generated
+   */
+  public Adapter createLLMProviderAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProviderKeyword <em>Provider Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProviderKeyword
+   * @generated
+   */
+  public Adapter createProviderKeywordAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProviderType <em>Provider Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProviderType
+   * @generated
+   */
+  public Adapter createProviderTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProviderTypeKeyword <em>Provider Type Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ProviderTypeKeyword
+   * @generated
+   */
+  public Adapter createProviderTypeKeywordAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.LocalModelPath <em>Local Model Path</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LocalModelPath
+   * @generated
+   */
+  public Adapter createLocalModelPathAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.Model <em>Model</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Model
+   * @generated
+   */
+  public Adapter createModelAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.ModelKeyword <em>Model Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ModelKeyword
+   * @generated
+   */
+  public Adapter createModelKeywordAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.FilePathKeyword <em>File Path Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.FilePathKeyword
+   * @generated
+   */
+  public Adapter createFilePathKeywordAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.Endpoint <em>Endpoint</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Endpoint
+   * @generated
+   */
+  public Adapter createEndpointAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.EndpointKeyword <em>Endpoint Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.EndpointKeyword
+   * @generated
+   */
+  public Adapter createEndpointKeywordAdapter()
   {
     return null;
   }
@@ -388,6 +1363,81 @@ public class LibrettoProjectProfileAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.ModelUsageKeyword <em>Model Usage Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.ModelUsageKeyword
+   * @generated
+   */
+  public Adapter createModelUsageKeywordAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider <em>Primary Provider</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider
+   * @generated
+   */
+  public Adapter createPrimaryProviderAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProviderKeyword <em>Primary Provider Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProviderKeyword
+   * @generated
+   */
+  public Adapter createPrimaryProviderKeywordAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProvider <em>Secondary Provider</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProvider
+   * @generated
+   */
+  public Adapter createSecondaryProviderAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProviderKeyword <em>Secondary Provider Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProviderKeyword
+   * @generated
+   */
+  public Adapter createSecondaryProviderKeywordAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock <em>Gen Escalation Block</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -398,6 +1448,81 @@ public class LibrettoProjectProfileAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createGenEscalationBlockAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.EscalationKeyword <em>Escalation Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.EscalationKeyword
+   * @generated
+   */
+  public Adapter createEscalationKeywordAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.Enabled <em>Enabled</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Enabled
+   * @generated
+   */
+  public Adapter createEnabledAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.EnabledKeyword <em>Enabled Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.EnabledKeyword
+   * @generated
+   */
+  public Adapter createEnabledKeywordAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.AtRetry <em>At Retry</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.AtRetry
+   * @generated
+   */
+  public Adapter createAtRetryAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.AtRetryKeyword <em>At Retry Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.AtRetryKeyword
+   * @generated
+   */
+  public Adapter createAtRetryKeywordAdapter()
   {
     return null;
   }
@@ -593,6 +1718,21 @@ public class LibrettoProjectProfileAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTypedParamAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.robenglander.libretto.spec.librettoProjectProfile.TrueKeyword <em>True Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.TrueKeyword
+   * @generated
+   */
+  public Adapter createTrueKeywordAdapter()
   {
     return null;
   }

@@ -80,10 +80,45 @@ public class LibrettoProjectProfileSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LibrettoProjectProfilePackage.PROFILE:
+      {
+        Profile profile = (Profile)theEObject;
+        T result = caseProfile(profile);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.PROFILE_KEYWORD:
+      {
+        ProfileKeyword profileKeyword = (ProfileKeyword)theEObject;
+        T result = caseProfileKeyword(profileKeyword);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case LibrettoProjectProfilePackage.PROJECT_BLOCK:
       {
         ProjectBlock projectBlock = (ProjectBlock)theEObject;
         T result = caseProjectBlock(projectBlock);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.ROOT_DIRECTORY:
+      {
+        RootDirectory rootDirectory = (RootDirectory)theEObject;
+        T result = caseRootDirectory(rootDirectory);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.PROJECT_KEYWORD:
+      {
+        ProjectKeyword projectKeyword = (ProjectKeyword)theEObject;
+        T result = caseProjectKeyword(projectKeyword);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.ROOT_DIR_KEYWORD:
+      {
+        RootDirKeyword rootDirKeyword = (RootDirKeyword)theEObject;
+        T result = caseRootDirKeyword(rootDirKeyword);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -94,10 +129,94 @@ public class LibrettoProjectProfileSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LibrettoProjectProfilePackage.MODULES_KEYWORD:
+      {
+        ModulesKeyword modulesKeyword = (ModulesKeyword)theEObject;
+        T result = caseModulesKeyword(modulesKeyword);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case LibrettoProjectProfilePackage.PROJECT_MODULE:
       {
         ProjectModule projectModule = (ProjectModule)theEObject;
         T result = caseProjectModule(projectModule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.MODULE_KEYWORD:
+      {
+        ModuleKeyword moduleKeyword = (ModuleKeyword)theEObject;
+        T result = caseModuleKeyword(moduleKeyword);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.DIRECTORY:
+      {
+        Directory directory = (Directory)theEObject;
+        T result = caseDirectory(directory);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.SPEC_DIRECTORY:
+      {
+        SpecDirectory specDirectory = (SpecDirectory)theEObject;
+        T result = caseSpecDirectory(specDirectory);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.TEST_DIRECTORY:
+      {
+        TestDirectory testDirectory = (TestDirectory)theEObject;
+        T result = caseTestDirectory(testDirectory);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.MAIN_DIRECTORY:
+      {
+        MainDirectory mainDirectory = (MainDirectory)theEObject;
+        T result = caseMainDirectory(mainDirectory);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.BASE_PACKAGE:
+      {
+        BasePackage basePackage = (BasePackage)theEObject;
+        T result = caseBasePackage(basePackage);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.DIR_KEYWORD:
+      {
+        DirKeyword dirKeyword = (DirKeyword)theEObject;
+        T result = caseDirKeyword(dirKeyword);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.SPEC_DIR_KEYWORD:
+      {
+        SpecDirKeyword specDirKeyword = (SpecDirKeyword)theEObject;
+        T result = caseSpecDirKeyword(specDirKeyword);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.TEST_DIR_KEYWORD:
+      {
+        TestDirKeyword testDirKeyword = (TestDirKeyword)theEObject;
+        T result = caseTestDirKeyword(testDirKeyword);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.MAIN_DIR_KEYWORD:
+      {
+        MainDirKeyword mainDirKeyword = (MainDirKeyword)theEObject;
+        T result = caseMainDirKeyword(mainDirKeyword);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.BASE_PACKAGE_KEYWORD:
+      {
+        BasePackageKeyword basePackageKeyword = (BasePackageKeyword)theEObject;
+        T result = caseBasePackageKeyword(basePackageKeyword);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -108,10 +227,87 @@ public class LibrettoProjectProfileSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LibrettoProjectProfilePackage.GEN_KEYWORD:
+      {
+        GenKeyword genKeyword = (GenKeyword)theEObject;
+        T result = caseGenKeyword(genKeyword);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.INITIAL_INSTRUCTION:
+      {
+        InitialInstruction initialInstruction = (InitialInstruction)theEObject;
+        T result = caseInitialInstruction(initialInstruction);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.MAX_RETRIES:
+      {
+        MaxRetries maxRetries = (MaxRetries)theEObject;
+        T result = caseMaxRetries(maxRetries);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.PARSE_CHECK:
+      {
+        ParseCheck parseCheck = (ParseCheck)theEObject;
+        T result = caseParseCheck(parseCheck);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.DEFAULT_CORRECTION:
+      {
+        DefaultCorrection defaultCorrection = (DefaultCorrection)theEObject;
+        T result = caseDefaultCorrection(defaultCorrection);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.INITIAL_INSTRUCTION_KEYWORD:
+      {
+        InitialInstructionKeyword initialInstructionKeyword = (InitialInstructionKeyword)theEObject;
+        T result = caseInitialInstructionKeyword(initialInstructionKeyword);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.MAX_RETRIES_KEYWORD:
+      {
+        MaxRetriesKeyword maxRetriesKeyword = (MaxRetriesKeyword)theEObject;
+        T result = caseMaxRetriesKeyword(maxRetriesKeyword);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.PARSE_CHECK_KEYWORD:
+      {
+        ParseCheckKeyword parseCheckKeyword = (ParseCheckKeyword)theEObject;
+        T result = caseParseCheckKeyword(parseCheckKeyword);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.DEFAULT_CORRECTION_KEYWORD:
+      {
+        DefaultCorrectionKeyword defaultCorrectionKeyword = (DefaultCorrectionKeyword)theEObject;
+        T result = caseDefaultCorrectionKeyword(defaultCorrectionKeyword);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.TRUE_FALSE_KEYWORD:
+      {
+        TrueFalseKeyword trueFalseKeyword = (TrueFalseKeyword)theEObject;
+        T result = caseTrueFalseKeyword(trueFalseKeyword);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case LibrettoProjectProfilePackage.GEN_REMEDIATION_RULES:
       {
         GenRemediationRules genRemediationRules = (GenRemediationRules)theEObject;
         T result = caseGenRemediationRules(genRemediationRules);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.RULES_KEYWORD:
+      {
+        RulesKeyword rulesKeyword = (RulesKeyword)theEObject;
+        T result = caseRulesKeyword(rulesKeyword);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -122,10 +318,66 @@ public class LibrettoProjectProfileSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LibrettoProjectProfilePackage.RULE_KEYWORD:
+      {
+        RuleKeyword ruleKeyword = (RuleKeyword)theEObject;
+        T result = caseRuleKeyword(ruleKeyword);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.PATTERN:
+      {
+        Pattern pattern = (Pattern)theEObject;
+        T result = casePattern(pattern);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.PATTERN_KEYWORD:
+      {
+        PatternKeyword patternKeyword = (PatternKeyword)theEObject;
+        T result = casePatternKeyword(patternKeyword);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.CODE:
+      {
+        Code code = (Code)theEObject;
+        T result = caseCode(code);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.CODE_KEYWORD:
+      {
+        CodeKeyword codeKeyword = (CodeKeyword)theEObject;
+        T result = caseCodeKeyword(codeKeyword);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.CORRECTION:
+      {
+        Correction correction = (Correction)theEObject;
+        T result = caseCorrection(correction);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.CORRECTION_KEYWORD:
+      {
+        CorrectionKeyword correctionKeyword = (CorrectionKeyword)theEObject;
+        T result = caseCorrectionKeyword(correctionKeyword);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case LibrettoProjectProfilePackage.GEN_DEFAULT_REMEDIATION_RULE:
       {
         GenDefaultRemediationRule genDefaultRemediationRule = (GenDefaultRemediationRule)theEObject;
         T result = caseGenDefaultRemediationRule(genDefaultRemediationRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.DEFAULT_KEYWORD:
+      {
+        DefaultKeyword defaultKeyword = (DefaultKeyword)theEObject;
+        T result = caseDefaultKeyword(defaultKeyword);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -136,10 +388,80 @@ public class LibrettoProjectProfileSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LibrettoProjectProfilePackage.NAMED_LLM_PROVIDER:
+      case LibrettoProjectProfilePackage.LLM_PROVIDERS_KEYWORD:
       {
-        NamedLlmProvider namedLlmProvider = (NamedLlmProvider)theEObject;
-        T result = caseNamedLlmProvider(namedLlmProvider);
+        LLMProvidersKeyword llmProvidersKeyword = (LLMProvidersKeyword)theEObject;
+        T result = caseLLMProvidersKeyword(llmProvidersKeyword);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.LLM_PROVIDER:
+      {
+        LLMProvider llmProvider = (LLMProvider)theEObject;
+        T result = caseLLMProvider(llmProvider);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.PROVIDER_KEYWORD:
+      {
+        ProviderKeyword providerKeyword = (ProviderKeyword)theEObject;
+        T result = caseProviderKeyword(providerKeyword);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.PROVIDER_TYPE:
+      {
+        ProviderType providerType = (ProviderType)theEObject;
+        T result = caseProviderType(providerType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.PROVIDER_TYPE_KEYWORD:
+      {
+        ProviderTypeKeyword providerTypeKeyword = (ProviderTypeKeyword)theEObject;
+        T result = caseProviderTypeKeyword(providerTypeKeyword);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.LOCAL_MODEL_PATH:
+      {
+        LocalModelPath localModelPath = (LocalModelPath)theEObject;
+        T result = caseLocalModelPath(localModelPath);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.MODEL:
+      {
+        Model model = (Model)theEObject;
+        T result = caseModel(model);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.MODEL_KEYWORD:
+      {
+        ModelKeyword modelKeyword = (ModelKeyword)theEObject;
+        T result = caseModelKeyword(modelKeyword);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.FILE_PATH_KEYWORD:
+      {
+        FilePathKeyword filePathKeyword = (FilePathKeyword)theEObject;
+        T result = caseFilePathKeyword(filePathKeyword);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.ENDPOINT:
+      {
+        Endpoint endpoint = (Endpoint)theEObject;
+        T result = caseEndpoint(endpoint);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.ENDPOINT_KEYWORD:
+      {
+        EndpointKeyword endpointKeyword = (EndpointKeyword)theEObject;
+        T result = caseEndpointKeyword(endpointKeyword);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -150,10 +472,80 @@ public class LibrettoProjectProfileSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LibrettoProjectProfilePackage.MODEL_USAGE_KEYWORD:
+      {
+        ModelUsageKeyword modelUsageKeyword = (ModelUsageKeyword)theEObject;
+        T result = caseModelUsageKeyword(modelUsageKeyword);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.PRIMARY_PROVIDER:
+      {
+        PrimaryProvider primaryProvider = (PrimaryProvider)theEObject;
+        T result = casePrimaryProvider(primaryProvider);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.PRIMARY_PROVIDER_KEYWORD:
+      {
+        PrimaryProviderKeyword primaryProviderKeyword = (PrimaryProviderKeyword)theEObject;
+        T result = casePrimaryProviderKeyword(primaryProviderKeyword);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.SECONDARY_PROVIDER:
+      {
+        SecondaryProvider secondaryProvider = (SecondaryProvider)theEObject;
+        T result = caseSecondaryProvider(secondaryProvider);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.SECONDARY_PROVIDER_KEYWORD:
+      {
+        SecondaryProviderKeyword secondaryProviderKeyword = (SecondaryProviderKeyword)theEObject;
+        T result = caseSecondaryProviderKeyword(secondaryProviderKeyword);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK:
       {
         GenEscalationBlock genEscalationBlock = (GenEscalationBlock)theEObject;
         T result = caseGenEscalationBlock(genEscalationBlock);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.ESCALATION_KEYWORD:
+      {
+        EscalationKeyword escalationKeyword = (EscalationKeyword)theEObject;
+        T result = caseEscalationKeyword(escalationKeyword);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.ENABLED:
+      {
+        Enabled enabled = (Enabled)theEObject;
+        T result = caseEnabled(enabled);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.ENABLED_KEYWORD:
+      {
+        EnabledKeyword enabledKeyword = (EnabledKeyword)theEObject;
+        T result = caseEnabledKeyword(enabledKeyword);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.AT_RETRY:
+      {
+        AtRetry atRetry = (AtRetry)theEObject;
+        T result = caseAtRetry(atRetry);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.AT_RETRY_KEYWORD:
+      {
+        AtRetryKeyword atRetryKeyword = (AtRetryKeyword)theEObject;
+        T result = caseAtRetryKeyword(atRetryKeyword);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -260,6 +652,14 @@ public class LibrettoProjectProfileSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LibrettoProjectProfilePackage.TRUE_KEYWORD:
+      {
+        TrueKeyword trueKeyword = (TrueKeyword)theEObject;
+        T result = caseTrueKeyword(trueKeyword);
+        if (result == null) result = caseTrueFalseKeyword(trueKeyword);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -281,6 +681,38 @@ public class LibrettoProjectProfileSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Profile</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Profile</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseProfile(Profile object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Profile Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Profile Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseProfileKeyword(ProfileKeyword object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Project Block</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -292,6 +724,54 @@ public class LibrettoProjectProfileSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseProjectBlock(ProjectBlock object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Root Directory</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Root Directory</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRootDirectory(RootDirectory object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Project Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Project Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseProjectKeyword(ProjectKeyword object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Root Dir Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Root Dir Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRootDirKeyword(RootDirKeyword object)
   {
     return null;
   }
@@ -313,6 +793,22 @@ public class LibrettoProjectProfileSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Modules Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Modules Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseModulesKeyword(ModulesKeyword object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Project Module</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -324,6 +820,182 @@ public class LibrettoProjectProfileSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseProjectModule(ProjectModule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Module Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Module Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseModuleKeyword(ModuleKeyword object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Directory</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Directory</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDirectory(Directory object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Spec Directory</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Spec Directory</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSpecDirectory(SpecDirectory object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Test Directory</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Test Directory</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTestDirectory(TestDirectory object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Main Directory</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Main Directory</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMainDirectory(MainDirectory object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Base Package</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Base Package</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBasePackage(BasePackage object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Dir Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Dir Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDirKeyword(DirKeyword object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Spec Dir Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Spec Dir Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSpecDirKeyword(SpecDirKeyword object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Test Dir Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Test Dir Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTestDirKeyword(TestDirKeyword object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Main Dir Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Main Dir Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMainDirKeyword(MainDirKeyword object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Base Package Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Base Package Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBasePackageKeyword(BasePackageKeyword object)
   {
     return null;
   }
@@ -345,6 +1017,166 @@ public class LibrettoProjectProfileSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Gen Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Gen Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGenKeyword(GenKeyword object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Initial Instruction</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Initial Instruction</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInitialInstruction(InitialInstruction object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Max Retries</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Max Retries</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMaxRetries(MaxRetries object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Parse Check</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Parse Check</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseParseCheck(ParseCheck object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Default Correction</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Default Correction</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDefaultCorrection(DefaultCorrection object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Initial Instruction Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Initial Instruction Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInitialInstructionKeyword(InitialInstructionKeyword object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Max Retries Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Max Retries Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMaxRetriesKeyword(MaxRetriesKeyword object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Parse Check Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Parse Check Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseParseCheckKeyword(ParseCheckKeyword object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Default Correction Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Default Correction Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDefaultCorrectionKeyword(DefaultCorrectionKeyword object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>True False Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>True False Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTrueFalseKeyword(TrueFalseKeyword object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Gen Remediation Rules</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -356,6 +1188,22 @@ public class LibrettoProjectProfileSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseGenRemediationRules(GenRemediationRules object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Rules Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Rules Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRulesKeyword(RulesKeyword object)
   {
     return null;
   }
@@ -377,6 +1225,118 @@ public class LibrettoProjectProfileSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Rule Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Rule Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRuleKeyword(RuleKeyword object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Pattern</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Pattern</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePattern(Pattern object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Pattern Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Pattern Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePatternKeyword(PatternKeyword object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Code</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Code</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCode(Code object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Code Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Code Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCodeKeyword(CodeKeyword object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Correction</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Correction</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCorrection(Correction object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Correction Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Correction Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCorrectionKeyword(CorrectionKeyword object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Gen Default Remediation Rule</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -388,6 +1348,22 @@ public class LibrettoProjectProfileSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseGenDefaultRemediationRule(GenDefaultRemediationRule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Default Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Default Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDefaultKeyword(DefaultKeyword object)
   {
     return null;
   }
@@ -409,17 +1385,177 @@ public class LibrettoProjectProfileSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Named Llm Provider</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>LLM Providers Keyword</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Named Llm Provider</em>'.
+   * @return the result of interpreting the object as an instance of '<em>LLM Providers Keyword</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseNamedLlmProvider(NamedLlmProvider object)
+  public T caseLLMProvidersKeyword(LLMProvidersKeyword object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>LLM Provider</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>LLM Provider</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLLMProvider(LLMProvider object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Provider Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Provider Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseProviderKeyword(ProviderKeyword object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Provider Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Provider Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseProviderType(ProviderType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Provider Type Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Provider Type Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseProviderTypeKeyword(ProviderTypeKeyword object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Local Model Path</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Local Model Path</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLocalModelPath(LocalModelPath object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Model</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Model</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseModel(Model object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Model Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Model Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseModelKeyword(ModelKeyword object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>File Path Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>File Path Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFilePathKeyword(FilePathKeyword object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Endpoint</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Endpoint</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEndpoint(Endpoint object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Endpoint Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Endpoint Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEndpointKeyword(EndpointKeyword object)
   {
     return null;
   }
@@ -441,6 +1577,86 @@ public class LibrettoProjectProfileSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Model Usage Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Model Usage Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseModelUsageKeyword(ModelUsageKeyword object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Primary Provider</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Primary Provider</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePrimaryProvider(PrimaryProvider object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Primary Provider Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Primary Provider Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePrimaryProviderKeyword(PrimaryProviderKeyword object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Secondary Provider</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Secondary Provider</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSecondaryProvider(SecondaryProvider object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Secondary Provider Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Secondary Provider Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSecondaryProviderKeyword(SecondaryProviderKeyword object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Gen Escalation Block</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -452,6 +1668,86 @@ public class LibrettoProjectProfileSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseGenEscalationBlock(GenEscalationBlock object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Escalation Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Escalation Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEscalationKeyword(EscalationKeyword object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Enabled</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Enabled</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEnabled(Enabled object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Enabled Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Enabled Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEnabledKeyword(EnabledKeyword object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>At Retry</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>At Retry</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAtRetry(AtRetry object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>At Retry Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>At Retry Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAtRetryKeyword(AtRetryKeyword object)
   {
     return null;
   }
@@ -660,6 +1956,22 @@ public class LibrettoProjectProfileSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseTypedParam(TypedParam object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>True Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>True Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTrueKeyword(TrueKeyword object)
   {
     return null;
   }

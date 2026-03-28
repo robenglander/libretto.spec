@@ -6,9 +6,13 @@ package com.robenglander.libretto.spec.librettoProjectProfile.impl;
 import com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock;
 import com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock;
 import com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage;
+import com.robenglander.libretto.spec.librettoProjectProfile.ModelUsageKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider;
+import com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProvider;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -16,9 +20,9 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -30,6 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenUsageBlockImpl#getKeyword <em>Keyword</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenUsageBlockImpl#getPrimaryProviders <em>Primary Providers</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenUsageBlockImpl#getSecondaryProviders <em>Secondary Providers</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenUsageBlockImpl#getEscalations <em>Escalations</em>}</li>
@@ -40,24 +45,34 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class GenUsageBlockImpl extends MinimalEObjectImpl.Container implements GenUsageBlock
 {
   /**
-   * The cached value of the '{@link #getPrimaryProviders() <em>Primary Providers</em>}' attribute list.
+   * The cached value of the '{@link #getKeyword() <em>Keyword</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getKeyword()
+   * @generated
+   * @ordered
+   */
+  protected ModelUsageKeyword keyword;
+
+  /**
+   * The cached value of the '{@link #getPrimaryProviders() <em>Primary Providers</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getPrimaryProviders()
    * @generated
    * @ordered
    */
-  protected EList<String> primaryProviders;
+  protected EList<PrimaryProvider> primaryProviders;
 
   /**
-   * The cached value of the '{@link #getSecondaryProviders() <em>Secondary Providers</em>}' attribute list.
+   * The cached value of the '{@link #getSecondaryProviders() <em>Secondary Providers</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getSecondaryProviders()
    * @generated
    * @ordered
    */
-  protected EList<String> secondaryProviders;
+  protected EList<SecondaryProvider> secondaryProviders;
 
   /**
    * The cached value of the '{@link #getEscalations() <em>Escalations</em>}' containment reference list.
@@ -96,11 +111,61 @@ public class GenUsageBlockImpl extends MinimalEObjectImpl.Container implements G
    * @generated
    */
   @Override
-  public EList<String> getPrimaryProviders()
+  public ModelUsageKeyword getKeyword()
+  {
+    return keyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetKeyword(ModelUsageKeyword newKeyword, NotificationChain msgs)
+  {
+    ModelUsageKeyword oldKeyword = keyword;
+    keyword = newKeyword;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__KEYWORD, oldKeyword, newKeyword);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setKeyword(ModelUsageKeyword newKeyword)
+  {
+    if (newKeyword != keyword)
+    {
+      NotificationChain msgs = null;
+      if (keyword != null)
+        msgs = ((InternalEObject)keyword).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__KEYWORD, null, msgs);
+      if (newKeyword != null)
+        msgs = ((InternalEObject)newKeyword).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__KEYWORD, null, msgs);
+      msgs = basicSetKeyword(newKeyword, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__KEYWORD, newKeyword, newKeyword));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<PrimaryProvider> getPrimaryProviders()
   {
     if (primaryProviders == null)
     {
-      primaryProviders = new EDataTypeEList<String>(String.class, this, LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__PRIMARY_PROVIDERS);
+      primaryProviders = new EObjectContainmentEList<PrimaryProvider>(PrimaryProvider.class, this, LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__PRIMARY_PROVIDERS);
     }
     return primaryProviders;
   }
@@ -111,11 +176,11 @@ public class GenUsageBlockImpl extends MinimalEObjectImpl.Container implements G
    * @generated
    */
   @Override
-  public EList<String> getSecondaryProviders()
+  public EList<SecondaryProvider> getSecondaryProviders()
   {
     if (secondaryProviders == null)
     {
-      secondaryProviders = new EDataTypeEList<String>(String.class, this, LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__SECONDARY_PROVIDERS);
+      secondaryProviders = new EObjectContainmentEList<SecondaryProvider>(SecondaryProvider.class, this, LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__SECONDARY_PROVIDERS);
     }
     return secondaryProviders;
   }
@@ -145,6 +210,12 @@ public class GenUsageBlockImpl extends MinimalEObjectImpl.Container implements G
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__KEYWORD:
+        return basicSetKeyword(null, msgs);
+      case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__PRIMARY_PROVIDERS:
+        return ((InternalEList<?>)getPrimaryProviders()).basicRemove(otherEnd, msgs);
+      case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__SECONDARY_PROVIDERS:
+        return ((InternalEList<?>)getSecondaryProviders()).basicRemove(otherEnd, msgs);
       case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__ESCALATIONS:
         return ((InternalEList<?>)getEscalations()).basicRemove(otherEnd, msgs);
     }
@@ -161,6 +232,8 @@ public class GenUsageBlockImpl extends MinimalEObjectImpl.Container implements G
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__KEYWORD:
+        return getKeyword();
       case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__PRIMARY_PROVIDERS:
         return getPrimaryProviders();
       case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__SECONDARY_PROVIDERS:
@@ -182,13 +255,16 @@ public class GenUsageBlockImpl extends MinimalEObjectImpl.Container implements G
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__KEYWORD:
+        setKeyword((ModelUsageKeyword)newValue);
+        return;
       case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__PRIMARY_PROVIDERS:
         getPrimaryProviders().clear();
-        getPrimaryProviders().addAll((Collection<? extends String>)newValue);
+        getPrimaryProviders().addAll((Collection<? extends PrimaryProvider>)newValue);
         return;
       case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__SECONDARY_PROVIDERS:
         getSecondaryProviders().clear();
-        getSecondaryProviders().addAll((Collection<? extends String>)newValue);
+        getSecondaryProviders().addAll((Collection<? extends SecondaryProvider>)newValue);
         return;
       case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__ESCALATIONS:
         getEscalations().clear();
@@ -208,6 +284,9 @@ public class GenUsageBlockImpl extends MinimalEObjectImpl.Container implements G
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__KEYWORD:
+        setKeyword((ModelUsageKeyword)null);
+        return;
       case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__PRIMARY_PROVIDERS:
         getPrimaryProviders().clear();
         return;
@@ -231,6 +310,8 @@ public class GenUsageBlockImpl extends MinimalEObjectImpl.Container implements G
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__KEYWORD:
+        return keyword != null;
       case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__PRIMARY_PROVIDERS:
         return primaryProviders != null && !primaryProviders.isEmpty();
       case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__SECONDARY_PROVIDERS:
@@ -239,25 +320,6 @@ public class GenUsageBlockImpl extends MinimalEObjectImpl.Container implements G
         return escalations != null && !escalations.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (primaryProviders: ");
-    result.append(primaryProviders);
-    result.append(", secondaryProviders: ");
-    result.append(secondaryProviders);
-    result.append(')');
-    return result.toString();
   }
 
 } //GenUsageBlockImpl

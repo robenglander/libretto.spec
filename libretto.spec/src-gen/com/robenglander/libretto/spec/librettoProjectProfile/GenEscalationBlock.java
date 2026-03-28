@@ -16,8 +16,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock#getKeyword <em>Keyword</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock#getEnableds <em>Enableds</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock#getEscalateAtRetries <em>Escalate At Retries</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock#getAtRetries <em>At Retries</em>}</li>
  * </ul>
  *
  * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenEscalationBlock()
@@ -27,27 +28,49 @@ import org.eclipse.emf.ecore.EObject;
 public interface GenEscalationBlock extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Enableds</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Keyword</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Enableds</em>' attribute list.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenEscalationBlock_Enableds()
-   * @model unique="false"
+   * @return the value of the '<em>Keyword</em>' containment reference.
+   * @see #setKeyword(EscalationKeyword)
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenEscalationBlock_Keyword()
+   * @model containment="true"
    * @generated
    */
-  EList<String> getEnableds();
+  EscalationKeyword getKeyword();
 
   /**
-   * Returns the value of the '<em><b>Escalate At Retries</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.Integer}.
+   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock#getKeyword <em>Keyword</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Escalate At Retries</em>' attribute list.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenEscalationBlock_EscalateAtRetries()
-   * @model unique="false"
+   * @param value the new value of the '<em>Keyword</em>' containment reference.
+   * @see #getKeyword()
    * @generated
    */
-  EList<Integer> getEscalateAtRetries();
+  void setKeyword(EscalationKeyword value);
+
+  /**
+   * Returns the value of the '<em><b>Enableds</b></em>' containment reference list.
+   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.Enabled}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Enableds</em>' containment reference list.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenEscalationBlock_Enableds()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Enabled> getEnableds();
+
+  /**
+   * Returns the value of the '<em><b>At Retries</b></em>' containment reference list.
+   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.AtRetry}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>At Retries</em>' containment reference list.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenEscalationBlock_AtRetries()
+   * @model containment="true"
+   * @generated
+   */
+  EList<AtRetry> getAtRetries();
 
 } // GenEscalationBlock

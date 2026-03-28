@@ -5,10 +5,12 @@ package com.robenglander.libretto.spec.librettoProjectProfile.impl;
 
 import com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage;
 import com.robenglander.libretto.spec.librettoProjectProfile.ModulesBlock;
+import com.robenglander.libretto.spec.librettoProjectProfile.ModulesKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -16,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -29,6 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ModulesBlockImpl#getModulesKeyword <em>Modules Keyword</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ModulesBlockImpl#getModules <em>Modules</em>}</li>
  * </ul>
  *
@@ -36,6 +40,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class ModulesBlockImpl extends MinimalEObjectImpl.Container implements ModulesBlock
 {
+  /**
+   * The cached value of the '{@link #getModulesKeyword() <em>Modules Keyword</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getModulesKeyword()
+   * @generated
+   * @ordered
+   */
+  protected ModulesKeyword modulesKeyword;
+
   /**
    * The cached value of the '{@link #getModules() <em>Modules</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -73,6 +87,56 @@ public class ModulesBlockImpl extends MinimalEObjectImpl.Container implements Mo
    * @generated
    */
   @Override
+  public ModulesKeyword getModulesKeyword()
+  {
+    return modulesKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetModulesKeyword(ModulesKeyword newModulesKeyword, NotificationChain msgs)
+  {
+    ModulesKeyword oldModulesKeyword = modulesKeyword;
+    modulesKeyword = newModulesKeyword;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LibrettoProjectProfilePackage.MODULES_BLOCK__MODULES_KEYWORD, oldModulesKeyword, newModulesKeyword);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setModulesKeyword(ModulesKeyword newModulesKeyword)
+  {
+    if (newModulesKeyword != modulesKeyword)
+    {
+      NotificationChain msgs = null;
+      if (modulesKeyword != null)
+        msgs = ((InternalEObject)modulesKeyword).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LibrettoProjectProfilePackage.MODULES_BLOCK__MODULES_KEYWORD, null, msgs);
+      if (newModulesKeyword != null)
+        msgs = ((InternalEObject)newModulesKeyword).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LibrettoProjectProfilePackage.MODULES_BLOCK__MODULES_KEYWORD, null, msgs);
+      msgs = basicSetModulesKeyword(newModulesKeyword, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoProjectProfilePackage.MODULES_BLOCK__MODULES_KEYWORD, newModulesKeyword, newModulesKeyword));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<ProjectModule> getModules()
   {
     if (modules == null)
@@ -92,6 +156,8 @@ public class ModulesBlockImpl extends MinimalEObjectImpl.Container implements Mo
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.MODULES_BLOCK__MODULES_KEYWORD:
+        return basicSetModulesKeyword(null, msgs);
       case LibrettoProjectProfilePackage.MODULES_BLOCK__MODULES:
         return ((InternalEList<?>)getModules()).basicRemove(otherEnd, msgs);
     }
@@ -108,6 +174,8 @@ public class ModulesBlockImpl extends MinimalEObjectImpl.Container implements Mo
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.MODULES_BLOCK__MODULES_KEYWORD:
+        return getModulesKeyword();
       case LibrettoProjectProfilePackage.MODULES_BLOCK__MODULES:
         return getModules();
     }
@@ -125,6 +193,9 @@ public class ModulesBlockImpl extends MinimalEObjectImpl.Container implements Mo
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.MODULES_BLOCK__MODULES_KEYWORD:
+        setModulesKeyword((ModulesKeyword)newValue);
+        return;
       case LibrettoProjectProfilePackage.MODULES_BLOCK__MODULES:
         getModules().clear();
         getModules().addAll((Collection<? extends ProjectModule>)newValue);
@@ -143,6 +214,9 @@ public class ModulesBlockImpl extends MinimalEObjectImpl.Container implements Mo
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.MODULES_BLOCK__MODULES_KEYWORD:
+        setModulesKeyword((ModulesKeyword)null);
+        return;
       case LibrettoProjectProfilePackage.MODULES_BLOCK__MODULES:
         getModules().clear();
         return;
@@ -160,6 +234,8 @@ public class ModulesBlockImpl extends MinimalEObjectImpl.Container implements Mo
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.MODULES_BLOCK__MODULES_KEYWORD:
+        return modulesKeyword != null;
       case LibrettoProjectProfilePackage.MODULES_BLOCK__MODULES:
         return modules != null && !modules.isEmpty();
     }

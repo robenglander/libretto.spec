@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getKeyword <em>Keyword</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getInitialInstructions <em>Initial Instructions</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getMaxRetries <em>Max Retries</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getParseChecks <em>Parse Checks</em>}</li>
@@ -31,52 +32,74 @@ import org.eclipse.emf.ecore.EObject;
 public interface GenBlock extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Initial Instructions</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Keyword</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Initial Instructions</em>' attribute list.
+   * @return the value of the '<em>Keyword</em>' containment reference.
+   * @see #setKeyword(GenKeyword)
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenBlock_Keyword()
+   * @model containment="true"
+   * @generated
+   */
+  GenKeyword getKeyword();
+
+  /**
+   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getKeyword <em>Keyword</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Keyword</em>' containment reference.
+   * @see #getKeyword()
+   * @generated
+   */
+  void setKeyword(GenKeyword value);
+
+  /**
+   * Returns the value of the '<em><b>Initial Instructions</b></em>' containment reference list.
+   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.InitialInstruction}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Initial Instructions</em>' containment reference list.
    * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenBlock_InitialInstructions()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getInitialInstructions();
+  EList<InitialInstruction> getInitialInstructions();
 
   /**
-   * Returns the value of the '<em><b>Max Retries</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.Integer}.
+   * Returns the value of the '<em><b>Max Retries</b></em>' containment reference list.
+   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.MaxRetries}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Max Retries</em>' attribute list.
+   * @return the value of the '<em>Max Retries</em>' containment reference list.
    * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenBlock_MaxRetries()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<Integer> getMaxRetries();
+  EList<MaxRetries> getMaxRetries();
 
   /**
-   * Returns the value of the '<em><b>Parse Checks</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Parse Checks</b></em>' containment reference list.
+   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.ParseCheck}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Parse Checks</em>' attribute list.
+   * @return the value of the '<em>Parse Checks</em>' containment reference list.
    * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenBlock_ParseChecks()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getParseChecks();
+  EList<ParseCheck> getParseChecks();
 
   /**
-   * Returns the value of the '<em><b>Default Corrections</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Default Corrections</b></em>' containment reference list.
+   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.DefaultCorrection}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Default Corrections</em>' attribute list.
+   * @return the value of the '<em>Default Corrections</em>' containment reference list.
    * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenBlock_DefaultCorrections()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getDefaultCorrections();
+  EList<DefaultCorrection> getDefaultCorrections();
 
   /**
    * Returns the value of the '<em><b>Remediations</b></em>' containment reference list.

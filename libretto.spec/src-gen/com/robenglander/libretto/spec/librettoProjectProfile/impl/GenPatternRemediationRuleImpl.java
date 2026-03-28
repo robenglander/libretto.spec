@@ -3,18 +3,28 @@
  */
 package com.robenglander.libretto.spec.librettoProjectProfile.impl;
 
+import com.robenglander.libretto.spec.librettoProjectProfile.Code;
+import com.robenglander.libretto.spec.librettoProjectProfile.Correction;
 import com.robenglander.libretto.spec.librettoProjectProfile.GenPatternRemediationRule;
 import com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage;
+import com.robenglander.libretto.spec.librettoProjectProfile.Pattern;
+import com.robenglander.libretto.spec.librettoProjectProfile.RuleKeyword;
 
 import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,6 +34,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenPatternRemediationRuleImpl#getKeyword <em>Keyword</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenPatternRemediationRuleImpl#getPatterns <em>Patterns</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenPatternRemediationRuleImpl#getCodes <em>Codes</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenPatternRemediationRuleImpl#getCorrections <em>Corrections</em>}</li>
@@ -34,34 +45,44 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 public class GenPatternRemediationRuleImpl extends MinimalEObjectImpl.Container implements GenPatternRemediationRule
 {
   /**
-   * The cached value of the '{@link #getPatterns() <em>Patterns</em>}' attribute list.
+   * The cached value of the '{@link #getKeyword() <em>Keyword</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getKeyword()
+   * @generated
+   * @ordered
+   */
+  protected RuleKeyword keyword;
+
+  /**
+   * The cached value of the '{@link #getPatterns() <em>Patterns</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getPatterns()
    * @generated
    * @ordered
    */
-  protected EList<String> patterns;
+  protected EList<Pattern> patterns;
 
   /**
-   * The cached value of the '{@link #getCodes() <em>Codes</em>}' attribute list.
+   * The cached value of the '{@link #getCodes() <em>Codes</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getCodes()
    * @generated
    * @ordered
    */
-  protected EList<String> codes;
+  protected EList<Code> codes;
 
   /**
-   * The cached value of the '{@link #getCorrections() <em>Corrections</em>}' attribute list.
+   * The cached value of the '{@link #getCorrections() <em>Corrections</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getCorrections()
    * @generated
    * @ordered
    */
-  protected EList<String> corrections;
+  protected EList<Correction> corrections;
 
   /**
    * <!-- begin-user-doc -->
@@ -90,11 +111,61 @@ public class GenPatternRemediationRuleImpl extends MinimalEObjectImpl.Container 
    * @generated
    */
   @Override
-  public EList<String> getPatterns()
+  public RuleKeyword getKeyword()
+  {
+    return keyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetKeyword(RuleKeyword newKeyword, NotificationChain msgs)
+  {
+    RuleKeyword oldKeyword = keyword;
+    keyword = newKeyword;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LibrettoProjectProfilePackage.GEN_PATTERN_REMEDIATION_RULE__KEYWORD, oldKeyword, newKeyword);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setKeyword(RuleKeyword newKeyword)
+  {
+    if (newKeyword != keyword)
+    {
+      NotificationChain msgs = null;
+      if (keyword != null)
+        msgs = ((InternalEObject)keyword).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LibrettoProjectProfilePackage.GEN_PATTERN_REMEDIATION_RULE__KEYWORD, null, msgs);
+      if (newKeyword != null)
+        msgs = ((InternalEObject)newKeyword).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LibrettoProjectProfilePackage.GEN_PATTERN_REMEDIATION_RULE__KEYWORD, null, msgs);
+      msgs = basicSetKeyword(newKeyword, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoProjectProfilePackage.GEN_PATTERN_REMEDIATION_RULE__KEYWORD, newKeyword, newKeyword));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<Pattern> getPatterns()
   {
     if (patterns == null)
     {
-      patterns = new EDataTypeEList<String>(String.class, this, LibrettoProjectProfilePackage.GEN_PATTERN_REMEDIATION_RULE__PATTERNS);
+      patterns = new EObjectContainmentEList<Pattern>(Pattern.class, this, LibrettoProjectProfilePackage.GEN_PATTERN_REMEDIATION_RULE__PATTERNS);
     }
     return patterns;
   }
@@ -105,11 +176,11 @@ public class GenPatternRemediationRuleImpl extends MinimalEObjectImpl.Container 
    * @generated
    */
   @Override
-  public EList<String> getCodes()
+  public EList<Code> getCodes()
   {
     if (codes == null)
     {
-      codes = new EDataTypeEList<String>(String.class, this, LibrettoProjectProfilePackage.GEN_PATTERN_REMEDIATION_RULE__CODES);
+      codes = new EObjectContainmentEList<Code>(Code.class, this, LibrettoProjectProfilePackage.GEN_PATTERN_REMEDIATION_RULE__CODES);
     }
     return codes;
   }
@@ -120,13 +191,35 @@ public class GenPatternRemediationRuleImpl extends MinimalEObjectImpl.Container 
    * @generated
    */
   @Override
-  public EList<String> getCorrections()
+  public EList<Correction> getCorrections()
   {
     if (corrections == null)
     {
-      corrections = new EDataTypeEList<String>(String.class, this, LibrettoProjectProfilePackage.GEN_PATTERN_REMEDIATION_RULE__CORRECTIONS);
+      corrections = new EObjectContainmentEList<Correction>(Correction.class, this, LibrettoProjectProfilePackage.GEN_PATTERN_REMEDIATION_RULE__CORRECTIONS);
     }
     return corrections;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case LibrettoProjectProfilePackage.GEN_PATTERN_REMEDIATION_RULE__KEYWORD:
+        return basicSetKeyword(null, msgs);
+      case LibrettoProjectProfilePackage.GEN_PATTERN_REMEDIATION_RULE__PATTERNS:
+        return ((InternalEList<?>)getPatterns()).basicRemove(otherEnd, msgs);
+      case LibrettoProjectProfilePackage.GEN_PATTERN_REMEDIATION_RULE__CODES:
+        return ((InternalEList<?>)getCodes()).basicRemove(otherEnd, msgs);
+      case LibrettoProjectProfilePackage.GEN_PATTERN_REMEDIATION_RULE__CORRECTIONS:
+        return ((InternalEList<?>)getCorrections()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -139,6 +232,8 @@ public class GenPatternRemediationRuleImpl extends MinimalEObjectImpl.Container 
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.GEN_PATTERN_REMEDIATION_RULE__KEYWORD:
+        return getKeyword();
       case LibrettoProjectProfilePackage.GEN_PATTERN_REMEDIATION_RULE__PATTERNS:
         return getPatterns();
       case LibrettoProjectProfilePackage.GEN_PATTERN_REMEDIATION_RULE__CODES:
@@ -160,17 +255,20 @@ public class GenPatternRemediationRuleImpl extends MinimalEObjectImpl.Container 
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.GEN_PATTERN_REMEDIATION_RULE__KEYWORD:
+        setKeyword((RuleKeyword)newValue);
+        return;
       case LibrettoProjectProfilePackage.GEN_PATTERN_REMEDIATION_RULE__PATTERNS:
         getPatterns().clear();
-        getPatterns().addAll((Collection<? extends String>)newValue);
+        getPatterns().addAll((Collection<? extends Pattern>)newValue);
         return;
       case LibrettoProjectProfilePackage.GEN_PATTERN_REMEDIATION_RULE__CODES:
         getCodes().clear();
-        getCodes().addAll((Collection<? extends String>)newValue);
+        getCodes().addAll((Collection<? extends Code>)newValue);
         return;
       case LibrettoProjectProfilePackage.GEN_PATTERN_REMEDIATION_RULE__CORRECTIONS:
         getCorrections().clear();
-        getCorrections().addAll((Collection<? extends String>)newValue);
+        getCorrections().addAll((Collection<? extends Correction>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -186,6 +284,9 @@ public class GenPatternRemediationRuleImpl extends MinimalEObjectImpl.Container 
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.GEN_PATTERN_REMEDIATION_RULE__KEYWORD:
+        setKeyword((RuleKeyword)null);
+        return;
       case LibrettoProjectProfilePackage.GEN_PATTERN_REMEDIATION_RULE__PATTERNS:
         getPatterns().clear();
         return;
@@ -209,6 +310,8 @@ public class GenPatternRemediationRuleImpl extends MinimalEObjectImpl.Container 
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.GEN_PATTERN_REMEDIATION_RULE__KEYWORD:
+        return keyword != null;
       case LibrettoProjectProfilePackage.GEN_PATTERN_REMEDIATION_RULE__PATTERNS:
         return patterns != null && !patterns.isEmpty();
       case LibrettoProjectProfilePackage.GEN_PATTERN_REMEDIATION_RULE__CODES:
@@ -217,27 +320,6 @@ public class GenPatternRemediationRuleImpl extends MinimalEObjectImpl.Container 
         return corrections != null && !corrections.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (patterns: ");
-    result.append(patterns);
-    result.append(", codes: ");
-    result.append(codes);
-    result.append(", corrections: ");
-    result.append(corrections);
-    result.append(')');
-    return result.toString();
   }
 
 } //GenPatternRemediationRuleImpl

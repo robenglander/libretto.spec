@@ -3,18 +3,27 @@
  */
 package com.robenglander.libretto.spec.librettoProjectProfile.impl;
 
+import com.robenglander.libretto.spec.librettoProjectProfile.AtRetry;
+import com.robenglander.libretto.spec.librettoProjectProfile.Enabled;
+import com.robenglander.libretto.spec.librettoProjectProfile.EscalationKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock;
 import com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,8 +33,9 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenEscalationBlockImpl#getKeyword <em>Keyword</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenEscalationBlockImpl#getEnableds <em>Enableds</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenEscalationBlockImpl#getEscalateAtRetries <em>Escalate At Retries</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenEscalationBlockImpl#getAtRetries <em>At Retries</em>}</li>
  * </ul>
  *
  * @generated
@@ -33,24 +43,34 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 public class GenEscalationBlockImpl extends MinimalEObjectImpl.Container implements GenEscalationBlock
 {
   /**
-   * The cached value of the '{@link #getEnableds() <em>Enableds</em>}' attribute list.
+   * The cached value of the '{@link #getKeyword() <em>Keyword</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getKeyword()
+   * @generated
+   * @ordered
+   */
+  protected EscalationKeyword keyword;
+
+  /**
+   * The cached value of the '{@link #getEnableds() <em>Enableds</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getEnableds()
    * @generated
    * @ordered
    */
-  protected EList<String> enableds;
+  protected EList<Enabled> enableds;
 
   /**
-   * The cached value of the '{@link #getEscalateAtRetries() <em>Escalate At Retries</em>}' attribute list.
+   * The cached value of the '{@link #getAtRetries() <em>At Retries</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEscalateAtRetries()
+   * @see #getAtRetries()
    * @generated
    * @ordered
    */
-  protected EList<Integer> escalateAtRetries;
+  protected EList<AtRetry> atRetries;
 
   /**
    * <!-- begin-user-doc -->
@@ -79,11 +99,61 @@ public class GenEscalationBlockImpl extends MinimalEObjectImpl.Container impleme
    * @generated
    */
   @Override
-  public EList<String> getEnableds()
+  public EscalationKeyword getKeyword()
+  {
+    return keyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetKeyword(EscalationKeyword newKeyword, NotificationChain msgs)
+  {
+    EscalationKeyword oldKeyword = keyword;
+    keyword = newKeyword;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK__KEYWORD, oldKeyword, newKeyword);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setKeyword(EscalationKeyword newKeyword)
+  {
+    if (newKeyword != keyword)
+    {
+      NotificationChain msgs = null;
+      if (keyword != null)
+        msgs = ((InternalEObject)keyword).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK__KEYWORD, null, msgs);
+      if (newKeyword != null)
+        msgs = ((InternalEObject)newKeyword).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK__KEYWORD, null, msgs);
+      msgs = basicSetKeyword(newKeyword, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK__KEYWORD, newKeyword, newKeyword));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<Enabled> getEnableds()
   {
     if (enableds == null)
     {
-      enableds = new EDataTypeEList<String>(String.class, this, LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK__ENABLEDS);
+      enableds = new EObjectContainmentEList<Enabled>(Enabled.class, this, LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK__ENABLEDS);
     }
     return enableds;
   }
@@ -94,13 +164,33 @@ public class GenEscalationBlockImpl extends MinimalEObjectImpl.Container impleme
    * @generated
    */
   @Override
-  public EList<Integer> getEscalateAtRetries()
+  public EList<AtRetry> getAtRetries()
   {
-    if (escalateAtRetries == null)
+    if (atRetries == null)
     {
-      escalateAtRetries = new EDataTypeEList<Integer>(Integer.class, this, LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK__ESCALATE_AT_RETRIES);
+      atRetries = new EObjectContainmentEList<AtRetry>(AtRetry.class, this, LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK__AT_RETRIES);
     }
-    return escalateAtRetries;
+    return atRetries;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK__KEYWORD:
+        return basicSetKeyword(null, msgs);
+      case LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK__ENABLEDS:
+        return ((InternalEList<?>)getEnableds()).basicRemove(otherEnd, msgs);
+      case LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK__AT_RETRIES:
+        return ((InternalEList<?>)getAtRetries()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -113,10 +203,12 @@ public class GenEscalationBlockImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK__KEYWORD:
+        return getKeyword();
       case LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK__ENABLEDS:
         return getEnableds();
-      case LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK__ESCALATE_AT_RETRIES:
-        return getEscalateAtRetries();
+      case LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK__AT_RETRIES:
+        return getAtRetries();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -132,13 +224,16 @@ public class GenEscalationBlockImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK__KEYWORD:
+        setKeyword((EscalationKeyword)newValue);
+        return;
       case LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK__ENABLEDS:
         getEnableds().clear();
-        getEnableds().addAll((Collection<? extends String>)newValue);
+        getEnableds().addAll((Collection<? extends Enabled>)newValue);
         return;
-      case LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK__ESCALATE_AT_RETRIES:
-        getEscalateAtRetries().clear();
-        getEscalateAtRetries().addAll((Collection<? extends Integer>)newValue);
+      case LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK__AT_RETRIES:
+        getAtRetries().clear();
+        getAtRetries().addAll((Collection<? extends AtRetry>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -154,11 +249,14 @@ public class GenEscalationBlockImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK__KEYWORD:
+        setKeyword((EscalationKeyword)null);
+        return;
       case LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK__ENABLEDS:
         getEnableds().clear();
         return;
-      case LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK__ESCALATE_AT_RETRIES:
-        getEscalateAtRetries().clear();
+      case LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK__AT_RETRIES:
+        getAtRetries().clear();
         return;
     }
     super.eUnset(featureID);
@@ -174,31 +272,14 @@ public class GenEscalationBlockImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK__KEYWORD:
+        return keyword != null;
       case LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK__ENABLEDS:
         return enableds != null && !enableds.isEmpty();
-      case LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK__ESCALATE_AT_RETRIES:
-        return escalateAtRetries != null && !escalateAtRetries.isEmpty();
+      case LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK__AT_RETRIES:
+        return atRetries != null && !atRetries.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (enableds: ");
-    result.append(enableds);
-    result.append(", escalateAtRetries: ");
-    result.append(escalateAtRetries);
-    result.append(')');
-    return result.toString();
   }
 
 } //GenEscalationBlockImpl

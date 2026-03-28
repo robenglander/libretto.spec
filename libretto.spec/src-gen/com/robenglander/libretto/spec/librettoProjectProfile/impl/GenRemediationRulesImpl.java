@@ -7,9 +7,11 @@ import com.robenglander.libretto.spec.librettoProjectProfile.GenDefaultRemediati
 import com.robenglander.libretto.spec.librettoProjectProfile.GenPatternRemediationRule;
 import com.robenglander.libretto.spec.librettoProjectProfile.GenRemediationRules;
 import com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage;
+import com.robenglander.libretto.spec.librettoProjectProfile.RulesKeyword;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -17,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -30,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenRemediationRulesImpl#getRulesKeyword <em>Rules Keyword</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenRemediationRulesImpl#getPatternRules <em>Pattern Rules</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenRemediationRulesImpl#getDefaultRemediations <em>Default Remediations</em>}</li>
  * </ul>
@@ -38,6 +42,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class GenRemediationRulesImpl extends MinimalEObjectImpl.Container implements GenRemediationRules
 {
+  /**
+   * The cached value of the '{@link #getRulesKeyword() <em>Rules Keyword</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRulesKeyword()
+   * @generated
+   * @ordered
+   */
+  protected RulesKeyword rulesKeyword;
+
   /**
    * The cached value of the '{@link #getPatternRules() <em>Pattern Rules</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -85,6 +99,56 @@ public class GenRemediationRulesImpl extends MinimalEObjectImpl.Container implem
    * @generated
    */
   @Override
+  public RulesKeyword getRulesKeyword()
+  {
+    return rulesKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetRulesKeyword(RulesKeyword newRulesKeyword, NotificationChain msgs)
+  {
+    RulesKeyword oldRulesKeyword = rulesKeyword;
+    rulesKeyword = newRulesKeyword;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LibrettoProjectProfilePackage.GEN_REMEDIATION_RULES__RULES_KEYWORD, oldRulesKeyword, newRulesKeyword);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setRulesKeyword(RulesKeyword newRulesKeyword)
+  {
+    if (newRulesKeyword != rulesKeyword)
+    {
+      NotificationChain msgs = null;
+      if (rulesKeyword != null)
+        msgs = ((InternalEObject)rulesKeyword).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LibrettoProjectProfilePackage.GEN_REMEDIATION_RULES__RULES_KEYWORD, null, msgs);
+      if (newRulesKeyword != null)
+        msgs = ((InternalEObject)newRulesKeyword).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LibrettoProjectProfilePackage.GEN_REMEDIATION_RULES__RULES_KEYWORD, null, msgs);
+      msgs = basicSetRulesKeyword(newRulesKeyword, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoProjectProfilePackage.GEN_REMEDIATION_RULES__RULES_KEYWORD, newRulesKeyword, newRulesKeyword));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<GenPatternRemediationRule> getPatternRules()
   {
     if (patternRules == null)
@@ -119,6 +183,8 @@ public class GenRemediationRulesImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.GEN_REMEDIATION_RULES__RULES_KEYWORD:
+        return basicSetRulesKeyword(null, msgs);
       case LibrettoProjectProfilePackage.GEN_REMEDIATION_RULES__PATTERN_RULES:
         return ((InternalEList<?>)getPatternRules()).basicRemove(otherEnd, msgs);
       case LibrettoProjectProfilePackage.GEN_REMEDIATION_RULES__DEFAULT_REMEDIATIONS:
@@ -137,6 +203,8 @@ public class GenRemediationRulesImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.GEN_REMEDIATION_RULES__RULES_KEYWORD:
+        return getRulesKeyword();
       case LibrettoProjectProfilePackage.GEN_REMEDIATION_RULES__PATTERN_RULES:
         return getPatternRules();
       case LibrettoProjectProfilePackage.GEN_REMEDIATION_RULES__DEFAULT_REMEDIATIONS:
@@ -156,6 +224,9 @@ public class GenRemediationRulesImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.GEN_REMEDIATION_RULES__RULES_KEYWORD:
+        setRulesKeyword((RulesKeyword)newValue);
+        return;
       case LibrettoProjectProfilePackage.GEN_REMEDIATION_RULES__PATTERN_RULES:
         getPatternRules().clear();
         getPatternRules().addAll((Collection<? extends GenPatternRemediationRule>)newValue);
@@ -178,6 +249,9 @@ public class GenRemediationRulesImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.GEN_REMEDIATION_RULES__RULES_KEYWORD:
+        setRulesKeyword((RulesKeyword)null);
+        return;
       case LibrettoProjectProfilePackage.GEN_REMEDIATION_RULES__PATTERN_RULES:
         getPatternRules().clear();
         return;
@@ -198,6 +272,8 @@ public class GenRemediationRulesImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.GEN_REMEDIATION_RULES__RULES_KEYWORD:
+        return rulesKeyword != null;
       case LibrettoProjectProfilePackage.GEN_REMEDIATION_RULES__PATTERN_RULES:
         return patternRules != null && !patternRules.isEmpty();
       case LibrettoProjectProfilePackage.GEN_REMEDIATION_RULES__DEFAULT_REMEDIATIONS:

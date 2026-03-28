@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenRemediationRules#getRulesKeyword <em>Rules Keyword</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenRemediationRules#getPatternRules <em>Pattern Rules</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenRemediationRules#getDefaultRemediations <em>Default Remediations</em>}</li>
  * </ul>
@@ -26,6 +27,28 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface GenRemediationRules extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Rules Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Rules Keyword</em>' containment reference.
+   * @see #setRulesKeyword(RulesKeyword)
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenRemediationRules_RulesKeyword()
+   * @model containment="true"
+   * @generated
+   */
+  RulesKeyword getRulesKeyword();
+
+  /**
+   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenRemediationRules#getRulesKeyword <em>Rules Keyword</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Rules Keyword</em>' containment reference.
+   * @see #getRulesKeyword()
+   * @generated
+   */
+  void setRulesKeyword(RulesKeyword value);
+
   /**
    * Returns the value of the '<em><b>Pattern Rules</b></em>' containment reference list.
    * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.GenPatternRemediationRule}.

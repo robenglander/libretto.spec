@@ -4,35 +4,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Portable domain model of a Libretto project profile ({@code .lpp}): name, surface, project blocks,
- * LLM provider blocks — aligned with the Xtext grammar (multiple {@code project} / {@code llmProviders}
- * / {@code surface} sections in document order).
+ * Portable domain model of one {@code profile "…" { … }} block inside a {@code .lpp} file (the grammar
+ * allows many such blocks under the file root). For the whole file, see
+ * {@link LibrettoProjectProfilesDocument}.
  *
- * @param profileName       root {@code profile} name ({@code ValidID})
- * @param surfaceElements   all {@code surface} blocks' elements concatenated in profile order
- * @param projectBlocks     each {@code project { … }} block
- * @param llmProviderBlocks each {@code llmProviders { … }} block
+ * @param profileName       this block’s {@code profile} name ({@code ValidID})
+ * @param projectBlocks     each {@code project { … }} block in this profile
+ * @param llmProviderBlocks each {@code llmProviders { … }} block in this profile
  */
 public record LibrettoProjectProfileDomainModel(
 		String profileName,
-		List<ProjectedSurfaceElement> surfaceElements,
 		List<ProjectedProjectBlock> projectBlocks,
 		List<ProjectedLlmProvidersBlock> llmProviderBlocks) {
 
 	public LibrettoProjectProfileDomainModel {
 		profileName = profileName == null ? "" : profileName.trim();
-		surfaceElements = surfaceElements == null ? List.of() : List.copyOf(surfaceElements);
 		projectBlocks = projectBlocks == null ? List.of() : List.copyOf(projectBlocks);
 		llmProviderBlocks = llmProviderBlocks == null ? List.of() : List.copyOf(llmProviderBlocks);
 	}
 
 	public static LibrettoProjectProfileDomainModel empty() {
-		return new LibrettoProjectProfileDomainModel("", List.of(), List.of(), List.of());
+		return new LibrettoProjectProfileDomainModel("", List.of(), List.of());
 	}
 
 	/** All providers from all {@code llmProviders} blocks, in order. */
-	public List<ProjectedLlmProviderEntry> allLlmProviders() {
-		List<ProjectedLlmProviderEntry> out = new ArrayList<>();
+	public List<ProjectedLlmProvider> allLlmProviders() {
+		List<ProjectedLlmProvider> out = new ArrayList<>();
 		for (ProjectedLlmProvidersBlock b : llmProviderBlocks) {
 			out.addAll(b.providers());
 		}

@@ -3,21 +3,14 @@ package com.robenglander.libretto.spec.projection;
 import java.util.List;
 
 /**
- * Portable view of {@code default { code … correction … }} inside {@code rules}.
+ * Portable view of {@code default { code* correction* }} inside {@code rules}.
  */
 public record ProjectedGenDefaultRemediationRule(
-		List<String> codes,
-		List<String> corrections) {
+		List<ProjectedGenRemediationCode> codes,
+		List<ProjectedGenRemediationCorrection> corrections) {
 
 	public ProjectedGenDefaultRemediationRule {
-		codes = normalizeList(codes);
-		corrections = normalizeList(corrections);
-	}
-
-	private static List<String> normalizeList(List<String> in) {
-		if (in == null || in.isEmpty()) {
-			return List.of();
-		}
-		return List.copyOf(in.stream().map(s -> s == null ? "" : s.trim()).toList());
+		codes = codes == null ? List.of() : List.copyOf(codes);
+		corrections = corrections == null ? List.of() : List.copyOf(corrections);
 	}
 }

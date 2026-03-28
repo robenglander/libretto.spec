@@ -17,7 +17,12 @@ generate librettoProjectProfile "http://www.robenglander.com/libretto/spec/Libre
 
 ProjectProfile:
 	{ProjectProfile}
-	'profile' name=ValidID '{'
+	profiles+=Profile*	
+;
+
+Profile:
+	{Profile}
+	profileKeyword = ProfileKeyword name=ValidID '{'
 		(
 		projects+=ProjectBlock
 		|
@@ -27,11 +32,16 @@ ProjectProfile:
 		)*
 	'}';
 
+ProfileKeyword:
+	{ProfileKeyword}
+	keyword = 'profile'
+;
+
 ProjectBlock:
 	{ProjectBlock} 
-	'project' '{'
+	projectKeyword = ProjectKeyword '{'
 		(
-			('rootDir' rootDir+=STRING)
+			(rootDirs+=RootDirectory)
 			|
 			(modules+=ModulesBlock)
 			|
@@ -39,38 +49,113 @@ ProjectBlock:
 		)*
 	'}';
 
+RootDirectory:
+	{RootDirectory}	
+	keyword = RootDirKeyword dir = STRING
+;
+
+ProjectKeyword:
+	{ProjectKeyword}
+	keyword = 'project'
+;
+
+RootDirKeyword:
+	{RootDirKeyword}
+	keyword = ('rootdir' | 'rootDir')
+;
+
 ModulesBlock:
 	{ModulesBlock} 
-	'modules' '{'
+	modulesKeyword = ModulesKeyword '{'
 		modules+=ProjectModule*
 	'}';
 
+ModulesKeyword:
+	{ModulesKeyword}
+	keyword = 'modules'
+;
+
 ProjectModule:
-	'module' name=ValidID '{'
+	keyword = ModuleKeyword name=ValidID '{'
 		(
-			('dir' dirs+=STRING)
+			(dirs+=Directory)
 			|
-			('specDir' specDirs+=STRING)
+			(specDirs+=SpecDirectory)
 			|
-			('testDir' testDirs+=STRING)
+			(testDirs+=TestDirectory)
 			|
-			('mainDir' mainDirs+=STRING)
+			(mainDirs+=MainDirectory)
 			|
-			('basePackage' basePackages+=STRING)
+			(basePackages+=BasePackage)
 		)*
 	'}';
 
+ModuleKeyword:
+	{ModuleKeyword}
+	keyword = 'module'
+;
+
+Directory:
+	{Directory}
+	keyword = DirKeyword dir = STRING	
+;
+
+SpecDirectory:
+	{SpecDirectory}
+	keyword = SpecDirKeyword dir = STRING	
+;
+
+TestDirectory:
+	{TestDirectory}
+	keyword = TestDirKeyword dir = STRING	
+;
+
+MainDirectory:
+	{MainDirectory}
+	keyword = MainDirKeyword dir = STRING	
+;
+
+BasePackage:
+	{BasePackage}
+	keyword = BasePackageKeyword dir = STRING	
+;
+
+DirKeyword:
+	{DirKeyword}
+	keyword = 'dir'
+;
+
+SpecDirKeyword:
+	{SpecDirKeyword}
+	keyword = ('specdir' | 'specDir')
+;
+
+TestDirKeyword:
+	{TestDirKeyword}
+	keyword = ('testdir' | 'testDir')
+;
+
+MainDirKeyword:
+	{MainDirKeyword}
+	keyword = ('maindir' | 'mainDir')
+;
+
+BasePackageKeyword:
+	{BasePackageKeyword}
+	keyword = ('basepackage' | 'basePackage')
+;
+
 GenBlock:
 	{GenBlock} 
-	'gen' '{'
+	keyword = GenKeyword '{'
 		(
-			('initialInstruction' initialInstructions+=STRING)
+			(initialInstructions+=InitialInstruction)
 			|
-			('maxRetries' maxRetries+=INT)
+			(maxRetries+=MaxRetries)
 			|
-			('parseCheck' parseChecks+=('true' | 'false'))
+			(parseChecks+=ParseCheck)
 			|
-			('defaultCorrection' defaultCorrections+=STRING)
+			(defaultCorrections+=DefaultCorrection)
 			|
 			(remediations+=GenRemediationRules)
 			|
@@ -78,9 +163,59 @@ GenBlock:
 		)*
 	'}';
 
+GenKeyword:
+	{GenKeyword}
+	keyword = 'gen'
+;
+
+InitialInstruction:
+	{InitialInstruction}
+	keyword = InitialInstructionKeyword instruction = STRING	
+;
+
+MaxRetries:
+	{MaxRetries}
+	keyword = MaxRetriesKeyword maxRetries = INT	
+;
+
+ParseCheck:
+	{ParseCheck}
+	keyword = ParseCheckKeyword value = TrueFalseKeyword	
+;
+
+DefaultCorrection:
+	{DefaultCorrection}
+	keyword = DefaultCorrectionKeyword correction = STRING	
+;
+
+InitialInstructionKeyword:
+	{InitialInstructionKeyword}
+	keyword = ('initialinstruction' | 'initialInstruction')
+;
+
+MaxRetriesKeyword:
+	{MaxRetriesKeyword}
+	keyword = ('maxretries' | 'maxRetries')
+;
+
+ParseCheckKeyword:
+	{ParseCheckKeyword}
+	keyword = ('parsecheck' | 'parseCheck')
+;
+
+DefaultCorrectionKeyword:
+	{DefaultCorrectionKeyword}
+	keyword = ('defaultcorrection' | 'defaultCorrection')
+;
+
+TrueFalseKeyword:
+	{TrueKeyword}
+	keyword = ('true' | 'false')
+;
+
 GenRemediationRules:
 	{GenRemediationRules} 
-	'rules' '{'
+	rulesKeyword = RulesKeyword '{'
 		(
 			(patternRules+=GenPatternRemediationRule)
 			|
@@ -88,68 +223,212 @@ GenRemediationRules:
 		)*
 	'}';
 
+RulesKeyword:
+	{RulesKeyword}
+	keyword = 'rules'
+;
+
 GenPatternRemediationRule:
 	{GenPatternRemediationRule} 
-	'rule' '{'
+	keyword = RuleKeyword '{'
 		(
-			('pattern' patterns+=STRING)
+			(patterns+=Pattern)
 			|
-			('code' codes+=STRING)
+			(codes+=Code)
 			|
-			('correction' corrections+=STRING)
+			(corrections+=Correction)
 		)*
 	'}';
+
+RuleKeyword:
+	{RuleKeyword}
+	keyword = 'rule'
+;
+
+Pattern:
+	{Pattern}
+	keyword = PatternKeyword pattern = STRING
+;
+PatternKeyword:
+	{PatternKeyword}
+	keyword = 'pattern'
+;
+
+Code:
+	{Code}
+	keyword = CodeKeyword code = STRING
+;
+
+CodeKeyword:
+	{CodeKeyword}
+	keyword = 'code'
+;
+
+Correction:
+	{Correction}
+	keyword = CorrectionKeyword correction = STRING	
+;
+
+CorrectionKeyword:
+	{CorrectionKeyword}
+	keyword = 'correction'
+;
 
 GenDefaultRemediationRule:
 	{GenDefaultRemediationRule} 
-	'default' '{'
+	keyword = DefaultKeyword '{'
 		(
-			('code' codes+=STRING)
+			(codes+=Code)
 			|
-			('correction' correction+=STRING)
+			(corrections+=Correction)
 		)*
 	'}';
+
+DefaultKeyword:
+	{DefaultKeyword}
+	keyword = 'default'	
+;
 
 LlmProvidersBlock:
 	{LlmProvidersBlock} 
-	'llmProviders' '{'
-		providers+=NamedLlmProvider*
+	keyword = LLMProvidersKeyword '{'
+		providers+=LLMProvider*
 	'}';
 
-NamedLlmProvider:
-	'provider' name=ValidID '{'
+LLMProvidersKeyword:
+	{LLMProvidersKeyword}
+	keyword = ('llmproviders' | 'llmProviders')	
+;
+
+LLMProvider:
+	keyword = ProviderKeyword name=ValidID '{'
 		(
-			('kind' kinds+=('local' | 'openai' | 'ollama'))
+			(types+=ProviderType)
 			|
-			('localModelPath' localModelPaths+=STRING)
+			(localModelPaths+=LocalModelPath)
 			|
-			('model' models+=STRING)
+			(models+=Model)
 			|
-			('endpoint' endpoints+=STRING)
+			(endpoints+=Endpoint)
 		)*
 	'}';
 
+ProviderKeyword:
+	{ProviderKeyword}
+	keyword = 'provider'
+;
+
+ProviderType:
+	{ProviderType}
+	keyword = ProviderTypeKeyword name = ValidID	
+;
+
+ProviderTypeKeyword:
+	{ProviderTypeKeyword}
+	keyword = 'type'
+;
+
+LocalModelPath:
+	{LocalModelPath}
+	keyword = FilePathKeyword path = STRING
+;
+
+Model:
+	{Model}
+	keyword = ModelKeyword mode = STRING
+;
+
+ModelKeyword:
+	{ModelKeyword}
+	keyword = 'model'
+;
+
+FilePathKeyword:
+	{FilePathKeyword}
+	keyword = ('filepath' | 'filePath')
+;
+
+Endpoint:
+	{Endpoint}
+	keyword = EndpointKeyword mode = STRING
+;
+
+EndpointKeyword:
+	{EndpointKeyword}
+	keyword = ('endpoint' | 'endPoint')
+;
+
 GenUsageBlock:
 	{GenUsageBlock} 
-	'modelUsage' '{'
+	keyword = ModelUsageKeyword '{'
 		(
-			('primary' primaryProviders+=ValidID)
+			(primaryProviders+=PrimaryProvider)
 			|
-			('secondary' secondaryProviders+=ValidID)
+			(secondaryProviders+=SecondaryProvider)
 			|
 			(escalations+=GenEscalationBlock)
 		)*
 	'}';
 
+ModelUsageKeyword:
+	{ModelUsageKeyword}
+	keyword = ('modelusage' | 'modelUsage')	
+;
+
+PrimaryProvider:
+	{PrimaryProvider}
+	keyword = PrimaryProviderKeyword name = ValidID
+;
+
+PrimaryProviderKeyword:
+	{PrimaryProviderKeyword}
+	keyword = 'primary'	
+;
+
+SecondaryProvider:
+	{SecondaryProvider}
+	keyword = SecondaryProviderKeyword name = ValidID
+;
+
+SecondaryProviderKeyword:
+	{SecondaryProviderKeyword}
+	keyword = 'secondary'	
+;
+
 GenEscalationBlock:
 	{GenEscalationBlock} 
-	'escalation' '{'
+	keyword = EscalationKeyword '{'
 		(
-			('enabled' enableds+=('true' | 'false'))
+			(enableds+=Enabled)
 			|
-			('escalateAtRetry' escalateAtRetries+=INT)
+			(atRetries+=AtRetry)
 		)*
 	'}';
+
+EscalationKeyword:
+	{EscalationKeyword}
+	keyword = 'escalation'
+;
+
+Enabled:
+	{Enabled}
+	keyword = EnabledKeyword value = TrueFalseKeyword
+;
+
+EnabledKeyword:
+	{EnabledKeyword}
+	keyword = 'enabled'
+;
+
+AtRetry:
+	{AtRetry}
+	keyword = AtRetryKeyword value = INT
+;
+
+AtRetryKeyword:
+	{AtRetryKeyword}
+	keyword = ('atretry' | 'atRetry')
+;
 
 SurfaceBlock:
 	{SurfaceBlock} 

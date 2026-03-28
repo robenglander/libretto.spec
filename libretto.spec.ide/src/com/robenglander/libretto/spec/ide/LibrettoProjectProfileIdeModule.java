@@ -3,8 +3,12 @@
  */
 package com.robenglander.libretto.spec.ide;
 
+import org.eclipse.xtext.ide.editor.quickfix.IQuickFixProvider;
 import org.eclipse.xtext.ide.editor.syntaxcoloring.ISemanticHighlightingCalculator;
+import org.eclipse.xtext.ide.server.codeActions.ICodeActionService2;
+import org.eclipse.xtext.ide.server.codeActions.QuickFixCodeActionService;
 
+import com.robenglander.libretto.spec.ide.quickfix.LibrettoProjectProfileIdeQuickfixProvider;
 import com.robenglander.libretto.spec.ide.syntaxcoloring.LibrettoProjectProfileSemanticHighlightingCalculator;
 
 /**
@@ -18,5 +22,14 @@ public class LibrettoProjectProfileIdeModule extends AbstractLibrettoProjectProf
 	 */
 	public Class<? extends ISemanticHighlightingCalculator> bindISemanticHighlightingCalculator() {
 		return LibrettoProjectProfileSemanticHighlightingCalculator.class;
+	}
+
+	/** Enables {@code textDocument/codeAction} quick fixes from {@link LibrettoProjectProfileIdeQuickfixProvider}. */
+	public Class<? extends ICodeActionService2> bindICodeActionService2() {
+		return QuickFixCodeActionService.class;
+	}
+
+	public Class<? extends IQuickFixProvider> bindIQuickFixProvider() {
+		return LibrettoProjectProfileIdeQuickfixProvider.class;
 	}
 }

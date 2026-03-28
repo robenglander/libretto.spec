@@ -33,6 +33,24 @@ public interface LibrettoProjectProfileFactory extends EFactory
   ProjectProfile createProjectProfile();
 
   /**
+   * Returns a new object of class '<em>Profile</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Profile</em>'.
+   * @generated
+   */
+  Profile createProfile();
+
+  /**
+   * Returns a new object of class '<em>Profile Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Profile Keyword</em>'.
+   * @generated
+   */
+  ProfileKeyword createProfileKeyword();
+
+  /**
    * Returns a new object of class '<em>Project Block</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -40,6 +58,33 @@ public interface LibrettoProjectProfileFactory extends EFactory
    * @generated
    */
   ProjectBlock createProjectBlock();
+
+  /**
+   * Returns a new object of class '<em>Root Directory</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Root Directory</em>'.
+   * @generated
+   */
+  RootDirectory createRootDirectory();
+
+  /**
+   * Returns a new object of class '<em>Project Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Project Keyword</em>'.
+   * @generated
+   */
+  ProjectKeyword createProjectKeyword();
+
+  /**
+   * Returns a new object of class '<em>Root Dir Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Root Dir Keyword</em>'.
+   * @generated
+   */
+  RootDirKeyword createRootDirKeyword();
 
   /**
    * Returns a new object of class '<em>Modules Block</em>'.
@@ -51,6 +96,15 @@ public interface LibrettoProjectProfileFactory extends EFactory
   ModulesBlock createModulesBlock();
 
   /**
+   * Returns a new object of class '<em>Modules Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Modules Keyword</em>'.
+   * @generated
+   */
+  ModulesKeyword createModulesKeyword();
+
+  /**
    * Returns a new object of class '<em>Project Module</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -58,6 +112,105 @@ public interface LibrettoProjectProfileFactory extends EFactory
    * @generated
    */
   ProjectModule createProjectModule();
+
+  /**
+   * Returns a new object of class '<em>Module Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Module Keyword</em>'.
+   * @generated
+   */
+  ModuleKeyword createModuleKeyword();
+
+  /**
+   * Returns a new object of class '<em>Directory</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Directory</em>'.
+   * @generated
+   */
+  Directory createDirectory();
+
+  /**
+   * Returns a new object of class '<em>Spec Directory</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Spec Directory</em>'.
+   * @generated
+   */
+  SpecDirectory createSpecDirectory();
+
+  /**
+   * Returns a new object of class '<em>Test Directory</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Test Directory</em>'.
+   * @generated
+   */
+  TestDirectory createTestDirectory();
+
+  /**
+   * Returns a new object of class '<em>Main Directory</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Main Directory</em>'.
+   * @generated
+   */
+  MainDirectory createMainDirectory();
+
+  /**
+   * Returns a new object of class '<em>Base Package</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Base Package</em>'.
+   * @generated
+   */
+  BasePackage createBasePackage();
+
+  /**
+   * Returns a new object of class '<em>Dir Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Dir Keyword</em>'.
+   * @generated
+   */
+  DirKeyword createDirKeyword();
+
+  /**
+   * Returns a new object of class '<em>Spec Dir Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Spec Dir Keyword</em>'.
+   * @generated
+   */
+  SpecDirKeyword createSpecDirKeyword();
+
+  /**
+   * Returns a new object of class '<em>Test Dir Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Test Dir Keyword</em>'.
+   * @generated
+   */
+  TestDirKeyword createTestDirKeyword();
+
+  /**
+   * Returns a new object of class '<em>Main Dir Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Main Dir Keyword</em>'.
+   * @generated
+   */
+  MainDirKeyword createMainDirKeyword();
+
+  /**
+   * Returns a new object of class '<em>Base Package Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Base Package Keyword</em>'.
+   * @generated
+   */
+  BasePackageKeyword createBasePackageKeyword();
 
   /**
    * Returns a new object of class '<em>Gen Block</em>'.
@@ -69,6 +222,96 @@ public interface LibrettoProjectProfileFactory extends EFactory
   GenBlock createGenBlock();
 
   /**
+   * Returns a new object of class '<em>Gen Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Gen Keyword</em>'.
+   * @generated
+   */
+  GenKeyword createGenKeyword();
+
+  /**
+   * Returns a new object of class '<em>Initial Instruction</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Initial Instruction</em>'.
+   * @generated
+   */
+  InitialInstruction createInitialInstruction();
+
+  /**
+   * Returns a new object of class '<em>Max Retries</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Max Retries</em>'.
+   * @generated
+   */
+  MaxRetries createMaxRetries();
+
+  /**
+   * Returns a new object of class '<em>Parse Check</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Parse Check</em>'.
+   * @generated
+   */
+  ParseCheck createParseCheck();
+
+  /**
+   * Returns a new object of class '<em>Default Correction</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Default Correction</em>'.
+   * @generated
+   */
+  DefaultCorrection createDefaultCorrection();
+
+  /**
+   * Returns a new object of class '<em>Initial Instruction Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Initial Instruction Keyword</em>'.
+   * @generated
+   */
+  InitialInstructionKeyword createInitialInstructionKeyword();
+
+  /**
+   * Returns a new object of class '<em>Max Retries Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Max Retries Keyword</em>'.
+   * @generated
+   */
+  MaxRetriesKeyword createMaxRetriesKeyword();
+
+  /**
+   * Returns a new object of class '<em>Parse Check Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Parse Check Keyword</em>'.
+   * @generated
+   */
+  ParseCheckKeyword createParseCheckKeyword();
+
+  /**
+   * Returns a new object of class '<em>Default Correction Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Default Correction Keyword</em>'.
+   * @generated
+   */
+  DefaultCorrectionKeyword createDefaultCorrectionKeyword();
+
+  /**
+   * Returns a new object of class '<em>True False Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>True False Keyword</em>'.
+   * @generated
+   */
+  TrueFalseKeyword createTrueFalseKeyword();
+
+  /**
    * Returns a new object of class '<em>Gen Remediation Rules</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -76,6 +319,15 @@ public interface LibrettoProjectProfileFactory extends EFactory
    * @generated
    */
   GenRemediationRules createGenRemediationRules();
+
+  /**
+   * Returns a new object of class '<em>Rules Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Rules Keyword</em>'.
+   * @generated
+   */
+  RulesKeyword createRulesKeyword();
 
   /**
    * Returns a new object of class '<em>Gen Pattern Remediation Rule</em>'.
@@ -87,6 +339,69 @@ public interface LibrettoProjectProfileFactory extends EFactory
   GenPatternRemediationRule createGenPatternRemediationRule();
 
   /**
+   * Returns a new object of class '<em>Rule Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Rule Keyword</em>'.
+   * @generated
+   */
+  RuleKeyword createRuleKeyword();
+
+  /**
+   * Returns a new object of class '<em>Pattern</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Pattern</em>'.
+   * @generated
+   */
+  Pattern createPattern();
+
+  /**
+   * Returns a new object of class '<em>Pattern Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Pattern Keyword</em>'.
+   * @generated
+   */
+  PatternKeyword createPatternKeyword();
+
+  /**
+   * Returns a new object of class '<em>Code</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Code</em>'.
+   * @generated
+   */
+  Code createCode();
+
+  /**
+   * Returns a new object of class '<em>Code Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Code Keyword</em>'.
+   * @generated
+   */
+  CodeKeyword createCodeKeyword();
+
+  /**
+   * Returns a new object of class '<em>Correction</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Correction</em>'.
+   * @generated
+   */
+  Correction createCorrection();
+
+  /**
+   * Returns a new object of class '<em>Correction Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Correction Keyword</em>'.
+   * @generated
+   */
+  CorrectionKeyword createCorrectionKeyword();
+
+  /**
    * Returns a new object of class '<em>Gen Default Remediation Rule</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -94,6 +409,15 @@ public interface LibrettoProjectProfileFactory extends EFactory
    * @generated
    */
   GenDefaultRemediationRule createGenDefaultRemediationRule();
+
+  /**
+   * Returns a new object of class '<em>Default Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Default Keyword</em>'.
+   * @generated
+   */
+  DefaultKeyword createDefaultKeyword();
 
   /**
    * Returns a new object of class '<em>Llm Providers Block</em>'.
@@ -105,13 +429,103 @@ public interface LibrettoProjectProfileFactory extends EFactory
   LlmProvidersBlock createLlmProvidersBlock();
 
   /**
-   * Returns a new object of class '<em>Named Llm Provider</em>'.
+   * Returns a new object of class '<em>LLM Providers Keyword</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Named Llm Provider</em>'.
+   * @return a new object of class '<em>LLM Providers Keyword</em>'.
    * @generated
    */
-  NamedLlmProvider createNamedLlmProvider();
+  LLMProvidersKeyword createLLMProvidersKeyword();
+
+  /**
+   * Returns a new object of class '<em>LLM Provider</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>LLM Provider</em>'.
+   * @generated
+   */
+  LLMProvider createLLMProvider();
+
+  /**
+   * Returns a new object of class '<em>Provider Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Provider Keyword</em>'.
+   * @generated
+   */
+  ProviderKeyword createProviderKeyword();
+
+  /**
+   * Returns a new object of class '<em>Provider Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Provider Type</em>'.
+   * @generated
+   */
+  ProviderType createProviderType();
+
+  /**
+   * Returns a new object of class '<em>Provider Type Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Provider Type Keyword</em>'.
+   * @generated
+   */
+  ProviderTypeKeyword createProviderTypeKeyword();
+
+  /**
+   * Returns a new object of class '<em>Local Model Path</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Local Model Path</em>'.
+   * @generated
+   */
+  LocalModelPath createLocalModelPath();
+
+  /**
+   * Returns a new object of class '<em>Model</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Model</em>'.
+   * @generated
+   */
+  Model createModel();
+
+  /**
+   * Returns a new object of class '<em>Model Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Model Keyword</em>'.
+   * @generated
+   */
+  ModelKeyword createModelKeyword();
+
+  /**
+   * Returns a new object of class '<em>File Path Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>File Path Keyword</em>'.
+   * @generated
+   */
+  FilePathKeyword createFilePathKeyword();
+
+  /**
+   * Returns a new object of class '<em>Endpoint</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Endpoint</em>'.
+   * @generated
+   */
+  Endpoint createEndpoint();
+
+  /**
+   * Returns a new object of class '<em>Endpoint Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Endpoint Keyword</em>'.
+   * @generated
+   */
+  EndpointKeyword createEndpointKeyword();
 
   /**
    * Returns a new object of class '<em>Gen Usage Block</em>'.
@@ -123,6 +537,51 @@ public interface LibrettoProjectProfileFactory extends EFactory
   GenUsageBlock createGenUsageBlock();
 
   /**
+   * Returns a new object of class '<em>Model Usage Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Model Usage Keyword</em>'.
+   * @generated
+   */
+  ModelUsageKeyword createModelUsageKeyword();
+
+  /**
+   * Returns a new object of class '<em>Primary Provider</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Primary Provider</em>'.
+   * @generated
+   */
+  PrimaryProvider createPrimaryProvider();
+
+  /**
+   * Returns a new object of class '<em>Primary Provider Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Primary Provider Keyword</em>'.
+   * @generated
+   */
+  PrimaryProviderKeyword createPrimaryProviderKeyword();
+
+  /**
+   * Returns a new object of class '<em>Secondary Provider</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Secondary Provider</em>'.
+   * @generated
+   */
+  SecondaryProvider createSecondaryProvider();
+
+  /**
+   * Returns a new object of class '<em>Secondary Provider Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Secondary Provider Keyword</em>'.
+   * @generated
+   */
+  SecondaryProviderKeyword createSecondaryProviderKeyword();
+
+  /**
    * Returns a new object of class '<em>Gen Escalation Block</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -130,6 +589,51 @@ public interface LibrettoProjectProfileFactory extends EFactory
    * @generated
    */
   GenEscalationBlock createGenEscalationBlock();
+
+  /**
+   * Returns a new object of class '<em>Escalation Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Escalation Keyword</em>'.
+   * @generated
+   */
+  EscalationKeyword createEscalationKeyword();
+
+  /**
+   * Returns a new object of class '<em>Enabled</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Enabled</em>'.
+   * @generated
+   */
+  Enabled createEnabled();
+
+  /**
+   * Returns a new object of class '<em>Enabled Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Enabled Keyword</em>'.
+   * @generated
+   */
+  EnabledKeyword createEnabledKeyword();
+
+  /**
+   * Returns a new object of class '<em>At Retry</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>At Retry</em>'.
+   * @generated
+   */
+  AtRetry createAtRetry();
+
+  /**
+   * Returns a new object of class '<em>At Retry Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>At Retry Keyword</em>'.
+   * @generated
+   */
+  AtRetryKeyword createAtRetryKeyword();
 
   /**
    * Returns a new object of class '<em>Surface Block</em>'.
@@ -247,6 +751,15 @@ public interface LibrettoProjectProfileFactory extends EFactory
    * @generated
    */
   TypedParam createTypedParam();
+
+  /**
+   * Returns a new object of class '<em>True Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>True Keyword</em>'.
+   * @generated
+   */
+  TrueKeyword createTrueKeyword();
 
   /**
    * Returns the package supported by this factory.

@@ -16,7 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock#getRootDir <em>Root Dir</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock#getProjectKeyword <em>Project Keyword</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock#getRootDirs <em>Root Dirs</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock#getModules <em>Modules</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock#getGens <em>Gens</em>}</li>
  * </ul>
@@ -28,16 +29,38 @@ import org.eclipse.emf.ecore.EObject;
 public interface ProjectBlock extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Root Dir</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Project Keyword</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Root Dir</em>' attribute list.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectBlock_RootDir()
-   * @model unique="false"
+   * @return the value of the '<em>Project Keyword</em>' containment reference.
+   * @see #setProjectKeyword(ProjectKeyword)
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectBlock_ProjectKeyword()
+   * @model containment="true"
    * @generated
    */
-  EList<String> getRootDir();
+  ProjectKeyword getProjectKeyword();
+
+  /**
+   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock#getProjectKeyword <em>Project Keyword</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Project Keyword</em>' containment reference.
+   * @see #getProjectKeyword()
+   * @generated
+   */
+  void setProjectKeyword(ProjectKeyword value);
+
+  /**
+   * Returns the value of the '<em><b>Root Dirs</b></em>' containment reference list.
+   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.RootDirectory}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Root Dirs</em>' containment reference list.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectBlock_RootDirs()
+   * @model containment="true"
+   * @generated
+   */
+  EList<RootDirectory> getRootDirs();
 
   /**
    * Returns the value of the '<em><b>Modules</b></em>' containment reference list.

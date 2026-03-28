@@ -16,8 +16,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenDefaultRemediationRule#getKeyword <em>Keyword</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenDefaultRemediationRule#getCodes <em>Codes</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenDefaultRemediationRule#getCorrection <em>Correction</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenDefaultRemediationRule#getCorrections <em>Corrections</em>}</li>
  * </ul>
  *
  * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenDefaultRemediationRule()
@@ -27,27 +28,49 @@ import org.eclipse.emf.ecore.EObject;
 public interface GenDefaultRemediationRule extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Codes</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Keyword</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Codes</em>' attribute list.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenDefaultRemediationRule_Codes()
-   * @model unique="false"
+   * @return the value of the '<em>Keyword</em>' containment reference.
+   * @see #setKeyword(DefaultKeyword)
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenDefaultRemediationRule_Keyword()
+   * @model containment="true"
    * @generated
    */
-  EList<String> getCodes();
+  DefaultKeyword getKeyword();
 
   /**
-   * Returns the value of the '<em><b>Correction</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenDefaultRemediationRule#getKeyword <em>Keyword</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Correction</em>' attribute list.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenDefaultRemediationRule_Correction()
-   * @model unique="false"
+   * @param value the new value of the '<em>Keyword</em>' containment reference.
+   * @see #getKeyword()
    * @generated
    */
-  EList<String> getCorrection();
+  void setKeyword(DefaultKeyword value);
+
+  /**
+   * Returns the value of the '<em><b>Codes</b></em>' containment reference list.
+   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.Code}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Codes</em>' containment reference list.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenDefaultRemediationRule_Codes()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Code> getCodes();
+
+  /**
+   * Returns the value of the '<em><b>Corrections</b></em>' containment reference list.
+   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.Correction}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Corrections</em>' containment reference list.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenDefaultRemediationRule_Corrections()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Correction> getCorrections();
 
 } // GenDefaultRemediationRule

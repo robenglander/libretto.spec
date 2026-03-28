@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.LlmProvidersBlock#getKeyword <em>Keyword</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.LlmProvidersBlock#getProviders <em>Providers</em>}</li>
  * </ul>
  *
@@ -26,8 +27,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface LlmProvidersBlock extends EObject
 {
   /**
+   * Returns the value of the '<em><b>Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Keyword</em>' containment reference.
+   * @see #setKeyword(LLMProvidersKeyword)
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getLlmProvidersBlock_Keyword()
+   * @model containment="true"
+   * @generated
+   */
+  LLMProvidersKeyword getKeyword();
+
+  /**
+   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.LlmProvidersBlock#getKeyword <em>Keyword</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Keyword</em>' containment reference.
+   * @see #getKeyword()
+   * @generated
+   */
+  void setKeyword(LLMProvidersKeyword value);
+
+  /**
    * Returns the value of the '<em><b>Providers</b></em>' containment reference list.
-   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider}.
+   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.LLMProvider}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Providers</em>' containment reference list.
@@ -35,6 +58,6 @@ public interface LlmProvidersBlock extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<NamedLlmProvider> getProviders();
+  EList<LLMProvider> getProviders();
 
 } // LlmProvidersBlock

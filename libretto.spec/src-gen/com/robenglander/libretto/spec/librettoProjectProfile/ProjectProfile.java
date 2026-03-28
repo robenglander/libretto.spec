@@ -16,10 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getName <em>Name</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getProjects <em>Projects</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getLlmProviders <em>Llm Providers</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getSurfaces <em>Surfaces</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getProfiles <em>Profiles</em>}</li>
  * </ul>
  *
  * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectProfile()
@@ -29,61 +26,15 @@ import org.eclipse.emf.ecore.EObject;
 public interface ProjectProfile extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Profiles</b></em>' containment reference list.
+   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.Profile}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectProfile_Name()
-   * @model
-   * @generated
-   */
-  String getName();
-
-  /**
-   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
-  void setName(String value);
-
-  /**
-   * Returns the value of the '<em><b>Projects</b></em>' containment reference list.
-   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Projects</em>' containment reference list.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectProfile_Projects()
+   * @return the value of the '<em>Profiles</em>' containment reference list.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectProfile_Profiles()
    * @model containment="true"
    * @generated
    */
-  EList<ProjectBlock> getProjects();
-
-  /**
-   * Returns the value of the '<em><b>Llm Providers</b></em>' containment reference list.
-   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.LlmProvidersBlock}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Llm Providers</em>' containment reference list.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectProfile_LlmProviders()
-   * @model containment="true"
-   * @generated
-   */
-  EList<LlmProvidersBlock> getLlmProviders();
-
-  /**
-   * Returns the value of the '<em><b>Surfaces</b></em>' containment reference list.
-   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.SurfaceBlock}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Surfaces</em>' containment reference list.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getProjectProfile_Surfaces()
-   * @model containment="true"
-   * @generated
-   */
-  EList<SurfaceBlock> getSurfaces();
+  EList<Profile> getProfiles();
 
 } // ProjectProfile

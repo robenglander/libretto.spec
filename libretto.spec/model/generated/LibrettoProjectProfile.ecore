@@ -3,6 +3,12 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="librettoProjectProfile" nsURI="http://www.robenglander.com/libretto/spec/LibrettoProjectProfile"
     nsPrefix="librettoProjectProfile">
   <eClassifiers xsi:type="ecore:EClass" name="ProjectProfile">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="profiles" upperBound="-1"
+        eType="#//Profile" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Profile">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="profileKeyword" eType="#//ProfileKeyword"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="projects" upperBound="-1"
         eType="#//ProjectBlock" containment="true"/>
@@ -11,93 +17,322 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="surfaces" upperBound="-1"
         eType="#//SurfaceBlock" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProfileKeyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProjectBlock">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rootDir" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="projectKeyword" eType="#//ProjectKeyword"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rootDirs" upperBound="-1"
+        eType="#//RootDirectory" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="modules" upperBound="-1"
         eType="#//ModulesBlock" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="gens" upperBound="-1" eType="#//GenBlock"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RootDirectory">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//RootDirKeyword"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dir" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProjectKeyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RootDirKeyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ModulesBlock">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modulesKeyword" eType="#//ModulesKeyword"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="modules" upperBound="-1"
         eType="#//ProjectModule" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModulesKeyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProjectModule">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//ModuleKeyword"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dirs" unique="false" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="specDirs" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="testDirs" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mainDirs" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="basePackages" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dirs" upperBound="-1" eType="#//Directory"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specDirs" upperBound="-1"
+        eType="#//SpecDirectory" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="testDirs" upperBound="-1"
+        eType="#//TestDirectory" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mainDirs" upperBound="-1"
+        eType="#//MainDirectory" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="basePackages" upperBound="-1"
+        eType="#//BasePackage" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModuleKeyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Directory">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//DirKeyword"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dir" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SpecDirectory">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//SpecDirKeyword"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dir" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TestDirectory">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//TestDirKeyword"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dir" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MainDirectory">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//MainDirKeyword"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dir" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BasePackage">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//BasePackageKeyword"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dir" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DirKeyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SpecDirKeyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TestDirKeyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MainDirKeyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BasePackageKeyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GenBlock">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialInstructions" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxRetries" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parseChecks" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultCorrections" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//GenKeyword"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialInstructions" upperBound="-1"
+        eType="#//InitialInstruction" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="maxRetries" upperBound="-1"
+        eType="#//MaxRetries" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parseChecks" upperBound="-1"
+        eType="#//ParseCheck" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="defaultCorrections" upperBound="-1"
+        eType="#//DefaultCorrection" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="remediations" upperBound="-1"
         eType="#//GenRemediationRules" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="modelUsages" upperBound="-1"
         eType="#//GenUsageBlock" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GenKeyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InitialInstruction">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//InitialInstructionKeyword"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instruction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MaxRetries">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//MaxRetriesKeyword"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxRetries" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParseCheck">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//ParseCheckKeyword"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//TrueFalseKeyword"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DefaultCorrection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//DefaultCorrectionKeyword"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="correction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InitialInstructionKeyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MaxRetriesKeyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParseCheckKeyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DefaultCorrectionKeyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TrueFalseKeyword"/>
   <eClassifiers xsi:type="ecore:EClass" name="GenRemediationRules">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rulesKeyword" eType="#//RulesKeyword"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="patternRules" upperBound="-1"
         eType="#//GenPatternRemediationRule" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="defaultRemediations" upperBound="-1"
         eType="#//GenDefaultRemediationRule" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RulesKeyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GenPatternRemediationRule">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="patterns" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="codes" unique="false" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="corrections" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//RuleKeyword"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="patterns" upperBound="-1"
+        eType="#//Pattern" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="codes" upperBound="-1"
+        eType="#//Code" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="corrections" upperBound="-1"
+        eType="#//Correction" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RuleKeyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Pattern">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//PatternKeyword"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pattern" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PatternKeyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Code">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//CodeKeyword"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CodeKeyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Correction">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//CorrectionKeyword"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="correction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CorrectionKeyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GenDefaultRemediationRule">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="codes" unique="false" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="correction" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//DefaultKeyword"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="codes" upperBound="-1"
+        eType="#//Code" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="corrections" upperBound="-1"
+        eType="#//Correction" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DefaultKeyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LlmProvidersBlock">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//LLMProvidersKeyword"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="providers" upperBound="-1"
-        eType="#//NamedLlmProvider" containment="true"/>
+        eType="#//LLMProvider" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NamedLlmProvider">
+  <eClassifiers xsi:type="ecore:EClass" name="LLMProvidersKeyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LLMProvider">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//ProviderKeyword"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kinds" unique="false" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="localModelPaths" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="models" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endpoints" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="types" upperBound="-1"
+        eType="#//ProviderType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="localModelPaths" upperBound="-1"
+        eType="#//LocalModelPath" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="models" upperBound="-1"
+        eType="#//Model" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="endpoints" upperBound="-1"
+        eType="#//Endpoint" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProviderKeyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProviderType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//ProviderTypeKeyword"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProviderTypeKeyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LocalModelPath">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//FilePathKeyword"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//ModelKeyword"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelKeyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FilePathKeyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Endpoint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//EndpointKeyword"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EndpointKeyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GenUsageBlock">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="primaryProviders" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="secondaryProviders" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//ModelUsageKeyword"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="primaryProviders" upperBound="-1"
+        eType="#//PrimaryProvider" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="secondaryProviders" upperBound="-1"
+        eType="#//SecondaryProvider" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="escalations" upperBound="-1"
         eType="#//GenEscalationBlock" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelUsageKeyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PrimaryProvider">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//PrimaryProviderKeyword"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PrimaryProviderKeyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SecondaryProvider">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//SecondaryProviderKeyword"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SecondaryProviderKeyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GenEscalationBlock">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enableds" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="escalateAtRetries" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//EscalationKeyword"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enableds" upperBound="-1"
+        eType="#//Enabled" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="atRetries" upperBound="-1"
+        eType="#//AtRetry" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EscalationKeyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Enabled">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//EnabledKeyword"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//TrueFalseKeyword"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnabledKeyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AtRetry">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//AtRetryKeyword"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AtRetryKeyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SurfaceBlock">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
@@ -148,5 +383,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//JavaType"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="paramName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TrueKeyword" eSuperTypes="#//TrueFalseKeyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

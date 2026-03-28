@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getKeyword <em>Keyword</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getPrimaryProviders <em>Primary Providers</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getSecondaryProviders <em>Secondary Providers</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getEscalations <em>Escalations</em>}</li>
@@ -28,28 +29,50 @@ import org.eclipse.emf.ecore.EObject;
 public interface GenUsageBlock extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Primary Providers</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Keyword</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Primary Providers</em>' attribute list.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenUsageBlock_PrimaryProviders()
-   * @model unique="false"
+   * @return the value of the '<em>Keyword</em>' containment reference.
+   * @see #setKeyword(ModelUsageKeyword)
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenUsageBlock_Keyword()
+   * @model containment="true"
    * @generated
    */
-  EList<String> getPrimaryProviders();
+  ModelUsageKeyword getKeyword();
 
   /**
-   * Returns the value of the '<em><b>Secondary Providers</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getKeyword <em>Keyword</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Secondary Providers</em>' attribute list.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenUsageBlock_SecondaryProviders()
-   * @model unique="false"
+   * @param value the new value of the '<em>Keyword</em>' containment reference.
+   * @see #getKeyword()
    * @generated
    */
-  EList<String> getSecondaryProviders();
+  void setKeyword(ModelUsageKeyword value);
+
+  /**
+   * Returns the value of the '<em><b>Primary Providers</b></em>' containment reference list.
+   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Primary Providers</em>' containment reference list.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenUsageBlock_PrimaryProviders()
+   * @model containment="true"
+   * @generated
+   */
+  EList<PrimaryProvider> getPrimaryProviders();
+
+  /**
+   * Returns the value of the '<em><b>Secondary Providers</b></em>' containment reference list.
+   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProvider}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Secondary Providers</em>' containment reference list.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenUsageBlock_SecondaryProviders()
+   * @model containment="true"
+   * @generated
+   */
+  EList<SecondaryProvider> getSecondaryProviders();
 
   /**
    * Returns the value of the '<em><b>Escalations</b></em>' containment reference list.

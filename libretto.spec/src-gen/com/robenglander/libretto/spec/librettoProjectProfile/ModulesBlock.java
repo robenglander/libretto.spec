@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ModulesBlock#getModulesKeyword <em>Modules Keyword</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.ModulesBlock#getModules <em>Modules</em>}</li>
  * </ul>
  *
@@ -25,6 +26,28 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface ModulesBlock extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Modules Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Modules Keyword</em>' containment reference.
+   * @see #setModulesKeyword(ModulesKeyword)
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getModulesBlock_ModulesKeyword()
+   * @model containment="true"
+   * @generated
+   */
+  ModulesKeyword getModulesKeyword();
+
+  /**
+   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.ModulesBlock#getModulesKeyword <em>Modules Keyword</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Modules Keyword</em>' containment reference.
+   * @see #getModulesKeyword()
+   * @generated
+   */
+  void setModulesKeyword(ModulesKeyword value);
+
   /**
    * Returns the value of the '<em><b>Modules</b></em>' containment reference list.
    * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule}.

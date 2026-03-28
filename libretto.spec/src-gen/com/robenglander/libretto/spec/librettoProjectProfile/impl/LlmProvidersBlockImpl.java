@@ -3,12 +3,14 @@
  */
 package com.robenglander.libretto.spec.librettoProjectProfile.impl;
 
+import com.robenglander.libretto.spec.librettoProjectProfile.LLMProvider;
+import com.robenglander.libretto.spec.librettoProjectProfile.LLMProvidersKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage;
 import com.robenglander.libretto.spec.librettoProjectProfile.LlmProvidersBlock;
-import com.robenglander.libretto.spec.librettoProjectProfile.NamedLlmProvider;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -16,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -29,6 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.LlmProvidersBlockImpl#getKeyword <em>Keyword</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.LlmProvidersBlockImpl#getProviders <em>Providers</em>}</li>
  * </ul>
  *
@@ -37,6 +41,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class LlmProvidersBlockImpl extends MinimalEObjectImpl.Container implements LlmProvidersBlock
 {
   /**
+   * The cached value of the '{@link #getKeyword() <em>Keyword</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getKeyword()
+   * @generated
+   * @ordered
+   */
+  protected LLMProvidersKeyword keyword;
+
+  /**
    * The cached value of the '{@link #getProviders() <em>Providers</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -44,7 +58,7 @@ public class LlmProvidersBlockImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    * @ordered
    */
-  protected EList<NamedLlmProvider> providers;
+  protected EList<LLMProvider> providers;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,11 +87,61 @@ public class LlmProvidersBlockImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    */
   @Override
-  public EList<NamedLlmProvider> getProviders()
+  public LLMProvidersKeyword getKeyword()
+  {
+    return keyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetKeyword(LLMProvidersKeyword newKeyword, NotificationChain msgs)
+  {
+    LLMProvidersKeyword oldKeyword = keyword;
+    keyword = newKeyword;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LibrettoProjectProfilePackage.LLM_PROVIDERS_BLOCK__KEYWORD, oldKeyword, newKeyword);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setKeyword(LLMProvidersKeyword newKeyword)
+  {
+    if (newKeyword != keyword)
+    {
+      NotificationChain msgs = null;
+      if (keyword != null)
+        msgs = ((InternalEObject)keyword).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LibrettoProjectProfilePackage.LLM_PROVIDERS_BLOCK__KEYWORD, null, msgs);
+      if (newKeyword != null)
+        msgs = ((InternalEObject)newKeyword).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LibrettoProjectProfilePackage.LLM_PROVIDERS_BLOCK__KEYWORD, null, msgs);
+      msgs = basicSetKeyword(newKeyword, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoProjectProfilePackage.LLM_PROVIDERS_BLOCK__KEYWORD, newKeyword, newKeyword));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<LLMProvider> getProviders()
   {
     if (providers == null)
     {
-      providers = new EObjectContainmentEList<NamedLlmProvider>(NamedLlmProvider.class, this, LibrettoProjectProfilePackage.LLM_PROVIDERS_BLOCK__PROVIDERS);
+      providers = new EObjectContainmentEList<LLMProvider>(LLMProvider.class, this, LibrettoProjectProfilePackage.LLM_PROVIDERS_BLOCK__PROVIDERS);
     }
     return providers;
   }
@@ -92,6 +156,8 @@ public class LlmProvidersBlockImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.LLM_PROVIDERS_BLOCK__KEYWORD:
+        return basicSetKeyword(null, msgs);
       case LibrettoProjectProfilePackage.LLM_PROVIDERS_BLOCK__PROVIDERS:
         return ((InternalEList<?>)getProviders()).basicRemove(otherEnd, msgs);
     }
@@ -108,6 +174,8 @@ public class LlmProvidersBlockImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.LLM_PROVIDERS_BLOCK__KEYWORD:
+        return getKeyword();
       case LibrettoProjectProfilePackage.LLM_PROVIDERS_BLOCK__PROVIDERS:
         return getProviders();
     }
@@ -125,9 +193,12 @@ public class LlmProvidersBlockImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.LLM_PROVIDERS_BLOCK__KEYWORD:
+        setKeyword((LLMProvidersKeyword)newValue);
+        return;
       case LibrettoProjectProfilePackage.LLM_PROVIDERS_BLOCK__PROVIDERS:
         getProviders().clear();
-        getProviders().addAll((Collection<? extends NamedLlmProvider>)newValue);
+        getProviders().addAll((Collection<? extends LLMProvider>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -143,6 +214,9 @@ public class LlmProvidersBlockImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.LLM_PROVIDERS_BLOCK__KEYWORD:
+        setKeyword((LLMProvidersKeyword)null);
+        return;
       case LibrettoProjectProfilePackage.LLM_PROVIDERS_BLOCK__PROVIDERS:
         getProviders().clear();
         return;
@@ -160,6 +234,8 @@ public class LlmProvidersBlockImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.LLM_PROVIDERS_BLOCK__KEYWORD:
+        return keyword != null;
       case LibrettoProjectProfilePackage.LLM_PROVIDERS_BLOCK__PROVIDERS:
         return providers != null && !providers.isEmpty();
     }

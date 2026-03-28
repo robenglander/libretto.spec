@@ -15,13 +15,14 @@ import org.eclipse.xtext.resource.XtextResourceSet;
 
 import com.google.inject.Injector;
 import com.robenglander.libretto.spec.LibrettoProjectProfileStandaloneSetup;
+import com.robenglander.libretto.spec.librettoProjectProfile.Profile;
 import com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile;
-import com.robenglander.libretto.spec.projection.LibrettoProjectProfileDomainModel;
 import com.robenglander.libretto.spec.projection.LibrettoProjectProfileDomainModelProjection;
+import com.robenglander.libretto.spec.projection.LibrettoProjectProfilesDocument;
 import com.robenglander.libretto.spec.projection.mapper.LibrettoProjectProfileProjectionMapper;
 
 /**
- * Headless native Libretto project profile: Xtext parse → EMF {@link ProjectProfile}.
+ * Headless native Libretto project profile: Xtext parse → EMF {@link ProjectProfile} (file root).
  * <p>
  * Use {@link LibrettoProjectProfileProjectionMapper} for the portable projection used outside EMF.
  */
@@ -34,9 +35,9 @@ public final class LibrettoProjectProfileHeadless {
 	}
 
 	/**
-	 * Parse result: EMF root and resource-level syntax diagnostics (Xtext lexer/parser).
+	 * Parse result: EMF file root and resource-level syntax diagnostics (Xtext lexer/parser).
 	 */
-	public record ParseResult(ProjectProfile projectProfile, List<String> syntaxErrors) {
+	public record ParseResult(ProjectProfile fileRoot, List<String> syntaxErrors) {
 		public ParseResult {
 			syntaxErrors = syntaxErrors == null ? List.of() : List.copyOf(syntaxErrors);
 		}
@@ -45,10 +46,24 @@ public final class LibrettoProjectProfileHeadless {
 			return !syntaxErrors.isEmpty();
 		}
 
+		/**
+		 * First {@code profile "…"} block from the parse tree, or {@code null} when absent.
+		 *
+		 * @deprecated Prefer {@link #fileRoot()} and {@link LibrettoProjectProfileDomainModelProjection#profiles()};
+		 *             retained for callers that assume a single profile block.
+		 */
+		@Deprecated
+		public Profile projectProfile() {
+			if (fileRoot == null || fileRoot.getProfiles().isEmpty()) {
+				return null;
+			}
+			return fileRoot.getProfiles().get(0);
+		}
+
 		public LibrettoProjectProfileDomainModelProjection project() {
-			return projectProfile == null
-					? new LibrettoProjectProfileDomainModelProjection(LibrettoProjectProfileDomainModel.empty())
-					: LibrettoProjectProfileProjectionMapper.project(projectProfile);
+			return fileRoot == null
+					? new LibrettoProjectProfileDomainModelProjection(LibrettoProjectProfilesDocument.empty())
+					: LibrettoProjectProfileProjectionMapper.project(fileRoot);
 		}
 	}
 
@@ -73,8 +88,9 @@ public final class LibrettoProjectProfileHeadless {
 		if (resource.getContents().isEmpty()) {
 			return new ParseResult(null, errors.isEmpty() ? List.of("empty parse model") : errors);
 		}
-		ProjectProfile root = (ProjectProfile) resource.getContents().get(0);
-		return new ParseResult(root, errors);
+		Object root = resource.getContents().get(0);
+		ProjectProfile fileRoot = root instanceof ProjectProfile pp ? pp : null;
+		return new ParseResult(fileRoot, errors);
 	}
 
 	public static LibrettoProjectProfileDomainModelProjection parseAndProject(String text) {

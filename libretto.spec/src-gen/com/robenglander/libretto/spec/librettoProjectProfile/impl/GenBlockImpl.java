@@ -3,13 +3,19 @@
  */
 package com.robenglander.libretto.spec.librettoProjectProfile.impl;
 
+import com.robenglander.libretto.spec.librettoProjectProfile.DefaultCorrection;
 import com.robenglander.libretto.spec.librettoProjectProfile.GenBlock;
+import com.robenglander.libretto.spec.librettoProjectProfile.GenKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.GenRemediationRules;
 import com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock;
+import com.robenglander.libretto.spec.librettoProjectProfile.InitialInstruction;
 import com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage;
+import com.robenglander.libretto.spec.librettoProjectProfile.MaxRetries;
+import com.robenglander.libretto.spec.librettoProjectProfile.ParseCheck;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -17,9 +23,9 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -31,6 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenBlockImpl#getKeyword <em>Keyword</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenBlockImpl#getInitialInstructions <em>Initial Instructions</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenBlockImpl#getMaxRetries <em>Max Retries</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenBlockImpl#getParseChecks <em>Parse Checks</em>}</li>
@@ -44,44 +51,54 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class GenBlockImpl extends MinimalEObjectImpl.Container implements GenBlock
 {
   /**
-   * The cached value of the '{@link #getInitialInstructions() <em>Initial Instructions</em>}' attribute list.
+   * The cached value of the '{@link #getKeyword() <em>Keyword</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getKeyword()
+   * @generated
+   * @ordered
+   */
+  protected GenKeyword keyword;
+
+  /**
+   * The cached value of the '{@link #getInitialInstructions() <em>Initial Instructions</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getInitialInstructions()
    * @generated
    * @ordered
    */
-  protected EList<String> initialInstructions;
+  protected EList<InitialInstruction> initialInstructions;
 
   /**
-   * The cached value of the '{@link #getMaxRetries() <em>Max Retries</em>}' attribute list.
+   * The cached value of the '{@link #getMaxRetries() <em>Max Retries</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getMaxRetries()
    * @generated
    * @ordered
    */
-  protected EList<Integer> maxRetries;
+  protected EList<MaxRetries> maxRetries;
 
   /**
-   * The cached value of the '{@link #getParseChecks() <em>Parse Checks</em>}' attribute list.
+   * The cached value of the '{@link #getParseChecks() <em>Parse Checks</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getParseChecks()
    * @generated
    * @ordered
    */
-  protected EList<String> parseChecks;
+  protected EList<ParseCheck> parseChecks;
 
   /**
-   * The cached value of the '{@link #getDefaultCorrections() <em>Default Corrections</em>}' attribute list.
+   * The cached value of the '{@link #getDefaultCorrections() <em>Default Corrections</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getDefaultCorrections()
    * @generated
    * @ordered
    */
-  protected EList<String> defaultCorrections;
+  protected EList<DefaultCorrection> defaultCorrections;
 
   /**
    * The cached value of the '{@link #getRemediations() <em>Remediations</em>}' containment reference list.
@@ -130,11 +147,61 @@ public class GenBlockImpl extends MinimalEObjectImpl.Container implements GenBlo
    * @generated
    */
   @Override
-  public EList<String> getInitialInstructions()
+  public GenKeyword getKeyword()
+  {
+    return keyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetKeyword(GenKeyword newKeyword, NotificationChain msgs)
+  {
+    GenKeyword oldKeyword = keyword;
+    keyword = newKeyword;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LibrettoProjectProfilePackage.GEN_BLOCK__KEYWORD, oldKeyword, newKeyword);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setKeyword(GenKeyword newKeyword)
+  {
+    if (newKeyword != keyword)
+    {
+      NotificationChain msgs = null;
+      if (keyword != null)
+        msgs = ((InternalEObject)keyword).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LibrettoProjectProfilePackage.GEN_BLOCK__KEYWORD, null, msgs);
+      if (newKeyword != null)
+        msgs = ((InternalEObject)newKeyword).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LibrettoProjectProfilePackage.GEN_BLOCK__KEYWORD, null, msgs);
+      msgs = basicSetKeyword(newKeyword, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoProjectProfilePackage.GEN_BLOCK__KEYWORD, newKeyword, newKeyword));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<InitialInstruction> getInitialInstructions()
   {
     if (initialInstructions == null)
     {
-      initialInstructions = new EDataTypeEList<String>(String.class, this, LibrettoProjectProfilePackage.GEN_BLOCK__INITIAL_INSTRUCTIONS);
+      initialInstructions = new EObjectContainmentEList<InitialInstruction>(InitialInstruction.class, this, LibrettoProjectProfilePackage.GEN_BLOCK__INITIAL_INSTRUCTIONS);
     }
     return initialInstructions;
   }
@@ -145,11 +212,11 @@ public class GenBlockImpl extends MinimalEObjectImpl.Container implements GenBlo
    * @generated
    */
   @Override
-  public EList<Integer> getMaxRetries()
+  public EList<MaxRetries> getMaxRetries()
   {
     if (maxRetries == null)
     {
-      maxRetries = new EDataTypeEList<Integer>(Integer.class, this, LibrettoProjectProfilePackage.GEN_BLOCK__MAX_RETRIES);
+      maxRetries = new EObjectContainmentEList<MaxRetries>(MaxRetries.class, this, LibrettoProjectProfilePackage.GEN_BLOCK__MAX_RETRIES);
     }
     return maxRetries;
   }
@@ -160,11 +227,11 @@ public class GenBlockImpl extends MinimalEObjectImpl.Container implements GenBlo
    * @generated
    */
   @Override
-  public EList<String> getParseChecks()
+  public EList<ParseCheck> getParseChecks()
   {
     if (parseChecks == null)
     {
-      parseChecks = new EDataTypeEList<String>(String.class, this, LibrettoProjectProfilePackage.GEN_BLOCK__PARSE_CHECKS);
+      parseChecks = new EObjectContainmentEList<ParseCheck>(ParseCheck.class, this, LibrettoProjectProfilePackage.GEN_BLOCK__PARSE_CHECKS);
     }
     return parseChecks;
   }
@@ -175,11 +242,11 @@ public class GenBlockImpl extends MinimalEObjectImpl.Container implements GenBlo
    * @generated
    */
   @Override
-  public EList<String> getDefaultCorrections()
+  public EList<DefaultCorrection> getDefaultCorrections()
   {
     if (defaultCorrections == null)
     {
-      defaultCorrections = new EDataTypeEList<String>(String.class, this, LibrettoProjectProfilePackage.GEN_BLOCK__DEFAULT_CORRECTIONS);
+      defaultCorrections = new EObjectContainmentEList<DefaultCorrection>(DefaultCorrection.class, this, LibrettoProjectProfilePackage.GEN_BLOCK__DEFAULT_CORRECTIONS);
     }
     return defaultCorrections;
   }
@@ -224,6 +291,16 @@ public class GenBlockImpl extends MinimalEObjectImpl.Container implements GenBlo
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.GEN_BLOCK__KEYWORD:
+        return basicSetKeyword(null, msgs);
+      case LibrettoProjectProfilePackage.GEN_BLOCK__INITIAL_INSTRUCTIONS:
+        return ((InternalEList<?>)getInitialInstructions()).basicRemove(otherEnd, msgs);
+      case LibrettoProjectProfilePackage.GEN_BLOCK__MAX_RETRIES:
+        return ((InternalEList<?>)getMaxRetries()).basicRemove(otherEnd, msgs);
+      case LibrettoProjectProfilePackage.GEN_BLOCK__PARSE_CHECKS:
+        return ((InternalEList<?>)getParseChecks()).basicRemove(otherEnd, msgs);
+      case LibrettoProjectProfilePackage.GEN_BLOCK__DEFAULT_CORRECTIONS:
+        return ((InternalEList<?>)getDefaultCorrections()).basicRemove(otherEnd, msgs);
       case LibrettoProjectProfilePackage.GEN_BLOCK__REMEDIATIONS:
         return ((InternalEList<?>)getRemediations()).basicRemove(otherEnd, msgs);
       case LibrettoProjectProfilePackage.GEN_BLOCK__MODEL_USAGES:
@@ -242,6 +319,8 @@ public class GenBlockImpl extends MinimalEObjectImpl.Container implements GenBlo
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.GEN_BLOCK__KEYWORD:
+        return getKeyword();
       case LibrettoProjectProfilePackage.GEN_BLOCK__INITIAL_INSTRUCTIONS:
         return getInitialInstructions();
       case LibrettoProjectProfilePackage.GEN_BLOCK__MAX_RETRIES:
@@ -269,21 +348,24 @@ public class GenBlockImpl extends MinimalEObjectImpl.Container implements GenBlo
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.GEN_BLOCK__KEYWORD:
+        setKeyword((GenKeyword)newValue);
+        return;
       case LibrettoProjectProfilePackage.GEN_BLOCK__INITIAL_INSTRUCTIONS:
         getInitialInstructions().clear();
-        getInitialInstructions().addAll((Collection<? extends String>)newValue);
+        getInitialInstructions().addAll((Collection<? extends InitialInstruction>)newValue);
         return;
       case LibrettoProjectProfilePackage.GEN_BLOCK__MAX_RETRIES:
         getMaxRetries().clear();
-        getMaxRetries().addAll((Collection<? extends Integer>)newValue);
+        getMaxRetries().addAll((Collection<? extends MaxRetries>)newValue);
         return;
       case LibrettoProjectProfilePackage.GEN_BLOCK__PARSE_CHECKS:
         getParseChecks().clear();
-        getParseChecks().addAll((Collection<? extends String>)newValue);
+        getParseChecks().addAll((Collection<? extends ParseCheck>)newValue);
         return;
       case LibrettoProjectProfilePackage.GEN_BLOCK__DEFAULT_CORRECTIONS:
         getDefaultCorrections().clear();
-        getDefaultCorrections().addAll((Collection<? extends String>)newValue);
+        getDefaultCorrections().addAll((Collection<? extends DefaultCorrection>)newValue);
         return;
       case LibrettoProjectProfilePackage.GEN_BLOCK__REMEDIATIONS:
         getRemediations().clear();
@@ -307,6 +389,9 @@ public class GenBlockImpl extends MinimalEObjectImpl.Container implements GenBlo
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.GEN_BLOCK__KEYWORD:
+        setKeyword((GenKeyword)null);
+        return;
       case LibrettoProjectProfilePackage.GEN_BLOCK__INITIAL_INSTRUCTIONS:
         getInitialInstructions().clear();
         return;
@@ -339,6 +424,8 @@ public class GenBlockImpl extends MinimalEObjectImpl.Container implements GenBlo
   {
     switch (featureID)
     {
+      case LibrettoProjectProfilePackage.GEN_BLOCK__KEYWORD:
+        return keyword != null;
       case LibrettoProjectProfilePackage.GEN_BLOCK__INITIAL_INSTRUCTIONS:
         return initialInstructions != null && !initialInstructions.isEmpty();
       case LibrettoProjectProfilePackage.GEN_BLOCK__MAX_RETRIES:
@@ -353,29 +440,6 @@ public class GenBlockImpl extends MinimalEObjectImpl.Container implements GenBlo
         return modelUsages != null && !modelUsages.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (initialInstructions: ");
-    result.append(initialInstructions);
-    result.append(", maxRetries: ");
-    result.append(maxRetries);
-    result.append(", parseChecks: ");
-    result.append(parseChecks);
-    result.append(", defaultCorrections: ");
-    result.append(defaultCorrections);
-    result.append(')');
-    return result.toString();
   }
 
 } //GenBlockImpl
