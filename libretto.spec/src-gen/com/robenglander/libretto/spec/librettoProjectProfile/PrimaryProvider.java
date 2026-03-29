@@ -3,7 +3,6 @@
  */
 package com.robenglander.libretto.spec.librettoProjectProfile;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,19 +21,19 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface PrimaryProvider extends EObject
+public interface PrimaryProvider extends Provider
 {
   /**
    * Returns the value of the '<em><b>Keyword</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Keyword</em>' containment reference.
-   * @see #setKeyword(PrimaryProviderKeyword)
+   * @see #setKeyword(ProviderKeyword)
    * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getPrimaryProvider_Keyword()
    * @model containment="true"
    * @generated
    */
-  PrimaryProviderKeyword getKeyword();
+  ProviderKeyword getKeyword();
 
   /**
    * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider#getKeyword <em>Keyword</em>}' containment reference.
@@ -44,7 +43,7 @@ public interface PrimaryProvider extends EObject
    * @see #getKeyword()
    * @generated
    */
-  void setKeyword(PrimaryProviderKeyword value);
+  void setKeyword(ProviderKeyword value);
 
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

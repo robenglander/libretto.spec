@@ -1,24 +1,36 @@
 package com.robenglander.libretto.spec.projection;
 
-import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
- * Portable view of {@code gen { … }} under {@code project}, lists in source order.
+ * Portable view of {@code gen { … }} under {@code project}. Validator-clean LPP has one each of
+ * {@code initialInstruction}, {@code parseCheck}, {@code defaultCorrection}, {@code rules}, and {@code modelUsage}.
  */
 public record ProjectedGenBlock(
-		List<ProjectedGenInstruction> initialInstructions,
-		List<ProjectedGenMaxRetries> maxRetries,
-		List<ProjectedGenParseCheck> parseChecks,
-		List<ProjectedGenDefaultCorrection> defaultCorrections,
-		List<ProjectedGenRemediationRules> remediations,
-		List<ProjectedGenUsageBlock> modelUsages) {
+		ProjectedGenInstruction initialInstruction,
+		ProjectedGenParseCheck parseCheck,
+		ProjectedGenDefaultCorrection defaultCorrection,
+		ProjectedGenRemediationRules remediation,
+		Optional<ProjectedGenUsageBlock> modelUsage) {
 
 	public ProjectedGenBlock {
-		initialInstructions = initialInstructions == null ? List.of() : List.copyOf(initialInstructions);
-		maxRetries = maxRetries == null ? List.of() : List.copyOf(maxRetries);
-		parseChecks = parseChecks == null ? List.of() : List.copyOf(parseChecks);
-		defaultCorrections = defaultCorrections == null ? List.of() : List.copyOf(defaultCorrections);
-		remediations = remediations == null ? List.of() : List.copyOf(remediations);
-		modelUsages = modelUsages == null ? List.of() : List.copyOf(modelUsages);
+		initialInstruction = Objects.requireNonNull(initialInstruction, "initialInstruction");
+		parseCheck = Objects.requireNonNull(parseCheck, "parseCheck");
+		defaultCorrection = Objects.requireNonNull(defaultCorrection, "defaultCorrection");
+		remediation = Objects.requireNonNull(remediation, "remediation");
+		modelUsage = Objects.requireNonNull(modelUsage, "modelUsage");
+	}
+
+	/**
+	 * Placeholder for tests or tooling that need a structural shell; not a validator-clean LPP {@code gen} block.
+	 */
+	public static ProjectedGenBlock empty() {
+		return new ProjectedGenBlock(
+				new ProjectedGenInstruction("shell"),
+				new ProjectedGenParseCheck(true),
+				new ProjectedGenDefaultCorrection("shell"),
+				ProjectedGenRemediationRules.empty(),
+				Optional.empty());
 	}
 }

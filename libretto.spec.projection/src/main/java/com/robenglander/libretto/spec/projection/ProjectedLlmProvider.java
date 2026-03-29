@@ -1,22 +1,14 @@
 package com.robenglander.libretto.spec.projection;
 
-import java.util.List;
-
 /**
- * Portable view of {@code provider ValidID { type* localModelPath* model* endPoint* }}.
+ * Portable view of one {@code provider ValidID { … }} under {@code llmProviders}. Validator-clean LPP fixes exactly
+ * one shape per {@code type}; that shape is modeled as this sealed hierarchy so invalid combinations are not
+ * representable and constructors do not coerce bad input into placeholder values.
  */
-public record ProjectedLlmProvider(
-		String name,
-		List<ProjectedLlmProviderType> types,
-		List<ProjectedLlmLocalModelPath> localModelPaths,
-		List<ProjectedLlmModel> models,
-		List<ProjectedLlmEndpoint> endpoints) {
+public sealed interface ProjectedLlmProvider permits
+		ProjectedLlmLocalProvider,
+		ProjectedLlmManagedProvider,
+		ProjectedLlmOllamaProvider {
 
-	public ProjectedLlmProvider {
-		name = name == null ? "" : name.trim();
-		types = types == null ? List.of() : List.copyOf(types);
-		localModelPaths = localModelPaths == null ? List.of() : List.copyOf(localModelPaths);
-		models = models == null ? List.of() : List.copyOf(models);
-		endpoints = endpoints == null ? List.of() : List.copyOf(endpoints);
-	}
+	String name();
 }

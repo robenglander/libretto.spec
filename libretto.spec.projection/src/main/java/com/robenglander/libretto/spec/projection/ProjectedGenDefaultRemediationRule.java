@@ -1,16 +1,14 @@
 package com.robenglander.libretto.spec.projection;
 
-import java.util.List;
+import java.util.Objects;
 
-/**
- * Portable view of {@code default { code* correction* }} inside {@code rules}.
- */
+/** Portable view of {@code default { … }} inside {@code rules}. */
 public record ProjectedGenDefaultRemediationRule(
-		List<ProjectedGenRemediationCode> codes,
-		List<ProjectedGenRemediationCorrection> corrections) {
+		ProjectedGenRemediationCode code,
+		ProjectedGenRemediationCorrection correction) {
 
 	public ProjectedGenDefaultRemediationRule {
-		codes = codes == null ? List.of() : List.copyOf(codes);
-		corrections = corrections == null ? List.of() : List.copyOf(corrections);
+		code = Objects.requireNonNull(code, "code");
+		correction = Objects.requireNonNull(correction, "correction");
 	}
 }

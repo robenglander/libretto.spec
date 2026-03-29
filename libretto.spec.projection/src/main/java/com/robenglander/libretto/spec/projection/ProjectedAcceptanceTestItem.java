@@ -1,6 +1,7 @@
 package com.robenglander.libretto.spec.projection;
 
 import java.util.List;
+import java.util.Objects;
 
 /** One {@code AcceptanceTestRecordItem} from the grammar. */
 public sealed interface ProjectedAcceptanceTestItem permits
@@ -16,58 +17,56 @@ public sealed interface ProjectedAcceptanceTestItem permits
 
 	record Source(ProjectedSourceBlock source) implements ProjectedAcceptanceTestItem {
 		public Source {
-			if (source == null) {
-				throw new NullPointerException("source");
-			}
+			Objects.requireNonNull(source, "source");
 		}
 	}
 
 	/** {@code validates} behavior ids ({@code B-ddd}). */
 	record Validates(List<String> behaviorIds) implements ProjectedAcceptanceTestItem {
 		public Validates {
-			behaviorIds = behaviorIds == null ? List.of() : List.copyOf(behaviorIds);
+			behaviorIds = List.copyOf(Objects.requireNonNull(behaviorIds, "behaviorIds"));
 		}
 	}
 
 	record Preconditions(List<String> preconditions) implements ProjectedAcceptanceTestItem {
 		public Preconditions {
-			preconditions = preconditions == null ? List.of() : List.copyOf(preconditions);
+			preconditions = List.copyOf(Objects.requireNonNull(preconditions, "preconditions"));
 		}
 	}
 
 	record Actions(List<String> actions) implements ProjectedAcceptanceTestItem {
 		public Actions {
-			actions = actions == null ? List.of() : List.copyOf(actions);
+			actions = List.copyOf(Objects.requireNonNull(actions, "actions"));
 		}
 	}
 
 	record Assertions(List<String> assertions) implements ProjectedAcceptanceTestItem {
 		public Assertions {
-			assertions = assertions == null ? List.of() : List.copyOf(assertions);
+			assertions = List.copyOf(Objects.requireNonNull(assertions, "assertions"));
 		}
 	}
 
 	record Title(String title) implements ProjectedAcceptanceTestItem {
 		public Title {
-			title = title == null ? "" : title;
+			title = ProjectionStrings.requireNonBlank(title, "title");
 		}
 	}
 
 	record References(List<String> refIds) implements ProjectedAcceptanceTestItem {
 		public References {
-			refIds = refIds == null ? List.of() : List.copyOf(refIds);
+			refIds = List.copyOf(Objects.requireNonNull(refIds, "refIds"));
 		}
 	}
 
 	record Notes(String notes) implements ProjectedAcceptanceTestItem {
 		public Notes {
-			notes = notes == null ? "" : notes;
+			notes = ProjectionStrings.requireNonNullTrim(notes, "notes");
 		}
 	}
 
 	record Context(String context) implements ProjectedAcceptanceTestItem {
 		public Context {
-			context = context == null ? "" : context;
+			context = ProjectionStrings.requireNonNullTrim(context, "context");
 		}
 	}
 }

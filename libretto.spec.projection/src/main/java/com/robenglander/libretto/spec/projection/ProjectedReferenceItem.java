@@ -14,43 +14,43 @@ public sealed interface ProjectedReferenceItem permits
 
 	record Title(String title) implements ProjectedReferenceItem {
 		public Title {
-			title = title == null ? "" : title;
+			title = ProjectionStrings.requireNonBlank(title, "title");
 		}
 	}
 
 	record Type(String typeIdentifier) implements ProjectedReferenceItem {
 		public Type {
-			typeIdentifier = typeIdentifier == null ? "" : typeIdentifier;
+			typeIdentifier = ProjectionStrings.requireNonBlank(typeIdentifier, "typeIdentifier");
 		}
 	}
 
 	record Citation(String citation) implements ProjectedReferenceItem {
 		public Citation {
-			citation = citation == null ? "" : citation;
+			citation = ProjectionStrings.requireNonNullTrim(citation, "citation");
 		}
 	}
 
 	record Locator(String locator) implements ProjectedReferenceItem {
 		public Locator {
-			locator = locator == null ? "" : locator;
+			locator = ProjectionStrings.requireNonBlank(locator, "locator");
 		}
 	}
 
 	record AuthorityNotes(String authorityNotes) implements ProjectedReferenceItem {
 		public AuthorityNotes {
-			authorityNotes = authorityNotes == null ? "" : authorityNotes;
+			authorityNotes = ProjectionStrings.requireNonNullTrim(authorityNotes, "authorityNotes");
 		}
 	}
 
 	record Metadata(String metadata) implements ProjectedReferenceItem {
 		public Metadata {
-			metadata = metadata == null ? "" : metadata;
+			metadata = ProjectionStrings.requireNonNullTrim(metadata, "metadata");
 		}
 	}
 
 	record Context(String context) implements ProjectedReferenceItem {
 		public Context {
-			context = context == null ? "" : context;
+			context = ProjectionStrings.requireNonNullTrim(context, "context");
 		}
 	}
 }

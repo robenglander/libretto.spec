@@ -17,13 +17,13 @@ public sealed interface ProjectedMetadataField permits
 
 	record Title(String title) implements ProjectedMetadataField {
 		public Title {
-			title = title == null ? "" : title;
+			title = ProjectionStrings.requireNonBlank(title, "title");
 		}
 	}
 
 	record Version(String version) implements ProjectedMetadataField {
 		public Version {
-			version = version == null ? "" : version;
+			version = ProjectionStrings.requireNonBlank(version, "version");
 		}
 	}
 
@@ -37,48 +37,48 @@ public sealed interface ProjectedMetadataField permits
 
 	record ModuleName(String moduleName) implements ProjectedMetadataField {
 		public ModuleName {
-			moduleName = moduleName == null ? "" : moduleName;
+			moduleName = ProjectionStrings.requireNonBlank(moduleName, "moduleName");
 		}
 	}
 
 	record JavaPackage(String javaPackage) implements ProjectedMetadataField {
 		public JavaPackage {
-			javaPackage = javaPackage == null ? "" : javaPackage;
+			javaPackage = ProjectionStrings.requireNonBlank(javaPackage, "javaPackage");
 		}
 	}
 
 	record CompiledAt(String compiledAt) implements ProjectedMetadataField {
 		public CompiledAt {
-			compiledAt = compiledAt == null ? "" : compiledAt;
+			compiledAt = ProjectionStrings.requireNonBlank(compiledAt, "compiledAt");
 		}
 	}
 
 	record CompilerVersion(String compilerVersion) implements ProjectedMetadataField {
 		public CompilerVersion {
-			compilerVersion = compilerVersion == null ? "" : compilerVersion;
+			compilerVersion = ProjectionStrings.requireNonBlank(compilerVersion, "compilerVersion");
 		}
 	}
 
 	record ModelMetadata(String modelMetadata) implements ProjectedMetadataField {
 		public ModelMetadata {
-			modelMetadata = modelMetadata == null ? "" : modelMetadata;
+			modelMetadata = ProjectionStrings.requireNonBlank(modelMetadata, "modelMetadata");
 		}
 	}
 
 	/**
 	 * Declared {@code project_profile_version} — must match the loaded {@code .lpp} root version when tooling
-	 * passes {@code --project-profile}.
+	 * passes {@code --project_profile}.
 	 */
 	record ProjectProfileVersion(String version) implements ProjectedMetadataField {
 		public ProjectProfileVersion {
-			version = version == null ? "" : version.trim();
+			version = ProjectionStrings.requireNonBlank(version, "projectProfileVersion");
 		}
 	}
 
-	/** Optional {@code project_profile_id}; if either side sets an id, both must match. */
+	/** Optional {@code project_profile_id}; empty string means unset. */
 	record ProjectProfileId(String id) implements ProjectedMetadataField {
 		public ProjectProfileId {
-			id = id == null ? "" : id.trim();
+			id = ProjectionStrings.requireNonNullTrim(id, "projectProfileId");
 		}
 	}
 }

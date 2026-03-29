@@ -7,13 +7,13 @@ public sealed interface ProjectedSectionContextItem permits
 
 	record SectionLine(String sectionLabel) implements ProjectedSectionContextItem {
 		public SectionLine {
-			sectionLabel = sectionLabel == null ? "" : sectionLabel;
+			sectionLabel = ProjectionStrings.requireNonBlank(sectionLabel, "sectionLabel");
 		}
 	}
 
 	record TextBody(String text) implements ProjectedSectionContextItem {
 		public TextBody {
-			text = text == null ? "" : text;
+			text = ProjectionStrings.requireNonNullTrim(text, "text");
 		}
 	}
 }

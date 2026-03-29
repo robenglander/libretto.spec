@@ -6,6 +6,6 @@ package com.robenglander.libretto.spec.projection;
 public record ProjectedLlmLocalModelPath(String path) {
 
 	public ProjectedLlmLocalModelPath {
-		path = path == null ? "" : path.trim();
+		path = ProjectionStrings.requireNonBlank(path, "path");
 	}
 }

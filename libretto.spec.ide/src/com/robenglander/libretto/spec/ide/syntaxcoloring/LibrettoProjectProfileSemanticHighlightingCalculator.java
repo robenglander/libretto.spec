@@ -121,13 +121,9 @@ public class LibrettoProjectProfileSemanticHighlightingCalculator extends Defaul
 			highlightAllNodesForFeature(acceptor, object, PKG.getPrimaryProvider_Name(),
 					SemanticTokenTypes.Variable);
 		}
-		if (object.eClass() == PKG.getSecondaryProvider() && object.eIsSet(PKG.getSecondaryProvider_Name())) {
-			highlightAllNodesForFeature(acceptor, object, PKG.getSecondaryProvider_Name(),
+		if (object.eClass() == PKG.getGenEscalationBlock() && object.eIsSet(PKG.getGenEscalationBlock_Name())) {
+			highlightAllNodesForFeature(acceptor, object, PKG.getGenEscalationBlock_Name(),
 					SemanticTokenTypes.Variable);
-		}
-		if (object.eClass() == PKG.getAtRetry() && object.eIsSet(PKG.getAtRetry_Value())) {
-			highlightAllNodesForFeature(acceptor, object, PKG.getAtRetry_Value(),
-					SemanticTokenTypes.Number);
 		}
 		if (object.eClass() == PKG.getScopedSurface()) {
 			if (object.eIsSet(PKG.getScopedSurface_ModuleId())) {

@@ -4,6 +4,6 @@ package com.robenglander.libretto.spec.projection;
 public record ProjectedGenInstruction(String instruction) {
 
 	public ProjectedGenInstruction {
-		instruction = instruction == null ? "" : instruction.trim();
+		instruction = ProjectionStrings.requireNonBlank(instruction, "instruction");
 	}
 }

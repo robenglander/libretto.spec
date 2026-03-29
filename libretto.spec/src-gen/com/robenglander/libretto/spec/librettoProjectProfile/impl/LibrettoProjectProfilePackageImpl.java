@@ -3,8 +3,6 @@
  */
 package com.robenglander.libretto.spec.librettoProjectProfile.impl;
 
-import com.robenglander.libretto.spec.librettoProjectProfile.AtRetry;
-import com.robenglander.libretto.spec.librettoProjectProfile.AtRetryKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.BasePackage;
 import com.robenglander.libretto.spec.librettoProjectProfile.BasePackageKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.Code;
@@ -16,11 +14,10 @@ import com.robenglander.libretto.spec.librettoProjectProfile.DefaultCorrectionKe
 import com.robenglander.libretto.spec.librettoProjectProfile.DefaultKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.DirKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.Directory;
-import com.robenglander.libretto.spec.librettoProjectProfile.Enabled;
-import com.robenglander.libretto.spec.librettoProjectProfile.EnabledKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.Endpoint;
 import com.robenglander.libretto.spec.librettoProjectProfile.EndpointKeyword;
-import com.robenglander.libretto.spec.librettoProjectProfile.EscalationKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.EscalationProvider;
+import com.robenglander.libretto.spec.librettoProjectProfile.EscalationToKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.FilePathKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.GenBlock;
 import com.robenglander.libretto.spec.librettoProjectProfile.GenDefaultRemediationRule;
@@ -56,7 +53,6 @@ import com.robenglander.libretto.spec.librettoProjectProfile.ParseCheckKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.Pattern;
 import com.robenglander.libretto.spec.librettoProjectProfile.PatternKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider;
-import com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProviderKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.PrimitiveType;
 import com.robenglander.libretto.spec.librettoProjectProfile.Profile;
 import com.robenglander.libretto.spec.librettoProjectProfile.ProfileKeyword;
@@ -64,6 +60,7 @@ import com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock;
 import com.robenglander.libretto.spec.librettoProjectProfile.ProjectKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule;
 import com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile;
+import com.robenglander.libretto.spec.librettoProjectProfile.Provider;
 import com.robenglander.libretto.spec.librettoProjectProfile.ProviderKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.ProviderType;
 import com.robenglander.libretto.spec.librettoProjectProfile.ProviderTypeKeyword;
@@ -75,8 +72,6 @@ import com.robenglander.libretto.spec.librettoProjectProfile.RootDirectory;
 import com.robenglander.libretto.spec.librettoProjectProfile.RuleKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.RulesKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.ScopedSurface;
-import com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProvider;
-import com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProviderKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.SpecDirKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.SpecDirectory;
 import com.robenglander.libretto.spec.librettoProjectProfile.SurfaceBlock;
@@ -514,70 +509,21 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass primaryProviderEClass = null;
+  private EClass providerEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass primaryProviderKeywordEClass = null;
+  private EClass escalationProviderEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass secondaryProviderEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass secondaryProviderKeywordEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass genEscalationBlockEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass escalationKeywordEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass enabledEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass enabledKeywordEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass atRetryEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass atRetryKeywordEClass = null;
+  private EClass escalationToKeywordEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -676,6 +622,20 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   private EClass trueKeywordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass primaryProviderEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass genEscalationBlockEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -1460,7 +1420,7 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EReference getGenBlock_MaxRetries()
+  public EReference getGenBlock_ParseChecks()
   {
     return (EReference)genBlockEClass.getEStructuralFeatures().get(2);
   }
@@ -1471,7 +1431,7 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EReference getGenBlock_ParseChecks()
+  public EReference getGenBlock_DefaultCorrections()
   {
     return (EReference)genBlockEClass.getEStructuralFeatures().get(3);
   }
@@ -1482,7 +1442,7 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EReference getGenBlock_DefaultCorrections()
+  public EReference getGenBlock_Remediations()
   {
     return (EReference)genBlockEClass.getEStructuralFeatures().get(4);
   }
@@ -1493,20 +1453,9 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EReference getGenBlock_Remediations()
-  {
-    return (EReference)genBlockEClass.getEStructuralFeatures().get(5);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EReference getGenBlock_ModelUsages()
   {
-    return (EReference)genBlockEClass.getEStructuralFeatures().get(6);
+    return (EReference)genBlockEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -2538,7 +2487,7 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EReference getGenUsageBlock_PrimaryProviders()
+  public EReference getGenUsageBlock_Providers()
   {
     return (EReference)genUsageBlockEClass.getEStructuralFeatures().get(1);
   }
@@ -2549,7 +2498,7 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EReference getGenUsageBlock_SecondaryProviders()
+  public EReference getGenUsageBlock_MaxRetries()
   {
     return (EReference)genUsageBlockEClass.getEStructuralFeatures().get(2);
   }
@@ -2593,9 +2542,9 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EClass getPrimaryProvider()
+  public EClass getProvider()
   {
-    return primaryProviderEClass;
+    return providerEClass;
   }
 
   /**
@@ -2604,9 +2553,9 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EReference getPrimaryProvider_Keyword()
+  public EClass getEscalationProvider()
   {
-    return (EReference)primaryProviderEClass.getEStructuralFeatures().get(0);
+    return escalationProviderEClass;
   }
 
   /**
@@ -2615,9 +2564,9 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EAttribute getPrimaryProvider_Name()
+  public EClass getEscalationToKeyword()
   {
-    return (EAttribute)primaryProviderEClass.getEStructuralFeatures().get(1);
+    return escalationToKeywordEClass;
   }
 
   /**
@@ -2626,251 +2575,9 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
-  public EClass getPrimaryProviderKeyword()
+  public EAttribute getEscalationToKeyword_Keyword()
   {
-    return primaryProviderKeywordEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getPrimaryProviderKeyword_Keyword()
-  {
-    return (EAttribute)primaryProviderKeywordEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getSecondaryProvider()
-  {
-    return secondaryProviderEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getSecondaryProvider_Keyword()
-  {
-    return (EReference)secondaryProviderEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getSecondaryProvider_Name()
-  {
-    return (EAttribute)secondaryProviderEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getSecondaryProviderKeyword()
-  {
-    return secondaryProviderKeywordEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getSecondaryProviderKeyword_Keyword()
-  {
-    return (EAttribute)secondaryProviderKeywordEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getGenEscalationBlock()
-  {
-    return genEscalationBlockEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getGenEscalationBlock_Keyword()
-  {
-    return (EReference)genEscalationBlockEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getGenEscalationBlock_Enableds()
-  {
-    return (EReference)genEscalationBlockEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getGenEscalationBlock_AtRetries()
-  {
-    return (EReference)genEscalationBlockEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getEscalationKeyword()
-  {
-    return escalationKeywordEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getEscalationKeyword_Keyword()
-  {
-    return (EAttribute)escalationKeywordEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getEnabled()
-  {
-    return enabledEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getEnabled_Keyword()
-  {
-    return (EReference)enabledEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getEnabled_Value()
-  {
-    return (EReference)enabledEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getEnabledKeyword()
-  {
-    return enabledKeywordEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getEnabledKeyword_Keyword()
-  {
-    return (EAttribute)enabledKeywordEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getAtRetry()
-  {
-    return atRetryEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getAtRetry_Keyword()
-  {
-    return (EReference)atRetryEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getAtRetry_Value()
-  {
-    return (EAttribute)atRetryEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getAtRetryKeyword()
-  {
-    return atRetryKeywordEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getAtRetryKeyword_Keyword()
-  {
-    return (EAttribute)atRetryKeywordEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)escalationToKeywordEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3231,6 +2938,72 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
    * @generated
    */
   @Override
+  public EClass getPrimaryProvider()
+  {
+    return primaryProviderEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getPrimaryProvider_Keyword()
+  {
+    return (EReference)primaryProviderEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getPrimaryProvider_Name()
+  {
+    return (EAttribute)primaryProviderEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getGenEscalationBlock()
+  {
+    return genEscalationBlockEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getGenEscalationBlock_Keyword()
+  {
+    return (EReference)genEscalationBlockEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getGenEscalationBlock_Name()
+  {
+    return (EAttribute)genEscalationBlockEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public LibrettoProjectProfileFactory getLibrettoProjectProfileFactory()
   {
     return (LibrettoProjectProfileFactory)getEFactoryInstance();
@@ -3342,7 +3115,6 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
     genBlockEClass = createEClass(GEN_BLOCK);
     createEReference(genBlockEClass, GEN_BLOCK__KEYWORD);
     createEReference(genBlockEClass, GEN_BLOCK__INITIAL_INSTRUCTIONS);
-    createEReference(genBlockEClass, GEN_BLOCK__MAX_RETRIES);
     createEReference(genBlockEClass, GEN_BLOCK__PARSE_CHECKS);
     createEReference(genBlockEClass, GEN_BLOCK__DEFAULT_CORRECTIONS);
     createEReference(genBlockEClass, GEN_BLOCK__REMEDIATIONS);
@@ -3475,48 +3247,19 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
 
     genUsageBlockEClass = createEClass(GEN_USAGE_BLOCK);
     createEReference(genUsageBlockEClass, GEN_USAGE_BLOCK__KEYWORD);
-    createEReference(genUsageBlockEClass, GEN_USAGE_BLOCK__PRIMARY_PROVIDERS);
-    createEReference(genUsageBlockEClass, GEN_USAGE_BLOCK__SECONDARY_PROVIDERS);
+    createEReference(genUsageBlockEClass, GEN_USAGE_BLOCK__PROVIDERS);
+    createEReference(genUsageBlockEClass, GEN_USAGE_BLOCK__MAX_RETRIES);
     createEReference(genUsageBlockEClass, GEN_USAGE_BLOCK__ESCALATIONS);
 
     modelUsageKeywordEClass = createEClass(MODEL_USAGE_KEYWORD);
     createEAttribute(modelUsageKeywordEClass, MODEL_USAGE_KEYWORD__KEYWORD);
 
-    primaryProviderEClass = createEClass(PRIMARY_PROVIDER);
-    createEReference(primaryProviderEClass, PRIMARY_PROVIDER__KEYWORD);
-    createEAttribute(primaryProviderEClass, PRIMARY_PROVIDER__NAME);
+    providerEClass = createEClass(PROVIDER);
 
-    primaryProviderKeywordEClass = createEClass(PRIMARY_PROVIDER_KEYWORD);
-    createEAttribute(primaryProviderKeywordEClass, PRIMARY_PROVIDER_KEYWORD__KEYWORD);
+    escalationProviderEClass = createEClass(ESCALATION_PROVIDER);
 
-    secondaryProviderEClass = createEClass(SECONDARY_PROVIDER);
-    createEReference(secondaryProviderEClass, SECONDARY_PROVIDER__KEYWORD);
-    createEAttribute(secondaryProviderEClass, SECONDARY_PROVIDER__NAME);
-
-    secondaryProviderKeywordEClass = createEClass(SECONDARY_PROVIDER_KEYWORD);
-    createEAttribute(secondaryProviderKeywordEClass, SECONDARY_PROVIDER_KEYWORD__KEYWORD);
-
-    genEscalationBlockEClass = createEClass(GEN_ESCALATION_BLOCK);
-    createEReference(genEscalationBlockEClass, GEN_ESCALATION_BLOCK__KEYWORD);
-    createEReference(genEscalationBlockEClass, GEN_ESCALATION_BLOCK__ENABLEDS);
-    createEReference(genEscalationBlockEClass, GEN_ESCALATION_BLOCK__AT_RETRIES);
-
-    escalationKeywordEClass = createEClass(ESCALATION_KEYWORD);
-    createEAttribute(escalationKeywordEClass, ESCALATION_KEYWORD__KEYWORD);
-
-    enabledEClass = createEClass(ENABLED);
-    createEReference(enabledEClass, ENABLED__KEYWORD);
-    createEReference(enabledEClass, ENABLED__VALUE);
-
-    enabledKeywordEClass = createEClass(ENABLED_KEYWORD);
-    createEAttribute(enabledKeywordEClass, ENABLED_KEYWORD__KEYWORD);
-
-    atRetryEClass = createEClass(AT_RETRY);
-    createEReference(atRetryEClass, AT_RETRY__KEYWORD);
-    createEAttribute(atRetryEClass, AT_RETRY__VALUE);
-
-    atRetryKeywordEClass = createEClass(AT_RETRY_KEYWORD);
-    createEAttribute(atRetryKeywordEClass, AT_RETRY_KEYWORD__KEYWORD);
+    escalationToKeywordEClass = createEClass(ESCALATION_TO_KEYWORD);
+    createEAttribute(escalationToKeywordEClass, ESCALATION_TO_KEYWORD__KEYWORD);
 
     surfaceBlockEClass = createEClass(SURFACE_BLOCK);
     createEReference(surfaceBlockEClass, SURFACE_BLOCK__ELEMENTS);
@@ -3563,6 +3306,14 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
 
     trueKeywordEClass = createEClass(TRUE_KEYWORD);
     createEAttribute(trueKeywordEClass, TRUE_KEYWORD__KEYWORD);
+
+    primaryProviderEClass = createEClass(PRIMARY_PROVIDER);
+    createEReference(primaryProviderEClass, PRIMARY_PROVIDER__KEYWORD);
+    createEAttribute(primaryProviderEClass, PRIMARY_PROVIDER__NAME);
+
+    genEscalationBlockEClass = createEClass(GEN_ESCALATION_BLOCK);
+    createEReference(genEscalationBlockEClass, GEN_ESCALATION_BLOCK__KEYWORD);
+    createEAttribute(genEscalationBlockEClass, GEN_ESCALATION_BLOCK__NAME);
   }
 
   /**
@@ -3603,6 +3354,8 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
     qualifiedNameEClass.getESuperTypes().add(this.getJavaType());
     primitiveTypeEClass.getESuperTypes().add(this.getJavaType());
     trueKeywordEClass.getESuperTypes().add(this.getTrueFalseKeyword());
+    primaryProviderEClass.getESuperTypes().add(this.getProvider());
+    genEscalationBlockEClass.getESuperTypes().add(this.getEscalationProvider());
 
     // Initialize classes and features; add operations and parameters
     initEClass(projectProfileEClass, ProjectProfile.class, "ProjectProfile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -3691,7 +3444,6 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
     initEClass(genBlockEClass, GenBlock.class, "GenBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getGenBlock_Keyword(), this.getGenKeyword(), null, "keyword", null, 0, 1, GenBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGenBlock_InitialInstructions(), this.getInitialInstruction(), null, "initialInstructions", null, 0, -1, GenBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGenBlock_MaxRetries(), this.getMaxRetries(), null, "maxRetries", null, 0, -1, GenBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGenBlock_ParseChecks(), this.getParseCheck(), null, "parseChecks", null, 0, -1, GenBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGenBlock_DefaultCorrections(), this.getDefaultCorrection(), null, "defaultCorrections", null, 0, -1, GenBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGenBlock_Remediations(), this.getGenRemediationRules(), null, "remediations", null, 0, -1, GenBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3824,48 +3576,19 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
 
     initEClass(genUsageBlockEClass, GenUsageBlock.class, "GenUsageBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getGenUsageBlock_Keyword(), this.getModelUsageKeyword(), null, "keyword", null, 0, 1, GenUsageBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGenUsageBlock_PrimaryProviders(), this.getPrimaryProvider(), null, "primaryProviders", null, 0, -1, GenUsageBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGenUsageBlock_SecondaryProviders(), this.getSecondaryProvider(), null, "secondaryProviders", null, 0, -1, GenUsageBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGenUsageBlock_Escalations(), this.getGenEscalationBlock(), null, "escalations", null, 0, -1, GenUsageBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGenUsageBlock_Providers(), this.getProvider(), null, "providers", null, 0, -1, GenUsageBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGenUsageBlock_MaxRetries(), this.getMaxRetries(), null, "maxRetries", null, 0, -1, GenUsageBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGenUsageBlock_Escalations(), this.getEscalationProvider(), null, "escalations", null, 0, -1, GenUsageBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(modelUsageKeywordEClass, ModelUsageKeyword.class, "ModelUsageKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getModelUsageKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, ModelUsageKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(primaryProviderEClass, PrimaryProvider.class, "PrimaryProvider", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPrimaryProvider_Keyword(), this.getPrimaryProviderKeyword(), null, "keyword", null, 0, 1, PrimaryProvider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getPrimaryProvider_Name(), ecorePackage.getEString(), "name", null, 0, 1, PrimaryProvider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(providerEClass, Provider.class, "Provider", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(primaryProviderKeywordEClass, PrimaryProviderKeyword.class, "PrimaryProviderKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPrimaryProviderKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, PrimaryProviderKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(escalationProviderEClass, EscalationProvider.class, "EscalationProvider", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(secondaryProviderEClass, SecondaryProvider.class, "SecondaryProvider", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSecondaryProvider_Keyword(), this.getSecondaryProviderKeyword(), null, "keyword", null, 0, 1, SecondaryProvider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSecondaryProvider_Name(), ecorePackage.getEString(), "name", null, 0, 1, SecondaryProvider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(secondaryProviderKeywordEClass, SecondaryProviderKeyword.class, "SecondaryProviderKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSecondaryProviderKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, SecondaryProviderKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(genEscalationBlockEClass, GenEscalationBlock.class, "GenEscalationBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getGenEscalationBlock_Keyword(), this.getEscalationKeyword(), null, "keyword", null, 0, 1, GenEscalationBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGenEscalationBlock_Enableds(), this.getEnabled(), null, "enableds", null, 0, -1, GenEscalationBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGenEscalationBlock_AtRetries(), this.getAtRetry(), null, "atRetries", null, 0, -1, GenEscalationBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(escalationKeywordEClass, EscalationKeyword.class, "EscalationKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEscalationKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, EscalationKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(enabledEClass, Enabled.class, "Enabled", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getEnabled_Keyword(), this.getEnabledKeyword(), null, "keyword", null, 0, 1, Enabled.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEnabled_Value(), this.getTrueFalseKeyword(), null, "value", null, 0, 1, Enabled.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(enabledKeywordEClass, EnabledKeyword.class, "EnabledKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEnabledKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, EnabledKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(atRetryEClass, AtRetry.class, "AtRetry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAtRetry_Keyword(), this.getAtRetryKeyword(), null, "keyword", null, 0, 1, AtRetry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAtRetry_Value(), ecorePackage.getEInt(), "value", null, 0, 1, AtRetry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(atRetryKeywordEClass, AtRetryKeyword.class, "AtRetryKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAtRetryKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, AtRetryKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(escalationToKeywordEClass, EscalationToKeyword.class, "EscalationToKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEscalationToKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, EscalationToKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(surfaceBlockEClass, SurfaceBlock.class, "SurfaceBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSurfaceBlock_Elements(), this.getSurfaceElement(), null, "elements", null, 0, -1, SurfaceBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3912,6 +3635,14 @@ public class LibrettoProjectProfilePackageImpl extends EPackageImpl implements L
 
     initEClass(trueKeywordEClass, TrueKeyword.class, "TrueKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTrueKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, TrueKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(primaryProviderEClass, PrimaryProvider.class, "PrimaryProvider", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPrimaryProvider_Keyword(), this.getProviderKeyword(), null, "keyword", null, 0, 1, PrimaryProvider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPrimaryProvider_Name(), ecorePackage.getEString(), "name", null, 0, 1, PrimaryProvider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(genEscalationBlockEClass, GenEscalationBlock.class, "GenEscalationBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getGenEscalationBlock_Keyword(), this.getEscalationToKeyword(), null, "keyword", null, 0, 1, GenEscalationBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGenEscalationBlock_Name(), ecorePackage.getEString(), "name", null, 0, 1, GenEscalationBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

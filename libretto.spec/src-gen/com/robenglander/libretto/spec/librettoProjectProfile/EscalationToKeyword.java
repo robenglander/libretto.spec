@@ -7,21 +7,21 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Primary Provider Keyword</b></em>'.
+ * A representation of the model object '<em><b>Escalation To Keyword</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProviderKeyword#getKeyword <em>Keyword</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.EscalationToKeyword#getKeyword <em>Keyword</em>}</li>
  * </ul>
  *
- * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getPrimaryProviderKeyword()
+ * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getEscalationToKeyword()
  * @model
  * @generated
  */
-public interface PrimaryProviderKeyword extends EObject
+public interface EscalationToKeyword extends EObject
 {
   /**
    * Returns the value of the '<em><b>Keyword</b></em>' attribute.
@@ -29,14 +29,14 @@ public interface PrimaryProviderKeyword extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Keyword</em>' attribute.
    * @see #setKeyword(String)
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getPrimaryProviderKeyword_Keyword()
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getEscalationToKeyword_Keyword()
    * @model
    * @generated
    */
   String getKeyword();
 
   /**
-   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProviderKeyword#getKeyword <em>Keyword</em>}' attribute.
+   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.EscalationToKeyword#getKeyword <em>Keyword</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Keyword</em>' attribute.
@@ -45,4 +45,4 @@ public interface PrimaryProviderKeyword extends EObject
    */
   void setKeyword(String value);
 
-} // PrimaryProviderKeyword
+} // EscalationToKeyword

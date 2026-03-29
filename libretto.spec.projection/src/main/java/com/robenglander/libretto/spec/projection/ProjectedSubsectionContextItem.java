@@ -8,19 +8,19 @@ public sealed interface ProjectedSubsectionContextItem permits
 
 	record SectionLine(String sectionLabel) implements ProjectedSubsectionContextItem {
 		public SectionLine {
-			sectionLabel = sectionLabel == null ? "" : sectionLabel;
+			sectionLabel = ProjectionStrings.requireNonBlank(sectionLabel, "sectionLabel");
 		}
 	}
 
 	record SubsectionLine(String subsectionLabel) implements ProjectedSubsectionContextItem {
 		public SubsectionLine {
-			subsectionLabel = subsectionLabel == null ? "" : subsectionLabel;
+			subsectionLabel = ProjectionStrings.requireNonBlank(subsectionLabel, "subsectionLabel");
 		}
 	}
 
 	record TextBody(String text) implements ProjectedSubsectionContextItem {
 		public TextBody {
-			text = text == null ? "" : text;
+			text = ProjectionStrings.requireNonNullTrim(text, "text");
 		}
 	}
 }

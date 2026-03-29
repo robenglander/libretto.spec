@@ -3,12 +3,12 @@
  */
 package com.robenglander.libretto.spec.librettoProjectProfile.impl;
 
-import com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock;
+import com.robenglander.libretto.spec.librettoProjectProfile.EscalationProvider;
 import com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock;
 import com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage;
+import com.robenglander.libretto.spec.librettoProjectProfile.MaxRetries;
 import com.robenglander.libretto.spec.librettoProjectProfile.ModelUsageKeyword;
-import com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider;
-import com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProvider;
+import com.robenglander.libretto.spec.librettoProjectProfile.Provider;
 
 import java.util.Collection;
 
@@ -35,8 +35,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenUsageBlockImpl#getKeyword <em>Keyword</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenUsageBlockImpl#getPrimaryProviders <em>Primary Providers</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenUsageBlockImpl#getSecondaryProviders <em>Secondary Providers</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenUsageBlockImpl#getProviders <em>Providers</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenUsageBlockImpl#getMaxRetries <em>Max Retries</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenUsageBlockImpl#getEscalations <em>Escalations</em>}</li>
  * </ul>
  *
@@ -55,24 +55,24 @@ public class GenUsageBlockImpl extends MinimalEObjectImpl.Container implements G
   protected ModelUsageKeyword keyword;
 
   /**
-   * The cached value of the '{@link #getPrimaryProviders() <em>Primary Providers</em>}' containment reference list.
+   * The cached value of the '{@link #getProviders() <em>Providers</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPrimaryProviders()
+   * @see #getProviders()
    * @generated
    * @ordered
    */
-  protected EList<PrimaryProvider> primaryProviders;
+  protected EList<Provider> providers;
 
   /**
-   * The cached value of the '{@link #getSecondaryProviders() <em>Secondary Providers</em>}' containment reference list.
+   * The cached value of the '{@link #getMaxRetries() <em>Max Retries</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSecondaryProviders()
+   * @see #getMaxRetries()
    * @generated
    * @ordered
    */
-  protected EList<SecondaryProvider> secondaryProviders;
+  protected EList<MaxRetries> maxRetries;
 
   /**
    * The cached value of the '{@link #getEscalations() <em>Escalations</em>}' containment reference list.
@@ -82,7 +82,7 @@ public class GenUsageBlockImpl extends MinimalEObjectImpl.Container implements G
    * @generated
    * @ordered
    */
-  protected EList<GenEscalationBlock> escalations;
+  protected EList<EscalationProvider> escalations;
 
   /**
    * <!-- begin-user-doc -->
@@ -161,13 +161,13 @@ public class GenUsageBlockImpl extends MinimalEObjectImpl.Container implements G
    * @generated
    */
   @Override
-  public EList<PrimaryProvider> getPrimaryProviders()
+  public EList<Provider> getProviders()
   {
-    if (primaryProviders == null)
+    if (providers == null)
     {
-      primaryProviders = new EObjectContainmentEList<PrimaryProvider>(PrimaryProvider.class, this, LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__PRIMARY_PROVIDERS);
+      providers = new EObjectContainmentEList<Provider>(Provider.class, this, LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__PROVIDERS);
     }
-    return primaryProviders;
+    return providers;
   }
 
   /**
@@ -176,13 +176,13 @@ public class GenUsageBlockImpl extends MinimalEObjectImpl.Container implements G
    * @generated
    */
   @Override
-  public EList<SecondaryProvider> getSecondaryProviders()
+  public EList<MaxRetries> getMaxRetries()
   {
-    if (secondaryProviders == null)
+    if (maxRetries == null)
     {
-      secondaryProviders = new EObjectContainmentEList<SecondaryProvider>(SecondaryProvider.class, this, LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__SECONDARY_PROVIDERS);
+      maxRetries = new EObjectContainmentEList<MaxRetries>(MaxRetries.class, this, LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__MAX_RETRIES);
     }
-    return secondaryProviders;
+    return maxRetries;
   }
 
   /**
@@ -191,11 +191,11 @@ public class GenUsageBlockImpl extends MinimalEObjectImpl.Container implements G
    * @generated
    */
   @Override
-  public EList<GenEscalationBlock> getEscalations()
+  public EList<EscalationProvider> getEscalations()
   {
     if (escalations == null)
     {
-      escalations = new EObjectContainmentEList<GenEscalationBlock>(GenEscalationBlock.class, this, LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__ESCALATIONS);
+      escalations = new EObjectContainmentEList<EscalationProvider>(EscalationProvider.class, this, LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__ESCALATIONS);
     }
     return escalations;
   }
@@ -212,10 +212,10 @@ public class GenUsageBlockImpl extends MinimalEObjectImpl.Container implements G
     {
       case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__KEYWORD:
         return basicSetKeyword(null, msgs);
-      case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__PRIMARY_PROVIDERS:
-        return ((InternalEList<?>)getPrimaryProviders()).basicRemove(otherEnd, msgs);
-      case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__SECONDARY_PROVIDERS:
-        return ((InternalEList<?>)getSecondaryProviders()).basicRemove(otherEnd, msgs);
+      case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__PROVIDERS:
+        return ((InternalEList<?>)getProviders()).basicRemove(otherEnd, msgs);
+      case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__MAX_RETRIES:
+        return ((InternalEList<?>)getMaxRetries()).basicRemove(otherEnd, msgs);
       case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__ESCALATIONS:
         return ((InternalEList<?>)getEscalations()).basicRemove(otherEnd, msgs);
     }
@@ -234,10 +234,10 @@ public class GenUsageBlockImpl extends MinimalEObjectImpl.Container implements G
     {
       case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__KEYWORD:
         return getKeyword();
-      case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__PRIMARY_PROVIDERS:
-        return getPrimaryProviders();
-      case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__SECONDARY_PROVIDERS:
-        return getSecondaryProviders();
+      case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__PROVIDERS:
+        return getProviders();
+      case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__MAX_RETRIES:
+        return getMaxRetries();
       case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__ESCALATIONS:
         return getEscalations();
     }
@@ -258,17 +258,17 @@ public class GenUsageBlockImpl extends MinimalEObjectImpl.Container implements G
       case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__KEYWORD:
         setKeyword((ModelUsageKeyword)newValue);
         return;
-      case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__PRIMARY_PROVIDERS:
-        getPrimaryProviders().clear();
-        getPrimaryProviders().addAll((Collection<? extends PrimaryProvider>)newValue);
+      case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__PROVIDERS:
+        getProviders().clear();
+        getProviders().addAll((Collection<? extends Provider>)newValue);
         return;
-      case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__SECONDARY_PROVIDERS:
-        getSecondaryProviders().clear();
-        getSecondaryProviders().addAll((Collection<? extends SecondaryProvider>)newValue);
+      case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__MAX_RETRIES:
+        getMaxRetries().clear();
+        getMaxRetries().addAll((Collection<? extends MaxRetries>)newValue);
         return;
       case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__ESCALATIONS:
         getEscalations().clear();
-        getEscalations().addAll((Collection<? extends GenEscalationBlock>)newValue);
+        getEscalations().addAll((Collection<? extends EscalationProvider>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -287,11 +287,11 @@ public class GenUsageBlockImpl extends MinimalEObjectImpl.Container implements G
       case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__KEYWORD:
         setKeyword((ModelUsageKeyword)null);
         return;
-      case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__PRIMARY_PROVIDERS:
-        getPrimaryProviders().clear();
+      case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__PROVIDERS:
+        getProviders().clear();
         return;
-      case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__SECONDARY_PROVIDERS:
-        getSecondaryProviders().clear();
+      case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__MAX_RETRIES:
+        getMaxRetries().clear();
         return;
       case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__ESCALATIONS:
         getEscalations().clear();
@@ -312,10 +312,10 @@ public class GenUsageBlockImpl extends MinimalEObjectImpl.Container implements G
     {
       case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__KEYWORD:
         return keyword != null;
-      case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__PRIMARY_PROVIDERS:
-        return primaryProviders != null && !primaryProviders.isEmpty();
-      case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__SECONDARY_PROVIDERS:
-        return secondaryProviders != null && !secondaryProviders.isEmpty();
+      case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__PROVIDERS:
+        return providers != null && !providers.isEmpty();
+      case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__MAX_RETRIES:
+        return maxRetries != null && !maxRetries.isEmpty();
       case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK__ESCALATIONS:
         return escalations != null && !escalations.isEmpty();
     }

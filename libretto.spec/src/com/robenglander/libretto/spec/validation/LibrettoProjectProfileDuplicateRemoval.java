@@ -26,7 +26,6 @@ import com.robenglander.libretto.spec.librettoProjectProfile.Pattern;
 import com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider;
 import com.robenglander.libretto.spec.librettoProjectProfile.Profile;
 import com.robenglander.libretto.spec.librettoProjectProfile.ProviderType;
-import com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProvider;
 import com.robenglander.libretto.spec.librettoProjectProfile.ProjectBlock;
 import com.robenglander.libretto.spec.librettoProjectProfile.RootDirectory;
 import com.robenglander.libretto.spec.librettoProjectProfile.RootDirKeyword;
@@ -93,14 +92,12 @@ public final class LibrettoProjectProfileDuplicateRemoval {
 					firstAncestorOrSelf(ctx, GenRemediationRules.class);
 			case LibrettoProjectProfileValidator.GEN_TOO_MANY_MODEL_USAGES ->
 					firstAncestorOrSelf(ctx, GenUsageBlock.class);
-			case LibrettoProjectProfileValidator.MODEL_USAGE_TOO_MANY_PRIMARIES ->
+			case LibrettoProjectProfileValidator.MODEL_USAGE_TOO_MANY_PROVIDERS ->
 					firstAncestorOrSelf(ctx, PrimaryProvider.class);
-			case LibrettoProjectProfileValidator.MODEL_USAGE_TOO_MANY_SECONDARIES ->
-					firstAncestorOrSelf(ctx, SecondaryProvider.class);
 			case LibrettoProjectProfileValidator.MODEL_USAGE_TOO_MANY_ESCALATIONS ->
 					firstAncestorOrSelf(ctx, GenEscalationBlock.class);
-			case LibrettoProjectProfileValidator.MODEL_USAGE_PRIMARY_SECONDARY_SAME_NAME ->
-					removablePrimaryOrSecondary(ctx);
+			case LibrettoProjectProfileValidator.MODEL_USAGE_TOP_ESCALATION_PROVIDER_SAME_NAME ->
+					modelUsageTopEscalationSameNameRemovable(ctx);
 			case LibrettoProjectProfileValidator.RULES_TOO_MANY_DEFAULT_SECTIONS ->
 					firstAncestorOrSelf(ctx, GenDefaultRemediationRule.class);
 			case LibrettoProjectProfileValidator.RULE_TOO_MANY_PATTERNS -> firstAncestorOrSelf(ctx, Pattern.class);
@@ -114,13 +111,15 @@ public final class LibrettoProjectProfileDuplicateRemoval {
 		};
 	}
 
-	/** Prefer removing {@code secondary} when the diagnostic is anchored there; otherwise {@code primary}. */
-	private static EObject removablePrimaryOrSecondary(EObject ctx) {
-		EObject sec = firstAncestorOrSelf(ctx, SecondaryProvider.class);
-		if (sec != null) {
-			return sec;
+	/**
+	 * Same-name diagnostic is anchored on {@link GenEscalationBlock} name only; remove that escalation line.
+	 */
+	private static EObject modelUsageTopEscalationSameNameRemovable(EObject ctx) {
+		GenEscalationBlock eb = firstAncestorOrSelf(ctx, GenEscalationBlock.class);
+		if (eb != null) {
+			return eb;
 		}
-		return firstAncestorOrSelf(ctx, PrimaryProvider.class);
+		return null;
 	}
 
 	private static EObject firstModulePathDeclaration(EObject ctx) {

@@ -4,6 +4,6 @@ package com.robenglander.libretto.spec.projection;
 public record ProjectedModuleDir(String dir) {
 
 	public ProjectedModuleDir {
-		dir = dir == null ? "" : dir.trim();
+		dir = ProjectionStrings.requireNonBlank(dir, "dir");
 	}
 }

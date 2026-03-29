@@ -5,13 +5,13 @@ public sealed interface ProjectedSourceItem permits ProjectedSourceItem.SectionL
 
 	record SectionLine(String section) implements ProjectedSourceItem {
 		public SectionLine {
-			section = section == null ? "" : section;
+			section = ProjectionStrings.requireNonBlank(section, "section");
 		}
 	}
 
 	record SubsectionLine(String subsection) implements ProjectedSourceItem {
 		public SubsectionLine {
-			subsection = subsection == null ? "" : subsection;
+			subsection = ProjectionStrings.requireNonBlank(subsection, "subsection");
 		}
 	}
 }

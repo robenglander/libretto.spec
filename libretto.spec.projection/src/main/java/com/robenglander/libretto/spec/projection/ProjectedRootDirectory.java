@@ -6,6 +6,6 @@ package com.robenglander.libretto.spec.projection;
 public record ProjectedRootDirectory(String dir) {
 
 	public ProjectedRootDirectory {
-		dir = dir == null ? "" : dir.trim();
+		dir = ProjectionStrings.requireNonBlank(dir, "rootDir");
 	}
 }

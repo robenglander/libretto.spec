@@ -1,6 +1,7 @@
 package com.robenglander.libretto.spec.projection;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * {@code metadata} block: fields may repeat in the grammar; validation enforces structure.
@@ -8,6 +9,6 @@ import java.util.List;
 public record ProjectedMetadataSection(List<ProjectedMetadataField> fields) implements ProjectedSpecSection {
 
 	public ProjectedMetadataSection {
-		fields = fields == null ? List.of() : List.copyOf(fields);
+		fields = List.copyOf(Objects.requireNonNull(fields, "fields"));
 	}
 }

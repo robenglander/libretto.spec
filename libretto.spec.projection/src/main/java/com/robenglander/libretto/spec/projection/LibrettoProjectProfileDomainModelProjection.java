@@ -1,65 +1,57 @@
 package com.robenglander.libretto.spec.projection;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
- * Result of mapping the EMF file root ({@code ProjectProfile}: zero or more {@code Profile} children) to portable
- * types without EMF
- * or Xtext on the consumer classpath.
+ * Result of mapping the EMF file root ({@code ProjectProfile}) to portable types without EMF or Xtext on the
+ * consumer classpath.
  *
- * @param document all {@code profile} blocks from the file, in order
+ * @param projectedProfile exactly one logical profile; see {@link ProjectedProfile}
  */
-public record LibrettoProjectProfileDomainModelProjection(LibrettoProjectProfilesDocument document) {
+public record LibrettoProjectProfileDomainModelProjection(ProjectedProfile projectedProfile) {
 
 	public LibrettoProjectProfileDomainModelProjection {
-		document = document == null ? LibrettoProjectProfilesDocument.empty() : document;
-	}
-
-	/** Ordered list of portable models, one per {@code profile} block. */
-	public List<LibrettoProjectProfileDomainModel> profiles() {
-		return document.profiles();
+		projectedProfile = Objects.requireNonNull(projectedProfile, "projectedProfile");
 	}
 
 	/**
-	 * First {@code profile} block’s model, or {@link LibrettoProjectProfileDomainModel#empty()} when the file
-	 * has none. Convenience for single-profile files; use {@link #profiles()} when multiple apply.
+	 * The single profile’s portable model, or {@link LibrettoProjectProfileDomainModel#empty()} when the file has
+	 * no {@code profile} block.
 	 */
 	public LibrettoProjectProfileDomainModel domainModel() {
-		List<LibrettoProjectProfileDomainModel> p = document.profiles();
-		return p.isEmpty() ? LibrettoProjectProfileDomainModel.empty() : p.get(0);
+		return projectedProfile.profile();
 	}
 
-	/** {@link LibrettoProjectProfileDomainModel#profileName()} of the first profile; empty when none. */
+	/** {@link LibrettoProjectProfileDomainModel#profileName()} of {@link #domainModel()}. */
 	public String profileName() {
 		return domainModel().profileName();
 	}
 
-	/** Project blocks from the first profile only. */
-	public List<ProjectedProjectBlock> projectBlocks() {
-		return domainModel().projectBlocks();
-	}
-
-	/** LLM provider blocks from the first profile only. */
-	public List<ProjectedLlmProvidersBlock> llmProviderBlocks() {
-		return domainModel().llmProviderBlocks();
+	/**
+	 * The single {@code project { … }} block when present (validator-clean LPP has exactly one).
+	 */
+	public Optional<ProjectedProjectBlock> project() {
+		return domainModel().project();
 	}
 
 	/**
-	 * First {@code project} block of the first profile, or {@code null}. Matches common single-profile
-	 * files; use {@link #profiles()} for multi-profile data.
+	 * The single {@code llmProviders { … }} block when present (validator-clean LPP has exactly one).
 	 */
-	public ProjectedProjectBlock projectBlock() {
-		List<ProjectedProjectBlock> blocks = domainModel().projectBlocks();
-		return blocks.isEmpty() ? null : blocks.get(0);
+	public Optional<ProjectedLlmProvidersBlock> llmProvidersBlock() {
+		return domainModel().llmProviders();
 	}
 
-	/** All providers from every {@code llmProviders} block in every profile, in order. */
+	/**
+	 * Same as {@link #project()}; kept for older call sites.
+	 */
+	public Optional<ProjectedProjectBlock> projectBlock() {
+		return domainModel().project();
+	}
+
+	/** All providers from the {@code llmProviders} block, in declaration order. */
 	public List<ProjectedLlmProvider> llmProviders() {
-		List<ProjectedLlmProvider> out = new ArrayList<>();
-		for (LibrettoProjectProfileDomainModel m : document.profiles()) {
-			out.addAll(m.allLlmProviders());
-		}
-		return List.copyOf(out);
+		return domainModel().allLlmProviders();
 	}
 }

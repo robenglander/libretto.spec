@@ -1,11 +1,8 @@
 package com.robenglander.libretto.spec.projection;
 
 /**
- * Portable view of {@code parseCheck} with {@code true}/{@code false} keyword under {@code gen}.
+ * Portable view of a {@code parseCheck} line under {@code gen}. The {@code boolean} is the grammar
+ * {@code value = TrueFalseKeyword} (lexical {@code true} / {@code false}), not the {@code parseCheck} keyword token.
  */
-public record ProjectedGenParseCheck(String value) {
-
-	public ProjectedGenParseCheck {
-		value = value == null ? "" : value.trim();
-	}
+public record ProjectedGenParseCheck(boolean value) {
 }

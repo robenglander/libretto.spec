@@ -1,6 +1,7 @@
 package com.robenglander.libretto.spec.projection;
 
 import java.util.List;
+import java.util.Objects;
 
 /** Either {@code section_context} or {@code subsection_context}. */
 public sealed interface ProjectedProseRecord permits
@@ -9,13 +10,13 @@ public sealed interface ProjectedProseRecord permits
 
 	record SectionContext(List<ProjectedSectionContextItem> items) implements ProjectedProseRecord {
 		public SectionContext {
-			items = items == null ? List.of() : List.copyOf(items);
+			items = List.copyOf(Objects.requireNonNull(items, "items"));
 		}
 	}
 
 	record SubsectionContext(List<ProjectedSubsectionContextItem> items) implements ProjectedProseRecord {
 		public SubsectionContext {
-			items = items == null ? List.of() : List.copyOf(items);
+			items = List.copyOf(Objects.requireNonNull(items, "items"));
 		}
 	}
 }

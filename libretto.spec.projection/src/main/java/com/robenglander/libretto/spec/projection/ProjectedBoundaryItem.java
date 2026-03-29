@@ -8,25 +8,25 @@ public sealed interface ProjectedBoundaryItem permits
 
 	record SpecId(String specId) implements ProjectedBoundaryItem {
 		public SpecId {
-			specId = specId == null ? "" : specId;
+			specId = ProjectionStrings.requireNonBlank(specId, "specId");
 		}
 	}
 
 	record OperationId(String operationId) implements ProjectedBoundaryItem {
 		public OperationId {
-			operationId = operationId == null ? "" : operationId;
+			operationId = ProjectionStrings.requireNonBlank(operationId, "operationId");
 		}
 	}
 
 	record ProfileId(String profileId) implements ProjectedBoundaryItem {
 		public ProfileId {
-			profileId = profileId == null ? "" : profileId;
+			profileId = ProjectionStrings.requireNonBlank(profileId, "profileId");
 		}
 	}
 
 	record Raw(String raw) implements ProjectedBoundaryItem {
 		public Raw {
-			raw = raw == null ? "" : raw;
+			raw = ProjectionStrings.requireNonNullTrim(raw, "raw");
 		}
 	}
 }

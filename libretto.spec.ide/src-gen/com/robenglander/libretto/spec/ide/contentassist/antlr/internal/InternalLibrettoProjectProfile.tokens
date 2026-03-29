@@ -6,8 +6,6 @@
 ';'=62
 '_'=52
 'as'=61
-'atRetry'=40
-'atretry'=39
 'basePackage'=20
 'basepackage'=19
 'boolean'=41
@@ -20,10 +18,10 @@
 'defaultcorrection'=27
 'dir'=74
 'double'=44
-'enabled'=88
 'endPoint'=36
 'endpoint'=35
-'escalation'=87
+'escalationTo'=40
+'escalationto'=39
 'false'=30
 'filePath'=34
 'filepath'=33
@@ -52,7 +50,6 @@
 'parseCheck'=26
 'parsecheck'=25
 'pattern'=78
-'primary'=85
 'profile'=71
 'project'=72
 'provider'=82
@@ -63,7 +60,6 @@
 'rootdir'=11
 'rule'=77
 'rules'=76
-'secondary'=86
 'short'=46
 'spec'=58
 'specDir'=14
@@ -157,7 +153,3 @@ T__81=81
 T__82=82
 T__83=83
 T__84=84
-T__85=85
-T__86=86
-T__87=87
-T__88=88

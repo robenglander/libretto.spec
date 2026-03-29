@@ -4,6 +4,6 @@ package com.robenglander.libretto.spec.projection;
 public record ProjectedGenRemediationCorrection(String correction) {
 
 	public ProjectedGenRemediationCorrection {
-		correction = correction == null ? "" : correction.trim();
+		correction = ProjectionStrings.requireNonBlank(correction, "correction");
 	}
 }

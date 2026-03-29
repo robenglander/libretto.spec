@@ -1,6 +1,7 @@
 package com.robenglander.libretto.spec.projection;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * One {@code implements} line group: {@code implements target_spec ...} (grammar allows multiple
@@ -9,6 +10,6 @@ import java.util.List;
 public record ProjectedImplementsSurfaceRecord(List<String> targetSpecs) {
 
 	public ProjectedImplementsSurfaceRecord {
-		targetSpecs = targetSpecs == null ? List.of() : List.copyOf(targetSpecs);
+		targetSpecs = List.copyOf(Objects.requireNonNull(targetSpecs, "targetSpecs"));
 	}
 }

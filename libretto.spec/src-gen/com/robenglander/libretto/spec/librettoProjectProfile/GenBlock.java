@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getKeyword <em>Keyword</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getInitialInstructions <em>Initial Instructions</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getMaxRetries <em>Max Retries</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getParseChecks <em>Parse Checks</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getDefaultCorrections <em>Default Corrections</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getRemediations <em>Remediations</em>}</li>
@@ -64,18 +63,6 @@ public interface GenBlock extends EObject
    * @generated
    */
   EList<InitialInstruction> getInitialInstructions();
-
-  /**
-   * Returns the value of the '<em><b>Max Retries</b></em>' containment reference list.
-   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.MaxRetries}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Max Retries</em>' containment reference list.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenBlock_MaxRetries()
-   * @model containment="true"
-   * @generated
-   */
-  EList<MaxRetries> getMaxRetries();
 
   /**
    * Returns the value of the '<em><b>Parse Checks</b></em>' containment reference list.

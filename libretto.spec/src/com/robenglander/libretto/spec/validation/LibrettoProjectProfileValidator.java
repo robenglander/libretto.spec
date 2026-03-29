@@ -12,19 +12,17 @@ import java.util.Set;
 import java.util.function.Function;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
 
-import com.robenglander.libretto.spec.librettoProjectProfile.AtRetry;
 import com.robenglander.libretto.spec.librettoProjectProfile.BasePackage;
 import com.robenglander.libretto.spec.librettoProjectProfile.Code;
 import com.robenglander.libretto.spec.librettoProjectProfile.Correction;
 import com.robenglander.libretto.spec.librettoProjectProfile.DefaultCorrection;
 import com.robenglander.libretto.spec.librettoProjectProfile.Directory;
-import com.robenglander.libretto.spec.librettoProjectProfile.Enabled;
 import com.robenglander.libretto.spec.librettoProjectProfile.Endpoint;
 import com.robenglander.libretto.spec.librettoProjectProfile.GenBlock;
 import com.robenglander.libretto.spec.librettoProjectProfile.GenDefaultRemediationRule;
+import com.robenglander.libretto.spec.librettoProjectProfile.EscalationProvider;
 import com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock;
 import com.robenglander.libretto.spec.librettoProjectProfile.GenPatternRemediationRule;
 import com.robenglander.libretto.spec.librettoProjectProfile.GenRemediationRules;
@@ -45,14 +43,13 @@ import com.robenglander.libretto.spec.librettoProjectProfile.Model;
 import com.robenglander.libretto.spec.librettoProjectProfile.ParseCheck;
 import com.robenglander.libretto.spec.librettoProjectProfile.Pattern;
 import com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider;
+import com.robenglander.libretto.spec.librettoProjectProfile.Provider;
 import com.robenglander.libretto.spec.librettoProjectProfile.ProviderType;
 import com.robenglander.libretto.spec.librettoProjectProfile.ProjectModule;
 import com.robenglander.libretto.spec.librettoProjectProfile.ProjectProfile;
 import com.robenglander.libretto.spec.librettoProjectProfile.RootDirectory;
-import com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProvider;
 import com.robenglander.libretto.spec.librettoProjectProfile.SpecDirectory;
 import com.robenglander.libretto.spec.librettoProjectProfile.TestDirectory;
-import com.robenglander.libretto.spec.librettoProjectProfile.TrueKeyword;
 
 
 /**
@@ -76,13 +73,13 @@ public class LibrettoProjectProfileValidator extends AbstractLibrettoProjectProf
 	public static final String MISSING_GEN_SECTION = "missing_gen_section";
 	public static final String TOO_MANY_GEN_SECTIONS = "too_many_gen_sections";
 	public static final String GEN_MISSING_INITIAL_INSTRUCTION = "gen_missing_initial_instruction";
-	public static final String GEN_MISSING_MAX_RETRIES = "gen_missing_max_retries";
 	public static final String GEN_MISSING_PARSE_CHECK = "gen_missing_parse_check";
 	public static final String GEN_MISSING_DEFAULT_CORRECTION = "gen_missing_default_correction";
 	public static final String GEN_MISSING_RULES = "gen_missing_rules";
 	public static final String GEN_MISSING_MODEL_USAGE = "gen_missing_model_usage";
 	public static final String GEN_TOO_MANY_MODEL_USAGES = "gen_too_many_model_usage";
 	public static final String GEN_TOO_MANY_INITIAL_INSTRUCTIONS = "gen_too_many_initial_instruction";
+	/** Duplicate {@code maxRetries} lines inside {@code modelUsage { ... }}. */
 	public static final String GEN_TOO_MANY_MAX_RETRIES = "gen_too_many_max_retries";
 	public static final String GEN_TOO_MANY_PARSE_CHECKS = "gen_too_many_parse_check";
 	public static final String GEN_TOO_MANY_DEFAULT_CORRECTIONS = "gen_too_many_default_correction";
@@ -145,18 +142,13 @@ public class LibrettoProjectProfileValidator extends AbstractLibrettoProjectProf
 	public static final String MODULE_DUPLICATE_PATH_DECLARATION = "module_duplicate_path_declaration";
 	public static final String TOO_MANY_PROFILES = "too_many_profiles";
 	public static final String GEN_MAX_RETRIES_OUT_OF_RANGE = "gen_max_retries_out_of_range";
-	public static final String AT_RETRY_OUT_OF_RANGE = "at_retry_out_of_range";
-	public static final String AT_RETRY_EXCEEDS_MAX_RETRIES = "at_retry_exceeds_max_retries";
-	public static final String MODEL_USAGE_MISSING_PRIMARY = "model_usage_missing_primary";
-	public static final String MODEL_USAGE_MISSING_SECONDARY = "model_usage_missing_secondary";
-	public static final String MODEL_USAGE_MISSING_ESCALATION = "model_usage_missing_escalation";
-	public static final String MODEL_USAGE_TOO_MANY_PRIMARIES = "model_usage_too_many_primary";
-	public static final String MODEL_USAGE_TOO_MANY_SECONDARIES = "model_usage_too_many_secondary";
+	public static final String MODEL_USAGE_MISSING_MAX_RETRIES = "model_usage_missing_max_retries";
+	public static final String MODEL_USAGE_MISSING_PROVIDER = "model_usage_missing_provider";
+	public static final String MODEL_USAGE_TOO_MANY_PROVIDERS = "model_usage_too_many_providers";
 	public static final String MODEL_USAGE_TOO_MANY_ESCALATIONS = "model_usage_too_many_escalation";
-	public static final String MODEL_USAGE_PRIMARY_UNKNOWN_PROVIDER = "model_usage_primary_unknown_provider";
-	public static final String MODEL_USAGE_SECONDARY_UNKNOWN_PROVIDER = "model_usage_secondary_unknown_provider";
-	/** {@code primary} and {@code secondary} name the same provider; anchor on each keyword. */
-	public static final String MODEL_USAGE_PRIMARY_SECONDARY_SAME_NAME = "model_usage_primary_secondary_same_name";
+	public static final String MODEL_USAGE_UNKNOWN_PROVIDER = "model_usage_unknown_provider";
+	/** Top-level {@code provider} and {@code escalationTo} target must not share the same name. */
+	public static final String MODEL_USAGE_TOP_ESCALATION_PROVIDER_SAME_NAME = "model_usage_top_escalation_provider_same_name";
 	public static final String RULE_MISSING_PATTERN = "rule_missing_pattern";
 	public static final String RULE_MISSING_CODE = "rule_missing_code";
 	public static final String RULE_MISSING_CORRECTION = "rule_missing_correction";
@@ -789,208 +781,130 @@ public class LibrettoProjectProfileValidator extends AbstractLibrettoProjectProf
 	}
 
 	/**
-	 * {@code atRetry} must be between 0 and 5 (inclusive). Anchor on the {@code atRetry} keyword.
-	 */
-	@Check
-	public void checkAtRetryRange(AtRetry ar) {
-		if (ar == null) {
-			return;
-		}
-		int v = ar.getValue();
-		if (v < MIN_RETRY_BOUND || v > MAX_RETRY_BOUND) {
-			errorOnAtRetryKeyword(
-					ar,
-					"atRetry must be between 0 and 5.",
-					AT_RETRY_OUT_OF_RANGE);
-		}
-	}
-
-	/**
-	 * When {@code atRetry} is greater than this {@code gen} block’s {@code maxRetries} (first declaration), warn on
-	 * {@code atRetry}.
-	 */
-	@Check
-	public void checkAtRetryVsMaxRetries(AtRetry ar) {
-		if (ar == null) {
-			return;
-		}
-		GenBlock gen = enclosingGenBlock(ar);
-		Integer maxVal = firstMaxRetriesValue(gen);
-		if (maxVal == null) {
-			return;
-		}
-		if (ar.getValue() > maxVal.intValue()) {
-			warningOnAtRetryKeyword(
-					ar,
-					"atRetry is greater than maxRetries for this gen block.",
-					AT_RETRY_EXCEEDS_MAX_RETRIES);
-		}
-	}
-
-	/**
-	 * Each {@code modelUsage { ... }} block must contain exactly one {@code primary} and one {@code escalation { ... }}.
-	 * {@code secondary} is required only when {@code escalation.enabled} is {@code true}. Duplicates are anchored on each
-	 * extra {@code primary}, {@code secondary}, or {@code escalation} keyword.
-	 * <p>
-	 * When there is exactly one primary and one secondary, each name must match a {@code provider} in
-	 * {@code llmProviders { ... }}, and primary and secondary must not name the same provider (errors on both keywords).
+	 * Each {@code modelUsage { ... }} block must contain exactly one top-level {@code provider} and exactly one
+	 * {@code maxRetries}. {@code escalationTo} is optional; at most one is allowed — when there are multiple, every
+	 * {@code escalationTo} keyword is in error.
 	 */
 	@Check
 	public void checkModelUsageShape(GenUsageBlock block) {
 		if (block == null) {
 			return;
 		}
-		EList<PrimaryProvider> primaries = block.getPrimaryProviders();
-		int np = primaries == null ? 0 : primaries.size();
+		List<PrimaryProvider> topProviders = nonNullPrimaryProviders(block.getProviders());
+		int np = topProviders.size();
 		if (np == 0) {
 			errorOnModelUsageKeyword(
 					block,
-					"modelUsage.primary is required.",
-					MODEL_USAGE_MISSING_PRIMARY);
+					"modelUsage.provider is required.",
+					MODEL_USAGE_MISSING_PROVIDER);
 		} else if (np > 1) {
-			String msg = "Only one primary is allowed in modelUsage { ... }.";
-			for (PrimaryProvider p : primaries) {
+			String msg = "Only one provider is allowed at modelUsage level (outside escalationTo).";
+			for (PrimaryProvider p : topProviders) {
 				if (p != null) {
-					errorOnPrimaryProviderKeyword(p, msg, MODEL_USAGE_TOO_MANY_PRIMARIES);
+					errorOnUsageProviderKeyword(p, msg, MODEL_USAGE_TOO_MANY_PROVIDERS);
 				}
 			}
 		}
 
-		EList<GenEscalationBlock> escalations = block.getEscalations();
+		EList<MaxRetries> maxRetriesList = block.getMaxRetries();
+		int nm = maxRetriesList == null ? 0 : maxRetriesList.size();
+		if (nm == 0) {
+			errorOnModelUsageKeyword(
+					block,
+					"modelUsage.maxRetries is required.",
+					MODEL_USAGE_MISSING_MAX_RETRIES);
+		} else if (nm > 1) {
+			String msg = "Only one maxRetries is allowed in modelUsage { ... }.";
+			for (MaxRetries mr : maxRetriesList) {
+				if (mr != null) {
+					errorOnMaxRetriesKeyword(mr, msg, GEN_TOO_MANY_MAX_RETRIES);
+				}
+			}
+		}
+
+		EList<EscalationProvider> escalations = block.getEscalations();
 		int ne = escalations == null ? 0 : escalations.size();
-		if (ne == 0) {
-			errorOnModelUsageKeyword(
-					block,
-					"modelUsage.escalation { ... } is required.",
-					MODEL_USAGE_MISSING_ESCALATION);
-		} else if (ne > 1) {
-			String msg = "Only one escalation { ... } block is allowed in modelUsage { ... }.";
-			for (GenEscalationBlock e : escalations) {
-				if (e != null) {
-					errorOnEscalationKeyword(e, msg, MODEL_USAGE_TOO_MANY_ESCALATIONS);
-				}
-			}
-		}
-
-		EList<SecondaryProvider> secondaries = block.getSecondaryProviders();
-		int ns = secondaries == null ? 0 : secondaries.size();
-		GenEscalationBlock soleEscalation = ne == 1 && escalations != null ? escalations.get(0) : null;
-		boolean secondaryRequired = soleEscalation != null && modelUsageEscalationEnabled(soleEscalation);
-		if (secondaryRequired && ns == 0) {
-			errorOnModelUsageKeyword(
-					block,
-					"modelUsage.secondary is required when escalation.enabled is true.",
-					MODEL_USAGE_MISSING_SECONDARY);
-		}
-		if (ns > 1) {
-			String msg = "Only one secondary is allowed in modelUsage { ... }.";
-			for (SecondaryProvider s : secondaries) {
-				if (s != null) {
-					errorOnSecondaryProviderKeyword(s, msg, MODEL_USAGE_TOO_MANY_SECONDARIES);
+		if (ne > 1) {
+			String msg = "Only one escalationTo is allowed in modelUsage { ... }.";
+			for (EscalationProvider ep : escalations) {
+				if (ep instanceof GenEscalationBlock e) {
+					errorOnEscalationToKeyword(e, msg, MODEL_USAGE_TOO_MANY_ESCALATIONS);
 				}
 			}
 		}
 
 		checkModelUsageProviderNamesMatchLlmProviders(block);
-		checkModelUsagePrimarySecondaryDistinctNames(block);
+		checkModelUsageTopAndEscalationProvidersDistinct(block);
 	}
 
 	/**
-	 * True if any {@code enabled true} appears in the escalation block. The grammar maps both {@code true} and
-	 * {@code false} literals to {@link TrueKeyword} with {@link TrueKeyword#getKeyword()} carrying the actual token.
+	 * When there is exactly one top-level {@code provider} and exactly one {@code escalationTo} with non-blank names,
+	 * they must differ. Anchored only on {@code escalationTo}’s provider name (not on the top {@code provider}).
 	 */
-	private static boolean modelUsageEscalationEnabled(GenEscalationBlock e) {
-		if (e == null) {
-			return false;
-		}
-		EList<Enabled> list = e.getEnableds();
-		if (list == null) {
-			return false;
-		}
-		for (Enabled en : list) {
-			if (en == null) {
-				continue;
-			}
-			if (en.getValue() instanceof TrueKeyword tk && literalTrueSpelledTrue(tk)) {
-				return true;
-			}
-		}
-		return false;
-	}
-
-	private static boolean literalTrueSpelledTrue(TrueKeyword tk) {
-		if (tk == null) {
-			return false;
-		}
-		String kw = tk.getKeyword();
-		return kw != null && "true".equalsIgnoreCase(kw.trim());
-	}
-
-	/**
-	 * When there is exactly one {@code primary} and one {@code secondary} with non-blank names, they must differ. Errors on
-	 * {@link LibrettoProjectProfilePackage.Literals#PRIMARY_PROVIDER_KEYWORD__KEYWORD} and
-	 * {@link LibrettoProjectProfilePackage.Literals#SECONDARY_PROVIDER_KEYWORD__KEYWORD}.
-	 */
-	private void checkModelUsagePrimarySecondaryDistinctNames(GenUsageBlock block) {
-		EList<PrimaryProvider> primaries = block.getPrimaryProviders();
-		EList<SecondaryProvider> secondaries = block.getSecondaryProviders();
-		if (primaries == null || primaries.size() != 1 || secondaries == null || secondaries.size() != 1) {
+	private void checkModelUsageTopAndEscalationProvidersDistinct(GenUsageBlock block) {
+		List<PrimaryProvider> top = nonNullPrimaryProviders(block.getProviders());
+		EList<EscalationProvider> escalations = block.getEscalations();
+		if (top.size() != 1 || escalations == null || escalations.size() != 1) {
 			return;
 		}
-		PrimaryProvider p = primaries.get(0);
-		SecondaryProvider s = secondaries.get(0);
-		if (p == null || s == null) {
+		PrimaryProvider p = top.get(0);
+		EscalationProvider ep0 = escalations.get(0);
+		if (p == null || !(ep0 instanceof GenEscalationBlock esc)) {
 			return;
 		}
 		String pn = p.getName();
-		String sn = s.getName();
+		String sn = esc.getName();
 		if (!nonBlank(pn) || !nonBlank(sn)) {
 			return;
 		}
 		if (!pn.trim().equals(sn.trim())) {
 			return;
 		}
-		String msg = "primary and secondary must not name the same provider.";
-		errorOnPrimaryProviderKeyword(p, msg, MODEL_USAGE_PRIMARY_SECONDARY_SAME_NAME);
-		errorOnSecondaryProviderKeyword(s, msg, MODEL_USAGE_PRIMARY_SECONDARY_SAME_NAME);
+		Profile profile = LlmProviderReferenceSupport.enclosingProfile(block);
+		String declaredCsv = LlmProviderReferenceSupport.declaredProviderNamesCsv(profile);
+		String msg = "modelUsage provider and escalationTo must not name the same llmProviders entry.";
+		error(
+				msg,
+				esc,
+				LibrettoProjectProfilePackage.Literals.GEN_ESCALATION_BLOCK__NAME,
+				MODEL_USAGE_TOP_ESCALATION_PROVIDER_SAME_NAME,
+				LlmProviderReferenceSupport.escalationSameNameIssueData(declaredCsv, pn));
 	}
 
 	/**
-	 * When {@code modelUsage} has exactly one {@code primary} and one {@code secondary}, each name must match a
-	 * {@code provider} declared in {@code llmProviders { ... }}. Unknown names are anchored on
-	 * {@link LibrettoProjectProfilePackage.Literals#PRIMARY_PROVIDER__NAME} or
-	 * {@link LibrettoProjectProfilePackage.Literals#SECONDARY_PROVIDER__NAME}.
-	 * <p>
-	 * Invoked from {@link #checkModelUsageShape(GenUsageBlock)} so it always runs with shape validation.
+	 * Each {@code provider} line in {@code modelUsage} and each {@code escalationTo} name must name an
+	 * {@code llmProviders} entry.
 	 */
 	private void checkModelUsageProviderNamesMatchLlmProviders(GenUsageBlock block) {
 		Profile profile = LlmProviderReferenceSupport.enclosingProfile(block);
 		Set<String> declared = LlmProviderReferenceSupport.declaredProviderNames(profile);
 		String declaredCsv = LlmProviderReferenceSupport.declaredProviderNamesCsv(profile);
+		String msg = "provider must name a provider declared in llmProviders { ... }.";
 
-		EList<PrimaryProvider> primaries = block.getPrimaryProviders();
-		if (primaries != null && primaries.size() == 1) {
-			PrimaryProvider p = primaries.get(0);
+		for (PrimaryProvider p : nonNullPrimaryProviders(block.getProviders())) {
 			if (p != null && nonBlank(p.getName()) && !declared.contains(p.getName())) {
 				error(
-						"primary must name a provider declared in llmProviders { ... }.",
+						msg,
 						p,
 						LibrettoProjectProfilePackage.Literals.PRIMARY_PROVIDER__NAME,
-						MODEL_USAGE_PRIMARY_UNKNOWN_PROVIDER,
+						MODEL_USAGE_UNKNOWN_PROVIDER,
 						declaredCsv);
 			}
 		}
-
-		EList<SecondaryProvider> secondaries = block.getSecondaryProviders();
-		if (secondaries != null && secondaries.size() == 1) {
-			SecondaryProvider s = secondaries.get(0);
-			if (s != null && nonBlank(s.getName()) && !declared.contains(s.getName())) {
-				error(
-						"secondary must name a provider declared in llmProviders { ... }.",
-						s,
-						LibrettoProjectProfilePackage.Literals.SECONDARY_PROVIDER__NAME,
-						MODEL_USAGE_SECONDARY_UNKNOWN_PROVIDER,
-						declaredCsv);
+		EList<EscalationProvider> escalations = block.getEscalations();
+		if (escalations != null) {
+			for (EscalationProvider ep : escalations) {
+				if (ep instanceof GenEscalationBlock eb) {
+					String n = eb.getName();
+					if (nonBlank(n) && !declared.contains(n)) {
+						error(
+								msg,
+								eb,
+								LibrettoProjectProfilePackage.Literals.GEN_ESCALATION_BLOCK__NAME,
+								MODEL_USAGE_UNKNOWN_PROVIDER,
+								declaredCsv);
+					}
+				}
 			}
 		}
 	}
@@ -1504,13 +1418,12 @@ public class LibrettoProjectProfileValidator extends AbstractLibrettoProjectProf
 	}
 
 	/**
-	 * At most one of each {@code initialInstruction}, {@code maxRetries}, {@code parseCheck}, {@code defaultCorrection},
-	 * and {@code rules { ... }} per {@link GenBlock}. Duplicates are anchored on each occurrence’s keyword
+	 * At most one of each {@code initialInstruction}, {@code parseCheck}, {@code defaultCorrection}, and
+	 * {@code rules { ... }} per {@link GenBlock}. Duplicates are anchored on each occurrence’s keyword
 	 * ({@link LibrettoProjectProfilePackage.Literals#INITIAL_INSTRUCTION__KEYWORD}, etc.).
 	 */
 	private void checkGenDuplicateDeclarations(GenBlock gen) {
 		errorIfDuplicateInitialInstructions(gen.getInitialInstructions());
-		errorIfDuplicateMaxRetries(gen.getMaxRetries());
 		errorIfDuplicateParseChecks(gen.getParseChecks());
 		errorIfDuplicateDefaultCorrections(gen.getDefaultCorrections());
 		errorIfDuplicateRulesSections(gen.getRemediations());
@@ -1529,22 +1442,6 @@ public class LibrettoProjectProfileValidator extends AbstractLibrettoProjectProf
 						ii,
 						LibrettoProjectProfilePackage.Literals.INITIAL_INSTRUCTION__KEYWORD,
 						GEN_TOO_MANY_INITIAL_INSTRUCTIONS);
-			}
-		}
-	}
-
-	private void errorIfDuplicateMaxRetries(EList<MaxRetries> list) {
-		if (list == null || list.size() <= 1) {
-			return;
-		}
-		String message = "Only one maxRetries is allowed in gen { ... }.";
-		for (MaxRetries mr : list) {
-			if (mr != null) {
-				error(
-						message,
-						mr,
-						LibrettoProjectProfilePackage.Literals.MAX_RETRIES__KEYWORD,
-						GEN_TOO_MANY_MAX_RETRIES);
 			}
 		}
 	}
@@ -1625,12 +1522,13 @@ public class LibrettoProjectProfileValidator extends AbstractLibrettoProjectProf
 		}
 	}
 
-	private void errorOnPrimaryProviderKeyword(PrimaryProvider p, String message, String code) {
+	/** {@code provider} line in {@code modelUsage} or {@code escalation} ({@link PrimaryProvider} instance). */
+	private void errorOnUsageProviderKeyword(PrimaryProvider p, String message, String code) {
 		if (p.getKeyword() != null) {
 			error(
 					message,
 					p.getKeyword(),
-					LibrettoProjectProfilePackage.Literals.PRIMARY_PROVIDER_KEYWORD__KEYWORD,
+					LibrettoProjectProfilePackage.Literals.PROVIDER_KEYWORD__KEYWORD,
 					code);
 		} else {
 			error(
@@ -1641,28 +1539,12 @@ public class LibrettoProjectProfileValidator extends AbstractLibrettoProjectProf
 		}
 	}
 
-	private void errorOnSecondaryProviderKeyword(SecondaryProvider s, String message, String code) {
-		if (s.getKeyword() != null) {
-			error(
-					message,
-					s.getKeyword(),
-					LibrettoProjectProfilePackage.Literals.SECONDARY_PROVIDER_KEYWORD__KEYWORD,
-					code);
-		} else {
-			error(
-					message,
-					s,
-					LibrettoProjectProfilePackage.Literals.SECONDARY_PROVIDER__KEYWORD,
-					code);
-		}
-	}
-
-	private void errorOnEscalationKeyword(GenEscalationBlock e, String message, String code) {
+	private void errorOnEscalationToKeyword(GenEscalationBlock e, String message, String code) {
 		if (e.getKeyword() != null) {
 			error(
 					message,
 					e.getKeyword(),
-					LibrettoProjectProfilePackage.Literals.ESCALATION_KEYWORD__KEYWORD,
+					LibrettoProjectProfilePackage.Literals.ESCALATION_TO_KEYWORD__KEYWORD,
 					code);
 		} else {
 			error(
@@ -1674,16 +1556,14 @@ public class LibrettoProjectProfileValidator extends AbstractLibrettoProjectProf
 	}
 
 	/**
-	 * Each {@code gen} block must declare {@code initialInstruction}, {@code maxRetries}, {@code parseCheck},
-	 * {@code defaultCorrection}, and {@code rules { ... }}. Missing entries are reported on the parent {@code gen}
-	 * keyword ({@link LibrettoProjectProfilePackage.Literals#GEN_BLOCK__KEYWORD}).
+	 * Each {@code gen} block must declare {@code initialInstruction}, {@code parseCheck}, {@code defaultCorrection}, and
+	 * {@code rules { ... }}. Missing entries are reported on the parent {@code gen} keyword
+	 * ({@link LibrettoProjectProfilePackage.Literals#GEN_BLOCK__KEYWORD}). {@code maxRetries} belongs under
+	 * {@code modelUsage} (see {@link #checkModelUsageShape(GenUsageBlock)}).
 	 */
 	private void checkGenRequiredDeclarations(GenBlock gen) {
 		if (!anyNonBlankInitialInstruction(gen.getInitialInstructions())) {
 			errorOnGenKeyword(gen, "gen.initialInstruction is required.", GEN_MISSING_INITIAL_INSTRUCTION);
-		}
-		if (gen.getMaxRetries().isEmpty()) {
-			errorOnGenKeyword(gen, "gen.maxRetries is required.", GEN_MISSING_MAX_RETRIES);
 		}
 		if (!anyParseCheckWithValue(gen.getParseChecks())) {
 			errorOnGenKeyword(gen, "gen.parseCheck is required.", GEN_MISSING_PARSE_CHECK);
@@ -2010,60 +1890,18 @@ public class LibrettoProjectProfileValidator extends AbstractLibrettoProjectProf
 		}
 	}
 
-	private void errorOnAtRetryKeyword(AtRetry ar, String message, String code) {
-		if (ar.getKeyword() != null) {
-			error(
-					message,
-					ar.getKeyword(),
-					LibrettoProjectProfilePackage.Literals.AT_RETRY_KEYWORD__KEYWORD,
-					code);
-		} else {
-			error(
-					message,
-					ar,
-					LibrettoProjectProfilePackage.Literals.AT_RETRY__KEYWORD,
-					code);
+	/** Non-null {@link PrimaryProvider} instances from a {@code providers} list (grammar uses {@link Provider}). */
+	private static List<PrimaryProvider> nonNullPrimaryProviders(EList<Provider> list) {
+		List<PrimaryProvider> out = new ArrayList<>();
+		if (list == null) {
+			return out;
 		}
-	}
-
-	private void warningOnAtRetryKeyword(AtRetry ar, String message, String code) {
-		if (ar.getKeyword() != null) {
-			warning(
-					message,
-					ar.getKeyword(),
-					LibrettoProjectProfilePackage.Literals.AT_RETRY_KEYWORD__KEYWORD,
-					code);
-		} else {
-			warning(
-					message,
-					ar,
-					LibrettoProjectProfilePackage.Literals.AT_RETRY__KEYWORD,
-					code);
-		}
-	}
-
-	private static GenBlock enclosingGenBlock(EObject from) {
-		EObject c = from;
-		while (c != null) {
-			if (c instanceof GenBlock gb) {
-				return gb;
+		for (Provider p : list) {
+			if (p instanceof PrimaryProvider pp) {
+				out.add(pp);
 			}
-			c = c.eContainer();
 		}
-		return null;
-	}
-
-	/** First {@code maxRetries} value in the gen block (matches tooling that uses the first declaration). */
-	private static Integer firstMaxRetriesValue(GenBlock gen) {
-		if (gen == null) {
-			return null;
-		}
-		EList<MaxRetries> list = gen.getMaxRetries();
-		if (list == null || list.isEmpty()) {
-			return null;
-		}
-		MaxRetries first = list.get(0);
-		return first != null ? Integer.valueOf(first.getMaxRetries()) : null;
+		return out;
 	}
 
 }

@@ -4,6 +4,6 @@ package com.robenglander.libretto.spec.projection;
 public record ProjectedModuleBasePackage(String value) {
 
 	public ProjectedModuleBasePackage {
-		value = value == null ? "" : value.trim();
+		value = ProjectionStrings.requireNonBlank(value, "basePackage");
 	}
 }

@@ -113,8 +113,6 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="initialInstructions" upperBound="-1"
         eType="#//InitialInstruction" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="maxRetries" upperBound="-1"
-        eType="#//MaxRetries" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parseChecks" upperBound="-1"
         eType="#//ParseCheck" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="defaultCorrections" upperBound="-1"
@@ -280,58 +278,19 @@
   <eClassifiers xsi:type="ecore:EClass" name="GenUsageBlock">
     <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//ModelUsageKeyword"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="primaryProviders" upperBound="-1"
-        eType="#//PrimaryProvider" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="secondaryProviders" upperBound="-1"
-        eType="#//SecondaryProvider" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="providers" upperBound="-1"
+        eType="#//Provider" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="maxRetries" upperBound="-1"
+        eType="#//MaxRetries" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="escalations" upperBound="-1"
-        eType="#//GenEscalationBlock" containment="true"/>
+        eType="#//EscalationProvider" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ModelUsageKeyword">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PrimaryProvider">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//PrimaryProviderKeyword"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PrimaryProviderKeyword">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SecondaryProvider">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//SecondaryProviderKeyword"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SecondaryProviderKeyword">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GenEscalationBlock">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//EscalationKeyword"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="enableds" upperBound="-1"
-        eType="#//Enabled" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="atRetries" upperBound="-1"
-        eType="#//AtRetry" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EscalationKeyword">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Enabled">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//EnabledKeyword"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//TrueFalseKeyword"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EnabledKeyword">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AtRetry">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//AtRetryKeyword"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AtRetryKeyword">
+  <eClassifiers xsi:type="ecore:EClass" name="Provider"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EscalationProvider"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EscalationToKeyword">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SurfaceBlock">
@@ -386,5 +345,15 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TrueKeyword" eSuperTypes="#//TrueFalseKeyword">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PrimaryProvider" eSuperTypes="#//Provider">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//ProviderKeyword"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GenEscalationBlock" eSuperTypes="#//EscalationProvider">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//EscalationToKeyword"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

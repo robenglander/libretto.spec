@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'{'", "'}'", "'profile'", "'project'", "'rootdir'", "'rootDir'", "'modules'", "'module'", "'dir'", "'specdir'", "'specDir'", "'testdir'", "'testDir'", "'maindir'", "'mainDir'", "'basepackage'", "'basePackage'", "'gen'", "'initialinstruction'", "'initialInstruction'", "'maxretries'", "'maxRetries'", "'parsecheck'", "'parseCheck'", "'defaultcorrection'", "'defaultCorrection'", "'true'", "'false'", "'rules'", "'rule'", "'pattern'", "'code'", "'correction'", "'default'", "'llmproviders'", "'llmProviders'", "'provider'", "'type'", "'model'", "'filepath'", "'filePath'", "'endpoint'", "'endPoint'", "'modelusage'", "'modelUsage'", "'primary'", "'secondary'", "'escalation'", "'enabled'", "'atretry'", "'atRetry'", "'surface'", "'for'", "'spec'", "'returnType'", "'method'", "'as'", "';'", "'paramType'", "'name'", "'recordSelfReturn'", "','", "'methodOverride'", "'returns'", "'.'", "'boolean'", "'int'", "'long'", "'double'", "'float'", "'short'", "'byte'", "'char'", "'void'", "'('", "')'", "'-'", "'_'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'{'", "'}'", "'profile'", "'project'", "'rootdir'", "'rootDir'", "'modules'", "'module'", "'dir'", "'specdir'", "'specDir'", "'testdir'", "'testDir'", "'maindir'", "'mainDir'", "'basepackage'", "'basePackage'", "'gen'", "'initialinstruction'", "'initialInstruction'", "'maxretries'", "'maxRetries'", "'parsecheck'", "'parseCheck'", "'defaultcorrection'", "'defaultCorrection'", "'true'", "'false'", "'rules'", "'rule'", "'pattern'", "'code'", "'correction'", "'default'", "'llmproviders'", "'llmProviders'", "'provider'", "'type'", "'model'", "'filepath'", "'filePath'", "'endpoint'", "'endPoint'", "'modelusage'", "'modelUsage'", "'escalationto'", "'escalationTo'", "'surface'", "'for'", "'spec'", "'returnType'", "'method'", "'as'", "';'", "'paramType'", "'name'", "'recordSelfReturn'", "','", "'methodOverride'", "'returns'", "'.'", "'boolean'", "'int'", "'long'", "'double'", "'float'", "'short'", "'byte'", "'char'", "'void'", "'('", "')'", "'-'", "'_'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -97,18 +97,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
     public static final int T__48=48;
     public static final int T__49=49;
     public static final int T__44=44;
-    public static final int T__88=88;
     public static final int T__45=45;
     public static final int T__46=46;
     public static final int T__47=47;
     public static final int T__40=40;
     public static final int T__84=84;
     public static final int T__41=41;
-    public static final int T__85=85;
     public static final int T__42=42;
-    public static final int T__86=86;
     public static final int T__43=43;
-    public static final int T__87=87;
 
     // delegates
     // delegators
@@ -442,7 +438,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
                     alt2=2;
                     }
                     break;
-                case 62:
+                case 58:
                     {
                     alt2=3;
                     }
@@ -3640,36 +3636,34 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleGenBlock"
-    // InternalLibrettoProjectProfile.g:1444:1: ruleGenBlock returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleGenKeyword ) ) otherlv_2= '{' ( ( (lv_initialInstructions_3_0= ruleInitialInstruction ) ) | ( (lv_maxRetries_4_0= ruleMaxRetries ) ) | ( (lv_parseChecks_5_0= ruleParseCheck ) ) | ( (lv_defaultCorrections_6_0= ruleDefaultCorrection ) ) | ( (lv_remediations_7_0= ruleGenRemediationRules ) ) | ( (lv_modelUsages_8_0= ruleGenUsageBlock ) ) )* otherlv_9= '}' ) ;
+    // InternalLibrettoProjectProfile.g:1444:1: ruleGenBlock returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleGenKeyword ) ) otherlv_2= '{' ( ( (lv_initialInstructions_3_0= ruleInitialInstruction ) ) | ( (lv_parseChecks_4_0= ruleParseCheck ) ) | ( (lv_defaultCorrections_5_0= ruleDefaultCorrection ) ) | ( (lv_remediations_6_0= ruleGenRemediationRules ) ) | ( (lv_modelUsages_7_0= ruleGenUsageBlock ) ) )* otherlv_8= '}' ) ;
     public final EObject ruleGenBlock() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_2=null;
-        Token otherlv_9=null;
+        Token otherlv_8=null;
         EObject lv_keyword_1_0 = null;
 
         EObject lv_initialInstructions_3_0 = null;
 
-        EObject lv_maxRetries_4_0 = null;
+        EObject lv_parseChecks_4_0 = null;
 
-        EObject lv_parseChecks_5_0 = null;
+        EObject lv_defaultCorrections_5_0 = null;
 
-        EObject lv_defaultCorrections_6_0 = null;
+        EObject lv_remediations_6_0 = null;
 
-        EObject lv_remediations_7_0 = null;
-
-        EObject lv_modelUsages_8_0 = null;
+        EObject lv_modelUsages_7_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:1450:2: ( ( () ( (lv_keyword_1_0= ruleGenKeyword ) ) otherlv_2= '{' ( ( (lv_initialInstructions_3_0= ruleInitialInstruction ) ) | ( (lv_maxRetries_4_0= ruleMaxRetries ) ) | ( (lv_parseChecks_5_0= ruleParseCheck ) ) | ( (lv_defaultCorrections_6_0= ruleDefaultCorrection ) ) | ( (lv_remediations_7_0= ruleGenRemediationRules ) ) | ( (lv_modelUsages_8_0= ruleGenUsageBlock ) ) )* otherlv_9= '}' ) )
-            // InternalLibrettoProjectProfile.g:1451:2: ( () ( (lv_keyword_1_0= ruleGenKeyword ) ) otherlv_2= '{' ( ( (lv_initialInstructions_3_0= ruleInitialInstruction ) ) | ( (lv_maxRetries_4_0= ruleMaxRetries ) ) | ( (lv_parseChecks_5_0= ruleParseCheck ) ) | ( (lv_defaultCorrections_6_0= ruleDefaultCorrection ) ) | ( (lv_remediations_7_0= ruleGenRemediationRules ) ) | ( (lv_modelUsages_8_0= ruleGenUsageBlock ) ) )* otherlv_9= '}' )
+            // InternalLibrettoProjectProfile.g:1450:2: ( ( () ( (lv_keyword_1_0= ruleGenKeyword ) ) otherlv_2= '{' ( ( (lv_initialInstructions_3_0= ruleInitialInstruction ) ) | ( (lv_parseChecks_4_0= ruleParseCheck ) ) | ( (lv_defaultCorrections_5_0= ruleDefaultCorrection ) ) | ( (lv_remediations_6_0= ruleGenRemediationRules ) ) | ( (lv_modelUsages_7_0= ruleGenUsageBlock ) ) )* otherlv_8= '}' ) )
+            // InternalLibrettoProjectProfile.g:1451:2: ( () ( (lv_keyword_1_0= ruleGenKeyword ) ) otherlv_2= '{' ( ( (lv_initialInstructions_3_0= ruleInitialInstruction ) ) | ( (lv_parseChecks_4_0= ruleParseCheck ) ) | ( (lv_defaultCorrections_5_0= ruleDefaultCorrection ) ) | ( (lv_remediations_6_0= ruleGenRemediationRules ) ) | ( (lv_modelUsages_7_0= ruleGenUsageBlock ) ) )* otherlv_8= '}' )
             {
-            // InternalLibrettoProjectProfile.g:1451:2: ( () ( (lv_keyword_1_0= ruleGenKeyword ) ) otherlv_2= '{' ( ( (lv_initialInstructions_3_0= ruleInitialInstruction ) ) | ( (lv_maxRetries_4_0= ruleMaxRetries ) ) | ( (lv_parseChecks_5_0= ruleParseCheck ) ) | ( (lv_defaultCorrections_6_0= ruleDefaultCorrection ) ) | ( (lv_remediations_7_0= ruleGenRemediationRules ) ) | ( (lv_modelUsages_8_0= ruleGenUsageBlock ) ) )* otherlv_9= '}' )
-            // InternalLibrettoProjectProfile.g:1452:3: () ( (lv_keyword_1_0= ruleGenKeyword ) ) otherlv_2= '{' ( ( (lv_initialInstructions_3_0= ruleInitialInstruction ) ) | ( (lv_maxRetries_4_0= ruleMaxRetries ) ) | ( (lv_parseChecks_5_0= ruleParseCheck ) ) | ( (lv_defaultCorrections_6_0= ruleDefaultCorrection ) ) | ( (lv_remediations_7_0= ruleGenRemediationRules ) ) | ( (lv_modelUsages_8_0= ruleGenUsageBlock ) ) )* otherlv_9= '}'
+            // InternalLibrettoProjectProfile.g:1451:2: ( () ( (lv_keyword_1_0= ruleGenKeyword ) ) otherlv_2= '{' ( ( (lv_initialInstructions_3_0= ruleInitialInstruction ) ) | ( (lv_parseChecks_4_0= ruleParseCheck ) ) | ( (lv_defaultCorrections_5_0= ruleDefaultCorrection ) ) | ( (lv_remediations_6_0= ruleGenRemediationRules ) ) | ( (lv_modelUsages_7_0= ruleGenUsageBlock ) ) )* otherlv_8= '}' )
+            // InternalLibrettoProjectProfile.g:1452:3: () ( (lv_keyword_1_0= ruleGenKeyword ) ) otherlv_2= '{' ( ( (lv_initialInstructions_3_0= ruleInitialInstruction ) ) | ( (lv_parseChecks_4_0= ruleParseCheck ) ) | ( (lv_defaultCorrections_5_0= ruleDefaultCorrection ) ) | ( (lv_remediations_6_0= ruleGenRemediationRules ) ) | ( (lv_modelUsages_7_0= ruleGenUsageBlock ) ) )* otherlv_8= '}'
             {
             // InternalLibrettoProjectProfile.g:1452:3: ()
             // InternalLibrettoProjectProfile.g:1453:4: 
@@ -3717,10 +3711,10 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             			newLeafNode(otherlv_2, grammarAccess.getGenBlockAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalLibrettoProjectProfile.g:1482:3: ( ( (lv_initialInstructions_3_0= ruleInitialInstruction ) ) | ( (lv_maxRetries_4_0= ruleMaxRetries ) ) | ( (lv_parseChecks_5_0= ruleParseCheck ) ) | ( (lv_defaultCorrections_6_0= ruleDefaultCorrection ) ) | ( (lv_remediations_7_0= ruleGenRemediationRules ) ) | ( (lv_modelUsages_8_0= ruleGenUsageBlock ) ) )*
+            // InternalLibrettoProjectProfile.g:1482:3: ( ( (lv_initialInstructions_3_0= ruleInitialInstruction ) ) | ( (lv_parseChecks_4_0= ruleParseCheck ) ) | ( (lv_defaultCorrections_5_0= ruleDefaultCorrection ) ) | ( (lv_remediations_6_0= ruleGenRemediationRules ) ) | ( (lv_modelUsages_7_0= ruleGenUsageBlock ) ) )*
             loop11:
             do {
-                int alt11=7;
+                int alt11=6;
                 switch ( input.LA(1) ) {
                 case 29:
                 case 30:
@@ -3728,33 +3722,27 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
                     alt11=1;
                     }
                     break;
-                case 31:
-                case 32:
-                    {
-                    alt11=2;
-                    }
-                    break;
                 case 33:
                 case 34:
                     {
-                    alt11=3;
+                    alt11=2;
                     }
                     break;
                 case 35:
                 case 36:
                     {
-                    alt11=4;
+                    alt11=3;
                     }
                     break;
                 case 39:
                     {
-                    alt11=5;
+                    alt11=4;
                     }
                     break;
                 case 54:
                 case 55:
                     {
-                    alt11=6;
+                    alt11=5;
                     }
                     break;
 
@@ -3799,56 +3787,19 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
             	    }
             	    break;
             	case 2 :
-            	    // InternalLibrettoProjectProfile.g:1503:4: ( (lv_maxRetries_4_0= ruleMaxRetries ) )
+            	    // InternalLibrettoProjectProfile.g:1503:4: ( (lv_parseChecks_4_0= ruleParseCheck ) )
             	    {
-            	    // InternalLibrettoProjectProfile.g:1503:4: ( (lv_maxRetries_4_0= ruleMaxRetries ) )
-            	    // InternalLibrettoProjectProfile.g:1504:5: (lv_maxRetries_4_0= ruleMaxRetries )
+            	    // InternalLibrettoProjectProfile.g:1503:4: ( (lv_parseChecks_4_0= ruleParseCheck ) )
+            	    // InternalLibrettoProjectProfile.g:1504:5: (lv_parseChecks_4_0= ruleParseCheck )
             	    {
-            	    // InternalLibrettoProjectProfile.g:1504:5: (lv_maxRetries_4_0= ruleMaxRetries )
-            	    // InternalLibrettoProjectProfile.g:1505:6: lv_maxRetries_4_0= ruleMaxRetries
+            	    // InternalLibrettoProjectProfile.g:1504:5: (lv_parseChecks_4_0= ruleParseCheck )
+            	    // InternalLibrettoProjectProfile.g:1505:6: lv_parseChecks_4_0= ruleParseCheck
             	    {
 
-            	    						newCompositeNode(grammarAccess.getGenBlockAccess().getMaxRetriesMaxRetriesParserRuleCall_3_1_0());
+            	    						newCompositeNode(grammarAccess.getGenBlockAccess().getParseChecksParseCheckParserRuleCall_3_1_0());
             	    					
             	    pushFollow(FOLLOW_11);
-            	    lv_maxRetries_4_0=ruleMaxRetries();
-
-            	    state._fsp--;
-
-
-            	    						if (current==null) {
-            	    							current = createModelElementForParent(grammarAccess.getGenBlockRule());
-            	    						}
-            	    						add(
-            	    							current,
-            	    							"maxRetries",
-            	    							lv_maxRetries_4_0,
-            	    							"com.robenglander.libretto.spec.LibrettoProjectProfile.MaxRetries");
-            	    						afterParserOrEnumRuleCall();
-            	    					
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-            	case 3 :
-            	    // InternalLibrettoProjectProfile.g:1523:4: ( (lv_parseChecks_5_0= ruleParseCheck ) )
-            	    {
-            	    // InternalLibrettoProjectProfile.g:1523:4: ( (lv_parseChecks_5_0= ruleParseCheck ) )
-            	    // InternalLibrettoProjectProfile.g:1524:5: (lv_parseChecks_5_0= ruleParseCheck )
-            	    {
-            	    // InternalLibrettoProjectProfile.g:1524:5: (lv_parseChecks_5_0= ruleParseCheck )
-            	    // InternalLibrettoProjectProfile.g:1525:6: lv_parseChecks_5_0= ruleParseCheck
-            	    {
-
-            	    						newCompositeNode(grammarAccess.getGenBlockAccess().getParseChecksParseCheckParserRuleCall_3_2_0());
-            	    					
-            	    pushFollow(FOLLOW_11);
-            	    lv_parseChecks_5_0=ruleParseCheck();
+            	    lv_parseChecks_4_0=ruleParseCheck();
 
             	    state._fsp--;
 
@@ -3859,7 +3810,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
             	    						add(
             	    							current,
             	    							"parseChecks",
-            	    							lv_parseChecks_5_0,
+            	    							lv_parseChecks_4_0,
             	    							"com.robenglander.libretto.spec.LibrettoProjectProfile.ParseCheck");
             	    						afterParserOrEnumRuleCall();
             	    					
@@ -3872,20 +3823,20 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             	    }
             	    break;
-            	case 4 :
-            	    // InternalLibrettoProjectProfile.g:1543:4: ( (lv_defaultCorrections_6_0= ruleDefaultCorrection ) )
+            	case 3 :
+            	    // InternalLibrettoProjectProfile.g:1523:4: ( (lv_defaultCorrections_5_0= ruleDefaultCorrection ) )
             	    {
-            	    // InternalLibrettoProjectProfile.g:1543:4: ( (lv_defaultCorrections_6_0= ruleDefaultCorrection ) )
-            	    // InternalLibrettoProjectProfile.g:1544:5: (lv_defaultCorrections_6_0= ruleDefaultCorrection )
+            	    // InternalLibrettoProjectProfile.g:1523:4: ( (lv_defaultCorrections_5_0= ruleDefaultCorrection ) )
+            	    // InternalLibrettoProjectProfile.g:1524:5: (lv_defaultCorrections_5_0= ruleDefaultCorrection )
             	    {
-            	    // InternalLibrettoProjectProfile.g:1544:5: (lv_defaultCorrections_6_0= ruleDefaultCorrection )
-            	    // InternalLibrettoProjectProfile.g:1545:6: lv_defaultCorrections_6_0= ruleDefaultCorrection
+            	    // InternalLibrettoProjectProfile.g:1524:5: (lv_defaultCorrections_5_0= ruleDefaultCorrection )
+            	    // InternalLibrettoProjectProfile.g:1525:6: lv_defaultCorrections_5_0= ruleDefaultCorrection
             	    {
 
-            	    						newCompositeNode(grammarAccess.getGenBlockAccess().getDefaultCorrectionsDefaultCorrectionParserRuleCall_3_3_0());
+            	    						newCompositeNode(grammarAccess.getGenBlockAccess().getDefaultCorrectionsDefaultCorrectionParserRuleCall_3_2_0());
             	    					
             	    pushFollow(FOLLOW_11);
-            	    lv_defaultCorrections_6_0=ruleDefaultCorrection();
+            	    lv_defaultCorrections_5_0=ruleDefaultCorrection();
 
             	    state._fsp--;
 
@@ -3896,7 +3847,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
             	    						add(
             	    							current,
             	    							"defaultCorrections",
-            	    							lv_defaultCorrections_6_0,
+            	    							lv_defaultCorrections_5_0,
             	    							"com.robenglander.libretto.spec.LibrettoProjectProfile.DefaultCorrection");
             	    						afterParserOrEnumRuleCall();
             	    					
@@ -3909,20 +3860,20 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             	    }
             	    break;
-            	case 5 :
-            	    // InternalLibrettoProjectProfile.g:1563:4: ( (lv_remediations_7_0= ruleGenRemediationRules ) )
+            	case 4 :
+            	    // InternalLibrettoProjectProfile.g:1543:4: ( (lv_remediations_6_0= ruleGenRemediationRules ) )
             	    {
-            	    // InternalLibrettoProjectProfile.g:1563:4: ( (lv_remediations_7_0= ruleGenRemediationRules ) )
-            	    // InternalLibrettoProjectProfile.g:1564:5: (lv_remediations_7_0= ruleGenRemediationRules )
+            	    // InternalLibrettoProjectProfile.g:1543:4: ( (lv_remediations_6_0= ruleGenRemediationRules ) )
+            	    // InternalLibrettoProjectProfile.g:1544:5: (lv_remediations_6_0= ruleGenRemediationRules )
             	    {
-            	    // InternalLibrettoProjectProfile.g:1564:5: (lv_remediations_7_0= ruleGenRemediationRules )
-            	    // InternalLibrettoProjectProfile.g:1565:6: lv_remediations_7_0= ruleGenRemediationRules
+            	    // InternalLibrettoProjectProfile.g:1544:5: (lv_remediations_6_0= ruleGenRemediationRules )
+            	    // InternalLibrettoProjectProfile.g:1545:6: lv_remediations_6_0= ruleGenRemediationRules
             	    {
 
-            	    						newCompositeNode(grammarAccess.getGenBlockAccess().getRemediationsGenRemediationRulesParserRuleCall_3_4_0());
+            	    						newCompositeNode(grammarAccess.getGenBlockAccess().getRemediationsGenRemediationRulesParserRuleCall_3_3_0());
             	    					
             	    pushFollow(FOLLOW_11);
-            	    lv_remediations_7_0=ruleGenRemediationRules();
+            	    lv_remediations_6_0=ruleGenRemediationRules();
 
             	    state._fsp--;
 
@@ -3933,7 +3884,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
             	    						add(
             	    							current,
             	    							"remediations",
-            	    							lv_remediations_7_0,
+            	    							lv_remediations_6_0,
             	    							"com.robenglander.libretto.spec.LibrettoProjectProfile.GenRemediationRules");
             	    						afterParserOrEnumRuleCall();
             	    					
@@ -3946,20 +3897,20 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             	    }
             	    break;
-            	case 6 :
-            	    // InternalLibrettoProjectProfile.g:1583:4: ( (lv_modelUsages_8_0= ruleGenUsageBlock ) )
+            	case 5 :
+            	    // InternalLibrettoProjectProfile.g:1563:4: ( (lv_modelUsages_7_0= ruleGenUsageBlock ) )
             	    {
-            	    // InternalLibrettoProjectProfile.g:1583:4: ( (lv_modelUsages_8_0= ruleGenUsageBlock ) )
-            	    // InternalLibrettoProjectProfile.g:1584:5: (lv_modelUsages_8_0= ruleGenUsageBlock )
+            	    // InternalLibrettoProjectProfile.g:1563:4: ( (lv_modelUsages_7_0= ruleGenUsageBlock ) )
+            	    // InternalLibrettoProjectProfile.g:1564:5: (lv_modelUsages_7_0= ruleGenUsageBlock )
             	    {
-            	    // InternalLibrettoProjectProfile.g:1584:5: (lv_modelUsages_8_0= ruleGenUsageBlock )
-            	    // InternalLibrettoProjectProfile.g:1585:6: lv_modelUsages_8_0= ruleGenUsageBlock
+            	    // InternalLibrettoProjectProfile.g:1564:5: (lv_modelUsages_7_0= ruleGenUsageBlock )
+            	    // InternalLibrettoProjectProfile.g:1565:6: lv_modelUsages_7_0= ruleGenUsageBlock
             	    {
 
-            	    						newCompositeNode(grammarAccess.getGenBlockAccess().getModelUsagesGenUsageBlockParserRuleCall_3_5_0());
+            	    						newCompositeNode(grammarAccess.getGenBlockAccess().getModelUsagesGenUsageBlockParserRuleCall_3_4_0());
             	    					
             	    pushFollow(FOLLOW_11);
-            	    lv_modelUsages_8_0=ruleGenUsageBlock();
+            	    lv_modelUsages_7_0=ruleGenUsageBlock();
 
             	    state._fsp--;
 
@@ -3970,7 +3921,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
             	    						add(
             	    							current,
             	    							"modelUsages",
-            	    							lv_modelUsages_8_0,
+            	    							lv_modelUsages_7_0,
             	    							"com.robenglander.libretto.spec.LibrettoProjectProfile.GenUsageBlock");
             	    						afterParserOrEnumRuleCall();
             	    					
@@ -3989,9 +3940,9 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
                 }
             } while (true);
 
-            otherlv_9=(Token)match(input,12,FOLLOW_2); 
+            otherlv_8=(Token)match(input,12,FOLLOW_2); 
 
-            			newLeafNode(otherlv_9, grammarAccess.getGenBlockAccess().getRightCurlyBracketKeyword_4());
+            			newLeafNode(otherlv_8, grammarAccess.getGenBlockAccess().getRightCurlyBracketKeyword_4());
             		
 
             }
@@ -4016,7 +3967,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleGenKeyword"
-    // InternalLibrettoProjectProfile.g:1611:1: entryRuleGenKeyword returns [EObject current=null] : iv_ruleGenKeyword= ruleGenKeyword EOF ;
+    // InternalLibrettoProjectProfile.g:1591:1: entryRuleGenKeyword returns [EObject current=null] : iv_ruleGenKeyword= ruleGenKeyword EOF ;
     public final EObject entryRuleGenKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -4024,8 +3975,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:1611:51: (iv_ruleGenKeyword= ruleGenKeyword EOF )
-            // InternalLibrettoProjectProfile.g:1612:2: iv_ruleGenKeyword= ruleGenKeyword EOF
+            // InternalLibrettoProjectProfile.g:1591:51: (iv_ruleGenKeyword= ruleGenKeyword EOF )
+            // InternalLibrettoProjectProfile.g:1592:2: iv_ruleGenKeyword= ruleGenKeyword EOF
             {
              newCompositeNode(grammarAccess.getGenKeywordRule()); 
             pushFollow(FOLLOW_1);
@@ -4052,7 +4003,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleGenKeyword"
-    // InternalLibrettoProjectProfile.g:1618:1: ruleGenKeyword returns [EObject current=null] : ( () ( (lv_keyword_1_0= 'gen' ) ) ) ;
+    // InternalLibrettoProjectProfile.g:1598:1: ruleGenKeyword returns [EObject current=null] : ( () ( (lv_keyword_1_0= 'gen' ) ) ) ;
     public final EObject ruleGenKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -4062,14 +4013,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:1624:2: ( ( () ( (lv_keyword_1_0= 'gen' ) ) ) )
-            // InternalLibrettoProjectProfile.g:1625:2: ( () ( (lv_keyword_1_0= 'gen' ) ) )
+            // InternalLibrettoProjectProfile.g:1604:2: ( ( () ( (lv_keyword_1_0= 'gen' ) ) ) )
+            // InternalLibrettoProjectProfile.g:1605:2: ( () ( (lv_keyword_1_0= 'gen' ) ) )
             {
-            // InternalLibrettoProjectProfile.g:1625:2: ( () ( (lv_keyword_1_0= 'gen' ) ) )
-            // InternalLibrettoProjectProfile.g:1626:3: () ( (lv_keyword_1_0= 'gen' ) )
+            // InternalLibrettoProjectProfile.g:1605:2: ( () ( (lv_keyword_1_0= 'gen' ) ) )
+            // InternalLibrettoProjectProfile.g:1606:3: () ( (lv_keyword_1_0= 'gen' ) )
             {
-            // InternalLibrettoProjectProfile.g:1626:3: ()
-            // InternalLibrettoProjectProfile.g:1627:4: 
+            // InternalLibrettoProjectProfile.g:1606:3: ()
+            // InternalLibrettoProjectProfile.g:1607:4: 
             {
 
             				current = forceCreateModelElement(
@@ -4079,11 +4030,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:1633:3: ( (lv_keyword_1_0= 'gen' ) )
-            // InternalLibrettoProjectProfile.g:1634:4: (lv_keyword_1_0= 'gen' )
+            // InternalLibrettoProjectProfile.g:1613:3: ( (lv_keyword_1_0= 'gen' ) )
+            // InternalLibrettoProjectProfile.g:1614:4: (lv_keyword_1_0= 'gen' )
             {
-            // InternalLibrettoProjectProfile.g:1634:4: (lv_keyword_1_0= 'gen' )
-            // InternalLibrettoProjectProfile.g:1635:5: lv_keyword_1_0= 'gen'
+            // InternalLibrettoProjectProfile.g:1614:4: (lv_keyword_1_0= 'gen' )
+            // InternalLibrettoProjectProfile.g:1615:5: lv_keyword_1_0= 'gen'
             {
             lv_keyword_1_0=(Token)match(input,28,FOLLOW_2); 
 
@@ -4124,7 +4075,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleInitialInstruction"
-    // InternalLibrettoProjectProfile.g:1651:1: entryRuleInitialInstruction returns [EObject current=null] : iv_ruleInitialInstruction= ruleInitialInstruction EOF ;
+    // InternalLibrettoProjectProfile.g:1631:1: entryRuleInitialInstruction returns [EObject current=null] : iv_ruleInitialInstruction= ruleInitialInstruction EOF ;
     public final EObject entryRuleInitialInstruction() throws RecognitionException {
         EObject current = null;
 
@@ -4132,8 +4083,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:1651:59: (iv_ruleInitialInstruction= ruleInitialInstruction EOF )
-            // InternalLibrettoProjectProfile.g:1652:2: iv_ruleInitialInstruction= ruleInitialInstruction EOF
+            // InternalLibrettoProjectProfile.g:1631:59: (iv_ruleInitialInstruction= ruleInitialInstruction EOF )
+            // InternalLibrettoProjectProfile.g:1632:2: iv_ruleInitialInstruction= ruleInitialInstruction EOF
             {
              newCompositeNode(grammarAccess.getInitialInstructionRule()); 
             pushFollow(FOLLOW_1);
@@ -4160,7 +4111,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleInitialInstruction"
-    // InternalLibrettoProjectProfile.g:1658:1: ruleInitialInstruction returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleInitialInstructionKeyword ) ) ( (lv_instruction_2_0= RULE_STRING ) ) ) ;
+    // InternalLibrettoProjectProfile.g:1638:1: ruleInitialInstruction returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleInitialInstructionKeyword ) ) ( (lv_instruction_2_0= RULE_STRING ) ) ) ;
     public final EObject ruleInitialInstruction() throws RecognitionException {
         EObject current = null;
 
@@ -4172,14 +4123,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:1664:2: ( ( () ( (lv_keyword_1_0= ruleInitialInstructionKeyword ) ) ( (lv_instruction_2_0= RULE_STRING ) ) ) )
-            // InternalLibrettoProjectProfile.g:1665:2: ( () ( (lv_keyword_1_0= ruleInitialInstructionKeyword ) ) ( (lv_instruction_2_0= RULE_STRING ) ) )
+            // InternalLibrettoProjectProfile.g:1644:2: ( ( () ( (lv_keyword_1_0= ruleInitialInstructionKeyword ) ) ( (lv_instruction_2_0= RULE_STRING ) ) ) )
+            // InternalLibrettoProjectProfile.g:1645:2: ( () ( (lv_keyword_1_0= ruleInitialInstructionKeyword ) ) ( (lv_instruction_2_0= RULE_STRING ) ) )
             {
-            // InternalLibrettoProjectProfile.g:1665:2: ( () ( (lv_keyword_1_0= ruleInitialInstructionKeyword ) ) ( (lv_instruction_2_0= RULE_STRING ) ) )
-            // InternalLibrettoProjectProfile.g:1666:3: () ( (lv_keyword_1_0= ruleInitialInstructionKeyword ) ) ( (lv_instruction_2_0= RULE_STRING ) )
+            // InternalLibrettoProjectProfile.g:1645:2: ( () ( (lv_keyword_1_0= ruleInitialInstructionKeyword ) ) ( (lv_instruction_2_0= RULE_STRING ) ) )
+            // InternalLibrettoProjectProfile.g:1646:3: () ( (lv_keyword_1_0= ruleInitialInstructionKeyword ) ) ( (lv_instruction_2_0= RULE_STRING ) )
             {
-            // InternalLibrettoProjectProfile.g:1666:3: ()
-            // InternalLibrettoProjectProfile.g:1667:4: 
+            // InternalLibrettoProjectProfile.g:1646:3: ()
+            // InternalLibrettoProjectProfile.g:1647:4: 
             {
 
             				current = forceCreateModelElement(
@@ -4189,11 +4140,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:1673:3: ( (lv_keyword_1_0= ruleInitialInstructionKeyword ) )
-            // InternalLibrettoProjectProfile.g:1674:4: (lv_keyword_1_0= ruleInitialInstructionKeyword )
+            // InternalLibrettoProjectProfile.g:1653:3: ( (lv_keyword_1_0= ruleInitialInstructionKeyword ) )
+            // InternalLibrettoProjectProfile.g:1654:4: (lv_keyword_1_0= ruleInitialInstructionKeyword )
             {
-            // InternalLibrettoProjectProfile.g:1674:4: (lv_keyword_1_0= ruleInitialInstructionKeyword )
-            // InternalLibrettoProjectProfile.g:1675:5: lv_keyword_1_0= ruleInitialInstructionKeyword
+            // InternalLibrettoProjectProfile.g:1654:4: (lv_keyword_1_0= ruleInitialInstructionKeyword )
+            // InternalLibrettoProjectProfile.g:1655:5: lv_keyword_1_0= ruleInitialInstructionKeyword
             {
 
             					newCompositeNode(grammarAccess.getInitialInstructionAccess().getKeywordInitialInstructionKeywordParserRuleCall_1_0());
@@ -4220,11 +4171,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:1692:3: ( (lv_instruction_2_0= RULE_STRING ) )
-            // InternalLibrettoProjectProfile.g:1693:4: (lv_instruction_2_0= RULE_STRING )
+            // InternalLibrettoProjectProfile.g:1672:3: ( (lv_instruction_2_0= RULE_STRING ) )
+            // InternalLibrettoProjectProfile.g:1673:4: (lv_instruction_2_0= RULE_STRING )
             {
-            // InternalLibrettoProjectProfile.g:1693:4: (lv_instruction_2_0= RULE_STRING )
-            // InternalLibrettoProjectProfile.g:1694:5: lv_instruction_2_0= RULE_STRING
+            // InternalLibrettoProjectProfile.g:1673:4: (lv_instruction_2_0= RULE_STRING )
+            // InternalLibrettoProjectProfile.g:1674:5: lv_instruction_2_0= RULE_STRING
             {
             lv_instruction_2_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -4269,7 +4220,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleMaxRetries"
-    // InternalLibrettoProjectProfile.g:1714:1: entryRuleMaxRetries returns [EObject current=null] : iv_ruleMaxRetries= ruleMaxRetries EOF ;
+    // InternalLibrettoProjectProfile.g:1694:1: entryRuleMaxRetries returns [EObject current=null] : iv_ruleMaxRetries= ruleMaxRetries EOF ;
     public final EObject entryRuleMaxRetries() throws RecognitionException {
         EObject current = null;
 
@@ -4277,8 +4228,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:1714:51: (iv_ruleMaxRetries= ruleMaxRetries EOF )
-            // InternalLibrettoProjectProfile.g:1715:2: iv_ruleMaxRetries= ruleMaxRetries EOF
+            // InternalLibrettoProjectProfile.g:1694:51: (iv_ruleMaxRetries= ruleMaxRetries EOF )
+            // InternalLibrettoProjectProfile.g:1695:2: iv_ruleMaxRetries= ruleMaxRetries EOF
             {
              newCompositeNode(grammarAccess.getMaxRetriesRule()); 
             pushFollow(FOLLOW_1);
@@ -4305,7 +4256,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleMaxRetries"
-    // InternalLibrettoProjectProfile.g:1721:1: ruleMaxRetries returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleMaxRetriesKeyword ) ) ( (lv_maxRetries_2_0= RULE_INT ) ) ) ;
+    // InternalLibrettoProjectProfile.g:1701:1: ruleMaxRetries returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleMaxRetriesKeyword ) ) ( (lv_maxRetries_2_0= RULE_INT ) ) ) ;
     public final EObject ruleMaxRetries() throws RecognitionException {
         EObject current = null;
 
@@ -4317,14 +4268,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:1727:2: ( ( () ( (lv_keyword_1_0= ruleMaxRetriesKeyword ) ) ( (lv_maxRetries_2_0= RULE_INT ) ) ) )
-            // InternalLibrettoProjectProfile.g:1728:2: ( () ( (lv_keyword_1_0= ruleMaxRetriesKeyword ) ) ( (lv_maxRetries_2_0= RULE_INT ) ) )
+            // InternalLibrettoProjectProfile.g:1707:2: ( ( () ( (lv_keyword_1_0= ruleMaxRetriesKeyword ) ) ( (lv_maxRetries_2_0= RULE_INT ) ) ) )
+            // InternalLibrettoProjectProfile.g:1708:2: ( () ( (lv_keyword_1_0= ruleMaxRetriesKeyword ) ) ( (lv_maxRetries_2_0= RULE_INT ) ) )
             {
-            // InternalLibrettoProjectProfile.g:1728:2: ( () ( (lv_keyword_1_0= ruleMaxRetriesKeyword ) ) ( (lv_maxRetries_2_0= RULE_INT ) ) )
-            // InternalLibrettoProjectProfile.g:1729:3: () ( (lv_keyword_1_0= ruleMaxRetriesKeyword ) ) ( (lv_maxRetries_2_0= RULE_INT ) )
+            // InternalLibrettoProjectProfile.g:1708:2: ( () ( (lv_keyword_1_0= ruleMaxRetriesKeyword ) ) ( (lv_maxRetries_2_0= RULE_INT ) ) )
+            // InternalLibrettoProjectProfile.g:1709:3: () ( (lv_keyword_1_0= ruleMaxRetriesKeyword ) ) ( (lv_maxRetries_2_0= RULE_INT ) )
             {
-            // InternalLibrettoProjectProfile.g:1729:3: ()
-            // InternalLibrettoProjectProfile.g:1730:4: 
+            // InternalLibrettoProjectProfile.g:1709:3: ()
+            // InternalLibrettoProjectProfile.g:1710:4: 
             {
 
             				current = forceCreateModelElement(
@@ -4334,11 +4285,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:1736:3: ( (lv_keyword_1_0= ruleMaxRetriesKeyword ) )
-            // InternalLibrettoProjectProfile.g:1737:4: (lv_keyword_1_0= ruleMaxRetriesKeyword )
+            // InternalLibrettoProjectProfile.g:1716:3: ( (lv_keyword_1_0= ruleMaxRetriesKeyword ) )
+            // InternalLibrettoProjectProfile.g:1717:4: (lv_keyword_1_0= ruleMaxRetriesKeyword )
             {
-            // InternalLibrettoProjectProfile.g:1737:4: (lv_keyword_1_0= ruleMaxRetriesKeyword )
-            // InternalLibrettoProjectProfile.g:1738:5: lv_keyword_1_0= ruleMaxRetriesKeyword
+            // InternalLibrettoProjectProfile.g:1717:4: (lv_keyword_1_0= ruleMaxRetriesKeyword )
+            // InternalLibrettoProjectProfile.g:1718:5: lv_keyword_1_0= ruleMaxRetriesKeyword
             {
 
             					newCompositeNode(grammarAccess.getMaxRetriesAccess().getKeywordMaxRetriesKeywordParserRuleCall_1_0());
@@ -4365,11 +4316,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:1755:3: ( (lv_maxRetries_2_0= RULE_INT ) )
-            // InternalLibrettoProjectProfile.g:1756:4: (lv_maxRetries_2_0= RULE_INT )
+            // InternalLibrettoProjectProfile.g:1735:3: ( (lv_maxRetries_2_0= RULE_INT ) )
+            // InternalLibrettoProjectProfile.g:1736:4: (lv_maxRetries_2_0= RULE_INT )
             {
-            // InternalLibrettoProjectProfile.g:1756:4: (lv_maxRetries_2_0= RULE_INT )
-            // InternalLibrettoProjectProfile.g:1757:5: lv_maxRetries_2_0= RULE_INT
+            // InternalLibrettoProjectProfile.g:1736:4: (lv_maxRetries_2_0= RULE_INT )
+            // InternalLibrettoProjectProfile.g:1737:5: lv_maxRetries_2_0= RULE_INT
             {
             lv_maxRetries_2_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -4414,7 +4365,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleParseCheck"
-    // InternalLibrettoProjectProfile.g:1777:1: entryRuleParseCheck returns [EObject current=null] : iv_ruleParseCheck= ruleParseCheck EOF ;
+    // InternalLibrettoProjectProfile.g:1757:1: entryRuleParseCheck returns [EObject current=null] : iv_ruleParseCheck= ruleParseCheck EOF ;
     public final EObject entryRuleParseCheck() throws RecognitionException {
         EObject current = null;
 
@@ -4422,8 +4373,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:1777:51: (iv_ruleParseCheck= ruleParseCheck EOF )
-            // InternalLibrettoProjectProfile.g:1778:2: iv_ruleParseCheck= ruleParseCheck EOF
+            // InternalLibrettoProjectProfile.g:1757:51: (iv_ruleParseCheck= ruleParseCheck EOF )
+            // InternalLibrettoProjectProfile.g:1758:2: iv_ruleParseCheck= ruleParseCheck EOF
             {
              newCompositeNode(grammarAccess.getParseCheckRule()); 
             pushFollow(FOLLOW_1);
@@ -4450,7 +4401,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleParseCheck"
-    // InternalLibrettoProjectProfile.g:1784:1: ruleParseCheck returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleParseCheckKeyword ) ) ( (lv_value_2_0= ruleTrueFalseKeyword ) ) ) ;
+    // InternalLibrettoProjectProfile.g:1764:1: ruleParseCheck returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleParseCheckKeyword ) ) ( (lv_value_2_0= ruleTrueFalseKeyword ) ) ) ;
     public final EObject ruleParseCheck() throws RecognitionException {
         EObject current = null;
 
@@ -4463,14 +4414,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:1790:2: ( ( () ( (lv_keyword_1_0= ruleParseCheckKeyword ) ) ( (lv_value_2_0= ruleTrueFalseKeyword ) ) ) )
-            // InternalLibrettoProjectProfile.g:1791:2: ( () ( (lv_keyword_1_0= ruleParseCheckKeyword ) ) ( (lv_value_2_0= ruleTrueFalseKeyword ) ) )
+            // InternalLibrettoProjectProfile.g:1770:2: ( ( () ( (lv_keyword_1_0= ruleParseCheckKeyword ) ) ( (lv_value_2_0= ruleTrueFalseKeyword ) ) ) )
+            // InternalLibrettoProjectProfile.g:1771:2: ( () ( (lv_keyword_1_0= ruleParseCheckKeyword ) ) ( (lv_value_2_0= ruleTrueFalseKeyword ) ) )
             {
-            // InternalLibrettoProjectProfile.g:1791:2: ( () ( (lv_keyword_1_0= ruleParseCheckKeyword ) ) ( (lv_value_2_0= ruleTrueFalseKeyword ) ) )
-            // InternalLibrettoProjectProfile.g:1792:3: () ( (lv_keyword_1_0= ruleParseCheckKeyword ) ) ( (lv_value_2_0= ruleTrueFalseKeyword ) )
+            // InternalLibrettoProjectProfile.g:1771:2: ( () ( (lv_keyword_1_0= ruleParseCheckKeyword ) ) ( (lv_value_2_0= ruleTrueFalseKeyword ) ) )
+            // InternalLibrettoProjectProfile.g:1772:3: () ( (lv_keyword_1_0= ruleParseCheckKeyword ) ) ( (lv_value_2_0= ruleTrueFalseKeyword ) )
             {
-            // InternalLibrettoProjectProfile.g:1792:3: ()
-            // InternalLibrettoProjectProfile.g:1793:4: 
+            // InternalLibrettoProjectProfile.g:1772:3: ()
+            // InternalLibrettoProjectProfile.g:1773:4: 
             {
 
             				current = forceCreateModelElement(
@@ -4480,11 +4431,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:1799:3: ( (lv_keyword_1_0= ruleParseCheckKeyword ) )
-            // InternalLibrettoProjectProfile.g:1800:4: (lv_keyword_1_0= ruleParseCheckKeyword )
+            // InternalLibrettoProjectProfile.g:1779:3: ( (lv_keyword_1_0= ruleParseCheckKeyword ) )
+            // InternalLibrettoProjectProfile.g:1780:4: (lv_keyword_1_0= ruleParseCheckKeyword )
             {
-            // InternalLibrettoProjectProfile.g:1800:4: (lv_keyword_1_0= ruleParseCheckKeyword )
-            // InternalLibrettoProjectProfile.g:1801:5: lv_keyword_1_0= ruleParseCheckKeyword
+            // InternalLibrettoProjectProfile.g:1780:4: (lv_keyword_1_0= ruleParseCheckKeyword )
+            // InternalLibrettoProjectProfile.g:1781:5: lv_keyword_1_0= ruleParseCheckKeyword
             {
 
             					newCompositeNode(grammarAccess.getParseCheckAccess().getKeywordParseCheckKeywordParserRuleCall_1_0());
@@ -4511,11 +4462,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:1818:3: ( (lv_value_2_0= ruleTrueFalseKeyword ) )
-            // InternalLibrettoProjectProfile.g:1819:4: (lv_value_2_0= ruleTrueFalseKeyword )
+            // InternalLibrettoProjectProfile.g:1798:3: ( (lv_value_2_0= ruleTrueFalseKeyword ) )
+            // InternalLibrettoProjectProfile.g:1799:4: (lv_value_2_0= ruleTrueFalseKeyword )
             {
-            // InternalLibrettoProjectProfile.g:1819:4: (lv_value_2_0= ruleTrueFalseKeyword )
-            // InternalLibrettoProjectProfile.g:1820:5: lv_value_2_0= ruleTrueFalseKeyword
+            // InternalLibrettoProjectProfile.g:1799:4: (lv_value_2_0= ruleTrueFalseKeyword )
+            // InternalLibrettoProjectProfile.g:1800:5: lv_value_2_0= ruleTrueFalseKeyword
             {
 
             					newCompositeNode(grammarAccess.getParseCheckAccess().getValueTrueFalseKeywordParserRuleCall_2_0());
@@ -4565,7 +4516,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleDefaultCorrection"
-    // InternalLibrettoProjectProfile.g:1841:1: entryRuleDefaultCorrection returns [EObject current=null] : iv_ruleDefaultCorrection= ruleDefaultCorrection EOF ;
+    // InternalLibrettoProjectProfile.g:1821:1: entryRuleDefaultCorrection returns [EObject current=null] : iv_ruleDefaultCorrection= ruleDefaultCorrection EOF ;
     public final EObject entryRuleDefaultCorrection() throws RecognitionException {
         EObject current = null;
 
@@ -4573,8 +4524,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:1841:58: (iv_ruleDefaultCorrection= ruleDefaultCorrection EOF )
-            // InternalLibrettoProjectProfile.g:1842:2: iv_ruleDefaultCorrection= ruleDefaultCorrection EOF
+            // InternalLibrettoProjectProfile.g:1821:58: (iv_ruleDefaultCorrection= ruleDefaultCorrection EOF )
+            // InternalLibrettoProjectProfile.g:1822:2: iv_ruleDefaultCorrection= ruleDefaultCorrection EOF
             {
              newCompositeNode(grammarAccess.getDefaultCorrectionRule()); 
             pushFollow(FOLLOW_1);
@@ -4601,7 +4552,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleDefaultCorrection"
-    // InternalLibrettoProjectProfile.g:1848:1: ruleDefaultCorrection returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleDefaultCorrectionKeyword ) ) ( (lv_correction_2_0= RULE_STRING ) ) ) ;
+    // InternalLibrettoProjectProfile.g:1828:1: ruleDefaultCorrection returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleDefaultCorrectionKeyword ) ) ( (lv_correction_2_0= RULE_STRING ) ) ) ;
     public final EObject ruleDefaultCorrection() throws RecognitionException {
         EObject current = null;
 
@@ -4613,14 +4564,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:1854:2: ( ( () ( (lv_keyword_1_0= ruleDefaultCorrectionKeyword ) ) ( (lv_correction_2_0= RULE_STRING ) ) ) )
-            // InternalLibrettoProjectProfile.g:1855:2: ( () ( (lv_keyword_1_0= ruleDefaultCorrectionKeyword ) ) ( (lv_correction_2_0= RULE_STRING ) ) )
+            // InternalLibrettoProjectProfile.g:1834:2: ( ( () ( (lv_keyword_1_0= ruleDefaultCorrectionKeyword ) ) ( (lv_correction_2_0= RULE_STRING ) ) ) )
+            // InternalLibrettoProjectProfile.g:1835:2: ( () ( (lv_keyword_1_0= ruleDefaultCorrectionKeyword ) ) ( (lv_correction_2_0= RULE_STRING ) ) )
             {
-            // InternalLibrettoProjectProfile.g:1855:2: ( () ( (lv_keyword_1_0= ruleDefaultCorrectionKeyword ) ) ( (lv_correction_2_0= RULE_STRING ) ) )
-            // InternalLibrettoProjectProfile.g:1856:3: () ( (lv_keyword_1_0= ruleDefaultCorrectionKeyword ) ) ( (lv_correction_2_0= RULE_STRING ) )
+            // InternalLibrettoProjectProfile.g:1835:2: ( () ( (lv_keyword_1_0= ruleDefaultCorrectionKeyword ) ) ( (lv_correction_2_0= RULE_STRING ) ) )
+            // InternalLibrettoProjectProfile.g:1836:3: () ( (lv_keyword_1_0= ruleDefaultCorrectionKeyword ) ) ( (lv_correction_2_0= RULE_STRING ) )
             {
-            // InternalLibrettoProjectProfile.g:1856:3: ()
-            // InternalLibrettoProjectProfile.g:1857:4: 
+            // InternalLibrettoProjectProfile.g:1836:3: ()
+            // InternalLibrettoProjectProfile.g:1837:4: 
             {
 
             				current = forceCreateModelElement(
@@ -4630,11 +4581,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:1863:3: ( (lv_keyword_1_0= ruleDefaultCorrectionKeyword ) )
-            // InternalLibrettoProjectProfile.g:1864:4: (lv_keyword_1_0= ruleDefaultCorrectionKeyword )
+            // InternalLibrettoProjectProfile.g:1843:3: ( (lv_keyword_1_0= ruleDefaultCorrectionKeyword ) )
+            // InternalLibrettoProjectProfile.g:1844:4: (lv_keyword_1_0= ruleDefaultCorrectionKeyword )
             {
-            // InternalLibrettoProjectProfile.g:1864:4: (lv_keyword_1_0= ruleDefaultCorrectionKeyword )
-            // InternalLibrettoProjectProfile.g:1865:5: lv_keyword_1_0= ruleDefaultCorrectionKeyword
+            // InternalLibrettoProjectProfile.g:1844:4: (lv_keyword_1_0= ruleDefaultCorrectionKeyword )
+            // InternalLibrettoProjectProfile.g:1845:5: lv_keyword_1_0= ruleDefaultCorrectionKeyword
             {
 
             					newCompositeNode(grammarAccess.getDefaultCorrectionAccess().getKeywordDefaultCorrectionKeywordParserRuleCall_1_0());
@@ -4661,11 +4612,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:1882:3: ( (lv_correction_2_0= RULE_STRING ) )
-            // InternalLibrettoProjectProfile.g:1883:4: (lv_correction_2_0= RULE_STRING )
+            // InternalLibrettoProjectProfile.g:1862:3: ( (lv_correction_2_0= RULE_STRING ) )
+            // InternalLibrettoProjectProfile.g:1863:4: (lv_correction_2_0= RULE_STRING )
             {
-            // InternalLibrettoProjectProfile.g:1883:4: (lv_correction_2_0= RULE_STRING )
-            // InternalLibrettoProjectProfile.g:1884:5: lv_correction_2_0= RULE_STRING
+            // InternalLibrettoProjectProfile.g:1863:4: (lv_correction_2_0= RULE_STRING )
+            // InternalLibrettoProjectProfile.g:1864:5: lv_correction_2_0= RULE_STRING
             {
             lv_correction_2_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -4710,7 +4661,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleInitialInstructionKeyword"
-    // InternalLibrettoProjectProfile.g:1904:1: entryRuleInitialInstructionKeyword returns [EObject current=null] : iv_ruleInitialInstructionKeyword= ruleInitialInstructionKeyword EOF ;
+    // InternalLibrettoProjectProfile.g:1884:1: entryRuleInitialInstructionKeyword returns [EObject current=null] : iv_ruleInitialInstructionKeyword= ruleInitialInstructionKeyword EOF ;
     public final EObject entryRuleInitialInstructionKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -4718,8 +4669,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:1904:66: (iv_ruleInitialInstructionKeyword= ruleInitialInstructionKeyword EOF )
-            // InternalLibrettoProjectProfile.g:1905:2: iv_ruleInitialInstructionKeyword= ruleInitialInstructionKeyword EOF
+            // InternalLibrettoProjectProfile.g:1884:66: (iv_ruleInitialInstructionKeyword= ruleInitialInstructionKeyword EOF )
+            // InternalLibrettoProjectProfile.g:1885:2: iv_ruleInitialInstructionKeyword= ruleInitialInstructionKeyword EOF
             {
              newCompositeNode(grammarAccess.getInitialInstructionKeywordRule()); 
             pushFollow(FOLLOW_1);
@@ -4746,7 +4697,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleInitialInstructionKeyword"
-    // InternalLibrettoProjectProfile.g:1911:1: ruleInitialInstructionKeyword returns [EObject current=null] : ( () ( ( (lv_keyword_1_1= 'initialinstruction' | lv_keyword_1_2= 'initialInstruction' ) ) ) ) ;
+    // InternalLibrettoProjectProfile.g:1891:1: ruleInitialInstructionKeyword returns [EObject current=null] : ( () ( ( (lv_keyword_1_1= 'initialinstruction' | lv_keyword_1_2= 'initialInstruction' ) ) ) ) ;
     public final EObject ruleInitialInstructionKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -4757,14 +4708,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:1917:2: ( ( () ( ( (lv_keyword_1_1= 'initialinstruction' | lv_keyword_1_2= 'initialInstruction' ) ) ) ) )
-            // InternalLibrettoProjectProfile.g:1918:2: ( () ( ( (lv_keyword_1_1= 'initialinstruction' | lv_keyword_1_2= 'initialInstruction' ) ) ) )
+            // InternalLibrettoProjectProfile.g:1897:2: ( ( () ( ( (lv_keyword_1_1= 'initialinstruction' | lv_keyword_1_2= 'initialInstruction' ) ) ) ) )
+            // InternalLibrettoProjectProfile.g:1898:2: ( () ( ( (lv_keyword_1_1= 'initialinstruction' | lv_keyword_1_2= 'initialInstruction' ) ) ) )
             {
-            // InternalLibrettoProjectProfile.g:1918:2: ( () ( ( (lv_keyword_1_1= 'initialinstruction' | lv_keyword_1_2= 'initialInstruction' ) ) ) )
-            // InternalLibrettoProjectProfile.g:1919:3: () ( ( (lv_keyword_1_1= 'initialinstruction' | lv_keyword_1_2= 'initialInstruction' ) ) )
+            // InternalLibrettoProjectProfile.g:1898:2: ( () ( ( (lv_keyword_1_1= 'initialinstruction' | lv_keyword_1_2= 'initialInstruction' ) ) ) )
+            // InternalLibrettoProjectProfile.g:1899:3: () ( ( (lv_keyword_1_1= 'initialinstruction' | lv_keyword_1_2= 'initialInstruction' ) ) )
             {
-            // InternalLibrettoProjectProfile.g:1919:3: ()
-            // InternalLibrettoProjectProfile.g:1920:4: 
+            // InternalLibrettoProjectProfile.g:1899:3: ()
+            // InternalLibrettoProjectProfile.g:1900:4: 
             {
 
             				current = forceCreateModelElement(
@@ -4774,13 +4725,13 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:1926:3: ( ( (lv_keyword_1_1= 'initialinstruction' | lv_keyword_1_2= 'initialInstruction' ) ) )
-            // InternalLibrettoProjectProfile.g:1927:4: ( (lv_keyword_1_1= 'initialinstruction' | lv_keyword_1_2= 'initialInstruction' ) )
+            // InternalLibrettoProjectProfile.g:1906:3: ( ( (lv_keyword_1_1= 'initialinstruction' | lv_keyword_1_2= 'initialInstruction' ) ) )
+            // InternalLibrettoProjectProfile.g:1907:4: ( (lv_keyword_1_1= 'initialinstruction' | lv_keyword_1_2= 'initialInstruction' ) )
             {
-            // InternalLibrettoProjectProfile.g:1927:4: ( (lv_keyword_1_1= 'initialinstruction' | lv_keyword_1_2= 'initialInstruction' ) )
-            // InternalLibrettoProjectProfile.g:1928:5: (lv_keyword_1_1= 'initialinstruction' | lv_keyword_1_2= 'initialInstruction' )
+            // InternalLibrettoProjectProfile.g:1907:4: ( (lv_keyword_1_1= 'initialinstruction' | lv_keyword_1_2= 'initialInstruction' ) )
+            // InternalLibrettoProjectProfile.g:1908:5: (lv_keyword_1_1= 'initialinstruction' | lv_keyword_1_2= 'initialInstruction' )
             {
-            // InternalLibrettoProjectProfile.g:1928:5: (lv_keyword_1_1= 'initialinstruction' | lv_keyword_1_2= 'initialInstruction' )
+            // InternalLibrettoProjectProfile.g:1908:5: (lv_keyword_1_1= 'initialinstruction' | lv_keyword_1_2= 'initialInstruction' )
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -4798,7 +4749,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
             }
             switch (alt12) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:1929:6: lv_keyword_1_1= 'initialinstruction'
+                    // InternalLibrettoProjectProfile.g:1909:6: lv_keyword_1_1= 'initialinstruction'
                     {
                     lv_keyword_1_1=(Token)match(input,29,FOLLOW_2); 
 
@@ -4814,7 +4765,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoProjectProfile.g:1940:6: lv_keyword_1_2= 'initialInstruction'
+                    // InternalLibrettoProjectProfile.g:1920:6: lv_keyword_1_2= 'initialInstruction'
                     {
                     lv_keyword_1_2=(Token)match(input,30,FOLLOW_2); 
 
@@ -4861,7 +4812,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleMaxRetriesKeyword"
-    // InternalLibrettoProjectProfile.g:1957:1: entryRuleMaxRetriesKeyword returns [EObject current=null] : iv_ruleMaxRetriesKeyword= ruleMaxRetriesKeyword EOF ;
+    // InternalLibrettoProjectProfile.g:1937:1: entryRuleMaxRetriesKeyword returns [EObject current=null] : iv_ruleMaxRetriesKeyword= ruleMaxRetriesKeyword EOF ;
     public final EObject entryRuleMaxRetriesKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -4869,8 +4820,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:1957:58: (iv_ruleMaxRetriesKeyword= ruleMaxRetriesKeyword EOF )
-            // InternalLibrettoProjectProfile.g:1958:2: iv_ruleMaxRetriesKeyword= ruleMaxRetriesKeyword EOF
+            // InternalLibrettoProjectProfile.g:1937:58: (iv_ruleMaxRetriesKeyword= ruleMaxRetriesKeyword EOF )
+            // InternalLibrettoProjectProfile.g:1938:2: iv_ruleMaxRetriesKeyword= ruleMaxRetriesKeyword EOF
             {
              newCompositeNode(grammarAccess.getMaxRetriesKeywordRule()); 
             pushFollow(FOLLOW_1);
@@ -4897,7 +4848,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleMaxRetriesKeyword"
-    // InternalLibrettoProjectProfile.g:1964:1: ruleMaxRetriesKeyword returns [EObject current=null] : ( () ( ( (lv_keyword_1_1= 'maxretries' | lv_keyword_1_2= 'maxRetries' ) ) ) ) ;
+    // InternalLibrettoProjectProfile.g:1944:1: ruleMaxRetriesKeyword returns [EObject current=null] : ( () ( ( (lv_keyword_1_1= 'maxretries' | lv_keyword_1_2= 'maxRetries' ) ) ) ) ;
     public final EObject ruleMaxRetriesKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -4908,14 +4859,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:1970:2: ( ( () ( ( (lv_keyword_1_1= 'maxretries' | lv_keyword_1_2= 'maxRetries' ) ) ) ) )
-            // InternalLibrettoProjectProfile.g:1971:2: ( () ( ( (lv_keyword_1_1= 'maxretries' | lv_keyword_1_2= 'maxRetries' ) ) ) )
+            // InternalLibrettoProjectProfile.g:1950:2: ( ( () ( ( (lv_keyword_1_1= 'maxretries' | lv_keyword_1_2= 'maxRetries' ) ) ) ) )
+            // InternalLibrettoProjectProfile.g:1951:2: ( () ( ( (lv_keyword_1_1= 'maxretries' | lv_keyword_1_2= 'maxRetries' ) ) ) )
             {
-            // InternalLibrettoProjectProfile.g:1971:2: ( () ( ( (lv_keyword_1_1= 'maxretries' | lv_keyword_1_2= 'maxRetries' ) ) ) )
-            // InternalLibrettoProjectProfile.g:1972:3: () ( ( (lv_keyword_1_1= 'maxretries' | lv_keyword_1_2= 'maxRetries' ) ) )
+            // InternalLibrettoProjectProfile.g:1951:2: ( () ( ( (lv_keyword_1_1= 'maxretries' | lv_keyword_1_2= 'maxRetries' ) ) ) )
+            // InternalLibrettoProjectProfile.g:1952:3: () ( ( (lv_keyword_1_1= 'maxretries' | lv_keyword_1_2= 'maxRetries' ) ) )
             {
-            // InternalLibrettoProjectProfile.g:1972:3: ()
-            // InternalLibrettoProjectProfile.g:1973:4: 
+            // InternalLibrettoProjectProfile.g:1952:3: ()
+            // InternalLibrettoProjectProfile.g:1953:4: 
             {
 
             				current = forceCreateModelElement(
@@ -4925,13 +4876,13 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:1979:3: ( ( (lv_keyword_1_1= 'maxretries' | lv_keyword_1_2= 'maxRetries' ) ) )
-            // InternalLibrettoProjectProfile.g:1980:4: ( (lv_keyword_1_1= 'maxretries' | lv_keyword_1_2= 'maxRetries' ) )
+            // InternalLibrettoProjectProfile.g:1959:3: ( ( (lv_keyword_1_1= 'maxretries' | lv_keyword_1_2= 'maxRetries' ) ) )
+            // InternalLibrettoProjectProfile.g:1960:4: ( (lv_keyword_1_1= 'maxretries' | lv_keyword_1_2= 'maxRetries' ) )
             {
-            // InternalLibrettoProjectProfile.g:1980:4: ( (lv_keyword_1_1= 'maxretries' | lv_keyword_1_2= 'maxRetries' ) )
-            // InternalLibrettoProjectProfile.g:1981:5: (lv_keyword_1_1= 'maxretries' | lv_keyword_1_2= 'maxRetries' )
+            // InternalLibrettoProjectProfile.g:1960:4: ( (lv_keyword_1_1= 'maxretries' | lv_keyword_1_2= 'maxRetries' ) )
+            // InternalLibrettoProjectProfile.g:1961:5: (lv_keyword_1_1= 'maxretries' | lv_keyword_1_2= 'maxRetries' )
             {
-            // InternalLibrettoProjectProfile.g:1981:5: (lv_keyword_1_1= 'maxretries' | lv_keyword_1_2= 'maxRetries' )
+            // InternalLibrettoProjectProfile.g:1961:5: (lv_keyword_1_1= 'maxretries' | lv_keyword_1_2= 'maxRetries' )
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -4949,7 +4900,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
             }
             switch (alt13) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:1982:6: lv_keyword_1_1= 'maxretries'
+                    // InternalLibrettoProjectProfile.g:1962:6: lv_keyword_1_1= 'maxretries'
                     {
                     lv_keyword_1_1=(Token)match(input,31,FOLLOW_2); 
 
@@ -4965,7 +4916,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoProjectProfile.g:1993:6: lv_keyword_1_2= 'maxRetries'
+                    // InternalLibrettoProjectProfile.g:1973:6: lv_keyword_1_2= 'maxRetries'
                     {
                     lv_keyword_1_2=(Token)match(input,32,FOLLOW_2); 
 
@@ -5012,7 +4963,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleParseCheckKeyword"
-    // InternalLibrettoProjectProfile.g:2010:1: entryRuleParseCheckKeyword returns [EObject current=null] : iv_ruleParseCheckKeyword= ruleParseCheckKeyword EOF ;
+    // InternalLibrettoProjectProfile.g:1990:1: entryRuleParseCheckKeyword returns [EObject current=null] : iv_ruleParseCheckKeyword= ruleParseCheckKeyword EOF ;
     public final EObject entryRuleParseCheckKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -5020,8 +4971,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:2010:58: (iv_ruleParseCheckKeyword= ruleParseCheckKeyword EOF )
-            // InternalLibrettoProjectProfile.g:2011:2: iv_ruleParseCheckKeyword= ruleParseCheckKeyword EOF
+            // InternalLibrettoProjectProfile.g:1990:58: (iv_ruleParseCheckKeyword= ruleParseCheckKeyword EOF )
+            // InternalLibrettoProjectProfile.g:1991:2: iv_ruleParseCheckKeyword= ruleParseCheckKeyword EOF
             {
              newCompositeNode(grammarAccess.getParseCheckKeywordRule()); 
             pushFollow(FOLLOW_1);
@@ -5048,7 +4999,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleParseCheckKeyword"
-    // InternalLibrettoProjectProfile.g:2017:1: ruleParseCheckKeyword returns [EObject current=null] : ( () ( ( (lv_keyword_1_1= 'parsecheck' | lv_keyword_1_2= 'parseCheck' ) ) ) ) ;
+    // InternalLibrettoProjectProfile.g:1997:1: ruleParseCheckKeyword returns [EObject current=null] : ( () ( ( (lv_keyword_1_1= 'parsecheck' | lv_keyword_1_2= 'parseCheck' ) ) ) ) ;
     public final EObject ruleParseCheckKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -5059,14 +5010,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:2023:2: ( ( () ( ( (lv_keyword_1_1= 'parsecheck' | lv_keyword_1_2= 'parseCheck' ) ) ) ) )
-            // InternalLibrettoProjectProfile.g:2024:2: ( () ( ( (lv_keyword_1_1= 'parsecheck' | lv_keyword_1_2= 'parseCheck' ) ) ) )
+            // InternalLibrettoProjectProfile.g:2003:2: ( ( () ( ( (lv_keyword_1_1= 'parsecheck' | lv_keyword_1_2= 'parseCheck' ) ) ) ) )
+            // InternalLibrettoProjectProfile.g:2004:2: ( () ( ( (lv_keyword_1_1= 'parsecheck' | lv_keyword_1_2= 'parseCheck' ) ) ) )
             {
-            // InternalLibrettoProjectProfile.g:2024:2: ( () ( ( (lv_keyword_1_1= 'parsecheck' | lv_keyword_1_2= 'parseCheck' ) ) ) )
-            // InternalLibrettoProjectProfile.g:2025:3: () ( ( (lv_keyword_1_1= 'parsecheck' | lv_keyword_1_2= 'parseCheck' ) ) )
+            // InternalLibrettoProjectProfile.g:2004:2: ( () ( ( (lv_keyword_1_1= 'parsecheck' | lv_keyword_1_2= 'parseCheck' ) ) ) )
+            // InternalLibrettoProjectProfile.g:2005:3: () ( ( (lv_keyword_1_1= 'parsecheck' | lv_keyword_1_2= 'parseCheck' ) ) )
             {
-            // InternalLibrettoProjectProfile.g:2025:3: ()
-            // InternalLibrettoProjectProfile.g:2026:4: 
+            // InternalLibrettoProjectProfile.g:2005:3: ()
+            // InternalLibrettoProjectProfile.g:2006:4: 
             {
 
             				current = forceCreateModelElement(
@@ -5076,13 +5027,13 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:2032:3: ( ( (lv_keyword_1_1= 'parsecheck' | lv_keyword_1_2= 'parseCheck' ) ) )
-            // InternalLibrettoProjectProfile.g:2033:4: ( (lv_keyword_1_1= 'parsecheck' | lv_keyword_1_2= 'parseCheck' ) )
+            // InternalLibrettoProjectProfile.g:2012:3: ( ( (lv_keyword_1_1= 'parsecheck' | lv_keyword_1_2= 'parseCheck' ) ) )
+            // InternalLibrettoProjectProfile.g:2013:4: ( (lv_keyword_1_1= 'parsecheck' | lv_keyword_1_2= 'parseCheck' ) )
             {
-            // InternalLibrettoProjectProfile.g:2033:4: ( (lv_keyword_1_1= 'parsecheck' | lv_keyword_1_2= 'parseCheck' ) )
-            // InternalLibrettoProjectProfile.g:2034:5: (lv_keyword_1_1= 'parsecheck' | lv_keyword_1_2= 'parseCheck' )
+            // InternalLibrettoProjectProfile.g:2013:4: ( (lv_keyword_1_1= 'parsecheck' | lv_keyword_1_2= 'parseCheck' ) )
+            // InternalLibrettoProjectProfile.g:2014:5: (lv_keyword_1_1= 'parsecheck' | lv_keyword_1_2= 'parseCheck' )
             {
-            // InternalLibrettoProjectProfile.g:2034:5: (lv_keyword_1_1= 'parsecheck' | lv_keyword_1_2= 'parseCheck' )
+            // InternalLibrettoProjectProfile.g:2014:5: (lv_keyword_1_1= 'parsecheck' | lv_keyword_1_2= 'parseCheck' )
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -5100,7 +5051,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
             }
             switch (alt14) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:2035:6: lv_keyword_1_1= 'parsecheck'
+                    // InternalLibrettoProjectProfile.g:2015:6: lv_keyword_1_1= 'parsecheck'
                     {
                     lv_keyword_1_1=(Token)match(input,33,FOLLOW_2); 
 
@@ -5116,7 +5067,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoProjectProfile.g:2046:6: lv_keyword_1_2= 'parseCheck'
+                    // InternalLibrettoProjectProfile.g:2026:6: lv_keyword_1_2= 'parseCheck'
                     {
                     lv_keyword_1_2=(Token)match(input,34,FOLLOW_2); 
 
@@ -5163,7 +5114,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleDefaultCorrectionKeyword"
-    // InternalLibrettoProjectProfile.g:2063:1: entryRuleDefaultCorrectionKeyword returns [EObject current=null] : iv_ruleDefaultCorrectionKeyword= ruleDefaultCorrectionKeyword EOF ;
+    // InternalLibrettoProjectProfile.g:2043:1: entryRuleDefaultCorrectionKeyword returns [EObject current=null] : iv_ruleDefaultCorrectionKeyword= ruleDefaultCorrectionKeyword EOF ;
     public final EObject entryRuleDefaultCorrectionKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -5171,8 +5122,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:2063:65: (iv_ruleDefaultCorrectionKeyword= ruleDefaultCorrectionKeyword EOF )
-            // InternalLibrettoProjectProfile.g:2064:2: iv_ruleDefaultCorrectionKeyword= ruleDefaultCorrectionKeyword EOF
+            // InternalLibrettoProjectProfile.g:2043:65: (iv_ruleDefaultCorrectionKeyword= ruleDefaultCorrectionKeyword EOF )
+            // InternalLibrettoProjectProfile.g:2044:2: iv_ruleDefaultCorrectionKeyword= ruleDefaultCorrectionKeyword EOF
             {
              newCompositeNode(grammarAccess.getDefaultCorrectionKeywordRule()); 
             pushFollow(FOLLOW_1);
@@ -5199,7 +5150,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleDefaultCorrectionKeyword"
-    // InternalLibrettoProjectProfile.g:2070:1: ruleDefaultCorrectionKeyword returns [EObject current=null] : ( () ( ( (lv_keyword_1_1= 'defaultcorrection' | lv_keyword_1_2= 'defaultCorrection' ) ) ) ) ;
+    // InternalLibrettoProjectProfile.g:2050:1: ruleDefaultCorrectionKeyword returns [EObject current=null] : ( () ( ( (lv_keyword_1_1= 'defaultcorrection' | lv_keyword_1_2= 'defaultCorrection' ) ) ) ) ;
     public final EObject ruleDefaultCorrectionKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -5210,14 +5161,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:2076:2: ( ( () ( ( (lv_keyword_1_1= 'defaultcorrection' | lv_keyword_1_2= 'defaultCorrection' ) ) ) ) )
-            // InternalLibrettoProjectProfile.g:2077:2: ( () ( ( (lv_keyword_1_1= 'defaultcorrection' | lv_keyword_1_2= 'defaultCorrection' ) ) ) )
+            // InternalLibrettoProjectProfile.g:2056:2: ( ( () ( ( (lv_keyword_1_1= 'defaultcorrection' | lv_keyword_1_2= 'defaultCorrection' ) ) ) ) )
+            // InternalLibrettoProjectProfile.g:2057:2: ( () ( ( (lv_keyword_1_1= 'defaultcorrection' | lv_keyword_1_2= 'defaultCorrection' ) ) ) )
             {
-            // InternalLibrettoProjectProfile.g:2077:2: ( () ( ( (lv_keyword_1_1= 'defaultcorrection' | lv_keyword_1_2= 'defaultCorrection' ) ) ) )
-            // InternalLibrettoProjectProfile.g:2078:3: () ( ( (lv_keyword_1_1= 'defaultcorrection' | lv_keyword_1_2= 'defaultCorrection' ) ) )
+            // InternalLibrettoProjectProfile.g:2057:2: ( () ( ( (lv_keyword_1_1= 'defaultcorrection' | lv_keyword_1_2= 'defaultCorrection' ) ) ) )
+            // InternalLibrettoProjectProfile.g:2058:3: () ( ( (lv_keyword_1_1= 'defaultcorrection' | lv_keyword_1_2= 'defaultCorrection' ) ) )
             {
-            // InternalLibrettoProjectProfile.g:2078:3: ()
-            // InternalLibrettoProjectProfile.g:2079:4: 
+            // InternalLibrettoProjectProfile.g:2058:3: ()
+            // InternalLibrettoProjectProfile.g:2059:4: 
             {
 
             				current = forceCreateModelElement(
@@ -5227,13 +5178,13 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:2085:3: ( ( (lv_keyword_1_1= 'defaultcorrection' | lv_keyword_1_2= 'defaultCorrection' ) ) )
-            // InternalLibrettoProjectProfile.g:2086:4: ( (lv_keyword_1_1= 'defaultcorrection' | lv_keyword_1_2= 'defaultCorrection' ) )
+            // InternalLibrettoProjectProfile.g:2065:3: ( ( (lv_keyword_1_1= 'defaultcorrection' | lv_keyword_1_2= 'defaultCorrection' ) ) )
+            // InternalLibrettoProjectProfile.g:2066:4: ( (lv_keyword_1_1= 'defaultcorrection' | lv_keyword_1_2= 'defaultCorrection' ) )
             {
-            // InternalLibrettoProjectProfile.g:2086:4: ( (lv_keyword_1_1= 'defaultcorrection' | lv_keyword_1_2= 'defaultCorrection' ) )
-            // InternalLibrettoProjectProfile.g:2087:5: (lv_keyword_1_1= 'defaultcorrection' | lv_keyword_1_2= 'defaultCorrection' )
+            // InternalLibrettoProjectProfile.g:2066:4: ( (lv_keyword_1_1= 'defaultcorrection' | lv_keyword_1_2= 'defaultCorrection' ) )
+            // InternalLibrettoProjectProfile.g:2067:5: (lv_keyword_1_1= 'defaultcorrection' | lv_keyword_1_2= 'defaultCorrection' )
             {
-            // InternalLibrettoProjectProfile.g:2087:5: (lv_keyword_1_1= 'defaultcorrection' | lv_keyword_1_2= 'defaultCorrection' )
+            // InternalLibrettoProjectProfile.g:2067:5: (lv_keyword_1_1= 'defaultcorrection' | lv_keyword_1_2= 'defaultCorrection' )
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -5251,7 +5202,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
             }
             switch (alt15) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:2088:6: lv_keyword_1_1= 'defaultcorrection'
+                    // InternalLibrettoProjectProfile.g:2068:6: lv_keyword_1_1= 'defaultcorrection'
                     {
                     lv_keyword_1_1=(Token)match(input,35,FOLLOW_2); 
 
@@ -5267,7 +5218,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoProjectProfile.g:2099:6: lv_keyword_1_2= 'defaultCorrection'
+                    // InternalLibrettoProjectProfile.g:2079:6: lv_keyword_1_2= 'defaultCorrection'
                     {
                     lv_keyword_1_2=(Token)match(input,36,FOLLOW_2); 
 
@@ -5314,7 +5265,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleTrueFalseKeyword"
-    // InternalLibrettoProjectProfile.g:2116:1: entryRuleTrueFalseKeyword returns [EObject current=null] : iv_ruleTrueFalseKeyword= ruleTrueFalseKeyword EOF ;
+    // InternalLibrettoProjectProfile.g:2096:1: entryRuleTrueFalseKeyword returns [EObject current=null] : iv_ruleTrueFalseKeyword= ruleTrueFalseKeyword EOF ;
     public final EObject entryRuleTrueFalseKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -5322,8 +5273,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:2116:57: (iv_ruleTrueFalseKeyword= ruleTrueFalseKeyword EOF )
-            // InternalLibrettoProjectProfile.g:2117:2: iv_ruleTrueFalseKeyword= ruleTrueFalseKeyword EOF
+            // InternalLibrettoProjectProfile.g:2096:57: (iv_ruleTrueFalseKeyword= ruleTrueFalseKeyword EOF )
+            // InternalLibrettoProjectProfile.g:2097:2: iv_ruleTrueFalseKeyword= ruleTrueFalseKeyword EOF
             {
              newCompositeNode(grammarAccess.getTrueFalseKeywordRule()); 
             pushFollow(FOLLOW_1);
@@ -5350,7 +5301,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleTrueFalseKeyword"
-    // InternalLibrettoProjectProfile.g:2123:1: ruleTrueFalseKeyword returns [EObject current=null] : ( () ( ( (lv_keyword_1_1= 'true' | lv_keyword_1_2= 'false' ) ) ) ) ;
+    // InternalLibrettoProjectProfile.g:2103:1: ruleTrueFalseKeyword returns [EObject current=null] : ( () ( ( (lv_keyword_1_1= 'true' | lv_keyword_1_2= 'false' ) ) ) ) ;
     public final EObject ruleTrueFalseKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -5361,14 +5312,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:2129:2: ( ( () ( ( (lv_keyword_1_1= 'true' | lv_keyword_1_2= 'false' ) ) ) ) )
-            // InternalLibrettoProjectProfile.g:2130:2: ( () ( ( (lv_keyword_1_1= 'true' | lv_keyword_1_2= 'false' ) ) ) )
+            // InternalLibrettoProjectProfile.g:2109:2: ( ( () ( ( (lv_keyword_1_1= 'true' | lv_keyword_1_2= 'false' ) ) ) ) )
+            // InternalLibrettoProjectProfile.g:2110:2: ( () ( ( (lv_keyword_1_1= 'true' | lv_keyword_1_2= 'false' ) ) ) )
             {
-            // InternalLibrettoProjectProfile.g:2130:2: ( () ( ( (lv_keyword_1_1= 'true' | lv_keyword_1_2= 'false' ) ) ) )
-            // InternalLibrettoProjectProfile.g:2131:3: () ( ( (lv_keyword_1_1= 'true' | lv_keyword_1_2= 'false' ) ) )
+            // InternalLibrettoProjectProfile.g:2110:2: ( () ( ( (lv_keyword_1_1= 'true' | lv_keyword_1_2= 'false' ) ) ) )
+            // InternalLibrettoProjectProfile.g:2111:3: () ( ( (lv_keyword_1_1= 'true' | lv_keyword_1_2= 'false' ) ) )
             {
-            // InternalLibrettoProjectProfile.g:2131:3: ()
-            // InternalLibrettoProjectProfile.g:2132:4: 
+            // InternalLibrettoProjectProfile.g:2111:3: ()
+            // InternalLibrettoProjectProfile.g:2112:4: 
             {
 
             				current = forceCreateModelElement(
@@ -5378,13 +5329,13 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:2138:3: ( ( (lv_keyword_1_1= 'true' | lv_keyword_1_2= 'false' ) ) )
-            // InternalLibrettoProjectProfile.g:2139:4: ( (lv_keyword_1_1= 'true' | lv_keyword_1_2= 'false' ) )
+            // InternalLibrettoProjectProfile.g:2118:3: ( ( (lv_keyword_1_1= 'true' | lv_keyword_1_2= 'false' ) ) )
+            // InternalLibrettoProjectProfile.g:2119:4: ( (lv_keyword_1_1= 'true' | lv_keyword_1_2= 'false' ) )
             {
-            // InternalLibrettoProjectProfile.g:2139:4: ( (lv_keyword_1_1= 'true' | lv_keyword_1_2= 'false' ) )
-            // InternalLibrettoProjectProfile.g:2140:5: (lv_keyword_1_1= 'true' | lv_keyword_1_2= 'false' )
+            // InternalLibrettoProjectProfile.g:2119:4: ( (lv_keyword_1_1= 'true' | lv_keyword_1_2= 'false' ) )
+            // InternalLibrettoProjectProfile.g:2120:5: (lv_keyword_1_1= 'true' | lv_keyword_1_2= 'false' )
             {
-            // InternalLibrettoProjectProfile.g:2140:5: (lv_keyword_1_1= 'true' | lv_keyword_1_2= 'false' )
+            // InternalLibrettoProjectProfile.g:2120:5: (lv_keyword_1_1= 'true' | lv_keyword_1_2= 'false' )
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -5402,7 +5353,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
             }
             switch (alt16) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:2141:6: lv_keyword_1_1= 'true'
+                    // InternalLibrettoProjectProfile.g:2121:6: lv_keyword_1_1= 'true'
                     {
                     lv_keyword_1_1=(Token)match(input,37,FOLLOW_2); 
 
@@ -5418,7 +5369,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoProjectProfile.g:2152:6: lv_keyword_1_2= 'false'
+                    // InternalLibrettoProjectProfile.g:2132:6: lv_keyword_1_2= 'false'
                     {
                     lv_keyword_1_2=(Token)match(input,38,FOLLOW_2); 
 
@@ -5465,7 +5416,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleGenRemediationRules"
-    // InternalLibrettoProjectProfile.g:2169:1: entryRuleGenRemediationRules returns [EObject current=null] : iv_ruleGenRemediationRules= ruleGenRemediationRules EOF ;
+    // InternalLibrettoProjectProfile.g:2149:1: entryRuleGenRemediationRules returns [EObject current=null] : iv_ruleGenRemediationRules= ruleGenRemediationRules EOF ;
     public final EObject entryRuleGenRemediationRules() throws RecognitionException {
         EObject current = null;
 
@@ -5473,8 +5424,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:2169:60: (iv_ruleGenRemediationRules= ruleGenRemediationRules EOF )
-            // InternalLibrettoProjectProfile.g:2170:2: iv_ruleGenRemediationRules= ruleGenRemediationRules EOF
+            // InternalLibrettoProjectProfile.g:2149:60: (iv_ruleGenRemediationRules= ruleGenRemediationRules EOF )
+            // InternalLibrettoProjectProfile.g:2150:2: iv_ruleGenRemediationRules= ruleGenRemediationRules EOF
             {
              newCompositeNode(grammarAccess.getGenRemediationRulesRule()); 
             pushFollow(FOLLOW_1);
@@ -5501,7 +5452,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleGenRemediationRules"
-    // InternalLibrettoProjectProfile.g:2176:1: ruleGenRemediationRules returns [EObject current=null] : ( () ( (lv_rulesKeyword_1_0= ruleRulesKeyword ) ) otherlv_2= '{' ( ( (lv_patternRules_3_0= ruleGenPatternRemediationRule ) ) | ( (lv_defaultRemediations_4_0= ruleGenDefaultRemediationRule ) ) )* otherlv_5= '}' ) ;
+    // InternalLibrettoProjectProfile.g:2156:1: ruleGenRemediationRules returns [EObject current=null] : ( () ( (lv_rulesKeyword_1_0= ruleRulesKeyword ) ) otherlv_2= '{' ( ( (lv_patternRules_3_0= ruleGenPatternRemediationRule ) ) | ( (lv_defaultRemediations_4_0= ruleGenDefaultRemediationRule ) ) )* otherlv_5= '}' ) ;
     public final EObject ruleGenRemediationRules() throws RecognitionException {
         EObject current = null;
 
@@ -5518,14 +5469,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:2182:2: ( ( () ( (lv_rulesKeyword_1_0= ruleRulesKeyword ) ) otherlv_2= '{' ( ( (lv_patternRules_3_0= ruleGenPatternRemediationRule ) ) | ( (lv_defaultRemediations_4_0= ruleGenDefaultRemediationRule ) ) )* otherlv_5= '}' ) )
-            // InternalLibrettoProjectProfile.g:2183:2: ( () ( (lv_rulesKeyword_1_0= ruleRulesKeyword ) ) otherlv_2= '{' ( ( (lv_patternRules_3_0= ruleGenPatternRemediationRule ) ) | ( (lv_defaultRemediations_4_0= ruleGenDefaultRemediationRule ) ) )* otherlv_5= '}' )
+            // InternalLibrettoProjectProfile.g:2162:2: ( ( () ( (lv_rulesKeyword_1_0= ruleRulesKeyword ) ) otherlv_2= '{' ( ( (lv_patternRules_3_0= ruleGenPatternRemediationRule ) ) | ( (lv_defaultRemediations_4_0= ruleGenDefaultRemediationRule ) ) )* otherlv_5= '}' ) )
+            // InternalLibrettoProjectProfile.g:2163:2: ( () ( (lv_rulesKeyword_1_0= ruleRulesKeyword ) ) otherlv_2= '{' ( ( (lv_patternRules_3_0= ruleGenPatternRemediationRule ) ) | ( (lv_defaultRemediations_4_0= ruleGenDefaultRemediationRule ) ) )* otherlv_5= '}' )
             {
-            // InternalLibrettoProjectProfile.g:2183:2: ( () ( (lv_rulesKeyword_1_0= ruleRulesKeyword ) ) otherlv_2= '{' ( ( (lv_patternRules_3_0= ruleGenPatternRemediationRule ) ) | ( (lv_defaultRemediations_4_0= ruleGenDefaultRemediationRule ) ) )* otherlv_5= '}' )
-            // InternalLibrettoProjectProfile.g:2184:3: () ( (lv_rulesKeyword_1_0= ruleRulesKeyword ) ) otherlv_2= '{' ( ( (lv_patternRules_3_0= ruleGenPatternRemediationRule ) ) | ( (lv_defaultRemediations_4_0= ruleGenDefaultRemediationRule ) ) )* otherlv_5= '}'
+            // InternalLibrettoProjectProfile.g:2163:2: ( () ( (lv_rulesKeyword_1_0= ruleRulesKeyword ) ) otherlv_2= '{' ( ( (lv_patternRules_3_0= ruleGenPatternRemediationRule ) ) | ( (lv_defaultRemediations_4_0= ruleGenDefaultRemediationRule ) ) )* otherlv_5= '}' )
+            // InternalLibrettoProjectProfile.g:2164:3: () ( (lv_rulesKeyword_1_0= ruleRulesKeyword ) ) otherlv_2= '{' ( ( (lv_patternRules_3_0= ruleGenPatternRemediationRule ) ) | ( (lv_defaultRemediations_4_0= ruleGenDefaultRemediationRule ) ) )* otherlv_5= '}'
             {
-            // InternalLibrettoProjectProfile.g:2184:3: ()
-            // InternalLibrettoProjectProfile.g:2185:4: 
+            // InternalLibrettoProjectProfile.g:2164:3: ()
+            // InternalLibrettoProjectProfile.g:2165:4: 
             {
 
             				current = forceCreateModelElement(
@@ -5535,11 +5486,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:2191:3: ( (lv_rulesKeyword_1_0= ruleRulesKeyword ) )
-            // InternalLibrettoProjectProfile.g:2192:4: (lv_rulesKeyword_1_0= ruleRulesKeyword )
+            // InternalLibrettoProjectProfile.g:2171:3: ( (lv_rulesKeyword_1_0= ruleRulesKeyword ) )
+            // InternalLibrettoProjectProfile.g:2172:4: (lv_rulesKeyword_1_0= ruleRulesKeyword )
             {
-            // InternalLibrettoProjectProfile.g:2192:4: (lv_rulesKeyword_1_0= ruleRulesKeyword )
-            // InternalLibrettoProjectProfile.g:2193:5: lv_rulesKeyword_1_0= ruleRulesKeyword
+            // InternalLibrettoProjectProfile.g:2172:4: (lv_rulesKeyword_1_0= ruleRulesKeyword )
+            // InternalLibrettoProjectProfile.g:2173:5: lv_rulesKeyword_1_0= ruleRulesKeyword
             {
 
             					newCompositeNode(grammarAccess.getGenRemediationRulesAccess().getRulesKeywordRulesKeywordParserRuleCall_1_0());
@@ -5570,7 +5521,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             			newLeafNode(otherlv_2, grammarAccess.getGenRemediationRulesAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalLibrettoProjectProfile.g:2214:3: ( ( (lv_patternRules_3_0= ruleGenPatternRemediationRule ) ) | ( (lv_defaultRemediations_4_0= ruleGenDefaultRemediationRule ) ) )*
+            // InternalLibrettoProjectProfile.g:2194:3: ( ( (lv_patternRules_3_0= ruleGenPatternRemediationRule ) ) | ( (lv_defaultRemediations_4_0= ruleGenDefaultRemediationRule ) ) )*
             loop17:
             do {
                 int alt17=3;
@@ -5586,13 +5537,13 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
                 switch (alt17) {
             	case 1 :
-            	    // InternalLibrettoProjectProfile.g:2215:4: ( (lv_patternRules_3_0= ruleGenPatternRemediationRule ) )
+            	    // InternalLibrettoProjectProfile.g:2195:4: ( (lv_patternRules_3_0= ruleGenPatternRemediationRule ) )
             	    {
-            	    // InternalLibrettoProjectProfile.g:2215:4: ( (lv_patternRules_3_0= ruleGenPatternRemediationRule ) )
-            	    // InternalLibrettoProjectProfile.g:2216:5: (lv_patternRules_3_0= ruleGenPatternRemediationRule )
+            	    // InternalLibrettoProjectProfile.g:2195:4: ( (lv_patternRules_3_0= ruleGenPatternRemediationRule ) )
+            	    // InternalLibrettoProjectProfile.g:2196:5: (lv_patternRules_3_0= ruleGenPatternRemediationRule )
             	    {
-            	    // InternalLibrettoProjectProfile.g:2216:5: (lv_patternRules_3_0= ruleGenPatternRemediationRule )
-            	    // InternalLibrettoProjectProfile.g:2217:6: lv_patternRules_3_0= ruleGenPatternRemediationRule
+            	    // InternalLibrettoProjectProfile.g:2196:5: (lv_patternRules_3_0= ruleGenPatternRemediationRule )
+            	    // InternalLibrettoProjectProfile.g:2197:6: lv_patternRules_3_0= ruleGenPatternRemediationRule
             	    {
 
             	    						newCompositeNode(grammarAccess.getGenRemediationRulesAccess().getPatternRulesGenPatternRemediationRuleParserRuleCall_3_0_0());
@@ -5623,13 +5574,13 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
             	    }
             	    break;
             	case 2 :
-            	    // InternalLibrettoProjectProfile.g:2235:4: ( (lv_defaultRemediations_4_0= ruleGenDefaultRemediationRule ) )
+            	    // InternalLibrettoProjectProfile.g:2215:4: ( (lv_defaultRemediations_4_0= ruleGenDefaultRemediationRule ) )
             	    {
-            	    // InternalLibrettoProjectProfile.g:2235:4: ( (lv_defaultRemediations_4_0= ruleGenDefaultRemediationRule ) )
-            	    // InternalLibrettoProjectProfile.g:2236:5: (lv_defaultRemediations_4_0= ruleGenDefaultRemediationRule )
+            	    // InternalLibrettoProjectProfile.g:2215:4: ( (lv_defaultRemediations_4_0= ruleGenDefaultRemediationRule ) )
+            	    // InternalLibrettoProjectProfile.g:2216:5: (lv_defaultRemediations_4_0= ruleGenDefaultRemediationRule )
             	    {
-            	    // InternalLibrettoProjectProfile.g:2236:5: (lv_defaultRemediations_4_0= ruleGenDefaultRemediationRule )
-            	    // InternalLibrettoProjectProfile.g:2237:6: lv_defaultRemediations_4_0= ruleGenDefaultRemediationRule
+            	    // InternalLibrettoProjectProfile.g:2216:5: (lv_defaultRemediations_4_0= ruleGenDefaultRemediationRule )
+            	    // InternalLibrettoProjectProfile.g:2217:6: lv_defaultRemediations_4_0= ruleGenDefaultRemediationRule
             	    {
 
             	    						newCompositeNode(grammarAccess.getGenRemediationRulesAccess().getDefaultRemediationsGenDefaultRemediationRuleParserRuleCall_3_1_0());
@@ -5692,7 +5643,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleRulesKeyword"
-    // InternalLibrettoProjectProfile.g:2263:1: entryRuleRulesKeyword returns [EObject current=null] : iv_ruleRulesKeyword= ruleRulesKeyword EOF ;
+    // InternalLibrettoProjectProfile.g:2243:1: entryRuleRulesKeyword returns [EObject current=null] : iv_ruleRulesKeyword= ruleRulesKeyword EOF ;
     public final EObject entryRuleRulesKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -5700,8 +5651,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:2263:53: (iv_ruleRulesKeyword= ruleRulesKeyword EOF )
-            // InternalLibrettoProjectProfile.g:2264:2: iv_ruleRulesKeyword= ruleRulesKeyword EOF
+            // InternalLibrettoProjectProfile.g:2243:53: (iv_ruleRulesKeyword= ruleRulesKeyword EOF )
+            // InternalLibrettoProjectProfile.g:2244:2: iv_ruleRulesKeyword= ruleRulesKeyword EOF
             {
              newCompositeNode(grammarAccess.getRulesKeywordRule()); 
             pushFollow(FOLLOW_1);
@@ -5728,7 +5679,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleRulesKeyword"
-    // InternalLibrettoProjectProfile.g:2270:1: ruleRulesKeyword returns [EObject current=null] : ( () ( (lv_keyword_1_0= 'rules' ) ) ) ;
+    // InternalLibrettoProjectProfile.g:2250:1: ruleRulesKeyword returns [EObject current=null] : ( () ( (lv_keyword_1_0= 'rules' ) ) ) ;
     public final EObject ruleRulesKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -5738,14 +5689,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:2276:2: ( ( () ( (lv_keyword_1_0= 'rules' ) ) ) )
-            // InternalLibrettoProjectProfile.g:2277:2: ( () ( (lv_keyword_1_0= 'rules' ) ) )
+            // InternalLibrettoProjectProfile.g:2256:2: ( ( () ( (lv_keyword_1_0= 'rules' ) ) ) )
+            // InternalLibrettoProjectProfile.g:2257:2: ( () ( (lv_keyword_1_0= 'rules' ) ) )
             {
-            // InternalLibrettoProjectProfile.g:2277:2: ( () ( (lv_keyword_1_0= 'rules' ) ) )
-            // InternalLibrettoProjectProfile.g:2278:3: () ( (lv_keyword_1_0= 'rules' ) )
+            // InternalLibrettoProjectProfile.g:2257:2: ( () ( (lv_keyword_1_0= 'rules' ) ) )
+            // InternalLibrettoProjectProfile.g:2258:3: () ( (lv_keyword_1_0= 'rules' ) )
             {
-            // InternalLibrettoProjectProfile.g:2278:3: ()
-            // InternalLibrettoProjectProfile.g:2279:4: 
+            // InternalLibrettoProjectProfile.g:2258:3: ()
+            // InternalLibrettoProjectProfile.g:2259:4: 
             {
 
             				current = forceCreateModelElement(
@@ -5755,11 +5706,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:2285:3: ( (lv_keyword_1_0= 'rules' ) )
-            // InternalLibrettoProjectProfile.g:2286:4: (lv_keyword_1_0= 'rules' )
+            // InternalLibrettoProjectProfile.g:2265:3: ( (lv_keyword_1_0= 'rules' ) )
+            // InternalLibrettoProjectProfile.g:2266:4: (lv_keyword_1_0= 'rules' )
             {
-            // InternalLibrettoProjectProfile.g:2286:4: (lv_keyword_1_0= 'rules' )
-            // InternalLibrettoProjectProfile.g:2287:5: lv_keyword_1_0= 'rules'
+            // InternalLibrettoProjectProfile.g:2266:4: (lv_keyword_1_0= 'rules' )
+            // InternalLibrettoProjectProfile.g:2267:5: lv_keyword_1_0= 'rules'
             {
             lv_keyword_1_0=(Token)match(input,39,FOLLOW_2); 
 
@@ -5800,7 +5751,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleGenPatternRemediationRule"
-    // InternalLibrettoProjectProfile.g:2303:1: entryRuleGenPatternRemediationRule returns [EObject current=null] : iv_ruleGenPatternRemediationRule= ruleGenPatternRemediationRule EOF ;
+    // InternalLibrettoProjectProfile.g:2283:1: entryRuleGenPatternRemediationRule returns [EObject current=null] : iv_ruleGenPatternRemediationRule= ruleGenPatternRemediationRule EOF ;
     public final EObject entryRuleGenPatternRemediationRule() throws RecognitionException {
         EObject current = null;
 
@@ -5808,8 +5759,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:2303:66: (iv_ruleGenPatternRemediationRule= ruleGenPatternRemediationRule EOF )
-            // InternalLibrettoProjectProfile.g:2304:2: iv_ruleGenPatternRemediationRule= ruleGenPatternRemediationRule EOF
+            // InternalLibrettoProjectProfile.g:2283:66: (iv_ruleGenPatternRemediationRule= ruleGenPatternRemediationRule EOF )
+            // InternalLibrettoProjectProfile.g:2284:2: iv_ruleGenPatternRemediationRule= ruleGenPatternRemediationRule EOF
             {
              newCompositeNode(grammarAccess.getGenPatternRemediationRuleRule()); 
             pushFollow(FOLLOW_1);
@@ -5836,7 +5787,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleGenPatternRemediationRule"
-    // InternalLibrettoProjectProfile.g:2310:1: ruleGenPatternRemediationRule returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleRuleKeyword ) ) otherlv_2= '{' ( ( (lv_patterns_3_0= rulePattern ) ) | ( (lv_codes_4_0= ruleCode ) ) | ( (lv_corrections_5_0= ruleCorrection ) ) )* otherlv_6= '}' ) ;
+    // InternalLibrettoProjectProfile.g:2290:1: ruleGenPatternRemediationRule returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleRuleKeyword ) ) otherlv_2= '{' ( ( (lv_patterns_3_0= rulePattern ) ) | ( (lv_codes_4_0= ruleCode ) ) | ( (lv_corrections_5_0= ruleCorrection ) ) )* otherlv_6= '}' ) ;
     public final EObject ruleGenPatternRemediationRule() throws RecognitionException {
         EObject current = null;
 
@@ -5855,14 +5806,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:2316:2: ( ( () ( (lv_keyword_1_0= ruleRuleKeyword ) ) otherlv_2= '{' ( ( (lv_patterns_3_0= rulePattern ) ) | ( (lv_codes_4_0= ruleCode ) ) | ( (lv_corrections_5_0= ruleCorrection ) ) )* otherlv_6= '}' ) )
-            // InternalLibrettoProjectProfile.g:2317:2: ( () ( (lv_keyword_1_0= ruleRuleKeyword ) ) otherlv_2= '{' ( ( (lv_patterns_3_0= rulePattern ) ) | ( (lv_codes_4_0= ruleCode ) ) | ( (lv_corrections_5_0= ruleCorrection ) ) )* otherlv_6= '}' )
+            // InternalLibrettoProjectProfile.g:2296:2: ( ( () ( (lv_keyword_1_0= ruleRuleKeyword ) ) otherlv_2= '{' ( ( (lv_patterns_3_0= rulePattern ) ) | ( (lv_codes_4_0= ruleCode ) ) | ( (lv_corrections_5_0= ruleCorrection ) ) )* otherlv_6= '}' ) )
+            // InternalLibrettoProjectProfile.g:2297:2: ( () ( (lv_keyword_1_0= ruleRuleKeyword ) ) otherlv_2= '{' ( ( (lv_patterns_3_0= rulePattern ) ) | ( (lv_codes_4_0= ruleCode ) ) | ( (lv_corrections_5_0= ruleCorrection ) ) )* otherlv_6= '}' )
             {
-            // InternalLibrettoProjectProfile.g:2317:2: ( () ( (lv_keyword_1_0= ruleRuleKeyword ) ) otherlv_2= '{' ( ( (lv_patterns_3_0= rulePattern ) ) | ( (lv_codes_4_0= ruleCode ) ) | ( (lv_corrections_5_0= ruleCorrection ) ) )* otherlv_6= '}' )
-            // InternalLibrettoProjectProfile.g:2318:3: () ( (lv_keyword_1_0= ruleRuleKeyword ) ) otherlv_2= '{' ( ( (lv_patterns_3_0= rulePattern ) ) | ( (lv_codes_4_0= ruleCode ) ) | ( (lv_corrections_5_0= ruleCorrection ) ) )* otherlv_6= '}'
+            // InternalLibrettoProjectProfile.g:2297:2: ( () ( (lv_keyword_1_0= ruleRuleKeyword ) ) otherlv_2= '{' ( ( (lv_patterns_3_0= rulePattern ) ) | ( (lv_codes_4_0= ruleCode ) ) | ( (lv_corrections_5_0= ruleCorrection ) ) )* otherlv_6= '}' )
+            // InternalLibrettoProjectProfile.g:2298:3: () ( (lv_keyword_1_0= ruleRuleKeyword ) ) otherlv_2= '{' ( ( (lv_patterns_3_0= rulePattern ) ) | ( (lv_codes_4_0= ruleCode ) ) | ( (lv_corrections_5_0= ruleCorrection ) ) )* otherlv_6= '}'
             {
-            // InternalLibrettoProjectProfile.g:2318:3: ()
-            // InternalLibrettoProjectProfile.g:2319:4: 
+            // InternalLibrettoProjectProfile.g:2298:3: ()
+            // InternalLibrettoProjectProfile.g:2299:4: 
             {
 
             				current = forceCreateModelElement(
@@ -5872,11 +5823,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:2325:3: ( (lv_keyword_1_0= ruleRuleKeyword ) )
-            // InternalLibrettoProjectProfile.g:2326:4: (lv_keyword_1_0= ruleRuleKeyword )
+            // InternalLibrettoProjectProfile.g:2305:3: ( (lv_keyword_1_0= ruleRuleKeyword ) )
+            // InternalLibrettoProjectProfile.g:2306:4: (lv_keyword_1_0= ruleRuleKeyword )
             {
-            // InternalLibrettoProjectProfile.g:2326:4: (lv_keyword_1_0= ruleRuleKeyword )
-            // InternalLibrettoProjectProfile.g:2327:5: lv_keyword_1_0= ruleRuleKeyword
+            // InternalLibrettoProjectProfile.g:2306:4: (lv_keyword_1_0= ruleRuleKeyword )
+            // InternalLibrettoProjectProfile.g:2307:5: lv_keyword_1_0= ruleRuleKeyword
             {
 
             					newCompositeNode(grammarAccess.getGenPatternRemediationRuleAccess().getKeywordRuleKeywordParserRuleCall_1_0());
@@ -5907,7 +5858,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             			newLeafNode(otherlv_2, grammarAccess.getGenPatternRemediationRuleAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalLibrettoProjectProfile.g:2348:3: ( ( (lv_patterns_3_0= rulePattern ) ) | ( (lv_codes_4_0= ruleCode ) ) | ( (lv_corrections_5_0= ruleCorrection ) ) )*
+            // InternalLibrettoProjectProfile.g:2328:3: ( ( (lv_patterns_3_0= rulePattern ) ) | ( (lv_codes_4_0= ruleCode ) ) | ( (lv_corrections_5_0= ruleCorrection ) ) )*
             loop18:
             do {
                 int alt18=4;
@@ -5932,13 +5883,13 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
                 switch (alt18) {
             	case 1 :
-            	    // InternalLibrettoProjectProfile.g:2349:4: ( (lv_patterns_3_0= rulePattern ) )
+            	    // InternalLibrettoProjectProfile.g:2329:4: ( (lv_patterns_3_0= rulePattern ) )
             	    {
-            	    // InternalLibrettoProjectProfile.g:2349:4: ( (lv_patterns_3_0= rulePattern ) )
-            	    // InternalLibrettoProjectProfile.g:2350:5: (lv_patterns_3_0= rulePattern )
+            	    // InternalLibrettoProjectProfile.g:2329:4: ( (lv_patterns_3_0= rulePattern ) )
+            	    // InternalLibrettoProjectProfile.g:2330:5: (lv_patterns_3_0= rulePattern )
             	    {
-            	    // InternalLibrettoProjectProfile.g:2350:5: (lv_patterns_3_0= rulePattern )
-            	    // InternalLibrettoProjectProfile.g:2351:6: lv_patterns_3_0= rulePattern
+            	    // InternalLibrettoProjectProfile.g:2330:5: (lv_patterns_3_0= rulePattern )
+            	    // InternalLibrettoProjectProfile.g:2331:6: lv_patterns_3_0= rulePattern
             	    {
 
             	    						newCompositeNode(grammarAccess.getGenPatternRemediationRuleAccess().getPatternsPatternParserRuleCall_3_0_0());
@@ -5969,13 +5920,13 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
             	    }
             	    break;
             	case 2 :
-            	    // InternalLibrettoProjectProfile.g:2369:4: ( (lv_codes_4_0= ruleCode ) )
+            	    // InternalLibrettoProjectProfile.g:2349:4: ( (lv_codes_4_0= ruleCode ) )
             	    {
-            	    // InternalLibrettoProjectProfile.g:2369:4: ( (lv_codes_4_0= ruleCode ) )
-            	    // InternalLibrettoProjectProfile.g:2370:5: (lv_codes_4_0= ruleCode )
+            	    // InternalLibrettoProjectProfile.g:2349:4: ( (lv_codes_4_0= ruleCode ) )
+            	    // InternalLibrettoProjectProfile.g:2350:5: (lv_codes_4_0= ruleCode )
             	    {
-            	    // InternalLibrettoProjectProfile.g:2370:5: (lv_codes_4_0= ruleCode )
-            	    // InternalLibrettoProjectProfile.g:2371:6: lv_codes_4_0= ruleCode
+            	    // InternalLibrettoProjectProfile.g:2350:5: (lv_codes_4_0= ruleCode )
+            	    // InternalLibrettoProjectProfile.g:2351:6: lv_codes_4_0= ruleCode
             	    {
 
             	    						newCompositeNode(grammarAccess.getGenPatternRemediationRuleAccess().getCodesCodeParserRuleCall_3_1_0());
@@ -6006,13 +5957,13 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
             	    }
             	    break;
             	case 3 :
-            	    // InternalLibrettoProjectProfile.g:2389:4: ( (lv_corrections_5_0= ruleCorrection ) )
+            	    // InternalLibrettoProjectProfile.g:2369:4: ( (lv_corrections_5_0= ruleCorrection ) )
             	    {
-            	    // InternalLibrettoProjectProfile.g:2389:4: ( (lv_corrections_5_0= ruleCorrection ) )
-            	    // InternalLibrettoProjectProfile.g:2390:5: (lv_corrections_5_0= ruleCorrection )
+            	    // InternalLibrettoProjectProfile.g:2369:4: ( (lv_corrections_5_0= ruleCorrection ) )
+            	    // InternalLibrettoProjectProfile.g:2370:5: (lv_corrections_5_0= ruleCorrection )
             	    {
-            	    // InternalLibrettoProjectProfile.g:2390:5: (lv_corrections_5_0= ruleCorrection )
-            	    // InternalLibrettoProjectProfile.g:2391:6: lv_corrections_5_0= ruleCorrection
+            	    // InternalLibrettoProjectProfile.g:2370:5: (lv_corrections_5_0= ruleCorrection )
+            	    // InternalLibrettoProjectProfile.g:2371:6: lv_corrections_5_0= ruleCorrection
             	    {
 
             	    						newCompositeNode(grammarAccess.getGenPatternRemediationRuleAccess().getCorrectionsCorrectionParserRuleCall_3_2_0());
@@ -6075,7 +6026,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleRuleKeyword"
-    // InternalLibrettoProjectProfile.g:2417:1: entryRuleRuleKeyword returns [EObject current=null] : iv_ruleRuleKeyword= ruleRuleKeyword EOF ;
+    // InternalLibrettoProjectProfile.g:2397:1: entryRuleRuleKeyword returns [EObject current=null] : iv_ruleRuleKeyword= ruleRuleKeyword EOF ;
     public final EObject entryRuleRuleKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -6083,8 +6034,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:2417:52: (iv_ruleRuleKeyword= ruleRuleKeyword EOF )
-            // InternalLibrettoProjectProfile.g:2418:2: iv_ruleRuleKeyword= ruleRuleKeyword EOF
+            // InternalLibrettoProjectProfile.g:2397:52: (iv_ruleRuleKeyword= ruleRuleKeyword EOF )
+            // InternalLibrettoProjectProfile.g:2398:2: iv_ruleRuleKeyword= ruleRuleKeyword EOF
             {
              newCompositeNode(grammarAccess.getRuleKeywordRule()); 
             pushFollow(FOLLOW_1);
@@ -6111,7 +6062,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleRuleKeyword"
-    // InternalLibrettoProjectProfile.g:2424:1: ruleRuleKeyword returns [EObject current=null] : ( () ( (lv_keyword_1_0= 'rule' ) ) ) ;
+    // InternalLibrettoProjectProfile.g:2404:1: ruleRuleKeyword returns [EObject current=null] : ( () ( (lv_keyword_1_0= 'rule' ) ) ) ;
     public final EObject ruleRuleKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -6121,14 +6072,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:2430:2: ( ( () ( (lv_keyword_1_0= 'rule' ) ) ) )
-            // InternalLibrettoProjectProfile.g:2431:2: ( () ( (lv_keyword_1_0= 'rule' ) ) )
+            // InternalLibrettoProjectProfile.g:2410:2: ( ( () ( (lv_keyword_1_0= 'rule' ) ) ) )
+            // InternalLibrettoProjectProfile.g:2411:2: ( () ( (lv_keyword_1_0= 'rule' ) ) )
             {
-            // InternalLibrettoProjectProfile.g:2431:2: ( () ( (lv_keyword_1_0= 'rule' ) ) )
-            // InternalLibrettoProjectProfile.g:2432:3: () ( (lv_keyword_1_0= 'rule' ) )
+            // InternalLibrettoProjectProfile.g:2411:2: ( () ( (lv_keyword_1_0= 'rule' ) ) )
+            // InternalLibrettoProjectProfile.g:2412:3: () ( (lv_keyword_1_0= 'rule' ) )
             {
-            // InternalLibrettoProjectProfile.g:2432:3: ()
-            // InternalLibrettoProjectProfile.g:2433:4: 
+            // InternalLibrettoProjectProfile.g:2412:3: ()
+            // InternalLibrettoProjectProfile.g:2413:4: 
             {
 
             				current = forceCreateModelElement(
@@ -6138,11 +6089,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:2439:3: ( (lv_keyword_1_0= 'rule' ) )
-            // InternalLibrettoProjectProfile.g:2440:4: (lv_keyword_1_0= 'rule' )
+            // InternalLibrettoProjectProfile.g:2419:3: ( (lv_keyword_1_0= 'rule' ) )
+            // InternalLibrettoProjectProfile.g:2420:4: (lv_keyword_1_0= 'rule' )
             {
-            // InternalLibrettoProjectProfile.g:2440:4: (lv_keyword_1_0= 'rule' )
-            // InternalLibrettoProjectProfile.g:2441:5: lv_keyword_1_0= 'rule'
+            // InternalLibrettoProjectProfile.g:2420:4: (lv_keyword_1_0= 'rule' )
+            // InternalLibrettoProjectProfile.g:2421:5: lv_keyword_1_0= 'rule'
             {
             lv_keyword_1_0=(Token)match(input,40,FOLLOW_2); 
 
@@ -6183,7 +6134,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRulePattern"
-    // InternalLibrettoProjectProfile.g:2457:1: entryRulePattern returns [EObject current=null] : iv_rulePattern= rulePattern EOF ;
+    // InternalLibrettoProjectProfile.g:2437:1: entryRulePattern returns [EObject current=null] : iv_rulePattern= rulePattern EOF ;
     public final EObject entryRulePattern() throws RecognitionException {
         EObject current = null;
 
@@ -6191,8 +6142,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:2457:48: (iv_rulePattern= rulePattern EOF )
-            // InternalLibrettoProjectProfile.g:2458:2: iv_rulePattern= rulePattern EOF
+            // InternalLibrettoProjectProfile.g:2437:48: (iv_rulePattern= rulePattern EOF )
+            // InternalLibrettoProjectProfile.g:2438:2: iv_rulePattern= rulePattern EOF
             {
              newCompositeNode(grammarAccess.getPatternRule()); 
             pushFollow(FOLLOW_1);
@@ -6219,7 +6170,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "rulePattern"
-    // InternalLibrettoProjectProfile.g:2464:1: rulePattern returns [EObject current=null] : ( () ( (lv_keyword_1_0= rulePatternKeyword ) ) ( (lv_pattern_2_0= RULE_STRING ) ) ) ;
+    // InternalLibrettoProjectProfile.g:2444:1: rulePattern returns [EObject current=null] : ( () ( (lv_keyword_1_0= rulePatternKeyword ) ) ( (lv_pattern_2_0= RULE_STRING ) ) ) ;
     public final EObject rulePattern() throws RecognitionException {
         EObject current = null;
 
@@ -6231,14 +6182,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:2470:2: ( ( () ( (lv_keyword_1_0= rulePatternKeyword ) ) ( (lv_pattern_2_0= RULE_STRING ) ) ) )
-            // InternalLibrettoProjectProfile.g:2471:2: ( () ( (lv_keyword_1_0= rulePatternKeyword ) ) ( (lv_pattern_2_0= RULE_STRING ) ) )
+            // InternalLibrettoProjectProfile.g:2450:2: ( ( () ( (lv_keyword_1_0= rulePatternKeyword ) ) ( (lv_pattern_2_0= RULE_STRING ) ) ) )
+            // InternalLibrettoProjectProfile.g:2451:2: ( () ( (lv_keyword_1_0= rulePatternKeyword ) ) ( (lv_pattern_2_0= RULE_STRING ) ) )
             {
-            // InternalLibrettoProjectProfile.g:2471:2: ( () ( (lv_keyword_1_0= rulePatternKeyword ) ) ( (lv_pattern_2_0= RULE_STRING ) ) )
-            // InternalLibrettoProjectProfile.g:2472:3: () ( (lv_keyword_1_0= rulePatternKeyword ) ) ( (lv_pattern_2_0= RULE_STRING ) )
+            // InternalLibrettoProjectProfile.g:2451:2: ( () ( (lv_keyword_1_0= rulePatternKeyword ) ) ( (lv_pattern_2_0= RULE_STRING ) ) )
+            // InternalLibrettoProjectProfile.g:2452:3: () ( (lv_keyword_1_0= rulePatternKeyword ) ) ( (lv_pattern_2_0= RULE_STRING ) )
             {
-            // InternalLibrettoProjectProfile.g:2472:3: ()
-            // InternalLibrettoProjectProfile.g:2473:4: 
+            // InternalLibrettoProjectProfile.g:2452:3: ()
+            // InternalLibrettoProjectProfile.g:2453:4: 
             {
 
             				current = forceCreateModelElement(
@@ -6248,11 +6199,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:2479:3: ( (lv_keyword_1_0= rulePatternKeyword ) )
-            // InternalLibrettoProjectProfile.g:2480:4: (lv_keyword_1_0= rulePatternKeyword )
+            // InternalLibrettoProjectProfile.g:2459:3: ( (lv_keyword_1_0= rulePatternKeyword ) )
+            // InternalLibrettoProjectProfile.g:2460:4: (lv_keyword_1_0= rulePatternKeyword )
             {
-            // InternalLibrettoProjectProfile.g:2480:4: (lv_keyword_1_0= rulePatternKeyword )
-            // InternalLibrettoProjectProfile.g:2481:5: lv_keyword_1_0= rulePatternKeyword
+            // InternalLibrettoProjectProfile.g:2460:4: (lv_keyword_1_0= rulePatternKeyword )
+            // InternalLibrettoProjectProfile.g:2461:5: lv_keyword_1_0= rulePatternKeyword
             {
 
             					newCompositeNode(grammarAccess.getPatternAccess().getKeywordPatternKeywordParserRuleCall_1_0());
@@ -6279,11 +6230,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:2498:3: ( (lv_pattern_2_0= RULE_STRING ) )
-            // InternalLibrettoProjectProfile.g:2499:4: (lv_pattern_2_0= RULE_STRING )
+            // InternalLibrettoProjectProfile.g:2478:3: ( (lv_pattern_2_0= RULE_STRING ) )
+            // InternalLibrettoProjectProfile.g:2479:4: (lv_pattern_2_0= RULE_STRING )
             {
-            // InternalLibrettoProjectProfile.g:2499:4: (lv_pattern_2_0= RULE_STRING )
-            // InternalLibrettoProjectProfile.g:2500:5: lv_pattern_2_0= RULE_STRING
+            // InternalLibrettoProjectProfile.g:2479:4: (lv_pattern_2_0= RULE_STRING )
+            // InternalLibrettoProjectProfile.g:2480:5: lv_pattern_2_0= RULE_STRING
             {
             lv_pattern_2_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -6328,7 +6279,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRulePatternKeyword"
-    // InternalLibrettoProjectProfile.g:2520:1: entryRulePatternKeyword returns [EObject current=null] : iv_rulePatternKeyword= rulePatternKeyword EOF ;
+    // InternalLibrettoProjectProfile.g:2500:1: entryRulePatternKeyword returns [EObject current=null] : iv_rulePatternKeyword= rulePatternKeyword EOF ;
     public final EObject entryRulePatternKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -6336,8 +6287,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:2520:55: (iv_rulePatternKeyword= rulePatternKeyword EOF )
-            // InternalLibrettoProjectProfile.g:2521:2: iv_rulePatternKeyword= rulePatternKeyword EOF
+            // InternalLibrettoProjectProfile.g:2500:55: (iv_rulePatternKeyword= rulePatternKeyword EOF )
+            // InternalLibrettoProjectProfile.g:2501:2: iv_rulePatternKeyword= rulePatternKeyword EOF
             {
              newCompositeNode(grammarAccess.getPatternKeywordRule()); 
             pushFollow(FOLLOW_1);
@@ -6364,7 +6315,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "rulePatternKeyword"
-    // InternalLibrettoProjectProfile.g:2527:1: rulePatternKeyword returns [EObject current=null] : ( () ( (lv_keyword_1_0= 'pattern' ) ) ) ;
+    // InternalLibrettoProjectProfile.g:2507:1: rulePatternKeyword returns [EObject current=null] : ( () ( (lv_keyword_1_0= 'pattern' ) ) ) ;
     public final EObject rulePatternKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -6374,14 +6325,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:2533:2: ( ( () ( (lv_keyword_1_0= 'pattern' ) ) ) )
-            // InternalLibrettoProjectProfile.g:2534:2: ( () ( (lv_keyword_1_0= 'pattern' ) ) )
+            // InternalLibrettoProjectProfile.g:2513:2: ( ( () ( (lv_keyword_1_0= 'pattern' ) ) ) )
+            // InternalLibrettoProjectProfile.g:2514:2: ( () ( (lv_keyword_1_0= 'pattern' ) ) )
             {
-            // InternalLibrettoProjectProfile.g:2534:2: ( () ( (lv_keyword_1_0= 'pattern' ) ) )
-            // InternalLibrettoProjectProfile.g:2535:3: () ( (lv_keyword_1_0= 'pattern' ) )
+            // InternalLibrettoProjectProfile.g:2514:2: ( () ( (lv_keyword_1_0= 'pattern' ) ) )
+            // InternalLibrettoProjectProfile.g:2515:3: () ( (lv_keyword_1_0= 'pattern' ) )
             {
-            // InternalLibrettoProjectProfile.g:2535:3: ()
-            // InternalLibrettoProjectProfile.g:2536:4: 
+            // InternalLibrettoProjectProfile.g:2515:3: ()
+            // InternalLibrettoProjectProfile.g:2516:4: 
             {
 
             				current = forceCreateModelElement(
@@ -6391,11 +6342,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:2542:3: ( (lv_keyword_1_0= 'pattern' ) )
-            // InternalLibrettoProjectProfile.g:2543:4: (lv_keyword_1_0= 'pattern' )
+            // InternalLibrettoProjectProfile.g:2522:3: ( (lv_keyword_1_0= 'pattern' ) )
+            // InternalLibrettoProjectProfile.g:2523:4: (lv_keyword_1_0= 'pattern' )
             {
-            // InternalLibrettoProjectProfile.g:2543:4: (lv_keyword_1_0= 'pattern' )
-            // InternalLibrettoProjectProfile.g:2544:5: lv_keyword_1_0= 'pattern'
+            // InternalLibrettoProjectProfile.g:2523:4: (lv_keyword_1_0= 'pattern' )
+            // InternalLibrettoProjectProfile.g:2524:5: lv_keyword_1_0= 'pattern'
             {
             lv_keyword_1_0=(Token)match(input,41,FOLLOW_2); 
 
@@ -6436,7 +6387,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleCode"
-    // InternalLibrettoProjectProfile.g:2560:1: entryRuleCode returns [EObject current=null] : iv_ruleCode= ruleCode EOF ;
+    // InternalLibrettoProjectProfile.g:2540:1: entryRuleCode returns [EObject current=null] : iv_ruleCode= ruleCode EOF ;
     public final EObject entryRuleCode() throws RecognitionException {
         EObject current = null;
 
@@ -6444,8 +6395,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:2560:45: (iv_ruleCode= ruleCode EOF )
-            // InternalLibrettoProjectProfile.g:2561:2: iv_ruleCode= ruleCode EOF
+            // InternalLibrettoProjectProfile.g:2540:45: (iv_ruleCode= ruleCode EOF )
+            // InternalLibrettoProjectProfile.g:2541:2: iv_ruleCode= ruleCode EOF
             {
              newCompositeNode(grammarAccess.getCodeRule()); 
             pushFollow(FOLLOW_1);
@@ -6472,7 +6423,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleCode"
-    // InternalLibrettoProjectProfile.g:2567:1: ruleCode returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleCodeKeyword ) ) ( (lv_code_2_0= RULE_STRING ) ) ) ;
+    // InternalLibrettoProjectProfile.g:2547:1: ruleCode returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleCodeKeyword ) ) ( (lv_code_2_0= RULE_STRING ) ) ) ;
     public final EObject ruleCode() throws RecognitionException {
         EObject current = null;
 
@@ -6484,14 +6435,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:2573:2: ( ( () ( (lv_keyword_1_0= ruleCodeKeyword ) ) ( (lv_code_2_0= RULE_STRING ) ) ) )
-            // InternalLibrettoProjectProfile.g:2574:2: ( () ( (lv_keyword_1_0= ruleCodeKeyword ) ) ( (lv_code_2_0= RULE_STRING ) ) )
+            // InternalLibrettoProjectProfile.g:2553:2: ( ( () ( (lv_keyword_1_0= ruleCodeKeyword ) ) ( (lv_code_2_0= RULE_STRING ) ) ) )
+            // InternalLibrettoProjectProfile.g:2554:2: ( () ( (lv_keyword_1_0= ruleCodeKeyword ) ) ( (lv_code_2_0= RULE_STRING ) ) )
             {
-            // InternalLibrettoProjectProfile.g:2574:2: ( () ( (lv_keyword_1_0= ruleCodeKeyword ) ) ( (lv_code_2_0= RULE_STRING ) ) )
-            // InternalLibrettoProjectProfile.g:2575:3: () ( (lv_keyword_1_0= ruleCodeKeyword ) ) ( (lv_code_2_0= RULE_STRING ) )
+            // InternalLibrettoProjectProfile.g:2554:2: ( () ( (lv_keyword_1_0= ruleCodeKeyword ) ) ( (lv_code_2_0= RULE_STRING ) ) )
+            // InternalLibrettoProjectProfile.g:2555:3: () ( (lv_keyword_1_0= ruleCodeKeyword ) ) ( (lv_code_2_0= RULE_STRING ) )
             {
-            // InternalLibrettoProjectProfile.g:2575:3: ()
-            // InternalLibrettoProjectProfile.g:2576:4: 
+            // InternalLibrettoProjectProfile.g:2555:3: ()
+            // InternalLibrettoProjectProfile.g:2556:4: 
             {
 
             				current = forceCreateModelElement(
@@ -6501,11 +6452,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:2582:3: ( (lv_keyword_1_0= ruleCodeKeyword ) )
-            // InternalLibrettoProjectProfile.g:2583:4: (lv_keyword_1_0= ruleCodeKeyword )
+            // InternalLibrettoProjectProfile.g:2562:3: ( (lv_keyword_1_0= ruleCodeKeyword ) )
+            // InternalLibrettoProjectProfile.g:2563:4: (lv_keyword_1_0= ruleCodeKeyword )
             {
-            // InternalLibrettoProjectProfile.g:2583:4: (lv_keyword_1_0= ruleCodeKeyword )
-            // InternalLibrettoProjectProfile.g:2584:5: lv_keyword_1_0= ruleCodeKeyword
+            // InternalLibrettoProjectProfile.g:2563:4: (lv_keyword_1_0= ruleCodeKeyword )
+            // InternalLibrettoProjectProfile.g:2564:5: lv_keyword_1_0= ruleCodeKeyword
             {
 
             					newCompositeNode(grammarAccess.getCodeAccess().getKeywordCodeKeywordParserRuleCall_1_0());
@@ -6532,11 +6483,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:2601:3: ( (lv_code_2_0= RULE_STRING ) )
-            // InternalLibrettoProjectProfile.g:2602:4: (lv_code_2_0= RULE_STRING )
+            // InternalLibrettoProjectProfile.g:2581:3: ( (lv_code_2_0= RULE_STRING ) )
+            // InternalLibrettoProjectProfile.g:2582:4: (lv_code_2_0= RULE_STRING )
             {
-            // InternalLibrettoProjectProfile.g:2602:4: (lv_code_2_0= RULE_STRING )
-            // InternalLibrettoProjectProfile.g:2603:5: lv_code_2_0= RULE_STRING
+            // InternalLibrettoProjectProfile.g:2582:4: (lv_code_2_0= RULE_STRING )
+            // InternalLibrettoProjectProfile.g:2583:5: lv_code_2_0= RULE_STRING
             {
             lv_code_2_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -6581,7 +6532,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleCodeKeyword"
-    // InternalLibrettoProjectProfile.g:2623:1: entryRuleCodeKeyword returns [EObject current=null] : iv_ruleCodeKeyword= ruleCodeKeyword EOF ;
+    // InternalLibrettoProjectProfile.g:2603:1: entryRuleCodeKeyword returns [EObject current=null] : iv_ruleCodeKeyword= ruleCodeKeyword EOF ;
     public final EObject entryRuleCodeKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -6589,8 +6540,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:2623:52: (iv_ruleCodeKeyword= ruleCodeKeyword EOF )
-            // InternalLibrettoProjectProfile.g:2624:2: iv_ruleCodeKeyword= ruleCodeKeyword EOF
+            // InternalLibrettoProjectProfile.g:2603:52: (iv_ruleCodeKeyword= ruleCodeKeyword EOF )
+            // InternalLibrettoProjectProfile.g:2604:2: iv_ruleCodeKeyword= ruleCodeKeyword EOF
             {
              newCompositeNode(grammarAccess.getCodeKeywordRule()); 
             pushFollow(FOLLOW_1);
@@ -6617,7 +6568,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleCodeKeyword"
-    // InternalLibrettoProjectProfile.g:2630:1: ruleCodeKeyword returns [EObject current=null] : ( () ( (lv_keyword_1_0= 'code' ) ) ) ;
+    // InternalLibrettoProjectProfile.g:2610:1: ruleCodeKeyword returns [EObject current=null] : ( () ( (lv_keyword_1_0= 'code' ) ) ) ;
     public final EObject ruleCodeKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -6627,14 +6578,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:2636:2: ( ( () ( (lv_keyword_1_0= 'code' ) ) ) )
-            // InternalLibrettoProjectProfile.g:2637:2: ( () ( (lv_keyword_1_0= 'code' ) ) )
+            // InternalLibrettoProjectProfile.g:2616:2: ( ( () ( (lv_keyword_1_0= 'code' ) ) ) )
+            // InternalLibrettoProjectProfile.g:2617:2: ( () ( (lv_keyword_1_0= 'code' ) ) )
             {
-            // InternalLibrettoProjectProfile.g:2637:2: ( () ( (lv_keyword_1_0= 'code' ) ) )
-            // InternalLibrettoProjectProfile.g:2638:3: () ( (lv_keyword_1_0= 'code' ) )
+            // InternalLibrettoProjectProfile.g:2617:2: ( () ( (lv_keyword_1_0= 'code' ) ) )
+            // InternalLibrettoProjectProfile.g:2618:3: () ( (lv_keyword_1_0= 'code' ) )
             {
-            // InternalLibrettoProjectProfile.g:2638:3: ()
-            // InternalLibrettoProjectProfile.g:2639:4: 
+            // InternalLibrettoProjectProfile.g:2618:3: ()
+            // InternalLibrettoProjectProfile.g:2619:4: 
             {
 
             				current = forceCreateModelElement(
@@ -6644,11 +6595,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:2645:3: ( (lv_keyword_1_0= 'code' ) )
-            // InternalLibrettoProjectProfile.g:2646:4: (lv_keyword_1_0= 'code' )
+            // InternalLibrettoProjectProfile.g:2625:3: ( (lv_keyword_1_0= 'code' ) )
+            // InternalLibrettoProjectProfile.g:2626:4: (lv_keyword_1_0= 'code' )
             {
-            // InternalLibrettoProjectProfile.g:2646:4: (lv_keyword_1_0= 'code' )
-            // InternalLibrettoProjectProfile.g:2647:5: lv_keyword_1_0= 'code'
+            // InternalLibrettoProjectProfile.g:2626:4: (lv_keyword_1_0= 'code' )
+            // InternalLibrettoProjectProfile.g:2627:5: lv_keyword_1_0= 'code'
             {
             lv_keyword_1_0=(Token)match(input,42,FOLLOW_2); 
 
@@ -6689,7 +6640,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleCorrection"
-    // InternalLibrettoProjectProfile.g:2663:1: entryRuleCorrection returns [EObject current=null] : iv_ruleCorrection= ruleCorrection EOF ;
+    // InternalLibrettoProjectProfile.g:2643:1: entryRuleCorrection returns [EObject current=null] : iv_ruleCorrection= ruleCorrection EOF ;
     public final EObject entryRuleCorrection() throws RecognitionException {
         EObject current = null;
 
@@ -6697,8 +6648,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:2663:51: (iv_ruleCorrection= ruleCorrection EOF )
-            // InternalLibrettoProjectProfile.g:2664:2: iv_ruleCorrection= ruleCorrection EOF
+            // InternalLibrettoProjectProfile.g:2643:51: (iv_ruleCorrection= ruleCorrection EOF )
+            // InternalLibrettoProjectProfile.g:2644:2: iv_ruleCorrection= ruleCorrection EOF
             {
              newCompositeNode(grammarAccess.getCorrectionRule()); 
             pushFollow(FOLLOW_1);
@@ -6725,7 +6676,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleCorrection"
-    // InternalLibrettoProjectProfile.g:2670:1: ruleCorrection returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleCorrectionKeyword ) ) ( (lv_correction_2_0= RULE_STRING ) ) ) ;
+    // InternalLibrettoProjectProfile.g:2650:1: ruleCorrection returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleCorrectionKeyword ) ) ( (lv_correction_2_0= RULE_STRING ) ) ) ;
     public final EObject ruleCorrection() throws RecognitionException {
         EObject current = null;
 
@@ -6737,14 +6688,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:2676:2: ( ( () ( (lv_keyword_1_0= ruleCorrectionKeyword ) ) ( (lv_correction_2_0= RULE_STRING ) ) ) )
-            // InternalLibrettoProjectProfile.g:2677:2: ( () ( (lv_keyword_1_0= ruleCorrectionKeyword ) ) ( (lv_correction_2_0= RULE_STRING ) ) )
+            // InternalLibrettoProjectProfile.g:2656:2: ( ( () ( (lv_keyword_1_0= ruleCorrectionKeyword ) ) ( (lv_correction_2_0= RULE_STRING ) ) ) )
+            // InternalLibrettoProjectProfile.g:2657:2: ( () ( (lv_keyword_1_0= ruleCorrectionKeyword ) ) ( (lv_correction_2_0= RULE_STRING ) ) )
             {
-            // InternalLibrettoProjectProfile.g:2677:2: ( () ( (lv_keyword_1_0= ruleCorrectionKeyword ) ) ( (lv_correction_2_0= RULE_STRING ) ) )
-            // InternalLibrettoProjectProfile.g:2678:3: () ( (lv_keyword_1_0= ruleCorrectionKeyword ) ) ( (lv_correction_2_0= RULE_STRING ) )
+            // InternalLibrettoProjectProfile.g:2657:2: ( () ( (lv_keyword_1_0= ruleCorrectionKeyword ) ) ( (lv_correction_2_0= RULE_STRING ) ) )
+            // InternalLibrettoProjectProfile.g:2658:3: () ( (lv_keyword_1_0= ruleCorrectionKeyword ) ) ( (lv_correction_2_0= RULE_STRING ) )
             {
-            // InternalLibrettoProjectProfile.g:2678:3: ()
-            // InternalLibrettoProjectProfile.g:2679:4: 
+            // InternalLibrettoProjectProfile.g:2658:3: ()
+            // InternalLibrettoProjectProfile.g:2659:4: 
             {
 
             				current = forceCreateModelElement(
@@ -6754,11 +6705,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:2685:3: ( (lv_keyword_1_0= ruleCorrectionKeyword ) )
-            // InternalLibrettoProjectProfile.g:2686:4: (lv_keyword_1_0= ruleCorrectionKeyword )
+            // InternalLibrettoProjectProfile.g:2665:3: ( (lv_keyword_1_0= ruleCorrectionKeyword ) )
+            // InternalLibrettoProjectProfile.g:2666:4: (lv_keyword_1_0= ruleCorrectionKeyword )
             {
-            // InternalLibrettoProjectProfile.g:2686:4: (lv_keyword_1_0= ruleCorrectionKeyword )
-            // InternalLibrettoProjectProfile.g:2687:5: lv_keyword_1_0= ruleCorrectionKeyword
+            // InternalLibrettoProjectProfile.g:2666:4: (lv_keyword_1_0= ruleCorrectionKeyword )
+            // InternalLibrettoProjectProfile.g:2667:5: lv_keyword_1_0= ruleCorrectionKeyword
             {
 
             					newCompositeNode(grammarAccess.getCorrectionAccess().getKeywordCorrectionKeywordParserRuleCall_1_0());
@@ -6785,11 +6736,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:2704:3: ( (lv_correction_2_0= RULE_STRING ) )
-            // InternalLibrettoProjectProfile.g:2705:4: (lv_correction_2_0= RULE_STRING )
+            // InternalLibrettoProjectProfile.g:2684:3: ( (lv_correction_2_0= RULE_STRING ) )
+            // InternalLibrettoProjectProfile.g:2685:4: (lv_correction_2_0= RULE_STRING )
             {
-            // InternalLibrettoProjectProfile.g:2705:4: (lv_correction_2_0= RULE_STRING )
-            // InternalLibrettoProjectProfile.g:2706:5: lv_correction_2_0= RULE_STRING
+            // InternalLibrettoProjectProfile.g:2685:4: (lv_correction_2_0= RULE_STRING )
+            // InternalLibrettoProjectProfile.g:2686:5: lv_correction_2_0= RULE_STRING
             {
             lv_correction_2_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -6834,7 +6785,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleCorrectionKeyword"
-    // InternalLibrettoProjectProfile.g:2726:1: entryRuleCorrectionKeyword returns [EObject current=null] : iv_ruleCorrectionKeyword= ruleCorrectionKeyword EOF ;
+    // InternalLibrettoProjectProfile.g:2706:1: entryRuleCorrectionKeyword returns [EObject current=null] : iv_ruleCorrectionKeyword= ruleCorrectionKeyword EOF ;
     public final EObject entryRuleCorrectionKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -6842,8 +6793,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:2726:58: (iv_ruleCorrectionKeyword= ruleCorrectionKeyword EOF )
-            // InternalLibrettoProjectProfile.g:2727:2: iv_ruleCorrectionKeyword= ruleCorrectionKeyword EOF
+            // InternalLibrettoProjectProfile.g:2706:58: (iv_ruleCorrectionKeyword= ruleCorrectionKeyword EOF )
+            // InternalLibrettoProjectProfile.g:2707:2: iv_ruleCorrectionKeyword= ruleCorrectionKeyword EOF
             {
              newCompositeNode(grammarAccess.getCorrectionKeywordRule()); 
             pushFollow(FOLLOW_1);
@@ -6870,7 +6821,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleCorrectionKeyword"
-    // InternalLibrettoProjectProfile.g:2733:1: ruleCorrectionKeyword returns [EObject current=null] : ( () ( (lv_keyword_1_0= 'correction' ) ) ) ;
+    // InternalLibrettoProjectProfile.g:2713:1: ruleCorrectionKeyword returns [EObject current=null] : ( () ( (lv_keyword_1_0= 'correction' ) ) ) ;
     public final EObject ruleCorrectionKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -6880,14 +6831,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:2739:2: ( ( () ( (lv_keyword_1_0= 'correction' ) ) ) )
-            // InternalLibrettoProjectProfile.g:2740:2: ( () ( (lv_keyword_1_0= 'correction' ) ) )
+            // InternalLibrettoProjectProfile.g:2719:2: ( ( () ( (lv_keyword_1_0= 'correction' ) ) ) )
+            // InternalLibrettoProjectProfile.g:2720:2: ( () ( (lv_keyword_1_0= 'correction' ) ) )
             {
-            // InternalLibrettoProjectProfile.g:2740:2: ( () ( (lv_keyword_1_0= 'correction' ) ) )
-            // InternalLibrettoProjectProfile.g:2741:3: () ( (lv_keyword_1_0= 'correction' ) )
+            // InternalLibrettoProjectProfile.g:2720:2: ( () ( (lv_keyword_1_0= 'correction' ) ) )
+            // InternalLibrettoProjectProfile.g:2721:3: () ( (lv_keyword_1_0= 'correction' ) )
             {
-            // InternalLibrettoProjectProfile.g:2741:3: ()
-            // InternalLibrettoProjectProfile.g:2742:4: 
+            // InternalLibrettoProjectProfile.g:2721:3: ()
+            // InternalLibrettoProjectProfile.g:2722:4: 
             {
 
             				current = forceCreateModelElement(
@@ -6897,11 +6848,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:2748:3: ( (lv_keyword_1_0= 'correction' ) )
-            // InternalLibrettoProjectProfile.g:2749:4: (lv_keyword_1_0= 'correction' )
+            // InternalLibrettoProjectProfile.g:2728:3: ( (lv_keyword_1_0= 'correction' ) )
+            // InternalLibrettoProjectProfile.g:2729:4: (lv_keyword_1_0= 'correction' )
             {
-            // InternalLibrettoProjectProfile.g:2749:4: (lv_keyword_1_0= 'correction' )
-            // InternalLibrettoProjectProfile.g:2750:5: lv_keyword_1_0= 'correction'
+            // InternalLibrettoProjectProfile.g:2729:4: (lv_keyword_1_0= 'correction' )
+            // InternalLibrettoProjectProfile.g:2730:5: lv_keyword_1_0= 'correction'
             {
             lv_keyword_1_0=(Token)match(input,43,FOLLOW_2); 
 
@@ -6942,7 +6893,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleGenDefaultRemediationRule"
-    // InternalLibrettoProjectProfile.g:2766:1: entryRuleGenDefaultRemediationRule returns [EObject current=null] : iv_ruleGenDefaultRemediationRule= ruleGenDefaultRemediationRule EOF ;
+    // InternalLibrettoProjectProfile.g:2746:1: entryRuleGenDefaultRemediationRule returns [EObject current=null] : iv_ruleGenDefaultRemediationRule= ruleGenDefaultRemediationRule EOF ;
     public final EObject entryRuleGenDefaultRemediationRule() throws RecognitionException {
         EObject current = null;
 
@@ -6950,8 +6901,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:2766:66: (iv_ruleGenDefaultRemediationRule= ruleGenDefaultRemediationRule EOF )
-            // InternalLibrettoProjectProfile.g:2767:2: iv_ruleGenDefaultRemediationRule= ruleGenDefaultRemediationRule EOF
+            // InternalLibrettoProjectProfile.g:2746:66: (iv_ruleGenDefaultRemediationRule= ruleGenDefaultRemediationRule EOF )
+            // InternalLibrettoProjectProfile.g:2747:2: iv_ruleGenDefaultRemediationRule= ruleGenDefaultRemediationRule EOF
             {
              newCompositeNode(grammarAccess.getGenDefaultRemediationRuleRule()); 
             pushFollow(FOLLOW_1);
@@ -6978,7 +6929,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleGenDefaultRemediationRule"
-    // InternalLibrettoProjectProfile.g:2773:1: ruleGenDefaultRemediationRule returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleDefaultKeyword ) ) otherlv_2= '{' ( ( (lv_codes_3_0= ruleCode ) ) | ( (lv_corrections_4_0= ruleCorrection ) ) )* otherlv_5= '}' ) ;
+    // InternalLibrettoProjectProfile.g:2753:1: ruleGenDefaultRemediationRule returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleDefaultKeyword ) ) otherlv_2= '{' ( ( (lv_codes_3_0= ruleCode ) ) | ( (lv_corrections_4_0= ruleCorrection ) ) )* otherlv_5= '}' ) ;
     public final EObject ruleGenDefaultRemediationRule() throws RecognitionException {
         EObject current = null;
 
@@ -6995,14 +6946,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:2779:2: ( ( () ( (lv_keyword_1_0= ruleDefaultKeyword ) ) otherlv_2= '{' ( ( (lv_codes_3_0= ruleCode ) ) | ( (lv_corrections_4_0= ruleCorrection ) ) )* otherlv_5= '}' ) )
-            // InternalLibrettoProjectProfile.g:2780:2: ( () ( (lv_keyword_1_0= ruleDefaultKeyword ) ) otherlv_2= '{' ( ( (lv_codes_3_0= ruleCode ) ) | ( (lv_corrections_4_0= ruleCorrection ) ) )* otherlv_5= '}' )
+            // InternalLibrettoProjectProfile.g:2759:2: ( ( () ( (lv_keyword_1_0= ruleDefaultKeyword ) ) otherlv_2= '{' ( ( (lv_codes_3_0= ruleCode ) ) | ( (lv_corrections_4_0= ruleCorrection ) ) )* otherlv_5= '}' ) )
+            // InternalLibrettoProjectProfile.g:2760:2: ( () ( (lv_keyword_1_0= ruleDefaultKeyword ) ) otherlv_2= '{' ( ( (lv_codes_3_0= ruleCode ) ) | ( (lv_corrections_4_0= ruleCorrection ) ) )* otherlv_5= '}' )
             {
-            // InternalLibrettoProjectProfile.g:2780:2: ( () ( (lv_keyword_1_0= ruleDefaultKeyword ) ) otherlv_2= '{' ( ( (lv_codes_3_0= ruleCode ) ) | ( (lv_corrections_4_0= ruleCorrection ) ) )* otherlv_5= '}' )
-            // InternalLibrettoProjectProfile.g:2781:3: () ( (lv_keyword_1_0= ruleDefaultKeyword ) ) otherlv_2= '{' ( ( (lv_codes_3_0= ruleCode ) ) | ( (lv_corrections_4_0= ruleCorrection ) ) )* otherlv_5= '}'
+            // InternalLibrettoProjectProfile.g:2760:2: ( () ( (lv_keyword_1_0= ruleDefaultKeyword ) ) otherlv_2= '{' ( ( (lv_codes_3_0= ruleCode ) ) | ( (lv_corrections_4_0= ruleCorrection ) ) )* otherlv_5= '}' )
+            // InternalLibrettoProjectProfile.g:2761:3: () ( (lv_keyword_1_0= ruleDefaultKeyword ) ) otherlv_2= '{' ( ( (lv_codes_3_0= ruleCode ) ) | ( (lv_corrections_4_0= ruleCorrection ) ) )* otherlv_5= '}'
             {
-            // InternalLibrettoProjectProfile.g:2781:3: ()
-            // InternalLibrettoProjectProfile.g:2782:4: 
+            // InternalLibrettoProjectProfile.g:2761:3: ()
+            // InternalLibrettoProjectProfile.g:2762:4: 
             {
 
             				current = forceCreateModelElement(
@@ -7012,11 +6963,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:2788:3: ( (lv_keyword_1_0= ruleDefaultKeyword ) )
-            // InternalLibrettoProjectProfile.g:2789:4: (lv_keyword_1_0= ruleDefaultKeyword )
+            // InternalLibrettoProjectProfile.g:2768:3: ( (lv_keyword_1_0= ruleDefaultKeyword ) )
+            // InternalLibrettoProjectProfile.g:2769:4: (lv_keyword_1_0= ruleDefaultKeyword )
             {
-            // InternalLibrettoProjectProfile.g:2789:4: (lv_keyword_1_0= ruleDefaultKeyword )
-            // InternalLibrettoProjectProfile.g:2790:5: lv_keyword_1_0= ruleDefaultKeyword
+            // InternalLibrettoProjectProfile.g:2769:4: (lv_keyword_1_0= ruleDefaultKeyword )
+            // InternalLibrettoProjectProfile.g:2770:5: lv_keyword_1_0= ruleDefaultKeyword
             {
 
             					newCompositeNode(grammarAccess.getGenDefaultRemediationRuleAccess().getKeywordDefaultKeywordParserRuleCall_1_0());
@@ -7047,7 +6998,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             			newLeafNode(otherlv_2, grammarAccess.getGenDefaultRemediationRuleAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalLibrettoProjectProfile.g:2811:3: ( ( (lv_codes_3_0= ruleCode ) ) | ( (lv_corrections_4_0= ruleCorrection ) ) )*
+            // InternalLibrettoProjectProfile.g:2791:3: ( ( (lv_codes_3_0= ruleCode ) ) | ( (lv_corrections_4_0= ruleCorrection ) ) )*
             loop19:
             do {
                 int alt19=3;
@@ -7063,13 +7014,13 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
                 switch (alt19) {
             	case 1 :
-            	    // InternalLibrettoProjectProfile.g:2812:4: ( (lv_codes_3_0= ruleCode ) )
+            	    // InternalLibrettoProjectProfile.g:2792:4: ( (lv_codes_3_0= ruleCode ) )
             	    {
-            	    // InternalLibrettoProjectProfile.g:2812:4: ( (lv_codes_3_0= ruleCode ) )
-            	    // InternalLibrettoProjectProfile.g:2813:5: (lv_codes_3_0= ruleCode )
+            	    // InternalLibrettoProjectProfile.g:2792:4: ( (lv_codes_3_0= ruleCode ) )
+            	    // InternalLibrettoProjectProfile.g:2793:5: (lv_codes_3_0= ruleCode )
             	    {
-            	    // InternalLibrettoProjectProfile.g:2813:5: (lv_codes_3_0= ruleCode )
-            	    // InternalLibrettoProjectProfile.g:2814:6: lv_codes_3_0= ruleCode
+            	    // InternalLibrettoProjectProfile.g:2793:5: (lv_codes_3_0= ruleCode )
+            	    // InternalLibrettoProjectProfile.g:2794:6: lv_codes_3_0= ruleCode
             	    {
 
             	    						newCompositeNode(grammarAccess.getGenDefaultRemediationRuleAccess().getCodesCodeParserRuleCall_3_0_0());
@@ -7100,13 +7051,13 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
             	    }
             	    break;
             	case 2 :
-            	    // InternalLibrettoProjectProfile.g:2832:4: ( (lv_corrections_4_0= ruleCorrection ) )
+            	    // InternalLibrettoProjectProfile.g:2812:4: ( (lv_corrections_4_0= ruleCorrection ) )
             	    {
-            	    // InternalLibrettoProjectProfile.g:2832:4: ( (lv_corrections_4_0= ruleCorrection ) )
-            	    // InternalLibrettoProjectProfile.g:2833:5: (lv_corrections_4_0= ruleCorrection )
+            	    // InternalLibrettoProjectProfile.g:2812:4: ( (lv_corrections_4_0= ruleCorrection ) )
+            	    // InternalLibrettoProjectProfile.g:2813:5: (lv_corrections_4_0= ruleCorrection )
             	    {
-            	    // InternalLibrettoProjectProfile.g:2833:5: (lv_corrections_4_0= ruleCorrection )
-            	    // InternalLibrettoProjectProfile.g:2834:6: lv_corrections_4_0= ruleCorrection
+            	    // InternalLibrettoProjectProfile.g:2813:5: (lv_corrections_4_0= ruleCorrection )
+            	    // InternalLibrettoProjectProfile.g:2814:6: lv_corrections_4_0= ruleCorrection
             	    {
 
             	    						newCompositeNode(grammarAccess.getGenDefaultRemediationRuleAccess().getCorrectionsCorrectionParserRuleCall_3_1_0());
@@ -7169,7 +7120,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleDefaultKeyword"
-    // InternalLibrettoProjectProfile.g:2860:1: entryRuleDefaultKeyword returns [EObject current=null] : iv_ruleDefaultKeyword= ruleDefaultKeyword EOF ;
+    // InternalLibrettoProjectProfile.g:2840:1: entryRuleDefaultKeyword returns [EObject current=null] : iv_ruleDefaultKeyword= ruleDefaultKeyword EOF ;
     public final EObject entryRuleDefaultKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -7177,8 +7128,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:2860:55: (iv_ruleDefaultKeyword= ruleDefaultKeyword EOF )
-            // InternalLibrettoProjectProfile.g:2861:2: iv_ruleDefaultKeyword= ruleDefaultKeyword EOF
+            // InternalLibrettoProjectProfile.g:2840:55: (iv_ruleDefaultKeyword= ruleDefaultKeyword EOF )
+            // InternalLibrettoProjectProfile.g:2841:2: iv_ruleDefaultKeyword= ruleDefaultKeyword EOF
             {
              newCompositeNode(grammarAccess.getDefaultKeywordRule()); 
             pushFollow(FOLLOW_1);
@@ -7205,7 +7156,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleDefaultKeyword"
-    // InternalLibrettoProjectProfile.g:2867:1: ruleDefaultKeyword returns [EObject current=null] : ( () ( (lv_keyword_1_0= 'default' ) ) ) ;
+    // InternalLibrettoProjectProfile.g:2847:1: ruleDefaultKeyword returns [EObject current=null] : ( () ( (lv_keyword_1_0= 'default' ) ) ) ;
     public final EObject ruleDefaultKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -7215,14 +7166,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:2873:2: ( ( () ( (lv_keyword_1_0= 'default' ) ) ) )
-            // InternalLibrettoProjectProfile.g:2874:2: ( () ( (lv_keyword_1_0= 'default' ) ) )
+            // InternalLibrettoProjectProfile.g:2853:2: ( ( () ( (lv_keyword_1_0= 'default' ) ) ) )
+            // InternalLibrettoProjectProfile.g:2854:2: ( () ( (lv_keyword_1_0= 'default' ) ) )
             {
-            // InternalLibrettoProjectProfile.g:2874:2: ( () ( (lv_keyword_1_0= 'default' ) ) )
-            // InternalLibrettoProjectProfile.g:2875:3: () ( (lv_keyword_1_0= 'default' ) )
+            // InternalLibrettoProjectProfile.g:2854:2: ( () ( (lv_keyword_1_0= 'default' ) ) )
+            // InternalLibrettoProjectProfile.g:2855:3: () ( (lv_keyword_1_0= 'default' ) )
             {
-            // InternalLibrettoProjectProfile.g:2875:3: ()
-            // InternalLibrettoProjectProfile.g:2876:4: 
+            // InternalLibrettoProjectProfile.g:2855:3: ()
+            // InternalLibrettoProjectProfile.g:2856:4: 
             {
 
             				current = forceCreateModelElement(
@@ -7232,11 +7183,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:2882:3: ( (lv_keyword_1_0= 'default' ) )
-            // InternalLibrettoProjectProfile.g:2883:4: (lv_keyword_1_0= 'default' )
+            // InternalLibrettoProjectProfile.g:2862:3: ( (lv_keyword_1_0= 'default' ) )
+            // InternalLibrettoProjectProfile.g:2863:4: (lv_keyword_1_0= 'default' )
             {
-            // InternalLibrettoProjectProfile.g:2883:4: (lv_keyword_1_0= 'default' )
-            // InternalLibrettoProjectProfile.g:2884:5: lv_keyword_1_0= 'default'
+            // InternalLibrettoProjectProfile.g:2863:4: (lv_keyword_1_0= 'default' )
+            // InternalLibrettoProjectProfile.g:2864:5: lv_keyword_1_0= 'default'
             {
             lv_keyword_1_0=(Token)match(input,44,FOLLOW_2); 
 
@@ -7277,7 +7228,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleLlmProvidersBlock"
-    // InternalLibrettoProjectProfile.g:2900:1: entryRuleLlmProvidersBlock returns [EObject current=null] : iv_ruleLlmProvidersBlock= ruleLlmProvidersBlock EOF ;
+    // InternalLibrettoProjectProfile.g:2880:1: entryRuleLlmProvidersBlock returns [EObject current=null] : iv_ruleLlmProvidersBlock= ruleLlmProvidersBlock EOF ;
     public final EObject entryRuleLlmProvidersBlock() throws RecognitionException {
         EObject current = null;
 
@@ -7285,8 +7236,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:2900:58: (iv_ruleLlmProvidersBlock= ruleLlmProvidersBlock EOF )
-            // InternalLibrettoProjectProfile.g:2901:2: iv_ruleLlmProvidersBlock= ruleLlmProvidersBlock EOF
+            // InternalLibrettoProjectProfile.g:2880:58: (iv_ruleLlmProvidersBlock= ruleLlmProvidersBlock EOF )
+            // InternalLibrettoProjectProfile.g:2881:2: iv_ruleLlmProvidersBlock= ruleLlmProvidersBlock EOF
             {
              newCompositeNode(grammarAccess.getLlmProvidersBlockRule()); 
             pushFollow(FOLLOW_1);
@@ -7313,7 +7264,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleLlmProvidersBlock"
-    // InternalLibrettoProjectProfile.g:2907:1: ruleLlmProvidersBlock returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleLLMProvidersKeyword ) ) otherlv_2= '{' ( (lv_providers_3_0= ruleLLMProvider ) )* otherlv_4= '}' ) ;
+    // InternalLibrettoProjectProfile.g:2887:1: ruleLlmProvidersBlock returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleLLMProvidersKeyword ) ) otherlv_2= '{' ( (lv_providers_3_0= ruleLLMProvider ) )* otherlv_4= '}' ) ;
     public final EObject ruleLlmProvidersBlock() throws RecognitionException {
         EObject current = null;
 
@@ -7328,14 +7279,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:2913:2: ( ( () ( (lv_keyword_1_0= ruleLLMProvidersKeyword ) ) otherlv_2= '{' ( (lv_providers_3_0= ruleLLMProvider ) )* otherlv_4= '}' ) )
-            // InternalLibrettoProjectProfile.g:2914:2: ( () ( (lv_keyword_1_0= ruleLLMProvidersKeyword ) ) otherlv_2= '{' ( (lv_providers_3_0= ruleLLMProvider ) )* otherlv_4= '}' )
+            // InternalLibrettoProjectProfile.g:2893:2: ( ( () ( (lv_keyword_1_0= ruleLLMProvidersKeyword ) ) otherlv_2= '{' ( (lv_providers_3_0= ruleLLMProvider ) )* otherlv_4= '}' ) )
+            // InternalLibrettoProjectProfile.g:2894:2: ( () ( (lv_keyword_1_0= ruleLLMProvidersKeyword ) ) otherlv_2= '{' ( (lv_providers_3_0= ruleLLMProvider ) )* otherlv_4= '}' )
             {
-            // InternalLibrettoProjectProfile.g:2914:2: ( () ( (lv_keyword_1_0= ruleLLMProvidersKeyword ) ) otherlv_2= '{' ( (lv_providers_3_0= ruleLLMProvider ) )* otherlv_4= '}' )
-            // InternalLibrettoProjectProfile.g:2915:3: () ( (lv_keyword_1_0= ruleLLMProvidersKeyword ) ) otherlv_2= '{' ( (lv_providers_3_0= ruleLLMProvider ) )* otherlv_4= '}'
+            // InternalLibrettoProjectProfile.g:2894:2: ( () ( (lv_keyword_1_0= ruleLLMProvidersKeyword ) ) otherlv_2= '{' ( (lv_providers_3_0= ruleLLMProvider ) )* otherlv_4= '}' )
+            // InternalLibrettoProjectProfile.g:2895:3: () ( (lv_keyword_1_0= ruleLLMProvidersKeyword ) ) otherlv_2= '{' ( (lv_providers_3_0= ruleLLMProvider ) )* otherlv_4= '}'
             {
-            // InternalLibrettoProjectProfile.g:2915:3: ()
-            // InternalLibrettoProjectProfile.g:2916:4: 
+            // InternalLibrettoProjectProfile.g:2895:3: ()
+            // InternalLibrettoProjectProfile.g:2896:4: 
             {
 
             				current = forceCreateModelElement(
@@ -7345,11 +7296,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:2922:3: ( (lv_keyword_1_0= ruleLLMProvidersKeyword ) )
-            // InternalLibrettoProjectProfile.g:2923:4: (lv_keyword_1_0= ruleLLMProvidersKeyword )
+            // InternalLibrettoProjectProfile.g:2902:3: ( (lv_keyword_1_0= ruleLLMProvidersKeyword ) )
+            // InternalLibrettoProjectProfile.g:2903:4: (lv_keyword_1_0= ruleLLMProvidersKeyword )
             {
-            // InternalLibrettoProjectProfile.g:2923:4: (lv_keyword_1_0= ruleLLMProvidersKeyword )
-            // InternalLibrettoProjectProfile.g:2924:5: lv_keyword_1_0= ruleLLMProvidersKeyword
+            // InternalLibrettoProjectProfile.g:2903:4: (lv_keyword_1_0= ruleLLMProvidersKeyword )
+            // InternalLibrettoProjectProfile.g:2904:5: lv_keyword_1_0= ruleLLMProvidersKeyword
             {
 
             					newCompositeNode(grammarAccess.getLlmProvidersBlockAccess().getKeywordLLMProvidersKeywordParserRuleCall_1_0());
@@ -7380,7 +7331,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             			newLeafNode(otherlv_2, grammarAccess.getLlmProvidersBlockAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalLibrettoProjectProfile.g:2945:3: ( (lv_providers_3_0= ruleLLMProvider ) )*
+            // InternalLibrettoProjectProfile.g:2925:3: ( (lv_providers_3_0= ruleLLMProvider ) )*
             loop20:
             do {
                 int alt20=2;
@@ -7393,10 +7344,10 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
                 switch (alt20) {
             	case 1 :
-            	    // InternalLibrettoProjectProfile.g:2946:4: (lv_providers_3_0= ruleLLMProvider )
+            	    // InternalLibrettoProjectProfile.g:2926:4: (lv_providers_3_0= ruleLLMProvider )
             	    {
-            	    // InternalLibrettoProjectProfile.g:2946:4: (lv_providers_3_0= ruleLLMProvider )
-            	    // InternalLibrettoProjectProfile.g:2947:5: lv_providers_3_0= ruleLLMProvider
+            	    // InternalLibrettoProjectProfile.g:2926:4: (lv_providers_3_0= ruleLLMProvider )
+            	    // InternalLibrettoProjectProfile.g:2927:5: lv_providers_3_0= ruleLLMProvider
             	    {
 
             	    					newCompositeNode(grammarAccess.getLlmProvidersBlockAccess().getProvidersLLMProviderParserRuleCall_3_0());
@@ -7456,7 +7407,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleLLMProvidersKeyword"
-    // InternalLibrettoProjectProfile.g:2972:1: entryRuleLLMProvidersKeyword returns [EObject current=null] : iv_ruleLLMProvidersKeyword= ruleLLMProvidersKeyword EOF ;
+    // InternalLibrettoProjectProfile.g:2952:1: entryRuleLLMProvidersKeyword returns [EObject current=null] : iv_ruleLLMProvidersKeyword= ruleLLMProvidersKeyword EOF ;
     public final EObject entryRuleLLMProvidersKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -7464,8 +7415,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:2972:60: (iv_ruleLLMProvidersKeyword= ruleLLMProvidersKeyword EOF )
-            // InternalLibrettoProjectProfile.g:2973:2: iv_ruleLLMProvidersKeyword= ruleLLMProvidersKeyword EOF
+            // InternalLibrettoProjectProfile.g:2952:60: (iv_ruleLLMProvidersKeyword= ruleLLMProvidersKeyword EOF )
+            // InternalLibrettoProjectProfile.g:2953:2: iv_ruleLLMProvidersKeyword= ruleLLMProvidersKeyword EOF
             {
              newCompositeNode(grammarAccess.getLLMProvidersKeywordRule()); 
             pushFollow(FOLLOW_1);
@@ -7492,7 +7443,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleLLMProvidersKeyword"
-    // InternalLibrettoProjectProfile.g:2979:1: ruleLLMProvidersKeyword returns [EObject current=null] : ( () ( ( (lv_keyword_1_1= 'llmproviders' | lv_keyword_1_2= 'llmProviders' ) ) ) ) ;
+    // InternalLibrettoProjectProfile.g:2959:1: ruleLLMProvidersKeyword returns [EObject current=null] : ( () ( ( (lv_keyword_1_1= 'llmproviders' | lv_keyword_1_2= 'llmProviders' ) ) ) ) ;
     public final EObject ruleLLMProvidersKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -7503,14 +7454,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:2985:2: ( ( () ( ( (lv_keyword_1_1= 'llmproviders' | lv_keyword_1_2= 'llmProviders' ) ) ) ) )
-            // InternalLibrettoProjectProfile.g:2986:2: ( () ( ( (lv_keyword_1_1= 'llmproviders' | lv_keyword_1_2= 'llmProviders' ) ) ) )
+            // InternalLibrettoProjectProfile.g:2965:2: ( ( () ( ( (lv_keyword_1_1= 'llmproviders' | lv_keyword_1_2= 'llmProviders' ) ) ) ) )
+            // InternalLibrettoProjectProfile.g:2966:2: ( () ( ( (lv_keyword_1_1= 'llmproviders' | lv_keyword_1_2= 'llmProviders' ) ) ) )
             {
-            // InternalLibrettoProjectProfile.g:2986:2: ( () ( ( (lv_keyword_1_1= 'llmproviders' | lv_keyword_1_2= 'llmProviders' ) ) ) )
-            // InternalLibrettoProjectProfile.g:2987:3: () ( ( (lv_keyword_1_1= 'llmproviders' | lv_keyword_1_2= 'llmProviders' ) ) )
+            // InternalLibrettoProjectProfile.g:2966:2: ( () ( ( (lv_keyword_1_1= 'llmproviders' | lv_keyword_1_2= 'llmProviders' ) ) ) )
+            // InternalLibrettoProjectProfile.g:2967:3: () ( ( (lv_keyword_1_1= 'llmproviders' | lv_keyword_1_2= 'llmProviders' ) ) )
             {
-            // InternalLibrettoProjectProfile.g:2987:3: ()
-            // InternalLibrettoProjectProfile.g:2988:4: 
+            // InternalLibrettoProjectProfile.g:2967:3: ()
+            // InternalLibrettoProjectProfile.g:2968:4: 
             {
 
             				current = forceCreateModelElement(
@@ -7520,13 +7471,13 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:2994:3: ( ( (lv_keyword_1_1= 'llmproviders' | lv_keyword_1_2= 'llmProviders' ) ) )
-            // InternalLibrettoProjectProfile.g:2995:4: ( (lv_keyword_1_1= 'llmproviders' | lv_keyword_1_2= 'llmProviders' ) )
+            // InternalLibrettoProjectProfile.g:2974:3: ( ( (lv_keyword_1_1= 'llmproviders' | lv_keyword_1_2= 'llmProviders' ) ) )
+            // InternalLibrettoProjectProfile.g:2975:4: ( (lv_keyword_1_1= 'llmproviders' | lv_keyword_1_2= 'llmProviders' ) )
             {
-            // InternalLibrettoProjectProfile.g:2995:4: ( (lv_keyword_1_1= 'llmproviders' | lv_keyword_1_2= 'llmProviders' ) )
-            // InternalLibrettoProjectProfile.g:2996:5: (lv_keyword_1_1= 'llmproviders' | lv_keyword_1_2= 'llmProviders' )
+            // InternalLibrettoProjectProfile.g:2975:4: ( (lv_keyword_1_1= 'llmproviders' | lv_keyword_1_2= 'llmProviders' ) )
+            // InternalLibrettoProjectProfile.g:2976:5: (lv_keyword_1_1= 'llmproviders' | lv_keyword_1_2= 'llmProviders' )
             {
-            // InternalLibrettoProjectProfile.g:2996:5: (lv_keyword_1_1= 'llmproviders' | lv_keyword_1_2= 'llmProviders' )
+            // InternalLibrettoProjectProfile.g:2976:5: (lv_keyword_1_1= 'llmproviders' | lv_keyword_1_2= 'llmProviders' )
             int alt21=2;
             int LA21_0 = input.LA(1);
 
@@ -7544,7 +7495,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
             }
             switch (alt21) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:2997:6: lv_keyword_1_1= 'llmproviders'
+                    // InternalLibrettoProjectProfile.g:2977:6: lv_keyword_1_1= 'llmproviders'
                     {
                     lv_keyword_1_1=(Token)match(input,45,FOLLOW_2); 
 
@@ -7560,7 +7511,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoProjectProfile.g:3008:6: lv_keyword_1_2= 'llmProviders'
+                    // InternalLibrettoProjectProfile.g:2988:6: lv_keyword_1_2= 'llmProviders'
                     {
                     lv_keyword_1_2=(Token)match(input,46,FOLLOW_2); 
 
@@ -7607,7 +7558,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleLLMProvider"
-    // InternalLibrettoProjectProfile.g:3025:1: entryRuleLLMProvider returns [EObject current=null] : iv_ruleLLMProvider= ruleLLMProvider EOF ;
+    // InternalLibrettoProjectProfile.g:3005:1: entryRuleLLMProvider returns [EObject current=null] : iv_ruleLLMProvider= ruleLLMProvider EOF ;
     public final EObject entryRuleLLMProvider() throws RecognitionException {
         EObject current = null;
 
@@ -7615,8 +7566,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:3025:52: (iv_ruleLLMProvider= ruleLLMProvider EOF )
-            // InternalLibrettoProjectProfile.g:3026:2: iv_ruleLLMProvider= ruleLLMProvider EOF
+            // InternalLibrettoProjectProfile.g:3005:52: (iv_ruleLLMProvider= ruleLLMProvider EOF )
+            // InternalLibrettoProjectProfile.g:3006:2: iv_ruleLLMProvider= ruleLLMProvider EOF
             {
              newCompositeNode(grammarAccess.getLLMProviderRule()); 
             pushFollow(FOLLOW_1);
@@ -7643,7 +7594,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleLLMProvider"
-    // InternalLibrettoProjectProfile.g:3032:1: ruleLLMProvider returns [EObject current=null] : ( ( (lv_keyword_0_0= ruleProviderKeyword ) ) ( (lv_name_1_0= ruleValidID ) ) otherlv_2= '{' ( ( (lv_types_3_0= ruleProviderType ) ) | ( (lv_localModelPaths_4_0= ruleLocalModelPath ) ) | ( (lv_models_5_0= ruleModel ) ) | ( (lv_endpoints_6_0= ruleEndpoint ) ) )* otherlv_7= '}' ) ;
+    // InternalLibrettoProjectProfile.g:3012:1: ruleLLMProvider returns [EObject current=null] : ( ( (lv_keyword_0_0= ruleProviderKeyword ) ) ( (lv_name_1_0= ruleValidID ) ) otherlv_2= '{' ( ( (lv_types_3_0= ruleProviderType ) ) | ( (lv_localModelPaths_4_0= ruleLocalModelPath ) ) | ( (lv_models_5_0= ruleModel ) ) | ( (lv_endpoints_6_0= ruleEndpoint ) ) )* otherlv_7= '}' ) ;
     public final EObject ruleLLMProvider() throws RecognitionException {
         EObject current = null;
 
@@ -7666,17 +7617,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:3038:2: ( ( ( (lv_keyword_0_0= ruleProviderKeyword ) ) ( (lv_name_1_0= ruleValidID ) ) otherlv_2= '{' ( ( (lv_types_3_0= ruleProviderType ) ) | ( (lv_localModelPaths_4_0= ruleLocalModelPath ) ) | ( (lv_models_5_0= ruleModel ) ) | ( (lv_endpoints_6_0= ruleEndpoint ) ) )* otherlv_7= '}' ) )
-            // InternalLibrettoProjectProfile.g:3039:2: ( ( (lv_keyword_0_0= ruleProviderKeyword ) ) ( (lv_name_1_0= ruleValidID ) ) otherlv_2= '{' ( ( (lv_types_3_0= ruleProviderType ) ) | ( (lv_localModelPaths_4_0= ruleLocalModelPath ) ) | ( (lv_models_5_0= ruleModel ) ) | ( (lv_endpoints_6_0= ruleEndpoint ) ) )* otherlv_7= '}' )
+            // InternalLibrettoProjectProfile.g:3018:2: ( ( ( (lv_keyword_0_0= ruleProviderKeyword ) ) ( (lv_name_1_0= ruleValidID ) ) otherlv_2= '{' ( ( (lv_types_3_0= ruleProviderType ) ) | ( (lv_localModelPaths_4_0= ruleLocalModelPath ) ) | ( (lv_models_5_0= ruleModel ) ) | ( (lv_endpoints_6_0= ruleEndpoint ) ) )* otherlv_7= '}' ) )
+            // InternalLibrettoProjectProfile.g:3019:2: ( ( (lv_keyword_0_0= ruleProviderKeyword ) ) ( (lv_name_1_0= ruleValidID ) ) otherlv_2= '{' ( ( (lv_types_3_0= ruleProviderType ) ) | ( (lv_localModelPaths_4_0= ruleLocalModelPath ) ) | ( (lv_models_5_0= ruleModel ) ) | ( (lv_endpoints_6_0= ruleEndpoint ) ) )* otherlv_7= '}' )
             {
-            // InternalLibrettoProjectProfile.g:3039:2: ( ( (lv_keyword_0_0= ruleProviderKeyword ) ) ( (lv_name_1_0= ruleValidID ) ) otherlv_2= '{' ( ( (lv_types_3_0= ruleProviderType ) ) | ( (lv_localModelPaths_4_0= ruleLocalModelPath ) ) | ( (lv_models_5_0= ruleModel ) ) | ( (lv_endpoints_6_0= ruleEndpoint ) ) )* otherlv_7= '}' )
-            // InternalLibrettoProjectProfile.g:3040:3: ( (lv_keyword_0_0= ruleProviderKeyword ) ) ( (lv_name_1_0= ruleValidID ) ) otherlv_2= '{' ( ( (lv_types_3_0= ruleProviderType ) ) | ( (lv_localModelPaths_4_0= ruleLocalModelPath ) ) | ( (lv_models_5_0= ruleModel ) ) | ( (lv_endpoints_6_0= ruleEndpoint ) ) )* otherlv_7= '}'
+            // InternalLibrettoProjectProfile.g:3019:2: ( ( (lv_keyword_0_0= ruleProviderKeyword ) ) ( (lv_name_1_0= ruleValidID ) ) otherlv_2= '{' ( ( (lv_types_3_0= ruleProviderType ) ) | ( (lv_localModelPaths_4_0= ruleLocalModelPath ) ) | ( (lv_models_5_0= ruleModel ) ) | ( (lv_endpoints_6_0= ruleEndpoint ) ) )* otherlv_7= '}' )
+            // InternalLibrettoProjectProfile.g:3020:3: ( (lv_keyword_0_0= ruleProviderKeyword ) ) ( (lv_name_1_0= ruleValidID ) ) otherlv_2= '{' ( ( (lv_types_3_0= ruleProviderType ) ) | ( (lv_localModelPaths_4_0= ruleLocalModelPath ) ) | ( (lv_models_5_0= ruleModel ) ) | ( (lv_endpoints_6_0= ruleEndpoint ) ) )* otherlv_7= '}'
             {
-            // InternalLibrettoProjectProfile.g:3040:3: ( (lv_keyword_0_0= ruleProviderKeyword ) )
-            // InternalLibrettoProjectProfile.g:3041:4: (lv_keyword_0_0= ruleProviderKeyword )
+            // InternalLibrettoProjectProfile.g:3020:3: ( (lv_keyword_0_0= ruleProviderKeyword ) )
+            // InternalLibrettoProjectProfile.g:3021:4: (lv_keyword_0_0= ruleProviderKeyword )
             {
-            // InternalLibrettoProjectProfile.g:3041:4: (lv_keyword_0_0= ruleProviderKeyword )
-            // InternalLibrettoProjectProfile.g:3042:5: lv_keyword_0_0= ruleProviderKeyword
+            // InternalLibrettoProjectProfile.g:3021:4: (lv_keyword_0_0= ruleProviderKeyword )
+            // InternalLibrettoProjectProfile.g:3022:5: lv_keyword_0_0= ruleProviderKeyword
             {
 
             					newCompositeNode(grammarAccess.getLLMProviderAccess().getKeywordProviderKeywordParserRuleCall_0_0());
@@ -7703,11 +7654,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:3059:3: ( (lv_name_1_0= ruleValidID ) )
-            // InternalLibrettoProjectProfile.g:3060:4: (lv_name_1_0= ruleValidID )
+            // InternalLibrettoProjectProfile.g:3039:3: ( (lv_name_1_0= ruleValidID ) )
+            // InternalLibrettoProjectProfile.g:3040:4: (lv_name_1_0= ruleValidID )
             {
-            // InternalLibrettoProjectProfile.g:3060:4: (lv_name_1_0= ruleValidID )
-            // InternalLibrettoProjectProfile.g:3061:5: lv_name_1_0= ruleValidID
+            // InternalLibrettoProjectProfile.g:3040:4: (lv_name_1_0= ruleValidID )
+            // InternalLibrettoProjectProfile.g:3041:5: lv_name_1_0= ruleValidID
             {
 
             					newCompositeNode(grammarAccess.getLLMProviderAccess().getNameValidIDParserRuleCall_1_0());
@@ -7738,7 +7689,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             			newLeafNode(otherlv_2, grammarAccess.getLLMProviderAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalLibrettoProjectProfile.g:3082:3: ( ( (lv_types_3_0= ruleProviderType ) ) | ( (lv_localModelPaths_4_0= ruleLocalModelPath ) ) | ( (lv_models_5_0= ruleModel ) ) | ( (lv_endpoints_6_0= ruleEndpoint ) ) )*
+            // InternalLibrettoProjectProfile.g:3062:3: ( ( (lv_types_3_0= ruleProviderType ) ) | ( (lv_localModelPaths_4_0= ruleLocalModelPath ) ) | ( (lv_models_5_0= ruleModel ) ) | ( (lv_endpoints_6_0= ruleEndpoint ) ) )*
             loop22:
             do {
                 int alt22=5;
@@ -7770,13 +7721,13 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
                 switch (alt22) {
             	case 1 :
-            	    // InternalLibrettoProjectProfile.g:3083:4: ( (lv_types_3_0= ruleProviderType ) )
+            	    // InternalLibrettoProjectProfile.g:3063:4: ( (lv_types_3_0= ruleProviderType ) )
             	    {
-            	    // InternalLibrettoProjectProfile.g:3083:4: ( (lv_types_3_0= ruleProviderType ) )
-            	    // InternalLibrettoProjectProfile.g:3084:5: (lv_types_3_0= ruleProviderType )
+            	    // InternalLibrettoProjectProfile.g:3063:4: ( (lv_types_3_0= ruleProviderType ) )
+            	    // InternalLibrettoProjectProfile.g:3064:5: (lv_types_3_0= ruleProviderType )
             	    {
-            	    // InternalLibrettoProjectProfile.g:3084:5: (lv_types_3_0= ruleProviderType )
-            	    // InternalLibrettoProjectProfile.g:3085:6: lv_types_3_0= ruleProviderType
+            	    // InternalLibrettoProjectProfile.g:3064:5: (lv_types_3_0= ruleProviderType )
+            	    // InternalLibrettoProjectProfile.g:3065:6: lv_types_3_0= ruleProviderType
             	    {
 
             	    						newCompositeNode(grammarAccess.getLLMProviderAccess().getTypesProviderTypeParserRuleCall_3_0_0());
@@ -7807,13 +7758,13 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
             	    }
             	    break;
             	case 2 :
-            	    // InternalLibrettoProjectProfile.g:3103:4: ( (lv_localModelPaths_4_0= ruleLocalModelPath ) )
+            	    // InternalLibrettoProjectProfile.g:3083:4: ( (lv_localModelPaths_4_0= ruleLocalModelPath ) )
             	    {
-            	    // InternalLibrettoProjectProfile.g:3103:4: ( (lv_localModelPaths_4_0= ruleLocalModelPath ) )
-            	    // InternalLibrettoProjectProfile.g:3104:5: (lv_localModelPaths_4_0= ruleLocalModelPath )
+            	    // InternalLibrettoProjectProfile.g:3083:4: ( (lv_localModelPaths_4_0= ruleLocalModelPath ) )
+            	    // InternalLibrettoProjectProfile.g:3084:5: (lv_localModelPaths_4_0= ruleLocalModelPath )
             	    {
-            	    // InternalLibrettoProjectProfile.g:3104:5: (lv_localModelPaths_4_0= ruleLocalModelPath )
-            	    // InternalLibrettoProjectProfile.g:3105:6: lv_localModelPaths_4_0= ruleLocalModelPath
+            	    // InternalLibrettoProjectProfile.g:3084:5: (lv_localModelPaths_4_0= ruleLocalModelPath )
+            	    // InternalLibrettoProjectProfile.g:3085:6: lv_localModelPaths_4_0= ruleLocalModelPath
             	    {
 
             	    						newCompositeNode(grammarAccess.getLLMProviderAccess().getLocalModelPathsLocalModelPathParserRuleCall_3_1_0());
@@ -7844,13 +7795,13 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
             	    }
             	    break;
             	case 3 :
-            	    // InternalLibrettoProjectProfile.g:3123:4: ( (lv_models_5_0= ruleModel ) )
+            	    // InternalLibrettoProjectProfile.g:3103:4: ( (lv_models_5_0= ruleModel ) )
             	    {
-            	    // InternalLibrettoProjectProfile.g:3123:4: ( (lv_models_5_0= ruleModel ) )
-            	    // InternalLibrettoProjectProfile.g:3124:5: (lv_models_5_0= ruleModel )
+            	    // InternalLibrettoProjectProfile.g:3103:4: ( (lv_models_5_0= ruleModel ) )
+            	    // InternalLibrettoProjectProfile.g:3104:5: (lv_models_5_0= ruleModel )
             	    {
-            	    // InternalLibrettoProjectProfile.g:3124:5: (lv_models_5_0= ruleModel )
-            	    // InternalLibrettoProjectProfile.g:3125:6: lv_models_5_0= ruleModel
+            	    // InternalLibrettoProjectProfile.g:3104:5: (lv_models_5_0= ruleModel )
+            	    // InternalLibrettoProjectProfile.g:3105:6: lv_models_5_0= ruleModel
             	    {
 
             	    						newCompositeNode(grammarAccess.getLLMProviderAccess().getModelsModelParserRuleCall_3_2_0());
@@ -7881,13 +7832,13 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
             	    }
             	    break;
             	case 4 :
-            	    // InternalLibrettoProjectProfile.g:3143:4: ( (lv_endpoints_6_0= ruleEndpoint ) )
+            	    // InternalLibrettoProjectProfile.g:3123:4: ( (lv_endpoints_6_0= ruleEndpoint ) )
             	    {
-            	    // InternalLibrettoProjectProfile.g:3143:4: ( (lv_endpoints_6_0= ruleEndpoint ) )
-            	    // InternalLibrettoProjectProfile.g:3144:5: (lv_endpoints_6_0= ruleEndpoint )
+            	    // InternalLibrettoProjectProfile.g:3123:4: ( (lv_endpoints_6_0= ruleEndpoint ) )
+            	    // InternalLibrettoProjectProfile.g:3124:5: (lv_endpoints_6_0= ruleEndpoint )
             	    {
-            	    // InternalLibrettoProjectProfile.g:3144:5: (lv_endpoints_6_0= ruleEndpoint )
-            	    // InternalLibrettoProjectProfile.g:3145:6: lv_endpoints_6_0= ruleEndpoint
+            	    // InternalLibrettoProjectProfile.g:3124:5: (lv_endpoints_6_0= ruleEndpoint )
+            	    // InternalLibrettoProjectProfile.g:3125:6: lv_endpoints_6_0= ruleEndpoint
             	    {
 
             	    						newCompositeNode(grammarAccess.getLLMProviderAccess().getEndpointsEndpointParserRuleCall_3_3_0());
@@ -7950,7 +7901,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleProviderKeyword"
-    // InternalLibrettoProjectProfile.g:3171:1: entryRuleProviderKeyword returns [EObject current=null] : iv_ruleProviderKeyword= ruleProviderKeyword EOF ;
+    // InternalLibrettoProjectProfile.g:3151:1: entryRuleProviderKeyword returns [EObject current=null] : iv_ruleProviderKeyword= ruleProviderKeyword EOF ;
     public final EObject entryRuleProviderKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -7958,8 +7909,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:3171:56: (iv_ruleProviderKeyword= ruleProviderKeyword EOF )
-            // InternalLibrettoProjectProfile.g:3172:2: iv_ruleProviderKeyword= ruleProviderKeyword EOF
+            // InternalLibrettoProjectProfile.g:3151:56: (iv_ruleProviderKeyword= ruleProviderKeyword EOF )
+            // InternalLibrettoProjectProfile.g:3152:2: iv_ruleProviderKeyword= ruleProviderKeyword EOF
             {
              newCompositeNode(grammarAccess.getProviderKeywordRule()); 
             pushFollow(FOLLOW_1);
@@ -7986,7 +7937,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleProviderKeyword"
-    // InternalLibrettoProjectProfile.g:3178:1: ruleProviderKeyword returns [EObject current=null] : ( () ( (lv_keyword_1_0= 'provider' ) ) ) ;
+    // InternalLibrettoProjectProfile.g:3158:1: ruleProviderKeyword returns [EObject current=null] : ( () ( (lv_keyword_1_0= 'provider' ) ) ) ;
     public final EObject ruleProviderKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -7996,14 +7947,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:3184:2: ( ( () ( (lv_keyword_1_0= 'provider' ) ) ) )
-            // InternalLibrettoProjectProfile.g:3185:2: ( () ( (lv_keyword_1_0= 'provider' ) ) )
+            // InternalLibrettoProjectProfile.g:3164:2: ( ( () ( (lv_keyword_1_0= 'provider' ) ) ) )
+            // InternalLibrettoProjectProfile.g:3165:2: ( () ( (lv_keyword_1_0= 'provider' ) ) )
             {
-            // InternalLibrettoProjectProfile.g:3185:2: ( () ( (lv_keyword_1_0= 'provider' ) ) )
-            // InternalLibrettoProjectProfile.g:3186:3: () ( (lv_keyword_1_0= 'provider' ) )
+            // InternalLibrettoProjectProfile.g:3165:2: ( () ( (lv_keyword_1_0= 'provider' ) ) )
+            // InternalLibrettoProjectProfile.g:3166:3: () ( (lv_keyword_1_0= 'provider' ) )
             {
-            // InternalLibrettoProjectProfile.g:3186:3: ()
-            // InternalLibrettoProjectProfile.g:3187:4: 
+            // InternalLibrettoProjectProfile.g:3166:3: ()
+            // InternalLibrettoProjectProfile.g:3167:4: 
             {
 
             				current = forceCreateModelElement(
@@ -8013,11 +7964,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:3193:3: ( (lv_keyword_1_0= 'provider' ) )
-            // InternalLibrettoProjectProfile.g:3194:4: (lv_keyword_1_0= 'provider' )
+            // InternalLibrettoProjectProfile.g:3173:3: ( (lv_keyword_1_0= 'provider' ) )
+            // InternalLibrettoProjectProfile.g:3174:4: (lv_keyword_1_0= 'provider' )
             {
-            // InternalLibrettoProjectProfile.g:3194:4: (lv_keyword_1_0= 'provider' )
-            // InternalLibrettoProjectProfile.g:3195:5: lv_keyword_1_0= 'provider'
+            // InternalLibrettoProjectProfile.g:3174:4: (lv_keyword_1_0= 'provider' )
+            // InternalLibrettoProjectProfile.g:3175:5: lv_keyword_1_0= 'provider'
             {
             lv_keyword_1_0=(Token)match(input,47,FOLLOW_2); 
 
@@ -8058,7 +8009,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleProviderType"
-    // InternalLibrettoProjectProfile.g:3211:1: entryRuleProviderType returns [EObject current=null] : iv_ruleProviderType= ruleProviderType EOF ;
+    // InternalLibrettoProjectProfile.g:3191:1: entryRuleProviderType returns [EObject current=null] : iv_ruleProviderType= ruleProviderType EOF ;
     public final EObject entryRuleProviderType() throws RecognitionException {
         EObject current = null;
 
@@ -8066,8 +8017,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:3211:53: (iv_ruleProviderType= ruleProviderType EOF )
-            // InternalLibrettoProjectProfile.g:3212:2: iv_ruleProviderType= ruleProviderType EOF
+            // InternalLibrettoProjectProfile.g:3191:53: (iv_ruleProviderType= ruleProviderType EOF )
+            // InternalLibrettoProjectProfile.g:3192:2: iv_ruleProviderType= ruleProviderType EOF
             {
              newCompositeNode(grammarAccess.getProviderTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -8094,7 +8045,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleProviderType"
-    // InternalLibrettoProjectProfile.g:3218:1: ruleProviderType returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleProviderTypeKeyword ) ) ( (lv_name_2_0= ruleValidID ) ) ) ;
+    // InternalLibrettoProjectProfile.g:3198:1: ruleProviderType returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleProviderTypeKeyword ) ) ( (lv_name_2_0= ruleValidID ) ) ) ;
     public final EObject ruleProviderType() throws RecognitionException {
         EObject current = null;
 
@@ -8107,14 +8058,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:3224:2: ( ( () ( (lv_keyword_1_0= ruleProviderTypeKeyword ) ) ( (lv_name_2_0= ruleValidID ) ) ) )
-            // InternalLibrettoProjectProfile.g:3225:2: ( () ( (lv_keyword_1_0= ruleProviderTypeKeyword ) ) ( (lv_name_2_0= ruleValidID ) ) )
+            // InternalLibrettoProjectProfile.g:3204:2: ( ( () ( (lv_keyword_1_0= ruleProviderTypeKeyword ) ) ( (lv_name_2_0= ruleValidID ) ) ) )
+            // InternalLibrettoProjectProfile.g:3205:2: ( () ( (lv_keyword_1_0= ruleProviderTypeKeyword ) ) ( (lv_name_2_0= ruleValidID ) ) )
             {
-            // InternalLibrettoProjectProfile.g:3225:2: ( () ( (lv_keyword_1_0= ruleProviderTypeKeyword ) ) ( (lv_name_2_0= ruleValidID ) ) )
-            // InternalLibrettoProjectProfile.g:3226:3: () ( (lv_keyword_1_0= ruleProviderTypeKeyword ) ) ( (lv_name_2_0= ruleValidID ) )
+            // InternalLibrettoProjectProfile.g:3205:2: ( () ( (lv_keyword_1_0= ruleProviderTypeKeyword ) ) ( (lv_name_2_0= ruleValidID ) ) )
+            // InternalLibrettoProjectProfile.g:3206:3: () ( (lv_keyword_1_0= ruleProviderTypeKeyword ) ) ( (lv_name_2_0= ruleValidID ) )
             {
-            // InternalLibrettoProjectProfile.g:3226:3: ()
-            // InternalLibrettoProjectProfile.g:3227:4: 
+            // InternalLibrettoProjectProfile.g:3206:3: ()
+            // InternalLibrettoProjectProfile.g:3207:4: 
             {
 
             				current = forceCreateModelElement(
@@ -8124,11 +8075,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:3233:3: ( (lv_keyword_1_0= ruleProviderTypeKeyword ) )
-            // InternalLibrettoProjectProfile.g:3234:4: (lv_keyword_1_0= ruleProviderTypeKeyword )
+            // InternalLibrettoProjectProfile.g:3213:3: ( (lv_keyword_1_0= ruleProviderTypeKeyword ) )
+            // InternalLibrettoProjectProfile.g:3214:4: (lv_keyword_1_0= ruleProviderTypeKeyword )
             {
-            // InternalLibrettoProjectProfile.g:3234:4: (lv_keyword_1_0= ruleProviderTypeKeyword )
-            // InternalLibrettoProjectProfile.g:3235:5: lv_keyword_1_0= ruleProviderTypeKeyword
+            // InternalLibrettoProjectProfile.g:3214:4: (lv_keyword_1_0= ruleProviderTypeKeyword )
+            // InternalLibrettoProjectProfile.g:3215:5: lv_keyword_1_0= ruleProviderTypeKeyword
             {
 
             					newCompositeNode(grammarAccess.getProviderTypeAccess().getKeywordProviderTypeKeywordParserRuleCall_1_0());
@@ -8155,11 +8106,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:3252:3: ( (lv_name_2_0= ruleValidID ) )
-            // InternalLibrettoProjectProfile.g:3253:4: (lv_name_2_0= ruleValidID )
+            // InternalLibrettoProjectProfile.g:3232:3: ( (lv_name_2_0= ruleValidID ) )
+            // InternalLibrettoProjectProfile.g:3233:4: (lv_name_2_0= ruleValidID )
             {
-            // InternalLibrettoProjectProfile.g:3253:4: (lv_name_2_0= ruleValidID )
-            // InternalLibrettoProjectProfile.g:3254:5: lv_name_2_0= ruleValidID
+            // InternalLibrettoProjectProfile.g:3233:4: (lv_name_2_0= ruleValidID )
+            // InternalLibrettoProjectProfile.g:3234:5: lv_name_2_0= ruleValidID
             {
 
             					newCompositeNode(grammarAccess.getProviderTypeAccess().getNameValidIDParserRuleCall_2_0());
@@ -8209,7 +8160,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleProviderTypeKeyword"
-    // InternalLibrettoProjectProfile.g:3275:1: entryRuleProviderTypeKeyword returns [EObject current=null] : iv_ruleProviderTypeKeyword= ruleProviderTypeKeyword EOF ;
+    // InternalLibrettoProjectProfile.g:3255:1: entryRuleProviderTypeKeyword returns [EObject current=null] : iv_ruleProviderTypeKeyword= ruleProviderTypeKeyword EOF ;
     public final EObject entryRuleProviderTypeKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -8217,8 +8168,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:3275:60: (iv_ruleProviderTypeKeyword= ruleProviderTypeKeyword EOF )
-            // InternalLibrettoProjectProfile.g:3276:2: iv_ruleProviderTypeKeyword= ruleProviderTypeKeyword EOF
+            // InternalLibrettoProjectProfile.g:3255:60: (iv_ruleProviderTypeKeyword= ruleProviderTypeKeyword EOF )
+            // InternalLibrettoProjectProfile.g:3256:2: iv_ruleProviderTypeKeyword= ruleProviderTypeKeyword EOF
             {
              newCompositeNode(grammarAccess.getProviderTypeKeywordRule()); 
             pushFollow(FOLLOW_1);
@@ -8245,7 +8196,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleProviderTypeKeyword"
-    // InternalLibrettoProjectProfile.g:3282:1: ruleProviderTypeKeyword returns [EObject current=null] : ( () ( (lv_keyword_1_0= 'type' ) ) ) ;
+    // InternalLibrettoProjectProfile.g:3262:1: ruleProviderTypeKeyword returns [EObject current=null] : ( () ( (lv_keyword_1_0= 'type' ) ) ) ;
     public final EObject ruleProviderTypeKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -8255,14 +8206,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:3288:2: ( ( () ( (lv_keyword_1_0= 'type' ) ) ) )
-            // InternalLibrettoProjectProfile.g:3289:2: ( () ( (lv_keyword_1_0= 'type' ) ) )
+            // InternalLibrettoProjectProfile.g:3268:2: ( ( () ( (lv_keyword_1_0= 'type' ) ) ) )
+            // InternalLibrettoProjectProfile.g:3269:2: ( () ( (lv_keyword_1_0= 'type' ) ) )
             {
-            // InternalLibrettoProjectProfile.g:3289:2: ( () ( (lv_keyword_1_0= 'type' ) ) )
-            // InternalLibrettoProjectProfile.g:3290:3: () ( (lv_keyword_1_0= 'type' ) )
+            // InternalLibrettoProjectProfile.g:3269:2: ( () ( (lv_keyword_1_0= 'type' ) ) )
+            // InternalLibrettoProjectProfile.g:3270:3: () ( (lv_keyword_1_0= 'type' ) )
             {
-            // InternalLibrettoProjectProfile.g:3290:3: ()
-            // InternalLibrettoProjectProfile.g:3291:4: 
+            // InternalLibrettoProjectProfile.g:3270:3: ()
+            // InternalLibrettoProjectProfile.g:3271:4: 
             {
 
             				current = forceCreateModelElement(
@@ -8272,11 +8223,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:3297:3: ( (lv_keyword_1_0= 'type' ) )
-            // InternalLibrettoProjectProfile.g:3298:4: (lv_keyword_1_0= 'type' )
+            // InternalLibrettoProjectProfile.g:3277:3: ( (lv_keyword_1_0= 'type' ) )
+            // InternalLibrettoProjectProfile.g:3278:4: (lv_keyword_1_0= 'type' )
             {
-            // InternalLibrettoProjectProfile.g:3298:4: (lv_keyword_1_0= 'type' )
-            // InternalLibrettoProjectProfile.g:3299:5: lv_keyword_1_0= 'type'
+            // InternalLibrettoProjectProfile.g:3278:4: (lv_keyword_1_0= 'type' )
+            // InternalLibrettoProjectProfile.g:3279:5: lv_keyword_1_0= 'type'
             {
             lv_keyword_1_0=(Token)match(input,48,FOLLOW_2); 
 
@@ -8317,7 +8268,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleLocalModelPath"
-    // InternalLibrettoProjectProfile.g:3315:1: entryRuleLocalModelPath returns [EObject current=null] : iv_ruleLocalModelPath= ruleLocalModelPath EOF ;
+    // InternalLibrettoProjectProfile.g:3295:1: entryRuleLocalModelPath returns [EObject current=null] : iv_ruleLocalModelPath= ruleLocalModelPath EOF ;
     public final EObject entryRuleLocalModelPath() throws RecognitionException {
         EObject current = null;
 
@@ -8325,8 +8276,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:3315:55: (iv_ruleLocalModelPath= ruleLocalModelPath EOF )
-            // InternalLibrettoProjectProfile.g:3316:2: iv_ruleLocalModelPath= ruleLocalModelPath EOF
+            // InternalLibrettoProjectProfile.g:3295:55: (iv_ruleLocalModelPath= ruleLocalModelPath EOF )
+            // InternalLibrettoProjectProfile.g:3296:2: iv_ruleLocalModelPath= ruleLocalModelPath EOF
             {
              newCompositeNode(grammarAccess.getLocalModelPathRule()); 
             pushFollow(FOLLOW_1);
@@ -8353,7 +8304,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleLocalModelPath"
-    // InternalLibrettoProjectProfile.g:3322:1: ruleLocalModelPath returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleFilePathKeyword ) ) ( (lv_path_2_0= RULE_STRING ) ) ) ;
+    // InternalLibrettoProjectProfile.g:3302:1: ruleLocalModelPath returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleFilePathKeyword ) ) ( (lv_path_2_0= RULE_STRING ) ) ) ;
     public final EObject ruleLocalModelPath() throws RecognitionException {
         EObject current = null;
 
@@ -8365,14 +8316,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:3328:2: ( ( () ( (lv_keyword_1_0= ruleFilePathKeyword ) ) ( (lv_path_2_0= RULE_STRING ) ) ) )
-            // InternalLibrettoProjectProfile.g:3329:2: ( () ( (lv_keyword_1_0= ruleFilePathKeyword ) ) ( (lv_path_2_0= RULE_STRING ) ) )
+            // InternalLibrettoProjectProfile.g:3308:2: ( ( () ( (lv_keyword_1_0= ruleFilePathKeyword ) ) ( (lv_path_2_0= RULE_STRING ) ) ) )
+            // InternalLibrettoProjectProfile.g:3309:2: ( () ( (lv_keyword_1_0= ruleFilePathKeyword ) ) ( (lv_path_2_0= RULE_STRING ) ) )
             {
-            // InternalLibrettoProjectProfile.g:3329:2: ( () ( (lv_keyword_1_0= ruleFilePathKeyword ) ) ( (lv_path_2_0= RULE_STRING ) ) )
-            // InternalLibrettoProjectProfile.g:3330:3: () ( (lv_keyword_1_0= ruleFilePathKeyword ) ) ( (lv_path_2_0= RULE_STRING ) )
+            // InternalLibrettoProjectProfile.g:3309:2: ( () ( (lv_keyword_1_0= ruleFilePathKeyword ) ) ( (lv_path_2_0= RULE_STRING ) ) )
+            // InternalLibrettoProjectProfile.g:3310:3: () ( (lv_keyword_1_0= ruleFilePathKeyword ) ) ( (lv_path_2_0= RULE_STRING ) )
             {
-            // InternalLibrettoProjectProfile.g:3330:3: ()
-            // InternalLibrettoProjectProfile.g:3331:4: 
+            // InternalLibrettoProjectProfile.g:3310:3: ()
+            // InternalLibrettoProjectProfile.g:3311:4: 
             {
 
             				current = forceCreateModelElement(
@@ -8382,11 +8333,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:3337:3: ( (lv_keyword_1_0= ruleFilePathKeyword ) )
-            // InternalLibrettoProjectProfile.g:3338:4: (lv_keyword_1_0= ruleFilePathKeyword )
+            // InternalLibrettoProjectProfile.g:3317:3: ( (lv_keyword_1_0= ruleFilePathKeyword ) )
+            // InternalLibrettoProjectProfile.g:3318:4: (lv_keyword_1_0= ruleFilePathKeyword )
             {
-            // InternalLibrettoProjectProfile.g:3338:4: (lv_keyword_1_0= ruleFilePathKeyword )
-            // InternalLibrettoProjectProfile.g:3339:5: lv_keyword_1_0= ruleFilePathKeyword
+            // InternalLibrettoProjectProfile.g:3318:4: (lv_keyword_1_0= ruleFilePathKeyword )
+            // InternalLibrettoProjectProfile.g:3319:5: lv_keyword_1_0= ruleFilePathKeyword
             {
 
             					newCompositeNode(grammarAccess.getLocalModelPathAccess().getKeywordFilePathKeywordParserRuleCall_1_0());
@@ -8413,11 +8364,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:3356:3: ( (lv_path_2_0= RULE_STRING ) )
-            // InternalLibrettoProjectProfile.g:3357:4: (lv_path_2_0= RULE_STRING )
+            // InternalLibrettoProjectProfile.g:3336:3: ( (lv_path_2_0= RULE_STRING ) )
+            // InternalLibrettoProjectProfile.g:3337:4: (lv_path_2_0= RULE_STRING )
             {
-            // InternalLibrettoProjectProfile.g:3357:4: (lv_path_2_0= RULE_STRING )
-            // InternalLibrettoProjectProfile.g:3358:5: lv_path_2_0= RULE_STRING
+            // InternalLibrettoProjectProfile.g:3337:4: (lv_path_2_0= RULE_STRING )
+            // InternalLibrettoProjectProfile.g:3338:5: lv_path_2_0= RULE_STRING
             {
             lv_path_2_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -8462,7 +8413,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleModel"
-    // InternalLibrettoProjectProfile.g:3378:1: entryRuleModel returns [EObject current=null] : iv_ruleModel= ruleModel EOF ;
+    // InternalLibrettoProjectProfile.g:3358:1: entryRuleModel returns [EObject current=null] : iv_ruleModel= ruleModel EOF ;
     public final EObject entryRuleModel() throws RecognitionException {
         EObject current = null;
 
@@ -8470,8 +8421,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:3378:46: (iv_ruleModel= ruleModel EOF )
-            // InternalLibrettoProjectProfile.g:3379:2: iv_ruleModel= ruleModel EOF
+            // InternalLibrettoProjectProfile.g:3358:46: (iv_ruleModel= ruleModel EOF )
+            // InternalLibrettoProjectProfile.g:3359:2: iv_ruleModel= ruleModel EOF
             {
              newCompositeNode(grammarAccess.getModelRule()); 
             pushFollow(FOLLOW_1);
@@ -8498,7 +8449,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleModel"
-    // InternalLibrettoProjectProfile.g:3385:1: ruleModel returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleModelKeyword ) ) ( (lv_mode_2_0= RULE_STRING ) ) ) ;
+    // InternalLibrettoProjectProfile.g:3365:1: ruleModel returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleModelKeyword ) ) ( (lv_mode_2_0= RULE_STRING ) ) ) ;
     public final EObject ruleModel() throws RecognitionException {
         EObject current = null;
 
@@ -8510,14 +8461,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:3391:2: ( ( () ( (lv_keyword_1_0= ruleModelKeyword ) ) ( (lv_mode_2_0= RULE_STRING ) ) ) )
-            // InternalLibrettoProjectProfile.g:3392:2: ( () ( (lv_keyword_1_0= ruleModelKeyword ) ) ( (lv_mode_2_0= RULE_STRING ) ) )
+            // InternalLibrettoProjectProfile.g:3371:2: ( ( () ( (lv_keyword_1_0= ruleModelKeyword ) ) ( (lv_mode_2_0= RULE_STRING ) ) ) )
+            // InternalLibrettoProjectProfile.g:3372:2: ( () ( (lv_keyword_1_0= ruleModelKeyword ) ) ( (lv_mode_2_0= RULE_STRING ) ) )
             {
-            // InternalLibrettoProjectProfile.g:3392:2: ( () ( (lv_keyword_1_0= ruleModelKeyword ) ) ( (lv_mode_2_0= RULE_STRING ) ) )
-            // InternalLibrettoProjectProfile.g:3393:3: () ( (lv_keyword_1_0= ruleModelKeyword ) ) ( (lv_mode_2_0= RULE_STRING ) )
+            // InternalLibrettoProjectProfile.g:3372:2: ( () ( (lv_keyword_1_0= ruleModelKeyword ) ) ( (lv_mode_2_0= RULE_STRING ) ) )
+            // InternalLibrettoProjectProfile.g:3373:3: () ( (lv_keyword_1_0= ruleModelKeyword ) ) ( (lv_mode_2_0= RULE_STRING ) )
             {
-            // InternalLibrettoProjectProfile.g:3393:3: ()
-            // InternalLibrettoProjectProfile.g:3394:4: 
+            // InternalLibrettoProjectProfile.g:3373:3: ()
+            // InternalLibrettoProjectProfile.g:3374:4: 
             {
 
             				current = forceCreateModelElement(
@@ -8527,11 +8478,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:3400:3: ( (lv_keyword_1_0= ruleModelKeyword ) )
-            // InternalLibrettoProjectProfile.g:3401:4: (lv_keyword_1_0= ruleModelKeyword )
+            // InternalLibrettoProjectProfile.g:3380:3: ( (lv_keyword_1_0= ruleModelKeyword ) )
+            // InternalLibrettoProjectProfile.g:3381:4: (lv_keyword_1_0= ruleModelKeyword )
             {
-            // InternalLibrettoProjectProfile.g:3401:4: (lv_keyword_1_0= ruleModelKeyword )
-            // InternalLibrettoProjectProfile.g:3402:5: lv_keyword_1_0= ruleModelKeyword
+            // InternalLibrettoProjectProfile.g:3381:4: (lv_keyword_1_0= ruleModelKeyword )
+            // InternalLibrettoProjectProfile.g:3382:5: lv_keyword_1_0= ruleModelKeyword
             {
 
             					newCompositeNode(grammarAccess.getModelAccess().getKeywordModelKeywordParserRuleCall_1_0());
@@ -8558,11 +8509,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:3419:3: ( (lv_mode_2_0= RULE_STRING ) )
-            // InternalLibrettoProjectProfile.g:3420:4: (lv_mode_2_0= RULE_STRING )
+            // InternalLibrettoProjectProfile.g:3399:3: ( (lv_mode_2_0= RULE_STRING ) )
+            // InternalLibrettoProjectProfile.g:3400:4: (lv_mode_2_0= RULE_STRING )
             {
-            // InternalLibrettoProjectProfile.g:3420:4: (lv_mode_2_0= RULE_STRING )
-            // InternalLibrettoProjectProfile.g:3421:5: lv_mode_2_0= RULE_STRING
+            // InternalLibrettoProjectProfile.g:3400:4: (lv_mode_2_0= RULE_STRING )
+            // InternalLibrettoProjectProfile.g:3401:5: lv_mode_2_0= RULE_STRING
             {
             lv_mode_2_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -8607,7 +8558,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleModelKeyword"
-    // InternalLibrettoProjectProfile.g:3441:1: entryRuleModelKeyword returns [EObject current=null] : iv_ruleModelKeyword= ruleModelKeyword EOF ;
+    // InternalLibrettoProjectProfile.g:3421:1: entryRuleModelKeyword returns [EObject current=null] : iv_ruleModelKeyword= ruleModelKeyword EOF ;
     public final EObject entryRuleModelKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -8615,8 +8566,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:3441:53: (iv_ruleModelKeyword= ruleModelKeyword EOF )
-            // InternalLibrettoProjectProfile.g:3442:2: iv_ruleModelKeyword= ruleModelKeyword EOF
+            // InternalLibrettoProjectProfile.g:3421:53: (iv_ruleModelKeyword= ruleModelKeyword EOF )
+            // InternalLibrettoProjectProfile.g:3422:2: iv_ruleModelKeyword= ruleModelKeyword EOF
             {
              newCompositeNode(grammarAccess.getModelKeywordRule()); 
             pushFollow(FOLLOW_1);
@@ -8643,7 +8594,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleModelKeyword"
-    // InternalLibrettoProjectProfile.g:3448:1: ruleModelKeyword returns [EObject current=null] : ( () ( (lv_keyword_1_0= 'model' ) ) ) ;
+    // InternalLibrettoProjectProfile.g:3428:1: ruleModelKeyword returns [EObject current=null] : ( () ( (lv_keyword_1_0= 'model' ) ) ) ;
     public final EObject ruleModelKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -8653,14 +8604,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:3454:2: ( ( () ( (lv_keyword_1_0= 'model' ) ) ) )
-            // InternalLibrettoProjectProfile.g:3455:2: ( () ( (lv_keyword_1_0= 'model' ) ) )
+            // InternalLibrettoProjectProfile.g:3434:2: ( ( () ( (lv_keyword_1_0= 'model' ) ) ) )
+            // InternalLibrettoProjectProfile.g:3435:2: ( () ( (lv_keyword_1_0= 'model' ) ) )
             {
-            // InternalLibrettoProjectProfile.g:3455:2: ( () ( (lv_keyword_1_0= 'model' ) ) )
-            // InternalLibrettoProjectProfile.g:3456:3: () ( (lv_keyword_1_0= 'model' ) )
+            // InternalLibrettoProjectProfile.g:3435:2: ( () ( (lv_keyword_1_0= 'model' ) ) )
+            // InternalLibrettoProjectProfile.g:3436:3: () ( (lv_keyword_1_0= 'model' ) )
             {
-            // InternalLibrettoProjectProfile.g:3456:3: ()
-            // InternalLibrettoProjectProfile.g:3457:4: 
+            // InternalLibrettoProjectProfile.g:3436:3: ()
+            // InternalLibrettoProjectProfile.g:3437:4: 
             {
 
             				current = forceCreateModelElement(
@@ -8670,11 +8621,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:3463:3: ( (lv_keyword_1_0= 'model' ) )
-            // InternalLibrettoProjectProfile.g:3464:4: (lv_keyword_1_0= 'model' )
+            // InternalLibrettoProjectProfile.g:3443:3: ( (lv_keyword_1_0= 'model' ) )
+            // InternalLibrettoProjectProfile.g:3444:4: (lv_keyword_1_0= 'model' )
             {
-            // InternalLibrettoProjectProfile.g:3464:4: (lv_keyword_1_0= 'model' )
-            // InternalLibrettoProjectProfile.g:3465:5: lv_keyword_1_0= 'model'
+            // InternalLibrettoProjectProfile.g:3444:4: (lv_keyword_1_0= 'model' )
+            // InternalLibrettoProjectProfile.g:3445:5: lv_keyword_1_0= 'model'
             {
             lv_keyword_1_0=(Token)match(input,49,FOLLOW_2); 
 
@@ -8715,7 +8666,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleFilePathKeyword"
-    // InternalLibrettoProjectProfile.g:3481:1: entryRuleFilePathKeyword returns [EObject current=null] : iv_ruleFilePathKeyword= ruleFilePathKeyword EOF ;
+    // InternalLibrettoProjectProfile.g:3461:1: entryRuleFilePathKeyword returns [EObject current=null] : iv_ruleFilePathKeyword= ruleFilePathKeyword EOF ;
     public final EObject entryRuleFilePathKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -8723,8 +8674,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:3481:56: (iv_ruleFilePathKeyword= ruleFilePathKeyword EOF )
-            // InternalLibrettoProjectProfile.g:3482:2: iv_ruleFilePathKeyword= ruleFilePathKeyword EOF
+            // InternalLibrettoProjectProfile.g:3461:56: (iv_ruleFilePathKeyword= ruleFilePathKeyword EOF )
+            // InternalLibrettoProjectProfile.g:3462:2: iv_ruleFilePathKeyword= ruleFilePathKeyword EOF
             {
              newCompositeNode(grammarAccess.getFilePathKeywordRule()); 
             pushFollow(FOLLOW_1);
@@ -8751,7 +8702,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleFilePathKeyword"
-    // InternalLibrettoProjectProfile.g:3488:1: ruleFilePathKeyword returns [EObject current=null] : ( () ( ( (lv_keyword_1_1= 'filepath' | lv_keyword_1_2= 'filePath' ) ) ) ) ;
+    // InternalLibrettoProjectProfile.g:3468:1: ruleFilePathKeyword returns [EObject current=null] : ( () ( ( (lv_keyword_1_1= 'filepath' | lv_keyword_1_2= 'filePath' ) ) ) ) ;
     public final EObject ruleFilePathKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -8762,14 +8713,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:3494:2: ( ( () ( ( (lv_keyword_1_1= 'filepath' | lv_keyword_1_2= 'filePath' ) ) ) ) )
-            // InternalLibrettoProjectProfile.g:3495:2: ( () ( ( (lv_keyword_1_1= 'filepath' | lv_keyword_1_2= 'filePath' ) ) ) )
+            // InternalLibrettoProjectProfile.g:3474:2: ( ( () ( ( (lv_keyword_1_1= 'filepath' | lv_keyword_1_2= 'filePath' ) ) ) ) )
+            // InternalLibrettoProjectProfile.g:3475:2: ( () ( ( (lv_keyword_1_1= 'filepath' | lv_keyword_1_2= 'filePath' ) ) ) )
             {
-            // InternalLibrettoProjectProfile.g:3495:2: ( () ( ( (lv_keyword_1_1= 'filepath' | lv_keyword_1_2= 'filePath' ) ) ) )
-            // InternalLibrettoProjectProfile.g:3496:3: () ( ( (lv_keyword_1_1= 'filepath' | lv_keyword_1_2= 'filePath' ) ) )
+            // InternalLibrettoProjectProfile.g:3475:2: ( () ( ( (lv_keyword_1_1= 'filepath' | lv_keyword_1_2= 'filePath' ) ) ) )
+            // InternalLibrettoProjectProfile.g:3476:3: () ( ( (lv_keyword_1_1= 'filepath' | lv_keyword_1_2= 'filePath' ) ) )
             {
-            // InternalLibrettoProjectProfile.g:3496:3: ()
-            // InternalLibrettoProjectProfile.g:3497:4: 
+            // InternalLibrettoProjectProfile.g:3476:3: ()
+            // InternalLibrettoProjectProfile.g:3477:4: 
             {
 
             				current = forceCreateModelElement(
@@ -8779,13 +8730,13 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:3503:3: ( ( (lv_keyword_1_1= 'filepath' | lv_keyword_1_2= 'filePath' ) ) )
-            // InternalLibrettoProjectProfile.g:3504:4: ( (lv_keyword_1_1= 'filepath' | lv_keyword_1_2= 'filePath' ) )
+            // InternalLibrettoProjectProfile.g:3483:3: ( ( (lv_keyword_1_1= 'filepath' | lv_keyword_1_2= 'filePath' ) ) )
+            // InternalLibrettoProjectProfile.g:3484:4: ( (lv_keyword_1_1= 'filepath' | lv_keyword_1_2= 'filePath' ) )
             {
-            // InternalLibrettoProjectProfile.g:3504:4: ( (lv_keyword_1_1= 'filepath' | lv_keyword_1_2= 'filePath' ) )
-            // InternalLibrettoProjectProfile.g:3505:5: (lv_keyword_1_1= 'filepath' | lv_keyword_1_2= 'filePath' )
+            // InternalLibrettoProjectProfile.g:3484:4: ( (lv_keyword_1_1= 'filepath' | lv_keyword_1_2= 'filePath' ) )
+            // InternalLibrettoProjectProfile.g:3485:5: (lv_keyword_1_1= 'filepath' | lv_keyword_1_2= 'filePath' )
             {
-            // InternalLibrettoProjectProfile.g:3505:5: (lv_keyword_1_1= 'filepath' | lv_keyword_1_2= 'filePath' )
+            // InternalLibrettoProjectProfile.g:3485:5: (lv_keyword_1_1= 'filepath' | lv_keyword_1_2= 'filePath' )
             int alt23=2;
             int LA23_0 = input.LA(1);
 
@@ -8803,7 +8754,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
             }
             switch (alt23) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:3506:6: lv_keyword_1_1= 'filepath'
+                    // InternalLibrettoProjectProfile.g:3486:6: lv_keyword_1_1= 'filepath'
                     {
                     lv_keyword_1_1=(Token)match(input,50,FOLLOW_2); 
 
@@ -8819,7 +8770,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoProjectProfile.g:3517:6: lv_keyword_1_2= 'filePath'
+                    // InternalLibrettoProjectProfile.g:3497:6: lv_keyword_1_2= 'filePath'
                     {
                     lv_keyword_1_2=(Token)match(input,51,FOLLOW_2); 
 
@@ -8866,7 +8817,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleEndpoint"
-    // InternalLibrettoProjectProfile.g:3534:1: entryRuleEndpoint returns [EObject current=null] : iv_ruleEndpoint= ruleEndpoint EOF ;
+    // InternalLibrettoProjectProfile.g:3514:1: entryRuleEndpoint returns [EObject current=null] : iv_ruleEndpoint= ruleEndpoint EOF ;
     public final EObject entryRuleEndpoint() throws RecognitionException {
         EObject current = null;
 
@@ -8874,8 +8825,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:3534:49: (iv_ruleEndpoint= ruleEndpoint EOF )
-            // InternalLibrettoProjectProfile.g:3535:2: iv_ruleEndpoint= ruleEndpoint EOF
+            // InternalLibrettoProjectProfile.g:3514:49: (iv_ruleEndpoint= ruleEndpoint EOF )
+            // InternalLibrettoProjectProfile.g:3515:2: iv_ruleEndpoint= ruleEndpoint EOF
             {
              newCompositeNode(grammarAccess.getEndpointRule()); 
             pushFollow(FOLLOW_1);
@@ -8902,7 +8853,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleEndpoint"
-    // InternalLibrettoProjectProfile.g:3541:1: ruleEndpoint returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleEndpointKeyword ) ) ( (lv_mode_2_0= RULE_STRING ) ) ) ;
+    // InternalLibrettoProjectProfile.g:3521:1: ruleEndpoint returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleEndpointKeyword ) ) ( (lv_mode_2_0= RULE_STRING ) ) ) ;
     public final EObject ruleEndpoint() throws RecognitionException {
         EObject current = null;
 
@@ -8914,14 +8865,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:3547:2: ( ( () ( (lv_keyword_1_0= ruleEndpointKeyword ) ) ( (lv_mode_2_0= RULE_STRING ) ) ) )
-            // InternalLibrettoProjectProfile.g:3548:2: ( () ( (lv_keyword_1_0= ruleEndpointKeyword ) ) ( (lv_mode_2_0= RULE_STRING ) ) )
+            // InternalLibrettoProjectProfile.g:3527:2: ( ( () ( (lv_keyword_1_0= ruleEndpointKeyword ) ) ( (lv_mode_2_0= RULE_STRING ) ) ) )
+            // InternalLibrettoProjectProfile.g:3528:2: ( () ( (lv_keyword_1_0= ruleEndpointKeyword ) ) ( (lv_mode_2_0= RULE_STRING ) ) )
             {
-            // InternalLibrettoProjectProfile.g:3548:2: ( () ( (lv_keyword_1_0= ruleEndpointKeyword ) ) ( (lv_mode_2_0= RULE_STRING ) ) )
-            // InternalLibrettoProjectProfile.g:3549:3: () ( (lv_keyword_1_0= ruleEndpointKeyword ) ) ( (lv_mode_2_0= RULE_STRING ) )
+            // InternalLibrettoProjectProfile.g:3528:2: ( () ( (lv_keyword_1_0= ruleEndpointKeyword ) ) ( (lv_mode_2_0= RULE_STRING ) ) )
+            // InternalLibrettoProjectProfile.g:3529:3: () ( (lv_keyword_1_0= ruleEndpointKeyword ) ) ( (lv_mode_2_0= RULE_STRING ) )
             {
-            // InternalLibrettoProjectProfile.g:3549:3: ()
-            // InternalLibrettoProjectProfile.g:3550:4: 
+            // InternalLibrettoProjectProfile.g:3529:3: ()
+            // InternalLibrettoProjectProfile.g:3530:4: 
             {
 
             				current = forceCreateModelElement(
@@ -8931,11 +8882,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:3556:3: ( (lv_keyword_1_0= ruleEndpointKeyword ) )
-            // InternalLibrettoProjectProfile.g:3557:4: (lv_keyword_1_0= ruleEndpointKeyword )
+            // InternalLibrettoProjectProfile.g:3536:3: ( (lv_keyword_1_0= ruleEndpointKeyword ) )
+            // InternalLibrettoProjectProfile.g:3537:4: (lv_keyword_1_0= ruleEndpointKeyword )
             {
-            // InternalLibrettoProjectProfile.g:3557:4: (lv_keyword_1_0= ruleEndpointKeyword )
-            // InternalLibrettoProjectProfile.g:3558:5: lv_keyword_1_0= ruleEndpointKeyword
+            // InternalLibrettoProjectProfile.g:3537:4: (lv_keyword_1_0= ruleEndpointKeyword )
+            // InternalLibrettoProjectProfile.g:3538:5: lv_keyword_1_0= ruleEndpointKeyword
             {
 
             					newCompositeNode(grammarAccess.getEndpointAccess().getKeywordEndpointKeywordParserRuleCall_1_0());
@@ -8962,11 +8913,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:3575:3: ( (lv_mode_2_0= RULE_STRING ) )
-            // InternalLibrettoProjectProfile.g:3576:4: (lv_mode_2_0= RULE_STRING )
+            // InternalLibrettoProjectProfile.g:3555:3: ( (lv_mode_2_0= RULE_STRING ) )
+            // InternalLibrettoProjectProfile.g:3556:4: (lv_mode_2_0= RULE_STRING )
             {
-            // InternalLibrettoProjectProfile.g:3576:4: (lv_mode_2_0= RULE_STRING )
-            // InternalLibrettoProjectProfile.g:3577:5: lv_mode_2_0= RULE_STRING
+            // InternalLibrettoProjectProfile.g:3556:4: (lv_mode_2_0= RULE_STRING )
+            // InternalLibrettoProjectProfile.g:3557:5: lv_mode_2_0= RULE_STRING
             {
             lv_mode_2_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -9011,7 +8962,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleEndpointKeyword"
-    // InternalLibrettoProjectProfile.g:3597:1: entryRuleEndpointKeyword returns [EObject current=null] : iv_ruleEndpointKeyword= ruleEndpointKeyword EOF ;
+    // InternalLibrettoProjectProfile.g:3577:1: entryRuleEndpointKeyword returns [EObject current=null] : iv_ruleEndpointKeyword= ruleEndpointKeyword EOF ;
     public final EObject entryRuleEndpointKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -9019,8 +8970,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:3597:56: (iv_ruleEndpointKeyword= ruleEndpointKeyword EOF )
-            // InternalLibrettoProjectProfile.g:3598:2: iv_ruleEndpointKeyword= ruleEndpointKeyword EOF
+            // InternalLibrettoProjectProfile.g:3577:56: (iv_ruleEndpointKeyword= ruleEndpointKeyword EOF )
+            // InternalLibrettoProjectProfile.g:3578:2: iv_ruleEndpointKeyword= ruleEndpointKeyword EOF
             {
              newCompositeNode(grammarAccess.getEndpointKeywordRule()); 
             pushFollow(FOLLOW_1);
@@ -9047,7 +8998,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleEndpointKeyword"
-    // InternalLibrettoProjectProfile.g:3604:1: ruleEndpointKeyword returns [EObject current=null] : ( () ( ( (lv_keyword_1_1= 'endpoint' | lv_keyword_1_2= 'endPoint' ) ) ) ) ;
+    // InternalLibrettoProjectProfile.g:3584:1: ruleEndpointKeyword returns [EObject current=null] : ( () ( ( (lv_keyword_1_1= 'endpoint' | lv_keyword_1_2= 'endPoint' ) ) ) ) ;
     public final EObject ruleEndpointKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -9058,14 +9009,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:3610:2: ( ( () ( ( (lv_keyword_1_1= 'endpoint' | lv_keyword_1_2= 'endPoint' ) ) ) ) )
-            // InternalLibrettoProjectProfile.g:3611:2: ( () ( ( (lv_keyword_1_1= 'endpoint' | lv_keyword_1_2= 'endPoint' ) ) ) )
+            // InternalLibrettoProjectProfile.g:3590:2: ( ( () ( ( (lv_keyword_1_1= 'endpoint' | lv_keyword_1_2= 'endPoint' ) ) ) ) )
+            // InternalLibrettoProjectProfile.g:3591:2: ( () ( ( (lv_keyword_1_1= 'endpoint' | lv_keyword_1_2= 'endPoint' ) ) ) )
             {
-            // InternalLibrettoProjectProfile.g:3611:2: ( () ( ( (lv_keyword_1_1= 'endpoint' | lv_keyword_1_2= 'endPoint' ) ) ) )
-            // InternalLibrettoProjectProfile.g:3612:3: () ( ( (lv_keyword_1_1= 'endpoint' | lv_keyword_1_2= 'endPoint' ) ) )
+            // InternalLibrettoProjectProfile.g:3591:2: ( () ( ( (lv_keyword_1_1= 'endpoint' | lv_keyword_1_2= 'endPoint' ) ) ) )
+            // InternalLibrettoProjectProfile.g:3592:3: () ( ( (lv_keyword_1_1= 'endpoint' | lv_keyword_1_2= 'endPoint' ) ) )
             {
-            // InternalLibrettoProjectProfile.g:3612:3: ()
-            // InternalLibrettoProjectProfile.g:3613:4: 
+            // InternalLibrettoProjectProfile.g:3592:3: ()
+            // InternalLibrettoProjectProfile.g:3593:4: 
             {
 
             				current = forceCreateModelElement(
@@ -9075,13 +9026,13 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:3619:3: ( ( (lv_keyword_1_1= 'endpoint' | lv_keyword_1_2= 'endPoint' ) ) )
-            // InternalLibrettoProjectProfile.g:3620:4: ( (lv_keyword_1_1= 'endpoint' | lv_keyword_1_2= 'endPoint' ) )
+            // InternalLibrettoProjectProfile.g:3599:3: ( ( (lv_keyword_1_1= 'endpoint' | lv_keyword_1_2= 'endPoint' ) ) )
+            // InternalLibrettoProjectProfile.g:3600:4: ( (lv_keyword_1_1= 'endpoint' | lv_keyword_1_2= 'endPoint' ) )
             {
-            // InternalLibrettoProjectProfile.g:3620:4: ( (lv_keyword_1_1= 'endpoint' | lv_keyword_1_2= 'endPoint' ) )
-            // InternalLibrettoProjectProfile.g:3621:5: (lv_keyword_1_1= 'endpoint' | lv_keyword_1_2= 'endPoint' )
+            // InternalLibrettoProjectProfile.g:3600:4: ( (lv_keyword_1_1= 'endpoint' | lv_keyword_1_2= 'endPoint' ) )
+            // InternalLibrettoProjectProfile.g:3601:5: (lv_keyword_1_1= 'endpoint' | lv_keyword_1_2= 'endPoint' )
             {
-            // InternalLibrettoProjectProfile.g:3621:5: (lv_keyword_1_1= 'endpoint' | lv_keyword_1_2= 'endPoint' )
+            // InternalLibrettoProjectProfile.g:3601:5: (lv_keyword_1_1= 'endpoint' | lv_keyword_1_2= 'endPoint' )
             int alt24=2;
             int LA24_0 = input.LA(1);
 
@@ -9099,7 +9050,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
             }
             switch (alt24) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:3622:6: lv_keyword_1_1= 'endpoint'
+                    // InternalLibrettoProjectProfile.g:3602:6: lv_keyword_1_1= 'endpoint'
                     {
                     lv_keyword_1_1=(Token)match(input,52,FOLLOW_2); 
 
@@ -9115,7 +9066,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoProjectProfile.g:3633:6: lv_keyword_1_2= 'endPoint'
+                    // InternalLibrettoProjectProfile.g:3613:6: lv_keyword_1_2= 'endPoint'
                     {
                     lv_keyword_1_2=(Token)match(input,53,FOLLOW_2); 
 
@@ -9162,7 +9113,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleGenUsageBlock"
-    // InternalLibrettoProjectProfile.g:3650:1: entryRuleGenUsageBlock returns [EObject current=null] : iv_ruleGenUsageBlock= ruleGenUsageBlock EOF ;
+    // InternalLibrettoProjectProfile.g:3630:1: entryRuleGenUsageBlock returns [EObject current=null] : iv_ruleGenUsageBlock= ruleGenUsageBlock EOF ;
     public final EObject entryRuleGenUsageBlock() throws RecognitionException {
         EObject current = null;
 
@@ -9170,8 +9121,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:3650:54: (iv_ruleGenUsageBlock= ruleGenUsageBlock EOF )
-            // InternalLibrettoProjectProfile.g:3651:2: iv_ruleGenUsageBlock= ruleGenUsageBlock EOF
+            // InternalLibrettoProjectProfile.g:3630:54: (iv_ruleGenUsageBlock= ruleGenUsageBlock EOF )
+            // InternalLibrettoProjectProfile.g:3631:2: iv_ruleGenUsageBlock= ruleGenUsageBlock EOF
             {
              newCompositeNode(grammarAccess.getGenUsageBlockRule()); 
             pushFollow(FOLLOW_1);
@@ -9198,7 +9149,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleGenUsageBlock"
-    // InternalLibrettoProjectProfile.g:3657:1: ruleGenUsageBlock returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleModelUsageKeyword ) ) otherlv_2= '{' ( ( (lv_primaryProviders_3_0= rulePrimaryProvider ) ) | ( (lv_secondaryProviders_4_0= ruleSecondaryProvider ) ) | ( (lv_escalations_5_0= ruleGenEscalationBlock ) ) )* otherlv_6= '}' ) ;
+    // InternalLibrettoProjectProfile.g:3637:1: ruleGenUsageBlock returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleModelUsageKeyword ) ) otherlv_2= '{' ( ( (lv_providers_3_0= ruleProvider ) ) | ( (lv_maxRetries_4_0= ruleMaxRetries ) ) | ( (lv_escalations_5_0= ruleEscalationProvider ) ) )* otherlv_6= '}' ) ;
     public final EObject ruleGenUsageBlock() throws RecognitionException {
         EObject current = null;
 
@@ -9206,9 +9157,9 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         Token otherlv_6=null;
         EObject lv_keyword_1_0 = null;
 
-        EObject lv_primaryProviders_3_0 = null;
+        EObject lv_providers_3_0 = null;
 
-        EObject lv_secondaryProviders_4_0 = null;
+        EObject lv_maxRetries_4_0 = null;
 
         EObject lv_escalations_5_0 = null;
 
@@ -9217,14 +9168,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:3663:2: ( ( () ( (lv_keyword_1_0= ruleModelUsageKeyword ) ) otherlv_2= '{' ( ( (lv_primaryProviders_3_0= rulePrimaryProvider ) ) | ( (lv_secondaryProviders_4_0= ruleSecondaryProvider ) ) | ( (lv_escalations_5_0= ruleGenEscalationBlock ) ) )* otherlv_6= '}' ) )
-            // InternalLibrettoProjectProfile.g:3664:2: ( () ( (lv_keyword_1_0= ruleModelUsageKeyword ) ) otherlv_2= '{' ( ( (lv_primaryProviders_3_0= rulePrimaryProvider ) ) | ( (lv_secondaryProviders_4_0= ruleSecondaryProvider ) ) | ( (lv_escalations_5_0= ruleGenEscalationBlock ) ) )* otherlv_6= '}' )
+            // InternalLibrettoProjectProfile.g:3643:2: ( ( () ( (lv_keyword_1_0= ruleModelUsageKeyword ) ) otherlv_2= '{' ( ( (lv_providers_3_0= ruleProvider ) ) | ( (lv_maxRetries_4_0= ruleMaxRetries ) ) | ( (lv_escalations_5_0= ruleEscalationProvider ) ) )* otherlv_6= '}' ) )
+            // InternalLibrettoProjectProfile.g:3644:2: ( () ( (lv_keyword_1_0= ruleModelUsageKeyword ) ) otherlv_2= '{' ( ( (lv_providers_3_0= ruleProvider ) ) | ( (lv_maxRetries_4_0= ruleMaxRetries ) ) | ( (lv_escalations_5_0= ruleEscalationProvider ) ) )* otherlv_6= '}' )
             {
-            // InternalLibrettoProjectProfile.g:3664:2: ( () ( (lv_keyword_1_0= ruleModelUsageKeyword ) ) otherlv_2= '{' ( ( (lv_primaryProviders_3_0= rulePrimaryProvider ) ) | ( (lv_secondaryProviders_4_0= ruleSecondaryProvider ) ) | ( (lv_escalations_5_0= ruleGenEscalationBlock ) ) )* otherlv_6= '}' )
-            // InternalLibrettoProjectProfile.g:3665:3: () ( (lv_keyword_1_0= ruleModelUsageKeyword ) ) otherlv_2= '{' ( ( (lv_primaryProviders_3_0= rulePrimaryProvider ) ) | ( (lv_secondaryProviders_4_0= ruleSecondaryProvider ) ) | ( (lv_escalations_5_0= ruleGenEscalationBlock ) ) )* otherlv_6= '}'
+            // InternalLibrettoProjectProfile.g:3644:2: ( () ( (lv_keyword_1_0= ruleModelUsageKeyword ) ) otherlv_2= '{' ( ( (lv_providers_3_0= ruleProvider ) ) | ( (lv_maxRetries_4_0= ruleMaxRetries ) ) | ( (lv_escalations_5_0= ruleEscalationProvider ) ) )* otherlv_6= '}' )
+            // InternalLibrettoProjectProfile.g:3645:3: () ( (lv_keyword_1_0= ruleModelUsageKeyword ) ) otherlv_2= '{' ( ( (lv_providers_3_0= ruleProvider ) ) | ( (lv_maxRetries_4_0= ruleMaxRetries ) ) | ( (lv_escalations_5_0= ruleEscalationProvider ) ) )* otherlv_6= '}'
             {
-            // InternalLibrettoProjectProfile.g:3665:3: ()
-            // InternalLibrettoProjectProfile.g:3666:4: 
+            // InternalLibrettoProjectProfile.g:3645:3: ()
+            // InternalLibrettoProjectProfile.g:3646:4: 
             {
 
             				current = forceCreateModelElement(
@@ -9234,11 +9185,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:3672:3: ( (lv_keyword_1_0= ruleModelUsageKeyword ) )
-            // InternalLibrettoProjectProfile.g:3673:4: (lv_keyword_1_0= ruleModelUsageKeyword )
+            // InternalLibrettoProjectProfile.g:3652:3: ( (lv_keyword_1_0= ruleModelUsageKeyword ) )
+            // InternalLibrettoProjectProfile.g:3653:4: (lv_keyword_1_0= ruleModelUsageKeyword )
             {
-            // InternalLibrettoProjectProfile.g:3673:4: (lv_keyword_1_0= ruleModelUsageKeyword )
-            // InternalLibrettoProjectProfile.g:3674:5: lv_keyword_1_0= ruleModelUsageKeyword
+            // InternalLibrettoProjectProfile.g:3653:4: (lv_keyword_1_0= ruleModelUsageKeyword )
+            // InternalLibrettoProjectProfile.g:3654:5: lv_keyword_1_0= ruleModelUsageKeyword
             {
 
             					newCompositeNode(grammarAccess.getGenUsageBlockAccess().getKeywordModelUsageKeywordParserRuleCall_1_0());
@@ -9269,22 +9220,24 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             			newLeafNode(otherlv_2, grammarAccess.getGenUsageBlockAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalLibrettoProjectProfile.g:3695:3: ( ( (lv_primaryProviders_3_0= rulePrimaryProvider ) ) | ( (lv_secondaryProviders_4_0= ruleSecondaryProvider ) ) | ( (lv_escalations_5_0= ruleGenEscalationBlock ) ) )*
+            // InternalLibrettoProjectProfile.g:3675:3: ( ( (lv_providers_3_0= ruleProvider ) ) | ( (lv_maxRetries_4_0= ruleMaxRetries ) ) | ( (lv_escalations_5_0= ruleEscalationProvider ) ) )*
             loop25:
             do {
                 int alt25=4;
                 switch ( input.LA(1) ) {
-                case 56:
+                case 47:
                     {
                     alt25=1;
                     }
                     break;
-                case 57:
+                case 31:
+                case 32:
                     {
                     alt25=2;
                     }
                     break;
-                case 58:
+                case 56:
+                case 57:
                     {
                     alt25=3;
                     }
@@ -9294,19 +9247,19 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
                 switch (alt25) {
             	case 1 :
-            	    // InternalLibrettoProjectProfile.g:3696:4: ( (lv_primaryProviders_3_0= rulePrimaryProvider ) )
+            	    // InternalLibrettoProjectProfile.g:3676:4: ( (lv_providers_3_0= ruleProvider ) )
             	    {
-            	    // InternalLibrettoProjectProfile.g:3696:4: ( (lv_primaryProviders_3_0= rulePrimaryProvider ) )
-            	    // InternalLibrettoProjectProfile.g:3697:5: (lv_primaryProviders_3_0= rulePrimaryProvider )
+            	    // InternalLibrettoProjectProfile.g:3676:4: ( (lv_providers_3_0= ruleProvider ) )
+            	    // InternalLibrettoProjectProfile.g:3677:5: (lv_providers_3_0= ruleProvider )
             	    {
-            	    // InternalLibrettoProjectProfile.g:3697:5: (lv_primaryProviders_3_0= rulePrimaryProvider )
-            	    // InternalLibrettoProjectProfile.g:3698:6: lv_primaryProviders_3_0= rulePrimaryProvider
+            	    // InternalLibrettoProjectProfile.g:3677:5: (lv_providers_3_0= ruleProvider )
+            	    // InternalLibrettoProjectProfile.g:3678:6: lv_providers_3_0= ruleProvider
             	    {
 
-            	    						newCompositeNode(grammarAccess.getGenUsageBlockAccess().getPrimaryProvidersPrimaryProviderParserRuleCall_3_0_0());
+            	    						newCompositeNode(grammarAccess.getGenUsageBlockAccess().getProvidersProviderParserRuleCall_3_0_0());
             	    					
             	    pushFollow(FOLLOW_18);
-            	    lv_primaryProviders_3_0=rulePrimaryProvider();
+            	    lv_providers_3_0=ruleProvider();
 
             	    state._fsp--;
 
@@ -9316,9 +9269,9 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
             	    						}
             	    						add(
             	    							current,
-            	    							"primaryProviders",
-            	    							lv_primaryProviders_3_0,
-            	    							"com.robenglander.libretto.spec.LibrettoProjectProfile.PrimaryProvider");
+            	    							"providers",
+            	    							lv_providers_3_0,
+            	    							"com.robenglander.libretto.spec.LibrettoProjectProfile.Provider");
             	    						afterParserOrEnumRuleCall();
             	    					
 
@@ -9331,19 +9284,19 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
             	    }
             	    break;
             	case 2 :
-            	    // InternalLibrettoProjectProfile.g:3716:4: ( (lv_secondaryProviders_4_0= ruleSecondaryProvider ) )
+            	    // InternalLibrettoProjectProfile.g:3696:4: ( (lv_maxRetries_4_0= ruleMaxRetries ) )
             	    {
-            	    // InternalLibrettoProjectProfile.g:3716:4: ( (lv_secondaryProviders_4_0= ruleSecondaryProvider ) )
-            	    // InternalLibrettoProjectProfile.g:3717:5: (lv_secondaryProviders_4_0= ruleSecondaryProvider )
+            	    // InternalLibrettoProjectProfile.g:3696:4: ( (lv_maxRetries_4_0= ruleMaxRetries ) )
+            	    // InternalLibrettoProjectProfile.g:3697:5: (lv_maxRetries_4_0= ruleMaxRetries )
             	    {
-            	    // InternalLibrettoProjectProfile.g:3717:5: (lv_secondaryProviders_4_0= ruleSecondaryProvider )
-            	    // InternalLibrettoProjectProfile.g:3718:6: lv_secondaryProviders_4_0= ruleSecondaryProvider
+            	    // InternalLibrettoProjectProfile.g:3697:5: (lv_maxRetries_4_0= ruleMaxRetries )
+            	    // InternalLibrettoProjectProfile.g:3698:6: lv_maxRetries_4_0= ruleMaxRetries
             	    {
 
-            	    						newCompositeNode(grammarAccess.getGenUsageBlockAccess().getSecondaryProvidersSecondaryProviderParserRuleCall_3_1_0());
+            	    						newCompositeNode(grammarAccess.getGenUsageBlockAccess().getMaxRetriesMaxRetriesParserRuleCall_3_1_0());
             	    					
             	    pushFollow(FOLLOW_18);
-            	    lv_secondaryProviders_4_0=ruleSecondaryProvider();
+            	    lv_maxRetries_4_0=ruleMaxRetries();
 
             	    state._fsp--;
 
@@ -9353,9 +9306,9 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
             	    						}
             	    						add(
             	    							current,
-            	    							"secondaryProviders",
-            	    							lv_secondaryProviders_4_0,
-            	    							"com.robenglander.libretto.spec.LibrettoProjectProfile.SecondaryProvider");
+            	    							"maxRetries",
+            	    							lv_maxRetries_4_0,
+            	    							"com.robenglander.libretto.spec.LibrettoProjectProfile.MaxRetries");
             	    						afterParserOrEnumRuleCall();
             	    					
 
@@ -9368,19 +9321,19 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
             	    }
             	    break;
             	case 3 :
-            	    // InternalLibrettoProjectProfile.g:3736:4: ( (lv_escalations_5_0= ruleGenEscalationBlock ) )
+            	    // InternalLibrettoProjectProfile.g:3716:4: ( (lv_escalations_5_0= ruleEscalationProvider ) )
             	    {
-            	    // InternalLibrettoProjectProfile.g:3736:4: ( (lv_escalations_5_0= ruleGenEscalationBlock ) )
-            	    // InternalLibrettoProjectProfile.g:3737:5: (lv_escalations_5_0= ruleGenEscalationBlock )
+            	    // InternalLibrettoProjectProfile.g:3716:4: ( (lv_escalations_5_0= ruleEscalationProvider ) )
+            	    // InternalLibrettoProjectProfile.g:3717:5: (lv_escalations_5_0= ruleEscalationProvider )
             	    {
-            	    // InternalLibrettoProjectProfile.g:3737:5: (lv_escalations_5_0= ruleGenEscalationBlock )
-            	    // InternalLibrettoProjectProfile.g:3738:6: lv_escalations_5_0= ruleGenEscalationBlock
+            	    // InternalLibrettoProjectProfile.g:3717:5: (lv_escalations_5_0= ruleEscalationProvider )
+            	    // InternalLibrettoProjectProfile.g:3718:6: lv_escalations_5_0= ruleEscalationProvider
             	    {
 
-            	    						newCompositeNode(grammarAccess.getGenUsageBlockAccess().getEscalationsGenEscalationBlockParserRuleCall_3_2_0());
+            	    						newCompositeNode(grammarAccess.getGenUsageBlockAccess().getEscalationsEscalationProviderParserRuleCall_3_2_0());
             	    					
             	    pushFollow(FOLLOW_18);
-            	    lv_escalations_5_0=ruleGenEscalationBlock();
+            	    lv_escalations_5_0=ruleEscalationProvider();
 
             	    state._fsp--;
 
@@ -9392,7 +9345,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
             	    							current,
             	    							"escalations",
             	    							lv_escalations_5_0,
-            	    							"com.robenglander.libretto.spec.LibrettoProjectProfile.GenEscalationBlock");
+            	    							"com.robenglander.libretto.spec.LibrettoProjectProfile.EscalationProvider");
             	    						afterParserOrEnumRuleCall();
             	    					
 
@@ -9437,7 +9390,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleModelUsageKeyword"
-    // InternalLibrettoProjectProfile.g:3764:1: entryRuleModelUsageKeyword returns [EObject current=null] : iv_ruleModelUsageKeyword= ruleModelUsageKeyword EOF ;
+    // InternalLibrettoProjectProfile.g:3744:1: entryRuleModelUsageKeyword returns [EObject current=null] : iv_ruleModelUsageKeyword= ruleModelUsageKeyword EOF ;
     public final EObject entryRuleModelUsageKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -9445,8 +9398,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:3764:58: (iv_ruleModelUsageKeyword= ruleModelUsageKeyword EOF )
-            // InternalLibrettoProjectProfile.g:3765:2: iv_ruleModelUsageKeyword= ruleModelUsageKeyword EOF
+            // InternalLibrettoProjectProfile.g:3744:58: (iv_ruleModelUsageKeyword= ruleModelUsageKeyword EOF )
+            // InternalLibrettoProjectProfile.g:3745:2: iv_ruleModelUsageKeyword= ruleModelUsageKeyword EOF
             {
              newCompositeNode(grammarAccess.getModelUsageKeywordRule()); 
             pushFollow(FOLLOW_1);
@@ -9473,7 +9426,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleModelUsageKeyword"
-    // InternalLibrettoProjectProfile.g:3771:1: ruleModelUsageKeyword returns [EObject current=null] : ( () ( ( (lv_keyword_1_1= 'modelusage' | lv_keyword_1_2= 'modelUsage' ) ) ) ) ;
+    // InternalLibrettoProjectProfile.g:3751:1: ruleModelUsageKeyword returns [EObject current=null] : ( () ( ( (lv_keyword_1_1= 'modelusage' | lv_keyword_1_2= 'modelUsage' ) ) ) ) ;
     public final EObject ruleModelUsageKeyword() throws RecognitionException {
         EObject current = null;
 
@@ -9484,14 +9437,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:3777:2: ( ( () ( ( (lv_keyword_1_1= 'modelusage' | lv_keyword_1_2= 'modelUsage' ) ) ) ) )
-            // InternalLibrettoProjectProfile.g:3778:2: ( () ( ( (lv_keyword_1_1= 'modelusage' | lv_keyword_1_2= 'modelUsage' ) ) ) )
+            // InternalLibrettoProjectProfile.g:3757:2: ( ( () ( ( (lv_keyword_1_1= 'modelusage' | lv_keyword_1_2= 'modelUsage' ) ) ) ) )
+            // InternalLibrettoProjectProfile.g:3758:2: ( () ( ( (lv_keyword_1_1= 'modelusage' | lv_keyword_1_2= 'modelUsage' ) ) ) )
             {
-            // InternalLibrettoProjectProfile.g:3778:2: ( () ( ( (lv_keyword_1_1= 'modelusage' | lv_keyword_1_2= 'modelUsage' ) ) ) )
-            // InternalLibrettoProjectProfile.g:3779:3: () ( ( (lv_keyword_1_1= 'modelusage' | lv_keyword_1_2= 'modelUsage' ) ) )
+            // InternalLibrettoProjectProfile.g:3758:2: ( () ( ( (lv_keyword_1_1= 'modelusage' | lv_keyword_1_2= 'modelUsage' ) ) ) )
+            // InternalLibrettoProjectProfile.g:3759:3: () ( ( (lv_keyword_1_1= 'modelusage' | lv_keyword_1_2= 'modelUsage' ) ) )
             {
-            // InternalLibrettoProjectProfile.g:3779:3: ()
-            // InternalLibrettoProjectProfile.g:3780:4: 
+            // InternalLibrettoProjectProfile.g:3759:3: ()
+            // InternalLibrettoProjectProfile.g:3760:4: 
             {
 
             				current = forceCreateModelElement(
@@ -9501,13 +9454,13 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:3786:3: ( ( (lv_keyword_1_1= 'modelusage' | lv_keyword_1_2= 'modelUsage' ) ) )
-            // InternalLibrettoProjectProfile.g:3787:4: ( (lv_keyword_1_1= 'modelusage' | lv_keyword_1_2= 'modelUsage' ) )
+            // InternalLibrettoProjectProfile.g:3766:3: ( ( (lv_keyword_1_1= 'modelusage' | lv_keyword_1_2= 'modelUsage' ) ) )
+            // InternalLibrettoProjectProfile.g:3767:4: ( (lv_keyword_1_1= 'modelusage' | lv_keyword_1_2= 'modelUsage' ) )
             {
-            // InternalLibrettoProjectProfile.g:3787:4: ( (lv_keyword_1_1= 'modelusage' | lv_keyword_1_2= 'modelUsage' ) )
-            // InternalLibrettoProjectProfile.g:3788:5: (lv_keyword_1_1= 'modelusage' | lv_keyword_1_2= 'modelUsage' )
+            // InternalLibrettoProjectProfile.g:3767:4: ( (lv_keyword_1_1= 'modelusage' | lv_keyword_1_2= 'modelUsage' ) )
+            // InternalLibrettoProjectProfile.g:3768:5: (lv_keyword_1_1= 'modelusage' | lv_keyword_1_2= 'modelUsage' )
             {
-            // InternalLibrettoProjectProfile.g:3788:5: (lv_keyword_1_1= 'modelusage' | lv_keyword_1_2= 'modelUsage' )
+            // InternalLibrettoProjectProfile.g:3768:5: (lv_keyword_1_1= 'modelusage' | lv_keyword_1_2= 'modelUsage' )
             int alt26=2;
             int LA26_0 = input.LA(1);
 
@@ -9525,7 +9478,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
             }
             switch (alt26) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:3789:6: lv_keyword_1_1= 'modelusage'
+                    // InternalLibrettoProjectProfile.g:3769:6: lv_keyword_1_1= 'modelusage'
                     {
                     lv_keyword_1_1=(Token)match(input,54,FOLLOW_2); 
 
@@ -9541,7 +9494,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoProjectProfile.g:3800:6: lv_keyword_1_2= 'modelUsage'
+                    // InternalLibrettoProjectProfile.g:3780:6: lv_keyword_1_2= 'modelUsage'
                     {
                     lv_keyword_1_2=(Token)match(input,55,FOLLOW_2); 
 
@@ -9587,25 +9540,25 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
     // $ANTLR end "ruleModelUsageKeyword"
 
 
-    // $ANTLR start "entryRulePrimaryProvider"
-    // InternalLibrettoProjectProfile.g:3817:1: entryRulePrimaryProvider returns [EObject current=null] : iv_rulePrimaryProvider= rulePrimaryProvider EOF ;
-    public final EObject entryRulePrimaryProvider() throws RecognitionException {
+    // $ANTLR start "entryRuleProvider"
+    // InternalLibrettoProjectProfile.g:3797:1: entryRuleProvider returns [EObject current=null] : iv_ruleProvider= ruleProvider EOF ;
+    public final EObject entryRuleProvider() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_rulePrimaryProvider = null;
+        EObject iv_ruleProvider = null;
 
 
         try {
-            // InternalLibrettoProjectProfile.g:3817:56: (iv_rulePrimaryProvider= rulePrimaryProvider EOF )
-            // InternalLibrettoProjectProfile.g:3818:2: iv_rulePrimaryProvider= rulePrimaryProvider EOF
+            // InternalLibrettoProjectProfile.g:3797:49: (iv_ruleProvider= ruleProvider EOF )
+            // InternalLibrettoProjectProfile.g:3798:2: iv_ruleProvider= ruleProvider EOF
             {
-             newCompositeNode(grammarAccess.getPrimaryProviderRule()); 
+             newCompositeNode(grammarAccess.getProviderRule()); 
             pushFollow(FOLLOW_1);
-            iv_rulePrimaryProvider=rulePrimaryProvider();
+            iv_ruleProvider=ruleProvider();
 
             state._fsp--;
 
-             current =iv_rulePrimaryProvider; 
+             current =iv_ruleProvider; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -9620,12 +9573,12 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         }
         return current;
     }
-    // $ANTLR end "entryRulePrimaryProvider"
+    // $ANTLR end "entryRuleProvider"
 
 
-    // $ANTLR start "rulePrimaryProvider"
-    // InternalLibrettoProjectProfile.g:3824:1: rulePrimaryProvider returns [EObject current=null] : ( () ( (lv_keyword_1_0= rulePrimaryProviderKeyword ) ) ( (lv_name_2_0= ruleValidID ) ) ) ;
-    public final EObject rulePrimaryProvider() throws RecognitionException {
+    // $ANTLR start "ruleProvider"
+    // InternalLibrettoProjectProfile.g:3804:1: ruleProvider returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleProviderKeyword ) ) ( (lv_name_2_0= ruleValidID ) ) ) ;
+    public final EObject ruleProvider() throws RecognitionException {
         EObject current = null;
 
         EObject lv_keyword_1_0 = null;
@@ -9637,46 +9590,46 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:3830:2: ( ( () ( (lv_keyword_1_0= rulePrimaryProviderKeyword ) ) ( (lv_name_2_0= ruleValidID ) ) ) )
-            // InternalLibrettoProjectProfile.g:3831:2: ( () ( (lv_keyword_1_0= rulePrimaryProviderKeyword ) ) ( (lv_name_2_0= ruleValidID ) ) )
+            // InternalLibrettoProjectProfile.g:3810:2: ( ( () ( (lv_keyword_1_0= ruleProviderKeyword ) ) ( (lv_name_2_0= ruleValidID ) ) ) )
+            // InternalLibrettoProjectProfile.g:3811:2: ( () ( (lv_keyword_1_0= ruleProviderKeyword ) ) ( (lv_name_2_0= ruleValidID ) ) )
             {
-            // InternalLibrettoProjectProfile.g:3831:2: ( () ( (lv_keyword_1_0= rulePrimaryProviderKeyword ) ) ( (lv_name_2_0= ruleValidID ) ) )
-            // InternalLibrettoProjectProfile.g:3832:3: () ( (lv_keyword_1_0= rulePrimaryProviderKeyword ) ) ( (lv_name_2_0= ruleValidID ) )
+            // InternalLibrettoProjectProfile.g:3811:2: ( () ( (lv_keyword_1_0= ruleProviderKeyword ) ) ( (lv_name_2_0= ruleValidID ) ) )
+            // InternalLibrettoProjectProfile.g:3812:3: () ( (lv_keyword_1_0= ruleProviderKeyword ) ) ( (lv_name_2_0= ruleValidID ) )
             {
-            // InternalLibrettoProjectProfile.g:3832:3: ()
-            // InternalLibrettoProjectProfile.g:3833:4: 
+            // InternalLibrettoProjectProfile.g:3812:3: ()
+            // InternalLibrettoProjectProfile.g:3813:4: 
             {
 
             				current = forceCreateModelElement(
-            					grammarAccess.getPrimaryProviderAccess().getPrimaryProviderAction_0(),
+            					grammarAccess.getProviderAccess().getPrimaryProviderAction_0(),
             					current);
             			
 
             }
 
-            // InternalLibrettoProjectProfile.g:3839:3: ( (lv_keyword_1_0= rulePrimaryProviderKeyword ) )
-            // InternalLibrettoProjectProfile.g:3840:4: (lv_keyword_1_0= rulePrimaryProviderKeyword )
+            // InternalLibrettoProjectProfile.g:3819:3: ( (lv_keyword_1_0= ruleProviderKeyword ) )
+            // InternalLibrettoProjectProfile.g:3820:4: (lv_keyword_1_0= ruleProviderKeyword )
             {
-            // InternalLibrettoProjectProfile.g:3840:4: (lv_keyword_1_0= rulePrimaryProviderKeyword )
-            // InternalLibrettoProjectProfile.g:3841:5: lv_keyword_1_0= rulePrimaryProviderKeyword
+            // InternalLibrettoProjectProfile.g:3820:4: (lv_keyword_1_0= ruleProviderKeyword )
+            // InternalLibrettoProjectProfile.g:3821:5: lv_keyword_1_0= ruleProviderKeyword
             {
 
-            					newCompositeNode(grammarAccess.getPrimaryProviderAccess().getKeywordPrimaryProviderKeywordParserRuleCall_1_0());
+            					newCompositeNode(grammarAccess.getProviderAccess().getKeywordProviderKeywordParserRuleCall_1_0());
             				
             pushFollow(FOLLOW_4);
-            lv_keyword_1_0=rulePrimaryProviderKeyword();
+            lv_keyword_1_0=ruleProviderKeyword();
 
             state._fsp--;
 
 
             					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getPrimaryProviderRule());
+            						current = createModelElementForParent(grammarAccess.getProviderRule());
             					}
             					set(
             						current,
             						"keyword",
             						lv_keyword_1_0,
-            						"com.robenglander.libretto.spec.LibrettoProjectProfile.PrimaryProviderKeyword");
+            						"com.robenglander.libretto.spec.LibrettoProjectProfile.ProviderKeyword");
             					afterParserOrEnumRuleCall();
             				
 
@@ -9685,14 +9638,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:3858:3: ( (lv_name_2_0= ruleValidID ) )
-            // InternalLibrettoProjectProfile.g:3859:4: (lv_name_2_0= ruleValidID )
+            // InternalLibrettoProjectProfile.g:3838:3: ( (lv_name_2_0= ruleValidID ) )
+            // InternalLibrettoProjectProfile.g:3839:4: (lv_name_2_0= ruleValidID )
             {
-            // InternalLibrettoProjectProfile.g:3859:4: (lv_name_2_0= ruleValidID )
-            // InternalLibrettoProjectProfile.g:3860:5: lv_name_2_0= ruleValidID
+            // InternalLibrettoProjectProfile.g:3839:4: (lv_name_2_0= ruleValidID )
+            // InternalLibrettoProjectProfile.g:3840:5: lv_name_2_0= ruleValidID
             {
 
-            					newCompositeNode(grammarAccess.getPrimaryProviderAccess().getNameValidIDParserRuleCall_2_0());
+            					newCompositeNode(grammarAccess.getProviderAccess().getNameValidIDParserRuleCall_2_0());
             				
             pushFollow(FOLLOW_2);
             lv_name_2_0=ruleValidID();
@@ -9701,7 +9654,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
             					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getPrimaryProviderRule());
+            						current = createModelElementForParent(grammarAccess.getProviderRule());
             					}
             					set(
             						current,
@@ -9735,28 +9688,28 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         }
         return current;
     }
-    // $ANTLR end "rulePrimaryProvider"
+    // $ANTLR end "ruleProvider"
 
 
-    // $ANTLR start "entryRulePrimaryProviderKeyword"
-    // InternalLibrettoProjectProfile.g:3881:1: entryRulePrimaryProviderKeyword returns [EObject current=null] : iv_rulePrimaryProviderKeyword= rulePrimaryProviderKeyword EOF ;
-    public final EObject entryRulePrimaryProviderKeyword() throws RecognitionException {
+    // $ANTLR start "entryRuleEscalationProvider"
+    // InternalLibrettoProjectProfile.g:3861:1: entryRuleEscalationProvider returns [EObject current=null] : iv_ruleEscalationProvider= ruleEscalationProvider EOF ;
+    public final EObject entryRuleEscalationProvider() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_rulePrimaryProviderKeyword = null;
+        EObject iv_ruleEscalationProvider = null;
 
 
         try {
-            // InternalLibrettoProjectProfile.g:3881:63: (iv_rulePrimaryProviderKeyword= rulePrimaryProviderKeyword EOF )
-            // InternalLibrettoProjectProfile.g:3882:2: iv_rulePrimaryProviderKeyword= rulePrimaryProviderKeyword EOF
+            // InternalLibrettoProjectProfile.g:3861:59: (iv_ruleEscalationProvider= ruleEscalationProvider EOF )
+            // InternalLibrettoProjectProfile.g:3862:2: iv_ruleEscalationProvider= ruleEscalationProvider EOF
             {
-             newCompositeNode(grammarAccess.getPrimaryProviderKeywordRule()); 
+             newCompositeNode(grammarAccess.getEscalationProviderRule()); 
             pushFollow(FOLLOW_1);
-            iv_rulePrimaryProviderKeyword=rulePrimaryProviderKeyword();
+            iv_ruleEscalationProvider=ruleEscalationProvider();
 
             state._fsp--;
 
-             current =iv_rulePrimaryProviderKeyword; 
+             current =iv_ruleEscalationProvider; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -9771,120 +9724,12 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         }
         return current;
     }
-    // $ANTLR end "entryRulePrimaryProviderKeyword"
+    // $ANTLR end "entryRuleEscalationProvider"
 
 
-    // $ANTLR start "rulePrimaryProviderKeyword"
-    // InternalLibrettoProjectProfile.g:3888:1: rulePrimaryProviderKeyword returns [EObject current=null] : ( () ( (lv_keyword_1_0= 'primary' ) ) ) ;
-    public final EObject rulePrimaryProviderKeyword() throws RecognitionException {
-        EObject current = null;
-
-        Token lv_keyword_1_0=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalLibrettoProjectProfile.g:3894:2: ( ( () ( (lv_keyword_1_0= 'primary' ) ) ) )
-            // InternalLibrettoProjectProfile.g:3895:2: ( () ( (lv_keyword_1_0= 'primary' ) ) )
-            {
-            // InternalLibrettoProjectProfile.g:3895:2: ( () ( (lv_keyword_1_0= 'primary' ) ) )
-            // InternalLibrettoProjectProfile.g:3896:3: () ( (lv_keyword_1_0= 'primary' ) )
-            {
-            // InternalLibrettoProjectProfile.g:3896:3: ()
-            // InternalLibrettoProjectProfile.g:3897:4: 
-            {
-
-            				current = forceCreateModelElement(
-            					grammarAccess.getPrimaryProviderKeywordAccess().getPrimaryProviderKeywordAction_0(),
-            					current);
-            			
-
-            }
-
-            // InternalLibrettoProjectProfile.g:3903:3: ( (lv_keyword_1_0= 'primary' ) )
-            // InternalLibrettoProjectProfile.g:3904:4: (lv_keyword_1_0= 'primary' )
-            {
-            // InternalLibrettoProjectProfile.g:3904:4: (lv_keyword_1_0= 'primary' )
-            // InternalLibrettoProjectProfile.g:3905:5: lv_keyword_1_0= 'primary'
-            {
-            lv_keyword_1_0=(Token)match(input,56,FOLLOW_2); 
-
-            					newLeafNode(lv_keyword_1_0, grammarAccess.getPrimaryProviderKeywordAccess().getKeywordPrimaryKeyword_1_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getPrimaryProviderKeywordRule());
-            					}
-            					setWithLastConsumed(current, "keyword", lv_keyword_1_0, "primary");
-            				
-
-            }
-
-
-            }
-
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "rulePrimaryProviderKeyword"
-
-
-    // $ANTLR start "entryRuleSecondaryProvider"
-    // InternalLibrettoProjectProfile.g:3921:1: entryRuleSecondaryProvider returns [EObject current=null] : iv_ruleSecondaryProvider= ruleSecondaryProvider EOF ;
-    public final EObject entryRuleSecondaryProvider() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleSecondaryProvider = null;
-
-
-        try {
-            // InternalLibrettoProjectProfile.g:3921:58: (iv_ruleSecondaryProvider= ruleSecondaryProvider EOF )
-            // InternalLibrettoProjectProfile.g:3922:2: iv_ruleSecondaryProvider= ruleSecondaryProvider EOF
-            {
-             newCompositeNode(grammarAccess.getSecondaryProviderRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleSecondaryProvider=ruleSecondaryProvider();
-
-            state._fsp--;
-
-             current =iv_ruleSecondaryProvider; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleSecondaryProvider"
-
-
-    // $ANTLR start "ruleSecondaryProvider"
-    // InternalLibrettoProjectProfile.g:3928:1: ruleSecondaryProvider returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleSecondaryProviderKeyword ) ) ( (lv_name_2_0= ruleValidID ) ) ) ;
-    public final EObject ruleSecondaryProvider() throws RecognitionException {
+    // $ANTLR start "ruleEscalationProvider"
+    // InternalLibrettoProjectProfile.g:3868:1: ruleEscalationProvider returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleEscalationToKeyword ) ) ( (lv_name_2_0= ruleValidID ) ) ) ;
+    public final EObject ruleEscalationProvider() throws RecognitionException {
         EObject current = null;
 
         EObject lv_keyword_1_0 = null;
@@ -9896,46 +9741,46 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:3934:2: ( ( () ( (lv_keyword_1_0= ruleSecondaryProviderKeyword ) ) ( (lv_name_2_0= ruleValidID ) ) ) )
-            // InternalLibrettoProjectProfile.g:3935:2: ( () ( (lv_keyword_1_0= ruleSecondaryProviderKeyword ) ) ( (lv_name_2_0= ruleValidID ) ) )
+            // InternalLibrettoProjectProfile.g:3874:2: ( ( () ( (lv_keyword_1_0= ruleEscalationToKeyword ) ) ( (lv_name_2_0= ruleValidID ) ) ) )
+            // InternalLibrettoProjectProfile.g:3875:2: ( () ( (lv_keyword_1_0= ruleEscalationToKeyword ) ) ( (lv_name_2_0= ruleValidID ) ) )
             {
-            // InternalLibrettoProjectProfile.g:3935:2: ( () ( (lv_keyword_1_0= ruleSecondaryProviderKeyword ) ) ( (lv_name_2_0= ruleValidID ) ) )
-            // InternalLibrettoProjectProfile.g:3936:3: () ( (lv_keyword_1_0= ruleSecondaryProviderKeyword ) ) ( (lv_name_2_0= ruleValidID ) )
+            // InternalLibrettoProjectProfile.g:3875:2: ( () ( (lv_keyword_1_0= ruleEscalationToKeyword ) ) ( (lv_name_2_0= ruleValidID ) ) )
+            // InternalLibrettoProjectProfile.g:3876:3: () ( (lv_keyword_1_0= ruleEscalationToKeyword ) ) ( (lv_name_2_0= ruleValidID ) )
             {
-            // InternalLibrettoProjectProfile.g:3936:3: ()
-            // InternalLibrettoProjectProfile.g:3937:4: 
+            // InternalLibrettoProjectProfile.g:3876:3: ()
+            // InternalLibrettoProjectProfile.g:3877:4: 
             {
 
             				current = forceCreateModelElement(
-            					grammarAccess.getSecondaryProviderAccess().getSecondaryProviderAction_0(),
+            					grammarAccess.getEscalationProviderAccess().getGenEscalationBlockAction_0(),
             					current);
             			
 
             }
 
-            // InternalLibrettoProjectProfile.g:3943:3: ( (lv_keyword_1_0= ruleSecondaryProviderKeyword ) )
-            // InternalLibrettoProjectProfile.g:3944:4: (lv_keyword_1_0= ruleSecondaryProviderKeyword )
+            // InternalLibrettoProjectProfile.g:3883:3: ( (lv_keyword_1_0= ruleEscalationToKeyword ) )
+            // InternalLibrettoProjectProfile.g:3884:4: (lv_keyword_1_0= ruleEscalationToKeyword )
             {
-            // InternalLibrettoProjectProfile.g:3944:4: (lv_keyword_1_0= ruleSecondaryProviderKeyword )
-            // InternalLibrettoProjectProfile.g:3945:5: lv_keyword_1_0= ruleSecondaryProviderKeyword
+            // InternalLibrettoProjectProfile.g:3884:4: (lv_keyword_1_0= ruleEscalationToKeyword )
+            // InternalLibrettoProjectProfile.g:3885:5: lv_keyword_1_0= ruleEscalationToKeyword
             {
 
-            					newCompositeNode(grammarAccess.getSecondaryProviderAccess().getKeywordSecondaryProviderKeywordParserRuleCall_1_0());
+            					newCompositeNode(grammarAccess.getEscalationProviderAccess().getKeywordEscalationToKeywordParserRuleCall_1_0());
             				
             pushFollow(FOLLOW_4);
-            lv_keyword_1_0=ruleSecondaryProviderKeyword();
+            lv_keyword_1_0=ruleEscalationToKeyword();
 
             state._fsp--;
 
 
             					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getSecondaryProviderRule());
+            						current = createModelElementForParent(grammarAccess.getEscalationProviderRule());
             					}
             					set(
             						current,
             						"keyword",
             						lv_keyword_1_0,
-            						"com.robenglander.libretto.spec.LibrettoProjectProfile.SecondaryProviderKeyword");
+            						"com.robenglander.libretto.spec.LibrettoProjectProfile.EscalationToKeyword");
             					afterParserOrEnumRuleCall();
             				
 
@@ -9944,14 +9789,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:3962:3: ( (lv_name_2_0= ruleValidID ) )
-            // InternalLibrettoProjectProfile.g:3963:4: (lv_name_2_0= ruleValidID )
+            // InternalLibrettoProjectProfile.g:3902:3: ( (lv_name_2_0= ruleValidID ) )
+            // InternalLibrettoProjectProfile.g:3903:4: (lv_name_2_0= ruleValidID )
             {
-            // InternalLibrettoProjectProfile.g:3963:4: (lv_name_2_0= ruleValidID )
-            // InternalLibrettoProjectProfile.g:3964:5: lv_name_2_0= ruleValidID
+            // InternalLibrettoProjectProfile.g:3903:4: (lv_name_2_0= ruleValidID )
+            // InternalLibrettoProjectProfile.g:3904:5: lv_name_2_0= ruleValidID
             {
 
-            					newCompositeNode(grammarAccess.getSecondaryProviderAccess().getNameValidIDParserRuleCall_2_0());
+            					newCompositeNode(grammarAccess.getEscalationProviderAccess().getNameValidIDParserRuleCall_2_0());
             				
             pushFollow(FOLLOW_2);
             lv_name_2_0=ruleValidID();
@@ -9960,7 +9805,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
             					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getSecondaryProviderRule());
+            						current = createModelElementForParent(grammarAccess.getEscalationProviderRule());
             					}
             					set(
             						current,
@@ -9994,28 +9839,28 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         }
         return current;
     }
-    // $ANTLR end "ruleSecondaryProvider"
+    // $ANTLR end "ruleEscalationProvider"
 
 
-    // $ANTLR start "entryRuleSecondaryProviderKeyword"
-    // InternalLibrettoProjectProfile.g:3985:1: entryRuleSecondaryProviderKeyword returns [EObject current=null] : iv_ruleSecondaryProviderKeyword= ruleSecondaryProviderKeyword EOF ;
-    public final EObject entryRuleSecondaryProviderKeyword() throws RecognitionException {
+    // $ANTLR start "entryRuleEscalationToKeyword"
+    // InternalLibrettoProjectProfile.g:3925:1: entryRuleEscalationToKeyword returns [EObject current=null] : iv_ruleEscalationToKeyword= ruleEscalationToKeyword EOF ;
+    public final EObject entryRuleEscalationToKeyword() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleSecondaryProviderKeyword = null;
+        EObject iv_ruleEscalationToKeyword = null;
 
 
         try {
-            // InternalLibrettoProjectProfile.g:3985:65: (iv_ruleSecondaryProviderKeyword= ruleSecondaryProviderKeyword EOF )
-            // InternalLibrettoProjectProfile.g:3986:2: iv_ruleSecondaryProviderKeyword= ruleSecondaryProviderKeyword EOF
+            // InternalLibrettoProjectProfile.g:3925:60: (iv_ruleEscalationToKeyword= ruleEscalationToKeyword EOF )
+            // InternalLibrettoProjectProfile.g:3926:2: iv_ruleEscalationToKeyword= ruleEscalationToKeyword EOF
             {
-             newCompositeNode(grammarAccess.getSecondaryProviderKeywordRule()); 
+             newCompositeNode(grammarAccess.getEscalationToKeywordRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleSecondaryProviderKeyword=ruleSecondaryProviderKeyword();
+            iv_ruleEscalationToKeyword=ruleEscalationToKeyword();
 
             state._fsp--;
 
-             current =iv_ruleSecondaryProviderKeyword; 
+             current =iv_ruleEscalationToKeyword; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -10030,859 +9875,12 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         }
         return current;
     }
-    // $ANTLR end "entryRuleSecondaryProviderKeyword"
+    // $ANTLR end "entryRuleEscalationToKeyword"
 
 
-    // $ANTLR start "ruleSecondaryProviderKeyword"
-    // InternalLibrettoProjectProfile.g:3992:1: ruleSecondaryProviderKeyword returns [EObject current=null] : ( () ( (lv_keyword_1_0= 'secondary' ) ) ) ;
-    public final EObject ruleSecondaryProviderKeyword() throws RecognitionException {
-        EObject current = null;
-
-        Token lv_keyword_1_0=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalLibrettoProjectProfile.g:3998:2: ( ( () ( (lv_keyword_1_0= 'secondary' ) ) ) )
-            // InternalLibrettoProjectProfile.g:3999:2: ( () ( (lv_keyword_1_0= 'secondary' ) ) )
-            {
-            // InternalLibrettoProjectProfile.g:3999:2: ( () ( (lv_keyword_1_0= 'secondary' ) ) )
-            // InternalLibrettoProjectProfile.g:4000:3: () ( (lv_keyword_1_0= 'secondary' ) )
-            {
-            // InternalLibrettoProjectProfile.g:4000:3: ()
-            // InternalLibrettoProjectProfile.g:4001:4: 
-            {
-
-            				current = forceCreateModelElement(
-            					grammarAccess.getSecondaryProviderKeywordAccess().getSecondaryProviderKeywordAction_0(),
-            					current);
-            			
-
-            }
-
-            // InternalLibrettoProjectProfile.g:4007:3: ( (lv_keyword_1_0= 'secondary' ) )
-            // InternalLibrettoProjectProfile.g:4008:4: (lv_keyword_1_0= 'secondary' )
-            {
-            // InternalLibrettoProjectProfile.g:4008:4: (lv_keyword_1_0= 'secondary' )
-            // InternalLibrettoProjectProfile.g:4009:5: lv_keyword_1_0= 'secondary'
-            {
-            lv_keyword_1_0=(Token)match(input,57,FOLLOW_2); 
-
-            					newLeafNode(lv_keyword_1_0, grammarAccess.getSecondaryProviderKeywordAccess().getKeywordSecondaryKeyword_1_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getSecondaryProviderKeywordRule());
-            					}
-            					setWithLastConsumed(current, "keyword", lv_keyword_1_0, "secondary");
-            				
-
-            }
-
-
-            }
-
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleSecondaryProviderKeyword"
-
-
-    // $ANTLR start "entryRuleGenEscalationBlock"
-    // InternalLibrettoProjectProfile.g:4025:1: entryRuleGenEscalationBlock returns [EObject current=null] : iv_ruleGenEscalationBlock= ruleGenEscalationBlock EOF ;
-    public final EObject entryRuleGenEscalationBlock() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleGenEscalationBlock = null;
-
-
-        try {
-            // InternalLibrettoProjectProfile.g:4025:59: (iv_ruleGenEscalationBlock= ruleGenEscalationBlock EOF )
-            // InternalLibrettoProjectProfile.g:4026:2: iv_ruleGenEscalationBlock= ruleGenEscalationBlock EOF
-            {
-             newCompositeNode(grammarAccess.getGenEscalationBlockRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleGenEscalationBlock=ruleGenEscalationBlock();
-
-            state._fsp--;
-
-             current =iv_ruleGenEscalationBlock; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleGenEscalationBlock"
-
-
-    // $ANTLR start "ruleGenEscalationBlock"
-    // InternalLibrettoProjectProfile.g:4032:1: ruleGenEscalationBlock returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleEscalationKeyword ) ) otherlv_2= '{' ( ( (lv_enableds_3_0= ruleEnabled ) ) | ( (lv_atRetries_4_0= ruleAtRetry ) ) )* otherlv_5= '}' ) ;
-    public final EObject ruleGenEscalationBlock() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_2=null;
-        Token otherlv_5=null;
-        EObject lv_keyword_1_0 = null;
-
-        EObject lv_enableds_3_0 = null;
-
-        EObject lv_atRetries_4_0 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalLibrettoProjectProfile.g:4038:2: ( ( () ( (lv_keyword_1_0= ruleEscalationKeyword ) ) otherlv_2= '{' ( ( (lv_enableds_3_0= ruleEnabled ) ) | ( (lv_atRetries_4_0= ruleAtRetry ) ) )* otherlv_5= '}' ) )
-            // InternalLibrettoProjectProfile.g:4039:2: ( () ( (lv_keyword_1_0= ruleEscalationKeyword ) ) otherlv_2= '{' ( ( (lv_enableds_3_0= ruleEnabled ) ) | ( (lv_atRetries_4_0= ruleAtRetry ) ) )* otherlv_5= '}' )
-            {
-            // InternalLibrettoProjectProfile.g:4039:2: ( () ( (lv_keyword_1_0= ruleEscalationKeyword ) ) otherlv_2= '{' ( ( (lv_enableds_3_0= ruleEnabled ) ) | ( (lv_atRetries_4_0= ruleAtRetry ) ) )* otherlv_5= '}' )
-            // InternalLibrettoProjectProfile.g:4040:3: () ( (lv_keyword_1_0= ruleEscalationKeyword ) ) otherlv_2= '{' ( ( (lv_enableds_3_0= ruleEnabled ) ) | ( (lv_atRetries_4_0= ruleAtRetry ) ) )* otherlv_5= '}'
-            {
-            // InternalLibrettoProjectProfile.g:4040:3: ()
-            // InternalLibrettoProjectProfile.g:4041:4: 
-            {
-
-            				current = forceCreateModelElement(
-            					grammarAccess.getGenEscalationBlockAccess().getGenEscalationBlockAction_0(),
-            					current);
-            			
-
-            }
-
-            // InternalLibrettoProjectProfile.g:4047:3: ( (lv_keyword_1_0= ruleEscalationKeyword ) )
-            // InternalLibrettoProjectProfile.g:4048:4: (lv_keyword_1_0= ruleEscalationKeyword )
-            {
-            // InternalLibrettoProjectProfile.g:4048:4: (lv_keyword_1_0= ruleEscalationKeyword )
-            // InternalLibrettoProjectProfile.g:4049:5: lv_keyword_1_0= ruleEscalationKeyword
-            {
-
-            					newCompositeNode(grammarAccess.getGenEscalationBlockAccess().getKeywordEscalationKeywordParserRuleCall_1_0());
-            				
-            pushFollow(FOLLOW_5);
-            lv_keyword_1_0=ruleEscalationKeyword();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getGenEscalationBlockRule());
-            					}
-            					set(
-            						current,
-            						"keyword",
-            						lv_keyword_1_0,
-            						"com.robenglander.libretto.spec.LibrettoProjectProfile.EscalationKeyword");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
-
-            otherlv_2=(Token)match(input,11,FOLLOW_19); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getGenEscalationBlockAccess().getLeftCurlyBracketKeyword_2());
-            		
-            // InternalLibrettoProjectProfile.g:4070:3: ( ( (lv_enableds_3_0= ruleEnabled ) ) | ( (lv_atRetries_4_0= ruleAtRetry ) ) )*
-            loop27:
-            do {
-                int alt27=3;
-                int LA27_0 = input.LA(1);
-
-                if ( (LA27_0==59) ) {
-                    alt27=1;
-                }
-                else if ( ((LA27_0>=60 && LA27_0<=61)) ) {
-                    alt27=2;
-                }
-
-
-                switch (alt27) {
-            	case 1 :
-            	    // InternalLibrettoProjectProfile.g:4071:4: ( (lv_enableds_3_0= ruleEnabled ) )
-            	    {
-            	    // InternalLibrettoProjectProfile.g:4071:4: ( (lv_enableds_3_0= ruleEnabled ) )
-            	    // InternalLibrettoProjectProfile.g:4072:5: (lv_enableds_3_0= ruleEnabled )
-            	    {
-            	    // InternalLibrettoProjectProfile.g:4072:5: (lv_enableds_3_0= ruleEnabled )
-            	    // InternalLibrettoProjectProfile.g:4073:6: lv_enableds_3_0= ruleEnabled
-            	    {
-
-            	    						newCompositeNode(grammarAccess.getGenEscalationBlockAccess().getEnabledsEnabledParserRuleCall_3_0_0());
-            	    					
-            	    pushFollow(FOLLOW_19);
-            	    lv_enableds_3_0=ruleEnabled();
-
-            	    state._fsp--;
-
-
-            	    						if (current==null) {
-            	    							current = createModelElementForParent(grammarAccess.getGenEscalationBlockRule());
-            	    						}
-            	    						add(
-            	    							current,
-            	    							"enableds",
-            	    							lv_enableds_3_0,
-            	    							"com.robenglander.libretto.spec.LibrettoProjectProfile.Enabled");
-            	    						afterParserOrEnumRuleCall();
-            	    					
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-            	case 2 :
-            	    // InternalLibrettoProjectProfile.g:4091:4: ( (lv_atRetries_4_0= ruleAtRetry ) )
-            	    {
-            	    // InternalLibrettoProjectProfile.g:4091:4: ( (lv_atRetries_4_0= ruleAtRetry ) )
-            	    // InternalLibrettoProjectProfile.g:4092:5: (lv_atRetries_4_0= ruleAtRetry )
-            	    {
-            	    // InternalLibrettoProjectProfile.g:4092:5: (lv_atRetries_4_0= ruleAtRetry )
-            	    // InternalLibrettoProjectProfile.g:4093:6: lv_atRetries_4_0= ruleAtRetry
-            	    {
-
-            	    						newCompositeNode(grammarAccess.getGenEscalationBlockAccess().getAtRetriesAtRetryParserRuleCall_3_1_0());
-            	    					
-            	    pushFollow(FOLLOW_19);
-            	    lv_atRetries_4_0=ruleAtRetry();
-
-            	    state._fsp--;
-
-
-            	    						if (current==null) {
-            	    							current = createModelElementForParent(grammarAccess.getGenEscalationBlockRule());
-            	    						}
-            	    						add(
-            	    							current,
-            	    							"atRetries",
-            	    							lv_atRetries_4_0,
-            	    							"com.robenglander.libretto.spec.LibrettoProjectProfile.AtRetry");
-            	    						afterParserOrEnumRuleCall();
-            	    					
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop27;
-                }
-            } while (true);
-
-            otherlv_5=(Token)match(input,12,FOLLOW_2); 
-
-            			newLeafNode(otherlv_5, grammarAccess.getGenEscalationBlockAccess().getRightCurlyBracketKeyword_4());
-            		
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleGenEscalationBlock"
-
-
-    // $ANTLR start "entryRuleEscalationKeyword"
-    // InternalLibrettoProjectProfile.g:4119:1: entryRuleEscalationKeyword returns [EObject current=null] : iv_ruleEscalationKeyword= ruleEscalationKeyword EOF ;
-    public final EObject entryRuleEscalationKeyword() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleEscalationKeyword = null;
-
-
-        try {
-            // InternalLibrettoProjectProfile.g:4119:58: (iv_ruleEscalationKeyword= ruleEscalationKeyword EOF )
-            // InternalLibrettoProjectProfile.g:4120:2: iv_ruleEscalationKeyword= ruleEscalationKeyword EOF
-            {
-             newCompositeNode(grammarAccess.getEscalationKeywordRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleEscalationKeyword=ruleEscalationKeyword();
-
-            state._fsp--;
-
-             current =iv_ruleEscalationKeyword; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleEscalationKeyword"
-
-
-    // $ANTLR start "ruleEscalationKeyword"
-    // InternalLibrettoProjectProfile.g:4126:1: ruleEscalationKeyword returns [EObject current=null] : ( () ( (lv_keyword_1_0= 'escalation' ) ) ) ;
-    public final EObject ruleEscalationKeyword() throws RecognitionException {
-        EObject current = null;
-
-        Token lv_keyword_1_0=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalLibrettoProjectProfile.g:4132:2: ( ( () ( (lv_keyword_1_0= 'escalation' ) ) ) )
-            // InternalLibrettoProjectProfile.g:4133:2: ( () ( (lv_keyword_1_0= 'escalation' ) ) )
-            {
-            // InternalLibrettoProjectProfile.g:4133:2: ( () ( (lv_keyword_1_0= 'escalation' ) ) )
-            // InternalLibrettoProjectProfile.g:4134:3: () ( (lv_keyword_1_0= 'escalation' ) )
-            {
-            // InternalLibrettoProjectProfile.g:4134:3: ()
-            // InternalLibrettoProjectProfile.g:4135:4: 
-            {
-
-            				current = forceCreateModelElement(
-            					grammarAccess.getEscalationKeywordAccess().getEscalationKeywordAction_0(),
-            					current);
-            			
-
-            }
-
-            // InternalLibrettoProjectProfile.g:4141:3: ( (lv_keyword_1_0= 'escalation' ) )
-            // InternalLibrettoProjectProfile.g:4142:4: (lv_keyword_1_0= 'escalation' )
-            {
-            // InternalLibrettoProjectProfile.g:4142:4: (lv_keyword_1_0= 'escalation' )
-            // InternalLibrettoProjectProfile.g:4143:5: lv_keyword_1_0= 'escalation'
-            {
-            lv_keyword_1_0=(Token)match(input,58,FOLLOW_2); 
-
-            					newLeafNode(lv_keyword_1_0, grammarAccess.getEscalationKeywordAccess().getKeywordEscalationKeyword_1_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getEscalationKeywordRule());
-            					}
-            					setWithLastConsumed(current, "keyword", lv_keyword_1_0, "escalation");
-            				
-
-            }
-
-
-            }
-
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleEscalationKeyword"
-
-
-    // $ANTLR start "entryRuleEnabled"
-    // InternalLibrettoProjectProfile.g:4159:1: entryRuleEnabled returns [EObject current=null] : iv_ruleEnabled= ruleEnabled EOF ;
-    public final EObject entryRuleEnabled() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleEnabled = null;
-
-
-        try {
-            // InternalLibrettoProjectProfile.g:4159:48: (iv_ruleEnabled= ruleEnabled EOF )
-            // InternalLibrettoProjectProfile.g:4160:2: iv_ruleEnabled= ruleEnabled EOF
-            {
-             newCompositeNode(grammarAccess.getEnabledRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleEnabled=ruleEnabled();
-
-            state._fsp--;
-
-             current =iv_ruleEnabled; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleEnabled"
-
-
-    // $ANTLR start "ruleEnabled"
-    // InternalLibrettoProjectProfile.g:4166:1: ruleEnabled returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleEnabledKeyword ) ) ( (lv_value_2_0= ruleTrueFalseKeyword ) ) ) ;
-    public final EObject ruleEnabled() throws RecognitionException {
-        EObject current = null;
-
-        EObject lv_keyword_1_0 = null;
-
-        EObject lv_value_2_0 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalLibrettoProjectProfile.g:4172:2: ( ( () ( (lv_keyword_1_0= ruleEnabledKeyword ) ) ( (lv_value_2_0= ruleTrueFalseKeyword ) ) ) )
-            // InternalLibrettoProjectProfile.g:4173:2: ( () ( (lv_keyword_1_0= ruleEnabledKeyword ) ) ( (lv_value_2_0= ruleTrueFalseKeyword ) ) )
-            {
-            // InternalLibrettoProjectProfile.g:4173:2: ( () ( (lv_keyword_1_0= ruleEnabledKeyword ) ) ( (lv_value_2_0= ruleTrueFalseKeyword ) ) )
-            // InternalLibrettoProjectProfile.g:4174:3: () ( (lv_keyword_1_0= ruleEnabledKeyword ) ) ( (lv_value_2_0= ruleTrueFalseKeyword ) )
-            {
-            // InternalLibrettoProjectProfile.g:4174:3: ()
-            // InternalLibrettoProjectProfile.g:4175:4: 
-            {
-
-            				current = forceCreateModelElement(
-            					grammarAccess.getEnabledAccess().getEnabledAction_0(),
-            					current);
-            			
-
-            }
-
-            // InternalLibrettoProjectProfile.g:4181:3: ( (lv_keyword_1_0= ruleEnabledKeyword ) )
-            // InternalLibrettoProjectProfile.g:4182:4: (lv_keyword_1_0= ruleEnabledKeyword )
-            {
-            // InternalLibrettoProjectProfile.g:4182:4: (lv_keyword_1_0= ruleEnabledKeyword )
-            // InternalLibrettoProjectProfile.g:4183:5: lv_keyword_1_0= ruleEnabledKeyword
-            {
-
-            					newCompositeNode(grammarAccess.getEnabledAccess().getKeywordEnabledKeywordParserRuleCall_1_0());
-            				
-            pushFollow(FOLLOW_13);
-            lv_keyword_1_0=ruleEnabledKeyword();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getEnabledRule());
-            					}
-            					set(
-            						current,
-            						"keyword",
-            						lv_keyword_1_0,
-            						"com.robenglander.libretto.spec.LibrettoProjectProfile.EnabledKeyword");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
-
-            // InternalLibrettoProjectProfile.g:4200:3: ( (lv_value_2_0= ruleTrueFalseKeyword ) )
-            // InternalLibrettoProjectProfile.g:4201:4: (lv_value_2_0= ruleTrueFalseKeyword )
-            {
-            // InternalLibrettoProjectProfile.g:4201:4: (lv_value_2_0= ruleTrueFalseKeyword )
-            // InternalLibrettoProjectProfile.g:4202:5: lv_value_2_0= ruleTrueFalseKeyword
-            {
-
-            					newCompositeNode(grammarAccess.getEnabledAccess().getValueTrueFalseKeywordParserRuleCall_2_0());
-            				
-            pushFollow(FOLLOW_2);
-            lv_value_2_0=ruleTrueFalseKeyword();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getEnabledRule());
-            					}
-            					set(
-            						current,
-            						"value",
-            						lv_value_2_0,
-            						"com.robenglander.libretto.spec.LibrettoProjectProfile.TrueFalseKeyword");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
-
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleEnabled"
-
-
-    // $ANTLR start "entryRuleEnabledKeyword"
-    // InternalLibrettoProjectProfile.g:4223:1: entryRuleEnabledKeyword returns [EObject current=null] : iv_ruleEnabledKeyword= ruleEnabledKeyword EOF ;
-    public final EObject entryRuleEnabledKeyword() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleEnabledKeyword = null;
-
-
-        try {
-            // InternalLibrettoProjectProfile.g:4223:55: (iv_ruleEnabledKeyword= ruleEnabledKeyword EOF )
-            // InternalLibrettoProjectProfile.g:4224:2: iv_ruleEnabledKeyword= ruleEnabledKeyword EOF
-            {
-             newCompositeNode(grammarAccess.getEnabledKeywordRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleEnabledKeyword=ruleEnabledKeyword();
-
-            state._fsp--;
-
-             current =iv_ruleEnabledKeyword; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleEnabledKeyword"
-
-
-    // $ANTLR start "ruleEnabledKeyword"
-    // InternalLibrettoProjectProfile.g:4230:1: ruleEnabledKeyword returns [EObject current=null] : ( () ( (lv_keyword_1_0= 'enabled' ) ) ) ;
-    public final EObject ruleEnabledKeyword() throws RecognitionException {
-        EObject current = null;
-
-        Token lv_keyword_1_0=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalLibrettoProjectProfile.g:4236:2: ( ( () ( (lv_keyword_1_0= 'enabled' ) ) ) )
-            // InternalLibrettoProjectProfile.g:4237:2: ( () ( (lv_keyword_1_0= 'enabled' ) ) )
-            {
-            // InternalLibrettoProjectProfile.g:4237:2: ( () ( (lv_keyword_1_0= 'enabled' ) ) )
-            // InternalLibrettoProjectProfile.g:4238:3: () ( (lv_keyword_1_0= 'enabled' ) )
-            {
-            // InternalLibrettoProjectProfile.g:4238:3: ()
-            // InternalLibrettoProjectProfile.g:4239:4: 
-            {
-
-            				current = forceCreateModelElement(
-            					grammarAccess.getEnabledKeywordAccess().getEnabledKeywordAction_0(),
-            					current);
-            			
-
-            }
-
-            // InternalLibrettoProjectProfile.g:4245:3: ( (lv_keyword_1_0= 'enabled' ) )
-            // InternalLibrettoProjectProfile.g:4246:4: (lv_keyword_1_0= 'enabled' )
-            {
-            // InternalLibrettoProjectProfile.g:4246:4: (lv_keyword_1_0= 'enabled' )
-            // InternalLibrettoProjectProfile.g:4247:5: lv_keyword_1_0= 'enabled'
-            {
-            lv_keyword_1_0=(Token)match(input,59,FOLLOW_2); 
-
-            					newLeafNode(lv_keyword_1_0, grammarAccess.getEnabledKeywordAccess().getKeywordEnabledKeyword_1_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getEnabledKeywordRule());
-            					}
-            					setWithLastConsumed(current, "keyword", lv_keyword_1_0, "enabled");
-            				
-
-            }
-
-
-            }
-
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleEnabledKeyword"
-
-
-    // $ANTLR start "entryRuleAtRetry"
-    // InternalLibrettoProjectProfile.g:4263:1: entryRuleAtRetry returns [EObject current=null] : iv_ruleAtRetry= ruleAtRetry EOF ;
-    public final EObject entryRuleAtRetry() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleAtRetry = null;
-
-
-        try {
-            // InternalLibrettoProjectProfile.g:4263:48: (iv_ruleAtRetry= ruleAtRetry EOF )
-            // InternalLibrettoProjectProfile.g:4264:2: iv_ruleAtRetry= ruleAtRetry EOF
-            {
-             newCompositeNode(grammarAccess.getAtRetryRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleAtRetry=ruleAtRetry();
-
-            state._fsp--;
-
-             current =iv_ruleAtRetry; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleAtRetry"
-
-
-    // $ANTLR start "ruleAtRetry"
-    // InternalLibrettoProjectProfile.g:4270:1: ruleAtRetry returns [EObject current=null] : ( () ( (lv_keyword_1_0= ruleAtRetryKeyword ) ) ( (lv_value_2_0= RULE_INT ) ) ) ;
-    public final EObject ruleAtRetry() throws RecognitionException {
-        EObject current = null;
-
-        Token lv_value_2_0=null;
-        EObject lv_keyword_1_0 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalLibrettoProjectProfile.g:4276:2: ( ( () ( (lv_keyword_1_0= ruleAtRetryKeyword ) ) ( (lv_value_2_0= RULE_INT ) ) ) )
-            // InternalLibrettoProjectProfile.g:4277:2: ( () ( (lv_keyword_1_0= ruleAtRetryKeyword ) ) ( (lv_value_2_0= RULE_INT ) ) )
-            {
-            // InternalLibrettoProjectProfile.g:4277:2: ( () ( (lv_keyword_1_0= ruleAtRetryKeyword ) ) ( (lv_value_2_0= RULE_INT ) ) )
-            // InternalLibrettoProjectProfile.g:4278:3: () ( (lv_keyword_1_0= ruleAtRetryKeyword ) ) ( (lv_value_2_0= RULE_INT ) )
-            {
-            // InternalLibrettoProjectProfile.g:4278:3: ()
-            // InternalLibrettoProjectProfile.g:4279:4: 
-            {
-
-            				current = forceCreateModelElement(
-            					grammarAccess.getAtRetryAccess().getAtRetryAction_0(),
-            					current);
-            			
-
-            }
-
-            // InternalLibrettoProjectProfile.g:4285:3: ( (lv_keyword_1_0= ruleAtRetryKeyword ) )
-            // InternalLibrettoProjectProfile.g:4286:4: (lv_keyword_1_0= ruleAtRetryKeyword )
-            {
-            // InternalLibrettoProjectProfile.g:4286:4: (lv_keyword_1_0= ruleAtRetryKeyword )
-            // InternalLibrettoProjectProfile.g:4287:5: lv_keyword_1_0= ruleAtRetryKeyword
-            {
-
-            					newCompositeNode(grammarAccess.getAtRetryAccess().getKeywordAtRetryKeywordParserRuleCall_1_0());
-            				
-            pushFollow(FOLLOW_12);
-            lv_keyword_1_0=ruleAtRetryKeyword();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getAtRetryRule());
-            					}
-            					set(
-            						current,
-            						"keyword",
-            						lv_keyword_1_0,
-            						"com.robenglander.libretto.spec.LibrettoProjectProfile.AtRetryKeyword");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
-
-            // InternalLibrettoProjectProfile.g:4304:3: ( (lv_value_2_0= RULE_INT ) )
-            // InternalLibrettoProjectProfile.g:4305:4: (lv_value_2_0= RULE_INT )
-            {
-            // InternalLibrettoProjectProfile.g:4305:4: (lv_value_2_0= RULE_INT )
-            // InternalLibrettoProjectProfile.g:4306:5: lv_value_2_0= RULE_INT
-            {
-            lv_value_2_0=(Token)match(input,RULE_INT,FOLLOW_2); 
-
-            					newLeafNode(lv_value_2_0, grammarAccess.getAtRetryAccess().getValueINTTerminalRuleCall_2_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getAtRetryRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"value",
-            						lv_value_2_0,
-            						"org.eclipse.xtext.common.Terminals.INT");
-            				
-
-            }
-
-
-            }
-
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleAtRetry"
-
-
-    // $ANTLR start "entryRuleAtRetryKeyword"
-    // InternalLibrettoProjectProfile.g:4326:1: entryRuleAtRetryKeyword returns [EObject current=null] : iv_ruleAtRetryKeyword= ruleAtRetryKeyword EOF ;
-    public final EObject entryRuleAtRetryKeyword() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleAtRetryKeyword = null;
-
-
-        try {
-            // InternalLibrettoProjectProfile.g:4326:55: (iv_ruleAtRetryKeyword= ruleAtRetryKeyword EOF )
-            // InternalLibrettoProjectProfile.g:4327:2: iv_ruleAtRetryKeyword= ruleAtRetryKeyword EOF
-            {
-             newCompositeNode(grammarAccess.getAtRetryKeywordRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleAtRetryKeyword=ruleAtRetryKeyword();
-
-            state._fsp--;
-
-             current =iv_ruleAtRetryKeyword; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleAtRetryKeyword"
-
-
-    // $ANTLR start "ruleAtRetryKeyword"
-    // InternalLibrettoProjectProfile.g:4333:1: ruleAtRetryKeyword returns [EObject current=null] : ( () ( ( (lv_keyword_1_1= 'atretry' | lv_keyword_1_2= 'atRetry' ) ) ) ) ;
-    public final EObject ruleAtRetryKeyword() throws RecognitionException {
+    // $ANTLR start "ruleEscalationToKeyword"
+    // InternalLibrettoProjectProfile.g:3932:1: ruleEscalationToKeyword returns [EObject current=null] : ( () ( ( (lv_keyword_1_1= 'escalationto' | lv_keyword_1_2= 'escalationTo' ) ) ) ) ;
+    public final EObject ruleEscalationToKeyword() throws RecognitionException {
         EObject current = null;
 
         Token lv_keyword_1_1=null;
@@ -10892,56 +9890,56 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:4339:2: ( ( () ( ( (lv_keyword_1_1= 'atretry' | lv_keyword_1_2= 'atRetry' ) ) ) ) )
-            // InternalLibrettoProjectProfile.g:4340:2: ( () ( ( (lv_keyword_1_1= 'atretry' | lv_keyword_1_2= 'atRetry' ) ) ) )
+            // InternalLibrettoProjectProfile.g:3938:2: ( ( () ( ( (lv_keyword_1_1= 'escalationto' | lv_keyword_1_2= 'escalationTo' ) ) ) ) )
+            // InternalLibrettoProjectProfile.g:3939:2: ( () ( ( (lv_keyword_1_1= 'escalationto' | lv_keyword_1_2= 'escalationTo' ) ) ) )
             {
-            // InternalLibrettoProjectProfile.g:4340:2: ( () ( ( (lv_keyword_1_1= 'atretry' | lv_keyword_1_2= 'atRetry' ) ) ) )
-            // InternalLibrettoProjectProfile.g:4341:3: () ( ( (lv_keyword_1_1= 'atretry' | lv_keyword_1_2= 'atRetry' ) ) )
+            // InternalLibrettoProjectProfile.g:3939:2: ( () ( ( (lv_keyword_1_1= 'escalationto' | lv_keyword_1_2= 'escalationTo' ) ) ) )
+            // InternalLibrettoProjectProfile.g:3940:3: () ( ( (lv_keyword_1_1= 'escalationto' | lv_keyword_1_2= 'escalationTo' ) ) )
             {
-            // InternalLibrettoProjectProfile.g:4341:3: ()
-            // InternalLibrettoProjectProfile.g:4342:4: 
+            // InternalLibrettoProjectProfile.g:3940:3: ()
+            // InternalLibrettoProjectProfile.g:3941:4: 
             {
 
             				current = forceCreateModelElement(
-            					grammarAccess.getAtRetryKeywordAccess().getAtRetryKeywordAction_0(),
+            					grammarAccess.getEscalationToKeywordAccess().getEscalationToKeywordAction_0(),
             					current);
             			
 
             }
 
-            // InternalLibrettoProjectProfile.g:4348:3: ( ( (lv_keyword_1_1= 'atretry' | lv_keyword_1_2= 'atRetry' ) ) )
-            // InternalLibrettoProjectProfile.g:4349:4: ( (lv_keyword_1_1= 'atretry' | lv_keyword_1_2= 'atRetry' ) )
+            // InternalLibrettoProjectProfile.g:3947:3: ( ( (lv_keyword_1_1= 'escalationto' | lv_keyword_1_2= 'escalationTo' ) ) )
+            // InternalLibrettoProjectProfile.g:3948:4: ( (lv_keyword_1_1= 'escalationto' | lv_keyword_1_2= 'escalationTo' ) )
             {
-            // InternalLibrettoProjectProfile.g:4349:4: ( (lv_keyword_1_1= 'atretry' | lv_keyword_1_2= 'atRetry' ) )
-            // InternalLibrettoProjectProfile.g:4350:5: (lv_keyword_1_1= 'atretry' | lv_keyword_1_2= 'atRetry' )
+            // InternalLibrettoProjectProfile.g:3948:4: ( (lv_keyword_1_1= 'escalationto' | lv_keyword_1_2= 'escalationTo' ) )
+            // InternalLibrettoProjectProfile.g:3949:5: (lv_keyword_1_1= 'escalationto' | lv_keyword_1_2= 'escalationTo' )
             {
-            // InternalLibrettoProjectProfile.g:4350:5: (lv_keyword_1_1= 'atretry' | lv_keyword_1_2= 'atRetry' )
-            int alt28=2;
-            int LA28_0 = input.LA(1);
+            // InternalLibrettoProjectProfile.g:3949:5: (lv_keyword_1_1= 'escalationto' | lv_keyword_1_2= 'escalationTo' )
+            int alt27=2;
+            int LA27_0 = input.LA(1);
 
-            if ( (LA28_0==60) ) {
-                alt28=1;
+            if ( (LA27_0==56) ) {
+                alt27=1;
             }
-            else if ( (LA28_0==61) ) {
-                alt28=2;
+            else if ( (LA27_0==57) ) {
+                alt27=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 28, 0, input);
+                    new NoViableAltException("", 27, 0, input);
 
                 throw nvae;
             }
-            switch (alt28) {
+            switch (alt27) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:4351:6: lv_keyword_1_1= 'atretry'
+                    // InternalLibrettoProjectProfile.g:3950:6: lv_keyword_1_1= 'escalationto'
                     {
-                    lv_keyword_1_1=(Token)match(input,60,FOLLOW_2); 
+                    lv_keyword_1_1=(Token)match(input,56,FOLLOW_2); 
 
-                    						newLeafNode(lv_keyword_1_1, grammarAccess.getAtRetryKeywordAccess().getKeywordAtretryKeyword_1_0_0());
+                    						newLeafNode(lv_keyword_1_1, grammarAccess.getEscalationToKeywordAccess().getKeywordEscalationtoKeyword_1_0_0());
                     					
 
                     						if (current==null) {
-                    							current = createModelElement(grammarAccess.getAtRetryKeywordRule());
+                    							current = createModelElement(grammarAccess.getEscalationToKeywordRule());
                     						}
                     						setWithLastConsumed(current, "keyword", lv_keyword_1_1, null);
                     					
@@ -10949,15 +9947,15 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoProjectProfile.g:4362:6: lv_keyword_1_2= 'atRetry'
+                    // InternalLibrettoProjectProfile.g:3961:6: lv_keyword_1_2= 'escalationTo'
                     {
-                    lv_keyword_1_2=(Token)match(input,61,FOLLOW_2); 
+                    lv_keyword_1_2=(Token)match(input,57,FOLLOW_2); 
 
-                    						newLeafNode(lv_keyword_1_2, grammarAccess.getAtRetryKeywordAccess().getKeywordAtRetryKeyword_1_0_1());
+                    						newLeafNode(lv_keyword_1_2, grammarAccess.getEscalationToKeywordAccess().getKeywordEscalationToKeyword_1_0_1());
                     					
 
                     						if (current==null) {
-                    							current = createModelElement(grammarAccess.getAtRetryKeywordRule());
+                    							current = createModelElement(grammarAccess.getEscalationToKeywordRule());
                     						}
                     						setWithLastConsumed(current, "keyword", lv_keyword_1_2, null);
                     					
@@ -10992,11 +9990,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         }
         return current;
     }
-    // $ANTLR end "ruleAtRetryKeyword"
+    // $ANTLR end "ruleEscalationToKeyword"
 
 
     // $ANTLR start "entryRuleSurfaceBlock"
-    // InternalLibrettoProjectProfile.g:4379:1: entryRuleSurfaceBlock returns [EObject current=null] : iv_ruleSurfaceBlock= ruleSurfaceBlock EOF ;
+    // InternalLibrettoProjectProfile.g:3978:1: entryRuleSurfaceBlock returns [EObject current=null] : iv_ruleSurfaceBlock= ruleSurfaceBlock EOF ;
     public final EObject entryRuleSurfaceBlock() throws RecognitionException {
         EObject current = null;
 
@@ -11004,8 +10002,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:4379:53: (iv_ruleSurfaceBlock= ruleSurfaceBlock EOF )
-            // InternalLibrettoProjectProfile.g:4380:2: iv_ruleSurfaceBlock= ruleSurfaceBlock EOF
+            // InternalLibrettoProjectProfile.g:3978:53: (iv_ruleSurfaceBlock= ruleSurfaceBlock EOF )
+            // InternalLibrettoProjectProfile.g:3979:2: iv_ruleSurfaceBlock= ruleSurfaceBlock EOF
             {
              newCompositeNode(grammarAccess.getSurfaceBlockRule()); 
             pushFollow(FOLLOW_1);
@@ -11032,7 +10030,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleSurfaceBlock"
-    // InternalLibrettoProjectProfile.g:4386:1: ruleSurfaceBlock returns [EObject current=null] : ( () otherlv_1= 'surface' otherlv_2= '{' ( (lv_elements_3_0= ruleSurfaceElement ) )* otherlv_4= '}' ) ;
+    // InternalLibrettoProjectProfile.g:3985:1: ruleSurfaceBlock returns [EObject current=null] : ( () otherlv_1= 'surface' otherlv_2= '{' ( (lv_elements_3_0= ruleSurfaceElement ) )* otherlv_4= '}' ) ;
     public final EObject ruleSurfaceBlock() throws RecognitionException {
         EObject current = null;
 
@@ -11046,14 +10044,14 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:4392:2: ( ( () otherlv_1= 'surface' otherlv_2= '{' ( (lv_elements_3_0= ruleSurfaceElement ) )* otherlv_4= '}' ) )
-            // InternalLibrettoProjectProfile.g:4393:2: ( () otherlv_1= 'surface' otherlv_2= '{' ( (lv_elements_3_0= ruleSurfaceElement ) )* otherlv_4= '}' )
+            // InternalLibrettoProjectProfile.g:3991:2: ( ( () otherlv_1= 'surface' otherlv_2= '{' ( (lv_elements_3_0= ruleSurfaceElement ) )* otherlv_4= '}' ) )
+            // InternalLibrettoProjectProfile.g:3992:2: ( () otherlv_1= 'surface' otherlv_2= '{' ( (lv_elements_3_0= ruleSurfaceElement ) )* otherlv_4= '}' )
             {
-            // InternalLibrettoProjectProfile.g:4393:2: ( () otherlv_1= 'surface' otherlv_2= '{' ( (lv_elements_3_0= ruleSurfaceElement ) )* otherlv_4= '}' )
-            // InternalLibrettoProjectProfile.g:4394:3: () otherlv_1= 'surface' otherlv_2= '{' ( (lv_elements_3_0= ruleSurfaceElement ) )* otherlv_4= '}'
+            // InternalLibrettoProjectProfile.g:3992:2: ( () otherlv_1= 'surface' otherlv_2= '{' ( (lv_elements_3_0= ruleSurfaceElement ) )* otherlv_4= '}' )
+            // InternalLibrettoProjectProfile.g:3993:3: () otherlv_1= 'surface' otherlv_2= '{' ( (lv_elements_3_0= ruleSurfaceElement ) )* otherlv_4= '}'
             {
-            // InternalLibrettoProjectProfile.g:4394:3: ()
-            // InternalLibrettoProjectProfile.g:4395:4: 
+            // InternalLibrettoProjectProfile.g:3993:3: ()
+            // InternalLibrettoProjectProfile.g:3994:4: 
             {
 
             				current = forceCreateModelElement(
@@ -11063,36 +10061,36 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            otherlv_1=(Token)match(input,62,FOLLOW_5); 
+            otherlv_1=(Token)match(input,58,FOLLOW_5); 
 
             			newLeafNode(otherlv_1, grammarAccess.getSurfaceBlockAccess().getSurfaceKeyword_1());
             		
-            otherlv_2=(Token)match(input,11,FOLLOW_20); 
+            otherlv_2=(Token)match(input,11,FOLLOW_19); 
 
             			newLeafNode(otherlv_2, grammarAccess.getSurfaceBlockAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalLibrettoProjectProfile.g:4409:3: ( (lv_elements_3_0= ruleSurfaceElement ) )*
-            loop29:
+            // InternalLibrettoProjectProfile.g:4008:3: ( (lv_elements_3_0= ruleSurfaceElement ) )*
+            loop28:
             do {
-                int alt29=2;
-                int LA29_0 = input.LA(1);
+                int alt28=2;
+                int LA28_0 = input.LA(1);
 
-                if ( (LA29_0==63||LA29_0==65||LA29_0==69||LA29_0==71||LA29_0==73) ) {
-                    alt29=1;
+                if ( (LA28_0==59||LA28_0==61||LA28_0==65||LA28_0==67||LA28_0==69) ) {
+                    alt28=1;
                 }
 
 
-                switch (alt29) {
+                switch (alt28) {
             	case 1 :
-            	    // InternalLibrettoProjectProfile.g:4410:4: (lv_elements_3_0= ruleSurfaceElement )
+            	    // InternalLibrettoProjectProfile.g:4009:4: (lv_elements_3_0= ruleSurfaceElement )
             	    {
-            	    // InternalLibrettoProjectProfile.g:4410:4: (lv_elements_3_0= ruleSurfaceElement )
-            	    // InternalLibrettoProjectProfile.g:4411:5: lv_elements_3_0= ruleSurfaceElement
+            	    // InternalLibrettoProjectProfile.g:4009:4: (lv_elements_3_0= ruleSurfaceElement )
+            	    // InternalLibrettoProjectProfile.g:4010:5: lv_elements_3_0= ruleSurfaceElement
             	    {
 
             	    					newCompositeNode(grammarAccess.getSurfaceBlockAccess().getElementsSurfaceElementParserRuleCall_3_0());
             	    				
-            	    pushFollow(FOLLOW_20);
+            	    pushFollow(FOLLOW_19);
             	    lv_elements_3_0=ruleSurfaceElement();
 
             	    state._fsp--;
@@ -11116,7 +10114,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
             	    break;
 
             	default :
-            	    break loop29;
+            	    break loop28;
                 }
             } while (true);
 
@@ -11147,7 +10145,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleSurfaceElement"
-    // InternalLibrettoProjectProfile.g:4436:1: entryRuleSurfaceElement returns [EObject current=null] : iv_ruleSurfaceElement= ruleSurfaceElement EOF ;
+    // InternalLibrettoProjectProfile.g:4035:1: entryRuleSurfaceElement returns [EObject current=null] : iv_ruleSurfaceElement= ruleSurfaceElement EOF ;
     public final EObject entryRuleSurfaceElement() throws RecognitionException {
         EObject current = null;
 
@@ -11155,8 +10153,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:4436:55: (iv_ruleSurfaceElement= ruleSurfaceElement EOF )
-            // InternalLibrettoProjectProfile.g:4437:2: iv_ruleSurfaceElement= ruleSurfaceElement EOF
+            // InternalLibrettoProjectProfile.g:4035:55: (iv_ruleSurfaceElement= ruleSurfaceElement EOF )
+            // InternalLibrettoProjectProfile.g:4036:2: iv_ruleSurfaceElement= ruleSurfaceElement EOF
             {
              newCompositeNode(grammarAccess.getSurfaceElementRule()); 
             pushFollow(FOLLOW_1);
@@ -11183,7 +10181,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleSurfaceElement"
-    // InternalLibrettoProjectProfile.g:4443:1: ruleSurfaceElement returns [EObject current=null] : (this_ScopedSurface_0= ruleScopedSurface | this_SurfaceRule_1= ruleSurfaceRule ) ;
+    // InternalLibrettoProjectProfile.g:4042:1: ruleSurfaceElement returns [EObject current=null] : (this_ScopedSurface_0= ruleScopedSurface | this_SurfaceRule_1= ruleSurfaceRule ) ;
     public final EObject ruleSurfaceElement() throws RecognitionException {
         EObject current = null;
 
@@ -11196,28 +10194,28 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:4449:2: ( (this_ScopedSurface_0= ruleScopedSurface | this_SurfaceRule_1= ruleSurfaceRule ) )
-            // InternalLibrettoProjectProfile.g:4450:2: (this_ScopedSurface_0= ruleScopedSurface | this_SurfaceRule_1= ruleSurfaceRule )
+            // InternalLibrettoProjectProfile.g:4048:2: ( (this_ScopedSurface_0= ruleScopedSurface | this_SurfaceRule_1= ruleSurfaceRule ) )
+            // InternalLibrettoProjectProfile.g:4049:2: (this_ScopedSurface_0= ruleScopedSurface | this_SurfaceRule_1= ruleSurfaceRule )
             {
-            // InternalLibrettoProjectProfile.g:4450:2: (this_ScopedSurface_0= ruleScopedSurface | this_SurfaceRule_1= ruleSurfaceRule )
-            int alt30=2;
-            int LA30_0 = input.LA(1);
+            // InternalLibrettoProjectProfile.g:4049:2: (this_ScopedSurface_0= ruleScopedSurface | this_SurfaceRule_1= ruleSurfaceRule )
+            int alt29=2;
+            int LA29_0 = input.LA(1);
 
-            if ( (LA30_0==63) ) {
-                alt30=1;
+            if ( (LA29_0==59) ) {
+                alt29=1;
             }
-            else if ( (LA30_0==65||LA30_0==69||LA30_0==71||LA30_0==73) ) {
-                alt30=2;
+            else if ( (LA29_0==61||LA29_0==65||LA29_0==67||LA29_0==69) ) {
+                alt29=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 30, 0, input);
+                    new NoViableAltException("", 29, 0, input);
 
                 throw nvae;
             }
-            switch (alt30) {
+            switch (alt29) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:4451:3: this_ScopedSurface_0= ruleScopedSurface
+                    // InternalLibrettoProjectProfile.g:4050:3: this_ScopedSurface_0= ruleScopedSurface
                     {
 
                     			newCompositeNode(grammarAccess.getSurfaceElementAccess().getScopedSurfaceParserRuleCall_0());
@@ -11235,7 +10233,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoProjectProfile.g:4460:3: this_SurfaceRule_1= ruleSurfaceRule
+                    // InternalLibrettoProjectProfile.g:4059:3: this_SurfaceRule_1= ruleSurfaceRule
                     {
 
                     			newCompositeNode(grammarAccess.getSurfaceElementAccess().getSurfaceRuleParserRuleCall_1());
@@ -11275,7 +10273,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleScopedSurface"
-    // InternalLibrettoProjectProfile.g:4472:1: entryRuleScopedSurface returns [EObject current=null] : iv_ruleScopedSurface= ruleScopedSurface EOF ;
+    // InternalLibrettoProjectProfile.g:4071:1: entryRuleScopedSurface returns [EObject current=null] : iv_ruleScopedSurface= ruleScopedSurface EOF ;
     public final EObject entryRuleScopedSurface() throws RecognitionException {
         EObject current = null;
 
@@ -11283,8 +10281,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:4472:54: (iv_ruleScopedSurface= ruleScopedSurface EOF )
-            // InternalLibrettoProjectProfile.g:4473:2: iv_ruleScopedSurface= ruleScopedSurface EOF
+            // InternalLibrettoProjectProfile.g:4071:54: (iv_ruleScopedSurface= ruleScopedSurface EOF )
+            // InternalLibrettoProjectProfile.g:4072:2: iv_ruleScopedSurface= ruleScopedSurface EOF
             {
              newCompositeNode(grammarAccess.getScopedSurfaceRule()); 
             pushFollow(FOLLOW_1);
@@ -11311,7 +10309,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleScopedSurface"
-    // InternalLibrettoProjectProfile.g:4479:1: ruleScopedSurface returns [EObject current=null] : (otherlv_0= 'for' ( (otherlv_1= 'module' ( (lv_moduleId_2_0= RULE_STRING ) ) ) | (otherlv_3= 'spec' ( (lv_specId_4_0= RULE_STRING ) ) ) ) otherlv_5= '{' ( (lv_rules_6_0= ruleSurfaceRule ) )* otherlv_7= '}' ) ;
+    // InternalLibrettoProjectProfile.g:4078:1: ruleScopedSurface returns [EObject current=null] : (otherlv_0= 'for' ( (otherlv_1= 'module' ( (lv_moduleId_2_0= RULE_STRING ) ) ) | (otherlv_3= 'spec' ( (lv_specId_4_0= RULE_STRING ) ) ) ) otherlv_5= '{' ( (lv_rules_6_0= ruleSurfaceRule ) )* otherlv_7= '}' ) ;
     public final EObject ruleScopedSurface() throws RecognitionException {
         EObject current = null;
 
@@ -11329,48 +10327,48 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:4485:2: ( (otherlv_0= 'for' ( (otherlv_1= 'module' ( (lv_moduleId_2_0= RULE_STRING ) ) ) | (otherlv_3= 'spec' ( (lv_specId_4_0= RULE_STRING ) ) ) ) otherlv_5= '{' ( (lv_rules_6_0= ruleSurfaceRule ) )* otherlv_7= '}' ) )
-            // InternalLibrettoProjectProfile.g:4486:2: (otherlv_0= 'for' ( (otherlv_1= 'module' ( (lv_moduleId_2_0= RULE_STRING ) ) ) | (otherlv_3= 'spec' ( (lv_specId_4_0= RULE_STRING ) ) ) ) otherlv_5= '{' ( (lv_rules_6_0= ruleSurfaceRule ) )* otherlv_7= '}' )
+            // InternalLibrettoProjectProfile.g:4084:2: ( (otherlv_0= 'for' ( (otherlv_1= 'module' ( (lv_moduleId_2_0= RULE_STRING ) ) ) | (otherlv_3= 'spec' ( (lv_specId_4_0= RULE_STRING ) ) ) ) otherlv_5= '{' ( (lv_rules_6_0= ruleSurfaceRule ) )* otherlv_7= '}' ) )
+            // InternalLibrettoProjectProfile.g:4085:2: (otherlv_0= 'for' ( (otherlv_1= 'module' ( (lv_moduleId_2_0= RULE_STRING ) ) ) | (otherlv_3= 'spec' ( (lv_specId_4_0= RULE_STRING ) ) ) ) otherlv_5= '{' ( (lv_rules_6_0= ruleSurfaceRule ) )* otherlv_7= '}' )
             {
-            // InternalLibrettoProjectProfile.g:4486:2: (otherlv_0= 'for' ( (otherlv_1= 'module' ( (lv_moduleId_2_0= RULE_STRING ) ) ) | (otherlv_3= 'spec' ( (lv_specId_4_0= RULE_STRING ) ) ) ) otherlv_5= '{' ( (lv_rules_6_0= ruleSurfaceRule ) )* otherlv_7= '}' )
-            // InternalLibrettoProjectProfile.g:4487:3: otherlv_0= 'for' ( (otherlv_1= 'module' ( (lv_moduleId_2_0= RULE_STRING ) ) ) | (otherlv_3= 'spec' ( (lv_specId_4_0= RULE_STRING ) ) ) ) otherlv_5= '{' ( (lv_rules_6_0= ruleSurfaceRule ) )* otherlv_7= '}'
+            // InternalLibrettoProjectProfile.g:4085:2: (otherlv_0= 'for' ( (otherlv_1= 'module' ( (lv_moduleId_2_0= RULE_STRING ) ) ) | (otherlv_3= 'spec' ( (lv_specId_4_0= RULE_STRING ) ) ) ) otherlv_5= '{' ( (lv_rules_6_0= ruleSurfaceRule ) )* otherlv_7= '}' )
+            // InternalLibrettoProjectProfile.g:4086:3: otherlv_0= 'for' ( (otherlv_1= 'module' ( (lv_moduleId_2_0= RULE_STRING ) ) ) | (otherlv_3= 'spec' ( (lv_specId_4_0= RULE_STRING ) ) ) ) otherlv_5= '{' ( (lv_rules_6_0= ruleSurfaceRule ) )* otherlv_7= '}'
             {
-            otherlv_0=(Token)match(input,63,FOLLOW_21); 
+            otherlv_0=(Token)match(input,59,FOLLOW_20); 
 
             			newLeafNode(otherlv_0, grammarAccess.getScopedSurfaceAccess().getForKeyword_0());
             		
-            // InternalLibrettoProjectProfile.g:4491:3: ( (otherlv_1= 'module' ( (lv_moduleId_2_0= RULE_STRING ) ) ) | (otherlv_3= 'spec' ( (lv_specId_4_0= RULE_STRING ) ) ) )
-            int alt31=2;
-            int LA31_0 = input.LA(1);
+            // InternalLibrettoProjectProfile.g:4090:3: ( (otherlv_1= 'module' ( (lv_moduleId_2_0= RULE_STRING ) ) ) | (otherlv_3= 'spec' ( (lv_specId_4_0= RULE_STRING ) ) ) )
+            int alt30=2;
+            int LA30_0 = input.LA(1);
 
-            if ( (LA31_0==18) ) {
-                alt31=1;
+            if ( (LA30_0==18) ) {
+                alt30=1;
             }
-            else if ( (LA31_0==64) ) {
-                alt31=2;
+            else if ( (LA30_0==60) ) {
+                alt30=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 31, 0, input);
+                    new NoViableAltException("", 30, 0, input);
 
                 throw nvae;
             }
-            switch (alt31) {
+            switch (alt30) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:4492:4: (otherlv_1= 'module' ( (lv_moduleId_2_0= RULE_STRING ) ) )
+                    // InternalLibrettoProjectProfile.g:4091:4: (otherlv_1= 'module' ( (lv_moduleId_2_0= RULE_STRING ) ) )
                     {
-                    // InternalLibrettoProjectProfile.g:4492:4: (otherlv_1= 'module' ( (lv_moduleId_2_0= RULE_STRING ) ) )
-                    // InternalLibrettoProjectProfile.g:4493:5: otherlv_1= 'module' ( (lv_moduleId_2_0= RULE_STRING ) )
+                    // InternalLibrettoProjectProfile.g:4091:4: (otherlv_1= 'module' ( (lv_moduleId_2_0= RULE_STRING ) ) )
+                    // InternalLibrettoProjectProfile.g:4092:5: otherlv_1= 'module' ( (lv_moduleId_2_0= RULE_STRING ) )
                     {
                     otherlv_1=(Token)match(input,18,FOLLOW_8); 
 
                     					newLeafNode(otherlv_1, grammarAccess.getScopedSurfaceAccess().getModuleKeyword_1_0_0());
                     				
-                    // InternalLibrettoProjectProfile.g:4497:5: ( (lv_moduleId_2_0= RULE_STRING ) )
-                    // InternalLibrettoProjectProfile.g:4498:6: (lv_moduleId_2_0= RULE_STRING )
+                    // InternalLibrettoProjectProfile.g:4096:5: ( (lv_moduleId_2_0= RULE_STRING ) )
+                    // InternalLibrettoProjectProfile.g:4097:6: (lv_moduleId_2_0= RULE_STRING )
                     {
-                    // InternalLibrettoProjectProfile.g:4498:6: (lv_moduleId_2_0= RULE_STRING )
-                    // InternalLibrettoProjectProfile.g:4499:7: lv_moduleId_2_0= RULE_STRING
+                    // InternalLibrettoProjectProfile.g:4097:6: (lv_moduleId_2_0= RULE_STRING )
+                    // InternalLibrettoProjectProfile.g:4098:7: lv_moduleId_2_0= RULE_STRING
                     {
                     lv_moduleId_2_0=(Token)match(input,RULE_STRING,FOLLOW_5); 
 
@@ -11399,20 +10397,20 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoProjectProfile.g:4517:4: (otherlv_3= 'spec' ( (lv_specId_4_0= RULE_STRING ) ) )
+                    // InternalLibrettoProjectProfile.g:4116:4: (otherlv_3= 'spec' ( (lv_specId_4_0= RULE_STRING ) ) )
                     {
-                    // InternalLibrettoProjectProfile.g:4517:4: (otherlv_3= 'spec' ( (lv_specId_4_0= RULE_STRING ) ) )
-                    // InternalLibrettoProjectProfile.g:4518:5: otherlv_3= 'spec' ( (lv_specId_4_0= RULE_STRING ) )
+                    // InternalLibrettoProjectProfile.g:4116:4: (otherlv_3= 'spec' ( (lv_specId_4_0= RULE_STRING ) ) )
+                    // InternalLibrettoProjectProfile.g:4117:5: otherlv_3= 'spec' ( (lv_specId_4_0= RULE_STRING ) )
                     {
-                    otherlv_3=(Token)match(input,64,FOLLOW_8); 
+                    otherlv_3=(Token)match(input,60,FOLLOW_8); 
 
                     					newLeafNode(otherlv_3, grammarAccess.getScopedSurfaceAccess().getSpecKeyword_1_1_0());
                     				
-                    // InternalLibrettoProjectProfile.g:4522:5: ( (lv_specId_4_0= RULE_STRING ) )
-                    // InternalLibrettoProjectProfile.g:4523:6: (lv_specId_4_0= RULE_STRING )
+                    // InternalLibrettoProjectProfile.g:4121:5: ( (lv_specId_4_0= RULE_STRING ) )
+                    // InternalLibrettoProjectProfile.g:4122:6: (lv_specId_4_0= RULE_STRING )
                     {
-                    // InternalLibrettoProjectProfile.g:4523:6: (lv_specId_4_0= RULE_STRING )
-                    // InternalLibrettoProjectProfile.g:4524:7: lv_specId_4_0= RULE_STRING
+                    // InternalLibrettoProjectProfile.g:4122:6: (lv_specId_4_0= RULE_STRING )
+                    // InternalLibrettoProjectProfile.g:4123:7: lv_specId_4_0= RULE_STRING
                     {
                     lv_specId_4_0=(Token)match(input,RULE_STRING,FOLLOW_5); 
 
@@ -11443,32 +10441,32 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            otherlv_5=(Token)match(input,11,FOLLOW_20); 
+            otherlv_5=(Token)match(input,11,FOLLOW_19); 
 
             			newLeafNode(otherlv_5, grammarAccess.getScopedSurfaceAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalLibrettoProjectProfile.g:4546:3: ( (lv_rules_6_0= ruleSurfaceRule ) )*
-            loop32:
+            // InternalLibrettoProjectProfile.g:4145:3: ( (lv_rules_6_0= ruleSurfaceRule ) )*
+            loop31:
             do {
-                int alt32=2;
-                int LA32_0 = input.LA(1);
+                int alt31=2;
+                int LA31_0 = input.LA(1);
 
-                if ( (LA32_0==65||LA32_0==69||LA32_0==71||LA32_0==73) ) {
-                    alt32=1;
+                if ( (LA31_0==61||LA31_0==65||LA31_0==67||LA31_0==69) ) {
+                    alt31=1;
                 }
 
 
-                switch (alt32) {
+                switch (alt31) {
             	case 1 :
-            	    // InternalLibrettoProjectProfile.g:4547:4: (lv_rules_6_0= ruleSurfaceRule )
+            	    // InternalLibrettoProjectProfile.g:4146:4: (lv_rules_6_0= ruleSurfaceRule )
             	    {
-            	    // InternalLibrettoProjectProfile.g:4547:4: (lv_rules_6_0= ruleSurfaceRule )
-            	    // InternalLibrettoProjectProfile.g:4548:5: lv_rules_6_0= ruleSurfaceRule
+            	    // InternalLibrettoProjectProfile.g:4146:4: (lv_rules_6_0= ruleSurfaceRule )
+            	    // InternalLibrettoProjectProfile.g:4147:5: lv_rules_6_0= ruleSurfaceRule
             	    {
 
             	    					newCompositeNode(grammarAccess.getScopedSurfaceAccess().getRulesSurfaceRuleParserRuleCall_3_0());
             	    				
-            	    pushFollow(FOLLOW_20);
+            	    pushFollow(FOLLOW_19);
             	    lv_rules_6_0=ruleSurfaceRule();
 
             	    state._fsp--;
@@ -11492,7 +10490,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
             	    break;
 
             	default :
-            	    break loop32;
+            	    break loop31;
                 }
             } while (true);
 
@@ -11523,7 +10521,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleSurfaceRule"
-    // InternalLibrettoProjectProfile.g:4573:1: entryRuleSurfaceRule returns [EObject current=null] : iv_ruleSurfaceRule= ruleSurfaceRule EOF ;
+    // InternalLibrettoProjectProfile.g:4172:1: entryRuleSurfaceRule returns [EObject current=null] : iv_ruleSurfaceRule= ruleSurfaceRule EOF ;
     public final EObject entryRuleSurfaceRule() throws RecognitionException {
         EObject current = null;
 
@@ -11531,8 +10529,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:4573:52: (iv_ruleSurfaceRule= ruleSurfaceRule EOF )
-            // InternalLibrettoProjectProfile.g:4574:2: iv_ruleSurfaceRule= ruleSurfaceRule EOF
+            // InternalLibrettoProjectProfile.g:4172:52: (iv_ruleSurfaceRule= ruleSurfaceRule EOF )
+            // InternalLibrettoProjectProfile.g:4173:2: iv_ruleSurfaceRule= ruleSurfaceRule EOF
             {
              newCompositeNode(grammarAccess.getSurfaceRuleRule()); 
             pushFollow(FOLLOW_1);
@@ -11559,7 +10557,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleSurfaceRule"
-    // InternalLibrettoProjectProfile.g:4580:1: ruleSurfaceRule returns [EObject current=null] : (this_ReturnTypeRule_0= ruleReturnTypeRule | this_ParamTypeRule_1= ruleParamTypeRule | this_RecordSelfReturnRule_2= ruleRecordSelfReturnRule | this_MethodOverrideRule_3= ruleMethodOverrideRule ) ;
+    // InternalLibrettoProjectProfile.g:4179:1: ruleSurfaceRule returns [EObject current=null] : (this_ReturnTypeRule_0= ruleReturnTypeRule | this_ParamTypeRule_1= ruleParamTypeRule | this_RecordSelfReturnRule_2= ruleRecordSelfReturnRule | this_MethodOverrideRule_3= ruleMethodOverrideRule ) ;
     public final EObject ruleSurfaceRule() throws RecognitionException {
         EObject current = null;
 
@@ -11576,42 +10574,42 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:4586:2: ( (this_ReturnTypeRule_0= ruleReturnTypeRule | this_ParamTypeRule_1= ruleParamTypeRule | this_RecordSelfReturnRule_2= ruleRecordSelfReturnRule | this_MethodOverrideRule_3= ruleMethodOverrideRule ) )
-            // InternalLibrettoProjectProfile.g:4587:2: (this_ReturnTypeRule_0= ruleReturnTypeRule | this_ParamTypeRule_1= ruleParamTypeRule | this_RecordSelfReturnRule_2= ruleRecordSelfReturnRule | this_MethodOverrideRule_3= ruleMethodOverrideRule )
+            // InternalLibrettoProjectProfile.g:4185:2: ( (this_ReturnTypeRule_0= ruleReturnTypeRule | this_ParamTypeRule_1= ruleParamTypeRule | this_RecordSelfReturnRule_2= ruleRecordSelfReturnRule | this_MethodOverrideRule_3= ruleMethodOverrideRule ) )
+            // InternalLibrettoProjectProfile.g:4186:2: (this_ReturnTypeRule_0= ruleReturnTypeRule | this_ParamTypeRule_1= ruleParamTypeRule | this_RecordSelfReturnRule_2= ruleRecordSelfReturnRule | this_MethodOverrideRule_3= ruleMethodOverrideRule )
             {
-            // InternalLibrettoProjectProfile.g:4587:2: (this_ReturnTypeRule_0= ruleReturnTypeRule | this_ParamTypeRule_1= ruleParamTypeRule | this_RecordSelfReturnRule_2= ruleRecordSelfReturnRule | this_MethodOverrideRule_3= ruleMethodOverrideRule )
-            int alt33=4;
+            // InternalLibrettoProjectProfile.g:4186:2: (this_ReturnTypeRule_0= ruleReturnTypeRule | this_ParamTypeRule_1= ruleParamTypeRule | this_RecordSelfReturnRule_2= ruleRecordSelfReturnRule | this_MethodOverrideRule_3= ruleMethodOverrideRule )
+            int alt32=4;
             switch ( input.LA(1) ) {
+            case 61:
+                {
+                alt32=1;
+                }
+                break;
             case 65:
                 {
-                alt33=1;
+                alt32=2;
+                }
+                break;
+            case 67:
+                {
+                alt32=3;
                 }
                 break;
             case 69:
                 {
-                alt33=2;
-                }
-                break;
-            case 71:
-                {
-                alt33=3;
-                }
-                break;
-            case 73:
-                {
-                alt33=4;
+                alt32=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 33, 0, input);
+                    new NoViableAltException("", 32, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt33) {
+            switch (alt32) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:4588:3: this_ReturnTypeRule_0= ruleReturnTypeRule
+                    // InternalLibrettoProjectProfile.g:4187:3: this_ReturnTypeRule_0= ruleReturnTypeRule
                     {
 
                     			newCompositeNode(grammarAccess.getSurfaceRuleAccess().getReturnTypeRuleParserRuleCall_0());
@@ -11629,7 +10627,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoProjectProfile.g:4597:3: this_ParamTypeRule_1= ruleParamTypeRule
+                    // InternalLibrettoProjectProfile.g:4196:3: this_ParamTypeRule_1= ruleParamTypeRule
                     {
 
                     			newCompositeNode(grammarAccess.getSurfaceRuleAccess().getParamTypeRuleParserRuleCall_1());
@@ -11647,7 +10645,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
                     }
                     break;
                 case 3 :
-                    // InternalLibrettoProjectProfile.g:4606:3: this_RecordSelfReturnRule_2= ruleRecordSelfReturnRule
+                    // InternalLibrettoProjectProfile.g:4205:3: this_RecordSelfReturnRule_2= ruleRecordSelfReturnRule
                     {
 
                     			newCompositeNode(grammarAccess.getSurfaceRuleAccess().getRecordSelfReturnRuleParserRuleCall_2());
@@ -11665,7 +10663,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
                     }
                     break;
                 case 4 :
-                    // InternalLibrettoProjectProfile.g:4615:3: this_MethodOverrideRule_3= ruleMethodOverrideRule
+                    // InternalLibrettoProjectProfile.g:4214:3: this_MethodOverrideRule_3= ruleMethodOverrideRule
                     {
 
                     			newCompositeNode(grammarAccess.getSurfaceRuleAccess().getMethodOverrideRuleParserRuleCall_3());
@@ -11705,7 +10703,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleReturnTypeRule"
-    // InternalLibrettoProjectProfile.g:4627:1: entryRuleReturnTypeRule returns [EObject current=null] : iv_ruleReturnTypeRule= ruleReturnTypeRule EOF ;
+    // InternalLibrettoProjectProfile.g:4226:1: entryRuleReturnTypeRule returns [EObject current=null] : iv_ruleReturnTypeRule= ruleReturnTypeRule EOF ;
     public final EObject entryRuleReturnTypeRule() throws RecognitionException {
         EObject current = null;
 
@@ -11713,8 +10711,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:4627:55: (iv_ruleReturnTypeRule= ruleReturnTypeRule EOF )
-            // InternalLibrettoProjectProfile.g:4628:2: iv_ruleReturnTypeRule= ruleReturnTypeRule EOF
+            // InternalLibrettoProjectProfile.g:4226:55: (iv_ruleReturnTypeRule= ruleReturnTypeRule EOF )
+            // InternalLibrettoProjectProfile.g:4227:2: iv_ruleReturnTypeRule= ruleReturnTypeRule EOF
             {
              newCompositeNode(grammarAccess.getReturnTypeRuleRule()); 
             pushFollow(FOLLOW_1);
@@ -11741,7 +10739,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleReturnTypeRule"
-    // InternalLibrettoProjectProfile.g:4634:1: ruleReturnTypeRule returns [EObject current=null] : (otherlv_0= 'returnType' otherlv_1= 'method' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'as' ( (lv_javaType_4_0= ruleJavaType ) ) (otherlv_5= ';' )? ) ;
+    // InternalLibrettoProjectProfile.g:4233:1: ruleReturnTypeRule returns [EObject current=null] : (otherlv_0= 'returnType' otherlv_1= 'method' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'as' ( (lv_javaType_4_0= ruleJavaType ) ) (otherlv_5= ';' )? ) ;
     public final EObject ruleReturnTypeRule() throws RecognitionException {
         EObject current = null;
 
@@ -11757,27 +10755,27 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:4640:2: ( (otherlv_0= 'returnType' otherlv_1= 'method' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'as' ( (lv_javaType_4_0= ruleJavaType ) ) (otherlv_5= ';' )? ) )
-            // InternalLibrettoProjectProfile.g:4641:2: (otherlv_0= 'returnType' otherlv_1= 'method' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'as' ( (lv_javaType_4_0= ruleJavaType ) ) (otherlv_5= ';' )? )
+            // InternalLibrettoProjectProfile.g:4239:2: ( (otherlv_0= 'returnType' otherlv_1= 'method' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'as' ( (lv_javaType_4_0= ruleJavaType ) ) (otherlv_5= ';' )? ) )
+            // InternalLibrettoProjectProfile.g:4240:2: (otherlv_0= 'returnType' otherlv_1= 'method' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'as' ( (lv_javaType_4_0= ruleJavaType ) ) (otherlv_5= ';' )? )
             {
-            // InternalLibrettoProjectProfile.g:4641:2: (otherlv_0= 'returnType' otherlv_1= 'method' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'as' ( (lv_javaType_4_0= ruleJavaType ) ) (otherlv_5= ';' )? )
-            // InternalLibrettoProjectProfile.g:4642:3: otherlv_0= 'returnType' otherlv_1= 'method' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'as' ( (lv_javaType_4_0= ruleJavaType ) ) (otherlv_5= ';' )?
+            // InternalLibrettoProjectProfile.g:4240:2: (otherlv_0= 'returnType' otherlv_1= 'method' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'as' ( (lv_javaType_4_0= ruleJavaType ) ) (otherlv_5= ';' )? )
+            // InternalLibrettoProjectProfile.g:4241:3: otherlv_0= 'returnType' otherlv_1= 'method' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'as' ( (lv_javaType_4_0= ruleJavaType ) ) (otherlv_5= ';' )?
             {
-            otherlv_0=(Token)match(input,65,FOLLOW_22); 
+            otherlv_0=(Token)match(input,61,FOLLOW_21); 
 
             			newLeafNode(otherlv_0, grammarAccess.getReturnTypeRuleAccess().getReturnTypeKeyword_0());
             		
-            otherlv_1=(Token)match(input,66,FOLLOW_4); 
+            otherlv_1=(Token)match(input,62,FOLLOW_4); 
 
             			newLeafNode(otherlv_1, grammarAccess.getReturnTypeRuleAccess().getMethodKeyword_1());
             		
-            // InternalLibrettoProjectProfile.g:4650:3: ( (lv_name_2_0= RULE_ID ) )
-            // InternalLibrettoProjectProfile.g:4651:4: (lv_name_2_0= RULE_ID )
+            // InternalLibrettoProjectProfile.g:4249:3: ( (lv_name_2_0= RULE_ID ) )
+            // InternalLibrettoProjectProfile.g:4250:4: (lv_name_2_0= RULE_ID )
             {
-            // InternalLibrettoProjectProfile.g:4651:4: (lv_name_2_0= RULE_ID )
-            // InternalLibrettoProjectProfile.g:4652:5: lv_name_2_0= RULE_ID
+            // InternalLibrettoProjectProfile.g:4250:4: (lv_name_2_0= RULE_ID )
+            // InternalLibrettoProjectProfile.g:4251:5: lv_name_2_0= RULE_ID
             {
-            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_23); 
+            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_22); 
 
             					newLeafNode(lv_name_2_0, grammarAccess.getReturnTypeRuleAccess().getNameIDTerminalRuleCall_2_0());
             				
@@ -11797,20 +10795,20 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            otherlv_3=(Token)match(input,67,FOLLOW_24); 
+            otherlv_3=(Token)match(input,63,FOLLOW_23); 
 
             			newLeafNode(otherlv_3, grammarAccess.getReturnTypeRuleAccess().getAsKeyword_3());
             		
-            // InternalLibrettoProjectProfile.g:4672:3: ( (lv_javaType_4_0= ruleJavaType ) )
-            // InternalLibrettoProjectProfile.g:4673:4: (lv_javaType_4_0= ruleJavaType )
+            // InternalLibrettoProjectProfile.g:4271:3: ( (lv_javaType_4_0= ruleJavaType ) )
+            // InternalLibrettoProjectProfile.g:4272:4: (lv_javaType_4_0= ruleJavaType )
             {
-            // InternalLibrettoProjectProfile.g:4673:4: (lv_javaType_4_0= ruleJavaType )
-            // InternalLibrettoProjectProfile.g:4674:5: lv_javaType_4_0= ruleJavaType
+            // InternalLibrettoProjectProfile.g:4272:4: (lv_javaType_4_0= ruleJavaType )
+            // InternalLibrettoProjectProfile.g:4273:5: lv_javaType_4_0= ruleJavaType
             {
 
             					newCompositeNode(grammarAccess.getReturnTypeRuleAccess().getJavaTypeJavaTypeParserRuleCall_4_0());
             				
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_24);
             lv_javaType_4_0=ruleJavaType();
 
             state._fsp--;
@@ -11832,18 +10830,18 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:4691:3: (otherlv_5= ';' )?
-            int alt34=2;
-            int LA34_0 = input.LA(1);
+            // InternalLibrettoProjectProfile.g:4290:3: (otherlv_5= ';' )?
+            int alt33=2;
+            int LA33_0 = input.LA(1);
 
-            if ( (LA34_0==68) ) {
-                alt34=1;
+            if ( (LA33_0==64) ) {
+                alt33=1;
             }
-            switch (alt34) {
+            switch (alt33) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:4692:4: otherlv_5= ';'
+                    // InternalLibrettoProjectProfile.g:4291:4: otherlv_5= ';'
                     {
-                    otherlv_5=(Token)match(input,68,FOLLOW_2); 
+                    otherlv_5=(Token)match(input,64,FOLLOW_2); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getReturnTypeRuleAccess().getSemicolonKeyword_5());
                     			
@@ -11876,7 +10874,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleParamTypeRule"
-    // InternalLibrettoProjectProfile.g:4701:1: entryRuleParamTypeRule returns [EObject current=null] : iv_ruleParamTypeRule= ruleParamTypeRule EOF ;
+    // InternalLibrettoProjectProfile.g:4300:1: entryRuleParamTypeRule returns [EObject current=null] : iv_ruleParamTypeRule= ruleParamTypeRule EOF ;
     public final EObject entryRuleParamTypeRule() throws RecognitionException {
         EObject current = null;
 
@@ -11884,8 +10882,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:4701:54: (iv_ruleParamTypeRule= ruleParamTypeRule EOF )
-            // InternalLibrettoProjectProfile.g:4702:2: iv_ruleParamTypeRule= ruleParamTypeRule EOF
+            // InternalLibrettoProjectProfile.g:4300:54: (iv_ruleParamTypeRule= ruleParamTypeRule EOF )
+            // InternalLibrettoProjectProfile.g:4301:2: iv_ruleParamTypeRule= ruleParamTypeRule EOF
             {
              newCompositeNode(grammarAccess.getParamTypeRuleRule()); 
             pushFollow(FOLLOW_1);
@@ -11912,7 +10910,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleParamTypeRule"
-    // InternalLibrettoProjectProfile.g:4708:1: ruleParamTypeRule returns [EObject current=null] : (otherlv_0= 'paramType' otherlv_1= 'name' ( (lv_paramName_2_0= RULE_ID ) ) otherlv_3= 'as' ( (lv_javaType_4_0= ruleJavaType ) ) (otherlv_5= ';' )? ) ;
+    // InternalLibrettoProjectProfile.g:4307:1: ruleParamTypeRule returns [EObject current=null] : (otherlv_0= 'paramType' otherlv_1= 'name' ( (lv_paramName_2_0= RULE_ID ) ) otherlv_3= 'as' ( (lv_javaType_4_0= ruleJavaType ) ) (otherlv_5= ';' )? ) ;
     public final EObject ruleParamTypeRule() throws RecognitionException {
         EObject current = null;
 
@@ -11928,27 +10926,27 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:4714:2: ( (otherlv_0= 'paramType' otherlv_1= 'name' ( (lv_paramName_2_0= RULE_ID ) ) otherlv_3= 'as' ( (lv_javaType_4_0= ruleJavaType ) ) (otherlv_5= ';' )? ) )
-            // InternalLibrettoProjectProfile.g:4715:2: (otherlv_0= 'paramType' otherlv_1= 'name' ( (lv_paramName_2_0= RULE_ID ) ) otherlv_3= 'as' ( (lv_javaType_4_0= ruleJavaType ) ) (otherlv_5= ';' )? )
+            // InternalLibrettoProjectProfile.g:4313:2: ( (otherlv_0= 'paramType' otherlv_1= 'name' ( (lv_paramName_2_0= RULE_ID ) ) otherlv_3= 'as' ( (lv_javaType_4_0= ruleJavaType ) ) (otherlv_5= ';' )? ) )
+            // InternalLibrettoProjectProfile.g:4314:2: (otherlv_0= 'paramType' otherlv_1= 'name' ( (lv_paramName_2_0= RULE_ID ) ) otherlv_3= 'as' ( (lv_javaType_4_0= ruleJavaType ) ) (otherlv_5= ';' )? )
             {
-            // InternalLibrettoProjectProfile.g:4715:2: (otherlv_0= 'paramType' otherlv_1= 'name' ( (lv_paramName_2_0= RULE_ID ) ) otherlv_3= 'as' ( (lv_javaType_4_0= ruleJavaType ) ) (otherlv_5= ';' )? )
-            // InternalLibrettoProjectProfile.g:4716:3: otherlv_0= 'paramType' otherlv_1= 'name' ( (lv_paramName_2_0= RULE_ID ) ) otherlv_3= 'as' ( (lv_javaType_4_0= ruleJavaType ) ) (otherlv_5= ';' )?
+            // InternalLibrettoProjectProfile.g:4314:2: (otherlv_0= 'paramType' otherlv_1= 'name' ( (lv_paramName_2_0= RULE_ID ) ) otherlv_3= 'as' ( (lv_javaType_4_0= ruleJavaType ) ) (otherlv_5= ';' )? )
+            // InternalLibrettoProjectProfile.g:4315:3: otherlv_0= 'paramType' otherlv_1= 'name' ( (lv_paramName_2_0= RULE_ID ) ) otherlv_3= 'as' ( (lv_javaType_4_0= ruleJavaType ) ) (otherlv_5= ';' )?
             {
-            otherlv_0=(Token)match(input,69,FOLLOW_26); 
+            otherlv_0=(Token)match(input,65,FOLLOW_25); 
 
             			newLeafNode(otherlv_0, grammarAccess.getParamTypeRuleAccess().getParamTypeKeyword_0());
             		
-            otherlv_1=(Token)match(input,70,FOLLOW_4); 
+            otherlv_1=(Token)match(input,66,FOLLOW_4); 
 
             			newLeafNode(otherlv_1, grammarAccess.getParamTypeRuleAccess().getNameKeyword_1());
             		
-            // InternalLibrettoProjectProfile.g:4724:3: ( (lv_paramName_2_0= RULE_ID ) )
-            // InternalLibrettoProjectProfile.g:4725:4: (lv_paramName_2_0= RULE_ID )
+            // InternalLibrettoProjectProfile.g:4323:3: ( (lv_paramName_2_0= RULE_ID ) )
+            // InternalLibrettoProjectProfile.g:4324:4: (lv_paramName_2_0= RULE_ID )
             {
-            // InternalLibrettoProjectProfile.g:4725:4: (lv_paramName_2_0= RULE_ID )
-            // InternalLibrettoProjectProfile.g:4726:5: lv_paramName_2_0= RULE_ID
+            // InternalLibrettoProjectProfile.g:4324:4: (lv_paramName_2_0= RULE_ID )
+            // InternalLibrettoProjectProfile.g:4325:5: lv_paramName_2_0= RULE_ID
             {
-            lv_paramName_2_0=(Token)match(input,RULE_ID,FOLLOW_23); 
+            lv_paramName_2_0=(Token)match(input,RULE_ID,FOLLOW_22); 
 
             					newLeafNode(lv_paramName_2_0, grammarAccess.getParamTypeRuleAccess().getParamNameIDTerminalRuleCall_2_0());
             				
@@ -11968,20 +10966,20 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            otherlv_3=(Token)match(input,67,FOLLOW_24); 
+            otherlv_3=(Token)match(input,63,FOLLOW_23); 
 
             			newLeafNode(otherlv_3, grammarAccess.getParamTypeRuleAccess().getAsKeyword_3());
             		
-            // InternalLibrettoProjectProfile.g:4746:3: ( (lv_javaType_4_0= ruleJavaType ) )
-            // InternalLibrettoProjectProfile.g:4747:4: (lv_javaType_4_0= ruleJavaType )
+            // InternalLibrettoProjectProfile.g:4345:3: ( (lv_javaType_4_0= ruleJavaType ) )
+            // InternalLibrettoProjectProfile.g:4346:4: (lv_javaType_4_0= ruleJavaType )
             {
-            // InternalLibrettoProjectProfile.g:4747:4: (lv_javaType_4_0= ruleJavaType )
-            // InternalLibrettoProjectProfile.g:4748:5: lv_javaType_4_0= ruleJavaType
+            // InternalLibrettoProjectProfile.g:4346:4: (lv_javaType_4_0= ruleJavaType )
+            // InternalLibrettoProjectProfile.g:4347:5: lv_javaType_4_0= ruleJavaType
             {
 
             					newCompositeNode(grammarAccess.getParamTypeRuleAccess().getJavaTypeJavaTypeParserRuleCall_4_0());
             				
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_24);
             lv_javaType_4_0=ruleJavaType();
 
             state._fsp--;
@@ -12003,18 +11001,18 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:4765:3: (otherlv_5= ';' )?
-            int alt35=2;
-            int LA35_0 = input.LA(1);
+            // InternalLibrettoProjectProfile.g:4364:3: (otherlv_5= ';' )?
+            int alt34=2;
+            int LA34_0 = input.LA(1);
 
-            if ( (LA35_0==68) ) {
-                alt35=1;
+            if ( (LA34_0==64) ) {
+                alt34=1;
             }
-            switch (alt35) {
+            switch (alt34) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:4766:4: otherlv_5= ';'
+                    // InternalLibrettoProjectProfile.g:4365:4: otherlv_5= ';'
                     {
-                    otherlv_5=(Token)match(input,68,FOLLOW_2); 
+                    otherlv_5=(Token)match(input,64,FOLLOW_2); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getParamTypeRuleAccess().getSemicolonKeyword_5());
                     			
@@ -12047,7 +11045,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleRecordSelfReturnRule"
-    // InternalLibrettoProjectProfile.g:4775:1: entryRuleRecordSelfReturnRule returns [EObject current=null] : iv_ruleRecordSelfReturnRule= ruleRecordSelfReturnRule EOF ;
+    // InternalLibrettoProjectProfile.g:4374:1: entryRuleRecordSelfReturnRule returns [EObject current=null] : iv_ruleRecordSelfReturnRule= ruleRecordSelfReturnRule EOF ;
     public final EObject entryRuleRecordSelfReturnRule() throws RecognitionException {
         EObject current = null;
 
@@ -12055,8 +11053,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:4775:61: (iv_ruleRecordSelfReturnRule= ruleRecordSelfReturnRule EOF )
-            // InternalLibrettoProjectProfile.g:4776:2: iv_ruleRecordSelfReturnRule= ruleRecordSelfReturnRule EOF
+            // InternalLibrettoProjectProfile.g:4374:61: (iv_ruleRecordSelfReturnRule= ruleRecordSelfReturnRule EOF )
+            // InternalLibrettoProjectProfile.g:4375:2: iv_ruleRecordSelfReturnRule= ruleRecordSelfReturnRule EOF
             {
              newCompositeNode(grammarAccess.getRecordSelfReturnRuleRule()); 
             pushFollow(FOLLOW_1);
@@ -12083,7 +11081,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleRecordSelfReturnRule"
-    // InternalLibrettoProjectProfile.g:4782:1: ruleRecordSelfReturnRule returns [EObject current=null] : (otherlv_0= 'recordSelfReturn' ( (lv_methods_1_0= RULE_ID ) ) (otherlv_2= ',' ( (lv_methods_3_0= RULE_ID ) ) )* (otherlv_4= ';' )? ) ;
+    // InternalLibrettoProjectProfile.g:4381:1: ruleRecordSelfReturnRule returns [EObject current=null] : (otherlv_0= 'recordSelfReturn' ( (lv_methods_1_0= RULE_ID ) ) (otherlv_2= ',' ( (lv_methods_3_0= RULE_ID ) ) )* (otherlv_4= ';' )? ) ;
     public final EObject ruleRecordSelfReturnRule() throws RecognitionException {
         EObject current = null;
 
@@ -12097,23 +11095,23 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:4788:2: ( (otherlv_0= 'recordSelfReturn' ( (lv_methods_1_0= RULE_ID ) ) (otherlv_2= ',' ( (lv_methods_3_0= RULE_ID ) ) )* (otherlv_4= ';' )? ) )
-            // InternalLibrettoProjectProfile.g:4789:2: (otherlv_0= 'recordSelfReturn' ( (lv_methods_1_0= RULE_ID ) ) (otherlv_2= ',' ( (lv_methods_3_0= RULE_ID ) ) )* (otherlv_4= ';' )? )
+            // InternalLibrettoProjectProfile.g:4387:2: ( (otherlv_0= 'recordSelfReturn' ( (lv_methods_1_0= RULE_ID ) ) (otherlv_2= ',' ( (lv_methods_3_0= RULE_ID ) ) )* (otherlv_4= ';' )? ) )
+            // InternalLibrettoProjectProfile.g:4388:2: (otherlv_0= 'recordSelfReturn' ( (lv_methods_1_0= RULE_ID ) ) (otherlv_2= ',' ( (lv_methods_3_0= RULE_ID ) ) )* (otherlv_4= ';' )? )
             {
-            // InternalLibrettoProjectProfile.g:4789:2: (otherlv_0= 'recordSelfReturn' ( (lv_methods_1_0= RULE_ID ) ) (otherlv_2= ',' ( (lv_methods_3_0= RULE_ID ) ) )* (otherlv_4= ';' )? )
-            // InternalLibrettoProjectProfile.g:4790:3: otherlv_0= 'recordSelfReturn' ( (lv_methods_1_0= RULE_ID ) ) (otherlv_2= ',' ( (lv_methods_3_0= RULE_ID ) ) )* (otherlv_4= ';' )?
+            // InternalLibrettoProjectProfile.g:4388:2: (otherlv_0= 'recordSelfReturn' ( (lv_methods_1_0= RULE_ID ) ) (otherlv_2= ',' ( (lv_methods_3_0= RULE_ID ) ) )* (otherlv_4= ';' )? )
+            // InternalLibrettoProjectProfile.g:4389:3: otherlv_0= 'recordSelfReturn' ( (lv_methods_1_0= RULE_ID ) ) (otherlv_2= ',' ( (lv_methods_3_0= RULE_ID ) ) )* (otherlv_4= ';' )?
             {
-            otherlv_0=(Token)match(input,71,FOLLOW_4); 
+            otherlv_0=(Token)match(input,67,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getRecordSelfReturnRuleAccess().getRecordSelfReturnKeyword_0());
             		
-            // InternalLibrettoProjectProfile.g:4794:3: ( (lv_methods_1_0= RULE_ID ) )
-            // InternalLibrettoProjectProfile.g:4795:4: (lv_methods_1_0= RULE_ID )
+            // InternalLibrettoProjectProfile.g:4393:3: ( (lv_methods_1_0= RULE_ID ) )
+            // InternalLibrettoProjectProfile.g:4394:4: (lv_methods_1_0= RULE_ID )
             {
-            // InternalLibrettoProjectProfile.g:4795:4: (lv_methods_1_0= RULE_ID )
-            // InternalLibrettoProjectProfile.g:4796:5: lv_methods_1_0= RULE_ID
+            // InternalLibrettoProjectProfile.g:4394:4: (lv_methods_1_0= RULE_ID )
+            // InternalLibrettoProjectProfile.g:4395:5: lv_methods_1_0= RULE_ID
             {
-            lv_methods_1_0=(Token)match(input,RULE_ID,FOLLOW_27); 
+            lv_methods_1_0=(Token)match(input,RULE_ID,FOLLOW_26); 
 
             					newLeafNode(lv_methods_1_0, grammarAccess.getRecordSelfReturnRuleAccess().getMethodsIDTerminalRuleCall_1_0());
             				
@@ -12133,32 +11131,32 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:4812:3: (otherlv_2= ',' ( (lv_methods_3_0= RULE_ID ) ) )*
-            loop36:
+            // InternalLibrettoProjectProfile.g:4411:3: (otherlv_2= ',' ( (lv_methods_3_0= RULE_ID ) ) )*
+            loop35:
             do {
-                int alt36=2;
-                int LA36_0 = input.LA(1);
+                int alt35=2;
+                int LA35_0 = input.LA(1);
 
-                if ( (LA36_0==72) ) {
-                    alt36=1;
+                if ( (LA35_0==68) ) {
+                    alt35=1;
                 }
 
 
-                switch (alt36) {
+                switch (alt35) {
             	case 1 :
-            	    // InternalLibrettoProjectProfile.g:4813:4: otherlv_2= ',' ( (lv_methods_3_0= RULE_ID ) )
+            	    // InternalLibrettoProjectProfile.g:4412:4: otherlv_2= ',' ( (lv_methods_3_0= RULE_ID ) )
             	    {
-            	    otherlv_2=(Token)match(input,72,FOLLOW_4); 
+            	    otherlv_2=(Token)match(input,68,FOLLOW_4); 
 
             	    				newLeafNode(otherlv_2, grammarAccess.getRecordSelfReturnRuleAccess().getCommaKeyword_2_0());
             	    			
-            	    // InternalLibrettoProjectProfile.g:4817:4: ( (lv_methods_3_0= RULE_ID ) )
-            	    // InternalLibrettoProjectProfile.g:4818:5: (lv_methods_3_0= RULE_ID )
+            	    // InternalLibrettoProjectProfile.g:4416:4: ( (lv_methods_3_0= RULE_ID ) )
+            	    // InternalLibrettoProjectProfile.g:4417:5: (lv_methods_3_0= RULE_ID )
             	    {
-            	    // InternalLibrettoProjectProfile.g:4818:5: (lv_methods_3_0= RULE_ID )
-            	    // InternalLibrettoProjectProfile.g:4819:6: lv_methods_3_0= RULE_ID
+            	    // InternalLibrettoProjectProfile.g:4417:5: (lv_methods_3_0= RULE_ID )
+            	    // InternalLibrettoProjectProfile.g:4418:6: lv_methods_3_0= RULE_ID
             	    {
-            	    lv_methods_3_0=(Token)match(input,RULE_ID,FOLLOW_27); 
+            	    lv_methods_3_0=(Token)match(input,RULE_ID,FOLLOW_26); 
 
             	    						newLeafNode(lv_methods_3_0, grammarAccess.getRecordSelfReturnRuleAccess().getMethodsIDTerminalRuleCall_2_1_0());
             	    					
@@ -12183,22 +11181,22 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
             	    break;
 
             	default :
-            	    break loop36;
+            	    break loop35;
                 }
             } while (true);
 
-            // InternalLibrettoProjectProfile.g:4836:3: (otherlv_4= ';' )?
-            int alt37=2;
-            int LA37_0 = input.LA(1);
+            // InternalLibrettoProjectProfile.g:4435:3: (otherlv_4= ';' )?
+            int alt36=2;
+            int LA36_0 = input.LA(1);
 
-            if ( (LA37_0==68) ) {
-                alt37=1;
+            if ( (LA36_0==64) ) {
+                alt36=1;
             }
-            switch (alt37) {
+            switch (alt36) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:4837:4: otherlv_4= ';'
+                    // InternalLibrettoProjectProfile.g:4436:4: otherlv_4= ';'
                     {
-                    otherlv_4=(Token)match(input,68,FOLLOW_2); 
+                    otherlv_4=(Token)match(input,64,FOLLOW_2); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getRecordSelfReturnRuleAccess().getSemicolonKeyword_3());
                     			
@@ -12231,7 +11229,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleMethodOverrideRule"
-    // InternalLibrettoProjectProfile.g:4846:1: entryRuleMethodOverrideRule returns [EObject current=null] : iv_ruleMethodOverrideRule= ruleMethodOverrideRule EOF ;
+    // InternalLibrettoProjectProfile.g:4445:1: entryRuleMethodOverrideRule returns [EObject current=null] : iv_ruleMethodOverrideRule= ruleMethodOverrideRule EOF ;
     public final EObject entryRuleMethodOverrideRule() throws RecognitionException {
         EObject current = null;
 
@@ -12239,8 +11237,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:4846:59: (iv_ruleMethodOverrideRule= ruleMethodOverrideRule EOF )
-            // InternalLibrettoProjectProfile.g:4847:2: iv_ruleMethodOverrideRule= ruleMethodOverrideRule EOF
+            // InternalLibrettoProjectProfile.g:4445:59: (iv_ruleMethodOverrideRule= ruleMethodOverrideRule EOF )
+            // InternalLibrettoProjectProfile.g:4446:2: iv_ruleMethodOverrideRule= ruleMethodOverrideRule EOF
             {
              newCompositeNode(grammarAccess.getMethodOverrideRuleRule()); 
             pushFollow(FOLLOW_1);
@@ -12267,7 +11265,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleMethodOverrideRule"
-    // InternalLibrettoProjectProfile.g:4853:1: ruleMethodOverrideRule returns [EObject current=null] : (otherlv_0= 'methodOverride' ( (lv_signature_1_0= ruleOperationSignature ) ) otherlv_2= 'returns' ( (lv_javaType_3_0= ruleJavaType ) ) (otherlv_4= ';' )? ) ;
+    // InternalLibrettoProjectProfile.g:4452:1: ruleMethodOverrideRule returns [EObject current=null] : (otherlv_0= 'methodOverride' ( (lv_signature_1_0= ruleOperationSignature ) ) otherlv_2= 'returns' ( (lv_javaType_3_0= ruleJavaType ) ) (otherlv_4= ';' )? ) ;
     public final EObject ruleMethodOverrideRule() throws RecognitionException {
         EObject current = null;
 
@@ -12283,26 +11281,26 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:4859:2: ( (otherlv_0= 'methodOverride' ( (lv_signature_1_0= ruleOperationSignature ) ) otherlv_2= 'returns' ( (lv_javaType_3_0= ruleJavaType ) ) (otherlv_4= ';' )? ) )
-            // InternalLibrettoProjectProfile.g:4860:2: (otherlv_0= 'methodOverride' ( (lv_signature_1_0= ruleOperationSignature ) ) otherlv_2= 'returns' ( (lv_javaType_3_0= ruleJavaType ) ) (otherlv_4= ';' )? )
+            // InternalLibrettoProjectProfile.g:4458:2: ( (otherlv_0= 'methodOverride' ( (lv_signature_1_0= ruleOperationSignature ) ) otherlv_2= 'returns' ( (lv_javaType_3_0= ruleJavaType ) ) (otherlv_4= ';' )? ) )
+            // InternalLibrettoProjectProfile.g:4459:2: (otherlv_0= 'methodOverride' ( (lv_signature_1_0= ruleOperationSignature ) ) otherlv_2= 'returns' ( (lv_javaType_3_0= ruleJavaType ) ) (otherlv_4= ';' )? )
             {
-            // InternalLibrettoProjectProfile.g:4860:2: (otherlv_0= 'methodOverride' ( (lv_signature_1_0= ruleOperationSignature ) ) otherlv_2= 'returns' ( (lv_javaType_3_0= ruleJavaType ) ) (otherlv_4= ';' )? )
-            // InternalLibrettoProjectProfile.g:4861:3: otherlv_0= 'methodOverride' ( (lv_signature_1_0= ruleOperationSignature ) ) otherlv_2= 'returns' ( (lv_javaType_3_0= ruleJavaType ) ) (otherlv_4= ';' )?
+            // InternalLibrettoProjectProfile.g:4459:2: (otherlv_0= 'methodOverride' ( (lv_signature_1_0= ruleOperationSignature ) ) otherlv_2= 'returns' ( (lv_javaType_3_0= ruleJavaType ) ) (otherlv_4= ';' )? )
+            // InternalLibrettoProjectProfile.g:4460:3: otherlv_0= 'methodOverride' ( (lv_signature_1_0= ruleOperationSignature ) ) otherlv_2= 'returns' ( (lv_javaType_3_0= ruleJavaType ) ) (otherlv_4= ';' )?
             {
-            otherlv_0=(Token)match(input,73,FOLLOW_4); 
+            otherlv_0=(Token)match(input,69,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getMethodOverrideRuleAccess().getMethodOverrideKeyword_0());
             		
-            // InternalLibrettoProjectProfile.g:4865:3: ( (lv_signature_1_0= ruleOperationSignature ) )
-            // InternalLibrettoProjectProfile.g:4866:4: (lv_signature_1_0= ruleOperationSignature )
+            // InternalLibrettoProjectProfile.g:4464:3: ( (lv_signature_1_0= ruleOperationSignature ) )
+            // InternalLibrettoProjectProfile.g:4465:4: (lv_signature_1_0= ruleOperationSignature )
             {
-            // InternalLibrettoProjectProfile.g:4866:4: (lv_signature_1_0= ruleOperationSignature )
-            // InternalLibrettoProjectProfile.g:4867:5: lv_signature_1_0= ruleOperationSignature
+            // InternalLibrettoProjectProfile.g:4465:4: (lv_signature_1_0= ruleOperationSignature )
+            // InternalLibrettoProjectProfile.g:4466:5: lv_signature_1_0= ruleOperationSignature
             {
 
             					newCompositeNode(grammarAccess.getMethodOverrideRuleAccess().getSignatureOperationSignatureParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_28);
+            pushFollow(FOLLOW_27);
             lv_signature_1_0=ruleOperationSignature();
 
             state._fsp--;
@@ -12324,20 +11322,20 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            otherlv_2=(Token)match(input,74,FOLLOW_24); 
+            otherlv_2=(Token)match(input,70,FOLLOW_23); 
 
             			newLeafNode(otherlv_2, grammarAccess.getMethodOverrideRuleAccess().getReturnsKeyword_2());
             		
-            // InternalLibrettoProjectProfile.g:4888:3: ( (lv_javaType_3_0= ruleJavaType ) )
-            // InternalLibrettoProjectProfile.g:4889:4: (lv_javaType_3_0= ruleJavaType )
+            // InternalLibrettoProjectProfile.g:4487:3: ( (lv_javaType_3_0= ruleJavaType ) )
+            // InternalLibrettoProjectProfile.g:4488:4: (lv_javaType_3_0= ruleJavaType )
             {
-            // InternalLibrettoProjectProfile.g:4889:4: (lv_javaType_3_0= ruleJavaType )
-            // InternalLibrettoProjectProfile.g:4890:5: lv_javaType_3_0= ruleJavaType
+            // InternalLibrettoProjectProfile.g:4488:4: (lv_javaType_3_0= ruleJavaType )
+            // InternalLibrettoProjectProfile.g:4489:5: lv_javaType_3_0= ruleJavaType
             {
 
             					newCompositeNode(grammarAccess.getMethodOverrideRuleAccess().getJavaTypeJavaTypeParserRuleCall_3_0());
             				
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_24);
             lv_javaType_3_0=ruleJavaType();
 
             state._fsp--;
@@ -12359,18 +11357,18 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:4907:3: (otherlv_4= ';' )?
-            int alt38=2;
-            int LA38_0 = input.LA(1);
+            // InternalLibrettoProjectProfile.g:4506:3: (otherlv_4= ';' )?
+            int alt37=2;
+            int LA37_0 = input.LA(1);
 
-            if ( (LA38_0==68) ) {
-                alt38=1;
+            if ( (LA37_0==64) ) {
+                alt37=1;
             }
-            switch (alt38) {
+            switch (alt37) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:4908:4: otherlv_4= ';'
+                    // InternalLibrettoProjectProfile.g:4507:4: otherlv_4= ';'
                     {
-                    otherlv_4=(Token)match(input,68,FOLLOW_2); 
+                    otherlv_4=(Token)match(input,64,FOLLOW_2); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getMethodOverrideRuleAccess().getSemicolonKeyword_4());
                     			
@@ -12403,7 +11401,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleJavaType"
-    // InternalLibrettoProjectProfile.g:4917:1: entryRuleJavaType returns [EObject current=null] : iv_ruleJavaType= ruleJavaType EOF ;
+    // InternalLibrettoProjectProfile.g:4516:1: entryRuleJavaType returns [EObject current=null] : iv_ruleJavaType= ruleJavaType EOF ;
     public final EObject entryRuleJavaType() throws RecognitionException {
         EObject current = null;
 
@@ -12411,8 +11409,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:4917:49: (iv_ruleJavaType= ruleJavaType EOF )
-            // InternalLibrettoProjectProfile.g:4918:2: iv_ruleJavaType= ruleJavaType EOF
+            // InternalLibrettoProjectProfile.g:4516:49: (iv_ruleJavaType= ruleJavaType EOF )
+            // InternalLibrettoProjectProfile.g:4517:2: iv_ruleJavaType= ruleJavaType EOF
             {
              newCompositeNode(grammarAccess.getJavaTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -12439,7 +11437,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleJavaType"
-    // InternalLibrettoProjectProfile.g:4924:1: ruleJavaType returns [EObject current=null] : (this_PrimitiveType_0= rulePrimitiveType | this_QualifiedName_1= ruleQualifiedName ) ;
+    // InternalLibrettoProjectProfile.g:4523:1: ruleJavaType returns [EObject current=null] : (this_PrimitiveType_0= rulePrimitiveType | this_QualifiedName_1= ruleQualifiedName ) ;
     public final EObject ruleJavaType() throws RecognitionException {
         EObject current = null;
 
@@ -12452,28 +11450,28 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:4930:2: ( (this_PrimitiveType_0= rulePrimitiveType | this_QualifiedName_1= ruleQualifiedName ) )
-            // InternalLibrettoProjectProfile.g:4931:2: (this_PrimitiveType_0= rulePrimitiveType | this_QualifiedName_1= ruleQualifiedName )
+            // InternalLibrettoProjectProfile.g:4529:2: ( (this_PrimitiveType_0= rulePrimitiveType | this_QualifiedName_1= ruleQualifiedName ) )
+            // InternalLibrettoProjectProfile.g:4530:2: (this_PrimitiveType_0= rulePrimitiveType | this_QualifiedName_1= ruleQualifiedName )
             {
-            // InternalLibrettoProjectProfile.g:4931:2: (this_PrimitiveType_0= rulePrimitiveType | this_QualifiedName_1= ruleQualifiedName )
-            int alt39=2;
-            int LA39_0 = input.LA(1);
+            // InternalLibrettoProjectProfile.g:4530:2: (this_PrimitiveType_0= rulePrimitiveType | this_QualifiedName_1= ruleQualifiedName )
+            int alt38=2;
+            int LA38_0 = input.LA(1);
 
-            if ( ((LA39_0>=76 && LA39_0<=84)) ) {
-                alt39=1;
+            if ( ((LA38_0>=72 && LA38_0<=80)) ) {
+                alt38=1;
             }
-            else if ( (LA39_0==RULE_ID) ) {
-                alt39=2;
+            else if ( (LA38_0==RULE_ID) ) {
+                alt38=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 39, 0, input);
+                    new NoViableAltException("", 38, 0, input);
 
                 throw nvae;
             }
-            switch (alt39) {
+            switch (alt38) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:4932:3: this_PrimitiveType_0= rulePrimitiveType
+                    // InternalLibrettoProjectProfile.g:4531:3: this_PrimitiveType_0= rulePrimitiveType
                     {
 
                     			newCompositeNode(grammarAccess.getJavaTypeAccess().getPrimitiveTypeParserRuleCall_0());
@@ -12491,7 +11489,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoProjectProfile.g:4941:3: this_QualifiedName_1= ruleQualifiedName
+                    // InternalLibrettoProjectProfile.g:4540:3: this_QualifiedName_1= ruleQualifiedName
                     {
 
                     			newCompositeNode(grammarAccess.getJavaTypeAccess().getQualifiedNameParserRuleCall_1());
@@ -12531,7 +11529,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleQualifiedName"
-    // InternalLibrettoProjectProfile.g:4953:1: entryRuleQualifiedName returns [EObject current=null] : iv_ruleQualifiedName= ruleQualifiedName EOF ;
+    // InternalLibrettoProjectProfile.g:4552:1: entryRuleQualifiedName returns [EObject current=null] : iv_ruleQualifiedName= ruleQualifiedName EOF ;
     public final EObject entryRuleQualifiedName() throws RecognitionException {
         EObject current = null;
 
@@ -12539,8 +11537,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:4953:54: (iv_ruleQualifiedName= ruleQualifiedName EOF )
-            // InternalLibrettoProjectProfile.g:4954:2: iv_ruleQualifiedName= ruleQualifiedName EOF
+            // InternalLibrettoProjectProfile.g:4552:54: (iv_ruleQualifiedName= ruleQualifiedName EOF )
+            // InternalLibrettoProjectProfile.g:4553:2: iv_ruleQualifiedName= ruleQualifiedName EOF
             {
              newCompositeNode(grammarAccess.getQualifiedNameRule()); 
             pushFollow(FOLLOW_1);
@@ -12567,7 +11565,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleQualifiedName"
-    // InternalLibrettoProjectProfile.g:4960:1: ruleQualifiedName returns [EObject current=null] : ( ( (lv_segments_0_0= RULE_ID ) ) (otherlv_1= '.' ( (lv_segments_2_0= RULE_ID ) ) )* ) ;
+    // InternalLibrettoProjectProfile.g:4559:1: ruleQualifiedName returns [EObject current=null] : ( ( (lv_segments_0_0= RULE_ID ) ) (otherlv_1= '.' ( (lv_segments_2_0= RULE_ID ) ) )* ) ;
     public final EObject ruleQualifiedName() throws RecognitionException {
         EObject current = null;
 
@@ -12579,19 +11577,19 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:4966:2: ( ( ( (lv_segments_0_0= RULE_ID ) ) (otherlv_1= '.' ( (lv_segments_2_0= RULE_ID ) ) )* ) )
-            // InternalLibrettoProjectProfile.g:4967:2: ( ( (lv_segments_0_0= RULE_ID ) ) (otherlv_1= '.' ( (lv_segments_2_0= RULE_ID ) ) )* )
+            // InternalLibrettoProjectProfile.g:4565:2: ( ( ( (lv_segments_0_0= RULE_ID ) ) (otherlv_1= '.' ( (lv_segments_2_0= RULE_ID ) ) )* ) )
+            // InternalLibrettoProjectProfile.g:4566:2: ( ( (lv_segments_0_0= RULE_ID ) ) (otherlv_1= '.' ( (lv_segments_2_0= RULE_ID ) ) )* )
             {
-            // InternalLibrettoProjectProfile.g:4967:2: ( ( (lv_segments_0_0= RULE_ID ) ) (otherlv_1= '.' ( (lv_segments_2_0= RULE_ID ) ) )* )
-            // InternalLibrettoProjectProfile.g:4968:3: ( (lv_segments_0_0= RULE_ID ) ) (otherlv_1= '.' ( (lv_segments_2_0= RULE_ID ) ) )*
+            // InternalLibrettoProjectProfile.g:4566:2: ( ( (lv_segments_0_0= RULE_ID ) ) (otherlv_1= '.' ( (lv_segments_2_0= RULE_ID ) ) )* )
+            // InternalLibrettoProjectProfile.g:4567:3: ( (lv_segments_0_0= RULE_ID ) ) (otherlv_1= '.' ( (lv_segments_2_0= RULE_ID ) ) )*
             {
-            // InternalLibrettoProjectProfile.g:4968:3: ( (lv_segments_0_0= RULE_ID ) )
-            // InternalLibrettoProjectProfile.g:4969:4: (lv_segments_0_0= RULE_ID )
+            // InternalLibrettoProjectProfile.g:4567:3: ( (lv_segments_0_0= RULE_ID ) )
+            // InternalLibrettoProjectProfile.g:4568:4: (lv_segments_0_0= RULE_ID )
             {
-            // InternalLibrettoProjectProfile.g:4969:4: (lv_segments_0_0= RULE_ID )
-            // InternalLibrettoProjectProfile.g:4970:5: lv_segments_0_0= RULE_ID
+            // InternalLibrettoProjectProfile.g:4568:4: (lv_segments_0_0= RULE_ID )
+            // InternalLibrettoProjectProfile.g:4569:5: lv_segments_0_0= RULE_ID
             {
-            lv_segments_0_0=(Token)match(input,RULE_ID,FOLLOW_29); 
+            lv_segments_0_0=(Token)match(input,RULE_ID,FOLLOW_28); 
 
             					newLeafNode(lv_segments_0_0, grammarAccess.getQualifiedNameAccess().getSegmentsIDTerminalRuleCall_0_0());
             				
@@ -12611,32 +11609,32 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:4986:3: (otherlv_1= '.' ( (lv_segments_2_0= RULE_ID ) ) )*
-            loop40:
+            // InternalLibrettoProjectProfile.g:4585:3: (otherlv_1= '.' ( (lv_segments_2_0= RULE_ID ) ) )*
+            loop39:
             do {
-                int alt40=2;
-                int LA40_0 = input.LA(1);
+                int alt39=2;
+                int LA39_0 = input.LA(1);
 
-                if ( (LA40_0==75) ) {
-                    alt40=1;
+                if ( (LA39_0==71) ) {
+                    alt39=1;
                 }
 
 
-                switch (alt40) {
+                switch (alt39) {
             	case 1 :
-            	    // InternalLibrettoProjectProfile.g:4987:4: otherlv_1= '.' ( (lv_segments_2_0= RULE_ID ) )
+            	    // InternalLibrettoProjectProfile.g:4586:4: otherlv_1= '.' ( (lv_segments_2_0= RULE_ID ) )
             	    {
-            	    otherlv_1=(Token)match(input,75,FOLLOW_4); 
+            	    otherlv_1=(Token)match(input,71,FOLLOW_4); 
 
             	    				newLeafNode(otherlv_1, grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0());
             	    			
-            	    // InternalLibrettoProjectProfile.g:4991:4: ( (lv_segments_2_0= RULE_ID ) )
-            	    // InternalLibrettoProjectProfile.g:4992:5: (lv_segments_2_0= RULE_ID )
+            	    // InternalLibrettoProjectProfile.g:4590:4: ( (lv_segments_2_0= RULE_ID ) )
+            	    // InternalLibrettoProjectProfile.g:4591:5: (lv_segments_2_0= RULE_ID )
             	    {
-            	    // InternalLibrettoProjectProfile.g:4992:5: (lv_segments_2_0= RULE_ID )
-            	    // InternalLibrettoProjectProfile.g:4993:6: lv_segments_2_0= RULE_ID
+            	    // InternalLibrettoProjectProfile.g:4591:5: (lv_segments_2_0= RULE_ID )
+            	    // InternalLibrettoProjectProfile.g:4592:6: lv_segments_2_0= RULE_ID
             	    {
-            	    lv_segments_2_0=(Token)match(input,RULE_ID,FOLLOW_29); 
+            	    lv_segments_2_0=(Token)match(input,RULE_ID,FOLLOW_28); 
 
             	    						newLeafNode(lv_segments_2_0, grammarAccess.getQualifiedNameAccess().getSegmentsIDTerminalRuleCall_1_1_0());
             	    					
@@ -12661,7 +11659,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
             	    break;
 
             	default :
-            	    break loop40;
+            	    break loop39;
                 }
             } while (true);
 
@@ -12688,7 +11686,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRulePrimitiveType"
-    // InternalLibrettoProjectProfile.g:5014:1: entryRulePrimitiveType returns [EObject current=null] : iv_rulePrimitiveType= rulePrimitiveType EOF ;
+    // InternalLibrettoProjectProfile.g:4613:1: entryRulePrimitiveType returns [EObject current=null] : iv_rulePrimitiveType= rulePrimitiveType EOF ;
     public final EObject entryRulePrimitiveType() throws RecognitionException {
         EObject current = null;
 
@@ -12696,8 +11694,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:5014:54: (iv_rulePrimitiveType= rulePrimitiveType EOF )
-            // InternalLibrettoProjectProfile.g:5015:2: iv_rulePrimitiveType= rulePrimitiveType EOF
+            // InternalLibrettoProjectProfile.g:4613:54: (iv_rulePrimitiveType= rulePrimitiveType EOF )
+            // InternalLibrettoProjectProfile.g:4614:2: iv_rulePrimitiveType= rulePrimitiveType EOF
             {
              newCompositeNode(grammarAccess.getPrimitiveTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -12724,7 +11722,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "rulePrimitiveType"
-    // InternalLibrettoProjectProfile.g:5021:1: rulePrimitiveType returns [EObject current=null] : ( ( (lv_kind_0_1= 'boolean' | lv_kind_0_2= 'int' | lv_kind_0_3= 'long' | lv_kind_0_4= 'double' | lv_kind_0_5= 'float' | lv_kind_0_6= 'short' | lv_kind_0_7= 'byte' | lv_kind_0_8= 'char' | lv_kind_0_9= 'void' ) ) ) ;
+    // InternalLibrettoProjectProfile.g:4620:1: rulePrimitiveType returns [EObject current=null] : ( ( (lv_kind_0_1= 'boolean' | lv_kind_0_2= 'int' | lv_kind_0_3= 'long' | lv_kind_0_4= 'double' | lv_kind_0_5= 'float' | lv_kind_0_6= 'short' | lv_kind_0_7= 'byte' | lv_kind_0_8= 'char' | lv_kind_0_9= 'void' ) ) ) ;
     public final EObject rulePrimitiveType() throws RecognitionException {
         EObject current = null;
 
@@ -12742,75 +11740,75 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:5027:2: ( ( ( (lv_kind_0_1= 'boolean' | lv_kind_0_2= 'int' | lv_kind_0_3= 'long' | lv_kind_0_4= 'double' | lv_kind_0_5= 'float' | lv_kind_0_6= 'short' | lv_kind_0_7= 'byte' | lv_kind_0_8= 'char' | lv_kind_0_9= 'void' ) ) ) )
-            // InternalLibrettoProjectProfile.g:5028:2: ( ( (lv_kind_0_1= 'boolean' | lv_kind_0_2= 'int' | lv_kind_0_3= 'long' | lv_kind_0_4= 'double' | lv_kind_0_5= 'float' | lv_kind_0_6= 'short' | lv_kind_0_7= 'byte' | lv_kind_0_8= 'char' | lv_kind_0_9= 'void' ) ) )
+            // InternalLibrettoProjectProfile.g:4626:2: ( ( ( (lv_kind_0_1= 'boolean' | lv_kind_0_2= 'int' | lv_kind_0_3= 'long' | lv_kind_0_4= 'double' | lv_kind_0_5= 'float' | lv_kind_0_6= 'short' | lv_kind_0_7= 'byte' | lv_kind_0_8= 'char' | lv_kind_0_9= 'void' ) ) ) )
+            // InternalLibrettoProjectProfile.g:4627:2: ( ( (lv_kind_0_1= 'boolean' | lv_kind_0_2= 'int' | lv_kind_0_3= 'long' | lv_kind_0_4= 'double' | lv_kind_0_5= 'float' | lv_kind_0_6= 'short' | lv_kind_0_7= 'byte' | lv_kind_0_8= 'char' | lv_kind_0_9= 'void' ) ) )
             {
-            // InternalLibrettoProjectProfile.g:5028:2: ( ( (lv_kind_0_1= 'boolean' | lv_kind_0_2= 'int' | lv_kind_0_3= 'long' | lv_kind_0_4= 'double' | lv_kind_0_5= 'float' | lv_kind_0_6= 'short' | lv_kind_0_7= 'byte' | lv_kind_0_8= 'char' | lv_kind_0_9= 'void' ) ) )
-            // InternalLibrettoProjectProfile.g:5029:3: ( (lv_kind_0_1= 'boolean' | lv_kind_0_2= 'int' | lv_kind_0_3= 'long' | lv_kind_0_4= 'double' | lv_kind_0_5= 'float' | lv_kind_0_6= 'short' | lv_kind_0_7= 'byte' | lv_kind_0_8= 'char' | lv_kind_0_9= 'void' ) )
+            // InternalLibrettoProjectProfile.g:4627:2: ( ( (lv_kind_0_1= 'boolean' | lv_kind_0_2= 'int' | lv_kind_0_3= 'long' | lv_kind_0_4= 'double' | lv_kind_0_5= 'float' | lv_kind_0_6= 'short' | lv_kind_0_7= 'byte' | lv_kind_0_8= 'char' | lv_kind_0_9= 'void' ) ) )
+            // InternalLibrettoProjectProfile.g:4628:3: ( (lv_kind_0_1= 'boolean' | lv_kind_0_2= 'int' | lv_kind_0_3= 'long' | lv_kind_0_4= 'double' | lv_kind_0_5= 'float' | lv_kind_0_6= 'short' | lv_kind_0_7= 'byte' | lv_kind_0_8= 'char' | lv_kind_0_9= 'void' ) )
             {
-            // InternalLibrettoProjectProfile.g:5029:3: ( (lv_kind_0_1= 'boolean' | lv_kind_0_2= 'int' | lv_kind_0_3= 'long' | lv_kind_0_4= 'double' | lv_kind_0_5= 'float' | lv_kind_0_6= 'short' | lv_kind_0_7= 'byte' | lv_kind_0_8= 'char' | lv_kind_0_9= 'void' ) )
-            // InternalLibrettoProjectProfile.g:5030:4: (lv_kind_0_1= 'boolean' | lv_kind_0_2= 'int' | lv_kind_0_3= 'long' | lv_kind_0_4= 'double' | lv_kind_0_5= 'float' | lv_kind_0_6= 'short' | lv_kind_0_7= 'byte' | lv_kind_0_8= 'char' | lv_kind_0_9= 'void' )
+            // InternalLibrettoProjectProfile.g:4628:3: ( (lv_kind_0_1= 'boolean' | lv_kind_0_2= 'int' | lv_kind_0_3= 'long' | lv_kind_0_4= 'double' | lv_kind_0_5= 'float' | lv_kind_0_6= 'short' | lv_kind_0_7= 'byte' | lv_kind_0_8= 'char' | lv_kind_0_9= 'void' ) )
+            // InternalLibrettoProjectProfile.g:4629:4: (lv_kind_0_1= 'boolean' | lv_kind_0_2= 'int' | lv_kind_0_3= 'long' | lv_kind_0_4= 'double' | lv_kind_0_5= 'float' | lv_kind_0_6= 'short' | lv_kind_0_7= 'byte' | lv_kind_0_8= 'char' | lv_kind_0_9= 'void' )
             {
-            // InternalLibrettoProjectProfile.g:5030:4: (lv_kind_0_1= 'boolean' | lv_kind_0_2= 'int' | lv_kind_0_3= 'long' | lv_kind_0_4= 'double' | lv_kind_0_5= 'float' | lv_kind_0_6= 'short' | lv_kind_0_7= 'byte' | lv_kind_0_8= 'char' | lv_kind_0_9= 'void' )
-            int alt41=9;
+            // InternalLibrettoProjectProfile.g:4629:4: (lv_kind_0_1= 'boolean' | lv_kind_0_2= 'int' | lv_kind_0_3= 'long' | lv_kind_0_4= 'double' | lv_kind_0_5= 'float' | lv_kind_0_6= 'short' | lv_kind_0_7= 'byte' | lv_kind_0_8= 'char' | lv_kind_0_9= 'void' )
+            int alt40=9;
             switch ( input.LA(1) ) {
+            case 72:
+                {
+                alt40=1;
+                }
+                break;
+            case 73:
+                {
+                alt40=2;
+                }
+                break;
+            case 74:
+                {
+                alt40=3;
+                }
+                break;
+            case 75:
+                {
+                alt40=4;
+                }
+                break;
             case 76:
                 {
-                alt41=1;
+                alt40=5;
                 }
                 break;
             case 77:
                 {
-                alt41=2;
+                alt40=6;
                 }
                 break;
             case 78:
                 {
-                alt41=3;
+                alt40=7;
                 }
                 break;
             case 79:
                 {
-                alt41=4;
+                alt40=8;
                 }
                 break;
             case 80:
                 {
-                alt41=5;
-                }
-                break;
-            case 81:
-                {
-                alt41=6;
-                }
-                break;
-            case 82:
-                {
-                alt41=7;
-                }
-                break;
-            case 83:
-                {
-                alt41=8;
-                }
-                break;
-            case 84:
-                {
-                alt41=9;
+                alt40=9;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 41, 0, input);
+                    new NoViableAltException("", 40, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt41) {
+            switch (alt40) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:5031:5: lv_kind_0_1= 'boolean'
+                    // InternalLibrettoProjectProfile.g:4630:5: lv_kind_0_1= 'boolean'
                     {
-                    lv_kind_0_1=(Token)match(input,76,FOLLOW_2); 
+                    lv_kind_0_1=(Token)match(input,72,FOLLOW_2); 
 
                     					newLeafNode(lv_kind_0_1, grammarAccess.getPrimitiveTypeAccess().getKindBooleanKeyword_0_0());
                     				
@@ -12824,9 +11822,9 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
                     }
                     break;
                 case 2 :
-                    // InternalLibrettoProjectProfile.g:5042:5: lv_kind_0_2= 'int'
+                    // InternalLibrettoProjectProfile.g:4641:5: lv_kind_0_2= 'int'
                     {
-                    lv_kind_0_2=(Token)match(input,77,FOLLOW_2); 
+                    lv_kind_0_2=(Token)match(input,73,FOLLOW_2); 
 
                     					newLeafNode(lv_kind_0_2, grammarAccess.getPrimitiveTypeAccess().getKindIntKeyword_0_1());
                     				
@@ -12840,9 +11838,9 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
                     }
                     break;
                 case 3 :
-                    // InternalLibrettoProjectProfile.g:5053:5: lv_kind_0_3= 'long'
+                    // InternalLibrettoProjectProfile.g:4652:5: lv_kind_0_3= 'long'
                     {
-                    lv_kind_0_3=(Token)match(input,78,FOLLOW_2); 
+                    lv_kind_0_3=(Token)match(input,74,FOLLOW_2); 
 
                     					newLeafNode(lv_kind_0_3, grammarAccess.getPrimitiveTypeAccess().getKindLongKeyword_0_2());
                     				
@@ -12856,9 +11854,9 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
                     }
                     break;
                 case 4 :
-                    // InternalLibrettoProjectProfile.g:5064:5: lv_kind_0_4= 'double'
+                    // InternalLibrettoProjectProfile.g:4663:5: lv_kind_0_4= 'double'
                     {
-                    lv_kind_0_4=(Token)match(input,79,FOLLOW_2); 
+                    lv_kind_0_4=(Token)match(input,75,FOLLOW_2); 
 
                     					newLeafNode(lv_kind_0_4, grammarAccess.getPrimitiveTypeAccess().getKindDoubleKeyword_0_3());
                     				
@@ -12872,9 +11870,9 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
                     }
                     break;
                 case 5 :
-                    // InternalLibrettoProjectProfile.g:5075:5: lv_kind_0_5= 'float'
+                    // InternalLibrettoProjectProfile.g:4674:5: lv_kind_0_5= 'float'
                     {
-                    lv_kind_0_5=(Token)match(input,80,FOLLOW_2); 
+                    lv_kind_0_5=(Token)match(input,76,FOLLOW_2); 
 
                     					newLeafNode(lv_kind_0_5, grammarAccess.getPrimitiveTypeAccess().getKindFloatKeyword_0_4());
                     				
@@ -12888,9 +11886,9 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
                     }
                     break;
                 case 6 :
-                    // InternalLibrettoProjectProfile.g:5086:5: lv_kind_0_6= 'short'
+                    // InternalLibrettoProjectProfile.g:4685:5: lv_kind_0_6= 'short'
                     {
-                    lv_kind_0_6=(Token)match(input,81,FOLLOW_2); 
+                    lv_kind_0_6=(Token)match(input,77,FOLLOW_2); 
 
                     					newLeafNode(lv_kind_0_6, grammarAccess.getPrimitiveTypeAccess().getKindShortKeyword_0_5());
                     				
@@ -12904,9 +11902,9 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
                     }
                     break;
                 case 7 :
-                    // InternalLibrettoProjectProfile.g:5097:5: lv_kind_0_7= 'byte'
+                    // InternalLibrettoProjectProfile.g:4696:5: lv_kind_0_7= 'byte'
                     {
-                    lv_kind_0_7=(Token)match(input,82,FOLLOW_2); 
+                    lv_kind_0_7=(Token)match(input,78,FOLLOW_2); 
 
                     					newLeafNode(lv_kind_0_7, grammarAccess.getPrimitiveTypeAccess().getKindByteKeyword_0_6());
                     				
@@ -12920,9 +11918,9 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
                     }
                     break;
                 case 8 :
-                    // InternalLibrettoProjectProfile.g:5108:5: lv_kind_0_8= 'char'
+                    // InternalLibrettoProjectProfile.g:4707:5: lv_kind_0_8= 'char'
                     {
-                    lv_kind_0_8=(Token)match(input,83,FOLLOW_2); 
+                    lv_kind_0_8=(Token)match(input,79,FOLLOW_2); 
 
                     					newLeafNode(lv_kind_0_8, grammarAccess.getPrimitiveTypeAccess().getKindCharKeyword_0_7());
                     				
@@ -12936,9 +11934,9 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
                     }
                     break;
                 case 9 :
-                    // InternalLibrettoProjectProfile.g:5119:5: lv_kind_0_9= 'void'
+                    // InternalLibrettoProjectProfile.g:4718:5: lv_kind_0_9= 'void'
                     {
-                    lv_kind_0_9=(Token)match(input,84,FOLLOW_2); 
+                    lv_kind_0_9=(Token)match(input,80,FOLLOW_2); 
 
                     					newLeafNode(lv_kind_0_9, grammarAccess.getPrimitiveTypeAccess().getKindVoidKeyword_0_8());
                     				
@@ -12980,7 +11978,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleOperationSignature"
-    // InternalLibrettoProjectProfile.g:5135:1: entryRuleOperationSignature returns [EObject current=null] : iv_ruleOperationSignature= ruleOperationSignature EOF ;
+    // InternalLibrettoProjectProfile.g:4734:1: entryRuleOperationSignature returns [EObject current=null] : iv_ruleOperationSignature= ruleOperationSignature EOF ;
     public final EObject entryRuleOperationSignature() throws RecognitionException {
         EObject current = null;
 
@@ -12988,8 +11986,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:5135:59: (iv_ruleOperationSignature= ruleOperationSignature EOF )
-            // InternalLibrettoProjectProfile.g:5136:2: iv_ruleOperationSignature= ruleOperationSignature EOF
+            // InternalLibrettoProjectProfile.g:4734:59: (iv_ruleOperationSignature= ruleOperationSignature EOF )
+            // InternalLibrettoProjectProfile.g:4735:2: iv_ruleOperationSignature= ruleOperationSignature EOF
             {
              newCompositeNode(grammarAccess.getOperationSignatureRule()); 
             pushFollow(FOLLOW_1);
@@ -13016,7 +12014,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleOperationSignature"
-    // InternalLibrettoProjectProfile.g:5142:1: ruleOperationSignature returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_params_2_0= ruleTypedParam ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleTypedParam ) ) )* )? otherlv_5= ')' ) ;
+    // InternalLibrettoProjectProfile.g:4741:1: ruleOperationSignature returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_params_2_0= ruleTypedParam ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleTypedParam ) ) )* )? otherlv_5= ')' ) ;
     public final EObject ruleOperationSignature() throws RecognitionException {
         EObject current = null;
 
@@ -13033,19 +12031,19 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:5148:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_params_2_0= ruleTypedParam ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleTypedParam ) ) )* )? otherlv_5= ')' ) )
-            // InternalLibrettoProjectProfile.g:5149:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_params_2_0= ruleTypedParam ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleTypedParam ) ) )* )? otherlv_5= ')' )
+            // InternalLibrettoProjectProfile.g:4747:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_params_2_0= ruleTypedParam ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleTypedParam ) ) )* )? otherlv_5= ')' ) )
+            // InternalLibrettoProjectProfile.g:4748:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_params_2_0= ruleTypedParam ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleTypedParam ) ) )* )? otherlv_5= ')' )
             {
-            // InternalLibrettoProjectProfile.g:5149:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_params_2_0= ruleTypedParam ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleTypedParam ) ) )* )? otherlv_5= ')' )
-            // InternalLibrettoProjectProfile.g:5150:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_params_2_0= ruleTypedParam ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleTypedParam ) ) )* )? otherlv_5= ')'
+            // InternalLibrettoProjectProfile.g:4748:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_params_2_0= ruleTypedParam ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleTypedParam ) ) )* )? otherlv_5= ')' )
+            // InternalLibrettoProjectProfile.g:4749:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_params_2_0= ruleTypedParam ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleTypedParam ) ) )* )? otherlv_5= ')'
             {
-            // InternalLibrettoProjectProfile.g:5150:3: ( (lv_name_0_0= RULE_ID ) )
-            // InternalLibrettoProjectProfile.g:5151:4: (lv_name_0_0= RULE_ID )
+            // InternalLibrettoProjectProfile.g:4749:3: ( (lv_name_0_0= RULE_ID ) )
+            // InternalLibrettoProjectProfile.g:4750:4: (lv_name_0_0= RULE_ID )
             {
-            // InternalLibrettoProjectProfile.g:5151:4: (lv_name_0_0= RULE_ID )
-            // InternalLibrettoProjectProfile.g:5152:5: lv_name_0_0= RULE_ID
+            // InternalLibrettoProjectProfile.g:4750:4: (lv_name_0_0= RULE_ID )
+            // InternalLibrettoProjectProfile.g:4751:5: lv_name_0_0= RULE_ID
             {
-            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_30); 
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_29); 
 
             					newLeafNode(lv_name_0_0, grammarAccess.getOperationSignatureAccess().getNameIDTerminalRuleCall_0_0());
             				
@@ -13065,31 +12063,31 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            otherlv_1=(Token)match(input,85,FOLLOW_31); 
+            otherlv_1=(Token)match(input,81,FOLLOW_30); 
 
             			newLeafNode(otherlv_1, grammarAccess.getOperationSignatureAccess().getLeftParenthesisKeyword_1());
             		
-            // InternalLibrettoProjectProfile.g:5172:3: ( ( (lv_params_2_0= ruleTypedParam ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleTypedParam ) ) )* )?
-            int alt43=2;
-            int LA43_0 = input.LA(1);
+            // InternalLibrettoProjectProfile.g:4771:3: ( ( (lv_params_2_0= ruleTypedParam ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleTypedParam ) ) )* )?
+            int alt42=2;
+            int LA42_0 = input.LA(1);
 
-            if ( (LA43_0==RULE_ID||(LA43_0>=76 && LA43_0<=84)) ) {
-                alt43=1;
+            if ( (LA42_0==RULE_ID||(LA42_0>=72 && LA42_0<=80)) ) {
+                alt42=1;
             }
-            switch (alt43) {
+            switch (alt42) {
                 case 1 :
-                    // InternalLibrettoProjectProfile.g:5173:4: ( (lv_params_2_0= ruleTypedParam ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleTypedParam ) ) )*
+                    // InternalLibrettoProjectProfile.g:4772:4: ( (lv_params_2_0= ruleTypedParam ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleTypedParam ) ) )*
                     {
-                    // InternalLibrettoProjectProfile.g:5173:4: ( (lv_params_2_0= ruleTypedParam ) )
-                    // InternalLibrettoProjectProfile.g:5174:5: (lv_params_2_0= ruleTypedParam )
+                    // InternalLibrettoProjectProfile.g:4772:4: ( (lv_params_2_0= ruleTypedParam ) )
+                    // InternalLibrettoProjectProfile.g:4773:5: (lv_params_2_0= ruleTypedParam )
                     {
-                    // InternalLibrettoProjectProfile.g:5174:5: (lv_params_2_0= ruleTypedParam )
-                    // InternalLibrettoProjectProfile.g:5175:6: lv_params_2_0= ruleTypedParam
+                    // InternalLibrettoProjectProfile.g:4773:5: (lv_params_2_0= ruleTypedParam )
+                    // InternalLibrettoProjectProfile.g:4774:6: lv_params_2_0= ruleTypedParam
                     {
 
                     						newCompositeNode(grammarAccess.getOperationSignatureAccess().getParamsTypedParamParserRuleCall_2_0_0());
                     					
-                    pushFollow(FOLLOW_32);
+                    pushFollow(FOLLOW_31);
                     lv_params_2_0=ruleTypedParam();
 
                     state._fsp--;
@@ -13111,35 +12109,35 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
                     }
 
-                    // InternalLibrettoProjectProfile.g:5192:4: (otherlv_3= ',' ( (lv_params_4_0= ruleTypedParam ) ) )*
-                    loop42:
+                    // InternalLibrettoProjectProfile.g:4791:4: (otherlv_3= ',' ( (lv_params_4_0= ruleTypedParam ) ) )*
+                    loop41:
                     do {
-                        int alt42=2;
-                        int LA42_0 = input.LA(1);
+                        int alt41=2;
+                        int LA41_0 = input.LA(1);
 
-                        if ( (LA42_0==72) ) {
-                            alt42=1;
+                        if ( (LA41_0==68) ) {
+                            alt41=1;
                         }
 
 
-                        switch (alt42) {
+                        switch (alt41) {
                     	case 1 :
-                    	    // InternalLibrettoProjectProfile.g:5193:5: otherlv_3= ',' ( (lv_params_4_0= ruleTypedParam ) )
+                    	    // InternalLibrettoProjectProfile.g:4792:5: otherlv_3= ',' ( (lv_params_4_0= ruleTypedParam ) )
                     	    {
-                    	    otherlv_3=(Token)match(input,72,FOLLOW_24); 
+                    	    otherlv_3=(Token)match(input,68,FOLLOW_23); 
 
                     	    					newLeafNode(otherlv_3, grammarAccess.getOperationSignatureAccess().getCommaKeyword_2_1_0());
                     	    				
-                    	    // InternalLibrettoProjectProfile.g:5197:5: ( (lv_params_4_0= ruleTypedParam ) )
-                    	    // InternalLibrettoProjectProfile.g:5198:6: (lv_params_4_0= ruleTypedParam )
+                    	    // InternalLibrettoProjectProfile.g:4796:5: ( (lv_params_4_0= ruleTypedParam ) )
+                    	    // InternalLibrettoProjectProfile.g:4797:6: (lv_params_4_0= ruleTypedParam )
                     	    {
-                    	    // InternalLibrettoProjectProfile.g:5198:6: (lv_params_4_0= ruleTypedParam )
-                    	    // InternalLibrettoProjectProfile.g:5199:7: lv_params_4_0= ruleTypedParam
+                    	    // InternalLibrettoProjectProfile.g:4797:6: (lv_params_4_0= ruleTypedParam )
+                    	    // InternalLibrettoProjectProfile.g:4798:7: lv_params_4_0= ruleTypedParam
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getOperationSignatureAccess().getParamsTypedParamParserRuleCall_2_1_1_0());
                     	    						
-                    	    pushFollow(FOLLOW_32);
+                    	    pushFollow(FOLLOW_31);
                     	    lv_params_4_0=ruleTypedParam();
 
                     	    state._fsp--;
@@ -13166,7 +12164,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
                     	    break;
 
                     	default :
-                    	    break loop42;
+                    	    break loop41;
                         }
                     } while (true);
 
@@ -13176,7 +12174,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            otherlv_5=(Token)match(input,86,FOLLOW_2); 
+            otherlv_5=(Token)match(input,82,FOLLOW_2); 
 
             			newLeafNode(otherlv_5, grammarAccess.getOperationSignatureAccess().getRightParenthesisKeyword_3());
             		
@@ -13203,7 +12201,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleTypedParam"
-    // InternalLibrettoProjectProfile.g:5226:1: entryRuleTypedParam returns [EObject current=null] : iv_ruleTypedParam= ruleTypedParam EOF ;
+    // InternalLibrettoProjectProfile.g:4825:1: entryRuleTypedParam returns [EObject current=null] : iv_ruleTypedParam= ruleTypedParam EOF ;
     public final EObject entryRuleTypedParam() throws RecognitionException {
         EObject current = null;
 
@@ -13211,8 +12209,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:5226:51: (iv_ruleTypedParam= ruleTypedParam EOF )
-            // InternalLibrettoProjectProfile.g:5227:2: iv_ruleTypedParam= ruleTypedParam EOF
+            // InternalLibrettoProjectProfile.g:4825:51: (iv_ruleTypedParam= ruleTypedParam EOF )
+            // InternalLibrettoProjectProfile.g:4826:2: iv_ruleTypedParam= ruleTypedParam EOF
             {
              newCompositeNode(grammarAccess.getTypedParamRule()); 
             pushFollow(FOLLOW_1);
@@ -13239,7 +12237,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleTypedParam"
-    // InternalLibrettoProjectProfile.g:5233:1: ruleTypedParam returns [EObject current=null] : ( ( (lv_type_0_0= ruleJavaType ) ) ( (lv_paramName_1_0= RULE_ID ) ) ) ;
+    // InternalLibrettoProjectProfile.g:4832:1: ruleTypedParam returns [EObject current=null] : ( ( (lv_type_0_0= ruleJavaType ) ) ( (lv_paramName_1_0= RULE_ID ) ) ) ;
     public final EObject ruleTypedParam() throws RecognitionException {
         EObject current = null;
 
@@ -13251,17 +12249,17 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:5239:2: ( ( ( (lv_type_0_0= ruleJavaType ) ) ( (lv_paramName_1_0= RULE_ID ) ) ) )
-            // InternalLibrettoProjectProfile.g:5240:2: ( ( (lv_type_0_0= ruleJavaType ) ) ( (lv_paramName_1_0= RULE_ID ) ) )
+            // InternalLibrettoProjectProfile.g:4838:2: ( ( ( (lv_type_0_0= ruleJavaType ) ) ( (lv_paramName_1_0= RULE_ID ) ) ) )
+            // InternalLibrettoProjectProfile.g:4839:2: ( ( (lv_type_0_0= ruleJavaType ) ) ( (lv_paramName_1_0= RULE_ID ) ) )
             {
-            // InternalLibrettoProjectProfile.g:5240:2: ( ( (lv_type_0_0= ruleJavaType ) ) ( (lv_paramName_1_0= RULE_ID ) ) )
-            // InternalLibrettoProjectProfile.g:5241:3: ( (lv_type_0_0= ruleJavaType ) ) ( (lv_paramName_1_0= RULE_ID ) )
+            // InternalLibrettoProjectProfile.g:4839:2: ( ( (lv_type_0_0= ruleJavaType ) ) ( (lv_paramName_1_0= RULE_ID ) ) )
+            // InternalLibrettoProjectProfile.g:4840:3: ( (lv_type_0_0= ruleJavaType ) ) ( (lv_paramName_1_0= RULE_ID ) )
             {
-            // InternalLibrettoProjectProfile.g:5241:3: ( (lv_type_0_0= ruleJavaType ) )
-            // InternalLibrettoProjectProfile.g:5242:4: (lv_type_0_0= ruleJavaType )
+            // InternalLibrettoProjectProfile.g:4840:3: ( (lv_type_0_0= ruleJavaType ) )
+            // InternalLibrettoProjectProfile.g:4841:4: (lv_type_0_0= ruleJavaType )
             {
-            // InternalLibrettoProjectProfile.g:5242:4: (lv_type_0_0= ruleJavaType )
-            // InternalLibrettoProjectProfile.g:5243:5: lv_type_0_0= ruleJavaType
+            // InternalLibrettoProjectProfile.g:4841:4: (lv_type_0_0= ruleJavaType )
+            // InternalLibrettoProjectProfile.g:4842:5: lv_type_0_0= ruleJavaType
             {
 
             					newCompositeNode(grammarAccess.getTypedParamAccess().getTypeJavaTypeParserRuleCall_0_0());
@@ -13288,11 +12286,11 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             }
 
-            // InternalLibrettoProjectProfile.g:5260:3: ( (lv_paramName_1_0= RULE_ID ) )
-            // InternalLibrettoProjectProfile.g:5261:4: (lv_paramName_1_0= RULE_ID )
+            // InternalLibrettoProjectProfile.g:4859:3: ( (lv_paramName_1_0= RULE_ID ) )
+            // InternalLibrettoProjectProfile.g:4860:4: (lv_paramName_1_0= RULE_ID )
             {
-            // InternalLibrettoProjectProfile.g:5261:4: (lv_paramName_1_0= RULE_ID )
-            // InternalLibrettoProjectProfile.g:5262:5: lv_paramName_1_0= RULE_ID
+            // InternalLibrettoProjectProfile.g:4860:4: (lv_paramName_1_0= RULE_ID )
+            // InternalLibrettoProjectProfile.g:4861:5: lv_paramName_1_0= RULE_ID
             {
             lv_paramName_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -13337,7 +12335,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleValidID"
-    // InternalLibrettoProjectProfile.g:5282:1: entryRuleValidID returns [String current=null] : iv_ruleValidID= ruleValidID EOF ;
+    // InternalLibrettoProjectProfile.g:4881:1: entryRuleValidID returns [String current=null] : iv_ruleValidID= ruleValidID EOF ;
     public final String entryRuleValidID() throws RecognitionException {
         String current = null;
 
@@ -13345,8 +12343,8 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
         try {
-            // InternalLibrettoProjectProfile.g:5282:47: (iv_ruleValidID= ruleValidID EOF )
-            // InternalLibrettoProjectProfile.g:5283:2: iv_ruleValidID= ruleValidID EOF
+            // InternalLibrettoProjectProfile.g:4881:47: (iv_ruleValidID= ruleValidID EOF )
+            // InternalLibrettoProjectProfile.g:4882:2: iv_ruleValidID= ruleValidID EOF
             {
              newCompositeNode(grammarAccess.getValidIDRule()); 
             pushFollow(FOLLOW_1);
@@ -13373,7 +12371,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleValidID"
-    // InternalLibrettoProjectProfile.g:5289:1: ruleValidID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID ( (kw= '.' | kw= '-' | kw= '_' ) this_ID_4= RULE_ID )* ) ;
+    // InternalLibrettoProjectProfile.g:4888:1: ruleValidID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID ( (kw= '.' | kw= '-' | kw= '_' ) this_ID_4= RULE_ID )* ) ;
     public final AntlrDatatypeRuleToken ruleValidID() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -13385,64 +12383,64 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
         	enterRule();
 
         try {
-            // InternalLibrettoProjectProfile.g:5295:2: ( (this_ID_0= RULE_ID ( (kw= '.' | kw= '-' | kw= '_' ) this_ID_4= RULE_ID )* ) )
-            // InternalLibrettoProjectProfile.g:5296:2: (this_ID_0= RULE_ID ( (kw= '.' | kw= '-' | kw= '_' ) this_ID_4= RULE_ID )* )
+            // InternalLibrettoProjectProfile.g:4894:2: ( (this_ID_0= RULE_ID ( (kw= '.' | kw= '-' | kw= '_' ) this_ID_4= RULE_ID )* ) )
+            // InternalLibrettoProjectProfile.g:4895:2: (this_ID_0= RULE_ID ( (kw= '.' | kw= '-' | kw= '_' ) this_ID_4= RULE_ID )* )
             {
-            // InternalLibrettoProjectProfile.g:5296:2: (this_ID_0= RULE_ID ( (kw= '.' | kw= '-' | kw= '_' ) this_ID_4= RULE_ID )* )
-            // InternalLibrettoProjectProfile.g:5297:3: this_ID_0= RULE_ID ( (kw= '.' | kw= '-' | kw= '_' ) this_ID_4= RULE_ID )*
+            // InternalLibrettoProjectProfile.g:4895:2: (this_ID_0= RULE_ID ( (kw= '.' | kw= '-' | kw= '_' ) this_ID_4= RULE_ID )* )
+            // InternalLibrettoProjectProfile.g:4896:3: this_ID_0= RULE_ID ( (kw= '.' | kw= '-' | kw= '_' ) this_ID_4= RULE_ID )*
             {
-            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_33); 
+            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_32); 
 
             			current.merge(this_ID_0);
             		
 
             			newLeafNode(this_ID_0, grammarAccess.getValidIDAccess().getIDTerminalRuleCall_0());
             		
-            // InternalLibrettoProjectProfile.g:5304:3: ( (kw= '.' | kw= '-' | kw= '_' ) this_ID_4= RULE_ID )*
-            loop45:
+            // InternalLibrettoProjectProfile.g:4903:3: ( (kw= '.' | kw= '-' | kw= '_' ) this_ID_4= RULE_ID )*
+            loop44:
             do {
-                int alt45=2;
-                int LA45_0 = input.LA(1);
+                int alt44=2;
+                int LA44_0 = input.LA(1);
 
-                if ( (LA45_0==75||(LA45_0>=87 && LA45_0<=88)) ) {
-                    alt45=1;
+                if ( (LA44_0==71||(LA44_0>=83 && LA44_0<=84)) ) {
+                    alt44=1;
                 }
 
 
-                switch (alt45) {
+                switch (alt44) {
             	case 1 :
-            	    // InternalLibrettoProjectProfile.g:5305:4: (kw= '.' | kw= '-' | kw= '_' ) this_ID_4= RULE_ID
+            	    // InternalLibrettoProjectProfile.g:4904:4: (kw= '.' | kw= '-' | kw= '_' ) this_ID_4= RULE_ID
             	    {
-            	    // InternalLibrettoProjectProfile.g:5305:4: (kw= '.' | kw= '-' | kw= '_' )
-            	    int alt44=3;
+            	    // InternalLibrettoProjectProfile.g:4904:4: (kw= '.' | kw= '-' | kw= '_' )
+            	    int alt43=3;
             	    switch ( input.LA(1) ) {
-            	    case 75:
+            	    case 71:
             	        {
-            	        alt44=1;
+            	        alt43=1;
             	        }
             	        break;
-            	    case 87:
+            	    case 83:
             	        {
-            	        alt44=2;
+            	        alt43=2;
             	        }
             	        break;
-            	    case 88:
+            	    case 84:
             	        {
-            	        alt44=3;
+            	        alt43=3;
             	        }
             	        break;
             	    default:
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 44, 0, input);
+            	            new NoViableAltException("", 43, 0, input);
 
             	        throw nvae;
             	    }
 
-            	    switch (alt44) {
+            	    switch (alt43) {
             	        case 1 :
-            	            // InternalLibrettoProjectProfile.g:5306:5: kw= '.'
+            	            // InternalLibrettoProjectProfile.g:4905:5: kw= '.'
             	            {
-            	            kw=(Token)match(input,75,FOLLOW_4); 
+            	            kw=(Token)match(input,71,FOLLOW_4); 
 
             	            					current.merge(kw);
             	            					newLeafNode(kw, grammarAccess.getValidIDAccess().getFullStopKeyword_1_0_0());
@@ -13451,9 +12449,9 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
             	            }
             	            break;
             	        case 2 :
-            	            // InternalLibrettoProjectProfile.g:5312:5: kw= '-'
+            	            // InternalLibrettoProjectProfile.g:4911:5: kw= '-'
             	            {
-            	            kw=(Token)match(input,87,FOLLOW_4); 
+            	            kw=(Token)match(input,83,FOLLOW_4); 
 
             	            					current.merge(kw);
             	            					newLeafNode(kw, grammarAccess.getValidIDAccess().getHyphenMinusKeyword_1_0_1());
@@ -13462,9 +12460,9 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
             	            }
             	            break;
             	        case 3 :
-            	            // InternalLibrettoProjectProfile.g:5318:5: kw= '_'
+            	            // InternalLibrettoProjectProfile.g:4917:5: kw= '_'
             	            {
-            	            kw=(Token)match(input,88,FOLLOW_4); 
+            	            kw=(Token)match(input,84,FOLLOW_4); 
 
             	            					current.merge(kw);
             	            					newLeafNode(kw, grammarAccess.getValidIDAccess().get_Keyword_1_0_2());
@@ -13475,7 +12473,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
 
             	    }
 
-            	    this_ID_4=(Token)match(input,RULE_ID,FOLLOW_33); 
+            	    this_ID_4=(Token)match(input,RULE_ID,FOLLOW_32); 
 
             	    				current.merge(this_ID_4);
             	    			
@@ -13487,7 +12485,7 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
             	    break;
 
             	default :
-            	    break loop45;
+            	    break loop44;
                 }
             } while (true);
 
@@ -13522,33 +12520,32 @@ public class InternalLibrettoProjectProfileParser extends AbstractInternalAntlrP
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000002002L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x4000600000005000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0400600000005000L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000010039000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000041000L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x000000000FF81000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x00C0009FE0001000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x00C0009E60001000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000006000000000L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000110000001000L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x00000E0000001000L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000800000001000L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x003F000000001000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0700000000001000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x3800000000001000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x8000000000001000L,0x00000000000002A2L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000040000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000000040L,0x00000000001FF000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000010L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000110L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000800L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000000000040L,0x00000000005FF000L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000000000L,0x0000000000400100L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000000000002L,0x0000000001800800L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0300800180001000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x2800000000001000L,0x000000000000002AL});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x1000000000040000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x4000000000000000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x8000000000000000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000000040L,0x000000000001FF00L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000001L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000011L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000080L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000000000000L,0x0000000000020000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000000000040L,0x000000000005FF00L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000000000000L,0x0000000000040010L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000000002L,0x0000000000180080L});
 
 }

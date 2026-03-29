@@ -1,18 +1,19 @@
 package com.robenglander.libretto.spec.projection;
 
-import java.util.List;
+import java.util.Objects;
 
 /**
- * Portable view of {@code project { rootdir* modules* gen* }} preserving statement order per section kind.
+ * Portable view of {@code project { rootdir* modules* gen* }} under validator-clean LPP: one each of rootDir,
+ * modules, and gen.
  */
 public record ProjectedProjectBlock(
-		List<ProjectedRootDirectory> rootDirs,
-		List<ProjectedModulesBlock> modulesBlocks,
-		List<ProjectedGenBlock> genBlocks) {
+		ProjectedRootDirectory rootDir,
+		ProjectedModulesBlock modules,
+		ProjectedGenBlock gen) {
 
 	public ProjectedProjectBlock {
-		rootDirs = rootDirs == null ? List.of() : List.copyOf(rootDirs);
-		modulesBlocks = modulesBlocks == null ? List.of() : List.copyOf(modulesBlocks);
-		genBlocks = genBlocks == null ? List.of() : List.copyOf(genBlocks);
+		rootDir = Objects.requireNonNull(rootDir, "rootDir");
+		modules = Objects.requireNonNull(modules, "modules");
+		gen = Objects.requireNonNull(gen, "gen");
 	}
 }

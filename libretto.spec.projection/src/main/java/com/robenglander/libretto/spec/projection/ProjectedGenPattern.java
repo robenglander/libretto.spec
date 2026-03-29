@@ -4,6 +4,6 @@ package com.robenglander.libretto.spec.projection;
 public record ProjectedGenPattern(String pattern) {
 
 	public ProjectedGenPattern {
-		pattern = pattern == null ? "" : pattern.trim();
+		pattern = ProjectionStrings.requireNonBlank(pattern, "pattern");
 	}
 }

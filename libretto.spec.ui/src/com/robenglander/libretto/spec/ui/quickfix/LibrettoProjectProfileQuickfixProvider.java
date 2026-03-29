@@ -16,9 +16,9 @@ import org.eclipse.xtext.ui.editor.quickfix.IssueResolutionAcceptor;
 import org.eclipse.xtext.util.concurrent.IUnitOfWork;
 import org.eclipse.xtext.validation.Issue;
 
+import com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock;
 import com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider;
 import com.robenglander.libretto.spec.librettoProjectProfile.ProviderType;
-import com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProvider;
 import com.robenglander.libretto.spec.validation.LibrettoProjectProfileDuplicateRemoval;
 import com.robenglander.libretto.spec.validation.LibrettoProjectProfileValidator;
 import com.robenglander.libretto.spec.validation.LlmProviderReferenceSupport;
@@ -160,44 +160,30 @@ public class LibrettoProjectProfileQuickfixProvider extends DefaultQuickfixProvi
 				"Deletes this modelUsage { ... } section from gen { ... }.");
 	}
 
-	@Fix(LibrettoProjectProfileValidator.MODEL_USAGE_TOO_MANY_PRIMARIES)
-	public void removeDuplicatePrimaryProvider(final Issue issue, IssueResolutionAcceptor acceptor) {
+	@Fix(LibrettoProjectProfileValidator.MODEL_USAGE_TOO_MANY_PROVIDERS)
+	public void removeDuplicateModelUsageProvider(final Issue issue, IssueResolutionAcceptor acceptor) {
 		removeDuplicate(
 				issue,
 				acceptor,
-				LibrettoProjectProfileValidator.MODEL_USAGE_TOO_MANY_PRIMARIES,
-				"Remove this primary entry",
-				"Deletes this primary line from modelUsage { ... }.");
-	}
-
-	@Fix(LibrettoProjectProfileValidator.MODEL_USAGE_TOO_MANY_SECONDARIES)
-	public void removeDuplicateSecondaryProvider(final Issue issue, IssueResolutionAcceptor acceptor) {
-		removeDuplicate(
-				issue,
-				acceptor,
-				LibrettoProjectProfileValidator.MODEL_USAGE_TOO_MANY_SECONDARIES,
-				"Remove this secondary entry",
-				"Deletes this secondary line from modelUsage { ... }.");
+				LibrettoProjectProfileValidator.MODEL_USAGE_TOO_MANY_PROVIDERS,
+				"Remove this provider entry",
+				"Deletes this provider line from modelUsage { ... } (only one at modelUsage level).");
 	}
 
 	@Fix(LibrettoProjectProfileValidator.MODEL_USAGE_TOO_MANY_ESCALATIONS)
-	public void removeDuplicateEscalationBlock(final Issue issue, IssueResolutionAcceptor acceptor) {
+	public void removeDuplicateEscalationTo(final Issue issue, IssueResolutionAcceptor acceptor) {
 		removeDuplicate(
 				issue,
 				acceptor,
 				LibrettoProjectProfileValidator.MODEL_USAGE_TOO_MANY_ESCALATIONS,
-				"Remove this escalation block",
-				"Deletes this escalation { ... } block from modelUsage { ... }.");
+				"Remove this escalationTo line",
+				"Deletes this escalationTo line from modelUsage { ... } (only one allowed).");
 	}
 
-	@Fix(LibrettoProjectProfileValidator.MODEL_USAGE_PRIMARY_SECONDARY_SAME_NAME)
-	public void removePrimaryOrSecondaryForSameName(final Issue issue, IssueResolutionAcceptor acceptor) {
-		removeDuplicate(
-				issue,
-				acceptor,
-				LibrettoProjectProfileValidator.MODEL_USAGE_PRIMARY_SECONDARY_SAME_NAME,
-				"Remove this primary or secondary entry",
-				"Deletes the primary or secondary line at the diagnostic (they must not name the same provider).");
+	@Fix(LibrettoProjectProfileValidator.MODEL_USAGE_TOP_ESCALATION_PROVIDER_SAME_NAME)
+	public void changeModelUsageProviderToDeclaredForTopEscalationSameName(final Issue issue,
+			IssueResolutionAcceptor acceptor) {
+		acceptDeclaredProviderNameReplacements(issue, acceptor);
 	}
 
 	@Fix(LibrettoProjectProfileValidator.LLM_PROVIDER_TOO_MANY_TYPES)
@@ -290,14 +276,9 @@ public class LibrettoProjectProfileQuickfixProvider extends DefaultQuickfixProvi
 				"Deletes this endpoint line from provider { ... } (type ollama allows only one).");
 	}
 
-	@Fix(LibrettoProjectProfileValidator.MODEL_USAGE_PRIMARY_UNKNOWN_PROVIDER)
-	public void changePrimaryToDeclaredProvider(final Issue issue, IssueResolutionAcceptor acceptor) {
-		acceptDeclaredProviderNameReplacements(issue, acceptor, true);
-	}
-
-	@Fix(LibrettoProjectProfileValidator.MODEL_USAGE_SECONDARY_UNKNOWN_PROVIDER)
-	public void changeSecondaryToDeclaredProvider(final Issue issue, IssueResolutionAcceptor acceptor) {
-		acceptDeclaredProviderNameReplacements(issue, acceptor, false);
+	@Fix(LibrettoProjectProfileValidator.MODEL_USAGE_UNKNOWN_PROVIDER)
+	public void changeModelUsageProviderToDeclared(final Issue issue, IssueResolutionAcceptor acceptor) {
+		acceptDeclaredProviderNameReplacements(issue, acceptor);
 	}
 
 	@Fix(LibrettoProjectProfileValidator.LLM_PROVIDER_TYPE_INVALID)
@@ -392,17 +373,25 @@ public class LibrettoProjectProfileQuickfixProvider extends DefaultQuickfixProvi
 
 	private static void acceptDeclaredProviderNameReplacements(
 			final Issue issue,
-			IssueResolutionAcceptor acceptor,
-			boolean primary) {
+			IssueResolutionAcceptor acceptor) {
 		String[] data = issue.getData();
-		String csv = data != null && data.length > 0 ? data[0] : "";
+		String csvRaw = data != null && data.length > 0 ? data[0] : "";
+		String csv = csvRaw;
+		String excludeName = null;
+		if (LibrettoProjectProfileValidator.MODEL_USAGE_TOP_ESCALATION_PROVIDER_SAME_NAME.equals(issue.getCode())) {
+			String[] parsed = parseEscalationSameNameIssueData(csvRaw);
+			csv = parsed[0];
+			excludeName = parsed[1];
+		}
 		List<String> names = LlmProviderReferenceSupport.splitDeclaredNamesCsv(csv);
-		String role = primary ? "primary" : "secondary";
 		for (String name : names) {
+			if (excludeName != null && !excludeName.isBlank() && name.equals(excludeName.trim())) {
+				continue;
+			}
 			acceptor.accept(
 					issue,
 					"Change to provider '" + name + "'",
-					"Sets this " + role + " to a name declared in llmProviders { ... }.",
+					"Sets this provider reference to a name declared in llmProviders { ... }.",
 					null,
 					new IModification() {
 						@Override
@@ -413,12 +402,10 @@ public class LibrettoProjectProfileQuickfixProvider extends DefaultQuickfixProvi
 									public void process(XtextResource state) throws Exception {
 										String fragment = issue.getUriToProblem().fragment();
 										EObject object = state.getEObject(fragment);
-										if (primary) {
-											if (object instanceof PrimaryProvider pp) {
-												pp.setName(name);
-											}
-										} else if (object instanceof SecondaryProvider sp) {
-											sp.setName(name);
+										if (object instanceof PrimaryProvider pp) {
+											pp.setName(name);
+										} else if (object instanceof GenEscalationBlock eb) {
+											eb.setName(name);
 										}
 									}
 								});
@@ -428,6 +415,18 @@ public class LibrettoProjectProfileQuickfixProvider extends DefaultQuickfixProvi
 						}
 					});
 		}
+	}
+
+	/** Same encoding as {@link LlmProviderReferenceSupport#escalationSameNameIssueData(String, String)}. */
+	private static String[] parseEscalationSameNameIssueData(String issueData) {
+		if (issueData == null || issueData.isBlank()) {
+			return new String[] { "", "" };
+		}
+		int i = issueData.lastIndexOf('|');
+		if (i < 0) {
+			return new String[] { issueData.trim(), "" };
+		}
+		return new String[] { issueData.substring(0, i).trim(), issueData.substring(i + 1).trim() };
 	}
 
 	private static void removeDuplicate(

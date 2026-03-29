@@ -4,8 +4,6 @@
 package com.robenglander.libretto.spec.serializer;
 
 import com.google.inject.Inject;
-import com.robenglander.libretto.spec.librettoProjectProfile.AtRetry;
-import com.robenglander.libretto.spec.librettoProjectProfile.AtRetryKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.BasePackage;
 import com.robenglander.libretto.spec.librettoProjectProfile.BasePackageKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.Code;
@@ -17,11 +15,9 @@ import com.robenglander.libretto.spec.librettoProjectProfile.DefaultCorrectionKe
 import com.robenglander.libretto.spec.librettoProjectProfile.DefaultKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.DirKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.Directory;
-import com.robenglander.libretto.spec.librettoProjectProfile.Enabled;
-import com.robenglander.libretto.spec.librettoProjectProfile.EnabledKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.Endpoint;
 import com.robenglander.libretto.spec.librettoProjectProfile.EndpointKeyword;
-import com.robenglander.libretto.spec.librettoProjectProfile.EscalationKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.EscalationToKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.FilePathKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.GenBlock;
 import com.robenglander.libretto.spec.librettoProjectProfile.GenDefaultRemediationRule;
@@ -55,7 +51,6 @@ import com.robenglander.libretto.spec.librettoProjectProfile.ParseCheckKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.Pattern;
 import com.robenglander.libretto.spec.librettoProjectProfile.PatternKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider;
-import com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProviderKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.PrimitiveType;
 import com.robenglander.libretto.spec.librettoProjectProfile.Profile;
 import com.robenglander.libretto.spec.librettoProjectProfile.ProfileKeyword;
@@ -74,8 +69,6 @@ import com.robenglander.libretto.spec.librettoProjectProfile.RootDirectory;
 import com.robenglander.libretto.spec.librettoProjectProfile.RuleKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.RulesKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.ScopedSurface;
-import com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProvider;
-import com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProviderKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.SpecDirKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.SpecDirectory;
 import com.robenglander.libretto.spec.librettoProjectProfile.SurfaceBlock;
@@ -109,12 +102,6 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == LibrettoProjectProfilePackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case LibrettoProjectProfilePackage.AT_RETRY:
-				sequence_AtRetry(context, (AtRetry) semanticObject); 
-				return; 
-			case LibrettoProjectProfilePackage.AT_RETRY_KEYWORD:
-				sequence_AtRetryKeyword(context, (AtRetryKeyword) semanticObject); 
-				return; 
 			case LibrettoProjectProfilePackage.BASE_PACKAGE:
 				sequence_BasePackage(context, (BasePackage) semanticObject); 
 				return; 
@@ -148,20 +135,14 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 			case LibrettoProjectProfilePackage.DIRECTORY:
 				sequence_Directory(context, (Directory) semanticObject); 
 				return; 
-			case LibrettoProjectProfilePackage.ENABLED:
-				sequence_Enabled(context, (Enabled) semanticObject); 
-				return; 
-			case LibrettoProjectProfilePackage.ENABLED_KEYWORD:
-				sequence_EnabledKeyword(context, (EnabledKeyword) semanticObject); 
-				return; 
 			case LibrettoProjectProfilePackage.ENDPOINT:
 				sequence_Endpoint(context, (Endpoint) semanticObject); 
 				return; 
 			case LibrettoProjectProfilePackage.ENDPOINT_KEYWORD:
 				sequence_EndpointKeyword(context, (EndpointKeyword) semanticObject); 
 				return; 
-			case LibrettoProjectProfilePackage.ESCALATION_KEYWORD:
-				sequence_EscalationKeyword(context, (EscalationKeyword) semanticObject); 
+			case LibrettoProjectProfilePackage.ESCALATION_TO_KEYWORD:
+				sequence_EscalationToKeyword(context, (EscalationToKeyword) semanticObject); 
 				return; 
 			case LibrettoProjectProfilePackage.FILE_PATH_KEYWORD:
 				sequence_FilePathKeyword(context, (FilePathKeyword) semanticObject); 
@@ -173,7 +154,7 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 				sequence_GenDefaultRemediationRule(context, (GenDefaultRemediationRule) semanticObject); 
 				return; 
 			case LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK:
-				sequence_GenEscalationBlock(context, (GenEscalationBlock) semanticObject); 
+				sequence_EscalationProvider(context, (GenEscalationBlock) semanticObject); 
 				return; 
 			case LibrettoProjectProfilePackage.GEN_KEYWORD:
 				sequence_GenKeyword(context, (GenKeyword) semanticObject); 
@@ -257,10 +238,7 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 				sequence_PatternKeyword(context, (PatternKeyword) semanticObject); 
 				return; 
 			case LibrettoProjectProfilePackage.PRIMARY_PROVIDER:
-				sequence_PrimaryProvider(context, (PrimaryProvider) semanticObject); 
-				return; 
-			case LibrettoProjectProfilePackage.PRIMARY_PROVIDER_KEYWORD:
-				sequence_PrimaryProviderKeyword(context, (PrimaryProviderKeyword) semanticObject); 
+				sequence_Provider(context, (PrimaryProvider) semanticObject); 
 				return; 
 			case LibrettoProjectProfilePackage.PRIMITIVE_TYPE:
 				sequence_PrimitiveType(context, (PrimitiveType) semanticObject); 
@@ -316,12 +294,6 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 			case LibrettoProjectProfilePackage.SCOPED_SURFACE:
 				sequence_ScopedSurface(context, (ScopedSurface) semanticObject); 
 				return; 
-			case LibrettoProjectProfilePackage.SECONDARY_PROVIDER:
-				sequence_SecondaryProvider(context, (SecondaryProvider) semanticObject); 
-				return; 
-			case LibrettoProjectProfilePackage.SECONDARY_PROVIDER_KEYWORD:
-				sequence_SecondaryProviderKeyword(context, (SecondaryProviderKeyword) semanticObject); 
-				return; 
 			case LibrettoProjectProfilePackage.SPEC_DIR_KEYWORD:
 				sequence_SpecDirKeyword(context, (SpecDirKeyword) semanticObject); 
 				return; 
@@ -347,43 +319,6 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     AtRetryKeyword returns AtRetryKeyword
-	 *
-	 * Constraint:
-	 *     (keyword='atretry' | keyword='atRetry')
-	 * </pre>
-	 */
-	protected void sequence_AtRetryKeyword(ISerializationContext context, AtRetryKeyword semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     AtRetry returns AtRetry
-	 *
-	 * Constraint:
-	 *     (keyword=AtRetryKeyword value=INT)
-	 * </pre>
-	 */
-	protected void sequence_AtRetry(ISerializationContext context, AtRetry semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.AT_RETRY__KEYWORD) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.AT_RETRY__KEYWORD));
-			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.AT_RETRY__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.AT_RETRY__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAtRetryAccess().getKeywordAtRetryKeywordParserRuleCall_1_0(), semanticObject.getKeyword());
-		feeder.accept(grammarAccess.getAtRetryAccess().getValueINTTerminalRuleCall_2_0(), semanticObject.getValue());
-		feeder.finish();
-	}
-	
 	
 	/**
 	 * <pre>
@@ -611,49 +546,6 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     EnabledKeyword returns EnabledKeyword
-	 *
-	 * Constraint:
-	 *     keyword='enabled'
-	 * </pre>
-	 */
-	protected void sequence_EnabledKeyword(ISerializationContext context, EnabledKeyword semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.ENABLED_KEYWORD__KEYWORD) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.ENABLED_KEYWORD__KEYWORD));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEnabledKeywordAccess().getKeywordEnabledKeyword_1_0(), semanticObject.getKeyword());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Enabled returns Enabled
-	 *
-	 * Constraint:
-	 *     (keyword=EnabledKeyword value=TrueFalseKeyword)
-	 * </pre>
-	 */
-	protected void sequence_Enabled(ISerializationContext context, Enabled semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.ENABLED__KEYWORD) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.ENABLED__KEYWORD));
-			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.ENABLED__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.ENABLED__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEnabledAccess().getKeywordEnabledKeywordParserRuleCall_1_0(), semanticObject.getKeyword());
-		feeder.accept(grammarAccess.getEnabledAccess().getValueTrueFalseKeywordParserRuleCall_2_0(), semanticObject.getValue());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
 	 *     EndpointKeyword returns EndpointKeyword
 	 *
 	 * Constraint:
@@ -691,20 +583,37 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     EscalationKeyword returns EscalationKeyword
+	 *     EscalationProvider returns GenEscalationBlock
 	 *
 	 * Constraint:
-	 *     keyword='escalation'
+	 *     (keyword=EscalationToKeyword name=ValidID)
 	 * </pre>
 	 */
-	protected void sequence_EscalationKeyword(ISerializationContext context, EscalationKeyword semanticObject) {
+	protected void sequence_EscalationProvider(ISerializationContext context, GenEscalationBlock semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.ESCALATION_KEYWORD__KEYWORD) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.ESCALATION_KEYWORD__KEYWORD));
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.GEN_ESCALATION_BLOCK__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.GEN_ESCALATION_BLOCK__KEYWORD));
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.GEN_ESCALATION_BLOCK__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.GEN_ESCALATION_BLOCK__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEscalationKeywordAccess().getKeywordEscalationKeyword_1_0(), semanticObject.getKeyword());
+		feeder.accept(grammarAccess.getEscalationProviderAccess().getKeywordEscalationToKeywordParserRuleCall_1_0(), semanticObject.getKeyword());
+		feeder.accept(grammarAccess.getEscalationProviderAccess().getNameValidIDParserRuleCall_2_0(), semanticObject.getName());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     EscalationToKeyword returns EscalationToKeyword
+	 *
+	 * Constraint:
+	 *     (keyword='escalationto' | keyword='escalationTo')
+	 * </pre>
+	 */
+	protected void sequence_EscalationToKeyword(ISerializationContext context, EscalationToKeyword semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -732,7 +641,6 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 	 *         keyword=GenKeyword 
 	 *         (
 	 *             initialInstructions+=InitialInstruction | 
-	 *             maxRetries+=MaxRetries | 
 	 *             parseChecks+=ParseCheck | 
 	 *             defaultCorrections+=DefaultCorrection | 
 	 *             remediations+=GenRemediationRules | 
@@ -756,20 +664,6 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 	 * </pre>
 	 */
 	protected void sequence_GenDefaultRemediationRule(ISerializationContext context, GenDefaultRemediationRule semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     GenEscalationBlock returns GenEscalationBlock
-	 *
-	 * Constraint:
-	 *     (keyword=EscalationKeyword (enableds+=Enabled | atRetries+=AtRetry)*)
-	 * </pre>
-	 */
-	protected void sequence_GenEscalationBlock(ISerializationContext context, GenEscalationBlock semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -828,7 +722,7 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 	 *     GenUsageBlock returns GenUsageBlock
 	 *
 	 * Constraint:
-	 *     (keyword=ModelUsageKeyword (primaryProviders+=PrimaryProvider | secondaryProviders+=SecondaryProvider | escalations+=GenEscalationBlock)*)
+	 *     (keyword=ModelUsageKeyword (providers+=Provider | maxRetries+=MaxRetries | escalations+=EscalationProvider)*)
 	 * </pre>
 	 */
 	protected void sequence_GenUsageBlock(ISerializationContext context, GenUsageBlock semanticObject) {
@@ -1270,49 +1164,6 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     PrimaryProviderKeyword returns PrimaryProviderKeyword
-	 *
-	 * Constraint:
-	 *     keyword='primary'
-	 * </pre>
-	 */
-	protected void sequence_PrimaryProviderKeyword(ISerializationContext context, PrimaryProviderKeyword semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.PRIMARY_PROVIDER_KEYWORD__KEYWORD) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.PRIMARY_PROVIDER_KEYWORD__KEYWORD));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPrimaryProviderKeywordAccess().getKeywordPrimaryKeyword_1_0(), semanticObject.getKeyword());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     PrimaryProvider returns PrimaryProvider
-	 *
-	 * Constraint:
-	 *     (keyword=PrimaryProviderKeyword name=ValidID)
-	 * </pre>
-	 */
-	protected void sequence_PrimaryProvider(ISerializationContext context, PrimaryProvider semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.PRIMARY_PROVIDER__KEYWORD) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.PRIMARY_PROVIDER__KEYWORD));
-			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.PRIMARY_PROVIDER__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.PRIMARY_PROVIDER__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPrimaryProviderAccess().getKeywordPrimaryProviderKeywordParserRuleCall_1_0(), semanticObject.getKeyword());
-		feeder.accept(grammarAccess.getPrimaryProviderAccess().getNameValidIDParserRuleCall_2_0(), semanticObject.getName());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
 	 *     JavaType returns PrimitiveType
 	 *     PrimitiveType returns PrimitiveType
 	 *
@@ -1501,6 +1352,29 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     Provider returns PrimaryProvider
+	 *
+	 * Constraint:
+	 *     (keyword=ProviderKeyword name=ValidID)
+	 * </pre>
+	 */
+	protected void sequence_Provider(ISerializationContext context, PrimaryProvider semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.PRIMARY_PROVIDER__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.PRIMARY_PROVIDER__KEYWORD));
+			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.PRIMARY_PROVIDER__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.PRIMARY_PROVIDER__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getProviderAccess().getKeywordProviderKeywordParserRuleCall_1_0(), semanticObject.getKeyword());
+		feeder.accept(grammarAccess.getProviderAccess().getNameValidIDParserRuleCall_2_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     JavaType returns QualifiedName
 	 *     QualifiedName returns QualifiedName
 	 *
@@ -1643,49 +1517,6 @@ public class LibrettoProjectProfileSemanticSequencer extends AbstractDelegatingS
 	 */
 	protected void sequence_ScopedSurface(ISerializationContext context, ScopedSurface semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     SecondaryProviderKeyword returns SecondaryProviderKeyword
-	 *
-	 * Constraint:
-	 *     keyword='secondary'
-	 * </pre>
-	 */
-	protected void sequence_SecondaryProviderKeyword(ISerializationContext context, SecondaryProviderKeyword semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.SECONDARY_PROVIDER_KEYWORD__KEYWORD) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.SECONDARY_PROVIDER_KEYWORD__KEYWORD));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSecondaryProviderKeywordAccess().getKeywordSecondaryKeyword_1_0(), semanticObject.getKeyword());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     SecondaryProvider returns SecondaryProvider
-	 *
-	 * Constraint:
-	 *     (keyword=SecondaryProviderKeyword name=ValidID)
-	 * </pre>
-	 */
-	protected void sequence_SecondaryProvider(ISerializationContext context, SecondaryProvider semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.SECONDARY_PROVIDER__KEYWORD) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.SECONDARY_PROVIDER__KEYWORD));
-			if (transientValues.isValueTransient(semanticObject, LibrettoProjectProfilePackage.Literals.SECONDARY_PROVIDER__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LibrettoProjectProfilePackage.Literals.SECONDARY_PROVIDER__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSecondaryProviderAccess().getKeywordSecondaryProviderKeywordParserRuleCall_1_0(), semanticObject.getKeyword());
-		feeder.accept(grammarAccess.getSecondaryProviderAccess().getNameValidIDParserRuleCall_2_0(), semanticObject.getName());
-		feeder.finish();
 	}
 	
 	

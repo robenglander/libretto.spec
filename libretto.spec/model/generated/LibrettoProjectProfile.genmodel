@@ -92,7 +92,6 @@
     <genClasses ecoreClass="LibrettoProjectProfile.ecore#//GenBlock">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//GenBlock/keyword"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//GenBlock/initialInstructions"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//GenBlock/maxRetries"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//GenBlock/parseChecks"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//GenBlock/defaultCorrections"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//GenBlock/remediations"/>
@@ -224,48 +223,17 @@
     </genClasses>
     <genClasses ecoreClass="LibrettoProjectProfile.ecore#//GenUsageBlock">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//GenUsageBlock/keyword"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//GenUsageBlock/primaryProviders"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//GenUsageBlock/secondaryProviders"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//GenUsageBlock/providers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//GenUsageBlock/maxRetries"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//GenUsageBlock/escalations"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoProjectProfile.ecore#//ModelUsageKeyword">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//ModelUsageKeyword/keyword"/>
     </genClasses>
-    <genClasses ecoreClass="LibrettoProjectProfile.ecore#//PrimaryProvider">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//PrimaryProvider/keyword"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//PrimaryProvider/name"/>
-    </genClasses>
-    <genClasses ecoreClass="LibrettoProjectProfile.ecore#//PrimaryProviderKeyword">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//PrimaryProviderKeyword/keyword"/>
-    </genClasses>
-    <genClasses ecoreClass="LibrettoProjectProfile.ecore#//SecondaryProvider">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//SecondaryProvider/keyword"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//SecondaryProvider/name"/>
-    </genClasses>
-    <genClasses ecoreClass="LibrettoProjectProfile.ecore#//SecondaryProviderKeyword">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//SecondaryProviderKeyword/keyword"/>
-    </genClasses>
-    <genClasses ecoreClass="LibrettoProjectProfile.ecore#//GenEscalationBlock">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//GenEscalationBlock/keyword"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//GenEscalationBlock/enableds"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//GenEscalationBlock/atRetries"/>
-    </genClasses>
-    <genClasses ecoreClass="LibrettoProjectProfile.ecore#//EscalationKeyword">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//EscalationKeyword/keyword"/>
-    </genClasses>
-    <genClasses ecoreClass="LibrettoProjectProfile.ecore#//Enabled">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//Enabled/keyword"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//Enabled/value"/>
-    </genClasses>
-    <genClasses ecoreClass="LibrettoProjectProfile.ecore#//EnabledKeyword">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//EnabledKeyword/keyword"/>
-    </genClasses>
-    <genClasses ecoreClass="LibrettoProjectProfile.ecore#//AtRetry">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//AtRetry/keyword"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//AtRetry/value"/>
-    </genClasses>
-    <genClasses ecoreClass="LibrettoProjectProfile.ecore#//AtRetryKeyword">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//AtRetryKeyword/keyword"/>
+    <genClasses ecoreClass="LibrettoProjectProfile.ecore#//Provider"/>
+    <genClasses ecoreClass="LibrettoProjectProfile.ecore#//EscalationProvider"/>
+    <genClasses ecoreClass="LibrettoProjectProfile.ecore#//EscalationToKeyword">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//EscalationToKeyword/keyword"/>
     </genClasses>
     <genClasses ecoreClass="LibrettoProjectProfile.ecore#//SurfaceBlock">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//SurfaceBlock/elements"/>
@@ -309,6 +277,14 @@
     </genClasses>
     <genClasses ecoreClass="LibrettoProjectProfile.ecore#//TrueKeyword">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//TrueKeyword/keyword"/>
+    </genClasses>
+    <genClasses ecoreClass="LibrettoProjectProfile.ecore#//PrimaryProvider">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//PrimaryProvider/keyword"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//PrimaryProvider/name"/>
+    </genClasses>
+    <genClasses ecoreClass="LibrettoProjectProfile.ecore#//GenEscalationBlock">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LibrettoProjectProfile.ecore#//GenEscalationBlock/keyword"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LibrettoProjectProfile.ecore#//GenEscalationBlock/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

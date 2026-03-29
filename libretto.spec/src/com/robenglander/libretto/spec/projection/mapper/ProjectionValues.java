@@ -2,6 +2,7 @@ package com.robenglander.libretto.spec.projection.mapper;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import com.robenglander.libretto.spec.librettoSpec.IdentifierList;
 import com.robenglander.libretto.spec.librettoSpec.IdentifierValue;
@@ -46,7 +47,11 @@ final class ProjectionValues {
 		}
 		List<String> out = new ArrayList<>();
 		for (String s : list.getValues()) {
-			out.add(s == null ? "" : s.trim());
+			String t = Objects.requireNonNull(s, "behaviorId").trim();
+			if (t.isEmpty()) {
+				throw new IllegalStateException("LibrettoSpecProjectionMapper: behavior id must not be blank");
+			}
+			out.add(t);
 		}
 		return List.copyOf(out);
 	}
@@ -57,7 +62,11 @@ final class ProjectionValues {
 		}
 		List<String> out = new ArrayList<>();
 		for (String s : list.getValues()) {
-			out.add(s == null ? "" : s.trim());
+			String t = Objects.requireNonNull(s, "referenceId").trim();
+			if (t.isEmpty()) {
+				throw new IllegalStateException("LibrettoSpecProjectionMapper: reference id must not be blank");
+			}
+			out.add(t);
 		}
 		return List.copyOf(out);
 	}

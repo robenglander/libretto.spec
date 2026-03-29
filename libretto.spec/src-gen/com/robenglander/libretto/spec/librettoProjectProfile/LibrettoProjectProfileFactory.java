@@ -546,94 +546,31 @@ public interface LibrettoProjectProfileFactory extends EFactory
   ModelUsageKeyword createModelUsageKeyword();
 
   /**
-   * Returns a new object of class '<em>Primary Provider</em>'.
+   * Returns a new object of class '<em>Provider</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Primary Provider</em>'.
+   * @return a new object of class '<em>Provider</em>'.
    * @generated
    */
-  PrimaryProvider createPrimaryProvider();
+  Provider createProvider();
 
   /**
-   * Returns a new object of class '<em>Primary Provider Keyword</em>'.
+   * Returns a new object of class '<em>Escalation Provider</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Primary Provider Keyword</em>'.
+   * @return a new object of class '<em>Escalation Provider</em>'.
    * @generated
    */
-  PrimaryProviderKeyword createPrimaryProviderKeyword();
+  EscalationProvider createEscalationProvider();
 
   /**
-   * Returns a new object of class '<em>Secondary Provider</em>'.
+   * Returns a new object of class '<em>Escalation To Keyword</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Secondary Provider</em>'.
+   * @return a new object of class '<em>Escalation To Keyword</em>'.
    * @generated
    */
-  SecondaryProvider createSecondaryProvider();
-
-  /**
-   * Returns a new object of class '<em>Secondary Provider Keyword</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Secondary Provider Keyword</em>'.
-   * @generated
-   */
-  SecondaryProviderKeyword createSecondaryProviderKeyword();
-
-  /**
-   * Returns a new object of class '<em>Gen Escalation Block</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Gen Escalation Block</em>'.
-   * @generated
-   */
-  GenEscalationBlock createGenEscalationBlock();
-
-  /**
-   * Returns a new object of class '<em>Escalation Keyword</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Escalation Keyword</em>'.
-   * @generated
-   */
-  EscalationKeyword createEscalationKeyword();
-
-  /**
-   * Returns a new object of class '<em>Enabled</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Enabled</em>'.
-   * @generated
-   */
-  Enabled createEnabled();
-
-  /**
-   * Returns a new object of class '<em>Enabled Keyword</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Enabled Keyword</em>'.
-   * @generated
-   */
-  EnabledKeyword createEnabledKeyword();
-
-  /**
-   * Returns a new object of class '<em>At Retry</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>At Retry</em>'.
-   * @generated
-   */
-  AtRetry createAtRetry();
-
-  /**
-   * Returns a new object of class '<em>At Retry Keyword</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>At Retry Keyword</em>'.
-   * @generated
-   */
-  AtRetryKeyword createAtRetryKeyword();
+  EscalationToKeyword createEscalationToKeyword();
 
   /**
    * Returns a new object of class '<em>Surface Block</em>'.
@@ -760,6 +697,24 @@ public interface LibrettoProjectProfileFactory extends EFactory
    * @generated
    */
   TrueKeyword createTrueKeyword();
+
+  /**
+   * Returns a new object of class '<em>Primary Provider</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Primary Provider</em>'.
+   * @generated
+   */
+  PrimaryProvider createPrimaryProvider();
+
+  /**
+   * Returns a new object of class '<em>Gen Escalation Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Gen Escalation Block</em>'.
+   * @generated
+   */
+  GenEscalationBlock createGenEscalationBlock();
 
   /**
    * Returns the package supported by this factory.

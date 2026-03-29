@@ -186,9 +186,6 @@ public class LibrettoProjectProfileParsingTest {
     _builder.append("initialInstruction \"Test profile gen block.\"");
     _builder.newLine();
     _builder.append("      ");
-    _builder.append("maxRetries 2");
-    _builder.newLine();
-    _builder.append("      ");
     _builder.append("parseCheck true");
     _builder.newLine();
     _builder.append("      ");
@@ -231,22 +228,13 @@ public class LibrettoProjectProfileParsingTest {
     _builder.append("modelUsage {");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("primary local-default");
+    _builder.append("maxRetries 1");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("secondary openai-fast");
+    _builder.append("provider local-default");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("escalation {");
-    _builder.newLine();
-    _builder.append("          ");
-    _builder.append("enabled true");
-    _builder.newLine();
-    _builder.append("          ");
-    _builder.append("atRetry 2");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("}");
+    _builder.append("escalationTo openai-fast");
     _builder.newLine();
     _builder.append("      ");
     _builder.append("}");
@@ -366,9 +354,6 @@ public class LibrettoProjectProfileParsingTest {
     _builder.append("initialInstruction \"Never use placeholders.\"");
     _builder.newLine();
     _builder.append("      ");
-    _builder.append("maxRetries 2");
-    _builder.newLine();
-    _builder.append("      ");
     _builder.append("parseCheck true");
     _builder.newLine();
     _builder.append("      ");
@@ -411,22 +396,13 @@ public class LibrettoProjectProfileParsingTest {
     _builder.append("modelUsage {");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("primary local-default");
+    _builder.append("maxRetries 1");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("secondary local-secondary");
+    _builder.append("provider local-default");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("escalation {");
-    _builder.newLine();
-    _builder.append("          ");
-    _builder.append("enabled true");
-    _builder.newLine();
-    _builder.append("          ");
-    _builder.append("atRetry 0");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("}");
+    _builder.append("escalationTo local-secondary");
     _builder.newLine();
     _builder.append("      ");
     _builder.append("}");
@@ -666,9 +642,6 @@ public class LibrettoProjectProfileParsingTest {
     _builder.append("initialInstruction \"a\"");
     _builder.newLine();
     _builder.append("      ");
-    _builder.append("maxRetries 1");
-    _builder.newLine();
-    _builder.append("      ");
     _builder.append("parseCheck true");
     _builder.newLine();
     _builder.append("      ");
@@ -690,22 +663,10 @@ public class LibrettoProjectProfileParsingTest {
     _builder.append("modelUsage {");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("primary dup");
+    _builder.append("maxRetries 1");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("secondary dup");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("escalation {");
-    _builder.newLine();
-    _builder.append("          ");
-    _builder.append("enabled true");
-    _builder.newLine();
-    _builder.append("          ");
-    _builder.append("atRetry 0");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("}");
+    _builder.append("provider dup");
     _builder.newLine();
     _builder.append("      ");
     _builder.append("}");
@@ -2732,9 +2693,6 @@ public class LibrettoProjectProfileParsingTest {
     _builder.append("initialInstruction \"a\"");
     _builder.newLine();
     _builder.append("      ");
-    _builder.append("maxRetries 1");
-    _builder.newLine();
-    _builder.append("      ");
     _builder.append("parseCheck true");
     _builder.newLine();
     _builder.append("      ");
@@ -2756,22 +2714,13 @@ public class LibrettoProjectProfileParsingTest {
     _builder.append("modelUsage {");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("primary not-a-declared-provider");
+    _builder.append("maxRetries 1");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("secondary test-minimal-provider");
+    _builder.append("provider not-a-declared-provider");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("escalation {");
-    _builder.newLine();
-    _builder.append("          ");
-    _builder.append("enabled true");
-    _builder.newLine();
-    _builder.append("          ");
-    _builder.append("atRetry 0");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("}");
+    _builder.append("escalationTo test-minimal-provider");
     _builder.newLine();
     _builder.append("      ");
     _builder.append("}");
@@ -2798,11 +2747,11 @@ public class LibrettoProjectProfileParsingTest {
     Assertions.assertNotNull(result);
     final List<String> issues = LibrettoProjectProfileParsingTest.diagnosticMessages(result);
     final Predicate<String> _function = (String it) -> {
-      return it.contains("primary must name a provider declared in llmProviders { ... }.");
+      return it.contains("provider must name a provider declared in llmProviders { ... }.");
     };
     boolean _anyMatch = issues.stream().anyMatch(_function);
     StringConcatenation _builder_1 = new StringConcatenation();
-    _builder_1.append("Expected unknown primary on provider name; got ");
+    _builder_1.append("Expected unknown modelUsage provider on provider name; got ");
     String _join = String.join(", ", issues);
     _builder_1.append(_join);
     Assertions.assertTrue(_anyMatch, _builder_1.toString());
@@ -2836,9 +2785,6 @@ public class LibrettoProjectProfileParsingTest {
     _builder.append("initialInstruction \"a\"");
     _builder.newLine();
     _builder.append("      ");
-    _builder.append("maxRetries 1");
-    _builder.newLine();
-    _builder.append("      ");
     _builder.append("parseCheck true");
     _builder.newLine();
     _builder.append("      ");
@@ -2860,22 +2806,13 @@ public class LibrettoProjectProfileParsingTest {
     _builder.append("modelUsage {");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("primary test-minimal-provider");
+    _builder.append("maxRetries 1");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("secondary not-a-declared-provider");
+    _builder.append("provider test-minimal-provider");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("escalation {");
-    _builder.newLine();
-    _builder.append("          ");
-    _builder.append("enabled true");
-    _builder.newLine();
-    _builder.append("          ");
-    _builder.append("atRetry 0");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("}");
+    _builder.append("escalationTo not-a-declared-provider");
     _builder.newLine();
     _builder.append("      ");
     _builder.append("}");
@@ -2902,11 +2839,11 @@ public class LibrettoProjectProfileParsingTest {
     Assertions.assertNotNull(result);
     final List<String> issues = LibrettoProjectProfileParsingTest.diagnosticMessages(result);
     final Predicate<String> _function = (String it) -> {
-      return it.contains("secondary must name a provider declared in llmProviders { ... }.");
+      return it.contains("provider must name a provider declared in llmProviders { ... }.");
     };
     boolean _anyMatch = issues.stream().anyMatch(_function);
     StringConcatenation _builder_1 = new StringConcatenation();
-    _builder_1.append("Expected unknown secondary on provider name; got ");
+    _builder_1.append("Expected unknown escalation provider on provider name; got ");
     String _join = String.join(", ", issues);
     _builder_1.append(_join);
     Assertions.assertTrue(_anyMatch, _builder_1.toString());
@@ -3783,9 +3720,6 @@ public class LibrettoProjectProfileParsingTest {
     _builder.append("gen {");
     _builder.newLine();
     _builder.append("      ");
-    _builder.append("maxRetries 1");
-    _builder.newLine();
-    _builder.append("      ");
     _builder.append("parseCheck true");
     _builder.newLine();
     _builder.append("    ");
@@ -3843,9 +3777,6 @@ public class LibrettoProjectProfileParsingTest {
     _builder.newLine();
     _builder.append("      ");
     _builder.append("initialInstruction \"a\"");
-    _builder.newLine();
-    _builder.append("      ");
-    _builder.append("maxRetries 1");
     _builder.newLine();
     _builder.append("      ");
     _builder.append("parseCheck true");
@@ -3939,9 +3870,6 @@ public class LibrettoProjectProfileParsingTest {
     _builder.newLine();
     _builder.append("      ");
     _builder.append("initialInstruction \"a\"");
-    _builder.newLine();
-    _builder.append("      ");
-    _builder.append("maxRetries 1");
     _builder.newLine();
     _builder.append("      ");
     _builder.append("parseCheck true");
@@ -4052,9 +3980,6 @@ public class LibrettoProjectProfileParsingTest {
     _builder.append("initialInstruction \"a\"");
     _builder.newLine();
     _builder.append("      ");
-    _builder.append("maxRetries 1");
-    _builder.newLine();
-    _builder.append("      ");
     _builder.append("parseCheck true");
     _builder.newLine();
     _builder.append("      ");
@@ -4148,9 +4073,6 @@ public class LibrettoProjectProfileParsingTest {
     _builder.append("initialInstruction \"a\"");
     _builder.newLine();
     _builder.append("      ");
-    _builder.append("maxRetries 1");
-    _builder.newLine();
-    _builder.append("      ");
     _builder.append("parseCheck true");
     _builder.newLine();
     _builder.append("      ");
@@ -4239,9 +4161,6 @@ public class LibrettoProjectProfileParsingTest {
     _builder.newLine();
     _builder.append("      ");
     _builder.append("initialInstruction \"a\"");
-    _builder.newLine();
-    _builder.append("      ");
-    _builder.append("maxRetries 1");
     _builder.newLine();
     _builder.append("      ");
     _builder.append("parseCheck true");
@@ -4361,9 +4280,6 @@ public class LibrettoProjectProfileParsingTest {
     _builder.append("initialInstruction \"a\"");
     _builder.newLine();
     _builder.append("      ");
-    _builder.append("maxRetries 1");
-    _builder.newLine();
-    _builder.append("      ");
     _builder.append("parseCheck true");
     _builder.newLine();
     _builder.append("      ");
@@ -4457,9 +4373,6 @@ public class LibrettoProjectProfileParsingTest {
     _builder.append("initialInstruction \"a\"");
     _builder.newLine();
     _builder.append("      ");
-    _builder.append("maxRetries 1");
-    _builder.newLine();
-    _builder.append("      ");
     _builder.append("parseCheck true");
     _builder.newLine();
     _builder.append("      ");
@@ -4539,9 +4452,6 @@ public class LibrettoProjectProfileParsingTest {
     _builder.newLine();
     _builder.append("      ");
     _builder.append("initialInstruction \"a\"");
-    _builder.newLine();
-    _builder.append("      ");
-    _builder.append("maxRetries 1");
     _builder.newLine();
     _builder.append("      ");
     _builder.append("parseCheck true");
@@ -4638,9 +4548,6 @@ public class LibrettoProjectProfileParsingTest {
     _builder.newLine();
     _builder.append("      ");
     _builder.append("initialInstruction \"a\"");
-    _builder.newLine();
-    _builder.append("      ");
-    _builder.append("maxRetries 1");
     _builder.newLine();
     _builder.append("      ");
     _builder.append("parseCheck true");
@@ -4745,9 +4652,6 @@ public class LibrettoProjectProfileParsingTest {
     _builder.append("initialInstruction \"a\"");
     _builder.newLine();
     _builder.append("      ");
-    _builder.append("maxRetries 1");
-    _builder.newLine();
-    _builder.append("      ");
     _builder.append("parseCheck true");
     _builder.newLine();
     _builder.append("      ");
@@ -4827,9 +4731,6 @@ public class LibrettoProjectProfileParsingTest {
     _builder.newLine();
     _builder.append("      ");
     _builder.append("initialInstruction \"a\"");
-    _builder.newLine();
-    _builder.append("      ");
-    _builder.append("maxRetries 1");
     _builder.newLine();
     _builder.append("      ");
     _builder.append("parseCheck true");
@@ -4931,9 +4832,6 @@ public class LibrettoProjectProfileParsingTest {
     _builder.append("initialInstruction \"a\"");
     _builder.newLine();
     _builder.append("      ");
-    _builder.append("maxRetries 1");
-    _builder.newLine();
-    _builder.append("      ");
     _builder.append("parseCheck true");
     _builder.newLine();
     _builder.append("      ");
@@ -4984,7 +4882,7 @@ public class LibrettoProjectProfileParsingTest {
   }
 
   @Test
-  public void rejectsMissingSecondaryInModelUsageAnchorsModelUsageKeyword() throws Exception {
+  public void rejectsDuplicateEscalationToAnchorsEachKeyword() throws Exception {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("profile \"lumiscape\" {");
     _builder.newLine();
@@ -5011,9 +4909,6 @@ public class LibrettoProjectProfileParsingTest {
     _builder.append("initialInstruction \"a\"");
     _builder.newLine();
     _builder.append("      ");
-    _builder.append("maxRetries 1");
-    _builder.newLine();
-    _builder.append("      ");
     _builder.append("parseCheck true");
     _builder.newLine();
     _builder.append("      ");
@@ -5035,19 +4930,16 @@ public class LibrettoProjectProfileParsingTest {
     _builder.append("modelUsage {");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("primary test-minimal-provider");
+    _builder.append("maxRetries 1");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("escalation {");
-    _builder.newLine();
-    _builder.append("          ");
-    _builder.append("enabled true");
-    _builder.newLine();
-    _builder.append("          ");
-    _builder.append("atRetry 0");
+    _builder.append("provider test-minimal-provider");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("}");
+    _builder.append("escalationTo other-provider");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("escalationTo test-minimal-provider");
     _builder.newLine();
     _builder.append("      ");
     _builder.append("}");
@@ -5059,9 +4951,35 @@ public class LibrettoProjectProfileParsingTest {
     _builder.append("}");
     _builder.newLine();
     _builder.append("  ");
-    String _minimalLlmProvidersForGenTests = LibrettoProjectProfileParsingTest.minimalLlmProvidersForGenTests();
-    _builder.append(_minimalLlmProvidersForGenTests, "  ");
-    _builder.newLineIfNotEmpty();
+    _builder.append("llmProviders {");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("provider test-minimal-provider {");
+    _builder.newLine();
+    _builder.append("      ");
+    _builder.append("type local");
+    _builder.newLine();
+    _builder.append("      ");
+    _builder.append("filePath \"/test-minimal\"");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("provider other-provider {");
+    _builder.newLine();
+    _builder.append("      ");
+    _builder.append("type openai");
+    _builder.newLine();
+    _builder.append("      ");
+    _builder.append("model \"gpt\"");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.append("}");
+    _builder.newLine();
     _builder.append("  ");
     _builder.append("surface {");
     _builder.newLine();
@@ -5073,19 +4991,20 @@ public class LibrettoProjectProfileParsingTest {
     final ProjectProfile result = this.parseHelper.parse(_builder);
     Assertions.assertNotNull(result);
     final List<String> issues = LibrettoProjectProfileParsingTest.diagnosticMessages(result);
+    final String msg = "Only one escalationTo is allowed in modelUsage { ... }.";
     final Predicate<String> _function = (String it) -> {
-      return it.contains("modelUsage.secondary is required when escalation.enabled is true.");
+      return it.contains(msg);
     };
-    boolean _anyMatch = issues.stream().anyMatch(_function);
+    long _count = issues.stream().filter(_function).count();
     StringConcatenation _builder_1 = new StringConcatenation();
-    _builder_1.append("Expected missing secondary on modelUsage keyword; got ");
+    _builder_1.append("Expected one diagnostic per escalationTo keyword; got ");
     String _join = String.join(", ", issues);
     _builder_1.append(_join);
-    Assertions.assertTrue(_anyMatch, _builder_1.toString());
+    Assertions.assertEquals(2L, _count, _builder_1.toString());
   }
 
   @Test
-  public void acceptsModelUsageWithoutSecondaryWhenEscalationDisabled() throws Exception {
+  public void acceptsModelUsageWithoutEscalationTo() throws Exception {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("profile \"lumiscape\" {");
     _builder.newLine();
@@ -5112,9 +5031,6 @@ public class LibrettoProjectProfileParsingTest {
     _builder.append("initialInstruction \"a\"");
     _builder.newLine();
     _builder.append("      ");
-    _builder.append("maxRetries 1");
-    _builder.newLine();
-    _builder.append("      ");
     _builder.append("parseCheck true");
     _builder.newLine();
     _builder.append("      ");
@@ -5136,19 +5052,10 @@ public class LibrettoProjectProfileParsingTest {
     _builder.append("modelUsage {");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("primary test-minimal-provider");
+    _builder.append("maxRetries 1");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("escalation {");
-    _builder.newLine();
-    _builder.append("          ");
-    _builder.append("enabled false");
-    _builder.newLine();
-    _builder.append("          ");
-    _builder.append("atRetry 0");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("}");
+    _builder.append("provider test-minimal-provider");
     _builder.newLine();
     _builder.append("      ");
     _builder.append("}");
@@ -5179,20 +5086,10 @@ public class LibrettoProjectProfileParsingTest {
     String _joinDiagnostics = LibrettoProjectProfileParsingTest.joinDiagnostics(result.eResource().getErrors());
     _builder_1.append(_joinDiagnostics);
     Assertions.assertTrue(_isEmpty, _builder_1.toString());
-    final List<String> issues = LibrettoProjectProfileParsingTest.diagnosticMessages(result);
-    final Predicate<String> _function = (String it) -> {
-      return it.contains("modelUsage.secondary is required when escalation.enabled is true.");
-    };
-    boolean _anyMatch = issues.stream().anyMatch(_function);
-    StringConcatenation _builder_2 = new StringConcatenation();
-    _builder_2.append("enabled false must not require secondary; got ");
-    String _join = String.join(", ", issues);
-    _builder_2.append(_join);
-    Assertions.assertFalse(_anyMatch, _builder_2.toString());
   }
 
   @Test
-  public void rejectsPrimaryAndSecondarySameNameAnchorsBothKeywords() throws Exception {
+  public void rejectsPrimaryAndSecondarySameNameAnchorsEscalationNameOnly() throws Exception {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("profile \"lumiscape\" {");
     _builder.newLine();
@@ -5219,9 +5116,6 @@ public class LibrettoProjectProfileParsingTest {
     _builder.append("initialInstruction \"a\"");
     _builder.newLine();
     _builder.append("      ");
-    _builder.append("maxRetries 1");
-    _builder.newLine();
-    _builder.append("      ");
     _builder.append("parseCheck true");
     _builder.newLine();
     _builder.append("      ");
@@ -5243,22 +5137,13 @@ public class LibrettoProjectProfileParsingTest {
     _builder.append("modelUsage {");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("primary test-minimal-provider");
+    _builder.append("maxRetries 1");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("secondary test-minimal-provider");
+    _builder.append("provider test-minimal-provider");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("escalation {");
-    _builder.newLine();
-    _builder.append("          ");
-    _builder.append("enabled true");
-    _builder.newLine();
-    _builder.append("          ");
-    _builder.append("atRetry 0");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("}");
+    _builder.append("escalationTo test-minimal-provider");
     _builder.newLine();
     _builder.append("      ");
     _builder.append("}");
@@ -5284,16 +5169,16 @@ public class LibrettoProjectProfileParsingTest {
     final ProjectProfile result = this.parseHelper.parse(_builder);
     Assertions.assertNotNull(result);
     final List<String> issues = LibrettoProjectProfileParsingTest.diagnosticMessages(result);
-    final String msg = "primary and secondary must not name the same provider.";
+    final String msg = "modelUsage provider and escalationTo must not name the same llmProviders entry.";
     final Predicate<String> _function = (String it) -> {
       return Objects.equals(it, msg);
     };
     long _count = issues.stream().filter(_function).count();
     StringConcatenation _builder_1 = new StringConcatenation();
-    _builder_1.append("Expected one diagnostic on primary and one on secondary keyword; got ");
+    _builder_1.append("Expected one diagnostic on escalationTo name only; got ");
     String _join = String.join(", ", issues);
     _builder_1.append(_join);
-    Assertions.assertEquals(2L, _count, _builder_1.toString());
+    Assertions.assertEquals(1L, _count, _builder_1.toString());
   }
 
   @Test
@@ -5324,9 +5209,6 @@ public class LibrettoProjectProfileParsingTest {
     _builder.append("initialInstruction \"a\"");
     _builder.newLine();
     _builder.append("      ");
-    _builder.append("maxRetries 1");
-    _builder.newLine();
-    _builder.append("      ");
     _builder.append("parseCheck true");
     _builder.newLine();
     _builder.append("      ");
@@ -5348,25 +5230,13 @@ public class LibrettoProjectProfileParsingTest {
     _builder.append("modelUsage {");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("primary test-minimal-provider");
+    _builder.append("maxRetries 1");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("primary test-minimal-provider");
+    _builder.append("provider test-minimal-provider");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("secondary test-minimal-provider");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("escalation {");
-    _builder.newLine();
-    _builder.append("          ");
-    _builder.append("enabled true");
-    _builder.newLine();
-    _builder.append("          ");
-    _builder.append("atRetry 0");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("}");
+    _builder.append("provider test-minimal-provider");
     _builder.newLine();
     _builder.append("      ");
     _builder.append("}");
@@ -5392,13 +5262,13 @@ public class LibrettoProjectProfileParsingTest {
     final ProjectProfile result = this.parseHelper.parse(_builder);
     Assertions.assertNotNull(result);
     final List<String> issues = LibrettoProjectProfileParsingTest.diagnosticMessages(result);
-    final String msg = "Only one primary is allowed in modelUsage { ... }.";
+    final String msg = "Only one provider is allowed at modelUsage level (outside escalationTo).";
     final Predicate<String> _function = (String it) -> {
       return it.contains(msg);
     };
     final long n = issues.stream().filter(_function).count();
     StringConcatenation _builder_1 = new StringConcatenation();
-    _builder_1.append("Expected one diagnostic per duplicate primary keyword; got ");
+    _builder_1.append("Expected one diagnostic per duplicate modelUsage provider keyword; got ");
     _builder_1.append(n);
     _builder_1.append(": ");
     String _join = String.join(", ", issues);
@@ -5432,9 +5302,6 @@ public class LibrettoProjectProfileParsingTest {
     _builder.newLine();
     _builder.append("      ");
     _builder.append("initialInstruction \"a\"");
-    _builder.newLine();
-    _builder.append("      ");
-    _builder.append("maxRetries 1");
     _builder.newLine();
     _builder.append("      ");
     _builder.append("parseCheck true");
@@ -5586,9 +5453,6 @@ public class LibrettoProjectProfileParsingTest {
     _builder.append("initialInstruction \"i\"");
     _builder.newLine();
     _builder.append("      ");
-    _builder.append("maxRetries 6");
-    _builder.newLine();
-    _builder.append("      ");
     _builder.append("parseCheck true");
     _builder.newLine();
     _builder.append("      ");
@@ -5607,9 +5471,17 @@ public class LibrettoProjectProfileParsingTest {
     _builder.append("}");
     _builder.newLine();
     _builder.append("      ");
-    String _minimalModelUsageForTests = LibrettoProjectProfileParsingTest.minimalModelUsageForTests();
-    _builder.append(_minimalModelUsageForTests, "      ");
-    _builder.newLineIfNotEmpty();
+    _builder.append("modelUsage {");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("maxRetries 6");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("provider test-minimal-provider");
+    _builder.newLine();
+    _builder.append("      ");
+    _builder.append("}");
+    _builder.newLine();
     _builder.append("    ");
     _builder.append("}");
     _builder.newLine();
@@ -5639,204 +5511,15 @@ public class LibrettoProjectProfileParsingTest {
     Assertions.assertTrue(_anyMatch, _builder_1.toString());
   }
 
-  @Test
-  public void rejectsAtRetryAboveFive() throws Exception {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("profile \"x\" {");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("project {");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("rootDir \".\"");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("modules { ");
-    String _completeModule = LibrettoProjectProfileParsingTest.completeModule("m", "m");
-    _builder.append(_completeModule, "    ");
-    _builder.append(" }");
-    _builder.newLineIfNotEmpty();
-    _builder.append("    ");
-    _builder.append("gen {");
-    _builder.newLine();
-    _builder.append("      ");
-    _builder.append("initialInstruction \"i\"");
-    _builder.newLine();
-    _builder.append("      ");
-    _builder.append("maxRetries 3");
-    _builder.newLine();
-    _builder.append("      ");
-    _builder.append("parseCheck true");
-    _builder.newLine();
-    _builder.append("      ");
-    _builder.append("defaultCorrection \"c\"");
-    _builder.newLine();
-    _builder.append("      ");
-    _builder.append("rules {");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("rule { pattern \"_\" code \"C\" correction \"R\" }");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("default { code \"X\" correction \"Y\" }");
-    _builder.newLine();
-    _builder.append("      ");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("      ");
-    _builder.append("modelUsage {");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("primary p");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("secondary p");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("escalation { atRetry 6 }");
-    _builder.newLine();
-    _builder.append("      ");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("llmProviders { provider p { type local filePath \"/x\" } }");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("surface { }");
-    _builder.newLine();
-    _builder.append("}");
-    _builder.newLine();
-    final ProjectProfile result = this.parseHelper.parse(_builder);
-    Assertions.assertNotNull(result);
-    final List<String> issues = LibrettoProjectProfileParsingTest.diagnosticMessages(result);
-    final Predicate<String> _function = (String it) -> {
-      return it.contains("atRetry must be between 0 and 5.");
-    };
-    boolean _anyMatch = issues.stream().anyMatch(_function);
-    StringConcatenation _builder_1 = new StringConcatenation();
-    _builder_1.append("Expected atRetry range error; got ");
-    String _join = String.join(", ", issues);
-    _builder_1.append(_join);
-    Assertions.assertTrue(_anyMatch, _builder_1.toString());
-  }
-
-  @Test
-  public void warnsWhenAtRetryGreaterThanMaxRetries() throws Exception {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("profile \"x\" {");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("project {");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("rootDir \".\"");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("modules { ");
-    String _completeModule = LibrettoProjectProfileParsingTest.completeModule("m", "m");
-    _builder.append(_completeModule, "    ");
-    _builder.append(" }");
-    _builder.newLineIfNotEmpty();
-    _builder.append("    ");
-    _builder.append("gen {");
-    _builder.newLine();
-    _builder.append("      ");
-    _builder.append("initialInstruction \"i\"");
-    _builder.newLine();
-    _builder.append("      ");
-    _builder.append("maxRetries 2");
-    _builder.newLine();
-    _builder.append("      ");
-    _builder.append("parseCheck true");
-    _builder.newLine();
-    _builder.append("      ");
-    _builder.append("defaultCorrection \"c\"");
-    _builder.newLine();
-    _builder.append("      ");
-    _builder.append("rules {");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("rule { pattern \"_\" code \"C\" correction \"R\" }");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("default { code \"X\" correction \"Y\" }");
-    _builder.newLine();
-    _builder.append("      ");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("      ");
-    _builder.append("modelUsage {");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("primary p");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("secondary p");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("escalation { atRetry 4 }");
-    _builder.newLine();
-    _builder.append("      ");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("llmProviders { provider p { type local filePath \"/x\" } }");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("surface { }");
-    _builder.newLine();
-    _builder.append("}");
-    _builder.newLine();
-    final ProjectProfile result = this.parseHelper.parse(_builder);
-    Assertions.assertNotNull(result);
-    boolean _isEmpty = result.eResource().getErrors().isEmpty();
-    StringConcatenation _builder_1 = new StringConcatenation();
-    _builder_1.append("Unexpected errors: ");
-    String _joinDiagnostics = LibrettoProjectProfileParsingTest.joinDiagnostics(result.eResource().getErrors());
-    _builder_1.append(_joinDiagnostics);
-    Assertions.assertTrue(_isEmpty, _builder_1.toString());
-    final List<String> warns = LibrettoProjectProfileParsingTest.warningMessages(result);
-    final Predicate<String> _function = (String it) -> {
-      return it.contains("atRetry is greater than maxRetries for this gen block.");
-    };
-    boolean _anyMatch = warns.stream().anyMatch(_function);
-    StringConcatenation _builder_2 = new StringConcatenation();
-    _builder_2.append("Expected warning; got ");
-    String _join = String.join(", ", warns);
-    _builder_2.append(_join);
-    Assertions.assertTrue(_anyMatch, _builder_2.toString());
-  }
-
   private static String minimalModelUsageForTests() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("modelUsage {");
     _builder.newLine();
     _builder.append("  ");
-    _builder.append("primary test-minimal-provider");
+    _builder.append("maxRetries 1");
     _builder.newLine();
     _builder.append("  ");
-    _builder.append("escalation {");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("enabled false");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("atRetry 0");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("}");
+    _builder.append("provider test-minimal-provider");
     _builder.newLine();
     _builder.append("}");
     _builder.newLine();
@@ -5865,9 +5548,9 @@ public class LibrettoProjectProfileParsingTest {
   }
 
   /**
-   * Minimal valid {@code gen} body (initialInstruction, maxRetries, parseCheck, defaultCorrection, rules, modelUsage).
-   * Pair with {@code minimalLlmProvidersForGenTests()} at profile level (primary {@code test-minimal-provider};
-   * escalation {@code enabled false} so {@code secondary} is omitted).
+   * Minimal valid {@code gen} body (initialInstruction, parseCheck, defaultCorrection, rules, modelUsage with maxRetries).
+   * Pair with {@code minimalLlmProvidersForGenTests()} at profile level ({@code test-minimal-provider} for
+   * modelUsage).
    */
   private static String minimalGenBlock() {
     StringConcatenation _builder = new StringConcatenation();
@@ -5875,9 +5558,6 @@ public class LibrettoProjectProfileParsingTest {
     _builder.newLine();
     _builder.append("  ");
     _builder.append("initialInstruction \"minimal\"");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("maxRetries 1");
     _builder.newLine();
     _builder.append("  ");
     _builder.append("parseCheck true");

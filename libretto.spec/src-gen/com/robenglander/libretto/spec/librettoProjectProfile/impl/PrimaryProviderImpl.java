@@ -5,7 +5,7 @@ package com.robenglander.libretto.spec.librettoProjectProfile.impl;
 
 import com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage;
 import com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider;
-import com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProviderKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.ProviderKeyword;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +29,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class PrimaryProviderImpl extends MinimalEObjectImpl.Container implements PrimaryProvider
+public class PrimaryProviderImpl extends ProviderImpl implements PrimaryProvider
 {
   /**
    * The cached value of the '{@link #getKeyword() <em>Keyword</em>}' containment reference.
@@ -40,7 +39,7 @@ public class PrimaryProviderImpl extends MinimalEObjectImpl.Container implements
    * @generated
    * @ordered
    */
-  protected PrimaryProviderKeyword keyword;
+  protected ProviderKeyword keyword;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -89,7 +88,7 @@ public class PrimaryProviderImpl extends MinimalEObjectImpl.Container implements
    * @generated
    */
   @Override
-  public PrimaryProviderKeyword getKeyword()
+  public ProviderKeyword getKeyword()
   {
     return keyword;
   }
@@ -99,9 +98,9 @@ public class PrimaryProviderImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetKeyword(PrimaryProviderKeyword newKeyword, NotificationChain msgs)
+  public NotificationChain basicSetKeyword(ProviderKeyword newKeyword, NotificationChain msgs)
   {
-    PrimaryProviderKeyword oldKeyword = keyword;
+    ProviderKeyword oldKeyword = keyword;
     keyword = newKeyword;
     if (eNotificationRequired())
     {
@@ -117,7 +116,7 @@ public class PrimaryProviderImpl extends MinimalEObjectImpl.Container implements
    * @generated
    */
   @Override
-  public void setKeyword(PrimaryProviderKeyword newKeyword)
+  public void setKeyword(ProviderKeyword newKeyword)
   {
     if (newKeyword != keyword)
     {
@@ -203,7 +202,7 @@ public class PrimaryProviderImpl extends MinimalEObjectImpl.Container implements
     switch (featureID)
     {
       case LibrettoProjectProfilePackage.PRIMARY_PROVIDER__KEYWORD:
-        setKeyword((PrimaryProviderKeyword)newValue);
+        setKeyword((ProviderKeyword)newValue);
         return;
       case LibrettoProjectProfilePackage.PRIMARY_PROVIDER__NAME:
         setName((String)newValue);
@@ -223,7 +222,7 @@ public class PrimaryProviderImpl extends MinimalEObjectImpl.Container implements
     switch (featureID)
     {
       case LibrettoProjectProfilePackage.PRIMARY_PROVIDER__KEYWORD:
-        setKeyword((PrimaryProviderKeyword)null);
+        setKeyword((ProviderKeyword)null);
         return;
       case LibrettoProjectProfilePackage.PRIMARY_PROVIDER__NAME:
         setName(NAME_EDEFAULT);

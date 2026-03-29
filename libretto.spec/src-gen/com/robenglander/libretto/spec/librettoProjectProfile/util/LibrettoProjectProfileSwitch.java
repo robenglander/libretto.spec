@@ -479,73 +479,24 @@ public class LibrettoProjectProfileSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LibrettoProjectProfilePackage.PRIMARY_PROVIDER:
+      case LibrettoProjectProfilePackage.PROVIDER:
       {
-        PrimaryProvider primaryProvider = (PrimaryProvider)theEObject;
-        T result = casePrimaryProvider(primaryProvider);
+        Provider provider = (Provider)theEObject;
+        T result = caseProvider(provider);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LibrettoProjectProfilePackage.PRIMARY_PROVIDER_KEYWORD:
+      case LibrettoProjectProfilePackage.ESCALATION_PROVIDER:
       {
-        PrimaryProviderKeyword primaryProviderKeyword = (PrimaryProviderKeyword)theEObject;
-        T result = casePrimaryProviderKeyword(primaryProviderKeyword);
+        EscalationProvider escalationProvider = (EscalationProvider)theEObject;
+        T result = caseEscalationProvider(escalationProvider);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LibrettoProjectProfilePackage.SECONDARY_PROVIDER:
+      case LibrettoProjectProfilePackage.ESCALATION_TO_KEYWORD:
       {
-        SecondaryProvider secondaryProvider = (SecondaryProvider)theEObject;
-        T result = caseSecondaryProvider(secondaryProvider);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LibrettoProjectProfilePackage.SECONDARY_PROVIDER_KEYWORD:
-      {
-        SecondaryProviderKeyword secondaryProviderKeyword = (SecondaryProviderKeyword)theEObject;
-        T result = caseSecondaryProviderKeyword(secondaryProviderKeyword);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK:
-      {
-        GenEscalationBlock genEscalationBlock = (GenEscalationBlock)theEObject;
-        T result = caseGenEscalationBlock(genEscalationBlock);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LibrettoProjectProfilePackage.ESCALATION_KEYWORD:
-      {
-        EscalationKeyword escalationKeyword = (EscalationKeyword)theEObject;
-        T result = caseEscalationKeyword(escalationKeyword);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LibrettoProjectProfilePackage.ENABLED:
-      {
-        Enabled enabled = (Enabled)theEObject;
-        T result = caseEnabled(enabled);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LibrettoProjectProfilePackage.ENABLED_KEYWORD:
-      {
-        EnabledKeyword enabledKeyword = (EnabledKeyword)theEObject;
-        T result = caseEnabledKeyword(enabledKeyword);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LibrettoProjectProfilePackage.AT_RETRY:
-      {
-        AtRetry atRetry = (AtRetry)theEObject;
-        T result = caseAtRetry(atRetry);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LibrettoProjectProfilePackage.AT_RETRY_KEYWORD:
-      {
-        AtRetryKeyword atRetryKeyword = (AtRetryKeyword)theEObject;
-        T result = caseAtRetryKeyword(atRetryKeyword);
+        EscalationToKeyword escalationToKeyword = (EscalationToKeyword)theEObject;
+        T result = caseEscalationToKeyword(escalationToKeyword);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -657,6 +608,22 @@ public class LibrettoProjectProfileSwitch<T> extends Switch<T>
         TrueKeyword trueKeyword = (TrueKeyword)theEObject;
         T result = caseTrueKeyword(trueKeyword);
         if (result == null) result = caseTrueFalseKeyword(trueKeyword);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.PRIMARY_PROVIDER:
+      {
+        PrimaryProvider primaryProvider = (PrimaryProvider)theEObject;
+        T result = casePrimaryProvider(primaryProvider);
+        if (result == null) result = caseProvider(primaryProvider);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK:
+      {
+        GenEscalationBlock genEscalationBlock = (GenEscalationBlock)theEObject;
+        T result = caseGenEscalationBlock(genEscalationBlock);
+        if (result == null) result = caseEscalationProvider(genEscalationBlock);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1593,161 +1560,49 @@ public class LibrettoProjectProfileSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Primary Provider</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Provider</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Primary Provider</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Provider</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casePrimaryProvider(PrimaryProvider object)
+  public T caseProvider(Provider object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Primary Provider Keyword</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Escalation Provider</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Primary Provider Keyword</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Escalation Provider</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casePrimaryProviderKeyword(PrimaryProviderKeyword object)
+  public T caseEscalationProvider(EscalationProvider object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Secondary Provider</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Escalation To Keyword</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Secondary Provider</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Escalation To Keyword</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseSecondaryProvider(SecondaryProvider object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Secondary Provider Keyword</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Secondary Provider Keyword</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSecondaryProviderKeyword(SecondaryProviderKeyword object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Gen Escalation Block</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Gen Escalation Block</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseGenEscalationBlock(GenEscalationBlock object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Escalation Keyword</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Escalation Keyword</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseEscalationKeyword(EscalationKeyword object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Enabled</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Enabled</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseEnabled(Enabled object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Enabled Keyword</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Enabled Keyword</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseEnabledKeyword(EnabledKeyword object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>At Retry</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>At Retry</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAtRetry(AtRetry object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>At Retry Keyword</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>At Retry Keyword</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAtRetryKeyword(AtRetryKeyword object)
+  public T caseEscalationToKeyword(EscalationToKeyword object)
   {
     return null;
   }
@@ -1972,6 +1827,38 @@ public class LibrettoProjectProfileSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseTrueKeyword(TrueKeyword object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Primary Provider</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Primary Provider</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePrimaryProvider(PrimaryProvider object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Gen Escalation Block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Gen Escalation Block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGenEscalationBlock(GenEscalationBlock object)
   {
     return null;
   }

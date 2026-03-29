@@ -86,7 +86,6 @@ class LibrettoProjectProfileParsingTest {
 			    }
 			    gen {
 			      initialInstruction "Test profile gen block."
-			      maxRetries 2
 			      parseCheck true
 			      defaultCorrection "Retry with valid output."
 			      rules {
@@ -101,12 +100,9 @@ class LibrettoProjectProfileParsingTest {
 			        }
 			      }
 			      modelUsage {
-			        primary local-default
-			        secondary openai-fast
-			        escalation {
-			          enabled true
-			          atRetry 2
-			        }
+			        maxRetries 1
+			        provider local-default
+			        escalationTo openai-fast
 			      }
 			    }
 			  }
@@ -151,7 +147,6 @@ class LibrettoProjectProfileParsingTest {
 			    }
 			    gen {
 			      initialInstruction "Never use placeholders."
-			      maxRetries 2
 			      parseCheck true
 			      defaultCorrection "Generic retry."
 			      rules {
@@ -166,12 +161,9 @@ class LibrettoProjectProfileParsingTest {
 			        }
 			      }
 			      modelUsage {
-			        primary local-default
-			        secondary local-secondary
-			        escalation {
-			          enabled true
-			          atRetry 0
-			        }
+			        maxRetries 1
+			        provider local-default
+			        escalationTo local-secondary
 			      }
 			    }
 			  }
@@ -275,7 +267,6 @@ class LibrettoProjectProfileParsingTest {
 			    }
 			    gen {
 			      initialInstruction "a"
-			      maxRetries 1
 			      parseCheck true
 			      defaultCorrection "b"
 			      rules {
@@ -283,12 +274,8 @@ class LibrettoProjectProfileParsingTest {
 			        default { code "X" correction "Y" }
 			      }
 			      modelUsage {
-			        primary dup
-			        secondary dup
-			        escalation {
-			          enabled true
-			          atRetry 0
-			        }
+			        maxRetries 1
+			        provider dup
 			      }
 			    }
 			  }
@@ -1120,7 +1107,6 @@ class LibrettoProjectProfileParsingTest {
 			    }
 			    gen {
 			      initialInstruction "a"
-			      maxRetries 1
 			      parseCheck true
 			      defaultCorrection "b"
 			      rules {
@@ -1128,12 +1114,9 @@ class LibrettoProjectProfileParsingTest {
 			        default { code "X" correction "Y" }
 			      }
 			      modelUsage {
-			        primary not-a-declared-provider
-			        secondary test-minimal-provider
-			        escalation {
-			          enabled true
-			          atRetry 0
-			        }
+			        maxRetries 1
+			        provider not-a-declared-provider
+			        escalationTo test-minimal-provider
 			      }
 			    }
 			  }
@@ -1145,8 +1128,8 @@ class LibrettoProjectProfileParsingTest {
 		Assertions.assertNotNull(result)
 		val issues = diagnosticMessages(result)
 		Assertions.assertTrue(
-			issues.stream().anyMatch[it.contains("primary must name a provider declared in llmProviders { ... }.")],
-			'''Expected unknown primary on provider name; got «String.join(", ", issues)»'''
+			issues.stream().anyMatch[it.contains("provider must name a provider declared in llmProviders { ... }.")],
+			'''Expected unknown modelUsage provider on provider name; got «String.join(", ", issues)»'''
 		)
 	}
 
@@ -1161,7 +1144,6 @@ class LibrettoProjectProfileParsingTest {
 			    }
 			    gen {
 			      initialInstruction "a"
-			      maxRetries 1
 			      parseCheck true
 			      defaultCorrection "b"
 			      rules {
@@ -1169,12 +1151,9 @@ class LibrettoProjectProfileParsingTest {
 			        default { code "X" correction "Y" }
 			      }
 			      modelUsage {
-			        primary test-minimal-provider
-			        secondary not-a-declared-provider
-			        escalation {
-			          enabled true
-			          atRetry 0
-			        }
+			        maxRetries 1
+			        provider test-minimal-provider
+			        escalationTo not-a-declared-provider
 			      }
 			    }
 			  }
@@ -1186,8 +1165,8 @@ class LibrettoProjectProfileParsingTest {
 		Assertions.assertNotNull(result)
 		val issues = diagnosticMessages(result)
 		Assertions.assertTrue(
-			issues.stream().anyMatch[it.contains("secondary must name a provider declared in llmProviders { ... }.")],
-			'''Expected unknown secondary on provider name; got «String.join(", ", issues)»'''
+			issues.stream().anyMatch[it.contains("provider must name a provider declared in llmProviders { ... }.")],
+			'''Expected unknown escalation provider on provider name; got «String.join(", ", issues)»'''
 		)
 	}
 
@@ -1561,7 +1540,6 @@ class LibrettoProjectProfileParsingTest {
 			      «completeModule("common", "common")»
 			    }
 			    gen {
-			      maxRetries 1
 			      parseCheck true
 			    }
 			  }
@@ -1591,7 +1569,6 @@ class LibrettoProjectProfileParsingTest {
 			    }
 			    gen {
 			      initialInstruction "a"
-			      maxRetries 1
 			      parseCheck true
 			      parseCheck false
 			      defaultCorrection "b"
@@ -1629,7 +1606,6 @@ class LibrettoProjectProfileParsingTest {
 			    }
 			    gen {
 			      initialInstruction "a"
-			      maxRetries 1
 			      parseCheck true
 			      defaultCorrection "b"
 			      rules {
@@ -1672,7 +1648,6 @@ class LibrettoProjectProfileParsingTest {
 			    }
 			    gen {
 			      initialInstruction "a"
-			      maxRetries 1
 			      parseCheck true
 			      defaultCorrection "b"
 			      rules {
@@ -1710,7 +1685,6 @@ class LibrettoProjectProfileParsingTest {
 			    }
 			    gen {
 			      initialInstruction "a"
-			      maxRetries 1
 			      parseCheck true
 			      defaultCorrection "b"
 			      rules {
@@ -1747,7 +1721,6 @@ class LibrettoProjectProfileParsingTest {
 			    }
 			    gen {
 			      initialInstruction "a"
-			      maxRetries 1
 			      parseCheck true
 			      defaultCorrection "b"
 			      rules {
@@ -1793,7 +1766,6 @@ class LibrettoProjectProfileParsingTest {
 			    }
 			    gen {
 			      initialInstruction "a"
-			      maxRetries 1
 			      parseCheck true
 			      defaultCorrection "b"
 			      rules {
@@ -1832,7 +1804,6 @@ class LibrettoProjectProfileParsingTest {
 			    }
 			    gen {
 			      initialInstruction "a"
-			      maxRetries 1
 			      parseCheck true
 			      defaultCorrection "b"
 			      rules {
@@ -1866,7 +1837,6 @@ class LibrettoProjectProfileParsingTest {
 			    }
 			    gen {
 			      initialInstruction "a"
-			      maxRetries 1
 			      parseCheck true
 			      defaultCorrection "b"
 			      rules {
@@ -1905,7 +1875,6 @@ class LibrettoProjectProfileParsingTest {
 			    }
 			    gen {
 			      initialInstruction "a"
-			      maxRetries 1
 			      parseCheck true
 			      defaultCorrection "b"
 			      rules {
@@ -1948,7 +1917,6 @@ class LibrettoProjectProfileParsingTest {
 			    }
 			    gen {
 			      initialInstruction "a"
-			      maxRetries 1
 			      parseCheck true
 			      defaultCorrection "b"
 			      rules {
@@ -1982,7 +1950,6 @@ class LibrettoProjectProfileParsingTest {
 			    }
 			    gen {
 			      initialInstruction "a"
-			      maxRetries 1
 			      parseCheck true
 			      defaultCorrection "b"
 			      rules {
@@ -2022,7 +1989,6 @@ class LibrettoProjectProfileParsingTest {
 			    }
 			    gen {
 			      initialInstruction "a"
-			      maxRetries 1
 			      parseCheck true
 			      defaultCorrection "b"
 			      rules {
@@ -2045,7 +2011,7 @@ class LibrettoProjectProfileParsingTest {
 	}
 
 	@Test
-	def void rejectsMissingSecondaryInModelUsageAnchorsModelUsageKeyword() throws Exception {
+	def void rejectsDuplicateEscalationToAnchorsEachKeyword() throws Exception {
 		val result = parseHelper.parse('''
 			profile "lumiscape" {
 			  project {
@@ -2055,7 +2021,6 @@ class LibrettoProjectProfileParsingTest {
 			    }
 			    gen {
 			      initialInstruction "a"
-			      maxRetries 1
 			      parseCheck true
 			      defaultCorrection "b"
 			      rules {
@@ -2063,29 +2028,38 @@ class LibrettoProjectProfileParsingTest {
 			        default { code "X" correction "Y" }
 			      }
 			      modelUsage {
-			        primary test-minimal-provider
-			        escalation {
-			          enabled true
-			          atRetry 0
-			        }
+			        maxRetries 1
+			        provider test-minimal-provider
+			        escalationTo other-provider
+			        escalationTo test-minimal-provider
 			      }
 			    }
 			  }
-			  «minimalLlmProvidersForGenTests()»
+			  llmProviders {
+			    provider test-minimal-provider {
+			      type local
+			      filePath "/test-minimal"
+			    }
+			    provider other-provider {
+			      type openai
+			      model "gpt"
+			    }
+			  }
 			  surface {
 			  }
 			}
 		''')
 		Assertions.assertNotNull(result)
 		val issues = diagnosticMessages(result)
-		Assertions.assertTrue(
-			issues.stream().anyMatch[it.contains("modelUsage.secondary is required when escalation.enabled is true.")],
-			'''Expected missing secondary on modelUsage keyword; got «String.join(", ", issues)»'''
+		val msg = "Only one escalationTo is allowed in modelUsage { ... }."
+		Assertions.assertEquals(2L,
+			issues.stream().filter[it.contains(msg)].count(),
+			'''Expected one diagnostic per escalationTo keyword; got «String.join(", ", issues)»'''
 		)
 	}
 
 	@Test
-	def void acceptsModelUsageWithoutSecondaryWhenEscalationDisabled() throws Exception {
+	def void acceptsModelUsageWithoutEscalationTo() throws Exception {
 		val result = parseHelper.parse('''
 			profile "lumiscape" {
 			  project {
@@ -2095,7 +2069,6 @@ class LibrettoProjectProfileParsingTest {
 			    }
 			    gen {
 			      initialInstruction "a"
-			      maxRetries 1
 			      parseCheck true
 			      defaultCorrection "b"
 			      rules {
@@ -2103,11 +2076,8 @@ class LibrettoProjectProfileParsingTest {
 			        default { code "X" correction "Y" }
 			      }
 			      modelUsage {
-			        primary test-minimal-provider
-			        escalation {
-			          enabled false
-			          atRetry 0
-			        }
+			        maxRetries 1
+			        provider test-minimal-provider
 			      }
 			    }
 			  }
@@ -2118,15 +2088,10 @@ class LibrettoProjectProfileParsingTest {
 		''')
 		Assertions.assertNotNull(result)
 		Assertions.assertTrue(result.eResource.errors.isEmpty, '''Unexpected errors: «joinDiagnostics(result.eResource.errors)»''')
-		val issues = diagnosticMessages(result)
-		Assertions.assertFalse(
-			issues.stream().anyMatch[it.contains("modelUsage.secondary is required when escalation.enabled is true.")],
-			'''enabled false must not require secondary; got «String.join(", ", issues)»'''
-		)
 	}
 
 	@Test
-	def void rejectsPrimaryAndSecondarySameNameAnchorsBothKeywords() throws Exception {
+	def void rejectsPrimaryAndSecondarySameNameAnchorsEscalationNameOnly() throws Exception {
 		val result = parseHelper.parse('''
 			profile "lumiscape" {
 			  project {
@@ -2136,7 +2101,6 @@ class LibrettoProjectProfileParsingTest {
 			    }
 			    gen {
 			      initialInstruction "a"
-			      maxRetries 1
 			      parseCheck true
 			      defaultCorrection "b"
 			      rules {
@@ -2144,12 +2108,9 @@ class LibrettoProjectProfileParsingTest {
 			        default { code "X" correction "Y" }
 			      }
 			      modelUsage {
-			        primary test-minimal-provider
-			        secondary test-minimal-provider
-			        escalation {
-			          enabled true
-			          atRetry 0
-			        }
+			        maxRetries 1
+			        provider test-minimal-provider
+			        escalationTo test-minimal-provider
 			      }
 			    }
 			  }
@@ -2160,10 +2121,10 @@ class LibrettoProjectProfileParsingTest {
 		''')
 		Assertions.assertNotNull(result)
 		val issues = diagnosticMessages(result)
-		val msg = "primary and secondary must not name the same provider."
-		Assertions.assertEquals(2L,
+		val msg = "modelUsage provider and escalationTo must not name the same llmProviders entry."
+		Assertions.assertEquals(1L,
 			issues.stream().filter[it == msg].count(),
-			'''Expected one diagnostic on primary and one on secondary keyword; got «String.join(", ", issues)»'''
+			'''Expected one diagnostic on escalationTo name only; got «String.join(", ", issues)»'''
 		)
 	}
 
@@ -2178,7 +2139,6 @@ class LibrettoProjectProfileParsingTest {
 			    }
 			    gen {
 			      initialInstruction "a"
-			      maxRetries 1
 			      parseCheck true
 			      defaultCorrection "b"
 			      rules {
@@ -2186,13 +2146,9 @@ class LibrettoProjectProfileParsingTest {
 			        default { code "X" correction "Y" }
 			      }
 			      modelUsage {
-			        primary test-minimal-provider
-			        primary test-minimal-provider
-			        secondary test-minimal-provider
-			        escalation {
-			          enabled true
-			          atRetry 0
-			        }
+			        maxRetries 1
+			        provider test-minimal-provider
+			        provider test-minimal-provider
 			      }
 			    }
 			  }
@@ -2203,10 +2159,10 @@ class LibrettoProjectProfileParsingTest {
 		''')
 		Assertions.assertNotNull(result)
 		val issues = diagnosticMessages(result)
-		val msg = "Only one primary is allowed in modelUsage { ... }."
+		val msg = "Only one provider is allowed at modelUsage level (outside escalationTo)."
 		val n = issues.stream().filter[it.contains(msg)].count
 		Assertions.assertEquals(2L, n,
-			'''Expected one diagnostic per duplicate primary keyword; got «n»: «String.join(", ", issues)»'''
+			'''Expected one diagnostic per duplicate modelUsage provider keyword; got «n»: «String.join(", ", issues)»'''
 		)
 	}
 
@@ -2221,7 +2177,6 @@ class LibrettoProjectProfileParsingTest {
 			    }
 			    gen {
 			      initialInstruction "a"
-			      maxRetries 1
 			      parseCheck true
 			      defaultCorrection "b"
 			      rules {
@@ -2283,14 +2238,16 @@ class LibrettoProjectProfileParsingTest {
 			    modules { «completeModule("m", "m")» }
 			    gen {
 			      initialInstruction "i"
-			      maxRetries 6
 			      parseCheck true
 			      defaultCorrection "c"
 			      rules {
 			        rule { pattern "_" code "C" correction "R" }
 			        default { code "X" correction "Y" }
 			      }
-			      «minimalModelUsageForTests()»
+			      modelUsage {
+			        maxRetries 6
+			        provider test-minimal-provider
+			      }
 			    }
 			  }
 			  «minimalLlmProvidersForGenTests()»
@@ -2305,84 +2262,10 @@ class LibrettoProjectProfileParsingTest {
 		)
 	}
 
-	@Test
-	def void rejectsAtRetryAboveFive() throws Exception {
-		val result = parseHelper.parse('''
-			profile "x" {
-			  project {
-			    rootDir "."
-			    modules { «completeModule("m", "m")» }
-			    gen {
-			      initialInstruction "i"
-			      maxRetries 3
-			      parseCheck true
-			      defaultCorrection "c"
-			      rules {
-			        rule { pattern "_" code "C" correction "R" }
-			        default { code "X" correction "Y" }
-			      }
-			      modelUsage {
-			        primary p
-			        secondary p
-			        escalation { atRetry 6 }
-			      }
-			    }
-			  }
-			  llmProviders { provider p { type local filePath "/x" } }
-			  surface { }
-			}
-		''')
-		Assertions.assertNotNull(result)
-		val issues = diagnosticMessages(result)
-		Assertions.assertTrue(
-			issues.stream().anyMatch[it.contains("atRetry must be between 0 and 5.")],
-			'''Expected atRetry range error; got «String.join(", ", issues)»'''
-		)
-	}
-
-	@Test
-	def void warnsWhenAtRetryGreaterThanMaxRetries() throws Exception {
-		val result = parseHelper.parse('''
-			profile "x" {
-			  project {
-			    rootDir "."
-			    modules { «completeModule("m", "m")» }
-			    gen {
-			      initialInstruction "i"
-			      maxRetries 2
-			      parseCheck true
-			      defaultCorrection "c"
-			      rules {
-			        rule { pattern "_" code "C" correction "R" }
-			        default { code "X" correction "Y" }
-			      }
-			      modelUsage {
-			        primary p
-			        secondary p
-			        escalation { atRetry 4 }
-			      }
-			    }
-			  }
-			  llmProviders { provider p { type local filePath "/x" } }
-			  surface { }
-			}
-		''')
-		Assertions.assertNotNull(result)
-		Assertions.assertTrue(result.eResource.errors.isEmpty, '''Unexpected errors: «joinDiagnostics(result.eResource.errors)»''')
-		val warns = warningMessages(result)
-		Assertions.assertTrue(
-			warns.stream().anyMatch[it.contains("atRetry is greater than maxRetries for this gen block.")],
-			'''Expected warning; got «String.join(", ", warns)»'''
-		)
-	}
-
 	def private static String minimalModelUsageForTests() '''
 			      modelUsage {
-			        primary test-minimal-provider
-			        escalation {
-			          enabled false
-			          atRetry 0
-			        }
+			        maxRetries 1
+			        provider test-minimal-provider
 			      }
 	'''
 
@@ -2396,14 +2279,13 @@ class LibrettoProjectProfileParsingTest {
 	'''
 
 	/**
-	 * Minimal valid {@code gen} body (initialInstruction, maxRetries, parseCheck, defaultCorrection, rules, modelUsage).
-	 * Pair with {@code minimalLlmProvidersForGenTests()} at profile level (primary {@code test-minimal-provider};
-	 * escalation {@code enabled false} so {@code secondary} is omitted).
+	 * Minimal valid {@code gen} body (initialInstruction, parseCheck, defaultCorrection, rules, modelUsage with maxRetries).
+	 * Pair with {@code minimalLlmProvidersForGenTests()} at profile level ({@code test-minimal-provider} for
+	 * modelUsage).
 	 */
 	def private static String minimalGenBlock() '''
 			    gen {
 			      initialInstruction "minimal"
-			      maxRetries 1
 			      parseCheck true
 			      defaultCorrection "minimal"
 			      rules {

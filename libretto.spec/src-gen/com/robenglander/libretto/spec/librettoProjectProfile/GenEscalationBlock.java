@@ -3,9 +3,6 @@
  */
 package com.robenglander.libretto.spec.librettoProjectProfile;
 
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,27 +14,26 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock#getKeyword <em>Keyword</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock#getEnableds <em>Enableds</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock#getAtRetries <em>At Retries</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenEscalationBlock()
  * @model
  * @generated
  */
-public interface GenEscalationBlock extends EObject
+public interface GenEscalationBlock extends EscalationProvider
 {
   /**
    * Returns the value of the '<em><b>Keyword</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Keyword</em>' containment reference.
-   * @see #setKeyword(EscalationKeyword)
+   * @see #setKeyword(EscalationToKeyword)
    * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenEscalationBlock_Keyword()
    * @model containment="true"
    * @generated
    */
-  EscalationKeyword getKeyword();
+  EscalationToKeyword getKeyword();
 
   /**
    * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock#getKeyword <em>Keyword</em>}' containment reference.
@@ -47,30 +43,28 @@ public interface GenEscalationBlock extends EObject
    * @see #getKeyword()
    * @generated
    */
-  void setKeyword(EscalationKeyword value);
+  void setKeyword(EscalationToKeyword value);
 
   /**
-   * Returns the value of the '<em><b>Enableds</b></em>' containment reference list.
-   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.Enabled}.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Enableds</em>' containment reference list.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenEscalationBlock_Enableds()
-   * @model containment="true"
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenEscalationBlock_Name()
+   * @model
    * @generated
    */
-  EList<Enabled> getEnableds();
+  String getName();
 
   /**
-   * Returns the value of the '<em><b>At Retries</b></em>' containment reference list.
-   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.AtRetry}.
+   * Sets the value of the '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>At Retries</em>' containment reference list.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenEscalationBlock_AtRetries()
-   * @model containment="true"
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  EList<AtRetry> getAtRetries();
+  void setName(String value);
 
 } // GenEscalationBlock

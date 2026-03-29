@@ -6,9 +6,10 @@
  * {@link com.robenglander.libretto.spec.projection.LibrettoSpecDomainModel}.
  * </p>
  * <p>
- * <b>Project profile ({@code .lpp}):</b> root
- * {@link com.robenglander.libretto.spec.projection.LibrettoProjectProfileDomainModelProjection} /
- * {@link com.robenglander.libretto.spec.projection.LibrettoProjectProfileDomainModel}.
+ * <b>Project profile ({@code .lpp}):</b>
+ * {@link com.robenglander.libretto.spec.projection.LibrettoProjectProfileDomainModelProjection} wraps
+ * {@link com.robenglander.libretto.spec.projection.ProjectedProfile} (one
+ * {@link com.robenglander.libretto.spec.projection.LibrettoProjectProfileDomainModel} per file).
  * </p>
  * <p>
  * <b>Populate</b> from EMF in {@code libretto.spec} (mappers). <b>Consume</b> from {@code libretto-core}

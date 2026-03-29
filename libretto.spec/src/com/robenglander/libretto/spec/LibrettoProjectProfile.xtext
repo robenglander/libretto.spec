@@ -151,8 +151,6 @@ GenBlock:
 		(
 			(initialInstructions+=InitialInstruction)
 			|
-			(maxRetries+=MaxRetries)
-			|
 			(parseChecks+=ParseCheck)
 			|
 			(defaultCorrections+=DefaultCorrection)
@@ -362,11 +360,11 @@ GenUsageBlock:
 	{GenUsageBlock} 
 	keyword = ModelUsageKeyword '{'
 		(
-			(primaryProviders+=PrimaryProvider)
+			(providers+=Provider)
 			|
-			(secondaryProviders+=SecondaryProvider)
+			(maxRetries+=MaxRetries)
 			|
-			(escalations+=GenEscalationBlock)
+			(escalations+=EscalationProvider)
 		)*
 	'}';
 
@@ -375,59 +373,19 @@ ModelUsageKeyword:
 	keyword = ('modelusage' | 'modelUsage')	
 ;
 
-PrimaryProvider:
+Provider:
 	{PrimaryProvider}
-	keyword = PrimaryProviderKeyword name = ValidID
+	keyword = ProviderKeyword name = ValidID
 ;
 
-PrimaryProviderKeyword:
-	{PrimaryProviderKeyword}
-	keyword = 'primary'	
-;
-
-SecondaryProvider:
-	{SecondaryProvider}
-	keyword = SecondaryProviderKeyword name = ValidID
-;
-
-SecondaryProviderKeyword:
-	{SecondaryProviderKeyword}
-	keyword = 'secondary'	
-;
-
-GenEscalationBlock:
+EscalationProvider:
 	{GenEscalationBlock} 
-	keyword = EscalationKeyword '{'
-		(
-			(enableds+=Enabled)
-			|
-			(atRetries+=AtRetry)
-		)*
-	'}';
-
-EscalationKeyword:
-	{EscalationKeyword}
-	keyword = 'escalation'
+	keyword = EscalationToKeyword name = ValidID
 ;
 
-Enabled:
-	{Enabled}
-	keyword = EnabledKeyword value = TrueFalseKeyword
-;
-
-EnabledKeyword:
-	{EnabledKeyword}
-	keyword = 'enabled'
-;
-
-AtRetry:
-	{AtRetry}
-	keyword = AtRetryKeyword value = INT
-;
-
-AtRetryKeyword:
-	{AtRetryKeyword}
-	keyword = ('atretry' | 'atRetry')
+EscalationToKeyword:
+	{EscalationToKeyword}
+	keyword = ('escalationto' | 'escalationTo')
 ;
 
 SurfaceBlock:

@@ -17,8 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getKeyword <em>Keyword</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getPrimaryProviders <em>Primary Providers</em>}</li>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getSecondaryProviders <em>Secondary Providers</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getProviders <em>Providers</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getMaxRetries <em>Max Retries</em>}</li>
  *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getEscalations <em>Escalations</em>}</li>
  * </ul>
  *
@@ -51,32 +51,32 @@ public interface GenUsageBlock extends EObject
   void setKeyword(ModelUsageKeyword value);
 
   /**
-   * Returns the value of the '<em><b>Primary Providers</b></em>' containment reference list.
-   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider}.
+   * Returns the value of the '<em><b>Providers</b></em>' containment reference list.
+   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.Provider}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Primary Providers</em>' containment reference list.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenUsageBlock_PrimaryProviders()
+   * @return the value of the '<em>Providers</em>' containment reference list.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenUsageBlock_Providers()
    * @model containment="true"
    * @generated
    */
-  EList<PrimaryProvider> getPrimaryProviders();
+  EList<Provider> getProviders();
 
   /**
-   * Returns the value of the '<em><b>Secondary Providers</b></em>' containment reference list.
-   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProvider}.
+   * Returns the value of the '<em><b>Max Retries</b></em>' containment reference list.
+   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.MaxRetries}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Secondary Providers</em>' containment reference list.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenUsageBlock_SecondaryProviders()
+   * @return the value of the '<em>Max Retries</em>' containment reference list.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage#getGenUsageBlock_MaxRetries()
    * @model containment="true"
    * @generated
    */
-  EList<SecondaryProvider> getSecondaryProviders();
+  EList<MaxRetries> getMaxRetries();
 
   /**
    * Returns the value of the '<em><b>Escalations</b></em>' containment reference list.
-   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock}.
+   * The list contents are of type {@link com.robenglander.libretto.spec.librettoProjectProfile.EscalationProvider}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Escalations</em>' containment reference list.
@@ -84,6 +84,6 @@ public interface GenUsageBlock extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<GenEscalationBlock> getEscalations();
+  EList<EscalationProvider> getEscalations();
 
 } // GenUsageBlock

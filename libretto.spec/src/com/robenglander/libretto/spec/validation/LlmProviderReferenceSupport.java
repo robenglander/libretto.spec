@@ -74,6 +74,30 @@ public final class LlmProviderReferenceSupport {
 		return String.join(",", sorted);
 	}
 
+	/**
+	 * Single issue-data string for {@code model_usage_top_escalation_provider_same_name}: comma-separated declared names,
+	 * then {@code '|'}, then the modelUsage primary provider name. Valid provider IDs do not contain {@code |}.
+	 */
+	public static String escalationSameNameIssueData(String declaredCsv, String primaryName) {
+		String c = declaredCsv == null ? "" : declaredCsv;
+		String p = primaryName == null ? "" : primaryName.trim();
+		return c + "|" + p;
+	}
+
+	/**
+	 * @return {@code [declaredCsv, primaryName]} (possibly empty strings)
+	 */
+	public static String[] parseEscalationSameNameIssueData(String issueData) {
+		if (issueData == null || issueData.isBlank()) {
+			return new String[] { "", "" };
+		}
+		int i = issueData.lastIndexOf('|');
+		if (i < 0) {
+			return new String[] { issueData.trim(), "" };
+		}
+		return new String[] { issueData.substring(0, i).trim(), issueData.substring(i + 1).trim() };
+	}
+
 	/** Inverse of {@link #declaredProviderNamesCsv(Profile)} for issue data / quick fixes. */
 	public static List<String> splitDeclaredNamesCsv(String csv) {
 		if (csv == null || csv.isBlank()) {

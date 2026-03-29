@@ -20,81 +20,79 @@ public sealed interface ProjectedBehaviorItem permits
 
 	record Source(ProjectedSourceBlock source) implements ProjectedBehaviorItem {
 		public Source {
-			if (source == null) {
-				throw new NullPointerException("source");
-			}
+			java.util.Objects.requireNonNull(source, "source");
 		}
 	}
 
 	record Actor(String actor) implements ProjectedBehaviorItem {
 		public Actor {
-			actor = actor == null ? "" : actor;
+			actor = ProjectionStrings.requireNonBlank(actor, "actor");
 		}
 	}
 
 	record Action(String action) implements ProjectedBehaviorItem {
 		public Action {
-			action = action == null ? "" : action;
+			action = ProjectionStrings.requireNonBlank(action, "action");
 		}
 	}
 
 	record Objects(List<String> objectIds) implements ProjectedBehaviorItem {
 		public Objects {
-			objectIds = objectIds == null ? List.of() : List.copyOf(objectIds);
+			objectIds = List.copyOf(java.util.Objects.requireNonNull(objectIds, "objectIds"));
 		}
 	}
 
 	record Reads(List<String> reads) implements ProjectedBehaviorItem {
 		public Reads {
-			reads = reads == null ? List.of() : List.copyOf(reads);
+			reads = List.copyOf(java.util.Objects.requireNonNull(reads, "reads"));
 		}
 	}
 
 	record Writes(List<String> writes) implements ProjectedBehaviorItem {
 		public Writes {
-			writes = writes == null ? List.of() : List.copyOf(writes);
+			writes = List.copyOf(java.util.Objects.requireNonNull(writes, "writes"));
 		}
 	}
 
 	record Conditions(List<String> conditions) implements ProjectedBehaviorItem {
 		public Conditions {
-			conditions = conditions == null ? List.of() : List.copyOf(conditions);
+			conditions = List.copyOf(java.util.Objects.requireNonNull(conditions, "conditions"));
 		}
 	}
 
 	record Outcomes(List<String> outcomes) implements ProjectedBehaviorItem {
 		public Outcomes {
-			outcomes = outcomes == null ? List.of() : List.copyOf(outcomes);
+			outcomes = List.copyOf(java.util.Objects.requireNonNull(outcomes, "outcomes"));
 		}
 	}
 
 	record Label(String label) implements ProjectedBehaviorItem {
 		public Label {
-			label = label == null ? "" : label;
+			label = ProjectionStrings.requireNonBlank(label, "label");
 		}
 	}
 
 	record References(List<String> refIds) implements ProjectedBehaviorItem {
 		public References {
-			refIds = refIds == null ? List.of() : List.copyOf(refIds);
+			refIds = List.copyOf(java.util.Objects.requireNonNull(refIds, "refIds"));
 		}
 	}
 
 	record Notes(String notes) implements ProjectedBehaviorItem {
 		public Notes {
-			notes = notes == null ? "" : notes;
+			notes = ProjectionStrings.requireNonNullTrim(notes, "notes");
 		}
 	}
 
 	record Context(String context) implements ProjectedBehaviorItem {
 		public Context {
-			context = context == null ? "" : context;
+			context = ProjectionStrings.requireNonNullTrim(context, "context");
 		}
 	}
 
 	record Dependencies(List<String> dependencyIds) implements ProjectedBehaviorItem {
 		public Dependencies {
-			dependencyIds = dependencyIds == null ? List.of() : List.copyOf(dependencyIds);
+			dependencyIds = List.copyOf(java.util.Objects.requireNonNull(dependencyIds, "dependencyIds"));
 		}
 	}
 }

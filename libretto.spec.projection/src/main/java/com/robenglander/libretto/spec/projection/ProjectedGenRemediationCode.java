@@ -4,6 +4,6 @@ package com.robenglander.libretto.spec.projection;
 public record ProjectedGenRemediationCode(String code) {
 
 	public ProjectedGenRemediationCode {
-		code = code == null ? "" : code.trim();
+		code = ProjectionStrings.requireNonBlank(code, "code");
 	}
 }

@@ -123,16 +123,9 @@ public class LibrettoProjectProfileFactoryImpl extends EFactoryImpl implements L
       case LibrettoProjectProfilePackage.ENDPOINT_KEYWORD: return createEndpointKeyword();
       case LibrettoProjectProfilePackage.GEN_USAGE_BLOCK: return createGenUsageBlock();
       case LibrettoProjectProfilePackage.MODEL_USAGE_KEYWORD: return createModelUsageKeyword();
-      case LibrettoProjectProfilePackage.PRIMARY_PROVIDER: return createPrimaryProvider();
-      case LibrettoProjectProfilePackage.PRIMARY_PROVIDER_KEYWORD: return createPrimaryProviderKeyword();
-      case LibrettoProjectProfilePackage.SECONDARY_PROVIDER: return createSecondaryProvider();
-      case LibrettoProjectProfilePackage.SECONDARY_PROVIDER_KEYWORD: return createSecondaryProviderKeyword();
-      case LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK: return createGenEscalationBlock();
-      case LibrettoProjectProfilePackage.ESCALATION_KEYWORD: return createEscalationKeyword();
-      case LibrettoProjectProfilePackage.ENABLED: return createEnabled();
-      case LibrettoProjectProfilePackage.ENABLED_KEYWORD: return createEnabledKeyword();
-      case LibrettoProjectProfilePackage.AT_RETRY: return createAtRetry();
-      case LibrettoProjectProfilePackage.AT_RETRY_KEYWORD: return createAtRetryKeyword();
+      case LibrettoProjectProfilePackage.PROVIDER: return createProvider();
+      case LibrettoProjectProfilePackage.ESCALATION_PROVIDER: return createEscalationProvider();
+      case LibrettoProjectProfilePackage.ESCALATION_TO_KEYWORD: return createEscalationToKeyword();
       case LibrettoProjectProfilePackage.SURFACE_BLOCK: return createSurfaceBlock();
       case LibrettoProjectProfilePackage.SURFACE_ELEMENT: return createSurfaceElement();
       case LibrettoProjectProfilePackage.SCOPED_SURFACE: return createScopedSurface();
@@ -147,6 +140,8 @@ public class LibrettoProjectProfileFactoryImpl extends EFactoryImpl implements L
       case LibrettoProjectProfilePackage.OPERATION_SIGNATURE: return createOperationSignature();
       case LibrettoProjectProfilePackage.TYPED_PARAM: return createTypedParam();
       case LibrettoProjectProfilePackage.TRUE_KEYWORD: return createTrueKeyword();
+      case LibrettoProjectProfilePackage.PRIMARY_PROVIDER: return createPrimaryProvider();
+      case LibrettoProjectProfilePackage.GEN_ESCALATION_BLOCK: return createGenEscalationBlock();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -854,10 +849,10 @@ public class LibrettoProjectProfileFactoryImpl extends EFactoryImpl implements L
    * @generated
    */
   @Override
-  public PrimaryProvider createPrimaryProvider()
+  public Provider createProvider()
   {
-    PrimaryProviderImpl primaryProvider = new PrimaryProviderImpl();
-    return primaryProvider;
+    ProviderImpl provider = new ProviderImpl();
+    return provider;
   }
 
   /**
@@ -866,10 +861,10 @@ public class LibrettoProjectProfileFactoryImpl extends EFactoryImpl implements L
    * @generated
    */
   @Override
-  public PrimaryProviderKeyword createPrimaryProviderKeyword()
+  public EscalationProvider createEscalationProvider()
   {
-    PrimaryProviderKeywordImpl primaryProviderKeyword = new PrimaryProviderKeywordImpl();
-    return primaryProviderKeyword;
+    EscalationProviderImpl escalationProvider = new EscalationProviderImpl();
+    return escalationProvider;
   }
 
   /**
@@ -878,94 +873,10 @@ public class LibrettoProjectProfileFactoryImpl extends EFactoryImpl implements L
    * @generated
    */
   @Override
-  public SecondaryProvider createSecondaryProvider()
+  public EscalationToKeyword createEscalationToKeyword()
   {
-    SecondaryProviderImpl secondaryProvider = new SecondaryProviderImpl();
-    return secondaryProvider;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public SecondaryProviderKeyword createSecondaryProviderKeyword()
-  {
-    SecondaryProviderKeywordImpl secondaryProviderKeyword = new SecondaryProviderKeywordImpl();
-    return secondaryProviderKeyword;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public GenEscalationBlock createGenEscalationBlock()
-  {
-    GenEscalationBlockImpl genEscalationBlock = new GenEscalationBlockImpl();
-    return genEscalationBlock;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EscalationKeyword createEscalationKeyword()
-  {
-    EscalationKeywordImpl escalationKeyword = new EscalationKeywordImpl();
-    return escalationKeyword;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Enabled createEnabled()
-  {
-    EnabledImpl enabled = new EnabledImpl();
-    return enabled;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EnabledKeyword createEnabledKeyword()
-  {
-    EnabledKeywordImpl enabledKeyword = new EnabledKeywordImpl();
-    return enabledKeyword;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public AtRetry createAtRetry()
-  {
-    AtRetryImpl atRetry = new AtRetryImpl();
-    return atRetry;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public AtRetryKeyword createAtRetryKeyword()
-  {
-    AtRetryKeywordImpl atRetryKeyword = new AtRetryKeywordImpl();
-    return atRetryKeyword;
+    EscalationToKeywordImpl escalationToKeyword = new EscalationToKeywordImpl();
+    return escalationToKeyword;
   }
 
   /**
@@ -1134,6 +1045,30 @@ public class LibrettoProjectProfileFactoryImpl extends EFactoryImpl implements L
   {
     TrueKeywordImpl trueKeyword = new TrueKeywordImpl();
     return trueKeyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PrimaryProvider createPrimaryProvider()
+  {
+    PrimaryProviderImpl primaryProvider = new PrimaryProviderImpl();
+    return primaryProvider;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public GenEscalationBlock createGenEscalationBlock()
+  {
+    GenEscalationBlockImpl genEscalationBlock = new GenEscalationBlockImpl();
+    return genEscalationBlock;
   }
 
   /**

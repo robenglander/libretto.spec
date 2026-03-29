@@ -4,13 +4,13 @@ public sealed interface ProjectedDependencyItem permits ProjectedDependencyItem.
 
 	record TargetSpec(String targetSpec) implements ProjectedDependencyItem {
 		public TargetSpec {
-			targetSpec = targetSpec == null ? "" : targetSpec;
+			targetSpec = ProjectionStrings.requireNonBlank(targetSpec, "targetSpec");
 		}
 	}
 
 	record Notes(String notes) implements ProjectedDependencyItem {
 		public Notes {
-			notes = notes == null ? "" : notes;
+			notes = ProjectionStrings.requireNonNullTrim(notes, "notes");
 		}
 	}
 }

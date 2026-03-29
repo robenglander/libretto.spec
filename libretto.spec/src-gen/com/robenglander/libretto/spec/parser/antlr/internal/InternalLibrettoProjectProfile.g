@@ -1503,29 +1503,9 @@ ruleGenBlock returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getGenBlockAccess().getMaxRetriesMaxRetriesParserRuleCall_3_1_0());
+						newCompositeNode(grammarAccess.getGenBlockAccess().getParseChecksParseCheckParserRuleCall_3_1_0());
 					}
-					lv_maxRetries_4_0=ruleMaxRetries
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getGenBlockRule());
-						}
-						add(
-							$current,
-							"maxRetries",
-							lv_maxRetries_4_0,
-							"com.robenglander.libretto.spec.LibrettoProjectProfile.MaxRetries");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			    |
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getGenBlockAccess().getParseChecksParseCheckParserRuleCall_3_2_0());
-					}
-					lv_parseChecks_5_0=ruleParseCheck
+					lv_parseChecks_4_0=ruleParseCheck
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getGenBlockRule());
@@ -1533,7 +1513,7 @@ ruleGenBlock returns [EObject current=null]
 						add(
 							$current,
 							"parseChecks",
-							lv_parseChecks_5_0,
+							lv_parseChecks_4_0,
 							"com.robenglander.libretto.spec.LibrettoProjectProfile.ParseCheck");
 						afterParserOrEnumRuleCall();
 					}
@@ -1543,9 +1523,9 @@ ruleGenBlock returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getGenBlockAccess().getDefaultCorrectionsDefaultCorrectionParserRuleCall_3_3_0());
+						newCompositeNode(grammarAccess.getGenBlockAccess().getDefaultCorrectionsDefaultCorrectionParserRuleCall_3_2_0());
 					}
-					lv_defaultCorrections_6_0=ruleDefaultCorrection
+					lv_defaultCorrections_5_0=ruleDefaultCorrection
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getGenBlockRule());
@@ -1553,7 +1533,7 @@ ruleGenBlock returns [EObject current=null]
 						add(
 							$current,
 							"defaultCorrections",
-							lv_defaultCorrections_6_0,
+							lv_defaultCorrections_5_0,
 							"com.robenglander.libretto.spec.LibrettoProjectProfile.DefaultCorrection");
 						afterParserOrEnumRuleCall();
 					}
@@ -1563,9 +1543,9 @@ ruleGenBlock returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getGenBlockAccess().getRemediationsGenRemediationRulesParserRuleCall_3_4_0());
+						newCompositeNode(grammarAccess.getGenBlockAccess().getRemediationsGenRemediationRulesParserRuleCall_3_3_0());
 					}
-					lv_remediations_7_0=ruleGenRemediationRules
+					lv_remediations_6_0=ruleGenRemediationRules
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getGenBlockRule());
@@ -1573,7 +1553,7 @@ ruleGenBlock returns [EObject current=null]
 						add(
 							$current,
 							"remediations",
-							lv_remediations_7_0,
+							lv_remediations_6_0,
 							"com.robenglander.libretto.spec.LibrettoProjectProfile.GenRemediationRules");
 						afterParserOrEnumRuleCall();
 					}
@@ -1583,9 +1563,9 @@ ruleGenBlock returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getGenBlockAccess().getModelUsagesGenUsageBlockParserRuleCall_3_5_0());
+						newCompositeNode(grammarAccess.getGenBlockAccess().getModelUsagesGenUsageBlockParserRuleCall_3_4_0());
 					}
-					lv_modelUsages_8_0=ruleGenUsageBlock
+					lv_modelUsages_7_0=ruleGenUsageBlock
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getGenBlockRule());
@@ -1593,16 +1573,16 @@ ruleGenBlock returns [EObject current=null]
 						add(
 							$current,
 							"modelUsages",
-							lv_modelUsages_8_0,
+							lv_modelUsages_7_0,
 							"com.robenglander.libretto.spec.LibrettoProjectProfile.GenUsageBlock");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)*
-		otherlv_9='}'
+		otherlv_8='}'
 		{
-			newLeafNode(otherlv_9, grammarAccess.getGenBlockAccess().getRightCurlyBracketKeyword_4());
+			newLeafNode(otherlv_8, grammarAccess.getGenBlockAccess().getRightCurlyBracketKeyword_4());
 		}
 	)
 ;
@@ -3696,18 +3676,18 @@ ruleGenUsageBlock returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getGenUsageBlockAccess().getPrimaryProvidersPrimaryProviderParserRuleCall_3_0_0());
+						newCompositeNode(grammarAccess.getGenUsageBlockAccess().getProvidersProviderParserRuleCall_3_0_0());
 					}
-					lv_primaryProviders_3_0=rulePrimaryProvider
+					lv_providers_3_0=ruleProvider
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getGenUsageBlockRule());
 						}
 						add(
 							$current,
-							"primaryProviders",
-							lv_primaryProviders_3_0,
-							"com.robenglander.libretto.spec.LibrettoProjectProfile.PrimaryProvider");
+							"providers",
+							lv_providers_3_0,
+							"com.robenglander.libretto.spec.LibrettoProjectProfile.Provider");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -3716,18 +3696,18 @@ ruleGenUsageBlock returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getGenUsageBlockAccess().getSecondaryProvidersSecondaryProviderParserRuleCall_3_1_0());
+						newCompositeNode(grammarAccess.getGenUsageBlockAccess().getMaxRetriesMaxRetriesParserRuleCall_3_1_0());
 					}
-					lv_secondaryProviders_4_0=ruleSecondaryProvider
+					lv_maxRetries_4_0=ruleMaxRetries
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getGenUsageBlockRule());
 						}
 						add(
 							$current,
-							"secondaryProviders",
-							lv_secondaryProviders_4_0,
-							"com.robenglander.libretto.spec.LibrettoProjectProfile.SecondaryProvider");
+							"maxRetries",
+							lv_maxRetries_4_0,
+							"com.robenglander.libretto.spec.LibrettoProjectProfile.MaxRetries");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -3736,9 +3716,9 @@ ruleGenUsageBlock returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getGenUsageBlockAccess().getEscalationsGenEscalationBlockParserRuleCall_3_2_0());
+						newCompositeNode(grammarAccess.getGenUsageBlockAccess().getEscalationsEscalationProviderParserRuleCall_3_2_0());
 					}
-					lv_escalations_5_0=ruleGenEscalationBlock
+					lv_escalations_5_0=ruleEscalationProvider
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getGenUsageBlockRule());
@@ -3747,7 +3727,7 @@ ruleGenUsageBlock returns [EObject current=null]
 							$current,
 							"escalations",
 							lv_escalations_5_0,
-							"com.robenglander.libretto.spec.LibrettoProjectProfile.GenEscalationBlock");
+							"com.robenglander.libretto.spec.LibrettoProjectProfile.EscalationProvider");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -3813,15 +3793,15 @@ ruleModelUsageKeyword returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRulePrimaryProvider
-entryRulePrimaryProvider returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getPrimaryProviderRule()); }
-	iv_rulePrimaryProvider=rulePrimaryProvider
-	{ $current=$iv_rulePrimaryProvider.current; }
+// Entry rule entryRuleProvider
+entryRuleProvider returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getProviderRule()); }
+	iv_ruleProvider=ruleProvider
+	{ $current=$iv_ruleProvider.current; }
 	EOF;
 
-// Rule PrimaryProvider
-rulePrimaryProvider returns [EObject current=null]
+// Rule Provider
+ruleProvider returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -3832,25 +3812,25 @@ rulePrimaryProvider returns [EObject current=null]
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getPrimaryProviderAccess().getPrimaryProviderAction_0(),
+					grammarAccess.getProviderAccess().getPrimaryProviderAction_0(),
 					$current);
 			}
 		)
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getPrimaryProviderAccess().getKeywordPrimaryProviderKeywordParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getProviderAccess().getKeywordProviderKeywordParserRuleCall_1_0());
 				}
-				lv_keyword_1_0=rulePrimaryProviderKeyword
+				lv_keyword_1_0=ruleProviderKeyword
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getPrimaryProviderRule());
+						$current = createModelElementForParent(grammarAccess.getProviderRule());
 					}
 					set(
 						$current,
 						"keyword",
 						lv_keyword_1_0,
-						"com.robenglander.libretto.spec.LibrettoProjectProfile.PrimaryProviderKeyword");
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.ProviderKeyword");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -3858,12 +3838,12 @@ rulePrimaryProvider returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getPrimaryProviderAccess().getNameValidIDParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getProviderAccess().getNameValidIDParserRuleCall_2_0());
 				}
 				lv_name_2_0=ruleValidID
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getPrimaryProviderRule());
+						$current = createModelElementForParent(grammarAccess.getProviderRule());
 					}
 					set(
 						$current,
@@ -3877,15 +3857,15 @@ rulePrimaryProvider returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRulePrimaryProviderKeyword
-entryRulePrimaryProviderKeyword returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getPrimaryProviderKeywordRule()); }
-	iv_rulePrimaryProviderKeyword=rulePrimaryProviderKeyword
-	{ $current=$iv_rulePrimaryProviderKeyword.current; }
+// Entry rule entryRuleEscalationProvider
+entryRuleEscalationProvider returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getEscalationProviderRule()); }
+	iv_ruleEscalationProvider=ruleEscalationProvider
+	{ $current=$iv_ruleEscalationProvider.current; }
 	EOF;
 
-// Rule PrimaryProviderKeyword
-rulePrimaryProviderKeyword returns [EObject current=null]
+// Rule EscalationProvider
+ruleEscalationProvider returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -3896,65 +3876,25 @@ rulePrimaryProviderKeyword returns [EObject current=null]
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getPrimaryProviderKeywordAccess().getPrimaryProviderKeywordAction_0(),
-					$current);
-			}
-		)
-		(
-			(
-				lv_keyword_1_0='primary'
-				{
-					newLeafNode(lv_keyword_1_0, grammarAccess.getPrimaryProviderKeywordAccess().getKeywordPrimaryKeyword_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getPrimaryProviderKeywordRule());
-					}
-					setWithLastConsumed($current, "keyword", lv_keyword_1_0, "primary");
-				}
-			)
-		)
-	)
-;
-
-// Entry rule entryRuleSecondaryProvider
-entryRuleSecondaryProvider returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getSecondaryProviderRule()); }
-	iv_ruleSecondaryProvider=ruleSecondaryProvider
-	{ $current=$iv_ruleSecondaryProvider.current; }
-	EOF;
-
-// Rule SecondaryProvider
-ruleSecondaryProvider returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getSecondaryProviderAccess().getSecondaryProviderAction_0(),
+					grammarAccess.getEscalationProviderAccess().getGenEscalationBlockAction_0(),
 					$current);
 			}
 		)
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSecondaryProviderAccess().getKeywordSecondaryProviderKeywordParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getEscalationProviderAccess().getKeywordEscalationToKeywordParserRuleCall_1_0());
 				}
-				lv_keyword_1_0=ruleSecondaryProviderKeyword
+				lv_keyword_1_0=ruleEscalationToKeyword
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getSecondaryProviderRule());
+						$current = createModelElementForParent(grammarAccess.getEscalationProviderRule());
 					}
 					set(
 						$current,
 						"keyword",
 						lv_keyword_1_0,
-						"com.robenglander.libretto.spec.LibrettoProjectProfile.SecondaryProviderKeyword");
+						"com.robenglander.libretto.spec.LibrettoProjectProfile.EscalationToKeyword");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -3962,12 +3902,12 @@ ruleSecondaryProvider returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSecondaryProviderAccess().getNameValidIDParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getEscalationProviderAccess().getNameValidIDParserRuleCall_2_0());
 				}
 				lv_name_2_0=ruleValidID
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getSecondaryProviderRule());
+						$current = createModelElementForParent(grammarAccess.getEscalationProviderRule());
 					}
 					set(
 						$current,
@@ -3981,15 +3921,15 @@ ruleSecondaryProvider returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleSecondaryProviderKeyword
-entryRuleSecondaryProviderKeyword returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getSecondaryProviderKeywordRule()); }
-	iv_ruleSecondaryProviderKeyword=ruleSecondaryProviderKeyword
-	{ $current=$iv_ruleSecondaryProviderKeyword.current; }
+// Entry rule entryRuleEscalationToKeyword
+entryRuleEscalationToKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getEscalationToKeywordRule()); }
+	iv_ruleEscalationToKeyword=ruleEscalationToKeyword
+	{ $current=$iv_ruleEscalationToKeyword.current; }
 	EOF;
 
-// Rule SecondaryProviderKeyword
-ruleSecondaryProviderKeyword returns [EObject current=null]
+// Rule EscalationToKeyword
+ruleEscalationToKeyword returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -4000,372 +3940,31 @@ ruleSecondaryProviderKeyword returns [EObject current=null]
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getSecondaryProviderKeywordAccess().getSecondaryProviderKeywordAction_0(),
-					$current);
-			}
-		)
-		(
-			(
-				lv_keyword_1_0='secondary'
-				{
-					newLeafNode(lv_keyword_1_0, grammarAccess.getSecondaryProviderKeywordAccess().getKeywordSecondaryKeyword_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getSecondaryProviderKeywordRule());
-					}
-					setWithLastConsumed($current, "keyword", lv_keyword_1_0, "secondary");
-				}
-			)
-		)
-	)
-;
-
-// Entry rule entryRuleGenEscalationBlock
-entryRuleGenEscalationBlock returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getGenEscalationBlockRule()); }
-	iv_ruleGenEscalationBlock=ruleGenEscalationBlock
-	{ $current=$iv_ruleGenEscalationBlock.current; }
-	EOF;
-
-// Rule GenEscalationBlock
-ruleGenEscalationBlock returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getGenEscalationBlockAccess().getGenEscalationBlockAction_0(),
-					$current);
-			}
-		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getGenEscalationBlockAccess().getKeywordEscalationKeywordParserRuleCall_1_0());
-				}
-				lv_keyword_1_0=ruleEscalationKeyword
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getGenEscalationBlockRule());
-					}
-					set(
-						$current,
-						"keyword",
-						lv_keyword_1_0,
-						"com.robenglander.libretto.spec.LibrettoProjectProfile.EscalationKeyword");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_2='{'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getGenEscalationBlockAccess().getLeftCurlyBracketKeyword_2());
-		}
-		(
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getGenEscalationBlockAccess().getEnabledsEnabledParserRuleCall_3_0_0());
-					}
-					lv_enableds_3_0=ruleEnabled
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getGenEscalationBlockRule());
-						}
-						add(
-							$current,
-							"enableds",
-							lv_enableds_3_0,
-							"com.robenglander.libretto.spec.LibrettoProjectProfile.Enabled");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			    |
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getGenEscalationBlockAccess().getAtRetriesAtRetryParserRuleCall_3_1_0());
-					}
-					lv_atRetries_4_0=ruleAtRetry
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getGenEscalationBlockRule());
-						}
-						add(
-							$current,
-							"atRetries",
-							lv_atRetries_4_0,
-							"com.robenglander.libretto.spec.LibrettoProjectProfile.AtRetry");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)*
-		otherlv_5='}'
-		{
-			newLeafNode(otherlv_5, grammarAccess.getGenEscalationBlockAccess().getRightCurlyBracketKeyword_4());
-		}
-	)
-;
-
-// Entry rule entryRuleEscalationKeyword
-entryRuleEscalationKeyword returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getEscalationKeywordRule()); }
-	iv_ruleEscalationKeyword=ruleEscalationKeyword
-	{ $current=$iv_ruleEscalationKeyword.current; }
-	EOF;
-
-// Rule EscalationKeyword
-ruleEscalationKeyword returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getEscalationKeywordAccess().getEscalationKeywordAction_0(),
-					$current);
-			}
-		)
-		(
-			(
-				lv_keyword_1_0='escalation'
-				{
-					newLeafNode(lv_keyword_1_0, grammarAccess.getEscalationKeywordAccess().getKeywordEscalationKeyword_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getEscalationKeywordRule());
-					}
-					setWithLastConsumed($current, "keyword", lv_keyword_1_0, "escalation");
-				}
-			)
-		)
-	)
-;
-
-// Entry rule entryRuleEnabled
-entryRuleEnabled returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getEnabledRule()); }
-	iv_ruleEnabled=ruleEnabled
-	{ $current=$iv_ruleEnabled.current; }
-	EOF;
-
-// Rule Enabled
-ruleEnabled returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getEnabledAccess().getEnabledAction_0(),
-					$current);
-			}
-		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getEnabledAccess().getKeywordEnabledKeywordParserRuleCall_1_0());
-				}
-				lv_keyword_1_0=ruleEnabledKeyword
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getEnabledRule());
-					}
-					set(
-						$current,
-						"keyword",
-						lv_keyword_1_0,
-						"com.robenglander.libretto.spec.LibrettoProjectProfile.EnabledKeyword");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getEnabledAccess().getValueTrueFalseKeywordParserRuleCall_2_0());
-				}
-				lv_value_2_0=ruleTrueFalseKeyword
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getEnabledRule());
-					}
-					set(
-						$current,
-						"value",
-						lv_value_2_0,
-						"com.robenglander.libretto.spec.LibrettoProjectProfile.TrueFalseKeyword");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-	)
-;
-
-// Entry rule entryRuleEnabledKeyword
-entryRuleEnabledKeyword returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getEnabledKeywordRule()); }
-	iv_ruleEnabledKeyword=ruleEnabledKeyword
-	{ $current=$iv_ruleEnabledKeyword.current; }
-	EOF;
-
-// Rule EnabledKeyword
-ruleEnabledKeyword returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getEnabledKeywordAccess().getEnabledKeywordAction_0(),
-					$current);
-			}
-		)
-		(
-			(
-				lv_keyword_1_0='enabled'
-				{
-					newLeafNode(lv_keyword_1_0, grammarAccess.getEnabledKeywordAccess().getKeywordEnabledKeyword_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getEnabledKeywordRule());
-					}
-					setWithLastConsumed($current, "keyword", lv_keyword_1_0, "enabled");
-				}
-			)
-		)
-	)
-;
-
-// Entry rule entryRuleAtRetry
-entryRuleAtRetry returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getAtRetryRule()); }
-	iv_ruleAtRetry=ruleAtRetry
-	{ $current=$iv_ruleAtRetry.current; }
-	EOF;
-
-// Rule AtRetry
-ruleAtRetry returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getAtRetryAccess().getAtRetryAction_0(),
-					$current);
-			}
-		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getAtRetryAccess().getKeywordAtRetryKeywordParserRuleCall_1_0());
-				}
-				lv_keyword_1_0=ruleAtRetryKeyword
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getAtRetryRule());
-					}
-					set(
-						$current,
-						"keyword",
-						lv_keyword_1_0,
-						"com.robenglander.libretto.spec.LibrettoProjectProfile.AtRetryKeyword");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			(
-				lv_value_2_0=RULE_INT
-				{
-					newLeafNode(lv_value_2_0, grammarAccess.getAtRetryAccess().getValueINTTerminalRuleCall_2_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAtRetryRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"value",
-						lv_value_2_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
-			)
-		)
-	)
-;
-
-// Entry rule entryRuleAtRetryKeyword
-entryRuleAtRetryKeyword returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getAtRetryKeywordRule()); }
-	iv_ruleAtRetryKeyword=ruleAtRetryKeyword
-	{ $current=$iv_ruleAtRetryKeyword.current; }
-	EOF;
-
-// Rule AtRetryKeyword
-ruleAtRetryKeyword returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getAtRetryKeywordAccess().getAtRetryKeywordAction_0(),
+					grammarAccess.getEscalationToKeywordAccess().getEscalationToKeywordAction_0(),
 					$current);
 			}
 		)
 		(
 			(
 				(
-					lv_keyword_1_1='atretry'
+					lv_keyword_1_1='escalationto'
 					{
-						newLeafNode(lv_keyword_1_1, grammarAccess.getAtRetryKeywordAccess().getKeywordAtretryKeyword_1_0_0());
+						newLeafNode(lv_keyword_1_1, grammarAccess.getEscalationToKeywordAccess().getKeywordEscalationtoKeyword_1_0_0());
 					}
 					{
 						if ($current==null) {
-							$current = createModelElement(grammarAccess.getAtRetryKeywordRule());
+							$current = createModelElement(grammarAccess.getEscalationToKeywordRule());
 						}
 						setWithLastConsumed($current, "keyword", lv_keyword_1_1, null);
 					}
 					    |
-					lv_keyword_1_2='atRetry'
+					lv_keyword_1_2='escalationTo'
 					{
-						newLeafNode(lv_keyword_1_2, grammarAccess.getAtRetryKeywordAccess().getKeywordAtRetryKeyword_1_0_1());
+						newLeafNode(lv_keyword_1_2, grammarAccess.getEscalationToKeywordAccess().getKeywordEscalationToKeyword_1_0_1());
 					}
 					{
 						if ($current==null) {
-							$current = createModelElement(grammarAccess.getAtRetryKeywordRule());
+							$current = createModelElement(grammarAccess.getEscalationToKeywordRule());
 						}
 						setWithLastConsumed($current, "keyword", lv_keyword_1_2, null);
 					}

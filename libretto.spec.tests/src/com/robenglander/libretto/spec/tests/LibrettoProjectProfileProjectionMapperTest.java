@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.eclipse.xtext.testing.InjectWith;
 import org.eclipse.xtext.testing.extensions.InjectionExtension;
 import org.eclipse.xtext.testing.util.ParseHelper;
+import org.eclipse.xtext.testing.validation.ValidationTestHelper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -20,14 +21,53 @@ import com.robenglander.libretto.spec.projection.mapper.LibrettoProjectProfilePr
 @InjectWith(LibrettoProjectProfileInjectorProvider.class)
 class LibrettoProjectProfileProjectionMapperTest {
 
-	private static final String SAMPLE_WITH_SURFACE_ONLY = """
+	/**
+	 * Valid LPP: one profile, one project (rootDir, modules, gen), one llmProviders; modelUsage top and optional
+	 * {@code escalationTo} must differ when present and both exist in {@code llmProviders}.
+	 */
+	private static final String MINIMAL_VALID_LPP = """
 			profile "1" {
-			  surface {
-			    returnType method getX as boolean;
-			    for module "common" {
-			      paramType name p as int;
-			      recordSelfReturn a, b;
-			      methodOverride foo() returns com.example.T;
+			  project {
+			    rootDir "."
+			    modules {
+			      module common {
+			        dir "common"
+			        specDir "src/spec/public"
+			        testDir "src/test/java"
+			        mainDir "src/main/java"
+			        basePackage "com.example.common"
+			      }
+			    }
+			    gen {
+			      initialInstruction "x"
+			      parseCheck true
+			      defaultCorrection "y"
+			      rules {
+			        rule {
+			          pattern "_"
+			          code "MIN"
+			          correction "c"
+			        }
+			        default {
+			          code "X"
+			          correction "Y"
+			        }
+			      }
+			      modelUsage {
+			        maxRetries 1
+			        provider local-default
+			        escalationTo openai-fast
+			      }
+			    }
+			  }
+			  llmProviders {
+			    provider local-default {
+			      type local
+			      filePath "/models/local.bin"
+			    }
+			    provider openai-fast {
+			      type openai
+			      model "gpt"
 			    }
 			  }
 			}
@@ -36,20 +76,25 @@ class LibrettoProjectProfileProjectionMapperTest {
 	@Inject
 	ParseHelper<ProjectProfile> parseHelper;
 
+	@Inject
+	ValidationTestHelper validation;
+
 	@Test
 	void mapperOmitsSurfaceFromProjection() throws Exception {
-		ProjectProfile file = parseHelper.parse(SAMPLE_WITH_SURFACE_ONLY);
+		ProjectProfile file = parseHelper.parse(MINIMAL_VALID_LPP);
 		assertNotNull(file);
+		validation.assertNoIssues(file);
 		LibrettoProjectProfileDomainModelProjection p = LibrettoProjectProfileProjectionMapper.project(file);
 		assertEquals("1", p.profileName());
-		assertTrue(p.projectBlocks().isEmpty(), "surface-only profile has no project blocks in projection");
-		assertTrue(p.llmProviderBlocks().isEmpty(), "surface-only profile has no llmProviders in projection");
+		assertTrue(p.project().isPresent());
+		assertTrue(p.llmProvidersBlock().isPresent());
 	}
 
 	@Test
 	void headlessParseAndProjectMatchesMapper() {
-		var parsed = LibrettoProjectProfileHeadless.parse(SAMPLE_WITH_SURFACE_ONLY);
+		var parsed = LibrettoProjectProfileHeadless.parse(MINIMAL_VALID_LPP);
 		assertNotNull(parsed.fileRoot());
+		assertTrue(parsed.semanticErrors().isEmpty(), () -> String.valueOf(parsed.semanticErrors()));
 		LibrettoProjectProfileDomainModelProjection fromHeadless = parsed.project();
 		LibrettoProjectProfileDomainModelProjection direct = LibrettoProjectProfileProjectionMapper
 				.project(parsed.fileRoot());
@@ -60,16 +105,134 @@ class LibrettoProjectProfileProjectionMapperTest {
 	void mapperMapsNamedProfileWithSurfaceBlockPresent() throws Exception {
 		String named = """
 				profile "acme" {
+				  project {
+				    rootDir "."
+				    modules {
+				      module common {
+				        dir "common"
+				        specDir "src/spec/public"
+				        testDir "src/test/java"
+				        mainDir "src/main/java"
+				        basePackage "com.example.common"
+				      }
+				    }
+				    gen {
+				      initialInstruction "x"
+				      parseCheck true
+				      defaultCorrection "y"
+				      rules {
+				        rule {
+				          pattern "_"
+				          code "MIN"
+				          correction "c"
+				        }
+				        default {
+				          code "X"
+				          correction "Y"
+				        }
+				      }
+				      modelUsage {
+				        maxRetries 1
+				        provider local-default
+				        escalationTo openai-fast
+				      }
+				    }
+				  }
+				  llmProviders {
+				    provider local-default {
+				      type local
+				      filePath "/models/local.bin"
+				    }
+				    provider openai-fast {
+				      type openai
+				      model "gpt"
+				    }
+				  }
 				  surface {
 				  }
 				}
 				""";
 		ProjectProfile file = parseHelper.parse(named);
 		assertNotNull(file);
+		validation.assertNoIssues(file);
 		LibrettoProjectProfileDomainModelProjection p = LibrettoProjectProfileProjectionMapper.project(file);
 		assertEquals("acme", p.profileName());
-		assertTrue(p.projectBlocks().isEmpty());
-		assertTrue(p.llmProviderBlocks().isEmpty());
+		assertTrue(p.project().isPresent());
+		assertTrue(p.llmProvidersBlock().isPresent());
 	}
 
+	@Test
+	void invalidProfileDoesNotProduceProjectionViaHeadless() {
+		String two = """
+				profile "first" {
+				  project {
+				    rootDir "."
+				    modules {
+				      module m {
+				        dir "m"
+				        specDir "m/s"
+				        testDir "m/t"
+				        mainDir "m/m"
+				        basePackage "p.m"
+				      }
+				    }
+				    gen {
+				      initialInstruction "x"
+				      parseCheck true
+				      defaultCorrection "y"
+				      rules {
+				        rule { pattern "_" code "C" correction "c" }
+				        default { code "X" correction "Y" }
+				      }
+				      modelUsage {
+				        maxRetries 1
+				        provider a
+				        escalationTo b
+				      }
+				    }
+				  }
+				  llmProviders {
+				    provider a { type local filePath "/a" }
+				    provider b { type openai model "m" }
+				  }
+				}
+				profile "second" {
+				  project {
+				    rootDir "."
+				    modules {
+				      module m {
+				        dir "m"
+				        specDir "m/s"
+				        testDir "m/t"
+				        mainDir "m/m"
+				        basePackage "p.m"
+				      }
+				    }
+				    gen {
+				      initialInstruction "x"
+				      parseCheck true
+				      defaultCorrection "y"
+				      rules {
+				        rule { pattern "_" code "C" correction "c" }
+				        default { code "X" correction "Y" }
+				      }
+				      modelUsage {
+				        maxRetries 1
+				        provider a
+				        escalationTo b
+				      }
+				    }
+				  }
+				  llmProviders {
+				    provider a { type local filePath "/a" }
+				    provider b { type openai model "m" }
+				  }
+				}
+				""";
+		var parsed = LibrettoProjectProfileHeadless.parse(two);
+		assertNotNull(parsed.fileRoot());
+		assertTrue(parsed.hasSemanticErrors());
+		assertEquals("", parsed.project().profileName());
+		assertTrue(parsed.project().domainModel().project().isEmpty());
+	}
 }

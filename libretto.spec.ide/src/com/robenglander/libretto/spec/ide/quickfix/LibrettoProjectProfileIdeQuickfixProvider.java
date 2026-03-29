@@ -40,7 +40,7 @@ public class LibrettoProjectProfileIdeQuickfixProvider extends AbstractDeclarati
 
 	@Override
 	public boolean handlesDiagnostic(Diagnostic diagnostic) {
-		if (isUnknownModelUsageProviderDiagnostic(diagnostic)) {
+		if (isDeclaredProviderNameModelUsageFix(diagnostic)) {
 			return true;
 		}
 		if (isInvalidProviderTypeNameDiagnostic(diagnostic)) {
@@ -52,7 +52,7 @@ public class LibrettoProjectProfileIdeQuickfixProvider extends AbstractDeclarati
 	@Override
 	public List<DiagnosticResolution> getResolutions(ICodeActionService2.Options options, Diagnostic diagnostic) {
 		List<DiagnosticResolution> list = new ArrayList<>(super.getResolutions(options, diagnostic));
-		if (isUnknownModelUsageProviderDiagnostic(diagnostic)) {
+		if (isDeclaredProviderNameModelUsageFix(diagnostic)) {
 			/*
 			 * Must use DiagnosticResolutionAcceptor: it calls package-private DiagnosticResolution.configure(options,
 			 * diagnostic). Resolutions created with "new DiagnosticResolution(...)" never get configured, so apply()
@@ -63,12 +63,14 @@ public class LibrettoProjectProfileIdeQuickfixProvider extends AbstractDeclarati
 			 * Match legacy Libretto UI quick fixes (e.g. LibrettoQuickfixProvider): replace text at the validation
 			 * region (there IXtextDocument.replace(issue.getOffset(), length, newText); here LSP diagnostic range +
 			 * TextEdit). Change-serializer semantic edits did not produce applicable workspace edits for this case.
+			 * Same resolutions as {@link LibrettoProjectProfileValidator#MODEL_USAGE_UNKNOWN_PROVIDER}; for
+			 * {@link LibrettoProjectProfileValidator#MODEL_USAGE_TOP_ESCALATION_PROVIDER_SAME_NAME} the primary name is
+			 * excluded from candidates (see {@link #candidateDeclaredProviderNames}).
 			 */
 			for (String name : candidateDeclaredProviderNames(options, diagnostic)) {
-				String newName = name;
 				dynamic.accept(
 						"Change to provider '" + name + "'",
-						(ITextModification) (Diagnostic d, EObject ctx, Document doc) -> createTextEdit(d, newName));
+						(ITextModification) (Diagnostic d, EObject ctx, Document doc) -> createTextEdit(d, name));
 			}
 			list.addAll(dynamic.getDiagnosticResolutions(options, diagnostic));
 		}
@@ -93,9 +95,18 @@ public class LibrettoProjectProfileIdeQuickfixProvider extends AbstractDeclarati
 	}
 
 	private static boolean isUnknownModelUsageProviderDiagnostic(Diagnostic diagnostic) {
-		String code = diagnosticCodeString(diagnostic);
-		return LibrettoProjectProfileValidator.MODEL_USAGE_PRIMARY_UNKNOWN_PROVIDER.equals(code)
-				|| LibrettoProjectProfileValidator.MODEL_USAGE_SECONDARY_UNKNOWN_PROVIDER.equals(code);
+		return LibrettoProjectProfileValidator.MODEL_USAGE_UNKNOWN_PROVIDER.equals(diagnosticCodeString(diagnostic));
+	}
+
+	private static boolean isTopEscalationSameNameAsPrimaryDiagnostic(Diagnostic diagnostic) {
+		return LibrettoProjectProfileValidator.MODEL_USAGE_TOP_ESCALATION_PROVIDER_SAME_NAME.equals(
+				diagnosticCodeString(diagnostic));
+	}
+
+	/** {@link LibrettoProjectProfileValidator#MODEL_USAGE_UNKNOWN_PROVIDER} or same-name escalation / primary. */
+	private static boolean isDeclaredProviderNameModelUsageFix(Diagnostic diagnostic) {
+		return isUnknownModelUsageProviderDiagnostic(diagnostic)
+				|| isTopEscalationSameNameAsPrimaryDiagnostic(diagnostic);
 	}
 
 	private static boolean isInvalidProviderTypeNameDiagnostic(Diagnostic diagnostic) {
@@ -104,19 +115,77 @@ public class LibrettoProjectProfileIdeQuickfixProvider extends AbstractDeclarati
 
 	private static List<String> candidateDeclaredProviderNames(ICodeActionService2.Options options,
 			Diagnostic diagnostic) {
-		List<String> fromData = diagnosticDataCsvNames(diagnostic);
+		List<String> fromData;
+		String excludeName = null;
+		if (isTopEscalationSameNameAsPrimaryDiagnostic(diagnostic)) {
+			Object d = diagnostic.getData();
+			if (d instanceof List<?> list && list.size() >= 2 && list.get(0) instanceof String s0
+					&& list.get(1) instanceof String s1) {
+				fromData = LlmProviderReferenceSupport.splitDeclaredNamesCsv(s0);
+				excludeName = s1;
+			} else {
+				String raw = firstStringFromDiagnosticData(diagnostic);
+				if (raw != null && !raw.isBlank()) {
+					String[] parsed = parseEscalationSameNameIssueData(raw);
+					fromData = LlmProviderReferenceSupport.splitDeclaredNamesCsv(parsed[0]);
+					excludeName = parsed[1];
+				} else {
+					fromData = List.of();
+				}
+			}
+		} else {
+			fromData = diagnosticDataCsvNames(diagnostic);
+		}
 		if (!fromData.isEmpty()) {
-			return fromData;
+			return filterExcludedProviderName(fromData, excludeName);
 		}
 		Resource r = options.getResource();
 		if (r instanceof XtextResource xr && !xr.getContents().isEmpty()) {
 			EObject root = xr.getContents().get(0);
 			if (root instanceof ProjectProfile pp && !pp.getProfiles().isEmpty()) {
 				Profile p = pp.getProfiles().get(0);
-				return LlmProviderReferenceSupport.declaredProviderNamesSorted(p);
+				List<String> all = LlmProviderReferenceSupport.declaredProviderNamesSorted(p);
+				return filterExcludedProviderName(all, excludeName);
 			}
 		}
 		return List.of();
+	}
+
+	private static String firstStringFromDiagnosticData(Diagnostic diagnostic) {
+		Object data = diagnostic.getData();
+		if (data instanceof List<?> list && !list.isEmpty() && list.get(0) instanceof String s) {
+			return s;
+		}
+		if (data instanceof String s) {
+			return s;
+		}
+		return null;
+	}
+
+	private static List<String> filterExcludedProviderName(List<String> names, String excludeName) {
+		if (excludeName == null || excludeName.isBlank()) {
+			return names;
+		}
+		String ex = excludeName.trim();
+		List<String> out = new ArrayList<>();
+		for (String n : names) {
+			if (!n.equals(ex)) {
+				out.add(n);
+			}
+		}
+		return out;
+	}
+
+	/** Same encoding as {@link LlmProviderReferenceSupport#escalationSameNameIssueData(String, String)} (Tycho classpath). */
+	private static String[] parseEscalationSameNameIssueData(String issueData) {
+		if (issueData == null || issueData.isBlank()) {
+			return new String[] { "", "" };
+		}
+		int i = issueData.lastIndexOf('|');
+		if (i < 0) {
+			return new String[] { issueData.trim(), "" };
+		}
+		return new String[] { issueData.substring(0, i).trim(), issueData.substring(i + 1).trim() };
 	}
 
 	private static List<String> diagnosticDataCsvNames(Diagnostic diagnostic) {
@@ -213,33 +282,20 @@ public class LibrettoProjectProfileIdeQuickfixProvider extends AbstractDeclarati
 				"Remove this modelUsage section");
 	}
 
-	@QuickFix(LibrettoProjectProfileValidator.MODEL_USAGE_TOO_MANY_PRIMARIES)
-	public void removeDuplicatePrimaryProvider(DiagnosticResolutionAcceptor acceptor) {
-		acceptRemoval(acceptor, LibrettoProjectProfileValidator.MODEL_USAGE_TOO_MANY_PRIMARIES, "Remove this primary entry");
-	}
-
-	@QuickFix(LibrettoProjectProfileValidator.MODEL_USAGE_TOO_MANY_SECONDARIES)
-	public void removeDuplicateSecondaryProvider(DiagnosticResolutionAcceptor acceptor) {
+	@QuickFix(LibrettoProjectProfileValidator.MODEL_USAGE_TOO_MANY_PROVIDERS)
+	public void removeDuplicateModelUsageProvider(DiagnosticResolutionAcceptor acceptor) {
 		acceptRemoval(
 				acceptor,
-				LibrettoProjectProfileValidator.MODEL_USAGE_TOO_MANY_SECONDARIES,
-				"Remove this secondary entry");
+				LibrettoProjectProfileValidator.MODEL_USAGE_TOO_MANY_PROVIDERS,
+				"Remove this provider entry");
 	}
 
 	@QuickFix(LibrettoProjectProfileValidator.MODEL_USAGE_TOO_MANY_ESCALATIONS)
-	public void removeDuplicateEscalationBlock(DiagnosticResolutionAcceptor acceptor) {
+	public void removeDuplicateEscalationTo(DiagnosticResolutionAcceptor acceptor) {
 		acceptRemoval(
 				acceptor,
 				LibrettoProjectProfileValidator.MODEL_USAGE_TOO_MANY_ESCALATIONS,
-				"Remove this escalation block");
-	}
-
-	@QuickFix(LibrettoProjectProfileValidator.MODEL_USAGE_PRIMARY_SECONDARY_SAME_NAME)
-	public void removePrimaryOrSecondaryForSameName(DiagnosticResolutionAcceptor acceptor) {
-		acceptRemoval(
-				acceptor,
-				LibrettoProjectProfileValidator.MODEL_USAGE_PRIMARY_SECONDARY_SAME_NAME,
-				"Remove this primary or secondary entry");
+				"Remove this escalationTo line");
 	}
 
 	@QuickFix(LibrettoProjectProfileValidator.LLM_PROVIDER_TOO_MANY_TYPES)

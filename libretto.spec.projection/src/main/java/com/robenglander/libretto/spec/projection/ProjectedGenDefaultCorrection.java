@@ -4,6 +4,6 @@ package com.robenglander.libretto.spec.projection;
 public record ProjectedGenDefaultCorrection(String correction) {
 
 	public ProjectedGenDefaultCorrection {
-		correction = correction == null ? "" : correction.trim();
+		correction = ProjectionStrings.requireNonBlank(correction, "correction");
 	}
 }

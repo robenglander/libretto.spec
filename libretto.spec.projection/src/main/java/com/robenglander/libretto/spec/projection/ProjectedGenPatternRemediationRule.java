@@ -1,18 +1,16 @@
 package com.robenglander.libretto.spec.projection;
 
-import java.util.List;
+import java.util.Objects;
 
-/**
- * Portable view of {@code rule { pattern* code* correction* }} inside {@code rules}.
- */
+/** Portable view of {@code rule { … }} inside {@code rules}. */
 public record ProjectedGenPatternRemediationRule(
-		List<ProjectedGenPattern> patterns,
-		List<ProjectedGenRemediationCode> codes,
-		List<ProjectedGenRemediationCorrection> corrections) {
+		ProjectedGenPattern pattern,
+		ProjectedGenRemediationCode code,
+		ProjectedGenRemediationCorrection correction) {
 
 	public ProjectedGenPatternRemediationRule {
-		patterns = patterns == null ? List.of() : List.copyOf(patterns);
-		codes = codes == null ? List.of() : List.copyOf(codes);
-		corrections = corrections == null ? List.of() : List.copyOf(corrections);
+		pattern = Objects.requireNonNull(pattern, "pattern");
+		code = Objects.requireNonNull(code, "code");
+		correction = Objects.requireNonNull(correction, "correction");
 	}
 }

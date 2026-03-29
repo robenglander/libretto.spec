@@ -4,6 +4,6 @@ package com.robenglander.libretto.spec.projection;
 public record ProjectedLlmEndpoint(String mode) {
 
 	public ProjectedLlmEndpoint {
-		mode = mode == null ? "" : mode.trim();
+		mode = ProjectionStrings.requireNonBlank(mode, "endpoint");
 	}
 }

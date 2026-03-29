@@ -3,7 +3,7 @@
  */
 package com.robenglander.libretto.spec.librettoProjectProfile.impl;
 
-import com.robenglander.libretto.spec.librettoProjectProfile.EscalationKeyword;
+import com.robenglander.libretto.spec.librettoProjectProfile.EscalationToKeyword;
 import com.robenglander.libretto.spec.librettoProjectProfile.LibrettoProjectProfilePackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -15,18 +15,18 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Escalation Keyword</b></em>'.
+ * An implementation of the model object '<em><b>Escalation To Keyword</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.EscalationKeywordImpl#getKeyword <em>Keyword</em>}</li>
+ *   <li>{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.EscalationToKeywordImpl#getKeyword <em>Keyword</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class EscalationKeywordImpl extends MinimalEObjectImpl.Container implements EscalationKeyword
+public class EscalationToKeywordImpl extends MinimalEObjectImpl.Container implements EscalationToKeyword
 {
   /**
    * The default value of the '{@link #getKeyword() <em>Keyword</em>}' attribute.
@@ -53,7 +53,7 @@ public class EscalationKeywordImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  protected EscalationKeywordImpl()
+  protected EscalationToKeywordImpl()
   {
     super();
   }
@@ -66,7 +66,7 @@ public class EscalationKeywordImpl extends MinimalEObjectImpl.Container implemen
   @Override
   protected EClass eStaticClass()
   {
-    return LibrettoProjectProfilePackage.Literals.ESCALATION_KEYWORD;
+    return LibrettoProjectProfilePackage.Literals.ESCALATION_TO_KEYWORD;
   }
 
   /**
@@ -91,7 +91,7 @@ public class EscalationKeywordImpl extends MinimalEObjectImpl.Container implemen
     String oldKeyword = keyword;
     keyword = newKeyword;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoProjectProfilePackage.ESCALATION_KEYWORD__KEYWORD, oldKeyword, keyword));
+      eNotify(new ENotificationImpl(this, Notification.SET, LibrettoProjectProfilePackage.ESCALATION_TO_KEYWORD__KEYWORD, oldKeyword, keyword));
   }
 
   /**
@@ -104,7 +104,7 @@ public class EscalationKeywordImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case LibrettoProjectProfilePackage.ESCALATION_KEYWORD__KEYWORD:
+      case LibrettoProjectProfilePackage.ESCALATION_TO_KEYWORD__KEYWORD:
         return getKeyword();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -120,7 +120,7 @@ public class EscalationKeywordImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case LibrettoProjectProfilePackage.ESCALATION_KEYWORD__KEYWORD:
+      case LibrettoProjectProfilePackage.ESCALATION_TO_KEYWORD__KEYWORD:
         setKeyword((String)newValue);
         return;
     }
@@ -137,7 +137,7 @@ public class EscalationKeywordImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case LibrettoProjectProfilePackage.ESCALATION_KEYWORD__KEYWORD:
+      case LibrettoProjectProfilePackage.ESCALATION_TO_KEYWORD__KEYWORD:
         setKeyword(KEYWORD_EDEFAULT);
         return;
     }
@@ -154,7 +154,7 @@ public class EscalationKeywordImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case LibrettoProjectProfilePackage.ESCALATION_KEYWORD__KEYWORD:
+      case LibrettoProjectProfilePackage.ESCALATION_TO_KEYWORD__KEYWORD:
         return KEYWORD_EDEFAULT == null ? keyword != null : !KEYWORD_EDEFAULT.equals(keyword);
     }
     return super.eIsSet(featureID);
@@ -177,4 +177,4 @@ public class EscalationKeywordImpl extends MinimalEObjectImpl.Container implemen
     return result.toString();
   }
 
-} //EscalationKeywordImpl
+} //EscalationToKeywordImpl

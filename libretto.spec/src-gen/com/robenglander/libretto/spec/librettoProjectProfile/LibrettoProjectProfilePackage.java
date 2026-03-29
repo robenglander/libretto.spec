@@ -854,22 +854,13 @@ public interface LibrettoProjectProfilePackage extends EPackage
   int GEN_BLOCK__INITIAL_INSTRUCTIONS = 1;
 
   /**
-   * The feature id for the '<em><b>Max Retries</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GEN_BLOCK__MAX_RETRIES = 2;
-
-  /**
    * The feature id for the '<em><b>Parse Checks</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GEN_BLOCK__PARSE_CHECKS = 3;
+  int GEN_BLOCK__PARSE_CHECKS = 2;
 
   /**
    * The feature id for the '<em><b>Default Corrections</b></em>' containment reference list.
@@ -878,7 +869,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int GEN_BLOCK__DEFAULT_CORRECTIONS = 4;
+  int GEN_BLOCK__DEFAULT_CORRECTIONS = 3;
 
   /**
    * The feature id for the '<em><b>Remediations</b></em>' containment reference list.
@@ -887,7 +878,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int GEN_BLOCK__REMEDIATIONS = 5;
+  int GEN_BLOCK__REMEDIATIONS = 4;
 
   /**
    * The feature id for the '<em><b>Model Usages</b></em>' containment reference list.
@@ -896,7 +887,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int GEN_BLOCK__MODEL_USAGES = 6;
+  int GEN_BLOCK__MODEL_USAGES = 5;
 
   /**
    * The number of structural features of the '<em>Gen Block</em>' class.
@@ -905,7 +896,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int GEN_BLOCK_FEATURE_COUNT = 7;
+  int GEN_BLOCK_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenKeywordImpl <em>Gen Keyword</em>}' class.
@@ -2086,22 +2077,22 @@ public interface LibrettoProjectProfilePackage extends EPackage
   int GEN_USAGE_BLOCK__KEYWORD = 0;
 
   /**
-   * The feature id for the '<em><b>Primary Providers</b></em>' containment reference list.
+   * The feature id for the '<em><b>Providers</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GEN_USAGE_BLOCK__PRIMARY_PROVIDERS = 1;
+  int GEN_USAGE_BLOCK__PROVIDERS = 1;
 
   /**
-   * The feature id for the '<em><b>Secondary Providers</b></em>' containment reference list.
+   * The feature id for the '<em><b>Max Retries</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GEN_USAGE_BLOCK__SECONDARY_PROVIDERS = 2;
+  int GEN_USAGE_BLOCK__MAX_RETRIES = 2;
 
   /**
    * The feature id for the '<em><b>Escalations</b></em>' containment reference list.
@@ -2150,51 +2141,52 @@ public interface LibrettoProjectProfilePackage extends EPackage
   int MODEL_USAGE_KEYWORD_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.PrimaryProviderImpl <em>Primary Provider</em>}' class.
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProviderImpl <em>Provider</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.PrimaryProviderImpl
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getPrimaryProvider()
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.ProviderImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getProvider()
    * @generated
    */
-  int PRIMARY_PROVIDER = 58;
+  int PROVIDER = 58;
 
   /**
-   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
+   * The number of structural features of the '<em>Provider</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PRIMARY_PROVIDER__KEYWORD = 0;
+  int PROVIDER_FEATURE_COUNT = 0;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.EscalationProviderImpl <em>Escalation Provider</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.EscalationProviderImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getEscalationProvider()
+   * @generated
+   */
+  int ESCALATION_PROVIDER = 59;
+
+  /**
+   * The number of structural features of the '<em>Escalation Provider</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PRIMARY_PROVIDER__NAME = 1;
+  int ESCALATION_PROVIDER_FEATURE_COUNT = 0;
 
   /**
-   * The number of structural features of the '<em>Primary Provider</em>' class.
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.EscalationToKeywordImpl <em>Escalation To Keyword</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY_PROVIDER_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.PrimaryProviderKeywordImpl <em>Primary Provider Keyword</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.PrimaryProviderKeywordImpl
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getPrimaryProviderKeyword()
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.EscalationToKeywordImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getEscalationToKeyword()
    * @generated
    */
-  int PRIMARY_PROVIDER_KEYWORD = 59;
+  int ESCALATION_TO_KEYWORD = 60;
 
   /**
    * The feature id for the '<em><b>Keyword</b></em>' attribute.
@@ -2203,285 +2195,16 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int PRIMARY_PROVIDER_KEYWORD__KEYWORD = 0;
+  int ESCALATION_TO_KEYWORD__KEYWORD = 0;
 
   /**
-   * The number of structural features of the '<em>Primary Provider Keyword</em>' class.
+   * The number of structural features of the '<em>Escalation To Keyword</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PRIMARY_PROVIDER_KEYWORD_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.SecondaryProviderImpl <em>Secondary Provider</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.SecondaryProviderImpl
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getSecondaryProvider()
-   * @generated
-   */
-  int SECONDARY_PROVIDER = 60;
-
-  /**
-   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SECONDARY_PROVIDER__KEYWORD = 0;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SECONDARY_PROVIDER__NAME = 1;
-
-  /**
-   * The number of structural features of the '<em>Secondary Provider</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SECONDARY_PROVIDER_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.SecondaryProviderKeywordImpl <em>Secondary Provider Keyword</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.SecondaryProviderKeywordImpl
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getSecondaryProviderKeyword()
-   * @generated
-   */
-  int SECONDARY_PROVIDER_KEYWORD = 61;
-
-  /**
-   * The feature id for the '<em><b>Keyword</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SECONDARY_PROVIDER_KEYWORD__KEYWORD = 0;
-
-  /**
-   * The number of structural features of the '<em>Secondary Provider Keyword</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SECONDARY_PROVIDER_KEYWORD_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenEscalationBlockImpl <em>Gen Escalation Block</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.GenEscalationBlockImpl
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getGenEscalationBlock()
-   * @generated
-   */
-  int GEN_ESCALATION_BLOCK = 62;
-
-  /**
-   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GEN_ESCALATION_BLOCK__KEYWORD = 0;
-
-  /**
-   * The feature id for the '<em><b>Enableds</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GEN_ESCALATION_BLOCK__ENABLEDS = 1;
-
-  /**
-   * The feature id for the '<em><b>At Retries</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GEN_ESCALATION_BLOCK__AT_RETRIES = 2;
-
-  /**
-   * The number of structural features of the '<em>Gen Escalation Block</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GEN_ESCALATION_BLOCK_FEATURE_COUNT = 3;
-
-  /**
-   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.EscalationKeywordImpl <em>Escalation Keyword</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.EscalationKeywordImpl
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getEscalationKeyword()
-   * @generated
-   */
-  int ESCALATION_KEYWORD = 63;
-
-  /**
-   * The feature id for the '<em><b>Keyword</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ESCALATION_KEYWORD__KEYWORD = 0;
-
-  /**
-   * The number of structural features of the '<em>Escalation Keyword</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ESCALATION_KEYWORD_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.EnabledImpl <em>Enabled</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.EnabledImpl
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getEnabled()
-   * @generated
-   */
-  int ENABLED = 64;
-
-  /**
-   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ENABLED__KEYWORD = 0;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ENABLED__VALUE = 1;
-
-  /**
-   * The number of structural features of the '<em>Enabled</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ENABLED_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.EnabledKeywordImpl <em>Enabled Keyword</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.EnabledKeywordImpl
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getEnabledKeyword()
-   * @generated
-   */
-  int ENABLED_KEYWORD = 65;
-
-  /**
-   * The feature id for the '<em><b>Keyword</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ENABLED_KEYWORD__KEYWORD = 0;
-
-  /**
-   * The number of structural features of the '<em>Enabled Keyword</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ENABLED_KEYWORD_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.AtRetryImpl <em>At Retry</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.AtRetryImpl
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getAtRetry()
-   * @generated
-   */
-  int AT_RETRY = 66;
-
-  /**
-   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AT_RETRY__KEYWORD = 0;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AT_RETRY__VALUE = 1;
-
-  /**
-   * The number of structural features of the '<em>At Retry</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AT_RETRY_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.AtRetryKeywordImpl <em>At Retry Keyword</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.AtRetryKeywordImpl
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getAtRetryKeyword()
-   * @generated
-   */
-  int AT_RETRY_KEYWORD = 67;
-
-  /**
-   * The feature id for the '<em><b>Keyword</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AT_RETRY_KEYWORD__KEYWORD = 0;
-
-  /**
-   * The number of structural features of the '<em>At Retry Keyword</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AT_RETRY_KEYWORD_FEATURE_COUNT = 1;
+  int ESCALATION_TO_KEYWORD_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.SurfaceBlockImpl <em>Surface Block</em>}' class.
@@ -2491,7 +2214,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getSurfaceBlock()
    * @generated
    */
-  int SURFACE_BLOCK = 68;
+  int SURFACE_BLOCK = 61;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -2519,7 +2242,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getSurfaceElement()
    * @generated
    */
-  int SURFACE_ELEMENT = 69;
+  int SURFACE_ELEMENT = 62;
 
   /**
    * The number of structural features of the '<em>Surface Element</em>' class.
@@ -2538,7 +2261,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getScopedSurface()
    * @generated
    */
-  int SCOPED_SURFACE = 70;
+  int SCOPED_SURFACE = 63;
 
   /**
    * The feature id for the '<em><b>Module Id</b></em>' attribute.
@@ -2584,7 +2307,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getSurfaceRule()
    * @generated
    */
-  int SURFACE_RULE = 71;
+  int SURFACE_RULE = 64;
 
   /**
    * The number of structural features of the '<em>Surface Rule</em>' class.
@@ -2603,7 +2326,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getReturnTypeRule()
    * @generated
    */
-  int RETURN_TYPE_RULE = 72;
+  int RETURN_TYPE_RULE = 65;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2640,7 +2363,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getParamTypeRule()
    * @generated
    */
-  int PARAM_TYPE_RULE = 73;
+  int PARAM_TYPE_RULE = 66;
 
   /**
    * The feature id for the '<em><b>Param Name</b></em>' attribute.
@@ -2677,7 +2400,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getRecordSelfReturnRule()
    * @generated
    */
-  int RECORD_SELF_RETURN_RULE = 74;
+  int RECORD_SELF_RETURN_RULE = 67;
 
   /**
    * The feature id for the '<em><b>Methods</b></em>' attribute list.
@@ -2705,7 +2428,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getMethodOverrideRule()
    * @generated
    */
-  int METHOD_OVERRIDE_RULE = 75;
+  int METHOD_OVERRIDE_RULE = 68;
 
   /**
    * The feature id for the '<em><b>Signature</b></em>' containment reference.
@@ -2742,7 +2465,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getJavaType()
    * @generated
    */
-  int JAVA_TYPE = 76;
+  int JAVA_TYPE = 69;
 
   /**
    * The number of structural features of the '<em>Java Type</em>' class.
@@ -2761,7 +2484,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getQualifiedName()
    * @generated
    */
-  int QUALIFIED_NAME = 77;
+  int QUALIFIED_NAME = 70;
 
   /**
    * The feature id for the '<em><b>Segments</b></em>' attribute list.
@@ -2789,7 +2512,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getPrimitiveType()
    * @generated
    */
-  int PRIMITIVE_TYPE = 78;
+  int PRIMITIVE_TYPE = 71;
 
   /**
    * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -2817,7 +2540,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getOperationSignature()
    * @generated
    */
-  int OPERATION_SIGNATURE = 79;
+  int OPERATION_SIGNATURE = 72;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2854,7 +2577,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getTypedParam()
    * @generated
    */
-  int TYPED_PARAM = 80;
+  int TYPED_PARAM = 73;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -2891,7 +2614,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getTrueKeyword()
    * @generated
    */
-  int TRUE_KEYWORD = 81;
+  int TRUE_KEYWORD = 74;
 
   /**
    * The feature id for the '<em><b>Keyword</b></em>' attribute.
@@ -2910,6 +2633,80 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @ordered
    */
   int TRUE_KEYWORD_FEATURE_COUNT = TRUE_FALSE_KEYWORD_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.PrimaryProviderImpl <em>Primary Provider</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.PrimaryProviderImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getPrimaryProvider()
+   * @generated
+   */
+  int PRIMARY_PROVIDER = 75;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_PROVIDER__KEYWORD = PROVIDER_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_PROVIDER__NAME = PROVIDER_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Primary Provider</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_PROVIDER_FEATURE_COUNT = PROVIDER_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenEscalationBlockImpl <em>Gen Escalation Block</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.GenEscalationBlockImpl
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getGenEscalationBlock()
+   * @generated
+   */
+  int GEN_ESCALATION_BLOCK = 76;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GEN_ESCALATION_BLOCK__KEYWORD = ESCALATION_PROVIDER_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GEN_ESCALATION_BLOCK__NAME = ESCALATION_PROVIDER_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Gen Escalation Block</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GEN_ESCALATION_BLOCK_FEATURE_COUNT = ESCALATION_PROVIDER_FEATURE_COUNT + 2;
 
 
   /**
@@ -3604,17 +3401,6 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @generated
    */
   EReference getGenBlock_InitialInstructions();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getMaxRetries <em>Max Retries</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Max Retries</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getMaxRetries()
-   * @see #getGenBlock()
-   * @generated
-   */
-  EReference getGenBlock_MaxRetries();
 
   /**
    * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenBlock#getParseChecks <em>Parse Checks</em>}'.
@@ -4649,26 +4435,26 @@ public interface LibrettoProjectProfilePackage extends EPackage
   EReference getGenUsageBlock_Keyword();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getPrimaryProviders <em>Primary Providers</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getProviders <em>Providers</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Primary Providers</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getPrimaryProviders()
+   * @return the meta object for the containment reference list '<em>Providers</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getProviders()
    * @see #getGenUsageBlock()
    * @generated
    */
-  EReference getGenUsageBlock_PrimaryProviders();
+  EReference getGenUsageBlock_Providers();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getSecondaryProviders <em>Secondary Providers</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getMaxRetries <em>Max Retries</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Secondary Providers</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getSecondaryProviders()
+   * @return the meta object for the containment reference list '<em>Max Retries</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getMaxRetries()
    * @see #getGenUsageBlock()
    * @generated
    */
-  EReference getGenUsageBlock_SecondaryProviders();
+  EReference getGenUsageBlock_MaxRetries();
 
   /**
    * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenUsageBlock#getEscalations <em>Escalations</em>}'.
@@ -4703,280 +4489,45 @@ public interface LibrettoProjectProfilePackage extends EPackage
   EAttribute getModelUsageKeyword_Keyword();
 
   /**
-   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider <em>Primary Provider</em>}'.
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.Provider <em>Provider</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Primary Provider</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider
+   * @return the meta object for class '<em>Provider</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.Provider
    * @generated
    */
-  EClass getPrimaryProvider();
+  EClass getProvider();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider#getKeyword <em>Keyword</em>}'.
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.EscalationProvider <em>Escalation Provider</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Keyword</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider#getKeyword()
-   * @see #getPrimaryProvider()
+   * @return the meta object for class '<em>Escalation Provider</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.EscalationProvider
    * @generated
    */
-  EReference getPrimaryProvider_Keyword();
+  EClass getEscalationProvider();
 
   /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider#getName <em>Name</em>}'.
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.EscalationToKeyword <em>Escalation To Keyword</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider#getName()
-   * @see #getPrimaryProvider()
+   * @return the meta object for class '<em>Escalation To Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.EscalationToKeyword
    * @generated
    */
-  EAttribute getPrimaryProvider_Name();
+  EClass getEscalationToKeyword();
 
   /**
-   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProviderKeyword <em>Primary Provider Keyword</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Primary Provider Keyword</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProviderKeyword
-   * @generated
-   */
-  EClass getPrimaryProviderKeyword();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProviderKeyword#getKeyword <em>Keyword</em>}'.
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.EscalationToKeyword#getKeyword <em>Keyword</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Keyword</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProviderKeyword#getKeyword()
-   * @see #getPrimaryProviderKeyword()
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.EscalationToKeyword#getKeyword()
+   * @see #getEscalationToKeyword()
    * @generated
    */
-  EAttribute getPrimaryProviderKeyword_Keyword();
-
-  /**
-   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProvider <em>Secondary Provider</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Secondary Provider</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProvider
-   * @generated
-   */
-  EClass getSecondaryProvider();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProvider#getKeyword <em>Keyword</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Keyword</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProvider#getKeyword()
-   * @see #getSecondaryProvider()
-   * @generated
-   */
-  EReference getSecondaryProvider_Keyword();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProvider#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProvider#getName()
-   * @see #getSecondaryProvider()
-   * @generated
-   */
-  EAttribute getSecondaryProvider_Name();
-
-  /**
-   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProviderKeyword <em>Secondary Provider Keyword</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Secondary Provider Keyword</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProviderKeyword
-   * @generated
-   */
-  EClass getSecondaryProviderKeyword();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProviderKeyword#getKeyword <em>Keyword</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Keyword</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.SecondaryProviderKeyword#getKeyword()
-   * @see #getSecondaryProviderKeyword()
-   * @generated
-   */
-  EAttribute getSecondaryProviderKeyword_Keyword();
-
-  /**
-   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock <em>Gen Escalation Block</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Gen Escalation Block</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock
-   * @generated
-   */
-  EClass getGenEscalationBlock();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock#getKeyword <em>Keyword</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Keyword</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock#getKeyword()
-   * @see #getGenEscalationBlock()
-   * @generated
-   */
-  EReference getGenEscalationBlock_Keyword();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock#getEnableds <em>Enableds</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Enableds</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock#getEnableds()
-   * @see #getGenEscalationBlock()
-   * @generated
-   */
-  EReference getGenEscalationBlock_Enableds();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock#getAtRetries <em>At Retries</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>At Retries</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock#getAtRetries()
-   * @see #getGenEscalationBlock()
-   * @generated
-   */
-  EReference getGenEscalationBlock_AtRetries();
-
-  /**
-   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.EscalationKeyword <em>Escalation Keyword</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Escalation Keyword</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.EscalationKeyword
-   * @generated
-   */
-  EClass getEscalationKeyword();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.EscalationKeyword#getKeyword <em>Keyword</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Keyword</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.EscalationKeyword#getKeyword()
-   * @see #getEscalationKeyword()
-   * @generated
-   */
-  EAttribute getEscalationKeyword_Keyword();
-
-  /**
-   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.Enabled <em>Enabled</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Enabled</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.Enabled
-   * @generated
-   */
-  EClass getEnabled();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.Enabled#getKeyword <em>Keyword</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Keyword</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.Enabled#getKeyword()
-   * @see #getEnabled()
-   * @generated
-   */
-  EReference getEnabled_Keyword();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.Enabled#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Value</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.Enabled#getValue()
-   * @see #getEnabled()
-   * @generated
-   */
-  EReference getEnabled_Value();
-
-  /**
-   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.EnabledKeyword <em>Enabled Keyword</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Enabled Keyword</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.EnabledKeyword
-   * @generated
-   */
-  EClass getEnabledKeyword();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.EnabledKeyword#getKeyword <em>Keyword</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Keyword</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.EnabledKeyword#getKeyword()
-   * @see #getEnabledKeyword()
-   * @generated
-   */
-  EAttribute getEnabledKeyword_Keyword();
-
-  /**
-   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.AtRetry <em>At Retry</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>At Retry</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.AtRetry
-   * @generated
-   */
-  EClass getAtRetry();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.AtRetry#getKeyword <em>Keyword</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Keyword</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.AtRetry#getKeyword()
-   * @see #getAtRetry()
-   * @generated
-   */
-  EReference getAtRetry_Keyword();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.AtRetry#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.AtRetry#getValue()
-   * @see #getAtRetry()
-   * @generated
-   */
-  EAttribute getAtRetry_Value();
-
-  /**
-   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.AtRetryKeyword <em>At Retry Keyword</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>At Retry Keyword</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.AtRetryKeyword
-   * @generated
-   */
-  EClass getAtRetryKeyword();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.AtRetryKeyword#getKeyword <em>Keyword</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Keyword</em>'.
-   * @see com.robenglander.libretto.spec.librettoProjectProfile.AtRetryKeyword#getKeyword()
-   * @see #getAtRetryKeyword()
-   * @generated
-   */
-  EAttribute getAtRetryKeyword_Keyword();
+  EAttribute getEscalationToKeyword_Keyword();
 
   /**
    * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.SurfaceBlock <em>Surface Block</em>}'.
@@ -5315,6 +4866,70 @@ public interface LibrettoProjectProfilePackage extends EPackage
    * @generated
    */
   EAttribute getTrueKeyword_Keyword();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider <em>Primary Provider</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Primary Provider</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider
+   * @generated
+   */
+  EClass getPrimaryProvider();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider#getKeyword()
+   * @see #getPrimaryProvider()
+   * @generated
+   */
+  EReference getPrimaryProvider_Keyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.PrimaryProvider#getName()
+   * @see #getPrimaryProvider()
+   * @generated
+   */
+  EAttribute getPrimaryProvider_Name();
+
+  /**
+   * Returns the meta object for class '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock <em>Gen Escalation Block</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Gen Escalation Block</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock
+   * @generated
+   */
+  EClass getGenEscalationBlock();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Keyword</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock#getKeyword()
+   * @see #getGenEscalationBlock()
+   * @generated
+   */
+  EReference getGenEscalationBlock_Keyword();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.robenglander.libretto.spec.librettoProjectProfile.GenEscalationBlock#getName()
+   * @see #getGenEscalationBlock()
+   * @generated
+   */
+  EAttribute getGenEscalationBlock_Name();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -5902,14 +5517,6 @@ public interface LibrettoProjectProfilePackage extends EPackage
      * @generated
      */
     EReference GEN_BLOCK__INITIAL_INSTRUCTIONS = eINSTANCE.getGenBlock_InitialInstructions();
-
-    /**
-     * The meta object literal for the '<em><b>Max Retries</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference GEN_BLOCK__MAX_RETRIES = eINSTANCE.getGenBlock_MaxRetries();
 
     /**
      * The meta object literal for the '<em><b>Parse Checks</b></em>' containment reference list feature.
@@ -6758,20 +6365,20 @@ public interface LibrettoProjectProfilePackage extends EPackage
     EReference GEN_USAGE_BLOCK__KEYWORD = eINSTANCE.getGenUsageBlock_Keyword();
 
     /**
-     * The meta object literal for the '<em><b>Primary Providers</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Providers</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference GEN_USAGE_BLOCK__PRIMARY_PROVIDERS = eINSTANCE.getGenUsageBlock_PrimaryProviders();
+    EReference GEN_USAGE_BLOCK__PROVIDERS = eINSTANCE.getGenUsageBlock_Providers();
 
     /**
-     * The meta object literal for the '<em><b>Secondary Providers</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Max Retries</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference GEN_USAGE_BLOCK__SECONDARY_PROVIDERS = eINSTANCE.getGenUsageBlock_SecondaryProviders();
+    EReference GEN_USAGE_BLOCK__MAX_RETRIES = eINSTANCE.getGenUsageBlock_MaxRetries();
 
     /**
      * The meta object literal for the '<em><b>Escalations</b></em>' containment reference list feature.
@@ -6800,40 +6407,34 @@ public interface LibrettoProjectProfilePackage extends EPackage
     EAttribute MODEL_USAGE_KEYWORD__KEYWORD = eINSTANCE.getModelUsageKeyword_Keyword();
 
     /**
-     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.PrimaryProviderImpl <em>Primary Provider</em>}' class.
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.ProviderImpl <em>Provider</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.PrimaryProviderImpl
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getPrimaryProvider()
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.ProviderImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getProvider()
      * @generated
      */
-    EClass PRIMARY_PROVIDER = eINSTANCE.getPrimaryProvider();
+    EClass PROVIDER = eINSTANCE.getProvider();
 
     /**
-     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.EscalationProviderImpl <em>Escalation Provider</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.EscalationProviderImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getEscalationProvider()
      * @generated
      */
-    EReference PRIMARY_PROVIDER__KEYWORD = eINSTANCE.getPrimaryProvider_Keyword();
+    EClass ESCALATION_PROVIDER = eINSTANCE.getEscalationProvider();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.EscalationToKeywordImpl <em>Escalation To Keyword</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.EscalationToKeywordImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getEscalationToKeyword()
      * @generated
      */
-    EAttribute PRIMARY_PROVIDER__NAME = eINSTANCE.getPrimaryProvider_Name();
-
-    /**
-     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.PrimaryProviderKeywordImpl <em>Primary Provider Keyword</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.PrimaryProviderKeywordImpl
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getPrimaryProviderKeyword()
-     * @generated
-     */
-    EClass PRIMARY_PROVIDER_KEYWORD = eINSTANCE.getPrimaryProviderKeyword();
+    EClass ESCALATION_TO_KEYWORD = eINSTANCE.getEscalationToKeyword();
 
     /**
      * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
@@ -6841,191 +6442,7 @@ public interface LibrettoProjectProfilePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PRIMARY_PROVIDER_KEYWORD__KEYWORD = eINSTANCE.getPrimaryProviderKeyword_Keyword();
-
-    /**
-     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.SecondaryProviderImpl <em>Secondary Provider</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.SecondaryProviderImpl
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getSecondaryProvider()
-     * @generated
-     */
-    EClass SECONDARY_PROVIDER = eINSTANCE.getSecondaryProvider();
-
-    /**
-     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SECONDARY_PROVIDER__KEYWORD = eINSTANCE.getSecondaryProvider_Keyword();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SECONDARY_PROVIDER__NAME = eINSTANCE.getSecondaryProvider_Name();
-
-    /**
-     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.SecondaryProviderKeywordImpl <em>Secondary Provider Keyword</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.SecondaryProviderKeywordImpl
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getSecondaryProviderKeyword()
-     * @generated
-     */
-    EClass SECONDARY_PROVIDER_KEYWORD = eINSTANCE.getSecondaryProviderKeyword();
-
-    /**
-     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SECONDARY_PROVIDER_KEYWORD__KEYWORD = eINSTANCE.getSecondaryProviderKeyword_Keyword();
-
-    /**
-     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenEscalationBlockImpl <em>Gen Escalation Block</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.GenEscalationBlockImpl
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getGenEscalationBlock()
-     * @generated
-     */
-    EClass GEN_ESCALATION_BLOCK = eINSTANCE.getGenEscalationBlock();
-
-    /**
-     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference GEN_ESCALATION_BLOCK__KEYWORD = eINSTANCE.getGenEscalationBlock_Keyword();
-
-    /**
-     * The meta object literal for the '<em><b>Enableds</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference GEN_ESCALATION_BLOCK__ENABLEDS = eINSTANCE.getGenEscalationBlock_Enableds();
-
-    /**
-     * The meta object literal for the '<em><b>At Retries</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference GEN_ESCALATION_BLOCK__AT_RETRIES = eINSTANCE.getGenEscalationBlock_AtRetries();
-
-    /**
-     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.EscalationKeywordImpl <em>Escalation Keyword</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.EscalationKeywordImpl
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getEscalationKeyword()
-     * @generated
-     */
-    EClass ESCALATION_KEYWORD = eINSTANCE.getEscalationKeyword();
-
-    /**
-     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ESCALATION_KEYWORD__KEYWORD = eINSTANCE.getEscalationKeyword_Keyword();
-
-    /**
-     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.EnabledImpl <em>Enabled</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.EnabledImpl
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getEnabled()
-     * @generated
-     */
-    EClass ENABLED = eINSTANCE.getEnabled();
-
-    /**
-     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ENABLED__KEYWORD = eINSTANCE.getEnabled_Keyword();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ENABLED__VALUE = eINSTANCE.getEnabled_Value();
-
-    /**
-     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.EnabledKeywordImpl <em>Enabled Keyword</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.EnabledKeywordImpl
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getEnabledKeyword()
-     * @generated
-     */
-    EClass ENABLED_KEYWORD = eINSTANCE.getEnabledKeyword();
-
-    /**
-     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ENABLED_KEYWORD__KEYWORD = eINSTANCE.getEnabledKeyword_Keyword();
-
-    /**
-     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.AtRetryImpl <em>At Retry</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.AtRetryImpl
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getAtRetry()
-     * @generated
-     */
-    EClass AT_RETRY = eINSTANCE.getAtRetry();
-
-    /**
-     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference AT_RETRY__KEYWORD = eINSTANCE.getAtRetry_Keyword();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute AT_RETRY__VALUE = eINSTANCE.getAtRetry_Value();
-
-    /**
-     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.AtRetryKeywordImpl <em>At Retry Keyword</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.AtRetryKeywordImpl
-     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getAtRetryKeyword()
-     * @generated
-     */
-    EClass AT_RETRY_KEYWORD = eINSTANCE.getAtRetryKeyword();
-
-    /**
-     * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute AT_RETRY_KEYWORD__KEYWORD = eINSTANCE.getAtRetryKeyword_Keyword();
+    EAttribute ESCALATION_TO_KEYWORD__KEYWORD = eINSTANCE.getEscalationToKeyword_Keyword();
 
     /**
      * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.SurfaceBlockImpl <em>Surface Block</em>}' class.
@@ -7310,6 +6727,58 @@ public interface LibrettoProjectProfilePackage extends EPackage
      * @generated
      */
     EAttribute TRUE_KEYWORD__KEYWORD = eINSTANCE.getTrueKeyword_Keyword();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.PrimaryProviderImpl <em>Primary Provider</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.PrimaryProviderImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getPrimaryProvider()
+     * @generated
+     */
+    EClass PRIMARY_PROVIDER = eINSTANCE.getPrimaryProvider();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_PROVIDER__KEYWORD = eINSTANCE.getPrimaryProvider_Keyword();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PRIMARY_PROVIDER__NAME = eINSTANCE.getPrimaryProvider_Name();
+
+    /**
+     * The meta object literal for the '{@link com.robenglander.libretto.spec.librettoProjectProfile.impl.GenEscalationBlockImpl <em>Gen Escalation Block</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.GenEscalationBlockImpl
+     * @see com.robenglander.libretto.spec.librettoProjectProfile.impl.LibrettoProjectProfilePackageImpl#getGenEscalationBlock()
+     * @generated
+     */
+    EClass GEN_ESCALATION_BLOCK = eINSTANCE.getGenEscalationBlock();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GEN_ESCALATION_BLOCK__KEYWORD = eINSTANCE.getGenEscalationBlock_Keyword();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GEN_ESCALATION_BLOCK__NAME = eINSTANCE.getGenEscalationBlock_Name();
 
   }
 
